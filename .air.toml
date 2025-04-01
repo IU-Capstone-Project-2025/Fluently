@@ -1,0 +1,36 @@
+# Working directory
+root = "."
+tmp_dir = "tmp"
+
+[build]
+# Command to build the project
+cmd = "go build -o ./tmp/main ./cmd/main.go"
+# Binary file produced by the build command
+bin = "tmp/main"
+# Watch these file extensions
+include_ext = ["go", "tpl", "tmpl", "html", "css", "js", "yaml"]
+# Exclude these directories from watching
+exclude_dir = ["tmp", "vendor", "node_modules"]
+# Delay before rebuilding after a change (in milliseconds)
+delay = 1000
+# Stop running the old binary when a build error occurs
+stop_on_error = true
+
+[log]
+# Show log time
+time = true
+
+[color]
+# Customize log colors
+main = "magenta"
+watcher = "cyan"
+build = "yellow"
+runner = "green"
+
+[misc]
+# Delete tmp directory on exit
+clean_on_exit = true
+
+[screen]
+# Clear the screen on each rebuild
+clear_on_rebuild = true
