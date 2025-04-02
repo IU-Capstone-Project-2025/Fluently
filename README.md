@@ -38,8 +38,60 @@ Swagger-документация будет доступна по маршрут
 
 ### 4. Example of logging
 
+```main.go
+	logger.Log.Info("Logger initialization successful!")
+	logger.Log.Info("App starting",
+		zap.String("name", config.GetAppName()),
+		zap.String("address", config.GetAppHost()+":"+config.GetAppPort()),
+		zap.String("dsn", config.GetPostgresDSN()),
+	)
+```
+
+# Project Structure
+## 🗂️ Project Structure — `fluently/go-backend`
+
+```txt
+.
+├── cmd/                            # Точка входа в приложение
+│   └── main.go                     # Запуск HTTP-сервера, зависимостей и маршрутов
+├── docs/                           # Swagger-документация (сгенерировано через swag)
+│   ├── docs.go
+│   ├── swagger.json
+│   └── swagger.yaml
+├── go.mod, go.sum                  # Зависимости проекта (модуль Go)
+├── internal/                       # Основная бизнес-логика (handlers, сервисы, доступ к данным)
+│   ├── api/
+│   │   └── v1/
+│   │       ├── handlers/           # HTTP-обработчики (controllers)
+│   │       │   └── *.go            # Например: word_handler.go, user_handler.go и т.д.
+│   │       └── routes/             # Роутинг chi (RegisterWordRoutes, и т.п.)
+│   │           └── *.go
+│   ├── config/                     # Загрузка конфигурации (viper)
+│   │   └── config.go
+│   ├── db/                         # Инициализация базы, миграции, подключения (ещё пусто)
+│   ├── repository/                 # Слой доступа к данным (models, postgres-реализации, DTO)
+│   │   ├── models/                 # GORM-модели таблиц
+│   │   ├── postgres/               # Реализации репозиториев через GORM
+│   │   └── schemas/                # DTO-схемы (вход/выход)
+│   ├── router/                     # Сборка chi.Router
+│   │   └── router.go
+│   ├── swagger/                    # Связь между swagger-доками и chi (опционально)
+│   └── utils/                      # Хелперы, утилиты, форматирование, ошибки и т.д.
+├── migrations/                     # SQL- или go-модули для миграций базы данных
+├── pkg/
+│   └── logger/                     # Zap-логгер (переиспользуемый)
+│       └── logger.go
+└── README.md                       # Главный файл описания проекта
+```
 
 ---
+
+## Общая концепция
+
+- `internal/` — основная логика проекта, разбитая по слоям
+- `repository/` — реализация работы с БД: модели, схемы и репозитории
+- `api/v1/` — REST API (обработчики + маршруты)
+- `pkg/` — внешний код, пригодный для повторного использования
 
 ## Dependencies
 
