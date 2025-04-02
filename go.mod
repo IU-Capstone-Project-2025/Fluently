@@ -6,6 +6,7 @@ toolchain go1.24.1
 
 require (
 	github.com/go-chi/chi/v5 v5.0.12
+	github.com/go-chi/cors v1.2.1
 	github.com/joho/godotenv v1.5.1
 	github.com/spf13/viper v1.20.1
 	github.com/swaggo/http-swagger v1.3.4
