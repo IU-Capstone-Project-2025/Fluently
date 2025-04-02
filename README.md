@@ -9,9 +9,17 @@
 
 ### Requirements
 
-- Go 1.20+
+- Go 1.23+
 - PostgreSQL
 - Redis
+
+### 0. Git
+
+Сделал ветку develop
+От неё уже есть две ветки:
+- feature/models, там пишешь код моделек
+- feature/handlers - код хендлеров
+- Можешь создавать по такому же принципу ветки и делать в них
 
 ### 1. Install Dependencies
 
