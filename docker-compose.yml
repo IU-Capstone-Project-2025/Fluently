@@ -1,0 +1,64 @@
+services:
+  # app:
+  #   build: .
+  #   container_name: fluently_bot
+  #   env_file: .env
+  #   environment:
+  #     BOT_TOKEN: ${BOT_TOKEN}
+  #   ports:
+  #     - "${APP_PORT}:${APP_PORT}"
+  #   depends_on:
+  #     - redis
+  #     - postgres
+  #   restart: unless-stopped
+
+  # worker:
+  #   build: .
+  #   container_name: fluently_worker
+  #   command: poetry run celery -A telegram.celery_app worker --loglevel=info
+  #   env_file: .env
+  #   depends_on:
+  #     - redis
+  #     - postgres
+  #   restart: unless-stopped
+
+  # redis:
+  #   image: redis:7
+  #   # container_name: fluently_redis
+  #   ports:
+  #     - "6380:6379"
+  #   restart: unless-stopped
+
+  postgres:
+    image: postgres:latest
+    container_name: fluently_db
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - pgdata:/var/lib/postgresql/data/pgdata
+    command: >
+      postgres -c max_connections=1000
+               -c shared_buffers=256MB
+               -c effective_cache_size=768MB
+               -c maintenance_work_mem=64MB
+               -c checkpoint_completion_target=0.7
+               -c wal_buffers=16MB
+               -c default_statistics_target=100
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+
+volumes:
+  pgdata:
+    driver: local
