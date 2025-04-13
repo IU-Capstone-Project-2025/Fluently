@@ -3,6 +3,7 @@ package postgres
 import (
 	"context"
 
+<<<<<<< HEAD
 	"fluently/go-backend/internal/repository/models"
 
 	"github.com/google/uuid"
@@ -48,4 +49,23 @@ func (r *LearnedWordRepository) Update(ctx context.Context, lw *models.LearnedWo
 func (r *LearnedWordRepository) Delete(ctx context.Context, userID, wordID uuid.UUID) error {
 	return r.db.WithContext(ctx).
 		Delete(&models.LearnedWords{}, "user_id = ? AND word_id = ?", userID, wordID).Error
+=======
+	"github.com/google/uuid"
+	"gorm.io/gorm"
+
+	"fluently/go-backend/internal/repository/models"
+)
+
+type WordPostgres struct {
+	db *gorm.DB
+}
+
+func NewWordPostgres(db *gorm.DB) *WordPostgres {
+	return &WordPostgres{db: db}
+}
+
+func (r *WordPostgres) Create(ctx context.Context, word *models.Word) error {
+	word.ID = uuid.New()
+	return r.db.WithContext(ctx).Create(word).Error
+>>>>>>> 514fbe1 (Add word create logic)
 }
