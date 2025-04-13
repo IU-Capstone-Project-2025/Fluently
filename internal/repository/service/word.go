@@ -30,11 +30,3 @@ func (s *WordService) Create(ctx context.Context, req *schemas.WordCreateRequest
 
 	return s.repo.Create(ctx, word)
 }
-
-func stringPtrOrNil(s *string) *string {
-	if s == nil || *s == "" {
-		return nil
-	}
-
-	return s
-}
