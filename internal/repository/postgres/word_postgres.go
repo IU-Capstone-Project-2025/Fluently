@@ -9,6 +9,7 @@ import (
 	"fluently/go-backend/internal/repository/models"
 )
 
+<<<<<<< HEAD
 type WordRepository struct {
 	db *gorm.DB
 }
@@ -46,3 +47,17 @@ func (r *WordRepository) Update(ctx context.Context, word *models.Word) error {
 func (r *WordRepository) Delete(ctx context.Context, id uuid.UUID) error {
 	return r.db.WithContext(ctx).Delete(&models.Word{}, "id = ?", id).Error
 }
+=======
+type WordPostgres struct {
+	db *gorm.DB
+}
+
+func NewWordPostgres(db *gorm.DB) *WordPostgres {
+	return &WordPostgres{db: db}
+}
+
+func (r *WordPostgres) Create(ctx context.Context, word *models.Word) error {
+	word.ID = uuid.New()
+	return r.db.WithContext(ctx).Create(word).Error
+}
+>>>>>>> 2e8329b (Fix files and order)
