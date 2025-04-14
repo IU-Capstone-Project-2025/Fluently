@@ -33,7 +33,7 @@ func InitRoutes(db *gorm.DB) http.Handler {
     r.Get("/swagger/*", httpSwagger.WrapHandler)
 
     // 👇 Регистрируем все подроутеры
-    routes.RegisterUserRoutes(r)
+    routes.RegisterUserRoutes(r, db)
     routes.RegisterWordRoutes(r, db)
     routes.RegisterSentenceRoutes(r)
 

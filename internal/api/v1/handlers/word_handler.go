@@ -4,8 +4,6 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/go-playground/validator/v10"
-
 	"fluently/go-backend/internal/repository/schemas"
 	"fluently/go-backend/internal/repository/service"
 )
@@ -17,8 +15,6 @@ type WordHandler struct {
 func NewWordHandler(service *service.WordService) *WordHandler {
     return &WordHandler{service: service}
 }
-
-var validate = validator.New()
 
 func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
     words, err := h.service.List(r.Context())
@@ -77,8 +73,6 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
         http.Error(w, "Failed to update word: "+err.Error(), http.StatusInternalServerError)
         return
     }
-
-    w.WriteHeader(http.StatusOK)
 }
 
 func (h *WordHandler) DeleteWord(w http.ResponseWriter, r *http.Request) {
