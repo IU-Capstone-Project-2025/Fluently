@@ -20,16 +20,28 @@ func NewWordHandler(service *service.WordService) *WordHandler {
 
 var validate = validator.New()
 
-func ListWords(w http.ResponseWriter, r *http.Request) {
-    // TODO: Получить список слов с фильтрами
+func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
+    words, err := h.service.List(r.Context())
+    if err != nil {
+        http.Error(w, "Failed to list words: "+err.Error(), http.StatusInternalServerError)
+        return 
+    }
+
+    json.NewEncoder(w).Encode(words)
 }
 
-func GetWord(w http.ResponseWriter, r *http.Request) {
-    // TODO: Получить слово по ID
+func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
+    id := r.URL.Query().Get("id")
+    word, err := h.service.GetByID(r.Context(), id)
+    if err != nil {
+        http.Error(w, "Failed to get word: "+err.Error(), http.StatusNotFound)
+        return
+    }
+
+    json.NewEncoder(w).Encode(word)
 }
 
 func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
-    // TODO: Добавить новое слово
     var req schemas.WordCreateRequest
     if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
         http.Error(w, "Invalid JSON", http.StatusBadRequest)
@@ -48,10 +60,33 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusCreated)
 }
 
-func UpdateWord(w http.ResponseWriter, r *http.Request) {
-    // TODO: Обновить слово
+func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
+    id := r.URL.Query().Get("id")
+    var req schemas.WordUpdateRequest
+    if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+        http.Error(w, "Invalid JSON", http.StatusBadRequest)
+        return
+    }
+
+    if err := validate.Struct(&req); err != nil {
+        http.Error(w, "Validation error: "+err.Error(), http.StatusBadRequest)
+        return
+    }
+
+    if err := h.service.Update(r.Context(), id, &req); err != nil {
+        http.Error(w, "Failed to update word: "+err.Error(), http.StatusInternalServerError)
+        return
+    }
+
+    w.WriteHeader(http.StatusOK)
 }
 
-func DeleteWord(w http.ResponseWriter, r *http.Request) {
-    // TODO: Удалить слово
+func (h *WordHandler) DeleteWord(w http.ResponseWriter, r *http.Request) {
+    id := r.URL.Query().Get("id")
+    if err := h.service.Delete(r.Context(), id); err != nil {
+        http.Error(w, "Failed to delete word: "+err.Error(), http.StatusInternalServerError)
+        return
+    }
+
+    w.WriteHeader(http.StatusNoContent)
 }

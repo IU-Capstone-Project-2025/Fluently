@@ -5,6 +5,7 @@ import (
 
 	_ "fluently/go-backend/docs"
 	"fluently/go-backend/internal/config"
+	//"fluently/go-backend/internal/router"
 	"fluently/go-backend/pkg/logger"
 
 	"github.com/go-chi/chi/v5"
@@ -32,6 +33,9 @@ func main() {
 	defer logger.Log.Sync()
 
 	r := chi.NewRouter()
+
+	// db, err := gorm.Open(postgres.Open(config.GetPostgresDSN()), &gorm.Config{})
+	// router.InitRoutes(db)
 
 	r.Get("/swagger/*", httpSwagger.WrapHandler) // Swagger UI
 
