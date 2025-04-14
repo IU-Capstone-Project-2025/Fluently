@@ -9,6 +9,10 @@ import (
 
 type WordRepository interface {
 	Create(ctx context.Context, word *models.Word) error
+	GetByID(ctx context.Context, id string) (*models.Word, error)
+	List(ctx context.Context) ([]*models.Word, error)
+	Update(ctx context.Context, id string, updates map[string]any) error
+	Delete(ctx context.Context, id string) error 
 }
 
 type WordService struct {
@@ -29,4 +33,38 @@ func (s *WordService) Create(ctx context.Context, req *schemas.WordCreateRequest
 	}
 
 	return s.repo.Create(ctx, word)
+}
+
+func (s *WordService) GetByID(ctx context.Context, id string) (*models.Word, error) {
+	return s.repo.GetByID(ctx, id)
+}
+
+func (s *WordService) List(ctx context.Context) ([]*models.Word, error) {
+	return s.repo.List(ctx)
+}
+
+func (s *WordService) Update(ctx context.Context, id string, req *schemas.WordUpdateRequest) error {
+	updates := make(map[string]interface{})
+
+	if req.Word != nil {
+		updates["word"] = *req.Word
+	}
+	if req.CEFR != nil {
+		updates["cefr"] = *req.CEFR
+	}
+	if req.Translation != nil {
+		updates["translation"] = *req.Translation
+	}
+	if req.PartOfSpeech != nil {
+		updates["part_of_speech"] = *req.PartOfSpeech
+	}
+	if req.Context != nil {
+		updates["context"] = *req.Context
+	}
+
+	return s.repo.Update(ctx, id, updates)
+}
+
+func (s *WordService) Delete(ctx context.Context, id string) error {
+	return s.repo.Delete(ctx, id)
 }

@@ -7,11 +7,12 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
 	httpSwagger "github.com/swaggo/http-swagger"
+    "gorm.io/gorm"
 
 	"fluently/go-backend/internal/api/v1/routes"
 )
 
-func InitRoutes() http.Handler {
+func InitRoutes(db *gorm.DB) http.Handler {
     r := chi.NewRouter()
 
     r.Use(cors.Handler(cors.Options{
@@ -33,7 +34,7 @@ func InitRoutes() http.Handler {
 
     // 👇 Регистрируем все подроутеры
     routes.RegisterUserRoutes(r)
-    routes.RegisterWordRoutes(r)
+    routes.RegisterWordRoutes(r, db)
     routes.RegisterSentenceRoutes(r)
 
     return r
