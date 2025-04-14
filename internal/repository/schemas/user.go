@@ -1,5 +1,6 @@
 package schemas
 
+<<<<<<< HEAD
 import "github.com/google/uuid"
 
 type CreateUserRequest struct {
@@ -18,4 +19,12 @@ type UserResponse struct {
 type PreferenceMini struct {
 	ID        uuid.UUID `json:"id"`
 	CEFRLevel string    `json:"ceft_level"`
+=======
+type UserCreateRequest struct {
+	Name string `json:"name" validate:"required,min=3,max=30"`
+}
+
+type UserUpdateRequest struct {
+	Name *string `json:"name" validate:"omitempty,min=3,max=30"`
+>>>>>>> d67dbcc (Add all user logic)
 }

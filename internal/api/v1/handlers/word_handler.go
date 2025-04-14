@@ -6,8 +6,6 @@ import (
 <<<<<<< HEAD
 =======
 
-	"github.com/go-playground/validator/v10"
-
 	"fluently/go-backend/internal/repository/schemas"
 	"fluently/go-backend/internal/repository/service"
 )
@@ -20,6 +18,7 @@ func NewWordHandler(service *service.WordService) *WordHandler {
     return &WordHandler{service: service}
 }
 
+<<<<<<< HEAD
 var validate = validator.New()
 >>>>>>> 514fbe1 (Add word create logic)
 
@@ -64,6 +63,8 @@ func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
 
 	json.NewEncoder(w).Encode(resp)
 =======
+=======
+>>>>>>> d67dbcc (Add all user logic)
 func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
     words, err := h.service.List(r.Context())
     if err != nil {
@@ -259,8 +260,6 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
         http.Error(w, "Failed to update word: "+err.Error(), http.StatusInternalServerError)
         return
     }
-
-    w.WriteHeader(http.StatusOK)
 }
 
 func (h *WordHandler) DeleteWord(w http.ResponseWriter, r *http.Request) {

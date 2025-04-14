@@ -8,6 +8,7 @@ import (
 	"gorm.io/gorm"
 
 	"fluently/go-backend/internal/repository/models"
+	"fluently/go-backend/internal/repository/schemas"
 )
 
 <<<<<<< HEAD
@@ -87,7 +88,7 @@ func (r *WordPostgres) List(ctx context.Context) ([]*models.Word, error) {
 	return words, err
 }
 
-func (r *WordPostgres) Update(ctx context.Context, idStr string, updates map[string]any) error {
+func (r *WordPostgres) Update(ctx context.Context, idStr string, updates *schemas.WordUpdateRequest) error {
 	id, err := uuid.Parse(idStr)
 	if err != nil {
 		return errors.New("invalid uuid")

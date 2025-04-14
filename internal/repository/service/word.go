@@ -11,7 +11,7 @@ type WordRepository interface {
 	Create(ctx context.Context, word *models.Word) error
 	GetByID(ctx context.Context, id string) (*models.Word, error)
 	List(ctx context.Context) ([]*models.Word, error)
-	Update(ctx context.Context, id string, updates map[string]any) error
+	Update(ctx context.Context, id string, updates *schemas.WordUpdateRequest) error
 	Delete(ctx context.Context, id string) error 
 }
 
@@ -44,26 +44,14 @@ func (s *WordService) List(ctx context.Context) ([]*models.Word, error) {
 }
 
 func (s *WordService) Update(ctx context.Context, id string, req *schemas.WordUpdateRequest) error {
-	updates := make(map[string]interface{})
-
-	if req.Word != nil {
-		updates["word"] = *req.Word
-	}
-	if req.CEFR != nil {
-		updates["cefr"] = *req.CEFR
-	}
-	if req.Translation != nil {
-		updates["translation"] = *req.Translation
-	}
-	if req.PartOfSpeech != nil {
-		updates["part_of_speech"] = *req.PartOfSpeech
-	}
-	if req.Context != nil {
-		updates["context"] = *req.Context
+	if req.Word == nil && req.CEFR == nil && req.Translation == nil &&
+		req.PartOfSpeech == nil && req.Context == nil {
+		return nil 
 	}
 
-	return s.repo.Update(ctx, id, updates)
+	return s.repo.Update(ctx, id, req)
 }
+
 
 func (s *WordService) Delete(ctx context.Context, id string) error {
 	return s.repo.Delete(ctx, id)
