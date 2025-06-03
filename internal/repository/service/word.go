@@ -26,7 +26,7 @@ func NewWordService(repo WordRepository) *WordService {
 func (s *WordService) Create(ctx context.Context, req *schemas.WordCreateRequest) error {
 	word := &models.Word{
 		Word: req.Word,
-		CEFR: (*models.CEFRLevel)(req.CEFR),
+		CEFR: req.CEFR,
 		Translation: req.Translation,
 		PartOfSpeech: req.PartOfSpeech,
 		Context: req.Context,
