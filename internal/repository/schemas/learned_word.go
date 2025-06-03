@@ -20,6 +20,6 @@ type LearenedWordResponse struct {
 	WordID          uuid.UUID `json:"word_id"`
 	LearnedAt       time.Time `json:"learned_at"`
 	LastReviewed    time.Time `json:"last_reviewed"`
-	CntReviewedA    int       `json:"cnt_reviewed"`
+	CntReviewedAt   int       `json:"cnt_reviewed"`
 	ConfidenceScore int       `json:"confidence_score"`
 }
