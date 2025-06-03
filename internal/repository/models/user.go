@@ -16,8 +16,12 @@ type User struct {
 type User struct {
 	UserID      uint             `gorm:"column:user_id;primaryKey;unique;not null"`
 	Name        string           `gorm:"type:varchar(30)"`
+<<<<<<< HEAD
 	Preferences *UserPreferences `gorm:"foreignKey:UserID;references:UserID"`
 >>>>>>> d67dbcc (Add all user logic)
+=======
+	Preferences *Preference `gorm:"foreignKey:UserID;references:UserID"`
+>>>>>>> 079df46 (fix: bugs)
 }
 
 func (User) TableName() string {

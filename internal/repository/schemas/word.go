@@ -17,11 +17,15 @@ type WordResponse struct {
 =======
 type WordCreateRequest struct {
 	Word         string  `json:"word" validate:"required,min=1,max=30"`
-	CEFR         *string `json:"ceft" validate:"omitempty,oneof=A1 A2 B1 B2 C1 C2"`
-	Translation  *string `json:"translation" validate:"omitempty,max=30"`
+	CEFR         string `json:"ceft" validate:"omitempty,oneof=A1 A2 B1 B2 C1 C2"`
+	Translation  string `json:"translation" validate:"omitempty,max=30"`
 	PartOfSpeech string  `json:"part_of_speech" validate:"required, max=30"`
+<<<<<<< HEAD
 	Context      *string `json:"context" validate:"omitempty,max=100"`
 >>>>>>> 514fbe1 (Add word create logic)
+=======
+	Context      string `json:"context" validate:"omitempty,max=100"`
+>>>>>>> 079df46 (fix: bugs)
 }
 
 type WordCreateResponse struct {
