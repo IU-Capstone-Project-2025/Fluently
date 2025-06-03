@@ -1,28 +1,22 @@
 package models
 
-type CEFRLevel string
+import (
+	"time"
 
-const (
-	A1 CEFRLevel = "A1"
-	A2 CEFRLevel = "A2"
-	B1 CEFRLevel = "B1"
-	B2 CEFRLevel = "B2"
-	C1 CEFRLevel = "C1"
-	C2 CEFRLevel = "C2"
+	"github.com/google/uuid"
 )
 
-type UserPreferences struct {
-	UserID          uint      `gorm:"primaryKey;not null;unique;column:user_id"`
-	CEFRLevel       CEFRLevel `gorm:"type:varchar(2);not null"`
-	Goal            string    `gorm:"type:varchar(100);default:generally"`
+type Preference struct {
+	ID              uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
+	CEFRLevel       string    `gorm:"type:varchar(2);not null"`
+	Points          int       `gorm:"default:0"`
+	FactEveryday    bool      `gorm:"default:false"`
 	Notifications   bool      `gorm:"default:true"`
-	Advertisments   bool      `gorm:"default:true"`
-	WordsPerDay     int       `gorm:"default:10"`
-	NotificationsAt string    `gorm:"type:varchar(5);default:'09:00'"`
-
-	User User `gorm:"foreignKey:UserID;references:UserID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE"`
+	NotificationsAt *time.Time
+	WordsPerDay     int    `gorm:"default:10"`
+	Goal            string `gorm:"type:varchar(255)"`
 }
 
-func (UserPreferences) TableName() string {
+func (Preference) TableName() string {
 	return "user_preferences"
 }
