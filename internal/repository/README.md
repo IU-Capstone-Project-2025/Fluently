@@ -60,3 +60,9 @@
 - В `schemas/` избегай `gorm`-тегов — только `json` и `validate`
 - Реализации в `postgres/` должны соответствовать интерфейсам
 
+## Дополнительно (от Дани):
+
+> Стоит подключить генератор uuid в postgresql
+ ```SQL
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+```
