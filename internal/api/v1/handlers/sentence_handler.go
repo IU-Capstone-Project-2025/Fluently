@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"context"
 	"encoding/json"
 	"net/http"
 
@@ -79,7 +78,7 @@ func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
-	sentence, err := h.Repo.Get(r.Context(), id)
+	sentence, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
 		http.Error(w, "not found", http.StatusNotFound)
 		return

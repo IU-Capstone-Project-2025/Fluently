@@ -61,7 +61,7 @@ func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
-	word, err := h.Repo.GetLearnedWord(r.Context(), userID, wordID)
+	word, err := h.Repo.GetByUserWordID(r.Context(), userID, wordID)
 	if err != nil {
 		http.Error(w, "learned word not found", http.StatusNotFound)
 		return
@@ -95,7 +95,7 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 		ConfidenceScore:  req.ConfidenceScore,
 	}
 
-	if err := h.Repo.CreateLearnedWord(r.Context(), &word); err != nil {
+	if err := h.Repo.Create(r.Context(), &word); err != nil {
 		http.Error(w, "failed to create", http.StatusInternalServerError)
 		return
 	}
@@ -125,7 +125,7 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 		return
 	}
 
-	word, err := h.Repo.GetLearnedWord(r.Context(), userID, wordID)
+	word, err := h.Repo.GetByUserWordID(r.Context(), userID, wordID)
 	if err != nil {
 		http.Error(w, "not found", http.StatusNotFound)
 		return
@@ -136,7 +136,7 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 	word.CountOfRevisions = req.CntReviewed
 	word.ConfidenceScore = req.ConfidenceScore
 
-	if err := h.Repo.UpdateLearnedWord(r.Context(), word); err != nil {
+	if err := h.Repo.Update(r.Context(), word); err != nil {
 		http.Error(w, "failed to update", http.StatusInternalServerError)
 		return
 	}
@@ -160,7 +160,7 @@ func (h *LearnedWordHandler) DeleteLearnedWord(w http.ResponseWriter, r *http.Re
 		return
 	}
 
-	if err := h.Repo.DeleteLearnedWord(r.Context(), userID, wordID); err != nil {
+	if err := h.Repo.Delete(r.Context(), userID, wordID); err != nil {
 		http.Error(w, "failed to delete", http.StatusInternalServerError)
 		return
 	}

@@ -71,7 +71,7 @@ func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http
 	pref.WordsPerDay = req.WordsPerDay
 	pref.Goal = req.Goal
 
-	if err := h.Repo.UpdatePreference(r.Context(), pref); err != nil {
+	if err := h.Repo.Update(r.Context(), pref); err != nil {
 		http.Error(w, "failed to update preference", http.StatusInternalServerError)
 		return
 	}

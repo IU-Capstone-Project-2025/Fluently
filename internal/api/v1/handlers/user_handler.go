@@ -30,7 +30,7 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 		PrefID:   req.PrefID,
 	}
 
-	if err := h.Repo.CreateUser(r.Context(), &user); err != nil {
+	if err := h.Repo.Create(r.Context(), &user); err != nil {
 		http.Error(w, "failed to create user", http.StatusInternalServerError)
 		return
 	}
@@ -57,7 +57,7 @@ func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	user, err := h.Repo.GetUserByID(r.Context(), id)
+	user, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
 		http.Error(w, "user not found", http.StatusNotFound)
 		return
@@ -90,7 +90,7 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	user, err := h.Repo.GetUserByID(r.Context(), id)
+	user, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
 		http.Error(w, "user not found", http.StatusNotFound)
 		return
@@ -100,7 +100,7 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 	user.SubLevel = req.SubLevel
 	user.PrefID = req.PrefID
 
-	if err := h.Repo.UpdateUser(r.Context(), user); err != nil {
+	if err := h.Repo.Update(r.Context(), user); err != nil {
 		http.Error(w, "failed to update user", http.StatusInternalServerError)
 		return
 	}
@@ -126,7 +126,7 @@ func (h *UserHandler) DeleteUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := h.Repo.DeleteUser(r.Context(), id); err != nil {
+	if err := h.Repo.Delete(r.Context(), id); err != nil {
 		http.Error(w, "failed to delte user", http.StatusInternalServerError)
 		return
 	}

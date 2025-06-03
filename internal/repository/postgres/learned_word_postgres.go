@@ -26,7 +26,7 @@ func (r *LearnedWordRepository) ListByUser(ctx context.Context, userID uuid.UUID
 	return words, err
 }
 
-func (r *LearnedWordRepository) GetLearnedWord(ctx context.Context, userID, wordID uuid.UUID) (*models.LearnedWords, error) {
+func (r *LearnedWordRepository) GetByUserWordID(ctx context.Context, userID, wordID uuid.UUID) (*models.LearnedWords, error) {
 	var lw models.LearnedWords
 	err := r.db.WithContext(ctx).
 		First(&lw, "user_id = ? AND word_id = ?", userID, wordID).Error
@@ -37,15 +37,15 @@ func (r *LearnedWordRepository) GetLearnedWord(ctx context.Context, userID, word
 	return &lw, nil
 }
 
-func (r *LearnedWordRepository) CreateLearnedWord(ctx context.Context, lw *models.LearnedWords) error {
+func (r *LearnedWordRepository) Create(ctx context.Context, lw *models.LearnedWords) error {
 	return r.db.Create(lw).Error
 }
 
-func (r *LearnedWordRepository) UpdateLearnedWord(ctx context.Context, lw *models.LearnedWords) error {
+func (r *LearnedWordRepository) Update(ctx context.Context, lw *models.LearnedWords) error {
 	return r.db.WithContext(ctx).Save(lw).Error
 }
 
-func (r *LearnedWordRepository) DeleteLearnedWord(ctx context.Context, userID, wordID uuid.UUID) error {
+func (r *LearnedWordRepository) Delete(ctx context.Context, userID, wordID uuid.UUID) error {
 	return r.db.WithContext(ctx).
 		Delete(&models.LearnedWords{}, "user_id = ? AND word_id = ?", userID, wordID).Error
 }
