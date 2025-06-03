@@ -26,7 +26,7 @@ func (r *WordRepository) ListWords(ctx context.Context) ([]models.Word, error) {
 	return words, nil
 }
 
-func (r *WordRepository) GetWordByID(ctx context.Context, id uuid.UUID) (*models.Word, error) {
+func (r *WordRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.Word, error) {
 	var word models.Word
 	if err := r.db.WithContext(ctx).First(&word, "id = ?", id).Error; err != nil {
 		return nil, err
@@ -35,14 +35,14 @@ func (r *WordRepository) GetWordByID(ctx context.Context, id uuid.UUID) (*models
 	return &word, nil
 }
 
-func (r *WordRepository) CreateWord(ctx context.Context, word *models.Word) error {
+func (r *WordRepository) Create(ctx context.Context, word *models.Word) error {
 	return r.db.WithContext(ctx).Create(word).Error
 }
 
-func (r *WordRepository) UpdateWord(ctx context.Context, word *models.Word) error {
+func (r *WordRepository) Update(ctx context.Context, word *models.Word) error {
 	return r.db.WithContext(ctx).Save(word).Error
 }
 
-func (r *WordRepository) DeleteWord(ctx context.Context, id uuid.UUID) error {
+func (r *WordRepository) Delete(ctx context.Context, id uuid.UUID) error {
 	return r.db.WithContext(ctx).Delete(&models.Word{}, "id = ?", id).Error
 }

@@ -36,7 +36,7 @@ func (r *SentenceRepository) Delete(ctx context.Context, id uuid.UUID) error {
 	return r.db.WithContext(ctx).Delete(&models.Sentence{}, "id = ?", id).Error
 }
 
-func (r *SentenceRepository) Get(ctx context.Context, id uuid.UUID) (*models.Sentence, error) {
+func (r *SentenceRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.Sentence, error) {
 	var s models.Sentence
 	err := r.db.WithContext(ctx).First(&s, "id = ?", id).Error
 	if err != nil {

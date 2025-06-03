@@ -53,7 +53,7 @@ func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	word, err := h.Repo.GetWordByID(r.Context(), id)
+	word, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
 		http.Error(w, "word not found", http.StatusNotFound)
 		return
@@ -97,7 +97,7 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 		word.Context = *req.Context
 	}
 
-	if err := h.Repo.CreateWord(r.Context(), &word); err != nil {
+	if err := h.Repo.Create(r.Context(), &word); err != nil {
 		http.Error(w, "failed to create word", http.StatusInternalServerError)
 		return
 	}
@@ -128,7 +128,7 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	word, err := h.Repo.GetWordByID(r.Context(), id)
+	word, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
 		http.Error(w, "word not found", http.StatusNotFound)
 		return
@@ -149,7 +149,7 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 		word.Context = ""
 	}
 
-	if err := h.Repo.UpdateWord(r.Context(), word); err != nil {
+	if err := h.Repo.Update(r.Context(), word); err != nil {
 		http.Error(w, "failed to update word", http.StatusInternalServerError)
 		return
 	}
@@ -173,7 +173,7 @@ func (h *WordHandler) DeleteWord(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := h.Repo.DeleteWord(r.Context(), id); err != nil {
+	if err := h.Repo.Delete(r.Context(), id); err != nil {
 		http.Error(w, "failed to delete word", http.StatusInternalServerError)
 		return
 	}

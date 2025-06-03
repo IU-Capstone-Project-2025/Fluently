@@ -26,6 +26,6 @@ func (r *PreferenceRepository) GetByID(ctx context.Context, id uuid.UUID) (*mode
 	return &pref, nil
 }
 
-func (r *PreferenceRepository) UpdatePreference(ctx context.Context, pref *models.Preference) error {
+func (r *PreferenceRepository) Update(ctx context.Context, pref *models.Preference) error {
 	return r.db.WithContext(ctx).Save(pref).Error
 }
