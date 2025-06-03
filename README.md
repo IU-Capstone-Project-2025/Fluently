@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Fluently
 =======
 # go-backend
@@ -114,6 +115,9 @@ Swagger-документация будет доступна по маршрут
 <<<<<<< HEAD
 =======
 # data-gripping
+=======
+# ios-app
+>>>>>>> 5ca136d (Initial commit)
 
 
 
@@ -130,14 +134,22 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
+<<<<<<< HEAD
 git remote add origin https://gitlab.com/fluently/data-gripping.git
+=======
+git remote add origin https://gitlab.com/fluently/ios-app.git
+>>>>>>> 5ca136d (Initial commit)
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
+<<<<<<< HEAD
 - [ ] [Set up project integrations](https://gitlab.com/fluently/data-gripping/-/settings/integrations)
+=======
+- [ ] [Set up project integrations](https://gitlab.com/fluently/ios-app/-/settings/integrations)
+>>>>>>> 5ca136d (Initial commit)
 
 ## Collaborate with your team
 
@@ -165,7 +177,10 @@ When you're ready to make this README your own, just edit this file and use the 
 
 ## Suggestions for a good README
 
+<<<<<<< HEAD
 >>>>>>> 76a4feb (Initial commit)
+=======
+>>>>>>> 5ca136d (Initial commit)
 Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
 
 ## Name
@@ -208,6 +223,7 @@ For open source projects, say how it is licensed.
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 27352b1 (Initial commit)
 =======
 - [Chi Router](https://github.com/go-chi/chi): Lightweight, idiomatic HTTP router
@@ -219,3 +235,5 @@ If you have run out of energy or time for your project, put a note at the top of
 >>>>>>> d6ccba0 (Add initial project configuration files and dependencies)
 =======
 >>>>>>> 76a4feb (Initial commit)
+=======
+>>>>>>> 5ca136d (Initial commit)
