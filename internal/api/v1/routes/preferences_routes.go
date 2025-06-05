@@ -1,14 +1,14 @@
 package routes
 
 import (
-	// handler "fluently/go-backend/internal/api/v1/handlers"
+	handler "fluently/go-backend/internal/api/v1/handlers"
 
 	"github.com/go-chi/chi/v5"
 )
 
-func RegisterPreferencesRoutes(r chi.Router) {
+func RegisterPreferencesRoutes(r chi.Router, h *handler.PreferenceHandler) {
 	r.Route("/users/{id}/preferences", func(r chi.Router) {
-		//    r.Get("/", handler.GetUserPreferences)
-		//   r.Put("/", handler.UpdateUserPreferences)
+		r.Get("/", h.GetUserPreferences)
+		r.Put("/", h.UpdateUserPreferences)
 	})
 }
