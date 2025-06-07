@@ -1,123 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Fluently
-=======
-# go-backend
-=======
-## Setup and Usage
->>>>>>> d6ccba0 (Add initial project configuration files and dependencies)
-
-### Requirements
-
-- Go 1.23+
-- PostgreSQL
-- Redis
-
-### 0. Git
-
-Сделал ветку develop
-От неё уже есть две ветки:
-- feature/models, там пишешь код моделек
-- feature/handlers - код хендлеров
-- Можешь создавать по такому же принципу ветки и делать в них
-
-### 1. Install Dependencies
-
-```bash
-go mod tidy
-```
-
-### 2. Run in Development Mode
-
-```bash
-air
-```
-
-> Убедись, что у тебя установлен `air`. Если нет — установи:
-> ```bash
-> go install github.com/air-verse/air@latest
-> ```
-
-### 3. Generate Swagger Docs
-
-```bash
-swag init --generalInfo cmd/main.go --output docs
-```
-
-> Убедись, что у тебя установлен `swag`:
-> ```bash
-> go install github.com/swaggo/swag/cmd/swag@latest
-> ```
-
-Swagger-документация будет доступна по маршруту `/swagger/index.html`, если подключён `httpSwagger.Handler`.
-
-### 4. Example of logging
-
-```main.go
-	logger.Log.Info("Logger initialization successful!")
-	logger.Log.Info("App starting",
-		zap.String("name", config.GetAppName()),
-		zap.String("address", config.GetAppHost()+":"+config.GetAppPort()),
-		zap.String("dsn", config.GetPostgresDSN()),
-	)
-```
-
-# Project Structure
-## 🗂️ Project Structure — `fluently/go-backend`
-
-```txt
-.
-├── cmd/                            # Точка входа в приложение
-│   └── main.go                     # Запуск HTTP-сервера, зависимостей и маршрутов
-├── docs/                           # Swagger-документация (сгенерировано через swag)
-│   ├── docs.go
-│   ├── swagger.json
-│   └── swagger.yaml
-├── go.mod, go.sum                  # Зависимости проекта (модуль Go)
-├── internal/                       # Основная бизнес-логика (handlers, сервисы, доступ к данным)
-│   ├── api/
-│   │   └── v1/
-│   │       ├── handlers/           # HTTP-обработчики (controllers)
-│   │       │   └── *.go            # Например: word_handler.go, user_handler.go и т.д.
-│   │       └── routes/             # Роутинг chi (RegisterWordRoutes, и т.п.)
-│   │           └── *.go
-│   ├── config/                     # Загрузка конфигурации (viper)
-│   │   └── config.go
-│   ├── db/                         # Инициализация базы, миграции, подключения (ещё пусто)
-│   ├── repository/                 # Слой доступа к данным (models, postgres-реализации, DTO)
-│   │   ├── models/                 # GORM-модели таблиц
-│   │   ├── postgres/               # Реализации репозиториев через GORM
-│   │   └── schemas/                # DTO-схемы (вход/выход)
-│   ├── router/                     # Сборка chi.Router
-│   │   └── router.go
-│   ├── swagger/                    # Связь между swagger-доками и chi (опционально)
-│   └── utils/                      # Хелперы, утилиты, форматирование, ошибки и т.д.
-├── migrations/                     # SQL- или go-модули для миграций базы данных
-├── pkg/
-│   └── logger/                     # Zap-логгер (переиспользуемый)
-│       └── logger.go
-└── README.md                       # Главный файл описания проекта
-```
-
----
-
-## Общая концепция
-
-- `internal/` — основная логика проекта, разбитая по слоям
-- `repository/` — реализация работы с БД: модели, схемы и репозитории
-- `api/v1/` — REST API (обработчики + маршруты)
-- `pkg/` — внешний код, пригодный для повторного использования
-
-## Dependencies
-
-<<<<<<< HEAD
-=======
-# data-gripping
-=======
 # ios-app
->>>>>>> 5ca136d (Initial commit)
 
 
 
@@ -134,22 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-<<<<<<< HEAD
-git remote add origin https://gitlab.com/fluently/data-gripping.git
-=======
 git remote add origin https://gitlab.com/fluently/ios-app.git
->>>>>>> 5ca136d (Initial commit)
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-<<<<<<< HEAD
-- [ ] [Set up project integrations](https://gitlab.com/fluently/data-gripping/-/settings/integrations)
-=======
 - [ ] [Set up project integrations](https://gitlab.com/fluently/ios-app/-/settings/integrations)
->>>>>>> 5ca136d (Initial commit)
 
 ## Collaborate with your team
 
@@ -177,10 +50,6 @@ When you're ready to make this README your own, just edit this file and use the 
 
 ## Suggestions for a good README
 
-<<<<<<< HEAD
->>>>>>> 76a4feb (Initial commit)
-=======
->>>>>>> 5ca136d (Initial commit)
 Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
 
 ## Name
@@ -222,18 +91,3 @@ For open source projects, say how it is licensed.
 
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 27352b1 (Initial commit)
-=======
-- [Chi Router](https://github.com/go-chi/chi): Lightweight, idiomatic HTTP router
-- [GORM](https://gorm.io/): ORM library for Golang
-- [Viper](https://github.com/spf13/viper): Configuration solution
-- [Zap](https://github.com/uber-go/zap): Structured logging
-- [Swaggo](https://github.com/swaggo/swag): Swagger 2.0 generator for Go
-- [Air](https://github.com/cosmtrek/air): Live reload for Go apps
->>>>>>> d6ccba0 (Add initial project configuration files and dependencies)
-=======
->>>>>>> 76a4feb (Initial commit)
-=======
->>>>>>> 5ca136d (Initial commit)
