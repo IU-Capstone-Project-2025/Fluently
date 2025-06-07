@@ -1,4 +1,4 @@
-package handler
+package handlers
 
 import (
 	"encoding/json"
@@ -16,6 +16,17 @@ type UserHandler struct {
 	Repo *postgres.UserRepository
 }
 
+// CreateUser godoc
+// @Summary      Create a user
+// @Description  Registers a new user
+// @Tags         users
+// @Accept       json
+// @Produce      json
+// @Param        user  body      schemas.CreateUserRequest  true  "User data"
+// @Success      201  {object}  schemas.UserResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /users/ [post]
 func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateUserRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
@@ -49,6 +60,17 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(resp)
 }
 
+// GetUser godoc
+// @Summary      Get user by ID
+// @Description  Returns a user by their unique identifier
+// @Tags         users
+// @Accept       json
+// @Produce      json
+// @Param        id   path      string  true  "User ID"
+// @Success      200  {object}  schemas.UserResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      404  {object}  schemas.ErrorResponse
+// @Router       /users/{id} [get]
 func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 	idStr := chi.URLParam(r, "id")
 	id, err := uuid.Parse(idStr)
@@ -76,6 +98,19 @@ func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(resp)
 }
 
+// UpdateUser godoc
+// @Summary      Update a user
+// @Description  Updates user data by ID
+// @Tags         users
+// @Accept       json
+// @Produce      json
+// @Param        id    path      string                   true  "User ID"
+// @Param        user  body      schemas.CreateUserRequest  true  "User data"
+// @Success      200  {object}  schemas.UserResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      404  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /users/{id} [put]
 func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 	idStr := chi.URLParam(r, "id")
 	id, err := uuid.Parse(idStr)
@@ -118,6 +153,18 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(resp)
 }
 
+// DeleteUser godoc
+// @Summary      Delete a user
+// @Description  Deletes a user by ID
+// @Tags         users
+// @Accept       json
+// @Produce      json
+// @Param        id   path      string  true  "User ID"
+// @Success      204  ""
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      404  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /users/{id} [delete]
 func (h *UserHandler) DeleteUser(w http.ResponseWriter, r *http.Request) {
 	idStr := chi.URLParam(r, "id")
 	id, err := uuid.Parse(idStr)
