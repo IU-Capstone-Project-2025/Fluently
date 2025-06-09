@@ -1,33 +1,48 @@
 services:
   # app:
-  #   build: .
-  #   container_name: fluently_bot
-  #   env_file: .env
-  #   environment:
-  #     BOT_TOKEN: ${BOT_TOKEN}
-  #   ports:
-  #     - "${APP_PORT}:${APP_PORT}"
-  #   depends_on:
-  #     - redis
-  #     - postgres
-  #   restart: unless-stopped
+    #   build: .
+    #   container_name: fluently_bot
+    #   env_file: .env
+    #   environment:
+    #     BOT_TOKEN: ${BOT_TOKEN}
+    #   ports:
+    #     - "${APP_PORT}:${APP_PORT}"
+    #   depends_on:
+    #     - redis
+    #     - postgres
+    #   restart: unless-stopped
 
-  # worker:
-  #   build: .
-  #   container_name: fluently_worker
-  #   command: poetry run celery -A telegram.celery_app worker --loglevel=info
-  #   env_file: .env
-  #   depends_on:
-  #     - redis
-  #     - postgres
-  #   restart: unless-stopped
+    # worker:
+    #   build: .
+    #   container_name: fluently_worker
+    #   command: poetry run celery -A telegram.celery_app worker --loglevel=info
+    #   env_file: .env
+    #   depends_on:
+    #     - redis
+    #     - postgres
+    #   restart: unless-stopped
 
-  # redis:
-  #   image: redis:7
-  #   # container_name: fluently_redis
-  #   ports:
-  #     - "6380:6379"
-  #   restart: unless-stopped
+    # redis:
+    #   image: redis:7
+    #   # container_name: fluently_redis
+    #   ports:
+    #     - "6380:6379"
+    #   restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fluently_app
+    env_file: .env 
+    ports:
+      - "${APP_PORT:-8080}:${APP_PORT:-8080}"
+    depends_on:
+      postgres:
+        condition: service_healthy 
+    restart: unless-stopped
+    networks:
+      - fluently_network
 
   postgres:
     image: postgres:latest
@@ -39,7 +54,7 @@ services:
       POSTGRES_DB: ${DB_NAME}
       PGDATA: /var/lib/postgresql/data/pgdata
     ports:
-      - "${DB_PORT}:${DB_PORT}"
+      - "${DB_PORT}:${DB_PORT}" 
     volumes:
       - pgdata:/var/lib/postgresql/data/pgdata
     command: >
@@ -62,3 +77,7 @@ services:
 volumes:
   pgdata:
     driver: local
+
+networks:
+  fluently_network:
+    driver: bridge
