@@ -54,8 +54,8 @@ services:
       dockerfile: swagger/Dockerfile
     container_name: fluently_swagger_ui
     ports:
-      - "80:80"
-      - "443:443"
+      - "8071:80"
+      - "8072:443"
     depends_on:
       - app
     volumes:
