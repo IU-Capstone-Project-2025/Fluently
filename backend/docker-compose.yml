@@ -33,6 +33,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    cache_from:
+      - builder
+    volumes:
+      - go-mod-cache:/go/pkg/mod
     container_name: fluently_app
     env_file: .env 
     ports:
@@ -46,7 +50,7 @@ services:
 
   swagger-ui:
     build:
-      context: ./backend
+      context: .
       dockerfile: /swagger/Dockerfile
     container_name: fluently_swagger_ui
     ports:
@@ -92,6 +96,7 @@ services:
 volumes:
   pgdata:
     driver: local
+  go-mod-cache:
 
 networks:
   fluently_network:

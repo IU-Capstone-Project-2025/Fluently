@@ -4,7 +4,9 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -o /app/fluently-backend ./cmd/main.go
+RUN \
+--mount=type=cache,target=/go/pkg/mod \
+CGO_ENABLED=0 GOOS=linux go build -o /app/fluently-backend ./cmd/main.go
 
 # Final stage
 FROM alpine:latest
