@@ -60,6 +60,7 @@ services:
       - app
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
+      - ./letsencrypt/webroot:/var/www/certbot  # Add this line
     networks:
       - fluently_network
   
