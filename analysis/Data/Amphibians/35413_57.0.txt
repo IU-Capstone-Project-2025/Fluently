@@ -1,0 +1,3610 @@
+﻿The Project Gutenberg eBook of A Review of the Middle American Tree Frogs of the Genus Ptychohyla
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: A Review of the Middle American Tree Frogs of the Genus Ptychohyla
+
+Author: William Edward Duellman
+
+Release date: February 26, 2011 [eBook #35413]
+                Most recently updated: January 7, 2021
+
+Language: English
+
+Credits: Produced by Chris Curnow, Tom Cosmas, Joseph Cooper and
+        the Online Distributed Proofreading Team at
+        https://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK A REVIEW OF THE MIDDLE AMERICAN TREE FROGS OF THE GENUS PTYCHOHYLA ***
+
+
+
+
+Produced by Chris Curnow, Tom Cosmas, Joseph Cooper and
+the Online Distributed Proofreading Team at
+https://www.pgdp.net
+
+
+
+
+
+
+
+
+
+                  UNIVERSITY OF KANSAS PUBLICATIONS
+                      MUSEUM OF NATURAL HISTORY
+
+          Volume 15, No. 7, pp. 297-349, pls. 11-18, 7 figs.
+
+                           October 18, 1963
+
+
+
+
+              A Review of the Middle American Tree Frogs
+                        of the Genus Ptychohyla
+
+                                  BY
+
+                          WILLIAM E. DUELLMAN
+
+
+
+
+                         UNIVERSITY OF KANSAS
+                               LAWRENCE
+                                 1963
+
+
+
+
+     UNIVERSITY OF KANSAS PUBLICATIONS, MUSEUM OF NATURAL HISTORY
+
+          Editors: E. Raymond Hall, Chairman, Henry S. Fitch,
+                   Theodore H. Eaton, Jr.
+
+          Volume 15, No. 7, pp. 297-349, pls. 11-18, 7 figs.
+
+                      Published October 18, 1963
+
+
+                         UNIVERSITY OF KANSAS
+                           Lawrence, Kansas
+
+
+                              PRINTED BY
+                   JEAN M. NEIBARGER, STATE PRINTER
+                            TOPEKA, KANSAS
+                                 1963
+
+                            [Union Label]
+                                29-6531
+
+
+
+
+              A Review of the Middle American Tree Frogs
+                        of the Genus Ptychohyla
+
+                                  BY
+                          WILLIAM E. DUELLMAN
+
+
+
+                               CONTENTS
+
+                                                                 PAGE
+
+    INTRODUCTION                                                  301
+      Acknowledgments                                             301
+      Materials and Methods                                       302
+
+    ANALYSIS OF DATA                                              303
+      External Morphology                                         303
+      Color and Pattern                                           307
+      Osteology                                                   307
+      Tadpoles                                                    310
+      Breeding Call                                               312
+
+    SYSTEMATIC ACCOUNTS                                           314
+      _Ptychohyla_ Taylor, 1944                                   314
+      Key to Adults                                               315
+      Key to Tadpoles                                             315
+      _Ptychohyla euthysanota_ Group                              315
+      _Ptychohyla euthysanota_                                    315
+      _Ptychohyla euthysanota euthysanota_ (Kellogg)              315
+      _Ptychohyla euthysanota macrotympanum_ (Tanner)             320
+      _Ptychohyla leonhardschultzei_ (Ahl)                        323
+      _Ptychohyla spinipollex_ (Schmidt)                          327
+      _Ptychohyla schmidtorum_ Group                              331
+      _Ptychohyla schmidtorum_                                    331
+      _Ptychohyla schmidtorum schmidtorum_ Stuart                 331
+      _Ptychohyla schmidtorum chamulae_ Duellman                  334
+      _Ptychohyla ignicolor_ Duellman                             337
+
+    DISTRIBUTION AND ECOLOGY                                      340
+      Geographic Distribution of the Species                      340
+      Habitat Preference                                          342
+      Interspecific Competition                                   343
+      Reproduction and Development                                344
+
+    PHYLOGENY OF PTYCHOHYLA                                       345
+      _Ptychohyla_ as a Natural Assemblage                        345
+      Generic Relationships                                       346
+      Interspecific Relationships                                 347
+
+    LITERATURE CITED                                              349
+
+
+
+
+                             INTRODUCTION
+
+
+Probably no ecological group of hylid frogs (some _Hyla_ plus
+_Plectrohyla_ and _Ptychohyla_) in Middle America is so poorly known
+as those species that live in the cloud forests on steep mountain
+slopes and breed in cascading mountain streams. During the last half
+of the nineteenth century most of the species of hylids living in the
+lowlands of southern México and northern Central America were named
+and described. Despite the extensive collecting by Salvin and Godman,
+Nelson and Goldman, and the various expeditions of the _Mission
+Scientifique_, no members of the genus _Ptychohyla_ were obtained
+until 1927, when in the mountains of El Salvador Ruben A. Stirton
+found a small tree frog that subsequently was described and named
+_Hyla euthysanota_ by Kellogg (1928). Until recently frogs of this
+genus were known from few specimens and in the literature by nearly as
+many names.
+
+Although I first collected _Ptychohyla_ in 1956, it was not until 1960
+that special efforts were made to obtain specimens of this genus. The
+summer of 1960 was spent in southern México and Guatemala, where every
+accessible stream in the cloud forests was searched for tree frogs,
+especially _Ptychohyla_ and _Plectrohyla_. Similar, but less
+extensive, investigations were carried out in 1961 and 1962. The
+result of this field work is a rather large collection of _Ptychohyla_
+representing all of the known species, plus tape recordings of the
+breeding calls and tadpoles of all of the species.
+
+Previously, I have discussed the nomenclature of one of the species
+(Duellman, 1960) and have described two new species (Duellman, 1961).
+In the latter paper I made reference to a future account (this one)
+that would deal with the systematics and biology of the entire genus.
+Although I have series of specimens, tadpoles, osteological
+preparations, and recordings of breeding calls, thereby having a wide
+array of data at my disposal, much still remains to be learned about
+these frogs, especially about various aspects of their life histories.
+Even the validity of the genus is open to question; this problem is
+discussed at length in the section beyond entitled "_Ptychohyla_ as a
+Natural Assemblage."
+
+
+Acknowledgments
+
+I am indebted to the following persons for permitting me to examine
+specimens in their care: Miguel Alvarez del Toro, Museo Zoología de
+Tuxtla Gutierrez, México (MZTG); Charles M. Bogert and Richard G.
+Zweifel, American Museum of Natural History (AMNH); Doris M. Cochran,
+United States National Museum (USNM); Norman Hartweg and Charles F.
+Walker, University of Michigan Museum of Zoology (UMMZ); Robert F.
+Inger, Chicago Natural History Museum (CNHM); Hobart M. Smith,
+University of Illinois Museum of Natural History (UIMNH); Heinz
+Wermuth, Zoologisches Museum Berlin (ZMB); and Ernest E. Williams,
+Museum of Comparative Zoology (MCZ). The abbreviations following names
+of institutions will be used throughout the text; the Museum of
+Natural History at the University of Kansas is abbreviated KU.
+
+Throughout my work on these frogs I have profited from discussions
+with L. C. Stuart, who has made many valuable suggestions and with his
+characteristic generosity has placed at my disposal his extensive
+collections of tadpoles from Guatemala. For his aid I am indeed
+grateful. I am grateful to Thomas E. Moore for tapes of breeding calls
+of two species.
+
+My own field work was made more enjoyable and profitable through the
+assistance of Dale L. Hoyt, Craig E. Nelson, Jerome B. Tulecke, and
+John Wellman, all of whom spent many hours in often unsuccessful
+attempts to collect specimens and record breeding calls of
+_Ptychohyla_. I am indebted to many residents of México, Guatemala,
+and El Salvador for permission to work on their land and for providing
+shelter, food, and guides. I am especially grateful to Mr. and Mrs.
+Horatio Kelly of "Colegio Linda Vista" at Pueblo Nuevo Solistahuacán,
+Chiapas, for a pleasant stay at their school; Jordi Juliá Z. of the
+Comisión del Papaloapan, Ciudad Alemán, Veracruz, for arranging for
+field work in northern Oaxaca in 1959; Walter Hannstein and Lothar
+Menzel for the use of facilities at Finca La Paz, Guatemala, in 1960;
+Alan Hempstead for the use of facilities at Finca Los Alpes, Guatemala
+in 1960 and 1961; and Julio Aguirre C. of the Instituto Tropical de
+Investigaciones Científicas, San Salvador, El Salvador, for providing
+comfortable working quarters and transportation and guides to the
+mountains in northern El Salvador. Without the cheerful efforts of
+Jorge A. Ibarra, Director of the Museo Nacional de Historia Natural in
+Guatemala, my field work would have been greatly restricted during
+politically precarious times in that country. Permits to collect in
+México were furnished by the late Luis Macías Arellano of the
+Dirección General de Caza. Each of these individuals has my profound
+thanks for his indispensable aid.
+
+Field work on hylid frogs in Middle America has been supported by the
+National Science Foundation, Grant NSF-G9827, and this is the 9th
+publication on the results of study of the material from America.
+
+
+Materials and Methods
+
+During the course of this study I have examined 247 frogs that I
+assign to the genus _Ptychohyla_, plus 40 lots of tadpoles and 12
+skeletal preparations. Furthermore, I have examined all of the type
+specimens. I have studied each of the species and subspecies in the
+field and have examined from seven (_P. euthysanota macrotympanum_) to
+33 (_P. spinipollex_) living individuals of each species.
+
+Measurements given in the analysis of data and in the descriptions of
+the species are those described by Duellman (1956). In the
+descriptions of living colors the capitalized names are from Ridgway
+(1912). All interpretations of osteological characters are based on
+specimens cleared in potassium hydroxide and stained with alizarin
+red.
+
+Recordings of the breeding calls were made with a Magnemite Portable
+Tape-recorder; audiospectrographs were made on a vibralyzer (Kay
+Electric Company) using normal pattern and wide bandwidth.
+
+
+
+
+ANALYSIS OF DATA
+
+
+Data that are used to arrive at a systematic arrangement of the
+species of _Ptychohyla_ are analyzed and discussed below for the
+values inherent in the analysis. These data are of some value also
+in the recognition of species and subspecies but if employed for that
+purpose the data must be used in combination with the keys and the
+diagnoses of the individual species and subspecies.
+
+
+External Morphology
+
+Each of the external morphological characters used in the systematic
+treatment of _Ptychohyla_, as well as the nature of the tongue,
+is discussed below.
+
+SIZE AND PROPORTIONS.--Comparisons of size and certain proportions are
+given in Table 1. Frogs of this genus are small; the largest specimen
+examined is a female of _P. euthysanota euthysanota_ having a
+snout-vent length of 53.3 mm. The species comprising the _Ptychohyla
+schmidtorum_ group are smaller; the largest specimen examined is a
+female of _P. schmidtorum schmidtorum_ having a snout-vent length of
+38.0 mm. An analysis of the various measurements and proportions shows
+few constant differences. _Ptychohyla ignicolor_ differs from all of
+the other species in having the head slightly wider than long and the
+tympanum noticeably less than half the size of eye. _Ptychohyla
+spinipollex_ has a relatively narrow interorbital distance,
+approximately equal to the width of the eyelid, whereas in all of the
+other species that distance is much more than the width of the eyelid.
+
+SNOUT.--All species have a blunt snout. In _P. leonhardschultzei_ and
+_P. ignicolor_ the snout is nearly square in lateral profile; in _P.
+schmidtorum_ the snout is slightly rounded above and below, and in the
+other species it is rounded above. _Ptychohyla leonhardschultzei_ and
+_P. spinipollex_ have a vertical fleshy rostral keel on the snout; in
+these species, because of this keel, the snout in dorsal profile is
+pointed. The nostrils are slightly protuberant in all species, and in
+_P. schmidtorum_ the internarial region is slightly depressed.
+
+HAND.--The species in the _Ptychohyla euthysanota_ group have a
+vestige of web between the first and second fingers; the other fingers
+are about one-third webbed. Breeding males have a cluster of horny
+nuptial spines on the thumb. The spines are largest in _P. spinipollex_
+(Fig. 1) and vary in number from 35 to 66 (average 47.4) on each thumb.
+In the other species of the _Ptychohyla euthysanota_ group the spines
+are smaller and usually more numerous; the numbers of spines on each
+thumb (means in parentheses) in members of this group are: _P.
+euthysanota euthysanota_, 44-143 (83.8); _P. euthysanota
+macrotympanum_, 40-110 (63.0); _P. leonhardschultzei_, 24-80 (54.7).
+The species in the _Ptychohyla schmidtorum_ group have no web between
+the first and second fingers and only a vestige of web between the
+other fingers. Furthermore, these species lack nuptial spines in
+breeding males. Like the usual horny excrescences on the thumbs of
+many species of frogs, the horny spines on the thumbs of members of
+the _Ptychohyla euthysanota_ group are seasonal in development.
+
+
+TABLE 1.--VARIATION IN CERTAIN CHARACTERS IN THE SPECIES OF PTYCHOHYLA.
+                (MEANS ARE IN PARENTHESES BELOW THE RANGES.)
+
+  Key to Table Columns
+
+    A) Number of specimens
+    B) Maximum snout-vent length
+    C) Tibia length/Snout-vent length
+    D) Tympanum/Eye
+    E) Vomerine teeth
+
+==================+========+======+=======+=========+=========+=======
+    Species       |  Sex   |   A  |   B   |   C     |   D     |   E
+------------------+--------+------+-----------------+-----------------
+                  |        |      |       |         |         |
+_P. euthysanota   | [Male] |  17  |  38.1 |44.4-55.0|48.6-63.8|  4-6
+    euthysanota_  |        |      |       |  (48.7) |  (56.3) | (5.1)
+                  |        |      |       |         |         |
+                  |[Female]|  15  |  53.3 |46.5-56.6|42.9-56.4|  6-18
+                  |        |      |       |  (51.4) |  (51.4) | (9.6)
+                  |        |      |       |         |         |
+_P. euthysanota   | [Male] |   5  |  38.0 |48.8-52.0|50.0-57.1|  0-4
+    macrotympanum_|        |      |       |  (50.2) |  (54.1) | (2.6)
+                  |        |      |       |         |         |
+                  |[Female]|   5  |  44.8 |46.4-54.1|48.7-58.9|  8-10
+                  |        |      |       |  (50.2) |  (53.7) | (9.2)
+                  |        |      |       |         |         |
+_P. leonhard      | [Male] |  16  |  35.6 |48.8-56.1|48.7-61.9|  6-9
+    schultzei_    |        |      |       |  (51.2) |  (52.1) | (6.5)
+                  |        |      |       |         |         |
+                  |[Female]|   3  |  41.6 |52.3-59.5|47.5-48.6| 7-12
+                  |        |      |       |  (54.7) |  (48.1) | (9.5)
+                  |        |      |       |         |         |
+_P. spinipollex_  | [Male] |  32  |  41.2 |46.9-53.1|45.0-55.2|  3-7
+                  |        |      |       |  (49.0) |  (49.5) | (4.9)
+                  |        |      |       |         |         |
+                  |[Female]|   6  |  44.6 |46.1-50.2|47.7-53.8| 6-10
+                  |        |      |       |  (48.8) |  (50.4) | (7.6)
+                  |        |      |       |         |         |
+_P. schmidtorum   | [Male] |  25  |  32.8 |45.3-52.4|51.5-59.3| 5-11
+    schmidtorum_  |        |      |       |  (48.1) |  (54.7) | (6.2)
+                  |        |      |       |         |         |
+                  |[Female]|   9  |  38.0 |46.5-49.1|51.3-58.3| 7-11
+                  |        |      |       |  (47.7) |  (54.9) | (8.7)
+                  |        |      |       |         |         |
+_P. schmidtorum   | [Male] |  40  |  30.5 |46.0-51.9|48.2-65.6|  4-6
+    chamulae_     |        |      |       |  (48.2) |  (54.9) | (4.7)
+                  |        |      |       |         |         |
+                  |[Female]|   4  |  31.8 |48.1-52.4|51.4-61.7|  4-9
+                  |        |      |       |  (50.5) |  (55.7) | (6.2)
+                  |        |      |       |         |         |
+_P. ignicolor_    | [Male] |  13  |  30.5 |45.9-52.2|37.1-47.1|  3-9
+                  |        |      |       |  (49.6) |  (43.2) | (6.1)
+------------------+--------+------+-------+---------+---------+-------
+
+
+
+  [Illustration: FIG. 1. Palmar views of right hands of
+        (A) _Ptychohyla spinipollex_ (KU 58054) and
+        (B) _Ptychohyla schmidtorum schmidtorum_ (KU 58043).]
+
+
+Many workers have used the presence of a bifid subarticular tubercle
+beneath the fourth finger as a diagnostic character of certain species
+of hylids. Examination of the subarticular tubercles in _Ptychohyla_
+reveals considerable intraspecific variation. Bifid tubercles beneath
+the fourth finger are found in all species except _P. ignicolor_,
+which is known from only two specimens. In _P. euthysanota
+euthysanota_ nearly 60 per cent and in _P. schmidtorum schmidtorum_
+about 90 per cent of the specimens have a bifid tubercle beneath the
+fourth finger on one or both hands. All specimens of _P.
+leonhardschultzei_ have either a bifid or double tubercle beneath the
+fourth finger, and some have a bifid distal tubercle beneath the third
+finger.
+
+FEET.--Members of the _Ptychohyla euthysanota_ group have a weak
+tarsal fold, whereas in the species comprising the _Ptychohyla
+schmidtorum_ group the tarsal fold is absent. Webbing on the foot
+extends to the discs of the third and fifth toes and to the base of
+the penultimate phalanx of the fourth toe, except in _P. ignicolor_,
+which has less webbing.
+
+VENTROLATERAL GLANDS.--Breeding males develop thickened, pigmented
+glandular areas on the sides of the body. In living specimens of _P.
+schmidtorum_ and _P. ignicolor_ the glands are not readily visible,
+but in preservative they show as distinctive orange-colored areas.
+These glands are most distinct in _P. euthysanota_; in many specimens
+of this species the glands are elevated above the surrounding skin.
+The extent of the glands is variable (Fig. 2); probably this
+variability is due to different degrees of development in individual
+frogs rather than to interspecific differences. All _Ptychohyla
+ignicolor_ and some _P. schmidtorum chamulae_ have a small, round
+glandular area on the chin; to my knowledge this does not occur in the
+other species. Superficial examination of microscopic preparations of
+the glands reveals no histological differences between species. The
+glands occupy most of the thickened area and have narrow ducts leading
+to the exterior. Detailed studies of the histology will be reported
+elsewhere. Since the glands are developed only in breeding males, it
+is surmised that the glands are associated with some phase of the
+breeding activity.
+
+
+  [Illustration: FIG. 2. Normal extent of ventrolateral glands in
+        (A) _Ptychohyla euthysanota euthysanota_ (KU 58008),
+        (B) _Ptychohyla schmidtorum schmidtorum_ (KU 58037), and
+        (C) _Ptychohyla ignicolor_ (UMMZ 119603).]
+
+
+TONGUE.--The shape of the tongue varies intraspecifically. Usually the
+tongue is ovoid; in some specimens it is barely notched posteriorly,
+whereas in others it is deeply notched, making the tongue cordiform.
+Deeply notched cordiform tongues are found in _P. leonhardschultzei_
+and _P. schmidtorum_; with the exception of these two species, some
+individuals of all species have emarginate tongues. Some individuals
+of all species have tongues that are shallowly notched posteriorly.
+
+
+
+Color and Pattern
+
+The dorsum in living frogs of the genus _Ptychohyla_ is primarily
+yellowish or reddish brown, except in _P. schmidtorum chamulae_ and
+_P. ignicolor_ in which it is green. Usually there are some darker
+blotches or reticulations on the dorsum. The venter usually is white;
+in _P. ignicolor_ it is yellow. The venter is spotted in all members
+of the _Ptychohyla euthysanota_ group; the species, arranged from
+least to most spotting ventrally, are: _P. euthysanota euthysanota_,
+_P. euthysanota macrotympanum_, _P. leonhardschultzei_, and _P.
+spinipollex_. The last two species also have bold dark spots on the
+flanks. _Ptychohyla schmidtorum_ lacks spots on the venter, whereas
+_P. ignicolor_ has small dark flecks ventrally.
+
+_Ptychohyla euthysanota_ and _P. schmidtorum_ have white stripes on
+the upper lips and on the flanks. All species have some form of a pale
+stripe above the anus and usually rather distinct white or pale
+stripes along the ventrolateral edges of the tarsi and forearms. There
+are no bright or boldly marked flash-colors (colors that are revealed
+only when the hind limbs are extended), except in _P. ignicolor_,
+which has bright red flash-colors in the groin and on the thighs. In
+life the iris varies from several different shades of bronze color to
+deep red in _P. schmidtorum schmidtorum_.
+
+The degree of metachrosis is moderate. Usually any change of color in
+life consists only of change in the intensity of color. At times when
+the over-all coloration is darkened some markings are obscured.
+
+
+
+Osteology
+
+The following description of the skull, hyoid, sternum, and prepollex
+is based on a male specimen of _P. spinipollex_ (KU 68632) that has
+been cleared and stained. The broad, flat skull (Fig. 3) has a large
+frontoparietal fontanelle. The ethmoid is large and has a flange
+laterally. The nasals are of moderate size and in broad contact with
+the ethmoid, but are separated from one another medially. The anterior
+half of the maxillary bears a thin, high flange. The anterior process
+of the squamosal is short and widely separated from the maxillary. The
+quadratojugal is a small spine-shaped element projecting anteriorly
+from the ventral base of the quadrate; the quadratojugal does not
+articulate with the maxillary.
+
+
+  [Illustration: FIG. 3. Dorsal aspect of skull of _Ptychohyla
+        spinipollex_ (KU 68632). Arrow indicates reduced
+        quadratojugal.]
+
+
+The posteromedian part of the hyoid plate is calcified; from this
+plate the long bony, posterior cornua (thyrohyales) extend
+posterolaterally.
+
+The omosternum is calcified, widest anteriorly, and has a convex
+anterior edge. The calcified xiphisternum is roughly bell-shaped
+having short lateral processes anteriorly and a deep notch
+posteriorly.
+
+The swollen thumb is supported by a dorsoventrally flattened spine
+that does not extrude through the skin.
+
+VARIATION.--In general, the skull varies little. Usually the
+quadratojugal is present only as a short element attached to the
+quadrate, but in one specimen of _P. spinipollex_ the quadratojugal
+articulates with the maxillary and forms a complete
+quadratojugal-maxillary arch on each side of the skull. One specimen
+of _P. leonhardschultzei_ has a complete arch on one side and an
+incomplete arch on the other.
+
+Only _P. spinipollex_ has lateral processes anteriorly on the
+xiphisternum; in the other species the xiphisternum is deeply
+bell-shaped.
+
+_Ptychohyla schmidtorum_ and _P. ignicolor_ have slightly longer
+premaxillaries than the other species. The longer premaxillary is
+reflected in the larger number of teeth on the bone--9 to 11 (average
+10) in four specimens of _P. schmidtorum_ and 10 teeth in one _P.
+ignicolor_, as compared with 6 to 10 (average 7.9) in seven specimens
+of the other species. The number of maxillary teeth in the various
+species are: _P. euthysanota euthysanota_, 43; _P. euthysanota
+macrotympanum_, 38; _P. leonhardschultzei_, 38 and 40; _P.
+spinipollex_, 34 and 40; _P. schmidtorum schmidtorum_, 37 and 43; _P.
+schmidtorum chamulae_, 40 and 41; _P. ignicolor_, 43. The teeth on the
+premaxillary and anterior part of the maxillary are long, pointed, and
+terminally curved backwards. Posteriorly on the maxillary the teeth
+become progressively shorter and blunter.
+
+Variation in number of vomerine teeth is shown in Table 1.
+
+
+  [Illustration: FIG. 4. Tadpoles of the _Ptychohyla euthysanota_ group:
+        (A) _P. euthysanota euthysanota_ (KU 60042),
+        (B) _P. euthysanota macrotympanum_ (KU 60049),
+        (C) _P. leonhardschultzei_ (KU 68556), and
+        (D) _P. spinipollex_ (KU 60053).]
+
+
+Tadpoles
+
+Tadpoles of the genus _Ptychohyla_ are adapted to live in mountain
+streams. The bodies are streamlined, and the tails are long and have
+low fins (Figs. 4 and 5). The mouths are large and directed ventrally.
+Tadpoles of the two groups of species have strikingly different
+mouthparts.
+
+
+  [Illustration: FIG. 5. Tadpoles of
+        (A) _Ptychohyla schmidtorum schmidtorum_ (KU 60051),
+        (B) _P. schmidtorum chamulae_ (KU 58199), and
+        (C) _P. ignicolor_ (KU 71716).]
+
+
+Lips of tadpoles of the _Ptychohyla euthysanota_ group (Fig. 6 A-D)
+are folded laterally; there are 4/6 or sometimes 4/7 tooth-rows. A
+lateral "wing" projects on either side of the upper beak. The beaks
+have blunt, peglike serrations. Lips of tadpoles of the _Ptychohyla
+schmidtorum_ group (Fig. 6 E-G) are greatly expanded and form a
+funnel-shaped disc; there are 3/3 short tooth-rows. There is no
+lateral projection or "wing" on either side of the upper beak. The
+beaks have long, pointed serrations.
+
+  [Illustration: FIG. 6. Mouthparts of tadpoles of _Ptychohyla_:
+        (A) _P. euthysanota euthysanota_ (KU 60042),
+        (B) _P. euthysanota macrotympanum_ (KU 60049),
+        (C) _P. leonhardschultzei_ (KU 68556),
+        (D) _P. spinipollex_ (KU 60053),
+        (E) _P. schmidtorum schmidtorum_ (KU60051),
+        (F) _P. schmidtorum chamulae_ (KU 58199), and
+        (G) _P. ignicolor_ (KU 71716). × 10.]
+
+Variation in certain structural details and in coloration is discussed
+for each species and subspecies in the systematic accounts that
+follow. Sizes, proportions, and numbers of tooth-rows are tabulated in
+Table 2.
+
+
+TABLE 2.--COMPARISON OF CERTAIN LARVAL CHARACTERS IN THE SPECIES OF
+PTYCHOHYLA. (MEANS ARE IN PARENTHESES BELOW THE RANGES.)
+
+==============================+=========+=======+============+==========
+                              | Number  |Maximum| Head length|
+          Species             |   of    | total |------------|Tooth-rows
+                              |specimens| length|Total length|
+------------------------------+---------+-------+------------+----------
+_P. euthysanota euthysanota_  |   23    |  40.8 | 30.9-37.3  |    4/6
+                              |         |       |   (33.5)   |
+_P. euthysanota macrotympanum_|   13    |  43.3 | 30.6-33.4  |    4/6
+                              |         |       |   (32.7)   |
+_P. leonhardschultzei_        |    7    |  47.5 | 29.2-32.7  |    4/6
+                              |         |       |   (31.1)   |
+_P. spinipollex_              |   32    |  45.0 | 30.2-35.9  |    4/7
+                              |         |       |   (33.0)   |
+_P. schmidtorum schmidtorum_  |   14    |  42.5 | 28.9-31.2  |    3/3
+                              |         |       |   (29.9)   |
+_P. schmidtorum chamulae_     |    4    |  45.0 | 26.9-29.3  |    3/3
+                              |         |       |   (27.8)   |
+_P. ignicolor_                |    2    |  39.6 | 29.6-29.8  |    3/3
+                              |         |       |   (29.7)   |
+------------------------------+---------+-------+------------+----------
+
+
+Evidence on the pattern of development of tooth-rows indicates that
+the inner rows develop first. A small tadpole of _P. euthysanota
+euthysanota_ has six lower rows and three fully developed upper rows
+and only the beginning of the first (outer) upper row. A small tadpole
+of _P. euthysanota macrotympanum_ has four upper rows and five lower
+rows. In a small tadpole of _P. leonhardschultzei_ the three upper and
+four lower tooth-rows are well developed; the first upper and fifth
+lower rows are beginning to develop, and the sixth lower row is
+absent. In small tadpoles of _P. spinipollex_, the sixth lower row is
+poorly developed, and the seventh row is absent; large individuals
+normally have seven lower rows. A small tadpole of _P. schmidtorum
+chamulae_ has 3/2 tooth-rows.
+
+
+
+Breeding Call
+
+Breeding calls of all species and subspecies of _Ptychohyla_ were
+recorded in the field. Obtaining series of calls of _Ptychohyla_ is
+difficult because these frogs call mostly from vegetation along
+roaring mountain streams and only by locating a calling frog some
+distance from the water or along a quiet stretch of the stream can
+good recordings be obtained. For example, four individuals of _P.
+spinipollex_ were recorded, but only one recording was sufficiently
+free of background noise to be analyzed.
+
+Analysis of breeding calls supports the division of the genus
+_Ptychohyla_ into two groups of species. The call of each member of
+the _Ptychohyla euthysanota_ group consists of a single long note,
+whereas the call of species in the _Ptychohyla schmidtorum_ group
+consists of a series of short notes. Since no differences were found
+between the calls of subspecies of any given species, the following
+discussion of breeding calls pertains to species. These calls are
+described briefly below and at greater length in the systematic
+accounts farther on. Audiospectrographs of the breeding calls are
+shown in Plate 11, and comparisons of the characteristics of the calls
+are given in Table 3.
+
+
+  [Illustration: PLATE 11
+
+            Audiospectrographs of the breeding calls of the
+                    five species of _Ptychohyla_:
+
+            (A) _P. spinipollex_ (KU Tape No. 41),
+            (B) _P. euthysanota macrotympanum_ (KU Tape No. 48),
+            (C) _P. leonhardschultzei_ (UMMZ Tape No. 525),
+            (D) _P. schmidtorum chamulae_ (KU Tape No. 52),
+            (E) _P. ignicolor_ (UMMZ Tape No. 526).]
+
+
+ TABLE 3.--COMPARISON OF THE BREEDING CALLS OF PTYCHOHYLA
+
+ --------------------------------------------------------------------------
+ ----------------+----+--------+-----------+---------+---------+-----------
+                 |    | Notes  | Duration  |  Pulses |Frequency| Dominant
+      Species    |Num-|per call|  of note  |   per   |  range  | frequency
+                 | ber| group  | (seconds) |  second |  (cps)  |   (cps)
+ ----------------+----+--------+-----------+---------+---------+-----------
+ _P. spinipollex_|  1 |    1   |    .46    |  147    |3000-5100|   4300
+                 |    |        |           |         |         |
+ _P. euthysanota_|  7 |    1   |    .62    |   95.3  |1800-4200|   3070
+                 |    |        | (.60-.65) | (91-102)|         |(3000-3200)
+                 |    |        |           |         |         |
+ _P. leonhard-   |  2 |    1   |    .79    |   77    |1500-3500|   2750
+       schultzei_|    |        | (.62-.95) | (76-78) |         |(2700-2800)
+                 |    |        |           |         |         |
+ _P. schmidtorum_|  6 | 8.5[A] |   .064    |   110   |1400-5800|   3400
+                 |    | (8-9)  |(.054-.070)| (96-121)|         |(3350-3450)
+                 |    |        |           |         |         |
+ _P. ignicolor_  |  2 |  12[A] |   .079    |   126   |1000-5000|   3150
+                 |    |(11-13) |(.078-.080)|(123-129)|         |(3100-3200)
+ ----------------+----+--------+-----------+---------+---------+-----------
+
+ [Footnote A: Only an analysis of the long series of calls is given
+         here; see text for explanation.]
+
+
+_P. spinipollex_ (Pl. 11A).--One long note is repeated at intervals
+of 45 seconds to four minutes and has an average dominant frequency of
+4300 cycles per second.
+
+_P. euthysanota_ (Pl. 11B).--One long note is repeated six to nine
+times at intervals of 2.7 to 3.4 seconds and has an average dominant
+frequency of 3070 cycles per second.
+
+_P. leonhardschultzei_ (Pl. 11C).--One long note is repeated once
+after 10 to 13 seconds and has an average dominant frequency of 2750
+cycles per second.
+
+_P. schmidtorum_ (Pl. 11D).--The complete call consists of one short
+series of notes alternating with two long series. Numbers of notes per
+series in one individual having a typical call were 5-8-8-3-9-9. The
+average dominant frequency of notes in the short and long series alike
+is 3400 cycles per second.
+
+_P. ignicolor_ (Pl. 11E).--The complete call consists of a short
+series of notes alternating with a long series. In one complete
+recording the numbers of notes in these series were 4-13-3-11. The
+notes in the short series have an average dominant frequency of 2100
+cycles per second, whereas the notes in the long series have an
+average dominant frequency of 3150 cycles per second. The four series
+of notes were given in one minute and 15 seconds.
+
+
+
+
+                         SYSTEMATIC ACCOUNTS
+
+
+The museum catalogue numbers of the specimens examined, together with
+the localities from which they came, are listed at the end of the
+account of each subspecies or monotypic species. The localities that
+are represented by symbols on the distribution map (Fig. 7) are in
+roman type; those that are not represented on the map, because
+overlapping of symbols would have occurred, are in italic type.
+
+
+                       =Ptychohyla= Taylor, 1944
+
+
+    _Ptychohyla_ Taylor, Univ. Kansas Sci. Bull., 30:41, May 15, 1944.
+        Type, _Ptychohyla adipoventris_ Taylor, 1944 [= _Hyla
+        leonhardschultzei_ (Ahl), 1934].
+
+
+_Diagnosis._--Small hylids having stream-adapted tadpoles and
+differing from other hylid genera in having large ventrolateral glands
+in breeding males.
+
+_Composition._--Five species, two of which are made up of two
+subspecies, arranged in two groups of species on the basis of
+morphological characters of adults and tadpoles and on the basis of
+breeding calls.
+
+_Distribution._--Moderate elevations from southern Guerrero and
+northern Oaxaca, México, to northern El Salvador and central Honduras.
+
+
+
+
+                             KEY TO ADULTS
+
+
+1.  A weak tarsal fold; outer fingers one-third webbed; males
+    having spiny nuptial tuberosities; color in life tan or brown
+    with blotches or reticulations, never green; iris bronze color
+                                             _P. euthysanota_ group--2
+
+    No tarsal fold; outer fingers having only vestige of web;
+    males lacking nuptial tuberosities; color in life green or
+    brown; iris red or golden color          _P. schmidtorum_ group--5
+
+2.  Chest, throat, and flanks usually having brown or black spots;
+    no distinct white stripe on upper lip or on flanks; a faint
+    white line usually present above anal opening; a rostral keel    3
+
+    Chest, throat, and flanks usually unspotted; distinct white
+    line on upper lip and on flank present or not; white line
+    above anal opening faint or well defined; no rostral keel        4
+
+3.  Interorbital region much wider than eyelid; spots on throat
+    and chest black; spots only occasionally present on belly;
+    flanks marbled with black and white; nuptial spines small, as
+    many as 80 on one thumb                     _P. leonhardschultzei_
+
+    Interorbital region about as wide as eyelid; spots on chest
+    and throat brown or black; spots usually present on belly;
+    flanks having round brown or black spots; nuptial spines
+    moderate in size, conical, seldom more than 60 on one thumb
+                                                      _P. spinipollex_
+
+4.  A distinct, broad, white lateral stripe usually present;
+    usually a distinct white line above anal opening; a distinct
+    white stripe on upper lip             _P. euthysanota euthysanota_
+
+    No white lateral stripe; a faint white stripe above anal
+    opening; no distinct white stripe on upper lip
+                                        _P. euthysanota macrotympanum_
+
+5.  A distinct, broad, lateral stripe; a white stripe on upper
+    lip expanded to form a large spot below eye; hidden surfaces
+    of thighs and webs of feet not red in life; internarial region
+    slightly depressed; diameter of tympanum greater than one-half
+    diameter of eye                                                  6
+
+    No lateral white stripe; no stripe on upper lip; in life
+    dorsum green, hidden surfaces of thighs and webs of feet
+    orange tan to bright red, and eye golden color; internarial
+    region flat; diameter of tympanum less than one-half diameter
+    of eye                                              _P. ignicolor_
+
+6.  Webs of feet and posterior surfaces of thighs pale cream
+    color; dorsum in life reddish brown; iris bright red
+                                          _P. schmidtorum schmidtorum_
+
+    Webs of feet and posterior surfaces of thighs pale brown;
+    dorsum in life green; iris reddish bronze color
+                                             _P. schmidtorum chamulae_
+
+
+                           KEY TO TADPOLES
+
+1.  Lips greatly expanded forming a funnel-shaped mouth;
+    tooth-rows 3/3                           _P. schmidtorum_ group--2
+
+    Lips folded laterally, not forming a funnel-shaped mouth;
+    tooth-rows 4/6 or more                   _P. euthysanota_ group--4
+
+2.  Belly and mouth mottled; tail cream color heavily blotched
+    with brown                                                       3
+
+    Belly dark gray; tail cream color with dense brown flecking,
+    giving brown appearance                  _P. schmidtorum chamulae_
+
+3.  Belly cream color with brown mottling; no large tubercle at
+    each end of first lower tooth-row     _P. schmidtorum schmidtorum_
+
+    Belly grayish green with brown mottling; a large tubercle at
+    each end of first lower tooth-row                   _P. ignicolor_
+
+4.  Tooth-rows 4/6; cream-colored crescent-shaped mark on
+    posterior part of body bordered posteriorly by large brown
+    mark                                                             5
+
+    Tooth-rows usually 4/7 (sometimes 4/6); cream-colored
+    crescent-shaped mark on posterior part of body usually
+    indistinct, not bordered posteriorly by large brown mark
+                                                      _P. spinipollex_
+
+5.  Caudal musculature uniformly flecked with brown; lower
+    tooth-rows 1-4 about equal in length to upper rows
+                                          _P. euthysanota euthysanota_
+
+    Caudal musculature having brown square blotches dorsally on
+    anterior one-half of tail; lower tooth-rows 1-4 usually
+    slightly shorter than upper rows                                 6
+
+6.  Dorsal caudal blotches well defined and extending onto sides
+    of tail; moderately large brown flecks on caudal fin; eye in
+    life pale reddish brown                     _P. leonhardschultzei_
+
+    Dorsal caudal blotches faint, not extending onto sides of
+    tail; small brown flecks on caudal fin; eye in life silvery
+    bronze                              _P. euthysanota macrotympanum_
+
+
+
+
+                  The _Ptychohyla euthysanota_ Group
+
+
+Three species in group; adults having moderate amount of webbing
+between fingers, and tarsal fold; breeding males having spinous,
+horny, nuptial tuberosities on pollex; mouths of tadpoles having
+lateral folds in lips and 4/6 or 4/7 tooth-rows; breeding call
+consisting of one long note.
+
+
+
+
+                       =Ptychohyla euthysanota=
+
+_Diagnosis._--Rostral keel absent; nuptial spines in males small;
+interorbital region much wider than eyelid.
+
+
+
+
+  [Illustration: PLATE 12
+        _Ptychohyla euthysanota euthysanota_ (KU 58008). × 2.]
+
+
+                   =Ptychohyla euthysanota euthysanota= (Kellogg)
+
+    _Hyla euthysanota_ Kellogg, Proc. Biol. Soc. Washington,
+        41:123-124, June 29, 1928 [Holotype.--USNM 73296 from Los
+        Esemiles, Depto. Chalatenango, El Salvador; Ruben A. Stirton
+        collector]. Mertens, Senckenbergiana, 33:169-171, June 15,
+        1952; Abhand. Senckenbergische Naturf. Gesell., 487:29,
+        December 1, 1952. Stuart, Proc. Biol. Soc. Washington, 67:169,
+        August 5, 1954.
+
+    _Hyla rozellae_ Taylor, Univ. Kansas Sci. Bull., 28:78-80, pl. 9,
+        fig. 1, May 15, 1942 [Holotype.--USNM 115039 from Salto de
+        Agua, Chiapas, México; Hobart M. and Rozella Smith
+        collectors]. Taylor and Smith, Proc. U. S. Natl. Mus., 95:587,
+        June 30, 1945. Smith and Taylor, Bull. U. S. Natl. Mus.,
+        194:86, June 17, 1948. Stuart, Proc. Biol. Soc. Washington,
+        67:169, August 5, 1954.
+
+    _Ptychohyla bogerti_ Taylor, Amer. Mus. Novitates, 1437:13-16,
+        fig. 5, December 7, 1949 [Holotype.--AMNH 51847 from Río
+        Grande, Oaxaca, México; Thomas MacDougall collector]. Stuart,
+        Proc. Biol. Soc. Washington, 67:169, August 5, 1954.
+
+    _Ptychohyla euthysanota_, Duellman, Univ. Kansas Publ. Mus. Nat.
+        Hist., 13:351, April 27, 1961.
+
+
+_Diagnosis._--Dorsum tan to reddish brown; venter white; rarely
+flecked with brown or black; a white stripe on upper lip, on flank,
+and usually above anus.
+
+_Description._--The following description is based on KU 58008 from
+Finca La Paz, Depto. San Marcos, Guatemala (Pl. 12). Adult male having
+a snout-vent length of 35.0 mm.; tibia length, 16.5 mm.; tibia
+length/snout-vent length, 47.1 per cent; foot length, 14.2 mm.; head
+length, 11.0 mm.; head length/snout-vent length, 31.4 per cent; head
+width, 10.7 mm.; head width/snout-vent length, 30.6 per cent; diameter
+of eye, 3.3 mm.; diameter of tympanum, 1.8 mm.; tympanum/eye, 54.5 per
+cent. Snout in lateral profile nearly square, slightly rounded above,
+and in dorsal profile bluntly rounded; canthus pronounced; loreal
+region moderately concave; lips thick, rounded, and slightly flaring;
+nostrils protuberant; internarial distance, 3.0 mm.; top of head flat;
+interorbital distance, 4.1 mm., and approximately a third broader than
+width of eyelid, 2.9 mm. Moderately heavy dermal fold from posterior
+corner of eye above tympanum to point above insertion of forelimb,
+covering upper edge of tympanum; tympanum round, its diameter slightly
+more than its distance from eye. Forearm moderately robust, having
+distinct dermal fold on wrist; dermal fold, but no row of tubercles
+along ventrolateral surface of forearm; pollex only slightly enlarged,
+bearing triangular shaped patch of small horn-covered spines (128 on
+right, 134 on left); second and fourth fingers equal in length;
+subarticular tubercles round, distal one on fourth finger bifid; discs
+moderate in size, that of third finger equal to diameter of tympanum;
+no web between first and second fingers; other fingers one-third
+webbed. Heels broadly overlap when hind limbs adpressed; tibiotarsal
+articulation reaches to middle of eye; low rounded tarsal fold; inner
+metatarsal tubercle large, elliptical, and flat; outer metatarsal
+tubercle small and round; low dermal fold from heel to disc of fifth
+toe; subarticular tubercles round; length of digits from shortest to
+longest 1-2-5-3-4; third and fifth toes webbed to base of disc; fourth
+toe webbed to proximal end of penultimate phalanx; thin dermal fold
+from inner metatarsal tubercle to disc of first toe; disc smaller than
+on fingers. Anal opening at the level of the upper edge of thighs;
+anal flap short; anal opening bordered above by thin transverse dermal
+fold and laterally by heavy dermal fold. Skin of dorsum and ventral
+surfaces of forelimbs and shanks smooth; that of throat, belly, and
+ventral surfaces of thighs granular. Ventrolateral glands moderately
+developed, not reaching axilla or groin and broadly separated
+midventrally. Tongue ovoid, emarginate, and only slightly free
+posteriorly; vomerine teeth 2-2, situated on small triangular
+elevations between ovoid inner nares; openings to vocal sac large, one
+situated along inner posterior edge of each mandibular ramus.
+
+Dorsal ground-color of head, body, and limbs dull reddish brown with
+irregular dark brown reticulations on head and body and dark brown
+transverse bands on limbs; dorsal surfaces of first and second fingers
+and webbing on hand cream color; dorsal surfaces of third and fourth
+fingers dull brown; anterior surfaces of thighs dull creamy yellow;
+posterior surfaces of thighs dull brown; tarsi and toes tan with brown
+flecks; webbing of feet brown; faint creamy white stripe along lateral
+edges of tarsi and forearms; thin white line along edge of upper lip;
+distinct white stripe above and beside anal opening; axilla white;
+throat, chest, belly, and ventral surfaces of forelimbs creamy white;
+flanks white, separated from pale venter by a row of partly connected
+dark brown spots; ventral surfaces of thighs dull creamy yellow; feet
+grayish brown; ventrolateral glands pale grayish brown; small brown
+flecks on periphery of chin.
+
+In life the dorsal ground-color was pale reddish brown
+(Orange-Cinnamon); dorsal reticulations dark brown (Chocolate); dorsal
+surfaces of first and second fingers and webbing on hands creamy tan
+(Light Pinkish Cinnamon); posterior surfaces of thighs reddish brown
+(Vinaceous-Tawny); webbing of feet gray (Deep Mouse Gray); throat and
+belly grayish white (Pale Gull Gray); ventral surfaces of hind limbs
+creamy white (Marguerite Yellow); spots on flanks dark brown (Warm
+Sepia); iris reddish bronze (Apricot Orange).
+
+_Variation._--No geographic variation in structural characters is
+discernible; variation in size and proportions is given in Table 1. Of
+32 adults examined, seven have the tongue shallowly notched
+posteriorly; in the others the tongue is emarginate. Twenty specimens
+have a bifid subarticular tubercle beneath the fourth finger; in the
+others there are no bifid tubercles.
+
+The coloration described above is typical of the 16 specimens
+available from Finca La Paz. The living coloration at night, when the
+frogs were collected, was somewhat darker than the living colors
+described above, which were recorded for the frogs the morning after
+collection, at which time one individual had a pale reddish brown
+dorsum (Orange-Cinnamon) with dull olive green (Deep Grape Green)
+reticulations on the back and transverse bands on the limbs; the
+dorsal surfaces of the first and second fingers and the discs on the
+third and fourth fingers were orange (Mikado Orange).
+
+More than half of the specimens from Finca La Paz agree in all
+essential characters with the description given above. The
+distinctness of the white stripe on the upper lip is variable; in two
+individuals the stripe is barely discernible. Likewise, in some
+individuals the white stripe on the flanks is not distinct, either
+because there are few or no brown spots separating the stripe from the
+pale venter, or because the ventrolateral gland has diffused the pale
+color on the flanks. There is some noticeable variation in dorsal
+coloration, either through a greater or lesser development of dark
+pigment. One specimen (KU 58007) is grayish tan above with dark brown
+markings; the posterior surfaces of the thighs are dull grayish
+yellow; the first and second fingers and the webbing on the hands are
+pale yellowish gray; the belly and throat are dusty white; the flecks
+on the throat are gray; the ventral surfaces of the feet are grayish
+brown. Dark individuals, such as KU 58009 have a uniform dark brownish
+black dorsum; the belly is cream; the first and second fingers and the
+webbing on the hands are dull creamy tan; the dorsal and ventral
+surfaces of the feet are dark brown. In KU 58013 there is a heavy
+suffusion of brown on the throat and flanks. Two specimens have
+scattered white flecks on the dorsum.
+
+The reddish brown dorsal ground-color with dark brown reticulations on
+the head and body and dark brown transverse bands on the limbs seems
+to be rather constant throughout the range of the subspecies.
+Likewise, the presence of the white stripe on the upper lip and the
+white stripe around the anal opening are present on most specimens. In
+breeding males having well-developed ventrolateral glands the lateral
+white stripe often is obliterated.
+
+_Description of Tadpole._--The following description is based on KU
+60042 from Finca La Paz, Depto. San Marcos, Guatemala (Figs. 4A and
+6A). No limb buds; total length, 35.8 mm.; body length, 11.2 mm.; body
+length/total length, 31.3 per cent. Body moderately depressed,
+slightly wider than deep, ovoid in dorsal profile; mouth directed
+ventrally; eyes small, directed dorsolaterally; nostrils slightly
+protuberant and directed anteriorly, closer to eye than snout;
+spiracle sinistral and posteroventrad to eye; anal tube dextral.
+Caudal fin low, rounded posteriorly; depth of caudal musculature about
+one-half greatest depth of caudal fin; musculature extends nearly to
+tip of tail.
+
+Mouth large; lips having deep lateral folds; two complete rows of
+papillae on lips; five to six rows of papillae laterally. Beaks
+moderately developed, bearing peglike serrations; slender lateral
+projections on upper beak; tooth-rows 4/6; upper rows subequal in
+length, second longest; fourth row interrupted medially; lower rows
+complete; lower rows 1-4 equal in length to upper rows; fifth lower
+row somewhat shorter; sixth lower row short.
+
+Body brown above; tip of snout cream color; grayish cream color below;
+caudal musculature creamy tan; caudal fin transparent; cream-colored
+crescent-shaped mark on posterior edge of body and anterior part of
+caudal musculature, bordered posteriorly by dark brown blotch;
+scattered brown flecks on caudal musculature and posterior part of
+caudal fin. Eye bronze color in life.
+
+_Variation._--The variation in size and proportions is given in Table
+2. In some specimens the first upper tooth-row is irregular, sometimes
+broken, and often shorter than other upper tooth-rows. Usually the
+fourth upper and first lower, and sometimes the sixth lower,
+tooth-rows are interrupted medially. One specimen has a short,
+irregular, seventh lower tooth-row; all others have six.
+
+The cream-colored crescent-shaped mark usually is distinct. The brown
+blotch posterior to this mark is variously shaped ranging from a
+narrow vertical bar to a triangular blotch. Brown flecks seldom are
+present on the anterior part of the ventral caudal fin.
+
+_Comparisons._--Aside from the characters given in the diagnosis, _P.
+euthysanota euthysanota_ can be distinguished from both _P.
+spinipollex_ and _P. leonhardschultzei_ by the absence of bold black
+and white marbling on the flanks; furthermore, from the former it can
+be distinguished by having more and smaller horny nuptial spines and
+from the latter by having the snout, in lateral profile, rounded above
+and not acutely angulate. _Ptychohyla euthysanota euthysanota_ differs
+from _P. euthysanota macrotympanum_ by normally having a darker dorsal
+color, broader stripe on upper lip, and a distinct lateral stripe.
+
+Occurring sympatrically with _Ptychohyla euthysanota euthysanota_ are
+several species of _Plectrohyla_, all of which differ in having a bony
+prepollex, rather rugose skin on the dorsum, and more squat bodies.
+Other sympatric species are _Ptychohyla schmidtorum schmidtorum_,
+which lacks a tarsal fold and nuptial spines and has a red eye in
+life, _Hyla salvadorensis_, which has a green dorsum and lacks spinous
+nuptial tuberosities, and _Hyla sumichrasti_, a small yellow frog
+usually lacking vomerine teeth.
+
+
+_Life History._--This subspecies breeds in clear, swift mountain
+streams. Males call from stems and leaves of plants at the edge of, or
+overhanging, the streams. The breeding call consists of a soft
+"wraack," repeated at intervals of three to four seconds. Each note
+has a duration of 0.60 to 0.65 seconds and has 91 to 102 pulses per
+second; the dominant frequency falls between 3000 and 3200 cycles per
+second.
+
+Tadpoles in various stages of development were found at Finca La Paz,
+Guatemala, in late July. This indicates that there is either extreme
+differential growth, or, more probably, an extended breeding season. A
+tadpole having a body length of 6.8 mm. and a total length of 19.1 mm.
+has a short median first upper tooth-row; lower tooth-rows 3-6 are
+only two-thirds as long as lower rows 1 and 2. Two recently
+metamorphosed young have snout-vent lengths of 14.2 and 14.8 mm.; they
+are colored like the adults.
+
+_Remarks._--The type specimen of _Hyla euthysanota_ Kellogg (1928:123)
+is a female; therefore, when Taylor (1944) proposed the name
+_Ptychohyla_ for hylids having ventrolateral glands in breeding males,
+he was unaware that _Hyla euthysanota_ was a member of this group. In
+his description of _Hyla rozellae_, Taylor (1942) did not compare his
+specimens with _Hyla euthysanota_, but instead placed _H. rozellae_
+with _H. loquax_ and _H. rickardsi_. The type series of _H. rozellae_
+consists of one large adult female and several metamorphosing young.
+Taylor (1949:16) based the description of _Ptychohyla bogerti_ on two
+males and compared these specimens with _P. adipoventris_ Taylor [=
+_P. leonhardschultzei_ (Ahl)]. Thus, in a period of 22 years the
+females of this species were given two names and the male another.
+Stuart (1954:169) suggested that _Hyla euthysanota_ and _Hyla
+rozellae_ were _Ptychohyla_. Now that sufficient specimens are
+available from throughout the range it is possible to determine that
+the various named populations are conspecific.
+
+_Distribution._--This subspecies inhabits cloud forests at elevations
+of 660 to 2200 meters on the Pacific slopes of the Sierra Madre from
+extreme eastern Oaxaca and western Chiapas, México, through Guatemala
+to northern El Salvador; probably it occurs also in southwestern
+Honduras. Aside from the specimens listed below, three in the
+Frankfurt Museum from Depto. Santa Ana, El Salvador (44571, Hacienda
+San José; 43040, Hacienda Los Planes; 65119, Miramundo) are listed by
+Mertens (1952:29).
+
+_Specimens examined._--MEXICO: _Chiapas: Cascarada, 30 km. W of
+Cíltapec_, UMMZ 87851-2; Cerro Ovando, UMMZ 87853-4; Chicomuselo, UMMZ
+94439-40; Finca Juárez, 28 km. N of Escuintla, USNM 115052-5; _Las
+Nubes, Cerro Ovando_, USNM 115030-8; Salto de Agua, USNM 115039-51.
+_Oaxaca_: Cerro Pecho Blanco, UIMNH 40963; between La Gloria and Cerro
+Azul, UIMNH 40976-7; Río Grande, AMNH 51847-8; Santo Tomás Tecpan,
+UIMNH 41071.
+
+GUATEMALA: _San Marcos_: Finca La Paz, 2 km. W of La Reforma, KU
+58001-14, 59937 (skeleton), 60042-3 (tadpoles), 60044 (4 young), MCZ
+34997, UMMZ 107739, 123151-7 (tadpoles); Finca Pirineos, Río Samalá,
+CNHM 35066. _Santa Rosa_: Finca La Gloria, UMMZ 123148 (tadpoles),
+123150 (tadpoles). _Sololá_: Finca Santo Tomás, UMMZ 123149
+(tadpoles); Olas de Mocá, near Mocá, CNHM 20208.
+
+EL SALVADOR: _Chalatenango_: Los Esemiles, USNM 73296. _Santa Ana_:
+Miramundo, CNHM 65120.
+
+
+
+
+  [Illustration: PLATE 13
+        _Ptychohyla euthysanota macrotympanum_ (KU 58049). × 2.]
+
+
+           =Ptychohyla euthysanota macrotympanum= (Tanner)
+
+
+    _Hyla macrotympanum_ Tanner, Great Basin Nat., 17:52-53, July 31,
+        1957 [Holotype.--AMNH 62141 (formerly BYU 13752) from 10 miles
+        east of Chiapa de Corzo, Chiapas, México; Robert Bohlman
+        collector].
+
+    _Ptychohyla macrotympanum_, Duellman, Univ. Kansas Publ. Mus. Nat.
+        Hist., 13:351, April 27, 1961.
+
+
+_Diagnosis._--Dorsum usually pale tan; venter white with scattered
+brown or black flecks; a thin white stripe on upper lip and another
+above anal opening; no distinct white stripe on flanks.
+
+_Description._--The following description is based on KU 58049 from
+Linda Vista, Chiapas, México (Pl. 13). Adult male having a snout-vent
+length of 38.0 mm.; tibia length, 19.5 mm.; tibia length/snout-vent
+length, 51.3 per cent; foot length, 15.7 mm.; head length, 11.8 mm.;
+head length/snout-vent length, 31.1 per cent; head width, 11.7 mm.;
+head width/snout-vent length, 30.8 per cent; diameter of eye, 3.8 mm.;
+diameter of tympanum, 2.1 mm.; tympanum/eye, 55.2 per cent. Snout in
+lateral profile nearly square, slightly rounded above, and in dorsal
+profile bluntly rounded; canthus pronounced; loreal region concave;
+lips thick, rounded, and slightly flaring; nostrils protuberant;
+internarial distance, 3.1 mm.; top of head flat; interorbital
+distance, 3.8 mm., and approximately a fourth broader than width of
+eyelid, 3.1 mm. A moderately heavy dermal fold from posterior corner
+of eye above tympanum to point above insertion of forelimb, covering
+upper edge of tympanum; tympanum round, its diameter equal to its
+distance from eye. Forearm moderately robust, having a distinct dermal
+fold on wrist; dermal fold, but no row of tubercles along
+ventrolateral surface of forearm; pollex only slightly enlarged,
+bearing triangular patch of small horn covered spines (94 on right,
+100 on left); fourth finger slightly longer than second; subarticular
+tubercles round, none bifid; discs moderate in size, that of third
+finger equal to diameter of tympanum; vestige of web between first and
+second fingers; other fingers one-third webbed. Heels broadly overlap
+when hind limbs adpressed; tibiotarsal articulation reaches to middle
+of eye; weak tarsal fold on distal two-thirds of tarsus; inner
+metatarsal tubercle large, elliptical, and flat; outer metatarsal
+tubercle small and round; no dermal fold from heel to disc of fifth
+toe; subarticular tubercles round; length of digits from shortest to
+longest 1-2-5-3-4; third toe webbed to base of disc; fifth toe webbed
+to middle of penultimate phalanx; fourth toe webbed to proximal end of
+penultimate phalanx; no fold of skin from inner metatarsal tubercle to
+base of disc on first toe; discs much smaller than on fingers. Anal
+opening near upper edge of thighs; short anal flap bordered above by
+thin dermal fold; small tubercles and heavy dermal fold lateral to
+anal opening. Skin of dorsum and ventral surfaces of fore limbs and
+shanks smooth; that of throat, belly, and ventral surfaces of thighs
+granular. Ventrolateral glands weakly developed, not reaching axilla
+or groin and broadly separated midventrally. Tongue ovoid, shallowly
+notched posteriorly, and barely free behind; vomerine teeth 2-2,
+situated on small triangular elevations between ovoid inner nares;
+openings to vocal sac large, one situated along inner posterior edge
+of each mandibular ramus.
+
+Dorsal ground-color of head, body, and limbs pale pinkish tan with the
+greatest part of head and body covered by large gray interconnected
+blotches; black flecks over most of dorsum; grayish brown transverse
+bands on shanks; dorsal surfaces of first and second fingers pale
+grayish yellow; dorsal surfaces of third and fourth fingers and
+webbing on hand pale grayish tan; anterior surfaces of thighs pale
+flesh-color; posterior surfaces of thighs pale grayish yellow; dorsal
+surfaces of tarsi and toes pale grayish tan with black flecks; webbing
+of feet pale gray; faint creamy white stripes along ventrolateral
+edges of tarsi and forearms; a very thin white line along edge of
+upper lip; a narrow grayish white stripe above anal opening; axilla
+gray; throat, chest, belly, and ventral surfaces of forelimbs pale
+grayish white; ventral surfaces of hind limbs cream color; flanks gray
+flecked with brown; ventral surfaces of feet grayish tan;
+ventrolateral glands pinkish tan; anterior one-half of chin flecked
+with brown.
+
+In life the dorsum was pale tan (Pinkish Buff); the dark markings on
+dorsum dull brown (Tawny-Olive); tarsi pale tan (Pale Pinkish Buff);
+flanks pinkish tan (Pale Cinnamon-Pink); iris coppery bronze (Capucine
+Orange).
+
+_Variation._--The few specimens from a limited geographic region
+preclude any analysis of geographic variation. All specimens, except
+the one described above, have the fifth toe webbed to the base of the
+disc. Many individuals have a bifid subarticular tubercle beneath the
+fourth finger. The shape of the posterior edge of the tongue varies
+from nearly straight and shallowly notched to bluntly rounded and
+emarginate. Two females (KU 58050-1) have more pointed snouts in
+dorsal profile than do males.
+
+Some specimens, such as KU 58048, are notably darker than the specimen
+described above; in dark specimens the dorsum is brown with dark brown
+markings; all fingers and the webbing on the hand are brown. The tarsi
+and feet are like those in the specimen described above, but the
+posterior surfaces of the thighs are yellowish tan heavily suffused
+with brown; the venter is cream color. In life KU 58048 had a brown
+(Verona Brown) dorsum with dark brown (Chocolate) markings. KU 58047
+is slightly darker than KU 58048 and has scattered small white flecks
+on the dorsum. All specimens have the thin white line on the upper
+lip, but in some individuals it is indistinct. The grayish white line
+above the anus is present in all specimens.
+
+_Description of Tadpole._--The following description is based on KU
+60049 from Río Hondo, 9.5 kilometers south of Pueblo Nuevo
+Solistahuacán, Chiapas, México (Figs. 4B and 6B). No limb buds; total
+length, 36.2 mm.; body length, 11.1 mm.; body length/total length,
+30.6 per cent. Body moderately depressed, slightly wider than deep,
+ovoid in dorsal profile; mouth directed ventrally; eyes small,
+directed dorsolaterally; nostrils slightly protuberant and directed
+anteriorly, somewhat closer to eye than snout; spiracle sinistral and
+posteroventrad to eye; anal tube dextral. Caudal fin low, acutely
+rounded posteriorly; depth of caudal musculature slightly more than
+one-half greatest depth of caudal fin; caudal musculature extending
+nearly to tip of tail.
+
+Mouth large; lips having deep lateral folds; two complete rows of
+papillae on lips; five or six rows of papillae laterally. Beaks
+moderately developed, bearing small peglike serrations; moderately
+wide lateral projections on upper beak; tooth-rows 4/6; upper rows
+subequal in length; fourth row interrupted medially; length of lower
+rows 1-4 subequal to upper rows; fifth and sixth lower rows decreasing
+in length; first lower row interrupted medially.
+
+Body brown above; tip of snout cream color; venter creamy white;
+caudal musculature creamy tan; caudal fin transparent; cream-colored
+crescent-shaped mark on posterior edge of body and anterior part of
+caudal musculature, bordered posterodorsally by dark brown blotch;
+four dark brown blotches on dorsum of anterior part of caudal
+musculature; scattered brown flecks on caudal musculature and fin; eye
+silvery bronze in life.
+
+_Variation._--The variation in size and proportions is given in Table
+2. All specimens have 4/6 tooth-rows; in some the first lower row is
+interrupted medially. Specimens from Jacaltenango and two kilometers
+west of San Pedro Necta, Depto. Huehuetenango, Guatemala, have weakly
+developed sixth lower tooth-rows.
+
+The cream-colored crescent-shaped mark is distinct in all specimens;
+the dorsal blotches on the anterior part of the caudal musculature are
+narrow and do not extend far onto the sides of the tail. The blotches
+are most distinct in small tadpoles and sometimes indistinct in large
+ones.
+
+_Comparisons._--_Ptychohyla euthysanota macrotympanum_ can be
+distinguished from both _P. spinipollex_ and _P. leonhardschultzei_ by
+the absence of bold black and white marbling on the flanks, as well as
+by the characters given in the diagnosis; furthermore, from the former
+it differs in having more and smaller horny nuptial tuberosities and
+from the latter by having the snout, in lateral profile, rounded above
+instead of angulate. _Ptychohyla euthysanota macrotympanum_ differs
+from _P. e. euthysanota_ by normally having a paler dorsum, narrower
+stripe on upper lip, and no distinct lateral stripe.
+
+_Ptychohyla euthysanota macrotympanum_ occurs sympatrically with
+_Plectrohyla guatemalensis_ and _P. matudai matudai_. Each of the last
+two has a bony prepollex, rather rugose skin on the dorsum, and more
+squat body. Other sympatric species are _Hyla walkeri_, which has a
+green dorsum with brown markings and a rather pointed snout, and _Hyla
+sumichrasti_, a small yellow frog usually lacking vomerine teeth.
+
+_Life History._--This species breeds in clear mountain streams in
+mixed pine and broad-leafed forest. Males call from trees and bushes
+along the streams. The breeding call consists of a soft "wraack,"
+repeated three to nine times with intervals of 2.7 to 3.4 seconds
+between notes. Each note has a duration of 0.60 to 0.65 second, and a
+rate of 92 to 100 pulses per second; the dominant frequency falls
+between 3000 and 3200 cycles per second (Pl. 11B). The call is
+indistinguishable from that of _P. e. euthysanota_.
+
+Tadpoles in various stages of development were found in the Río Hondo,
+Chiapas, on June 16, 1960. The smallest tadpole has a total length of
+24.1 mm.; in this individual the sixth lower tooth row has barely
+started to develop. A metamorphosing frog taken at the same time has a
+snout-vent length of 19.8 mm., a short remnant of the tail, and the
+mouth and tongue developed, whereas another individual having a
+snout-vent length of 17.8 mm. and a tail 31.0 mm. in length still has
+larval teeth. Three completely metamorphosed juveniles collected by L.
+C. Stuart at Jacaltenango, Guatemala, on June 6 and 7, 1955, have
+snout-vent lengths of 16.0, 16.0, and 16.1 mm.
+
+_Remarks._--Tanner (1957:52) based the description of _Hyla
+macrotympanum_ on a single female, which, of course, lacked the
+characters diagnostic of _Ptychohyla_. On the basis of general
+external characters Tanner suggested that _Hyla macrotympanum_ was
+related to _H. miotympanum_, from which it differed in having a larger
+tympanum and a bifid subarticular tubercle beneath the fourth finger.
+The collection of additional females, together with males of the
+species, has shown that _Hyla macrotympanum_ is a _Ptychohyla_.
+
+Intergradation between _Ptychohyla euthysanota_ and _P. macrotympanum_
+has not been demonstrated. Currently their ranges are separated by the
+dry valleys of the Río Grijalva and Río Cuilco. The similarity in
+structure of the adults and tadpoles and the indistinguishable
+breeding calls are the basis for considering the two populations
+subspecies.
+
+_Distribution._--This species occurs in mixed pine and broad-leafed
+forests at elevations of 700 to 1700 meters on the southern slopes of
+the Chiapan Highlands and Sierra de Cuchumatanes, in Guatemala. These
+forests are on the south facing slopes north of the valleys of the Río
+Grijalva and Río Cuilco.
+
+_Specimens examined._--MEXICO: _Chiapas_: 6 km. NE of Chiapa de Corzo,
+TCWC 16183; 16 km. E of Chiapa de Corzo, AMNH 62141; Linda Vista, 2
+km. NW of Pueblo Nuevo Solistahuacán, KU 58049-51, 59939 (skeleton);
+_Río Hondo, 9.5 km. S of Pueblo Nuevo Solistahuacán_, KU 58047-8,
+60046-7, 60048-9 (tadpoles); San Fernando, MZTG 15, 17; Tonina
+(ruins), KU 41592.
+
+GUATEMALA: _Huehuetenango_: Jacaltenango, UMMZ 123139 (tadpoles); 0.5
+km. E of Jacaltenango, UMMZ 123142-3; 2 km. S of Jacaltenango, UMMZ
+123141; 2 km. W of San Pedro Necta, UMMZ 123140 (tadpoles).
+
+
+
+
+  [Illustration: PLATE 14
+        _Ptychohyla leonhardschultzei_ (KU 64117). × 2.]
+
+
+                 =Ptychohyla leonhardschultzei= (Ahl)
+
+
+    _Hyla leonhard-schultzei_ Ahl, Zool. Anz., 106:185-186, fig. 1,
+        April 15, 1934 [Holotype.--ZMB 34353 from Malinaltepec,
+        Guerrero, México; Leonhard Schultze collector]. Smith and
+        Taylor, Bull. U. S. Natl. Mus., 184:87, June 17, 1948.
+
+    _Hyla godmani_, Ahl, Zool. Anz., 106:186, April 15, 1934.
+
+    _Hyla pinorum_ Taylor, Proc. Biol. Soc. Washington, 50:46-48,
+        pl. 2, fig. 2, April 21, 1937 [Holotype.--UIMNH 25049 from
+        Agua del Obispo, Guerrero, México; Edward H. Taylor
+        collector]. Smith and Taylor, Bull. U. S. Natl. Mus., 194:87,
+        June 17, 1948.
+
+    _Ptychohyla adipoventris_ Taylor, Univ. Kansas Sci. Bull.,
+        30:41-45, May 15, 1944 [Holotype.--UIMNH 25047 from Agua del
+        Obispo, Guerrero, México; Edward T. Taylor collector]. Smith
+        and Taylor, Bull. U. S. Natl. Mus., 194:91, June 17, 1948.
+        Taylor, Amer. Mus. Novitates, 1437:16, December 7, 1949.
+        Stuart, Proc. Biol. Soc. Washington, 67:169, August 5, 1954.
+
+    _Hyla milleri_ Shannon, Proc. U. S. Natl. Mus., 101:473-477,
+        figs. 92b, 93a-c, May 17, 1951 [Holotype.--USNM 123700 from
+        San Lucas Camotlán, Oaxaca, México; Walter S. Miller
+        collector].
+
+    _Ptychohyla leonhard-schultzei_, Duellman, Herpetologica,
+        16:191-197, figs. 1-3, September 23, 1960; Univ. Kansas Publ.
+        Mus. Nat. Hist., 13:351, April 27, 1961.
+
+
+_Diagnosis._--Rostral keel present; snout in lateral profile not
+rounded above; interorbital region much broader than eyelid; distal
+subarticular tubercle beneath fourth finger bifid or double; no white
+stripe on edge of upper lip; flanks white with black spots.
+
+_Description._--The following description is based on KU 64117 from
+Vista Hermosa, Oaxaca, México (Pl. 14). Adult male having a snout-vent
+length of 35.6 mm.; tibia length, 18.0 mm.; tibia length/snout-vent
+length, 50.5 per cent; foot length, 14.3 mm.; head length, 10.7 mm.;
+head length/snout-vent length, 30.1 per cent; head width, 10.6 mm.;
+head width/snout-vent length, 29.8 per cent; diameter of eye, 3.6 mm.;
+diameter of tympanum, 1.8 mm.; tympanum/eye, 50.0 per cent. Snout in
+lateral profile square, not rounded above, and in dorsal profile
+rounded with pointed tip resulting from vertical rostral keel; canthus
+pronounced; loreal region barely concave; lips thick, rounded, and
+barely flaring; nostrils protuberant; internarial distance, 3.2 mm.;
+top of head flat; interorbital distance, 3.8 mm., and approximately a
+fifth broader than width of eyelid, 3.2 mm. A moderately heavy dermal
+fold from posterior corner of eye above tympanum and curving ventrad
+to anterior edge of insertion of forelimb, covering upper edge of
+tympanum; tympanum round, its diameter equal to its distance from eye.
+Forearm moderately robust, having distinct dermal fold on wrist; row
+of small, low, rounded tubercles along ventrolateral surface of
+forearm; pollex only slightly enlarged, bearing triangular patch of
+small horn-covered spines (56 on right, 62 on left); second finger
+noticeably shorter than fourth; subarticular tubercles round, distal
+ones on third and fourth toes bifid; discs moderate in size, that of
+third finger slightly larger than diameter of tympanum; no web between
+first and second fingers; other fingers one-third webbed. Heels
+broadly overlap when hind limbs adpressed; tibiotarsal articulation
+reaches to middle of eye; a low rounded tarsal fold on distal half of
+tarsus; inner metatarsal tubercle elevated, flat, and elliptical;
+outer metatarsal tubercle at base of fourth toe, round; row of low,
+sometimes indistinct, tubercles from heel to base of fifth toe;
+subarticular tubercles round; length of digits from shortest to
+longest 1-2-3-5-4, third and fifth being about equal in length; third
+and fifth toes webbed to base of disc; fourth toe webbed to base of
+penultimate phalanx; discs of toes much smaller than on fingers. Anal
+opening near dorsal surface of thighs; short anal flap; opening
+bordered laterally by heavy dermal fold and ventrolaterally by large
+tubercles. Skin of dorsum and ventral surfaces of forelimbs and shanks
+smooth; that of throat, belly, and ventral surfaces of thighs
+granular. Ventrolateral glands moderately developed, reaching axilla
+but not to groin and broadly separated midventrally. Tongue cordiform,
+shallowly notched behind and barely free posteriorly; vomerine teeth
+4-3, situated on transverse elevations between ovoid inner nares;
+openings to vocal sac large, one situated along inner posterior edge
+of each mandibular ramus.
+
+Dorsal ground-color of head, body, and limbs pale tan with large
+interconnected dark brown blotches on head and body and broad dark
+brown transverse bands on limbs; dorsal surfaces of first and second
+fingers and of webbing of hands pale brown; dorsal surfaces of third
+and fourth fingers dark brown; anterior surfaces of thighs
+flesh-color; posterior surfaces of thighs brown; dorsal surfaces of
+tarsi and feet dark brown; narrow white stripe along ventrolateral
+edges of forearms and tarsi; a faint creamy white stripe above anal
+opening; axilla white; flanks creamy white, boldly spotted with black;
+throat and chest white; ventral surfaces of tarsi and feet dark brown;
+other ventral surfaces dusty cream color; large brown spots on chin
+and anterior part of abdomen.
+
+In life the dorsum was reddish brown (Orange-Cinnamon) with dark brown
+(Chocolate) blotches; first and second fingers and webbing on hand
+pale reddish brown (Cinnamon); webbing on feet dark brown (Clove
+Brown); flanks pale creamy white (Pale Olive Buff) with dark brown
+(Bone Brown) spots; iris reddish bronze (Apricot Orange).
+
+_Variation._--No noticeable geographic variation is apparent in the
+few available specimens; variations in proportions are given in Table
+1. The distal subarticular tubercle of the fourth finger is either
+bifid or double in all specimens; that on the third finger usually is
+bifid, sometimes single. The vertical rostral keel is prominent in all
+freshly preserved specimens; in some older specimens it is indistinct.
+The tongue always is notched posteriorly; in some individuals the
+notch is shallow; in others it is deep.
+
+Some specimens are paler and less boldly marked than the specimen
+described above. All specimens from Agua del Obispo and some specimens
+from the northern slopes of the Sierra Madre Oriental in Oaxaca have a
+pale tan dorsum with brown markings. In most individuals the white
+color in the axilla extends onto the posterior edge of the upper arm.
+The creamy white color of the flanks is constant and usually extends
+slightly dorsad in the inguinal region. The white stripe above, and
+sometimes continuing down beside, the anal opening varies from a thin
+indistinct line or row of flecks to a distinct continuous stripe. Two
+specimens have dark brown spots on the belly; in the others the spots
+are confined to the flanks and throat.
+
+_Description of tadpole._--The following description is based on KU
+68556 from 7.5 kilometers south of Yetla, Oaxaca, México (Figs. 4C and
+6C). No limb buds; total length, 37.3 mm.; body length, 12.2 mm.; body
+length/total length, 32.7 per cent; body slightly depressed, barely
+wider than deep, ovoid in dorsal profile; mouth directed ventrally;
+eyes small, directed dorsolaterally; nostrils barely protuberant and
+directed anterolaterally, about midway between snout and eye; spiracle
+sinistral and posteroventrad to eye; anal tube dextral. Caudal fin
+low, bluntly rounded posteriorly; greatest depth of caudal musculature
+about one-half depth of caudal fin; musculature extends nearly to tip
+of tail.
+
+Mouth large; lips having deep lateral folds; two complete rows of
+papillae on lips; five to seven rows of papillae laterally; beaks
+moderately developed, bearing short peglike serrations; moderately
+wide lateral projections on upper beak; tooth-rows 4/6; upper rows
+subequal in length; fourth row interrupted medially; length of lower
+rows 1-4 equal to upper rows; fifth and sixth lower rows shorter;
+first lower row interrupted medially.
+
+Body brown above; tip of snout brown; venter creamy gray; caudal
+musculature creamy tan; caudal fin transparent; cream-colored
+crescent-shaped mark on posterior edge of body; dark brown flecks on
+caudal musculature and all except anterior two-thirds of ventral
+caudal fin; large brown square blotches on dorsum of caudal fin; eye
+reddish brown in life.
+
+_Variation._--The variation in size and proportions is given in Table
+2. With the exception of one specimen having a short, broken, seventh
+tooth-row, all specimens have 4/6 tooth-rows that are like those
+described above. In some specimens the brown blotches on the dorsum of
+the caudal musculature are fused and marked with cream-colored flecks.
+
+_Comparisons._--_Ptychohyla leonhardschultzei_ differs from all other
+members of the _Ptychohyla euthysanota_ group in having a square
+snout, and further differs from _P. spinipollex_ in more numerous and
+smaller nuptial spines and in transverse, instead of posteromedially
+slanting, vomerine processes between the inner nares. _Ptychohyla
+leonhardschultzei_ differs from _P. euthysanota_ in having a rostral
+keel and in having white flanks boldly spotted with black.
+
+All small hylids that are sympatric with _Ptychohyla
+leonhardschultzei_ are either yellow (_Hyla dendroscarta_ and _H.
+melanomma_) or green (_Hyla erythromma_, which has a red eye, _Hyla
+hazelae_, which has a black line on the canthus, and _Ptychohyla
+ignicolor_, which has red flash colors on the thighs).
+
+_Life History._--This frog has been found along streams in cloud
+forests and in pine-oak forest. Males call from vegetation along the
+stream or from rocks in and at the edge of the stream. The call is a
+single, long, soft "wraack," repeated at intervals of anywhere from
+several seconds to three or four minutes. Each note has a duration of
+0.62 to 0.95 of a second and a rate of 76 to 78 pulses per second; the
+dominant frequency falls between 2700 and 2800 cycles per second
+(Pl. 11C).
+
+Tadpoles were found in several streams in northern Oaxaca. A tadpole
+having a total length of 21.1 mm. has three upper and four lower
+tooth-rows well developed; the fourth upper and fifth lower rows are
+weakly present, and the sixth lower row has not started to develop.
+Two metamorphosed young have snout-vent lengths of 15.2 and 15.5 mm.
+
+_Remarks._--Four specific names have been applied to this species. Ahl
+(1934:185) based his description of _Hyla leonhardschultzei_ on a
+small, poorly preserved female. Taylor (1944:41) proposed the generic
+name _Ptychohyla_ for a species (named therein as _P. adipoventris_)
+of hylid having ventrolateral glands and horn-covered nuptial spines.
+Obviously, Taylor was unaware that _Hyla leonhardschultzei_ was the
+same species. Earlier Taylor (1937:46) described _Hyla pinorum_. The
+types of all of these species came from the Pacific slopes of the
+Sierra del Sur in Guerrero. Examination of the types and other
+available specimens shows that they are representatives of a single
+species. The type of _Hyla pinorum_ is an immature male having a
+snout-vent length of 26.7 mm. All of these specimens have the square
+snout and black and white flanks characteristic of _Ptychohyla
+leonhard-schultzei_. Although Shannon (1951:473) based his description
+of _Hyla milleri_ on a male having well-developed ventrolateral
+glands, he overlooked the presence of these glands in his description
+and discussion of relationships. The acquisition of more specimens
+from northern Oaxaca has shown that _Hyla milleri_ is the same as
+_Ptychohyla leonhardschultzei_.
+
+_Distribution._--This species is known from pine-oak forest and cloud
+forest on the Pacific slopes of the Sierra Madre del Sur in Guerrero
+and Oaxaca and from the Atlantic slopes of the Sierra Madre Oriental
+in northern Oaxaca. Specimens have been collected at elevations
+between 700 and 1650 meters. Probably the species occurs in humid
+forests at similar elevations around the eastern end of the Mexican
+Highlands in Oaxaca.
+
+_Specimens examined._--MEXICO: _Guerrero_: Agua del Obispo, CNHM
+123489-90, 126651, 106300, MCZ 29639, UIMNH 25047, 25049, USNM 114551;
+Malinaltepec, ZMB 34351, 34353. _Oaxaca_: 2.5 km. N of La Soledad, KU
+58061; San Lucas Camotlán, UIMNH 3201, USNM 123700-1; Vista Hermosa,
+KU 64116-7, 64119, 68560 (tadpoles), 71344, 71717-8 (tadpoles), UMMZ
+119604; 5 km. S of Yetla, KU 60045 (tadpoles); _7.5 km. S of Yetla_,
+KU 64118, 68556-7 (tadpoles), 68559 (tadpoles), 68561 (2 young), 68630
+(skeleton), UMMZ 115514-5, 118863 (tadpoles); 9 km. S of Yetla, KU
+68558 (tadpoles).
+
+
+
+
+  [Illustration: PLATE 15
+        _Ptychohyla spinipollex_ (KU 58054). × 2.]
+
+
+                  =Ptychohyla spinipollex= (Schmidt)
+
+
+    _Hyla euthysanota_, Dunn and Emlen, Proc. Acad. Nat. Sci.
+        Philadelphia, 84:25, March 22, 1932.
+
+    _Hyla spinipollex_ Schmidt, Proc. Biol. Soc. Washington, 49:45-46,
+        May 1, 1936 [Holotype.--MCZ 21300 from the mountains behind
+        Ceiba, Depto. Atlantidad, Honduras; Raymond E. Stadelman
+        collector]. Stuart, Misc. Publ. Mus. Zool. Univ. Michigan,
+        69:32-34, figs. 5-6, June 12, 1948; Contr. Lab. Vert. Biol.
+        Univ. Michigan, 45:22, 52, 54, 57, May, 1950; Proc. Biol. Soc.
+        Washington, 67:169, August 5, 1954.
+
+    _Ptychohyla spinipollex_, Stuart, Contr. Lab. Vert. Biol. Univ.
+        Michigan, 68:48, November, 1954. Duellman, Univ. Kansas Publ.
+        Mus. Nat. Hist., 13:351, April 27, 1961.
+
+
+_Diagnosis._--Rostral keel present; snout in lateral profile rounded
+above; eyelid nearly as wide as interorbital region; flanks white with
+brown spots; belly spotted; nuptial spines pointed and moderate in
+size.
+
+_Description._--The following description is based on KU 58054 from
+Finca Los Alpes, Depto. Alta Verapaz, Guatemala (Pl. 15). Adult male
+having a snout-vent length of 37.7 mm.; tibia length, 18.2 mm.; tibia
+length/snout-vent length, 48.2 per cent; foot length, 15.8 mm.; head
+length, 11.7 mm.; head length/snout-vent length, 31.0 per cent; head
+width, 11.7 mm.; head width/snout-vent length, 31.0 per cent; diameter
+of eye, 3.6 mm.; diameter of tympanum, 1.9 mm.; tympanum/eye, 52.7 per
+cent. Snout in lateral profile nearly square, slightly rounded above,
+and in dorsal profile rounded with a pointed tip resulting from
+vertical rostral keel; canthus pronounced; loreal region barely
+concave; lips thick, rounded, and barely flaring; nostrils
+protuberant; internarial distance, 3.0 mm.; top of head flat;
+interorbital distance, 3.7 mm., about equal to width of eyelid, 3.6
+mm. A heavy dermal fold from posterior corner of eye above tympanum to
+point above insertion of forearm, covering upper edge of tympanum;
+tympanum round, its diameter equal to its distance from eye. Forearm
+moderately robust, having faint dermal fold on wrist; row of low,
+rounded tubercles along ventrolateral edge of forearm; pollex only
+slightly enlarged, bearing triangular patch of moderate-sized,
+pointed, horn-covered spines (38 on right, 43 on left); second finger
+noticeably shorter than fourth; subarticular tubercles round, distal
+one on fourth finger bifid; discs of fingers of moderate size, that of
+third finger slightly smaller than diameter of tympanum; vestigial web
+between first and second fingers; other fingers one-third webbed.
+Heels broadly overlapping when hind limbs adpressed; tibiotarsal
+articulation reaches to middle of eye; distinct, but low, tarsal fold
+extending length of tarsus; inner metatarsal tubercle elevated, flat,
+and elliptical; outer metatarsal tubercle small and round, near base
+of fourth toe; row of low indistinct tubercles from heel to base of
+fifth toe; subarticular tubercles round; length of toes from shortest
+to longest 1-2-3-5-4, the third and fifth being about equal in length;
+third and fifth toes webbed to base of disc; fourth toe webbed to base
+of penultimate phalanx; discs of toes slightly smaller than those on
+fingers. Anal opening near upper edge of thighs; opening bordered
+laterally by moderately heavy dermal folds and ventrolaterally by
+tubercles. Skin of dorsum and ventral surfaces of forelimbs and shanks
+smooth; that of throat, belly, and ventral surfaces of thighs
+granular. Ventrolateral glands barely evident. Tongue ovoid, barely
+notched behind and slightly free posteriorly; vomerine teeth 2-3,
+situated on V-shaped elevations between round inner nares; openings
+to vocal sac large, one situated along inner posterior edge of each
+mandibular ramus.
+
+Dorsal ground-color of head, body, and limbs grayish tan with dark
+brown reticulations on head and body and dark brown transverse bars or
+spots on limbs; first and second fingers cream color; third and fourth
+fingers and webbing on hands pale grayish brown; anterior surfaces of
+thighs reddish tan; posterior surfaces of thighs yellowish tan; tarsi
+and toes pale grayish tan with brown flecks; webbing on foot pale
+brown; faint white stripe along ventrolateral edges of tarsi and
+forearms; narrow white line above and beside anal opening; no white
+stripe on edge of upper lip; axilla pale flesh-color; throat, chest,
+and ventral surfaces of limbs pale creamy gray; belly white with
+scattered brown flecks; flanks grayish white with dark brown flecks;
+ventral surfaces of tarsi dark brown; ventrolateral glands grayish
+tan.
+
+In life the dorsal ground-color of the head, body, fore limbs, and
+thighs was yellowish tan (Pinkish Buff); dorsal surfaces of shanks and
+tarsi pale yellowish tan (Pale Pinkish Buff); markings on head and
+back brown (Snuff Brown) to dark brown (Chocolate); dark bands on
+limbs brown (Tawny-Olive); first and second fingers creamy tan (Light
+Pinkish Cinnamon); posterior surfaces of thighs creamy tan (Light
+Pinkish Cinnamon); third and fourth fingers and webbing on hand
+grayish brown (Avellaneous); webbing on feet dark brown (Olive Brown);
+axilla pale pink (Hydrangea Pink); flanks buff (Cream-Buff) becoming
+yellow (Lemon Chrome) in groin; spots on flanks dark brown (Clove
+Brown); iris dull grayish bronze (Orange-Citrine).
+
+_Variation._--The distal subarticular tubercle beneath the fourth
+finger is bifid in about two-thirds of the specimens; in the rest it
+is round. The posterior edge of the tongue varies from being
+emarginate to shallowly notched. In most specimens the row of
+tubercles along the outer edge of the tarsus is made up of discrete
+tubercles, but in some individuals the tubercles form a nearly
+continuous dermal fold. Most specimens have the vomerine teeth
+situated on V-shaped elevations, but in some individuals the
+elevations are more nearly transversely situated between the inner
+nares.
+
+All 42 specimens from Finca Los Alpes, Guatemala, have dark brown
+spots and flecks on the venter. Some individuals have only a few
+flecks on the throat and a few large spots on the flanks, as does KU
+64125. Other specimens, such as KU 64132, have dense spotting over the
+entire venter. The color of the dorsum varies from pale tan to dark
+brown with darker brown markings; the white line above the anus is
+present in all specimens, but in some it is indistinct. KU 58053 and
+64127 have a dark brown dorsum with large pale tan, square blotches;
+in life the blotches were pale tan (Pinkish Buff); the rest of the
+dorsum was dark brown (Sayal Brown). KU 58052 is dark brown with many
+small white flecks on the dorsum; in life the dorsum was deep olive
+brown (Dark Olive).
+
+Aside from the differences mentioned above, all specimens from
+Guatemala are similar in coloration. Three specimens from Honduras
+(MCZ 21300 and UMMZ 113102-3) have unspotted white venters. MCZ 21300,
+the holotype of _P. spinipollex_, lacks a white stripe above the anal
+opening, whereas the stripe is indistinct in UMMZ 113102-3.
+
+_Description of tadpole._--The following description is based on KU
+60053 from Fina Los Alpes, Depto. Alta Verapaz, Guatemala (Figs. 4D
+and 6D). No limb buds; total length, 37.2 mm.; body length, 12.2 mm.;
+body length/total length, 32.8 per cent. Body rounded, not depressed,
+as wide as deep, ovoid in dorsal profile; mouth directed ventrally;
+eyes small, directed dorsolaterally; nostrils barely protuberant and
+directed anterolaterally, somewhat closer to eye than snout; spiracle
+sinistral and posteroventrad to eye; anal tube dextral. Caudal fin
+low, bluntly rounded posteriorly; greatest depth of caudal musculature
+about one-half depth of caudal fin; musculature extends nearly to tip
+of tail.
+
+Mouth large; lips having deep lateral folds; two complete rows of
+papillae on lips; six or seven rows of papillae laterally; beaks
+moderately developed, bearing fine blunt serrations; slender lateral
+projections on upper beak; tooth-rows 4/7; upper rows subequal in
+length; fourth row interrupted medially; lower rows 1-4 equal in
+length to upper rows; lower rows 5-7 decreasing in length; first lower
+row interrupted medially.
+
+Top of head and tip of snout brown; venter creamy gray; caudal
+musculature tan; caudal fin transparent; faint cream-colored, narrow,
+crescent-shaped mark on posterior edge of body, not bordered
+posteriorly by dark brown mark; brown flecks scattered on caudal
+musculature and caudal fin; only a few flecks on anterior half of
+ventral caudal fin; eye bronze-color in life.
+
+_Variation._--The variation in size and proportions as compared with
+tadpoles of other species is given in Table 2. Of the 57 tadpoles of
+this species that I have examined, 21 have only six lower tooth-rows,
+although in some of these specimens a faint ridge for a seventh row is
+present. In those specimens having seven lower rows, the seventh often
+is broken.
+
+There is considerable variation in coloration. None has a distinct
+cream-colored, crescent-shaped mark bordered posteriorly by a dark
+brown bar or triangle, as in the other species in the _Ptychohyla
+euthysanota_ group. Most specimens have a rather indistinct crescent;
+some have no crescent. In a few specimens there is a weakly outlined
+dark mark posterior to the crescent. Some specimens in a series of
+tadpoles from 32 kilometers north of Morazán, Baja Verapaz, Guatemala,
+have faint dorsal blotches on the dorsal musculature, much like those
+in tadpoles of _Ptychohyla leonhardschultzei_.
+
+_Comparisons._--_Ptychohyla spinipollex_ differs from all other
+species in the genus by having moderate-sized, instead of small,
+pointed nuptial spines; also it has fewer spines than the other
+species (see discussion of this character in Analysis of Data). The
+nearly equal interorbital breadth and width of the upper eyelid also
+is diagnostic of this species.
+
+Other hylids sympatric with _Ptychohyla spinipollex_ include three
+species of _Plectrohyla_, each of which has a bony prepollex, heavy
+body, and rugose skin on the dorsum. The only other sympatric hylid
+that could be confused with _Ptychohyla spinipollex_ is _Hyla
+bromeliacea_, which has a round snout and yellowish tan dorsum not
+marked with dark brown.
+
+_Life History._--At Finca Los Alpes, Guatemala, in July, 1960, and in
+August, 1961, calling males were found on bushes and trees along
+cascading mountain streams. The breeding call consists of a soft
+"wraack," repeated at intervals of 45 seconds to four minutes. Each
+note has a duration of about .46 of a second and a rate of 147 pulses
+per second. The dominant frequency is 4300 cycles per second (Pl. 11A).
+
+Tadpoles have been found in cascading mountain streams. Two
+metamorphosed young have snout-vent lengths of 15.0 and 15.5 mm.
+
+_Remarks._--There is little doubt that all of the specimens herein
+referred to _Ptychohyla spinipollex_ are conspecific. However, the
+three specimens from Honduras, including the type of _Ptychohyla
+spinipollex_, differ from Guatemalan specimens in lacking all dark
+spotting on the venter. Additional specimens from Honduras and eastern
+Guatemala may show that two subspecies are recognizable, in which case
+the nominal subspecies will be the population in Honduras.
+
+_Distribution._--This species lives in cloud forests at elevations of
+800 to 1700 meters on the Atlantic side of the Guatemalan Highlands
+from the Sierra de Cuchumatanes in western Guatemala eastward to
+central Honduras.
+
+_Specimens examined._--GUATEMALA: _Alta Verapaz_: Finca Chichén, UMMZ
+90876 (tadpoles); Finca Los Alpes, KU 58052-60, 59939 (skeleton),
+60053 (tadpoles), 64122-41, 68562, 68563 (tadpoles), 68631-2
+(skeletons), MCZ 35000-1, UMMZ 90873, 90874 (3), 90875 (tadpoles); La
+Primavera, UMMZ 90877 (tadpoles); Panzamalá, UMMZ 90878 (tadpoles).
+_Baja Verapaz_: 32 km. N of Morazán, KU 68564 (tadpoles); _Santa
+Elena_, UMMZ 98119, 98120 (2). _Huehuetenango_: 1 km. E of Barillas,
+UMMZ 123136-7 (tadpoles). _Progreso_: Finca Bucaral, UMMZ 106783 (3),
+123138 (tadpoles), S-1292 (skeleton).
+
+HONDURAS: _Atlantidad_: Mountains behind Ceiba, MCZ 21300. _Morazán_:
+Cerro Uyuca, UMMZ 123102-3.
+
+
+
+
+The _Ptychohyla schmidtorum_ Group
+
+
+Two species in group; adults having only vestige of web between fingers
+and lacking tarsal fold; pollex of breeding males lacking spinous,
+horny, nuptial tuberosities; mouth of tadpole greatly expanded,
+funnel-shaped, lacking lateral folds, and having 3/3 tooth-rows;
+breeding call consisting of series of short notes.
+
+
+
+
+=Ptychohyla schmidtorum=
+
+
+_Diagnosis._--Diameter of tympanum more than half of diameter of eye;
+internarial region depressed; toes three-fourths webbed; no red
+flash-colors on thighs.
+
+
+
+
+  [Illustration: PLATE 16
+        _Ptychohyla schmidtorum schmidtorum_ (KU 58043). × 2.]
+
+
+              =Ptychohyla schmidtorum schmidtorum= Stuart
+
+
+    _Ptychohyla schmidtorum_ Stuart, Proc. Biol. Soc. Washington,
+        67:169-172, August 5, 1954 [Holotype.--CNHM 27055 from El
+        Porvenir (17 kilometers air-line west of San Marcos), Depto.
+        San Marcos, Guatemala; Karl P. Schmidt collector]. Duellman,
+        Univ. Kansas Publ. Mus. Nat. Hist., 13:351, 355, April 27, 1961.
+
+
+_Diagnosis._--Vomerine teeth 5-11; dorsum dark brown; white spot below
+eye; eye red in life.
+
+_Description._--The following description is based on KU 58043 from
+Finca La Paz, Depto. San Marcos, Guatemala (Pl. 16). Adult male having
+snout-vent length of 31.6 mm.; tibia length, 15.0 mm.; tibia
+length/snout-vent length, 47.5 per cent; foot length, 12.5 mm.; head
+length, 10.2 mm.; head length/snout-vent length, 32.3 per cent; head
+width, 9.9 mm.; head width/snout-vent length, 31.3 per cent; diameter
+of eye, 3.4 mm.; diameter of tympanum, 1.8 mm.; tympanum/eye, 52.9 per
+cent. Snout in lateral profile nearly square, slightly rounded above
+and below, and in dorsal profile bluntly squared; canthus pronounced;
+loreal region concave; lips thick, rounded, and flaring; nostrils
+protuberant; internarial distance, 2.2 mm.; internarial region
+depressed; top of head flat; interorbital distance, 3.4 mm., much
+greater than width of eyelid, 2.5 mm. Thin dermal fold from posterior
+corner of eye above tympanum to insertion of forelimb, covering upper
+edge of tympanum; tympanum round, its diameter equal to its distance
+from eye. Forearm slender, lacking distinct dermal fold on wrist; row
+of low rounded tubercles along ventrolateral edge of forearm; pollex
+slightly enlarged; no nuptial spines; second and fourth fingers about
+equal in length; subarticular tubercles small and round, distal one
+beneath fourth finger bifid; discs small, that of third finger
+noticeably smaller than tympanum; no web between first and second
+fingers; vestige of web between other fingers. Heels overlap when hind
+limbs adpressed; tibiotarsal articulation reaches to middle of eye; no
+tarsal fold; inner metatarsal tubercle large, flat, and elliptical;
+outer metatarsal tubercle small, ovoid, slightly more distal than
+inner; subarticular tubercles round; length of digits from shortest to
+longest 1-2-5-3-4; third and fifth toes webbed to base of discs;
+fourth toe webbed to base of penultimate phalanx; discs of toes
+smaller than on fingers. Anal opening directed posteriorly at upper
+edge of thighs; no anal flap; pair of large tubercles below anal
+opening and smaller tubercles farther below. Skin of dorsum and
+ventral surfaces of forelimbs and shanks smooth; that of belly and
+ventral surfaces of thighs granular. Ventrolateral glands well
+developed, reaching axilla and groin and narrowly separated on chest.
+Tongue ovoid, emarginate posteriorly, and only slightly free behind;
+vomerine teeth 3-3, situated on small triangular elevations between
+ovid inner nares; openings to vocal sac large, one situated along
+inner posterior edge of each mandibular ramus.
+
+Dorsum of head, body, and limbs reddish brown with indistinct,
+irregular darker brown markings on body and dark brown transverse
+bands or spots on limbs; first and second fingers creamy white; third
+and fourth fingers brown; dorsal surfaces of tarsi and third, fourth,
+and fifth toes tan with brown spots; first and second toes and webbing
+on feet creamy tan; enamel-white stripe along edge of upper lip
+continuing over, and on posterior edge of, forearm to groin, expanded
+to form spot below eye; belly white, unspotted; ventrolateral glands
+pale brown; ventral surfaces of hind limbs and anterior and posterior
+surfaces of thighs cream color; enamel-white stripe on heel; creamy
+white stripe along ventrolateral edges of tarsi and forearms.
+
+In life dorsum reddish brown (Terra Cotta) with dark brown (Burnt
+Umber) markings; first and second fingers and first and second toes
+orange-yellow (Light Orange-Yellow); posterior surfaces of thighs pale
+reddish tan (Ochraceous-Salmon); webbing on feet yellowish tan (Deep
+Colonial Buff); belly white; iris red (Nopal Red).
+
+_Variation._--Little variation in structural characters was observed.
+All but five specimens have bifid subarticular tubercles beneath the
+fourth finger. Three specimens have cordiform tongues, and in four
+others the tongue is ovoid and shallowly notched behind; all other
+specimens have an emarginate ovoid tongue.
+
+Some individuals when active at night had a pale brown
+(Ochraceous-Tawny) dorsum with dull olive green (Dark Olive Buff)
+markings. Otherwise there was no noticeable variation in color.
+
+_Description of tadpole._--The following description is based on KU
+60051 from Finca La Paz, Depto. San Marcos, Guatemala (Figs. 5A and
+6E). Small hind limbs; total length, 37.9 mm.; body length, 11.6 mm.;
+body length/total length, 30.6 per cent. Body only slightly depressed,
+nearly as deep as wide, in dorsal profile ovoid, widest just posterior
+to eyes; in lateral profile snout rounded; mouth directed ventrally;
+eyes small, directed dorsolaterally; nostrils barely protuberant,
+directed anteriorly, somewhat closer to eye than snout; spiracle
+sinistral and posteroventrad to eye; anal tube dextral. Tail long and
+slender; caudal fin low and rounded posteriorly; depth of caudal
+musculature one-half greatest depth of caudal fin; musculature not
+extending to tip of tail.
+
+Mouth large; thin fleshy lips greatly expanded and forming large
+funnel-shaped disc; width of mouth two-thirds greatest width of body;
+outer edge of lips having one row of small papillae; inner surfaces of
+mouth smooth; scattered large papillae forming one nearly complete row
+around teeth; other large papillae laterally; beaks moderately
+developed, bearing long, pointed denticulations; no lateral
+projections on upper beak; tooth-rows 3/3, all short; second and third
+upper rows subequal in length; first upper row shorter; first and
+third upper rows interrupted medially; first lower row interrupted
+medially, equal in length to second and third upper rows; second lower
+row slightly shorter; third lower row shortest.
+
+Body mottled brown and creamy gray above and below; mouth colored like
+body; caudal musculature creamy tan; caudal fin transparent; dark
+brown streak mid-laterally on anterior third of caudal musculature;
+rest of tail and all of caudal fin heavily flecked with brown; eye red
+in life.
+
+_Variation._--The third upper tooth-row is interrupted in all
+specimens; in some individuals the first upper and first lower rows
+are complete. The variation in size and proportions is given in Table
+2. The dark brown lateral streak on the anterior part of the caudal
+musculature is distinct on most specimens; the only other variation in
+coloration is in the amount of brown flecking on the caudal
+musculature and fin.
+
+_Comparisons._--_Ptychohyla schmidtorum schmidtorum_ differs from _P.
+schmidtorum chamulae_ as stated in the diagnosis and in having pale
+creamy tan, as opposed to dark brown, webbing on the feet; and from
+_P. ignicolor_ in having a depressed, as opposed to a flat,
+internarial region. Tadpoles of _P. s. schmidtorum_ have a mottled
+appearance, as opposed to the more uniform brown color of _P. s.
+chamulae_.
+
+_Ptychohyla schmidtorum schmidtorum_ and several species of
+_Plectrohyla_ are sympatric. All species of the latter genus have a
+bony prepollex, rugose skin on the dorsum, and heavy body; also
+sympatric is _Ptychohyla e. euthysanota_, which has a tarsal fold and
+in breeding males spinous nuptial tuberosities.
+
+_Life History._--This species breeds in clear mountain streams where
+males call from vegetation along the stream. The call consists of
+series of short notes, three to nine notes per series, sounding like
+"raa-raa-raa." The duration of each note is approximately .065 of a
+second, and has a rate of 96 to 119 pulses per second; the dominant
+frequency is about 3400 cycles per second. The call is almost
+indistinguishable from that of _Ptychohyla schmidtorum chamulae_.
+
+Tadpoles and metamorphosing young were found at Finca La Paz,
+Guatemala, in late July, 1960. Two young lacking tails but not having
+completely developed mouths have snout-vent lengths of 14.2 and 14.6
+mm. L. C. Stuart collected four metamorphosing young at Finca La Paz
+on May 6, 1949. By May 10 the frogs were completely metamorphosed, at
+which time they had snout-vent lengths of 15.5 to 17.0 (average 16.1)
+mm.
+
+_Remarks._--There is no doubt that this frog is most closely related
+to _Ptychohyla schmidtorum chamulae_, even though the ranges of the
+two subspecies are separated by the interior depression of Chiapas.
+Since at least at Finca La Paz, Guatemala, _P. s. schmidtorum_ occurs
+with _P. e. euthysanota_, it is surprising that the former species has
+not been found at more localities along the Pacific slopes on northern
+Central America. At Finca La Paz in July, 1960, _P. s. schmidtorum_
+was more abundant than _P. e. euthysanota_.
+
+_Distribution._--This species is known only from a limited area at
+elevations between 1300 and 2200 meters on the Pacific slopes of the
+Sierra Madre in extreme eastern Chiapas and western Guatemala.
+
+_Specimens examined._--MEXICO: _Chiapas_: Finca Irlandia, UMMZ
+105429-30.
+
+GUATEMALA: _San Marcos_: El Porvenir, CNHM 20755, 20761, 69904, UMMZ
+80918; Finca La Paz, 2 km. W of La Reforma, KU 58016-44, 59940-2
+(skeletons), 60050 (3 young), 60051 (tadpoles), 60052 (4 young), MCZ
+34998-9, UMMZ 123144-7 (tadpoles).
+
+
+
+
+  [Illustration: PLATE 17
+        _Ptychohyla schmidtorum chamulae_ (KU 58069). × 2.]
+
+
+              =Ptychohyla schmidtorum chamulae= Duellman
+
+
+    _Ptychohyla chamulae_ Duellman, Univ. Kansas Publ. Mus. Nat. Hist.,
+        13: 354-357, pl. 25, fig. 2, April 27, 1961 [Holotype.--KU
+        58063 from 6.2 kilometers south of Rayón Mescalapa, Chiapas,
+        México; William E. Duellman collector].
+
+
+_Diagnosis._--Vomerine teeth 4-6; dorsum bright green; white lateral
+stripe; eye reddish bronze in life.
+
+_Description._--The following description is based on KU 58069 from
+6.2 kilometers south of Rayón Mescalapa, Chiapas, México (Pl. 17).
+Adult male having a snout-vent length of 27.6 mm.; tibia length, 13.0
+mm.; tibia length/snout-vent length, 47.1 per cent; foot length, 10.8
+mm.; head length, 9.6 mm.; head length/snout-vent length, 34.7 per
+cent; head width, 9.2 mm.; head width/snout-vent length, 33.1 per
+cent; diameter of eye, 3.0 mm.; diameter of tympanum, 1.6 mm.;
+tympanum/eye, 53.3 per cent. Snout in lateral profile nearly square,
+slightly rounded above and below, and in dorsal profile blunt, almost
+square; canthus pronounced; loreal region concave; lips thick, rounded
+and flaring; nostrils protuberant; internarial distance, 2.5 mm.;
+internarial region slightly depressed; top of head flat; interorbital
+distance, 3.3 mm., much greater than width of eyelid, 2.5 mm. Thin
+dermal fold, from posterior corner of eye above tympanum to insertion
+of fore limb, covering upper edge of tympanum; tympanum nearly round,
+its diameter equal to its distance from eye. Forearm slender, lacking
+distinct fold on wrist; row of low, rounded tubercles on ventrolateral
+surface of forearm; pollex slightly enlarged, without nuptial spines;
+second and fourth fingers equal in length; subarticular tubercles
+round, that under fourth finger bifid; discs small, that of third
+finger noticeably smaller than tympanum; no web between first and
+second fingers; vestige of web between other fingers. Heels
+overlapping when hind limbs adpressed; tibiotarsal articulation
+reaches to middle of eye; no tarsal fold; inner metatarsal tubercle
+large, flat, and elliptical; outer metatarsal tubercle small,
+elliptical, slightly more distal than inner; subarticular tubercles
+round; length of digits from shortest to longest 1-2-5-3-4; third and
+fifth toes webbed to base of disc; fourth toe webbed to base of
+penultimate phalanx; discs smaller on toes than on fingers. Anal
+opening directed posteriorly at upper edge of thighs; no anal flap;
+pair of large tubercles below anal opening. Skin of dorsum and of
+ventral surfaces of forelimbs and shanks smooth; that of throat,
+belly, and ventral surfaces of thighs granular. Ventrolateral glands
+well developed, not reaching axilla or groin and broadly separated
+midventrally. Tongue cordiform, shallowly notched behind and only
+slightly free posteriorly; vomerine teeth 2-3, situated on small
+triangular elevations between ovoid inner nares; openings to vocal sac
+large, one situated along inner posterior edge of each mandibular
+ramus.
+
+Dorsum of head, body and limbs reddish brown with dark purplish brown
+markings on back and shanks; first finger creamy tan; other fingers
+pale brown; dorsal surfaces of tarsi, third, fourth, and fifth toes
+dull tan with brown spots; first and second toes creamy tan; webbing
+on feet brown; anterior and posterior surfaces of thighs tan; faint
+creamy white stripe along ventrolateral edges of tarsi and forearms;
+enamel-white stripe on heel; axilla and groin gray; enamel-white
+stripe on edge of upper lip, continuing onto proximal upper surfaces
+of forelimb and on flanks to groin, widened under eye to form large
+spot, and bordered below on flanks by dark brown stripe; white stripe
+above and white spots below anal opening; throat and chest white;
+belly and ventral surfaces of limbs cream color; brown dash on either
+side of chin and brown spot on throat near angle of jaws; few brown
+flecks on belly; ventrolateral glands orange-tan; ventral surfaces of
+tarsi and feet brown.
+
+In life, dorsal surfaces of head, body, and limbs bright green
+(Shamrock Green); first and second fingers pale orange (Apricot
+Yellow); stripe on upper lip and spot below eye enamel-white; stripe
+on flanks silvery white, bordered below by brown (Saccardo's Umber)
+brown; anterior and posterior surfaces of thighs yellowish brown (Old
+Gold); webbing of feet dull brown (Brownish Olive); belly deep yellow
+(Amber Yellow); iris reddish bronze (English Red).
+
+_Variation._--Tubercles beneath the fourth fingers are bifid in 20
+specimens and rounded in all others. The tongue is emarginate in 12
+specimens and cordiform in all others. In most specimens the white
+stripe on the upper lip continues onto the flanks and to the groin; in
+five specimens the stripe terminates above the forearm, and in three
+it terminates at mid-flank. The lateral stripe is absent in two
+specimens. All specimens were uniform green above when found at night;
+later some changed to pale green (Light Oriental Green) on the dorsum
+with irregular yellowish tan (Naples Yellow) blotches. Most males have
+brown flecks on the throat and ventrolateral gland, but some specimens
+are immaculate below, and one has dark brown mottling on the throat.
+Several males have a round, orange-tan glandular area on the chin, as
+does _P. ignicolor_.
+
+_Description of tadpole._--The following description is based on KU
+58199 from 6.2 kilometers south of Rayón Mescalapa, Chiapas, México
+(Figs. 5B and 6F). Hind limbs small; total length, 39.0 mm.; body
+length, 10.5 mm.; body length/total length, 26.9 per cent. Body barely
+depressed, only slightly wider than deep, widest just posterior to
+eyes; in dorsal profile ovoid; mouth directed ventrally; eyes small,
+directed dorsolaterally; nostrils barely protuberant, directed
+anterodorsally, slightly closer to eye than snout; spiracle sinistral
+and posteroventrad to eye; anal tube dextral. Tail long and slender;
+caudal fin low, rounded posteriorly; depth of caudal musculature
+one-half greatest depth of caudal fin; musculature not extending to
+tip of tail.
+
+Mouth large; thin fleshy lips greatly expanded and forming
+funnel-shaped disc; outer edge of lips having one row of small
+papillae; inner surfaces of mouth smooth; scattered large papillae
+forming nearly one complete row around teeth; other papillae
+laterally; beaks moderately developed, bearing long, pointed
+denticulations; no lateral projections on upper beak; tooth-rows 3/3,
+all short; second and third upper rows subequal in length; first upper
+row shorter; first and third upper rows interrupted medially; first
+lower row interrupted medially, equal in length to second and third
+upper rows; second lower row slightly shorter; third lower row
+shortest.
+
+Body dark brown above and dark gray below; fleshy part of mouth creamy
+gray mottled with dark brown; caudal musculature pale tan with heavy
+suffusion of brown flecks; caudal fin transparent with brown spots;
+dark brown streak mid-laterally on anterior one-fifth of caudal
+musculature, bordered below by cream-colored spot; eye brown in life.
+
+_Variation._--The third upper tooth-row is interrupted in all
+specimens, but in some individuals the first upper row and first lower
+row are complete. The only noted variation in color is the intensity
+of brown pigmentation on the caudal musculature, which in most
+specimens is sufficiently dense to make the tail look brown. In some
+specimens the mid-lateral streak is indistinct, and the pale spot
+below the streak is absent.
+
+_Comparisons._--Aside from the characters listed in the diagnosis,
+_Ptychohyla schmidtorum chamulae_ differs from _P. schmidtorum
+schmidtorum_ by having dark brown webbing on the feet, instead of pale
+creamy tan webbing, and in having in life a yellow venter, instead of
+a white venter. _Ptychohyla ignicolor_ also is green in life, but has
+red flash-colors on the thighs, red webbing on the feet, and lacks the
+white lateral stripe diagnostic of _P. schmidtorum chamulae_.
+
+_Plectrohyla matudai matudai_ and _P. guatemalensis_ are sympatric
+with _Ptychohyla schmidtorum chamulae_. Each of the first two has a
+bony prepollex, rugose skin on the dorsum, and heavy body. Also living
+with _Ptychohyla chamulae_ are _Hyla chaneque_, a large species having
+a tuberculate dorsum and webbed fingers, and _Hyla bivocata_, a small
+yellow species having a broad, flat head, small indistinct tympanum,
+and an axillary membrane.
+
+_Life History._--Calling males were found on leaves of herbs and
+bushes by cascading streams in cloud forest. The call consists of
+series of short notes, three to nine notes per series, sounding like
+"raa-raa-raa." The duration of each note is .054 to .070 of a second,
+and has a rate of 96 to 110 pulses per second. The dominant frequency
+falls between 3350 and 3450 cycles per second (Pl. 11D). The call is
+almost indistinguishable from that of _Ptychohyla schmidtorum
+schmidtorum_.
+
+Tadpoles were found in the cascading streams; the smallest tadpole has
+a total length of 17.2 mm. and has only 3/2 tooth-rows. At a stream
+6.2 kilometers south of Rayón Mescalapa, Chiapas, metamorphosing young
+were found on June 16 and August 5, 1960. Each of two completely
+metamorphosed young has a snout-vent length of 15.7 mm. Another having
+a snout-vent length of 16.2 mm. has a tail stub 2 mm. long and a
+completely metamorphosed mouth. Two others have snout-vent lengths of
+13.6 and 14.1 mm. and tail lengths of 11.5 and 8.1 mm. respectively;
+in these the mouth parts are incompletely metamorphosed.
+
+_Remarks._--Duellman (1961:354) described _Ptychohyla chamulae_ and
+stated that it probably was most closely related to _P. schmidtorum_.
+Further study has revealed additional resemblance in morphological and
+behavioral details. It is concluded that the two populations are more
+realistically treated as subspecies than as species. The geographic
+ranges, as now known, are disjunct. _Ptychohyla schmidtorum chamulae_
+inhabits cloud forest on the Atlantic slopes of the Chiapan Highlands,
+whereas _P. s. schmidtorum_ lives in cloud forest on the Pacific
+slopes of the Sierra Madre in Chiapas and Guatemala. Between their
+known geographic ranges are the pine clad Sierra Madre and Chiapan
+Highlands, and intervening sub-humid Grijalva Valley.
+
+_Distribution._--This species is known only from elevations between
+1500 and 1700 meters on the Atlantic slopes of the Chiapan Highlands;
+it is to be expected in cloud forests on the northern slopes of the
+Sierra de Cuchumatanes in Guatemala.
+
+_Specimens examined._--MEXICO: _Chiapas: 15 km. N of Pueblo Nuevo
+Solistahuacán_, UMMZ 123325 (4); _16.5 km. N of Pueblo Nuevo
+Solistahuacán_, UMMZ 123322 (10); _18 km. N of Pueblo Nuevo
+Solistahuacán_, UMMZ 121395-9, 123324 (8), 123326 (5); _18.6 km. N of
+Pueblo Nuevo Solistahuacán_, UMMZ 123323 (4); _5.6 km. S of Rayón
+Mescalapa_, KU 58062, 58200 (tadpoles); _6.2 km. S of Rayón
+Mescalapa_, KU 58063-74, 58199 (tadpole), 58234-8, 59936 (skeleton).
+
+
+
+
+  [Illustration: PLATE 18
+        _Ptychohyla ignicolor_ (UMMZ 119603). × 2.]
+
+
+                    =Ptychohyla ignicolor= Duellman
+
+
+    _Ptychohyla ignicolor_ Duellman, Uni. Kansas Publ. Mus. Nat. Hist.,
+        13:352-353, pl. 25, fig. 1, April 27, 1961 [Holotype.--UMMZ
+        119603 from 6 kilometers south of Vista Hermosa, Oaxaca,
+        México; Thomas E. Moore collector].
+
+_Diagnosis._--Diameter of tympanum less than one-half diameter of eye;
+internarial region flat; 3-7 vomerine teeth; toes one-half webbed; no
+white spot below eye; no lateral white stripe; in life dorsum green;
+groin and thighs having bright red flash-colors.
+
+_Description._--The following description is based on UMMZ 119603 from
+6 kilometers south of Vista Hermosa, Oaxaca, México (Pl. 18). Adult
+male having a snout-vent length of 30.0 mm.; tibia length, 14.6 mm.;
+tibia length/snout-vent length, 48.7 per cent; foot length, 12.3 mm.;
+head length, 9.2 mm.; head length/snout-vent length, 30.7 per cent;
+head width, 9.3 mm.; head width/snout-vent length, 31.0 per cent;
+diameter of eye, 3.2 mm.; diameter of tympanum, 1.3 mm.; tympanum/eye,
+40.6 per cent. Snout in lateral profile square, and in dorsal profile
+rounded; canthus pronounced; loreal region slightly concave; lips
+moderately flaring; top of head flat; nostrils protuberant;
+internarial distance, 2.8 mm.; internarial region flat; interorbital
+distance, 3.3 mm., much broader than width of eyelid, 2.8 mm. A heavy
+dermal fold from posterior corner of eye above tympanum to insertion
+of forelimb, covering upper edge of tympanum; tympanum elliptical, its
+greatest diameter equal to its distance from eye. Forearm moderately
+robust having distinct dermal fold on wrist; pollex moderately
+enlarged without nuptial spines; second and fourth fingers equal in
+length; subarticular tubercles round, none is bifid; discs on fingers
+moderate in size, that on third finger slightly larger than tympanum;
+no web between first and second fingers; vestige of web between other
+fingers. Heels overlap when hind limbs adpressed; tibiotarsal
+articulation extends to anterior corner of eye; no tarsal fold; inner
+metatarsal tubercle large, flat, and elliptical; outer metatarsal
+tubercle near inner one and triangular in shape; subarticular
+tubercles round; length of digits from shortest to longest 1-2-5-3-4;
+third toe webbed to proximal end of penultimate phalanx; fourth toe
+webbed to distal part of antepenultimate phalanx; fifth toe webbed to
+middle of penultimate phalanx; discs on toes smaller than on fingers.
+Anal opening directed posteriorly at upper edge of thighs; no anal
+flap; pair of large tubercles below anal opening; small tubercles
+ventral and lateral to these. Skin of dorsum and ventral surfaces of
+limbs smooth; that of throat and belly granular. Ventrolateral glands
+noticeably thickened, extending from axilla nearly to groin and only
+narrowly separated midventrally on chest; skin of anterior part of
+chin thickened and glandular. Tongue cordiform, shallowly notched
+behind and only slightly free posteriorly; vomerine teeth 0-3,
+situated on rounded elevations between somewhat larger, round inner
+nares; openings to vocal sac large, one situated along posterior
+margin of each mandibular ramus.
+
+Dorsal ground-color of head, body, and limbs dull brown with dark
+brown reticulations on head and body and dark brown transverse bands
+or spots on limbs; first and second fingers cream color; third and
+fourth fingers dull tan; anterior surfaces of thighs pale brown;
+posterior surfaces of thighs cream color with heavy suffusion of
+brown; dorsal surfaces of tarsi and third, fourth, and fifth toes dull
+brown with dark brown spots; first and second toes creamy white;
+webbing on foot brown; axilla and groin cream color; flanks brown; no
+white stripes on edge of upper lip or on flank; faint, barely
+discernible tan streak above anal opening; faint creamy tan line on
+ventrolateral edges of tarsi; throat, belly, ventral surfaces of
+limbs, inner edges of tarsi, and first toes cream color; outer ventral
+surfaces of tarsi and other toes brown; chest and throat spotted with
+brown; ventrolateral and chin glands orange-brown.
+
+In life the dorsum was uniform green (Cosse Green) becoming paler
+green (Bright Green-Yellow) on flanks, later changing to paler green
+(Javel Green) on dorsum with irregular darker green (Lettuce Green)
+markings and greenish yellow (Green-Yellow) on flanks; anterior and
+posterior surfaces of thighs, ventral surfaces of shanks, anterior
+surfaces of tarsi, and upper proximal surfaces of first, second, and
+third toes red (Coral Red); venter pale creamy yellow (Sulfur Yellow);
+iris pale golden color (Aniline Yellow).
+
+_Variation._--Of 13 specimens, six have a cordiform tongue; the others
+have an emarginate tongue. Five specimens have round subarticular
+tubercles beneath the fourth fingers; six specimens have a bifid
+tubercle on one hand, and two specimens have bifid tubercles on both
+hands. A round gland is present on the chin of all specimens; in some
+the gland is barely visible, but in others it is large and distinct.
+In two specimens the ventrolateral glands are weakly developed; in the
+others the glands are well developed and orange-tan. The white anal
+stripe varies from a thin line to a series of white flecks. Dark brown
+or black flecks are present on the throat, chest, and flanks of all
+specimens. In some the flecks are small and widely scattered; in
+others the flecks are larger and more numerous. All specimens were
+pale green above when calling at night; later they changed to dull
+green with darker green reticulations. The flash-colors on the thighs
+and in the groin vary from red to orange-red or brownish red.
+
+_Description of tadpole._--The following description is based on KU
+71716 from Vista Hermosa, Oaxaca, México (Figs. 5C and 6G). Hind limbs
+small; total length, 39.6 mm.; body length, 11.8 mm.; body
+length/total length, 29.8 per cent. Body moderately depressed, only
+slightly wider than deep, in dorsal profile ovoid, widest just
+posterior to eyes; in lateral profile snout rounded; mouth directed
+ventrally; eyes small, directed dorsolaterally; nostrils barely
+protuberant, directed anteriorly, somewhat closer to eye than snout;
+spiracle sinistral and posteroventrad to eye; anal tube dextral. Tail
+long and slender; caudal fin low and rounded posteriorly; depth of
+caudal musculature about one-half greatest depth of caudal fin;
+musculature not extending to tip of tail.
+
+Mouth large; thin fleshy lips greatly expanded and forming large
+funnel-shaped disc; width of mouth about two-thirds greatest width of
+body; outer edge of lips having one row of small papillae; inner
+surface of mouth smooth; scattered large papillae forming one nearly
+complete row around teeth; other papillae laterally; one large papilla
+just above each end of first lower tooth-row; beaks moderately
+developed bearing long, pointed denticulations; no lateral projections
+on upper beak; tooth-rows 3/3, all short; second and third upper rows
+subequal in length; first upper row shorter; first lower row equal in
+length to second and third upper rows; second lower row slightly
+shorter; third lower row shortest.
+
+Body creamy gray with dark brown flecks above and below; mouth colored
+like body; caudal musculature creamy tan; caudal fin transparent; dark
+brown streak on anterior third of caudal musculature; rest of tail and
+all of caudal fin, except anterior two-thirds of ventral fin, heavily
+flecked with brown; iris silvery bronze color in life.
+
+_Variation._--The only other known tadpole, which was collected with
+the individual described above, differs in having only two upper
+tooth-rows. The first upper tooth-row seems not to have developed.
+
+_Comparisons._--From _P. schmidtorum chamulae_ and _P. s.
+schmidtorum_, _P. ignicolor_ differs as follows: Tympanum smaller;
+snout more nearly square; less webbing on toes; internarial region
+flat instead of depressed; white lateral stripes lacking.
+
+_Ptychohyla ignicolor_ and several small and moderate sized hylids are
+sympatric. From _P. ignicolor_ these hylids can be distinguished as
+follows: _Hyla dendroscarta_ has a round snout and yellow dorsum;
+_Hyla erythromma_ has a round snout, green dorsum, white flanks, and a
+red eye; _Hyla hazelae_ has a tarsal fold, green dorsum, and a black
+line on the canthus; and _Ptychohyla leonhardschultzei_ has a tarsal
+fold, brown dorsum, black and white flanks, and horny nuptial spines
+in breeding males.
+
+_Life History._--At Vista Hermosa, Oaxaca, males were calling on
+vegetation above small streams on March 30, 1959, and on June 28,
+1962; males were found on vegetation overhanging a stream 6 kilometers
+south of Vista Hermosa on June 27 and July 3, 1962. The call consists
+of a series of short notes, three to thirteen notes per series,
+sounding like "raa-raa-raa." The duration of each note is about .08 of
+a second and has a rate of 123 to 129 pulses per second. The dominant
+frequency of notes in short series is about 2100 cycles per second,
+whereas the dominant frequency of notes in long series is about 3150
+cycles per second (Pl. 11E).
+
+On June 28, 1962, two tadpoles of this species were found in a quiet
+pool in a spring-fed rivulet at Vista Hermosa, Oaxaca. Females are
+unknown.
+
+_Remarks._--The absence of a tarsal fold and of nuptial spines in
+breeding males, the nature of the breeding call, and the form of
+tadpole are characters that place _Ptychohyla ignicolor_ in the _P.
+schmidtorum_-group.
+
+_Distribution._--This species is known from only two localities at
+elevations of 1500 and 1850 meters in the cloud forest on the northern
+(Atlantic) slopes of the Sierra Madre Oriental in northern Oaxaca.
+
+_Specimens examined._--MEXICO: _Oaxaca: Vista Hermosa_, KU 71334,
+71716 (tadpoles), UMMZ 119602; 6 km. S of Vista Hermosa, KU 71335-42,
+71343 (skeleton), UMMZ 119603, 123327 (2).
+
+
+
+
+                       DISTRIBUTION AND ECOLOGY
+
+                Geographic Distribution of the Species
+
+
+The distribution of species of _Ptychohyla_ reflects the distribution
+of cloud forest in southern México and northern Central America.
+The frogs are restricted to mountainous areas, usually at elevations
+higher than 1000 meters above sea level. _Ptychohyla_ does not range
+to great heights in the mountains, where west of the Isthmus of
+Tehuantepec the mountain streams are inhabited by frogs of the
+_Hyla bistincta_ group, and in Chiapas and Guatemala by species of
+_Plectrohyla_.
+
+Frogs of the _Ptychohyla euthysanota_ group have a greater combined
+geographic range than the species comprising the _Ptychohyla
+schmidtorum_ group (Fig. 7). No two species in the same group
+are sympatric, but members of different groups are sympatric in at
+least parts of their ranges. Apparently _P. leonhardschultzei_ ranges
+around the southern edge of the Mexican Highlands, where the
+species occurs on both Atlantic and Pacific slopes; as can be seen
+from the distribution map, there are many gaps in the known range
+of this species. The range of _P. euthysanota euthysanota_ is along
+the Pacific slopes of the Sierra Madre in Chiapas, Guatemala, and
+El Salvador, whereas that of _P. euthysanota macrotympanum_ is
+along the southern interior slopes of the Central Highlands of
+Chiapas and the Sierra de Cuchumatanes in Guatemala. _Ptychohyla
+spinipollex_ occurs on the wet Atlantic slopes of the Guatemalan and
+Honduranean Highlands; the range of the species in Honduras is
+poorly known.
+
+
+  [Illustration: FIG. 7. Map showing locality records for the species
+        and subspecies of _Ptychohyla_.]
+
+
+The frogs of the _Ptychohyla schmidtorum_ group have more restricted
+geographic ranges than members of the former group. _Ptychohyla
+schmidtorum schmidtorum_ occurs on the Pacific slopes of the Sierra
+Madre in Chiapas and Guatemala, where it occurs with _P. euthysanota
+euthysanota_; _P. schmidtorum chamulae_ is known from only two
+localities on the Atlantic slopes of the Central Highlands of Chiapas,
+where it occurs close to, but as now known not with, _P. euthysanota
+macrotympanum_. On the Atlantic slopes of the Sierra Madre Oriental in
+northern Oaxaca _P. ignicolor_ occurs with _P. leonhardschultzei_.
+
+In the Sierra de los Tuxtlas in southern Veracruz and in the cloud
+forests along the eastern slopes of the Sierra Madre Oriental
+northward to Nuevo León, _Hyla miotympanum_ seems to be the ecological
+replacement of _Ptychohyla_. On the Pacific slopes north of Guerrero,
+México, humid forests in which there are cascading mountain streams
+are absent; consequently, no _Ptychohyla_ are known from that region.
+In the mountains of El Salvador _Ptychohyla euthysanota euthysanota_
+occurs sympatrically with another small stream-breeding hylid, _Hyla
+salvadorensis_. To the south of Honduras the highlands diminish into
+the lowlands of Nicaragua, where habitat suitable for _Ptychohyla_
+apparently does not exist. In the mountains of Costa Rica and Panamá,
+the habitats occupied by _Ptychohyla_ in northern Central America are
+filled by a variety of stream-breeding _Hyla_, such as _Hyla legleri_,
+_H. rivularis_, _H. rufioculis_, _H. alleei_, and _H. uranochroa_.
+
+Although members of the genus _Ptychohyla_ occur in the southern
+part of the Mexican Highlands to the west of the Isthmus of
+Tehuantepec, the greater distribution and differentiation in the
+genus is in the Chiapan-Guatemalan Highlands. In this respect
+_Ptychohyla_ is a counterpart of _Plectrohyla_.
+
+
+
+
+                          Habitat Preference
+
+Frogs of the genus _Ptychohyla_ are ecologically associated with
+mountain streams at elevations between 650 and 2200 meters; in the
+geographic region where these frogs occur the vegetation between those
+elevations consists of cloud forest or pine-oak forest. In some places
+the frogs have been found in a mixture of oak and semi-deciduous scrub
+forest. At Vista Hermosa, Oaxaca, _P. leonhardschultzei_ and _P.
+ignicolor_ were found in cloud forest, whereas at Agua del Obispo,
+Guerrero, the former species was found in pine-oak forest. _Ptychohyla
+schmidtorum_ is known only from cloud forest; _P. euthysanota
+euthysanota_ and _P. spinipollex_ generally are found in cloud forest,
+but in some places they live in pine-oak forest. _Ptychohyla
+euthysanota macrotympanum_ has been found in pine-oak forest and in a
+mixture of oak and semi-deciduous scrub forest. With the possible
+exception of the members of the _Ptychohyla schmidtorum_ group, which
+has been found only in cloud forest, it seems as though the type of
+vegetation is not the controlling factor in the ecological
+distribution of these frogs.
+
+_Ptychohyla_ has been found only where there are clear, cascading
+streams overhung by vegetation, on which adults and young perch at
+night, or even by day. The presence of these streams, in which the
+tadpoles live, seems to be an important factor in the distribution of
+_Ptychohyla_. As has been shown previously, the tadpoles of
+_Ptychohyla_ are adapted for existence in torrential streams, where
+the water is cool, and the amount of oxygen is high. Clearly these
+tadpoles are unsuited for life in ponds or sluggish streams in the
+lowlands, where the temperature of the water is high, a layer of silt
+on the bottom is deep, and the amount of oxygen is low. The tadpoles
+cling to rocks on the bottom of the streams; there they move slowly
+across the rocks, apparently feeding on the thin covering of algae.
+Tadpoles were not observed on rocks having a thick covering of algae
+or moss. The tadpoles were observed to swim against the current in
+torrential streams, in which no fishes were found. Therefore, it seems
+as though the presence of the stream-habitat for the tadpoles is a
+significant factor in the ecological distribution of the species of
+_Ptychohyla_.
+
+
+
+
+                      Interspecific Competition
+
+At localities where two species of _Ptychohyla_ occur sympatrically
+(_P. ignicolor_ and _P. leonhardschultzei_ at Vista Hermosa, Oaxaca,
+and _P. euthysanota euthysanota_ and _P. schmidtorum schmidtorum_ at
+Finca La Paz, Depto. San Marcos, Guatemala) effort was made to
+determine what, if any, ecological interspecific relationships
+existed. Although adults of the sympatric species were found on
+adjacent leaves or branches of bushes overhanging the streams at both
+localities, segregation at the time of breeding seems to be maintained
+by the notably different breeding calls in sympatric species (see
+discussion of breeding calls). Thus, as has been shown by Blair
+(1956), Fouquette (1960), and others working on a variety of
+pond-breeding frogs and toads, the breeding call in _Ptychohyla_ acts
+as an important reproductive isolating mechanism.
+
+At no locality were _Ptychohyla_ and associated species of hylids
+found so abundantly as were species of pond-breeding hylids in the
+lowlands. Apparently reproductive activity is not concentrated in a
+short breeding season, and it is highly doubtful if the populations of
+these frogs are as large as those of the lowland pond-breeders. The
+continual humid conditions and abundance of insect food throughout the
+year in the cloud forest are perhaps indicative of little
+interspecific competition among adults of _Ptychohyla_ and other
+sympatric hylids.
+
+At Finca La Paz, Guatemala, tadpoles of two species of _Ptychohyla_
+were ecologically segregated. The tadpoles of _P. euthysanota
+euthysanota_ were found in riffles in the streams, whereas those of
+_P. schmidtorum schmidtorum_ were found in slower water, chiefly in
+small pools in the streams. At Vista Hermosa, Oaxaca, tadpoles of _P.
+leonhardschultzei_ were found in riffles, and tadpoles of the
+sympatric _P. ignicolor_ were found in a small pool in a stream.
+Similar ecological relationships were observed for several species of
+Costa Rican hylids. Throughout the range of _Ptychohyla_ east of the
+Isthmus of Tehuantepec, members of the genus occur with species of
+_Plectrohyla_, all of which are larger than _Ptychohyla_, and all of
+which have tadpoles that live in torrential streams. Tadpoles of
+_Ptychohyla spinipollex_ have been found in streams inhabited by the
+tadpoles of _Plectrohyla guatemalensis_ and _P. quecchi_; tadpoles of
+_Ptychohyla euthysanota euthysanota_ and _P. schmidtorum schmidtorum_
+were found in streams inhabited by tadpoles of _Plectrohyla
+guatemalensis_, _P. matudai_, and _P. sagorum_. In some streams great
+numbers of tadpoles occur. The habitat is rather restricted, and the
+food supply is limited. Consequently, interspecific competition among
+the various species of hylids whose tadpoles live in the torrential
+streams probably is highest during the larval stage. Unfortunately,
+this aspect of salientian population ecology has received no intensive
+study.
+
+
+
+
+                     Reproduction and Development
+
+Since the cloud forests inhabited by _Ptychohyla_ are daily bathed in
+clouds and have a fairly evenly distributed rainfall throughout the
+year, the frogs living in these forests are active throughout the
+year. At least some of the species evidently have a long breeding
+season, for I found calling males of _P. leonhardschultzei_ in
+February, March, and August, and found tadpoles in February, March,
+June, and August. Tadpoles of the various species have been obtained
+throughout much of the year, as follows: _P. euthysanota euthysanota_,
+February, March, May, and July; _P. euthysanota macrotympanum_, March,
+June, and August; _P. spinipollex_, February, March, April, June,
+July, and August; _P. schmidtorum schmidtorum_, March, May, June,
+July, and August; _P. schmidtorum chamulae_, June and August; _P.
+ignicolor_, June. I suspect that this temporal distribution more
+accurately reflects the seasonal activities of collectors than of the
+frogs.
+
+Calling frogs usually are on vegetation adjacent to or overhanging
+streams; some calling males of _P. spinipollex_ were on rocks in or by
+streams. Clasping pairs of _P. euthysanota_ and _P. schmidtorum_ were
+observed on vegetation by streams. Despite intensive search, no eggs
+were found. It is doubtful if _Ptychohyla_ deposit eggs on vegetation
+overhanging streams, as do centrolenids and _Phyllomedusa_, for
+egg-clutches of these frogs are easily found. Possibly the eggs are
+laid separately on vegetation above the stream, in which case they
+could be overlooked easily. In streams where _Ptychohyla_ and other
+hylid tadpoles occur, empty egg capsules have been found on the lee
+sides of rocks, but there is no way to determine which species laid
+the eggs.
+
+Numbers of eggs were counted in gravid females; the largest eggs have
+diameters ranging from 2.5 to 3.0 mm. The smaller species, comprising
+the _Ptychohyla schmidtorum_ group, have fewer eggs than do the larger
+species. Numbers of eggs found in females of the various species are:
+_P. euthysanota euthysanota_, 108; _P. euthysanota macrotympanum_, 136,
+160; _P. leonhardschultzei_, 141; _P. spinipollex_, 119, 134, 143;
+_P. schmidtorum schmidtorum_, 59, 61, 90; _P. schmidtorum chamulae_,
+60, 71, 89.
+
+Duration of the larval stage is unknown. Metamorphosing young have
+been found from May through August. From two to six completely
+metamorphosed young are available for each of the species, except for
+_P. ignicolor_ of which none is available. The smallest young frog is
+a _P. euthysanota_ having a snout-vent length of 14.2 mm.; the largest
+young frog is a _P. schmidtorum schmidtorum_ having a snout-vent
+length of 17.0 mm.
+
+
+
+
+                       PHYLOGENY OF PTYCHOHYLA
+
+
+The preceding data on morphology, life histories, and behavior form
+the basis for the following interpretation of the phylogeny of
+_Ptychohyla_. Additional data are needed to support some of the ideas
+discussed below; many of the data that are available for _Ptychohyla_
+are lacking for other, possibly related, hylids. The family Hylidae is
+composed of several hundred species, and most of the species are
+poorly known. Consequently, any attempt to place _Ptychohyla_ in the
+over-all scheme of hylid phylogeny would be premature at this time.
+But, as between the five species of two species-groups here recognized
+as constituting the genus _Ptychohyla_, some estimate of relationships
+can be made. First, it is necessary to determine the validity of the
+genus itself.
+
+
+                  Ptychohyla as a Natural Assemblage
+
+As stated in the diagnosis of the genus, the only character that sets
+this group of species apart from other hylids is the presence of
+ventrolateral glands in the breeding males. To many systematists the
+thought of being able to identify to genus only breeding males is
+sufficiently disturbing to cause them to view with disfavor the
+recognition of the genus. Nonetheless, the question is raised: Do the
+five species herein placed in the genus _Ptychohyla_ constitute a
+natural assemblage? If the genus is considered to be more than a
+category of convenience, that is to say, a group of related species
+having a common origin, the primary problem is to determine whether or
+not the five species form a phylogenetic unit.
+
+The species of _Ptychohyla_ are divided into two groups on the basis
+of external morphology, breeding calls, and tadpoles. The _Ptychohyla
+euthysanota_ group seems to be a natural group composed of three
+species, all of which are more closely related to one another than to
+any other hylid. Likewise, the species comprising the _Ptychohyla
+schmidtorum_ group seem to represent a natural unit. If the presence
+of ventrolateral glands in breeding males is ignored, a student of
+salientian systematics might derive the _Ptychohyla euthysanota_ group
+from a hylid stock containing _Hyla miotympanum_ and _Hyla
+mixomaculata_. Likewise, _Ptychohyla schmidtorum_ could be placed with
+_Hyla uranochroa_ and related species in Costa Rica. Nonetheless, the
+fact remains that all of the species assigned to the genus
+_Ptychohyla_ have ventrolateral glands in the breeding males;
+furthermore, ventrolateral glands are unknown in other hylids. If the
+_P. schmidtorum_ group and the _P. euthysanota_ group each evolved
+from separate hylid stocks, then the ventrolateral glands must have
+developed independently in both groups. That ventrolateral glands
+developed independently in five species of frogs in southern México
+and northern Central America and not in any of the other approximately
+500 species of hylids in the world is untenable. It is more logical to
+assume that the development of the glands took place only once in a
+stock of hylids that gave rise to the five species herein recognized
+as members of the genus _Ptychohyla_.
+
+
+
+
+                        Generic Relationships
+
+The affinities of _Ptychohyla_ apparently are not with any of the
+other groups that have been generically separated from _Hyla_. Of the
+daughter genera in Middle America only _Plectrohyla_ has
+stream-adapted tadpoles, but these large frogs are not closely related
+to _Ptychohyla_. Stuart (1954:169) suggested that certain montane
+species of _Hyla_ in lower Central America and _Hyla salvadorensis_ in
+El Salvador may be related to _Ptychohyla_ or even congeneric. I have
+had experience with most of these species in the field and believe
+that Stuart was correct in his suggestion of relationships. The
+species concerned are four red-eyed stream-breeding _Hyla_ in Costa
+Rica--_H. alleei_, _H. legleri_, _H. rufioculis_, and _H. uranochroa_,
+plus _Hyla salvadorensis_ in the mountains of El Salvador.
+Morphologically all of the species are similar; _Hyla uranochroa_, _H.
+legleri_, and _H. rufioculis_ have a lateral white stripe that is
+expanded to form a spot beneath the eye, as in _Ptychohyla
+schmidtorum_. The tadpoles of _Hyla rufioculis_ and _H. uranochroa_
+have large funnel-shaped mouths and long slender tails like those of
+_Ptychohyla schmidtorum_. Lips of the tadpoles of _H. legleri_ and _H.
+salvadorensis_ are folded laterally, in this respect resembling those
+of the _Ptychohyla euthysanota_ group. I do not know the tadpoles and
+the breeding call of _Hyla alleei_. The breeding calls of _Hyla
+rufioculis_ and _H. uranochroa_ consist of high melodious notes; the
+calls of _H. legleri_ and _H. salvadorensis_ consist of series of
+short notes that have the general characteristics of the call of
+_Ptychohyla schmidtorum_. Affinities of the genus _Ptychohyla_ seem to
+me to be with the red-eyed species forming the _Hyla uranochroa_ group
+in Costa Rica. All of the species in the _Hyla uranochroa_ group have
+large frontoparietal fontanelles, rather small ethmoids, and small
+nasals that are not in contact with one another or with the ethmoid.
+Some species have a complete quadratojugal-maxillary arch; others do
+not. Assuming that the parental stock that gave rise both to the _Hyla
+uranochroa_ group and to _Ptychohyla_ was widespread in Central
+America at a time of cooler, more humid conditions, it is possible
+that with subsequent warming temperatures and seasonal rainfall in the
+lowlands the parental stock was restricted to the Costa Rican
+highlands, where the _Hyla uranochroa_ group developed, and to the
+Chiapas-Guatemala highlands, where _Ptychohyla_ evolved.
+
+
+
+
+                     Interspecific Relationships
+
+_Ptychohyla schmidtorum_ is thought to resemble more closely the
+parental stock of the genus than does any other species of
+_Ptychohyla_ now extant. This parental stock is discussed above in the
+account of the generic relationships. _Ptychohyla schmidtorum_ has a
+red eye, white lateral stripe, frontoparietal fontanelle,
+funnel-shaped mouth in tadpoles, and lacks nuptial spines; in all of
+these characters it resembles members of the _Hyla uranochroa_ group.
+Probably during times of glaciation during the Pleistocene, when
+climates in México and Central America were depressed, the
+_Ptychohyla_ stock was more widespread than it is now. Subsequent
+elevation of climatic zones during interglacial periods would have
+isolated populations as they are today in regions of cloud forests.
+Thus, through geographic isolation populations could have
+differentiated and evolved into the present species. Climatic
+fluctuation in the Pleistocene must have been of sufficient magnitude
+to permit the spread of cool, moist forests containing _Ptychohyla_
+across the Isthmus of Tehuantepec into the mountains of Oaxaca.
+
+Because of its small nuptial spines, small triangular vomers,
+coloration, and absence of a rostral keel, _Ptychohyla euthysanota_,
+more than any of the other species in the _P. euthysanota_ group,
+resembles _P. schmidtorum_. At the present time _P. euthysanota_ and
+_P. schmidtorum_ are sympatric.
+
+As I have mentioned previously, ecological segregation and
+interspecific competition probably is highly developed in the tadpoles
+of _Ptychohyla_. If this ecological segregation resulted from
+intraspecific competition in a stock of _Ptychohyla_, possibly _P.
+euthysanota_ and _P. schmidtorum_ differentiated sympatrically in this
+way. Specific identity is maintained, at least in part, by different
+breeding calls in males.
+
+_Ptychohyla spinipollex_ and _P. leonhardschultzei_ seem to be more
+closely related to one another than either is to _P. euthysanota_.
+Probably a stock of _P. euthysanota_ was isolated on the Atlantic
+slopes of northern Central America from _P. euthysanota_ on the
+southern slopes. The frogs on the Atlantic slopes differentiated and
+spread into the mountains of Oaxaca, where through isolation by the
+barrier of the Isthmus of Tehuantepec they developed into _P.
+leonhardschultzei_, while the stock on the northern slopes of Central
+America evolved into _P. spinipollex_. Subsequent to the
+differentiation of _P. leonhardschultzei_ and _P. spinipollex_ from
+_P. euthysanota_ and during a time of cooler more equable climate than
+exists now, _P. euthysanota_ and _P. schmidtorum_ invaded the Central
+Highlands of Chiapas. Subsequent climatic changes isolated populations
+of each in the Central Highlands, where _P. euthysanota macrotympanum_
+and _P. schmidtorum chamulae_ evolved. _Ptychohyla ignicolor_ probably
+represents stock of _P. schmidtorum_ that crossed the Isthmus of
+Tehuantepec and became isolated in Oaxaca on the western side of the
+isthmus.
+
+
+
+
+                           LITERATURE CITED
+
+
+    AHL, E.
+        1934. Über eine sammlung von Reptilien und Amphibien aus
+              Mexiko, Zool. Anz., 106:184-186, April 15.
+
+    BLAIR, W. F.
+        1956. Call difference as an isolation mechanism in
+              southwestern toads (genus _Bufo_). Texas Jour. Sci.,
+              8:87-106, March.
+
+    DUELLMAN, W. E.
+        1956. The frogs of the hylid genus _Phrynohyas_ Fitzinger,
+              1843. Misc. Publ. Mus. Zool. Univ. Michigan, 96:1-47,
+              pls. 1-6, February 21.
+
+        1960. Synonymy, variation, and distribution of _Ptychohyla
+              leonhardschultzei_ Ahl. Studies of American Hylid Frogs,
+              IV. Herpetologica, 16:191-197, September 23.
+
+        1961. Descriptions of two species of frogs, genus Ptychohyla.
+              Studies of American Hylid Frogs, V. Univ. Kansas Publ.
+              Mus. Nat. Hist., 13:349-357, pl. 25, April 27.
+
+    FOUQUETTE, M. J.
+        1960. Isolating mechanisms in three sympatric treefrogs in the
+              Canal Zone. Evolution, 14:484-497, December.
+
+    KELLOGG, R.
+        1928. An apparently new _Hyla_ from El Salvador. Proc. Biol.
+              Soc. Washington, 41:123-124, June 29.
+
+    MERTENS, R.
+        1952. Die Amphibien und Reptilien von El Salvador.
+              Senckenbergischen Naturf. Gesell., 487:1-120, pls. 1-16,
+              December 1.
+
+    RIDGWAY, R.
+        1912. Color standards and color nomenclature. Washington,
+              D. C., 44 pp., 53 pls.
+
+    SHANNON, F. A.
+        1951. Notes on a herpetological collection from Oaxaca and
+              other localities in Mexico. Proc. U. S. Nat. Mus.,
+              101:465-484, May 17.
+
+    STUART, L. C.
+        1954. Descriptions of some new amphibians and reptiles from
+              Guatemala. Proc. Biol. Soc. Washington, 67:159-178,
+              August 5.
+
+    TANNER, W. W.
+        1957. Notes on a collection of amphibians and reptiles from
+              southern Mexico, with a description of a new _Hyla_.
+              Great Basin Nat., 17:52-56, July 31.
+
+    TAYLOR, E. H.
+        1937. New species of hylid frogs from Mexico with comments on
+              the rare _Hyla bistincta_ Cope. Proc. Biol. Soc.
+              Washington, 50:43-54, pls. 2-3, April 21.
+
+        1942. New tailless amphibia from Mexico. Univ. Kansas Sci.
+              Bull., 28: 67-89, May 15.
+
+        1944. A new genus and species of Mexican frogs. Univ. Kansas
+              Sci. Bull., 30:41-45, June 12.
+
+        1949. New or unusual Mexican amphibians. Amer. Mus. Novitates,
+              1437:1-21, December 7.
+
+
+_Transmitted December 27, 1962._
+
+
+
+
+      UNIVERSITY OF KANSAS PUBLICATIONS MUSEUM OF NATURAL HISTORY
+
+
+Institutional libraries interested in publications exchange may obtain
+this series by addressing the Exchange Librarian, University of Kansas
+Library, Lawrence, Kansas. Copies for individuals, persons working in
+a particular field of study, may be obtained by addressing instead the
+Museum of Natural History, University of Kansas, Lawrence, Kansas.
+There is no provision for sale of this series by the University
+Library, which meets institutional requests, or by the Museum of
+Natural History, which meets the requests of individuals.
+Nevertheless, when individuals request copies from the Museum, 25
+cents should be included, for each separate number that is 100 pages
+or more in length, for the purpose of defraying the costs of wrapping
+and mailing.
+
+* An asterisk designates those numbers of which the Museum's supply
+(not the Library's supply) is exhausted. Numbers published to date, in
+this series, are as follows:
+
+
+     Vol.  1. Nos. 1-26 and index. Pp. 1-638, 1946-1950.
+
+    *Vol.  2. (Complete) Mammals of Washington. By Walter W. Dalquest.
+                  Pp. 1-444, 140 figures in text. April 9, 1948.
+
+     Vol.  3. *1. The avifauna of Micronesia, its origin, evolution,
+                  and distribution. By Rollin H. Baker. Pp. 1-359,
+                  16 figures in text. June 12, 1951.
+
+              *2. A quantitative study of the nocturnal migration of
+                  birds. By George H. Lowery, Jr. Pp. 361-472,
+                  47 figures in text. June 29, 1951.
+
+               3. Phylogeny of the waxwings and allied birds. By M.
+                  Dale Arvey. Pp. 473-530, 49 figures in text,
+                  13 tables. October 10, 1951.
+
+              *4. Birds from the state of Veracruz, Mexico. By George
+                  H. Lowery, Jr., and Walter W. Dalquest. Pp. 531-649,
+                  7 figures in text, 2 tables. October 10, 1951.
+
+              Index. Pp. 651-681.
+
+    *Vol.  4. (Complete) American weasels. By E. Raymond Hall.
+                  Pp. 1-466, 41 plates, 31 figures in text.
+                  December 27, 1951.
+
+     Vol.  5. Nos. 1-37 and index. Pp. 1-676, 1951-1953.
+
+    *Vol.  6. (Complete) Mammals of Utah, _taxonomy and distribution_.
+                  By Stephen D. Durrant. Pp. 1-549, 91 figures in text,
+                  30 tables. August 10, 1952.
+
+     Vol.  7. Nos. 1-15 and index. Pp. 1-651, 1952-1955.
+
+     Vol.  8. Nos. 1-10 and index. Pp. 1-675, 1954-1956.
+
+     Vol.  9. *1. Speciation of the wandering shrew. By James S.
+                  Findley. Pp. 1-68, 18 figures in text.
+                  December 10, 1955.
+
+               2. Additional records and extension of ranges of mammals
+                  from Utah. By Stephen D. Durrant, M. Raymond Lee, and
+                  Richard M. Hansen. Pp. 69-80. December 10, 1955.
+
+               3. A new long-eared myotis (Myotis evotis) from
+                  northeastern Mexico. By Rollin H. Baker and Howard J.
+                  Stains. Pp. 81-84. December 10, 1955.
+
+               4. Subspeciation in the meadow mouse, Microtus
+                  pennsylvanicus, in Wyoming. By Sydney Anderson.
+                  Pp. 85-104, 2 figures in text. May 10, 1956.
+
+               5. The condylarth genus Ellipsodon. By Robert W. Wilson.
+                  Pp. 105-116, 6 figures in text. May 19, 1956.
+
+               6. Additional remains of the multituberculate genus
+                  Eucosmodon. By Robert W. Wilson. Pp. 117-123,
+                  10 figures in text. May 19, 1956.
+
+               7. Mammals of Coahulia, Mexico. By Rollin H. Baker.
+                  Pp. 125-335, 75 figures in text. June 15, 1956.
+
+               8. Comments on the taxonomic status of Apodemus
+                  peninsulae, with description of a new subspecies
+                  from North China. By J. Knox Jones, Jr. Pp. 337-346,
+                  1 figure in text, 1 table. August 15, 1956.
+
+               9. Extensions of known ranges of Mexican bats. By
+                  Sydney Anderson. Pp. 347-351. August 15, 1956.
+
+              10. A new bat (Genus Leptonycteris) from Coahulia. By
+                  Howard J. Stains. Pp. 353-356. January 21, 1957.
+
+              11. A new species of pocket gopher (Genus Pappogeomys)
+                  from Jalisco, Mexico. By Robert J. Russell.
+                  Pp. 357-361. January 21, 1957.
+
+              12. Geographic variation in the pocket gopher, Thomomys
+                  bottae, in Colorado. By Phillip M. Youngman.
+                  Pp. 363-387, 7 figures in text. February 21, 1958.
+
+              13. New bog lemming (genus Synaptomys) from Nebraska.
+                  By J. Knox Jones, Jr. Pp. 385-388. May 12, 1958.
+
+              14. Pleistocene bats from San Josecito Cave, Nuevo León,
+                  México. By J. Knox Jones, Jr. Pp. 389-396.
+                  December 19, 1958.
+
+              15. New subspecies of the rodent Baiomys from Central
+                  America. By Robert L. Packard. Pp. 397-404.
+                  December 19, 1958.
+
+              16. Mammals of the Grand Mesa, Colorado. By Sydney
+                  Anderson. Pp. 405-414, 1 figure in text,
+                  May 20, 1959.
+
+              17. Distribution, variation, and relationships of the
+                  montane vole, Microtus montanus. By Sydney Anderson.
+                  Pp. 415-511, 12 figures in text, 2 tables.
+                  August 1, 1959.
+
+              18. Conspecificity of two pocket mice, Perognathus
+                  goldmani and P. artus. By E. Raymond Hall and Marilyn
+                  Bailey Ogilvie. Pp. 513-518, 1 map. January 14, 1960.
+
+              19. Records of harvest mice, Reithrodontomys, from
+                  Central America, with description of a new subspecies
+                  from Nicaragua. By Sydney Anderson and J. Knox Jones,
+                  Jr. Pp. 519-529. January 14, 1960.
+
+              20. Small carnivores from San Josecito Cave (Pleistocene),
+                  Nuevo León, México. By E. Raymond Hall. Pp. 531-538,
+                  1 figure in text. January 14, 1960.
+
+              21. Pleistocene pocket gophers from San Josecito Cave,
+                  Nuevo León, México. By Robert J. Russell.
+                  Pp. 539-548,1 figure in text. January 14, 1960.
+
+              22. Review of the insectivores of Korea. By J. Knox
+                  Jones, Jr., and David H. Johnson. Pp. 549-578.
+                  February 23, 1960.
+
+              23. Speciation and evolution of the pygmy mice, genus
+                  Baimoys. By Robert L. Packard. Pp. 579-670, 4 plates,
+                  12 figures in text. June 16, 1960.
+
+             Index. Pp. 671-690
+
+     Vol. 10.  1. Studies of birds killed in nocturnal migration. By
+                  Harrison B. Tordoff and Robert M. Mengel. Pp. 1-44,
+                  6 figures in text, 2 tables. September 12, 1956.
+
+               2. Comparative breeding behavior of Ammospiza caudacuta
+                  and A. maritima. By Glen E. Woolfenden. Pp. 45-75,
+                  6 plates, 1 figure. December 20, 1956.
+
+               3. The forest habitat of the University of Kansas
+                  Natural History Reservation. By Henry S. Fitch and
+                  Ronald R. McGregor. Pp. 77-127, 2 plates, 7 figures
+                  in text, 4 tables. December 31, 1956.
+
+               4. Aspects of reproduction and development in the
+                  prairie vole (Microtus ochrogaster). By Henry S.
+                  Fitch. Pp. 129-161, 8 figures in text, 4 tables.
+                  December 19, 1957.
+
+               5. Birds found on the Arctic slope of northern Alaska.
+                  By James W. Bee. Pp. 163-211, plates 9-10, 1 figure
+                  in text. March 12, 1958.
+
+              *6. The wood rats of Colorado: distribution and ecology.
+                  By Robert B. Finley, Jr. Pp. 213-552, 34 plates,
+                  8 figures in text, 35 tables. November 7, 1958.
+
+               7. Home ranges and movements of the eastern cottontail
+                  in Kansas. By Donald W. Janes. Pp. 553-572, 4 plates,
+                  3 figures in text. May 4, 1959.
+
+               8. Natural history of the salamander, Aneides hardyi.
+                  By Richard F. Johnston and Gerhard A. Schad.
+                  Pp. 573-585. October 8, 1959.
+
+               9. A new subspecies of lizard, Cnemidophorus sacki,
+                  from Michoacán, México. By William E. Duellman.
+                  Pp. 587-598, 2 figures in text. May 2, 1960.
+
+              10. A taxonomic study of the middle American snake,
+                  Pituophis deppei. By William E. Duellman.
+                  Pp. 599-610, 1 plate, 1 figure in text. May 2, 1960.
+
+              Index. Pp. 611-626.
+
+     Vol. 11. Nos. 1-10 and index. Pp. 1-703, 1958-1960.
+
+     Vol. 12.  1. Functional morphology of three bats: Sumops, Myotis,
+                  Macrotus. By Terry A. Vaughan. Pp. 1-153, 4 plates,
+                  24 figures in text. July 8, 1959.
+
+              *2. The ancestry of modern Amphibia: a review of the
+                  evidence. By Theodore H. Eaton, Jr. Pp. 155-180,
+                  10 figures in text. July 10, 1959.
+
+               3. The baculum in microtine rodents. By Sydney Anderson.
+                  Pp. 181-216, 49 figures in text. February 19, 1960.
+
+              *4. A new order of fishlike Amphibia from the
+                  Pennsylvanian of Kansas. By Theodore H. Eaton, Jr.,
+                  and Peggy Lou Stewart. Pp. 217-240, 12 figures in
+                  text. May 2, 1960.
+
+               5. Natural history of the bell vireo. By Jon C. Barlow.
+                  Pp. 241-296, 6 figures in text. March 7, 1962.
+
+               6. Two new pelycosaurs from the lower Permian of
+                  Oklahoma. By Richard C. Fox. Pp. 297-307, 6 figures
+                  in text. May 21, 1962.
+
+               7. Vertebrates from the barrier island of Tamaulipas,
+                  México. By Robert K. Selander, Richard F. Johnston,
+                  B. J. Wilks, and Gerald G. Raun. Pp. 309-345,
+                  pls. 5-8. June 18, 1962.
+
+               8. Teeth of Edestid sharks. By Theodore H. Eaton, Jr.
+                  Pp. 347-362, 10 figures in text. October 1, 1962.
+
+              More numbers will appear in volume 12.
+
+
+     Vol. 13.  1. Five natural hybrid combinations in minnows
+                  (Cyprinidae). By Frank B. Cross and W. L. Minckley.
+                  Pp. 1-18. June 1, 1960.
+
+               2. A distributional study of the amphibians of the
+                  Isthmus of Tehuantepec, México. By William E.
+                  Duellman. Pp. 19-72, pls. 1-8, 3 figures in text.
+                  August 16, 1960.
+
+               3. A new subspecies of the slider turtle (Pseudemys
+                  scripta) from Coahulia, México. By John M. Legler.
+                  Pp. 73-84, pls. 9-12, 3 figures in text.
+                  August 16, 1960.
+
+               4. Autecology of the copperhead. By Henry S. Fitch.
+                  Pp. 85-288, pls. 13-20, 26 figures in text.
+                  November 30, 1960.
+
+               5. Occurrence of the garter snake, Thamnophis sirtalis,
+                  in the Great Plains and Rocky Mountains. By Henry S.
+                  Fitch and T. Paul Maslin. Pp. 289-308, 4 figures in
+                  text. February 10, 1961.
+
+               6. Fishes of the Wakarusa river in Kansas. By James E.
+                  Deacon and Artie L. Metcalf. Pp. 309-322, 1 figure
+                  in text. February 10, 1961.
+
+               7. Geographic variation in the North American cyprinid
+                  fish, Hybopsis gracilis. By Leonard J. Olund and
+                  Frank B. Cross. Pp. 323-348, pls. 21-24, 2 figures
+                  in text. February 10, 1961.
+
+               8. Descriptions of two species of frogs, genus
+                  Ptychohyla; studies of American hylid frogs, V.
+                  By William E. Duellman. Pp. 349-357, pl. 25,
+                  2 figures in text. April 27, 1961.
+
+               9. Fish populations, following a drought, in the Neosho
+                  and Marais des Cygnes rivers of Kansas. By James
+                  Everett Deacon. Pp. 359-427, pls. 26-30, 3 figs.
+                  August 11, 1961.
+
+              10. Recent soft-shelled turtles of North America (family
+                  Trionychidae). By Robert G. Webb. Pp. 429-611,
+                  pls. 31-54, 24 figures in text, February 16, 1962.
+
+              Index. Pp. 613-624.
+
+     Vol. 14.  1. Neotropical bats from western México. By Sydney
+                  Anderson. Pp. 1-8. October 24, 1960.
+
+               2. Geographic variation in the harvest mouse.
+                  Reithrodontomys megalotis, on the central Great
+                  Plains and in adjacent regions. By J. Knox Jones, Jr.,
+                  and B. Mursaloglu. Pp. 9-27, 1 figure in text.
+                  July 24, 1961.
+
+               3. Mammals of Mesa Verde National Park, Colorado.
+                  By Sydney Anderson. Pp. 29-67, pls. 1 and 2,
+                  3 figures in text. July 24, 1961.
+
+               4. A new subspecies of the black myotis (bat) from
+                  eastern Mexico. By E. Raymond Hall and Ticul Alvarez.
+                  Pp. 69-72, 1 figure in text. December 29, 1961.
+
+               5. North American yellow bats, "Dasypterus," and a list
+                  of the named kinds of the genus Lasiurus Gray.
+                  By E. Raymond Hall and J. Knox Jones, Jr. Pp. 73-98,
+                  4 figures in text. December 29, 1961.
+
+               6. Natural history of the brush mouse (Peromyscus
+                  boylii) in Kansas with description of a new
+                  subspecies. By Charles A. Long. Pp. 99-111, 1 figure
+                  in text. December 29, 1961.
+
+               7. Taxonomic status of some mice of the Peromyscus
+                  boylii group in eastern Mexico, with description of
+                  a new subspecies. By Ticul Alvarez. Pp. 113-120,
+                  1 figure in text. December 29, 1961.
+
+               8. A new subspecies of ground squirrel (Spermophilus
+                  spilosoma) from Tamaulipas, Mexico. By Ticul Alvarez.
+                  Pp. 121-124. March 7, 1962.
+
+               9. Taxonomic status of the free-tailed bat, Tadarida
+                  yucatanica Miller. By J. Knox Jones, Jr., and Ticul
+                  Alvarez. Pp. 125-133, 1 figure in text.
+                  March 7, 1962.
+
+              10. A new doglike carnivore, genus Cynaretus, from the
+                  Clarendonian Pliocene, of Texas. By E. Raymond Hall
+                  and Walter W. Dalquest. Pp. 135-138, 2 figures in
+                  text. April 30, 1962.
+
+              11. A new subspecies of wood rat (Neotoma) from
+                  northeastern Mexico. By Ticul Alvarez. Pp. 139-143.
+                  April 30, 1962.
+
+              12. Noteworthy mammals from Sinaloa, Mexico. By J. Knox
+                  Jones, Jr., Ticul Alvarez, and M. Raymond Lee.
+                  Pp. 145-159, 1 figure in text. May 18, 1962.
+
+              13. A new bat (Myotis) from Mexico. By E. Raymond Hall.
+                  Pp. 161-164, 1 figure in text. May 21, 1962.
+
+              14. The mammals of Veracruz. By E. Raymond Hall and
+                  Walter W. Dalquest. Pp. 165-362, 2 figures.
+                  May 20, 1963.
+
+              15. The recent mammals of Tamaulipas, México. By Ticul
+                  Alvarez. Pp. 363-473, 5 figures in text.
+                  May 20, 1963.
+
+              More numbers will appear in volume 14.
+
+     Vol. 15.  1. The amphibians and reptiles of Michoacán, México.
+                  By William E. Duellman. Pp. 1-148, pls. 1-6,
+                  11 figures in text. December 20, 1961.
+
+               2. Some reptiles and amphibians from Korea. By Robert
+                  G. Webb, J. Knox Jones, Jr., and George W. Byers.
+                  Pp. 149-173. January 31, 1962.
+
+               3. A new species of frog (Genus Tomodactylus) from
+                  western México. By Robert G. Webb. Pp. 175-181,
+                  1 figure in text. March 7, 1962.
+
+               4. Type specimens of amphibians and reptiles in the
+                  Museum of Natural History, the University of Kansas.
+                  By William E. Duellman and Barbara Berg. Pp. 183-204.
+                  October 26, 1962.
+
+               5. Amphibians and Reptiles of the Rainforests of
+                  Southern El Petén, Guatemala. By William E. Duellman.
+                  Pp. 205-249, pls. 7-10, 6 figures in text.
+                  October 4, 1963.
+
+               6. A revision of snakes of the genus Conophis (Family
+                  Colubridae, from Middle America). By John Wellman.
+                  Pp. 251-295, 9 figures in text. October 4, 1963.
+
+               7. A review of the Middle American tree frogs of the
+                  genus Ptychohyla. By William E. Duellman.
+                  Pp. 297-349, pls. 11-18, 7 figures in text.
+                  October 18, 1963.
+
+              More numbers will appear in volume 15.
+
+
+    *     *     *     *     *     *     *
+
+Transcriber's Notes.
+
+This file was derived from scanned images. With the exception of the
+list of typographical errors that were corrected below, the original
+text is presented.
+
+In the original, the Plates were grouped together between pages 328
+and 329. Here the Illustration: block which contains the text
+associated with the Plates were moved just above the text in their
+respective Systematic Account listing. The Plate text contain the
+notation "× 2" after the caption to let the reader know that the image
+was enlarged by a factor of two.
+
+
+Typographical Errors Corrected:
+
+Several minor typographical corrections were made (missing periods,
+commas, misspelling of 'and', etc.); but are not indicated here. More
+substantial changes are listed below:
+
+   References to the Plate 11 (Audiograms):
+        Pl. 1A, Pl. 1B, etc.=> Pl. 11A, Pl. 11B, etc.
+   Page 301, Paragraph 1: know => known
+   Page 302, Paragraph 1: Zoolegy => Zoology
+   Page 303, Paragraph 5: speces => species
+   Page 305, Paragraph 1: excresences => excrescences
+   Page 308, Paragraph 6: xiphisterum => xiphisternum
+   Page 316, Paragraph 3: with => width
+   Page 327, Paragraph 1: leonhard-schultzei => leonhardschultzei
+        to match remaining report text
+   Page 331, Paragraph 1: skelton => skeleton
+   Publication List Vol. 13, No. 8.: Decriptions => Descriptions
+
+
+
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK A REVIEW OF THE MIDDLE AMERICAN TREE FROGS OF THE GENUS PTYCHOHYLA ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

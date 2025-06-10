@@ -1,0 +1,4686 @@
+﻿The Project Gutenberg eBook of A Synopsis of the North American Lagomorpha
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: A Synopsis of the North American Lagomorpha
+
+Author: E. Raymond Hall
+
+Release date: May 19, 2010 [eBook #32426]
+
+Language: English
+
+Credits: Produced by Chris Curnow, Simon Gardner, Joseph Cooper and
+        the Online Distributed Proofreading Team at
+        http://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK A SYNOPSIS OF THE NORTH AMERICAN LAGOMORPHA ***
+
+
+
+
+Produced by Chris Curnow, Simon Gardner, Joseph Cooper and
+the Online Distributed Proofreading Team at
+http://www.pgdp.net
+
+
+
+
+
+
+
+TRANSCRIBER'S NOTES:
+
+This text version uses the UTF-8 Unicode character set.
+
+Bold typeface in the original is indicated by the use of =equals signs=.
+
+Italic typeface in the original is indicated by the use of
+_underscores_.
+
+Small capital typeface in the original is indicated by the use of UPPER
+CASE.
+
+Minor inconsistencies in punctuation in the original have been corrected
+in this version. Inconsistent spellings have mainly been retained except
+for corrections as listed after the end of the book.
+
+       *       *       *       *       *
+
+
+
+    A Synopsis of the North American Lagomorpha
+
+
+                      BY
+
+                E. RAYMOND HALL
+
+        University of Kansas Publications
+            Museum of Natural History
+
+  Volume 5, No. 10, pp. 119-202, 68 figures in text
+                December 15, 1951
+
+              University of Kansas
+
+                    LAWRENCE
+
+                      1951
+
+
+UNIVERSITY OF KANSAS PUBLICATIONS
+
+
+The University of Kansas Publications, Museum of Natural History, are
+offered in exchange for the publications of learned societies and
+institutions, universities and libraries. For exchanges and information,
+address the EXCHANGE DESK, UNIVERSITY OF KANSAS LIBRARY, LAWRENCE,
+KANSAS, U. S. A.
+
+    MUSEUM OF NATURAL HISTORY.--E. Raymond Hall, Chairman, Editorial
+    Committee.
+
+    This series contains contributions from the Museum of Natural
+    History. Cited as Univ. Kans. Publ., Mus. Nat. Hist.
+
+  Vol. 1. (Complete) Nos. 1-26. Pp. 1-638. August 15, 1946-January 20,
+             1951.
+
+  Vol. 2. (Complete) Mammals of Washington. By Walter W. Dalquest. Pp.
+             1-444, 140 figures in text. April 9, 1948.
+
+  Vol. 3. 1. The avifauna of Micronesia its origin, evolution, and
+             distribution. By Rollin H. Baker. Pp. 1-359, 16 figures in
+             text. June 12, 1951.
+
+          2. A quantitative study of the nocturnal migration of birds.
+             Pp. 361-472, 47 figures in text. June 29, 1951.
+
+          3. Phylogeny of the waxwings and allied birds. By M. Dale Arvey.
+             Pp. 473-530, 49 figures in text, 13 tables. October 10, 1951.
+
+          4. Birds from the state of Veracruz, Mexico. By George H. Lowery,
+             Jr., and Walter W. Dalquest. Pp. 531-649, 7 figures in text, 2
+             tables. October 10, 1951.
+
+  Vol. 4. In press.
+
+  Vol. 5. 1. Preliminary survey of a Paleocene faunule from the Angels Peak
+             Area, New Mexico. By Robert W. Wilson. Pp. 1-11, 1 figure in
+             text. February 24, 1951.
+
+          2. Two new moles (genus Scalopus) from Mexico and Texas. By
+             Rollin H. Baker. Pp. 17-24. February 28, 1951.
+
+          3. Two new pocket gophers from Wyoming and Colorado. By
+             E. Raymond Hall and H. Gordon Montague. Pp. 25-32.
+             February 28, 1951.
+
+          4. Mammals obtained by Dr. Curt von Wedel from the barrier beach
+             of Tamaulipas, Mexico. By E. Raymond Hall. Pp. 33-47, 1
+             figure in text. October 1, 1951.
+
+          5. Comments on the taxonomy and geographic distribution of some
+             North American rabbits. By E. Raymond Hall and Keith R.
+             Kelson. Pp. 49-58. October 1, 1951.
+
+          6. Two new subspecies of Thomomys bottae from New Mexico and
+             Colorado. By Keith R. Kelson. Pp. 59-71, one figure in text.
+             October 1, 1951.
+
+          7. A new subspecies of Microtus montanus from Montana and
+             comments on Microtus canicaudus Miller. By E. Raymond Hall and
+             Keith R. Kelson. Pp. 73-79. October 1, 1951.
+
+          8. A new pocket gopher (genus Thomomys) from Eastern Colorado.
+             By E. Raymond Hall. Pp. 81-85. October 1, 1951.
+
+          9. Mammals taken along the Alaska highway. By Rollin H. Baker.
+             Pp. 87-117, 1 figure in text. November 28, 1951.
+
+         10. A synopsis of the North American Lagomorpha. By E. Raymond
+             Hall. Pp. 110-202, 68 figures in text. December 15, 1951.
+
+
+
+
+    A Synopsis of the North American Lagomorpha
+
+                      BY
+
+                E. RAYMOND HALL
+
+        University of Kansas Publications
+            Museum of Natural History
+
+  Volume 5, No. 10, pp. 119-202, 68 figures in text
+
+                December 15, 1951
+
+              University of Kansas
+
+                    LAWRENCE
+
+                      1951
+
+UNIVERSITY OF KANSAS PUBLICATIONS, MUSEUM OF NATURAL HISTORY
+
+Editors: E. Raymond Hall, Chairman, A. Byron Leonard, Edward H. Taylor,
+Robert W. Wilson
+
+Volume 5, No. 10, pp. 119-202, 68 figures in text December 15, 1951
+
+  UNIVERSITY OF KANSAS
+  Lawrence, Kansas
+
+  PRINTED BY
+  FERD VOILAND, JR., STATE PRINTER
+  TOPEKA, KANSAS
+  1951
+
+  23-7988
+
+
+
+
+A Synopsis of the North American Lagomorpha
+
+BY
+
+E. RAYMOND HALL
+
+
+The most popular small game mammal in nearly every part of North America
+is one or another of the species of rabbits or hares. The rabbit is one
+of the few species of wild game that still is hunted commercially and
+sold for food on the open market. The close association and repeated
+contact of man with these animals has resulted in his contracting such
+of their diseases as are transmissible to him. Consequently the rabbits
+and hares have figured in many investigations concerned with public
+health and medicine. Because the number of such investigations is
+increasing, there has been an increasing number of specimens of these
+animals submitted to mammalogists for identification; also, inquiries
+are received as to the degree of relationship between two or more of the
+named kinds of rabbits in which identical, or closely related, disease
+organisms have been found; other inquiries have to do with the degree of
+relationship of named kinds of rabbits and hares in widely separated
+parts of the continent.
+
+The monographs to which the investigator could turn to obtain answers to
+some of these questions are Arthur H. Howell's "Revision of the American
+Pikas" (1924), and Edward H. Nelson's "The Rabbits of North America"
+(1909) published 27 and 42 years ago, respectively. These monographs are
+still excellent sources of detailed information, as, of course, also is
+Marcus Ward Lyon's "Classification of the Hares and their Allies"
+(1904). The acquisition of additional study specimens in recent years,
+however, has provided new data on the geographic occurrence of several
+species, and study of these specimens has given basis for a different
+arrangement of several named kinds of the lagomorphs. Two principal aims
+of the present synopsis, therefore, are to combine in one publication
+the current taxonomic arrangement and as much as is known of the
+geographic distribution of the several species and subspecies.
+
+The maps herewith and listings of marginal localities are the means
+chosen to present the information on geographic distribution. The
+artificial key is supplemented by line drawings of skulls of certain
+species and by a minimum of text to aid the user of the key. The skulls
+are necessary for the identification of some species of the genus
+_Sylvilagus_. The skins, on the contrary, are essential for the
+identification of the species of the genus _Lepus_ in central Mexico and
+in the Great Basin of the western United States. Consequently, it has
+been impossible to construct a key based on external characters only or
+on cranial features only. Furthermore, the only apparent differences
+between a given pair of species in one region may not be apparent in
+another region where the same two species occur together. A case in
+point is provided by _Sylvilagus floridanus_ and _Sylvilagus nuttallii_
+where the Great Plains meet the eastern flank of the Rocky Mountains and
+where the Sonoran desert meets the southwestern flank of these
+mountains. The details are described by Hall and Kelson (1951:52, 53)
+and are indicated in the part of the accompanying artificial key that
+takes out the species _Sylvilagus nuttallii_. Because of this geographic
+change in specific characters and because of the slight amount of
+difference between certain species of leporids, I have frequently
+resorted to geography, instead of to morphology alone, in constructing
+the artificial key. Despite this fault of the key to the lagomorphs, it,
+and the accompanying account, I hope, will aid workers who need to
+identify kinds of lagomorphs and to know about their geographic
+distribution.
+
+Another reason for presenting a synopsis of the lagomorphs at this time
+is that the presentation may bring suggestions for improvement in the
+arrangement of the kind of information presented here; an account along
+similar lines for all of the kinds of mammals native to North America is
+in prospect. Corrections of, and additions to, the material presented
+here will be welcomed and I shall be especially grateful for suggestions
+as to a more useful arrangement of the data.
+
+In arranging the families, genera and species the aim has been, in each
+category, to list the most primitive members first and to list last the
+one which presents the highest total of specialization. The term _total
+of specialization_ is used here, as Miller (1924:2) used it, to denote
+the sum of the physical modifications which any mammal, or taxonomic
+category of mammals, is supposed by the author to have undergone during
+the course of its development away from its original or generalized
+mammalian stock.
+
+Subspecies of any one species are arranged alphabetically. On the maps,
+of course, the subspecies are shown in their correct geographic
+positions.
+
+For each subspecies, or species if it has not been divided into
+subspecies, there is given (1) the accepted scientific name (selected
+in accordance with the rules of the International Commission of
+Zoological Nomenclature); (2) a citation to the account in which the
+terminal part of the name was first proposed (the original description
+of zoological parlance) followed by a statement of the type locality;
+(3) a citation to the account in which the combination of names
+(generic, specific and subspecific) used in the present account first
+was employed unless the name combination used here is the same as that
+in the original description; (4) synonyms arranged in chronological
+order, and (5) marginal record stations of occurrence.
+
+These marginal records are arranged in clockwise order beginning with
+the northernmost locality. If more than one of the marginal localities
+lies on the line of latitude that is northernmost for a given kind of
+mammal, the westernmost of these is recorded first. The marginal
+localities that are represented by symbols on the corresponding
+distribution map are in Roman type. Italic type is used for those
+marginal localities that could not be represented by symbols on the map
+because undue crowding, or overlapping, of the symbols would have
+occurred. An understanding of how these localities are arranged and
+knowledge as to which of these localities are shown on the map will
+permit a person to associate any symbol on a map with its corresponding
+place name.
+
+Measurements are in millimeters unless otherwise indicated. Capitalized
+color terms are after Ridgway (Color Standards and Color Nomenclature,
+Washington, D. C., 1912), and uncapitalized terms refer to no particular
+color standard. Several of the drawings of skulls were reproduced
+originally in the "Mammals of Nevada" (Hall, 1946) and I am grateful to
+the University of California Press for permission to use them here.
+Those drawings were made by Miss Viola Memmler. The other drawings are
+the work of Mrs. Frieda Abernathy, Mrs. Diane (Danley) Sandidge, and
+Mrs. Virginia (Cassel) Unruh. Initials on the drawings identify the
+individual's work. The study here reported upon was aided by a contract
+between the Office of Naval Research, Department of the Navy, and the
+University of Kansas (NR 161-791). Also, assistance with some of the
+field work was given by the Kansas University Endowment Association and
+by Dr. Curt von Wedel. For the corrected dates on several publications I
+am indebted to Dr. A. Remington Kellogg. For assistance with the
+organization of the data for the present account I am grateful to
+several persons, especially to my wife, Mary F. Hall, and to Dr. Keith
+R. Kelson.
+
+
+
+
+Order LAGOMORPHA--Hares, Rabbits and Pikas
+
+    Families and genera revised by Lyon, Smithsonian Miscl. Coll.,
+    45:321-447, June 15, 1904. For taxonomic status of group see Gidley,
+    Science, n. s., 36:285-286, August 30, 1912.
+
+The order Lagomorpha is old in the geological sense; fossilized bones
+and teeth of both pikas and rabbits are known from deposits of Oligocene
+age and even at that early time the structural features distinguishing
+these animals from other orders were well developed.
+
+A noteworthy character of the order is the presence of four upper
+incisor teeth (instead of only two as in the Rodentia); also, the fibula
+is ankylosed to the tibia and articulates with the calcaneum. Each of
+the first upper incisors has a longitudinal groove on its anterior face.
+
+All lagomorphs are herbivorous. They eat principally leaves and
+non-woody stems although the bark of sprouts and bushes is taken as
+second choice by rabbits and hares.
+
+Correlation of structure and function is well illustrated among the
+lagomorphs by the means which the different species employ to detect and
+escape from their enemies. A gradient series is evident in which the
+pikas and jack rabbits are the extremes. The black-tailed jack rabbit,
+for example, in relation to size of the entire animal, has the longest
+ears and longest hind legs. This kind of lagomorph takes alarm when an
+enemy, for example, a coyote, is yet a long way off. The jack rabbit
+seeks safety in running; even when being overtaken by a pursuer that is
+close behind, the jack rabbit still relies on its running ability
+instead of entering thick brush or a hole in the ground where its
+larger-sized pursuer would be unable to follow. A cottontail has shorter
+ears and shorter hind legs. It allows the enemy to approach more closely
+than the jack rabbit does before running, and then, although relying in
+some measure on its running ability for escape, flees to a burrow or
+thicket for safety from its pursuer. The brush rabbit with ears and hind
+legs shorter than those of the cottontail seldom if ever ventures
+farther than 45 feet away from the edge of dense cover. After an enemy
+is near, the brush rabbit has merely to scamper back into the brush.
+Still shorter of ear and hind leg is the pigmy rabbit which ventures
+outside its burrow to feed only among the tall and closely-spaced bushes
+of sagebrush among which its burrow is dug. Detection of the slightest
+movement of an enemy on the opposite side of the bush sends the pigmy
+rabbit, in one or a few jumps, into the mouth of its burrow and, if
+need be, below ground. The pika, with the shortest ears and legs of all,
+lives in the rock slides and has to do little more than drop off the top
+of a rock into a space between the broken rocks when an enemy is
+detected near enough to the pika to have a chance of seizing it.
+
+The number of molts in a year, depending on the kind of lagomorph,
+varies in adults from one (according to Nelson, 1909:31) in the
+cottontails (genus _Sylvilagus_) to as many as three (according to
+Lyman, 1943, and Severaid, 1945) in the varying hare (_Lepus
+americanus_). Difficulties that I have experienced in attempting to
+account for the variations in color and wear of the pelage of the pika,
+_Ochotona princeps_, on the basis of two molts per year, make me wonder
+if it, too, has three molts. _Lepus townsendii_ certainly has at least
+two molts per year.
+
+
+KEY TO FAMILIES AND GENERA OF LAGOMORPHA
+
+  1.  Hind legs scarcely larger than forelegs; hind foot less than 40;
+      nasals widest anteriorly; no supraorbital process on frontal; five
+      cheek teeth on each side above
+                               Family Ochotonidae, Genus _Ochotona_, p. 125
+
+  1´. Hind legs notably larger than forelegs; hind foot more than 40;
+      nasals widest posteriorly; supraorbital process on frontal; six
+      cheek teeth on each side above
+                                                   Family Leporidae, p. 134
+
+      2.  Interparietal fused with parietals (see fig. 49); hind foot
+          usually more than 105
+                                                      Genus _Lepus_, p. 170
+
+      2´. Interparietal not fused with parietals (see fig. 10); hind foot
+          usually less than 105
+                        Genera _Romerolagus_ and _Sylvilagus_, pp. 137, 138
+
+
+Family OCHOTONIDAE--Pikas
+
+Certain characters in which this family differs from the Leporidae
+(hares and rabbits) are: hind legs scarcely longer than forelegs; ears
+short, approximately as wide as high; no postorbital process on frontal;
+rostrum slender; nasals widest anteriorly; maxilla not conspicuously
+fenestrated; jugal long and projecting far posteriorly to zygomatic arm
+of squamosal; no pubic symphysis; one less cheek-tooth above, the dental
+formula being i. 2/1, c. 0/0, p. 3/2, m. 2/3; second upper maxillary
+tooth unlike third in form; last lower molar simple (not double) or
+absent (in the extinct genus _Oreolagus_); cutting edge of first upper
+incisor V-shaped; mental foramen situated under last lower molar.
+
+
+Genus OCHOTONA Link--Pikas
+
+Revised by A. H. Howell, N. Amer. Fauna, 47:1-57, August 21, 1924.
+
+    1795. _Ochotona_ Link, Beyträge zur Naturgesch, I (pt. 2):74. Type,
+      _Lepus ogotona_ Pallas.
+
+_Characters_.--Five teeth (excluding incisor) in lower jaw; first
+cheek-tooth (p3) with more than one re-entrant angle; columns of lower
+molars angular internally; transverse width of any one column of a
+lower molariform tooth more than double the width of the neck connecting
+it to the other column.
+
+
+Subgenus PIKA Lacépède
+
+    1799. _Pika_ Lacépède, Tableau des Divisions &c., Mamm., p. 9. Type,
+      _Lepus alpinus_ Pallas.
+
+    1904. _Pika_, Lyon, Smiths. Misc. Coll., 45:438, June 15.
+
+_Characters._--Skull flattened; interorbital region wide; maxillary
+orifice roundly triangular; palatal foramina separate from anterior
+palatine foramina.
+
+All of the living members of the family Ochotonidae belong to this
+genus. American pikas all belong to the subgenus _Pika_, which occurs
+also in Eurasia.
+
+The distribution is boreal and the animals live in talus. This broken
+rock at the foot of a cliff provides interstices in which the animals
+live and store grass and herbs. These plant materials are cut for food
+and stacked in piles to dry in the sun, often beneath slabs of rock
+which protect the hay-piles from rain. Pikas are diurnal, active
+throughout the year, and have a characteristic call, "chickck-chickck."
+Young number two to five per litter.
+
+[Illustration: FIGS. 1-4. _Ochotona princeps tutelata_, Greenmonster
+Canyon, 8150 feet, No. 38519 MVZ, ♂, × 1.]
+
+
+KEY TO NOMINAL SPECIES OF OCHOTONA
+
+  1.  North of 58° N latitude; underparts creamy white, without buffy
+      wash; an indistinct grayish "collar" on shoulders
+                                                         _collaris_, p. 126
+
+  1´. South of 58° N latitude; underparts washed with buff; no grayish
+      "collar" on shoulders
+                                                         _princeps_, p. 127
+
+
+=Ochotona collaris= (Nelson)
+
+Collared Pika
+
+    1893. _Lagomys collaris_ Nelson, Proc. Biol. Soc. Washington, 8:117,
+      December 21, type from near head of Tanana River, Alaska.
+
+    1897. [_Ochotona_] _collaris_, Trouessart, Catalogus Mammalium ...,
+      p. 648
+
+    _Marginal records._--Alaska: Mt. McKinley (A. H. Howell, 1924:36).
+    Yukon: head of Coal Creek, Ogilvie Mountains (_ibid._). Mackenzie:
+    mile 63E on Little Keel River, Canol Road (Anderson, 1947:94).
+    Yukon: _Macmillan Pass, mile 282, Canol Road_ (_ibid._); Ross River,
+    mile 96, Canol Road (_ibid._); vic. Teslin Lake (A. H. Howell,
+    1924:36). British Columbia: Tagish Lake (_ibid._); Stonehouse Creek,
+    5½ mi. W jct. Stonehouse Creek and Kelsall River (29088 KU). Alaska:
+    Tanana River (A. H. Howell, 1924:36).
+
+    Upper parts Drab to Light Drab; underparts creamy white; grayish
+    patch on nape and shoulders; skull broad; tympanic bullae large;
+    total length 189; hind foot, 30.
+
+
+=Ochotona princeps=
+
+Pika
+
+Total length, 162-216; hind foot, 25-35; weight of _O. p. tulelata_, 6 ♂
+121 (108-128), 2 ♀ 121 and 129 grams. Upper parts varying from grayish
+to Cinnamon-Buff depending on the subspecies; underparts with wash of
+buff. Eight Nevadan females had an average of 3.1 (2-4) embryos. The
+mode was 3.
+
+OCHOTONA PRINCEPS ALBATA Grinnell.
+
+    1912. _Ochotona albatus_ Grinnell, Univ. California Publ. Zool.,
+      10:125, January 31, type from 11,000 ft., near Cottonwood Lakes,
+      Sierra Nevada, Inyo County, California.
+
+    _Marginal records_ (A. H. Howell, 1924:45).--California: Bullfrog
+    Lake; 10,000 ft., Independence Creek; type locality; Mineral King,
+    E. Fork Kaweah River.
+
+OCHOTONA PRINCEPS BROOKSI A. H. Howell.
+
+    1924. _Ochotona princeps brooksi_ A. H. Howell, N. Amer. Fauna,
+      47:30, August 21, type from Sicamous, British Columbia.
+
+    _Marginal records_.--British Columbia: Mountains E Shuswap Lake
+    (Anderson, 1947:95); type locality; McGillivary Creek, Lillooet
+    Dist. (A. H. Howell, 1924:31).
+
+OCHOTONA PRINCEPS BRUNNESCENS A. H. Howell.
+
+    1919. _Ochotona fenisex brunnescens_ A. H. Howell, Proc. Biol. Soc.
+      Washington, 32:108, May 20, type from Keechelus, Kittitas County,
+      Washington.
+
+    1924. _Ochotona princeps brunnescens_ A. H. Howell, N. Amer. Fauna,
+      47:31, September 23.
+
+    _Marginal records_.--British Columbia: Alta Lake (Anderson,
+    1947:95); Hope, Lake House (A. H. Howell, 1924:33). Washington:
+    _Whatcom Pass_ (Dalquest, 1948:380); Stevens Pass (A. H. Howell,
+    1924:33); _Cowlitz Pass_ (Dalquest, 1948:380). Oregon: Mt. Hood (A.
+    H. Howell, 1924:33); Crater Lake (_ibid._); Mt. McLoughlin (V.
+    Bailey, 1936:116); Diamond Lake (A. H. Howell, 1924:33). Washington:
+    Tumtum Mtn. (Dalquest, 1948:380); Mt. Index (A. H. Howell, 1924:33).
+    British Columbia: Chilliwack (ibid.); Vancouver (_ibid._).
+
+[Illustration: FIG. 5. Distribution of _Ochotona collaris_ and _Ochotona
+princeps_.
+
+  1. _O. collaris_
+  2. _O. p. princeps_
+  3. _O. p. lutescens_
+  4. _O. p. septentrionalis_
+  5. _O. p. brooksi_
+  6. _O. p. cuppes_
+  7. _O. p. brunnescens_
+  8. _O. p. fenisex_
+  9. _O. p. fumosa_
+  10. _O. p. jewetti_
+  11. _O. p. taylori_
+  12. _O. p. schisticeps_
+  13. _O. p. muiri_
+  14. _O. p. albatus_
+  15. _O. p. sheltoni_
+  16. _O. p. tutelata_
+  17. _O. p. nevadensis_
+  18. _O. p. uinta_
+  19. _O. p. moorei_
+  20. _O. p. cinnamomea_
+  21. _O. p. fuscipes_
+  22. _O. p. utahensis_
+  23. _O. p. howelli_
+  24. _O. p. lemhi_
+  25. _O. p. goldmani_
+  26. _O. p. clamosa_
+  27. _O. p. ventorum_
+  28. _O. p. levis_
+  29. _O. p. figginsi_
+  30. _O. p. saxatilis_
+  31. _O. p. nigrescens_
+  32. _O. p. incana_ ]
+
+OCHOTONA PRINCEPS CINNAMOMEA J. A. Allen.
+
+    1905. _Ochotona cinnamomea_ J. A. Allen, Mus. Brooklyn Inst. Arts
+      and Sci., Sci. Bull., 1:121, March 31, type from 11,000 ft.,
+      Briggs [=Britts] Meadows, Beaver Range, Beaver County, Utah (5 mi.
+      by road W Puffer Lake, according to Hardy, Jour. Mamm., 26:432,
+      February 12, 1946). Known from type locality only.
+
+    1934. _Ochotona princeps cinnamomea_, Hall, Proc. Biol. Soc.
+      Washington, 47:103, June 13.
+
+OCHOTONA PRINCEPS CLAMOSA Hall and Bowlus.
+
+    1938. _Ochotona princeps clamosa_ Hall and Bowlus, Univ. California
+      Publ. Zool., 42:335, October 12, type from 8400 ft., north rim
+      Copenhagen Basin, Bear Lake County, Idaho.
+
+    _Marginal records._--Idaho: type locality; _Deep Lake, Bear River
+    Mts._ (Hall and Bowlus, 1938:336) _2 mi. E Strawberry Creek Ranger
+    Station, Wasatch Mts._ (Davis, 1939:352).
+
+OCHOTONA PRINCEPS CUPPES Bangs.
+
+    1899. _Ochotona cuppes_ Bangs, Proc. New England Zool. Club, 1:40,
+      June 5, type from 4000 ft., Monashee Divide, Gold Range, British
+      Columbia.
+
+    1924. _Ochotona princeps cuppes_, A. H. Howell, N. Amer. Fauna,
+      47:27, September 23.
+
+    _Marginal records._--British Columbia: Glacier (A. H. Howell,
+    1924:28); Nelson (Anderson, 1947:95). Idaho: Cabinet Mts. (Davis,
+    1939:348). Washington: Sullivan Lake (A. H. Howell, 1924:28).
+    British Columbia: Rossland (_ibid._); type locality.
+
+OCHOTONA PRINCEPS FENISEX Osgood.
+
+    1913. _Ochotona fenisex_ Osgood, Proc. Biol. Soc. Washington, 26:80,
+      March 22 (substitute for _minimus_ Lord, type from 7000 ft.,
+      Ptarmigan Hill, near head of Ashnola River, Cascade Range, British
+      Columbia).
+
+    1924. _Ochotona princeps fenisex_, A. H. Howell, N. Amer. Fauna,
+      47:28, September 23.
+
+    1863. _Lagomys minimus_ Lord, Proc. Zool. Soc. London, p. 98. (Not
+      of Schinz, 1821.)
+
+    1899. _Ochotona minimus_, Bangs, Proc. New England Zool. Club, 1:39,
+      June 5.
+
+    _Marginal records._--British Columbia: Okanagan (A. H. Howell,
+    1924:30). Washington: Horseshoe Basin, "near" Mt. Chopaka (_ibid._);
+    mts. near Wenatchee (_ibid._); Steamboat Mtn. (Dalquest, 1948:380);
+    Easton (_ibid._); Lyman Lake (_ibid._); Barron (A. H. Howell,
+    1924:30). British Columbia: Tulameen (_ibid._); 2500 ft., mts. W
+    Okanagan Lake (_ibid._).
+
+_Ochotona princeps figginsi_ J. A. Allen.
+
+    1912. _Ochotona figginsi_ J. A. Allen, Bull. Amer. Mus. Nat. Hist.,
+      31:103, May 28, type from Pagoda Peak, Rio Blanco County,
+      Colorado.
+
+    1924. _Ochotona princeps figginsi_, A. H. Howell, N. Amer. Fauna,
+      47:21, September 23.
+
+    _Marginal records_ (A. H. Howell, 1924:22).--Wyoming: Bridger Peak,
+    Sierra Madre. Colorado: Mt. Zirkel; Trappers Lake; _Crested Butte_;
+    Irwin; type locality; Sand Mtn., 9 mi. SW Hahns Peak P. O.
+
+OCHOTONA PRINCEPS FUMOSA A. H. Howell.
+
+    1919. _Ochotona fenisex fumosa_ A. H. Howell, Proc. Biol. Soc.
+      Washington, 32:109, May 20, type from Permilia Lake, W base Mt.
+      Jefferson, Linn County, Oregon.
+
+    1924. _Ochotona princeps fumosa_ A. H. Howell, N. Amer. Fauna,
+      47:33, September 23.
+
+    _Marginal records_ (A. H. Howell, 1924:34).--Oregon: About 900 ft.,
+    15 mi. above Estacada; Paulina Lake; _Three Sisters_; Lost Creek
+    Ranger Station, 10 mi. SE McKenzie Bridge.
+
+OCHOTONA PRINCEPS FUSCIPES A. H. Howell.
+
+    1919. _Ochotona schisticeps fuscipes_ A. H. Howell, Proc. Biol. Soc.
+      Washington, 32:110, May 20, type from Brian Head, Parowan Mts.,
+      Iron County, Utah.
+
+    1941. _O[chotona]. p[rinceps]. fuscipes_, Hall and Hayward, The
+      Great Basin Naturalist, 2:108, July 20.
+
+    _Marginal records._--Utah: type locality; 9000 ft., Duck Creek
+    (Durrant, MS).
+
+OCHOTONA PRINCEPS GOLDMANI A. H. Howell.
+
+    1924. _Ochotona schisticeps goldmani_ A. H. Howell, N. Amer. Fauna,
+      47:40, September 23, type from Echo Crater, Snake River Desert, 20
+      mi. SW Arco, Idaho.
+
+    1938. _Ochotona princeps goldmani_, Hall and Bowlus, Univ.
+      California Publ. Zool., 42:337, October 12.
+
+    _Marginal records._--Idaho: _S base Grassy Cone_ (Davis, 1939:350);
+    type locality; _Fissure Crater_ (A. H. Howell, 1924:41); _Great Owl
+    Cavern_ (Davis, 1939:350).
+
+OCHOTONA PRINCEPS HOWELLI Borell.
+
+    1931. _Ochotona princeps howelli_ Borell, Jour. Mamm., 12:306,
+      August 24, type from 7500 ft., near head of Bear Creek, summit of
+      Smith Mtn., S end Seven Devils Mts., Adams County, Idaho.
+
+    _Marginal records._--Idaho: _½ mi. E Black Lake_ (Davis, 1939:350);
+    type locality.
+
+OCHOTONA PRINCEPS INCANA A. H. Howell.
+
+    1919. _Ochotona saxatilis incana_ A. H. Howell, Proc. Biol. Soc.
+      Washington, 32:107, May 20, type from 12,000 ft., Pecos Baldy,
+      Santa Fe County, New Mexico.
+
+    1924. _Ochotona princeps incana_ A. H. Howell, N. Amer. Fauna,
+      47:25, September 23.
+
+    _Marginal records._--Colorado: Medano Creek (A. H. Howell, 1924:25).
+    New Mexico: Wheeler Peak (V. Bailey, 1932:64); type locality.
+
+OCHOTONA PRINCEPS JEWETTI A. H. Howell.
+
+    1919. _Ochotona schisticeps jewetti_ A. H. Howell, Proc. Biol. Soc.
+      Washington, 32:109, May 20, type from head of Pine Creek, near
+      Cornucopia, S slope Wallowa Mts., Baker County, Oregon.
+
+    _Marginal records_ (A. H. Howell, 1924:42).--Oregon: Wallowa Lake;
+    Cornucopia, near head East Pine Creek; _Anthony_; Strawberry Butte;
+    Austin.
+
+OCHOTONA PRINCEPS LEMHI A. H. Howell.
+
+    1919. _Ochotona uinta lemhi_ A. H. Howell, Proc. Biol. Soc.
+      Washington, 32:106, May 20, type from Lemhi Mountains, 10 mi. W
+      Junction, Lemhi County, Idaho.
+
+    1924. _Ochotona princeps lemhi_ A. H. Howell, N. Amer. Fauna, 47:16,
+      September 23.
+
+    _Marginal records._--Idaho: Elk Summit, about 15 mi. SE Warren (A.
+    H. Howell, 1924:18); mts. E of Leadore (_ibid._); mts. E of Birch
+    Creek (_ibid._); Ketchum (_ibid._); _Stanley Lake_ (_ibid._); 5 mi.
+    W Cape Horn (Davis, 1939:348).
+
+OCHOTONA PRINCEPS LEVIS Hollister.
+
+    1912. _Ochotona levis_ Hollister, Proc. Biol. Soc. Washington,
+      25:57, April 13, type from Chief Mountain [= Waterton] Lake,
+      Alberta.
+
+    1924. _Ochotona princeps levis_, A. H. Howell, N. Amer. Fauna,
+      47:16, September 23.
+
+    _Marginal records_ (A. H. Howell, 1924:16).--Alberta: type locality.
+    Montana: Little Belt Mts.; Belt Mts.; Chief Mountain Lake.
+
+OCHOTONA PRINCEPS LUTESCENS A. H. Howell.
+
+    1919. _Ochotona princeps lutescens_ A. H. Howell, Proc. Biol. Soc.
+      Washington, 32:105, May 20, type from approximately 8000 ft.,
+      Mount Inglismaldie, near Banff, Alberta.
+
+    _Marginal records._--Alberta: Mistaya Creek, Banff-Jasper Highway
+    (Anderson, 1947:96); Canmore (A. H. Howell, 1924:15); Mt.
+    Forget-me-not, 50 to 75 mi. SW Calgary (_ibid._).
+
+OCHOTONA PRINCEPS MOOREI Gardner.
+
+    1950. _Ochotona princeps moorei_ Gardner, Jour. Washington Acad.
+      Sci., 40:344, October 23, 1950, type from 10,000 ft., 1 mi. NE
+      Baldy Ranger Station, Manti Nat'l Forest, Sanpete County, Utah.
+      Known from type locality only.
+
+OCHOTONA PRINCEPS MUIRI Grinnell and Storer.
+
+    1916. _Ochotona schisticeps muiri_ Grinnell and Storer, Univ.
+      California Publ. Zool., 17:6, August 23, type from 9300 ft., Ten
+      Lakes, Yosemite Nat'l Park, California.
+
+    1934. _Ochotona princeps muiri_, Hall, Proc. Biol. Soc. Washington,
+      47:103, June 13.
+
+    _Marginal records._--Nevada (Hall, 1946:593): 8500 ft., 3 mi. S Mt.
+    Rose, California (A. H. Howell, 1924:44): Markleeville; mts. W
+    Bishop Creek; Washburn Lake; Latitude 39°, summit of Sierra.
+
+OCHOTONA PRINCEPS NEVADENSIS A. H. Howell.
+
+    1919. _Ochotona uinta nevadensis_ A. H. Howell, Proc. Biol. Soc.
+      Washington, 32:107, May 20, type from 10,500 ft., Ruby Mts., SW
+      Ruby Valley P. O., Elko County, Nevada.
+
+    1924. _Ochotona princeps nevadensis_ A. H. Howell, N. Amer. Fauna,
+      47:21, September 23.
+
+    _Marginal records._--Nevada: 7830 ft., Long Creek (Hall, 1946:590);
+    type locality.
+
+OCHOTONA PRINCEPS NIGRESCENS V. Bailey.
+
+    1913. _Ochotona nigrescens_ V. Bailey, Proc. Biol. Soc. Washington,
+      26:133, May 21, type from 10,000 ft., Jemez Mountains, Bernalillo
+      County, New Mexico.
+
+    1924. _Ochotona princeps nigrescens_, A. H. Howell, N. Amer. Fauna,
+      47:26, September 23.
+
+    _Marginal records_ (A. H. Howell, 1924:26).--Colorado: Upper Navajo
+    River; Osier. New Mexico: type locality. Colorado: Navajo Peaks.
+
+OCHOTONA PRINCEPS PRINCEPS (Richardson).
+
+    1828. _Lepus_ (_Lagomys_) _princeps_ Richardson, Zool. Jour., 3:520,
+      type from headwaters of Athabaska River, near Athabaska Pass,
+      Alberta.
+
+    1897. [_Ochotona_] _princeps_, Trouessart, Catalogus Mammalium, p.
+      648.
+
+    _Marginal records._--British Columbia: headwaters South Pine River
+    (Anderson, 1947:95). Alberta: Muskeg Creek "about" 60 mi. N Jasper
+    House (_ibid._). British Columbia: Morrissey (_ibid._). Montana:
+    mts. near St. Marys Lake (A. H. Howell, 1924:14); mts. 15 mi. E
+    Corvallis (_ibid._); Lake Como, Bitterroot Mts. (_ibid._). Idaho:
+    Coeur d' Alene Nat'l Forest (Rust, 1946:322). British Columbia: Mt.
+    Evans, "near" Cranbrook (A. H. Howell, 1924:14); Spillamacheen River
+    (_ibid._)
+
+OCHOTONA PRINCEPS SAXATILIS Bangs.
+
+    1899. _Ochotona saxatilis_ Bangs, Proc. New England Zool. Club,
+      1:41, June 5, type from Montgomery, "near" Mt. Lincoln, Park
+      County, Colorado.
+
+    1924. _Ochotona princeps saxatilis_, A. H. Howell, N. Amer. Fauna,
+      47:23, September 23.
+
+    _Marginal records_ (A. H. Howell, 1924:24, except as otherwise
+    noted).--Wyoming: Medicine Bow Mts.; just above Centennial in mts.
+    (Martin, 1943:394). Colorado: Estes Park; Pikes Peak; Silverton.
+    Utah: La Sal Mts. Colorado: Crystal Lake, 5 mi. W Lake City; Middle
+    Brush Creek; Ten Mile Creek; Berthoud Pass; _Irwin Lakes_ (A. H.
+    Howell, _loc. cit._) not found.
+
+OCHOTONA PRINCEPS SCHISTICEPS (Merriam).
+
+    1889. _Lagomys schisticeps_ Merriam, N. Amer. Fauna, 2:11, October
+      30, type from Donner, Placer County, California.
+
+    1936. _Ochotona princeps schisticeps_, A. H. Miller, Jour. Mamm.,
+      17:174, May 18.
+
+    1897. _Ochotona schisticeps_ Merriam, Mazama, 1:223, October.
+
+    _Marginal records._--Nevada (Hall, 1946:590): 12 mi. E and 3 mi. N
+    Ft. Bidwell, 5700 ft.; 8400-8600 ft., Duffer Peak, Pine Forest Mts.
+    California (A. H. Howell, 1924:39): Tahoe; _Donner Pass_; 12 mi. NE
+    Prattville; Lassen Peak; Mt. Shasta.
+
+OCHOTONA PRINCEPS SEPTENTRIONALIS Cowan and Racey.
+
+    1947. _Ochotona princeps septentrionalis_ Cowan and Racey, Canadian
+      Field-Nat., 60:102, March 17, type from 6500 ft., Itcha Mountains,
+      52° 45´ N lat., 125° W long., British Columbia. Known from type
+      locality only.
+
+OCHOTONA PRINCEPS SHELTONI Grinnell.
+
+    1918. _Ochotona schisticeps sheltoni_ Grinnell, Univ. California
+      Publ. Zool., 17:429, April 25, type from 11,000 ft., "near" Big
+      Prospector Meadow, White Mountains, Mono County, California.
+
+    1946. _Ochotona princeps sheltoni_, Hall, Mammals of Nevada, p. 593,
+      July 1.
+
+    _Marginal records._--Nevada: 8700 ft., Pinchot Creek (Hall,
+    1946:593). California: type locality.
+
+OCHOTONA PRINCEPS TAYLORI Grinnell.
+
+    1912. _Ochotona taylori_ Grinnell, Proc. Biol. Soc. Washington,
+      25:129, July 31, type from 9000 ft., Warren Peak, Warner Mts.,
+      Modoc Co., Calif.
+
+    _Marginal records_ (V. Bailey, 1936:113, unless otherwise
+    noted).--Oregon: N end of Steens Mts.; Guano Valley; Jack Lake, 20
+    mi. NE Adel; Adel. California (A. H. Howell, 1924:40): type
+    locality; 5400 ft., "near" Termo, Madeline Plains; nr. head Little
+    Shasta Riv. Oregon: Lower Klamath Lake.
+
+OCHOTONA PRINCEPS TUTELATA Hall.
+
+    1934. _Ochotona princeps tutelata_ Hall, Proc. Biol. Soc.
+      Washington, 47:103, June 13, type from 8150 ft., Greenmonster
+      Canyon, Monitor Mts., Nye County, Nevada.
+
+    _Marginal records_ (Hall, 1946:591).--Nevada: 7500 ft., Smiths
+    Creek, Desatoya Mts.; 8600 ft., type locality; 8700-11,000 ft., SW
+    and W slopes Mt. Jefferson, Toquima Range; South Twin River; _Arc
+    Dome_.
+
+OCHOTONA PRINCEPS UINTA Hollister.
+
+    1912. _Ochotona uinta_ Hollister, Proc. Biol. Soc. Washington,
+      25:58, April 13, type from "near" head E. Fork Bear River, Uinta
+      Mts., Utah.
+
+    1924. _Ochotona princeps uinta_, A. H. Howell, N. Amer. Fauna,
+      47:19, September 23.
+
+    _Marginal records._--Utah: type locality; Elk Park (Hall and Bowlus,
+    1938:337); _11,000 to 11,500 ft., The Nipple_ (_ibid._); 10,500 ft.,
+    SW slope Bald Mtn. (_op. cit._:336); Mt. Timpanogos (_op.
+    cit._:337); 8500 ft., Morehouse Canyon, 5 mi. above Weber River
+    (_op. cit._:337); _Spirit Lake_ (_op. cit._:336) not found.
+
+OCHOTONA PRINCEPS UTAHENSIS Hall and Hayward.
+
+    1941. _Ochotona princeps utahensis_ Hall and Hayward, Great Basin
+      Nat., 2:107, July 20, type from 2 mi. W Deer Lake, Garfield
+      County, Utah.
+
+    _Marginal records._--Utah: 9000 ft., Donkey Lake, Boulder Mtn.
+    (Durrant, MS); type locality.
+
+OCHOTONA PRINCEPS VENTORUM A. H. Howell.
+
+    1919. _Ochotona uinta ventorum_ A. H. Howell, Proc. Biol. Soc.
+      Washington, 32:106, May 20, type from Fremont Peak, Wind River
+      Mts., Fremont County, Wyoming.
+
+    1924. _Ochotona princeps ventorum_ A. H. Howell, N. Amer. Fauna,
+      47:18, September 23.
+
+    _Marginal records._--Montana: Emigrant Peak (A. H. Howell, 1924:19);
+    Beartooth Mts. (_ibid._). Wyoming: 9600 ft., 19½ mi. E and 4½ mi. S
+    Shell (20882 KU); head of Trappers Creek (A. H. Howell, 1924:19);
+    Medicine Wheel Ranch, 28 mi. E Lovell (32919 KU); Needle Mtn. (A. H.
+    Howell, 1924:19); Lake Fork (_ibid._); 8450 ft., 17½ mi. S and 6½
+    mi. W Lander (37994 KU); Middle Piney Lake, "near" Stanley (A. H.
+    Howell, 1924:19); Salt River, 16 mi. S Afton (Hall and Bowlus,
+    1938:337); Teton Pass (A. H. Howell, 1924:19). Idaho: Teton Canyon
+    (Davis, 1939:349).
+
+
+Family LEPORIDAE--Rabbits and Hares
+
+Hind legs longer than forelegs; ears longer than wide; frontal bone
+carrying supraorbital process consisting always of posterior arm and
+sometimes of anterior arm; rostrum wide; nasals not wider anteriorly
+than posteriorly; maxillae conspicuously fenestrated; jugal projecting
+less than half way from zygomatic root of squamosal to external auditory
+meatus (except in _Romerolagus_); pubic symphysis well marked; dental
+formula, i. 2/1, c. 0/0, p. 3/2, m. 3/3 (but m. 2/3 in _Pentalagus_ of
+Liu Kiu Islands south of Japan); second upper maxillary tooth like third
+in form; last lower molar double; cutting edge of first upper incisor
+straight; mental foramen of mandible situated under first lower
+cheek-tooth. Females average larger than males in all members of this
+family. (See Orr, 1940:20.) The reverse is true in most other families
+of mammals.
+
+Hare is a name applied to any lagomorph whose young are born fully
+haired, with the eyes open, and able to run about a few minutes after
+birth. The young are born in the open, not in a nest. All of the species
+of the genus _Lepus_ are hares. The species of leporids of all genera
+other than _Lepus_, in North America at least, are rabbits. Their young
+are born naked, blind, and helpless, in a nest especially built for them
+and lined with fur. Considering the degree of development of the young
+at birth, the gestation periods are about what a person would expect: 26
+to 30 days in _Sylvilagus_ and 36 to 47 days in _Lepus_ (see Severaid,
+1950:356-357). Vernacular names are misleading because the names jack
+rabbit and snowshoe rabbit are applied to hares; also, Belgian hare is a
+name applied to a rabbit (genus _Oryctolagus_) that is commonly bred in
+captivity. There are many domestic strains and varieties of
+_Oryctolagus_ and the animals are second only to poultry in some areas
+as a protein food for man. Also, the pelts are sold as a source of felt
+and many of the skins are dyed and processed for making fur coats and
+other fur-pieces that appear on the market under names not readily
+associated with rabbit.
+
+Rabbits and hares are crepuscular and possibly more nocturnal than
+diurnal. So far as I know they do not store food as do their diurnal
+relatives, the pikas. Some leporids, however, have an unusual, and
+possibly unique, method of processing food: Two types of vegetable
+pellets are expelled from the anal opening of the digestive tract; the
+dark brownish pellets, from which the nutriments have been extracted,
+are feces, but the greenish pellets seem to be only slightly predigested
+foods which are re-eaten. Southern (1942:553), among others, has written
+about this. This system functionally resembles that in the ruminants
+where a cud of vegetation is returned to the mouth, from one part of the
+stomach, to be re-chewed and finally swallowed.
+
+Because the causative organism of a disease that decimates dense
+populations of small mammals, and some other kinds of vertebrates, was
+isolated first in leporids, this disease, tularemia, is more associated
+in the popular mind with rabbits than with other kinds of mammals.
+Actually, many kinds of mammals are quite as likely to have tularemia as
+are rabbits. Now that streptomycin is available, cases of tularemia in
+persons are easily cured.
+
+
+KEY TO SPECIES OF THE GENERA SYLVILAGUS AND ROMEROLAGUS
+
+  1.  Antorbital extension of supraorbital process more than ½ length of
+      posterior extension; first upper cheek-tooth with only one
+      re-entrant angle on anterior face; re-entrant angle of second upper
+      cheek-tooth not crenate
+                                            _Sylvilagus idahoensis_, p. 139
+
+  1´. Antorbital extension of supraorbital process less than ½ of
+      posterior extension or entirely absent; first upper cheek-tooth with
+      more than one (usually 3) re-entrant angles on anterior face;
+      re-entrant angle of second upper cheek-tooth crenate.
+
+    2.  Anterior extension of supraorbital process absent (or if a point is
+        barely indicated, then 5/6 or all of posterior process fused to
+        braincase).
+
+      3.  Tympanic bulla smaller than foramen magnum; hind foot more than
+          74; geographic range wholly in United States.
+
+        4.  Ear more than 58 from notch in dried skin; basilar length of
+            skull more than 63
+                                             _Sylvilagus aquaticus_, p. 166
+
+        4´. Ear less than 58 from notch in dried skin; basilar length of
+            skull less than 63.
+
+          5.  Underside of tail white; posterior extension of supraorbital
+              process tapering to a slender point, this point free of
+              braincase or barely touching it and leaving a slit or long
+              foramen
+                                        _Sylvilagus transitionalis_, p. 160
+
+          5´. Underside of tail brown or gray; posterior extension of
+              supraorbital process always fused to skull, usually for
+              entire length but in occasional specimens there is small
+              foramen at middle of posterior extension of supraorbital
+              process
+                                             _Sylvilagus palustris_, p. 147
+
+      3´. Tympanic bulla as large as foramen magnum; hind foot less than
+          74; geographic range limited to southern edge of Mexican
+          tableland at high elevations
+                                                _Romerolagus diazi_, p. 138
+
+    2´. Anterior extension of supraorbital process present, and posterior
+        extension free of braincase or leaving a slit between the process
+        and braincase.
+
+            6.  Tympanic bullae large (see fig. 26).
+                                             _Sylvilagus audubonii_, p. 162
+
+            6´. Tympanic bullae small (see figs. 23, 25 and 27).
+
+              7.  Restricted to Pacific coastal strip from Columbia River
+                  south to tip of Baja California, west of Sierra
+                  Nevada-Cascade Mountain Chain; hind foot less than 81.
+                     _Sylvilagus bachmani_ and _S. mansuetus_, pp. 143, 147
+
+              7´. East of the Pacific coastal strip mentioned in 7; hind
+                  foot usually more than 81.
+
+                8.  If north of United States-Mexican boundary:
+
+                  9.  In Arizona, New Mexico and southern Colorado
+                      posterior extension of supraorbital process free of
+                      braincase, and supraoccipital shield posteriorly
+                      pointed; from central Colorado north into Canada
+                      diameter of external auditory meatus more than crown
+                      length of last three cheek-teeth
+                                             _Sylvilagus nuttallii_, p. 161
+
+                  9´. In Arizona, New Mexico and southeastern Colorado
+                      posterior extension of supraorbital process of
+                      frontal with its tip against, or fused to,
+                      braincase, and supraoccipital shield posteriorly
+                      truncate or notched; from central Colorado north
+                      into Canada, diameter of external auditory meatus
+                      less than crown length of last three cheek-teeth
+                                            _Sylvilagus floridanus_, p. 154
+
+                8´. If south of United States-Mexican boundary:
+
+                    10.  Geographic range restricted to Tres Marias Islands
+                                              _Sylvilagus graysoni_, p. 169
+
+                    10´. Geographic range not including Tres Marias
+                         Islands.
+
+                      11.  Underside of tail dingy gray or buffy (not
+                           white).
+
+                        12.  Tail short (less than 30) and brown like rump;
+                             ear from notch (dry) less than 53;
+                             interorbital breadth less than 16.
+                                          _Sylvilagus brasiliensis_, p. 141
+
+                        12´. Tail of moderate length (more than 30) and
+                             dingy gray; ear from notch (dry) more than
+                             53; interorbital breadth more than 16
+                                               _Sylvilagus insonus_, p. 168
+
+                      11´. Underside of tail distinctly white.
+
+                          13. Total length more than 476; ear from notch
+                               (dry) more than 64; interorbital breadth
+                               usually more than 19.3; geographic range,
+                               southwestern Mexico north of the Isthmus of
+                               Tehuantepec.
+                                          _Sylvilagus cunicularius_, p. 169
+
+                          13´. Total length less than 476; ear from notch
+                               (dry) less than 64; interorbital breadth
+                               usually less than 19.3; geographic range,
+                               Canada to Panamá
+                                            _Sylvilagus floridanus_, p. 154
+
+
+Genus ROMEROLAGUS Merriam--Volcano Rabbit
+
+    1896. _Romerolagus_ Merriam, Proc. Biol. Soc. Washington, 10:173,
+      December 29. Type, _Romerolagus nelsoni_ Merriam = _Lepus diazi_
+      Diaz.
+
+Total length 300 to 311; tail rudimentary; hind foot, 52; ear from notch
+(dry), 36; upper parts grizzled buffy brown or dull cinnamon brown;
+underparts dingy gray; anterior projection of supraorbital process
+absent; jugal projecting posteriorly past squamosal root of zygomatic
+arch more than half way to external auditory meatus. The two cranial
+characters mentioned are resemblances to pikas although the skull
+otherwise resembles that of the true rabbits. The genus contains only
+the one living species.
+
+Living in well defined runways in the dense sacoton grass, these small
+rabbits are mainly nocturnal and crepuscular, but sometimes are active
+by day, especially in cloudy weather in the period of mating.
+
+[Illustration: FIG. 6. Distribution of _Romerolagus diazi_.]
+
+
+=Romerolagus diazi= (Diaz)
+
+Volcano Rabbit
+
+    1893. _Lepus diazi_ Diaz, Catal. Com. Geográf.-Expl. Repub. Mex.
+      Expos. Internac. Columb. Chicago, pl. 42, March, 1893, type from
+      eastern slope of Mount Ixtaccihuatl, Puebla.
+
+    1911. _Romerolagus diazi_ Miller, Proc. Biol. Soc. Washington,
+      24:228, October 31, 1911.
+
+    1896. _Romerolagus nelsoni_ Merriam, Proc. Biol. Soc. Washington,
+      10:173, December 29, 1896, type from west slope Mount
+      Popocatepetl, 11,000 feet, México.
+
+_Range._--Canadian Life-zone of the mountains bounding the eastern,
+southern and western sides of the Valley of Mexico. _Marginal
+records._--México: Monte Río Frío, 45 km. ESE Mexico City (Davis,
+1944:401). Puebla: type locality. México: Mt. Popocatepetl (Nelson,
+1909:280). Distrito Federal: 31 km. S Mexico City (30815 KU). México:
+Llano Grande, 3 km. W Tlalmanalco (28278 KU).
+
+
+Genus SYLVILAGUS Gray--Cottontails and Allies
+
+Revised by Nelson, N. Amer. Fauna, 29:58-158, August 31, 1909.
+
+    1867. _Sylvilagus_ Gray, Ann. and Mag. Nat. Hist., 20 (ser. 3):221.
+      Type, _Lepus sylvaticus_ Bachman, _Lepus nuttalli mallurus_
+      Thomas.
+
+Total length, 291-538; tail, 18-73; hind foot, 71-110; ear from notch
+(dry) 41-74. Grayish to dark brownish above and lighter below; sutures
+of interparietal bone distinct throughout life; second to fourth
+cervical vertebrae broader than long with dorsal surface flattened and
+without carination.
+
+The delectable flesh of members of this genus, the large numbers that
+occur on a small area, even in thickly settled rural areas, and the
+wariness that rabbits soon develop when much hunted, give them top
+ranking among small game mammals. Tens of thousands of cottontails in
+Kansas and Missouri (_Sylvilagus floridanus_ and some _S. audubonii_)
+are captured alive, transported to the eastern United States and
+released there to bolster the local supply of game. Considering that
+certain ectoparasites are limited to certain hosts and that some
+ectoparasites transmit such diseases as Rocky Mountain Spotted Fever
+whereas other ectoparasites do not, this transplantation of rabbits is
+dangerous. Also, expenditure of $100.00 on improving the habitat for
+_Sylvilagus_ in a given area in the eastern United States would produce
+more cottontails than the expenditure of the same sum for live animals,
+from the Middlewest, that are to be released (see Langenbach and Beule,
+1942:14, 15 and 30).
+
+Different species venture different distances from cover to feed. The
+Audubon cottontail of west-central California ventures a hundred feet
+and more from cover but the brush rabbit was never seen (Orr, 1940:182)
+farther than 42 feet from cover. In the thirties, when a gladiolus
+farmer from the chaparral belt of Santa Clara County, California,
+visited the University of California seeking advice on how to prevent
+damage by "cottontails" to his gladioli plantings, we asked the farmer
+if brush rabbits or cottontails were responsible and suggested to the
+farmer, who was unable to distinguish between the two, that an animal be
+killed and submitted for identification. When this was done, the brush
+rabbit (_Sylvilagus bachmani_) was found to be responsible for the
+damage. Robert T. Orr's recommendation that the chaparral (brush) be cut
+back 45 feet from the gladioli plantings was reluctantly followed and
+proved to be effective. A letter from a Santa Clara County agricultural
+official a couple of years later expressed thanks for the recommendation
+made by Orr, and estimated that adoption of his recommendations saved
+farmers of that one county $40,000 annually. This incident illustrates
+how detailed knowledge of the life history of a given kind of animal and
+control of its environment, rather than direct "control" of the animal,
+is sometimes of value to man.
+
+The genus _Sylvilagus_ is restricted to the New World; the two species
+_Sylvilagus brasiliensis_ and _S. floridanus_ are the only two which
+occur in South America and they occur also in North America.
+
+
+Subgenus BRACHYLAGUS Miller--Pigmy Rabbit
+
+    1900. _Brachylagus_ Miller, Proc. Biol. Soc. Washington, 13:157,
+      June 13. Type, _Lepus idahoensis_ Merriam. For characters see
+      subgenus _Sylvilagus_.
+
+
+Sylvilagus idahoensis (Merriam)
+
+Pigmy Rabbit
+
+    1891. _Lepus idahoensis_ Merriam, N. Amer. Fauna, 5:76, July 30,
+      type from head of Pahsimeroi Valley, near Goldburg, Custer County,
+      Idaho (Davis, Recent Mammals of Idaho, p. 363, April 9, 1939).
+
+    1930. _Sylvilagus idahoensis_, Grinnell, Dixon and Linsdale, Univ.
+      California Publ. Zool., 35:553, October 10.
+
+    _Marginal records._--In southeastern Washington: Ritzville (Taylor
+    and Shaw, 1929:29); Lind (243344 USBS); Warden (Taylor and Shaw,
+    1929:29). In remainder of range: Montana: Bannack (Davis, 1937:27).
+    Idaho: Trail Creek near Pocatello (Davis, 1939:366). Utah: 3 mi. NE
+    Clarkson (Durrant, MS); W side Utah Lake (_ibid._); 20 mi. W Parowan
+    (_ibid._); 10 mi. SW Cedar City (_ibid._). Nevada: 8½ mi. NE Sharp
+    (Hall, 1946:618); Fallon (Schantz, 1947:187). California: Bodie
+    (Severaid, 1950:2); 5000 ft., 3 mi. S Ravendale (Orr, 1940:194).
+    Oregon: Silver Lake (Bailey, 1936:110, fig. 17, 206518 USBS);
+    Fremont (_ibid._, 205005 USBS); Redmond (_ibid._, 242302 USBS); 10
+    mi. N Baker (Dice, 1926:27). Idaho: type locality; Junction (Davis,
+    1939:366).
+
+    Total length, 250-290; tail, 20-30; hind foot, 65-72; ear from notch
+    (dry), 36-48; weight, 6 ♂ 409(375-435), 9 ♀ 398(246-458) grams.
+    Upper parts pinkish to blackish or dark grayish depending on amount
+    of wear. The pigmy rabbit lives in burrows, mostly dug by itself,
+    preferably where tall sagebrush grows densely. This species feeds
+    extensively on sagebrush, at least in winter. Six young seem to be
+    the rule and they are born any time from late in May until early in
+    August.
+
+[Illustration: FIG. 7. Distribution of _Sylvilagus idahoensis_.]
+
+
+Subgenus SYLVILAGUS Gray--Cottontails and Allies
+
+    1867. _Sylvilagus_ Gray, Ann. and Mag. Nat. Hist., 20 (ser. 3):221.
+      Type, _Lepus sylvaticus_ Bachman [= _Lepus nuttalli mallurus_
+      Thomas].
+
+    1867. _Tapeti_ Gray, Ann. and Mag. Nat. Hist., 20 (ser. 3):224,
+      September. Type _Lepus brasiliensis_ Linnaeus.
+
+    1897. _Microlagus_ Trouessart, Catalogus Mammalium ..., p. 660.
+      Type, _Lepus cinerascens_ J. A. Allen.
+
+    1897. _Limnolagus_ Mearns, Science, n. s., 5:393, March 5. Type
+      _Lepus aquaticus_ Bachman.
+
+    1950. _Paludilagus_ Hershkovitz, Proc. U. S. Nat. Mus., 100:333, May
+      26. Type _Lepus palustris_ Bachman.
+
+Characters of subgeneric worth, in contrast to those of the subgenus
+_Brachylagus_, are: First premolar, in upper jaw and in lower jaw, with
+more than one fold in the enamel; infolded enamel, which divides each
+molar tooth into two parts, crenate.
+
+The many nominal species of the subgenus _Sylvilagus_ belong to no more
+than 12 and perhaps to only ten full species. The now more abundant
+specimens than were available a half century ago reveal also that there
+are less trenchant differences between some of the species than were
+supposed to exist when the five names for genera or subgenera listed
+immediately above were proposed. Some species can be placed in each of
+two subgenera with almost equal propriety. If used, four of the five
+subgeneric names mentioned above would contain only one species each. It
+seems that no useful purpose is served by attempting to fit the several
+species of the genus _Sylvilagus_ into more than the two subgenera
+_Brachylagus_ and _Sylvilagus_; the other names, _Tapeti_ Gray,
+_Microlagus_ Trouessart, _Limnolagus_ Mearns, and _Paludilagus_
+Hershkovitz, are here arranged as synonyms of the subgeneric name
+_Sylvilagus_ Gray.
+
+
+Sylvilagus brasiliensis
+
+Forest Rabbit
+
+Total length, 380-420; tail, 20-21; hind foot, 77-80; ear from notch
+(dry), 39-46. The principal characters of this species are small size,
+dark color, short tail, and dingy buffy (not white) undersurface of the
+tail. These rabbits rest in forests or other thick vegetative cover and
+do not venture far from such cover to feed.
+
+SYLVILAGUS BRASILIENSIS CONSOBRINUS Anthony.
+
+    1917. _Sylvilagus gabbi consobrinus_ Anthony, Bull. Amer. Mus. Nat.
+      Hist., 37:335, May 28, type from Old Panamá, Panamá. Known from
+      type locality only.
+
+    1950. _Sylvilagus brasiliensis consobrinus_, Hershkovitz, Proc. U.
+      S. Nat. Mus., 100:353, May 26.
+
+SYLVILAGUS BRASILIENSIS DICEI Harris.
+
+    1932. _Sylvilagus dicei_ Harris, Occas. Papers Univ. Michigan, Mus.
+      Zool., 248:1, August 4, type from 6000 ft., El Copey de Dota, in
+      the Cordillera de Talamanca, Costa Rica.
+
+    1950. _Sylvilagus brasiliensis dicei_, Hershkovitz, Proc. U. S. Nat.
+      Mus., 100:352, May 26.
+
+    _Marginal records._--Costa Rica (Goodwin, 1946:359); Rancho de Río
+    Jimenez; Juan Viñas; type locality; _San José_.
+
+[Illustration: FIG. 8. Distribution of _Sylvilagus brasiliensis_.
+
+  1. _S. b. truei_
+  2. _S. b. gabbi_
+  3. _S. b. dicei_
+  4. _S. b. consobrinus_
+  5. _S. b. messorius_
+  6. _S. b. incitatus_ ]
+
+SYLVILAGUS BRASILIENSIS GABBI (J. A. Allen).
+
+    1877. _Lepus brasiliensis_ var. _gabbi_ J. A. Allen, Monogr. N.
+      Amer. Rodentia, p. 349, August, type locality Costa Rica and
+      Chiriquí; restricted by Nelson (N. Amer. Fauna, 29:259, August 31,
+      1909), by designation of type specimen, to Talamanca [= Sipurio,
+      Río Sixaola, near Caribbean Coast], Costa Rica.
+
+    1950. _Sylvilagus brasiliensis gabbi_, Hershkovitz, Proc. U. S. Nat.
+      Mus., 100:351, May 26.
+
+    1908. _Lepus gabbi tumacus_ J. A. Allen, Bull. Amer. Mus. Nat.
+      Hist., 24:649, October 13, type from Tuma, Nicaragua.
+
+    _Marginal records._--Honduras: San Pedro Sula (Nelson, 1909:261); to
+    Gulf Coast and southward along coast to Panamá Canal, Panamá: Gatun
+    (Goldman, 1920:146); Corozal (_ibid._); Gobernador Island (_ibid._);
+    Divala (_ibid._); _Chiriquí_ (Goodwin, 1946:358). Northward east of
+    the range of _S. b. dicei_, thence westward in Costa Rica: Vijaqual,
+    San Carlos (Goodwin, 1946:358). Nicaragua: Matagalpa (Allen,
+    1910:96); Ocotal (_ibid._). Honduras: San José, Santa Barbara
+    (Goodwin, 1942:151).
+
+SYLVILAGUS BRASILIENSIS INCITATUS (Bangs).
+
+    1901. _Lepus_ (_Tapeti_) _incitatus_ Bangs, Amer. Nat., 35:633,
+      August, type from San Miguel Island, Bay of Panamá. Known from
+      type locality only.
+
+    1950. _Sylvilagus brasiliensis incitatus_, Hershkovitz, Proc. U. S.
+      Nat. Mus., 100:352, May 26.
+
+SYLVILAGUS BRASILIENSIS MESSORIUS Goldman.
+
+    1912. _Sylvilagus gabbi messorius_ Goldman, Smiths. Misc. Coll. 60
+      (no. 2):13, September 20, type from Cana, 1800 ft., mts. of
+      eastern Panamá.
+
+    1950. _Sylvilagus brasiliensis messorius_, Hershkovitz, Proc. U. S.
+      Nat. Mus., 100:352, May 26.
+
+    _Marginal records._--Panamá (Goldman, 1920:147): Boca de Cupe;
+    _Tacarcuna_; _Tapalisa_; type locality.
+
+SYLVILAGUS BRASILIENSIS TRUEI (J. A. Allen).
+
+    1890. _Lepus truei_ J. A. Allen, Bull. Amer. Mus. Nat. Hist., 3:192,
+      December 10, type from Mirador, Veracruz.
+
+    1950. _Sylvilagus brasiliensis truei_, Hershkovitz, Proc. U. S. Nat.
+      Mus., 100:351, May 26.
+
+    _Marginal records_ (Nelson, 1909:264, unless otherwise noted).--San
+    Luis Potosí: Rancho Apetsco, Xilitla (Dalquest, 1950:4), thence down
+    coast to Tabasco: Teapa. Chiapas: Huehuetan. Oaxaca: Santo Domingo.
+    Veracruz: Buena Vista; Motzorongo. Puebla: Metlaltoyuca.
+
+
+=Sylvilagus bachmani=
+
+Brush Rabbit
+
+Size small. Total length, 300-375; tail, 20-43; hind foot, 64-81; ear
+from notch (dry), 50-64; weight (topotypes of _S. b. macrorhinus_) 16 ♂
+679 (561-832), 22 ♀ 707 (517-843) grams. Body uniformly dark brown or
+brownish gray, but tail whitish beneath; hair on midventral part of body
+gray at base; only a slight crenulation of ridge of enamel which
+separates an individual molariform tooth into anterior and posterior
+sections. From _Sylvilagus audubonii_, the only other species of
+_Sylvilagus_ in the same geographic area, _S. bachmani_ differs in
+smaller size, less white on underparts (the hairs on the midventral part
+of the body being gray instead of white at base), shorter ears and legs,
+and a less crenulated ridge of enamel separating the anterior and
+posterior parts of a molariform tooth.
+
+The brush rabbit is a Pacific Coastal species; as may be seen from
+figure 9 on the next page, this species occurs from the Columbia River
+on the north to the tip of Baja California on the south. Nowhere, so far
+as I can learn, does it occur as far east as the crest of the
+Cascade-Sierra Nevada Mountain Chain. Throughout its range the brush
+rabbit is closely associated with--in fact, lives in--the chaparral that
+is dense enough to afford protection from raptorial birds and the larger
+carnivorous mammals. The rabbit's reliance on protective cover is so
+great that, as pointed out on an earlier page, a person can turn this
+trait to advantage in protecting cultivated crops from inroads that the
+rabbits might make on them. The protection is afforded by clearing the
+brush from a strip forty-five feet wide so that the cleared strip
+intervenes between the cultivated crops and the brushy shelter. The
+rabbits will not risk crossing the open strip and hence do not reach the
+growing crops.
+
+[Illustration: FIG. 9. Distribution of _Sylvilagus bachmani_ and
+_Sylvilagus mansuetus_.
+
+  1. _S. b. ubericolor_
+  2. _S. b. tehamae_
+  3. _S. b. macrorhinus_
+  4. _S. b. riparius_
+  5. _S. b. mariposae_
+  6. _S. b. bachmani_
+  7. _S. b. virgulti_
+  8. _S. b. cinerascens_
+  9. _S. b. rosaphagus_
+  10. _S. b. howelli_
+  11. _S. b. exiguus_
+  12. _S. b. peninsularis_
+  13. _S. b. cerrosensis_
+  14. _S. mansuetus_ ]
+
+Brush rabbits use simple "forms" in the brush for resting. Only one
+observer (Orr, 1940: 173) has reported an individual entering a hole. In
+patches of chaparral in which the rabbits live they make runways that
+are especially well defined at the edges of the brush. The outer
+entrance to a runway is tunnellike and one to two feet from the outer
+entrance there is a special form that serves as a lookout post. A brush
+rabbit that is about to venture into the open ordinarily pauses in such
+a form for several minutes, presumably to satisfy itself that no enemy
+is in the open area whither the rabbit is bound.
+
+The breeding season is from January to June, at least in California.
+There are 2 to 5 young, averaging 3.5 per litter. They are born in a
+nest.
+
+SYLVILAGUS BACHMANI BACHMANI (Waterhouse).
+
+    1839. _Lepus bachmani_ Waterhouse, Proc. Zool. Soc. London, Pt. 6
+      (for 1838):103, February 7, type from California, probably between
+      Monterey and Santa Barbara.
+
+    1904. _Sylvilagus_ (_microlagus_) _bachmani_, Lyon, Smiths. Misc.
+      Coll., 45:336, June 15.
+
+    1855. _Lepus trowbridgei_ Baird, Proc. Acad. Nat. Sci. Philadelphia,
+      p. 333, type from Monterey County, California.
+
+    _Marginal records._--California (Orr, 1940:150): 2 mi. S mouth
+    Salinas River; near Morro.
+
+SYLVILAGUS BACHMANI CERROSENSIS (J. A. Allen).
+
+    1898. _Lepus cerrosensis_ J. A. Allen, Bull. Amer. Mus. Nat. Hist.,
+      10:145, April 12, type from Cerros [=Cedros] Island, Baja
+      California. Known from type locality only.
+
+    1909. _Sylvilagus bachmani cerrosensis_, Nelson, N. Amer. Fauna,
+      29:255, August 31.
+
+SYLVILAGUS BACHMANI CINERASCENS (J. A. Allen).
+
+    1890. _Lepus cinerascens_ J. A. Allen, Bull. Amer. Mus. Nat. Hist.,
+      3:159, October 8, type from San Fernando, Los Angeles County,
+      California.
+
+    1907. _Sylvilagus bachmani cinerascens_, Nelson, Proc. Biol. Soc.
+      Washington, 20:84, July 22.
+
+    _Marginal records._--California (Orr, 1940:168): 5700 ft., San
+    Emigdio Canyon; 3 mi. E San Fernando; Reche Canyon (Orr, 1940:169);
+    3500 ft., Dos Palmas Springs, Santa Rosa Mts. Baja California
+    (Nelson, 1909:253): La Huerta, thence northward up-coast to point of
+    beginning.
+
+SYLVILAGUS BACHMANI EXIGUUS Nelson.
+
+    1907. _Sylvilagus bachmani exiguus_ Nelson, Proc. Biol. Soc.
+      Washington, 20:84, July 22, type from Yubay, central Baja
+      California.
+
+    _Marginal records._--Baja California (Nelson, 1909:254): Agua Dulce;
+    Santana.
+
+SYLVILAGUS BACHMANI HOWELLI Huey.
+
+    1927. _Sylvilagus bachmani howelli_ Huey, Trans. San Diego Soc. Nat.
+      Hist., 5:67, July 6, type from 10 mi. SE Alamo, Baja California,
+      lat. 31° 35´ N, long. 116° 03´ W.
+
+    _Marginal records._--Baja California (Huey, 1927:68): Laguna Hanson,
+    Sierra Juarez; type locality.
+
+SYLVILAGUS BACHMANI MACRORHINUS Orr.
+
+    1935. _Sylvilagus bachmani macrorhinus_ Orr, Proc. Biol. Soc.
+      Washington, 48:28, February 6, type from Alpine Creek Ranch, 3½
+      mi. S and 2-1/3 mi. E Portola, 1700 ft., San Mateo County,
+      California.
+
+    _Marginal records._--California (Orr, 1940:163): 10 mi. SW Suisun; W
+    side Mt. Diablo; Summit Station, Santa Cruz Mts., thence north along
+    coast to Golden Gate.
+
+SYLVILAGUS BACHMANI MARIPOSAE Grinnell and Storer.
+
+    1916. _Sylvilagus bachmani mariposae_ Grinnell and Storer, Univ.
+      California Publ. Zool., 17:7, August 23, type from McCauley Trail,
+      4000 ft., near El Portal, Mariposa County, California.
+
+    _Marginal records._--California (Orr, 1940): Carbondale (p. 158);
+    French Gulch, 6700 ft., Piute Mtn. (p. 159).
+
+SYLVILAGUS BACHMANI PENINSULARIS (J. A. Allen).
+
+    1898. _Lepus peninsularis_ J. A. Allen, Bull. Amer. Mus. Nat. Hist.,
+      10:144, April 12, type from Santa Anita, Baja California.
+
+    1909. _Sylvilagus bachmani peninsularis_, Nelson, N. Amer. Fauna,
+      29:255, August 31.
+
+    _Marginal records._--Baja California (Nelson, 1909:255): type
+    locality; Cape San Lucas.
+
+SYLVILAGUS BACHMANI RIPARIUS Orr.
+
+    1935. _Sylvilagus bachmani riparius_ Orr, Proc. Biol. Soc.
+      Washington, 48:29, February 6, type from west side San Joaquin
+      River, 2 mi. NE Vernalis, in Stanislaus County, California. Known
+      from type locality only.
+
+SYLVILAGUS BACHMANI ROSAPHAGUS Huey.
+
+    1940. _Sylvilagus bachmani rosaphagus_ Huey, Trans. San Diego Soc.
+      Nat. Hist., 9:221, July 31, type from 2 mi. W Santo Domingo
+      Mission, Baja California, México, lat. 30° 45´ N, long. 115° 58´
+      W, or precisely, near the huge red cliff that marks the entrance
+      of the Santo Domingo River Cañon from the coastal plain.
+
+    _Marginal records._--Baja California (Huey, 1940): San Quintín (p.
+    223); El Rosario (p. 222).
+
+SYLVILAGUS BACHMANI TEHAMAE Orr.
+
+    1935. _Sylvilagus bachmani tehamae_ Orr, Proc. Biol. Soc.
+      Washington, 48:27, February 6, type from Dale's, on Paine's Creek,
+      600 ft., Tehama County, California.
+
+    _Marginal records._--Oregon (Orr, 1935:28): Prospect. California
+    (Orr, 1940:156): Auburn; 7 mi. W and 14 mi. S Chico; Rumsey; Castle
+    Springs; 3 mi. S Covelo; Mad River Bridge, S. Fork Mtn.
+
+SYLVILAGUS BACHMANI UBERICOLOR (Miller).
+
+    1899. _Lepus bachmani ubericolor_ Miller, Proc. Acad. Nat. Sci.
+      Philadelphia, p. 383, September 29, type from Beaverton,
+      Washington County, Oregon.
+
+    1904. _Sylvilagus_ (_Microlagus_) _bachmani ubericolor_, Lyon,
+      Smiths. Misc. Coll., 45:337, June 15.
+
+    _Range._--Columbia River, Oregon, south to San Francisco Bay,
+    California, and from the Pacific Coast eastward to a line connecting
+    the following marginal records.--Oregon (V. Bailey, 1936:109, unless
+    otherwise noted): Portland (Nelson, 1909:251); Mackenzie Bridge;
+    above Grants Pass. California (Orr, 1940:153): Laytonville; Maillard
+    [=4 mi. E Lagunitas].
+
+SYLVILAGUS BACHMANI VIRGULTI Dice.
+
+    1926. _Sylvilagus bachmani virgulti_ Dice, Occas. papers Mus. Zool.
+      Univ. Michigan, 166:24, February 11, Soledad, Monterey County,
+      California.
+
+    _Marginal records._--California (Orr, 1940:166): The Pinnacles;
+    Waltham Cr., 4½ mi. SE Priest Valley; 2 mi. S San Miguel; Bryson.
+
+
+=Sylvilagus mansuetus=
+
+Brush Rabbit
+
+    1907. _Sylvilagus mansuetus_ Nelson, Proc. Biol. Soc. Washington,
+      20:83, July 22, type from San José Island, Gulf of California,
+      Baja California. Known from San José Island only.
+
+This insular species is closely related to _Sylvilagus bachmani_ and is
+distinguished by paleness, proportionately longer and narrower skull,
+fusion to skull of anterior arm of supraorbital process, and larger
+jugal.
+
+
+=Sylvilagus palustris=
+
+Marsh Rabbit
+
+(See figure 42)
+
+Total length, 425-440; tail, 33-39; hind foot, 88-91; ear from notch
+(dry), 45-52. Upper parts blackish brown or reddish brown; underside of
+tail brownish or dingy gray (not white); ears, tail and hind feet short;
+posterior and anterior extensions of supraorbital processes joined to
+skull along most (or all) of their extent. The lack of white on the
+underside of the tail is a ready means of distinguishing this species
+from the other species of the genus which occur within its geographic
+range. The species occurs in the lowlands, possibly not above 500 feet
+altitude, of the Lower Austral and Tropical life-zones. In Florida,
+Blair (1936) found that the marsh rabbit ate 29 per cent of its bodily
+weight in green food each day and that the number of embryos in 3
+females was 4, 4 and 3.
+
+SYLVILAGUS PALUSTRIS PALUDICOLA (Miller and Bangs).
+
+    1894. _Lepus paludicola_ Miller and Bangs, Proc. Biol. Soc.
+      Washington, 9:105, June 9, type from Ft. Island, near Crystal
+      Riv., Citrus Co., Fla.
+
+    1909. _Sylvilagus palustris paludicola_, Nelson, N. Amer. Fauna,
+      29:269, August 31.
+
+    _Marginal records._--Florida (Nelson, 1909:270): Hibernia [= Green
+    Cove Springs]; San Mateo; along Atlantic Coast at least to Micco;
+    Kissimmee River; Cape Sable; northward along Gulf Coast and on
+    coastal islands at least to Suwanee River.
+
+SYLVILAGUS PALUSTRIS PALUSTRIS (Bachman).
+
+    1837. _Lepus palustris_ Bachman, Jour. Acad. Nat. Sci. Philadelphia,
+      7:194, type locality eastern South Carolina.
+
+    1909. _Sylvilagus palustris_, Nelson, N. Amer. Fauna, 29:266, August
+      31.
+
+    _Marginal records._--Nansemond County (Handley and Patton,
+    1947:190), southward along Atlantic Coast to northern Florida:
+    Anastasia Island (Nelson, 1909:269). West to Gulf Coast and along
+    Coast to Alabama: Bon Secour (Nelson, 1909:269); Flomaton (Howell,
+    1921:74); Dothan (_ibid._). Georgia: Americus (Nelson, 1909:269).
+    South Carolina: Society Hill (_ibid._).
+
+[Illustration: FIGS. 10-14. Dorsal views of skulls of rabbits. All × 1.]
+
+    FIG. 10. _Romerolagus diazi_, 31 km. S Mexico City, D. F. No. 30815
+    KU, ♀.
+
+    FIG. 11. _Sylvilagus idahoensis_, Millett P. O., Nevada. No. 37275
+    MVZ, ♂.
+
+    FIG. 12. _Sylvilagus brasiliensis truei_, 30 km. SSE Jesus Carranza,
+    Veracruz. No. 32128 KU, ♂.
+
+    FIG. 13. _Sylvilagus bachmani macrorhinus_, 1700 feet, Alpine Creek
+    Ranch, San Mateo County, California. No. 53382 MVZ, ♀.
+
+    FIG. 14. _Sylvilagus palustris palustris_, Riceboro, Georgia. No.
+    45502 USNM, ♀. (After Nelson, 1909: pl. 12, fig. 3.)
+
+[Illustration: FIGS. 15-19. Dorsal views of skulls of rabbits. All × 1.]
+
+    FIG. 15. _Sylvilagus nuttallii grangeri_, ½ mi. E. Jefferson, Nev.
+    No. 58527, ♀.
+
+    FIG. 16. _Sylvilagus audubonii minor_, 3290 ft., Neville Spring,
+    Grapevine Mts., Big Bend, Brewster Co., Texas. No. 80519 MVZ,
+    ♂.
+
+    FIG. 17. _Sylvilagus floridanus mearnsi_, 4 mi. NE Lawrence, Douglas
+    Co., Kansas. No. 3774 KU, ♂.
+
+    FIG. 18. _Sylvilagus a. aquaticus_, Crawford Co., Kansas. No. 8544
+    KU. ♂.
+
+    FIG. 19. _Sylvilagus cunicularius cunicularius_, 3 km. W Acultzingo,
+    Veracruz. No. 30749 KU, ♂.
+
+[Illustration: FIGS. 20-24. Ventral views of skulls of rabbits. All × 1.
+Different views of the first four of these skulls are shown in figs.
+10-13.]
+
+    FIG. 20. _Romerolagus diazi._
+
+    FIG. 21. _Sylvilagus idahoensis._
+
+    FIG. 22. _Sylvilagus brasiliensis truei._
+
+    FIG. 23. _Sylvilagus bachmani macrorhinus._
+
+    FIG. 24. _Sylvilagus palustris palustris_, Society Hill, South
+    Carolina. No. 2089 USNM (after Lyon, 1904: pl. 76, fig. 6).
+
+[Illustration: FIGS. 25-29. Ventral views of skulls of rabbits. All × 1.
+Different views of these skulls are shown in figs. 15-19.]
+
+    FIG. 25. _Sylvilagus nuttallii grangeri._
+
+    FIG. 26. _Sylvilagus audubonii minor._
+
+    FIG. 27. _Sylvilagus floridanus mearnsi._
+
+    FIG. 28. _Sylvilagus aquaticus aquaticus._
+
+    FIG. 29. _Sylvilagus cunicularius cunicularius._
+
+[Illustration: FIGS. 30-34. Lateral views of skulls of rabbits. All × 1.
+Different views of these skulls are shown in figs. 10-15.]
+
+    FIG. 30. _Romerolagus diazi._
+
+    FIG. 31. _Sylvilagus idahoensis._
+
+    FIG. 32. _Sylvilagus brasiliensis truei._
+
+    FIG. 33. _Sylvilagus bachmani macrorhinus._
+
+    FIG. 34. _Sylvilagus nuttallii grangeri._
+
+[Illustration: FIGS. 35-38. Lateral views of skulls of rabbits. All × 1.
+Different views of these skulls are shown in figs. 16-19.]
+
+    FIG. 35. _Sylvilagus audubonii minor._
+
+    FIG. 36. _Sylvilagus floridanus mearnsi._
+
+    FIG. 37. _Sylvilagus aquaticus aquaticus._
+
+    FIG. 38. _Sylvilagus cunicularius cunicularius._
+
+
+=Sylvilagus floridanus=
+
+Florida Cottontail
+
+Total length, 375-463; tail, 39-65; hind foot, 87-104; ear from notch
+(dry), 49-68; upper parts brownish or grayish; underside of tail white;
+skull with transversely thick posterior extension of supraorbital
+process of frontal. The geographic range is the largest of all of the
+North American species of the genus _Sylvilagus_; from Canada the
+species occurs south at least to Costa Rica and it may occur in Panamá
+for the species is recorded also from South America.
+
+In the western part of the Great Plains this species is confined to the
+riparian growth along streams and _Sylvilagus audubonii_ occupies the
+remainder of the terrain. In New Mexico and southwestern Texas _S.
+floridanus_ is confined to the boreal life-zones where timber provides
+denser cover than is found in the lower life-zones. The zonal range is
+from the Canadian Life-zone into the Tropical Life-zone. It is not
+surprising, therefore, that there is much geographic variation in the
+shape and size of the skull. There is so much geographic variation in
+the skull that it is impossible, at this writing at least, to frame a
+description that will enable the reader to distinguish the skull from
+those of all other species of the genus. In any given area, however, it
+is possible, easily and certainly, to distinguish the skulls of _S.
+floridanus_ from those of the other species which occur in that area.
+
+SYLVILAGUS FLORIDANUS ALACER (Bangs).
+
+    1896. _Lepus sylvaticus alacer_ Bangs, Proc. Biol. Soc. Washington,
+      10:136, December 28, type from Stilwell, Boston Mountains, Adair
+      County, Oklahoma.
+
+    _Marginal records._--Missouri (Nelson, 1909:176): Columbia; St.
+    Louis. Illinois: Ozark (Necker and Hatfield, 1941:56). Tennessee
+    (Nelson, 1909:176): Samburg; Raleigh. Mississippi (Nelson,
+    1909:176): Michigan City; Bay St. Louis. Texas (Nelson, 1909:176):
+    Port Lavaca; Brazos; Henrietta. Oklahoma: Norman (Blair, 1939:128).
+    Kansas: _8 mi. NE Harper_ (12917 KU); Rago (12508 KU); Halstead
+    (3110 KU); _4 mi. S_ and _14 mi. W Hamilton_ (13673 KU); 3 mi. N
+    Chanute (22026 KU).
+
+SYLVILAGUS FLORIDANUS AMMOPHILUS A. H. Howell.
+
+    1939. _Sylvilagus floridanus ammophilus_ A. H. Howell, Jour. Mamm.,
+      20:365, August 14, type from "Oak Lodge", on peninsula opposite
+      Micco, Florida. Known from type locality only.
+
+[Illustration: FIG. 39. Distribution of _Sylvilagus nuttallii_, _S.
+floridanus_ and _S. insonus_.
+
+  Guide to kinds:
+
+  1. _S. n. nuttallii_
+  2. _S. n. grangeri_
+  3. _S. n. pinetis_
+  4. _S. f. similis_
+  5. _S. f. mearnsi_
+  6. _S. f. llanensis_
+  7. _S. f. alacer_
+  8. _S. f. mallurus_
+  9. _S. f. hitchensi_
+  10. _S. f. floridanus_
+  11. _S. f. ammophilus_
+  12. _S. f. cognatus_
+  13. _S. f. robustus_
+  14. _S. f. chapmani_
+  15. _S. f. holzneri_
+  16. _S. f. restrictus_
+  17. _S. f. subcinctus_
+  18. _S. f. orizabae_
+  19. _S. f. connectens_
+  20. _S. f. russatus_
+  21. _S. f. aztecus_
+  22. _S. f. chiapensis_
+  23. _S. f. yucatanicus_
+  24. _S. f. hondurensis_
+  25. _S. f. costaricensis_
+  26. _S. insonus_ ]
+
+SYLVILAGUS FLORIDANUS AZTECUS (J. A. Allen).
+
+    1890. _Lepus sylvaticus aztecus_ J. A. Allen, Bull. Amer. Mus. Nat.
+      Hist., 3:188, December 10, type from Tehuantepec City, Oaxaca.
+
+    1904. _Sylvilagus_ (_Sylvilagus_) _floridanus aztecus_, Lyon,
+      Smiths. Misc. Coll., 45:336, June 15.
+
+    _Marginal records_ (Nelson, 1909:188, unless otherwise
+    noted).--Oaxaca: Santa Maria Petapa; Santa Efigenia. Chiapas:
+    Tonala, 50 M (Hooper, 1947:56). Oaxaca: Salina Cruz; _type
+    locality_.
+
+SYLVILAGUS FLORIDANUS CHAPMANI (J. A. Allen).
+
+    1899. _Lepus floridanus chapmani_ J. A. Allen, Bull. Amer. Mus. Nat.
+      Hist., 12:12, March 4, type from Corpus Christi, Nueces County,
+      Texas.
+
+    1904. _Sylvilagus_ (_Sylvilagus_) _floridanus chapmani_, Lyon,
+      Smiths. Misc. Coll., 45:336, June 15.
+
+    1899. _Lepus floridanus caniclunis_ Miller, Proc. Acad. Nat. Sci.
+      Philadelphia, p. 388, October 5, type from Fort Clark, Kinney
+      County, Texas.
+
+    1902. _Lepus simplicicanus_ Miller, Proc. Biol. Soc. Washington,
+      15:81, April 25, type from Brownsville, Cameron County, Texas.
+
+    _Marginal records_ (Nelson, 1909:178).--Texas: Clyde; Victoria
+    County; _Rockport_. Tamaulipas: Soto la Marina; Juamave. Coahuila:
+    Monclova; Sabinas. Texas: Comstock; Stanton.
+
+SYLVILAGUS FLORIDANUS CHIAPENSIS (Nelson).
+
+    1904. _Lepus floridanus chiapensis_ Nelson, Proc. Biol. Soc.
+      Washington, 17:106, May 18, type from San Cristobal, Chiapas.
+
+    1909. _Sylvilagus floridanus chiapensis_, Lyon and Osgood, Bull. U.
+      S. Nat. Mus., 62:32, January 28.
+
+    _Marginal records_ (Nelson, 1909:190, unless otherwise
+    noted).--Chiapas: type locality; Comitan. Guatemala: Hacienda
+    Chancol; Panajachel (Goodwin, 1934:56). Chiapas: Tuxtla.
+
+SYLVILAGUS FLORIDANUS COGNATUS Nelson.
+
+    1907. _Sylvilagus cognatus_ Nelson, Proc. Biol. Soc. Washington,
+      20:82, July 22, type from near summit of the Manzano Mountains,
+      Valencia County, New Mexico.
+
+    1951. _Sylvilagus floridanus cognatus_, Hall and Kelson, Univ.
+      Kansas Publ., Mus. Nat. Hist., 5:55, October 1, 1951.
+
+    _Marginal records_ (Nelson, 1909:193).--New Mexico: Santa Rosa, 35
+    mi. N on Conchas River; Capitan Mts.; Datil Mts.; type locality.
+
+SYLVILAGUS FLORIDANUS CONNECTENS (Nelson).
+
+    1904. _Lepus floridanus connectens_ Nelson, Proc. Biol. Soc.
+      Washington, 17:105, May 18, type from Chichicaxtle, central
+      Veracruz.
+
+    1909. _Sylvilagus floridanus connectens_, Lyon and Osgood, Bull. U.
+      S. Nat. Mus., 62:32, January 28.
+
+    _Marginal records_ (Nelson, 1909:186).--Tamaulipas: Altamira.
+    Veracruz: type locality. Oaxaca: Mt. Zempoaltepec. Veracruz: Orizaba
+    (City of); Jico. Puebla: Metlaltoyuca. Queretaro: Pinal de Amoles.
+    San Luis Potosí: Valles.
+
+SYLVILAGUS FLORIDANUS COSTARICENSIS Harris.
+
+    1933. _Sylvilagus floridanus costaricensis_ Harris, Occas. Papers
+      Mus. Zool., Univ. Michigan, 266:3, June 28, type from Hacienda
+      Santa Maria, Province of Guanacaste, 3200 ft, Costa Rica.
+
+    _Marginal records_ (Goodwin, 1946:358).--Costa Rica: El Pelón; type
+    locality; Tenorio.
+
+SYLVILAGUS FLORIDANUS FLORIDANUS (J. A. Allen).
+
+    1890. _Lepus sylvaticus floridanus_ J. A. Allen, Bull. Amer. Mus.
+      Nat. Hist., 3:160, October 8, type from Sebastian River, Brevard
+      County, Florida.
+
+    1904. _Sylvilagus floridanus_, Lyon, Smiths. Misc. Coll., 45:322,
+      June 15.
+
+    _Marginal records._--Florida: San Mateo (Sherman, 1936:122);
+    _Enterprise_ (_ibid._); Miakka Lake (230812 USBS); Blitches Ferry
+    (Sherman, 1936:122).
+
+SYLVILAGUS FLORIDANUS HITCHENSI Mearns.
+
+    1911. _Sylvilagus floridanus hitchensi_ Mearns, Proc. U. S. Nat.
+      Mus., 39:227, January 9, type from Smiths Island, Northampton
+      County, Virginia.
+
+    _Marginal records._--Virginia: type locality; Fishermans Island
+    (Handley and Patton, 1947:187).
+
+SYLVILAGUS FLORIDANUS HOLZNERI (Mearns).
+
+    1896. _Lepus sylvaticus holzneri_ Mearns, Proc. U. S. Nat. Mus.,
+      18:554, June 24, type from Douglas spruce zone, near summit of
+      Huachuca Mountains, Cochise County, Arizona.
+
+    1904. _Sylvilagus_ (_Sylvilagus_) _floridanus holzneri_, Lyon,
+      Smiths. Misc. Coll., 45:336, June 15.
+
+    1896. [_Lepus sylvaticus_] subspecies _rigidus_ Mearns, Proc. U. S.
+      Nat. Mus., 18:555, June 24, type from Carrizalillo Mts., near
+      monument No. 31, Mexican boundary line, Grant County, New Mexico.
+
+    1903. _Lepus_ (_Sylvilagus_) _durangae_ J. A. Allen, Bull. Amer.
+      Mus. Nat. Hist., 19:609, November 12, type from Rancho Bailon,
+      northwestern Durango.
+
+    _Marginal records._--Arizona: Pine Springs, 15 mi. S of Canyon of
+    Colorado (Hall and Kelson, 1951:54); Reynolds Creek R. S., Sierra
+    Ancha Mts. (_ibid._); W base Mt. Turnbull, 4500 ft. (_ibid._). New
+    Mexico: Silver City (Nelson, 1909:180); _Animas Mts._ (_ibid._).
+    Zacatecas: Valparaiso (_ibid._); Plateado (_ibid._). Chihuahua:
+    Guadalupe y Calvo (_ibid._). Arizona: Thomas Cañon, 2 mi. E
+    Baboquivari Mts. (Hall and Kelson, 1951:54), Hualapi Mts. (_ibid._).
+
+SYLVILAGUS FLORIDANUS HONDURENSIS Goldman.
+
+    1932. _Sylvilagus floridanus hondurensis_ Goldman, Proc. Biol. Soc.
+      Washington, 45:122, July 30, type from Monte Redondo,
+      approximately 30 mi. NW Tegucigalpa, 5100 ft., Honduras.
+
+    _Marginal records._--Honduras: Santa Barbara (Goodwin, 1942:150);
+    Cedros (_ibid._). Nicaragua: Jinotega (Nelson, 1909:190); Chontales
+    ["District" of] (_ibid._); Leon. Honduras: Ocotepeque (Goodwin,
+    1942:150).
+
+SYLVILAGUS FLORIDANUS LLANENSIS Blair.
+
+    1938. _Sylvilagus floridanus llanensis_ Blair, Occas. Papers. Mus.
+      Zool., Univ. Michigan, 380:1, June 21, type from Old "F" Ranch
+      headquarters, Quitaque, Briscoe County, Texas.
+
+    _Marginal records._--Kansas: 15 mi. N and 3 mi. E Stafford (5547
+    KU); 1 mi. NE Aetna (12144 KU). Oklahoma: 3 mi SE Southard (10063
+    KU); _Fort Cobb_ (Blair, 1939:129); Mt. Scott (_ibid._). Texas: 6
+    mi. E Coahoma (Blair, 1938:3); 6 mi. southwest of Muleshoe
+    (_ibid._). Kansas: Coolidge (18462 KU).
+
+SYLVILAGUS FLORIDANUS MALLURUS (Thomas).
+
+    1898. _L[epus]. n[uttalli]. mallurus_ Thomas, Ann. and Mag. Nat.
+      Hist., 2(ser. 7):320, October, type from Raleigh, Wake County,
+      North Carolina.
+
+    1904. _Sylvilagus floridanus mallurus_, Lyon, Smiths. Misc. Coll.,
+      45:323, June 15.
+
+    1837. _Lepus sylvaticus_ Bachman, Jour. Acad. Nat. Sci.
+      Philadelphia, 7:403, no type or type locality. Name given to the
+      "common gray rabbit" of the eastern United States and probably
+      with particular reference to the animal in South Carolina. Name
+      preoccupied by _Lepus borealis sylvaticus_ Nilson, 1832, from
+      Sweden.
+
+    _Marginal records._--Connecticut: Bear Mountain (Goodwin, 1935:163),
+    south along coast to Florida: Lake Julian (Nelson, 1909:168); Rock
+    Bluff (Sherman, 1936:122). Alabama: Bayou Labatre (A. H. Howell,
+    1921:71); Leighton (_ibid._). Tennessee (Kellogg, 1939:291):
+    Arlington; Hornbeak; Highcliff; Watauga Valley. West Virginia:
+    _Ernshaw_ (Kellogg, 1937:472). Pennsylvania (Nelson, 1909:169):
+    Waynesburg; Potts Grove. New York: Palenville (_ibid._).
+
+SYLVILAGUS FLORIDANUS MEARNSII (J. A. Allen).
+
+    1894. _Lepus sylvaticus mearnsii_ J. A. Allen, Bull. Amer. Mus. Nat.
+      Hist., 6:171, May 31, type from Fort Snelling, Hennepin County,
+      Minnesota.
+
+    1904. _Sylvilagus_ (_Sylvilagus_) _floridanus mearnsi_, Lyon,
+      Smiths. Misc. Coll., 45:336, June 15.
+
+    _Marginal records._--Minnesota: Fertile (Swanson, Surber and
+    Roberts, 1945:97); Duluth (_ibid._). Michigan: Marquette County
+    (Burt, 1946:249). Ontario: Lake Simcoe (Miller, 1924:464). Quebec
+    (Anderson, 1947): Montreal (p. 103); Quebec-side Ottawa River in
+    Laurentian Hills (p. 104). New York: "eastern New York" (Hamilton,
+    1943:383). Pennsylvania: Lopez (Nelson, 1909:172). West Virginia: 7
+    mi. E Phillipi (Kellogg, 1937:473); Gilboa (_ibid._). Illinois:
+    Sangamon (Nelson, 1909:172). Kansas: Neosho Falls (5104 KU); 1 mi. N
+    and ½ mi. E Lincolnville (12964 KU); _6 mi. SW Clay Center_ (12398
+    KU); Strawberry (4510 KU). Minnesota: Otter Tail County (Surber,
+    1932:74).
+
+SYLVILAGUS FLORIDANUS ORIZABAE (Merriam).
+
+    1893. _Lepus orizabae_ Merriam, Proc. Biol. Soc. Washington, 8:143,
+      December 29, type from Mt. Orizaba, 9500 ft., Puebla.
+
+    1909. _Sylvilagus floridanus orizabae_, Nelson, N. Amer. Fauna,
+      29:183, August 31.
+
+    1903. _Lepus floridanus persultator_ Elliott, Field Columb. Mus.,
+      publ. 71, zool. ser., 3:147, March 20, type from Puebla, Puebla.
+
+    _Marginal records_ (Nelson, 1909:185).--Coahuila: Sierra
+    Encarnación. Hidalgo: Encarnación. Veracruz: _Las Vigas_; Mt.
+    Orizaba. _Puebla: Chalchicomula_. México: Mt. Popocatepetl; Volcano
+    of Toluca. Guanajuato: Santa Rosa. San Luis Potosí: San Luis Potosí.
+
+SYLVILAGUS FLORIDANUS RESTRICTUS Nelson.
+
+    1907. _Sylvilagus floridanus restrictus_ Nelson, Proc. Biol. Soc.
+      Washington, 20:82, July 22, type from Zapotlan, Jalisco.
+
+    _Marginal records_ (Nelson, 1909:183).--Nayarit: Tepic; Ojo de Agua.
+    Jalisco: _La Cienega_; _Atenguillo_. Michoacán: Mt. Tancítaro;
+    Pátzcuaro. Jalisco: type locality; Las Canoas; La Laguna.
+
+SYLVILAGUS FLORIDANUS ROBUSTUS (V. Bailey).
+
+    1905. _Lepus pinetus robustus_ V. Bailey, N. Amer. Fauna, 25:159,
+      October 24, type from 6000 ft., Davis Mts., Jeff Davis County,
+      Texas.
+
+    1951. _Sylvilagus floridanus robustus_, Hall and Kelson, Univ.
+      Kansas Publ., Mus. Nat. Hist., 5:56, October 1, 1951.
+
+    _Marginal records._--Texas: The Bowl, Guadalupe Mts. (Hall and
+    Kelson, 1951:56); Chisos Mts. (Nelson, 1909:195); 35 mi. S Marfa
+    (_ibid._).
+
+SYLVILAGUS FLORIDANUS RUSSATUS (J. A. Allen).
+
+    1904. _Lepus_ (_Sylvilagus_) _russatus_ J. A. Allen, Bull. Amer.
+      Mus. Nat. Hist., 20:31, February 29, type from Pasa Nueva,
+      southern Veracruz.
+
+    1909. _Sylvilagus floridanus russatus_, Nelson, N. Amer. Fauna,
+      29:186, August 31.
+
+    _Marginal records_ (Nelson, 1909:187).--Veracruz: Catemaco;
+    Coatzacoalcos; _Minatitlan_; type locality; _Jimba_ (KU 19895).
+
+SYLVILAGUS FLORIDANUS SIMILIS Nelson.
+
+    1907. _Sylvilagus floridanus similis_ Nelson, Proc. Biol. Soc.
+      Washington, 20:82, July 22, type from Valentine, Cherry County,
+      Nebraska.
+
+    _Marginal records._--Manitoba: Dauphin (Anderson and Rand, 1943:24).
+    Minnesota: Ten Mile Lake (Surber, 1932:74). Nebraska: Neligh
+    (Nelson, 1909:174). Kansas: _Long Island_ (_ibid._); 3 mi. N and 2
+    mi. W Hoisington (16509 KU); Lane County (5520 KU); Elkader (5595
+    KU). Colorado: Arvada (Cary, 1911:158). Wyoming: 6400 ft., 3 mi. E
+    Horse Creek, P. O. (15936 KU). Nebraska: 8 mi. E Chadron (39380 KU).
+    Montana: _Little Missouri River, 7 mi. NE Albion_ (Hall and Kelson,
+    1951:52); Box Elder Creek, 25 mi. SW Sykes (_ibid._). North Dakota:
+    Oakdale (Bailey, 1927:134).
+
+SYLVILAGUS FLORIDANUS SUBCINCTUS (Miller).
+
+    1899. _Lepus floridanus subcinctus_ Miller, Proc. Acad. Nat. Sci.
+      Philadelphia, p. 386, October 5, type from Hacienda El Molino,
+      near Negrete, Michoacán.
+
+    1904. _Sylvilagus floridanus subcinctus_, Lyon, Smiths. Misc. Coll.,
+      45:336, June 15.
+
+    _Marginal records_ (Nelson, 1909:181).--Jalisco: Lagos. Guanajuato:
+    Acámbaro. Michoacán: _Querendaro_. Jalisco: _Ameca_; Etzatlán.
+
+SYLVILAGUS FLORIDANUS YUCATANICUS (Miller).
+
+    1899. _Lepus floridanus yucatanicus_ Miller, Proc. Acad. Nat. Sci.
+      Philadelphia, p. 384, September 29, type from Mérida, Yucatán.
+
+    1904. _Sylvilagus floridanus yucatanicus_, Lyon, Smiths. Misc.
+      Coll., 45:336, June 15.
+
+    _Marginal records_ (Nelson, 1909:191).--Yucatán: Progreso; type
+    locality. Campeche: Campeche.
+
+
+=Sylvilagus transitionalis= (Bangs)
+
+New England Cottontail
+
+    1895. _Lepus sylvaticus transitionalis_ Bangs, Proc. Boston Soc.
+      Nat. Hist., 26:405, January 31, type from Liberty Hill, New London
+      County, Connecticut.
+
+    1909. _Sylvilagus transitionalis_, Nelson, N. Amer. Fauna, 29:195,
+      August 31.
+
+    _Marginal records._--Vermont: west side at Canadian boundary
+    (Osgood, F. L., Jr., 1938:440); Montpelier (_ibid._). Maine:
+    Sagadahoc County (Palmer, 1944:194); _Androscoggin County_
+    (_ibid._). New York: Miller Place (Nelson, 1909:199). Virginia:
+    Roanoke County (Llewellyn and Handley, 1946:385). North Carolina:
+    Roan Mtn. (Nelson, 1909:199). Georgia: Brasstown Bald Mtn. (A. H.
+    Howell, 1921:71). Alabama: Erin (_ibid._); Ardell (_ibid._).
+    Tennessee: Walden Ridge, "near" Soddy (Kellogg, 1939:291). West
+    Virginia: Ronceverte (Kellogg, 1937:473). Pennsylvania: Renovo
+    (Nelson, 1909:199). New York: Lake George (_ibid._).
+
+[Illustration: FIG. 40. Distribution of _Sylvilagus transitionalis_.]
+
+Total length, 388; tail, 39; hind foot, 95; ear from notch (dry), 52.
+Upper parts almost pinkish buff, varying to almost ochraceous buff; back
+overlaid by a distinct black wash giving a penciled effect; anterior
+extension of supraorbital process obsolete or short and closely
+appressed to orbital rim; tympanic bullae small, smaller than in any
+subspecies of _S. floridanus_ in the United States. _S. transitionalis_
+is a forest-inhabiting species--more so than is _S. floridanus_.
+
+
+=Sylvilagus nuttallii=
+
+Nuttall Cottontail
+
+(See figure 39)
+
+Total length, 350-390; tail, 44-50; hind foot, 88-100; ear from notch
+(dry), 55-56; weight in Nevada, ♂ 678, 3 ♀ 928 (868-1032) grams. Hind
+feet densely covered with long hair; ear short; tympanic bulla of
+moderate size. In the northern part of its range _S. nuttallii_ occurs
+principally in the sagebrush areas but it occurs also in the timbered
+areas of the Transition Life-zone and almost exclusively in timbered
+areas in the southern part of its range. From _S. floridanus_, _S.
+nuttallii_ along the eastern margin of its range differs in more slender
+rostrum, and larger external auditory meatus. In New Mexico and Arizona,
+_S. nuttallii_ differs from _S. floridanus_ in the posteriorly pointed
+and un-notched supraoccipital shield and in the posterior extension of
+the supraorbital process, the tip of which projects free from the
+braincase or merely lies against the braincase instead of being firmly
+welded to the side of the skull. From _S. audubonii_, _S. nuttallii_
+differs in shorter ears, smaller tympanic bullae and smaller hind legs;
+_S. nuttallii_ usually occurs at higher elevations, or where the two
+occur at approximately the same elevation _S. nuttallii_ occurs in
+wooded or brushy areas and _S. audubonii_ lives on the plains or in
+relatively open country. Eight females contained an average of 6.1 (4-8)
+embryos.
+
+SYLVILAGUS NUTTALLII GRANGERI (J. A. Allen).
+
+    1895. _Lepus sylvaticus grangeri_ J. A. Allen, Bull. Amer. Mus. Nat.
+      Hist., 7:264, August 21, type from Hill City, Black Hills,
+      Pennington County, South Dakota.
+
+    1909. _Sylvilagus nuttalli grangeri_, Nelson, N. Amer. Fauna,
+      29:204, August 31.
+
+    1904. _Lepus l[aticinctus]. perplicatus_ Elliott, Field Columb.
+      Mus., publ. 87, zool. ser., 3:255, January 7, type from Hannopee
+      [= Hannaupah] Canyon, Panamint Mts., Inyo County, California.
+
+    _Marginal records._--Alberta: Steveville (Anderson, 1943:25).
+    Saskatchewan (_ibid._): Cypress Hills; Johnston Lake; Big Muddy
+    Lake. North Dakota: Goodall (V. Bailey, 1927:137). South Dakota:
+    Custer (Nelson, 1909:207). Wyoming: 2 mi. W Horse Creek P. O. (15935
+    KU); Sherman (Nelson, 1909:207). Colorado: Meeker (Warren,
+    1942:272). Utah (Nelson, 1909:207): Mt. Ellen; "Upper Kanab";
+    Panguitch. Nevada (Hall, 1946:612): ¼ mi. W Utah-Nev. boundary, 38°
+    17´ N, 7300 ft.; S end Belted Range, 5 mi. NW Whiterock Spring, 7200
+    ft.; Chiatovich Creek, 7000 ft.; 2½ mi. E and 1 mi. S Grapevine
+    Peak, 6700 ft.; Charleston Park, Kyle Cañon, 8000 ft. California
+    (Orr, 1940:103): Johnson Canyon, 6500 ft.; nr. Woodfords, 5500 ft.
+    Nevada (Hall, 1946:612): Calvada; Hardscrabble Canyon; Paradise
+    Valley. Idaho (Davis, 1939:363): S. Fork Owyhee River, 12 mi. N
+    Nevada line; Crane Creek, 15 mi. E Midvale; Lemhi. Montana: 4 mi. W
+    Hamilton (Jellison, MS); 2 mi. N Moise Lake (_ibid._). Alberta:
+    Cardston (Anderson, 1947:105).
+
+SYLVILAGUS NUTTALLII NUTTALLII (Bachman).
+
+    1837. _Lepus nuttallii_ Bachman, Jour. Acad. Nat. Sci. Philadelphia,
+      7:345, type locality probably eastern Oregon near mouth of Malheur
+      River.
+
+    1904. _Sylvilagus nuttallii_, Lyon, Smiths. Misc. Coll., 45:323,
+      June 15.
+
+    _Marginal records._--British Columbia: Anarchist Mtn., Osoyoos
+    (Cowan, 1940:9). Washington: Kettle Falls (Dalquest, 1941:408).
+    Idaho: Couer d' Alene (Rust, 1946:322); _Lewiston_ (Davis,
+    1939:361); Fiddle Creek (_ibid._). Nevada (Hall, 1946:612): 5800
+    ft., Quinn River Crossing; _½ mi. S Granite Cr., Granite Mts._;
+    _Smoke Creek, 9 mi. E California line_; 4½ mi. S Flanigan.
+    California: Truckee (Orr, 1940:101); _Beckwith_ (_ibid._); Weed
+    (Orr, 1940:100); Yreka (_ibid._). Oregon (V. Bailey, 1936:107): near
+    Ashland; Bend; The Dalles. Washington: Grand Dalles (Taylor and
+    Shaw, 1929:29); Yakima Valley (_ibid._); Douglas (Nelson, 1909:203).
+
+SYLVILAGUS NUTTALLII PINETIS (J. A. Allen).
+
+    1894. _Lepus sylvaticus pinetis_ J. A. Allen, Bull. Amer. Mus. Nat.
+      Hist., 6:348, December 7, type from White Mts., south of Mt. Ord,
+      Apache County, Arizona, according to Warren (Mammals of Colorado,
+      1942:270).
+
+    1909. _Sylvilagus nuttalli pinetis_, Nelson, N. Amer. Fauna, 29:207,
+      August 31.
+
+    _Marginal records._--Colorado (Nelson, 1909:210): Arkins; Golden;
+    Greenhorn Mts. New Mexico: Sierra Grande (Nelson, 1909:211); Willis
+    (_ibid._); Zuni Mts. (V. Bailey, 1932:60). Arizona: type locality.
+    Utah (Durrant, MS): 4½ mi. NW Bluff; Block Canyon, 19 mi. SE Moab,
+    5400 ft.; _5 mi. NE La Sal P. O., 8000 ft._
+
+
+=Sylvilagus audubonii=
+
+Audubon Cottontail
+
+Total length, 350-420; tail, 45-75; hind foot, 75-100; ear from notch
+(dry), 55-70; weight of _S. a. vallicola_, 7 ♂ 912 (835-988), 2 ♀ 1096,
+1191 grams. Long hind legs, long ears, sparseness of hair on the ears,
+shortness of hair on the feet, prominent (upturned) supraorbital process
+of the skull and much inflated tympanic bullae are characters of this
+wide-spread species. Embryos in 19 Californian females averaged 3.6
+(2-6) per female.
+
+[Illustration: FIG. 41. Distribution of _Sylvilagus audubonii_.
+
+  1. _S. a. audubonii_
+  2. _S. a. vallicola_
+  3. _S. a. sanctidiegi_
+  4. _S. a. confinis_
+  5. _S. a. arizonae_
+  6. _S. a. warreni_
+  7. _S. a. baileyi_
+  8. _S. a. cedrophilus_
+  9. _S. a. neomexicanus_
+  10. _S. a. minor_
+  11. _S. a. goldmani_
+  12. _S. a. parvulus_ ]
+
+SYLVILAGUS AUDUBONII ARIZONAE (J. A. Allen).
+
+    1877. [_Lepus sylvaticus_] var. _arizonae_ J. A. Allen, Monogr.
+      North Amer. Rodentia, p. 332, August, type from Beals Spring,
+      Yavapai Co., Arizona.
+
+    1909. _Sylvilagus auduboni arizonae_, Nelson, N. Amer. Fauna,
+      29:222, August 31.
+
+    1896. _Lepus arizonae major_ Mearns, Proc. U. S. Nat. Mus., 18:557,
+      June 24, type from Calabasas, Pima County, Arizona.
+
+    1904. _Lepus laticinctus_ Elliot, Field Columb. Mus., publ. 87,
+      zool. ser., 3:254, January 7, type from Oro Grande, Mohave Desert,
+      San Bernardino County, California.
+
+    1904. _Lepus l[aticinctus]. rufipes_ Elliot, Field Columb. Mus.,
+      publ. 87, zool. ser., 3:254, January 7, type from Furnace Cr.,
+      Inyo Co., California.
+
+    _Marginal records._--Utah (Durrant, MS): 2 mi. SW Fish Springs;
+    Holden; 7 mi. SW Tropic. Arizona (Nelson, 1909:225): Seligman; Ft.
+    Verde; Dos Cabesos. Sonora (Burt, 1938:69): Tecoripa; La Libertad
+    Ranch. Baja California: San Matias Pass (Nelson, 1909:225).
+    California: Vallecito (Orr, 1940:126); Fairmont, Antelope Valley
+    (_ibid._); Little Lake, 3300 ft. (Orr, 1940:125); 5300-5639 ft.,
+    near Benton (_ibid._). Nevada (Hall, 1946:614): Arlemont; 4 mi. E
+    Smith Creek Cave.
+
+SYLVILAGUS AUDUBONII AUDUBONII (Baird).
+
+    1858. _Lepus audubonii_ Baird, Mamm. N. Amer., p. 608, July 14, type
+      from San Francisco, San Francisco County, California.
+
+    1909. _Sylvilagus auduboni_, Nelson, N. Amer. Fauna, 29:214, August
+      31.
+
+    _Marginal records_ (Orr, 1940:115).--California: 600 ft., Paines
+    Creek; Rackerby; Pleasant Valley; Snelling; 2 mi. S mouth Salinas
+    River, northward not reaching coast again except at San Francisco,
+    thence around shores of San Francisco Bay to mouth of Carquinez
+    Straits and northward along western side of Sacramento Valley to
+    Winslow, 5 mi. W Fruto.
+
+SYLVILAGUS AUDUBONII BAILEYI (Merriam).
+
+    1897. _Lepus baileyi_ Merriam, Proc. Biol. Soc. Washington, 11:148,
+      June 9, type from Spring Creek, east side of Bighorn Basin,
+      Bighorn County, Wyoming.
+
+    1908. _Sylvilagus auduboni baileyi_, Lantz, Trans. Kansas Acad.
+      Sci., 22:336.
+
+    _Marginal records._--Montana: Great Falls of the Missouri (Nelson,
+    1909:234). North Dakota: Wade on the Cannonball River (V. Bailey,
+    1927:138). South Dakota: Corral Draw (Nelson, 1909:234). Nebraska:
+    Glen (_ibid._). Kansas: 2½ mi. S and 4 mi. W Oberlin (19035 KU);
+    Wakeeney (1203 KU). Colorado (Nelson, 1909:234): Monon; The Cedars;
+    Quenda [=Querida]; Salida. Wyoming: ½ mi. W Horse Creek P. O. (15948
+    KU). Colorado (Nelson, 1909:234): White Rock [2 mi. above Meeker,
+    6400 ft.]; 20 mi. SW Rangely. Utah (Durrant, MS): 8 mi. S Myton; 6
+    mi. NW Duchesne; 10 mi. E Mountain Home. Wyoming (Nelson, 1909:234):
+    Ft. Bridger; Big Piney; Circle. Montana: Stillwater (_ibid._).
+    Phillips Creek, Montana (Nelson 1909:234) not found.
+
+SYLVILAGUS AUDUBONII CEDROPHILUS Nelson.
+
+    1907. _Sylvilagus auduboni cedrophilus_ Nelson, Proc. Biol. Soc.
+      Washington, 20:83, July 22, type from Cactus Flat, 20 mi. N Cliff,
+      Grant County, New Mexico.
+
+    _Marginal records_ (Nelson, 1909:230).--Arizona: San Francisco Mts.
+    New Mexico: Gallup; Santa Rosa; Capitan; Ancho; Isleta; Burro Mts.
+    Arizona: Springerville.
+
+SYLVILAGUS AUDUBONII CONFINIS (J. A. Allen).
+
+    1898. _Lepus arizonae confinis_ J. A. Allen, Bull. Amer. Mus. Nat.
+      Hist., 10: 146, April 12, type from Playa Maria, Baja California.
+
+    1909. _Sylvilagus auduboni confinis_, Nelson, N. Amer. Fauna,
+      29:220, August 31.
+
+    _Marginal records_ (Nelson, 1909:221).--Baja California: type
+    locality; San Bruno, thence southerly over peninsula to tip.
+
+SYLVILAGUS AUDUBONII GOLDMANI (Nelson).
+
+    1904. _Lepus arizonae goldmani_ Nelson, Proc. Biol. Soc. Washington,
+      17:107, May 18, type from Culiacán, Sinaloa.
+
+    1909. _Sylvilagus auduboni goldmani_ Nelson, N. Amer. Fauna, 29:225,
+      August 31.
+
+    _Marginal records_ (Nelson, 1909:226).--Sonora: Ortiz; Camoa.
+    Sinaloa: Bacubirito; type locality.
+
+SYLVILAGUS AUDUBONII MINOR (Mearns).
+
+    1896. _Lepus arizonae minor_ Mearns, Proc. U. S. Nat. Mus., 18:557,
+      June 24, type from El Paso, El Paso County, Texas.
+
+    1907. _S[ylvilagus]. a[uduboni]_. minor, Nelson, Proc. Biol. Soc.
+      Washington, 20:83, July 22.
+
+    _Marginal records_ (Nelson, 1909:228, unless otherwise noted).--New
+    Mexico: [12 mi. N] Tularosa. Texas: Kent; Haymond; Langtry. Durango
+    (Nelson, 1909:229): Inde; Rancho Bailon; Río Campo. Arizona: San
+    Bernardino Ranch. New Mexico: Red Rock; _Lordsburg_.
+
+SYLVILAGUS AUDUBONII NEOMEXICANUS Nelson.
+
+    1907. _Sylvilagus auduboni neomexicanus_ Nelson, Proc. Biol. Soc.
+      Washington, 20:83, July 22, type from Fort Sumner, Guadalupe
+      County, New Mexico.
+
+    _Marginal records._--Kansas: 1 mi. E Coolidge (12976 KU); Rezeau
+    Ranch, 5 mi. N Belvidere (13208 KU). Texas: Wichita Falls (Nelson,
+    1909:236); San Angelo (_ibid._); Adam [=15 mi. E Adams] (Nelson,
+    1909:236); 28 mi. S Alpine (Borell and Bryant, 1942:39); _15 mi. S
+    Alpine_, (Hall and Kelson, 1951:57); 7 mi. NE Marfa (Blair,
+    1940:34); Toyahvale [= 10 mi. S of] (Nelson, 1909:236); McKittrick
+    Canyon (Davis and Robertson, 1944:271). New Mexico: Roswell (V.
+    Bailey, 1932:54); Emory Peak (_ibid._).
+
+SYLVILAGUS AUDUBONII PARVULUS (J. A. Allen).
+
+    1904. _Lepus_ (_Sylvilagus_) _parvulus_ J. A. Allen, Bull. Amer.
+      Mus. Nat. Hist., 20:34, February 29, type from Apam, Hidalgo.
+
+    1909. _Sylvilagus auduboni parvulus_, Nelson, N. Amer. Fauna,
+      29:236, August 31.
+
+    _Marginal records_ (Nelson, 1909:237, unless otherwise
+    noted).--Texas: Llano; San Diego; Rio Grande City. Tamaulipas: El
+    Mulato (Dice, 1937:256); Miquihuana. San Luis Potosí: Rio Verde.
+    Veracruz: Perote. Puebla: Chalchicomula. Guanajuato: Silao. Durango:
+    Durango City. Coahuila: Monclova. Texas: Comstock.
+
+SYLVILAGUS AUDUBONII SANCTIDIEGI (Miller).
+
+    1899. _Lepus floridanus sanctidiegi_ Miller, Proc. Acad. Nat. Sci.
+      Philadelphia, 51:389, October 5, type from Mexican Boundary
+      Monument No. 258, shore of Pacific Ocean, San Diego County,
+      California.
+
+    1909. _Sylvilagus auduboni sanctidiegi_, Nelson, N. Amer. Fauna,
+      29:218, August 31.
+
+    _Marginal records._--California (Orr, 1940:122): Sespe; Reche Canyon
+    near Colton; San Felipe Canyon. Baja California (Nelson, 1909:220):
+    Nachogüero Valley; Santo Tomas, thence northerly along coast.
+
+SYLVILAGUS AUDUBONII VALLICOLA Nelson.
+
+    1907. _Sylvilagus auduboni vallicola_ Nelson, Proc. Biol. Soc.
+      Washington, 20:82, July 22, type from San Emigdio Ranch, Kern
+      County, California.
+
+    _Marginal records_ (Orr, 1940:118, unless otherwise
+    noted).--California: Fresno Flat (Nelson, 1909:218); Badger
+    (_ibid._); 2750 ft., Onyx; Tehachapi (Nelson, 1909:218); Mt. Pinos
+    (Orr, 1940:119), northwesterly, seldom actually reaching coast, to
+    central Monterey County thence easterly to point of beginning.
+
+SYLVILAGUS AUDUBONII WARRENI Nelson.
+
+    1907. _Sylvilagus auduboni warreni_ Nelson, Proc. Biol. Soc.
+      Washington, 20:83, July 22, type from Coventry, Montrose County,
+      Colorado.
+
+    _Marginal records._--Utah: 5250 ft., Willow Creek (Durrant, MS).
+    Colorado (Nelson, 1909:232): Rifle; Villa Grove; Medano Ranch. New
+    Mexico: Hondo Canyon (Nelson, 1909:232); Cieneguilla (_ibid._); Juan
+    Tafoya (Bailey, 1932:59). Arizona (Nelson, 1909:232): Holbrook;
+    Winslow. Utah: Canesville (_sic_) (Nelson, 1909:232); Wellington
+    (Durrant, MS).
+
+
+=Sylvilagus aquaticus=
+
+Swamp Rabbit
+
+Total length, 530-540; tail, 67-71; hind foot, 105-110; length of ear
+from notch (dry), 63-67. Upper parts blackish brown or reddish brown;
+underparts with some white; under side of tail white; skull robust;
+posterior extensions of supraorbital processes joined for their entire
+length with side of braincase or, in some specimens, with a small
+foramen between the braincase and the base of the posterior extension of
+the supraorbital process. This big rabbit is a stronger runner than the
+smaller marsh rabbit and is easily distinguished from the smaller
+species by larger size and white, instead of brownish or grayish,
+underside of the tail.
+
+SYLVILAGUS AQUATICUS AQUATICUS (Bachman).
+
+    1837. _Lepus aquaticus_ Bachman, Jour. Acad. Nat. Sci. Philadelphia,
+      7:319, type locality western Alabama.
+
+    1909. _Sylvilagus aquaticus_, Nelson, N. Amer. Fauna, 29:270, August
+      31.
+
+    1895. _Lepus aquaticus attwateri_ J. A. Allen, Bull. Amer. Mus. Nat.
+      Hist., 7:327, November 8, type from Medina River, 18 mi. S San
+      Antonio, Bexar County, Texas.
+
+    1899. _Lepus telmalemonus_ Elliot, Field Columb. Mus., publ. 38,
+      zool. ser., 1:285, May 25, type from Washita River, near
+      Dougherty, Murray County, Oklahoma.
+
+    _Marginal records._--Illinois: 6 mi. N Sesser (Cockrum, 1949:427).
+    Indiana: Point Township (Harrison and Hickie, 1931:319). Tennessee:
+    5 mi. W Hornbeak (Kellogg, 1939:292); Henryville (A. H. Howell,
+    1909:63). Alabama: Huntsville (Nelson, 1909:273); Big Crow Creek
+    near Stevenson (A. H. Howell, 1921:71). South Carolina: "about" 3
+    mi. SE Westminster (F. Sherman, 1939:259); "about" 5 mi. W Iva
+    (_ibid._). Georgia: Fulton County (_ibid._); Lumpkin (Nelson,
+    1909:273). Alabama: Castleberry (_ibid._). Louisiana: Covington
+    (Lowery, 1936:32); Kleinpeter (_ibid._). Texas (Nelson, 1909:273):
+    Sourlake; Richmond; Medina River, 18 mi. SW San Antonio; Gurley.
+    Oklahoma: 7 mi. NW Stillwater (Blair, 1939:129). Kansas: Crawford
+    County (8826 KU). Arkansas: along White River near Springdale
+    (Black, 1936:34). Missouri: 3 mi. SW Udall (Leopold and Hall,
+    1945:145). Arkansas: White River near Augusta (Dellinger and Black,
+    1940:190). Missouri: St. Francis River, W of Senath (Nelson,
+    1909:273).
+
+[Illustration: FIG. 42. Distribution of _Sylvilagus palustris_ and
+_Sylvilagus aquaticus_.
+
+  1. _S. p. palustris_
+  2. _S. p. paludicola_
+  3. _S. a. aquaticus_
+  4. _S. a. littoralis_ ]
+
+SYLVILAGUS AQUATICUS LITTORALIS Nelson.
+
+    1909. _Sylvilagus aquaticus littoralis_ Nelson, N. Amer. Fauna,
+      29:273, August 31, type from Houma, Terrebonne Parish, Louisiana.
+
+    _Range._--Swamps and marshes along Gulf Coast, wholly within Lower
+    Austral Life-zone, below 50 ft., from Mobile Bay west to Matagordo
+    Bay. Inland _Marginal records_.--Alabama: Blakely Island opposite
+    Mobile (A. H. Howell, 1921:73). Mississippi: Bay St. Louis (Nelson,
+    1909:275). Louisiana: Rayne (Lowery, 1936:32); Hackberry (Nelson,
+    1909:275). Texas: Matagorda (Nelson, 1909:275).
+
+
+=Sylvilagus insonus= (Nelson)
+
+Omilteme Cottontail
+
+(See figure 39)
+
+    1904. _Lepus insonus_ Nelson, Proc. Biol. Soc. Washington, 17:103,
+      May 18, type from Omilteme, Guerrero. Known from type locality
+      only.
+
+    1909. _Sylvilagus insonus_, Lyon and Osgood, Bull. U. S. Nat. Mus.,
+      62:34, January 28 (see Hershkovitz, Proc. U. S. Nat. Mus.,
+      100:335, May 26, 1950, for allocation of _S. insonus_ to subgenus
+      _Sylvilagus_ instead of to subgenus _Tapeti_).
+
+Total length, 435; tail, 42.5; hind foot, 95; ear from notch (dry), 61.
+Color grayish brown above and dingy (not white) below; tail dingy buffy
+below and dull rusty brown above. The collectors thought that the
+species was restricted to the forested parts of the Sierra Madre del Sur
+between 7000 and 10,000 feet altitude in the Mexican state of Guerrero.
+
+[Illustration: FIG. 43. Distribution of _Sylvilagus cunicularius_ and
+_Sylvilagus graysoni_.
+
+  1. _Sylvilagus cunicularius insolitas_
+  2. _Sylvilagus cunicularius pacificus_
+  3. _Sylvilagus cunicularius cunicularius_
+  4. _Sylvilagus graysoni_ ]
+
+
+=Sylvilagus cunicularius=
+
+Mexican Cottontail
+
+Total length, 485-515; tail, 54-68; hind foot, 108-111; ear from notch
+(dry), 60-63. Pelage coarse; upper parts brownish gray; skull massive;
+posterior extensions of supraorbital processes varying from those that
+project free to those that have the tips, or tips and a considerable
+part of the processes, attached to the braincase.
+
+SYLVILAGUS CUNICULARIUS CUNICULARIUS (Waterhouse).
+
+    1848. _Lepus cunicularius_ Waterhouse, Nat. Hist. Mammalia, 2:132,
+      type from Zacualpan (probably in state of México).
+
+    1909. _Sylvilagus cunicularius_, Nelson, N. Amer. Fauna, 29:239,
+      August 31.
+
+    1890. _Lepus verae-crucis_ Thomas, Proc. Zool. Soc. London, p. 74,
+      June, type from Las Vigas, Veracruz.
+
+    _Marginal records_ (Nelson, 1909:241).--Hidalgo: Tulancingo.
+    Veracruz: Las Vigas; Orizaba. Oaxaca: Mt. Zempoaltepec; Suchixtepec.
+    Guerrero: Chilpancingo. Michoacán (Hall and Villa, 1949:469).
+    Pátzcuaro; Tancítaro.
+
+SYLVILAGUS CUNICULARIUS INSOLITUS (J. A. Allen).
+
+    1890. _Lepus insolitus_ J. A. Allen, Bull. Amer. Mus. Nat. Hist.,
+      3:189, December 10, type from plains of Colima, Jalisco.
+
+    1909. _Sylvilagus cunicularius insolitus_, Nelson, N. Amer. Fauna,
+      29:243, August 31.
+
+    _Marginal records_ (Nelson, 1909:244).--Sinaloa: Mazatlan; Rosario;
+    Esquinapa. Nayarit: Acaponeta. Colima: Colima; Armeria, thence
+    northward along Pacific Coast.
+
+SYLVILAGUS CUNICULARIUS PACIFICUS (Nelson).
+
+    1904. _Lepus veraecrucis pacificus_ Nelson, Proc. Biol. Soc.
+      Washington, 17:104, May 18, type from Acapulco, Guerrero.
+
+    1909. _Sylvilagus cunicularius pacificus_, Lyon and Osgood, Catal.
+      Bull. U. S. Nat. Mus., 62:35, January 28.
+
+    _Marginal records_ (Nelson, 1909:242).--Guerrero: El Limón. Oaxaca:
+    Llano Grande, thence westward along Pacific Coast.
+
+
+=Sylvilagus graysoni= (J. A. Allen)
+
+Tres Marias Cottontail
+
+    1877. _Lepus graysoni_ J. A. Allen, Monogr. N. Amer. Rodentia, p.
+      347, August, type from Tres Marias Islands, Jalisco; probably
+      María Madre Island. (See Nelson, N. Amer. Fauna, 14:16, April 29,
+      1899.)
+
+    1904. _Sylvilagus_ (_Sylvilagus_) _graysoni_, Lyon, Smiths. Misc.
+      Coll., 45:336, June 15.
+
+    _Marginal records_ (Nelson, 1909:245): María Madre Island; María
+    Magdalena Island.
+
+Total length, 480; tail, 51; hind foot, 99; ear from notch (dry), 57.
+This insular species is closely related to _Sylvilagus cunicularius_ of
+the adjacent mainland but has notably shorter ears and more reddish on
+the upper parts, sides and legs; the skull is slenderer, especially in
+the rostral region. The posterior extensions of the supraorbital process
+are united to the braincase throughout most of their length as in
+_Sylvilagus palustris_. The species seems to have a narrow vertical
+range, occurring from sea level up to only 200 feet.
+
+
+Genus LEPUS Linnaeus--Hares and Jack Rabbits
+
+    Revised by Nelson, N. Amer. Fauna, 29:59-158, August 31, 1909.
+    Concerning Shamel's (Proc. Biol. Soc. Washington, 55:25, May 12,
+    1942) proposed changes of names for several species, see Hall, Univ.
+    Kansas Publ., Mus. Nat. Hist., 5:45, October 1, 1951.
+
+    1758. _Lepus_ Linnaeus, Systema Naturae, ed. 10, 1:57. Type _Lepus
+      timidus_ Linnaeus.
+
+    1895. _Macrotolagus_ Mearns, Science, n. s., 1:698, June 21. Type,
+      _Lepus alleni_ Mearns. (See Mearns, Proc. U. S. Nat. Mus., 18:552,
+      June 24, 1896.)
+
+    1904. _Poecilolagus_ Lyon, Smiths. Misc. Coll., 45:395, June 15.
+      Type, _Lepus americanus_ Erxleben.
+
+    1904. _Lagos_ Palmer. N. Amer. Fauna, 23:361, January 23. Type,
+      _Lepus arcticus_ Ross. _Lagos_ J. Brooks, a catalogue of the
+      anatomical and zoological museum, pt. 1, p. 54, July, 1828,
+      appears to be a _nomen nudum_.
+
+    1911. _Boreolepus_ Barrett-Hamilton, History of the British
+      Mammalia, pt. 9, p. 160, November 17. Type, _Lepus groenlandicus_
+      Rhoads. (For status see Sutton and Hamilton, Mem. Carnegie Mus.,
+      12 (pt. 2, sec. 1):78, August 4, 1932; also A. H. Howell, Jour.
+      Mamm., 17:331, November 16.)
+
+Total length, 363-664; tail, 25-112; hind foot, 112-189; ear from notch
+(dry), 62-144. Upper parts grayish, brownish or black; interparietal
+bone fused to surrounding bones; cervical vertabrae long, 2nd and 3rd
+being longer than wide; transverse processes of lumbar vertabrae long,
+the longest one equal to the length of the centrum to which it is
+attached plus half of the length of the preceding centrum; free
+extremity of transverse process of lumbar vertebra considerably
+expanded; distance from anterior edge of acetabulum to extreme anterior
+point of ilium less than distance from former point to most distant
+point of ischium; ulna reduced in size along middle part of shaft, and,
+excepting the lower extremity, placed almost entirely behind radius.
+
+All members of the genus _Lepus_ are technically hares, as these are
+defined in the account of the family Leporidae. The largest members of
+the order Lagomorpha are members of the genus _Lepus_. No domestic
+strains have been developed but effort in this direction might be
+profitable, in as much as the so-called Belgian hares of the related
+genus, _Oryctolagus_, have done well in captivity.
+
+In the past it has been customary to recognize two or more subgenera of
+the genus _Lepus_. The species are a less diverse lot than those in
+some other genera, however, and it seems that no useful purpose is
+served by recognizing subgenera. Accordingly, the several names proposed
+for this purpose are arranged here as synonyms of the generic name
+_Lepus_ Linnaeus.
+
+The introduction of the European Hare (_Lepus europaeus_) into the
+eastern part of the North American Continent has been successful in the
+sense that the animal is multiplying. If it continues to increase, the
+increase almost certainly will be at the expense of some native species
+of rabbit. This circumstance and the unfortunate consequences of the
+introduction of the European rabbit (_Oryctolagus cuniculus_) in New
+Zealand (see Wodzicki, 1950:107-141) and Australia (see Stead,
+1925:355-358) give basis for effort to exterminate the alien species
+before it spreads more widely.
+
+KEY TO THE SPECIES OF THE GENUS LEPUS
+
+  1.  North of 34° N latitude.
+
+    2.  All white pelage (tips of ears sometimes black).
+
+      3.  North of line from Port Simpson, British Columbia, to Halifax,
+          Nova Scotia.
+
+        4.  Basilar length of skull more than 67; ear from notch usually
+            more than 73 dry (77 fresh); first upper incisors inscribing
+            an arch of a circle the radius of which is more than 9.6 mm.
+
+          5.  Geographic range east of Mackenzie River.
+                                                   _Lepus arcticus_, p. 178
+
+          5´. Geographic range west of Mackenzie River.
+                                                      _Lepus othus_, p. 177
+
+        4´. Basilar length of skull less than 67; ear from notch usually
+            less than 73 dry (77 fresh); first upper incisors inscribing
+            an arch of a circle the radius of which is less than 9.6 mm.
+                                                 _Lepus americanus_, p. 173
+
+
+      3´. South of a line from Port Simpson, British Columbia to Halifax,
+          Nova Scotia.
+
+          5.  Ear from notch more than 82 dry (87 fresh); least
+              interorbital breadth more than 26
+                                                 _Lepus townsendii_, p. 180
+
+          5´. Ear from notch less than 82 dry (87 fresh); least
+              interorbital breadth less than 26
+                                                 _Lepus americanus_, p. 173
+
+    2´. Brownish or grayish pelage.
+
+            6.  Tail blackish or brownish all around (in specimens not
+                having completed molt on tail, white winter pelage may be
+                present); basilar length less than 67 mm.
+                                                 _Lepus americanus_, p. 173
+
+            6´. Tail partly or wholly white.
+
+              7.  Tail black on upper surface.
+
+
+                8.  Upper sides of hind feet without a trace of white;
+                    upper parts tawny.
+                                                  _Lepus europaeus_, p. 189
+
+                8´. Upper sides of hind feet with more or less white or
+                    whitish; upper parts grayish or brownish
+                                               _Lepus californicus_, p. 181
+
+              7´. Tail all white or (in some _Lepus townsendii_) with
+                  faint buffy or dusky median line on top but this line
+                  not extending on to rump (as in _L. californicus_).
+
+                  9.  Geographic range north of a line from Port Simpson,
+                      British Columbia, to Halifax, Nova Scotia.
+
+                    10. Geographic range east of Mackenzie River
+                                                   _Lepus arcticus_, p. 178
+
+                    10´. Geographic range west of Mackenzie River
+                                                      _Lepus othus_, p. 177
+
+                  9´. Geographic range south of a line from Port Simpson,
+                      British Columbia, to Halifax, Nova Scotia
+                                                 _Lepus townsendii_, p. 180
+
+  1´. South of 34° N latitude.
+
+                      11.  In state of Tamaulipas, México.
+                                               _Lepus californicus_, p. 181
+
+                      11´. Range outside Tamaulipas, México.
+
+                        12.  Ears with terminal black patch (on outside).
+                             _Lepus californicus_ and _Lepus insularis_,
+                                                               pp. 181, 186
+
+                        12´. Ears without terminal black patch.
+
+                          13.  Ear from notch, dry more than 130 (137
+                               fresh),
+                                                     _Lepus alleni_, p. 188
+
+                          13´. Ear from notch, dry less than 130 (137
+                               fresh).
+
+                            14.  Nape more or less black.
+
+                              15.  Ears yellow; range Pacific Coastal
+                                   region of Isthmus of Tehuantepec in
+                                   southern Oaxaca and Chiapas.
+                                               _Lepus flavigularis_, p. 188
+
+                              15´. Ears dark buff, grayish, white and
+                                   black; range north of Isthmus of
+                                   Tehuantepec.
+                                                   _Lepus callotis_, p. 186
+
+                            14´. Nape gray or grayish buff.
+                                                  _Lepus gaillardi_, p. 188
+
+[Illustration: FIG. 44. Distribution of _Lepus americanus_.
+
+  Guide to subspecies:
+
+  1. _L. a. dalli_
+  2. _L. a. macfarlani_
+  3. _L. a. americanus_
+  4. _L. a. pallidus_
+  5. _L. a. columbiensis_
+  6. _L. a. cascadensis_
+  7. _L. a. washingtoni_
+  8. _L. a. klamathensis_
+  9. _L. a. tahoensis_
+  10. _L. a. pineus_
+  11. _L. a. oregonus_
+  12. _L. a. bairdii_
+  13. _L. a. seclusus_
+  14. _L. a. phaenotus_
+  15. _L. a. struthopus_
+  16. _L. a. virginianus_ ]
+
+
+=Lepus americanus=
+
+American Varying Hare
+
+Total length, 363-520; tail, 25-55; hind foot, 112-150; ear from notch
+(dry), 62-70. Upper parts brownish or dusky grayish; hind feet brownish
+or white depending on subspecies; winter pelage white except in certain
+populations along Pacific Coast; basilar length less than 67; first
+upper incisors inscribing an arc of a circle the radius of which is
+less than 9.6 mm. There are two to six young in a litter according to
+Orr (1940:59).
+
+LEPUS AMERICANUS AMERICANUS Erxleben.
+
+    1777. [_Lepus_] _americanus_ Erxleben, Systema Regni Animalis ...,
+      1:330, type locality Hudson Bay, Canada.
+
+    1778. _Lepus hudsonius_ Pallas, Glires, p. 30, type locality not
+      stated.
+
+    1790. _Lepus nanus_ Schreber, Säugethiere, 4:880-885, pl. 234B, a
+      composite of _Lepus americanus_ and _Sylvilagus floridanus_. No
+      type or type locality designated. Range given as from Hudson Bay
+      to Florida.
+
+    1899. _Lepus bishopi_ J. A. Allen, Bull. Amer. Mus. Nat. Hist.,
+      12:11, March 4, type from Mill Lake, Turtle Mts., North Dakota
+      (inseparable from _L. a. americanus_ according to V. Bailey, N.
+      Amer. Fauna, 49:138, January 8, 1927 [not December, 1926]).
+
+    _Marginal records_ (Nelson, 1909:89, unless otherwise
+    noted).--Keewatin: Hudson Bay (Anderson, 1947:100). Ontario: Fort
+    Severn (Nelson, 1909:88); around shore of Hudson Bay to
+    approximately 56° N thence to Ungava: Fort Chimo. Labrador: Hamilton
+    Inlet. Ontario: North Bay of Lake Nipissing; Michipicoten Island;
+    Isle Royal (Anderson, 1947:100). Manitoba: Dog Lake. Saskatchewan:
+    Indian Head. North Dakota (V. Bailey, 1927:139): Mill Lake, Turtle
+    Mts.; Grafton; "near" Fargo; Elbowoods; Buford. Saskatchewan: Battle
+    Creek (Soper, 1946:149). Alberta: Red Deer; 50 mi. N Edmonton; Fort
+    Chipewyan; Govt. Hay Camp, Slave River (Soper, 1942:140).
+
+LEPUS AMERICANUS BAIRDII Hayden.
+
+    1869. _Lepus bairdii_ Hayden, Amer. Nat., 3:115, May, type locality
+      Columbia Valley, Wind River Mts., Fremont County, Wyoming.
+
+    1875. [_Lepus americanus_] var. _bairdii_, J. A. Allen, Proc. Boston
+      Soc. Nat. Hist., 17:431, February 17.
+
+    _Marginal records._--British Columbia: Elko (Anderson, 1947:100);
+    Waterton Lakes Nat'l Park (_ibid._). Montana (Nelson, 1909:112):
+    Fort Benton; Big Snowy Mts. Wyoming: 5 mi. E and 9 mi. N Pinedale
+    (15924 KU); 3 mi. ESE Browns Peak (17603 KU). Colorado: Boulder Co.
+    (Nelson, 1909:112). New Mexico: 10,500 ft., Agua Fria Mtn. (Hill,
+    1942:82); Pecos Baldy (V. Bailey, 1932:45); Chama (_ibid._). Utah
+    (Durrant, MS unless otherwise noted): 18 mi. SE Manila; _30 mi. N
+    Fort Duchesne_; _23 mi. N Fruitland_; 21 mi. N Escalante; 10 mi. E
+    Marysvale; City Creek Canyon, Salt Lake City (Barnes, 1927:145).
+    Idaho (Dalquest, 1942:181): Pocatello; _Payette_; Cuddy Mtn.;
+    _Weippe_; Bitterroot Valley. _British Columbia: Newgate_ (Anderson,
+    1947:100).
+
+LEPUS AMERICANUS CASCADENSIS Nelson.
+
+    1907. _Lepus bairdi cascadensis_ Nelson, Proc. Biol. Soc.
+      Washington, 20:87, December 11, type from Roab's ranch, near Hope,
+      British Columbia.
+
+    1935. _Lepus americanus cascadensis_, Racey and Cowan, Rep't Prov.
+      Mus. British Columbia, 1935:H28.
+
+    _Marginal records_ (Dalquest, 1942:177, unless otherwise
+    noted).--British Columbia: type locality; Fairview-Keremeos Summit
+    (Anderson, 1947:101). Washington: Lake Chelan; Trout Lake; Vance;
+    _Mt. Rainier_; Entiat River, 20 mi. from mouth. British Columbia:
+    Alta Lake.
+
+LEPUS AMERICANUS COLUMBIENSIS Rhoads.
+
+    1895. _Lepus americanus columbiensis_ Rhoads, Proc. Acad. Nat. Sci.
+      Philadelphia, p. 242, July 2, type from Vernon, British Columbia.
+
+    _Marginal records._--Alberta: Banff Nat'l Park (Anderson, 1947:101);
+    Jasper Nat'l Park (_ibid._). British Columbia: Creston (Dalquest,
+    1942:182). Washington: Republic (Dalquest, 1948:385); Moulson
+    (Dalquest, 1942:182). British Columbia: Cottonwood Post Office
+    (Dalquest, 1942:182); Indianpoint Lake (_ibid._).
+
+LEPUS AMERICANUS DALLI Merriam.
+
+    1900. _Lepus americanus dalli_ Merriam, Proc. Washington Acad. Sci.,
+      2:29, March 14, type from Nulato, Alaska.
+
+    _Marginal records._--Noatak River (Bailey and Hendee, 1926:21);
+    Upper St. John River (Rausch, 1950:466); Koyukuk (Nelson, 1909:102);
+    Anvik (_ibid._); Yukon Delta (_ibid._); thence northerly, in
+    suitable habitat, along coast to Noatak River.
+
+LEPUS AMERICANUS KLAMATHENSIS Merriam.
+
+    1899. _Lepus klamathensis_ Merriam, N. Amer. Fauna, 16:100, October
+      28, type from head of Wood River, near Fort Klamath, Klamath
+      County, Oregon.
+
+    1936. _Lepus americanus klamathensis_, V. Bailey, N. Amer. Fauna,
+      55:95, August 29.
+
+    _Marginal records._--Oregon (Dalquest, 1942:176): Mt. Hood; mouth
+    Davis Creek. California (Orr, 1940:53): vicinity Fort Bidwell; 3000
+    ft., Rush Creek, 12 mi. from [N of] Weaverville. _Oregon: Estacada_
+    (Dalquest, 1942:176).
+
+LEPUS AMERICANUS MACFARLANI Merriam.
+
+    1900. _Lepus americanus macfarlani_ Merriam, Proc. Washington Acad.
+      Sci., 2:30, March 14, type from Fort Anderson, near mouth of
+      Anderson River, Mackenzie.
+
+    1900. _Lepus saliens_ Osgood, N. Amer. Fauna, 19:39, October 6, type
+      from Caribou Crossing, between Lake Bennett and Lake Tagish,
+      Yukon.
+
+    1907. ? _Lepus niediecki_ Matschie, Niedieck's Kreuzfahrten im
+      Beringmeer, p. 240, type locality Kasilof Lake, Kenai Peninsula,
+      Alaska.
+
+    _Marginal records_ (Nelson, 1909:100, unless otherwise
+    noted).--Mackenzie: type locality; Fort Franklin; Fort Rae; Fort
+    Resolution; Fort Smith. British Columbia: Peace River and Alaska
+    Highway (Anderson, 1947:101); Bennett. Alaska: Cordova (Philip,
+    1939:84); Mills Creek (_ibid._); Lake Clark; E. Fork Kuskokwim River
+    (Dice, 1921:27); head N. Fork Kuskokwim (_ibid._); Fort Yukon.
+    Yukon: Russell Mts.
+
+LEPUS AMERICANUS OREGONUS Orr.
+
+    1934. _Lepus bairdii oregonus_ Orr, Jour. Mamm., 15:152, May 15,
+      type from 12 mi. S Canyon City, 5500 ft., Grant County, Oregon.
+
+    1942. _Lepus americanus oregonus_, Dalquest, Jour. Mamm., 23:179,
+      June 3.
+
+    _Marginal records._--Oregon (Dalquest, 1942:180): 22 mi. N
+    Enterprise; _Wallowa Lake_; _summit of Blue Mts._; Ochoco Nat'l
+    Forest, Harney County.
+
+    1938. _Lepus americanus pallidus_ Cowan, Jour. Mamm., 19:242, May
+      12, type from Chezacut Lake, Chiloctin River, British Columbia.
+
+LEPUS AMERICANUS PALLIDUS Cowan.
+
+_Marginal records._--British Columbia: 23 mi. N Hazelton (Dalquest,
+1942:183); Berg Lake (_ibid._); Quesnel (Cowan, 1938:243); Lac La Hache
+(_ibid._); Bonaparte River, 5 days N Ashcroft (Dalquest, 1942:183);
+Kimsquit, Dean Channel (Anderson, 1947:102); Hazelton (Dalquest,
+1942:183).
+
+LEPUS AMERICANUS PHAEONOTUS J. A. Allen.
+
+    1899. _Lepus americanus phaeonotus_ J. A. Allen, Bull. Amer. Mus.
+      Nat. Hist., 12:11, March 4, type from Hallock, Kittson County,
+      Minnesota.
+
+    _Marginal records_ (Nelson, 1909:96, unless otherwise
+    noted).--Manitoba: Selkirk Settlement. Ontario: Lake of the Woods
+    (Anderson, 1947:102); Rainy Lake. Michigan: Houghton; Chippewa
+    County (Burt, 1946:244); Presque Isle County (_ibid._); Wayne County
+    (_ibid._); Jackson County (_ibid._); Allegan County (_ibid._).
+    Wisconsin: Rhinelander; St. Croix River, Douglas Co. Minnesota: Elk
+    River; Moores Lake; Warren; St. Vincent. Saskatchewan: Glen Ewen
+    (Soper, 1946:149). Manitoba: Carberry (Anderson, 1947:102).
+
+LEPUS AMERICANUS PINEUS Dalquest.
+
+    1942. _Lepus americanus pineus_ Dalquest, Jour. Mamm., 23:178, June
+      3, type from Cedar Mtn., Latah County, Idaho.
+
+    _Marginal records._--British Columbia (Anderson, 1947:102): Trail;
+    Nelson Range south of Creston. Idaho (Dalquest, 1942:179): 5 mi. W
+    Cocolalla; Troy. Washington (Dalquest, 1942:179): Blue Mts.,
+    Columbia County; _Marcus_. _British Columbia_: _Rossland_ (Anderson,
+    1947:102).
+
+LEPUS AMERICANUS SECLUSUS Baker and Hankins.
+
+    1950. _Lepus americanus seclusus_ Baker and Hankins, Proc. Biol.
+      Soc. Washington, 63:63, May 25, type from 12 mi. E and 2 mi. N
+      Shell, 7900 ft., Bighorn Mts., Big Horn County, Wyoming. Type
+      locality is only precise locality.
+
+LEPUS AMERICANUS STRUTHOPUS Bangs.
+
+    1898. _Lepus americanus struthopus_ Bangs, Proc. Biol. Soc.
+      Washington, 12:81, March 24, type from Digby, Nova Scotia.
+
+    _Marginal records_ (Nelson, 1909:92, unless otherwise
+    noted).--Newfoundland (introduced in 1864): Bay of Islands; Bay of
+    St. George. Nova Scotia: type locality. Maine: Bucksport. Quebec:
+    south of St. Lawrence River (Anderson, 1947:102). New Brunswick:
+    Andover. Prince Edward Island: Alberton. Quebec: Grosse Isle,
+    Magdalen Islands.
+
+LEPUS AMERICANUS TAHOENSIS Orr.
+
+    1933. _Lepus washingtonii tahoensis_ Orr, Jour. Mamm., 14:54,
+    February 14, type from ½ mi. S Tahoe Tavern, Placer County,
+    California.
+
+    1942. [_Lepus americanus_] _tahoensis_, Dalquest, Jour. Mamm.,
+    23:176, June 3.
+
+    _Marginal records._--California: vic. Mineral (Orr, 1940:56).
+    Nevada: 350 yards NE junction of Nevada state line and N shore Lake
+    Tahoe (Hall, 1946:601). California: Niagara Creek (Orr, 1940:55);
+    Cisco (Orr, 1940:56).
+
+LEPUS AMERICANUS VIRGINIANUS Harlan.
+
+    1825. _Lepus virginianus_ Harlan, Fauna Americana, p. 196, type
+      locality Blue Mountains, northeast of Harrisburg, Pennsylvania.
+
+    1875. _Lepus americanus_ var. _virginianus_, J. A. Allen, Proc.
+      Boston Soc. Nat. Hist., 17:431, February 17.
+
+    1825. _Lepus wardii_ Schinz, Das Thierreich ..., 4:428, based on the
+      varying hare of the southern part of the United States (Warden, D.
+      B., in A statistical, political, and historical account of the
+      United States of North America ..., 1:233, 1819).
+
+    1845. _Lepus borealis_ Schinz, Synopsis Mammalium, 2:286-287. No
+      type or type locality mentioned. From Virginia and the
+      Alleghenies.
+
+    _Marginal records_ (Nelson, 1909:94, unless otherwise
+    noted).--Quebec (Anderson, 1947:103): Ottawa River; Megantic County.
+    Maine: _Greenville_ (Nelson, 1909:95); Sebec Lake (_ibid._); Mt.
+    Desert Island (Manville, 1942:397). _Massachusetts_: _Concord_;
+    _Middleboro_. _Rhode Island_: _Washington County_. New York: Locust
+    Grove. Pennsylvania: type locality. Tennessee: White Rock (Kellogg,
+    1939:289). Ohio: Ashtabula Co. (Bole and Moulthrop, 1942:174).
+    Ontario: Holland Riv. (Snyder and Logier, 1930:180).
+
+LEPUS AMERICANUS WASHINGTONII Baird.
+
+    1855. _Lepus washingtonii_ Baird, Proc. Acad. Nat. Sci.
+      Philadelphia, 7:333, type from Steilacoom, Washington.
+
+    1875. _Lepus americanus_ var. _washingtoni_, J. A. Allen, Proc.
+      Boston Soc. Nat. Hist., 18:431, February 17.
+
+    _Marginal records_ (Dalquest, 1942:175, unless otherwise
+    noted).--British Columbia (Nelson, 1909:107): Sumas; Chilliwack.
+    Washington: _Mt. Vernon_; Lake Kapowsin; White Salmon. Oregon: Drew;
+    Florence; _Tillamook_. Washington: Sekiu River.
+
+
+=Lepus othus=
+
+Alaskan Hare
+
+Total length, 565-690; tail, 53-104; hind foot, 147-189; ear from notch
+(dry), 75-78. Color brownish in summer; white in winter; but tips of
+ears always black. General comparisons indicate that this is the species
+which, in Eurasia, bears the name _Lepus timidus_.
+
+LEPUS OTHUS OTHUS Merriam.
+
+    1900. _Lepus othus_ Merriam, Proc. Washington Acad. Sci., 2:28,
+      March 14, type from St. Michael, Norton Sound, Alaska.
+
+    _Marginal records._--Alaska (A. H. Howell, 1936:334): Kotzebue
+    Sound; mts. NW Nulato River; Akiak; 75 mi. below Bethel; thence N
+    along coast.
+
+LEPUS OTHUS POADROMUS Merriam.
+
+    1900. _Lepus poadromus_ Merriam, Proc. Washington Acad. Sci., 2:29,
+      March 14, type from Stepovak Bay, Alaska Peninsula, Alaska.
+
+    1936. _Lepus othus poadromus_, A. H. Howell, Jour. Mamm., 17:334,
+      November 16.
+
+    _Marginal records._--Alaska (A. H. Howell, 1936:335): Nushagak;
+    Kawatna Bay, Shelikof Strait; _Cold Bay_; _Chignik_; _type
+    locality_; _Sand Point_; 15 mi. W Pavlof Mtn.
+
+
+=Lepus arcticus=
+
+Arctic Hare
+
+    Revised by A. H. Howell, Jour. Mamm., 17:315-332, November 16, 1936.
+      For the taxonomic status of the technical names _arcticus_ and
+      _glacialis_ see Rhoads, Amer. Nat., 30:234-235, March, 1896;
+      Merriam, Science, n. s., 3:564-565, April 10, 1896; Rhoads,
+      Science, n. s., 3:843-845, June 5, 1896; Merriam, Science, n. s.,
+      3:845, June 5, 1896.
+
+Total length, 480-678; tail, 34-80; hind foot, 132-174; ear from notch
+(dry), 70-84. Upper parts gray in summer in southern subspecies; in
+others white; in winter white in all subspecies, except black tips of
+ears. Weights of lean individuals reach 12 pounds. Hopping on the hind
+feet without touching the forefeet to the ground has repeatedly been
+recorded for this species. There are four to eight young in a litter.
+
+[Illustration: FIG. 45. Distribution of _Lepus othus_ and _Lepus
+arcticus_.
+
+  1. _L. o. othus_
+  2. _L. o. poadromus_
+  3. _L. a. groenlandicus_
+  4. _L. a. porsildi_
+  5. _L. a. monstrabilis_
+  6. _L. a. arcticus_
+  7. _L. a. andersoni_
+  8. _L. a. labradorius_
+  9. _L. a. bangsi_ ]
+
+LEPUS ARCTICUS ARCTICUS Ross.
+
+    1819. _Lepus arcticus_ Ross, Voyage of Discovery, ed. 2, vol. 2,
+      appendix 4, p. 151, type locality Possession Bay, Bylot Island,
+      lat. 73° 37´ N.
+
+    1819. _Lepus glacialis_ Leach, in Ross, Voyage of Discovery, ed. 2,
+      vol. 2, p. 170, type locality same as for _Lepus arcticus_ Ross.
+
+    _Marginal records._--Franklin: type locality; Egukjuak, 8 mi. E Pond
+    Inlet, Baffin Island (A. H. Howell, 1936:322); W coast Baffin
+    Island, 67° 30´ (Anderson, 1947:96); Winter Island, Melville
+    Peninsula (A. H. Howell, 1936:321); Repulse Bay, Melville Peninsula
+    (_ibid._)
+
+LEPUS ARCTICUS ANDERSONI Nelson.
+
+    1934. _Lepus arcticus andersoni_ Nelson, Proc. Biol. Soc.
+      Washington, 47:85, March 8, type from Cape Barrow, Coronation
+      Gulf, Northwest Territory.
+
+    _Marginal records_ (A. H. Howell, 1936:328).--Franklin: Cape
+    Kellett, Banks Island; Cambridge Bay, Victoria Island. Mackenzie:
+    Bathurst Inlet; Backs River near Lake Beechey; Lake Hanbury; Fort
+    Rae; Fort Anderson.
+
+LEPUS ARCTICUS BANGSII Rhoads.
+
+    1896. _Lepus arcticus bangsii_ Rhoads, Amer. Nat., 30:253[=236 of
+      March issue], author's separates (preprints) published February
+      20, 1896, type from Codroy, Newfoundland.
+
+    _Marginal records_ (A. H. Howell, 1936:327).--Labrador: Hopedale;
+    Makkovik. Newfoundland: Saint Johns; type locality; Mt. St. Gregory.
+
+LEPUS ARCTICUS GROENLANDICUS Rhoads.
+
+    1896. _Lepus groenlandicus_ Rhoads, Amer. Nat., 30:254(=237 of March
+      issue), author's separates (preprints) issued February 20, type
+      from Robertson Bay, NW Greenland.
+
+    1934. [_Lepus arcticus_] _groenlandicus_, Nelson, Proc. Biol. Soc.
+      Washington, 47:83, March 8.
+
+    1912. _Boreolepus groenlandicus_, Barrett-Hamilton, Hist. British
+      Mammals, pt. 12, p. 298, October.
+
+    1930. _Lepus variabilis hyperboreus_ Pedersen, Medd. om Grönland,
+      77:363, no type or type locality designated but name applied to
+      hares of east Greenland in the general vicinity of Scoresby Sound
+      (preoccupied by _Lepus hyperboreas_ Pallas, Zoogeographica Rosso
+      Asiatica, 1:152, 1831, a species of _Ochotona_).
+
+    1934. _Lepus arcticus persimilis_ Nelson, Proc. Biol. Soc.
+      Washington, 47:84, March 8, type from S side Clavering Island,
+      east Greenland.
+
+    _Marginal records._--Greenland (A. H. Howell, 1936:331): Cape
+    Alexander; on east coast to Francis Joseph Fiord; on west coast to
+    _Nugsuak Peninsula_; Disko Island; Holsteinsborg.
+
+LEPUS ARCTICUS LABRADORIUS Miller.
+
+    1899. _Lepus labradorius_ Miller, Proc. Biol. Soc. Washington,
+      13:39, May 29, type from Fort Chimo, Ungava, Canada.
+
+    1924. _Lepus arcticus labradorius_, G. M. Allen and Copeland, Jour.
+      Mamm., 5:12, February 9.
+
+    1902. _Lepus arcticus canus_ Preble, N. Amer. Fauna, 22:59, October
+      31, type from Hubbart Point, W coast Hudson Bay, Keewatin.
+
+    _Marginal records_ (A. H. Howell, 1936:323).--Franklin: Pangnirtung
+    Fiord; Nunata, Kingua Fiord; Cumberland Sound, Blacklead Island;
+    Weddell Harbor, Frobisher Bay. Labrador: Ramah; Solomons Island,
+    near Davis Inlet. Quebec: _type locality_; Great Whale River, Hudson
+    Bay; Belcher Islands. Manitoba: Fort Churchill; _Hubbart Point_.
+    Keewatin: Cape Fullerton; Southampton Island. Franklin: _Cape
+    Dorset_; Camp Kungovik, W coast Baffin Island, 65° 35´ N lat.;
+    _Nettilling Fiord_.
+
+LEPUS ARCTICUS MONSTRABILIS Nelson.
+
+    1934. _Lepus arcticus monstrabilis_ Nelson, Proc. Biol. Soc.
+      Washington, 47:85, March 8, type from Buchanan Bay, Ellesmere
+      Island.
+
+    _Marginal records._--Franklin (A. H. Howell, 1936:329): Cape
+    Sheridan; Craig Harbor; Dundas Harbor, Devon Island.
+
+LEPUS ARCTICUS PORSILDI Nelson.
+
+    1934. _Lepus arcticus porsildi_ Nelson, Proc. Biol. Soc. Washington,
+      47:83, March 8, type from near Julianehaab, 61° 20´ N lat.,
+      Greenland.
+
+    _Marginal records._--Greenland (A. H. Howell, 1936:332):
+    Sukkertoppen; _Neria, 61° 36´ N lat_.; 60° 42´ N lat.
+
+
+=Lepus townsendii=
+
+White-tailed Jack Rabbit
+
+Total length, 565-655; tail, 66-112; hind foot, 145-172; ear from notch
+(dry), 96-113. Upper parts grayish brown; tail all white or with dusky
+or buffy mid-dorsal stripe which does not extend onto back; white in
+winter in northern parts of its range. Two adult males weighed 2945 and
+2494 grams (Orr, 1940:43) and there are 3 to 6 young in a litter.
+
+[Illustration: FIG. 46. Distribution of _Lepus townsendii_.
+
+  1. _Lepus townsendii townsendii_
+  2. _Lepus townsendii campanius_ ]
+
+LEPUS TOWNSENDII CAMPANIUS Hollister.
+
+    1837. _Lepus campestris_ Bachman, Jour. Acad. Nat. Sci.
+      Philadelphia, 7:349, not of Meyer, 1790; type locality plains of
+      the Saskatchewan, probably near Carlton House.
+
+    1915. _Lepus townsendii campanius_ Hollister, Proc. Biol. Soc.
+      Washington, 28:70, March 12.
+
+    _Marginal records_ (Nelson, 1909:78, unless otherwise
+    noted).--Saskatchewan: Indian Head (Nelson, 1909:77). Manitoba:
+    Carberry (_ibid._). Ontario: Rainy River (Anderson, 1947:100).
+    Minnesota (Swanson, Surber and Roberts, 1945:97): Polk County; Otter
+    Tail County; Sherburne County: Washington County. Illinois:
+    Blanding, 6 mi. WNW Hanover (Hoffmeister, 1948:1). Kansas: Red Fork,
+    60 mi. W Fort Riley; Greensburg (Brown, 1940:387). New Mexico:
+    "near" Taos (V. Bailey, 1932:47); Hopewell. Colorado: Antonito; Fort
+    Garland; Villa Grove; Salida; Como; _Denver_; Mt. Whitely, 25 mi. N
+    Kremmling. Wyoming: Spring Creek; Big Piney; head Glenn Creek,
+    Yellowstone Nat'l Park. Alberta: Great Plains region (Anderson,
+    1947:99).
+
+LEPUS TOWNSENDII TOWNSENDII Bachman.
+
+    1839. _Lepus townsendii_ Bachman, Jour. Acad. Nat. Sci.
+      Philadelphia, 8(pt. 1):90, pl. 2, type from Fort Walla Walla, near
+      present town of Wallula, Walla Walla County, Washington.
+
+    1904. _Lepus campestris sierrae_ Merriam, Proc. Biol. Soc.
+      Washington, 17:132, July 14, type from 7800 ft., Hope Valley,
+      Alpine County, California. Regarded as inseparable from _L. t.
+      townsendii_ by Orr, Occas. Papers, California Acad. Sci., 19:42,
+      May 25, 1940.
+
+    _Marginal records_ (Nelson, 1909:82, unless otherwise
+    noted).--British Columbia: Fairview, Okanagan Valley. Idaho:
+    Rathdrum Prairie (Rust, 1946:322); Lemhi River; Teton Basin.
+    Wyoming: Hamsfork; Henrys Fork. Colorado: Hot Sulphur Springs; Mt.
+    Baldy; Crested Butte; Mill City. Utah: Kanab. Nevada (Hall,
+    1946:600): Hamilton; Desatoya Mts.; Santa Rosa Mts. California:
+    Parker Creek, 6300 ft., Warner Mts. Nevada (Hall, 1946:600): 8600
+    ft., 3 mi. S Mt. Rose; 8900 ft., Lapon Canyon, Mt. Grant; Mt.
+    Magruder. California (Orr, 1940:43): Tuolumne Meadows; Woodfords;
+    Tahoe City; 4700 ft., Steele Meadows. Oregon: Antelope. Washington:
+    Manson (Dalquest, 1948:382).
+
+
+=Lepus californicus=
+
+Black-tailed Jack Rabbit
+
+Total length, 465-630; tail, 50-112; hind foot, 112-145; ear from notch
+(dry), 99-131. Upper parts gray to blackish; tail with black mid-dorsal
+stripe extending onto back; never all white in winter. On the tableland
+of Mexico and in the southwestern United States where this species
+occurs together with the white-sided jack rabbits, _L. californicus_ can
+be recognized by the terminal black patch on the outside of each ear and
+by the less extensive area of white on the flank. To the eastward, in
+Tamaulipas, where only the black-tailed jack rabbit occurs, it too, has
+extensively white flanks and some individuals lack the terminal black
+patch on the ear.
+
+A certain means for distinguishing the skulls of the black-tailed jack
+rabbit from those of all of the white-sided jack rabbits has not yet
+been found. The same is true of the skulls of the white-tailed jack
+rabbit and the black-tailed jack rabbit in the Great Basin region of
+Nevada. The skulls, at least of adults, of these two species, in the
+region east of the Rocky Mountains can be readily distinguished by the
+pattern of infolding of the enamel on the front of the first upper
+incisor teeth; _L. townsendii_ has a simple groove on the anterior face
+of the tooth and _L. californicus_, east of the Rocky Mountains, has a
+bifurcation, or even trifurcation, of the infold that can readily be
+seen by examining the occlusal surface of the incisor.
+
+In Arizona, Vorhies and Taylor (1933:478) found the weight of 23 adult
+males to average 5.1 (4.4-6.1) lbs. In that state, 70 pregnant females
+averaged 2.24 (1-6) young per litter and the authors (_op. cit._)
+thought that a female had three or four litters each year.
+
+LEPUS CALIFORNICUS ALTAMIRAE Nelson.
+
+    1904. _Lepus merriami altamirae_ Nelson, Proc. Biol. Soc.
+      Washington, 17:109, May 18, type from Alta Mira, Tamaulipas. Known
+      from type locality only.
+
+    1951. _Lepus californicus altamirae_, Hall, Univ. Kansas Publ., Mus.
+      Nat. Hist., 5:45, October 1, 1951.
+
+LEPUS CALIFORNICUS ASELLUS Miller.
+
+    1899. _Lepus asellus_ Miller, Proc. Acad. Nat. Sci., Philadelphia,
+      p. 380, September 29, type from San Luis Potosí, San Luis Potosí.
+
+    1909. _Lepus californicus asellus_, Nelson, N. Amer. Fauna, 29:150,
+      August 31.
+
+    _Marginal records_ (Nelson, 1909:151).--Coahuila: Jaral. Nuevo Leon:
+    Miquihuana. San Luis Potosí: Río Verde. Aguascalientes: Chicalote.
+    Zacatecas: Valparaiso.
+
+LEPUS CALIFORNICUS BENNETTII Gray.
+
+    1844. _Lepus bennettii_ Gray, Zoology Voy. _Sulphur_, p. 35, pl. 14,
+      type from San Diego, San Diego County, California.
+
+    1909. _Lepus californicus bennetti_, Nelson, N. Amer. Fauna, 29:136,
+      August 31.
+
+    _Marginal records._--California: Mt. Piños (Orr, 1940:73); Arroyo
+    Seco, Pasadena (Orr, 1940:74); San Felipe Valley (_ibid._); Jacumba
+    (Nelson, 1909:137), Baja California: San Quintín (Nelson, 1909:137).
+    Northward along coast at least to California: Montalvo (Orr,
+    1940:73).
+
+LEPUS CALIFORNICUS CALIFORNICUS Gray.
+
+    1837. _Lepus californica_ Gray, Charlesworth's Mag. Nat. Hist.,
+      1:586, type from "St. Antoine," California (probably on coastal
+      slope of mts. near the Mission of San Antonio, Jolon, Monterey
+      County).
+
+    1926. _Lepus californicus vigilax_ Dice, Occas. Papers Mus. Zool.,
+      Univ. Michigan, 166:11, February 11, type from Balls Ferry, Shasta
+      County, California.
+
+    _Marginal records._--Oregon (Nelson, 1909:132): Drain; Grants Pass.
+    California (Orr, 1940:68-69): Callahan, Scott River; 3300 ft,
+    Lymans, NW of Lyonsville; Dry Creek, Oroville-Chico Road; Snelling;
+    Hernandez; Morro; _Carmel Point_; _Bolinas Bay_; _Freestone_;
+    _Sherwood_; _Ferndale_; 3 mi. W Arcata. Oregon: Rogue River Valley
+    (Nelson, 1909:132).
+
+_Lepus californicus curti_ Hall.
+
+    1951. _Lepus californicus curti_ Hall, Univ. Kansas Publ., Mus. Nat.
+      Hist., 5:42, October 1, 1951, type from 88 mi. S and 10 mi. W
+      Matamoros, Tamaulipas. Known from type locality only.
+
+[Illustration: FIG. 47. Distribution of _Lepus californicus_ and _Lepus
+insularis_.
+
+  1. _L. c. wallawalla_
+  2. _L. c. californicus_
+  3. _L. c. deserticola_
+  4. _L. c. richardsonii_
+  5. _L. c. bennettii_
+  6. _L. c. martirensis_
+  7. _L. c. xanti_
+  8. _L. c. sheldoni_
+  9. _L. c. magdalenae_
+  10. _L. c. eremicus_
+  11. _L. c. texianus_
+  12. _L. c. melanotis_
+  13. _L. c. merriami_
+  14. _L. c. asellus_
+  15. _L. c. festinus_
+  16. _L. c. altamirae_
+  17. _L. c. curti_
+  18. _L. insularis_ ]
+
+LEPUS CALIFORNICUS DESERTICOLA Mearns.
+
+    1896. _Lepus texianus deserticola_ Mearns, Proc. U. S. Nat. Mus.,
+      18:564, June 24, type from western edge Colorado Desert, at base
+      of Coast Range Mts., Imperial County, California.
+
+    1909. _Lepus californicus deserticola_, Nelson, N. Amer. Fauna,
+      29:137, August 31.
+
+    1932. _Lepus californicus depressus_ Hall and Whitlow, Proc. Biol.
+      Soc. Washington, 45:71, April 2, type from ½ mi. S. Pocatello,
+      Bannock County, Idaho. (Regarded as inseparable from _L. c.
+      deserticola_ by Davis, The Recent Mammals of Idaho, p. 359, April
+      5, 1939.)
+
+    _Marginal records_ (Nelson, 1909:140, unless otherwise
+    noted).--Idaho (Davis, 1939:360): Boise River; Sawtooth Nat'l
+    Forest; Arco; Blackfoot. Utah: Ogden; Provo; Loa. Arizona: San
+    Francisco Mtn.; Fort Whipple; Phoenix; Rancho Bonito, Abra Valley
+    (Huey, 1942:362). Sonora: El Doctor. Baja California: Calamahue;
+    Esperanza Canyon. California (Orr, 1940-76): Coyote Wells;
+    Kenworthy; Victorville; Farrington Ranch; 5 mi. SW Lone Pine; 10,000
+    ft., head Silver Canyon; Mono Mills; 5600 ft., near Woodfords.
+    Nevada (Hall, 1946:606): Sutcliffe; ¾ mi. S Sulphur. Idaho: 6 mi. S
+    Murphy (Davis, 1939:360).
+
+LEPUS CALIFORNICUS EREMICUS J. A. Allen.
+
+    1894. _Lepus texianus eremicus_ J. A. Allen, Bull. Amer. Mus. Nat.
+      Hist., 6:347, December 7, type from Fairbank, Cochise County,
+      Arizona.
+
+    1909. _Lepus californicus eremicus_, Nelson, N. Amer. Fauna, 29:140,
+      August 31.
+
+    _Marginal records_ (Nelson, 1909:141, unless otherwise
+    noted).--Arizona: Casa Grande; Fort Bowie; 2 mi. E Portal (Cahalane,
+    1939:435). Chihuahua: San Bernardino Ranch (possibly Nelson should
+    have placed this in Sonora); Colonia Garcia. Sonora: Hermosillo; La
+    Libertad (Burt, 1938:68); Agua Dulce (of Sonora, not of Arizona).
+
+LEPUS CALIFORNICUS FESTINUS Nelson.
+
+    1904. _Lepus festinus_ Nelson, Proc. Biol. Soc. Washington, 17:108,
+      May 18, type from Irolo, Hidalgo.
+
+    1909. _Lepus californicus festinus_ Nelson, N. Amer. Fauna, 29:151,
+      August 31.
+
+    _Marginal records_ (Nelson, 1909:152).--Hidalgo: Zimapan;
+    _Tulancingo_; type locality; Queretaro: Tequisquiapam.
+
+LEPUS CALIFORNICUS MAGDALENAE Nelson.
+
+    1907. _Lepus californicus magdalenae_ Nelson, Proc. Biol. Soc.
+      Washington, 20:81, July 22, type from Magdalena Island, Baja
+      California.
+
+    _Marginal records._--Baja California (Nelson, 1909:155): type
+    locality; Margarita Island.
+
+LEPUS CALIFORNICUS MARTIRENSIS Stowell.
+
+    1895. _Lepus martirensis_ Stowell, Proc. California Acad. Sci.,
+      5(ser. 2):51, May 28, type specimen from the San Pedro Mártir
+      Mountains of Baja California.
+
+    _Marginal records._--Baja California (Nelson, 1909:154): La Huerta;
+    Calamahue; San Bruno; Rancho San José; San Simon.
+
+LEPUS CALIFORNICUS MELANOTIS Mearns.
+
+    1890. _Lepus melanotis_ Mearns, Bull. Amer. Mus. Nat. Hist., 2:297,
+      February 21, type from Independence, Montgomery County, Kansas.
+
+    1909. _Lepus californicus melanotis_, Nelson, N. Amer. Fauna,
+      29:146, August 31.
+
+    _Marginal records._--South Dakota: Lyman Co. (Over and Churchill,
+    1945:48). Nebraska: Oakland (12399 KU). Kansas: near Doniphan Lake
+    (Linsdale, 1928:146). Missouri: Saline Co. (Enders, 1932:120); 5 mi.
+    E Rockbridge (Leopold and Hall, 1945:145). Arkansas: "about" 2 mi. S
+    Evansville (Dellinger and Black, 1940:190). Oklahoma: 3 mi. E
+    Wainwright (Blair, 1939:128). Texas: Brazos County (Petersen,
+    1946:166); Golinda (Nelson, 1909:148); Washburn (_ibid._). New
+    Mexico: Santa Rosa (_ibid._); vicinity of Cimarron (Hill, 1942:82).
+    Colorado: Semper (Nelson, 1909:148). Wyoming: 3 mi. W Meriden along
+    Horse Cr. (15926 KU).
+
+LEPUS CALIFORNICUS MERRIAMI Mearns.
+
+    1896. _Lepus merriami_ Mearns, Preliminary diagnoses of new mammals
+      from the Mexican border of the United States, p. 2, March 25,
+      (Reprint: Proc. U. S. Nat. Mus., 18:444, May 23, 1896) type from
+      Fort Clark, Kinney County, Texas.
+
+    _Marginal records_ (Nelson, 1909:150, unless otherwise
+    noted).--Texas: Mason; Lott; Antioch; Houston. Tamaulipas:
+    Matamoros; Tamaulipeca, San Carlos Mts. (Dice, 1937:255). Nuevo
+    Leon: Santa Catariña. Coahuila: Monclova; Sabinas.
+
+LEPUS CALIFORNICUS RICHARDSONII Bachman.
+
+    1839. _Lepus richardsonii_ Bachman, Jour. Acad. Nat. Sci.
+      Philadelphia, 8(pt. 1):88, type from California (exact locality
+      unknown, but probably on interior slope of mts. near Jolon,
+      Monterey County).
+
+    1909. _Lepus californicus richardsoni_, Nelson, N. Amer. Fauna,
+      29:133, August 31.
+
+    1904. _Lepus tularensis_ Merriam, Proc. Biol. Soc. Washington,
+      17:136, July 14, type from Alila, Tulare County, California.
+
+    _Marginal records._--California (Orr, 1940:71): Minkler; Thompson
+    Valley, Walker Basin; Kern Lake Basin; Carrizo Plains, 7 mi. SE
+    Simmler; _2 mi. E Bryson_; Jolon.
+
+LEPUS CALIFORNICUS SHELDONI Burt.
+
+    1933. _Lepus californicus sheldoni_ Burt, Proc. Biol. Soc.
+      Washington, 46:37, February 20, type from Carmen Island [(lat. 26°
+      N, long. 111° 12´ W) Gulf of Calif.], Baja California. Known from
+      type locality only.
+
+LEPUS CALIFORNICUS TEXIANUS Waterhouse.
+
+    1848. _Lepus texianus_ Waterhouse, Nat. Hist. Mamm., 2:136, type
+      locality unknown, but probably in western Texas.
+
+    1909. _Lepus californicus texianus_, Nelson, N. Amer. Fauna, 29:142,
+      August 31.
+
+    1896. _Lepus texianus griseus_ Mearns, Proc. U. S. Nat. Mus.,
+      18:562, June 24, type from Fort Hancock, El Paso County, Texas.
+
+    1903. _Lepus_ (_Macrotolagus_) _texianus micropus_ J. A. Allen,
+      Bull. Amer. Mus. Nat. Hist., 19:605, November 12, type from Río
+      del Bocas, NW Durango.
+
+    _Marginal records_ (Nelson, 1909:146, unless otherwise
+    noted).--Colorado: between Grand Junction and the Utah boundary
+    (Cary, 1911:158). New Mexico: Roswell (Nelson, 1909:145). Texas
+    (Nelson, 1909:145). Colorado: Comstock. Coahuila: 8 mi. SE San Pedro
+    de los Colonias, 3700 ft. (40206 KU). Durango: Río Sestín; Río del
+    Bocas. Chihuahua: Santa Rosalia; Pacheco; San Luis Mts. New Mexico
+    (Nelson, 1909:145): Guadalupe Ranch. Arizona: Painted Desert. Utah:
+    Abajo (Blue Mts.) (Barnes, 1927:149).
+
+LEPUS CALIFORNICUS WALLAWALLA Merriam.
+
+    1904. _Lepus texianus wallawalla_ Merriam, Proc. Biol. Soc.
+      Washington, 17:137, July 14, type from Touchet, Plains of the
+      Columbia, Walla Walla County, Washington.
+
+    1909. _Lepus californicus wallawalla_, Nelson, N. Amer. Fauna,
+      29:132, August 31.
+
+    _Marginal records._--Washington: Moses Coulee (Dalquest, 1948:386);
+    Touchet (Nelson, 1909:133). Oregon: Ontario (Nelson, 1909:133).
+    Nevada (Hall, 1946:606): 4100 ft., Quinn River Crossing; 4200 ft.,
+    4½ mi. W Flanigan. California (Orr, 1940:79): 5000 ft., 7 mi. E
+    Ravendale; 3600 ft., 1 mi. SE Weed; Hornbrook. Oregon (Nelson,
+    1909:133): Hay Creek; Willow Junction.
+
+LEPUS CALIFORNICUS XANTI Thomas.
+
+    1898. _Lepus californicus xanti_ Thomas, Ann. and Mag. Nat. Hist.,
+      1(ser. 7):45, January, type from Santa Anita, Baja California.
+
+    _Marginal records._--Baja California (Nelson, 1909:156): Southern
+    part of the Peninsula. Santa Clara Mts., southward around range of
+    _L. c. martirensis_ to and down east coast; La Paz; Cape St. Lucas;
+    San Jorgé; 20 mi. W San Ignacio.
+
+
+=Lepus insularis= Bryant
+
+Black Jack Rabbit
+
+    1891. _Lepus insularis_ Bryant, Proc. California Acad. Sci., 3(ser.
+      2):92, April 23, type from Espiritu Santo Island, Gulf of
+      California, Baja California. Known from Espiritu Santo Island
+      only.
+
+    1895. _Lepus edwardsi_ St. Loup, Bull. Mus. Hist. Nat., Paris, 1:5,
+      type from Espiritu Santo Island, Gulf of California, Baja
+      California.
+
+Total length, 574; tail, 96; hind foot, 121; ear from notch (dry), 105.
+This insular species, clearly a close relative of _Lepus californicus_
+of the adjacent peninsula of Baja California, is mainly glossy black on
+the upper parts but grizzled and suffused on sides of back and body, and
+in some specimens on head, with dark buffy or reddish brown; underparts
+dark cinnamon buffy or dusky brown; ears and sides of head grayish
+dusky; jugals heavier than in _Lepus californicus_ of the adjacent
+peninsula of Baja California.
+
+
+=Lepus callotis= Wagler
+
+White-sided Jack Rabbit
+
+    1830. _Lepus callotis_ Wagler, Nat. Syst. der Amphibien, p. 23, type
+      from southern end of Mexican Tableland.
+
+    1830. _Lepus mexicanus_ Lichtenstein, Abhandl. k. Akad. Wiss.,
+      Berlin., p. 101, type from México (southern end of Mexican
+      Tableland).
+
+    1833. _Lepus nigracaudatus_ Bennett, Proc. Zool. Soc. London, p. 41,
+      type from "that part of California which adjoins to Mexico"
+      (probably southwestern part of Mexican Tableland).
+
+    _Marginal records_ (Nelson, 1909:124).--Durango: Durango (city of).
+    San Luis Potosí: Arenal. Hidalgo: Tulancingo. Oaxaca: Oaxaca (city
+    of); Tlapancingo. Jalisco: Atenquiqui; Reyes.
+
+Total length, 560; tail, 71; length of hind foot, 133; ear from notch
+(dry), 117. Upper parts dark, slightly pinkish, buff heavily washed with
+black; backs of ears mainly white without terminal patch of black;
+flanks white; rump iron gray.
+
+[Illustration: FIG. 48. Distribution of the White-sided Jack Rabbits.
+
+  Guide to kinds:
+
+  1. _Lepus callotis_
+  2. _Lepus flavigularis_
+  3. _Lepus gaillardi gaillardi_
+  4. _Lepus gaillardi battyi_
+  5. _Lepus alleni alleni_
+  6. _Lepus alleni palitans_
+  7. _Lepus alleni tiburonensis_ ]
+
+
+=Lepus flavigularis= Wagner
+
+Tehuantepec Jack Rabbit
+
+    1844. _Lepus callotis_ var [gamma] _flavigularis_ Wagner, Schreber's
+      Säugthiere, Suppl., 4:106, type from México (probably near
+      Tehuantepec City, Oaxaca).
+
+    1909. _Lepus flavigularis_, Nelson, N. Amer. Fauna, 29:125, August
+      31.
+
+    _Marginal records._--Oaxaca (Nelson, 1909:126): Santa Efigenia; San
+    Mateo del Mar; Huilotepec.
+
+Total length, 595; tail, 77; hind foot, 133; ear from notch (dry), 112.
+Upper parts bright ochraceous buff strongly washed with black; ears
+entirely buff; nape with black stripe extending back from base of each
+ear and median stripe of buff; flanks and underparts of body white; rump
+iron gray; tympanic bullae smaller than in any other _Lepus_ of México.
+
+
+=Lepus gaillardi=
+
+Gaillard Jack Rabbit
+
+Total length, 450-536; tail, 59-80; hind foot, 124-133; ear from notch
+(dry), 110-112. Coloration essentially as in _Lepus callotis_ except
+that nape is plain buff, without a trace of black, and upper parts
+paler, more vinaceous buff.
+
+LEPUS GAILLARDI BATTYI J. A. Allen.
+
+    1903. _Lepus_ (_Microtolagus_ [_sic_]) _gaillardi battyi_ J. A.
+      Allen, Bull. Amer. Mus. Nat. Hist., 19:607, November 12, type from
+      Rancho Santuario, northwestern Durango.
+
+    _Marginal records._--Durango (Nelson, 1909:122): Río Campo; type
+    locality.
+
+LEPUS GAILLARDI GAILLARDI Mearns.
+
+    1896. _Lepus gaillardi_ Mearns, Proc. U. S. Nat. Mus., 18:560, June
+      24, type from West Fork of Playas Valley, near monument No. 63,
+      Mexican boundary line, Grant County, New Mexico.
+
+    _Marginal records._--New Mexico: Animas Valley (V. Bailey, 1932:53).
+    Chihuahua (Nelson, 1909:121): Whitewater; Colonia Juarez. New
+    Mexico; type locality.
+
+
+=Lepus alleni=
+
+Antelope Jack Rabbit
+
+Total length, 553-670; tail, 48-76; hind foot, 127-150, ear from notch,
+in flesh, 138-173. Top and sides of head creamy buff, slightly washed on
+top with black; tail white except for mid-dorsal line of black extending
+onto rump; sides of shoulders, flanks, sides of abdomen, rump, and
+outside of hind legs uniform iron gray. The average weight of 61 adult
+males from Arizona was 8.2 lbs. In that state 124 pregnant females had
+an average of 1.93 young (1-5) and Vorhies and Taylor (1933:580) thought
+that a female had three or four litters per year.
+
+LEPUS ALLENI ALLENI Mearns.
+
+    1890. _Lepus alleni_ Mearns, Bull. Amer. Mus. Nat. Hist., 2:294,
+      February 21, type from Rillito, on the Southern Pacific Railroad,
+      Pima County, Arizona.
+
+    _Marginal records._--Arizona: Queen Creek (Vorhies and Taylor,
+    1933:480); Cascabel (_ibid._); Calabasas (Nelson, 1909:118). Sonora
+    (Burt, 1938): Cerro Blanco (p. 67); Oputo (p. 66); Batamotal (p.
+    66); La Libertad Ranch (p. 67); Picu Pass (p. 67). Arizona: 2 mi. W
+    Quitovaquita (Huey, 1942:362); Casa Grande (Nelson, 1909:118).
+
+LEPUS ALLENI PALITANS Bangs.
+
+    1900. _Lepus_ (_Macrotolagus_) _alleni palitans_ Bangs, Proc. New
+      England Zool. Club, 1:85, February 23, type from Aguacaliente,
+      about 40 mi. SE Mazatlan, Sinaloa.
+
+    _Marginal records._--Sonora: near San Bernardo on Río Mayo on Sonora
+    side of Sonora-Chihuahua boundary (Burt and Hooper, 1941:7):
+    _Alamos_ (Nelson, 1909:119); Guirocoba (Burt, 1938:68). Nayarit:
+    Acaponeta (Nelson, 1909:119). Sinaloa (Nelson, 1909:119): Esquinapa;
+    _Rosario_; Culiacán. Sonora: "near" Navajoa (Burt, 1938:68).
+
+LEPUS ALLENI TIBURONENSIS Townsend.
+
+    1912. _Lepus alleni tiburonensis_ Townsend, Bull. Amer. Mus. Nat.
+      Hist., 31:120, June 14, type from Tiburon Island, Gulf of
+      California, Sonora. Known from Tiburon Island only.
+
+
+=Lepus europaeus=
+
+European Hare
+
+Total length, 640-700; tail, 70-100; hind foot, 130-150; ear from notch
+(dry), 79-100; weight, 3000 to 5000 grams. Upper parts tawny, mixed with
+blackish hairs on back; underparts white including underside of tail;
+upper side of tail and terminal patch at distal end of outside of ears
+black; upper side of feet tawny like sides (not white or whitish). This
+is an introduced species.
+
+LEPUS EUROPAEUS EUROPAEUS Pallas.
+
+    1778. _Lepus europaeus_ Pallas, Nov. Spec. Quadr. Glir. Ord., p. 30.
+      Type locality, Burgundy, France. (Introduced and established in
+      Ontario and parts of the northern United States; slowly spreading
+      in southern Ontario north of Lake Erie (St. Thomas and Woodstock),
+      west and north of Lake Ontario (Toronto) to Goodrich on east side
+      of Lake Huron. See Anderson, Canadian Field-Naturalist, 37:75-76,
+      April, 1923; Anderson, Nat. Mus. Canada Bull., 102:100, January
+      24, 1947; Burt, Mammals of Michigan, p. 247, 1946.)
+
+LEPUS EUROPAEUS HYBRIDUS Desmarest.
+
+    1822. _Lepus hybridus_ Desmarest, Encyclopedie methodique (Zoologie)
+      Mammalogie, pt. 1, p. 349 (Name based on "Russac" of Pallas, Nov.
+      Spec. Quadr. Glir. Ord., p. 5, 1778), type locality central
+      Russia.
+
+    1912. _Lepus europaeus hybridus_, Miller, Cat. Mamm., western
+      Europe, Publ., British Mus. (Nat. Hist.), p. 508, November 23,
+      1912.
+
+    _Range._--Introduced and established in New York and Connecticut
+    (see Goodwin, Connecticut Geol. and Nat. Hist. Survey, Bull.
+    53:159-162, 1935).
+
+[Illustration: FIGS. 49-51. Dorsal views of skulls of hares. All × 1.]
+
+    FIG. 49. _Lepus americanus tahoensis_, ½ mi. S Tahoe Tavern, Lake
+    Tahoe, Placer County, California. No. 37522 MVZ, ♂.
+
+    FIG. 50. _Lepus alleni alleni_, Santa Rita Mountains, 30 mi. S
+    Tucson, Pima County, Arizona. No. 8621 KU, ♂.
+
+    FIG. 51. _Lepus arcticus groenlandicus_, Cape Alexander, Greenland.
+    No. 114850 USNM, ♂.
+
+[Illustration: FIGS. 52-54. Dorsal views of skulls of hares. All × 1.]
+
+    FIG. 52. _Lepus townsendii townsendii_, north end Ruby Valley, east
+    base Ruby Mountains, Elko County, Nevada. No. 4686, coll. of Ralph
+    Ellis, ♀.
+
+    FIG. 53. _Lepus callotis_, 3½ mi. S Tecolotlán, Jalisco. No. 31842
+    KU, ♀.
+
+    FIG. 54. _Lepus californicus deserticola_, 4 mi. W Fallon, Churchill
+    County, Nevada. No. 900061 MVZ, ♂.
+
+[Illustration: FIGS. 55-57. Ventral views of skulls of hares. All × 1.
+Different views of these skulls are shown in figs. 49-51.]
+
+    FIG. 55. _Lepus americanus tahoensis_.
+
+    FIG. 56. _Lepus alleni alleni_.
+
+    FIG. 57. _Lepus arcticus groenlandicus_.
+
+[Illustration: FIGS. 58-60. Ventral views of skulls of hares. All × 1.
+Different views of these skulls are shown in figs. 49-51.]
+
+    FIG. 58. _Lepus townsendii townsendii_.
+
+    FIG. 59. _Lepus callotis_.
+
+    FIG. 60. _Lepus californicus deserticola_.
+
+[Illustration: FIGS. 61-64. Lateral views of skulls (one lower jaw) of
+hares. All × 1. Different views of these skulls are shown in figs.
+49-51.]
+
+    FIG. 61. _Lepus alleni alleni_.
+
+    FIG. 62. _Lepus americanus tahoensis_.
+
+    FIGS. 63-64. _Lepus arcticus groenlandicus_.
+
+[Illustration: FIGS. 65-68. Lateral views of skulls (one lower jaw) of
+hares. All × 1. Different views of these skulls are shown in figs.
+52-54.]
+
+    FIG. 65. _Lepus townsendii townsendii_.
+
+    FIG. 66. _Lepus callotis_.
+
+    FIGS. 67-68. _Lepus californicus deserticola_.
+
+
+
+
+LITERATURE CITED
+
+ALLEN, J. A.
+
+  1910. Additional mammals from Nicaragua. Bull. Amer. Mus. Nat. Hist.,
+        28:87-115, April 30.
+
+ANDERSON, R. M.
+
+  1947. Catalogue of Canadian Recent mammals. Bull. Nat. Mus. Canada,
+        102:v + 238, January 24.
+
+ANDERSON, R. M., and RAND, A. L.
+
+  1943. A synopsis of the rodents of the southern parts of the Prairie
+        Provinces of Canada. Special contribution-43-1, Canada, Dept.
+        Mines and Resources, Mines and Geol. Branch, pp. 1-25, 13
+        illustrations (mimeographed MS). On the front of the self cover
+        below the date 1943 there is stamped "April 27, 1939".
+
+BAILEY, A. M., and HENDEE, R. W.
+
+  1926. Notes on the mammals of northwestern Alaska. Jour. Mamm.,
+        7:9-28, 3 pls., February 15.
+
+BAILEY, V.
+
+  1927. A biological survey of North Dakota. N. Amer. Fauna, 49:vi +
+        226, 21 pls., 8 figs. in text, January 8.
+
+  1932. Mammals of New Mexico. N. Amer. Fauna, 53:1-412, 22 pls., 56
+        figs. in text, March 1.
+
+  1936. The mammals and life zones of Oregon. N. Amer. Fauna, 55:1-416,
+        51 pls. (nos. 2-52), 102 figs. in text, 1 map, August 29.
+
+BARNES, C. T.
+
+  1927. Utah mammals. Bull. Univ. of Utah, 17(12):1-183, Frontispiece,
+        31 maps, June.
+
+BLACK, J. D.
+
+  1936. Mammals of northwestern Arkansas. Jour. Mamm., 17:29-35,
+        February 17.
+
+BLAIR, W. F.
+
+  1936. The Florida Marsh rabbit. Jour. Mamm., 17:197-207, August 17.
+
+  1938. A new race of the eastern cottontail from the Texas Panhandle.
+        Occas. Papers, Mus. Zool., Univ. Michigan, no. 380:1-3, June 21.
+
+  1939. Faunal relationships and geographic distribution of mammals in
+        Oklahoma. Amer. Midl. Natur., 22:85-133, 1 fig., July.
+
+  1940. A contribution to the ecology and faunal relationships of the
+        mammals of the Davis Mountain Region, Southwestern Texas. Misc.
+        Publ., Mus. Zool., Univ. Michigan, 46:1-39, 3 pls., June 28.
+
+BOLE, B. P., JR., and MOULTHROP, P. N.
+
+  1942. The Ohio Recent mammal collection in the Cleveland Museum of
+        Natural History. Scientific Publs., Cleveland Mus. Nat. Hist.,
+        5:83-181, September 11.
+
+BORELL, A. E., and BRYANT, M. D.
+
+  1942. Mammals of the Big Bend area of Texas. Univ. California Publ.
+        Zool., 48:1-62, 5 pls., 1 fig. in text, August 7.
+
+BROWN, L.
+
+  1940. The distribution of the white-tailed jack rabbit (_Lepus
+        townsendii campanius_ Hollister) in Kansas. Trans. Kansas Acad.
+        Sci., 43:385-389.
+
+BURT, W. H.
+
+  1938. Faunal relationships and geographic distribution of mammals in
+        Sonora, Mexico. Misc. Publ., Mus. Zool., Univ. Michigan,
+        39:1-77, 3 tables, 26 maps, February 15.
+
+  1946. The mammals of Michigan. Univ. Michigan Press, Ann Arbor, xv +
+        1-288 pp., illustrated.
+
+BURT, W. H., and HOOPER, E. T.
+
+  1941. Notes on mammals from Sonora and Chihuahua, Mexico. Occas.
+        Papers, Mus. Zool., Univ. Michigan, 430:1-7, May 27.
+
+CAHALANE, V. H.
+
+  1939. Mammals of the Chiricahua Mountains, Cochise County, Arizona.
+        Jour. Mamm., 20:418-440, 3 figs. in text, November 14.
+
+CARY, M.
+
+  1911. A Biological survey of Colorado. N. Amer. Fauna, 33:1-256, 12
+        pls., 39 figs. in text, August 17.
+
+COCKRUM, E. L.
+
+  1949. Range-extension of the swamp rabbit in Illinois. Jour. Mamm.,
+        30:427-429, 1 fig. in text, November 17.
+
+COWAN, I. MCT.
+
+  1938. Notes on the hares of British Columbia with the description of a
+        new race. Jour. Mamm., 19:240-243, May 12.
+
+  1940. Two mammals new to the known fauna of British Columbia. The
+        Murrelet, 21:9, April 30.
+
+DALQUEST, W. W.
+
+  1941. Distribution of cottontail rabbits in Washington. Jour. Wildlife
+        Manag., 5:408-411, October.
+
+  1942. Geographic variation in northwestern snowshoe hares. Jour.
+        Mamm., 23:166-183, 2 figs. in text, June 3.
+
+  1948. Mammals of Washington. Univ. Kansas Publ., Mus. Nat. Hist.,
+        2:1-444, 140 figs. in text, April 9.
+
+  1950. Records of mammals from the Mexican state of San Luis Potosí.
+        Occas. Papers Mus. Zool., Louisiana State Univ., 23:1-15, July
+        10.
+
+DAVIS, W. B.
+
+  1937. Some mammals from western Montana and eastern Idaho. Murrelet
+        18:22-27, September 4.
+
+  1939. The Recent mammals of Idaho. The Caxton Printers, Caldwell,
+        Idaho, 400 pp., 2 full pages half tones, 33 figs. in text, April
+        5.
+
+  1944. Notes on Mexican mammals. Jour. Mamm., 25:370-403, 1 fig. in
+        text, December 12.
+
+DAVIS, W. B., and ROBERTSON, J. L., Jr.
+
+  1944. The mammals of Culberson County, Texas. Jour. Mamm., 25:254-273,
+        1 pl., 2 figs. in text, September 8.
+
+DELLINGER, S. C., and BLACK, J. D.
+
+  1940. Notes on Arkansas mammals. Jour. Mamm., 21:187-191, May 16.
+
+DICE, L. R.
+
+  1921. Notes on the mammals of interior Alaska. Jour. Mamm., 2:20-28,
+        February 10.
+
+  1926. Notes on Pacific Coast rabbits and pikas. Occas. Papers, Mus.
+        Zool., Univ. Michigan, 166:1-28, February 11.
+
+  1937. Mammals of the San Carlos Mountains and vicinity. Michigan
+        studies, Sci. Ser., 12:245-268, 3 pls.
+
+DURRANT, S. D.
+
+  MS. The mammals of Utah. 826 pp., illustrated--on file Mus. Nat.
+        Hist., Univ. Kansas, Lawrence, Kansas, as of May, 1950.
+
+ENDERS, R. K.
+
+  1932. Mammal distribution in Saline and Camden counties, Missouri.
+        Amer. Midland Nat., 13:114-123, May.
+
+GOLDMAN, E. A.
+
+  1920. Mammals of Panama. Smithsonian Misc. Coll., 69(5):1-309, 39
+        pls., 24 figs. in text, April 24.
+
+GOODWIN, G. G.
+
+  1934. Mammals collected by A. W. Anthony in Guatemala 1924-1928. Bull.
+        Amer. Mus. Nat. Hist., 68:1-60, 5 pls., December 12.
+
+  1935. The mammals of Connecticut. Bull. Connecticut State Geol. and
+        Nat. Hist. Surv., 53:1-221, 33 pls., 19 figs. in text.
+
+  1942. Mammals of Honduras. Bull. Amer. Mus. Nat. Hist., 79:107-195,
+        May 29.
+
+  1946. Mammals of Costa Rica. Bull. Amer. Mus. Nat. Hist., 87:271-473,
+        1 pl., 50 figs. in text, 1 map, December 31.
+
+HALL, E. R.
+
+  1946. Mammals of Nevada. Univ. California Press, Berkeley, xi + 710,
+        colored frontispiece, 11 pls., 485 figs, in text, plus 54
+        silhouettes, July 1.
+
+HALL, E. R., and BOWLUS, H. L.
+
+  1938. A new pika (mammalian genus Ochotona) from southeastern Idaho
+        with notes on near-by subspecies. Univ. California Publ. Zool.,
+        42:335-339, 1 fig. in text, July 7.
+
+HALL, E. R., and KELSON, K. R.
+
+  1951. Comments on the taxonomy and geographic distribution of some
+        North American rabbits. Univ. Kansas Publ., Mus. Nat. Hist.,
+        5:49-58, October 1, 1951.
+
+HALL, E. R., and VILLA R. B.
+
+  1949. An annotated check list of the mammals of Michoacán, México.
+        Univ. Kansas Publ., Mus. Nat. Hist., 1:433-472, 2 pls., 1 fig.
+        in text, December 27.
+
+HAMILTON, W. J., JR.
+
+  1943. The mammals of eastern United States. Comstock Publishing Co.,
+        Inc., Ithaca, pp. 1-432, illustrated.
+
+HANDLEY, C. O., JR., and PATTON, C. P.
+
+  1947. Wild mammals of Virginia. Commonwealth of Virginia Comm. Game
+        and Inland Fisheries, Richmond, vi + 220 pp. Frontispiece + 103
+        figs. in text.
+
+HARRISON, T., and NICKIE, P. F.
+
+  1931. Indiana's swamp rabbit. Jour. Mamm., 12:319-320, August 24.
+
+HILL, J. E.
+
+  1942. Notes on mammals of northeastern New Mexico. Jour. Mamm.,
+        23:75-82, 1 fig. in text, February 16.
+
+HOFFMEISTER, D. F.
+
+  1948. A specimen of the white-tailed jack rabbit, _Lepus townsendii_,
+        from Illinois. Chicago Acad. Sci., Nat. Hist. Miscellanea,
+        29:1-2, October 15.
+
+HOOPER, E. T.
+
+  1947. Notes on Mexican mammals. Jour. Mamm., 28:40-57, February 17.
+
+HOWELL, A. H.
+
+  1909. Notes on the distribution of certain mammals in the southeastern
+        United States. Proc. Biol. Soc. Washington, 22:55-68, April 17.
+
+  1921. A biological survey of Alabama. N. Amer. Fauna, 45:1-88, 10
+        figs. in text, October 28.
+
+  1924. Revision of the American pikas. N. Amer. Fauna, 47:iv + 57, 6
+        pls., 4 figs., September 23.
+
+  1936. A revision of the American Arctic hares. Jour. Mamm.,
+        17:315:337, 4 figs, in text, November 16.
+
+HUEY, L. M.
+
+  1927. A new kangaroo rat and a new brush rabbit from Lower California,
+        Mexico. Trans. San Diego Soc. Nat. Hist., 5:65-68, July 6.
+
+  1940. A new coastal form of brush rabbit from the vicinity of San
+        Quintín, Lower California, Mexico. Trans. San Diego Soc. Nat.
+        Hist., 9:221-224, July 31.
+
+  1942. A vertebrate faunal survey of the Organ Pipe Cactus National
+        Monument, Arizona. Trans. San Diego Soc. Nat. Hist., 9:353-375,
+        1 map, February 17.
+
+KELLOGG, R.
+
+  1937. Annotated list of West Virginia mammals. Proc. U. S. Nat. Mus.,
+        84:443-479, prior to November 17.
+
+  1939. Annotated list of Tennessee mammals. Proc. U. S. Nat. Mus.,
+        86:245-303, prior to March 27.
+
+LANGENBACH, J. R., and BEULE, J. D.
+
+  1942. A progress report on cottontail rabbits in Pennsylvania.
+        Pennsylvania Game News, 13(8):14, 15, and 30, 3 photos., 2
+        tables. Only the reprint (lacking photos.) seen.
+
+LEOPOLD, A. S., and HALL, E. R.
+
+  1945. Some mammals of Ozark County, Missouri. Jour. Mamm., 26:142-145,
+        July 19.
+
+LINSDALE, J.
+
+  1928. Mammals of a small area along the Missouri River. Jour. Mamm.,
+        9:140-146, May 9.
+
+LLEWELLYN, L. M., and HANDLEY, C. O.
+
+  1946. The cottontail rabbits of Virginia. Jour. Mamm., 26:379-390,
+        February 12.
+
+LOWERY, G. H., JR.
+
+  1936. A preliminary report on the distribution of the mammals of
+        Louisiana. Proc. Louisiana Acad. Sci., 3:11-39, 4 pls., 2 figs.
+        in text, March.
+
+LYMAN, C. P.
+
+  1943. Control of coat color in the varying hare, _Lepus americanus_
+        Erxleben. Bull. Mus. Comp. Zool., 93:393-461, illustrated.
+
+LYON, M. W., JR.
+
+  1904. Classification of the hares and their allies. Smithsonian Misc.
+        Coll., 45:321-447, pls. 74-100, figs. 44-45, June 15.
+
+MANVILLE, R. H.
+
+  1942. Notes on the mammals of Mount Desert Island, Maine. Jour. Mamm.,
+        23:391-398, December 30.
+
+MARTIN, K.
+
+  1943. The Colorado pika. Jour. Mamm., 24:394-396, August 18.
+
+MILLER, G. S., JR.
+
+  1924. List of North American Recent mammals. Bull. U. S. Nat. Mus.,
+        128:xvi + 673, April 29.
+
+NECKER, W. L., and HATFIELD, D. M.
+
+  1941. Mammals of Illinois. Bull. Chicago Acad. Sci., 6:17-60, 15 figs.
+        in text, May 15.
+
+NELSON, E. W.
+
+  1909. The rabbits of North America. N. Amer. Fauna, 29:1-314, 13 pls.,
+        19 figs. in text, August 31.
+
+ORR, R. T.
+
+  1935. Descriptions of three new races of brush rabbit from California.
+        Proc. Biol. Soc. Washington, 48:27-30, February 6.
+
+  1940. The rabbits of California. Occas. Papers, California Acad. Sci.,
+        19:1-227, 10 pls., 30 figs. in text, May 25.
+
+OSGOOD, F. L., JR.
+
+  1938. The mammals of Vermont. Jour. Mamm., 19:435-441, November 14.
+
+OVER, W. H., and CHURCHHILL, F. P.
+
+  1945. Mammals of South Dakota. Museum, Univ. S. Dakota, pp. 3 + 56 + 3
+        (MS, mimeographed, including one map).
+
+PALMER, R. S.
+
+  1944. New England Cottontail in Maine. Jour. Mamm., 25:193-195, May
+        26.
+
+PETERSON, R. L.
+
+  1946. Recent and Pleistocene mammalian fauna of Brazos County, Texas.
+        Jour. Mamm., 27:162-169, 5 figs. in text, May 14.
+
+PHILIP, C. B.
+
+  1939. A parasitological reconnaissance in Alaska with particular
+        reference to varying hares. Jour. Mamm., 20:82-86, February 15.
+
+RAUSCH, R.
+
+  1950. Notes on the distribution of some Arctic mammals. Jour. Mamm.,
+        31:464-466, November 21.
+
+RUST, H. J.
+
+  1946. Mammals of Northern Idaho. Jour. Mamm., 27:308-327, 1 fig., 1
+        tab., November 25.
+
+SCHANTZ, V. S.
+
+  1947. Extension of the range of Brachylagus idahoensis. Jour. Mamm.,
+        28:187-188, 1 fig. in text, June 1.
+
+SEVERAID, J. H.
+
+  1945. Pelage changes in the snowshoe hare.... Jour. Mamm., 26:41-63,
+        15 figs. in text, February 27.
+
+  1950. The pigmy rabbit (_Sylvilagus idahoensis_) in Mono County,
+        California. Jour. Mamm., 31:1-4, February 21.
+
+  1950. The gestation period of the pika (_Ochotona princeps_). Jour.
+        Mamm., 31:356-357, August 21.
+
+SHERMAN, H. B.
+
+  1936. A list of the Recent land mammals of Florida. Proc. Florida
+        Acad. Sci., 1:102-128.
+
+SHERMAN, F.
+
+  1939. The swamp rabbit (Sylvilagus aquaticus aquaticus) in South
+        Carolina. Jour. Mamm., 20:259, May 15.
+
+SILVER, J.
+
+  1924. The European hare (Lepus europaeus Pallas) in North America.
+        Jour. Agric. Research, 28:1133-1137, 1 fig. in text, June 14.
+
+SNYDER, L. L., and LOGIER, E. B. S.
+
+  1930. A faunal investigation of King Township, York County, Ontario.
+        Trans. Royal Canadian Inst., 17(pt. 2):167-208, 3 pls.
+
+SOPER, J. D.
+
+  1942. Mammals of Wood Buffalo Park, northern Alberta and District of
+        Mackenzie. Jour. Mamm., 23:119-145, 2 pls. 1 fig. in text, June
+        3.
+
+  1946. Mammals of the northern Great Plains along the international
+        boundary in Canada. Jour. Mamm., 27:127-153, 1 fig. in text, May
+        14.
+
+SOUTHERN, H. N.
+
+  1942. Periodicity of refection in the wild rabbit. Nature, 149:553,
+        May 16.
+
+STEAD, D. G.
+
+  1925. Australian Encyclopedia, vol. 2, pp. 355-358--article on rabbit.
+
+SURBER, T.
+
+  1932. The mammals of Minnesota. Minnesota Dept. Conservation, 8 vo.,
+        pp. 1-84, illustrated.
+
+SWANSON, G., SURBER, T., and ROBERTS, T. S.
+
+  1945. The mammals of Minnesota. Minnesota Dept. Conservation, Tech.
+        Publ., 2:1-108, numerous unnumbered pls. and figs.
+
+TAYLOR, W. P., and SHAW, W. T.
+
+  1929. Provisional list of land mammals of the State of Washington.
+        Occas. Pap. Chas. R. Conner Mus., No. 2, pp. 1-32, December.
+
+VORHIES, C. T., and TAYLOR, W. P.
+
+  1933. The life-histories and ecology of jack rabbits, _Lepus alleni_
+        and _Lepus californicus_ ssp., in relation to grazing in
+        Arizona. Tech. Bull., Univ. Arizona, College Agric., Agric. Exp.
+        Station, 49:468-587, 12 pls., 5 figs, in text, 17 tables, May
+        31.
+
+WARREN, E. R.
+
+  1942. The mammals of Colorado. Univ. of Oklahoma Press. xviii + 330
+        pp., 50 pls.
+
+WODZICKI, K. A.
+
+  1950. Introduced mammals of New Zealand.... x + 255 pp., illustrated.
+        Published by Dept. Sci. and Industrial Res., Wellington, New
+        Zealand.
+
+_Transmitted May 8, 1951. Museum of Natural History, University of
+Kansas, Lawrence, Kansas._
+
+23-7988
+
+       *       *       *       *       *
+
+
+TRANSCRIBER'S NOTES:
+
+Changes that have been made to the text (typos or inconsistent
+spellings) are as follows:
+
+Changed "are are" to "as are" (such of their diseases as are
+transmissible to him)
+
+Changed "Inglesmaldie" to "Inglismaldie" (Mount Inglismaldie, near
+Banff, Alberta).
+
+Changed "Carribean" to "Caribbean" (Sipurio, Río Sixaola, near Caribbean
+Coast).
+
+Changed "Quintin" to "Quintín" (Baja California (Huey, 1940): San
+Quintín)
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK A SYNOPSIS OF THE NORTH AMERICAN LAGOMORPHA ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

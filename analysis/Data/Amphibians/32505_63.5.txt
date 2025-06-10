@@ -1,0 +1,2519 @@
+﻿The Project Gutenberg eBook of The Systematics of the Frogs of the Hyla Rubra Group in Middle America
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: The Systematics of the Frogs of the Hyla Rubra Group in Middle America
+
+Author: Juan R. León
+
+Release date: May 24, 2010 [eBook #32505]
+                Most recently updated: January 6, 2021
+
+Language: English
+
+Credits: Produced by Chris Curnow, Joseph Cooper and the Online
+        Distributed Proofreading Team at https://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK THE SYSTEMATICS OF THE FROGS OF THE HYLA RUBRA GROUP IN MIDDLE AMERICA ***
+
+
+
+
+Produced by Chris Curnow, Joseph Cooper and the Online
+Distributed Proofreading Team at https://www.pgdp.net
+
+
+
+
+
+
+UNIVERSITY OF KANSAS PUBLICATIONS
+
+MUSEUM OF NATURAL HISTORY
+
+
+Volume 18, No. 6, pp. 505-545, 7 figs., 4 pls.
+
+December 2, 1969
+
+
+The Systematics of the Frogs of the
+_Hyla rubra_ Group in Middle America
+
+
+
+BY
+
+JUAN R. LEÓN
+
+
+
+University of Kansas
+Lawrence
+1969
+
+
+
+UNIVERSITY OF KANSAS PUBLICATIONS, MUSEUM OF NATURAL HISTORY
+
+Editors: Frank B. Cross, Philip S. Humphrey, Robert M. Mengel.
+
+
+Volume 18, No. 6, pp. 505-545, 7 figs., 4 pls.
+Published December 2, 1969
+
+UNIVERSITY OF KANSAS
+Lawrence, Kansas
+
+
+PRINTED BY
+ROBERT R. (BOB) SANDERS, STATE PRINTER
+TOPEKA, KANSAS
+1969
+
+
+
+
+The Systematics of the Frogs of the _Hyla rubra_ Group in Middle
+America
+
+BY
+
+JUAN R. LEÓN
+
+
+
+
+CONTENTS
+
+
+                                                    PAGE
+
+INTRODUCTION                                         508
+  Acknowledgments                                    508
+  Materials and Methods                              509
+
+THE HYLA RUBRA GROUP                                 509
+  Key to Species and Subspecies                      510
+  Key to Known Tadpoles                              511
+
+ACCOUNTS OF SPECIES AND SUBSPECIES                   511
+  _Hyla boulengeri_ (Cope)                           511
+  _Hyla foliamorta_ Fouquette                        520
+  _Hyla rubra_ Laurenti                              524
+  _Hyla elaeochroa_ Cope                             525
+  _Hyla staufferi_ Cope                              532
+  _Hyla staufferi staufferi_ Cope                    537
+  _Hyla staufferi altae_ Dunn                        540
+
+EVOLUTIONARY HISTORY                                 540
+
+LITERATURE CITED                                     543
+
+
+
+
+INTRODUCTION
+
+
+The tree frogs of the _Hyla rubra_ group are abundant and form a
+conspicuous element of the Neotropical frog fauna. Representatives of
+the group occur from lowland México to Argentina; the greatest
+diversity is reached in the lowlands of southeastern Brazil (Cochran,
+1955). The group apparently originated in South America; the endemic
+Central American species evolved from stocks that invaded Middle
+America after the closure of the Colombian Portal in the late Pliocene.
+
+Dunn (1933) partially defined the _rubra_ group as it occurs in Central
+America. Cope (1865, 1876, 1887), Brocchi (1881), Boulenger (1882),
+Günther (1901), Noble (1918), Kellogg (1932), Dunn and Emlen (1932),
+Stuart (1935), and Gaige (1936) dealt with the Middle American species
+now considered to make up the _rubra_ group. More recently, Taylor
+(1952, 1958), Fouquette (1958), Starrett (1960), and Duellman (1960,
+1963, 1966a) studied aspects of the taxonomy and biology of the species
+of this group. The five species of the _rubra_ group in Central America
+have received ten different names. One species, _Hyla staufferi_, has
+received five names (two subspecies are recognized herein). _Hyla
+boulengeri_ was named in the genus _Scytopis_, but the type species of
+_Scytopis_ is a member of the genus _Phrynohyas_ Fitzinger, 1843
+(Duellman, 1956.)
+
+Little has been published concerning the ecology, life history,
+osteology, and mating calls of the Middle American species of this
+group. The purpose of the present report is to describe the species
+occurring in Middle America and to comment on their distributions,
+ecology, cranial osteology, and mating calls, and in so doing provide
+evidence for the evolutionary history of the species inhabiting Middle
+America.
+
+
+Acknowledgments
+
+For permission to examine specimens in their care, I am grateful to
+Drs. Richard G. Zweifel, American Museum of Natural History (AMNH);
+Robert F. Inger, Field Museum of Natural History (FMNH); Ernest E.
+Williams, Museum of Comparative Zoology (MCZ); Hobart M. Smith,
+University of Illinois Museum of Natural History (UIMNH); Charles F.
+Walker, University of Michigan Museum of Zoology (UMMZ); Jay M. Savage,
+University of Southern California (USC); James A. Peters, United States
+National Museum (USNM); Richard J. Baldauf, Texas Cooperative Wildlife
+Collection (TCWC); and W. Frank Blair, Texas Natural History Collection
+(TNHC). KU refers to specimens in the Museum of Natural History,
+University of Kansas. For the loan of tape-recordings of mating calls I
+thank Drs. W. Frank Blair, University of Texas, and Richard G. Zweifel,
+American Museum of Natural History.
+
+I am indebted to the Ford Foundation-Universidad de Oriente (Venezuela)
+Science Project for a scholarship which enabled me to study for two
+years at The University of Kansas, foster institution of the project. I
+have benefited by being able to work in the Museum of Natural History
+at The University of Kansas and I am grateful to Dr. E. Raymond Hall,
+Director, for providing space and equipment.
+
+I gratefully acknowledge the assistance and advice of Dr. William E.
+Duellman, who suggested and directed this work, made available
+specimens under his care and gave much of his time in reading the
+manuscript and suggesting improvements. I am grateful to Dr. Frank B.
+Cross who critically read the manuscript and made many editorial
+suggestions. I am indebted to Linda Trueb for assistance with the
+osteological aspects of this study; she helped to clarify many
+confusing points. I am grateful to Charles W. Myers for making
+available his field notes on these frogs in Panamá, to Arthur C.
+Echternacht for reading part of the manuscript, and to John D. Lynch
+for many suggestions and helpful criticisms. The illustrations were
+executed by David M. Dennis.
+
+
+Materials and Methods
+
+For the purposes of the present study I examined 1383 preserved
+specimens, 50 skeletons, and 9 lots of tadpoles. External
+characteristics used in the analysis of variation are those currently
+employed in the study of anuran systematics. Twelve measurements
+and six proportions were taken in the manner described by Duellman
+(1956). Only the most important references are given in the synonymies,
+except those of the two subspecies of _Hyla staufferi,_ which are
+more nearly complete. The taxonomic history of each frog is discussed
+under _Remarks_ in each account. The cranial osteology was studied
+by using skeletons and cleared and stained specimens of all species.
+Developmental stages of tadpoles were determined from Gosner's (1960)
+table. Personal field work in Central America in the summer of 1966
+provided an opportunity to make observations on the ecology, calling
+sites, and color in life; these data were supplemented by field notes
+from, and discussions with, Dr. William E. Duellman and Charles W.
+Myers.
+
+The mating calls of the frogs were recorded in the field on Magnemite
+and Uher Tape Recorders by Dr. Duellman in the course of his work on
+the hylid frogs of Middle America--supported by grants from the
+National Science Foundation (G-9827 and GB-1441). These recordings,
+plus those borrowed from other institutions, provided 50 tapes for
+analysis of the mating calls. The calls were analyzed on a Vibralyzer
+(Kay Electric Company).
+
+
+
+
+THE HYLA RUBRA GROUP
+
+
+_Definition._--The species forming the group are small to moderate-sized
+tree frogs (maximum snout-vent length of males of various species 20-49
+mm.), distinguished from other groups in the genus _Hyla_ as follows:
+Brown, grayish brown, or yellowish tan above; thighs plain, marbled
+with dark brown, or having vertical bands; vocal sac single, median,
+subgular; snout flat, protruding, rounded or pointed; webbing between
+fingers reduced or absent; web between first and second toes reduced to
+fringe on second toe, rest of toes about half webbed; tarsal fold
+reduced or absent; shanks robust; inner metatarsal tubercle larger than
+outer; prevomerine teeth on transverse ridges between small to large
+sized choanae; skull generally longer than wide; nasals large (length
+more than 40 per cent total length of skull) and having pointed
+maxillary processes; maxillary bearing small ventromedial palatine
+process; quadratojugal slender, always joined to maxillary by bony
+suture; auditory region of proötic slender and short; delicate
+spatulate columella ventral to crista parotica, broad basally,
+compressed anterolaterally, slightly rounded distally; anterior arm of
+squamosal extending about half distance to maxillary; sphenethmoid
+wider than long; frontoparietal fontanelle present or absent;
+prevomerine, premaxillary, and maxillary teeth present; prevomer with
+two lateral processes forming incomplete bony margin to internal nares;
+tadpoles having pointed xiphicercal tail, snout short, rounded; 2/3
+tooth rows; dorsal fin deeper than ventral fin; sinistral spiracle;
+short dextral anal tube not reaching edge of ventral fin; mating calls
+consisting of single long note or series of short notes.
+
+_Composition._--This group contains about 24 currently recognized
+species, most of which occur in Brazil. Only five species--_boulengeri,_
+_elaeochroa_, _foliamorta_, _rubra_, and _staufferi_ with two
+subspecies--occur in Central America. _Hyla boulengeri_ and _rubra_ are
+widespread in South America, and _foliamorta_ occurs in Colombia,
+whereas the other species are known only from Middle America.
+
+_Distribution._--The species of the _Hyla rubra_ group range from the
+lowlands of northern Argentina and Bolivia to southern Tamaulipas and
+Guerrero, México.
+
+_Comments._--In Central America two subgroups of species can be
+recognized. _Hyla boulengeri_ and _H. foliamorta_ are distinctive in
+the large size of adults (snout-vent lengths 41-49 mm.); both have
+prominent bars on the thighs, a well-defined interorbital triangular
+mark, blotches or spots dorsally, and large choanae. _Hyla elaeochroa,_
+_H. rubra,_ and _H. staufferi_ are smaller (snout-vent lengths 29-40
+mm.); they have the thighs weakly barred or vermiculate anteriorly and
+posteriorly or unmarked, an ill-defined interorbital triangular mark,
+linear markings dorsally, and small choanae.
+
+
+Key to Species and Subspecies
+
+    1. Larger frogs (males to 49 mm. snout-vent length); thighs
+    strongly barred; supratympanic fold black; dorsum blotched or
+    spotted                                                         2
+
+    Smaller frogs (males to 40 mm. snout-vent length); thighs weakly
+    barred or plain; supratympanic fold pale brown; dorsum usually
+    having linear pattern                                           3
+
+    2. Dorsum tuberculate; snout subacuminate; vocal sac flecked with
+    brown; tarsal fold rudimentary; web absent between fingers; black
+    spots absent in scapular region                   _H. boulengeri_
+
+    Dorsum smooth; snout pointed; vocal sac dark gray; tarsal fold
+    absent; trace of web between fingers; two or more elongate dark
+    spots in scapular region                          _H. foliamorta_
+
+    3. Snout-vent length more than 30 mm.; tympanum 2/3 to 3/4 diameter
+    of eye; prevomerine elevations about size of choanae            4
+
+    Snout-vent length less than 30 mm.; tympanum less than 1/2 diameter
+    of eye; prevomerine elevations smaller than choanae             5
+
+    4. Thighs mottled posteriorly; discs on fingers about 1/2 size of
+    tympanum; faint dark line from nostril to eye          _H. rubra_
+
+    Thighs faintly barred or plain posteriorly; discs on fingers
+    about size of tympanum; distinct dark line from nostril to eye
+                                                      _H. elaeochroa_
+
+    5. Dorsum brown with irregular dorsolateral stripes and
+    interrupted paravertebral stripes; two transverse bars on shanks;
+    interorbital bar present                 _H. staufferi staufferi_
+
+    Dorsum gray with complete dorsolateral and paravertebral stripes;
+    longitudinal stripe on shank; interorbital bar absent
+                                                 _H. staufferi altae_
+
+
+Key to Known Tadpoles
+
+    1. Entire lower beak black; beaks moderate-sized, serrate; dorsal
+    fin high, extending to middle of back                           2
+
+    No more than half of lower beak black; beaks small, finely serrate;
+    dorsal fin lower, barely extending onto body                    3
+
+    2. Papillae present only laterally                _H. boulengeri_
+    Papillae present laterally and ventrally          _H. foliamorta_
+
+    3. Distinct brown stripe from nostril to eye; two stripes below
+    eye,                                              _H. elaeochroa_
+
+    Faint stripe from nostril to eye; no stripe below eye
+                                                       _H. staufferi_
+
+
+
+
+ACCOUNTS OF SPECIES AND SUBSPECIES
+
+
+_Hyla boulengeri_ (Cope)
+
+    _Scytopis boulengeri_ Cope, Bull. U.S. Natl. Mus., 32:12, December
+    1, 1887 [Holotype.--USNM 13974, from "Nicaragua"; J. A. McNiel,
+    collector].
+
+    _Hyla boulengeri:_ Günther, Biologia Centrali-Americana, Reptilia
+    and Batrachia, p. 267, June 1901. Noble, Bull. Amer. Mus. Nat.
+    Hist, 38:339, June 1918. Taylor, Univ. Kansas Sci. Bull., 35:856,
+    July 1, 1952.
+
+_Diagnosis._--Size large (Male to 49 mm., Female to 53 mm.); skull as
+long as wide; frontoparietal fontanelle present; snout subacuminate;
+canthus not pronounced; choanae large; tongue cordiform, slightly
+longer than broad; interorbital triangle tubercular; skin on dorsum
+tuberculate; tarsal fold reduced or absent; thighs, shanks, and tarsi
+boldly barred with dark brown and pale yellow-green in life.
+
+_Description._--Head flattened, longer than wide; snout projecting
+beyond lower lip; loreal region oblique; canthus not pronounced; length
+of eye less than interorbital distance; tympanum large, about 70 per
+cent of diameter of eye; interorbital triangle distinct; arms short;
+fingers lacking web; palmar tubercle tripartite; subarticular tubercles
+distinct; long tubercle on base of first finger; discs truncate; legs
+long; tarsal fold reduced or absent; inner metatarsal tubercle rounded,
+larger than outer, both elevated; subarticular tubercles distinct; one
+phalanx free of web on second, third, and fifth toes, three free on
+fourth toe (Fig. 1A and B); skin tuberculate on dorsum, less so on
+flanks; skin of belly granular, that on chest and throat weakly
+granular; tongue cordiform, longer than wide, free and notched behind;
+vocal slits large, lateral to tongue.
+
+  [Illustration: Fig. 1. A and B.--Hand and foot of _Hyla boulengeri_
+  (KU 102173), × 3. C and D.--Hand and foot of _Hyla s. staufferi_× (KU
+  57790), × 6]
+
+In life, dorsum tan or brown with dark spots on snout, head, and
+scapular region; interorbital triangle and blotch posteriorly on dorsum
+dark brown; flanks pale green; groin pale green or orange, mottled with
+dark brown; thighs tan or brown above with dark transverse bars on
+anterior and posterior surfaces; spaces between bars green or orange;
+inner surfaces of shanks and outer surfaces of tarsi brown and orange;
+foot brown above; forelimbs brown and pale green above, weakly barred;
+belly creamy white with scattered brown spots; vocal sac creamy white
+flecked with brown; lower jaw brown with white spots on lips (Pl. 1A).
+
+In preservative, head and dorsum dark brown with triangular spot
+between eyes; dark spots on head and scapular region and dark brown
+blotch posteriorly on dorsum; flanks creamy white with brown spots;
+groin creamy white mottled with dark brown; thighs brown above with
+dark brown transverse bars on anterior and posterior surfaces; inner
+surfaces of shanks and outer surfaces of tarsi barred with pale brown;
+dorsal surface of foot mottled brown and creamy white; ventral surface
+of foot and toes pale brown; forelimbs faintly barred with pale brown;
+belly white with a few pale brown spots; vocal sac flecked with pale
+brown; lower jaw marked with small white spots on lips.
+
+_Variation._--Geographic variation is evident in the snout-vent length,
+tibia length, and foot length, all in relation to snout-vent length,
+and the relative size of the tympanum to the eye (Table 1). The largest
+specimens are from the humid Pacific lowlands of Costa Rica;
+individuals from the Caribbean lowlands of Costa Rica, Canal Zone, and
+South America are smaller. A general trend for increase in size extends
+from South America to the Pacific lowlands of Costa Rica.
+
+Most variation in color does not seem to be correlated with geography;
+color variation is nearly as great within a given population as between
+separated populations. However, most specimens from Rincón de Osa,
+Puntarenas Province, Costa Rica, are dusky brown, but a few are darker.
+In comparison with specimens from the Caribbean lowlands of Central
+America, specimens from the Pacific slopes in Costa Rica have a darker
+interorbital triangle. In some specimens from the latter area
+rugosities are present on the borders of the interorbital triangle, on
+the snout, on the upper eyelid, and on the heel. Specimens from the
+Caribbean lowlands are less tuberculate, and most individuals from
+there lack rugosities on the tarsus. Living individuals from Puerto
+Viejo, Heredia Province, Costa Rica, and from the Canal Zone, Panamá,
+are brown above with a metallic green tint. Rugosities are present on
+the posterior edges of the forelimbs in some specimens from throughout
+the range. In most respects, specimens from the Canal Zone resemble
+those from the Caribbean lowlands of Costa Rica more than they resemble
+those from the Pacific lowlands of Costa Rica, but some individuals
+from the Canal Zone are less metallic above and have small white spots
+dorsally on the body, head, and limbs.
+
+A moderate amount of color change from night to day has been noted. At
+night, a male from Puerto Viejo, Heredia Province, Costa Rica, was
+grayish tan above with slightly darker markings; the flanks were pale
+yellowish green. By day, the dorsum was brown with darker markings, and
+the throat was pale gray with white flecks; the rest of the venter was
+creamy white. The groin was pale green with black mottling; the
+anterior and posterior surfaces of the thighs and inner edges of the
+tarsi were greenish yellow with black bars.
+
+TABLE 1.--Geographic Variation in Size and Proportions in Males of
+_Hyla boulengeri_. (Means in parentheses below observed ranges.)
+
+=========================================================================
+                    |    | Snout-vent|   Tibia   |         |
+                    |    |  length   |   length/ |Tympanum/|Foot length/
+Locality            |  N |   (mm.)   | snout-vent|   eye   | snout-vent
+--------------------+----+-----------+-----------+---------+-------------
+Costa Rica: Tilarán | 23 | 37.4-48.7 | 0.52-0.58 |0.62-0.76| 0.39-0.45
+                    |    |   (43.8)  |  (0.55)   | (0.71)  |  (0.42)
+                    |    |           |           |         |
+Costa Rica: Rincón  | 10 | 41.4-46.1 | 0.54-0.60 |0.68-0.80| 0.40-0.45
+  de Osa            |    |   (44.0)  |  (0.57)   | (0.74)  |  (0.43)
+                    |    |           |           |         |
+Costa Rica: Alajuela| 13 | 35.6-43.1 | 0.55-0.60 |0.63-0.78| 0.41-0.46
+  Province          |    |   (39.8)  |  (0.57)   | (0.69)  |  (0.44)
+                    |    |           |           |         |
+Costa Rica: Puerto  | 25 | 37.5-42.9 | 0.51-0.62 |0.63-0.79| 0.38-0.46
+  Viejo             |    |   (41.6)  |  (0.55)   | (0.71)  |  (0.43)
+                    |    |           |           |         |
+Costa Rica: Suretka |  9 | 38.7-42.0 | 0.56-0.58 |0.53-0.72| 0.35-0.45
+                    |    |   (41.0)  |  (0.56)   | (0.62)  |  (0.42)
+                    |    |           |           |         |
+Panamá: Canal Zone  | 16 | 36.7-42.9 | 0.52-0.58 |0.70-0.78| 0.40-0.44
+                    |    |   (39.0)  |  (0.54)   | (0.74)  |  (0.42)
+                    |    |           |           |         |
+Venezuela: Santomé  |  4 | 35.5-40.9 | 0.45-0.48 |0.63-0.67| 0.36-0.40
+                    |    |   (38.5)  |  (0.46)   | (0.65)  |  (0.38)
+
+
+TABLE 2.--Comparison of Mating Calls in the _Hyla rubra_ Group. (Means
+in parentheses below observed ranges.)
+
+============================================================================
+               |   |Notes|        |       |           |  Major frequencies
+               |   | per |Duration| Pulses|Fundamental|       (cps)
+               |   |call | of note|  per  | frequency |---------------------
+Species        | N |group| (sec.) | second|  (cps)    |  Lower  |  Upper
+---------------+---+----+---------+-------+-----------+---------+-----------
+H. boulengeri  | 8 |   1 | 0.24-  | 80-120|  70-74    |1400-1820|2520-3182
+               |   |     | 0.47   |  (101)|   (71)    |  (1611) | (2840)
+               |   |     | (0.35) |       |           |         |
+               |   |     |        |       |           |         |
+H. foliamorta  | 7 |   1 | 0.23-  | 50-60 |  52-61    | 912-1026|2736-3477
+               |   |     | 1.86   |  (51) |   (56)    |  (918)  | (3055)
+               |   |     | (0.69) |       |           |         |
+               |   |     |        |       |           |         |
+H. elaeochroa  |15 | 2-95| 0.12-  | 40-50 |  48-65    |1254-1586|2562-3477
+               |   | (19)| 0.24   |  (42) |   (57)    |  (1499) |  (2911)
+               |   |     | (0.17) |       |           |         |
+               |   |     |        |       |           |         |
+H. s. staufferi|18 | 2-77| 0.13-  |100-130|  96-130   |1582-1872|1962-3744
+               |   | (23)| 0.23   | (120) |   (106)   |  (1743) |  (3056)
+               |   |     | (0.18) |       |           |         |
+               |   |     |        |       |           |         |
+H. s. altae    | 7 | 2-22| 0.14-  |110-130| 104-117   |1853-2106|3379-4056
+               |   | (11)| 0.18   | (120) |   (112)   |  (2008) |  (3775)
+               |   |     | (0.15) |       |           |         |
+
+_Cranial Osteology._--The skull of _Hyla boulengeri_ is as long as it
+is wide, and is flat; the premaxillary is small and bears 13 to 17
+teeth (mean for 6 specimens, 14.9). The alary processes of the
+premaxillaries are widely separated, concave posteriorly, and vertical.
+Ventrally, the premaxillary is connected to the prevomer by bony
+tissues. The maxillary is slender and bears 70 to 91 teeth (mean for 6
+specimens 78.1). The pars facialis of the maxillary is laterally convex
+and about four times as high as the pars dentalis.
+
+The nasal is large (its length about 40 per cent of total length of
+skull), and pointed anteriorly and posteriorly in dorsal view. The
+nasals are separated anteromedially by the cartilaginous septum nasi.
+One or two protuberances are present on the midlateral concavity of the
+nasal. Posteriorly, the nasal overlaps the sphenethmoid and articulates
+with the palatine. Dorsally the sphenethmoid is large, pentagonal, and
+completely ossified. The frontoparietal is elongate, smooth, and bears
+a small supraorbital process on the anterior edge of the orbit. A
+keyhole-shaped frontoparietal fontanelle is present; the fontanelle is
+narrow anteriorly and wide posteriorly.
+
+The bony part of the proötic is separated dorsally from the squamosal
+by the cartilaginous crista parotica. The squamosal is small, its
+anterior arm slender and pointed. The posterior arm of the squamosal is
+pointed terminally and articulates with the proötic medially.
+
+The prevomer is large and elongate. Anteriorly the prevomer is
+connected to the maxillary-premaxillary articulation; posteriorly, the
+prevomer is separated from the sphenethmoid by cartilage. Each prevomer
+bears six to nine teeth. The palatine is present and edentate. The
+anterior end of the parasphenoid is broad (less pointed than in _Hyla
+foliamorta_). The pterygoid is slender and well developed.
+
+_Natural History._--_Hyla boulengeri_ inhabits humid lowland tropical
+forests and breeds in temporary ponds. Clasping pairs and gravid
+females were observed at Puerto Viejo, Heredia Province, Costa Rica, on
+June 21, 1966. Males were calling from depressions in decaying logs and
+stumps, in forked stems, and from leaves of broad-leafed plants near
+the pond. Males were observed in late July and early August calling
+from _Calathea_ and _Heliconia_ leaves at the edge of a pond in the wet
+forest of the Osa Peninsula. William E. Duellman informed me that he
+collected calling males in January at El Real, Darién, and in March at
+Almirante, Bocas del Toro, Panamá. Taylor (1952) found calling males in
+June at Turrialba, Cartago Province, Costa Rica, and Dunn (1931a)
+observed males calling in July, November, and December in Panamá.
+Gravid females have been found from April to August. Breeding
+activities of _Hyla boulengeri_ always seem to be associated with
+temporary ponds; in Central America breeding apparently takes place
+throughout most of the year.
+
+The mating call of _Hyla boulengeri_ consists of one short, moderately
+low-pitched note. Each note has a duration of 0.24 to 0.47 second and
+is repeated at intervals of one second to several minutes. The notes
+have 80 to 120 pulses per second, a fundamental frequency of about 70
+cycles per second, and a dominant frequency of 2,840 cycles per second
+(Table 2, Pl. 3A).
+
+The eggs are deposited in a mass in the water. No information is
+available concerning early development. Tadpoles in advanced stages of
+development were found in a temporary pond at Rincón de Osa, Puntarenas
+Province, Costa Rica. The pond was about 10 cm. deep, had a muddy
+bottom and lacked vegetation. Three recently metamorphosed young were
+found in mid-August, 1966, on grass at the edge of another temporary
+pond in the forest.
+
+_Tadpoles_--Twelve tadpoles are available. These were collected at
+Rincón de Osa, Puntarenas Province, Costa Rica. The maximum size
+represented is 34.0 mm., total length (stage 42 of development).
+
+A typical tadpole in stage 36 of development (KU 104295) has a body
+length of 12.0 mm., tail length of 20.0 mm., and total length of 32.0
+mm. Other characters are as follows: depth of tail equal to length of
+body; body deeper than wide; distance between eye and nostril equal to
+that between nostril and tip of snout; mouth anteroventral, upper and
+lower lips bare; papillae present laterally; tooth rows 2/3; upper rows
+about equal in length; first upper row slightly, and second upper row
+widely, interrupted medially; lower rows about equal in length, shorter
+than upper rows; third lower row containing 5-10 large teeth; beak
+strong, serrate; spiracle nearer anus than eye; anal aperture not
+extending to border of ventral fin; caudal musculature slender
+posteriorly, extending to tip of pointed tail; dorsal fin extending to
+middle of body, slightly deeper than ventral fin; posterior three
+fourths of tail spotted; rest of tail and body gray-brown or
+transparent; hindlimbs flecked or spotted with brown (Table 3, Fig. 2A
+and 3A).
+
+TABLE 3.--Sizes of Tadpoles of _Hyla boulengeri_ in Relation to
+Developmental Stages. (Means in parentheses below observed ranges;
+measurements in mm.)
+
+    =======================================================
+    Stage   | N | Body length | Tail length | Total length
+    --------+---+-------------+-------------+--------------
+      30    | 1 |     11.0    |     22.2    |     33.2
+            |   |             |             |
+      35    | 1 |     11.0    |     12.0    |     23.0
+            |   |             |             |
+      36    | 3 |   9.5-12.0  |  20.0-21.5  |  31.0-32.0
+            |   |    (11.2)   |    (20.5)   |    (31.7)
+            |   |             |             |
+      38    | 2 |     11.5    |     22.0    |     33.5
+            |   |             |             |
+      42    | 2 |  10.5-13.0  |  21.0-22.0  |  32.5-34.0
+            |   |    (11.8)   |    (21.5)   |    (33.3)
+            |   |             |             |
+      44    | 2 |  14.0-15.0  |   8.0-15.0  |  22.0-30.0
+            |   |    (14.5)   |    (12.5)   |    (26.0)
+            |   |             |             |
+      46    | 1 |     15.0    |     15.0    |
+
+A recently metamorphosed young has a snout-vent length of 15 mm.; the
+head is as long as wide, the eyes are prominent; the limbs are weakly
+barred; the skin is rugose above and granular below. The venter is
+immaculate; the dorsum and limbs are gray-brown in preservative (pale
+green in life). The interorbital space, supratympanic fold, and
+scapular region are darker than the rest of the body; the fingers lack
+webbing; the webbing on the foot is the same as in adults; small
+metatarsal tubercles are present, but the tarsal fold is absent.
+
+  [Illustration: Fig. 2. Tadpoles of (A) _Hyla boulengeri_ (KU 104295)
+  and (B) _Hyla elaeochroa_ (KU 104134), × 3.]
+
+  [Illustration: Fig. 3. Mouthparts of tadpoles of (A) _Hyla
+  boulengeri_ (KU 104295) and (B) _Hyla elaeochroa_ (KU 104134), × 25.]
+
+_Remarks._--Cope (1887:12) described _Scytopis boulengeri_ from
+Nicaragua. Günther (1901:267) placed _boulengeri_ in the genus _Hyla_,
+and stated that Cope possibly placed _boulengeri_ in the genus
+_Scytopis_ on the supposition that it had an accumulation of
+"sebaceous glands" above the tympanum. Noble (1918:339) redescribed
+_Hyla boulengeri_ on the basis of three specimens from Zelaya
+Province, Nicaragua, and noted that the glands were not prominent in
+any of the specimens. Duellman (1956:8) showed that _Scytopis hebes_
+(generotype of _Scytopis_ by monotypy) is a Phrynohyas, and thus
+placed _Scytopis_ Cope, 1862, in the synonymy of _Phrynohyas_
+Fitzinger, 1843.
+
+Dunn and Emlen (1932:25) placed _Hyla lancasteri_ Barbour in the
+synonymy of _Hyla boulengeri_; the former was known solely from one
+juvenile. They made no qualifying statements, but probably they were
+impressed by the strongly barred thighs, a coloration known among
+Central American hylids at that time only in _Hyla boulengeri_
+(Duellman, 1966a:271). Taylor (1952:856) followed Dunn and Emlen with
+reservation and noted some differences. Duellman (1966a:271) showed
+that the holotype of _lancasteri_ was a juvenile of a species
+subsequently named as _Hyla moraviaensis_ by Taylor (1952:865).
+
+In Central America, _Hyla boulengeri_ can be confused only with _Hyla
+foliamorta;_ the latter is restricted to central and eastern Panamá
+and northern Colombia. The snout of _foliamorta_ is more pointed and
+protruding, and the vocal sac is darker than in _boulengeri_; the
+groin of _foliamorta_ usually is creamy white, whereas _boulengeri_
+usually has a dark spot. The skulls differ in that _boulengeri_ has a
+frontoparietal fontanelle, the prevomer is larger and elongate,
+anteriorly connected to the premaxillary, and posteriorly separated
+from the sphenethmoid by cartilage; _foliamorta_ lacks a fontanelle,
+the prevomer is smaller, anteriorly separated from the premaxillary by
+cartilage, but connected by a bony suture to the sphenethmoid. The
+mating call of _boulengeri_ differs by having shorter notes, twice as
+many pulses per second, a higher fundamental frequency, and more
+closely approximated major frequencies than does that of _foliamorta_.
+
+_Hyla boulengeri_ need not be compared in detail with the other Central
+American members of the _Hyla rubra_ group, because all of them are
+smaller and have shorter snouts, smoother skin, and dissimilar color
+patterns.
+
+_Distribution._--In Central America _Hyla boulengeri_ inhabits the
+forested lowlands in locally humid areas in Guanacaste Province, Costa
+Rica, and in the humid Golfo Dulce region of Costa Rica; it occurs on
+the Carribbean lowlands from central Nicaragua to South America, where
+it ranges to Guyana and Ecuador. The highest elevations where _H.
+boulengeri_ has been found are 620 meters at Turrialba, Cartago
+Province, and 700 meters at Tilarán, Guanacaste Province, Costa Rica
+(Fig. 4).
+
+_Specimens Examined._--Costa Rica: _Alajuela_: 9 km N Ciudad Quesada,
+near La Florencia, USC 8059 (4); 18 km N Florencia, USC 2624; Laguna
+Monte Alegre, KU 64334; Las Playuelas, 11 km S Los Chiles, USC 7216,
+7217 (2), 7219; 3 km NE Muelle del Arenal, USC 2644 (5). _Cartago_:
+Turrialba, KU 24741. _Guanacaste_: 7 km N Liberia, USC 8096 (2), 8138
+(6); 13.6 km N Liberia, USC 8151, 8171 (2); 20.5 km S Liberia, USC
+8205; Taboga, 20 km SE Las Cañas, KU 102170, USC 7166; 4 km NE Tilarán,
+USC 8023; 6 km NE Tilarán, USC 523 (3), 6262, 7019. _Heredia_: Puerto
+Viejo, KU 64323-7 (skeletons), 104351-3 (skeletons), 64330-3,
+103592-620; 1 km NE Puerto Viejo, UMMZ 126042; 1 km S Puerto Viejo, KU
+84983-4 (skeletons), 86317-22, 87774 (skeleton); 4.2 km W Puerto Viejo,
+KU 64329, 64328 (skeleton). _Limón_: Mountain Cow Creek, near Banano,
+KU 37031, 41067 (skeleton); 3 km S Río Tortuguero, AMNH 69057; Suretka,
+KU 36482-8, 36699. _Puntarenas_: 4.8 km S Bahía Rincón on NW side Río
+Rincón, USC 705; Parrita, USC 6163; 4.5 km W Rincón de Osa, KU
+102177-9, 104295-6 (tadpoles); 6 km SW Rincón de Osa, KU 102171-6; 4.4
+km NW Villa Neilly, USC 8003; 10.5 km WNW Villa Neilly, KU 64321. _San
+José_: 21 km WSW San Isidro el General, KU 34104-6.
+
+  [Illustration: Fig. 4. Map showing locality records for _Hyla
+  boulengeri_ (circles) and _H. foliamorta_ (dots).]
+
+Panamá: _Bocas del Toro_: 3.2 km W Almirante, KU 95978. _Canal Zone_:
+Barro Colorado Island, FMNH 13379; near Clayton Reservation, UIMNH
+42000; 2.6 km SW Fort Kobbe, KU 95977; Miraflores Locks, AMNH 69764-5;
+Summit, AMNH 73445, KU 97777, 101540-9, 104350 (skeleton). _Colón_: Río
+Gatuncillo, near Nuevo San Juan, KU 95976. _Darién_: El Real, KU
+80451-3.
+
+
+_Hyla foliamorta_ Fouquette
+
+    _Hyla foliamorta_ Fouquette, Herpetologica, 14:125, April 25,
+    1958 [Holotype.--TNHC 23109, 11 km. NW Miraflores Locks, Canal
+    Zone, Panamá; M. J. Fouquette, Jr. collector].
+
+_Diagnosis._--Size medium (Male to 43 mm., Female to 41 mm.); skull
+longer than wide; frontoparietal fontanelle absent; snout acuminate,
+projecting; interorbital triangle bordered by white lines; scapular
+region having two or more elongate spots; dorsum smooth; vocal sac
+dark gray; groin creamy white; traces of web between fingers.
+
+_Description._--Head flattened, longer than wide; snout flat, pointed,
+protruding beyond lower lip; loreal region slightly concave; canthus
+moderately prominent; eyes smaller than interorbital space; tympanum
+distinct, 55 to 75 per cent of diameter of eye, smaller than
+internarial space; arms short; fingers having rudimentary webs; median
+palmar tubercle tripartite; inner palmar tubercle on base of first
+finger flat; subarticular tubercles distinct; discs of fingers smaller
+than diameter of tympanum; legs long; tarsal fold lacking; inner
+metatarsal tubercle larger than outer; one phalanx free on second,
+third, and fifth toes, two and one half phalanges free on fourth toe;
+narrow fringe continuing from web to discs of toes; discs of toes
+about the size of those on fingers; skin smooth on dorsum and flanks,
+that on belly and posterior part of thighs granular; tongue oval,
+longer than wide; vocal slits oblique, about one half length of
+tongue.
+
+In life, dorsum pale tan to pale reddish brown with irregular reddish
+brown markings; small dark spots on head; distinct dark brown
+triangular mark between eyes, bordered by thin white lines; apex of
+triangle always directed backward; supratympanic fold with black edge;
+scapular region having two to five small, elongate black spots; belly
+creamy tan with small brown spots; vocal sac uniformly dark brown with
+scattered creamy tan flecks; upper jaw dark brown; limbs creamy white
+below with scattered brown spots; groin marked with small brown spots
+in some specimens; anterior and posterior surfaces of thighs
+yellow-orange with three distinct black blotches; two dark bands on
+upper surface of shanks; webbing of feet yellowish tan with brown
+mottlings (Pl. 1B).
+
+In preservative, dorsum brown or gray with darker markings; interorbital
+triangle distinct, bordered by white lines; supratympanic fold with
+black edge; two or more small elongate black spots in scapular region;
+belly white with numerous brown flecks; edge of upper lip dark brown;
+vocal sac dark gray; undersides of limbs creamy white; groin creamy
+white with or without brown spots; anterior and posterior surfaces of
+thighs having three black blotches separated by creamy white spaces;
+shanks having two brown bands; webbing of feet mottled with brown.
+
+_Variation._--Twenty-eight breeding males from the area between Chepo
+and Tocumen, Panamá, have snout-vent lengths of 39.0 mm. to 46.0 mm.
+(mean 42.5 mm.). In these specimens, the ratio of the tibia length
+to the snout-vent length is 0.54 to 0.61 (mean, 0.57); the ratio
+of the diameter of the tympanum to that of the eye is 0.55 to 0.75
+(mean, 0.67). One female has a snout-vent length of 41.0 mm.,
+tibia/snout-vent length ratio of 0.57, and tympanum/eye ratio of 0.76.
+Two to five (usually three) elongate black spots are present in the
+scapular region in different individuals. The flanks in some are
+spotted with brown; in others they are creamy white. A small black
+spot is present in the groin of some specimens. Usually two to four
+blotches are present on the anterior and posterior surfaces of the
+thighs; in some specimens the blotches are reduced to small spots. One
+or two brown spots are present proximally on the shanks in most
+specimens. In some individuals tuberculations are scattered on the
+head and in the tympanic and scapular regions, but the dorsum is
+smooth in most specimens; the belly is creamy white flecked with
+brown.
+
+_Cranial Osteology._--The skull of _Hyla foliamorta_ is flat and
+longer than it is wide. The premaxillary is small and bears 13 to 16
+teeth (mean for 2 specimens, 14.8). The alary process of the
+premaxillary is vertical and concave posteriorly. Ventrally, the
+premaxillary is completely separated from the prevomer by cartilage.
+The maxillary is slender; each bears 77 to 84 teeth (mean for 2
+specimens, 81). The pars facialis of the maxillary is laterally convex
+and less than three times the height of the pars dentalis.
+
+The nasal is large and pointed anteriorly and posteriorly in dorsal
+view. The length of the nasal comprises about 40 per cent of the total
+length of the skull. The nasals are separated anteromedially by the
+cartilaginous septum nasi. One protuberance is present on the
+midlateral concavity of the nasal. Posteriorly, the nasal overlaps the
+sphenethmoid; posterolaterally the nasal articulates with the
+palatine. The sphenethmoid is completely ossified and pentagonal in
+dorsal view. The frontoparietal is elongate, without a pronounced
+anterior supraorbital process. The frontoparientals are sutured
+medially throughout their lengths; the frontoparietal fontanelle is
+absent.
+
+The bony part of the proötic is narrowly separated dorsolaterally from
+the squamosal by the cartilaginous crista parotica. The squamosal is
+large; the anterior arm is pointed. The posterior arm of the squamosal
+is broad, rounded terminally, and articulates with the proötic
+medially.
+
+The prevomer is short and separated anteriorly from the premaxillary
+and maxillary by cartilage. The posterior margin of the prevomer has a
+bony articulation with the sphenethmoid. Each prevomer bears five to
+seven teeth. The palatine is small and edentate. The anterior end of
+the parasphenoid is narrow (more pointed than in _Hyla boulengeri_).
+The pterygoid is slender and well developed (Fig. 5A).
+
+  [Illustration: Fig. 5. Dorsal views of the skulls of (A) _Hyla
+  foliamorta_ (KU 77687) and (B) _H. elaeochroa_ (KU 68289), × 3.]
+
+_Natural History._--_Hyla foliamorta_ inhabits lowland forests in
+eastern Panamá and breeds in temporary ponds. Males have been observed
+calling from grasses, bushes, and emergent vegetation near temporary
+ponds and ditches along roads. William E. Duellman informed me that he
+found a breeding congregation of this species in June near Chepo,
+Panamá, where males were calling from spiny palms at the edge of a
+woodland pond. Fouquette (1958) found calling males in May, August,
+and September near Miraflores Locks, Canal Zone. Calling stations vary
+from one to two meters above ground. No clasping pairs have been
+found; only one female is known (KU 101589, from 8 km NE Tocumen,
+Panamá); this gravid individual was collected in early June.
+
+The mating call of _Hyla foliamorta_ consists of one pulsed,
+low-pitched, moderate trill of about O.5 second duration. Each note is
+repeated at intervals of 5 seconds to a few minutes. The notes have
+about 50 pulses per second, a fundamental frequency of 56 cycles per
+second and a dominant frequency of about 3000 cycles per second (Table
+2, Pl. 3B).
+
+Egg deposition sites are unknown. No information is available
+concerning early development, and little is known about the breeding
+season of _Hyla foliamorta_. Probably its breeding activities are
+restricted to the rainy months.
+
+_Tadpoles._--Eight tadpoles were collected from a weedy temporary pond
+near Chepo, Panamá, in early June.
+
+A typical tadpole in stage 35 of development (KU 104244) has a body
+length of 9.5 mm., tail length of 25.0 mm., and a total length of 34.5
+mm. Other characters are as follows: depth of tail equal to length of
+body; body deeper than wide; distance between eye and nostril equal to
+distance between eye and spiracle; mouth anteroventral; median part of
+upper lip bare; rest of lip having one row of papillae; a few other
+rows of small papillae at corners of mouth; tooth rows 2/3; first
+upper row entire, second upper row interrupted medially, shorter than
+first; lower rows shorter than upper rows, third shortest; beak
+moderately robust; spiracle nearer eye than anus; anal tube short,
+aperture not extending to border of ventral fin; caudal musculature
+slender, extending to tip of pointed tail; dorsal fin extending onto
+body (Table 4).
+
+TABLE 4.--Sizes of Tadpoles of _Hyla foliamorta_ in Relation to
+Developmental Stages. (Means in parentheses below observed ranges;
+measurements in mm.)
+
+    =======================================================
+    Stage   | N | Body length | Tail length | Total length
+    --------+---+-------------+-------------+--------------
+      25    | 2 |   5.0-5.2   |   8.0-8.5   |  13.0-13.7
+            |   |    (5.1)    |    (8.3)    |    (13.4)
+            |   |             |             |
+      26    | 3 |   7.0-7.5   |  12.0-12.4  |  17.0-19.5
+            |   |    (7.2)    |   (12.1)    |    (18.6)
+            |   |             |             |
+      28    | 2 |   6.5-7.0   |    18.0     |     25.0
+            |   |    (6.8)    |             |
+            |   |             |             |
+      35    | 1 |     9.5     |    25.0     |     34.5
+
+In life, yellow above, white below; caudal fin greenish yellow with
+black or gray reticulations; dark line from snout to eye; dark spot
+behind eye; tail unpigmented except for fine dark reticulations. In
+preservative body creamy white, transparent below with dark pigment
+above in some specimens.
+
+_Remarks._--_Hyla foliamorta_ can be confused only with _Hyla
+boulengeri_. The differences between adults of these species were
+discussed in _Remarks_ on _H. boulengeri_. The tadpoles of
+_foliamorta_ have labial papillae on the lower lip and a stripe
+between the eye and the tip of the snout. By comparison the tadpoles
+of _boulengeri_ have a bare lower lip and no stripe between the eye
+and the tip of the snout.
+
+_Distribution._--_Hyla foliamorta_ inhabits the subhumid Pacific
+lowlands (elevations of less than 100 meters) of Central Panamá and
+Caribbean lowlands of northern Colombia (Fig. 4).
+
+_Specimens Examined._--Panamá: _Panamá_: 3 km WSW Chepo, KU 77164-9,
+101573-5, 104243-4 (tadpoles); 6 km WSW Chepo, KU 77170, 101576-8; 1.5
+km SW Naranjal, KU 77171, 77687 (skeleton); 2 km N Tocumen, KU
+101579-83, 104349 (skeleton); 8 km NE Tocumen, KU 101584-92.
+
+No specific locality: TNHC 24401.
+
+
+_Hyla rubra_ Laurenti
+
+    _Hyla rubra_ Laurenti, Synopsis Reptilium Emendatum, p. 35, 1768.
+    Daudin, Hist. Nat. Rainettes Grenouilles Crapauds, II:26, 1802.
+    Daudin, Hist. Nat. Particuliere Reptiles, 8:53, 1803. Günther,
+    Catalogue Batrachia Salientia Brit. Mus., p. 110, 1859. Boulenger,
+    Catalogue Batrachia Salientia s. Ecaudata, p. 403, February 1,
+    1882. Dunn, Occas. Papers, Boston Soc. Nat. Hist., 5:413, October
+    10, 1931.
+
+    _Hyla elaeochroa_ (part): Dunn and Emlen, Proc. Acad. Nat. Sci.
+    Philadelphia, 84:25, March 22, 1932.
+
+_Diagnosis._--Size medium; skull longer than wide; frontoparietal
+fontanelle absent in adults; snout subovoid; choanae rounded; dorsal
+stripes present; black vermiculations on posterior surfaces of thighs.
+
+_Description._--Head flat, longer than wide; snout long, subovoid,
+slightly protruding beyond lower lip; loreal oblique, concave; canthus
+rounded, indistinct; diameter of eye about equal to interorbital
+space; tympanum large, about three fifths diameter of eye, smaller
+than internarial distance; supratympanic fold indistinct; arms short;
+fingers free of webs; subarticular tubercles distinct; median palmar
+tubercle large, bifid; inner palmar tubercle on base of first finger
+flat, elongate; disc of third finger about one half diameter of
+tympanum; legs moderately long; tarsal fold absent; inner metatarsal
+tubercle distinct, oval; toes about half webbed; web on fourth toe
+extending to disc; discs of toes about size of those on fingers; skin
+smooth above with small granules on head and in scapular region in
+some specimens; skin on flanks, throat, belly, and lower surfaces of
+thighs granular; tongue oval, longer than wide, not free behind;
+choanae small, oval; vocal slits long, lateral to tongue.
+
+In preservative, dorsum pale brown with darker dorsolateral stripes;
+narrow dark brown line from nostril to eye; groin, anterior surface of
+thighs, and posteroventral surfaces of shanks creamy tan with dark
+brown vermiculations; white spots present on thighs in some specimens;
+throat flecked with brown; belly creamy white or gray.
+
+_Remarks._--The taxonomic history of _Hyla rubra_ Laurenti is
+confused. Seba (1734:70) illustrated and diagnosed a frog for which
+he used the name _Ranula, Americana, Rubra_. Linnaeus (1758:213)
+considered Seba's frog to be a variety of _Hyla arborea_. Laurenti
+(1768:35) apparently examined the same individual that Seba called
+_Ranula, Americana, Rubra_. For this specimen, Laurenti used the
+binominal _Hyla rubra_ and provided a brief diagnosis. The type
+locality was given as America.
+
+Daudin (1802:26) redescribed the same specimen(s?) treated by Seba and
+Laurenti and provided a fairly good description and figures. Daudin
+restricted the type locality to Surinam and indicated that Marin de
+Baize was the probable collector. Daudin (1802:26 and 1803:53)
+neglected to consider Laurenti's work, but he applied the same name
+used by Laurenti. Most authors have credited _Hyla rubra_ to Daudin,
+but Rivero (1961:120) noted that _Hyla rubra_ Laurenti, 1768, has
+priority over _Hyla rubra_ Daudin, 1802. Since both Laurenti and
+Daudin worked on Seba's material, it is reasonable to assume that
+Daudin redescribed the same frog that was named by Laurenti; this was
+not an uncommon practice in the early nineteenth century. Thus I
+conclude that _Hyla rubra_ Daudin, 1802, is a junior synonym of _Hyla
+rubra_ Laurenti, 1768.
+
+Dunn (1931a:413) first reported _Hyla rubra_ from Central America; he
+recorded the species from the Canal Zone and San Pablo, Panamá. I have
+examined the material of _Hyla rubra_ from Panamá deposited in various
+museums. Most of the specimens are faded, discolored, and do not have
+distinct brown vermiculations on the thighs. The specimens seem to be
+more like _Hyla rubra_ than any of the other species in the _rubra_
+group. The presence of oval choanae and a tympanum larger than the
+largest finger disc separate these specimens from _Hyla elaeochroa_, a
+species with which _rubra_ has been confused. _Hyla elaeochroa_ does
+not occur in the Canal Zone or eastern Panamá. All museum specimens
+from Nicaragua, Costa Rica, and western Panamá that have been called
+_Hyla rubra_, plus those mentioned by Dunn and Emlen (1932:25) and
+Dunn (1933:61) are _Hyla elaeochroa_.
+
+The taxonomic status of the many South American populations referred
+to _Hyla rubra_ and of other populations now recognized as different
+species is not clear at the present time. Considerable variation in
+external characters and in cranial features has been observed in South
+American _rubra_. A review of the taxonomy of these populations is
+beyond the scope of this paper. Possibly the Central American
+specimens herein referred to _rubra_ will ultimately be found to be
+specifically distinct from those in Surinam. Since I have no
+osteological material from Central America, I have been unable to
+describe the cranium in this account. Furthermore, I have no data on
+the ecology and life history of _rubra_ in Central America.
+
+_Distribution._--_Hyla rubra_ inhabits lowland tropical forests from
+central-eastern Panamá to northern South America and thence through
+lowlands east of the Andes to northern Argentina (Fig. 6).
+
+_Specimens Examined._--Panamá: _Canal Zone_: Gatun, UMMZ 52720 (2);
+Madden Dam, FMNH 67820; no specific locality, UMMZ 56517 (3), USNM
+37863. _Colón_: Cerro Bruja, MCZ 13248. _Darién_: El Real, USNM
+140569-70, 140573. _Panamá_: Juan Díaz, MCZ 17973; Las Sabanas, MCZ
+17581; Río Trinidad, UMMZ 64003; San Pablo, MCZ 1398-9.
+
+
+_Hyla elaeochroa_ Cope
+
+    _Hyla elaeochroa_ Cope, Jour. Acad. Nat. Sci. Philadelphia, 8:105,
+    1876 [Holotype.--USNM 30689, Sipurio, Limón Province, Costa Rica;
+    William M. Gabb collector]. Günther, Biologia Centrali-Americana,
+    Reptilia and Batrachia, p. 265, June 1901. Taylor, Univ. Kansas
+    Sci. Bull., 35:859, July 1, 1952. Duellman, Univ. Kansas Publ.,
+    Mus. Nat. Hist., 17:270, June 17, 1966.
+
+    _Hyla quinquevittata_ Cope, Proc. Amer. Philos. Soc., 23:273,
+    April 1887 [Holotype.--USNM 14187, Nicaragua; J. F. Bransford
+    collector]. Günther, Biologia Centrali-Americana, Reptilia and
+    Batrachia, p. 268, June 1901. Noble, Bull. Amer. Mus. Nat. Hist.,
+    38:340, June 1918.
+
+    _Hyla rubra_ (part): Dunn and Emlen, Proc. Acad. Nat. Sci.
+    Philadelphia, 84:25, March 22, 1932.
+
+    _Hyla dulcensis_ Taylor, Univ. Kansas Sci. Bull., 39:37, November
+    18, 1958 [Holotype.--KU 32168, Golfito, Puntarenas Province, Costa
+    Rica; Edward H. Taylor collector].
+
+_Diagnosis._--Size medium (Male to 38 mm., Female to 40 mm.); skull
+wider than long; nasals truncate anteriorly; frontoparietal fontanelle
+moderate in size; snout slightly protruding; tympanum about size of
+largest discs on fingers; dorsum marked by longitudinal stripes; dark
+stripe between eye and nostril; in life tan to olive-green with or
+without dark mark between eyes; bones greenish blue.
+
+_Description._--Head flat, longer than wide; snout long, rounded,
+protruding beyond mouth; canthus indistinct; length of eye equal to
+interorbital distance; loreal region not pronounced; tympanum distinct
+and about two-fifths diameter of eye; interorbital triangle present or
+absent; arms short; trace of web between fingers, extending as fringe
+along sides of fingers; first finger very short with small disc; other
+discs about size of those on toes; discs on third finger and fourth
+toe as large as tympanum; outer palmar tubercle moderate in size,
+partly bifid; inner palmar tubercle large, elongate, flat;
+subarticular tubercles distinct; legs moderately long; tarsal fold
+absent; inner metatarsal tubercle flat; outer metatarsal tubercle
+smaller, indistinct; subarticular tubercles moderate in size; fringe
+on toes to tip of disc of second toe; rest of toes about two-thirds
+webbed; foot length about two fifths snout-vent length; tibia length
+about one half snout-vent length; skin above smooth or with minute
+pustules; belly finely granular; ventral surfaces of thighs and areas
+below anus granular; skin on ventral surfaces of limbs smooth; tongue
+relatively large, longer than wide, barely notched behind; vocal slits
+elongate, lateral to tongue; choanae medium in size. In life, dorsum
+yellowish brown, olive green, or grayish brown with dark brown spots
+on snout, dark brown stripe from nostril to eye, dark yellow-brown
+interorbital triangle, and dark supratympanic region; generally five
+interrupted longitudinal dark brown stripes on dorsum (one on each
+flank, pair of paravertebral and one vertebral); flanks pale yellow;
+groin yellowish brown; thighs marked with one or two transverse
+yellow-brown blotches; shanks with two or three yellow-brown blotches
+above; spaces between blotches on thighs, shanks, tarsi, and feet
+yellow; brown spots on tarsi and in some specimens on feet; arm pale
+yellow with pale brown spots; belly creamy white having slight
+blue-green tint; vocal sac and chin yellow; axillary region yellow,
+blue-green in some specimens (Pl. 2A).
+
+In preservative, head and dorsum yellowish brown; dark brown stripe
+from nostril to eye; dark brown spots on snout; a dark brown
+interorbital triangle with apex directed backward; dark brown
+supratympanic region; dorsal stripes same as in living individuals;
+flanks pale yellow with brown spots in some specimens; groin creamy
+white; thighs and shanks having or lacking transverse dark brown
+blotches; spaces between blotches creamy white or yellow-brown; arms
+pale yellowish brown; belly and vocal sac creamy white.
+
+_Variation._--Geographic variation in size and some proportions, such
+as the ratio of tibia length to snout-vent length and the ratio of the
+diameter of the tympanum to that of the eye, have been observed in
+this species. The largest individuals are from the Golfo Dulce region
+(samples from Piedras Blancas and Rincón de Osa), Puntarenas Province,
+Costa Rica. The smallest individuals are from El Recreo, Zelaya
+Province, Nicaragua, and from the Caribbean lowlands of Costa Rica.
+
+The diameter of the tympanum is proportionately larger (relative to
+the size of the eye) in males from Tilarán, Guanacaste Province; the
+tympanum is nearly as large in males from Piedras Blancas, Puntarenas
+Province, and Puerto Viejo, Heredia Province, Costa Rica. The lowest
+ratios occur in individuals from Almirante, Bocas del Toro, Panamá, in
+specimens from the Caribbean lowlands of Costa Rica (except Puerto
+Viejo), and in those from El Recreo, Zelaya Province, Nicaragua. In
+general, the tympanum is proportionately larger in females than in
+males; the tympanum is largest in females from the Pacific lowlands
+of Costa Rica (Table 5).
+
+Color variation has been observed in individuals from the same
+population, as well as in individuals from different localities,
+between males and females, and from night to day. In life, most
+individuals from the Pacific lowlands of Costa Rica are dark tan to
+greenish gray above with dark brown longitudinal stripes that are
+entire or broken, but some specimens (mostly males) are dusky brown
+and lack longitudinal stripes or an interorbital triangle; females
+usually have the dark interorbital triangle and the stripes on the
+dorsum. Individuals from Turrialba, Cartago Province, Costa Rica, are
+pale olive-tan with olive-brown markings. Individuals from Puerto
+Viejo, Heredia Province, Costa Rica, are uniformly yellowish brown
+with or without dark longitudinal stripes. Specimens from El Recreo,
+Zelaya Province, Nicaragua, are like those from Puerto Viejo. Males
+from Almirante, Bocas del Toro, Panamá, are pale brown with dark brown
+longitudinal stripes and an indistinct interorbital triangle. Females
+have a distinct interorbital triangle and dark brown blotches on the
+thighs and shanks.
+
+By night, the dorsum usually is pale yellow, and the belly is creamy
+white. By day, the dorsum is dark tan; the stripes and spots are
+darker, and the belly is yellowish white. Taylor (1952) noticed that
+considerable variation in color pattern occurred from night to day in
+individuals from Turrialba, Cartago Province, Costa Rica. At night
+some individuals lacked a dorsal pattern, but by day many of these
+individuals developed dorsal stripes.
+
+_Cranial Osteology._--The skull of _Hyla elaeochroa_ is slightly wider
+than it is long, and flat. The premaxillary is small and bears 10 to
+15 teeth (mean for 9 specimens, 12.3). The alary process of the
+premaxillary is small, vertical, and slightly concave posteriorly.
+Ventrally, the premaxillary is partially united to the prevomer by
+ossification. The maxillary is slender and bears 70 to 82 teeth (mean
+for 9 specimens, 74.3). The pars facialis of the maxillary is
+laterally convex and is about twice as high as the pars dentalis.
+
+The nasal is large, robust, anteriorly truncate, but pointed
+posteriorly in dorsal view. The nasal comprises about 45 per cent of
+the total length of the skull. There is an anterior cartilaginous
+septum nasi separating the two nasals; the latter overlap the
+sphenethmoid posteriorly. Each nasal bears a shallow concavity in the
+midlateral side and lacks a maxillary process. Dorsally, the
+sphenethmoid is wider than long, roughly pentagonal in shape; the
+frontoparietal is elongate, smooth, and bears a small anterior
+supraorbital process. The sphenethmoid and frontoparietal form the
+anterior margin of the frontoparietal fontanelle; the fontanelle is
+narrow anteriorly and wider posteriorly (Fig. 5B).
+
+The entire distal surface of the proötic is in contact with the
+posterior arm of the squamosal. A narrow cartilaginous crista parotica
+is visible dorsally in some specimens. The squamosal is broad
+posteriorly but its anterior arm is slender and not in contact with
+the maxillary.
+
+TABLE 5.--Geographic Variation in Size and Proportions in Males of
+_Hyla elaeochroa_. (Means in parentheses below observed ranges.)
+
+==========================================================================
+                     |    |Snout-vent|   Tibia    |         |
+                     |    | length   |   length/  |Tympanum/|Foot length/
+Locality             |  N |  (mm.)   | snout-vent |   eye   | snout-vent
+---------------------+----+----------+------------+---------+-------------
+Nicaragua: El Recreo |  9 | 28.0-30.3|  0.51-0.57 |0.47-0.59| 0.39-0.54
+                     |    |  (29.3)  |   (0.55)   | (0.51)  |  (0.41)
+                     |    |          |            |         |
+Costa Rica: Tilarán  | 21 | 28.8-33.6|  0.47-0.57 |0.48-0.65| 0.40-0.46
+                     |    |  (30.6)  |   (0.52)   | (0.59)  |  (0.41)
+                     |    |          |            |         |
+Costa Rica: Puerto   | 22 | 26.3-32.4|  0.49-0.54 |0.48-0.65| 0.38-0.45
+  Viejo              |    |  (29.7)  |   (0.52)   | (0.57)  |  (0.42)
+                     |    |          |            |         |
+Costa Rica: Turrialba| 95 | 28.1-35.0|  0.47-0.56 |0.47-0.68| 0.37-0.46
+                     |    |  (30.6)  |   (0.51)   | (0.56)  |  (0.41)
+                     |    |          |            |         |
+Costa Rica: Bataán,  | 26 | 26.3-32.7|  0.47-0.54 |0.45-0.66| 0.36-0.44
+  Limón, and Suretka |    |  (30.0)  |   (0.51)   | (0.50)  |  (0.41)
+                     |    |          |            |         |
+Costa Rica: Piedras  | 21 | 33.3-37.7|  0.50-0.54 |0.48-0.64| 0.40-0.46
+  Blancas            |    |  (35.2)  |   (0.51)   | (0.57)  |  (0.43)
+                     |    |          |            |         |
+Costa Rica: Rincón de| 24 | 31.4-35.9|  0.50-0.56 |0.45-0.61| 0.40-0.46
+  Osa                |    |  (34.1)  |   (0.53)   | (0.54)  |  (0.43)
+                     |    |          |            |         |
+Panamá: Bocas del    |  6 | 31.0-33.5|  0.49-0.54 |0.47-0.50| 0.41-0.43
+  Toro               |    |  (32.1)  |   (0.51)   | (0.48)  |  (0.42)
+
+
+  [Illustration: PLATE 1
+
+  Living _Hyla_: (A) _H. boulengeri_ (KU 86322) and (B) _H.
+  foliamorta_ (KU 101576), × 2.]
+
+  [Illustration: PLATE 2
+
+  Living _Hyla:_ (A) _H. elaeochroa_ (KU 91688), (B) _H. staufferi
+  staufferi_ (KU 57791), and (C) _H. staufferi altae_ (KU 101688), ×
+  2.]
+
+  [Illustration: PLATE 3
+
+  Audiospectrograms and sections of mating calls of (A) _Hyla
+  boulengeri_ (KU Tape No. 511) and (B) _H. foliamorta_ (KU Tape No.
+  511) and (B) _H. foliamorta_ (KU Tape No. 288).]
+
+  [Illustration: PLATE 4
+
+  Audiospectrograms and sections of mating calls of (A) _Hyla
+  elaeochroa_ (KU Tape No. 97), (B) _H. s. staufferi_ (KU Tape No.
+  93), and (C) _H. staufferi altae_ (KU Tape No. 502).]
+
+The prevomer is short, and broadest anteriorly. The prevomer is joined
+to the premaxillary by ossification. The posterior margin of the
+prevomer bears a narrow cartilaginous articulation with the
+sphenethmoid. The anterolateral and posterolateral processes of the
+prevomer form an incomplete bony margin to the small choanae; each
+prevomer bears four to seven teeth. The palatine is small, curved
+anteriorly and edentate. The anterior part of the parasphenoid is
+robust and ends in a point. The pterygoid is slender and weakly
+developed.
+
+_Natural History._--_Hyla elaeochroa_ inhabits humid lowland tropical
+forests in lower Central America and breeds in temporary ponds.
+Clasping pairs, gravid females, and calling males have been found
+mostly in June, July, and August. William E. Duellman informed me that
+he also found males calling in mid-February, late April, and May.
+Duellman (1967) reported detailed observations of the social
+organization in the mating call of _Hyla elaeochroa_. The choruses in
+this species are initially organized, but when many individuals call,
+the chorus loses organization. I observed this species breeding in a
+temporary pond at Puerto Viejo, Heredia Province, Cost Rica, in late
+June. Calling males and clasping pairs were extremely abundant within a
+few hours after a heavy rain. Males were mostly found calling from low
+emergent herbs in the pond and less commonly from bushes and trees to
+heights of six meters above the water. Calling males were also observed
+at Ricón de Osa, Puntarenas Province, Costa Rica, in late July. These
+breeding individuals were found in a shallow pond at the edge of a wet
+forest. Calling stations were less than two meters in height. John D.
+Lynch informed me that after a heavy rain in early August, he found
+several hundred individuals congregated in a small grassy pond less
+than a foot deep, at Rincón de Osa. Males were calling from sites on
+grass stems a few centimeters above the water.
+
+The mating call of _Hyla elaeochroa_ consists of short notes, repeated
+at intervals of about 0.40 second. Each note has a duration of 0.12 to
+0.24 second. The fundamental frequency varies from 48 to 65 cycles per
+second, and the notes have 40-50 pulses per second; the dominant
+frequency is at about 2,900 cycles per second (Table 2, Pl. 4A).
+
+The eggs are deposited in a mass in the water near floating vegetation.
+William E. Duellman informed me that he observed hatchlings oriented
+vertically with the tip of the mouth at the surface of the water. They
+gradually sank to bottom, but swam back to surface again. No additional
+information is available concerning early development. Tadpoles have
+been found in shallow grassy ponds in clearings and in temporary
+woodland ponds.
+
+_Tadpoles._--Three hundred and thirty-one tadpoles in various stages of
+development are available. Thirty-five tadpoles in stage 35 have a mean
+body length of 8.1 mm. (8.0-9.0 mm.), tail length of 17.7 mm.
+(15.0-19.5 mm.), and total length of 25.9 mm. (23.0-27.5 mm.). The
+largest tadpole examined is in stage 40 and has a total length of 34.5
+mm. (Table 6).
+
+A typical tadpole, stage 35 of development (KU 104134, from Puerto
+Viejo, Heredia Province, Costa Rica), has a body length of 9.1 mm.,
+tail length of 17.7 mm., and a total length of 26.8 mm. Other
+characters are as follows: body depressed anteriorly; body length
+greater than depth of tail; internarial space as broad as interorbital
+distance; nostril equidistant between eye and tip of snout; eyes
+moderately large; mouth anteroventral and triangular; median fourth of
+upper lip bare; rest of lip bordered by one row of papillae; clumps of
+small papillae at corners of mouth; tooth rows 2/3; upper rows equal in
+length; second row interrupted medially; lower rows shorter than upper
+rows, diminishing in length; beak rather weak with small serrations;
+spiracle short and nearer eyes than anus; anal opening not reaching
+edge of ventral fin; caudal musculature attenuated distally (Figs. 2B
+and 3B).
+
+TABLE 6.--Sizes of Tadpoles of _Hyla elaeochroa_ in Relation to
+Developmental Stages. (Means in parentheses below observed ranges;
+measurements in mm.)
+
+    ------+---+-------------+-------------+--------------
+    Stage | N | Body length | Tail length | Total length
+    ------+---+-------------+-------------+--------------
+      24  | 2 |  4.0-4.0    |  8.5-9.0    |  12.5-13.0
+          |   |   (4.0)     |   (8.8)     |   (12.8)
+          |   |             |             |
+      25  |64 |  5.0-6.5    |  8.5-15.0   |  13.5-21.5
+          |   |   (5.7)     |   (11.8)    |   (17.6)
+          |   |             |             |
+      27  |30 |  7.0-7.5    | 13.0-16.0   |  20.0-23.0
+          |   |   (7.1)     |   (14.2)    |   (21.3)
+          |   |             |             |
+      30  |15 |  7.0-8.0    | 13.0-16.5   |  20.0-24.0
+          |   |   (7.3)     |   (15.0)    |   (22.4)
+          |   |             |             |
+      32  |30 |  7.5-8.5    | 15.0-17.0   |  22.5-25.0
+          |   |   (7.8)     |   (16.1)    |   (23.8)
+          |   |             |             |
+      35  |35 |  8.0-9.0    | 15.0-19.5   |  23.0-27.5
+          |   |   (8.1)     |   (17.7)    |   (25.9)
+          |   |             |             |
+      37  |22 |  8.5-9.5    | 16.0-22.0   |  25.0-31.0
+          |   |   (9.0)     |   (18.8)    |   (27.8)
+          |   |             |             |
+      39  |14 |  9.5-10.5   | 19.0-24.9   |  28.5-33.5
+          |   |   (9.9)     |   (21.1)    |   (31.0)
+          |   |             |             |
+      40  |27 |  7.0-11.5   | 15.0-23.0   |  23.0-34.5
+          |   |   (9.1)     |   (22.0)    |  (31.2)
+          |   |             |             |
+      43  |10 |  8.0-12.0   | 11.0-17.0   | 20.0-26.0
+          |   |  (10.2)     |   (13.5)    |  (23.7)
+          |   |             |             |
+      45  |16 | 10.0-12.0   |  1.0-7.0    | 12.0-17.0
+          |   |  (11.2)     |   (3.4)     |  (14.6)
+          |   |             |             |
+      46  |45 | 11.0-13.0   |             |
+          |   |  (11.8)     |             |
+
+In life, dorsum yellowish tan with gray-brown mottling; belly and
+ventrolateral surfaces silvery-gold or white; black stripe from tip of
+snout to eye; two black blotches below eye, another blotch extending
+from eye to base of caudal musculature; caudal musculature and fins
+gray-brown. In preservative, yellowish tan and silvery-gold colors
+lost; black reticulations present on tail.
+
+_Remarks._--Cope (1876:105) described _Hyla elaeochroa_ from Sipurio,
+Limón Province, Costa Rica. He based his description on a small
+specimen, 26.0 mm. in snout-vent length, having a dorsum uniformly
+colored and lacking an interorbital triangle and blotches on the
+thighs. Cope (1887) described pigmented specimens from Nicaragua as
+_Hyla quinquevittata_, which he diagnosed as having dark brown bars on
+the hind limbs and five dark brown longitudinal stripes on the dorsum,
+the median one of which was expanded anteriorly so as to form a large
+triangular spot between the eyes. He thought this species was related
+to _Hyla eximia_ Baird and noted that "the hinder legs are much larger;
+the muzzle is more acuminate and the color bands are much wider" than
+in _eximia_. Cope did not compare _quinquevittata_ with _elaeochroa_,
+which he had described ten years before. Günther (1901:268), Noble
+(1918:340), and Nieden (1923:251) regarded both _elaeochroa_ and
+_quinquevittata_ as valid species. Dunn and Emlen (1932:25) regarded
+both as synonyms of _Hyla rubra_, but they made no qualifying
+statements. Taylor (1952:859) placed _quinquevittata_ as a synonym of
+_elaeochroa_ and indicated that _rubra_ was another species.
+
+Taylor (1958:37) described _Hyla dulcensis_ from the humid tropical
+forests of Golfo Dulce, Puntarenas Province, Costa Rica. He thought
+this species was "related to _H. elaeochroa_ but differs in its
+somewhat larger size, smaller finger and toe discs, the obsolete
+canthus rostralis; the loreal region concave and the choanae larger."
+Duellman (1966a:270) compared adults, tadpoles, and mating calls of
+_dulcensis_ and _elaeochroa_ and concluded that a single species was
+involved.
+
+_Hyla elaeochroa_ can be easily confused with the closely related _Hyla
+staufferi_. Although the durations of the calls are similar, the call
+of _elaeochroa_ has only about one third the number of pulses per
+second, a much lower fundamental frequency, and a lower dominant
+frequency than that of _staufferi_. _Hyla elaeochroa_ is larger and has
+a less pointed snout than does _staufferi_. Although the skulls of the
+two species are similar, that of _elaeochroa_ differs in having broad
+palatines and comparatively larger nasals that are truncate anteriorly.
+In _staufferi_ the nasal is rounded anteriorly and the palatine is
+absent.
+
+_Distribution._--_Hyla elaeochroa_ occurs on the Caribbean lowlands
+from western Panamá through Costa Rica to eastern Nicaragua, and on the
+Pacific lowlands of southeastern Costa Rica and extreme western Panamá.
+Most localities where it has been collected are below 800 meters, but
+the species has been found at two localities above 1000 meters (El
+Silencio and Pacuare, Cartago Province) on the Caribbean slopes of the
+Cordillera de Talamanca, Costa Rica (Fig. 6).
+
+_Specimens Examined._--Nicaragua: _Zelaya_: El Recreo, UMMZ 79721 (9).
+
+Costa Rica: _Alajuela_: Laguna Monte Alegre, KU 64499. _Cartago_: 2 km E
+Chitaría, KU 107058; El Silencio, 14.4 km NE Turrialba, KU 107059-60;
+4.6 km ENE Pacuare, KU 64451-75, 64628-37; 4 km S Pavones, KU 64500;
+Turrialba (Instituto Interamericano de Ciéncias Agrícolas), KU 30305-26,
+24616-57, 30337-54, 31776-91, 31803, 31807-15, 64413-50, 68283-87
+(skeletons), 68390-1 (young), 35042 (eggs), 25207-8 (skeletons), 25221
+(skeleton), 41073-83 (skeletons). _Guanacaste_: 2 km E Tilarán, KU
+86356-77, 87667-8 (young). _Heredia_: Puerto Viejo, KU 36696, 46466,
+64501-17, 68288-91, 68387, 68388-9 (young), 91803 (young), 91688-9,
+104134 (tadpoles), 104135 (young), 104354-6 (skeletons); 1.5 km N Puerto
+Viejo, KU 64518-23, 68386 (tadpoles); 1 km S Puerto Viejo, KU 84985-6
+(skeletons), 87669 (young), 87772-3 (skeletons). _Limón_: Bataán, KU
+30327-36; La Lola, KU 64478-98, 68281-2 (skeletons); Los Diamantes, KU
+31800-02, 64476-7; Peralta, KU 31816-21; Puerto Limón, KU 31792-99;
+Suretka, KU 36467-79, 36697, 41084. _Puntarenas_: 5 km NW Buenos Aires,
+KU 107057; 10 km E Esparta, KU 87666 (tadpoles); Golfito, KU 32166-8; 8
+km E Palmer Norte KU 93939; 10.7 km SE Palmar Sur, KU 93938 (skeleton),
+93940-51, 93952 (eggs), 93953-6 (tadpoles); Piedras Blancas, KU
+103646-59; 4.5 km W Rincón de Osa, KU 102208-41, 104298 (tadpoles).
+
+  [Illustration: Fig. 6. Map showing locality records for _Hyla
+  elaeochroa_ (circles) and _H. rubra_ (dots).]
+
+Panamá: _Bocas del Toro_: Almirante, KU 80079; Isla Bastimentos, KU
+96008-11; Río Cricamola, 3.7 km from coast, KU 96012. _Chiriquí_: Río
+Gariché, 8.3 km ESE Paso de Canoas, KU 101571-2.
+
+
+_Hyla staufferi_ Cope
+
+    _Hyla staufferi_ Cope, Proc. Acad. Nat. Sci. Philadelphia, 17:165,
+    October 1, 1865 [Holotype.--USNM 15317, Orizaba, Veracruz, México;
+    Francis Sumichrast collector].
+
+_Diagnosis._--Small frogs (Male to 29 mm., Female to 31.6 mm.); skull
+longer than wide; palatine absent; large cartilaginous crista parotica
+present; snout flat, elongate and protruding; dark interorbital bar and
+dorsal stripes usually present.
+
+_Description._--Head flat, especially in females, longer than wide;
+snout long, protruding beyond mouth; loreal region concave; canthus
+ill-defined; length of eye greater than internarial distance or width
+of eyelid; length of eye less than interorbital space; tympanum
+distinct; interorbital spot irregular; supratympanic fold faint; arms
+short; fingers free of webs; discs on third and fourth fingers equal to
+diameter of tympanum; inner metatarsal tubercle on base of first finger
+distinct; first finger shorter than second; palmar tubercle distinct
+(Fig. 1C); legs short (usually less than 50 per cent of snout-vent
+length); tarsal fold absent; metatarsal tubercles small, outer tubercle
+smaller than inner; subarticular tubercles small, simple, distinct;
+toes less than half webbed (Fig. 1D); skin smooth above with a few
+small pustules on head, scapular region, flanks, and supratympanic
+region; arms and legs smooth; skin of belly coarsely granular;
+posteroventral surfaces of thighs finely granular; tongue small,
+rounded, longer than wide, slightly free and notched posteriorly; vocal
+slits small, lateral to tongue; choanae moderate in size.
+
+_Variation._--The largest males of _Hyla staufferi_ are from Jalapa,
+Guatemala, and from San Salvador, El Salvador. In these samples the
+average snout-vent length is 27 mm. In Panamanian specimens the average
+snout-vent length is 23.6 mm. Slight variation in the ratio of tibia
+length to snout-vent length exists throughout the range; more variation
+exists in the ratio of the diameter of the tympanum to that of the eye;
+the tympanum is proportionately larger in northern populations (Table
+7). The primary differences between Panamanian and more northern
+populations are in size, color pattern on the dorsum and shanks, amount
+of webbing between the toes, and duration of notes in the mating call
+(Table 2, Pl. 4).
+
+The color in Panamanian _staufferi_ is gray or gray-brown with a pair
+of distinct, complete, dark brown dorsolateral stripes, a pair of
+entire paravertebral stripes, and in some specimens a vertebral stripe.
+About five per cent of the individuals have interrupted stripes on the
+dorsum, whereas in the more northern populations complete paravertebral
+stripes are present in less ten per cent of the specimens; when
+complete stripes are present, they are irregular. The dorsal ground
+color in non-Panamanian specimens is brown, olive-brown, or dark brown.
+
+Transverse bars are present on the shanks in _Hyla staufferi_ from
+Costa Rica northward to México, whereas in Panamá all the individuals
+have a longitudinal stripe on the shank (Table 7, Pl. 2). The
+interorbital spot or bar is more noticeable in northern populations
+than in specimens from Panamá. Frogs from Costa Rica and northward have
+the toes about three fourths webbed, whereas in Panamá the toes are
+about two fifths webbed. The mating calls of the northern and
+Panamanian populations are similar, but the notes have a longer
+duration in the northern populations and a higher dominant frequency in
+Panamanian populations.
+
+_Hyla staufferi_ is the most variable member of the _Hyla rubra_ group
+in Central America. The Panamanian populations are geographically
+separated from the Costa Rican and more northern populations by an area
+of tropical rainforest in the Golfo Dulce region in southeastern Costa
+Rica and adjacent Panamá. _Hyla staufferi_ does not occur on the
+Caribbean versant of Costa Rica and Panamá. The Golfo Dulce region and
+the Caribbean versant are humid and inhabited by _Hyla elaeochroa_.
+_Hyla staufferi_ is an inhabitant of subhumid and xeric areas.
+
+On the basis of the discontinuous variation in several characters which
+correlate with the disjunct distribution of the two populations, two
+subspecies of _Hyla staufferi_ are recognized. The accounts that follow
+apply equally to each.
+
+_Cranial Osteology._--The skull of _Hyla staufferi_ is flat and longer
+than wide. The premaxillary is small and bears 9 to 13 teeth (mean for
+5 specimens, 11.3). The alary process of the premaxillary is small,
+concave posteriorly and vertical. Ventrally, the premaxillary is united
+to the prevomers by partially ossified cartilage. The maxillary is
+slender and usually bears 49 to 70 teeth (mean for 5 specimens, 60.7).
+The pars facialis of the maxillary is convex and less than twice the
+height of the pars dentalis.
+
+The nasal is large, rounded anteriorly, and pointed posteriorly in
+dorsal view. The nasal comprises about 40 per cent of the total length
+of the skull. Anteromedially the two nasals converge; posteriorly they
+overlap the sphenethmoid. The nasals lack a concavity in the midlateral
+surface. Dorsally, the sphenethmoid is wider than long, roughly
+pentagonal in shape; the frontoparietal is elongate, narrow, and
+smooth, with a small supraorbital process anteriorly. The
+frontoparietal fontanelle is narrow anteriorly and wide posteriorly.
+
+TABLE 7.--Geographic Variation in Size and Color in Males of _Hyla
+staufferi_. (Means in parentheses below observed ranges.)
+
+    =================================================================
+                   |     |            |Complete dorsal|
+                   |     |Snout-vent  |    stripes    |Barred shanks
+    Locality       |  N  |length (mm.)|  (per cent)   |  (per cent)
+    ---------------+-----+------------+---------------+--------------
+    Veracruz       |  47 |  23.0-27.3 |      0.0      |     100
+                   |     |   (25.4)   |               |
+                   |     |            |               |
+    Campeche       |  20 |  24.6-27.5 |      0.0      |     100
+                   |     |   (25.5)   |               |
+                   |     |            |               |
+    Oaxaca         |  75 |  24.0-28.7 |      9.3      |     100
+                   |     |   (26.4)   |               |
+                   |     |            |               |
+    Chiapas        |  20 |  23.2-27.8 |     10.0      |     100
+                   |     |   (25.5)   |               |
+                   |     |            |               |
+    Guatemala      |  22 |  25.0-29.0 |     10.9      |     100
+                   |     |   (26.9)   |               |
+                   |     |            |               |
+    El Salvador    |  21 |  24.7-28.6 |      0.0      |     100
+                   |     |   (27.0)   |               |
+                   |     |            |               |
+    Honduras       |  34 |  20.6-27.0 |      3.3      |     100
+                   |     |   (24.9)   |               |
+                   |     |            |               |
+    Nicaragua      |  67 |  21.5-26.8 |      3.0      |      92.7
+                   |     |   (24.9)   |               |
+                   |     |            |               |
+    Costa Rica     |  54 |  20.7-26.6 |      5.5      |      98.1
+                   |     |   (24.2)   |               |
+                   |     |            |               |
+    Total          | 360 |  20.7-29.0 |      5.4      |      98.3
+    Non-Panamanian |     |   (25.9)   |               |
+                   |     |            |               |
+    Panamá         |  72 |  21.7-26.0 |     94.5      |       0.0
+                   |     |   (23.6)   |               |
+
+Only a narrow connection exists between the posterior, pointed arm of
+the squamosal and the lateral edge of the proötic. The crista parotica
+is visible dorsally along the lateral edge of the bony proötic. The
+squamosal is narrow anteriorly and posteriorly.
+
+The prevomers are short and separated anteriorly by partly ossified
+cartilage of the overlying solum nasi. The prevomer is joined to the
+premaxillary by cartilage. The posterior margin of the prevomer
+articulates directly with the sphenethmoid. The anterolateral and
+posterolateral processes of the prevomers form the incomplete bony
+internal margin of the choanae. Each prevomer bears three to six teeth.
+The palatine is absent. The anterior part of the parasphenoid is narrow
+and ends in a point. The pterygoid is slender and weakly developed.
+
+_Natural History._--Throughout its range _Hyla staufferi_ occurs in
+subhumid forests and savannas; consequently, the breeding activities
+are limited by the seasonal occurrence of rainfall, which accumulates
+in temporary ponds where this species breeds. Clasping pairs and gravid
+females have been found mostly from June to August throughout its
+range. This species was observed calling at Finca Taboga, Guanacaste
+Province, Costa Rica, in mid-July. The males were calling from
+temporary grassy and weedy ponds in which _Hyla microcephala_ also was
+calling, but the two species had different calling sites. _Hyla
+staufferi_ called at stations at heights of five to 80 cm. near the
+edge of the pond, whereas _Hyla microcephala_ called from emergent
+vegetation in the middle of the pond. Charles W. Myers informed me that
+at Penonomé, Coclé, Panamá, he found _staufferi_ calling from grass in
+puddles where _microcephala_ was absent, and at El Caño, Coclé, Panamá,
+_staufferi_ was calling from higher sites ("several inches to a few
+feet above water") than _microcephala_.
+
+Stuart (1948:34) reported breeding individuals from La Libertad,
+Guatemala, after rainfall in late May, and Schmidt and Stuart
+(1941:239) reported _staufferi_ breeding in July in the Salamá basin,
+Alta Verapaz, Guatemala. Stuart (1935:38) and Duellman (1960:63 and
+1963:226) agreed that this species breeds early in the rainy season.
+However, Rand (1957:519) stated that in El Salvador "these frogs did
+not begin to call until almost a month and a half after the beginning
+of the rains." Blair (1960:133) reported that males call in June and
+July in Chiapas, Oaxaca, Veracruz, and Tamaulipas, México.
+
+The mating call of this species is a series of closely spaced notes
+having a fundamental frequency of about 100 cycles per second. Each
+note has a duration of 0.13 to 0.23 second, repeated at intervals that
+are longer than the duration of the call. The notes are moderately
+low-pitched and have a dominant frequency of more than 3,000 cycles per
+second and about 120 pulses per second (Table 2).
+
+_Tadpoles._--Measurements of the 33 tadpoles that are available are
+given in Table 8. The largest tadpole examined is in stage 38 and has a
+total length of 29.5 mm.
+
+A typical tadpole in stage 38 of development (KU 104162, 5 km ESE
+Córdoba, Veracruz, México) has a body length of 10 mm., tail length of
+19.5 mm., and a total length of 29.5 mm. Other characters are as
+follows: body as deep as wide, depressed anteriorly; body as long as
+depth of tail; interorbital space greater than distance between eye and
+snout but equal to internarial space; nostril equidistant between eye
+and tip of snout; distance between spiracle and eye less than distance
+between eye and snout; eyes large, situated dorsolaterally; mouth
+anteroventral, approximately triangular in outline; one row of papillae
+covering lower lip and all except median fourth of upper lip; scattered
+papillae at corners of mouth; tooth rows 2/3; first upper row entire,
+second row interrupted medially, shorter than first; lower rows shorter
+than upper rows; beak weak; spiracle short and nearer eyes than anus;
+anal opening not reaching edge of ventral fin; dorsal fin barely
+extending onto body; caudal musculature pointed distally.
+
+TABLE 8.--Sizes of Tadpoles of _Hyla s. staufferi_ in Relation to
+Developmental Stages. (Means in parentheses below observed ranges;
+measurements in mm.)
+
+    ======================================================
+    Stage   | N | Body length| Tail length | Total length
+    --------+---+------------+-------------+--------------
+      25    | 3 |  6.0-7.0   |  12.0-13.0  |  18.0-20.0
+            |   |   (6.7)    |   (12.5)    |   (19.2)
+            |   |            |             |
+      26    | 2 |  7.0-7.5   |  14.0-15.0  |  21.5-22.0
+            |   |   (7.3)    |   (14.5)    |   (21.8)
+            |   |            |             |
+      27    | 9 |  7.0-8.0   |  13.0-17.0  |  21.0-25.0
+            |   |   (7.6)    |   (14.5)    |   (22.0)
+            |   |            |             |
+      32    | 1 |   8.5      |    15.5     |    24.0
+            |   |            |             |
+      36    | 2 |   8.0-10.0 |  16.5-17.0  |  25.0-26.5
+            |   |   (9.0)    |   (16.8)    |   (25.8)
+            |   |            |             |
+      38    | 6 |   9.0-10.0 |  19.0-20.5  |  28.0-29.5
+            |   |   (9.6)    |   (19.5)    |   (29.1)
+            |   |            |             |
+      41    | 1 |  10.0      |    14.0     |    24.0
+            |   |            |             |
+      42    | 6 |  11.0-14.0 |  10.0-13.0  |  20.0-29.0
+            |   |   (11.8)   |   (11.9)    |   (24.8)
+            |   |            |             |
+      45    | 1 |  12.5      |     0.5     |    13.0
+            |   |            |             |
+      46    | 1 |  13.0      |     --      |     --
+
+In life, body pale olive-tan, belly silvery white with pinkish-orange
+reticulations in some specimens; tail creamy white with silvery flecks
+and black or brown reticulations. In preservative, tan and
+pinkish-orange coloration lost; body transparent, reticulations on tail
+present.
+
+_Remarks._--_Hyla staufferi_ was described by Cope (1865:195) on the
+basis of specimens from Orizaba, Veracruz, México. He described the
+color pattern as "color above dark olive, with a short black bar over
+each scapula, and one from eye to eye, with a trace along the coccyx."
+Cope (1887:14) placed _staufferi_ as a subspecies of _Hyla eximia_, but
+he did not justify his action. Günther (1901:262) also considered
+_staufferi_ to be conspecific with _eximia_ without making any
+qualifying statement. Dunn and Emlen (1932:24) named _Hyla culex_ from
+Tela, Honduras, on the basis of a male (MCZ 16098) having a snout-vent
+length of 25.1 mm., and a female (USNM 20267) from Patuca, Honduras.
+They diagnosed the species as having "discs larger than tympanum ...
+black interorbital triangle, traces of black dorsal marking; three
+black bars on anterior and posterior face of thighs, two black bars on
+tibia, on tarsus and on forearm." The holotype now is faded but has
+some of the pattern described. Dunn and Emlen did not compare _culex_
+with _staufferi_ but did compare it with _boulengeri_ and _rubra_.
+
+Dunn (1933:61) named _Hyla altae_ from Summit, Canal Zone. His
+description was based on a male (MCZ 17972) having a snout-vent length
+of 25.1 mm., the color pattern was described as "gray with four darker
+dorsal stripes ... a faint trace of mid-dorsal striping...." Dunn
+defined the _Hyla rubra_ group and recognized _boulengeri_, _altae_,
+_culex_, and _rubra_ as members. _Hyla elaeochroa_ and _staufferi_ were
+omitted from his key to the group in Central America.
+
+Kellogg (1932:174) compared _staufferi_ with _eximia_ and concluded
+that the two were probably distinct species. Stuart (1935:38)
+considered _altae_ to be a synonym of _culex_. Gaige (1936:293)
+considered _altae_ and _culex_ to be conspecific but regarded
+_staufferi_ as a different species. She also suggested that _staufferi_
+was not related to _eximia_ but belonged to the _rubra_ group. Taylor
+(1952:865) and Duellman (1966a:274) considered _altae_ and _culex_ to
+be synonyms of _staufferi_.
+
+The only other worker besides Cope and Günther to consider _Hyla
+staufferi_ as a member of the _eximia_ group was Blair (1960:129), who
+suggested the relationship on the basis of similarities in the
+structure of the calls of _eximia_ and _staufferi_. Taylor (1938:421)
+and Smith and Taylor (1948:78) excluded _staufferi_ from the _eximia_
+group on the basis of morphological characteristics. I consider _culex_
+to be inseparable from _staufferi_, whereas _altae_ is recognizable as
+a Panamanian subspecies of _staufferi_.
+
+
+_Hyla staufferi staufferi_ Cope, New Combination
+
+    _Hyla staufferi_ Cope, Proc. Acad. Nat. Sci. Philadelphia, 17:195,
+    October 1865 [Holotype.--USNM 15317, Orizaba, Veracruz, México;
+    Francis Sumichrast collector], Brocchi, Mission Scientifique au
+    Mexique et dans L'Amerique Centrale, 1881, p. 36. Boulenger,
+    Catalogue, of the Bratrachia Salientia s. Ecaudata, p. 400,
+    February 1, 1882. Kellogg, Bull. U.S. Natl. Mus., 160:173, March
+    31, 1932. Smith and Taylor, Bull. U.S. Natl. Mus., 194:88, 1948.
+    Taylor, Univ. Kansas Sci. Bull., 35:862, July 1, 1952. Rand,
+    Fieldiana Zool. Chicago Nat. Hist. Mus., 34:518, April 18, 1957.
+    Duellman, Univ. Kansas Publ, Mus. Nat. Hist., 17:274, June 17,
+    1966.
+
+    _Hyla eximia staufferi_ Cope, Bull. U.S. Natl. Mus., 32:14, January
+    16, 1887.
+
+    _Hyla eximia_ (part): Günther, Biologia Centrali-Americana,
+    Reptilia and Batrachia, p. 261, June 1901. Nieden, Das Tierreich,
+    Anura I, p. 245, June 1923.
+
+    _Hyla culex_ Dunn and Emlen, Proc. Acad. Nat. Sci. Philadelphia,
+    84:24, March 22, 1932 [Holotype.--MCZ 16098, Tela Honduras; Raymond
+    A. Stadelman collector]. Stuart, Misc. Publ., Univ. Michigan Mus.
+    Zool., 29:38, October 1935. Gaige, Carnegie Inst. Washington Publ.,
+    457:293, 1936.
+
+_Diagnosis._--Small frogs (Male to 29 mm., Female to 31.6 mm.);
+dorsolateral stripes irregular; paravertebral stripes usually broken;
+two or three transverse bars on shanks; thighs spotted or not; arms
+usually barred; interorbital bar usually present; toes about three
+fourths webbed; color brown, tan, or olive-green.
+
+_Variation._--Three hundred and sixty males chosen at random from
+throughout the range have snout-vent lengths of 20.7 to 29 mm. (25.9
+mm.). The smallest individuals are from Costa Rica and Nicaragua (means
+24.2 and 24.4 mm., respectively). The largest individuals are from
+Guatemala and El Salvador (mean of each 27.0 mm.). The ratio of the
+diameter of the tympanum to that of the eye is more than 60 per cent in
+most samples, but in those from Costa Rica and British Honduras it is
+smaller. The color pattern is highly variable. Some specimens are dark
+brown or pale brown in color. Incomplete dorsal stripes are present in
+94.6 per cent of the specimens, and transverse bars are present on the
+shanks in 98.3 per cent of the specimens. The interorbital spot varies
+from transverse to longitudinal in position, and an irregular white
+line extends from the upper jaw to the arm in some specimens (Table 7).
+
+_Distribution._--_Hyla staufferi staufferi_ inhabits savanna and
+subhumid and xeric forests in the lowlands and moderate elevations from
+southern Tamaulipas southward to Nicaragua on the Caribbean versant and
+from Guerrero, México to northwestern Costa Rica on the Pacific
+lowlands (Fig. 7). Duellman (1963:226) commented that a specimen from
+Chinajá, Guatemala, possibly was transported there in the cargo from
+Toocog, because with this one exception the species is unknown in
+tropical rainforest in Guatemala.
+
+  [Illustration: Fig. 7. Map showing locality records for _Hyla
+  staufferi staufferi_ (circles) and _H. staufferi altae_ (dots).]
+
+_Specimens Examined._--México: _Campeche_: 5 km S Champotón KU 71296-7;
+7 km W Escárcega, KU 71298-308; 13 km W, 1 km N Escárcega, KU 71309-10,
+75090-4. _Chiapas_: 32 km S Arriaga, KU 57789-92; 4 km N Ixtapa, KU
+5776-81; 3.6 km SW Las Cruces, KU 37740; 17 km S Las Cruces, KU
+57793-4; 24 km S Las Cruces, KU 104160 (tadpoles); 11 km S Tapachula,
+KU 57782-8, 60000 (young). _Guerrero_: El Limoncito, near La Venta, KU
+31392-401; Mexcala, near Balsa River, KU 31391; Organos, S El Trienta,
+KU 31390. _Oaxaca_: 26 km N Matías Romero, KU 33878-82; 2.5 km S
+Pochutla, KU 59924-7 (skeletons); 5 km S Pochutla, KU 57795-801; 3.2 km
+E Tapanatepec, KU 37877-902; 17.6 km WNW Tapanatepec, KU 65033-4;
+Temascal, USC 8243 (8); 3.2 km S Tolocita, KU 39657-8; 0.5 km Tuxtepec,
+KU 87073-81, 87610 (tadpoles); 17 km S Tuxtepec, KU 65035-7; 1 km W
+Zanatepec, KU 104161 (tadpoles). _Quintana Roo_: Isla Cozumel, 3.5 km N
+San Miguel, KU 71710-11 (young). _San Luis Potosí_: Valles, KU 31490.
+_Tabasco_: Teapa, UMMZ 118887 (3), 119203 (13); 9.6 km N Teapa, UMMZ
+119202; 24 km N Teapa, UMMZ 119961 (5); 29 km N Teapa, UMMZ 119960; 3.5
+km S Villahermosa, UMMZ 119201 (2); 17.6 km S Villahermosa, UMMZ 119200
+(8). _Tamaulipas_: 1 km E Chamal, UMMZ 110706; Gómez Farías, UMMZ
+110701 (3); 5 km SE Gómez Farías, UMMZ 110705; 8 km NE Gómez Farías,
+UMMZ 11282 (2), 11283 (3); Kilometer 615 between Río Limón and Llera,
+UMMZ 80455 (2); 5 km W San Geraldo, UMMZ 110702 (4), 110703 (3); 8 km W
+San Geraldo, near Río Frío, UMMZ 110704 (5). _Veracruz_: 3 km SW Boca
+del Río, KU 10494-8; 5 km SW Boca del Río, KU 23701; 5 km ESE Córdoba,
+KU 104162 (tadpoles); Cuautlapán, KU 57098-102, 26787; Hacienda
+Tamiahua, Cabo Rojo, KU 62871; 2 km ENE Mata Oscura, KU 105627; 5 km SE
+Paso del Toro, KU 40144; Portrero Viejo, KU 23911-2, 26786, 27413,
+57094-7.
+
+Guatemala: _Alta Verapaz_: Chinajá, KU 57769; Finca La Cubilquitz, UMMZ
+90871, 90872 (5), 91379 (2). _Baja Verapaz_: 1 km S San Jerónimo, UMMZ
+84077 (7), 84078 (14). _Chiquimula_: 1.6 km SE Chiquimula, UMMZ 98114
+(2); Esquipulas, UMMZ 106784 (4), 106785 (14). _El Petén_: No specific
+locality, USNM 25143, 24825-6; La Libertad, FMNH 27096-7, KU 57770,
+UMMZ 75339 (15), 75340 (15), UMMZ 94341-2. _Esquintla_: 20 km N San
+José, AMNH 74369-76. _Guatamala_: 16 km NE Guatamala, KU 43539. Izábal:
+Puerto Barrios, TCWC 16671-73, 16646-56; 2.5 km NE Río Blanco, KU
+57774-5. _Jalapa_: Jalapa, UMMZ 106788 (44). _Jutiapa_: Finca La
+Trinidad, UMMZ 107730 (12), 107731 (16); Jutiapa, UMMZ 106786 (2).
+_Zacapa_: 14 km ENE Mayuelas, KU 57773; 7 km ENE Río Hondo, KU 57771-2,
+59999 (young).
+
+British Honduras: BELIZE: Belize, FMNH 4406. _El Cayo_: San Agustín,
+UMMZ 80741 (8). _Stann Creek_: 10 km S Stann Creek on Hummingbird
+Highway, UMMZ 125720-1.
+
+El Salvador: _Cuscatlán_: 7 km WNW Cojutepeque, TNHC 32004-10. _La
+Libertad_: 16 km NW Santa Tecla, KU 43540-1. _La Union_: 2.5 km Santa
+Rosa, TCWC 16669-70. _Morazán_: Dividendero, USNM 73288-92. _San
+Salvador_: San Salvador, FMNH 65101-06, KU 61932-44, 61989-92, 62152
+(eggs), USNM 117588, 118391 (3), 118394; 1.6 km NW San Salvador, KU
+43162-3.
+
+Honduras: _Atlantidad_: Ceiba, USNM 117592. _Choluteca_: Choluteca, KU
+85361-6; 2 km E Choluteca, UMMZ 118395 (7); 3.2 km NE Choluteca, KU
+100500-01; 6.2 km E Choluteca, KU 65046-56; 10 km E Choluteca, KU
+65045: 5 km S Choluteca, USC 2700 (4). _Colón_: Isla Guanaja (Islas de
+la Bahía), TCWC 21551, TNHC 32011. _Cortés_: Agua Azul, TCWC 19178-9;
+East side Lago Yojoa, KU 65038-44. _El Paraiso_: Valle de Jamastrán,
+AMNH 54800-04. _Francisco Morazán_: Escuela Agrícola Panamericana, AMNH
+54963-73; 14.5 km NW Comayaguela, KU 100499; El Zamorano, KU 103224; 29
+km N Tegucigalpa, TNHC 32003, 32012.
+
+Nicaragua: _Chinandega_: Finca San Isidro, 10 km S Chinandega, KU
+85311-33. _Managua_: 13 km E Managua, KU 85339; 2 km S Tipitapa, KU
+85334-8. _Rivas_: 9.5 km SE Rivas, KU 85355-6; 18 km SE Rivas, KU
+85354; 7.7 km NE San Juan del Sur, KU 85346-53; 16.5 km NE San Juan del
+Sur, KU 85340-5; 5 km SE San Pablo, KU 43151-61. _Zelaya_: Isla Grande
+del Maiz, KU 85357-60.
+
+Costa Rica: _Alajuela_: _Los Chiles_, USC 7215 (2), 7217. _Guanacaste_:
+4 km W Bagaces, USC 7019 (5); Finca Taboga, KU 102265-5; 12 km S La
+Cruz, USC 8091; Las Cañas, KU 41113 (skeleton); 27 km N Las Cañas, USC
+8171 (5); Guardia, Río Tempisque, USC 8214; 10 km N Guardia, KU
+102266-7; 1.6 km N Guayabo de Bagaces, USC 7023 (3); Liberia, KU
+36510-22; 4 km W Liberia, KU 36449-64, USC 102 (10), 103 (9), 104 (7),
+105; 6 km N Liberia. USC 8096; 8 km NNW Liberia, KU 65032; 14.5 km N
+Liberia, USC 8079, 8138 (2); 14.5 km S Liberia, USC 8238 (5); 6 km N
+Nicoya, USC 8229 (11); 4 km S Nicoya, USC 8230, 8231; Peñas Blancas, KU
+102263; 8.6 km ESE Playa del Coco, USC 8137 (14); 21 km E Playa del
+Coco, USC 8138 (2); Santa Cruz, USC 8232 (2); 3 km E Santa Rosa, TCWC
+16663-68; Tenorio, KU 32159; Tilarán, KU 36509. _Puntarenas_: 10 km WNW
+Esparta, KU 65022-9, 68614 (skeleton); 4.5 km WNW Esparta, KU 65030; 12
+km WNW Esparta, KU 65031; 6 km E Esparta, KU 86477; Hotel Maribella, KU
+32157-8; 3 km W Puntarenas, TCWC 16657-62.
+
+
+_Hyla staufferi altae_ Dunn, New Combination
+
+    _Hyla altae_ Dunn, Occas. Papers Boston Soc. Nat. Hist., 8:61, June
+    7, 1933 [Holotype.--MCZ 17972, Summit, Canal Zone, Panamá; Emmett
+    R. Dunn collector].
+
+    _Hyla culex_: Stuart, Misc. Publ. Univ. Michigan Mus. Zool., 29:38,
+    October 1, 1935. Gaige, Carnegie Inst. Washington Publ., 457:293,
+    1936.
+
+    _Hyla staufferi_: Taylor, Univ. Kansas Sci. Bull., 35:862, July 1,
+    1952. Duellman, Univ. Kansas Publ., Mus. Nat. Hist., 17:274, June
+    17, 1966.
+
+_Diagnosis._--Small frogs (Male to 26 mm., Female to 27 mm.);
+dorsolateral and paravertebral stripes complete; longitudinal dark gray
+stripe on shank; thighs unmarked; interorbital bar usually absent; toes
+about three fifths webbed; gray to brownish gray above.
+
+_Variation._--_Hyla staufferi altae_ is less variable in size,
+proportions, and color pattern than is _H. s. staufferi_. The size
+varies from 21.7 to 26 mm. (23.6) in 72 males. The ratio of tibia to
+snout-vent length is 0.42 to 0.50 (0.45), slightly less than in the
+northern subspecies. In color pattern 94.5 per cent of the individuals
+have complete dorsal stripes, and all have a longitudinal stripe on the
+shank (Table 7).
+
+_Distribution._--This subspecies is restricted to subhumid forests and
+savannas on the Pacific lowlands of Panamá. _Hyla s. altae_ is
+presently known to occur from Chepo in east-central Panamá through the
+Azuero Peninsula to Concepción, Chiriquí, in western Panamá (Fig. 7).
+
+_Specimens Examined._--Panamá: _Canal Zone_: No specific locality, TNHC
+24406; 2.8 km SW Fort Kobbe, KU 101679. _Chiriquí_: 14.4 km E
+Concepción, AMNH 69799-801; 6.6 km N David, TNHC 32013-4; 2 km S David,
+AMNH 68802. _Coclé_: 1 km NE El Caño, KU 101662-75; El Valle de Antón,
+AMNH 59601-5, KU 77333-47; 7 km SSW Penonomé, KU 101654-61. _Los
+Santos_: Tonosí, KU 101246 (tadpoles), 101697-701. _Panamá_: 2 km WSW
+Chepo, KU 101680-8; 6 km WSW Chepo, KU 77324-27; El Cangrejo (Panamá),
+KU 101676-8; Nueva Gorgona, AMNH 69991, 69798; 1.5 km W Pacora, KU
+77328-32; 2 km N Tocumen, KU 101689-95; 8 km NE Tocumen, KU 101696.
+
+
+
+
+EVOLUTIONARY HISTORY
+
+
+My assumptions regarding the evolutionary history of the _Hyla rubra_
+group in Central America were derived partly from interpretations of the
+evolutionary history of other animal groups (Simpson, 1943, 1965; Dunn,
+1931b; Stuart, 1950; Duellman, 1958, 1960, 1963, 1965; and Duellman and
+Trueb, 1966). The origin and early evolution of the group probably
+occurred prior to the Mid-Pliocene in the lowlands of South America,
+because the greatest diversity of the group is in Brazil. Differentiation
+into two or more subgroups took place in South America prior to the late
+Pliocene. At the end of the Pliocene, shortly after the closure of the
+Colombian Portal, many South American animals migrated into Central
+America (Simpson, 1943, Maldonado-Koerdell, 1964, and Savage, 1966). It
+is likely that the _Hyla rubra_ group entered Central America at that
+time; apparently two stocks (_rubra-elaeochroa-staufferi_ stock and
+_boulengeri-foliamorta_ stock) migrated into Central America.
+
+_Hyla elaeochroa_ is closely related to _rubra_ and probably
+differentiated from _rubra_ through spatial isolation. Thus, we have
+_elaeochroa_ in Central America and _rubra_ in South America; most
+likely only in relatively recent times has _rubra_ migrated into
+eastern Panamá from northern South America. The differentiation and
+dispersal of _elaeochroa_ and _staufferi_ took place in Central America
+after the Pliocene. Probably the events of the Pleistocene resulted in
+the isolation of populations. One of these (_Hyla staufferi_ stock) was
+restricted in the subhumid Pacific lowlands, whereas the _Hyla
+elaeochroa_ stock occupied the tropical wet forests of the Caribbean
+lowlands. _Hyla elaeochroa_ apparently more closely resembled the
+parental stock by being restricted to the tropical rain forests,
+whereas _staufferi_ adapted to subhumid environments and thereby was
+able to disperse throughout most of the subhumid regions of Central
+America.
+
+After geographical separation took place the initial genetic divergence
+between the two populations was maintained by means of ecological and
+ethological isolating mechanisms. Under these circumstances it can be
+supposed that the different ecological preferences of _elaeochroa_ and
+_staufferi_ depend on the climatic changes that took place during the
+Pleistocene. On this basis it may be proposed that when the original
+prototype broke up into the two incipient species, the _staufferi_
+stock became physiologically and behaviorally adapted to subhumid
+conditions and dispersed into dry areas of the lowlands of Middle
+America. The tropical evergreen forests on the Caribbean side of lower
+Central America and the uplift of the Talamanca range in the Pliocene
+were barriers to the dispersal of _staufferi_. Consequently, this frog
+dispersed along the Pacific lowlands.
+
+At the present time _staufferi_ occupies the length of the Pacific
+lowlands in Central America, except in the rainforest of the Golfo Duce
+region, which apparently is a relict stand and now separates the ranges
+of two subspecies of _Hyla staufferi_. This species crossed the central
+Nicaraguan lowlands and reached the Caribbean lowlands of Nicaragua and
+nuclear Central America. The species migrated through the subhumid
+corridor in northern Honduras and eastern Guatemala (Comayagua Valley
+in Honduras and the Motagua Valley of Guatemala) to the Isthmus of
+Tehuantepec. Duellman (1960) hypothesized "that during the times of
+glacial advances (Pleistocene) the lowlands of the Isthmus probably
+were more extensive and had more semiarid tropical environments than at
+the present" and that when semiarid environments were continuous from
+the Pacific slope across the isthmus to the Gulf lowlands _staufferi_
+and other amphibians migrated northward to southeastern Tamaulipas,
+México.
+
+_Hyla elaeochroa_ dispersed along Caribbean lowland routes. This
+species not only occurs in the wet forests of the Golfo Dulce region
+but also in Guanacaste. It is possible that _elaeochroa_ entered
+Guanacaste and moved to the Golfo Dulce region when the intervening
+area was less xeric than now (Duellman, 1966b). _Hyla elaeochroa_
+extended its range to eastern Nicaragua, but even though northeastern
+Nicaragua has over 2,000 mm. of precipitation annually (Vivo Escoto,
+1964), this species has not spread into Honduras and Guatemala.
+
+_Hyla boulengeri_ is widespread in Amazonian and northern South
+America, whereas _foliamorta_ occurs only in eastern Panamá and in
+north-central Colombia. The ancestral _boulengeri-foliamorta_ stock
+probably invaded Central America in the late Pliocene and dispersed
+through humid forested environments to Nicaragua. Apparently a
+peripheral population established itself in the dry Pacific lowlands of
+Panamá. This population differentiated from _boulengeri_ of the humid
+Caribbean lowlands and evolved into _foliamorta_, which subsequently
+expanded its range into Colombia.
+
+
+
+
+LITERATURE CITED
+
+
+BLAIR, W. F.
+
+1960. Mating call as evidence of relations in the _Hyla eximia_ group.
+Southwestern Nat., 5(3):129-135. November 1.
+
+BOULENGER, G. A.
+
+1882. Catalogue of the Batrachia Salientia s. Ecaudata, 2nd. ed., pp.
+1-503, pls. 1-30. February.
+
+BROCCHI, P.
+
+1881-1883. Etude des batraciens de l'Amerique Centrale. Mission
+Scientifique au Mexique et dans l'Amerique Centrale, Liv. 1, pp. 1-122,
+pls. 1-21.
+
+COCHRAN, D. M.
+
+1955. Frogs of southeastern Brazil. Bull. U.S. Natl. Mus., 206:1-423.
+
+COPE, E. D.
+
+1865. Third contribution to the Herpetology of Tropical America. Proc.
+Acad. Nat. Sci. Philadelphia, 17:195.
+
+1876. On the batrachia and reptilia of Costa Rica. Jour. Acad. Nat.
+Sci. Philadelphia, new series, 8:93-154, pls. 23-28. 1887. Thirteenth
+contribution to the Herpetology of Tropical America. Proc. Amer.
+Philos. Society, 23:273. April.
+
+DAUDIN, F. M.
+
+1802. Histoire naturelle des rainettes, des grenouilles et des
+crapauds. Paris, pp. 1-71, pls. 1-33.
+
+1803. Histoire naturelle générale et particulière des reptiles. Paris,
+8:1-439.
+
+DUELLMAN, W. E.
+
+1956. The frogs of the hylid Genus _Phrynohyas Fitzinger_, 1843. Misc.
+Publ. Mus. Zool., Univ. Mich., 96:1-47, pls. 1-6. February 21.
+
+1958. A monographic study of the colubrid snakes Genus _Leptodeira_.
+Bull. Amer. Mus. Nat. Hist., 114:1-152, pls. 1-31. February 24.
+
+1960. A distributional study of the amphibians of the Isthmus of
+Tehuantepec, México. Univ. Kansas Publ., Mus. Nat. Hist, 13:19-72, pls.
+1-8. August 16.
+
+1963. Amphibians and reptiles of the rainforests of southern El Petén,
+Guatemala. Univ. Kansas Publ., Mus. Nat. Hist., 15:205-249, pls. 7-10.
+October 4.
+
+1965. A biogeographic account of the herpetofauna of Michoacán, México.
+Univ. Kansas Publ., Mus. Nat. Hist., 15:627-709, pls. 29-36. December
+30.
+
+1966a. Taxonomic notes on some Mexican and Central American hylid
+frogs. Univ. Kansas Publ., Mus. Nat. Hist., 17:263-279. June 17.
+
+1966b. The Central American herpetofauna: An ecological perspective.
+Copeia, 4:700-719. December 23.
+
+1967. Social organization in the mating calls of some Neotropical
+Anurans. Amer. Midl. Nat., 77(1):156-163. January.
+
+DUELLMAN, W. E., and L. TRUEB
+
+1966. Neotropical hylid frogs, Genus Smilisca. Univ. Kansas Publ., Mus.
+Nat. Hist., 17:281-375, pls. 1-12. July 14.
+
+DUNN, E. R.
+
+1931a. The amphibians of Barro Colorado Island. Occas. Papers Boston
+Soc. Nat. Hist., 5:403-421. October 10.
+
+1931b. The herpetological fauna of the Americas. Copeia, 3:106-119.
+October 30.
+
+1933. A new Hyla from Panamá Canal Zone. Occas. Papers Boston Soc. Nat.
+Hist., 8:61-64. June 7.
+
+DUNN, E. R., and J. EMLEN
+
+1932. Reptiles and amphibians from Honduras. Proc. Acad. Nat. Sci.
+Philadelphia, 84:24-25. March 22.
+
+FOUQUETTE, M. J.
+
+1958. A new tree frog, Genus _Hyla_, from the Canal Zone.
+Herpetologica, 14:125-128. April 25.
+
+GAIGE, H. T.
+
+1936. Some reptiles and amphibians from Yucatan and Campeche, México.
+Carnegie Inst. Washington Publ., 457:289-304.
+
+GOSNER, K. L.
+
+1960. A simplified table for staging anuran embryos and larvae with
+notes on identification. Herpetologica, 16:183-190. June 17.
+
+GÜNTHER, A. C. L.
+
+1859. Catalogue of the Batrachia Salientia in the British Museum. pp.
+1-160.
+
+1885-1902. Biologia Centrali Americana. Reptilia and Batrachia. London,
+xx + 326 pp., pls. 1-76.
+
+KELLOGG, R.
+
+1932. Mexican tailless amphibians in the United States National Museum,
+Bull. U.S. Natl. Mus., 160:1-224.
+
+LAURENTI, J. N.
+
+1768. Specimen medicum exhibens synopsin reptilium emendatum cum
+experimentis circa venema et antidota reptilium austriacorum. Vienna,
+pp. 1-216.
+
+LINNAEUS, C.
+
+1758. Systema naturae. Holmiae, ed. 10 reformata, I:1-532.
+
+MALDONADO-KOERDELL, M.
+
+1964. Geohistory and paleography of Middle America. In R. Wauchope and
+R. C. West (Eds.). Handbook of Middle American Indians, Vol. I, Univ.
+Texas Press, Austin, 570 pp.
+
+NIEDEN, F.
+
+1923. Amphibia:Anura I. Das Tierreich. Berlin, 584 pp.
+
+NOBLE, G. K.
+
+1918. The amphibians collected by the American Museum expedition to
+Nicaragua in 1916. Bull. Amer. Mus. Nat. Hist., 38:311-347.
+
+RAND, A. S.
+
+1957. Notes on amphibians and reptiles from El Salvador. Fieldiana,
+Zool., Chicago Nat. Hist. Mus., 43:505-534. April 18.
+
+RIVERO, J. A.
+
+1961. Salientia of Venezuela. Bull. Mus. Comp. Zool., 126:1-207.
+November.
+
+SAVAGE, J. M.
+
+1966. The origins and history of the Central American herpetofauna.
+Copeia, 4:719-756. December 23.
+
+SCHMIDT, K. P., and L. C. STUART
+
+1941. The herpetological fauna of the Salamá Basin, Baja Verapaz,
+Guatemala. Field Mus. Nat. Hist., Zool. Ser., 24:233-247.
+
+SEBA, A.
+
+1734. Locupletissimi rerum naturalium thesauri accurata descriptio, et
+iconibus artificissimis expressio, per universam physis historiam.
+Amsterdam, I xxxiv + 178 pp., pls. 1-111.
+
+SIMPSON, G. G.
+
+1943. Turtles and the origin of the fauna of Latin America. Amer. Jour.
+Sci., 24:413-429.
+
+1965. The geography of evolution. Chilton Books Publishers.
+Philadelphia, pp. 1-349. July.
+
+SMITH, H. M. and E. H. TAYLOR
+
+1948. An annotated checklist and key to the amphibians of México. Bull.
+U.S. Natl. Mus., 194:1-118.
+
+STARRETT, P.
+
+1960. Description of tadpoles of Middle American frogs. Misc. Publ.
+Mus. Zool., Univ. Michigan, 110:1-37, pl. 1.
+
+STUART, L. C.
+
+1935. A contribution to a knowledge of the herpetology of a portion of
+the savanna region of Central Petén, Guatemala. Misc. Publ. Mus. Zool.,
+Univ. Michigan, 29:1-56, pls. 1-4. October 1.
+
+1948. The amphibians and reptiles of Alta Verapaz, Guatemala. Misc.
+Publ. Mus. Zool., Univ. Michigan, 69:1-109. June 12.
+
+1950. A geographic study of the herpetofauna of Alta Verapaz,
+Guatemala. Contr. Lab. Vert. Biol., Univ. Michigan, 45:1-77, pls. 1-9.
+May.
+
+TAYLOR, E. H.
+
+1938. Frogs of the _Hyla eximia_ group, with description of two new
+species. Univ. Kansas Sci. Bull., 25:421-445. June 1.
+
+1952. The frogs and toads of Costa Rica. Univ. Kansas Sci. Bull.,
+35:577-942. July 1.
+
+1958. Additions to the known herpetological fauna of Costa Rica, with
+comments on other species. No. III. Univ. Kansas Sci. Bull., 34:3-40.
+November 18.
+
+VIVO ESCOTO, J. A.
+
+1964. Weather and climate of México and Central America. _In_ R.
+Wauchope and R. C. West (Eds.), Handbook of Middle American Indians.
+Vol. 1, Univ. Texas Press, Austin, 570 pp.
+
+
+_Transmitted February 7, 1969._
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK THE SYSTEMATICS OF THE FROGS OF THE HYLA RUBRA GROUP IN MIDDLE AMERICA ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

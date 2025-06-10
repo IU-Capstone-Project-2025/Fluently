@@ -1,0 +1,3528 @@
+﻿The Project Gutenberg eBook of Animaduersions uppon the annotacions and corrections of some imperfections of impressiones of Chaucer's workes
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Animaduersions uppon the annotacions and corrections of some imperfections of impressiones of Chaucer's workes
+
+Author: Francis Thynne
+
+Editor: G. H. Kingsley
+
+Release date: June 28, 2009 [eBook #29261]
+                Most recently updated: January 5, 2021
+
+Language: English
+
+Credits: Produced by Louise Hope, Taavi Kalju and the Online
+        Distributed Proofreading Team at https://www.pgdp.net (This
+        book was produced from scanned images of public domain
+        material from the Google Print project.)
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK ANIMADUERSIONS UPPON THE ANNOTACIONS AND CORRECTIONS OF SOME IMPERFECTIONS OF IMPRESSIONES OF CHAUCER'S WORKES ***
+
+
+
+
+Produced by Louise Hope, Taavi Kalju and the Online
+Distributed Proofreading Team at https://www.pgdp.net (This
+book was produced from scanned images of public domain
+material from the Google Print project.)
+
+
+
+
+
+
+
+[This text uses UTF-8 (Unicode) file encoding. If the apostrophes and
+quotation marks in this paragraph appear as garbage, make sure your
+text reader’s “character set” or “file encoding” is set to Unicode
+(UTF-8). You may also need to change the default font. As a last
+resort, use the Latin-1 version of the file instead.
+
+The text is based on the 1865 EETS edition of Thynne’s _Animadversions_.
+Two purely typographic features have been adopted from the 1876 Chaucer
+Society re-edition of the same MS. Passages printed in brackets in 1865
+have been changed to 1876’s parentheses; conversely, letters and whole
+words supplied by the editor are shown in brackets, reserving italics
+for expanded abbreviations. A few apparent errors were corrected from
+the 1876 text. Some other differences between the two editions are
+noted at the end of the e-text.
+
+Italicized letters within a word are shown in {braces}. Other italics
+are shown conventionally with _lines_. Superscripts are shown with
+carets ^.
+
+The Sidenotes have been duplicated at the beginning of the text to act
+as a table of contents.]
+
+
+
+
+   Animaduersions
+
+        uppon
+
+  Chaucer’s Workes.
+
+
+
+
+  [Sidenotes:
+    The author is vexed that Master Speight did not consult him on
+      his new edition of Chaucer.
+    Also vexed at a side blow at his father’s edition, and justifies
+      him as editor.
+    His father’s collection of MS. Chaucers and their curiosity.
+    The Pilgrime’s Tale telling forth the evil lives of churchmen.
+    William Thynne in favour with Henry VIII., who promiseth to
+      countenance him.
+    The promise broken through the power of Wolsey.
+    The most part of Colin Clout written at William Thynne’s house
+      at Erith.
+    Chaucer’s works like to be destroyed by parliament.
+    Reasons why the Pilgrime’s Tale should be Chaucer’s.
+    How William Thynne’s collection of Chaucer’s MS. was dispersed
+      abroad.
+    He differeth from Master Speight on Chaucer’s family.
+    Chausier, one who hoseth or shueth a man.
+    Chaucer his arms injustly undervalued.
+    Philippa of Henault came not over with Prince Edward.
+    Bartholomew de Burgersh sent for Philippa of Henault.
+    The conjecture that Chaucer’s ancestors were merchants, of no
+      valydytye.
+    Master Speight misquoteth Gower.
+    Chaucer submitteth his works to Gower, not Gower to Chaucer.
+    Gower the poet was not of the Gowers (or Gores) of Stittenham.
+    Gower’s chaplette for knighthood not for poetry.
+    The chaplette of roses a peculiar ornament of honour.
+    The knighting of Erle Mortone of Normandye.
+    Chaucer being a grave man unlikely to beat a Franciscan Fryer but?
+    The lawyers not in the temple till the latter part of Edward III.
+    Speight knoweth not the name of Chaucer’s wife, nor doth Thynne.
+    The children of John of Gaunt born pre-nupt, and legytymated by
+      the Pope and the Parliament.
+    Chaucer’s children and their advauncement and of the Burgershes.
+    Serlo de Burgo uncle and not brother to Eustace.
+    Jane of Navarre maryed to Henry IV., in the 5th year of his reign.
+    The de la Pools gained advancement by lending the King money, but
+      William was not the first that did so.
+    The clergy offended that the temporal men were found as wise as
+      themselves.
+    A merchant by Attorney is no true merchant.
+    Alice, the wife of Richard Neville, was daughter of Thomas
+      Montacute.
+    He correcteth Master Speight his dates and history of printing.
+    The Romante of the Rose began by Guillm̄ de Loris, and finished
+      by John de la Meune.
+    Why the dream of Chaucer cannot be the book of the Duchess.
+    John of Gaunt, his incontinency.
+    Doubteth master Speight’s ability in the exposition of old words,
+      but commendeth his diligence and knowledge.
+    Aketon or Slevelesse jacket of plate for the war.
+    A besant is a besant, and not a duckett.
+    Fermentacione is fermentacione, and not dawbing even
+      metaphorically.
+    Orfrayes not Goldsmith’s work, but frysed cloth of gold,
+      a manufacture peculiar to the English.
+    Oundye and Crispe meaneth wavy like water.
+    Resager is ratsbane or arsenic.
+    Begyns are nuns, though it cometh to mean superstitious and
+      hypocritical women from their nature.
+    Citrinatione or perfect digestion.
+    Forage is old and hard provision made for horses and cattle in
+      winter, or metaphorically, or to help out the ryme it may mean
+      grass.
+    Heroner is a long-winged hawk for the heron.
+    The Hyppe is the berye of the sweet bryer or eglantine.
+    Nowell meaneth more than Christmas.
+    Porpherye is a peculiar marble, not marble in common.
+    Sendale, a sylke stuffe.
+    The trepegett is not the battering-ram, but an engine to cast
+      stones.
+    Wiuer or Wyvern, a serpent like unto a dragon.
+    Autenticke meaneth a thing of auctoritye, not of antiquitye.
+    Abandone is not liberty though Hollyband sayeth so.
+    Of the Vernacle.
+    Master Thynne would read Campaneus for Capaneus, and giveth
+      reasons.
+    Liketh the reading of Eros, but preferreth that of Heros,
+      and giveth reasons.
+    Of florins and their name from the Florentines.
+    Sterling money taketh its name from the Esterlings.
+    King John of France, his ransom of three millions of florens.
+    Of the oken garland of Emelye.
+    Eyther for euerye, an overnice correction.
+    The intellect of Arcite had not wholly gone, or he would not have
+      known Emelye.
+    Straught, a better word than haughte.
+    Visage for vassalage, an impertinent correction.
+    Leefe for lothe, a nedeless correction.
+    It is more likely that Absolon knocked than that he coughed at
+      the window.
+    Surrye or Russye, indifferent which.
+    Cambuscan is Caius canne.
+    “That may not saye naye,” better than “there may no wighte say
+      naye.”
+    Theophraste, not Paraphraste.
+    The wife of Bath’s Prologue taken from the author of Policraticon.
+    Country, not Couentry.
+    Maketh, not waketh.
+    Hugh of Lincoln.
+    “Where the sunne is in his ascensione,” a good reading.
+    Kenelm slain by Queen Drida.
+    Master Speight mistaketh his almanack.
+    The degrees of the signe are misreckoned, not the signe itself.
+    Mereturicke is a corruption of Merecenrycke, or the kingdom of
+      Mercia.
+    Pilloures of silver borne before Cardinalls.
+    Liketh best the old reading of “change of many manner of meates.”
+    And also the old reading of “myters” more than one or two for
+      the sake of the meter.
+    The lordes sonne of Windsore is in the French Romant of the rose,
+      but is there spelled Guindesores.
+    Master Thynne knoweth not clearly why the Baron should be called
+      of Windsor.
+    The ordeal was not tryall by fier only, but also by water, nor
+      for chastity only, but for many other matters.
+    The fyery ordeal was by going on hote shares and cultors, not
+      going through the fyre. The mother of Edward confessor passed
+      over nine burnynge shares.
+    The ordeal taken away by the court of Rome, and after by Henry
+      III.
+    The stork bewrayeth not adultery but wreaketh the adultery of
+      his owne mate.
+    The plowman’s tale is wrong placed.
+    Chaucer’s proper works should be distinguished from those
+      adulterat and not his.
+    There were three editions of Chaucer before William Thynne
+      dedicated his to Henry VIII.
+    The first editions being very corrupt, William Thynne augmented
+      and corrected them.
+    Master Speight hath omytted many auctors vouched by Chaucer.
+    It should be Harlottes, and not Haroldes.
+    The king of Ribalds or Harlottes, an officer of great accompt
+      in times past.
+    Johannes Tyllius maketh mention of a Rex Ribaldorum.
+    Also Vincentius Luparius maketh him an honourable officer.
+    The Rex Ribaldorum was like unto our Marshall. The Marshalls
+      duties and his powers over Harlotts and lost men.
+    Master Thynne being a herold liketh not that false semblance
+      should be thought one.
+    Hate was a Moueresse or stirrer of debate, not a minoresse.
+    Molinet calleth Hate a Ducteress, or leader.]
+
+
+
+
+  +Chaucer.+
+
+
+  ANIMADUERSIONS
+
+  uppon the Annotacions and correct{i}ons of some
+  imperfect{i}ons of impress{i}ones
+  of Chaucer’s workes (sett
+  downe before tyme and
+  nowe) reprinted in the
+  yere of our lorde
+  1598
+
+  Sett downe by
+  FRANCIS THYNNE.
+
+  “Sortee pur bien ou ne sortee rien.”
+
+
+  Now Newly Edited from the MS. in the
+  Bridgewater Library
+
+  by
+
+  G. H. KINGSLEY, M.D., F.L.S.
+
+  LONDON:
+  Published for the Early English Text Society,
+  by N. Trübner & Co., 60, Paternoster Row.
+
+  MDCCCLXV.
+
+
+
+
+  John Childs and Son, Printers.
+
+
+
+
+PREFACE.
+
+
+Although only the grandson of the first of his name, the author of the
+following interesting specimen of 16th-century criticism came of a
+family of great antiquity, of so great an antiquity, indeed, as to
+preclude our tracing it back to its origin. This family was originally
+known as the “De Botfelds,” but in the 15th century one branch adopted
+the more humble name of “Thynne,” or “of the Inne.” Why the latter name
+was first assumed has never been satisfactorily explained. It can hardly
+be supposed that “John de la Inne de Botfelde,” as he signed himself,
+kept a veritable hostelry and sold ale and provender to the travellers
+between Ludlow and Shrewsbury, and most probably the term Inn was used
+in the sense which has given us “Lincoln’s Inn,” “Gray’s Inn,” or
+“Furnivall’s Inn,” merely meaning a place of residence of the higher
+class, though in this case inverted, the Inn giving its name to its
+owner.
+
+However obtained, the name has been borne by the most successful branch
+of the De Botfelds down to the present Marquess of Bath, who now
+represents it. Much interesting matter connected with the family was
+collected by a late descendant of the older branch, Beriah Botfeld, and
+published by him in his “Stemmata Botvilliana.”
+
+The first “John of the Inn” married one Jane Bowdler, by whom he had a
+son Ralph, who married Anne Hygons, and their son William became clerk
+of the kitchen, and according to some, master of the household to Henry
+VIII. He married in the first place a lady who, however she may have
+advanced her husband’s prospects at court, behaved in a manner which
+must have considerably marred his satisfaction at her success. Those who
+wish to study the matrimonial sorrows of “Thynnus Aulicus,” as he calls
+him, may consult Erasmus in his Epistolæ, lib. xv. Epist. xiv.
+
+His second marriage to Anne Bond, daughter of William Bond, clerk of
+green cloth and master of the household to Henry VIII., was more
+fortunate, and by her he had daughters and one son, our Francis Thynne.
+
+Though his son gives him no higher position in the court of Henry VIII.
+than the apparently humble one of clerk of the kitchen, he is careful to
+let us know that the post was in reality no mean one, and that “there
+were those of good worship both at court and country” who had at one
+time been well pleased to be his father’s clerks. That he was a man of
+superior mind there is no question, and we have a pleasant hint in the
+following tract of his intimacy with his king, and of their mutual
+fondness for literature. To William Thynne, indeed, all who read the
+English language are deeply indebted, for to his industry and love for
+his author we owe much of what we now possess of Chaucer. Another
+curious bit of literary gossip to be gleaned from this tract is that
+William Thynne was a patron and supporter of John Skelton, who was an
+inmate of his house at Erith, whilst composing that most masterly bit of
+bitter truth, his “Colin Clout,” a satire perhaps unsurpassed in our
+language.
+
+William Thynne rests beside his second wife, in the church of
+Allhallows, Barking, near the Tower of London, where there are two
+handsome brasses to their memory. That of William Thynne represents him
+in full armour with a tremendous dudgeon dagger and broadsword, most
+warlike guize for a clerk of the kitchen and editor of Chaucer. The
+dress of his wife is quite refreshing in its graceful comeliness in
+these days of revived “farthingales and hoops.” These brasses were
+restored by the late Marquess of Bath. Would that the same good feeling
+for things old had prevented the owners of the “church property” from
+casing the old tower with a hideous warehouse.
+
+The Sir John Thynne mentioned in the “Animadversions” was most probably
+a cousin of Francis. He married the daughter of Sir Thomas Gresham, the
+builder of the Royal Exchange, part of whose wealth was devoted by his
+son-in-law to the building of the beautiful family seat of Long Leat,
+in Wiltshire, in which work he was doubtless aided indirectly by the
+Reformation, for, says the old couplet,
+
+  “Portman, Horner, Popham, and Thynne,
+  When the monks went out they came in.”
+
+Francis Thynne was born in Kent, probably at his father’s house at
+Erith, about 1550. He was educated at Tunbridge school under learned
+Master Proctor, thence to Magdalen College, Oxford, and then, as the
+manner was, to the Inns of Court, where he lay at Lincoln’s Inn for a
+while. Some men are born antiquarians as others are born poets, and we
+may be pretty certain that it was at Thynne’s own desire that his court
+influence was used to procure him the post of “Blanch Lyon pursuivant,”
+a position which would enable him to pursue studies, the results of
+which, however valuable in themselves, but seldom prove capable of being
+converted into the vulgar necessities of food and raiment. Poor John
+Stowe, with his license to beg, as the reward of the labour of his life,
+is a terrible proof of how utterly unmarketable a valuable commodity may
+become.
+
+Leading a calm and quiet life in the pleasant villages of Poplar and
+Clerkenwell, in “sweet and studious idleness,” as he himself calls it,
+the old herald was enabled to accumulate rich stores of matter, much of
+which has come down to us, principally in manuscript, scattered through
+various great libraries, which prove him to have deserved Camden’s
+estimate of him as “an antiquary of great judgment and diligence.” It
+would seem that he had entertained the idea of following in his father’s
+footsteps, and of becoming an editor of Chaucer, and that he had even
+made some collections towards that end. The appearance of Speight’s
+edition probably prevented this idea being carried out, and the evident
+soreness exhibited in this little tract very probably arose from a
+feeling that his friend had rather unfairly stolen a march upon him.
+However the wound was not deep, and Speight made use of Thynne’s
+corrections, and Thynne assisted Speight, in new editions, with all
+friendship and sympathy.[1] I suspect him of dabbling in alchemy and
+the occult sciences. He shows himself well acquainted with the terms
+peculiar to those mysteries, and hints that Chaucer only “enveyed”
+against the “sophisticall abuse,” not the honest use of the Arcana.
+Moreover in the British Museum (MS. add. 11,388) there is a volume
+containing much curious matter collected by him on these subjects, and
+not only collected but illustrated by him with most gorgeous colours and
+wondrous drawing, worthy of the blazonry of a Lancaster Herald. The
+costumes however are carefully correct, and give us useful hints as to
+the fashion of the raiment of our ancestors. From the peculiar piety and
+earnestness (most important elements in the search for the philosopher’s
+stone), of the small “signs” and prayers appended to these papers, it
+is, I think, clear, that he was working in all good faith and belief.
+Possibly the following lines, which seem to have been his favourite
+motto, may have been inspired by the disappointment and dyspepsia
+produced by his smoky studies and their ill success,
+
+  “My strange and froward fate
+    Shall turn her whele anew
+  To better or to payre my fate,
+    Which envy dothe pursue.”
+
+    [Footnote 1: “To the readers. After this booke was last printed,
+    I understand that M. Francis Thynn had a purpose, as indeed he
+    hath when the time shall serve, to set out Chaucer with a coment
+    in our tongue, as the Italians have Petrarke and others in their
+    language. Whereupon I purposed not to meddle any further in this
+    work, although some promise made to the contrarie, but to referre
+    all to him; being a gentleman for that purpose inferior to none,
+    both in regard to his own skill, as also of those helps left to
+    him by his father. Yet notwithstanding, Chaucer now being printed
+    againe I was willing not only to helpe some imperfections, but
+    also to add some things whereunto he did not only persuade me, but
+    most kindly lent me his helpe and direction. By this means most of
+    his old words are restored: proverbes and sentences marked: such
+    Notes as were collected, drawne into better order and the text by
+    olde copies corrected.” Speight’s Chaucer, 1602.]
+
+On the 22nd of April, 1602, he was with great ceremony advanced to the
+honour of Lancaster Herald. He never surrendered his patent, and as his
+successor entered on that post in November, 1608, he is supposed to have
+died about that date, though some postpone his death till 1611. He
+married Elizabeth, daughter and co-heiress of Thomas de la Rivers of
+Bransbe, but left no issue.
+
+There are many points of interest to be picked out of the following
+honest and straightforward bit of criticism, if we examine it closely:
+and, firstly, as to its author? Is there not something very
+characteristic in its general tone, something dimly sketching a shadowy
+outline of a kindly, fussy, busy, querulous old man, much given to tiny
+minutiæ, a careful copier with a clean pen, indefatiguable in collecting
+“contributions” to minor history; one jealous of all appearance of
+slight to his office, even to being moved to wrath with Master Speight
+for printing “Harolds” instead of “Harlotts,” and letting him know how
+mightily a “Harold” like himself would be offended at being holden of
+the condition of so base a thing as False Semblance? Perhaps the more so
+from a half-consciousness that the glory of the office was declining,
+and that if the smallest opening were given, a ribald wit might create
+terrible havock amongst his darling idols. How delicately he snubs
+Master Speight for not calling on him at Clerkenwell Green (How would
+Speight have travelled the distance in 1598? It was a long uphill walk
+for an antiquarian, and the fields by no means safe from long-staff
+sixpenny strikers); and how modestly he hints that he would have derived
+no “disparagement” from so doing; showing all the devotion to little
+matters of etiquette of an amiable but irritable old gentleman of our
+own day.
+
+But mark this old gentleman’s description of his father’s collection of
+Chaucer’s MS.! Had ever a Bibliophile a more delightful commission than
+that one of William Thynne’s, empowering him to rout and to rummage
+amongst all the monasteries and libraries of England in search of the
+precious fragments? And had ever a Bibliophile a greater reward for his
+pleasant toils? “Fully furnished with a multitude of books, emongst
+which one coppye of some part of his works subscribed in various places
+‘Examinatur Chaucer’!” Where is this invaluable MS. now? It is worth the
+tracing, if it be possible, even to its intermediate history. Was it one
+of those stolen from Francis Thynne’s house at Poplar by that
+bibliomaniacal burglar? or was it one of those which in a fit of
+generosity, worthy of those heroic times, he gave to Stephen Batemann,
+that most fortunate parson of Newington? Is this commission to be
+regarded as some slight proof that the spoliation of the monasteries was
+not carried on with the reckless Vandalism usually attributed to the
+reformers?
+
+We learn from this tract that William Thynne left no less than
+twenty-five copies of Chaucerian MS. to his son, doubtless but a small
+tything of the entire number extant, showing that there were men amongst
+the monks who could enjoy wit and humour even when directed against
+themselves, and that there must have been some considerable liberality
+if not laxness of rule amongst the orders of the day. It would, I fancy,
+be difficult to find amongst the monkeries of our own time (except
+possibly those belonging to that very cheery order the Capuchines) an
+abbot inclined to permit his monks to read, much less to copy, so
+heretical a work as the Canterbury Tales, however freely he winked at
+the introduction of French nouvellettes.
+
+But though some may have enjoyed Chaucer in all good faith, there were
+others who saw how trenchant were the blows he dealt against the
+churchmen of his time, and what deadly mischief to their pre-eminence
+lurked under his seeming _bonhommie_. Wolsey thought it worth his while
+to exert his influence against him so strongly as to oblige William
+Thynne to alter his plan of publication, though backed by the promised
+protection of Henry VIII. And the curious action of the Parliament
+noticed in the tract (p. 7) was doubtless owing to the same
+influence:[2] an assumption of the right of censure by the Parliament
+which seems to have gone near to deprive us of Chaucer altogether. The
+Parliament men were right in regarding the works of Chaucer as mere
+fables, but they forgot that fables have “morals,” and that these morals
+were directed to the decision of the great question of whether the
+“spiritual” or the “temporal” man was to rule the world, a question
+unhappily not quite settled even in our own time.
+
+    [Footnote 2: Urry, in his Ed. of Chaucer, says that the Canterbury
+    Tales were exempt from the prohibition of the Act of 34 Henry
+    VIII. “For the advancement of true religion.” I find no notice of
+    this in the Act in the “Statutes at large,” 1763. He also refers
+    to Foxe’s Acts and Monuments, which is also merely negative on the
+    subject.]
+
+The notice of that other sturdy reformer, John Skelton (p. 7) is also
+very interesting, and gives us a hint of the existence of a “protesting”
+feeling in the Court of Henry VIII. before there was any reason for
+attributing it to mere private or political motives. From the way in
+which it is mentioned here, I suspect that the more general satire
+“Colin Clout” preceded the more directly personal one of “Why come ye
+nat to court?” which lashes Wolsey himself with a heartily outspoken
+virulence which would hardly have been tolerated by him when in the
+zenith of his power. It was not improbably written whilst its author was
+safe in sanctuary under Bishop Islip. William Thynne, court favourite
+though he was, could never have kept Skelton’s head on his shoulders
+after so terrible a provocation.
+
+Wherever he may be placed, John Skelton stands alone amongst satirists,
+there is no one like him: possibly from a feeling that he was writing on
+the winning side, and sure of sympathy and protection, he scorns to hide
+his pearls under a dunghill like Rabelais, and utters fearlessly and
+openly what he has to say. Even in our own time,
+
+  “Though his rime be ragged
+  Tattered and iagged
+  Rudely rain-beaten
+  Rusty and moth-eaten
+  _If ye talke well therewyth
+  Yt hath in it some pith_.”
+
+Thynne’s note on the family of Gower (p. 14) is of value as agreeing
+with later theories, which deny that Gower the poet was of the Gowers of
+Stittenham, the ancestors of the present houses of Sutherland and
+Ellesmere. The question is not, however, finally decided, and we have
+reason to believe that all the Gowers of Great Britain are descended
+from the same family of Guers still flourishing in Brittany. Early
+coat-armours are not much to be depended on, and Thynne as a Herald may
+lean a little too much towards them. The question is, however, in good
+hands, and I hope that before long some fresh light may be thrown
+upon it.
+
+The old story of Chaucer’s having been fined for beating a Franciscan
+friar in Fleet Street is doubted by Thynne, though hardly, I think, on
+sufficient grounds. Tradition (when it agrees with our own views) is not
+lightly to be disturbed, and remembering with what more than feminine
+powers of invective “spiritual” men seem to be not unfrequently endowed,
+and also how atrociously insolent a Franciscan friar would be likely to
+be (of course from the best motives) to a man like Chaucer, who had
+burnt into the very soul of monasticism with the caustic of his wit,
+I shall continue to believe the legend for the present. If the mediæval
+Italians are to be believed, the cudgelling of a friar was occasionally
+thought necessary even by the most faithful, and I see no reason why
+hale Dan Chaucer should not have lost his temper on sufficient
+provocation. Old men have hot blood sometimes, and Dickens does not
+outrage probability when he makes Martin Chuzzelwit the elder, fell Mr
+Pecksniff to the ground.
+
+Much of the tract is taken up by corrections of etymologies, and the
+explanation of obscure and obsolete words. It is a little curious that
+the word “orfrayes,” which had gone so far out of date as to be
+unintelligible to Master Speight, should, thanks to the new rage for
+church and clergy decoration, have become reasonably common again. The
+note on the “Vernacle” is another bit of close and accurate antiquarian
+knowledge worth noting. It is most tantalizing that after all he says
+about that mysterious question of “The Lords son of Windsor,” a question
+as mysterious as that demanding why Falstalf likened Prince Henry’s
+father to a “singing man” of the same place, we should be left as wise
+as we were before. We have here and there, too, hints as to what we have
+lost from Thynne’s great storehouse of information; how valuable would
+have been “that long and no common discourse” which he tells us he might
+have composed on that most curious form of judicial knavery, the ordeal;
+and possibly much more so is that of his “collections” for his edition
+of Chaucer! This last may, however, be still recovered by some fortunate
+literary mole.
+
+The notice, by no means clear, but certainly not complimentary, of “the
+second editione to one inferior personne, than my father’s editione
+was,” may refer to any of the editions of Chaucer which, according to
+Lowndes, were printed more or less from William Thynne’s edition in
+1542, 1546, and 1555; but from another passage hinting that Speight
+followed “a late English corrector whom I forbear to name,” I suspect
+that the “inferior personne” was poor John Stowe, and the edition to
+have been that edited by him in 1561, the nearest in point of date to
+that of Speight.
+
+The manuscript from which this tract is reprinted is, like most of the
+treasures of the Bridgewater Library, wonderfully clean and in good
+order. It is entirely in the Autograph of Francis Thynne, and was
+evidently written purposely for the great Lord Chancellor Egerton,
+and bears his arms emblazoned on the title-page. Master Speight most
+probably got _his_ copy of Animadversions in a more humble form.
+
+In conclusion may I remark that, as usual, the green silk ribands,
+originally attached to the vellum and gold cover, are closely cut away,
+probably for the purpose of being converted into shoe-ties, which Robert
+Green informs us was the usual destination of those appended to
+presentation copies, hinting at the same time that they were generally
+the only solid advantage gained by the dedicatee from the honour done
+him.
+
+
+
+
+LIST OF THYNNE’S WORKS
+
+
+1. The perfect Ambassador, treating of the Antiquity, Privileges, and
+Behaviour of men belonging to that Function. 12mo, 1651 & 1652.
+
+(This was first published in 1651 under the title “The application of
+certain histories concerning Ambassadors and their functions.” The
+title-page only is new. MS. note by Bliss. British Museum, 8005--a.)
+
+2. Annals of Scotland, in some part continued from the time in which Ra.
+Holinshead left, being an. 1571 unto the year 1586. London, 1586. fol.
+
+3. “There are also the catalogues of the Protectors, Governors, or
+Regents of Scotland during the King’s minority, or the minority of
+several kings, or their insufficiency of government. There are also the
+catalogues of all Dukes of Scotland by creation or descent, of the
+Chancellors of Scotland; Archbishops of St Andrews and divers writers of
+Scotland.” _A. a’ Wood._
+
+4. Catalogue of English Cardinals set down in R. Holinshed’s Chronicle
+at the end of Q. Mary.
+
+5. “A Discourse of Arms,” dated “Clerkenwell Grene, 5th of Jan., 1593.”
+MS. in the College of Arms.
+
+6. “Catalogue of the Chancellors of England.” MS. in the Bridgewater
+Library.
+
+7. “Collections for the History of England.” MS. in Bridgewater Library.
+
+8. Animadversions on Speight’s Chaucer, MS. in Bridgewater Library.
+
+9. Several Collections of Antiquities. Notes concerning Arms, monumental
+Antiquities, &c. MS. Cotton’s Lib. Cleopatra, C. 3. p. 62.
+
+10. A discourse of the duty and office of a Herald of Arms, ad. 1605.
+MS. Bib. Ashmol. n. 835.
+
+11. Missellanies of the Treasury. MS. 1599.
+
+12. Matters concerning Heralds, and Tryal of Armes and the Court
+Military. MS. Bib. Ashmol. 12 (printed in Hearne’s Collection of Curious
+Discourses).
+
+13. Names of the Earls Marshall of England, A.D. 1601. MS. Bib. Ashmol.
+1374.
+
+14. Epitaphia. Sive monumenta Sepulchrorum Anglici et Latini quam
+gallice. MS.
+
+“In the castrations to Hollingshed’s Chronicles are the four following
+discourses by this Author, which were suppressed from political motives,
+they have been added to the late quarto Edition.”
+
+15. The Collection of the Earls of Leicester, compiled in 1585.
+
+16. The lives of the Archbishops of Canterbury, written in 1586.
+
+17. Treatise of the Lord Cobham. (Is this the “Lives of the Lords Cobham
+of Cobham, Randale and Harborough,” British Mus. MS. add. 12,514.
+f. 56?)
+
+18. The catalogue of the Lord Wardens of the Cinque Ports, and
+constables of Dover Castle, as well in the time of King Edward surnamed
+the Confessor, as since the reign of the conqueror. MS. 1585 (Was in the
+library of More, Bishop of Eley, and now in the British Museum. MS. add.
+12,514).
+
+19. Of Stirling Money.
+
+20. Of what antiquity shires were in England.
+
+21. Of the antiquity and etymology of terms and fines for administration
+of justice in England.
+
+22. Of the antiquity of the houses of Law.
+
+23. Of Epitaphs.
+
+24. On the antiquity, &c., of the high Steward of England.
+
+25. The antiquity and office of Earl Marshall. (These last seven are
+printed in “Hearne’s Curious Discourses.” 8vo, 1775.)
+
+26. Discourse of bastards. Brit. Mus. MS. add. 4176, fol. 139.
+
+27. The Plea between the advocate and the anti-advocate concerning the
+Bath and Batchelor Knights. Brit. Mus. MS. add. 12,530.
+
+28. Annals of England. Mus. Brit. MS. add. 926, 1017, 12,514.
+
+29. The kinges book of all the border Knyghtes, Squiers, and gentlemen
+of this realm of England, by Francis Thynne, 1601, MS. Mus. Brit. MSS.
+add. 11,388.
+
+(The same volume contains much curious matter collected and illustrated
+by Thynne--principally bearing on the philosopher’s stone. The principal
+paper is a rhyming Latin poem, “De Phenicæ sive de Lapide Philosophico,”
+referred to in the tract.)
+
+Collections out of Domus Regni Angliæ. Nomina Episcoporum in Somerset.
+Nomina Saxonica de Donatoribus a Regibus Eadfrido, Eadgare et Edwardo,
+Catalogus Episcoporum, Barton and Wells. A book of collections and
+commentaries de historia et Rebus Britannicis.
+
+Collections out of manuscript, Historians Registers of Abbies, Leger
+books, and other antient manuscripts.
+
+
+
+
+ANIMADVERSIONS.
+
++To the righte Honorable his singular goode Lorde Sir Thomas
+Egertone knighte lorde keper of the greate seale and Master of
+the Rooles of the Chancerye.+
+
+
+It was (Ryghte honorable and my verye good lorde) one annciente
+and gretlye estemed custome emongste the Romans in the heigh[t]e
+of their glorye, that eche one, accordinge to their abylytye or
+the desarte of his frende, did in the begynnynge of the monthe
+of Januarye (consecrated to the dooble faced godd Janus one the
+fyrste daye whereof they made electione of their cheife officers
+and magystrates) presente somme gyfte unto his frende as the
+noote and pledge of the contynued and encresed amytye betwene
+them, a pollicye gretlye to be regarded, for the manye good
+effectes whiche issue from so woorthye cause. This custome not
+restinge in the lymyttes of Italye, but spredinge with the
+Romans (as did their language and many other their usages and
+lawes) into euerye perticuler Countrye where theyr powre and
+gouermente stretched. passed also ouer the Oceane into the litle
+worlde of Brytannye, being neuer exiled from thence, nor frome
+those, whome eyther honor, amytye, or dutye doth combyne. ffor
+whiche cause lest I myghte offende in the breche of that moste
+excellente and yet embraced Custome, I thynke yt my parte to
+presente unto yo{u}r Lo{rdship} suche poore neweyeres gyfte as
+my weake estate and the barrennesse of my feble skyll will
+permytte: Wherefore, and because Cicero affirmethe, that he
+whiche hathe once ouer passed the frontiers of modestye must for
+euer after be impudente, (a grounde w{hi}che I fynde fully
+veryfyed in my selfe, havinge once before outgonne the boundes
+of shamefastnesse in presentinge to yo{u}r Lordshippe my
+confused collect{i}ons and disordered discourse of the
+Chauncelors)[3] I ame nowe become utterlye impudente in not
+blusshinge to salute you agayne (in the begynnynge of this newe
+yere) with my petye animadvers{i}ons, uppon the annotac{i}ons
+and corrections delivered by Master Thomas Speghte uppon the
+last edit{i}one of Chaucer’s workes in the yere of oure
+redempt{i}one 1598; thinges (I confesse) not so answerable to
+yo{u}r Lordshippes iudgmente, and my desyre, as boothe your
+desarte and my dutye doo challenge. But althoughe they doo not
+in all respectes satisfye youre Lordshippes expectac{i}one and
+my goode will, (accordinge as I wyshe they sholde), yet I dobt
+not but yo{u}r lordshippe (not degeneratinge from youre former
+curtesye wontinge to accompanye all youre act{i}ons) will
+accepte these trifles from yo{u}r lovinge well-willer, in suche
+sorte, as I shall acknowledge my selfe beholdinge and endebted
+to yo{u}r Lordshippe for the same. whiche I hoope yo{u}r
+Lordshippe will the rather doo (with pardonynge my presumptione)
+because you haue, by the former good acceptance of my laste
+booke, emboldened me to make tryall of the lyke acceptance of
+this pamfelette. Wherefore yf yo{u}r Lordshippe shall receve yt
+curteouslye (and so not to dischorage mee in my sweete and
+studiouse idlenesse) I will hereafter consecrate to yo{u}r
+lykinge some better labor of moore momente and higher subiecte,
+answerable to the excellencye of yo{u}r iudgemente, and mete to
+declare the fulnesse of the dutyfull mynde and service I beare
+and owe unto your Lordshippe, to whome in all reuerence I
+commytte this simple treatyce. Thus (withe hartye prayer
+comendinge youre estate to the Almightye (who send to yo{u}r
+  Lordshippe manye happye
+  and helthfull yeres
+  and to me the
+  enlarged
+  contynuance of
+  youre honorable fauo{r})
+  I humblye take my leave.
+  Clerkenwell grene
+  the xx of
+  December
+  1599.
+  Yo{u}r Lordshippes wholye to
+  dyspose,
+  Francis Thynne.
+
+    [Footnote 3: “_The names and Armes of the Chancellors
+    collected into one Catologue by ffrancis Thynn declaring the
+    yeres of the reignes of the kinges and the yere of our Lorde in
+    whiche they possessed that office._” --_Folio MS. Bridgewater
+    Library._]
+
+
+
+
+TO MASTER THOMAS SPEIGHTE ffrancis Thynn sendeth greeting.
+
+[Sidenote: The author is vexed that Master Speight did not
+consult him on his new edition of Chaucer.] THE INDUSTRYE AND
+LOVE (MASTER SPEIGHT) whiche you haue used, and beare, uppon and
+to oure famous poete Geffrye Chaucer, deseruethe bothe
+comendat{i}one and furtherance: the one to recompense yo{u}r
+trauayle, the other to accomplyshe the duetye, whiche we all
+beare (or at the least yf we reuerence lernynge or regarde the
+honor of oure Countrye, sholde beare) to suche a singuler
+ornamente of oure tonge, as the woorkes of Chaucer are: Yet
+since there is nothinge so fullye perfected, by anye one,
+whereine some imp{er}fect{i}one maye not bee founde, (for as the
+prouerbe is Bernardus, or as others have Alanus, non videt
+omnia,) you must be contented to gyve me leave in discharge of
+the duetye and love whiche I beare to Chaucer, (whome I suppose
+I have as great intereste to adorne withe my smale skyll as anye
+other hath, in regarde that the laborious care of my father made
+hym most acceptable to the worlde in correctinge and augmentinge
+his woorkes,) to enter into the examinat{i}one of this newe
+edit{i}one, and that the rather, because you with _Horace_ his
+verse “si quid novisti rectius istis, candidus imperti,” have
+willed all others to further the same, and to accepte yo{u}r
+labors in good p{ar}te, whiche as I most willingly doo, so
+meaninge but well to the worke, I ame to lett yo{u} understande
+my conceyte thereof, whiche before this, yf yo{u} wolde have
+vouchesafed my howse, or have thoughte me worthy to have byn
+acqueynted with these matters, (whiche yo{u} might well have
+donne without anye whatsoeuer dispargement to yo{ur}selfe,) you
+sholde haue understoode before the impressione, althoughe this
+whiche I here write ys not nowe uppon selfe will or fonnd
+conceyte to wrangle for one asses shadowe, or to seke a knott in
+a rushe, but in frendlye sorte to bringe truthe to lighte,
+a thinge whiche I wolde desire others to use towardes mee in
+whatsoeuer shall fall oute of my penne. Wherefore I will here
+shewe such thinges as, in mye opynione, may seme to be touched,
+not medlinge withe the seconde editione to one inferior personne
+then my fathers editione was.
+
+[Sidenote: Also vexed at a side blow at his father’s edition,
+and justifies him as editor.] Ffyrste in yo{ur} forespeche to
+the reader, yo{u} saye “secondly the texte by written copies
+corrected” by whiche worde corrected, I maye seme to gather,
+that yo{u} imagine greate imperfect{i}one in my fathers
+editione, whiche peraduenture maye move others to saye (as some
+unadvisedlye have sayed) that my father had wronged Chaucer:
+wherefore to stoppe that gappe, I will answere, that Chaucers
+woorkes haue byn sithens printed twyce, yf not thrice, and
+therfore by oure carelesse (and for the most p{ar}te unlerned)
+printers of Englande, not so well performed as yt ought to bee:
+so that of necessytye bothe in matter, myter and meaninge, yt
+must needes gather corrupt{i}one, passinge throughe so manye
+handes, as the water dothe the further yt run{n}ethe from the
+pure founteyne. To enduce me and all others to iudge his
+edit{i}one (whiche I thinke yo{u} neuer sawe wholye together,
+beinge fyrst printed but in one coolume in a page, whereof I
+will speake hereafter) was the p{er}fectest: ys the ernest
+desire and love my father hadde to have Chaucers woorkes
+rightlye to be publy{s}hed. for the performance whereof, my
+father not onlye used the helpe of that lerned and eloquent
+kn[i]ghte and antiquarye Sir Briane Tuke, but had also made
+greate serche for copies to p{er}fecte his woorkes, as apperethe
+in the ende of the squiers tale, in his edit{i}one printed in
+the yere 1542; [Sidenote: His father’s collection of MS.
+Chaucers and their curiosity.] but further had comiss{i}one to
+serche all the liberaries of Englande for Chaucers works, so
+that oute of all the Abbies of this Realme (whiche reserved anye
+monumentes thereof) he was fully furnished w{i}th multitude of
+Bookes. emongst w{hic}he one coppye of some p{ar}te of his
+woorkes came to his handes subscribed in diuers places withe
+“examinatur Chaucer.” By this Booke, and conferringe manye of
+the other written copies together, he deliuered his edit{i}one,
+fullye corrected, as the amendementes under his hande, in the
+fyrst printed booke that euer was of his woorkes (beinge stamped
+by the fyrste impress{i}one that was in Englande) will well
+declare, at what tyme he added manye thinges w{hi}che were not
+before printed, as you nowe haue donne soome, of whiche I ame
+p{er}swaded (and that not w{i}thoute reasone) the originall came
+from mee. [Sidenote: The Pilgrime’s Tale telling forth the evil
+lives of churchmen.] In w{hi}che his edit{i}one, beinge printed
+but w{i}th one coolume in a syde, there was the pilgrymes tale,
+a thinge moore odious to the Clergye, then the speche of the
+plowmanne; that pilgrimes tale begynnynge in this sorte;
+
+  “In Lincolneshyre fast by a fenne,
+  Standes a relligious howse who doth yt kenne,” &c.
+
+In this tale did Chaucer most bitterlye enveye against the
+pride, state, couetoussness, and extorc{i}one of the Bysshoppes,
+their officialls, archdeacons, vicars generalls, comissaryes,
+and other officers of the spirituall courte. The invent{i}one
+and order whereof (as I have herde yt related by some nowe of
+good worshippe bothe in courte and countrye but then my fathers
+clerkes,) was, that one comynge into this relligious howse,
+walked upp and down the churche, beholdinge goodlye pictures of
+Bysshoppes in the windowes, at lengthe the manne contynuynge in
+that contemplatione, not knowinge what Byshoppes they were,
+a grave olde manne withe a longe white hedde and berde, in a
+large blacke garment girded unto hym, came forthe and asked hym,
+what he iudged of those pictures in the windowes, who sayed he
+knewe not what to make of them, but that they looked lyke unto
+our mitred Byshoppes; to whome the olde father replied, yt is
+true, they are like, but not the same, for oure byshoppes are
+farr degenerate from them, and withe that, made a large
+discourse of the Byshoppes and of their courtes.
+
+[Sidenote: William Thynne in favour with Henry VIII., who
+promiseth to countenance him.] This tale when kinge henrye the
+eighte had redde, he called my father unto hym saying Williame
+Thynne I dobte this will not be allowed, for I suspecte the
+Byshoppes will call the in questione for yt, to whome my father,
+beinge in great fauore with his prince, (as manye yet lyvinge
+canne testyfye,) sayed yf yo{ur} grace be not offended, I hoope
+to be protected by yo{u}, whereuppon the kinge bydd hym goo his
+waye and feare not. All whiche not withstandinge, [Sidenote:
+The promise broken through the power of Wolsey.] my father was
+called in quest{i}one by the Bysshoppes and heaved at by
+cardinall Wolseye his olde enymye, for manye causes, but mostly
+for that my father had furthered Skelton to publishe his Collen
+Cloute againste the Cardinall, [Sidenote: The most part of Colin
+Clout written at William Thynne’s house at Erith.] the moste
+p{ar}te of whiche Booke was compiled in my fathers howse at
+Erithe in Kente. But for all my fathers frendes, the Cardinalls
+p{er}swadinge auctorytye was so greate withe the kinge, that
+thoughe by the kinges favor my father escaped bodelye daunger,
+yet the Cardinall caused the kinge so muche to myslyke of that
+tale, that chaucer must be newe printed and that discourse of
+the pilgrymes tale lefte oute, and so beinge printed agayne,
+some thynges were forsed to be omitted, and the plowmans tale
+(supposed, but untrulye, to be made by olde Sir Thomas Wyat,
+father to hym which was executed in the firste yere of Quene
+Marye, and not by Chaucer,) with muche ado p{er}mitted to passe
+with the reste, [Sidenote: Chaucer’s works like to be destroyed
+by parliament.] in suche sorte that in one open parliamente
+(as I have herde St. Johne Thynne reporte, beinge then a member
+of the howse,) when talke was had of Bookes to be forbidden,
+chaucer had there for euer byn condempned, had yt not byn that
+his woorkes had byn counted but fables. [Sidenote: Reasons why
+the Pilgrime’s Tale should be Chaucer’s.] Whereunto yf yo{u}
+will replye, that their colde not be any suche pilgrymes tale,
+because Chaucer in his prologues makethe not mentione of anye
+suche persoune, whiche he wolde haue doune yf yt had byn so: for
+after that he had recyted the knighte, the squyer, the squiers
+yeomane, the prioresse, her noone, and her thre prests, the
+monke, the fryer, the marchant, the clerke of Oxenforde,
+seriante at the lawe, franckleyne, haberdassher, goldsmythe,
+webbe, dyer and tapyster, cooke, shypmane, Doctor of physecke,
+wyfe of Bathe, p{ar}soune and plowmane, he sayeth at the end of
+the plowmans prologue,
+
+  There was also a Reue, and a Millere
+  A sumpneure, and a Pardoner
+  A manciple and my selfe there was no mo.
+
+All whiche make xxx persons with Chaucer: wherefore yf there had
+byn anye moore, he wolde also haue recyted them in those verses,
+whereunto I answere, that in the prologes he lefte oute some of
+those w{hic}he tolde their tales; as the chanons yomane, because
+he came after that they were passed out of theyre Inne, and did
+overtake them, as in lyke sorte this pilgrime did or mighte doo,
+and so afterwardes be one of their companye, as was that chanons
+yeomane, althoughe Chaucer talke no moore of this pilgrime in
+his prologe then he doothe of the chanons yeomane; whiche I
+dobte not wolde fullye appere, yf the pilgrimes prologe and tale
+mighte be restored to his former light they being nowe looste,
+as manye other of Chaucers tales were before that, as I am
+induced to thinke by manye reasons.
+
+[Sidenote: How William Thynne’s collection of Chaucer’s MS. was
+dispersed abroad.] But to leave this, I must saye that in those
+many written Bookes of Chaucer, w{hic}he came to my fathers
+hands, there were manye false copyes, whiche Chaucer shewethe in
+writinge of Adam Scriuener, (as yo{u} have noted) of whiche
+written copies there came to me after my fathers deathe some
+fyve and twentye; whereof some had moore and some fewer tales,
+and some but two and some three. w{hic}he bookes beinge by me
+(as one nothinge dobting of this whiche is nowe donne for
+Chaucer) partly dispersed aboute xxvj years agoo, and partlye
+stoolen out of my howse at Popler: I gave divers of them to
+Stephen Batemanne person of Newington, and to div{er}s other,
+whiche beinge copies unp{er}fecte and some of them corrected by
+my fathers hande yt maye happen soome of them to coome to some
+of yo{ur} frendes handes, whiche I knowe yf I see agayne: and yf
+by anye suche written copies yo{u} have corrected Chaucer, yo{u}
+maye as well offende as seme to do good. But I judge the beste,
+for in dobtes I will not resolve with a settled judgement,
+althoughe yo{u} may iudge this tediouse discourse of my father a
+needlesse thinge in setting forthe his diligence in breaking the
+yce, and givinge lighte to others, who may moore easely
+p{er}fecte then begyne any thinge, for facilius est addere
+qua{m} Invenire, and so to other matters.
+
+[Sidenote: He differeth from Master Speight on Chaucer’s
+family.] Under the tytle of chaucers countaye,[4] yo{u} seme to
+make yt probable that Richarde Chaucer vinetener of Londone, was
+Geffrye Chaucers father, But I holde that no moore the{n} that
+Johne Chaucer of Londone, was father to Richarde; of whiche
+Johne I fynde in the recordes in Dorso Rotulor. patent. 24 de
+anno 30. Ed. 1. in the towre. that kinge Edwarde the firste had
+herde the compleinte of Johne chaucer of London, who was beaten
+and hurte, to the domage of one thousand pownde (that some
+amountinge at this daye to thre thowsande pownde;) for whiche a
+comiss{i}one went forthe to enquire thereof. wherbye yt semethe
+that he was of some Reconynge. But as I cannott saye that Johne
+was father to Richarde, or hee to Geffroye: So yet this muche I
+will deliuer in settinge downe the antiquytye of the name of
+chaucer, that his anncesters (as you well coniecture) were
+strangers, as the etymon of his name (beinge frenche in Englishe
+synyfyinge one who shueth or hooseth a manne) dothe prove,
+[Sidenote: Chausier, one who hoseth or shueth a man.] for that
+dothe the Etymon of this worde chausier presente unto us, of
+whiche name I have founde (besides the former recyted Johne) on
+Elias chauseryr lyvinge in the tyme of Henrye the thirde and of
+Edwarde the firste, of whome the record of pellis exitus in the
+receyte of the Exchequier in the firste yere of Edwarde ye
+firste hathe thus noted: “Edwardus dei gra{tia} &c. Liberate de
+thesauro Nostro Elie chauseryr decem solidos super arreragia
+triu{m} obuloru{m} diurnoru{m} quos ad vita{m} sua{m} per
+litteras domini. H. Regis patris nostri, percepit ad
+scaccar{iu}m nostru{m}. datu{m} per manu{m} Walleri Merton
+cancellarii nostri apud West {minsteriu}m 24 Julii anno regni
+nostri primo.” with whiche carractres ys Geffry Chausyer written
+in the Recordes in the tyme of Edwarde the thirde and Richarde
+the seconde. So that yt was a name of office or occupat{i}one,
+whiche after came to be the surname of a famelye, as did Smythe,
+Baker, Porter, Bruer, Skynner, Cooke, Butler, and suche lyke,
+and that yt was a name of office apperethe in the recordes of
+the towre, where yt is named Le Chaucer, beinge more annciente
+then anye other of those recordes; for in Dorso clause of
+10: H. 3 ys this: Reginaldus mirifir^s et alicia uxor eius
+attornaveru{n}t Radulfu{m} le Chausier contra Joh{ann}em Le
+furber et matildem uxorem eius de uno messuagio in London. This
+chaucer lyvinge also in the time of kinge John. And thus this
+muche for the Antiquytye and synificat{i}one of Chaucer,
+w{hic}he I canne prove in the tyme of Edward the 4 to signyfye
+also, in oure Englishe tonge, bootes or highe shoes to the calfe
+of the legge: for thus hathe the Antique recordes of Domus Regni
+Anglie, ca. 53 for the messengers of the kinges howse to doo the
+kings comanndementes: that they shalbe allowed for their Chauses
+yerely iiij^s viij^d: But what shall wee stande uppon the
+Antiquyte and gentry of Chaucer, when the rolle of Battle Abbeye
+affirmeth hym to come in with the Conquerer. [Sidenote: Chaucer
+his arms injustly undervalued.] Under the title of Chaucers
+countrye, yow sett downe that some Heraldes are of opyny-o{n}e
+that he did not discende of any great howse; whiche they gather
+by his armes. This ys a slender coniecture, for as honorable
+howses and of as greate Antiquytye haue borne as meane armes as
+Chaucer, and yet Chaucers armes are not so meane eyther for
+coolo{r}, chardge or partic{i}one as some will make them.
+And where yo{u} saye, yt semethe lykelye, Chaucers skill in
+Geometrye considered, that he tooke the groundes and reasons
+of his armes oute of seuen twentye and eight and twentye
+proposit{i}ones of Euclide’s first booke, that ys no inference
+that his armes were newe or fyrst assumed by hym oute of
+Geometricall proportions, because he was skyllfull in Geometrye:
+for so yo{u} maye saye of all the auncient armes of England
+w{hic}he consyste not of anymalls or vegitalls. for all other
+armes whiche are not Anymalls and vegitalls, as Cheuerons,
+pales, Bendes, Checkes, and suche lyke, stande uppon
+geometricall proport{i}one{s}. And therfore howe greate so euer
+their skyll bee, which attribute that choyce of armes to Chaucer
+[they] had no moore skyle in armes then they needed.
+
+    [Footnote 4: _Error for family?_]
+
+[Sidenote: Philippa of Henault came not over with Prince
+Edward.] In the same title also, yo{u} sett downe Quene
+Isabell, &c. and her sonne prince Edwarde withe his newe maried
+wyfe retourned oute of Henalte. In whiche are two
+unperfect{i}ons. the first whereof ys, that his wyfe came oute
+of Henalte w{it}h the prince, but that is not soo, for the
+prince maryed her not before he came into England, since the
+prince was onlye slenderly contracted and not maryed to her
+before his arryvall in Englande, beinge two yeres and moore
+after that contracte, (betwene the erle of henalt and his
+mother,) about the latter ende of the seconde yere of his
+reigne, thoughe others haue the firste, the solempnytye of that
+mariage beinge donne at Yorke. besides she came not ouer with
+Quene Isabell and the prince, but the prince sent for her
+afterwardes, and so I suppose sayeth Hardinge in his cronicle,
+yf I do not mysconceve yt, not havinge the historye now in my
+handes. But whether he saye so or no, yt ys not materiall,
+because the recordes be playne, that he sent for her into
+Henalte in the seconde yere of his reigne in october, and she
+came to the kinge the 23 of Januarye followinge, w{hic}he was
+aboute one daye before he beganne the thirde yere of his reigne,
+wherunto he entred the 25 of Januarye. and for prooffe of the
+tyme when and whoome the Kinge sente, and what they were allowed
+therefore, the pellis exitus of the Exchequier remayninge in
+master warders office hathe thus sett downe to the forthe daye
+of februarye [Sidenote: Bartholomew de Burgersh sent for
+Philippa of Henault.] “Bartholomeo de Burgershe nuper misso ad
+partes Douor ad obuiandu{m} filiæ comitis Hannoniæ consorti
+ipsius Regis &c.” but this recorde followinge is most pleyne,
+shewing bothe who went for her, the day when they tooke their
+yourneye towardes henalte, with the daye when and where they
+presented her to the kinge after their retorne into Englande,
+and the daye one whiche they wer payed their charges, beinge the
+forthe of marche one w{hic}he daye yt is thus entred in the
+records of pellis exitus, Michaell. 2. ed. 3. “Rogero couentry
+&c Lichefeld episcopo nuper misso in nuntiu{m} domini Regis ad
+partes Hannoniæ pro matrimonio inter dominu{m} Regem et filiam
+comitis Hannoniæ contrahendo, ab octavo die octobris proxime
+preterito, quo die reessit de Notingha{m} ipso domino Rege
+ibidem existente, arripiendo iter suu{m} predictu{m}, versus
+partes predictas, usqu{e} vicesimu{m} tertiu{m} diem Januarii
+proxime sequente{m}, quo die rediit ad ipsu{m} Regem predictu{m}
+apud Eboru{m} in comitatiua filiæ comitis Hannoniæ predictæ
+utroqu{e} die computato pro cviij diebus percipiendo per diem
+iij.^li vj.^s viij.^d pro expensis suis.” Thus muche the
+recorde, whiche confirmethe that w{hi}che I go aboute to prove,
+that she came not into Englande with prince Edwarde, and that he
+was not maryed at that tyme, no, not contracted, but only by
+agremente betwene the erle and his mother. [Sidenote: The
+conjecture that Chaucer’s ancestors were merchants, of no
+valydytye.] Next yo{u} seme to implye by a coniecturall
+argumente, that Chaucers auncesters sholde be m{e}rcha{n}ts,
+for that in place where they haue dwelled the armes of the
+marchantes of the staple haue bin seene in the glasse windowes.
+This ys a mere coniecture, and of no valydytye. For the
+m{a}rchantes of the staple had not any armes granted to them
+(as I haue bin enformed) vntill longe after the deathe of
+Chaucers parentes, w{hi}che was aboute the 10 or 12 of Edwarde
+the thirde; and those merchantes had no armes before the tyme of
+Henrye the sixte, or muchewhat thereaboutes, as I dobt not but
+wilbe well proued, yf I be not mysenformed. But admytte the
+staplers had then armes, yt ys no argume{n}te that chaucers
+auncesters were merchantes because those armes were in the
+wyndowes, as you shall well p{er}ceave, yf yo{u} drawe yt into a
+syllogisme, and therefore yo{u} did well to conclude, that yt
+was not materiall whether they were merchants or noo.
+
+[Sidenote: Master Speight misquoteth Gower.] In the title of
+Chaucer’s educat{i}one, yo{u} saye that Gower in his booke
+entituled confessio amantis termethe Chaucer a worthye poet,
+and maketh hym as yt were the iudge of his woorkes; in w{hi}che
+Booke, to my knowledge, Gower dothe not terme hym a worthye
+poet, (althoughe I confesse he well deserueth that name, and
+that the same may be gathered oute of Gower comendynge hym,)
+nether doth he after a sorte (for any thinge I canne yet see)
+make hym iudge of his workes, (whereof I wolde be glad to be
+enformed,) since these be Gowers woordes, vttered by Venus in
+that booke of confessio Amantis:
+
+  And grete well Chaucer when ye mete,
+  As my disciple and my poet:
+  for in the flowere of his youthe,
+  In sondrye wise, as he well couthe,
+  of dytyes and of songes glade
+  the whiche for my sake he made,
+  the laude fulfilled is ouer all:
+  wherefore to hym in especiall
+  aboue all others I am most holde;
+  for thy nowe in his dayes olde,
+  thow shalt hym tell this message,
+  that he vppon his latter age
+  sett an ende of all his werke,
+  as he whiche is myne owne clerke
+  do make his _testament of Love_,
+  as thow hast done thy shrift ab[o]ue,
+  so that my Courte yt may recorde, &c.
+
+[Sidenote: Chaucer submitteth his works to Gower, not Gower to
+Chaucer.] These be all the verses w{hi}che I knowe or yet canne
+fynde, in whiche Gower in that booke mentioneth Chaucer, where
+he nether nameth hym worthye poet, nor after a sorte submyttethe
+his workes to his iudgmente. But quite contrarye Chaucer doth
+submytte the correctione of his woorks to Gower in these playne
+woordes, in the latter ende of the fyfte booke of Troylus:
+
+  O Morall Gower, this booke I directe
+  To the, and the philosophicall stroode,
+  To vouchesafe where nede is to correcte
+  Of your benignityes and zeales good.
+
+But this error had in you byn p{ar}doned, yf you had not sett yt
+downe as your owne, but warranted with the auctorytye of Bale in
+Scriptoribus Anglie, from whence yo{u} haue swallowed yt.
+[Sidenote: Gower the poet was not of the Gowers (or Gores) of
+Stittenham.] Then in a marginall note of this title yo{u} saye
+agayne oute of Bale, that Gower was a Yorkshire manne; but you
+are not to be touched therfore, because you discharge yo{ur}
+selfe in vouching yo{ur} auctor. Wherfore Bale hath muche
+mistaken yt, as he hath donne infynyte thinges in that Booke de
+scriptoribus Anglie, beinge for the most parte the collect{i}ons
+of Lelande. For in truth yo{u}r armes of this S^r Johne Gower
+beinge argent one a cheuerone azure, three leopardes heddes or,
+do prove that he came of a contrarye howse to the Gowers of
+Stytenham in Yorkeshyre, who bare barrulye of argent and gules a
+crosse patye florye sable. Whiche difference of armes semethe a
+difference of famelyes, vnlesse yo{u} canne prove that, beinge
+of one howse, they altered their armes vppone some iuste
+occas{i}one, as that soome of the howse maryinge one heyre did
+leave his owne armes and bare the armes of his moother; as was
+accustoomed in tymes paste. But this differe{n}ce of Cootes for
+this cause, or anye other, (that I colde yet euer lerne,) shall
+you not fynde in this famelye of Gower: and therefore seuerall
+howses from the fyrst originall. Then the marginall note goeth
+further out of Bale, that Gower had one his hedde a garlande of
+ivye and rooses, the one the ornamente of a knyghte, the other
+of a poet. [Sidenote: Gower’s chaplette for knighthood not for
+poetry.] But Bale ys mystaken, for yt ys not a garlande, vnlest
+you will metaphoricallye call euerye cyrcle of the hedde a
+garlande as Crownes are sometymes called garlandes, from whence
+they had their originall, nether ys yt of Ivye, as any manne
+whiche seethe yt may well iudge, and therefore not there sett
+for anye suche intente as an ensigne of his poetrye, but ys
+symplye a chapplett of Roses, suche as the knyghtes in olde tyme
+vsed ether of golde, or other embroderye, made after the
+fasshone of Roses, one of the peculier ornamentes of a knighte,
+as well as his coller of SSS, his guilte swoorde, and spurres.
+[Sidenote: The chaplette of roses a peculiar ornament of
+honour.] W{hi}che chaplett or cyrcle of Rooses was as well
+attributed to knights, the lowest degree of honor, as to the
+hygher degrees of Duke, Erle, &c. beinge knyghtes, for so I haue
+seene Johne of Gaunte pictured in his chaplett of Rooses; and
+kinge Edwarde the thirde gaue his chaplett to Eustace Rybamonte,
+only the difference was, that as they were of lower degree, so
+had the[y] fewer Rooses placed on their chaplett or cyrcle of
+golde, one ornament deduced frome the Dukes crowne whiche had
+thee rooses vppon the toppe of the cyrcle, when the knighte had
+them onlye vppon the cyrcle or garlande ytselfe. of whiche dukes
+crowne to be adorned with little rooses, [Sidenote: The
+knighting of Erle Mortone of Normandye.] Mathewe Paris,
+speakinge of the creatinge of Johne erle Mortone, duke of
+Normandye, in the yere of Christe 1199, dothe saye, Interim
+comes Johannes Rothomagu{m} veniens in octavis pasche gladio
+ducatus Normaniæ cinctus est, in matrice ecclesia, per
+ministeriu{m} Waltheri Rothomage{n}sis Archie{pisco}pi, vbi
+Archiepiscopus memoratus ante maius altare in capite eius posuit
+circulu{m} aureu{m} habente{m} in su{m}mitate per gyru{m}
+rosulas aureas artificialiter fabricatas, whiche chaplett of
+Rooses came in the ende to be a bande aboute oure cappes, sette
+with golde Buttons, as may be supposed.--In the same title yo{u}
+saye, yt semethe that these lerned menne were of the Inner
+Temple; [Sidenote: Chaucer being a grave man unlikely to beat a
+Franciscan Fryer but?] for that, manye yeres since, master
+Buckley did see a recorde in the same howse, where Geffrye
+Chaucer was fined two shillinges for beatinge a Franciscane
+Fryer in flete-streate. This is a hard collect[i]one to prove
+Gower of the Inner Temple, althoughe he studyed the lawe. for
+thus yo{u} frame yo{ur} argumente. Mr Buckley founde a recorde
+in the Temple, that Chaucer was fyned for beatinge the fryer;
+ergo, Gower and Chaucer were of the Temple. But for myne owne
+parte, yf I wolde stande vppon termes for matter of Antiquytye
+and ransacke the originall of the lawiers fyrst settlinge in the
+Temple, I dobte whether Chaucer were of the temple or noe,
+vnless yt were towardes his latter tyme, for he was an olde
+manne, as appereth by Gower in Confessione Amantis in the xvi
+yere of R. 2: when Gower wroote that Booke. [Sidenote: The
+lawyers not in the temple till the latter part of Edward III.]
+And yt is most certeyne to be gathered by cyrcumstances of
+Recordes, that the lawyers were not in the temple vntill
+towardes the latter parte of the reygne of kinge Edwarde the
+thirde; at w{hi}che tyme Chaucer was a grave manne, holden in
+greate credyt, and employed in embassye, so that me thinkethe he
+sholde not be of that howse; and yet, yf he then were, I sholde
+iudge yt strange that he sholde violate the rules of peace and
+gravytye yn those yeares. But I will passe over all those
+matters scito pede, and leave euerye manne to his owne
+iudgemente therein for this tyme.
+
+[Sidenote: Speight knoweth not the name of Chaucer’s wife, nor
+doth Thynne.] IN THE TITLE OF Chawcer’s mariage yo{u} saye,
+yo{u} cannotte fynde the name of the Gentlewomanne whome he
+maryed. Trulye, yf I did followe the conceyte of others,
+I sholde suppose her name was Elizabethe, a waytinge womanne of
+Quene philippe, wyfe to Edwarde the thirde & daughter to
+Willi{a}m erle of Henalte. but I favor not their oppynyone, for,
+althoughe I fynde a recorde of the pellis exitus, in the tyme of
+Edwarde the thirde, of a yerely stypende to Elizabethe Chawcer,
+domicellæ reginæ Philippæ, wh{ic}he domicella dothe signyfye one
+of her waytinge gentlewomen: yet I cannott for this tyme thinke
+this was his wyfe, but rather his sister or kinswomanne, who
+after the deathe of her mystresse Quene philippe did forsake the
+worlde, and became a nonne at Seinte Heleins in london,
+accordinge as yo{u} haue touched one of that profess{i}one in
+primo of kinge Richarde the seconde.
+
+[Sidenote: The children of John of Gaunt born pre-nupt, and
+legytymated by the Pope and the Parliament.] In the Latyne
+stemme of Chawcer you saye, speakinge of Katherine Swyneforde,
+Que postea nupta Johanni Gandauensi tertij Edwardi Regis filio,
+Lancastriæ duci, illi procreavit filios tres et vnica{m}
+filia{m}. Wherbye we may inferre that Johne of Gaunte had these
+childrene by her after the mariage. Whiche is not soo for he had
+all his children by her longe before that mariage, so that they
+beinge all illegitimate were enforced afterwarde vppon that
+maryage to be legytymated by the poope; & also by acte of
+Parliamente, aboute the two & twentythe of kinge Richarde the
+seconde; so that yo{u} cannott saye, que postea nupta procreavit
+Lancastriæ duci tres filios, etc.
+
+[Sidenote: Chaucer’s children and their advauncement and of the
+Burgershes.] In the title of Chawcers children and their
+advauncemente, in a marginall noote yo{u} vouche master Campdene
+that Barthelmewe Burgershe, knyghte of the Garter, was he from
+whome the Burgershes, whose daughter & heyre was maryed to
+Thomas Chawcer, did descende. But that is also one error. for
+this Barthelmewe was of a collaterall lyne to that S^r Johne
+Burgershe the father of Mawde wyfe to Thomas Chawcer; and
+therefore coulde not that S^r Johne Burghershe be descended of
+this Barthelmewe Burgershe, though hee were of that howse.
+[Sidenote: Serlo de Burgo uncle and not brother to Eustace.]
+Then, in that title, yo{u} vouche oute of Mr. Campdene that
+Serlo de Burgo brother to Eustachius de Vescye builte
+Knaresborowe Castle. but that ys not right for this Serlo beinge
+called Serlo de Burgo siue de Pembroke was brother to Johne
+father to Eustace Vescye, as haue the recordes of the towre, and
+so vncle and not brother to Eustace. [Sidenote: Jane of Navarre
+maryed to Henry IV., in the 5th year of his reign.] for one
+other marginall noote in that tytle, yo{u} saye, that Jane of
+Navarre was maryed to Henrye the forthe in the fourthe yere of
+his reygne, wherein you followe a late englishe cronicler whome
+I forbeare to name.[5] But Walsingha{m} bothe in his historye of
+Henry the fourthe, & in his ypodigma, sayethe that she was
+maryed the 26 of Januarye in the yere of Christe 1403, whiche
+was in the fyfte yere of the kinge, yf you begynne the yere of
+oure lorde at the annu{n}tiat{i}one of the Virgine, as we nowe
+doo; but this is no matter of great momente. [Sidenote: The de
+la Pools gained advancement by lending the King money, but
+William was not the first that did so.] ffourthlye in that title
+yo{u} seme to attribute the advancemente of the Pooles to
+Williame de la poole, merchante of Hull, that lente the kinge a
+greate masse of moneye. But this Williame was not the fyrste
+advancer of that howse because his father Richarde at Poole
+beinge a cheife gouernor in hull, and serving the kings
+necessytye with money, was made pincerna Regis, one office of
+great accompte; by the same gyvinge the fyrste advancemente to
+the succedynge famelye. Whereof the Record to prove Ric. de la
+Poole pincerna Regis is founde in the pryvye seales of the
+eleventhe yere of kinge Edwarde the thirde, in master wardoures
+office, the lorde treasurers clerke. Where yt is in this manner:
+Edwardus dei gratia rex Angliæ et dux Acquitaniæ, &c.
+Supplicavit nobis dilectus noster Richardus de la Poole Pincerna
+noster, vt quum ipse de expensis officii Pincernariæ ac omnibus
+aliis officiu{m} illud tangentibus, ad dictu{m} Scaccariu{m} a
+festo sancti michaelis anno regni nostri decimo, vsque ad ide{m}
+festu{m} proxime sequens plenarie computaverit, et 2090^li:
+13^s: et 11^d et vnus obulus sibi per computu{m} illud de claro
+debeatur: volumus ei solutione{m} inde, seu aliàs
+satisfactione{m} sibi fieri competentem: Nos eius supplicationi
+in hac parte, prout iustu{m} est, an{n}uentes, vobis mandamus,
+etc. Datu{m} apud Westmonasteriu{m} 14 Decembris, anno regni
+nostri vndecimo. To whose sonne this Williame de la Poole the
+older, and to his sonne Michaell de la Poole (who was after
+Chauncelor) and to his heyres, the kinge graunted fowre hundred
+markes by yere out of the custome of Hull, as apperethe in the
+record of pellis exitus of 46 Ed. 3. the same Michaell de la
+Poole recevinge the arrerages of that Annuytye. for thus yt is
+entred in Michaelmas terme one the first of December of that
+yere: Michaeli de la poole filio et heredi Will{iel}mi de la
+poole senioris per Tallia{m} levata{m} isto die continentem
+iij^c lxx^li xviij^s 1^d ob. eidem michaeli liberat per compotum
+suum factum ad Scaccariu{m} computator virtute cuiusdam brevis
+de magno sigillo, Thesaurario et Baronibus Scaccarii directum
+pro huius compoto faciendo, de quoda{m} annuo certo iiij^c marc.
+per annu{m} quas dominus rex Willielmo de la Poole seniori
+defuncto, et michaeli filio suo et heredibus suis de corpore suo
+exeuntibus, de Custumia in portis ville de kingeston super Hull
+per litteras suas patentes concess: percipendu{m} qua{m}diu
+vij^c xxxv^li xviij^s i^d ob. eidem Michaeli per compotu{m}
+predictu{m} sic debitu{m}, etc. D{omi}n{u}s Rex mandat vt ei
+satisfactionem vel assignationem competentem (in locis vbi ei
+celeriter satisfieri poterit) fieret et haberet, per breve de
+magno sigillo inter mandata de termino Paschæ anno quadragesimo
+tercio, etc. So that Richarde, Michaell de la Pooles
+grandfather, (a magistrate of greate welthe in Hull,) was the
+fyrste that gaue advancemente to that howse: although Williame,
+father to this michaell, were of lyke estate and a knyghte.
+nether canne I fynde (nor ys yt lyke) that michaell de la poole
+was a marchante, (havinge two such welthy marchantes to his
+ancestors before hym,) notwithstandinge that Walsingha{m}
+[Sidenote: The clergy offended that the temporal men were found
+as wise as themselves.] (moore offended than reasone, as all the
+Clergye were against temporall menne who were nowe become chief
+officers of the realme; and the spyrituall menne, till then
+possessinge those offices, displaced, w{hic}he bredd greate
+Sorseye in the Church menne againste them); sayethe that
+michaell de la poole fuerit à pueritia magis mercimoniis (vtpote
+Mercator Mercatoris filius) quam militia occupatus. [Sidenote:
+A merchant by Attorney is no true merchant.] And yet yt may bee
+that he mighte have some factors in merchandise, and deale by
+his attorneyes as many noble menne and great persons have donne,
+whereuppon Walsingham (who wroote longe after) might seme to
+call hym merchante by reasone of others mens dealinge for hym,
+althoughe in troothe he was neuer merchante in respecte of his
+owne persone, (for whiche they are properly called merchantes,)
+as may be supposed. [Sidenote: Alice, the wife of Richard
+Neville, was daughter of Thomas Montacute.] ffyftlye in the same
+title yo{u} saye, that Alice, wyfe of Williame de la poole duke
+of Suffolke, had a daughter, by her seconde husbande thomas
+montague erle of Sarisberye, named, after her mother, Alice,
+maryed to Richarde Neville sonne to Raphe Neuill erle of
+Westmerlande, by whome he had issue Richarde, Johne, and George.
+But this is nothinge so. for this Alice, the wyfe of Richarde
+Neville, (erle of Sarisbery in the righte of the same Alice,)
+was daughter of Thomas Montacute erle of Salisburye and of Alice
+his wyfe, daughter of Thomas Hollande erle of Kente; and not of
+Alice daughter to Thomas Chawcer and widdowe to William de la
+Poole duke of Suffolke.
+
+    [Footnote 5: Stowe.]
+
+[Sidenote: He correcteth Master Speight his dates and history of
+printing.] IN THE LATTER END of the title of Chawcers deathe
+yo{u} saye, that printinge was brought oute of Germanye in the
+yere 1471 being the 37. H. 6. into Englande, beinge fyrst founde
+at Magunce by one Johne Cuthembergus, and broughte to Roome by
+Conradus one Almayne. But the yere of Christe 1471 was not the
+37. H. 6. but the eleuenthe of kinge Edward the fourthe; and, as
+some have yt, was not fyrste founde at Magonce or mentz but at
+Strasborowe, and perfected at Mago{n}ce. David Chytreus in his
+historye sayethe, yt was fyrst founde in anno 1440, and brought
+to Rome by Henricus Han[6] a Germane in the yere 1470; whereof
+Antonius Campanus framed this excellente epigrame:
+
+  Anser Tarpeii custos Jovis, vnde, quòd alis
+    Constreperis, Gallus decidit; vltor adest
+  Vlricus Gallus, ne quem poscantur in vsum,
+    Edocuit pennis, nil opus esse tuis.
+
+    [Footnote 6: “Hahn,”--German, a cock. “Cognomine Latino
+    _Gallus_,” Maittaire _Ann. Typ._ i. 52.]
+
+But others do suppose that yt was invented at Argenterote,
+as dothe Mathewe Parker in the lyfe of Thomas Bourchier
+Archbyshoppe of Canterburye; whiche for the incertentye thereof
+I leave at this tyme to farther examinat{i}one, not havinge nowe
+presente leysure therefore.
+
+[Sidenote: The Romante of the Rose began by Guillm̄ de Loris,
+and finished by John de la Meune.] IN THE TITLE OF THE augmente
+to euerye tale and booke you write, that the Romante of the
+Roose was made in frenche by Johne Clopinell alias Johne Moone;
+when in truthe the booke was not made by hym alone: for yt was
+begonne by Guillame de Loris, and fynished fourtye yeres after
+the death of Loris, by Johne de Meune alias Johne Clopinell, as
+apperethe by Molinet, the frenche author of the moralytye vppon
+the Romante of the Roose, ca. 50. fo. 57. and may further appere
+also in the frenche Romante of the Roose in verse, w{hic}h
+Chaucer w{i}th muche of that matter omytted, not havinge
+translated halfe the frenche Romante, but ended aboute the
+middle thereof. Againste whiche Booke Gersone compiled one
+other, intituled La reprobat{i}o{ne} de la Romante del Roose; as
+affirmethe the sayed Molinett, in the 107 chapter of the sayed
+moralizatione, where he excusethe Clopinell and reprouethe
+Gersone for that Booke, because Gersone soughte no further
+meanynge than what was conteyned in the outewarde letter, this
+Clopinell begynnynge the Romante of the Rose, in these verses of
+Chaucer:
+
+  Alas my wane hoope nay, pardyee;
+  for I will neuer dispayred bee:
+  yf happe me fayle, then am I
+  vngratious and vnworthy, &c.
+
+[Sidenote: Why the dream of Chaucer cannot be the book of the
+Duchess.] Secondlye, under that title yo{u} saye, the woorke,
+before this last edit{i}one of Chaucer, termed the Dreame of
+Chaucer, is mystermed, and that yt is the Booke of the Duches,
+or the Deathe of Blanche. wherein you bee greatlye mysledde in
+my conceyte, for yt cannott bee the Booke of the Duches or of
+the Deathe of Blanche, because Johne of Gaunt was then but fowre
+and twentye yere olde when the same was made, as apperethe by
+that tretyse in these verses:
+
+  Then founde I syttinge euen vprighte
+  A wonder well faringe knighte,
+  By the manner me thought so,
+  Of good mokell, and right yonge thereto,
+  Of the age of twentye fowre yere,
+  Vppon his bearde but little heare.
+
+Then yf he were but fowre and twentye yeres of age, being born,
+as hath Walsingha{m}, in the yere of Christ 1339 the 13. of
+kinge Edwarde the thirde; and that he was maryed to Blanche the
+fourtene calendes of June 1359, the 33 of Ed: the thirde; he was
+at this mariage but twentye yeres of age; who within fower yeres
+after sholde make his lamentac{i}on for Blanche the duchesse
+which must be then dedde. But the duchesse Blanche dyed of the
+pestilence in the yere of xxe 1368, as hath Anonimus MS, or
+1369, as hath Walsinghame w{hi}che by the first accompte was the
+{ix.} and by the last the {x.} yere after the mariage, and sixe
+or at the least five yeres after this lamentatione of Johne of
+Gaunte made in the fowre and twentye yere of his age. Wherfor
+this cannott be the boke of the Duches because he colde not
+lamente her deathe before she was deade. And yf you replye that
+yt pleinlye apperethe the same treatyce to be mente of the
+duches Blaunche, whiche signyfyethe whyte, by which name he
+often termethe his ladye there lamented, but especially in these
+verses,
+
+  Her throte, as I haue memoyre,
+  semed as a round towre of yuoire,
+  of good gretnesse and not to greate,
+  and fayre white she hete,
+  that was my ladies name righte;
+  she was thereto fayre and brighte,
+  she had not her name wronge,
+  right fayre sholders and body longe, &c.
+
+I will answere, that there is no necessitye that yt must be of
+Blanche the Duchesse because he sayeth her name was white; since
+there ys a famelye of that denominatione, and some female of
+that lyne myghte be both white in name, and fayre and white in
+p{er}sonne; and so had not her name wronge or in veyne, as
+Chaucer sayeth. or yt mighte be some other louer of his called
+Blanche, [Sidenote: John of Gaunt, his incontinency.] since he
+had many paramou{r}s in his youthe, and was not verye contynente
+in his age. Wherefore, to conclude, yt apperethe as before, that
+yt coulde not be mente of the Duchesse Blanche his wyfe, whiche
+dyed long after that compleinte. for whiche cause that Dreame of
+Chaucer in mye opynyone may well (naye rather of righte sholde)
+contynewe his former title of The Dreame of Chaucer. for that,
+wh{ic}he you will haue the Dreame of Chaucer, is his Temple of
+Glasse; as I haue seene the title thereof noted, and the thinge
+yt selfe confirmethe.
+
+[Sidenote: Doubteth master Speight’s ability in the exposition
+of old words, but commendeth his diligence and knowledge.] IN
+THE EXPOSITIONE of the olde wordes, as yo{u} shewe greate
+diligence and knowledge, so yet in my opynione, unlesse a manne
+be a good saxoniste, french, and Italyane linguiste, (from
+whence Chaucer hathe borowed manye woordes,) he cannott well
+expounde the same to oure nowe vnderstandinges, and therefore
+(thoughe I will not presume of much knowledge in these tounges)
+yt semeth yet to mee, that in your expositione, soome woordes
+are not so fullye and rightlye explaned as they mighte bee,
+althoughe peradventure yo{u} haue framed them to make sence.
+Wherefore I haue collected these fewe (from many others lefte
+for moore leysure) whiche seme to mee not to be fully explaned
+in their proper nature, thoughe peradventure yo{u} will seme to
+excuse them by a metaphoricall gloose.
+
+[Sidenote: Aketon or Slevelesse jacket of plate for the war.]
+Aketon or Haketone you expounde a jackett w{i}thoute sleves,
+without any further addit{i}one, that beinge an indiffynyte
+speache, and therefore may be entended a comone garmente daylye
+vsed, suche as we call a jerken or jackett withoute sleues:
+But _haketon_ is a slevelesse jackett of plate for the warre,
+couered withe anye other stuffe; at this day also called a
+jackett of plate, suche aketon Walter Stapletone, Bishoppe of
+Excester and Custos or Wardene of Londone, had vppon hym
+secretlye, when he was apprehended and behedded in the twentyeth
+yere of Edwarde the seconde.
+
+[Sidenote: A besant is a besant, and not a duckett.] Besante you
+expounde a duckett, But a duckett ys farre from a besante, bothe
+for the tyme of the invent{i}one, and for the forme; and as I
+suppose for the valewe, not withstandinge that Hollybande in his
+frenche-Englishe dictionarye make yt of the valewe of a duckett,
+whiche duckett is for the most part eyther venetiane or
+spanyshe, when the Besante ys mere Grekishe; a coyne well knowen
+and vsed in Englande (and yet not therefore one auncient coyne
+of Englande, as Hollybande sayethe yt was of france,) emongst
+the Saxons before, and the Normans after the Conqueste; the
+forme whereof I will at other tyme describe, onlye nowe settinge
+downe, that this besante (beinge the frenche name, and in
+armorye rightlye accordinge to his nature, for a plate of
+golde,) was called in Latine Byzant{i}um, obteyninge that name
+because yt was the coyne of Constantinople sometyme called
+Bizant{i}um; and because you shall not thinke this any
+fic{ti}one of myne owne, I will warrante the same with Williame
+of Malmesberye in the fourthe booke De Regibus, who hathe these
+wordes: Constantinopolis prim{u}m Bizantiu{m} dicta forma{m}
+antiqui vocabuli preferu{n}t imperatorii nu{m}mi Bizantiu{m}
+dicta; where one other coppye for nummi Bizantiu{m} hath
+Bizantini nu{m}mi, and the frenche hath yt besante or Bezantine,
+makinge yt an olde coyne of france, (when he sholde haue sayed
+one olde coyne in France and not of France,) of the valewe of a
+duckette.
+
+[Sidenote: Fermentacione is fermentacione, and not dawbing even
+metaphorically.] Fermentac{i}o{n}e yo{u} expounde Dawbinge,
+whiche cannott anye way be metaphoricallye so vsed in Chaucer,
+althoughe yt sholde be improperlye or harsely applied. For
+fermentac{i}one ys a peculier terme of Alchymye, deduced from
+the bakers fermente or levyne. And therefore the Chimicall
+philosophers defyne the fermente to bee anima, the sowle or
+lyfe, of the philosophers stoone. Whereunto agreethe Clauiger
+Bincing, one chimicall author, sayinge, ante viuificatio{ne}m id
+est fermentac{i}o{ne}m, w{hi}che is before tinctinge, or gyvinge
+tincture or cooler; that beinge as muche to saye as gyvinge
+sowle or lyfe to the philosophers stoone, wherby that may
+fermente or cooler or gyue lyfe to all other metaline bodyes.
+
+[Sidenote: Orfrayes not Goldsmith’s work, but frysed cloth of
+gold, a manufacture peculiar to the English.] Orfrayes yo{u}
+expounde Goldsmythes worke, w{hi}che ys as nere to goldsmythes
+woorke as clothe of golde, for this worde orefrayes, beinge
+compounded of the frenche worde (or) and (frays, or fryse,) the
+Englishe is that w{hi}che to this daye (beinge now made all of
+one stuffe or substance) is called frised or perled cloothe of
+gold; in Latyne, in tymes past, termed aurifrisium or
+aurifrixori{u}m. A thinge well knowen to the Saxons in Englande
+before, as to the Normans after, the Conqueste, and therfore
+fullye to satisfye you thereof, I will produce twoo
+auctorauctors of the weavinge and vse thereof before the
+conquest and since, wherin you shall pleynely see what yt was,
+and in what acco{m}pt yt was holden, beinge a worke peculier to
+the Englishe. The lieger booke of Elye, speakinge of Ediswetha
+daughter to Brightnothus, aldermanne, erle or duke, of
+northumberlande before the Conquest sayethe; cui tradita
+Coveneia, locus monasterio vicinus, vbi aurifrixorie et texturæ
+secretiùs cu{m} puellis vacabat; and a little after, Tunica
+Rubra purpura per gyrum et ab humeris aurifri vndiq{ue}
+circumdatu{m}. Then, after the conquest, mathew Paris speakethe
+thereof aboute ornamentes to be sente to the Poope. but because
+I haue not my mathewe Paris here, I will vouche one whose name
+hathe muche affinytye with hym, and that is Mathewe Parker
+Archbyshoppe of Canterburye, who, in the Lyfe of Bonifacius
+Archbishoppe of that see, hathe these wordes. “A^o. Domini 1246,
+Romæ multi Anglicani aderant Clerici, qui capis vt aiu{n}t
+chorealibus, et infulis, ornamentisq{ue} ecclesiasticis, ex
+Anglice tunc more gentis, ex lana tenuissima et auro artificiosè
+intexto fabricatis, vterentur. Huius modi ornamentoru{m} aspectu
+et concupiscentia provocatus Papa, rogavit cuiusmodi essent.
+Responsu{m} est, aurifrisia appellari, quia et eminens ex panno
+et lana qua{m} Angli fryse appellant, simul contexta sunt. Cui
+subridens et dulcedine captus Papa, Vere, inquit,” (for these
+are the woordes of Mathewe Paris whiche lyved at that tyme,)
+“Hortus noster delitiaru{m} est Anglia, verus puteus est
+inexhaustus, et vbi multa abundant, de multis multa sumere
+licet. Itaq{ue}, concupiscentia illectus oculorum, litteras
+suas Bullatas sacras misit ad Cistercienses in Anglia Abbates,
+quoru{m} orationibus se devotè commendabat, vt ipsi hec
+aurifrisia speciosissima ad suum ornandu{m} choru{m}
+compararent. Hoc Londoniensibus placuit, quia ea tum venalia
+habebant, tantiq{ue} quanti placuit vendiderunt.” In whiche
+discourse you not onlye see that orefryes was a weued clothe of
+golde and not goldsmythe worke, and that Englande had before and
+since the conqueste the arte to compose suche kynde of delicate
+Cloothe of golde as Europe had not the lyke; for yf yt hadd,
+the poope wolde haue made suche prouis{i}one thereof in other
+places, and not from Englande. And because you shall not thinke
+that yt was onlye vsed of the Clergye, you shall fynde in a
+record of the Towre that yt was also one ornamente of the kings
+garmente, since the Conqueste, for, in Rotulo Patentiu{m} 6.
+Joh{ann}is in Dorso (in whiche the kinge comaunded the templers
+to deliuer suche jewells, garmentes, and ornamentes as they had
+of the kings in kepinge,) are these wordes: “Dalmaticam de eodem
+samitto vrlatani de orfreyes et cu{m} lapidibus.” Whiche is to
+saye, the kings Dalmaticall garmente of the same samitte (spoken
+of before, whiche was crymsone,) vrled or bordrede (suche as we
+nowe calle garded) withe orfreyes.
+
+[Sidenote: Oundye and Crispe meaneth wavy like water.] fforthlye
+Oundye and Crispe is by you expounded slyked and curled, whiche
+sence althoughe yt may beare after some sorte; yet the proprytye
+of the true sence of oundye (beinge an especiall terme
+appropriate to the arte of Heraldye) dothe signifye wavinge or
+movinge, as the water dothe; being called vndye, of Latyne vnda
+for water, for so her haire was oundye, that is, layed in rooles
+vppone and downe, lyke waves of water when they are styrred with
+the winde, and not slyked or playne, etc.
+
+[Sidenote: Resager is ratsbane or arsenic.] ffyftlye You
+expounde not Resager, beinge a terme of Alchymye; as yo{u} leave
+manye of them vntouched. This worde sholde rather be resalgar,
+wherefore I will shewe yo{u} what resalgar ys in that abstruse
+science, whiche Chawcer knewe full well, althoughe he enveye
+againste the sophisticall abuse thereof in the chanons Yeomans
+Tale. This Resalgar is that w{hi}che by some is called
+Ratesbane, a kynde of poysone named Arsenicke, which the
+chimicall philosophers call their venome or poysone. Whereof I
+coulde produce infynyte examples; but I will gyve yo{u} onlye
+these fewe for a taste. Aristotle, in Rosario Philosophoru{m},
+sayethe, “nullu{m} tingens venenum generatur absq{ue} sole et
+eius vmbra, id est, uxore.” whiche venome they call by all names
+presentinge or signifyinge poysone, as a toode, a dragon,
+a Basilyske, a serpente, arsenicke, and suche lyke; and by manye
+other names, as “in exercitacio{n}e ad turbam philosophorum,”
+apperethe, wher aqua simplex is called venenu{m}, Argentum
+vivum, Cinnabar, aqua permanens, gumma, acetu{m}, urina, aqua
+maris, Draco, serpens, etc. And of this poysone the treatyce _de
+phenice_,[7] or the philosophers stoone, written in Gothyshe
+rymynge verse, dothe saye;
+
+  Moribunda, corporis virus emanabat
+  quod materna{m} faciem ca{n}dida{m} fœdabat.
+
+    [Footnote 7: A copy of this curious poem in Thynne’s
+    hand-writing, and marvellously illustrated by him, is in the
+    Brit. Mus., MSS. Add. No. 11,388.]
+
+[Sidenote: Begyns are nuns, though it cometh to mean
+superstitious and hypocritical women from their nature.] Begyn
+and Bigott yo{u} expounde sup{er}sticious hypocrites, whiche
+sence I knowe yt maye somewhat beare, because yt sauorethe of
+the disposit{i}one of those begins, or Beguines, for that ys the
+true wrytinge. But this woorde Begyn sholde in his owne nature
+rightlye haue ben expounded, sup{er}sticious or hipocriticall
+wemenne, as appereth by chaucer himselfe, w{hi}che nombrethe
+them emongest the wemen in the Romante of the Roose when he
+sayethe,
+
+  But empresses, & duchesses,
+  These queenes, & eke countesses
+  These abbasses, & eke Bigins,
+  These greate ladyes palasins.
+
+And a little after, in the same Romante, he doth write,
+
+  That dame abstinence streyned
+  Tooke one a Robe of camelyne,
+  And ganne her gratche as a Bygin.
+  A large cover-cherfe of Thredde
+  She wrapped all aboute her hedde.
+
+These wemene the Frenche call Beguynes or nonnes; being in
+Latyne called Bigrinæ or Biguinæ. Whose originall order,
+encrease, and contynuance are sett downe by mathewe Paris and
+Mathewe Westm{inster}. But as I sayed, since I haue not my
+mathewe Paris at hand, I will sett you downe the wordes of
+mathewe Westmynster (otherwise called “Flores Historiarum” or
+“Florilegus”) in this sorte. Sub eisdem diebus (w{hi}ch was in
+the yere of Christe 1244, and aboute the 28 of kinge Henry the
+thirde,) quidam in Almania precipuè se asserentes vitam et
+habitu{m} relligionis elegisse, in utroq{ue} sexu, sed maximè
+in muliebri, continentia{m}, cu{i}u{s} vitæ simplicitate
+profitentes, se voto priuato deo obligaru{n}t. Mulieresq{ue},
+quas Bigrinas vulgaritèr vocamus, adeò multiplicatæ sunt, quòd
+earu{m} numerus in vna ciuitate, scilicèt Colonia, ad plus quam
+mille asseritur ascendisse, etc. After whiche, speakinge yn the
+yere of Christe 1250 of the encrease of relligious orders, he
+sayeth, Item in Alemania et Francia mulieres, quas Biguinas
+nominant, etc.
+
+[Sidenote: Citrinatione or perfect digestion.] Citrinatione
+yo{u} do not expounde, beinge a terme of Alchymye. Whiche
+Citrinatione is bothe a color and parte of the philosophers
+stoone. for, as hathe Tractatus Avicennæ (yf yt be his and not
+liber suppositi[ti]us, as manye of the Alchimicall woorkes are
+foysted in vnder the names of the best lerned authors and
+philosophers, as Plato, Aristotle, Avicen, and suche others,) in
+parte of the 7 chapter. Citrinatio est que fit inter albu{m} et
+rubru{m}, et non dicitur coolor perfectus, whiche
+Citrinat{i}one, as sayethe Arnoldus de Nova Villa, li. i. ca. 5.
+nihil aliud est quàm completa digestio. For the worke of the
+philosophers stoone, following the worke of nature, hathe lyke
+color in the same degree. for as the vrine of manne, being
+whityshe, sheweth imp{er}fecte digestione: But when he hathe
+well rested, and slepte after the same, and the digestione
+p{er}fected: the vrine becomethe citrine, or of a depe yellowe
+cooler: so ys yt in Alchymye. whiche made Arnolde call this
+citrinatione perfect digestion, or the cooler provinge the
+philosophers stoone broughte almoste to the heigh[t]e of
+perfect{i}one.
+
+[Sidenote: Forage is old and hard provision made for horses and
+cattle in winter,] Forage in one place you expounde meate, and
+in other place fodder. boothe whiche properly cannott stande in
+this place of chaucer in the reves prologue, where he sayeth,
+“my fodder is forage.” for yf forrage be fodder, then is the
+sence of that verse, “my fodder is fodder.” But fodder beinge a
+generall name for meate gyven to Cattle in winter, and of
+affynytie withe foode applied to menne and beasts, dothe onlye
+signyfye meate. And so the sence is, “my meate ys forage,” that
+is, my meate is suche harde and olde provis{i}one as ys made for
+horses and Cattle in winter. for so doth this worde forragiu{m}
+in latyne signyfye. and so dothe Chaucer meane. for the word
+next before dothe well shewe yt, when the Reve sayeth,
+
+  I ame olde, me liste not play for age,
+  Grasse tyme is donne, my fodder is forrage.
+
+[Sidenote: or metaphorically, or to help out the ryme it may
+mean grass.] Yet metaphorically yt may be taken for other than
+drye horse meate, although improperlye; as Chaucer hathe, in Sir
+Topas Ryme, where he makethe yt grasse for his horse, and vseth
+the woorde rather to make vpp the ryme than to shewe the true
+nature thereof; sayinge,
+
+  That downe he layed hym in that place,
+  to make his steede some solace
+  and gyve hym good forage.
+
+[Sidenote: Heroner is a long-winged hawk for the heron.] Heroner
+yo{u} expounde a certeyne kynde of hawke, whiche is true, for a
+gowshawke, sparrowe hawke, tassell, &c. be kyndes of hawkes. But
+this heroner, is an especiall hawke (of anye of the kyndes of
+longe winged hawkes) of moore accompte then other hawkes are,
+because the flighte of the Herone ys moore daungerous than of
+other fowles, insomuch, that when she fyndeth her selfe in
+danger, she will lye in the ayre vppon her backe, and turne vpp
+her bellye towardes the hawke; and so defile her enymye with her
+excrementes, that eyther she will blinde the hawke, or ells with
+her byll or talons pierce the hawkes brest yf she offer to cease
+vppon her.
+
+[Sidenote: The Hyppe is the berye of the sweet bryer or
+eglantine.] The Hyppe is not simplye the redde berrye one the
+Bryer, vnlest yo{u} adde this epithetone and saye, the redde
+Berrye one the swete Bryer, (which is the Eglantyne,) to
+distinguyshe yt from the comone Bryer or Bramble beringe the
+blacke Berye, for that name Bryer ys comone to them boothe; when
+the Hyppe is proper but to one, neither maye yt helpe yo{u} that
+yo{u} saye the redd Berye, to distinguyshe yt from the Blacke,
+for the blacke berye ys also redde for a tyme, and then may be
+called the redde Berye of the Bryer for that tyme.
+
+[Sidenote: Nowell meaneth more than Christmas.] Nowell yo{u}
+expounde Christmasse, whiche ys that feaste and moore, for yt is
+that tyme, whiche is properlye called the Advente together with
+Christmasse and Newe yeres tyde, wherefore the true etymologye
+of that worde ys not Christmasse, or the twelve dayes, but yt is
+godd with us, or, oure Godde, expressinge to vs the comynge of
+Christe in the fleshe, whiche p{er}adventure after a sorte, by
+the figure synecdoche, yo{u} may seeme to excuse, placinge ther
+xþemas (_Christmasse_) a p{ar}te of this tyme of Nowell for all
+the tyme that Nowell conteynethe. for in the same worde is
+conteyned sometyme xx, but for the most p{ar}te thirtye dayes
+before Christmesse, aswell as the Christmesse yt selfe, that
+woorde being deduced as hathe Will{iel}m{u}s Postellus in
+Alphabet. 12 Linguarum, from the hebrue worde Noell: for thus he
+writethe: ‏‏ נאלnoel, sonat deus noster sive Deus nobis advenit,
+solitaq{ue} est hec vox cantari a plebe ante xþi ({Christi})
+natalitia viginti aut triginta dies quodam desiderio.
+
+[Sidenote: Porpherye is a peculiar marble, not marble in
+common.] Porpherye you expounde marble, w{hi}che m{ar}ble ys
+genus, but porpherye is species, for as there is white and grey
+marble, so ys there redde marbell, whiche is this porpherye,
+a stone of reddish purple coolor, distincte or enterlaced with
+white veynes as yo{u} may see in the great pillars entringe into
+the royall exchange or burse in Cornhill.
+
+[Sidenote: Sendale, a sylke stuffe.] Sendale you expounde a
+thynne stuffe lyke cypres. but yt was a thynne stuffe lyke
+sarcenette, and of a rawe kynde of sylke or sarcenett, but
+courser and narrower, than the sarcenett nowe ys, as my selfe
+canne remember.
+
+[Sidenote: The trepegett is not the battering-ram, but an engine
+to cast stones.] Trepegett you expounde a ramme to batter
+walles. But the trepegete was the same that the magonell;
+for Chaucer calleth yt a trepegett or magonell; wherefore the
+trepegett and magonell being all one, and the magonell one
+instrumente to flynge or cast stones (as youre selfe
+expounde yt) into a towne, or against a towne walles, (an engine
+not muche vnlyke to the catapulte, an instrumente to cast forthe
+dartes, stones, or arrowes,) the trepeget must nedes also be one
+instrumente to cast stones or such lyke against a wall or into a
+towne, and not a Ramme to batter wales; since the Ramme was no
+engine to flinge anye thinge, but by mens handes to be broughte
+and pusshed againste the walles; a thinge farr different in
+forme from the magonell or catapulte, as appereth by Vigetius
+and Robertus Valturius de re militari.
+
+[Sidenote: Wiuer or Wyvern, a serpent like unto a dragon.] Wiuer
+yo{u} expounde not. Wherefore I will tell you, a wyuer is a
+kynde of serpent of good Bulke, not vnlyke vnto a dragon, of
+whose kinde he is, a thinge well knowen vnto the Heroldes,
+vsinge the same for armes, and crestes, & supporters of manye
+gentle and noble menne. As the erle of Kent beareth a wiuer for
+his creste and supporters, the erle of Pembroke, a wiuer vert
+for his creste; the erle of Cumberlande, a wiuer geules for his
+supporters.
+
+[Sidenote: Autenticke meaneth a thing of auctoritye, not of
+antiquitye.] Autenticke yo{u} expounde to be antiquytye. But
+howe yo{u} may seme to force and racke the worde to Chaucers
+meaninge, I knowe not; but sure I ame the proper
+signyficat{i}one of autenticke is a thinge of auctoritye or
+credit allowed by menne of auctoritye, or the originall or
+fyrste archetypu{m} of any thinge; whiche I muse that you did
+not remember.
+
+[Sidenote: Abandone is not liberty though Hollyband sayeth so.]
+Abandone you expounde libertye; whiche in all Italiane, Frenche,
+and Spanishe, signifyeth relinquere, to forsake and leave a
+thinge; w{hi}che me thinkethe yo{u} most hardely stretche to
+libertye, vnlest yo{u} will saye that, when one forsakethe a
+thinge, he leaveth yt at libertye; whiche ys but a streyned
+speche, although the frenche Hollybande, not vnderstandinge the
+true energye of our tongue, hath expounded yt libertye; whiche
+may be some warrante vnto you.
+
+VNDER THE TITLE OF YOURE Annotacions and Corrections.
+
+[Sidenote: Of the Vernacle.] IN YOURE ANNOTACIONS you describe,
+oute of the prologues, the vernacle to be a broche or figure,
+wherein was sett the instruments wherewith Christe was
+crucyfyed, and withall a napkyn whereine was the printe of his
+face. but the vernacle did not conteyne the instrumentes of his
+deathe, but only the clothe wherein was the figure of his face;
+as I conceve yt with others.
+
+[Sidenote: Master Thynne would read Campaneus for Capaneus, and
+giveth reasons.] Fo: 1. pa: 2. For Campaneus you wolde reade
+Capaneus, wherunto I cannott yelde. for althoughe Statius and
+other latine authors do call hym Capaneus; yet all the writers
+of Englande in that age call him campaneus; as Gower, in
+confessione amantis, and Lidgat in the historye of Thebes taken
+out of Statius, and Chaucer hym selfe in many other places. so
+that yt semethe they made the pronu{n}tiatione of Campaneus to
+be the dialecte of our tongue for Capaneus. Besides chaucer is
+in this to be p{ar}doned, in that taking his knightes tale out
+of the Thesayde of Bocas, written in Italiane (and of late
+translated into frenche,) doth there, after the Italiane manner,
+call him campaneus; for so the Italians pronounce woordes
+beginninge with cap: with the interposit{i}one of the l{ette}re
+m, pronouncinge yt camp: for, that w{hi}che the Latins call
+capitoliu{m}, the Italians call campidoglio; and suche lyke.
+Wherefore since yt was vniversallye receued in that age, to call
+him Campaneus: lett vs not nowe alter yt, but p{er}mytte yt to
+have free passage accordinge to the pronuntiat{i}one and
+wrytinge of that age. since, in deducinge woordes from one
+language to one other, there ys often additione and
+substract{i}one of letters, or of Sillabes, before, in the
+middle, and in the ende of those wordes. whereof infynyte
+examples mighte be produced, whiche I nowe shonne for brevytye.
+
+[Sidenote: Liketh the reading of Eros, but preferreth that of
+Heros, and giveth reasons.] Fo: 3. pa: 2. (“Noughte comelye lyke
+to lovers maladye of Hereos.”) for whiche woorde hereos you
+reade eros, i. cupide, a very good and probable correct{i}one,
+well gathered out of Luciane. But (salua patient{i}a vestra,
+and reservinge to myselfe better iudgmente hereafter yf I nowe
+mystake yt,) I wolde, for the printed hereos of Chaucer, read
+heroes. whiche two woordes onlye differ in misplacinge of the
+letters; a comone thinge for the printer to do, and the
+corrector to overpasse. for Arcyte, in this furye of his love,
+did not shewe those courses of gouer[n]mente, whiche the Heroes,
+or valiante p{er}sons, in tymes past vsed, for thoughe they
+loued, yet that passione did not generallye so farre overrule
+them (althoughe yt mighte in some one p{ar}ticuler personne) as
+that theye lefte to contynewe the valor, and heroicke actions,
+whiche they before performed. for the Heroes sholde so love, as
+that they sholde not forgett, what they were in place, valor, or
+magnanymytye, whiche Arcite, in this pass{i}one, did not observe
+“lyke to lovers malady of Heroes.” Whereof I coulde produce six
+hundred examples, (as the proverbe ys,) were yt not that I
+avoyde tedious prolixytye.
+
+[Sidenote: Of florins and their name from the Florentines.]
+Fo: 6. pa: 2. (“Manye a florence.”) In whiche noote yo{u} expounde
+a florence to be ij^s frenche, and a gelder to be the same in
+dutche. Wherein yo{u} mistake the valewe of the florens, suche
+as was vsed in Chaucers tyme, w{hic}he taking his name of the
+woorkemenne, beinge florentynes, (of the terrytorye of florence
+in Italye,) were called Florens; [Sidenote: Sterling money
+taketh its name from the Esterlings.] as sterlinge money tooke
+their name of Esterlinges, whiche refyned and coyned the silver
+in the tyme of kinge Henry the seconde. for two shillinges
+frenche ys not equall in valewe (as I nowe take yt) to two
+shillinges Englishe: and much lesse equall to the florens in
+Chaucers tyme, whiche was of the valewe of thre shillings, fowre
+pence, or halfe a noble, or, at the leaste, of two shillinges
+tenne pence farthinge, as apperethe by recorde and historye:
+some of them being called florens de scuto or of the valewe of
+the shelde or frenche crowne and some of them called florens
+regall. Whereof yo{u} shall fynde, in the recorde of pellis
+exitus in the exchequer in michelmas terme 41. Ed. 3. this note.
+Bartholomeo de Burgershe militi in denariis sibi liberatis in
+parte solutionis 8000 florenoru{m} de scuto pretii petii iij^s.
+iiij^d. sibi debitis de illis 30000 florenoru{m} de scuto in
+quibus Rex tenebatur eidem Bartholomeo pro comite de Ventadoure,
+prisonario suo apud Bellu{m} de Poyters in guerra capto, et ab
+eodem Bartholomeo ad opus Regis empt{o}, vt patet per litteras
+Regis patentes, quas idem Bartholomeus inde penes se habet. in
+Dors. de summa subscripta, per bre{ve} de magno sigillo, inter
+mandata de Term. Michaelis de anno 36 --xx^li. To the valewe
+whereof agreeth Hipodigma Neustriæ, pa. 127, [Sidenote: King
+John of France, his ransom of three millions of florens.] where
+setting downe the ransome of the frenche kinge taken at Poyters
+to the valewe of thre milliones of florens, he sayethe “of
+w{hic}he florens duo valebant vj^s. viij^d.” These florens the
+same Walsingha{m} in another place callethe scutes or frenche
+crownes, pa. 170, sayinge: Rex quidem Franciæ pro sua
+redemptione soluit regi Angliæ tres milliones scutoru{m},
+quoru{m} duo valent vnu{m} nobile, videlicet, sex solidos et
+octo denarios. Whiche scutes in lyke manner, in the tyme of
+kinge Henry the sixte were of the same valewe, as apperethe in
+Fortescues commentaries of the lawes of Englande. But as those
+florens for the redempt{i}one of the frenche kinge, were of the
+valewe of half one noble: so at the tyme of that kings reigne
+there were also one other sorte of florens, not of lyke valewe,
+but conteyned within the price of ij^s. x^d. [QR]. called
+florene regales, as apperethe in this record, of Easter terme,
+of Pellis exitus before sayed, where yt is thus entred one the
+sixte of Julye: Guiscardo de Angles. Domino de pleyne martyne,
+In denariis sibi liberatis per manus Walteri Hewett militis in
+pretio 4000 florenoru{m} regaliu{m} pretii petii --ij^s. x^d.
+[QR] de quibus florenis regal{ibus} 7 computantur pro tribus
+nobilibus, eidem Guiscardo debitis. Whereby yo{u} see the
+meanest of these florens did exceed the valewe of ij^s. frenche,
+(although you sholde equall that with ii^s. Englishe,) as yt did
+also in other countryes. for in the lowe countryes at those
+dayes yt was much aboute the valewe of iij^s. iiij^d. beinge
+halfe a pistolet Italiane or Spanyshe. for so sayethe Heuterius
+Delphicus, (in the Historye of Burgundye, in the lyfe of
+Philippe le hardye,) lyving at that tyme, and sonne to the
+frenche kinge taken prisoner by the Inglishe. Heuterius’ woordes
+be these. Illustris viri aliorumq{ue} nobiliu{m} mors adeò
+comite{m} com{m}ovit, vt relicta obsidione exercitus ad
+co{m}meatus ducendos in proxima loca distribuerit. Decem
+millibus florenorum (moneta Belgica est semipistoletu{m}
+Italicu{m} pendens) pro Anglicani, aliorumq{ue} nobiliu{m}
+cadaverum redemptione solutis, &c.
+
+[Sidenote: Of the oken garland of Emelye.] Fo: 7. pa: 2. For
+unseriall yo{u} will vs to reade cerriall, for cerrus[8] is a
+kynde of tree lyke one oke, bearinge maste; and therefore by
+yo{ur} correct{i}one yt sholde be a garland of grene oke
+cerriall: But for the same reasone (because cerrus ys a kynde of
+oke as ys also the Ilex) I judge yt sholde not be redde cerriall
+but unseriall, that ys, (yf you will nedes have this worde
+cerriall,) a garlande of greene oke not cerriall, as who sholde
+saye, she had a Garlande of Grene oke, but not of the oke
+Cerriall. and therefore a garlande of oke unseriall, signifyinge
+a garlande that was freshe and Grene, and not of dedd wannyshe
+Coolor as the oke Cerriall in some parte ys. for the Cerrus,
+being the tree w{hi}che we comonly call the holme oke,
+(as Cooper also expoundeth the ilex to be that which wee call
+holme,) produceth two kyndes; whereof the one hathe greater, and
+the other lesser acornes, whose leaves beinge somewhat grene one
+the one syde, and of one ouer russett and darkyshe Coolor on the
+other syde, were not mete for this garland of Emelye, whiche
+sholde be freshe and Grene one everye parte, as were her younge
+and grene yeres, lyke to the goddesse to whome she sacryfyced,
+and therefore a garlande of Grene oke unseriall, not beinge of
+oke cerriall, for yf yt had byn oke serriall, yt wolde haue
+shewed duskyshe and as yt were of dedishe leaves, and not freshe
+and orient as chaucer wolde haue her garlande. And this for
+yo{u}r e[x]posit{i}one of unseriall, in some parte: for I wolde
+suppose that this worde unseriall dothe not vnaptly signifye
+perfectione of coolor, so that She having a Garlande of Grene
+oke unseriall, doth signyfye the oke to be grene and unseriall,
+that is, (as some do expounde this worde unseriall,) unsered,
+unsinged, unwithered, of freshe coolor, lyke unto the oke
+Quercus whiche hath no sered nor withered cooloor in his leafes.
+And yt was of necessytye that Emely (sacryfysinge to Diana) must
+haue a garlande of the Grene oke Quercus, because that they
+whiche sacryfyced vnto Diana, otherwise called Hecate, (which
+name is attribute to Diana, as natalis Comes affirmethe with
+statius in his Acheleidos in his first Booke sayinge,
+
+  Sic vbi virgineis Hecate lassata pharetris,
+
+being Diana adorned with her bowe and arrowes, called also
+Triuia because Luna, Diana, and Heccate, were all one, whereof
+Virgil speaketh,
+
+  Tergemina{m}q{ue} Hecaten, tria virginis ora Dianæ,)
+
+were adorned w{i}th a crowne of the grene oke Quercus, because
+that Heccate was wont to be crowned therewith, as hath Pierius
+Valerianus in his 51 booke of Hieroglyphes, sayinge, Heccate
+quoquè Quercu coronari solita est. for although Quercus be
+consecrate to Jupiter, because he gave his oracles in the same
+in Sylva Dodonea, and therefore called Jupiter Dodoneus; yet
+Antiqutye adorned and crowned Diana Heccate with the same crowne
+also. Wherefore I conclude, since she (Emelye) had a garlande of
+Grene oke, (as Chaucer of purpose addeth that woorde Greene to
+explane unseriall, whiche signyfyethe unsered, unparched,
+unwithered in every parte, not lyke to the oke Serriall, whose
+leafe one the one syde is duskyshe as though yt were somewhat
+withered,) that the same word unseriall must stand unamended,
+as well (as I sayed before) by youre owne correct{i}one and the
+nature of the worde; as for that Diana, called Heccate, was
+crowned with the oke Quercus and not with the oke cerrus. But yf
+yo{u} obiecte to mee that, in this place, yt must be a garlande
+of oke cerriall accordinge to the woordes of Chaucer in one
+other place, because that he in the flower and the leafe (newely
+printed by yo{u}) hath these woordes;
+
+  I sie come first all in theire clokes white
+  a companye that were for delight.
+  Chapletts freshe of oke serriall
+  Newly spronge and Trompetts they were all;
+
+I denye that therefore in the Knightes Tale yt must be oke
+serriall. for yt may well bee, that such meane persons as
+trompettes might be crowned with so base one oke as the serriall
+ys, whiche I call base in respecte of the oke Quercus (dedicate
+to the godd Jupiter) wherewithe Heccate was crowned, and whereof
+Garlands were gyven to the Romans for their nooble desarts in
+the warres, as apperethe in the Quernall crowne gyven to those
+whiche had saved a cytyzen. Wherefore Chaucer dothe rightly (and
+of purpose with great iudgm{en}t in my conceyte) make a
+difference in the chaplettes of the Trompettes and the garlands
+of Emelye, in that the trompetts chapletts were of oke seriall
+newly spronge; and not come to perfect{i}one, whiche yet yf they
+had byn p{er}fecte wolde not haue byn soo oryente and Greene one
+bothe sydes as ys the oke Quercus, wherewithe he wolde haue this
+Emelye crowned, as was her goddesse Heccate Diana (to whom she
+dyd sacryfyce) accustomed to bee. for so in tymes past (as I
+sayed before) the sacryfycer sholde be adorned with garlandes of
+suche thinges, as were consecrate to the goddes to whome they
+sacryfyced. for whiche cause also I ame not moved, thoughe
+Caxtone in his seconde editione do call yt one oke serriall. for
+I knowe (not withstandinge his fayre prologe of printing that by
+a true copye) there be manye imperfections in that Booke.
+
+    [Footnote 8: _The Quercus cerris, the mossy cupped oak?_]
+
+[Sidenote: Eyther for euerye, an overnice correction.] Fo: 9.
+pa: 1. For euerye) yo{u} will us to reade eyther. But the sence
+ys good, as well that they dyd ryde one euerye syde of hym, as
+of eyther syde of him. for they boothe colde not ryde of euerye
+syde of hym, no moore then they both colde ryde of eyther syde
+of him; and therefore they two ryding one euerye side of hym,
+canne haue noone other construct{i}one then that the one did
+ryde of the one syde and the other one the other side, aud
+therefore an ouer nice correct{i}one, thoughe some coppies do
+warrant yt:
+
+[Sidenote: The intellect of Arcite had not wholly gone, or he
+would not have known Emelye.] Fo: 10. pa: 1. for save only the
+intellecte,) yo{u} wolde haue us to reade “and also the
+intellecte.” But yf yo{u} well consider the woordes of Chaucer,
+(as I have donne in all the written copyes whiche I haue yet
+seene,) his meaninge ys not that the intellecte was wholye
+goonne, as yt wolde bee yf yo{u} sholde reade, “and also the
+intellecte” for “save only the intellecte.” for Chaucers
+meanynge ys, that all his streng[t]he and vitall Sprites aboute
+his outewarde partes were gonne, save onlye the intellecte or
+vnderstandinge, w{hi}che remayned sounde and good, as apperethe
+after by the followinge woordes, for when deathe approched, and
+that all outwarde senses fayled, he (Arcite) yet cast eye vppon
+Emelye, remembringe her, thoughe the cheifest vitall sprite of
+his harte and his streng[th]e were gonne from hym. but he colde
+not haue cast his eye vppon Emelye, yf his intellecte had fayled
+hym. Yet yf you liste to reade, “and also the intellecte,” for
+saue only the intellecte, yt may after a sorte somewhat be borne
+withall, notwithstandinge that a pointe at streng[t]he is
+looste; and a parenthesis includynge (Save only the intellecte,
+without moore,) will make the sence good in this sort as I have
+here pointed yt:
+
+  And yet moore ouer from his armes two
+  the vital streng[t]he is lost; and all agoo
+  (save only the intellecte without moore)
+  that dwelleth in his hart sicke and sore
+  gan faylen: When the hart felt death &c.
+
+[Sidenote: Straught, a better word than haughte.] Fo: 10. pa: 2.
+For armes straughte you wolde reade yt haughte, when straughte
+is moore significa{n}t (and moore answerable to Chaucers woordes
+whiche followethe) than haughte ys. for he speakethe of the
+Bredthe and spredinge of the boughes or armes or branches of the
+tree, whiche this woorde straughte doth signyfye, and is moore
+aptlye sett downe for stretched, then this woorde haughte,
+whiche signyfyethe catchinge holde, or holdinge faste, or (yf
+you will streyne yt againste his nature) stretching on heigh,
+whiche agreethe not well with Chaucers meanynge. for these be
+his words:
+
+  And twenty fadome of breedth, armes straughte;
+  That is to sayen, the Bowes were so broode, &c.
+
+[Sidenote: Visage for vassalage, an impertinent correction.]
+Fo: 11. pa: 1. For all forgotten in his vassalage, yow wolde haue
+vs reade, “for all forgotten is then his visage;” a thinge mere
+impertinente. for the forgettinge of his visage and personage is
+not materiall, nor regarded of anye to haue his face forgotten,
+but yt is muche materiall (and so ys Chaucers meanynge) that his
+vassalage, and the good service donne in his youthe, shold be
+forgotten when he waxethe olde. And therefore yt must bee “his
+vassalage forgotten;” as presently after Chaucer sayeth, better
+for a manne to dye when he is yonge, and his honor in price,
+than when he is olde, and the service of his youthe forgotten;
+w{hic}he I coulde dilate and prove by manye examples; but I
+cannott stande longe vppon euerye pointe, as well for that I
+wolde not be tedious vnto yo{u}, as for that leysure serveth me
+not thereunto.
+
+[Sidenote: Leefe for lothe, a nedeless correction.] Fo: 13.
+pa: 1. For lothe yo{u} bidde vs reade leefe, which annotacione
+neded not to haue byn there sett downe, because the verye woorde
+in the texte is lefe.
+
+[Sidenote: It is more likely that Absolon knocked than that he
+coughed at the window.] Fo: 14. pa: 1. for knocked yo{u} reade
+coughed, but, the circumstance considered, (althoughe they may
+both stande,) yt is moore probable that he[9] knocked at her[10]
+windowe, than that he coughed. for although those woordes “with
+a semely sownde” may haue relatione to the voyce, yet they may
+as well and with as much consonancye haue reference to a semely
+and gentle kynde of knockinge at the windowe as to the voyce,
+and so his meanynge was by that sounde to wake her, whiche wolde
+rather be by the noyse of a knocke than of a coughe. for so he
+determyned before to knocke, as apperethe in these verses, when
+he sayed,
+
+  So mote I thryve, I shall at cockes crow
+  Full priuily knocke at his windowe:
+
+And so apperethe by the tale afterwarde that he knocked, as he
+did before, although he coughed also at the latter tyme, for he
+knocked twyce.
+
+    [Footnote 9: [_Absolon._]]
+
+    [Footnote 10: [_The Carpenter’s wife’s._]]
+
+[Sidenote: Surrye or Russye, indifferent which.] Fo: 23. pa: 2.
+For Surrye you read Russye. true yt is, that some written copies
+haue Russye, and some Surrye. And therefore indifferent after
+the written copies, and some auncient printed copies before my
+fathers editione. But yf I shall interpone my opynione, I wolde
+more willingly (for this tyme) receve Surrey, because yt is most
+lykelye that the tartarians whiche dwelt at Sara (a place yet
+well knowen, and bordering vppon the lake Mare Casp{iu}m,) are
+nerer to Sorria or the countryes adioynynge called Syria, than
+to Russya. For as Hato the Armeniane, in his Tartariane
+Historye, sayeth, The cyttye of Sara was auncyently the famous
+cyttye of the countrye of Cumania; and the Tartarians obteyned
+the kingdome of Syria in the yere 1240, w{hi}che must be in the
+tyme of the fyrst Tartariane emperor called Caius canne,
+[Sidenote: Cambuscan is Caius canne.] beinge (as I suppose) he
+whome Chaucer namethe Cambiuscan, for so ys the written copies,
+such affynytye is there betwene those two names. And, as I
+gather, yt was after that tyme that the Tartarians had warres in
+Russia. But I leave yt indifferent at this tyme, as meanynge
+further to consider of yt.
+
+[Sidenote: “That may not saye naye,” better than “there may no
+wighte say naye.”] Fo: 31. pa: 2. for these woordes, “that may
+not saye naye,” yo{u} reade “there may no wighte say naye.”
+bothe whiche are good, and boothe founde in written coppyes; and
+yet the firste will better stande, in my conceyte, because [_the
+king of Faerie_] there speakinge to his wyfe, he urgethe her
+that she cannott denye yt; when he sayeth, my wyfe that cannott
+say naye, as who sholde saye yo{u} cannot denye yt because you
+knowe yt; and experience teacheth yt, so that these woordes,
+“that cannott say naye,” must be taken as spoken of his wyfes
+knowledge, and so as good or rather better than “there may no
+wighte saye naye,” consideringe that these wordes “that cannott
+saye naye,” dothe signyfye, “whoe cannott saye naye,” in such
+sorte that this relatyve (that) meanynge (whoe) must haue
+reference to his antecedente, i. e. this worde wyfe.
+
+[Sidenote: Theophraste, not Paraphraste.] Fo: 35. pa: 2. For “He
+cleped yt valerye and theophraste,” you saye some wolde haue vs
+reade “Valery and his Paraphraste.” But as yo{u} haue left yt at
+libertee to the reader to iudge, so I thinke yt must nedes be
+Theophraste; as the author [of] Policraticon in his eighte
+Booke, ca. 11. [Sidenote: The wife of Bath’s Prologue taken from
+the author of Policraticon.] (from whome Chaucer borrowethe
+almost worde for worde a great parte of the Wyfe of Bathes
+Prologe,) doth vouche yt, for the author of that booke, Johannes
+Sarisburiensis, lyvinge in the tyme of Henrye the seconde,
+sayethe, Fertur authore Hieronimo Aureolus Theophrasti liber, de
+nuptiis, in quo quæritur an vir sapiens ducat vxorem, etc. And
+the frenche molinet, moralizinge the Romant of the roose in
+frenche, and turnynge it oute of verse into proese, writeth,
+Ha si i’eusse creu Theophraste, &c. Oh, yf I had beleved
+Theophraste, I had never maried womanne, for he doth not holde
+hym wise that marieth anye womanne, be she fayre, foule, poore,
+or riche; as he sayeth in his Booke Aureolle; whiche verye
+wordes chaucer doth recyte.
+
+[Sidenote: Country, not Couentry.] Fo: 38. pa: 2. for this worde
+Countrye you will vs to reade Couentrye. But in my writtene
+copies yt is, “in my Countrye,” whiche I holde the truer and for
+the sence as good yf not better.
+
+[Sidenote: Maketh, not waketh.] Fo: 41. pa: 1. This woorde
+makethe is corrected by you, who for the same do place wakethe;
+w{hi}che cannott well stande, for Chaucers woordes being, “this
+maketh the fende,” dothe signyfye (by a true conuers{i}one after
+the dialecte of our tonge, w{hi}che with beawtye vsethe suche
+transmutac{i}one as I coulde gyve yo{u} manye pretye instances,)
+that the sence thereof ys, “the fende makethe this,” for whiche
+Chaucer vseth these wordes by Transposit{i}one, (accordinge to
+the rhethoricall figure Hiperbatone) “This makethe the fende:”
+Whiche this? Anger: for that comethe, ys made, or occasioned,
+by the deuell. But yf yt sholde be wakethe, then must the sence
+bee, that this (whiche is the anger he speakethe of before)
+wakethe the fende; whiche oure offences cannot do, because he
+cannott be waked, in that he neyther slumbrethe nor slepethe,
+but alwayes watcheth and howrely seekethe occas{i}one to
+destroye us, lyke a roringe lyone. But yf you will nedes saye
+“this wakethe the fende,” that is, by conuersione after this
+manner, “the fende waketh this,” whiche signyfyeth the fende
+waketh or styrreth this in manne, yt may, after a harde and
+over-streyned sorte, beare some sence, whiche yet hath not that
+energye, sprite or lyfe, w{hi}che haue Chaucers woordes, “this
+maketh the fende.” Whiche woordes are in my written copies, and
+in all written and auncient printed copies whiche I have yet
+seene.
+
+[Sidenote: Hugh of Lincoln.] Fo: 96. pa: 2. vppon these woordes,
+“O hughe of Lincolne sleyne also, &c.” You saye, that in the 29.
+H. 3. eightene Jewes were broughte fro{m} Lincolne, and hanged
+for crucyfyinge a childe of eight yeres olde. Whiche facte was
+[in] the 39. H. 3. so that yo{u} mighte verye well haue sayed,
+that the same childe of eighte yeres olde was the same hughe of
+Lincolne; of whiche name there were twoe, viz. thys younger
+Seinte Hughe, and Seinte Hughe bishoppe of Lincolne, whiche dyed
+in the yere 1200, long before this litle seinte hughe. And to
+prove [that] this childe of eighte yeres olde and that yonge
+hughe of Lincolne were but one; I will sett downe two
+auctoryties out of Mathewe Paris and Walsinghame, whereof the
+fyrste wryteth, that in the yere of Christe 1255, beinge the 39.
+of Henrye the 3, a childe called Hughe was sleyne by the Jewes
+at Lyncolne, whose lamentable historye he delyvereth at large;
+and further, in the yere 1256, being 40. Hen. 3, he sayeth,
+Dimissi sunt quieti 24 Judei à Turri London, qui ibidem infames
+tenebantur compediti pro crucifixione sancti Hugonis Lincolniæ:
+All whiche Thomas Walsingham, in Hypodigma Neustriæ, confirmeth;
+sayinge, A^o. 1255. Puer quidam Christianus, nomine HUGO, à
+Judeis captus, in opprobriu{m} Christiani nominis crudelitèr est
+crucifixus.
+
+[Sidenote: “Where the sunne is in his ascensione,” a good
+reading.] Fo: 86. pa: 8. (Where the sunne is in his
+ascensione, &c.) You will us to reade for the same,
+
+  Ware the soone in his ascensione
+  Ne fynde you not replete of humors hotte,
+  For yf yt doe, &c.
+
+But, savinge correct{i}one, the former sence is good: for these
+woordes: Where the sonne is in his ascensione, must haue
+relat{i}one to the woordes of the verse before,
+
+  Ye be righte colericke of complex{i}one,
+
+and then is the sence, that she [_the fair Pertelote_] willed
+hym to purge, for that he was righte (that is, extremelye and in
+the highest degree) collericke of complex{i}one, where (whiche
+signyfyeth when) the sonne is in his ascent{i}one. Wherefore he
+must take heede, that he did not fynde hym repleate (at that
+tyme of the sonnes being in his ascent{i}one) of hoote humors,
+for yf he did, he sholde surelye haue one ague. And this will
+stand with the woordes Where the sonne is in his ascentione,
+taking where for when, as yt is often vsed. But yf yo{u} mislyke
+that gloosse, and will begyn one new sence, as yt is in some
+written copyes, and saye, Ware the sonne in his ascentione ne
+fynde you not repleate, &c. yet yt cannott bee that the other
+wordes, (for yf yt doo,) canne answer the same, because this
+pronoune relative (yt) cannot haue relat{i}one to this worde
+(you) which wente before in this lyne, Ne fynde yo{u} not
+repleate of humors hotte. So that yf you nowe will nedes reade
+ware for where, yet the other parte of the followinge verse must
+nedes be, “for yf you doe,” and not “for yf yt dooe;” vnleste
+you will saye that this woorde (yt) must haue relat{i}one to
+these woordes, (the sonne in his ascentione,) whiche yt cannott
+have, those woordes goinge two lynes before, and the pronowne
+(you) interposed betwene the same and that his correlative (yt.)
+Wherefore these woordes, (for yf yt doe,) must nedes stande as
+they did before, though you will correcte “Where the sonne &c.”
+and saye “Ware the sonne &c.” W{hi}che yf you will nedes haue,
+you must correcte the rest in this sorte:
+
+  Ware the sonne in his ascentione
+  that yt fynde you not repleat of humors hotte,
+  for yf yt do, &c.
+
+But this correct{i}one (savinge, as I sayed, correct{i}one)
+semeth not so good as the former texte.
+
+[Sidenote: Kenelm slain by Queen Drida.] Fol: 86. pa: 2. Vppon
+these woordes, (Lo, in the lyfe of Kenelme we reade,) you saye
+that Kenelme was sleyne by his sister Quenda, whiche sholde be
+Quendrida; as Williame of Malmsberye and Ingulphus have. Whiche
+Quendrida dothe signyfye Quene Drida; as the author of the
+Antiquyties of Seint Albons and of the Abbottes thereof
+(supposed to be Mathewe Paris) dothe expounde yt. for that
+auctor, speakinge of the wyfe of Offa the greate kinge of
+Mercia, (a wicked and proude womanne because she was of the
+stocke of Charles the greate,) dothe saye, that she was called
+Drida, and being the kings wyfe was termed Quendrida, id est,
+Regina Drida.
+
+[Sidenote: Master Speight mistaketh his almanack.] Fo: 87. p: 1.
+Vppon these woordes of “Taurus was fortye degrees and one,” you
+saye that this place ys misprinted, as well in not namynge of
+the sygne, as of the misreckonynge of the degrees, that the two
+and twentye of Marche the sunne is in Aries, and that but eleven
+degrees or thereaboutes, and hathe in all but thirtye degrees.
+In whiche, in semynge to correcte the former printe (whiche in
+truthe deseruethe amendement, but not in that order,) you seme
+to mee to erre, as farre as heauen and yerthe, in mistakinge
+Chaucers meanynge and his woordes, as well for the daye of the
+monthe, as for the signe. for where yo{u} suppose that Chaucere
+meanethe the two and twentithe daye of Marche, you mistake yt.
+for although yt should be the 22 of the monthe, as the printed
+booke hathe; yet canne yt not be the 22 daye of Marche, but must
+of necessytye be the two and twentythe of Aprille: and so the
+signe Taurus trulye named. But first I must saye, the number of
+the dayes are misprinted, for where yt is twentye dayes and two,
+yt must be (and so are my written copies) thirtye dayes and two,
+whiche must be the seconde of Maye, as yo{u} shall well see by
+the woordes of Chaucer, for whether yowe recken thirtye two
+dayes, withe the truthe, as hathe the written copye, or xxii
+dayes, withe the printe: yet must yo{u} begynne to recken them
+from after the last of Marche. for so dothe Chaucer, sayinge
+Marche was compleate, in these woordes:
+
+  When the month in whiche the worlde began,
+  That hight Marche, when God first made man,
+  Was complete, and passed were also
+  Since Marche byganne, &c.
+
+Wherebye yo{u} see, that yo{u} must begynne to recken the nomber
+of dayes from the tyme of marche complete; and then woulde the
+signe fall out to be in Taurus. Yf yo{u} holde yo{u} to the
+printe (for the 22 daye after Marche, which is the 22 daye of
+Aprill in which the sonne is aboute xi degrees in Taurus;) or to
+the written copye of thirtye two dayes, (w{hi}che is the seconde
+of maye at what tyme the sonne ys also aboute some xxi degrees
+in Taurus;) the signe is not misreckoned or misnamed, as yo{u}
+suppose. nether canne these woordes, since Marche beganne, helpe
+you to recken them from the begynnynge of Marche, (as you seme
+to doo;) because they muste answere and be agreable to the
+former wordes of Chaucer, w{hi}che sayethe M{ar}che was
+complete, and, for that we shoulde not dobte thereof, he addethe
+also farther, And passed were also since Marche beganne; where
+the worde beganne ys mysprinted for be gonne, that is, since
+marche be gonne, this word begonne being put for is gonne, or
+gonne bye, or departed. so that the genuyniell sence hereof is,
+When march was complete, and also were passed, since march is
+gonne, or gonne by, or departed. for, in many olde inglishe
+woordes, this syllable (be) is sett before to make yt moore
+signyficante and of force, as for moone we saye bemone, for
+sprincled, besprincled; for dewed, bedewed, &c. as in this case
+for gonne ys sett downe begonne. But although there be no
+misnaminge of the [Sidenote: The degrees of the signe are
+misreckoned, not the signe itself.] signe; yet yt is true the
+degrees of the signes are misreckoned, the error whereof grewe,
+because the degree of the signe, is made equall with the degree
+of the sonne ascended above the Horizon, beinge at that tyme xli
+degrees in heighte from the Horizon. But to remedye all this,
+and to correcte yt accordinge as Chaucer sett yt downe in myne
+and other written copies; and that yt may stande w{i}th all
+mathematicall proport{i}one, whiche Chaucer knewe and observed
+there, the print must be corrected after those written copies
+(whiche I yet holde for sounde till I maye disprove them) having
+these woordes:
+
+  when that the month in whiche the worlde beganne,
+  that hight Marche, when god first made manne,
+  was complete, and passed were also
+  since marche begonne thirty dayes and two:
+  befell that Chanteclere in all his pride,
+  his seven wives walkinge him beside,
+  cast vp his eyen to the bright sonne,
+  that in the signe of Taurus had yronne
+  Twentye degrees and one and somewhat moore;
+  And knewe by kynde and by noone other loore
+  That yt was pryme, and crewe with blisful steven:
+  The sunne, quoth he, is clomben vp on heaven
+  Fortye degrees and one, and moore, ywis, &c.
+
+And that this shoulde be mente xxxij dayes after Marche, and the
+seconde of Maye, there be manye reasons, besides those that
+Chaucer nameth; which are, that the sonne was not farre from the
+middle of his ascent{i}one, and in the signe Taurus. ffurther,
+since I am now in Chantecler’s discourse, I must speake of one
+woorde in the same, deservinge correct{i}one, w{hi}che I see you
+overslipped; and because I thinke yo{u} knewe not what to make
+of yt, (as in dede by the printinge few menne canne
+vnderstande yt,) I will sett downe the correct{i}one of the
+same; [Sidenote: Mereturicke is a corruption of Merecenrycke,
+or the kingdom of Mercia.] being the worde Mereturicke, farr
+corrupted for Mercenricke, in saxon Meþecenþÿke which is the
+kingdome of Mercia, for so was Kenelme the sonne, and Kenulphus
+the father, both kinges of Mercia; the one reignynge 36 yeres,
+and the other murdred by his sister Quendrida, as ys before
+noted. And that yt is the kingdome of Mercia, the etymon of the
+woorde doth teache; for þÿk in the saxon tonge signyfyethe a
+kingdome; meþcen signyfyethe markes or boundes or marches of
+Countryes. So that Mercenricke is regnu{m} Merciæ, or the
+kingdome of Mercia, or of the boundes so called, because almost
+all the other kingdoms of the saxons bounded vppon the same, and
+that lykewise vppon them, since that kingdome did lye in the
+middle of England, and conteyned most of the shires thereof.
+
+[Sidenote: Pilloures of silver borne before Cardinalls.] Fo: 90.
+pa: 2. for pilloure you will vs to reade Pellure, signifyinge
+furres. but althoughe the Clergye ware furres, and some of them
+had their outwarde ornamentes thereof when they came to their
+service, as the Chanons had their Grey amises; yet in this
+place, to shewe the proude and stately ensignes of the Clergye,
+he there nameth the popes crowne, and the Cardinalls pilloures,
+yf I be not deceved. for euery cardinall had, for parte of his
+honorable ensignes borne before hym, certein silver pillers; as
+had Cardinall Wolsey, in the tyme of kinge Henrye the eighte,
+and Cardinall Poole, in my memory. So that pilloure in that
+place is better than pellure, because pilloures were a note of
+more pride and maiestye (againste whiche the Plowmanne dothe
+enveye in those woordes,) than in the weringe of furres.
+
+[Sidenote: Liketh best the old reading of “change of many manner
+of meates.”] Fo: 90. pa: 2. for these wordes, with change of
+many manner of meates, yo{u} wolde have vs reade, They eate of
+many manner of meates. Touchinge whiche, althoughe the sence
+stande well, yet sure Chaucer followeth this matter in many
+staues together with this preposit{i}one (cu{m}, with,) and this
+coniunctione (et, and;)--as, “With pride misledd the poore, and
+with money filled manye a male, &c.” so he contynuethe yt still
+with that prepositione, “with change of many meates;” w{hi}che
+is as good as the other, for euery one knoweth Chaucers meanynge
+to be that they eate of many meates, when they haue change of
+many meates; for why sholde they haue change of meates, but for
+varyetye to please the palates taste in eatynge. [Sidenote: And
+also the old reading of “myters” more than one or two for the
+sake of the meter.] In the next staffe, (for myters moe then one
+or two) you teache vs to reade, “myters they weare mo then one
+or two;” whiche, me thinkethe, nedeth not. For the wearinge of
+their myters is included in these woordes, And myters more then
+one or two. W{hi}che wordes are curteyled for the verse his
+cause, that the same mighte kepe an equall proport{i}one and
+decorum in the verse, whiche would be lengthened one foote or
+sillable moore than the other verses, yf your readinge shoulde
+stande. But yf yo{u} saye, that in this and other thinges I am
+overstreyghte laced and to obstinatlye bente to defende the
+former printed editione, in that I woulde rather allowe one
+imperfecte sence, and suche as must be vnderstoode, when yt ys
+not fully expressed, than a playne style, I will answere withe a
+grounde of the lawe, quod frustra fit per plura quod fieri
+potest per pauciora, and quod subintelligitur non deest.
+Wherefore yt is nedelesse to make that playner by addit{i}one of
+woordes, when yt maye be as well conceyved in any reasonable
+mens vnderstandinge without such addit{i}one. But on these and
+suche petit matters, I will not nowe longe insiste, (being
+things of no greate momente,) vntill I haue further examyned
+more written copyes to trye, whether wee shall reade the olde
+texte or your newe correctione.
+
+[Sidenote: The lordes sonne of Windsore is in the French Romant
+of the rose, but is there spelled Guindesores.] Fo: 122. pa: 2.
+The lordes sonne of Windsore.) Vppon these woordes you saye,
+this maye seme strange bothe in respecte that yt is not in the
+frenche, as also for that there was no lorde Windsore at those
+dayes. But yt semeth to me moore strange that these woordes
+shoulde seme strange to yo{u}, not to bee in the frenche, where
+yo{u} shall fynde them. For thus hathe the frenche written
+Romante, as maye appere in the old frenche vsed at the tyme when
+the Romante was composed, in this sorte:
+
+  Pris a Franchise lez alez
+  Ne sai coment est apelles,
+  Biaus est et genz, se il fust ores
+  Fuiz au seign{eur} de Guindesores:
+
+Whiche is thus englished: Next to Franchise went a young
+bacheler, I knowe not howe he was called, he was fayre and
+gentle, as yf he had byn sonne to the lorde of Windsore. Where
+in olde frenche this word fuiz (vsed here as in manye places of
+that Booke) is placed for that whiche we wryte and pronounce at
+this daye for filz or fitz, in Englishe sonne. and that it is
+here so mente, you shall see in the Romante of the Roose turned
+into proese, moralized, by the french Molinet, and printed at
+Paris in the yere 1521, who hathe the same verses in these
+woordes in proese. A Franchise s’estoit prins vn ieune Bacheler
+de qui ne scay le nome, fors bell, en son temps filz du
+seigneure de Guindesore. Whiche yo{u} mighte have well seene,
+had you but remembered their orthographie, and that the latyne,
+Italiane, frenche, and spanyshe have no doble w, as the Dutche,
+the Englishe, and such as haue affynytye with the Dutche, since
+they vse for doble w (a letter comone to vs) these two letters
+Gu, as in Gulielmus, which we wryte Willielmus; in guerra, which
+we call and writte warre, in Gualterus, which we write Walter;
+in guardeine, which we pronounce and write wardeyne; and suche
+lyke; accordinge to whiche in the frenche yt is Guindesore for
+Windesore. [Sidenote: Master Thynne knoweth not clearly why the
+Baron should be called of Windsor.] for your other coniectures,
+whye that Chaucer sholde inserte the loordes sonne of Windesore,
+they are of [{no}?] great momente, neque adhuc constat that
+Chaucer translated the Romante, whene Windsore Castle was in
+buildinge. for then I suppose that Chaucer was but yonge;
+whereof I will not stande at this tyme, no moore than I will
+that there was no lord Windsore in those dayes; althoughe I
+suppose that sir William Windsore, being then a worthye knighte
+and of great auctorytye in Englande and in the partes beyond the
+seas under the kinge of Englande, mighte be lord Windsore, of
+whom the Frenche tooke notice, being in those partes, and by
+them called seigneure de Windesore, as euery gouerno{r} was
+called seigneure emongst them. But whether he were a Baron or no
+in Englande, I cannott yet saye, because I haue not my booke of
+Somons of Barons to parliamente in my handes at this instante.
+
+[Sidenote: The ordeal was not tryall by fier only, but also
+by water, nor for chastity only, but for many other matters.]
+Fo: 171. pa: 2. by ordall, &c. Vppone whiche yo{u} write thus.
+“Ordalia is a tryall of chastytye, throughe the fyre, as did
+Emma, mother of the Confessor, or ells over hoote burnynge
+culters of yrone barefotte, as did Cunegunde, &c.” But in
+this describinge definit{i}one, you have commytted manye
+imp{er}fect{i}ons. first, that ordell was a tryall by fyre,
+w{hi}che is but a species of the ordell; for ordaliu{m} was a
+tryall by fyre and water: secondlye, that yt was a tryall of
+Chastitye whiche was but parcell thereof; for the ordale was a
+tryall for manye other matters. [Sidenote: The fyery ordeal was
+by going on hote shares and cultors, not going through the fyre.
+The mother of Edward confessor passed over nine burnynge
+shares.] Thirdlye, yo{u} saye yt was by goinge throughe the
+fyre. when the fyery ordale was onlye by goinge one hoote shares
+or cultores, or by holdinge a hoote pece of yrone in the hande,
+and not going through the fyre. fourthlye, that Emma, mother to
+Edwarde the confessor, receued this tryall by goinge through the
+fyre: But she passed not through the fyre as you bringe her for
+one example of your ordale but passed barefotte vppone nyne
+burnynge shares, fowr for her selfe, and fyve for Alwyne
+Bishoppe of Winchester, with whome she was suspected with
+incontynencye, whiche historye you maye see at large in
+Ranulphus Higden, in his policronicone li: 6. ca: 23, and in
+other auctors; of whiche ordale I colde make a longe and no
+commone discourse; of the manner of consecrating the fyre and
+water, how yt was vsed emongst the saxons before, and the
+normans since, the Conqueste, and of many other thinges
+belonging vnto yt. but I will passe them ouer, and only deliuer
+to you a thinge knowen to fewe, [Sidenote: The ordeal taken away
+by the court of Rome, and after by Henry III.] how this ordale
+was contynued in Englande in the tyme of kinge Johne, as
+appereth in Claus. 17. Johīs, m. 25, vntill yt was taken awaye
+by the courte of Rome; and after that, in Englande, by the
+auctorytye of kinge Henrye the thirde, whereof you shall fynde
+this recorde in the towre Patente. 3. H. 3. mem. 5, where yt
+speakethe of iudgmente and tryall by fyer and water to be
+forbydden by the Churche of Roome, and that yt sholde not be
+vsed here in Englande; as apperethe in the woordes of that
+record: Illis vero qui mediis criminibus vectati sunt, et quibus
+competeret iudiciu{m} ignis vel aquæ si non esset prohibitum, et
+de quibus si regnum nostru{m} abiurarent, nulla fieret postea,
+maleficiendi suspitio, regnu{m} nostru{m} abiurent &c.
+
+[Sidenote: The stork bewrayeth not adultery but wreaketh the
+adultery of his owne mate.] Fo: 246. pa: 1. speaking of the
+storke, you saye that Chaucers woordes “wreaker of adulterye”
+shoulde rather bee “bewrayer of Adulterye;” w{hi}che in truth
+accordinge to one propryetye of his nature may be as you saye,
+but according to another propryetye of his nature, yt sholde be
+“the wreaker of Adulterye,” as Chaucer hathe; for he ys a
+greater wreaker of the adulterye of his owne kynde and female
+than the bewrayer of the adulterye of one other kynde, and of
+his hostesse one the toppe of whose howse he harborethe. for
+Aristotle sayeth Bartholomeus de proprietatibus reru{m} li: 12.
+cap. 8. with many other auctors, that yf the storke by any
+meanes perceve that his female hath brooked spousehedde, he will
+no more dwell with her, but stryketh and so cruelly beateth her,
+that he will not surcease vntill he hathe killed her yf he maye,
+to wreake and revenge that adulterye.
+
+These and suche lyke in my conceyte are worthye to be touched in
+your Annotac{i}ons, besides other matters whiche you haue not
+handled; whereof (because tyme requirethe after all this tedious
+treatyce to drawe to one ende) I will not now treate; but onlye
+speake a little moore of fyve especiall thinges, woorthye the
+animadvers{i}one, of which the fyrste ys, [Sidenote: The
+plowman’s tale is wrong placed.] that yo{u} make the Plowmans
+tale to go next before the persons tale, suffering the persons
+corrupted prologue to passe with this begynnynge, “By that the
+plowmanne had his tale ended,” when all written copies, (whiche
+I coulde yet see,) and my fathers editione, haue yt, “By that
+the mancyple had his tale ended.” And because my father colde
+not see by any Prologues of thee other tales, (whiche for the
+most parte shewe the dependancye of one Tale vppone one other,)
+where to place the plowmans tale, he putt yt after the persons
+tale, whiche, by Chaucers owne woordes, was the laste tale; as
+apperethe by the persons prologue, where the hooste sayethe,
+that “euery manne had tolde his Tale before.” So that the
+plowmans tale must be sett in some other place before the
+manciple and persons tale, and not as yt ys in the last
+edit{i}one.
+
+[Sidenote: Chaucer’s proper works should be distinguished from
+those adulterat and not his.] One other thinge ys, that yt would
+be good that Chaucers proper woorkes were distinguyshed from the
+adulterat and suche as were not his, as the Testamente of
+Cressyde, the Letter of Cupide, and the ballade begynnynge
+“I have a ladye where so she bee,” &c. whiche Chaucer never
+composed, as may sufficientlye be proved by the things
+themselves.
+
+[Sidenote: There were three editions of Chaucer before William
+Thynne dedicated his to Henry VIII.] The thirde matter ys, that
+in youre epistle dedicatorye to Sir Roberte Cecille, yo{u} saye,
+“This Booke whene yt was first published in printe was dedicate
+to kinge Henrye the eighte.” But that is not soo. for the firste
+dedicatione to that kinge was by my father, when diverse of
+Chaucers woorkes had byn thrise printed before; whereof two
+editions were by Will{ia}m Caxtone, the firste printer of
+Englande, who first printed Chaucers Tales in one columne in a
+ragged letter, and after in one colume in a better order; and
+the thirde edit{i}one was printed, as farre as I remember, by
+Winkin de Worde or Richarde Pynson, the seconde and thirde
+printers of Englande, as I take them.[11] [Sidenote: The first
+editions being very corrupt, William Thynne augmented and
+corrected them.] Whiche three edit[i]ons beinge verye unperfecte
+and corrupte occasioned my father (for the love he oughte to
+Chaucers learnynge) to seeke the augmente and correct{i}one of
+Chaucers Woorkes, w{hi}che he happily fynyshed; the same being,
+since that tyme, by often printinge much corrupted. of this
+matter I sholde have spooken first of all, because yt is the
+first imperfect{i}one of your paynfull and comendable labors:
+Yet because the proverb ys better late than never, I hold yt
+better to speake of yt here then not at all.
+
+    [Footnote 11: _Caxton_, 1475-1481-2. _Wynkyn de Word_,
+    1495-1498.]
+
+[Sidenote: Master Speight hath omytted many auctors vouched by
+Chaucer.] The fourthe thinge ys, that, in the catalogue of the
+auctors, you haue omytted many auctors vouched by chaucer; and
+therefore did rightlye intitle yt, moost, and not all, of the
+auctors cited by Geffrye Chaucer.
+
+[Sidenote: It should be Harlottes, and not Haroldes.] The fyfte
+matter ys in the Romante of the Roose, fo. 144, that the worde
+Haroldes in this verse,
+
+  My kinge of Haroltes shalte thou bee,
+
+must, by a mathesis or transpositione of the letters, be
+Harlotes, and not Haroltes, and the verse thus,
+
+  My kinge of Harlottes shalt thou bee
+
+And so ys yt in the edit{i}one of Chaucer’s Works, printed in
+anno Domini 1542, accordinge to the frenche moralizatione of
+Molinet, fo. 149. where he is called “Roye des Ribauldez,”
+[Sidenote: The king of Ribalds or Harlottes, an officer of great
+accompt in times past.] w{hi}che is, the kinge of Ribaldes or
+Harlottes or evill or wicked persons; one officer of great
+acco{m}pte in tymes paste, and yet vsed in the courte of France
+but by one other name, in some parte beinge the office of the
+marshall of Englande. All whiche, because yo{u} shall not thinke
+I dreame, (though yt may seme strange to the ignorant to have so
+greate one officer intituled of suche base p{er}sons as to be
+called kinge or gouernor of Ribauldes,) [Sidenote: Johannes
+Tyllius maketh mention of a Rex Ribaldorum.] yo{u} shall here
+Joh{ann}es Tyllius (in his seconde booke de rebus Gallicis vnder
+the title de Prefecto pretorio Regis) confirme in these woordes:
+In domesticis regu{m} constitutionibus, quos proximo capite
+nominavimus, fit mentio Regis Ribaldorum, officii domestici,
+quem semper oportet stare extra Portam pretorii, &c. and a litle
+after the explanynge of their office, he addeth; “sic autem
+appellantur, quia iam tum homines perditi Ribaldi, et Ribaldæ
+mulieres puellæq{ue} perditæ vocantur. Regis nomen superiori aut
+Iudici tribuitur, Quemadmodu{m} magnus Cubicularius dicitur Rex
+Mercatorum,” &c. Where he maketh the “Regem Ribaldoru{m}” an
+honorable officer for manye causes, [Sidenote: Also Vincentius
+Luparius maketh him an honourable officer.] as Vincentius
+Luparius in his fyrste booke of the Magistrates of france doth
+also, vnder the title of “Rex Ribaldoru{m} et prouostus
+Hospitii;” makinge the Iudex pretorianus and this rex ribaldorum
+or provostus hospitii to seme all one, addinge further (after
+manye other honorable partes belonginge to this office) that
+“meretricibus aulicis hospitia assignare solebat.” In whiche
+pointe, bothe for orderinge and correctinge the harlottes and
+evill persons followinge the Courte of Englande, (whiche is the
+duty of the marshall,) the frenche and wee agree. [Sidenote: The
+Rex Ribaldorum was like unto our Marshall. The Marshalls duties
+and his powers over Harlotts and lost men.] Wherefor, touching
+that parte, yo{u} shall heare somewhat of the Marshalls office
+sett downe and founde in the Customes, whiche Thomas of
+Brothertonne (sonne to kinge Edwarde the fyrste) challenged to
+his office of Marshalcye; where, emongst other thinges, are
+these woordes: eoru{m} (w{hi}che was of the marshalls deputyes
+executinge that he shoulde ells do hym selfe) interest virgatam
+à meretricibus prohibere, et deliberare, et habet, ex
+consuetudine mariscallus ex quâlibet meretrice com[m]uni infra
+metas hospitii inventa iiij^d. primo die. Quæ, si iteru{m}
+inventa in Balliuâ suâ inveniatur, capiatur; et coram
+seneschallo inhibea{n}tur ei hospitia Regis et Reginæ et
+liberoru{m} suorum, ne iteru{m} ingrediatur, &c. And so
+afterwarde shewethe what shall be done to those women, yf they
+be founde agayne in the Kinges courte, in suche sorte, that, as
+by Tillius, this Rex Ribaldorum his auctorytye was over homines
+perditos, mulieres puellasq{ue} perditas. And that yt was, by
+Lupanus, to assigne to Ribaldes lodginge out of the courte, (for
+so modestye willeth vs to vnderstande, because they shoulde not
+offende and infecte the courte with their sighte and manners,)
+so ys yt our Marshalls office, to banyshe those harlottes the
+courte, and bestowe them in some other place, where they might
+be lesse annoyance. [Sidenote: Master Thynne being a herold
+liketh not that false semblance should be thought one.]
+Wherefore I conclude w{i}th the frenche, and the former
+edit{i}one of Chaucer in the yere of Christe 1542, that False
+Semblance was of righte to be made kinge of Harlottes, and not
+of Haroldes, who wolde mightely be offended to haue them holden
+of the conditions of false semblance. Nowe here be nugæ in the
+Romante of the Roose, I cannott (as the proverb ys) take my hand
+from the table, (fyndinge go manye oversightes in the two last
+editiones,) but must speake of one thing more, deserving
+correctione, in these woordes of the Romante, fo. 116 of the
+last impress{i}one:
+
+  Amide saw I hate stonde,
+  That for wrathe and yre & onde
+  Semed to be a minoresse;
+
+[Sidenote: Hate was a Moueresse or stirrer of debate, not a
+minoresse.] Where this woorde Minoresse shoulde be Moueresse,
+signyfyinge a mover or styrrer to debate, for these be the
+frenche verses in the oldest written copye that euer was (to be
+founde in Englande, yf my coniecture fayle me not,) by the age
+of the frenche wordes, which are these:
+
+  Enz euz le milieu vi hayne,
+  qui de courouz et datayn
+  Sembla bien estre moueresse,
+  et courouse et teucerresse.
+
+Beinge thus englyshed, as of righte they oughte, accordinge to
+the frenche:
+
+  Amyde sawe I hate stonde,
+  That of wrathe and yre & onde
+  Semed well to be mooveresse,
+  An angry wighte and chyderesse.
+
+[Sidenote: Molinet calleth Hate a Ducteress, or leader.] Whiche
+woord mooveresse the learned molinet, in his moralizat{i}one of
+that Romant, dothe turne into Ducteresse, a leader or leadresse,
+so that they agree yt shoulde not be a minoresse, but a
+mooveresse or leadresse of and to anger and yre; anye of whose
+woordes will as well and rather better fytt the sence and verse
+of Chaucer, and better answere the Frenche originall and
+meanynge, than the incerted woorde Minoresse.
+
+Thus hooping that yo{u} will accepte in good and frendlye parte,
+these my whatsoever conceytes vttered vnto you, (to the ende
+Chawcers Woorkes by much conference and many iudgmentes mighte
+at leng[t]he obteyne their true p{er}fect{i}one and glory, as I
+truste they shall, yf yt please godde to lend me tyme and
+leysure to reprinte, correcte, and comente the same after the
+manner of the Italians who have largely comented Petrarche;)
+I sett end to these matters; comyttinge yo{u} to god, and me to
+your curtesye.
+
+  Clerkenwell Greene,
+  the xvi of december 1599.
+  Your lovinge frende,
+  FRANCIS THYNNE.
+
+
+
+
+INDEX.
+
+  Abandone, p. 33.
+  Absalom, whether he coughed or knocked, p. 42.
+  Aketon, a sleeveless jacket of plate for the war, p. 24.
+  Arcite, his intellect, p. 40.
+  Authentic, a thing of authority, p. 33.
+
+  Bath, Wife of, her Prologue, p. 44.
+  Begyns, superstitious women, p. 29.
+  Besant, a coin of Bizantium, p. 25.
+  Burgersh, Bartholomew de, sent into Henault for Philippa, p. 12.
+  Burgo, Serlo de, built Knaresborough Castle, p. 18.
+
+  Cambuscan, or Caius, Cause, p. 43.
+  Campaneus, reading of, p. 34.
+  Chaucer, MSS., collection made by William Thynne, p. 5.
+  Chaucer, MSS., dispersed by his son, p. 8.
+  Chaucer’s parentage, p. 9.
+  Chaucer and the Franciscan friar, p. 16.
+  Chaucer’s marriage, p. 17.
+  Chaucer’s coat-of-arms, p. 10.
+  Chaucer’s children, p. 17.
+  Chaucer, his education, p. 13.
+  Chaucer, his skyll in Geometrye, p. 11.
+  Chaucer, his ancestors, whether merchants of the staple or no,
+      pp. 12, 13.
+  Chaucer, the stemme of, p. 17.
+  Chaucer, his children and their advancement, p. 17.
+  Chaucer, Thomas, married to Maude, daughter of Sir John Burgersh,
+      p. 18.
+  Chaucer, his dream, not the book of the Duchess, pp. 22, 23.
+  Chaucer, early editions of, p. 56.
+  Chausier, one who hoseth or booteth a man, p. 9.
+  Citrination, a term of Alchemy, p. 30.
+  Colin Clout, written in William Thynne’s house at Erith, p. 7.
+
+  Drida, Queen, slayeth Kenelm, p. 47.
+
+  Fermentacione, a term of Alchemy, p. 25.
+  Florius, concerning, p. 35.
+  Forage, winter provision, p. 30.
+
+  Garland, oken of Emelye, p. 37.
+  Gaunt, John of, his children born pre-nupt, p. 17.
+  Gaunt, John of, his incontinency, p. 23.
+  Gaunt, John of, his marriage, p. 23.
+  Gower, query whether of the
+  Gowers of Stittenham, p. 14.
+  Gower, his greeting to Chaucer, p. 13.
+
+  Harlottes, King of, p. 57.
+  Heroner, a hawk for a heron, p. 31.
+  Hyppe, the berye of the eglantine, p. 31.
+
+  John of France, his ransome, p. 36.
+
+  Knaresborough Castle, built by Serlo de Burgo, p. 18.
+  Kenelm, slain by Queen Drida, p. 47.
+
+  Leefe, for lothe, p. 42.
+  Lincoln, Hugh of, p. 44.
+
+  Mortone, John, Earl of, the manner of his creation, p. 16.
+  Merecenrycke, p. 50.
+
+  Navarre, Joan of, married to Henry IV., p. 18.
+  Neville, Richard, Earl of Salisbury, his wife, p. 21.
+  Nowell, meaning of, p. 32.
+
+  Orfrayes, a sort of cloth of gold, p. 26.
+  Ordeal, the manner of, p. 54.
+  Oundye meaneth wavy, p. 28.
+
+  Philippa, of Henault, her marriage, p. 11.
+  Pilgrime’s Tale, setting forth the evil lives of churchmen, p. 6.
+  Plowman’s Tale, not made by Sir T. Wyat, p. 7.
+  Porpherye, a peculiar marble, p. 32.
+  Printing, notes on the history of, p. 21.
+  Pillars, silver, borne before Churchmen, p. 51.
+  Poole, William de la, Merchant of Hull, lendeth money to the King,
+      p. 18.
+  Poole, Richard de la, a chief governor of Hull and Pincerna Regis,
+      p. 18.
+  Poole, Michael de la, Chancellor, p. 19.
+
+  Resager, or Ratsbane, p. 28.
+  Ribalds, king of, p. 57.
+  Roses, chaplet of, for knighthood, not for poesy, p. 15.
+  Rose, Romant of, notes on, p. 21.
+
+  Sendale, a sylke stuffe, p. 32.
+  Staple, Merchants of the, had no arms till 10 or 11 Ed. III., p. 13.
+  Sterling money, p. 35.
+  Straught, a better word than haughte, p. 41.
+  Stork, the, wreaketh adultery, p. 55.
+  Surrye or Russye, p. 43.
+
+  Temple, lawyers not in the, till the latter part of Ed. III., p. 16.
+  Theophraste, not Paraphraste, p. 44.
+  Trepegett, an engine to cast stones, p. 33.
+  Thynne, Sir John, reports that the parliament was minded to forbid
+      Chaucer’s tales, p. 7.
+  Thynne, William, in favour with Henry VIII., p. 6.
+  Thynne, William, his collection of Chaucer’s MSS., p. 5.
+  Thynne, William, protecteth John Skelton, p. 7.
+
+  Vernacle, of the, p. 34.
+  Veseye, Eustace de, p. 18.
+  Visage for vassalage, p. 42.
+
+  Walsingham, offended at temporall men being preferred to office,
+      p. 20.
+  Windsore, Lords son of, p. 52.
+  Wiuer or Wivern, a serpent like unto a dragon, p. 33.
+  Wolsey, his enmity to William Thynne, p. 7.
+  Wolsey, his great power with the King, p. 7.
+  Wyat, old Sir Thomas, did not make the Plowmans Tale, p. 7.
+
+
+    JOHN CHILDS AND SON, PRINTERS.
+
+       *       *       *       *       *
+           *       *       *       *
+       *       *       *       *       *
+
+_Errors and Inconsistencies_
+
+Non-Roman Scripts
+
+  In the 1865 text, thorn þ is used for Saxon “r” ꞃ:
+    in saxon Meþecenþÿke which is the kingdome of Mercia, for so was
+    Kenelme the sonne, and Kenulphus the father, both kinges of Mercia;
+    the one reignynge 36 yeres, and the other murdred by his sister
+    Quendrida, as ys before noted. And that yt is the kingdome of
+    Mercia, the etymon of the woorde doth teache; for þÿk in the saxon
+    tonge signyfyethe a kingdome; meþcen signyfyethe markes.
+
+  The 1876 text uses the Saxon letterforms:
+    Meꞃecenꞃÿke, ꞃÿk, meꞃcen.
+
+_At the time of preparation (June 2009), Saxon letters had been assigned
+Unicode values, but font support was extremely limited. Your text reader
+will probably not be able to display the character._
+
+  Similarly for Greek Χρ (Chi, rho):
+    placinge ther xþemas (_Christmasse_) a p{ar}te of this tyme of
+    Nowell .... ante xþi (_Christi_) natalitia viginti aut triginta
+    dies quodam desiderio.
+  The 1876 text gives only the expanded (Roman script) form of words
+  in Chr-.
+
+  Hebrew:
+    for thus he writethe: נאל noel
+      [_both editions misprint באל with bet ב for nun נ_]
+
+Introduction
+
+  a careful copier with a clean pen, indefatiguable  [_unchanged_]
+  a ribald wit might create terrible havock [_unchanged_]
+  Footnote 2 [_reference missing, supplied from 1876 edition_]
+  Martin Chuzzelwit the elder [_unchanged_]
+  demanding why Falstalf [_unchanged_]
+
+List of Thynne’s Works
+
+  18 ... since the reign of the conqueror.  [_extraneous close quote_]
+
+
+Errors corrected from 1876 edition:
+
+  _This list includes missing letters that were silently supplied in
+  1865: that is, the text is right but the MS reading was wrong. It
+  does not include misplaced italics such as “tri{u}m” for “triu{m}”._
+
+  the Romans in the heigh[t]e of their glorye  [heighe]
+  selfe will or fonnd conceyte  [found]
+  Chaucers woorkes haue byn sithens printed twyce  [sitheus]
+  that lerned and eloquent kn[i]ghte  [knighte]
+  as I have herde S^r Johne Thynne reporte  [St. Johne]
+  as the chanons yomane  [chanous]
+    [_all occurrences of “chanons” in this passage are printed
+    “chanous” in 1865_]
+  the recordes in Dorso Rotulor. patent.  [Rolulor]
+    [_1876 edition also adds “me{m}b.” after “patent.”_]
+  datu{m} per manu{m} Walteri Merton  [Walleri]
+  consorti ipsius Regis &c.”  [_close quote missing_]
+  “Rogero couentry &c  [_open quote missing_]
+  so had the[y] fewer Rooses placed  [they]
+  euerye manne to his owne iudgemente  [iudgemte]
+  Gersone soughte no further meanynge   [meanyuge]
+  tantiq{ue} quanti placuit vendiderunt.”  [_close quote missing_]
+  (otherwise called “Flores Historiarum” or “Florilegus”)
+    [_printed with open parenthesis, close bracket_]
+  almoste to the heigh[t]e of perfect{i}one  [heighte]
+  solitaq{ue} est hec vox cantari a plebe  [cantaria]
+  shewe those courses of gouer[n]mente,  [gouernmente]
+  (“Manye a florence.”)  [’ for ”]
+  in another place callethe scutes or frenche crownes  [calle the]
+  yo{u}r e[x]posit{i}one of unseriall  [exposit{i}one]
+  tria virginis ora Dianæ,)  [_close parenthesis missing_]
+  that all his streng[t]he and vitall Sprites  [strengthe]
+  a pointe at streng[t]he is looste  [strengthe]
+  agreethe not well with Chaucers meanynge  [Chancers]
+  Whiche facte was [in] the 39. H. 3.  [_“in” not bracketed_]
+  with change of many manner of meates,  [_superfluous close bracket_]
+  Regis nomen superiori aut Iudici tribuitur,
+    [_superfluous close quote_]
+  Rex Ribaldoru{m} et prouostus Hospitii
+    [_“pro-/vuostus” at line break_]
+  si iteru{m} inventa in Balliuâ suâ  [Ballinâ]
+  many iudgmentes mighte at leng[t]he obteyne  [lengthe]
+
+Shared anomalies:
+
+  Thus (withe hartye prayer comendinge
+    [both versions have extra open bracket/parenthesis]
+  I will passe over all those matters scito pede
+    [both versions have “scito”: error for “cito”?]
+  The lordes sonne of Windsore.)
+    [both versions missing open bracket/parenthesis]
+  by a mathesis or transpositione  [shared error for “metathesis”]
+
+Textual differences, with 1876 reading shown in brackets:
+
+  p{ar}soune and plowmane  [p{ar}sonne]
+  Under the tytle of chaucers countaye,[4]  [countrye, no footnote]
+  H. Regis patris nostri  [Henrici Regis]
+  apud West {minsteriu}m  [Westm{onasterium}]   316
+  In whiche are two unperfect{i}ons.  [imperfect{i}ons]
+  thus sett downe to the forthe daye of februarye
+    [... in the ferthe daye ...]
+  with the daye when and where they presented her
+    [_“with de daye” with footnote “MS. plainly de”_]
+  apud Eboru{m} in comitatiua  [Ebor{ac}u{m}]
+  the laude fulfilled is ouer all  [lande]  346
+  For in truth yo{u}r armes of this S^r Johne Gower  [{th}e armes]
+  an ensigne of his poetrye  [one]
+  for he was an olde manne  [one]
+  Ric. de la Poole  [Ric{hard}]
+  continentem iij^c lxx^li xviij^s 1^d  [I^d (capital Eye for One)]
+  factum ad Scaccariu{m} computator  [computator{is}]
+  iiij^c marc.  [marc{as}]
+  (a magistrate of greate welthe in Hull,)  [a marchante]
+  Walsingham (who wroote longe after)  [w{hic}he wroote]
+  by reasone of others mens dealinge
+    [_“othere mens dealing{es}” with footnote “MS. others”_]
+  and, as some have yt
+    [and, [printinge,] as some have yt]
+  In the title of the augmente  [argumente]
+  w{hic}h Chaucer w{i}th muche of that matter omytted
+    [w{i}th Chawcer,]
+    [_footnote “? _for_ which Chaucer englisht”_]
+  In the expositione of the olde wordes
+    [_Footnote: “+of+ of” with first “of” boldface_]
+  to oure nowe vnderstandinges  [vnderstandinge]
+  beinge an indiffynyte speache  [one]
+  an olde coyne of france  [one]
+  I will produce twoo auctorauctors  [twoo Auctors]
+  written in Gothyshe rymynge verse  [verses]
+  That dame abstinence streyned
+    [_“weyned” with footnote (MS) “streyned”_]
+  And ganne her gratche as a Bygin.
+    [_footnote (MS) “graithe”_]
+  A large cover-cherfe of Thredde  [cover-cheife]
+  whiche is true, for a gowshawke
+    [_“goshawke”, with footnote “MS. gowshake”_]
+  with her byll or talons  [talentes]
+  an engine not muche vnlyke to the catapulte  [one engine]
+  a Ramme to batter wales  [wal[l]es]
+  Wherein yo{u} mistake the valewe of the florens  [a florens]
+  the same Walsingha{m} in another place  [in other place]
+  within the price of ij^s. x^d. [QR]
+  --ij^s. x^d. [QR] de quibus florenis regal{ibus}
+    [_in both passages, 1865 has the “QR” symbol while
+    1876 expands to “q{uad}r{anta}”_]
+  as were her younge and grene yeres  [was]
+  yo{u} wolde haue us to reade  [haue us reade]
+  save onlye the intellecte or vnderstandinge  [his intellecte]
+  And twenty fadome of breedth, armes straughte  [breed th’armes]
+  he[9] knocked at her[10] windowe
+    [_1876 text ADDS “to make her the better to heare” after this
+    phrase (skipped line in original MS?)_]
+  are nerer to Sorria  [is nerer]
+  reference to his antecedente, i. e. this worde wyfe
+    [_word “i. e.” omitted_]
+  eightene Jewes were broughte  fro{m} Lincolne
+    [_1876 text ADDS [to London] in brackets after “broughte”_]
+  For yf yt doe, &c.  [For yf yt doe, . . .]
+  [_the fair Pertelote_]
+    [parenthesised in 1865 text, moved to footnote in 1876]
+  So that yf you nowe will  [yf yowe will]
+  that hight Marche ... the bright sonne  [hight[e] ... bright[e]]
+  and in the signe Taurus  [signe of Taurus]
+  than in the weringe of furres  [than ys]
+  “with change of many meates;”  [with many change of meates]
+  kepe an equall proport{i}one and decorum  [one equall]
+  But on these and suche petit matters  [in these]
+  they are of [{no}?] great momente
+    [1865 has “no” italicized and in parentheses;
+    1876 omits question mark]
+  as apperethe in the woordes  [by these woordes]
+  Aristotle sayeth Bartholomeus  [sayethe &]
+  I will not now treate;  [entreate]
+  Whiche three edit[i]ons beinge verye unperfecte  [imperfecte]
+  An angry wighte and chyderesse  [One angry]
+
+
+The HTML version of this e-text includes a detailed record of
+differences between the 1865 and 1876 editions. Neither edition
+includes a facsimile of the original MS, so readers will have to
+decide for themselves which differences reflect editorial decisions
+and which ones are errors in one edition or the other.
+
+Basic variations:
+
+  Typographic:
+    Variations in punctuation and capitalization
+    Decorative features of final letters, especially -ll printed
+      with connecting line
+    Font changes such as boldface instead of small capitals
+    Prices are printed inline as ijs. and similar
+
+  Consistent:
+    Initial v used throughout (medial u/v is variable)
+    “you” always printed with superscript “u”
+      (replacing both “you” and yo{u})
+    “S^r” (superscript “r”) printed as “S{i}r” (italic “i”)
+    “emongst(e)” always spelled with medial “e” as “emongest(e)”
+
+  Common:
+    initial J or j printed as I (always capitalized)
+    “than” spelled “then”
+    “could(e), would(e), should(e)” spelled “cold(e), wold(e), shold(e)”
+    in plurals or possessives of words ending in two consonants
+      (other than -ll-), where 1865 has simple “-s”, 1876 has -{es}
+    “which” written “whiche”, sometimes “wh{ic}he”
+    “your” transcribed “yo{u}r”
+    final “-eth” spelled “-ethe”
+
+  Occasional:
+    “y” for “i”
+      _The two occurrences of “it” in 1865 may be errors; 1876 has
+      “yt”, agreeing with all other occurrences of the word._
+    “i” for “e”, “aw” for “au” (“Chawcer”)
+    several occurrences of “an” are read as “one”
+    ampersand (&) for word “and”
+    final “-e”, especially in “much(e), such(e)”;
+      sometimes in “doth(e), hath(e)” and other words
+    single “o” changed to “oo”: “moore”, “woordes”
+    some Latin citations have final -e for -æ
+    words ending -o{r} transcribed as -o{u}r
+    word divisions such as “as well”, “my selfe”
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK ANIMADUERSIONS UPPON THE ANNOTACIONS AND CORRECTIONS OF SOME IMPERFECTIONS OF IMPRESSIONES OF CHAUCER'S WORKES ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

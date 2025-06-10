@@ -1,0 +1,1365 @@
+﻿The Project Gutenberg eBook of The Adductor Muscles of the Jaw In Some Primitive Reptiles
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: The Adductor Muscles of the Jaw In Some Primitive Reptiles
+
+Author: Richard C. Fox
+
+Release date: October 24, 2009 [eBook #30321]
+                Most recently updated: October 24, 2024
+
+Language: English
+
+Credits: Produced by Chris Curnow, Joseph Cooper, Diane Monico, and
+        the Online Distributed Proofreading Team at
+        https://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK THE ADDUCTOR MUSCLES OF THE JAW IN SOME PRIMITIVE REPTILES ***
+
+UNIVERSITY OF KANSAS PUBLICATIONS
+
+MUSEUM OF NATURAL HISTORY
+
+
+Volume 12, No. 15, pp. 657-680, 11 figs.
+May 18, 1964
+
+
+The Adductor Muscles of the Jaw
+In Some Primitive Reptiles
+
+
+BY
+
+RICHARD C. FOX
+
+
+UNIVERSITY OF KANSAS
+LAWRENCE
+1964
+
+
+UNIVERSITY OF KANSAS PUBLICATIONS, MUSEUM OF NATURAL HISTORY
+
+Editors: E. Raymond Hall, Chairman, Henry S. Fitch,
+Theodore H. Eaton, Jr.
+
+
+Volume 12, No. 15, pp. 657-680, 11 figs.
+Published May 18, 1964
+
+
+UNIVERSITY OF KANSAS
+Lawrence, Kansas
+
+
+PRINTED BY
+HARRY (BUD) TIMBERLAKE, STATE PRINTER
+TOPEKA, KANSAS
+1964
+
+30-1522
+
+
+
+
+The Adductor Muscles of the Jaw
+In Some Primitive Reptiles
+
+BY
+
+RICHARD C. FOX
+
+
+Information about osteological changes in the groups of reptiles that
+gave rise to mammals is preserved in the fossil record, but the
+musculature of these reptiles has been lost forever. Nevertheless, a
+reasonably accurate picture of the morphology and the spatial
+relationships of the muscles of many of these extinct vertebrates can
+be inferred by studying the scars or other marks delimiting the origins
+and insertions of muscles on the skeletons of the fossils and by
+studying the anatomy of Recent genera. A reconstruction built by these
+methods is largely speculative, especially when the fossil groups are
+far removed in time, kinship and morphology from Recent kinds, and when
+distortion, crushing, fragmentation and overzealous preparation have
+damaged the surfaces associated with the attachment of muscles. The
+frequent inadequacy of such direct evidence can be partially offset by
+considering the mechanical demands that groups of muscles must meet to
+perform a particular movement of a skeletal member.
+
+Both direct anatomical evidence and inferred functional relations were
+used to satisfy the purposes of the study here reported on. The
+following account reports the results of my efforts to: 1, reconstruct
+the adductor muscles of the mandible in _Captorhinus_ and _Dimetrodon_;
+2, reconstruct the external adductors of the mandible in the cynodont
+_Thrinaxodon_; and 3, learn the causes of the appearance and continued
+expansion of the temporal fenestrae among the reptilian ancestors of
+mammals.
+
+The osteology of these three genera is comparatively well-known.
+Although each of the genera is somewhat specialized, none seems to have
+departed radically from its relatives that comprised the line leading
+to mammals.
+
+I thank Prof. Theodore H. Eaton, Jr., for suggesting the study here
+reported on, for his perceptive criticisms regarding it, and for his
+continued patience throughout my investigation. Financial assistance
+was furnished by his National Science Foundation Grant (NSF-G8624) for
+which I am also appreciative. I thank Dr. Rainer Zangerl, Chief Curator
+of Geology, Chicago Museum of Natural History, for permission to
+examine the specimens of _Captorhinus_ and _Dimetrodon_ in that
+institution. I am grateful to Mr. Robert F. Clarke, Assistant Professor
+of Biology, The Kansas State Teachers College, Emporia, Kansas, for the
+opportunity to study his specimens of _Captorhinus_ from Richard's
+Spur, Oklahoma. Special acknowledgment is due Mr. Merton C. Bowman for
+his able preparation of the illustrations.
+
+
+Captorhinus
+
+The outlines of the skulls of _Captorhinus_ differ considerably from
+those of the skulls of the primitive captorhinomorph _Protorothyris_.
+Watson (1954:335, Fig. 9) has shown that in the morphological sequence,
+_Protorothyris--Romeria--Captorhinus_, there has been flattening and
+rounding of the skull-roof and loss of the primitive "square-cut"
+appearance in transverse section. The quadrates in _Captorhinus_ are
+farther from the midline than in _Protorothyris_, and the adductor
+chambers in _Captorhinus_ are considerably wider than they were
+primitively. Additionally, the postorbital region of _Captorhinus_ is
+relatively longer than that of _Protorothyris_, a specialization that
+has increased the length of the chambers within.
+
+In contrast with these dimensional changes there has been little shift
+in the pattern of the dermal bones that roof the adductor chambers. The
+most conspicuous modification in _Captorhinus_ is the absence of the
+tabular. This element in _Protorothyris_ was limited to the occiput and
+rested without sutural attachment upon the squamosal (Watson,
+1954:338); later loss of the tabular could have had no effect upon the
+origins of muscles from inside the skull roof. Changes in pattern that
+may have modified the origin of the adductors in _Captorhinus_ were
+correlated with the increase in length of the parietals and the
+reduction of the supratemporals. Other changes that were related to the
+departure from the primitive romeriid condition of the adductors
+included the development of a coronoid process, the flattening of the
+quadrate-articular joint, and the development of the peculiar dentition
+of _Captorhinus_.
+
+The adductor chambers of _Captorhinus_ are large. They are covered
+dorsally and laterally by the parietal, squamosal, postfrontal,
+postorbital, quadratojugal and jugal bones. The chamber extends
+medially to the braincase, but is not limited anteriorly by a bony
+wall. The occiput provides the posterior limit. The greater part of the
+adductor chambers lies mediad of the mandibles and thus of the
+Meckelian fossae; consequently the muscles that arise from the dermal
+roof pass downward and outward to their insertion on the mandibular
+rami.
+
+
+_Mandible_
+
+The mandibular rami of _Captorhinus_ are strongly constructed. Each
+ramus is slightly convex in lateral outline. Approximately the anterior
+half of each ramus lies beneath the tooth-row. This half is roughly
+wedge-shaped in its lateral aspect, reaching its greatest height
+beneath the short posterior teeth.
+
+The posterior half of each ramus is not directly involved in supporting
+the teeth, but is associated with the adductor musculature and the
+articulation of the ramus with the quadrate. The ventral margin of this
+part of the ramus curves dorsally in a gentle arc that terminates
+posteriorly at the base of the retroarticular process. The dorsal
+margin in contrast sweeps sharply upward behind the teeth and continues
+posteriorly in a long, low, truncated coronoid process.
+
+A prominent coronoid process is not found among the more primitive
+members of the suborder, such as _Limnoscelis_, although the mandible
+commonly curves upward behind the tooth-row in that genus. This area in
+_Limnoscelis_ is overlapped by the cheek when the jaw is fully adducted
+(Romer, 1956:494, Fig. 213), thereby foreshadowing the more extreme
+condition in _Captorhinus_.
+
+The coronoid process in _Captorhinus_ is not oriented vertically, but
+slopes inward toward the midline at approximately 45 degrees,
+effectively roofing the Meckelian fossa and limiting its opening to the
+median surface of each ramus. When the jaw was adducted, the coronoid
+process moved upward and inside the cheek. A space persisted between
+the process and the cheek because the process sloped obliquely away
+from the cheek and toward the midline of the skull. The external
+surface of the process presented an area of attachment for muscles
+arising from the apposing internal surface of the cheek.
+
+
+_Palate_
+
+The palate of _Captorhinus_ is of the generalized rhynchocephalian type
+(Romer, 1956:71). In _Captorhinus_ the pterygoids and palatines are
+markedly arched and the relatively large pterygoid flange lies almost
+entirely below the lower border of the cheek. The lateral edge of the
+flange passes obliquely across the anterior lip of the Meckelian fossa
+and abuts against the bottom lip of the fossa when the jaw is closed.
+
+The palatines articulate laterally with the maxillary bones by means of
+a groove that fits over a maxillary ridge. This presumably allowed the
+halves of the palate to move up and down rather freely. The greatest
+amplitude of movement was at the midline. Anteroposterior sliding of
+the palate seems impossible in view of the firm palatoquadrate and
+quadrate-quadratojugal articulations.
+
+The subtemporal fossa is essentially triangular, and its broad end is
+bounded anteriorly by the pterygoid flange. The fossa is lateral to
+much of the adductor chamber; consequently muscles arising from the
+parietals passed ventrolaterally, parallel to the oblique quadrate
+ramus of the pterygoid, to their attachment on the mandible.
+
+
+_Musculature_
+
+These osteological features indicate that the adductor muscles of the
+jaw in _Captorhinus_ consisted of two primary masses (Figs. 1, 2, 3).
+The first of these, the capitimandibularis, arose from the internal
+surface of the cheek and roof of the skull and inserted on the bones of
+the lower jaw that form the Meckelian canal and the coronoid process.
+
+[Illustration: FIG. 1. _Captorhinus._ Internal aspect of skull, showing
+masseter, medial adductor, and temporal muscles. Unnumbered specimen,
+coll. of Robert F. Clarke. Richard's Spur, Oklahoma. × 2.]
+
+[Illustration: FIG. 2. _Captorhinus._ Internal aspect of skull, showing
+anterior and posterior pterygoid muscles. Same specimen shown in Fig.
+1. × 2.]
+
+The muscle was probably divided into a major medial mass, the temporal,
+and a lesser, sheetlike lateral mass, the masseter. The temporal was
+the largest of the adductors and arose from the lateral parts of the
+parietal, the dorsal parts of the postorbital, the most posterior
+extent of the postfrontal, and the upper parts of the squamosal. The
+muscle may have been further subdivided, but evidence for subordinate
+slips is lacking. The fibers of this mass were nearly vertically
+oriented in lateral aspect since the parts of the ramus that are
+available for their insertion lie within the anteroposterior extent of
+the adductor chamber. In anterior aspect the fibers were obliquely
+oriented, since the jaw and subtemporal fossa are lateral to much of
+the skull-roof from which the fibers arose.
+
+The masseter probably arose from the quadratojugal, the jugal, and
+ventral parts of the squamosal, although scars on the quadratojugal and
+jugal are lacking. The squamosal bears an indistinct, gently curved
+ridge, passing upward and forward from the posteroventral corner of the
+bone and paralleling the articulation of the squamosal with the
+parietal. This ridge presumably marks the upper limits of the origin of
+the masseter from the squamosal.
+
+[Illustration: FIG. 3. _Captorhinus._ Cross-section of right half of
+skull immediately behind the pterygoid flange, showing masseter,
+temporal, and anterior pterygoid muscles. Same specimen shown in Fig.
+1. × 2.]
+
+[Illustration: FIG. 4. _Captorhinus._ Internal aspect of left
+mandibular fragment, showing insertion of posterior pterygoid muscle.
+KU 8963, Richard's Spur, Oklahoma. × 2.8.]
+
+The masseter inserted on the external surface of the coronoid process,
+within two shallow concavities separated by an oblique ridge. The
+concavities and ridge may indicate that the muscle was divided into two
+sheets. If so, the anterior component was wedge-shaped in
+cross-section, and its thin posterior edge overlapped the larger mass
+that inserted on the posterior half of the coronoid process.
+
+From a functional standpoint it is doubtful that a major component of
+the adductors arose from the quadrate wing of the pterygoid, for when
+the jaw is closed the Meckelian fossa is directly lateral to that bone.
+If the jaw were at almost any angle but maximum depression, the
+greatest component of force would be mediad, pulling the rami together
+and not upward. The mediad component would increase as the jaw
+approached full adduction. Neither is there anatomical evidence for an
+adductor arising from the quadrate wing of the pterygoid. The bone is
+smooth, hard, and without any marks that might be interpreted as muscle
+scars.
+
+The internal adductor or pterygoid musculature in _Captorhinus_
+consisted of anterior and posterior components. The anterior pterygoid
+arose from the lateral edge and the dorsal surface of the pterygoid
+flange. The burred dorsal recurvature of the edge resembles that of the
+flange of crocodiles, which serves as part of the origin of the
+anterior pterygoid in those animals. In _Captorhinus_ the attachment of
+the anterior pterygoid to the edge of the flange was probably
+tendinous, judging from the extent of the development of the edge of
+the flange. From the edge the origin extended medially across the
+dorsal surface of the flange; the ridging of this surface is
+indistinct, leading to the supposition that here the origin was more
+likely to have been fleshy than tendinous.
+
+The anterior pterygoid extended obliquely backward and downward from
+its origin, passed medial to the temporal muscle and inserted on the
+ventral and medial surfaces of the splenial and angular bones beneath
+the Meckelian fossa. The spatial relationship between the palate and
+quadrate-articular joint indicate that the muscle was probably a minor
+adductor in _Captorhinus_.
+
+When the jaw was adducted, the insertion of the anterior pterygoid was
+in a plane nearly level with the origin. Contraction of the anterior
+pterygoid when the jaw was in this position pulled the mandible forward
+and did not adduct it. Maximum depression of the mandible produced
+maximum disparity vertically between the levels of the origin and
+insertion. The force exerted by the anterior pterygoid upon the
+mandible when fully lowered most nearly approached the perpendicular to
+the long axes of the mandibular rami, and the resultant force acting on
+the mandible was adductive.
+
+The adductive component of force therefore decreased as the jaw swung
+upward, with the result that the anterior pterygoid could only have
+been active in initiating adduction and not in sustaining it.
+
+The evidence regarding the position and extent of the posterior
+pterygoid is more veiled. On the medial surface of the mandible, the
+prearticular and articular bones meet in a ridge that ventrally rims
+the glenoid cavity (Fig. 4). The ridge extends anteriorly and curves
+slightly in a dorsal direction and meets the Meckelian fossa. The
+curved part of the ridge is made of the prearticular bone alone. A
+small hollow above the ridge, anterior to the glenoid cavity, faces the
+medial plane of the skull and is bordered by the articular bone behind
+and above, and by the Meckelian fossa in front.
+
+The surfaces of the hollow and the prearticular-articular ridge bear
+tiny grooves and ridges that seem to be muscle scars. The entire area
+of the hollow and its bordering features was probably the area of
+insertion of the posterior pterygoid.
+
+However, the area of insertion lies mostly ventral to the articulating
+surface of the articular bone and extends but slightly in front of it.
+Seemingly little lever effect could be exercised by an adductor
+attaching in this position, namely, at the level of the fulcrum of the
+mandibular ramus.
+
+The posterior pterygoid muscle probably arose from the anterior portion
+of the pterygoid wing of the quadrate, from a ridge on the ventromedial
+surface. From the relationship of the muscle to the articulation of the
+jaw with the skull, it may be deduced that the muscle was limited in
+function to the stabilization of the quadrate-articular joint by
+keeping the articular surfaces in close contact with each other and by
+preventing lateral slipping.
+
+Finally there is evidence for an adductor between the temporal and
+masseter masses. The anterior dorsal lip of the Meckelian fossa
+supports a small knob to which this muscle attached, much as in
+_Sphenodon_ (Romer, 1956:18, Fig. 12). Presumably the muscle was
+sheetlike and attached to the skull roof, medial to the attachment of
+the masseter.
+
+A pseudotemporal may have been present, but evidence to indicate its
+extent and position is lacking. The muscle usually arises from the
+epipterygoid and nearby areas of the braincase and skull roof and
+inserts in the anterior parts of the fossa of the jaw. In _Captorhinus_
+the lateral wing of the pterygoid cuts across the fossa, effectively
+blocking it from the upper and medial parts of the skull, the areas of
+origin for the pseudotemporal.
+
+
+Dimetrodon
+
+The morphology of the skull of _Dimetrodon_ closely resembles that of
+the primitive _Haptodus_ (Haptodontinae, Sphenacodontidae), and "hence
+may be rather confidently described as that of the family as a whole"
+(Romer and Price, 1940:285). The major differences between the two
+genera are in the increased specialization of the dentition, the
+shortening of the lacrimal, and the development of long vertebral
+spines in _Dimetrodon_. The absence of gross differences in the areas
+of the skull associated with the groups of muscles with which this
+study is concerned, implies a similarity in the patterns of musculature
+between the two groups. Romer and Price suggest that _Haptodus_,
+although too late in time to be an actual ancestor, shows "all the
+common features of the _Dimetrodon_ group on the one hand and the
+therapsids on the other." The adductors of the jaw of _Dimetrodon_ were
+probably little changed from those of the Haptodontinae and represent a
+primitive condition within the suborder.
+
+_Dimetrodon_ and _Captorhinus_ differ in the bones associated with the
+adductor mechanism; the area behind the orbit in _Dimetrodon_ is
+relatively shorter, reducing the comparative longitudinal extent of the
+adductor chamber. Furthermore, the dermal roof above the adductor
+chamber slopes gently downward from behind the orbit to its contact
+with the occipital plate in _Dimetrodon_. Temporal fenestrae are, of
+course, present in _Dimetrodon_.
+
+
+_Musculature_
+
+The adductor musculature of the lower jaw in _Dimetrodon_ was divided
+into lateral and medial groups (Figs. 5, 6). The lateral division
+consisted of temporal and masseter masses. The temporal arose from the
+upper rim of the temporal opening, from the lateral wall of the skull
+behind the postorbital strut, and from the dorsal roof of the skull.
+The bones of origin included jugal, postorbital, postfrontal, parietal
+and squamosal. This division may also have arisen from the fascia
+covering the temporal opening (Romer and Price, 1940:53). The muscle
+passed into the Meckelian fossa of the mandible and inserted on the
+angular, surangular, prearticular, coronoid and dentary bones.
+Insertion on the lips of the fossa also probably occurred.
+
+The lateral division arose from the lower rim of the temporal opening
+and from the bones beneath. Insertion was in the Meckelian fossa and
+on the dorsal surface of the adjoining coronoid process.
+
+[Illustration: FIG. 5. _Dimetrodon._ Internal aspect of skull, showing
+masseter and temporal muscles. Skull modified from Romer and Price
+(1940). Approx. × 1/4.]
+
+The reconstruction of the progressively widening masseter as it
+traveled to the mandible follows from the progressively widening
+depression on the internal wall of the cheek against which the muscle
+must have been appressed. The depressed surface included the posterior
+wing of the jugal, the whole of the squamosal, and probably the
+anteriormost parts of the quadratojugal. Expansion of the muscle
+rostrally was prevented by the postorbital strut that protected the
+orbit (Romer and Price, 1940:53).
+
+The sphenacodonts possess the primitive rhynchocephalian kind of
+palate. In _Sphenodon_ the anterior pterygoid muscle arises from the
+dorsal surface of the pterygoid bone and from the adjacent bones. A
+similar origin suggests itself for the corresponding muscle, the second
+major adductor mass, in _Dimetrodon_.
+
+From the origin the muscle passed posterodorsad and laterad of the
+pterygoid flange. Insertion was in the notch formed by the reflected
+lamina of the angular, as suggested by Watson (1948).
+
+In _Dimetrodon_ the relationship of the dorsal surface of the palate
+and the ventromedial surface of the mandible in front of the
+articulation with the quadrate is unlike that in _Captorhinus_. When
+the mandible of _Dimetrodon_ is at rest (adducted), a line drawn
+between these two areas is oblique, between 30 and 40 degrees from the
+horizontal. Depression of the mandible increases this angle. The
+insertion of the anterior pterygoid is thus always considerably below
+the origin, permitting the muscle to be active throughout the movement
+of the mandible, from maximum depression to complete adduction. This
+was a major factor in adding substantially to the speed and power of
+the bite.
+
+The presence and extent of a posterior pterygoid is more difficult to
+assess, because of the closeness of the glenoid cavity and the raised
+ridge of the prearticular, and the occupancy of at least part of this
+region by the anterior pterygoid. In some specimens of _Dimetrodon_ the
+internal process of the articular is double (see Romer and Price,
+1940:87, Fig. 16) indicating that there was a double insertion here.
+Whether the double insertion implies the insertion of two separate
+muscles is, of course, the problem. Division of the pterygoid into
+anterior and posterior portions is the reptilian pattern (Adams, 1919),
+and such is adhered to here, with the posterior pterygoid arising as a
+thin sheet from the quadrate wing of the pterygoid and the quadrate,
+and inserting by means of a tendon on the internal process of the
+articular, next to the insertion of the anterior pterygoid.
+
+[Illustration: FIG. 6. _Dimetrodon._ Internal aspect of right cheek,
+showing anterior and posterior pterygoid muscles. Skull modified from
+Romer and Price (1940). Approx. × 1/4.]
+
+Watson (1948) has reconstructed the musculature of the jaw in
+_Dimetrodon_ with results that are at variance with those of the
+present study. Watson recognized two divisions, an inner temporal and
+an outer masseteric, of the capitimandibularis, but has pictured them
+(830: Fig. 4; 831: Fig. 5C) as both arising from the inner surface of
+the skull roof above the temporal opening. But in _Captorhinus_ the
+masseter arose from the lower part of the cheek close to the outer
+surface of the coronoid process. Watson has shown (1948:860, Fig. 17B)
+the same relationship of muscle to zygoma in _Kannemeyeria sp._ It is
+this arrangement that is also characteristic of mammals and presumably
+of _Thrinaxodon_. In view of the consistency of this pattern, I have
+reconstructed the masseter as arising from the lower wall of the cheek
+beneath the temporal opening.
+
+Watson's reconstruction shows both the temporal and masseter muscles as
+being limited anteroposteriorly to an extent only slightly greater than
+the anteroposterior diameter of the temporal opening. The whole of the
+posterior half of the adductor chamber is unoccupied. More probably
+this area was filled by muscles. The impress on the inner surface of
+the cheek is evident, and the extent of both the coronoid process and
+Meckelian opening beneath the rear part of the chamber indicate that
+muscles passed through this area.
+
+Watson remarked (1948:829-830) that the Meckelian opening in
+_Dimetrodon_ "is very narrow and the jaw cavity is very small. None the
+less, it may have been occupied by the muscle or a ligament connected
+to it. Such an insertion leaves unexplained the great dorsal production
+of the dentary, surangular and coronoid. This may merely be a device to
+provide great dorsal-ventral stiffness to the long jaw, but it is
+possible and probable that some part of the temporal muscle was
+inserted on the inner surface of the coronoid. Indeed a very
+well-preserved jaw of _D. limbatus?_ (R. 105: Pl. I, Fig. 2) bears a
+special depressed area on the outer surface of the extreme hinder end
+of the dentary which differs in surface modelling from the rest of the
+surface of the jaw, has a definite limit anteriorly, and may represent
+a muscle insertion. The nature of these insertions suggests that the
+muscle was already divided into two parts, an outer masseter and an
+inner temporalis." But, unaccountably, Watson's illustration (1948:830,
+Fig. 4) of his reconstruction limits the insertion of the temporal to
+the anterior limit of the Meckelian opening and a part of the coronoid
+process above it. No muscle is shown entering the Meckelian canal. It
+seems more likely that the temporal entered and inserted in the canal
+and on its dorsal lips. The masseter inserted lateral to it, over the
+peak of the coronoid process, and overlapping onto the dorsalmost
+portions of its external face, as Watson has illustrated (Plate I,
+middle fig.).
+
+I am in agreement with Watson's reconstruction of the origins for both
+the anterior and posterior pterygoid muscles. On a functional basis,
+however, I would modify slightly Watson's placement of the insertions
+of these muscles. Watson believed that the jaw of _Dimetrodon_ was
+capable of anteroposterior sliding. The articular surfaces of the jaws
+of _Dimetrodon_ that I have examined indicate that this capability, if
+present at all, was surely of a very limited degree, and in no way
+comparable to that of _Captorhinus_. The dentition of _Dimetrodon_
+further substantiates the movement of the jaw in a simple up and down
+direction. The teeth of _Dimetrodon_ are clearly stabbing devices; they
+are not modified at all for grinding and the correlative freedom of
+movement of the jaw that that function requires in an animal such as
+_Edaphosaurus_. Nor are they modified to parallel the teeth of
+_Captorhinus_. The latter's diet is less certain, but presumably it was
+insectivorous (Romer, 1928). With the requisite difference in levels of
+origin and insertion of the anterior pterygoid in _Dimetrodon_ insuring
+the application of force throughout the adduction of the jaws, it would
+seem that the whole of the insertion should be shifted downward and
+outward in the notch. If this change were made in the reconstruction,
+the anterior pterygoid would have to be thought of as having arisen by
+a tendon from the ridge that Watson has pictured (1948:828, Fig. 3) as
+separating his origins for anterior and posterior pterygoids. The
+posterior pterygoid, in turn, arose by tendons from the adjoining
+lateral ridge and from the pterygoid process of Romer and Price.
+Tendinous origins are indicated by the limitations of space in this
+area, by the strength of the ridges pictured and reported by Watson,
+and by the massiveness of the pterygoid process of Romer and Price.
+
+
+Discussion
+
+A comparison of the general pattern of the adductor musculature of
+_Captorhinus_ and _Dimetrodon_ reveals an expected similarity. The
+evidence indicates that the lateral and medial temporal masses were
+present in both genera. The anterior pterygoid aided in initiating
+adduction in _Captorhinus_, whereas in _Dimetrodon_ this muscle was
+adductive throughout the swing of the jaw. Evidence for the presence
+and extent of a pseudotemporal muscle in both _Captorhinus_ and
+_Dimetrodon_ is lacking. The posterior division of the pterygoid is
+small in _Captorhinus_. In _Dimetrodon_ this muscle has been
+reconstructed by Watson as a major adductor, an arrangement that is
+adhered to here with but slight modification.
+
+The dentition of _Captorhinus_ suggests that the jaw movement in
+feeding was more complex than the simple depression and adduction that
+was probably characteristic of _Dimetrodon_ and supports the
+osteological evidence for a relatively complex adductor mechanism.
+
+In _Captorhinus_ the presence of an overlapping premaxillary beak
+bearing teeth that are slanted posteriorly requires that the mandible
+be drawn back in order to be depressed. Conversely, during closure, the
+jaw must be pulled forward to complete full adduction. The
+quadrate-articular joint is flat enough to permit such anteroposterior
+sliding movements. The relationship of the origin and insertion of the
+anterior pterygoid indicates that this muscle, ineffective in
+maintaining adduction, may well have acted to pull the mandible
+forward, in back of the premaxillary beak, in the last stages of
+adduction. Abrasion of the sides of the inner maxillary and outer
+dentary teeth indicates that tooth-to-tooth contact did occur. Whether
+such abrasion was due to contact in simple vertical adduction or in
+anteroposterior sliding is impossible to determine, but the evidence
+considered above indicates the latter probability.
+
+Similarities of _Protorothyris_ to sphenacodont pelycosaurs in the
+shape of the skull and palate already commented upon by Watson (1954)
+and Hotton (1961) suggest that the condition of the adductors in
+_Dimetrodon_ is a retention of the primitive reptilian pattern, with
+modifications mainly limited to an increase in size of the temporalis.
+_Captorhinus_, however, seems to have departed rather radically from
+the primitive pattern, developing specializations of the adductors that
+are correlated with the flattening of the skull, the peculiar marginal
+and anterior dentition, the modifications of the quadrate-articular
+joint, and the development of the coronoid process.
+
+
+Thrinaxodon
+
+The evidence for the position and extent of the external adductors of
+the lower jaw in _Thrinaxodon_ was secured in part from dissections of
+_Didelphis marsupialis_, the Virginia opossum. Moreover, comparison of
+the two genera reveals striking similarities in the shape and spatial
+relationships of the external adductors. These are compared below in
+some detail.
+
+The sagittal crest in _Thrinaxodon_ is present but low. It arises
+immediately in front of the pineal foramen from the confluence of
+bilateral ridges that extend posteriorly and medially from the base of
+the postorbital bars. The crest diverges around the foramen, reunites
+immediately behind it, and continues posteriorly to its junction with
+the supraoccipital crest (Estes, 1961).
+
+In _Didelphis_ the sagittal crest is high and dorsally convex in
+lateral aspect, arising posterior to and medial to the orbits, reaching
+its greatest height near the midpoint, and sloping down to its
+termination at the supraoccipital crest. Two low ridges extend
+posteriorly from the postorbital process to the anterior end of the
+sagittal crest and correspond to ridges in similar position in
+_Thrinaxodon_.
+
+The supraoccipital crest flares upward to a considerable extent in
+_Thrinaxodon_ and slopes posteriorly from the skull-roof proper. The
+crest extends on either side downward to its confluence with the
+zygomatic bar. The area of the crest that is associated with the
+temporal musculature is similarly shaped in _Didelphis_.
+
+The zygomatic bar in each genus is stout, laterally compressed, and
+dorsally convex on both upper and lower margins. At the back of the
+orbit of _Thrinaxodon_, the postorbital process of the jugal extends
+posterodorsally. At this position in _Didelphis_, there is but a minor
+upward curvature of the margin of the bar.
+
+In _Thrinaxodon_ the dorsal and ventral postorbital processes, arising
+from the postorbital and jugal bones respectively, nearly meet but
+remain separate. The orbit is not completely walled off from the
+adductor chamber. The corresponding processes in _Didelphis_ are
+rudimentary so that the confluence of the orbit and the adductor
+chamber is complete.
+
+The adductor chamber dorsally occupies slightly less than half of the
+total length of the skull of _Thrinaxodon_; in _Didelphis_ the dorsal
+length of the chamber is approximately half of the total length of the
+skull.
+
+[Illustration: FIG. 7. _Thrinaxodon._ Showing masseter and temporal
+muscles. Skull after Romer (1956). Approx. × 7/10.]
+
+The coronoid process in _Thrinaxodon_ sweeps upward posterodorsally at
+an angle oblique to the long axis of the ramus. Angular, surangular and
+articular bones extend backward beneath and medial to the process. The
+process extends above the most dorsal point of the zygomatic bar, as in
+_Didelphis_. The mandibular ramus is ventrally convex in both genera.
+
+The relationships described above suggest that _Thrinaxodon_ and the
+therapsids having similar morphology in the posterior region of the
+skull possessed a temporal adductor mass that was split into major
+medial and lateral components (Fig. 7). The more lateral of these, the
+masseter, arose from the inner surface and lower margin of the
+zygomatic bar and inserted on the lateral surface of the coronoid
+process.
+
+The medial division or temporal arose from the sagittal crest and
+supraoccipital crest and the intervening dermal roof. The muscle
+inserted on the inner and outer surfaces of the coronoid process and
+possibly on the bones beneath.
+
+_Thrinaxodon_ represents an advance beyond _Dimetrodon_ in several
+respects. The zygomatic bar in _Thrinaxodon_ extends relatively far
+forward, is bowed outward and dorsally arched. Consequently, the
+masseter was able to extend from an anterodorsal origin to a posterior
+and ventral insertion. The curvature of the jaw transforms the
+anterodorsal pull of the muscle into a dorsally directed adductive
+movement regardless of the initial angle of the jaw. This is the
+generalized mammalian condition.
+
+With the development of the secondary palate the area previously
+available for the origin of large anterior pterygoid muscles was
+reduced. The development of the masseter extending posteroventrally
+from an anterior origin presumably paralleled the reduction of the
+anterior pterygoids. The therapsid masseter, as an external muscle
+unhindered by the crowding of surrounding organs, was readily available
+for the many modifications that have been achieved among the mammals.
+
+In the course of synapsid evolution leading to mammals, the temporal
+presumably became the main muscle mass acting in adduction of the lower
+jaw. Its primacy is reflected in the phyletic expansion of the temporal
+openings to permit greater freedom of the muscles during contraction.
+In the synapsids that lead to mammals, there is no similar change in
+the region of the palate that can be ascribed to the effect of the
+pterygoid musculature, even though these adductors, like the temporal,
+primitively were subjected to severe limitations of space.
+
+
+Didelphis
+
+Dissections reveal the following relationships of the external
+adductors of the jaw in _Didelphis marsupialis_ (Fig. 8).
+
+     1. MASSETER
+
+     Origin: ventral surface of zygomatic arch.
+
+     Insertion: posteroventral and lateroventral surface of
+     mandible.
+
+     2. EXTERNAL TEMPORALIS Origin: sagittal crest; anteriorly
+     with internal temporalis from frontal bone; posteriorly with
+     internal temporalis from interparietal bone.
+
+     Insertion: lateral surface of coronoid process of mandible.
+
+     3. INTERNAL TEMPORALIS
+
+     Origin: sagittal crest and skull roof, including posterior
+     two-thirds of frontal bone, whole of parietal, and
+     dorsalmost portions of squamosal and alisphenoid.
+
+     Insertion: medial surface of coronoid process; dorsal edge
+     of coronoid process.
+
+[Illustration: FIG. 8. _Didelphis marsupialis._ Showing masseter and
+temporal muscles. Skull KU 3780, 1 mi. N Lawrence, Douglas Co., Kansas.
+× 3/5.]
+
+
+Temporal Openings
+
+In discussions of the morphology and functions of the adductor
+mechanism of the lower jaw, the problem of accounting for the
+appearance of temporal openings in the skull is often encountered. Two
+patterns of explanation have evolved. The first has been the attempt to
+ascribe to the constant action of the same selective force the openings
+from their inception in primitive members of a phyletic line to their
+fullest expression in terminal members. According to this theory, for
+example, the synapsid opening appeared _originally_ to allow freer
+expansion of the adductor muscles of the jaw during contraction, and
+continued selection for that character caused the openings to expand
+until the ultimately derived therapsid or mammalian condition was
+achieved.
+
+The second course has been the attempt to explain the appearance of
+temporal openings in whatever line in which they occurred by the action
+of the same constant selective force. According to the reasoning of
+this theory, temporal fenestration in all groups was due to the need
+to decrease the total weight of the skull, and selection in all those
+groups where temporal fenestration occurs was to further that end.
+
+Both of these routes of inquiry are inadequate. If modern views of
+selection are applied to the problem of explaining the appearance of
+temporal fenestrae, the possibility cannot be ignored that:
+
+     1. Selective pressures causing the inception of temporal
+     fenestrae differed from those causing the continued
+     expansion of the fenestrae.
+
+     2. The selective pressures both for the inception and
+     continued expansion of the fenestrae differed from group to
+     group.
+
+     3. Selection perhaps involved multiple pressures operating
+     concurrently.
+
+     4. Because of different genotypes the potential of the
+     temporal region to respond to selective demands varied from
+     group to group.
+
+[Illustration: FIG. 9. _Captorhinus._ Diagram, showing some
+hypothetical lines of stress. Approx. × 1.]
+
+[Illustration: FIG. 10. _Captorhinus._ Diagram, showing areas of
+internal thickening. Approx. × 1.]
+
+[Illustration: FIG. 11. _Captorhinus._ Diagram, showing orientation of
+sculpture. Approx. × 1.]
+
+Secondly, the vectors of mechanical force associated with the temporal
+region are complex (Fig. 9). Presumably it was toward a more efficient
+mechanism to withstand these that selection on the cheek region was
+operating. The simpler and more readily analyzed of these forces are:
+
+     1. The force exerted by the weight of the skull anterior to
+     the cheek and the distribution of that weight depending
+     upon, for example, the length of the snout in relation to
+     its width, and the density of the bone.
+
+     2. The weight of the jaw pulling down on the suspensorium
+     when the jaw is at rest and the compression against the
+     suspensorium when the jaw is adducted; the distribution of
+     these stresses depending upon the length and breadth of the
+     snout, the rigidity of the anterior symphysis, and the
+     extent of the quadrate-articular joint.
+
+     3. The magnitude and extent of the vectors of force
+     transmitted through the occiput from the articulation with
+     the vertebral column and from the pull of the axial
+     musculature.
+
+     4. The downward pull on the skull-roof by the adductor
+     muscles of the mandible.
+
+     5. The lateral push exerted against the cheek by the
+     expansion of the mandibular adductors during contraction.
+
+     6. The necessity to compensate for the weakness in the skull
+     caused by the orbits, particularly in those kinds of
+     primitive tetrapods in which the orbits are large.
+
+The distribution of these stresses is further complicated and modified
+by such factors as:
+
+     1. The completeness or incompleteness of the occiput and the
+     location and extent of its attachment to the dermal roof.
+
+     2. The size and rigidity of the braincase and palate, and
+     the extent and rigidity of their contact with the skull.
+
+The stresses applied to the cheek fall into two groups. The first
+includes all of those stresses that ran through and parallel to the
+plane of the cheek initially. The weight of the jaw and snout, the pull
+of the axial musculature, and the necessity to provide firm anchorage
+for the teeth created stresses that acted in this manner. The second
+group comprises those stresses that were applied initially at an
+oblique angle to the cheek and not parallel to its plane. Within this
+group are the stresses created by the adductors of the jaw, pulling
+down and medially from the roof, and sometimes, during contraction,
+pushing out against the cheek.
+
+It is reasonable to assume that the vectors of these stresses were
+concentrated at the loci of their origin. For example, the effect of
+the forces created by the articulation of the jaw upon the skull was
+concentrated at the joint between the quadrate, quadratojugal, and
+squamosal bones. From this relatively restricted area, the stresses
+radiated out over the temporal region. Similarly, the stresses
+transmitted by the occiput radiated over the cheek from the points of
+articulation of the dermal roof with the occipital plate. In both of
+these examples, the vectors paralleled the plane of the cheek bones.
+Similar radiation from a restricted area, but of a secondary nature,
+resulted from stresses applied obliquely to the plane of the cheek. The
+initial stresses caused by the adductors of the jaw resulted from
+muscles pulling away from the skull-roof; secondary stresses, created
+at the origins of these muscles, radiated out over the cheek, parallel
+to its plane.
+
+The result of the summation of all of those vectors was a complex grid
+of intersecting lines of force passing in many directions both
+parallel to the plane of the cheek and at the perpendicular or at an
+angle oblique to the perpendicular to the plane of the cheek.
+
+Complexities are infused into this analysis with the division of
+relatively undifferentiated muscles into subordinate groups. The
+differentiation of the muscles was related to changing food habits,
+increased mobility of the head, and increase in the freedom of movement
+of the shoulder girdle and forelimbs (Olson, 1961:214). As Olson has
+pointed out, this further localized the stresses to which the bone was
+subjected. Additional localization of stresses was created with the
+origin and development of tetrapods (reptiles) that were independent of
+an aquatic environment and were subjected to greater effects of gravity
+and loss of bouyancy in the migration from the aqueous environment to
+the environment of air. The localization of these stresses was in the
+border area of the cheek, away from its center.
+
+What evidence is available to support this analysis of hypothetical
+forces transmitted through the fully-roofed skull of such an animal as
+_Captorhinus_?
+
+It is axiomatic that bones or parts of bones that are subject to
+increased stress become thicker, at least in part. This occurs
+ontogenetically, and it occurs phylogenetically through selection. Weak
+bones will not be selected for. Figure 10 illustrates the pattern of
+the areas of the skull-roof in the temporal region that are marked on
+the internal surface by broad, low thickened ridges. The position of
+these ridges correlates well with the position of the oriented stresses
+that were presumably applied to the skull of _Captorhinus_ during life.
+It can be seen from Figure 10 that the central area of the cheek is
+thinner than parts of the cheek that border the central area. The
+thickened border areas were the regions of the cheek that were
+subjected to greater stress than the thin central areas.
+
+External evidence of stress may also be present. The pattern of
+sculpturing of _Captorhinus_ is presented in Figure 11. The longer
+ridges are arranged in a definite pattern. Their position and direction
+correlates well with the thickened border of the cheek, the region in
+which the stresses are distinctly oriented. For example, a ridge is
+present on the internal surface of the squamosal along its dorsal
+border. Externally, the sculptured ridges are long and roughly
+parallel, both to each other and to the internal ridge.
+
+The central area of the cheek is characterized by a reticulate pattern
+of short ridges, without apparent orientation. The thinness of the bone
+in this area indicates that stresses were less severe here. The random
+pattern of the sculpture also indicates that the stresses passed in
+many directions, parallel to the plane of the cheek and obliquely to
+that plane.
+
+
+_Possible Explanation for the Appearance of Temporal Openings_
+
+Bone has three primary functions: support, protection and participation
+in calcium metabolism. Let us assume that the requirements of calcium
+metabolism affect the mass of bone that is selected for, but do not
+grossly affect the morphology of the bones of that mass. Then selection
+operates to meet the needs for support within the limits that are set
+by the necessity to provide the protection for vital organs. After the
+needs for protection are satisfied, the remaining variable and the one
+most effective in determining the morphology of bones is selection for
+increased efficiency in meeting stress.
+
+Let us also assume that bone increases in size and/or compactness in
+response to selection for meeting demands of increased stress, but is
+selected against when requirements for support are reduced or absent.
+Selection against bone could only be effective within the limits
+prescribed by the requirements for protection and calcium metabolism.
+
+We may therefore assume that there is conservation in selection against
+characters having multiple functions. Since bone is an organ system
+that plays a multiple role in the vertebrate organism, a change in the
+selective pressures that affect one of the roles of bone can only be
+effective within the limits set by the other roles. For example,
+selection against bone that is no longer essential for support can
+occur only so long as the metabolic and protective needs of the
+organism provided by that character are not compromised. If a character
+no longer has a positive survival value and is not linked with a
+character that does have a positive survival value, then the metabolic
+demands for the development and maintenance of that character no longer
+have a positive survival value. A useless burden of metabolic demands
+is placed upon the organism because the character no longer aids the
+survival of the organism. If selection caused, for example, muscles to
+migrate away from the center of the cheek, the bone that had previously
+provided support for these muscles would have lost one of its
+functions. If in a population of such individuals, variation in the
+thickness of the bone of the cheek occurred, those with thinner bone in
+the cheek would be selected for, because less metabolic activity was
+diverted to building and maintaining what is now a character of reduced
+functional significance. A continuation of the process would eliminate
+the bone or part of the bone in question while increasing the metabolic
+efficiency of the organism. The bone is no longer essential for
+support, the contribution of the mass of bone to calcium metabolism and
+the contribution of this part of the skeleton to protection have not
+been compromised, and the available energy can be diverted to other
+needs.
+
+The study of _Captorhinus_ has indicated that the central area of the
+cheek was subjected to less stress than the border areas. A similar
+condition in basal reptiles may well have been present. A continued
+trend in reducing the thickness of the bone of the cheek in the manner
+described above may well have resulted in the appearance of the first
+reptiles with temporal fenestrae arising from the basal stock.
+
+Such an explanation adequately accounts for an increased selective
+advantage in the step-by-step thinning of the cheek-wall prior to the
+time of actual breakthrough. It is difficult to see the advantage
+during such stages if explanations of weight reduction or bulging
+musculature are accepted.
+
+After the appearance of temporal fenestrae, selection for the classical
+factors is quite acceptable to explain the further development of
+fenestration. The continued enlargement of the temporal fenestrae in
+the pelycosaur-therapsid lineage undoubtedly was correlated with the
+advantages accrued from securing greater space to allow increased
+lateral expansion of contracting mandibular adductors. Similarly,
+weight in absolute terms can reasonably be suggested to explain the
+dramatic fenestration in the skeletons of many large dinosaurs.
+
+
+Literature Cited
+
+ADAMS, L. A.
+
+     1919. Memoir on the phylogeny of the jaw muscles in recent
+           and fossil vertebrates. Annals N. Y. Acad. Sci.,
+           28:51-166, 8 pls.
+
+ESTES, R.
+
+     1961. Cranial anatomy of the cynodont reptile _Thrinaxodon
+           liorhinus_. Bull. Mus. Comp. Zool., 125(6):165-180,
+           4 figs., 2 pls.
+
+HOTTON, N.
+
+     1960. The chorda tympani and middle ear as guides to origin
+           and development of reptiles. Evolution, 14(2):194-211,
+           4 figs.
+
+OLSON, E. C.
+
+     1961. Jaw mechanisms: rhipidistians, amphibians, reptiles.
+           Am. Zoologist, 1(2):205-215, 7 figs.
+
+ROMER, A. S.
+
+     1928. Vertebrate faunal horizons in the Texas Permo-Carboniferous
+           redbeds. Univ. Texas Bull., 2801:67-108, 7 figs.
+
+     1956. Osteology of the reptiles. Univ. Chicago Press, xxii +
+           772 pp., 248 figs.
+
+ROMER, A. S. and PRICE, L. I.
+
+     1940. Review of the Pelycosauria. Geol. Soc. Amer. Special
+           Papers, No. 28, x + 538 pp., 71 figs., 46 pls.
+
+WATSON, D. M. S.
+
+     1948. _Dicynodon_ and its allies. Proc. Zool. Soc. London,
+           118:823-877, 20 figs., 1 pl.
+
+     1954. On _Bolosaurus_ and the origin and classification of
+           reptiles. Bull. Mus. Comp. Zool., 111(9):200-449,
+           37 figs.
+
+     _Transmitted December 5, 1963._
+
+
+30-1522
+
+
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK THE ADDUCTOR MUSCLES OF THE JAW IN SOME PRIMITIVE REPTILES ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

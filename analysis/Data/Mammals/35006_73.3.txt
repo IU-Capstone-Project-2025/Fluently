@@ -1,0 +1,2519 @@
+﻿The Project Gutenberg eBook of An Experimental Translocation of the Eastern Timber Wolf
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: An Experimental Translocation of the Eastern Timber Wolf
+
+Author: Thomas F. Weise
+        Richard A. Hook
+        L. David Mech
+        William Laughlin Robinson
+
+Release date: January 19, 2011 [eBook #35006]
+                Most recently updated: January 7, 2021
+
+Language: English
+
+Credits: Produced by Chris Curnow, Joseph Cooper, Leonard Johnson
+        and the Online Distributed Proofreading Team at
+        https://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK AN EXPERIMENTAL TRANSLOCATION OF THE EASTERN TIMBER WOLF ***
+
+
+
+
+Produced by Chris Curnow, Joseph Cooper, Leonard Johnson
+and the Online Distributed Proofreading Team at
+https://www.pgdp.net
+
+
+
+
+
+
+
+
+
+
+
+                                FOREWORD
+
+
+The Fish and Wildlife Service is proud to present this bulletin
+describing an experimental attempt to re-establish an endangered species
+in part of its native range. Two States, a Federal agency, a university,
+and two private conservation groups pooled their resources to make the
+project possible. This effort exemplifies the type of cooperation the
+Department of the Interior believes is imperative in beginning the
+gigantic task of trying to save and restore the threatened and
+endangered animals in this country today.
+
+Our pride is bittersweet, however. The experiment was a complete success
+in providing the information sought: What might happen when a pack of
+wolves is transplanted to a new area where the native population has
+been all but exterminated by Man? It was the answer to this question
+that was disappointing. Nevertheless, experiments are for learning, no
+matter what the answers may be. We are convinced that the answers
+provided by this project will ultimately be most helpful in future
+attempts to restore endangered animals to parts of their native ranges
+where they can begin again on the road to recovery.
+
+                                       [Illustration: Lynn A. Greenwalt]
+
+                                       DIRECTOR
+
+                                       U. S. Fish and Wildlife Service
+
+Additional Copies Available from
+
+UNITED STATES DEPARTMENT OF THE INTERIOR
+
+FISH AND WILDLIFE SERVICE
+
+REGION 3
+
+Federal Building
+
+Fort Snelling
+
+Twin Cities, Minnesota 55111
+
+
+
+                    AN EXPERIMENTAL TRANSLOCATION OF
+                        THE EASTERN TIMBER WOLF
+
+
+  THOMAS F. WEISE
+  Department of Biology
+  Northern Michigan University[1]
+
+  WILLIAM L. ROBINSON
+  Department of Biology
+  Northern Michigan University
+
+  RICHARD A. HOOK
+  Department of Biology
+  Northern Michigan University
+
+  L. DAVID MECH
+  Endangered Wildlife Research Program
+  U. S. Fish & Wildlife Service[2]
+
+[1] _Marquette, Michigan 49855_
+
+[2] _Division of Cooperative Research, Patuxent Wildlife Research
+Center, Laurel, Md. 20810. Mailing address: North Central Forest
+Experiment Station, Folwell Ave., St. Paul, MN. 55101._
+
+
+
+
+                            TABLE OF CONTENTS
+
+
+  FOREWORD                                           Inside front cover
+
+  ABSTRACT                                      Back side of title page
+
+  INTRODUCTION                                                        1
+
+  THE STUDY AREA                                                      2
+
+  METHODS                                                             4
+
+  RESULTS                                                             8
+    Social Structure of the Translocated Wolves                       8
+    Aerial Tracking                                                  10
+    Movements of the Translocated Wolves                             11
+      Post-Release Phase                                             11
+      Directional Movement Phase                                     11
+      Exploratory Phase                                              11
+      Settled Phase                                                  11
+      Movements of the Remaining Pack Member                         11
+      Movements of Wolf No. 10                                       12
+    Feeding Habits                                                   16
+    Citizen Sightings                                                17
+    Habitat Use                                                      19
+    Failure of Female No. 11 to Whelp                                19
+    Demise of the Translocated Wolves                                19
+
+  DISCUSSION                                                         21
+    Effect of Captivity and Human Contact                            21
+    Movements                                                        22
+      Environmental Influences                                       22
+      Possible Homing Tendencies                                     22
+      Distances Traveled                                             23
+      Home Range Size                                                25
+      Selection of a Territory                                       25
+    Vulnerability and Mortality                                      25
+    Food Habits and Predation                                        26
+    An Alternate Approach                                            26
+
+  CONCLUSIONS                                                        26
+
+  ACKNOWLEDGMENTS                                                    27
+
+  LITERATURE CITED                                                   27
+
+
+
+
+                                ABSTRACT
+
+
+Two male and two female eastern timber wolves (_Canis lupus lycaon_),
+live-trapped in Minnesota were released in March 1974 near Huron
+Mountain in the Upper Peninsula of Michigan. Their movements were
+monitored by aerial radio-telemetry.
+
+The wolves separated into a group of three and a single animal after
+release. The single, a young female, remained in the release region in
+an area of 346 square miles (896 km²). The pack of three moved
+generally westward for 13 days and then explored a 1,631 square-mile
+(4,224 km²) region but settled after 2 months in a 246 square-mile
+(637 km²) area about 55 miles (88 km) southwest of the release site.
+The adult female, which mated while captive prior to release, failed to
+whelp.
+
+In early July, one male was killed by an automobile, and the other was
+shot. The remaining female from the pack then began to move over a much
+larger area again. On September 20th she was trapped by a coyote (_Canis
+latrans_) trapper and shot. Two months later the single female was
+killed by a deer (_Odocoileus virginianus_) hunter.
+
+These results indicated that wolves can be transplanted to a new region,
+although they may not settle in the release area itself. The
+displacement of the translocated wolves in this experiment apparently
+caused an initial increase in their daily movements, and probably
+increased their vulnerability, at least during the first 2 months after
+release. The two females examined post-mortem were in good physical
+condition indicating that food supplies were adequate in Michigan.
+
+Human-caused mortality was responsible for the failure of the wolves to
+establish themselves. Therefore recommendations for a more successful
+re-establishment effort include a stronger public-education campaign,
+removal of the coyote bounty, and release of a greater number of
+wolves.
+
+
+
+
+                              INTRODUCTION
+
+
+The eastern timber wolf (_Canis lupus lycaon_) originally occurred
+throughout the eastern United States and Canada but is now extinct in
+most of the United States. The only substantial population left inhabits
+northern Minnesota (Fig. 1). The estimated wolf population in the
+Superior National Forest of northeastern Minnesota in winter 1972-73 was
+about 390 (Mech 1973), and a tentative population estimate for the
+entire state is 500 to 1,000 (Mech and Rausch 1975). A well known
+population of about 15 to 30 wolves is also found in Isle Royale
+National Park, Lake Superior, Michigan (Mech 1966; Wolfe and Allen 1973;
+Peterson 1974).
+
+[Illustration: _Fig. 1.--Original and present range of the Eastern
+Timber Wolf_]
+
+In the Upper Peninsula of Michigan, Hendrickson et al. (1975) estimated
+the wolf population in 1973 at 6 to 10 animals, existing in three
+scattered areas: Iron County, Northern Marquette County, and Chippewa
+and Mackinac Counties (Fig. 2). Lone wolves made up 90 per cent of
+verified wolf observations there in recent years, and no more than two
+animals have been found together in at least the past 13 years.
+
+Hendrickson et al. (1975) postulated that the current low wolf
+population is maintained through possible sporadic breeding and
+immigration from Ontario and Minnesota (via Wisconsin), but is
+suppressed by illegal shooting and losses incidental to coyote (_Canis
+latrans_) bounty trapping.
+
+The eastern timber wolf was classed as an endangered species in the
+conterminous United States in 1967 under the Endangered Species Act of
+1966. There then followed widespread national and international concern
+and support for preserving natural wolf populations. Substantial
+scientific and ethical arguments exist for preventing the extinction of
+a species or subspecies of any plant or animal. In addition, the
+presence of the wolf adds immeasurably to a wilderness experience; its
+esthetic value is incalculable.
+
+Thus in 1970, D. W. Douglass, Chief of the Wildlife Division, Michigan
+Department of Natural Resources, suggested that restoration of a viable
+population of wolves in Michigan would be desirable, especially if such
+efforts could be supported by private organizations. In 1973 the Huron
+Mountain Wildlife Foundation and the National Audubon Society offered
+financial support, and we undertook this pilot project to obtain
+information necessary for a full-scale restoration effort.
+
+The objectives of the research project were to determine whether (1)
+wild wolves could be moved to a new location, (2) such translocated
+wolves could remain in the new area, (3) they could learn to find and
+procure enough food in the new area, (4) they could tolerate and survive
+human activities, and (5) they would breed and help to re-establish a
+new population in Upper Michigan.
+
+As background we had the results of three previous attempts to
+transplant wolves to new areas. In 1952, one male and three female zoo
+wolves were released on Isle Royale (Mech 1966). They were attracted to
+humans, became nuisances, and had to be disposed of. Two were shot, one
+was captured and returned to the mainland, and the male escaped; his
+fate is unknown.
+
+The second transplant effort took place on uninhabited, 36-square-mile
+(92 km²) Coronation Island in southeastern Alaska (Merriam 1964; Mech
+1970). In 1960, two male and two female, 19-month-old captive wolves,
+were released there. They learned to prey on black-tailed deer
+(_Odocoileus hemionus columbianus_), and multiplied to about 11 members
+by 1964.
+
+In the third case, two male and three female laboratory wolves from
+Barrow, Alaska were released near Umiat in August 1972, 175 miles (282
+km) southeast of Barrow (Henshaw and Stephenson 1974). Eventually, all
+moved toward centers of human habitation and three were shot within 7
+months. A fourth returned to the pens where she was reared, and was
+recaptured, while the fate of the fifth wolf remains unknown. Three of
+the five had taken the correct homing direction.
+
+Because results of the earlier attempts at translocating wolves
+suggested that pen-reared wolves did not fare well in the wild, we
+decided to use wild wolves that were accustomed to fending for
+themselves and avoiding people. They would have to be released in the
+most inaccessible area we could find and encouraged to stay there. To
+maximize their chances of breeding, we would have to try to obtain
+animals with already established social ties, that is, members of the
+same pack. Approval was obtained from the Minnesota Department of
+Natural Resources to live-trap up to five wolves in Minnesota, and a
+permit was granted by the Michigan Department of Natural Resources to
+release up to five in Upper Michigan.
+
+This bulletin describes the results of the experimental translocation.
+
+
+
+
+                             THE STUDY AREA
+
+
+The area selected for the release of the translocated wolves was the
+Huron Mountain area (Fig. 2) in northern Marquette County in the Upper
+Peninsula of Michigan (47° N Latitude; 88° W Longitude). This is one of
+the largest roadless tracts in Michigan, and has one of the lowest
+year-around densities of resident humans. Much of the area is owned by
+the Huron Mountain Club, on which accessibility is restricted.
+
+The Upper Peninsula is 16,491 square miles (42,693 km²) in area,
+bounded by Lake Superior to the north, and by Lakes Huron and Michigan
+to the east and south. The Wisconsin border along the western portion of
+the Upper Peninsula forms no distinctive ecological boundary. The Upper
+Peninsula is in the Canadian biotic province (Dice 1952), characterized
+by a northern hardwoods climax, interspersed with spruce-fir and pine
+subclimaxes. The northwestern portion of the Upper Peninsula, including
+Marquette, Baraga, Houghton, Ontonagon, and Iron Counties, contains
+rugged highlands and rock outcroppings which rise to elevations
+approaching 2,000 feet (610 m) in several locations.
+
+The human population of the Upper Peninsula is 303,342, with a rural
+density of about 9.0 persons per square mile or 3.5 persons per square
+kilometer (Table 1). The population of the Upper Peninsula has remained
+at about 300,000 for the past 50 years, and the rural human populations
+of local areas have generally declined or remained stable. During those
+50 years, the wolf population has declined from several hundred animals
+to near extinction, with the population estimated by Hendrickson et al.
+(1975) at 6 to 10 remaining wolves. These authors concluded that the
+bounty on wolves between 1935 and 1960 was largely responsible for the
+demise of the species in the Upper Peninsula. The bounty was removed
+in 1960, after only one wolf was taken in 1959. Legal protection was
+granted by Michigan in 1965. The Endangered Species Act of 1973 added
+federal protection in 1974.
+
+[Illustration: _Fig. 2.--Range of the wolf in Upper Michigan in 1973,
+and the release point (from Hendrickson et al. 1975)_]
+
+_Table 1. Density of Rural Human Populations in Four Wolf Ranges in the
+Great Lakes Region_
+
+  ----------------------------------------------------------------------
+                                                         Rural[4]
+                      Area in                          Population
+                     Square Miles                       Density Per
+                      (Square     Percent    Rural     Square Mile
+  Location           Kilometers)  Urban[3] Population (Square Kilometer)
+  ----------------------------------------------------------------------
+  Ontario[5]           412,582                              3.3
+                    (1,068,125)    80.4     1,364,33       (1.27)
+
+  Northern[6]           12,627                              6.4
+  Minnesota            (32,690)    68.0        81,246      (2.5)
+
+  Upper                 16,491                              9.0
+  Michigan[7]          (42,693)    51.4       147,841      (3.5)
+
+  Iron and Oneida
+  Co.[8]                 1,859                             12.3
+  Wisconsin             (4,812)    26.0        22,899      (4.7)
+  ----------------------------------------------------------------------
+
+[3] Towns or cities of more than 2,500 people
+
+[4] Including towns with a population less than 2,500
+
+[5] 1966 Census, 1970-71 Canada Yearbook
+
+[6] Cook, Koochiching, Lake and St. Louis Counties
+
+[7] All 15 Upper Peninsula counties
+
+[8] Last described wolf range in Wisconsin (Thompson 1952)
+
+The white-tailed deer (_Odocoileus virginianus_) would be the major prey
+for wolves in Michigan, and there appear to be sufficient numbers to
+support wolves. The Michigan Department of Natural Resources pellet
+count estimates for the spring deer population in the Upper Peninsula in
+1973 was 10 ± 21.9% deer per square mile (3.9 ± 21.9% per km²). Deer
+densities of 10 to 15 per square mile (3.9 to 5.8 per km²) supported
+wolf densities of one wolf per 10 square miles (26 km²) in Algonquin
+Provincial Park, Ontario (Pimlott 1967).
+
+The population of deer wintering on the 14 square-mile (36 km²) Huron
+Mountain deer yard in winter 1973-74 was estimated at 73.3 ± 49.5% deer
+per square mile (28.3 ± 49.5% deer per km²) by the pellet count
+method (Laundre 1975). Thus total wintering population on the Huron
+Mountain Club, the wolf release area, would be about 1,000 deer.
+
+The utilization of available browse by deer in the Huron Mountain deer
+yard reached 95% by March 8, 1969 and 92% by March 5, 1970 (Westover
+1971). The minimum winter deer loss (actual number found) in 1969 was 40
+animals, of which at least 12 had starved, and it was estimated that
+perhaps up to 33% of the deer starved in the Huron Mountain Yard in
+1968-69 (Westover 1971). The Huron Mountain yard continues to be
+overbrowsed, with high deer mortality expected in severe winters. Many
+other northern deer yards of the Upper Peninsula are also overbrowsed
+and are dwindling in area. Thus we expected that numbers of vulnerable
+deer (Pimlott et al. 1969; Mech and Frenzel 1971) would be available to
+wolves.
+
+Beavers (_Castor canadensis_) are an important food source for wolves in
+many areas during summer (Mech 1970), and they are common throughout the
+Upper Peninsula. The beaver population on the 26 square-mile (67 km²)
+Huron Mountain Club was estimated at 46.9, or about 1.9 beavers per
+square mile (0.7 per km²) (Laundre 1975). Moose (_Alces alces_) are
+rare on mainland Michigan.
+
+
+
+
+                                METHODS
+
+
+The general procedure for this study was to attempt to capture an intact
+pack of wolves in Minnesota, fit each animal with a radio-collar
+(Cochran & Lord 1963), release them in northern Michigan, and follow
+their fate through aerial and ground radio-tracking (Kolenosky and
+Johnston 1967).
+
+A pack was selected from an area near Ray, Minnesota (Fig. 3), south of
+International Falls (48° N Latitude, 93° W Longitude), where wolf
+hunting and trapping were legal. Two male and two female wolves were
+captured by professional trapper Robert Himes, under contract for the
+project, between December 24, 1973 and January 21, 1974 (Table 2). Three
+of the wolves were trapped (Fig. 4) in No. 4 or 14 steel traps (Mech
+1974), and one (No. 13) was live-snared (Nellis 1968). If these animals
+had not been solicited for this study, they would have been killed and
+their pelts sold, as part of the trapper's livelihood, before the
+Endangered Species Act of 1973 took effect.
+
+[Illustration: _Fig. 3.--Capture and release points of the translocated
+wolves_]
+
+At capture each wolf was immobilized with a combination of phencyclidine
+hydrochloride (Sernylan) and promazine hydrochloride (Sparine)
+intramuscularly (Mech 1974), with dosage recommendations from Seal et
+al. (1970). They were then carried out of the woods (Fig. 5), held in
+pens in Minnesota, and fed road-killed white-tailed deer, supplemented
+with beef scraps.
+
+[Illustration: _Fig. 4.--Wolf caught in trap (Photo by Don Breneman)_]
+
+[Illustration: _Fig. 5.--The captured wolves were drugged and carried to
+an enclosure in Minnesota (USFWS Photo by L. David Mech)_]
+
+There is no certain way of ascertaining that wolves are related or that
+they belong to the same pack. Thus to maximize chances that members of
+the same pack would be captured, the trapper set traps where he
+suspected only one pack ranged. To try to determine whether the
+individual wolves he caught were socially related, we instructed the
+trapper to hold the wolves in individual pens until we could observe
+their introductions to each other. Wolves No. 10 and 11 were placed
+together on January 23, 1974, and No. 13 and 14 were released into the
+pen with No. 10 and 11 on February 4.
+
+[Illustration: _Fig. 6.--Before being transported to Michigan, each wolf
+was weighed (USFWS Photo by Don Reilly)_]
+
+_Table 2. Background information on the translocated wolves_
+
+  ----------------------------------------------------------------------
+  Wolf Number         10            11             12            13
+  ----------------------------------------------------------------------
+  Sex                  F             F              M             M
+
+  Estimated age[9]  1-2 years     6-7 years    2-3 years     2-3 years
+
+  Capture date      12-24-73      1-5-74       1-19-74       1-21-74
+
+  Capture Method    Trapped       Trapped      Trapped       Live-snared
+
+  Capture foot      Left front    Right front  Right front
+
+  Capture-related   Two nails     Three nails    None          None
+    damage            lost          lost
+
+  Weight at          55 lb.         65 lb.       74 lb.       75 lb.
+    capture         (24.9 kg)      (29.4 kg)    (33.5 kg)    (33.9 kg)
+
+  Weight, March 5   46 lb.          58 lb.       66 lb.       60 lb.
+                    (20.8 kg.)     (26.3 kg)    (29.9 kg)    (27.2 kg)
+
+  % weight loss     16%            11%           11%          20%
+
+  Canine length,     0.83"        0.25-0.50"     0.93"        0.87"
+    upper           (21 mm)       (6-13 mm)     (24 mm)      (22 mm)
+
+  Canine length,     0.75"        very worn      0.82"        0.85"
+     lower          (19 mm)                     (21 mm)      (21 mm)
+
+  Testes[10]          ----           ----        0.5 × 1.0"   0.5 × 0.75"
+                                                (13×25 mm)   (13×19 mm)
+
+  Teats             Tiny, not      Dark,        ----         ----
+                    apparent       evident
+  ----------------------------------------------------------------------
+
+[9] Gross subjective estimates based on tooth wear
+
+[10] Estimated
+
+On March 5, 1974, the wolves were again immobilized for pre-release
+processing in Minnesota. An initial dose, and several supplemental doses
+of phencyclidine and promazine were administered intramuscularly and
+intraperitoneally between 9:00 a.m. and 4:30 p.m. CDT. The wolves were
+restrained with muzzles and their legs were bound together during
+processing and transport. Two of the wolves were blindfolded because
+they were too active otherwise.
+
+The wolves were ear-tagged with both Minnesota and Michigan Department
+of Natural Resources tags, and weights and body measurements were taken
+(Fig. 6, 7). Their teeth were inspected and canines were measured to try
+to obtain an indication of age. Each animal was fitted with a radio
+transmitter (AVM Instrument Co., Champaign, Illinois[11]) molded into an
+acrylic collar (Mech, 1974).
+
+[Illustration: _Fig. 7.--Standard body measurements were also taken
+(USFWS Photo by Don Reilly)_]
+
+Each wolf was injected with 1,200,000 units of Bicillin (Wyeth), 2 cc of
+distemper-hepatitus-leptospirosis vaccine (BioCeutic Laboratories D-Vac
+HL), 0.5 cc of vitamins A, D, E, (Hoffman-LaRoche[11] Injacom 100), 1 cc
+of vitamin C-fortified vitamin B complex (Eli-Lilly, Betalin Complex
+FC), and 2 cc anti rabies vaccine (Fromms Raboid). These injections
+(Fig. 8) were given to insure that the wolves would be as healthy as
+possible upon release, and would not contract or introduce diseases in
+the release area.
+
+[11] _Mention of trade names does not constitute endorsement by the U.
+S. Government._
+
+Some 30 to 60 cc of blood were drawn from each wolf for analysis of its
+physical condition (Seal et al. 1975).
+
+The processing of the wolves took from 8:45 a.m. to 2:00 p.m. CDT on
+March 5, 1974. The animals were then transported by truck to
+International Falls, loaded on an airplane (Fig. 9), and flown for 2
+hours (Fig. 10) to the Marquette County Airport, Michigan. They were
+turned on different sides each half hour while drugged during their
+processing and transport to prevent lung congestion. At the Marquette
+Airport they were transferred by van to a 25 foot by 25 foot by 12 foot
+(7.6 m × 7.6 m × 3.7 m) holding pen on the Huron Mountain Club property
+35 miles (56.3 km) northwest of Marquette.
+
+[Illustration: _Fig. 8.--Various vitamins and vaccines were administered
+to each wolf to insure their health and freedom from common canine
+diseases (USFWS Photo by Don Reilly)_]
+
+The wolves were released individually into the holding pen while each
+was still partly under sedation (Fig. 11). The transmitting frequency of
+each wolf's collar was rechecked on the receiver as each wolf was
+released into the pen (Fig. 12). All wolves were in the pen by 10:00
+p.m. EDT, and were held there until March 12.
+
+Four road-killed deer carcasses, provided by the Michigan Department of
+Natural Resources, had been placed inside the pen for food (Fig. 13),
+and a tub of drinking water was provided. Carcasses of five road-killed
+deer and a black bear (_Ursus americanus_) were placed within a
+half-mile (0.8 km) of the release pen as food for the wolves after their
+release.
+
+We had scheduled the release for mid-March for several reasons which we
+felt would maximize chances for success. Deer are concentrated then in
+the Huron Mountain area and vulnerable to predation. Pregnancy and
+subsequent whelping of the alpha female might increase her attachment to
+the new area. Furthermore, the snow is usually deepest then and hinders
+travel. However, a few days before the release, a freak rainstorm had
+settled the snow, and cold temperatures had frozen it so hard that
+animals could walk readily on top, making travel conditions excellent.
+
+[Illustration: _Fig. 9.--The anesthetized wolves were placed aboard an
+aircraft in International Falls, Minnesota (USFWS Photo by Don Reilly)_]
+
+[Illustration: _Fig. 10.--The wolves were kept lightly drugged during
+the flight to Michigan (USFWS Photo by L. David Mech)_]
+
+[Illustration: _Fig. 11.--In the Huron Mountain area of Upper Michigan
+the wolves were taken to another holding pen (Photo by Don Pavloski)_]
+
+[Illustration: _Fig. 12.--Biologists checked the signal from each
+radio-collar before the wolves were released into the holding pen (Photo
+by Don Pavloski)_]
+
+An observation shack 120 feet (36.6 m) from the pen was used to
+determine the activities and interactions of the four wolves. Weise
+spent three nights in the shack and also observed the wolves each day of
+the one-week penned period, for a total of 20 hours of observation (Fig.
+14).
+
+During preliminary air and ground checks of radio equipment, we
+discovered that Wolf No. 10 had a defective collar. Thus on March 12, we
+subdued her with a choker, restrained her with ropes, replaced her
+collar and released her just after sunset. We then opened the pen, and
+let the other wolves loose.
+
+[Illustration: _Fig. 13.--While in captivity, the wolves were fed
+primarily on road-killed deer (Photo by Don Pavloski)_]
+
+The subsequent locations of the wolves were then checked intermittently
+through aerial radio-tracking (Mech 1974), with a receiver and antenna
+from the AVM Instrument Co., Champaign, Illinois, used in a Cessna 172
+and a Piper Colt. We made two flights each day for the first 2 days
+after release, one each day when weather permitted, until April 20,
+three per week in May, approximately two per week from June through
+September, and three per week in October and November. A total of 194
+hours were flown, 80 per cent by Weise, and the remainder by Hook.
+Aerial locations were usually recorded to the nearest 40 acres (16 ha.).
+
+We also tracked the wolves from the ground whenever interesting or
+significant activities were observed during flights or were reported by
+ground observers. Carcasses of prey animals were investigated from the
+ground after consumption was complete and the wolves had left. Deer
+eaten by the wolves were considered killed by them if the ground check
+revealed fresh blood or flesh, or signs of a struggle. Scats were
+collected along the tracks of the wolves in the snow whenever possible.
+
+When radio signals were received from the same location for unusually
+long periods, ground checks were made to determine the cause.
+
+Attempts were made to verify all sightings and track records reported by
+local citizens, by comparing them with the aerially-determined
+locations.
+
+
+
+
+                                RESULTS
+
+               Social Structure of the Translocated Wolves
+
+
+Wolves No. 11, 12, and 13 were captured in Minnesota within a mile (1.6
+km) of each other, and No. 11 and 12 were taken in the same trap set 12
+days apart; Wolf No. 10 was caught approximately 7.5 miles (12.1 km)
+southeast of the others (Table 2). All were judged to be thin but in
+good condition.
+
+Females No. 10 and 11 were introduced into the same pen on January 23.
+No. 11 was reluctant to enter the pen containing No. 10 while several
+observers were around, but entered within 15 minutes after all but one
+had left. No. 11 went directly to No. 10 which was lying in a corner as
+she usually did, and pawed the fence at No. 10's back. When the pawing
+became more vigorous, No. 10 snapped at No. 11, moving only her head and
+neck. No. 11 then turned directly to No. 10, sniffed the top of her head
+and mane, and lay down beside No. 10 with her nose still in No. 10's
+mane. No. 10 remained still throughout the whole process. The trapper
+reported that later No. 11 licked the face of No. 10. Sniffing and
+licking anteriorally are usually signs of intimacy between wolves
+(Schenkel 1947).
+
+The two male wolves (No. 12 and No. 13) were allowed into the pen with
+the two females on February 4. No. 13 remained in the original adjoining
+pen and did not move in with the females immediately, but No. 12 did.
+There were no signs of aggression among any of the four wolves. No. 11,
+12, and 13 moved freely around the pen while in Minnesota, but No. 10
+most often lay in one corner by herself.
+
+Trapper Himes first observed vaginal bleeding in female 11 on February
+7. He observed Wolves 11 and 12 mating (with normal coupling) on
+February 12 and 16.
+
+No unusual aggressive or agonistic social interactions of consequence
+were observed among the wolves while penned in Michigan, from March 5 to
+12. Animals 11, 12 and 13 would lie down and feed together in various
+combinations. No. 10 was less active than the others and often stayed
+inside a shelter box within the enclosure, but would come out and mix
+with the other wolves for brief periods when humans were not in
+evidence. Her actions were indicative of a low ranking, immature,
+distressed, or alien animal.
+
+Male No. 12 was the only wolf that would stare directly at a person
+approaching the pen. He was bolder and more direct in his actions than
+any of the other animals. This is the wolf that mated with adult female
+No. 11 while penned in Minnesota, and thus can be considered the "alpha
+male," or pack leader.
+
+When approached by humans, all the wolves would urinate and defecate;
+No. 11 and 12 would pace, No. 10 (when out of the shelter box) and No.
+13 would lie in the far corner of the pen and remain motionless (Fig.
+14). No. 11 limped on her right front foot throughout the penned period,
+but this limp did not appear to have a significant effect on her
+activities or movements.
+
+Blood samples taken on March 5, 1974 were analyzed and interpreted by
+Dr. U. S. Seal of the Veterans Administration Hospital in Minneapolis.
+The assays performed included hematology, 16 blood chemistries,
+thryoxine, and cortisol (Seal et al., 1975), plus estrogen and
+progesterone. According to Seal (personal communication), all blood
+values for wolves No. 10, 12, and 13 were similar and indicative of good
+health and minimal stress, as indicated by very low levels of the
+enzymes LDH, CPK, and SGOT. Such levels are typical of animals in a
+state of good nutrition that have been in captivity for several weeks
+and have accepted their captive circumstances. The MCV's were normal,
+indicating no vitamin deficiency, and the MCHC showed full hemoglobin
+content in the red cells, indicating no lack of iron. The white blood
+cell counts were much lower than usually seen in newly trapped wolves.
+All the remaining chemistry values from these three wolves were in the
+normal range for the season.
+
+[Illustration: _Fig. 14.--The Minnesota wolves in their Michigan pen
+(Photo by Tom Weise)_]
+
+Wolf No. 11, however, differed in that she had a much higher hemoglobin
+level, higher blood glucose and white cell count, and higher levels of
+LDH, CPK, and SGOT, indicating that she was significantly stressed. This
+is corroborated by a low thyroxine level of 0.6 micrograms percent,
+which is hypothyroid for wolves.
+
+The fibrinogen levels of all four animals were normal, indicating that
+there was no acute or chronic inflammation in progress.
+
+The wolves ate well in captivity but still lost from 11% to 20% of their
+capture weight (Table 2). Himes estimated that they consumed an average
+of 8 lb. (3.6 kg) of food per wolf per day, while penned in Minnesota.
+In Michigan the wolves consumed about a deer and a half, or an estimated
+5.5 lb. (2.5 kg) per wolf per day. These estimates fall within the range
+of food consumption figures estimated for wolves in the wild (Mech and
+Frenzel 1971). After the wolves began feeding on the first carcass, they
+completely consumed it before starting a second one, even though four
+carcasses were available; they ate nothing from the other two carcasses.
+
+We released the wolves at dusk on March 12, 1974. Having just restrained
+Wolf No. 10 without drugs, to replace her collar, we untied her and let
+her free; she bounded off northwestward. We then opened the pen, and No.
+12, whom we had judged to be the alpha male, left in less than 5 minutes
+and trotted off steadily toward the west-southwest. The remaining two
+animals paced around the pen for about 5 minutes and then lay down.
+Because we felt that they might become too widely separated from the
+others, three of us approached the pen opposite the door to encourage
+the wolves to find the open gate. Five minutes later No. 13 left the pen
+running southwestward, and No. 11 left less than 5 minutes later. Upon
+exiting, No. 11 appeared to smell the track of No. 12 and slowly trotted
+in his direction.
+
+
+                            Aerial Tracking
+
+Our success in locating the translocated wolves by aerial radio-tracking
+was 95% (Table 3), similar to that of Mech and Frenzel (1971) working
+with wolves in their native range in Minnesota.
+
+During the part of the study in which extensive snow cover was present
+(March 13 to April 20) wolves No. 11, 12, and 13 were observed 14 times
+from the aircraft. The first time they were seen, near Laws Lake, they
+appeared alarmed and moved into heavy cover. The next day, however, and
+on all subsequent observations, the aircraft appeared to have little
+effect on their behavior, although they sometimes looked up at it. No.
+10 was seen only once by a passenger in the tracking aircraft, and she
+immediately hid from view. It seems likely that she avoided the
+aircraft. After the snow melted and leaves appeared, we no longer saw
+the wolves.
+
+The activities of the three wolves during the 14 aerial observations
+were as follows: traveling 4 (Fig. 15), feeding and scavenging 5 (Fig.
+16), resting 4, and sleeping 1.
+
+_Table 3. Success in locating wolves by aerial tracking_
+
+  ---------------------------------------------------------
+  Wolf Number           10        11        12        13
+  ---------------------------------------------------------
+  Number of
+  tracking attempts    113        65        59        67
+
+  Number of
+  times located        105        62        59        61
+
+  Percent located       93%       95%      100%       91%
+
+  Number of
+  times observed         1        14(Pack)
+
+  Last date tracked  Nov. 17   Sept. 19  July 10   July 27
+  ---------------------------------------------------------
+
+[Illustration: _Fig. 15.--The wolves often used woods roads for
+traveling (Photo by James Havemen)_]
+
+[Illustration: _Fig. 16.--The released wolves were sometimes observed
+from the aircraft feeding on deer they had killed (Photo by Richard P.
+Smith)_]
+
+
+                  Movements of the Translocated Wolves
+
+Wolf No. 10 never joined any of the other radioed wolves after their
+release, whereas the others generally remained as a pack. Thus the
+movements of the pack will be described separately from those of lone
+wolf No. 10.
+
+Four phases were seen in the movements of the pack: (1) Post-Release
+Phase, March 12 to 14; (2) Directional Movement Phase, March 15 to 24;
+(3) Exploratory Phase, March 25 to May 7, and (4) Settled Phase, May 7
+to July 6.
+
+
+Post-Release Phase
+
+This first phase of the wolves' movements, including the first 2 days
+after release, seemed to be characterized by confusion and indecision.
+On March 13, the morning after the release, the three wolves were
+separated, but all remained within 2.0 miles (3.2 km) south to west of
+the release site, the general direction in which they had headed upon
+release (Fig. 17). No. 11 and 13 were about a half-mile (0.8 km) apart
+in the morning, and by late afternoon, No. 13 apparently had joined No.
+11. No. 12 remained about 2 miles away from the others all day, although
+he did move about a half-mile during the day. By the 14th, No. 11 and 13
+had moved 2 miles southwestward, but were separated by a half-mile; No.
+12 had moved only a half-mile west.
+
+
+Directional Movement Phase
+
+During this phase, all three wolves left the immediate vicinity of the
+release point and headed southwestward. Early in this phase, wolves No.
+11 and 13 rejoined (by March 15) and traveled 9 miles (14.5 km)
+west-southwest of their previous day's location, while No. 12 took a
+more northerly route. Nevertheless, by March 19, No. 12 had joined the
+other two wolves near Skanee, some 14 miles (22.5 km) west-southwest of
+the release point (Fig. 17). For the next several weeks these wolves all
+remained together and travelled a straight-line distance of about 40
+miles (64.1 km) to a point just north of Prickett Dam about 11 miles
+(17.6 km) west-southwest of L'Anse, arriving there on March 24 (Fig.
+17).
+
+
+Exploratory Phase
+
+In the Exploratory Phase of their movements, from March 25 to May 7,
+wolves No. 11, 12, and 13 covered a 1,631-square-mile (4,224 km^2) area
+from the town of Atlantic Mine on the Keweenaw Peninsula to the north to
+a point about 64 miles (103.0 km) south, near Gibbs City (Fig. 18). In
+the opposite dimension, they ranged from Keweenaw Bay on the east to 9
+miles (14.5 km) south of Ontonagon, 42 miles (67.6 km) west of there.
+This phase was characterized by long movements, considerable
+zigzagging, and revisiting of certain general regions such as the base
+of the Keweenaw Peninsula and areas east and north of Kenton (Fig. 18).
+
+An interesting social change also occurred during this phase: No. 13
+split from the pack sometime after April 26 when the pack had reached
+its westernmost location, south of Ontonagon. Whereas No. 11 and 12
+returned east-northeastward toward Otter Lake, where they had been in
+late March, No. 13 headed west-northwestward to the Porcupine Mountains,
+18 miles (30.0 km) west of where the pack had last been located together
+(Fig. 18). Thus on May 2, Wolf No. 13 was 51 miles (82.0 km) west of No.
+11 and No. 12. Nevertheless, 5 days later all the wolves were found near
+Gibbs City, 62 miles (99.8 km) southwest of the Porcupine Mountains, and
+45 miles (72.4 km) south of Otter Lake; No. 13 was only 6 miles (9.7 km)
+from his packmates. The next time an attempt could be made to locate the
+wolves, on May 16, they had reunited.
+
+
+Settled Phase
+
+This last phase of the wolves' movements includes the period when the
+animals had settled into an area similar to the size of home ranges
+reported for other wolves in the Great Lakes Region (Mech 1970). From
+May 7 to July 6, this pack lived in a 246-square mile (637 km^2) area
+with its center north of Gibbs City (Fig. 18). On July 10, wolf No. 12
+was found dead. Presumably he had died by July 6, for he had not moved
+since then.
+
+Wolf No. 13 had again split from his associates between June 14 and 19
+and begun to travel alone. On July 20, his remains were discovered 24
+miles (38.6 km) southeast of where the pack had settled. These deaths
+will be discussed in detail later.
+
+
+Movements of the Remaining Pack Member
+
+After the death of her mate (No. 12), Wolf No. 11 left the
+246-square-mile area in which the pack had settled (Fig. 19). By July
+15, she had traveled 28 miles (45.0 km) northwest of this area and by
+the 20th, was back by Otter Lake, 40 miles (64.4 km) north. She returned
+south of Gibbs City on July 27, and was found about 3 miles (4.8 km)
+north of the Wisconsin border on August 2, near Lac Vieux Desert about a
+half mile (0.8 km) north of the Wisconsin border on August 6, and near
+Bruce Crossing on August 9.
+
+[Illustration: _Fig. 17.--Movements during the Post-release and
+Directional Movement Phases of Wolves No. 11, 12, and 13_]
+
+On August 13, Wolf No. 11 was located 1½ miles (2.4 km) southeast of
+Ewen on the western edge of her previous locations. She was not located
+again until August 28. By then she had moved a straight-line distance of
+almost 60 miles (96.5 km) to an area in Marquette County just south of
+Squaw Lake, in the Witch Lake area. In doing so, she probably had passed
+through the area previously explored just north of the Iron County
+region where the pack had spent so much of its time. These widespread
+movements are characteristic of lone wolves even in their native range
+(Mech and Frenzel 1971).
+
+No. 11 was still in the Witch Lake area on September 2. Due to poor
+flying conditions we did not locate her again until September 19. At
+that time she was on the Floodwood Plains a quarter mile (0.4 km) north
+of the Floodwood Lakes. She was caught in a coyote trap during the night
+of September 19 and shot about 10 a.m. on September 20.
+
+
+Movements of Wolf No. 10
+
+The movements of female wolf No. 10 during the post-release phase were
+markedly different from those of the pack. In fact, this wolf apparently
+skipped the relatively sedentary post-release phase of movements that
+the pack displayed, and immediately dispersed (Fig. 20).
+
+By the morning after release, No. 10 was 10 miles (16.0 km) southeast of
+the release point and by late afternoon was an additional 5.5 miles (8.8
+km) southeast (March 13). On the night of March 15 this wolf crossed
+four-lane Highway 41, and on the 16th was found 1¼ miles (2.0 km)
+south of the Marquette County Airport, approximately 32 miles (51.5 km)
+from the release site; she had traveled a minimum of 36 miles (57.9 km)
+to get there. However by March 20 she had returned to within 4 miles
+(6.4 km) of the release point, and by the 24th was within a quarter mile
+of the site.
+
+The other three wolves had already dispersed westward and were near
+Prickett Dam, some 40 miles (64.0 km) away. It is not known whether No.
+10 tried to locate them. Her locations indicate that she did not,
+although she may not have been able to find or follow their route. From
+April 2 to 15, No. 10 made a second exploration southward, again
+returning to the Huron Mountain area. She also made a third such trip on
+June 14 to 22, even crossing Highway 41 again.
+
+[Illustration: _Fig. 18.--Exploratory and Settled Phases in the
+movements of Wolves No. 11, 12, and 13_]
+
+[Illustration: _Fig. 19.--Movements of No. 11 after the death of No. 12
+and 13_]
+
+From the time of release until the first week in September, there seemed
+to be a pattern to the movements of Wolf No. 10. She made nine trips of
+about 40 miles (64.0 km) each, starting near Huron Mountain, extending
+southeasterly about 20 miles (32.0 km), and then returning northwesterly
+to the Huron Mountain area (Fig. 20).
+
+[Illustration: _Fig. 20.--Movements of Wolf No. 10_]
+
+During March, April, and the first week of May Wolf No. 10 made three of
+these trips roughly paralleling the Lake Superior shore, and she
+remained in the Huron Mountain area for several days between trips. From
+late May until mid-July she made four such trips but did not remain long
+anywhere. During that time she gradually moved westerly to near the
+Dead River Basin. In late July she made another trip to the Dead River
+Basin area after a stay near the Big Bay dump. These trips enlarged No.
+10's range considerably.
+
+Early in July, Wolf No. 10 moved almost directly south from the Huron
+Mountain area to the Silver Lake area, again expanding her range to the
+west. From September 5 until October 10 she remained in the Silver Lake
+area, and there was no apparent pattern to her movements then. After the
+wolf was located on September 15 near a bait that bear hunters had put
+out on the west edge of the Mulligan Plains, a ground check was made. No
+evidence of the wolf was found at the bear bait, consisting mostly of
+fish, and no signal was heard there. A signal was picked up in the
+southwest corner of the Mulligan Plains, and the wolf was flushed from
+her bed about 80 yards (75 m) away.
+
+On October 10, this wolf began a westward move, and on October 22 she
+was found south of Herman, 25 miles (40.2 km) west of Silver Lake. On
+October 24 she was located 6.5 miles (10.4 km) to the northeast, near
+Dirkman Lake. By October 26 she had moved 12 miles (19.3 km) southeast
+to within a mile of the town of Michigamme. From there she gradually
+moved northeastward. She was shot near Van Riper Lake during deer
+hunting season, probably on the morning of November 16.
+
+During the westward move, this wolf had increased the size of her range
+by 87 square miles (222.7 km^2), about a 30% increase. She seemed to be
+heading back to the Silver Lake area when she was killed.
+
+
+                             Feeding Habits
+
+What little information we could obtain on the wolves' feeding habits
+indicated considerable variation (Table 4).
+
+In the Skanee area, which the pack of three first visited after leaving
+the release area, deer were abundant, and 7 to 10 were seen within a
+quarter mile (0.4 km) of the pack on March 20. It is possible that the
+wolves killed a deer there, for they remained in the area for a few
+days. They did scavenge deer feet and head remains on the 22nd at Laws
+Lake, 12 miles (19.3 km) southwest of Skanee. Deer were also sighted
+within a quarter mile of the wolves on March 25, April 15, April 16, May
+7, June 8, and June 14.
+
+The first confirmed deer kill was made east of Otter Lake about April 1.
+The deer was a 4½-year-old doe with a partly healed broken left front
+leg (radius) and fat-depleted bone marrow (1%); a bullet was found in
+the skin of the right front leg.
+
+The pack also fed on a discarded deer carcass near Nisula, and then
+killed a 5½-year-old doe near Kenton on April 15 (Fig. 21); this
+animal also had bone marrow with a low fat content (6%).
+
+The next day, lone Wolf No. 10, back in the Huron Mountain area, killed
+a 4-5-year-old doe with fat-depleted marrow (5.6%).
+
+No doubt not all of the deer killed or fed upon by the translocated
+wolves were found, even when snow was present. However, it is clear from
+the observations we did make, and from the fact that all 26 scats we
+analyzed from this pack contained deer hair, that the wolves did adapt
+to killing deer in their new environment and that it was their primary
+food.
+
+Near Atlantic Mine the wolves scavenged on garbage from loggers, and
+then near Otter Lake they spent several days also feeding on garbage. A
+discarded cow (_Bos taurus_) head was scavenged, and at least one
+red-backed vole (_Clethrionomys gapperi_) was consumed. Lone Wolf No. 10
+was found near the Big Bay dump nine times, or 29% of the times she was
+located during tourist season (May through August).
+
+_Table 4. Analysis of scats collected from released wolves_
+
+  ---------------------------------------------------------------------
+               No.  Wolf
+  Date        Scats  No.   Location and items found
+  ---------------------------------------------------------------------
+  March 22      5  Pack    Laws Lake, deer hair
+
+  March 29      1  Pack    Otter Lake area, deer hair, red-backed vole
+                           hair, grass, refuse (including coffee
+                           grounds)
+
+  April 3       2  Pack    Otter Lake deer kill, scats soft and dark,
+                           some deer hair
+
+  April 8       3  Pack    Nisula, deer hair
+
+  April 17      5  Pack    Kenton deer kill, scats soft and dark,
+                           deer hair
+
+  June 28       3  Pack    Gibbs city area, summer and winter deer hair
+  ---------------------------------------------------------------------
+  Total (Pack) 19
+  ---------------------------------------------------------------------
+  March 27      2  No. 10  Conway Lake, deer hair
+
+  April 18      2  No. 10  Pine Lake, deer hair
+
+  June 1        1  No. 10  Huron Mountain Club, fawn deer hair and hoof
+  ---------------------------------------------------------------------
+  Total No. 10  5
+  ---------------------------------------------------------------------
+  Sept. 20      1  No. 11  Floodwood Plains 3.1 miles (5.0 km) south of
+                           Witch Lake, deer hair, and ruffed grouse
+                           (_Bonasa umbellus_) bones and nails
+
+  July 1        1  No. 12  Collected from under dead No. 12, 1.9 miles
+                           (3.0 km) north of Amasa, deer hair
+  ---------------------------------------------------------------------
+  Total        26  All
+
+[Illustration: _Fig. 21.--Each deer killed by the translocated wolves
+was examined from the ground (Photo by Richard P. Smith)_]
+
+The three wolves were located near beaver lodges or dams on April 10,
+April 15, May 7, June 8, and June 12. No beavers were known to have been
+killed by them, however, and no beaver remains were found in their scats
+(Table 4).
+
+
+                            Citizen Sightings
+
+The wolves were seen by many citizens early after their release (Table 5
+and 6), no doubt because of the wolves' confusion, their extensive
+movements, and their lack of familiarity with the region. They often
+traveled near populated areas and probably moved more during the day
+than they would have in their native territory. They were known to have
+made 14 daytime moves (from citizen reports) in addition to those
+observed from the aircraft. In at least five of the citizen reports, the
+wolves were observed sitting alongside the road, or otherwise making
+little attempt to move away immediately. However, after April 13 the
+group of three wolves was reported by citizens only twice, and Wolf No.
+10, three times.
+
+_Table 5. Significant events in history of Wolf No. 10_
+
+  Date      Event
+
+  March 12  Wolves released in Huron Mountain area
+            (T52N-R28W-Sec 20)
+
+  March 13  No. 10 separated from the other three wolves and
+            never reunited
+
+  March 15  Sighted from tracking car crossing County Road 492
+            south of Marquette County Airport, 6:35 p.m. (EDT)
+            (T47N-R26W-Sec 33)
+
+  March 15  Crossed a four-lane highway between Marquette and
+            Negaunee about 4:00 p.m. (EDT) (T49N-R26W-Sec 29)
+
+  March 24  Located from the air less than 0.5 miles (0.8 km)
+            from release pen (T52N-R28W-Sec 20)
+
+  March 27  Reported seen by Huron Mountain Club guard on edge
+            of First Pine Lake, 6:30 p.m. (EDT)
+            (T52N-R28W-Sec 29)
+
+  April 18  Visited bear carcass 100 feet (30.5 m) from
+            release pen, had also visited 3 nearby deer
+            carcasses (T52N-R28N-Sec 20)
+
+  April 18  Confirmed deer kill by No. 10 near Pine Lake,
+            Huron Mountain Club (T52N-R28W-Sec 20)
+
+  June 6    Reported seen by gate guard, Huron Mountain Club
+            (T51N-R27W-Sec 6)
+
+  June 3    Reported seen north of Saux Head Lake on Lake
+            Superior beach (T50N-R26W-Sec 17)
+
+  June 20   Reported seen crossing four-lane highway headed
+            north about 5 miles (8.0 km) west of Marquette
+            (T50N-R26W-Sec 24)
+
+  May 22 }
+  May 23 }
+  June 5 }  Located near Big Bay dump, probably scavenging.
+  July 15}  Bears are baited at the dump by local citizens and
+  July 20}  tourists (T51N-R27W-Sec 16)
+  July 31}
+  Aug. 6 }
+  Aug. 13}
+
+  Aug. 16   Back in Huron Mountain area between Conway and
+            Ives Lakes. 5:35 p.m. (EDT) (T52N-R28W-Sec 35)
+
+  Aug. 27   Returned to Big Bay dump, 11:10 a.m. (EDT)
+            (T51N-R27W-Sec 16)
+
+  Aug. 30   Huron Mountain area, 8:45 a.m. (EDT)
+            (T49N-R28W-Sec 9)
+
+  Sept. 2   Left Huron Mountain area for last time. Located on
+            Yellow Dog Plains, 8:45 a.m. (EDT)
+            (T50N-R28W-Sec 13)
+
+  Sept. 5   Near Silver Lake, 8:45 a.m. (EDT). Begins rambling
+            move westward out of established range
+            (T49N-R28W-Sec 17)
+
+  Sept. 15  Tracked on ground on Mulligan Plains, 4:45 p.m.
+            (EDT) (T49N-R28W-Sec 9)
+
+  Oct. 22   Farthest west, 22 miles (35.4 km) west of Silver
+            Lake. Begins rambling return east.
+
+  Nov. 16   Killed ½ mile (0.8 km) south of Van Riper Lake,
+            5.4 miles (8.4 km) north of Champion
+            (T49N-R30W-Sec 36)
+
+_Table 6. Significant events in history of Wolves
+                     No. 11, 12 and 13_
+
+  Date      Event
+
+  March 12  Wolves released in Huron Mountain area
+            (T52N-R28W-Sec 20)
+
+  March 18  Two wolves reported seen near Ravine River, Skanee
+            area, the smaller one limping (T51N-R31W-Sec 2)
+
+  March 19  First aerial fix of the three wolves in the same
+            location (T52N-R31W-Sec 36)
+
+  March 20  Wolves reported howling about 2 miles (3.2 km)
+            east of Arvon Tower, 10 miles (16 km) south of
+            Skanee (T50N-R31W-Sec 4)
+
+  March 22  Wolves dug up five discarded doe and
+            fawn heads and 27 deer legs near Laws
+            Lake (T50N-R32W-Sec 18)
+
+  March 22  Wolves reported crossing highway north of Herman,
+            4 miles (6.4 km) southeast of L'Anse, 8:30 a.m.
+            (EDT) (T50N-R33W)
+
+  March 25  Wolves reported in Pelkie area 6 miles (9.6 km)
+            east of Baraga by DNR officer, 8:30 a.m. (EDT)
+            (T51N-R34W-Sec 27SW)
+
+  March 25  Wolves crossed road 2.5 miles (4 km) north of
+            Pelkie near Otter River 11:00 a.m. (EDT) 5 miles
+            (8 km) southwest of Otter Lake (T51N-R34W-Sec 5)
+
+  March 25  Wolves reported seen crossing Highway M26, 2 miles
+            (3.2 km) north of Twin Lakes 7:30 a.m. (EDT)
+            (T52N-R38W-Sec 12)
+
+  March 26  Wolves reported seen by logger during most of
+            morning 9:00-11:00 a.m. (EDT), 4 miles (6.4 km)
+            south of Houghton, (T54N-R35W-Sec 14)
+
+  March 26  Wolves crossed Highway M26 south of Atlantic, 4:30
+            p.m. (EDT), (T54N-R34W-Sec 16)
+
+  March 26  Wolves sighted from aircraft, eating garbage from
+            cutting crew, 4:20 p.m. (EDT) (T54N-R34W-Sec 9NE)
+
+  March 29  Wolves reported being chased away from house by
+            dog, had been feeding on discarded cow head 150
+            feet (45.7 m) from house near Otter Lake
+            (T52N-R33W-Sec 5)
+
+  March 31  Wolves sighted in Otter Lake area (T52N-R33W-Sec 5)
+
+  April 2   First confirmed wolf-killed deer, Arnheim area
+            about 10 miles (16 km) north of Baraga
+            (T52N-R33W-Sec 11)
+
+  April 5   Wolves reported seen at 9:00 a.m. (EDT) on county
+            road 5 miles (8 km) southwest of Otter Lake, small
+            wolf reported as appearing fat (T53N-R35W-Sec 36)
+
+  April 8   Wolves dug up old deer carcass about 150
+            feet (45.7 m) from house near Nisula
+            (T50N-R36W-Sec 4)
+
+  April 10  Wolves reported seen by logger in Nisula area
+            (T50N-R36W-Sec 5)
+
+  April 13  One wolf sighted crossing Highway M28 in morning
+            between Kenton and Sidnaw
+
+  April 15  Wolves killed deer near Kenton (T47N-R36W-Sec 8)
+
+  April 18  Observed the three wolves from the tracking
+            aircraft swim the East Branch of Ontonagon River,
+            southeast of Kenton (T47N-R37W-Sec 7)
+
+  May 2     No. 13 split from other two wolves; found in
+            northwest Ontonagon County (T51N-R32W-Sec 21)
+
+  May 7     All wolves back in Iron County for the second
+            time, not known to leave until July 15
+
+  May 7     Forest service crew reported seeing the wolves and
+            tracking aircraft north of Gibbs City near old
+            deer carcass (T45N-R35W-Sec 26)
+
+  May 15    Loggers reported six wolves (one with collar)
+            (T54N-R37W-Sec 33)--Probably saw the collared
+            wolves twice
+
+  May 16    Confirmation from aerial location that the three
+            wolves had reunited south of Mallard Lake after
+            May 2 split
+
+  June 19   No. 13 again separated from No. 11 and 12
+
+  July 11   Wolf No. 12 found dead, killed by automobile just
+            before July 6, north of Amasa (T45N-R33W-Sec 17)
+
+  July 15   Wolf No. 11 moved out of Iron County for the first
+            time since May 7, found north of Kenton
+            (T49N-R38W-Sec 31)
+
+  July 20   Wolf No. 13 found dead from gunshot, south of
+            Sagola, last previous location (June 27) at same
+            location where No. 12 killed by automobile
+            (T52N-R30W-Sec 5)
+
+  Aug. 6    Wolf No. 11 located near Wisconsin border, ¾
+            miles (1.2 km) east of Lac Vieux Desert, 10:15
+            a.m. (EDT) (T43N-R38W-Sec 9)
+
+  Aug. 13   Wolf No. 11 located 1.5 miles (2.4 km) southeast
+            of Ewen 25 miles (40.5 km) north of Lac Vieux
+            Desert, 10:10 a.m. (EDT) (T46N-R40W-Sec 36)
+
+  Aug. 28   No locations since Aug. 13. Wolf No. 11 back in
+            Marquette County .25 miles (0.4 km) south of Squaw
+            Lake, a 60-mile (96.5 km) move eastward
+            (T45N-R30W-Sec 21)
+
+  Sept. 20  No. 11 trapped and shot on Floodwood Plaine 3.1
+            miles (5.0 km) south of Witch Lake
+            (T44N-R24W-Sec 11)
+
+
+                              Habitat Use
+
+The relative percentages of various habitats in which the translocated
+wolves were found during aerial locations (Table 7) did not indicate a
+preference for any particular habitat type. Evidently the animals chose
+their travel routes and ranges on some basis other than forest habitat,
+or at least habitat was not of any overriding importance in their
+movements.
+
+_Table 7. Habitat types in which the released wolves were located_
+
+  --------------------------------------------------------
+                       No. of    Percent       Percent
+  Habitat             Locations  of Total    Available[12]
+  --------------------------------------------------------
+  Northern Hardwoods     43         48.3         40.9
+
+  Northern Hardwoods-
+    Coniferous[13]      (57)       ...[13]     ...[13]
+
+  Spruce-fir             19         21.3         17.0
+
+  Aspen-hardwoods        11         12.4         20.5
+
+  Elm-ash-maple           1          1.1          4.5
+
+  Pine                    2          2.2          5.5
+
+  Oak                     0          0.0          1.4
+
+  Non-commercial
+    forests               0          0.0          2.6
+
+  --------------------------------------------------------
+  Other (near towns,
+    farms, dumps)        13         14.6(8.9)[13] 7.6
+                         __        ______       _____
+
+  Totals                 89(146)   100.00       100.0
+  --------------------------------------------------------
+
+[12] Spencer and Pfeifer 1966.
+
+[13] This forest type was not distinguished separately by Spencer and
+Pfeifer (1966), so they did not provide availability figures for it.
+Thus in this comparison, we did not include the 57 wolf locations that
+fell in the type. However in calculating percentage figures for
+non-forest areas (towns, farms, dumps), these 57 fixes could validly be
+used as representing forest locations.
+
+
+                  Failure of Female No. 11 to Whelp
+
+There was no sign that adult female No. 11 whelped or attempted to
+locate or construct a den. The usual gestation period for wolves is
+about 63 days (Brown 1936). Because No. 11 was seen coupled in
+copulation on February 12 and 16, she should have whelped between April
+13 and April 21, if she had conceived. Probably she would have moved
+little during the preceding 2 or 3 weeks (Mech 1970). However no such
+changes in this animal's movements were noticed. The three wolves stayed
+near Kenton between April 15 and April 18 but also killed a deer during
+that time. They moved extensively from April 19 to May 7. The only
+indirect evidence that the female may have been pregnant was an
+observation made by a local citizen on April 5 (Table 6) who saw the
+three wolves and stated that the small wolf looked "fat." This would
+probably have been No. 11, but a full stomach could easily have been
+mistaken for pregnancy.
+
+Unfortunately, neither the reproductive tract collected from No. 11 in
+September nor the blood sample taken in early March shed any light on
+the cause for the wolf's failure to produce pups. The ovaries did
+contain _corpora albicantia_, indicating that at some time the wolf had
+ovulated, but it could not be stated with certainty just when (R. D.
+Barnes, personal communication). The blood progesterone levels were more
+helpful. No. 11 had 3,560 picograms of progesterone per milliliter,
+compared to 56 picograms per milliliter for Wolf No. 10, whose
+reproductive tract appeared immature. This high progesterone level of
+No. 11 indicated that the animal had recently ovulated, but it was
+impossible to tell whether she was carrying any fetuses at the time the
+sample was taken (U. S. Seal, personal communication).
+
+
+                    Demise of the Translocated Wolves
+
+All four translocated wolves were killed by humans (Table 8). The alpha
+male (No. 12) was the first victim. He was found from the air in the
+same location on July 6 and 10. A ground check on July 11 showed him
+already decomposed. He lay about 60 feet (18.3 m) from paved highway US
+141 north of Amasa (Fig. 22). The articular processes on the right side
+of his fifth and sixth cervical vertebrae were broken and inverted. Part
+of the process of the sixth cervical vertebra was lodged in the neural
+canal between the fifth and sixth cervical vertebrae and would have
+exerted pressure on his spinal cord. His acrylic radio collar was also
+cracked on the right side in three places. We concluded that he had been
+struck and killed by an automobile. A scat found beneath the remains
+contained deer hair, so apparently the animal had been feeding not long
+before his death.
+
+[Illustration: _Fig. 22.--The remains of Wolf No. 12 were found near a
+highway, and broken bones indicated he had been hit by a vehicle (Photo
+by Richard P. Smith)_]
+
+Wolf No. 13 was killed next. He had been located south of Sagola in
+Dickinson County on July 20, the first time he was found since June 27.
+He was still there on July 27, so a ground check was made. It revealed
+that the wolf had been dead for perhaps 2 or 3 weeks. His flesh had
+decomposed, and only hair, bones and the transmitting collar remained
+(Fig. 23). His leg bones and ribs were mostly disarticulated, his skull
+was separated from the vertebral column, and his mandible had separated.
+A small caliber bullet had passed through the ramus of the left mandible
+and had entered the base of the cranium. The hole through the mandible
+was 0.26 inch × 0.34 inch (6.6 mm. × 8.6 mm.) and that through the
+cranium was 0.34 inch × 1.30 inch (8.6 mm. × 33.0 mm.). Three small lead
+fragments were removed from the cranium.
+
+[Illustration: _Fig. 23.--Wolf No. 13 had been shot, as the hole in the
+jawbone indicates (Photo by Tom Weise)_]
+
+The remains of Wolf No. 13 were sent to the Michigan Department of
+Natural Resources Wildlife Research Center at Rose Lake and examined by
+staff pathologists Dr. L. D. Fay and Mr. John Stuht. No fractures or
+other signs were found that might indicate that he had been trapped.
+However, some of the smaller foot bones were missing and a complete
+examination was not possible. Notches were found in both shoulder
+blades, and one rib was broken, suggesting that the animal had been shot
+twice by a small caliber firearm in addition to the head shot. The hole
+in the left scapula indicated a deep penetrating wound. The notch in the
+right scapula indicated a bullet traveling more parallel to the body.
+
+_Table 8. Details of Deaths of Translocated Wolves_
+
+  ----------------------------------------------------------------------
+  Wolf No.     10              11            12              13
+  ----------------------------------------------------------------------
+  Sex        Female          Female         Male            Male
+
+  Last date
+  tracked    Nov. 17         Sept. 19       July 10         July 27
+
+  Date       Nov. 16[14]     Sept. 20       June 28 to      Early
+  killed                                    July 4          July[14]
+
+  Date       Nov. 18         Sept. 20       July 11         July 28
+  found
+
+  Manner     Gunshot in      Gunshot in,    Struck by       Gunshot in
+  of death   head and        head, after    automobile      head and
+             right foreleg   being trapped                  chest
+
+  Location   Van Riper Lake  Floodwood      1.9 miles (3.0  2 miles (3.2
+  of death   5.4 miles (8.7  Plain 3.1      km) north of    km) south of
+             km) north of    miles (5.0     Amasa (T45N-    Sagola (T42N
+             Champion (T49N  km) south of   R33W-Sec 17)    -R30W-Sec 5)
+             -R30W-Sec 36)   Witch Lake
+                             (T44N-R24W-
+                             Sec 11)
+
+  Weight     52 lb.          56.5 lb.
+             (23.6 kg)       (25.6 kg)      Unknown[15]     Unknown[15]
+
+  Condition  Excellent       Good           Unknown[15]     Unknown[15]
+  ----------------------------------------------------------------------
+
+[14] Estimate
+
+[15] Decomposed
+
+Wolf No. 11 was caught the night of September 19, 1974 in a coyote trap
+set by a trapper from Channing. The next morning the trapper came upon
+the trapped wolf by surprise at a range of 12 feet (3.6 m). She growled
+and lunged toward him, and thinking he was in danger, the trapper shot
+the wolf in the head. The .22 caliber bullet entered below the right eye
+and lodged in the skull. The trapper immediately took the animal to the
+Michigan Department of Natural Resources office in Crystal Falls and
+reported the incident.
+
+The wolf weighed 56.5 lb. (25.6 kg), 1.5 lb. (0.68 kg) less than when
+she was brought to Michigan. Her general condition was good, with some
+omental fat, but no subcutaneous fat. She did harbor ten tapeworms
+(_Taenia pisiformis_) about 40-50 cm long and a few hookworms
+(_Uncinaria stenocephala_), as determined by Mr. John Wenstrom (personal
+communication), Biology Department, Northern Michigan University. Both
+are common tapeworms of wolves (Mech 1970).
+
+Wolf No. 10 was shot by a deer hunter, probably on the morning of
+November 16, the second day of firearms deer season. On November 17 her
+signal was heard from near a cabin on the south shore of Van Riper Lake.
+The hunters occupying the cabin later said they had removed the collar
+from the wolf, which they had found dead on the afternoon of November
+16. Before we had learned this, the carcass of Wolf No. 10 was
+discovered without the collar by another hunter, about a half mile (0.8
+km) south of Van Riper Lake. It had been shot through the right leg,
+shattering the radius and ulna, and through the head, the bullet
+entering the left frontal bone and exiting below the right eye. In
+addition the radio collar had been shattered by a bullet and was
+missing, and one ear had been cut off. We identified the wolf from the
+tag in the other ear.
+
+The wolf had gained 6 lb. (2.7 kg) since she had been brought to
+Michigan, and had heavy internal and subcutaneous fat. She had light
+infections of two species of tapeworms (_Echinococcus granulosus_ and
+_Taenia pisiformis_), and of one species of hookworm (Uncinaria
+stenocephala), as determined by John Wenstrom. _Echinococcus granulosus_
+is not uncommon in wolves (Mech 1970). The other two species were
+discussed above.
+
+
+
+
+                               DISCUSSION
+
+
+Wolves No. 11, 12, and 13 undoubtedly were members of the same pack.
+This conclusion is based on the fact that they did not fight when placed
+together in captivity, that they freely intermixed while penned, that
+No. 11 and No. 12 copulated, and that all three wolves generally
+traveled as a unit after their release. No. 11 and No. 12 were always
+located together from a few days after their release until the death of
+No. 12. Temporary splitting, as with No. 13 is a normal occurrence in
+wild wolf packs (Mech 1966).
+
+The identity of Wolf No. 10 remains unknown. She was captured 7.5 miles
+(12.1 km) away from the other three, and in captivity she behaved
+differently from them, remaining more to herself but intermingling with
+the others occasionally, with no signs of aggression. The face licking
+of No. 10 by No. 11 could be interpreted as a sign of patronizing
+intimacy as an adult might treat a subordinate offspring. The teeth of
+Wolf No. 10 had very little wear, indicating that she probably was less
+than 3-years old, whereas the teeth of No. 11 were blunt from wear. The
+tendency for No. 10 to withdraw from the others and from human beings
+indicated that she probably was a low-ranking or subordinate animal, a
+peripheral member of the pack (Woolpy 1968), or even a lone wolf
+currently dispersing from the pack (Mech 1973).
+
+The separation of No. 10 from the others upon release does not
+necessarily mean that she was not a member of the pack. No. 10's radio
+collar was replaced just before she was released. The handling without
+sedation could have frightened her enough that she ran some distance
+before the others were even released. The fact that No. 10 returned to
+within a half mile (0.8 km) of the release pen on March 20 and to within
+less than 100 feet (30.5 m) on April 18 may indicate she was seeking the
+other wolves. However, she may also just have used the release pen as a
+reference point in a generally unfamiliar area, or may have been
+attracted by the remains of carcasses left there.
+
+
+                  Effect of Captivity and Human Contact
+
+The necessary capture, captivity, translocation and contact of the
+experimental wolves with humans had an unknown effect on the wolves.
+They had been exposed to humans for over 2 months while in captivity. No
+attempts were made to tame them, and they never passed the escape stage
+of socialization as described by Woolpy and Ginsburg (1967). The
+dominant wolves (No. 11 and No. 12) were more relaxed when approached
+than were No. 10 and No. 13, however.
+
+The failure of female No. 11 to bear young probably can be attributed to
+her captivity and handling. The fact that two couplings were observed
+over a 5-day period indicates normal estrus in the female, and a normal
+response in the male. Conception would have been expected from such a
+mating. In wild wolves, it is known that there is only a small loss
+between number of ova shed, number of embryos implanting, and number of
+fetuses being carried (Rausch 1967). Thus it seems unlikely that, if No.
+11 conceived, she lost her fetuses _in utero_. Rather, she probably did
+not conceive, or perhaps the embryos never implanted. This wolf lost
+about 11% of her capture weight during captivity, despite an adequate
+food supply. This fact, plus the results of her blood tests indicate a
+high degree of stress, which probably explains why she never produced
+pups.
+
+The possible interference of the drugs used can be ruled out, for they
+were chosen because of their known lack of effect on pregnancy (Seal et
+al. 1970).
+
+The radio collars placed on the wolves had no noticeable effect on the
+animals. Radioed wolves are regularly accepted back into their packs in
+Minnesota, where they also reproduce and function normally (Mech and
+Frenzel 1971; Mech 1973, 1974).
+
+
+                                Movements
+
+Environmental Influences
+
+Lake Superior was a barrier to the northward and eastward movements of
+the wolves. Apparently it also directed wolves No. 11, 12, and 13
+southward around Keweenaw Bay, and possibly it prevented their eastward
+movement on April 2 when they approached Keweenaw Bay from the western
+side. The Bay is approximately 6-miles (9.6 km) wide there, and was
+frozen until late April.
+
+One to two miles (3.2 km) south of the release site, the Huron
+Mountains, with an elevation of 1,500 feet (457.5 m) might have
+prevented the southward movement of the wolves. Along the lakeshore, the
+land is relatively flat, which may have facilitated east-west movement.
+Wolves No. 11 and 13 were found at an elevation of 1,300 feet (490 m)
+the day after release but had returned to the flat shore areas (600 to
+700 feet, or 200 to 230 meters above sea level) by the next day.
+Topography likely had effects in other areas but the actual travel
+routes, in most instances, are unknown. The pack did travel along an
+abandoned railroad grade near Gibbs City and for 2 miles (3.2 km) on a
+muddy road north of Kenton. Wolf No. 10 used a railroad bridge to cross
+a river in mid-March. It is well known that wolves generally choose the
+easiest routes of travel (DeVos 1950, Stenlund 1955, Mech 1966).
+
+
+Possible Homing Tendencies
+
+Some of the movements of the wolves during the Directional Movements
+Phase could in part have resulted from a tendency for the animals to
+home, that is to return to their home territory. Packs have been
+observed to travel 45 miles (72 km) in 24 hours in Minnesota (Stenlund
+1955), Alaska (Burkholder 1959) and on Isle Royale (Mech 1966). In
+Minnesota, a radioed wolf was tracked a straight-line distance of 129
+miles (208 km) over a 2-month period before being lost by researchers
+(Mech and Frenzel 1971), and annual migratory movements of over 200
+miles (320 km) have been reported for Canadian wolves (Kuyt 1972).
+Therefore it seems within the capabilities of the released wolves to
+return the 270-mile (434 km) straight-line distance, or the 340-mile
+(547 km) travel distance around Lake Superior to Ray, Minnesota, if the
+orientation ability and inclination were present.
+
+Homing tendencies have been reported in wolves and other carnivores. One
+of five laboratory-reared wolves returned to her Barrow, Alaska homesite
+within about 4 months after a 175-mile (282 km) displacement (Henshaw
+and Stephenson 1974). An adult female red fox (_Vulpes vulpes_) returned
+to her homesite within 12 days after being displaced 35 miles (56.3 km)
+(Phillips and Mech 1970). For black bears there are many records of
+apparent homing. Harger (1970) displaced 107 adult black bears from 10.0
+to 168.5 miles (16.1 to 270.3 km) with an average displacement of 62.5
+miles (100.6 km). Thirty-seven of them homed and 11 others moved long
+distances toward home. The longest distance homed was 142.5 miles (229.4
+km). The return travel routes seemed direct, with little evidence of
+wandering or circling. Harger (1970) concluded that bears could navigate
+by some means, as yet undetermined.
+
+There is some indication that the pack of three wolves may have
+attempted to return home to Minnesota, although it is possible that
+exploration itself also may have produced the movement pattern observed.
+
+If the translocated wolves were to try homing directly toward their
+previous territory, they would have had to travel west-northwestward.
+However, within a few miles they would have encountered Lake Superior.
+The next closest choice would have been to head westward, and this is
+what the pack did (Fig. 17). The next possible barrier to their homeward
+movements would have been Huron Bay, which would have forced them
+southwestward, at least temporarily. Again this is what actually
+happened. The pack maintained its southwestward movement beyond Huron
+Bay until reaching a point southeast of the next possible barrier,
+Keweenaw Bay. They then continued westward south of Keweenaw Bay to the
+Prickett Dam area, and veered northwestward to Twin Lakes on March 25.
+
+By this time, the wolves had traveled for 13 days and covered a minimum
+distance of 59 miles (94.9 km), and they were 42 miles (67.6 km), closer
+to home (16% of the straight-line distance between home and release
+site). The directions of the movements of the wolves were consistent
+with what they would have to be if the wolves were to return home.
+
+However, after March 25, the directionality in the movements of the pack
+ended (Fig. 17), and the animals began what we consider the Exploratory
+Phase of their movements. If the wolves actually were homing, perhaps
+the tendency diminished as they failed to encounter familiar terrain, or
+perhaps they met too many obstacles, or became confused after
+encountering too much human activity. Or possibly these factors or the
+need to find food and security overcame the homing tendency. As
+discussed earlier in relation to the unusual number of times the wolves
+were observed, it is clear that they were not moving normally during
+this period.
+
+The lone wolf, No. 10, dispersed from the release site in as much of an
+opposite direction as it could from the pack (Fig. 20). Thus there is no
+evidence that this animal was trying to home. However, it is of interest
+to note that the first 32 miles (51.5 km) of her travel was directional
+rather than random. Furthermore, when the animal encountered what
+probably was a psychological barrier, a high concentration of human
+activity along Highway 41, she reversed her movements but still
+maintained a directionality by returning to the release area. In fact a
+striking pattern of southeast-northwest movements characterized this
+wolf's travels for several months after her release, with a gradual
+westward drift developing in the southeast-northwest movements (Fig.
+20).
+
+Mech and Frenzel (1971) found that a wolf dispersing from his former
+home range in Minnesota maintained a general southwestward movement for
+a straight-line distance of 129 miles (207.6 km) over a 2-month period,
+and Mech (unpublished) has three additional records of dispersing wolves
+that maintained directionality for distances of 48 to 130 miles (77.2 to
+209.2 km). Storm (1972) followed 12 dispersing red foxes in Iowa,
+Illinois, and Minnesota that moved directionally for distances of 12 to
+110 miles (19.2 to 176.0 km).
+
+The ability of wolves to orient and navigate even in unfamiliar
+surroundings was demonstrated dramatically by the separation of Wolf No.
+13 from his two packmates and his later rejoining of them. On May 2 he
+was 51 miles (82.1 km) away from them. Five days later he and his
+packmates were only 6 miles (9.6 km) apart, in an area 62 miles (99.8
+km) from where No. 13 had been on May 2, and 45 miles (72.4 km) from
+where his packmates were on that date (Fig. 18 and p. 11).
+
+Because No. 13 had taken such a divergent route from that of No. 11 and
+12 upon splitting, and then had met them again at a point so far from
+(1) where they had split and (2) where either had gone after the split,
+mere backtracking would seem to be ruled out as explanation of how they
+were able to rendezvous. Possibly No. 13 backtracked to the separation
+point and then followed the others by scent, although this seems
+unlikely because of the amount of time that had elapsed. Perhaps a
+combination of memory of the general lay of the land, and some
+backtracking and eventually howling and the crossing of each group's
+fresh tracks could explain this remarkable feat.
+
+
+Distances Traveled
+
+The average daily straight-line distances (average of all known 24-hour
+moves) traveled by Wolf No. 10 was 3.6 miles (5.8 km). For Wolf No. 11
+and her associates it was 5.8 miles (9.3 km) for the period before the
+settled Phase of their movements. The daily summer straight-line
+movements of an immature radioed female in Ontario ranged from 0.0 to
+3.5 miles (5.6 km) per day and averaged 1.0 (1.6 km) per day (Kolenosky
+and Johnston 1967). Mech and Frenzel (1971) found that the average daily
+straight-line distance traveled in Minnesota by three lone wolves was
+2.0, 1.0 and 2.9 miles (3.2, 1.6, and 4.6 km), and a pack of five
+averaged 2.5 miles (4.0 km) straight-line distance per day. A pack of
+eight wolves in Ontario traveled actual distances of 0.0 to 13.2 miles
+(21.1 km) per day during winter with an average movement of 4.4 miles
+(7.1 km) per day (Kolenosky 1972).
+
+Thus distances moved by both lone Wolf No. 10 and the pack were greater
+than the distances reported for lone wolves and packs in their native
+range. In Harger's (1970) study of homing in black bears, he also found
+increased movement by displaced animals.
+
+There was a general reduction in distances moved by the pack in May and
+June after the wolves had settled in Iron County (Fig. 19), compared
+with their earlier exploratory movements (Fig. 24). The movements during
+the Settled Phase were similar to those reported from the studies in
+Ontario and Minnesota.
+
+[Illustration: _Fig. 24.--Straight-line distances between consecutive
+locations for (A) Wolves No. 11, 12, and 13, (B) Wolf No. 10. (Gaps
+between data points represent periods when no data were obtained.
+Because these periods varied, and because distance traveled is partly a
+function of duration between locations, it is only valid to grossly
+compare distances from one period to the next.)_]
+
+
+Home Range Size
+
+At least in some areas, wolves are territorial (Mech 1972, 1973), and
+the sizes of their home ranges are restricted somewhat by boundaries
+established by the scent marks of surrounding packs (Peters and Mech
+1975). The introduced wolves probably encountered no native packs with
+established territories (Hendrickson et al. 1975), so they would not be
+similarly restricted. The total area that wolves No. 11, 12, and 13
+explored, 2,918 square miles (7,586 km^2), is larger than any reported
+from the Great Lakes area and is comparable to home ranges of "tundra
+wolves" (Mech 1970). Even the area in which they settled (May 7 to July
+6) until the deaths of the males was 246 square miles (637 km^2), which
+is larger than most reported ranges in the Great Lakes Region.
+
+The deaths of the two males seemed to cause an increase in both daily
+distance traveled and home range in Wolf No. 11. Essentially she began
+traveling as extensively as do lone wolves in Minnesota (Mech and
+Frenzel 1971).
+
+The home range of Wolf No. 10 from March through mid-November, 346
+square miles (895.7 km^2), was smaller than those of lone wolves in
+Minnesota (Mech and Frenzel 1971). Apparently she was still expanding
+her range when killed, however.
+
+
+Selection of a Territory
+
+The eventual settling of the pack of translocated wolves into a
+territory would be expected because such behavior is characteristic of
+wolves in other areas. The translocated pack did settle into a territory
+of 246 square miles (637 km^2) after about 2 months (Fig. 18). Although
+the region where they settled was not as remote as the release area, it
+was more inaccessible than most of the rest of the 1,631 square mile
+(4,224 km^2) area they explored after dispersing. As with the rest of
+Upper Michigan, the pack's adopted territory was inhabited by a moderate
+population of deer and beavers. It seems significant that this area is
+one of three where a few native Michigan wolves are known to still exist
+(Hendrickson et al. 1975).
+
+
+                       Vulnerability and Mortality
+
+It could be expected that the translocated wolves would be more
+vulnerable than wolves in their native environment. Although no data are
+available from any previous study of translocated wild wolves, Harger's
+(1970) investigation of displaced wild black bears showed that they were
+more vulnerable. In our study, it was clear that during the Directional
+Movement and Exploratory Phases Wolves No. 11, 12, and 13 were observed
+by local residents an unusual number of times (Table 6). No. 10, which
+did not explore such an extensive area and which spent considerable time
+in a more remote area, was seen less (Table 5).
+
+It is not clear why the wolves were not killed by humans during these
+periods when they appeared so vulnerable. Perhaps the novelty of the
+transplant coupled with the awareness that frequent aerial checks were
+being made of the wolves had some effect. Furthermore, spring is not
+generally a season of intensive hunting and trapping.
+
+Whatever the explanation, the wolves did survive what seemed to be their
+most vulnerable period. We do not believe that the deaths of the wolves
+can be attributed to the conditions of their translocations. Instead, we
+think that the most important factor in their demise was the
+accessibility of the area to human beings and the attitudes of humans
+towards wolves.
+
+As indicated earlier, there appears to be an inverse relationship
+between human density and wolf density in the Great Lakes Region (Table
+1). Wolves are vulnerable to both accidental and deliberate mortality
+from humans. For example, in winter 1947-48 at least 14 wolves were
+struck by automobiles in northern Ontario (DeVos 1949). In Michigan, a
+$15-$20 bounty still exists on coyotes, so these animals are commonly
+shot and trapped. Because many people cannot distinguish wolves from
+coyotes, and because wolves are often caught in the same kind of trap
+sets made for coyotes, wolves might be killed accidentally.
+
+Whether the killing of the translocated wolves was deliberate or
+accidental is unknown except in the case of No. 11. No. 11 was caught
+accidentally in a coyote trap, but was killed deliberately when the
+trapper thought the animal might attack him. The best guess about No.
+12, which was killed by a car, is that it was accidental. No. 10 and No.
+13 were shot, but it is possible that the hunters in each case may have
+mistaken them for coyotes. On the same day that No. 10 was killed, a
+deer hunter shot a 76-lb. (34.5 kg) native Michigan wolf and turned
+himself in to authorities, stating that he had thought it was a coyote,
+and in March 1975 there was a similar occurrence.
+
+Some Upper Michigan residents strongly opposed the transplant
+experiment, largely out of concern for deer populations. The Northern
+Michigan Sportsmen's Association passed a resolution against it, and the
+Baraga County Wolf Hunters Association was formed with the express
+purpose of interfering with the transplant effort. This association
+offered a reward of $100 to a person killing a wolf (Fig. 25).
+Supposedly 132 memberships at $1.50 each were sold.
+
+It is unlikely that members of the Baraga County group killed the
+experimental wolves, for it would be extremely difficult for anyone to
+deliberately hunt down and kill a wolf. Most wolves that are shot
+anywhere just happen to be seen by a few of the hundreds of thousands of
+hunters that are afield or by local residents who keep a gun handy. Thus
+the more accessible the area, and the higher the density of human
+beings, the greater the chances that wolves will encounter such people.
+
+Of course there was also excellent public support for the experiment.
+With weekly newspaper accounts of the travels of the wolves, many people
+began to develop an interest in, and sympathy for, the wolves. Some
+letters in the newspapers expressed regret that the animals had been
+killed.
+
+
+                        Food Habits and Predation
+
+The translocated wolves apparently scavenged more in Michigan than in
+Minnesota, at least shortly after their release. There were no known
+garbage dumps within their native territory. The dumps in Michigan
+presumably offered more readily available food during a time when the
+wolves appeared preoccupied with extensive travel.
+
+Nevertheless, the wolves did kill at least the three deer that we found,
+and no doubt took several others. Although the sample size is small, the
+results of our analysis of the condition of the deer are consistent with
+those from other studies, indicating that wolves prey primarily on
+debilitated deer (Pimlott et al. 1969, Mech and Frenzel 1971).
+
+All three deer killed by the wolves were seriously malnourished, with 6%
+or less fat content in the marrow of their femurs, or thigh bones. At
+less than 25% fat in the marrow, serious malnutrition has developed
+(Cheatum 1949). (In comparison, the femur fat of 59 doe deer killed by
+automobiles in the Upper Peninsula in March and April 1974 averaged 46%,
+according to Dr. L. D. Fay, Michigan Department of Natural Resources.)
+In addition, one of the animals killed by the wolves had been wounded by
+a bullet and had a broken leg; all three were does, and were over 4
+years of age, a factor that Pimlott et al. (1969) and Mech and Frenzel
+(1971) have also found important in wolf kills.
+
+
+                          An Alternate Approach
+
+Although the time of release for the four wolves in this study was
+selected in order to maximize chances that they would remain in their
+new range, possibly a release earlier in winter would be more
+successful. The failure of the adult female to conceive was probably a
+result of captivity and handling, although this needs confirmation
+through additional studies. Nevertheless, an early winter release might
+be favored by deep snows hindering travel. Furthermore, by breeding
+season in late February the wolves might already have settled into an
+area. Then the entire breeding cycle might take place outside captivity
+and stand a better chance of succeeding.
+
+
+
+
+                               CONCLUSIONS
+
+
+Three principal conclusions can be drawn from the results of this
+experiment: (1) It is possible to transplant a pack of wild wolves into
+a new range. That new range, however, must be large enough to permit
+some initial wandering. The animals cannot be expected to establish a
+home range centered on or even including the point of release. (2) The
+habitat in Upper Michigan apparently is adequate to support wolves, in
+terms of food and cover, for the carcasses of the two experimental
+wolves that could be examined intact had maintained or improved their
+condition during their 6-to-8-month residence in Michigan. (3) The
+reason for the failure of the experimental wolves to re-establish
+themselves was direct mortality by human beings, just as Hendrickson et
+al. (1975) concluded was the case for the failure of native and
+immigrant Michigan wolves to re-establish a population. This mortality
+probably is related to two factors, negative human attitudes toward
+wolves and accessibility of humans to wolf range.
+
+We are convinced that, ecologically, wolves can be re-established in
+Upper Michigan. However, a successful program of re-establishment will
+require the following:
+
+1. A survey of public attitudes in Upper Michigan toward re-establishing
+wolves,
+
+2. An intensive public relations campaign to promote an understanding of
+wolf ecology and the benefits of a wolf population,
+
+3. Suspension or removal of the bounty on coyotes,
+
+4. Releases of additional wolves in larger numbers perhaps over a period
+of a few years, if public attitudes appear favorable,
+
+5. A concentrated effort to inform the public of the penalties for
+killing wolves,
+
+6. A concerted law enforcement program, and
+
+7. Monitoring of translocated animals through radio-tracking to
+determine the results.
+
+[Illustration:]
+
+   ___________________________________
+  |                                   |
+  |  =F. E. Noble, Sr., President=    |
+  |                                   |
+  |        =BARAGA COUNTY=            |
+  |  =WOLF HUNTERS ASSOCIATION=       |
+  |                                   |
+  |=Preserve Our Deer  "Shoot a Wolf"=|
+  |                                   |
+  |    =$100.00 Reward For Any Wolf=  |
+  |                                   |
+  |        =$1.50 Membership Fee=     |
+  |___________________________________|
+
+_Fig. 25.--Although the transplant experiment enjoyed wide public
+support, some people opposed it and organized the Baraga County Wolf
+Hunters Association to try to prevent the re-establishment effort_]
+
+
+
+
+                             ACKNOWLEDGMENTS
+
+
+This project was a cooperative effort among the Michigan Department of
+Natural Resources, The Minnesota Department of Natural Resources, the U.
+S. Fish and Wildlife Service, Northern Michigan University, the Huron
+Mountain Wildlife Foundation, and the National Audubon Society.
+
+The Michigan and Minnesota Departments of Natural Resources provided the
+legal permits and logistical support necessary for the transplant. The
+Fish and Wildlife Service assisted in the planning and fund-raising for
+the overall project, and provided the technical expertise in the
+live-trapping, radio-tagging and radio-tracking of the wolves. Northern
+Michigan University initiated and administered the project and conducted
+the Michigan aspects of the work. Financial support was provided by the
+Huron Mountain Wildlife Foundation and the National Audubon Society.
+
+Dr. U. S. Seal of the Veterans Administration Hospital in Minneapolis
+analyzed and interpreted the blood samples, and Dr. Ray D. Barnes,
+University of Minnesota, the female reproductive tracts.
+
+The authors wish to thank all of the people mentioned above and the
+following individuals: Ralph Bailey and Robert Rafferty, Michigan
+Department of Natural Resources; Jeff Renneberg, U. S. Fish and Wildlife
+Service; Fred Harrington, State University of N. Y. at Stony Brook;
+Roger Peters, University of Michigan; Tom Jernstad, Leo Maki, and Leo
+Wouri, Huron Mountain Club; the late William P. Harris Jr. and Theodore
+A. McGraw of the Huron Mountain Wildlife Foundation; Edward H. Brigham
+III, National Audubon Society; Dennis Diaz and William Rowloff, pilots
+of Northern Airmotive; Robert Neil, owner of the research airplane;
+Denis Kallery, Cynthia Watt, and George Wilson of Marquette; and last
+but certainly not least, wolf-trapper Robert Himes of Ray, Minnesota.
+
+
+
+
+                            LITERATURE CITED
+
+
+  Brown, C. E. 1936. Rearing wild animals in captivity, and
+    gestation periods. J. Mammal. 17:10-13.
+
+  Burkholder, B. L. 1959. Movements and behavior of a wolf
+    pack in Alaska J. Wildl. Manage. 23:1-11.
+
+  Cheatum, E. L. 1949. Bone marrow as an index of
+    malnutrition in deer. N. Y. State Conservationist
+    3(5):19-22.
+
+  Cochran, W. W., and R. D. Lord. 1963. A radio-tracking
+    system for wild animals. J. Wildl. Manage. 27:9-24.
+
+  DeVos, A. 1949. Timber wolves (_Canis lupus lycaon_)
+    killed by cars on Ontario highways. J. Mammal. 30:197.
+
+  DeVos, A. 1950. Timber wolf movements on Sibley Peninsula,
+    Ontario. J. Mammal. 31:169-175.
+
+  Dice, L. R. 1952. Natural communities. Univ. of Mich.
+    Press, Ann Arbor. 547 p.
+
+  Douglass, D. W. 1970. History and status of the wolf in
+    Michigan. p. 6-8 _In_ Jorgensen, S. E., C. E. Faulkner,
+    and L. D. Mech (_Ed._) Proc. Symp. on Wolf Management in
+    Selected Areas of North America. U. S. Fish & Wildl.
+    Serv., Twin Cities, Mn. 50 p.
+
+  Harger, E. M. 1970. A study of homing behavior of black
+    bears. Unpubl. Master's Thesis. North. Mich. Univ.,
+    Marquette. 81 p.
+
+  Hendrickson, J., W. L. Robinson, and L. D. Mech. 1975. The
+    status of the wolf in Michigan--1973. Am. Midl. Nat. (In
+    press).
+
+  Henshaw, R. E. and R. O. Stephenson. 1974. Homing in the
+    gray wolf (_Canis lupus_). J. Mammal. 55:234-237.
+
+  Kolenosky, G. B. 1972. Wolf predation on wintering deer in
+    east-central Ontario. J. Wildl. Manage. 36:357-369.
+
+  Kolenosky, G. B., and D. H. Johnston. 1967. Radio-tracking
+    timber wolves in Ontario. Amer. Zool. 7:289-303.
+
+  Kuyt, E. 1972. Food habits of wolves on barren-ground
+    caribou range. Can. Wildl. Serv. Rep. Series No. 21. 36
+    p.
+
+  Laundre, J. 1975. An ecological survey of the mammals of
+    the Huron Mountain Area. Occ. Pap. Huron Mt. Wildl.
+    Found. No. 2.
+
+  Mech, L. D. 1966. The wolves of Isle Royale. U. S. Nat.
+    Park Serv. Fauna Ser. 7. 210 p.
+
+  Mech, L. D. 1970. The wolf: the ecology and behavior of an
+    endangered species. The Nat. Hist. Press. Garden City,
+    New York. 384 p.
+
+  Mech, L. D. 1972. Spacing and possible mechanisms of
+    population regulation in wolves. Am. Zool. 12(4): 9
+    (abstract).
+
+  Mech, L. D. 1973. Wolf numbers in the Superior National
+    Forest of Minnesota. North Cent. For. Exp. Stn., St.
+    Paul, Minn. USDA For. Serv. Res. Pap. NC-97. 10 p.
+
+  Mech, L. D. 1974. Current techniques in the study of
+    elusive wilderness carnivores. Proc. XI Int. Cong. Game
+    Biol., Stockholm, p. 315-322.
+
+  Mech, L. D., and L. D. Frenzel, Jr., eds. 1971. Ecological
+    studies of the timber wolf in northeastern Minnesota.
+    North Cent. For. Exp. Stn., St. Paul, Minn. USDA For.
+    Serv. Res. Pap. NC-52. 62 p.
+
+  Mech, L. D., and R. A. Rausch. 1975. Status of the wolf in
+    the United States, 1973. Proc. of First Meeting of
+    IUCN-SSC Wolf Specialist Group, Stockholm (In press).
+
+  Merriam, H. R. 1964. The wolves of Coronation Island.
+    Proc. Alaska Sci. Conf. 15:27-32.
+
+  Nellis, C. H. 1968. Some methods for capturing coyotes
+    alive. J. Wildl. Manage. 32:402-405.
+
+  Peters, R. R., and L. D. Mech. 1975. Scent-marking in
+    wolves: a field study. American Scientist 63(4) (In
+    press).
+
+  Peterson, R. O. 1974. Wolf ecology and prey populations on
+    Isle Royale. Unpubl. Ph.D. Dissertation, Purdue Univ.,
+    Lafayette, Ind. 368 p.
+
+  Phillips, R. L., and L. D. Mech. 1970. Homing behavior in
+    a red fox. J. Mammal. 51:621.
+
+  Pimlott, D. H. 1967. Wolf predation and ungulate
+    populations. Amer. Zool. 7:267-278.
+
+  Pimlott, D. H., J. A. Shannon, and G. B. Kolenosky. 1969.
+    The ecology of the timber wolf in Algonquin Park. Ont.
+    Dept. Lands and Forests. Res. Rep. (Wildlife) No. 87. 92
+    p.
+
+  Rausch, R. A. 1967. Some aspects of the population ecology
+    of wolves, Alaska. Am. Zool. 7:253-265.
+
+  Schenkel, R. 1947. Expression studies of wolves. Behaviour
+    1:81-129. (Translation from German by Agnes Klasson).
+
+  Seal, U. S., A. W. Erickson, J. G. Mayo. 1970. Drug
+    immobilization of the Carnivora. Int. Zoo Yearbook
+    10:157-170.
+
+  Seal, U. S., L. D. Mech, and V. Van Ballenberghe. 1975.
+    Blood analyses of wolf pups and their ecological and
+    metabolic interpretation. J. Mammal. 56:64-75.
+
+  Spencer, J. S., Jr., and R. E. Pfeifer. 1966. The growing
+    timber resource of Michigan--1966. Unit 2--the Western
+    Upper Peninsula, Mich. Dept. Nat. Res., Lansing.
+
+  Stenlund, M. H. 1955. A field study of the timber wolf
+    (_Canis lupus_) on the Superior National Forest,
+    Minnesota. Minn. Dept. Cons. Tech. Bull. No. 4. 55 p.
+
+  Storm, G. L. 1972. Population dynamics of red foxes in
+    northcentral United States. Ph.D. Thesis, Univ. of
+    Minn., Mpls., 227 p.
+
+  Thompson, D. Q. 1952. Travel, range, and food habits of
+    Timber Wolves in Wisconsin. J. Mammal. 25:37-43.
+
+  U. S. Bureau of Census. U. S. Census of Population: 1970.
+    No. of inhabitants. Final Rept. PC(1).
+
+  Westover, A. L. 1971. The use of a hemlock-hardwood winter
+    yard by white-tailed deer in northern Michigan. Occ.
+    Pap. Huron Mt. Wildl. Found. No. 1. 59 p.
+
+  Wolfe, M. L., and D. L. Allen. 1973. Continued studies of
+    the status, socialization, and relationships of Isle
+    Royale wolves, 1967 to 1970. J. Mammal. 54:611-635.
+
+  Woolpy, J. H. 1968. The social organization of wolves.
+    Nat. Hist. 77(5):46-55.
+
+  Woolpy, J. H., and B. E. Ginsburg. 1967. Wolf
+    socialization: a study of temperament in a wild species.
+    Am. Zool. 7:357-363.
+
+
+_The Audubon Conservation Report series_:
+
+ No. 1 THE GOLDEN EAGLE IN THE TRANS-PECOS AND EDWARDS
+        PLATEAU OF TEXAS by Walter R. Spofford. 1964.
+
+ No. 2 THE SUBURBAN WOODLAND/Trees and Insects in the Human
+        Environment by Roland C. Clement and Ian C. T.
+        Nisbet. 1972.
+
+ No. 3 SOME ENVIRONMENTAL AND ECONOMIC IMPLICATIONS OF THE
+        NATIONAL WATER COMMISSION'S 1972 DRAFT REPORT by
+        Roland C. Clement and Robert K. Davis. 1973.
+
+ No. 4 PROCEEDINGS OF A CONFERENCE ON PEREGRINE FALCON
+        RECOVERY Edited by Roland C. Clement. 1974.
+
+ No. 5 AN EXPERIMENTAL TRANSLOCATION OF THE EASTERN TIMBER
+        WOLF by Thomas F. Weise, William L. Robinson,
+        Richard A. Hook, and L. David Mech. 1975.
+
+National Audubon Society, 950 Third Avenue, New York City 10022
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK AN EXPERIMENTAL TRANSLOCATION OF THE EASTERN TIMBER WOLF ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

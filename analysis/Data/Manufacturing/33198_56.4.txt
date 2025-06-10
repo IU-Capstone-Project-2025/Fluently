@@ -1,0 +1,3143 @@
+﻿The Project Gutenberg eBook of The Borghesi Astronomical Clock in the Museum of History and Technology
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: The Borghesi Astronomical Clock in the Museum of History and Technology
+
+Author: Silvio A. Bedini
+
+Release date: July 18, 2010 [eBook #33198]
+
+Language: English
+
+Credits: E-text prepared by Chris Curnow, Joseph Cooper, Louise Pattison, and the Project Gutenberg Online Distributed Proofreading Team (http://www.pgdp.net)
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK THE BORGHESI ASTRONOMICAL CLOCK IN THE MUSEUM OF HISTORY AND TECHNOLOGY ***
+
+
+E-text prepared by Chris Curnow, Joseph Cooper, Louise Pattison, and the
+Project Gutenberg Online Distributed Proofreading Team
+(http://www.pgdp.net)
+
+
+
+Note: Project Gutenberg also has an HTML version of this
+      file which includes the original illustrations.
+      See 33198-h.htm or 33198-h.zip:
+      (https://www.gutenberg.org/cache/epub/33198/pg33198-images.html)
+      or
+      (https://www.gutenberg.org/files/33198/33198-h.zip)
+
+
+Transcriber's note:
+
+      This is Contributions from the Museum of History and
+      Technology, Paper 35, from the Smithsonian Institution
+      United States National Museum Bulletin 240, comprising
+      Papers 34-44, which will also be available as a complete
+      e-book.
+
+      The front material, introduction and relevant index entries
+      from the Bulletin are included in each single-paper e-book.
+
+      Corrections are listed at the end of the e-book.
+
+      Characters within curly braces following a carat character
+      are superscripted (example: Bart^{o}),
+
+
+
+
+
+Smithsonian Institution
+United States National Museum
+Bulletin 240
+
+[Illustration]
+
+Smithsonian Press
+
+Museum of History and Technology
+
+Contributions from the Museum of History and Technology
+
+Papers 34-44 on Science and Technology
+
+Smithsonian Institution . Washington, D.C. 1966
+
+       *       *       *       *       *
+
+_Publications of the United States National Museum_
+
+
+The scholarly and scientific publications of the United States National
+Museum include two series, _Proceedings of the United States National
+Museum_ and _United States National Museum Bulletin_.
+
+In these series, the Museum publishes original articles and
+monographs dealing with the collections and work of its constituent
+museums--The Museum of Natural History and the Museum of History and
+Technology--setting forth newly acquired facts in the fields of
+anthropology, biology, history, geology, and technology. Copies of each
+publication are distributed to libraries, to cultural and scientific
+organizations, and to specialists and others interested in the different
+subjects.
+
+The _Proceedings_, begun in 1878, are intended for the publication, in
+separate form, of shorter papers from the Museum of Natural History.
+These are gathered in volumes, octavo in size, with the publication date
+of each paper recorded in the table of contents of the volume.
+
+In the _Bulletin_ series, the first of which was issued in 1875, appear
+longer, separate publications consisting of monographs (occasionally in
+several parts) and volumes in which are collected works on related
+subjects. _Bulletins_ are either octavo or quarto in size, depending on
+the needs of the presentation. Since 1902 papers relating to the
+botanical collections of the Museum of Natural History have been
+published in the _Bulletin_ series under the heading _Contributions from
+the United States National Herbarium_, and since 1959, in _Bulletins_
+titled "Contributions from the Museum of History and Technology," have
+been gathered shorter papers relating to the collections and research of
+that Museum.
+
+The present collection of Contributions, Papers 34-44, comprises
+Bulletin 240. Each of these papers has been previously published in
+separate form. The year of publication is shown on the last page of each
+paper.
+
+    FRANK A. TAYLOR
+    _Director, United States National Museum_
+
+       *       *       *       *       *
+
+
+Contributions from the Museum of History and Technology:
+Paper 35
+
+THE BORGHESI ASTRONOMICAL CLOCK
+IN THE MUSEUM OF HISTORY AND TECHNOLOGY
+
+by
+
+SILVIO A. BEDINI
+
+
+    DEVELOPMENT OF ASTRONOMICAL CLOCKS             32
+
+    DESIGNER BORGHESI                              33
+
+    CLOCKMAKER BERTOLLA                            34
+
+    FIRST BORGHESI CLOCK                           38
+
+    SECOND BORGHESI CLOCK                          41
+
+    BORGHESIAN THEORY OF THE UNIVERSE              54
+
+    LAST YEARS                                     57
+
+    THE CLOCKS OF BARTOLOMEO ANTONIO BERTOLLA      59
+
+    APPENDIX                                       71
+
+    BIBLIOGRAPHY                                   76
+
+
+[Illustration: Figure 1.--THE DIAL PLATE of the Borghesi clock, showing
+the horary and astronomical indications which are automatically
+presented.]
+
+
+_Silvio A. Bedini_
+
+
+
+
+_The Borghesi Astronomical Clock_
+
+_In the Museum of History and Technology_
+
+
+     _The history of the 18th-century Borghesi astronomical clock is
+     described here from contemporary source material. The evolution
+     of its design by Father Francesco Borghesi and the building of
+     the complex mechanism devised by the clockmaker, Bartolomeo
+     Antonio Bertolla, is a story of the vision of one man turned
+     into reality by another. The result of their collaboration is
+     the unique, astronomical timepiece now in the Museum of History
+     and Technology._
+
+     THE AUTHOR: _Silvio A. Bedini is curator of mechanical and
+     civil engineering in the Smithsonian Institution's Museum of
+     History and Technology._
+
+
+     "... All this work I had performed eagerly, so that, while in
+     my room, I might contemplate leisurely, both during the day and
+     in the night, the true face of the heavens and of the seas
+     unobscured by clouds, even though I had no astronomical
+     equipment."[1]
+
+With these words, Father Francesco Borghesi (1723-1802) of Mechel
+described the reasons which inspired him to invent a unique astronomical
+clock which is now in the horological collection of the Museum of
+History and Technology.
+
+This complicated mechanism, which performs a multitude of functions, was
+designed by Father Francesco Borghesi, a secular priest in Venezia
+Tridentina. It was constructed in 1764 under his direction by a
+provincial clockmaker named Bartolomeo Antonio Bertolla (1702-1789) of
+Mocenigo di Rumo. It was the second of two complicated astronomical
+clocks which Father Borghesi designed and which Bertolla constructed.
+According to contemporary sources, this clock was presented to the
+Empress Maria Theresa of Austria soon after its completion.
+
+Its history is rather hazy, except for the fact that in 1780 this second
+Borghesi timepiece was still in the Imperial Palace in Vienna. The clock
+was again noted in 1927 when it was sold at a public auction in New
+York.[2] Subsequently, it was acquired for the Smithsonian Institution.
+
+
+
+
+Development of Astronomical Clocks
+
+
+The history of the great theoretical and mechanical achievement which
+the Borghesi clock represents has been most adequately covered
+elsewhere.[3] Consideration of the development of equation and
+astronomical clocks is required here only for the purpose of relating
+the Borghesi timepiece with the other significant developments in this
+branch of horology.
+
+The invention of the anchor escapement in about 1670, and the consequent
+greater accuracy in time-telling, led to increased preoccupation with
+precision. Daily differences in time as recorded by sundials and clocks
+became more noticeable. Finally, in the second half of the 17th century,
+some attempt was made to construct mechanical clocks combined with
+sundials as well as astronomical clocks.
+
+With the improvement of precision time-telling, it became necessary to
+reconcile the actual difference between true and mean time. Although a
+great variety of time-equation tables were produced, there was a
+considerable margin for error in their use. This led to the construction
+of mechanical clocks in which the equation of time was automatically
+accomplished. A few were produced late in the 17th and early 18th
+century at considerable cost and, consequently, with little popularity.
+Equation sundials were also developed which were elaborately ingenious,
+but they were not completely practical. Inevitably, they were supplanted
+by the mechanical equation clock.
+
+Probably the first documented mention of an equation clock is in the
+diary of John Evelyn who recorded that in 1666 he visited the Royal
+Society where he witnessed a curious clock, which showed the equation of
+time, being presented by a certain Mercator. More data on the subject
+appeared in the first two decades of the 18th century, when Henry Sully,
+Joseph Williamson, Daniel Quare, and Thomas Tompion--who were among the
+foremost English clockmakers of all time--produced elaborate examples of
+these timepieces. Another significant maker was Dowe Williamson, who
+became Court Clockmaker to Emperor Charles VI of Austria. In London,
+Joseph Williamson produced some of the finest astronomical timepieces of
+this type that have been known. The interest in the subject next shifted
+to France where many fine examples were produced during the first half
+of the 18th century.
+
+Just after the middle of the 18th century, the subject of astronomical
+clocks suddenly became a major horological preoccupation in another
+region, namely, Austria, where the work in this field was apparently
+done exclusively by members of the clergy. The earliest was Father
+Philipp Matthäus Hahn (1739-1790) of Württemberg.[4] Father Hahn
+considered the equation of time as only one part of a plan to represent
+astronomical occurrences by means of clockwork. In addition to
+planetaria and similar mechanisms, Father Hahn produced two
+extraordinary astronomical, tall-case clocks, both of which survive in
+public museums.
+
+       *       *       *       *       *
+
+ACKNOWLEDGMENTS
+
+The author wishes to acknowledge the valuable assistance received from
+the following: DR. AMOS AVERY, Amherst, Massachusetts; MR. EDWIN A.
+BATTISON, curator of light machinery and horology, U.S. National Museum;
+DOTT. RICHARD BLAAS, Oesterreiches Staatsarchiv, Vienna; DOTT. ADOLFO
+CETTO, librarian, Biblioteca Comunale di Trento, who made copies of
+Borghesi's two volumes available; SIGNOR MARIO DI MARIO, editor of _La
+Clessidra_, Rome, who permitted several of the illustrations in Sig.
+Luigi Pippa's article to be used herein; MR. WALTER A. GILBERT, Norwich,
+Connecticut; DR. HEINRICH LINARDI, Uhrenmuseum der Stadt Wien, Vienna;
+SIGNOR LUIGI PIPPA, Milan, Italy; CAV. ING. GUIDO UCELLI DI NEMI,
+Presidente, and DOTT. FEDERICO MORELLI and CAV. ORAZIO CURTI of the
+Museo Nazionale della Scienza e della Tecnica, Milan, for their
+cooperation on the descriptions and illustrations of the restored
+clockshop of Bartolomeo Antonio Bertolla; and DR. EDWARD WATERS,
+Division of Music, Library of Congress, Washington, D.C.
+
+The translation from Francesco Borghesi's Latin texts, which made this
+study possible, were made by: REV. NEIL HERLIHY, S.J., REV. FRANCIS J.
+HEYDEN, S.J., and REV. STEPHEN X. WINTERS, S.J., Georgetown University,
+Washington, D.C.; and REV. DANIEL HUNTER, O.P., and REV. ROBERT STENGER,
+O.P., Dominican House of Studies, Washington, D.C.
+
+       *       *       *       *       *
+
+[Illustration: Figure 2.--PORTRAIT OF FATHER FRANCESCO BORGHESI,
+inventor and designer of the astronomical clock in the Museum of History
+and Technology.]
+
+Another of the clerical clockmakers was Father Aurelianus à San Daniele
+(1728-1782), an Augustine monk in the monastery of the Imperial Court at
+Vienna.[5] His four complicated astronomical clocks, which exist in
+museums at present, are comparable to those produced by Father Hahn. The
+third cleric was Brother David à San Cajetano (1736-1796) in the same
+Augustine order to which Father Aurelianus belonged. He achieved note as
+the author of various publications, including _Neue Rädergebäude_[6]
+[New Construction of Wheels] relating to planet-wheels, or gear-trains
+containing epicyclic elements. He constructed a clock based on an
+elaborate astronomical design which was substantially different from the
+others. The fourth of the ecclesiasts who designed astronomical clocks
+in this period was Father Klein of Prague, who produced a complicated
+astronomical timepiece in about 1738.
+
+The fact that such important and outstanding examples of astronomical
+clocks were produced exclusively by ecclesiasts in Austria during the
+second half of the 18th century is especially significant. It is
+particularly so when a fifth cleric is added to the group, also an
+Austrian subject although Italian by heritage, in the person of Father
+Francesco Borghesi.
+
+Although only Father Borghesi's second astronomical clock is now known,
+it is apparent that this example in the Museum of History and Technology
+represents an experiment in astronomical time-telling comparable to any
+of the timepieces produced by Father Hahn, Father Aurelianus, Brother
+David à San Cajetano or Father Klein.
+
+This combination of five clerical clockmakers who lived in the same
+region during the same period of time is sufficiently unusual. However,
+the fact that each of them apparently worked without association with
+any of the others leads to the conjecture that a common factor must have
+led them to their individual preoccupation with astronomical horology.
+What the link may have been is not apparent from the surviving records
+of the lives and works of these clerics. Certainly it was not an
+interest in astronomy or clockmaking per se, because other than the
+astronomical clocks, none of these horological inventors--with the
+possible exception of Father Hahn--worked in any other aspect of the
+fields of astronomy or horology. However, after a comprehensive study of
+Father Borghesi's writings, there is little doubt of the religious basis
+of his own inspiration.
+
+
+
+
+Designer Borghesi
+
+
+Father Borghesi's story takes place in the picturesque mountainous
+region of what was then known as Venezia Tridentina (since 1947,
+Trentino-Alto Adige) in northern Italy, along the Tyrolean border of
+Austria. Because of its strategic position as the passage between
+Innsbruck and Verona, the possession of the Tridentina was contested
+again and again in the European wars, but during Father Borghesi's
+lifetime, the Tridentina was under Austrian domination.
+
+[Illustration: Figure 3.--PANORAMA of the village of Mechel in the
+valley of the Non, birthplace of Father Borghesi.]
+
+Deep within this mountainous district is the romantic valley of the Non,
+or Anáuni, with its great forests and ancient castles. Most maps do not
+mark it, and the tourist guides ignore it.[7] One of the chief
+communities is Cles, with its historic Renaissance buildings. The major
+city of the region is Trent on the Adige River, with its surviving Roman
+relics and Romanesque and Renaissance architecture.
+
+The little villages scattered throughout the valley of the Non played no
+part in history, but such names as Mechel and Mocenigo di Rumo reflect
+the interchange of sovereignty. It was in the little village of Mechel
+that Francesco Borghesi was born in 1723.[8] Local records are meager
+and inadequate, and many of the details of Borghesi's life must be
+assumed. Inasmuch as the village was in a rural, agricultural district,
+Borghesi may have come from a family of farmers, vintners, or village
+tradesmen. Borghesi sought an education by entering the priesthood and
+was ordained a secular priest in Salzburg. He was first assigned as
+curate to the village parish of Rumo in the valley of the Non, a short
+distance from his birthplace.[9] Later, he was transferred to his native
+Mechel. He was inherently a man of simple tastes and of great piety. He
+tended to the needs of his mountain villagers and attended the births,
+weddings and deaths of his parishioners. It was during his assignment in
+this tiny community that Father Borghesi met and became friendly with
+the clockmaker, Bartolomeo Antonio Bertolla of nearby Mocenigo di Rumo.
+
+
+
+
+Clockmaker Bertolla
+
+
+Bartolomeo Antonio Bertolla was born in Mocenigo di Rumo, a short
+distance from Mechel, in 1702.[10] Nothing is known of his boyhood,
+other than the fact that he was mechanically inclined. At the age of 17
+he was apprenticed to become a clockmaker with the master, Johann Georg
+Butzjäger of Neulengbach, a small village on the edge of the great
+Vienna woods.[11] This region was then part of the domain of the
+Archduke of Austria, of which Sankt Pölten was the capital.
+
+[Illustration: Figure 4.--PORTRAIT OF BARTOLOMEO ANTONIO BERTOLLA,
+clockmaker, of Mocenigo di Rumo. The canvas in oils is owned by
+descendants. In the upper left-hand corner is an inscription, now hardly
+legible, indicating that the portrait may have been painted after
+Bertolla's death on January 15, 1789. Translated, it states: "Bartolomeo
+Antonio Bertola [sic] Celebrated Mechanician and Inventor of various
+Instruments. Repairer of the clocks of Venice, Verona, Trent, and other
+localities. Maker of the Work which combines the Copernican and
+Ptolemaic Systems devised by Father Francesco Borghesi of Mechel,
+Laureate Mathematician, and humbly offered to Her Imperial Majesty Maria
+Theresa. Died in piety in his home at Rumo on 15 January 1789 at the age
+of 86." (_Courtesy of Sig. Luigi Pippa of Milan._)]
+
+[Illustration: Figure 5.--THE VILLAGE OF MOCENIGO DI RUMO in the valley
+of the Non. Arrow points to Bertolla's home and workshop at far left.]
+
+[Illustration: Figure 6.--CERTIFICATE OF APPRENTICESHIP awarded to
+Bartolomeo Antonio Bertolla upon completion of his 3-year apprenticeship
+at Neulengbach, dated December 27, 1722.]
+
+Bertolla began his apprenticeship with Butzjäger under the auspices of
+the Corporation of Blacksmiths of Sankt Pölten in 1719. His training was
+supervised by two master locksmiths, Johann Christian Winz and Peter
+Wisshofer, who were members of the Corporation, and were assigned to
+serve as patrons for the apprentice. It was their obligation to make
+certain that he received good care and adequate instruction from his
+master. While he worked in Butzjäger's shop, Bertolla lived with the
+master's family in their home.
+
+Bertolla's 3 years at Neulengbach passed quickly as he sought to absorb
+all that his master could teach him. Butzjäger was considered to be a
+good craftsman in the region, yet today there is not even a mention of
+his name in the lists of clockmakers. He specialized in the production
+and repair of "great clocks" which included tall-case, domestic
+timepieces, and tower clocks. Butzjäger treated his apprentice well, and
+in return Bertolla rewarded him by being diligent and honest. His
+subsequent work is sufficient indication that he developed into an
+extremely skilled craftsman, and he became the equal of any clockmaker
+of his time.
+
+The 3 years of apprenticeship were completed and on December 27, 1722,
+Bertolla received a certificate from the Corporation of Blacksmiths
+which assured whomever it might concern of Bertolla's skill, diligence
+and honesty, and permitted him to open his own shop as a clockmaker
+under the auspices of the Corporation. This document, which has been
+preserved by Bertolla's descendants, is an interesting record of the
+organization of the trade guilds in the 18th century, and, for that
+reason, has been translated from the original German:
+
+     We, the Superiors and other masters of the honorable
+     corporation of municipal blacksmiths, armorers, and of smiths,
+     in the Imperial City of St. Pölten in Austria by the river
+     Enns, DECLARE BY THESE PRESENTS put in force by this document
+     to anyone who waits to hear.... That the honorable and able
+     BARTOLOMEO ANTONIO BERTOLLA of Rumo in Lentzberg, the Tyrol, on
+     the 27th day of the month of December of the year 1719 was
+     consigned as apprentice for three years, in the presence of two
+     sponsoring masters for the purpose, the honorable Johann
+     Christian Winz and Peter Wisshofer, both of them master
+     locksmiths representing the entire honorable Corporation and
+     others of open shop--to the honorable JOHANN GEORG BUTZJÄGER,
+     incorporated with us, citizen and master clockmaker for large
+     clocks in the merchant-village of Neulengbach in Wienerwald, as
+     his master of the art, would have therefore perfectly and
+     rightfully worked and learned, and
+
+     that afterwards, on the day and year noted at the bottom, he
+     will be newly declared free and independent before us,
+     representative of an entire and honorable Corporation and with
+     open shop, of his above-mentioned master and of the two
+     sponsoring masters mentioned,
+
+     and since he eagerly requested a truthful certificate of
+     apprenticeship for his honest service as an apprentice and for
+     his good behavior, and we having great pleasure as well as the
+     duty of favoring the truth and well knowing that the aforesaid
+     BARTOLOMEO ANTONIO BERTOLLA has learned honestly the art of
+     clockmaking for great clocks from his aforesaid master, and
+     that he has always behaved with honesty, obedience,
+     faithfulness and diligence both towards his master and towards
+     us to our complete satisfaction and, therefore, we cannot in
+     any manner refuse his request, rather we wish to grant it with
+     a clear conscience.
+
+     WE THEREFORE ADDRESS TO EVERYONE and to anyone in whatever
+     state and rank, but particularly to those interested in our
+     branch of this art, our respectful and courteous entreaty and
+     request to consider BARTOLOMEO ANTONIO BERTOLLA well
+     recommended for his honest apprenticeship and his good
+     behavior, and to desire to favor him in every way, in such a
+     manner that will assure our gratitude whenever an occasion
+     presents itself.
+
+     For this purpose, we issue, as we have declared we wish to
+     issue to you, BARTOLOMEO ANTONIO BERTOLLA, this certificate of
+     apprenticeship, attaching to it the seal of our Corporation.
+
+     Executed in the city of St. Pölten on 27 December 1722.[12]
+
+His apprenticeship over, Bertolla returned to his native region where he
+soon established a reputation for himself as one of the most skillful
+clockmakers in the Tridentina and produced timepieces of fine quality in
+some quantity. No records have survived concerning his personal life,
+but it is believed that he married probably soon after his return. He
+had no children of his own. To expand his business, he eventually took
+into his shop two nephews, the sons of a brother and a sister, as
+apprentices.
+
+Bertolla's work brought him a sufficient number of clients, and he
+produced elaborate clocks for his more wealthy patrons.
+
+In 1752, it is recorded that he repaired the great clock in the
+campanile of the Church of the Assumption of the Virgin Mary in Cles,
+the regional capital of the valley of the Non. The clock dated probably
+from the 16th century, and it seems likely that Bertolla replaced the
+original two-wheel train with a three-wheel movement, and that he added
+the present anchor escapement.[13]
+
+It is not possible to determine when Father Borghesi first made
+Bertolla's acquaintance, but it may be assumed that they had become
+friends in the late 1750's.
+
+After he had come to know Bertolla, Father Borghesi apparently spent
+many hours in the clockmaker's shop. He was fascinated by mechanics in
+any form, and the complications of clockwork particularly intrigued him.
+Bertolla was patient with the young priest, explaining the tools he had
+and their uses, the clocks he produced or repaired, and the principles
+which were involved. Father Borghesi listened willingly and as his
+understanding of timepieces grew, his curiosity increased.
+
+In spite of himself, the priest could not be satisfied with the ordinary
+aspects of his friend's work and wanted to learn more. From a casual
+pastime, the study of time became an obsession with him. There was but
+one recourse: he went back to studying once again. This time it was not
+theology, however, but the sciences. Every moment he could spare went
+into the perusal of books on mathematics, astronomy, and associated
+subjects. He progressed rapidly, driven by his overpowering interest and
+aided by his quick intellect.
+
+Little by little, Borghesi managed to acquire the basic texts that
+explained this new world to him, probably borrowing them from old
+seminary friends. As each new book came into his hands, he devoured it
+in his desire to master its contents. He discussed each new principle or
+precept that he learned with Bertolla. Together, they attempted to apply
+his new learning to the calculations necessary for a timepiece which
+would demonstrate the astronomical theories in visual form. Borghesi
+taught himself slowly, step by step, and the result was a profound
+understanding of astronomical science. He conceived the project of
+constructing a great astronomical clock which he felt could be
+accomplished by combining Bertolla's mechanical skills with his own
+recent mastery of astronomy and mathematics.
+
+
+
+
+First Borghesi Clock
+
+
+It is not difficult to visualize the two men, the priest and the
+clockmaker, as they sat together night after night working out their
+plans. Father Borghesi would painstakingly outline the astronomical
+principles he wished to have the clock exhibit and the mathematical
+principles which would be involved to operate them. Bertolla
+concentrated on them and tried to transcribe the principles into
+functional mechanical terms, visualizing each operation in terms of
+wheels and gears. Little by little the two men coordinated the numerous
+elements and welded them into an operating entity. They adjourned either
+to the stark simplicity of the rectory or, probably more often, to
+Bertolla's little home workshop, the priest standing over his friend
+while the latter worked at his bench in the dark paneled interior
+illuminated only by the several lamps on the work benches.
+
+This first clock which the two men combined to create is a monument to
+the great scientific knowledge of the self-taught priest and the
+technical ability of the clockmaker--a unity combining astronomical
+science, mechanics, and artistry. The story of the project is told in a
+little book, _Novissima Ac Perpetua Astronomica..._, which Borghesi
+later published. Explaining the incentive which inspired him, and the
+premises from which he began his work, he wrote:
+
+     From the foundation of astronomical science long ago,
+     innumerable [and] repeated observations of both ancient and
+     modern astronomers, emerged at last from their hiding places.
+     Made light of by the jests of so many outstanding intellects,
+     they have so successfully brought to light the paths of the
+     stars and their motions, which are more complicated to us than
+     the Gordian knots. Now it is possible for even an amateur in
+     astronomy, sufficiently instructed, to predict for any given
+     time not only the mean position of the planets, but also their
+     true longitude and latitude, and even the true time of their
+     conjunctions, and their ecliptic oppositions, with all the
+     attendant circumstances. Yet, until now, no hypothesis has been
+     devised which would force an automaton to show to us, before
+     our very eyes, the eclipses of the planets in their true and
+     certain times.
+
+     For though there have been men seeking with all their might to
+     bind by laws their artificial heavens, by I know not how many
+     and how great calculations, and to systematize the complexities
+     of the rotations of celestial bodies; nevertheless, all of
+     them, as if by common agreement, considered themselves to have
+     made great contributions to mechanico-theoretical astronomy.
+     However, they have only attained, even though closely, the mean
+     locations of the secondary mobiles, and those by a certain
+     rather crude calculation. Some attained by more, some by less,
+     but all by some degree of wandering from the truth, either worn
+     out by the intricacies of the motions, or deceived and
+     deceiving by the errors of their calculations. This fact those
+     well know, who, setting about to collect information of this
+     kind, even those publicized not long ago, with true
+     astronomical calculation, have been bored to death while
+     digging out by the most elementary and superficial arithmetical
+     torture, the worst of fallacies spontaneously erupting from
+     thence.
+
+     It would seem that true calculations alone can be desired in
+     mechanico-astronomics. Long study had not only convinced me
+     that an automaton was within the realm of possibility, but that
+     there were many mechanical systems by which it could be
+     achieved. I girded myself for a new project and developed it
+     theoretically from the ground up, but under such unhappy
+     auspices that not only did all hope fail that anyone would ever
+     appear who might have seemed willing to set his hand to the
+     work, but that the new discovery itself was scoffed at by many
+     as altogether a nightmarish delirium of an unbridled
+     imagination.
+
+The first months of the project must have seemed like an inspired dream
+to the two men, and then must have followed a period of hopeless
+depression. Bertolla undoubtedly felt many times that the clock was an
+aspiration far beyond their combined abilities and means, but the priest
+would not be thwarted in his ambition and refused to abandon the
+project. He felt that it was a work that they were destined to produce.
+Many times, he wrote, he chided and begged and shamed his erstwhile
+partner into resuming the project where it had been last abandoned.
+Little by little, the first clock began to take form. As each new
+difficulty was encountered, the two men would go back over the notes and
+sketches to trace the problem to its source. Often a new part of the
+mechanism would nullify another which had thus far operated
+successfully, and a complete rearrangement would be required.
+
+[Illustration: Figure 7.--TITLE PAGE of Father Borghesi's first book.
+The translation in its entirety is: "The Most Recent, Perpetual,
+Astronomical Calendar Clock: Theoretical--Practical: by means of which
+besides the hours, the minutes and seconds; the current year, the month;
+the day of the month and the day of the week; the dominical letter,
+epact, and thence, the day of all the feastdays, both fixed and movable;
+the solar cycle; the golden number; the Roman indiction; the dominant
+planet of any year and its sign; the phases of the moon and its mean
+age: and all the motions of the sun and the moon as to longitude,
+latitude, eccentricity, etc., are immediately seen, so accurately that
+[not only] the true new full moons and the true quadrature, etc., of the
+sun and moon appear, but also, all solar and lunar eclipses--both
+visible and invisible; as in heaven, so on the clock, they are
+conspicuously celebrated in their true times, and those of the past and
+those of the future, with their circumstances of time and duration,
+magnitude, etc., can be quickly determined. All this was devised and
+brought to light by the author, Francesco Borghesi of Anáuni, a secular
+priest of Trent, A.A.L.L. & Doctor of Philosophy. (Trent: From the
+printshop of Giovanni Battista Monauni, With Permission of Superiors.)"
+(_Title page reproduced by permission of the Biblioteca della Citta di
+Trento._)]
+
+Again and again, Bertolla threw up his hands in despair and begged
+Father Borghesi to abandon the enterprise. He protested that he was not
+capable of producing such a complicated mechanism; he had neither the
+tools nor the skill. The priest wished to produce a clock such as the
+world had never seen before, such as the greatest scientists and
+clockmakers of all time had never been able to make. But Bertolla felt
+that he was only a provincial craftsman who could not hope to surpass
+them all with only his simple tools and training.
+
+In his book on the first clock, _Novissima Ac Perpetua Astronomica..._,
+Father Borghesi wrote that when he had finally come within a few weeks
+of the embryo stage in the development of his clock, he was faced with
+the problem of bolstering the sagging enthusiasm of Bertolla. The
+clockmaker's original enthusiasm had shown promise of great results, but
+as the days passed and the problems of the multiplex and generally
+unfamiliar apparatus to be forged for the workings of the automaton
+became more complex, his ardor decreased. Finally, Bertolla became so
+discouraged by the scoffers and frustrated by the fact that the work was
+insufficiently organized that Father Borghesi wrote that "it almost
+became a harder task for me to bolster up by daily opportunity and
+importunity the failing patience of the artisan, frightened away from
+the work already begun, than it was for me to extract from the inner
+recesses of mathematics and astronomy, without light and without a
+guide, the whole fabric of the machine itself!"
+
+In spite of Bertolla's protests, Father Borghesi prevailed, reviving his
+friend's interest once more until the two were deep in the project
+again. Months passed as they worked together on the mechanism and it
+seemed as if they lived for no other purpose. Inevitably, Bertolla's
+health began to suffer, undermined as it was by the constant nervous
+tension, and he eventually became ill from mental strain. He was forced
+to spend some time in bed, and for many weeks the subject of the clock
+was not discussed. Bertolla's other work, by which he made his living,
+suffered and it was several months before he was able to return to his
+little shop.
+
+One year passed into another and the work progressed slowly. The first
+clock, which easily should have been finished in less than a year, was
+not completed until after three full years had passed. However, when the
+priest and the clockmaker put the finishing touches to their great
+clock, the result surpassed the greatest possible expectations, for it
+was truly a masterpiece. Not only did it illustrate the ecliptic
+phenomena of the moon, the sun and earth occurring in their proper time,
+as well as many other things, but it showed these operations as they
+succeeded in proper order, taking place through the centuries.
+
+With mutual feelings of great pride, the two friends surveyed the result
+of their three years of endeavor. Bertolla realized that he had reached
+a point of maximum achievement in his work. He probably felt that now he
+could relax again, that his sleep would no longer be troubled by
+confused nightmares of wheels and gears that did not mesh together. Time
+was to prove otherwise.
+
+
+PUBLISHED DESCRIPTION OF THE FIRST CLOCK
+
+Father Borghesi soon came to the conclusion that it would be desirable
+to have a written description to explain the mechanism of the clock and
+its many indicators. He thereupon wrote out the story of how the clock
+was made, the reasons for embarking on the enterprise, the difficulties
+he had encountered, and the success which had crowned his and Bertolla's
+mutual labors. Finally, he described the operation of the clock's
+mechanism and the functions of its array of indicators.
+
+The little book was written in Latin and only a few copies were printed,
+presumably at the priest's own expense, on a handpress by Giovanni
+Battista Monauni, printer to the Bishop in Trent. The little volume was
+stated by contemporary writers to have been published in 1763, although
+no date appears on the title page. The title translated is, in part,
+_The Most Recent, Perpetual Astronomical Calendar Clock,
+Theoretical--Practical...._ The work begins with an introduction for the
+reader in which Father Borghesi stated that:
+
+     ... the little work, which, as far as I was concerned could
+     easily have been finished in a year, was only completed after
+     about three years. Fortunately, however, it was so far beyond
+     the expectations of most, that not only am I able to foretell
+     with certainty all the lunar ecliptic phenomena and the solar,
+     or rather terrestrial, phenomena, carefully worked out in their
+     true periods, among many other matters exhibited by the
+     machine; but also, within a few hours, I can exhibit by
+     altogether tangible evidence to the skeptics and the doubting
+     those very same phenomena, occurring within the space of many
+     years, or even centuries, and succeeding one another in proper
+     order, with their many attendant circumstances. I was not much
+     concerned about the other eclipses, such as those of Mercury,
+     Venus, and the other stars wandering through the zodiac, or
+     about the other solar eclipses from the transit of Mercury or
+     Venus, since they are altogether undiscernible to the naked
+     eye, and very few compilers of ephemerides wish them to be
+     noted, probably for the same reason.
+
+     Do not, however, expect, star-loving reader, that here anything
+     at all that you may wish can be drawn forth as from its source,
+     for to demand this would be almost the same as to seek to drain
+     as from a cup all the vast knowledge of the many arithmetical
+     sciences from the narrow confines of one book. You will
+     understand how impossible that is when, through prolonged
+     labor, you have grown somewhat more mature in this kind of
+     learning.
+
+     Wherefore, rather fully, and out of consideration for you, I
+     have decided, setting aside these prolixities, with completely
+     synoptic brevity and with all possible clarity to expound for
+     you simply the proportion of the movements, the description of
+     the machine, and its usage. As a result, when you have
+     progressed a little in theoretical mechanics, you will not only
+     be able to reduce all these things to their astronomical
+     principles, but you may find the way more smoothly laid out for
+     you even for perfecting the machine itself. And, thus, you may
+     be more effectively encouraged to a successful conclusion. Let
+     it be so now for you through the following 10 chapters!
+
+After these rather hopeful assurances, Father Borghesi proceeded to
+provide a detailed description of the clock dial and functions in the 10
+short chapters which he had promised, under a separate section entitled
+"Synopsis Totius Operis Mechanici," which is translated in its entirety
+in the appendix.
+
+As Father Borghesi prepared his little volume about his first clock, and
+described its unusual features and outlined its functions, which were
+primarily to place in evidence the celestial constellations, it occurred
+to him that it would now be easier after the experience he had acquired
+with his first timepiece, to construct another clock, which would
+present the motions of the two astronomical systems, the Ptolemaic and
+the Copernican. In this first book, he promised the reader that he would
+undertake the second project. It is fortunate that Father Borghesi
+undertook this project for the second clock is the only example of his
+work that is known to exist today. Extensive research has not shown what
+happened to the first clock, although several sources state that both
+timepieces were presented to Empress Maria Theresa sometime between 1764
+and 1780.
+
+
+
+
+Second Borghesi Clock
+
+
+Father Borghesi lost no time in initiating the project of the second
+clock. The first and most important step was to inform Bertolla and
+enlist his assistance. Bertolla was adamant: he had had enough of
+complicated astronomical movements. He was delighted by the prospect of
+returning to his former simple life, producing simple, domestic,
+elementary movements for his country clients. Father Borghesi begged and
+cajoled. The second clock would be a much simpler one to construct, he
+persisted. After all, they had gained invaluable experience from the
+production of the first clock. Furthermore, he had already completed its
+design.
+
+Bertolla apparently wavered in his resolve and, unwillingly and against
+his better judgment, he allowed the priest's inducements to prevail.
+Once again, the two friends yielded their leisure hours to a study of
+the priest's books and drawings as Father Borghesi enthusiastically
+elaborated his design for the timepiece, and Bertolla attempted to
+transcribe astronomical indications into terms of wheel counts. The
+second clock was, as Borghesi had promised, much easier of execution.
+Within a year, it was completed and functioned with complete success.
+
+[Illustration: Figure 8.--THE BORGHESI CLOCK in the Museum of History
+and Technology, constructed in 1764 by Bartolomeo Antonio Bertolla of
+Mocenigo di Rumo from the designs of Father Francesco Borghesi of Rumo
+and Mechel.]
+
+[Illustration: Figure 9.--ANOTHER VIEW of the Borghesi clock.]
+
+This is the clock now in the Museum of History and Technology. It is
+housed in a tall case of dark-red mahogany veneered on oak, with
+restrained carving featuring ribands and foliate motifs. Gilt-brass
+decorations flank the face of the hood, which is surmounted by three
+gilt-brass finials in the form of orbs. A wide door in the waist may be
+opened to attend the weights. The case is 7 feet 8 inches high, 20-1/2
+inches wide at the waist, and 14 inches in depth.
+
+The dial is of gilt brass, measuring 21 inches high and 15 inches in
+width, with a number of supplementary silvered dials visible through its
+openings. Instead of hands, the dial utilizes three concentric rings
+moving around a central disc, the indications of which are read at two
+bisecting gilt lines inscribed in the glass face. Twelve separate
+functions are performed by the chapter ring assembly alone, and there
+are 14 openings on the dial. It is estimated that the clock performs 30
+separate functions, including striking and chiming. Of the multiple
+chapter rings, the outermost is 1-1/8 inches wide, the center ring is
+3/8 inch wide, and the innermost ring measures 1-1/4 inches in width.
+
+
+THE DIAL-PLATE ENGRAVINGS
+
+The gilt dial is incised throughout with figures and inscriptions in
+engraving of the very finest quality, as is evidenced in the
+illustrations. The frontispiece is surmounted at its center by the
+crowned double eagle of the House of Hapsburg, indicating the identity
+of the sovereign in whose reign it was made, Emperor Francis I or the
+Empress Maria Theresa of Austria. Below the eagle at either side are
+flying cherubs supporting ribands with inscriptions. Centered at the
+bottom of the frontispiece immediately above the chapter rings is the
+moving silvered orb representing the sun. Surrounding it is a tableau of
+the Holy Trinity, with the Virgin Mary being crowned by Christ holding a
+cross at the left and God with a sword in hand at the right, and a dove
+representing the Holy Spirit hovering over the Virgin's head. Father S.
+X. Winters, S.J., considers it reminiscent of the triptych "The
+Coronation of the Virgin" by Fra Lippo Lippi.
+
+[Illustration: Figure 10.--DIAGRAM OF the dial plate.]
+
+[Illustration: Figure 11.--DIAL PLATE of the Borghesi clock.]
+
+KEY TO DIAGRAM OF THE DIAL PLATE
+
+A Dominating planet, represented by its symbol and its house;
+
+B Dominical letter (Lit. Dom.);
+
+C Epacts (Cyc. EpEC);
+
+D Roman indiction (Ind. Rom.), part of the reckoning of the Julian
+period;
+
+E Solar cycle, (Cyc. Sol.), part of the reckoning for the Julian period;
+
+F Golden number (Num. Aur.), part of the reckoning for the Julian
+period;
+
+G, H, I, J The era, or the current year; part of the six windows of the
+Iris, or rainbow;
+
+K Shuttered winding hole, for winding up the weights; part of the six
+windows of the Iris;
+
+L The era, or the month of the current year; part of the Iris, or six
+windows of the rainbow;
+
+M The sun in its epicycle;
+
+N The 12 signs of the sun's anomaly;
+
+O, P The first chapter ring representing the equatorial globe of the
+week, revolving from left to right;
+
+Q The coming day indicated through the window;
+
+R The second chapter ring; including the synodic-periodic measure of
+the tides, the days of the median lunar-synodic age, the signs and
+degrees of the signs for mean distance of the moon from the sun;
+
+S Epicycle of the moon with signs of its anomaly;
+
+T Head of the dragon (Cap. Draconis);
+
+U Tail of the dragon (Cauda Draconis), for measuring eclipses of the
+earth and of the moon;
+
+V Third chapter ring, with degrees of lunar latitude and some fixed
+stars;
+
+W Fourth chapter ring, showing firmament of fixed stars, signs of the
+zodiac and degrees of the signs, the months of the year, and days of the
+months, revolving left to right for the course of a mean astronomical
+year;
+
+X Adjustment marked _Claudit_ (it closes) and _Aperit_ (it opens) for
+disengaging dial work for the purpose of making astronomical experiments
+and computations;
+
+Y Adjustment marked _Concitat_ (it accelerates) and _Retardit_ (it
+retards) for fast and slow adjustments of the movement.
+
+In the upper spandrels of the dial are two more cherubs bearing ribands
+with inscriptions. In the lower left corner is a magnificent engraving
+of Atlas upholding the globe of the world, inscribed with the zodiac,
+over his head. The lower right corner features the figures of two
+noblemen apparently examining and discussing an orb upon a table, the
+significance of which is not clear.
+
+[Illustration: Figure 12.--EMPRESS MARIA THERESA, to whom Father
+Borghesi is stated to have presented his two astronomical clocks. The
+coin bearing her portrait is in the Museum of History and Technology.]
+
+
+THE INSCRIPTIONS
+
+Beginning with the uppermost part of the frontispiece, there are nine
+inscriptions in Latin on the dial plate. The topmost is _Franciscvs I
+sit plan. Dominator aeternvs._ The phrase has reference to Francis I,
+who was Emperor of the Holy Roman Empire, from 1745-1765, and husband of
+Empress Maria Theresa of Austria. The phrase may be translated as "May
+Francis I be the eternal ruler by favor of the planets" or more simply
+"Long Live Francis I, Emperor."[14] Although the dial plate of the
+Borghesi clock is inscribed with his name, the records indicate that
+the clock was presented to Maria Theresa. Francis I may have already
+died before the presentation was made.
+
+[Illustration: Figure 13.--PORTRAIT OF FRANCIS I, Emperor of the Holy
+Roman Empire, to whom Father Borghesi's astronomical clock in the Museum
+of History and Technology appears to have been inscribed.]
+
+From the left to right over the tableau of the Holy Trinity is the
+phrase "Lavs sacrosanctae Triadi Vni Deo, et Deiparae" (Praise [be] to
+the most Holy Trinity, to the one God, and to the Mother of God).
+
+Within the upper left and right spandrels is inscribed:
+
+     Isthaec, Signum grande apparvit in Coelo * sancta Dei genitrix
+     amicta sole * Illibato pede Lvnae et serpentis nigra premens
+     Cornva * bis senis pvlcherrime Coronata syderibvs * Tempe
+     indesinenter clavsa, scatvrigo signata * Cedrvs in Libano,
+     Cypresvs in Monte Sion * Mater pvrae Dilectionis sanctaeqve
+     spei * Chara patris aeterni proles, Verbi Mater, sponsaqve
+     procedentis *, gratiae et gloriae circvmdata varietate.
+
+This inscription is a eulogy to the Virgin Mary assembled from the texts
+of Holy Scripture. In addition, each _lemma_, contained within
+asterisks, carries out the chronogram 1764, the year the clock was
+completed. Each _lemma_ is translated and identified from the
+Douay-Rheims version of the Bible:
+
+     This woman: a great sign appeared in Heaven (Apocalypse 12:1) *
+     The Holy Mother of God clothed with the sun (Apocalypse 12:1) *
+     And with unharmed foot crushing the black horns of the moon
+     (Apocalypse 12:1) and the serpent (Genesis 3:15) * Most
+     beautifully crowned with twice-six (Apocalypse 12:1) * A garden
+     [_Tempe_[15]] enclosed, sealed with a fountain [spring of
+     water] (Song of Songs 4:12) * Like a cedar in Lebanon, and a
+     cypress tree on Mount Zion; (Ecclesiasticus 24:17) * Mother of
+     pure love and of holy hope: Beloved daughter of the Eternal
+     Father, Mother of the Word, Spouse of the Holy Spirit:
+     (Ecclesiasticus 24:24) * Surrounded with a diversity of grace
+     and glory (Psalms 44:10).
+
+[Illustration: Figure 14.--THE BOTTOM RIGHT CORNER of the dial plate,
+showing two noblemen contemplating an orb, with the inscription "Diligit
+Avdaces Trepidos Fortvna Repellet." (Fortune favors the daring and
+rejects the timid.)]
+
+At the lower left corner below the figure of Atlas upholding the world
+is the phrase, _Assidvo proni donant di cvncta labori_. (The favorable
+gods willingly grant all things to the assiduous laborer.) The same
+phrase is quoted by Father Borghesi in the text of his second volume.
+The last inscription appears at the lower right corner under the figures
+of the two noblemen, _Diligit avdaces trepidos fortvna repellet_.
+(Fortune favors the daring and rejects the timid.) The last two
+inscriptions are in dactylic hexameter. They appear to be original
+compositions inasmuch as no classical prototypes have been identified.
+
+[Illustration: Figure 15.--THE BOTTOM LEFT CORNER of the dial plate,
+showing the engraving of Atlas, with the inscription "Assidvo proni
+donant di cvncta labori." (The favorable gods willingly grant all things
+to the assiduous laborer.)]
+
+
+CENTER DIAL INSCRIPTIONS
+
+[Illustration: Figure 16.--DETAIL OF FRONTISPIECE of the Borghesi clock,
+showing the apertures for calendar indicators and the details of the
+engraving.]
+
+In addition to the inscriptions previously noted on the outer dial
+plate, there are three major inscriptions in the central dial. The
+outermost states _Circulus horarius Soli_, _Lunae_, _Fixis_, _Nodis_,
+_Aestuique marino communis_ (the hour circle, common to the sun, the
+moon, the fixed stars, the nodes and to the sea tide). This inscription
+is divided into four parts by the insertion of four divisions for the
+day into canonical hours: [_Horae_] _Nocturnae_ (night hours);
+_Matutinae_ (morning hours); _Diurnae_ (daytime hours) and _Vespertinae_
+(evening hours).
+
+The next section of the central dial is inscribed
+_Intumescite--Detumescite_ (rise and fall of the tides) repeated at
+intervals of approximately every six hours. Within the next section is
+the following inscription, inscribed continuously around the ring:
+
+     Lege fluunt, refluunt, dormitant hac maris undae: Ad Phoebi et
+     Phoebes concordia iussa moventur Aequora; discordi iussu
+     suspensa quiescunt.
+
+Translated, this is:
+
+     By this law the sea waves ebb and flow and lie dormant: When
+     Phoebus and Diana agree in their commands, the waters are
+     moved; when they disagree, the waters lie silent.[16]
+
+Within the central boss of the dial plate, the name of the maker is
+inscribed:
+
+     Bvrghesio Doctore, et Bertolla Limatore Annaniensibvs*
+
+Translated, this is:
+
+     [By] Doctor Borghesi and Bertolla, mechanician citizens of
+     Anáuni.
+
+
+INDICATORS IN THE FRONTISPIECE
+
+There are 12 windows in the frontispiece, through each of which appears
+an indication relating to time. Beginning at the top of the frontispiece
+of the dial, the first opening occurs on the breast of the imperial
+eagle. This indicates the dominating planet, represented by its symbol,
+and its house.
+
+The opening in the eagle's left claw, labeled "Lit. Dom." is the
+dominical letter. The first seven days in the month of January are each
+assigned one of the letters _a_ through _g_ in order of appearance. The
+letter which coincides with the first Sunday within this period is
+called the dominical letter, and it serves for the following year. In
+leap year, two letters are required, one to February 29th and the letter
+next proceeding for the remainder of the year. This letter is used in
+connection with establishing the date of Easter Sunday. The date of
+Easter regulates the dates of the other movable feasts.
+
+The eagle's right claw is labeled "Cyc. EpEC" and represents the epact,
+or the age of the moon on January 1st. It serves to find the moon's age
+by indicating the number of days to be added to each lunar year in order
+to complete a solar year. Twelve lunar months are nearly 11 days short
+of the solar year, so that the new moons in one year fall 11 days
+earlier than they did the preceding year. However, 30 days are deducted
+as an intercalary month since the moon has made a revolution in that
+time, and the remainder, 3, would be the epact.
+
+Below the imperial eagle two winged cherubs support a riband with three
+indictions of the Julian period. This period of 7980 years is the
+product derived from multiplying together the sums of 28, which
+represents the cycle of the sun; 19, representing the cycle of the moon;
+and 15, which represents the Roman indiction. The Julian period is
+reckoned to have begun from 4713 B.C. so that the period will be
+completed in A.D. 3267. The first of the three openings is marked "Ind.
+Rom." or "Roman indiction," which was an edict by the Emperor
+Constantine in A.D. 312, providing for the assessment of a property tax
+at the beginning of each 15-year cycle. It continues to be used in
+ecclesiastical contracts. The second opening, which occurs immediately
+below the eagle, is marked "Cyc. Sol." (cycle of the sun). This cycle
+takes a period of 28 years, after which the days of the week once again
+fall upon the same days of the month as they did during the first year
+of the former cycle. There is no relationship with the course of the sun
+itself, but was invented for the purpose of determining the dominical
+letter which designates the days of the month on which the Sundays occur
+during each year of the cycle. Since cycles of the sun date from 9 years
+before the Christian era, it is necessary to add the digit 9 to the
+digits of the current year and then divide the result by 28. The
+quotient is the number of cycles which has passed, and the remainder
+will be the year of the cycle answering to the current year. The third
+opening on the riband is labeled "Num. Aur." (golden number). Meton, an
+astronomer of Athens, discovered in 432 B.C. that after a period of 19
+years the new and the full moons returned on the same days of the month
+as they had before, and this is called the cycle of the moon. The Greeks
+were so impressed with this calculation that they had it inscribed in
+letters of gold upon stone, hence the golden number. The First Council
+of Nicaea in A.D. 325 determined that Meton's cycle was to be used to
+regulate the movable feasts of the Church.
+
+Immediately above the chapter rings is an opening through which the orb
+of the sun is visible.
+
+
+THE CHAPTER-RING ASSEMBLY
+
+In a separate chapter in his second volume, entitled "Descriptio
+Authomatis Summa totius Operis Mechanici" (Description of the
+Automaton--Summary of the Complete Mechanism), Father Borghesi provided
+a description of the functions of the various indicators, prefixing it
+with the short poem shown in figure 18. He then continues:
+
+     In the middle of the frontispiece, as at the center of the
+     universe, the terraqueous globe of the week revolves, with a
+     daily motion turning from right to left, bringing with it from
+     the round window the coming day and at the circumference the
+     circle of hours common to the sun, to the moon, to the fixed
+     stars, to the head and tail of the dragon, and to the raging
+     sea.
+
+     The second circle revolves the synodic-periodic measure of the
+     raging sea, the days of the median lunar-synodic age, the signs
+     and individual degrees of the signs of the distance of the moon
+     from the middle of the sun within the time of 29 terrestrial
+     revolutions, hours 12.44.3.13. This circle revolves likewise
+     from right to left around the center of the earth. In this
+     second circle, another little orb revolves, bringing with it
+     the epicycle of the moon, in which the little circle of the
+     moon (whose illuminated middle always faces towards the sun),
+     running from left to right through the signs of the anomaly;
+     within 13 revolutions of the earth, hours 18.39.16. It descends
+     from apogee to perigee and in just as many others it returns
+     from perigee to apogee, to be carried down thus to true, back
+     and front from the longitude and distance from the sun and from
+     the middle of the earth.
+
+     The third circle (on which I have tried to indicate
+     astronomically-geometrically in their places, the degrees of
+     lunar latitude both in the south and in the north, and some
+     fixed stars, those, namely, which can be separated by us from
+     the moon which goes between) from left to right turns around
+     the center of the earth, stretching out the head and tail of
+     the dragon, on the inside above the second circle for noting
+     and measuring the sun (but I should rather say the earth), and
+     the eclipses of the moon, within 346 revolutions of the earth,
+     hours 14.52.23.
+
+     The fourth circle, in which the heaven of the fixed stars,
+     reduced to the correct ascent of our times, the signs of the
+     zodiac and the individual degrees of the signs, the months of
+     the year and the single days of the month can be seen, likewise
+     makes its journey around the earth from left to right in 365
+     terrestrial revolutions, hours 5.48.56.; that is, within a
+     median astronomical year. Above this annual orb, the sun, in
+     its small epicycle, gliding through the 12 signs of the
+     anomaly, within the space of 182 terrestrial revolutions, hours
+     15.6.58., from left to right, falls from apogee to perigee;
+     and, within the same time, rises from perigee to apogee, and
+     brings with it, the index, namely its central radius, inhering
+     to the axis of the equatorial orb and cutting the four greatest
+     circles from the center.
+
+     When the sun has been moved around, Iris shows from six windows
+     the era, that is, the current year. Two winged youths take
+     their place next to Iris, carrying the Julian period: namely,
+     the Roman indiction, the cycle of the sun and the golden
+     number, on a leaf of paper held between them. The imperial
+     eagle stands out on top (as if added to the frontispiece)
+     carrying on its breast the dominating planet and in its talons
+     the ecclesiastical calends (that is, the dominical letter and
+     the epact).
+
+
+ATTACHMENTS FOR ADJUSTMENT
+
+Two attachments, in the form of small superimposed dials are situated at
+the base of the dial plate, at either side and immediately below the
+fourth chapter ring. In his second volume, Father Borghesi stated that
+they "are not moved from inside the clock, but the one at the right
+[inscribed _concitat_ and _retardat_] serves for loosening
+[accelerating] and tightening [retarding] time; that is, the reins of
+the perpendicular."
+
+In other words, the purpose of this attachment is for adjusting the
+pendulum to make the clock operate fast or slow. The second attachment,
+which appears at the left, and which is inscribed "Claudit" (close) and
+"Aperit" (open) serves the purpose of "... preparing the mechanism in a
+moment, as swiftly as you wish, for sustaining the astronomical
+experiments of which you will hear later; when these things have been
+done, it restores the mechanism to its natural motion at the same
+speed."
+
+This adjustment relates to the final section of Father Borghesi's second
+book, entitled "Chronologo-Astronomicus Usus Authomatis"
+(Chronological-Astronomical Use of the Automaton), which is translated
+from the Latin in its entirety:
+
+     With one glance at this automaton, you can quickly answer these
+     questions: What hour the sun shows, the moon, any fixed star,
+     the head and tail of the dragon. Is the sea swelling with
+     periodic heat [at high tide?] or is it deflated [low tide], or
+     quiescent? How many days is it from mean new moon or full moon?
+     By how many signs and degrees is the moon distant from the sun,
+     and from its nodes? What sign of the zodiac does the sun
+     occupy, the moon, the head and tail of the dragon? Is the sun
+     or the moon, in apogee or perigee, ascending or descending?
+     What is the apparent speed of the sun and of the moon? What is
+     the apparent magnitude of the solar and lunar diameter, and of
+     the horizontal parallax of the umbra and penumbra of the earth?
+     What is the latitude of the moon? Is it north or south? Does
+     the moon hide [occult eclipse] any of the fixed stars from the
+     earth dwellers, and which of these does it obscure? Is there a
+     true new or full moon? Is the sun in eclipse anywhere on earth?
+     What is the magnitude, and the duration of this eclipse, with
+     respect to the whole earth? Can it be seen in the north or in
+     the south? Is the moon in eclipse? Total or partial? Of what
+     magnitude, etc.? What limb of the moon is obscured? How many
+     years have passed from a given epoch? Is this year a leap year,
+     or a common year--first, second, or third after leap year? What
+     is the current month of the year, and what day of the month and
+     of the week? Which of the planets is dominant? What days of the
+     year do the various feasts fall on, and the movable feasts
+     during the ecclesiastical year? And many other similar
+     questions, which I pass over here for the sake of brevity.
+
+     Besides, this device can be so arranged for any time
+     whatsoever, past or future, and for the longitude of any
+     region, and can be so manipulated by hand, that within the
+     space of a very short time there can be provided in their
+     proper order, the various orbits of the luminous bodies, their
+     alternating eclipses, as many as have taken place through the
+     course of many years, or even from the beginning of the world;
+     or those that will be seen as long as the world itself shall
+     last, with all their attendant circumstances (year, month, day,
+     duration, magnitude, etc.). All these can be seen with great
+     satisfaction of curiosity and of learning, and hence with great
+     pleasure to the soul. In the meanwhile, the little bells
+     continually play, at their proper, respective times. So that,
+     all exaggeration aside, a thousand years pass, in the sight of
+     this clock, as one day!
+
+     I am aware of your complaints, O star-loving reader--that my
+     description is too meager and too succinct. Lay the blame for
+     this on those cares, hateful both to me and to you, more
+     pressing, which forbid me and deprive you of a methodical
+     explanation of the work.
+
+
+THE CLOCK MOVEMENT
+
+Father Borghesi specified that the entire mechanism was equal in weight
+to a seventh part of a _Centenarii Germanici_, a Germanic hundredweight.
+This is probably the Austrian centner which is equivalent to 123.4615
+pounds. Therefore, the clock mechanism weighs approximately 17.6 pounds.
+
+The clock operated for a hundred days and more at a single winding,
+according to Father Borghesi, and by means of a pendulum with a leaden
+bob weighing 60 Viennese pounds, attached at a height of 5 feet. Father
+Borghesi stated the weight of the pendulum to be 60 _librarum
+Viennensium_, but the Viennese libra does not appear among the weights
+of the Austrian Empire. However, using the average libra, an ancient
+Roman unit of weight equal to 0.7221 pound, it may be assumed that the
+driving weight should be approximately 45 pounds.
+
+Father Borghesi, however, does not venture to provide any description
+whatsoever of the movement of his second clock in his book. He gave the
+following reasons:
+
+     But beyond this, I entirely omit [a description of] the further
+     apparatus of the very many wheels, etc., inside the clock which
+     carry on its functions, lest I become too verbose for some
+     persons. To explain more thoroughly the internal labyrinth of
+     the entire mechanism, from which the movement of the circles or
+     heavens, etc., are derived, would seem to entangle in too many
+     complicated perplexities.... Therefore, that I might not delay
+     longer, and perhaps to no purpose, I have thought it better to
+     leave the whole work to the proportionate calculus of the
+     arithmeticians and the technical skill of mechanics. If they
+     have any desire to construct a similar mechanism, they will
+     follow the aforesaid motions of the heavens, etc., not only by
+     one means alone but by many, more swiftly through thoughtful
+     study than by any amount of instruction.
+
+     For whoever is well versed in the theory of calculus and sets
+     to work at any given project, will discover any desired motion
+     by a thousand and more ways, by one or another gearing of
+     wheels; which an industrious mechanic will carry out in
+     actuality and without too much difficulty. Nor is there any
+     reason for anyone to be discouraged, so long as he is not
+     disgusted by the amount of labor for there is nothing truer
+     than the old saying "The favorable gods grant everything to the
+     assiduous laborer."
+
+     Nay, further, even this little work itself can be improved on
+     and surpassed by new inventions. Otherwise that other old
+     adage, almost as old as the world, would prove false, "What you
+     have found already done, you can easily repeat, nor is it
+     difficult to add to what has already been invented." Relying on
+     this principle, I have already conceived some new things to be
+     added to the present little work.
+
+[Illustration: Figure 17.--MOVEMENT OF BORGHESI CLOCK viewed from the
+right side, with details of chiming mechanism.]
+
+
+THE BELLS
+
+There is a discrepancy between Father Borghesi's written description in
+his second book of the number of bells and those which currently exist
+in the clock. At the present time, there are two sets of bells attached
+to the upper part of the movement. While Father Borghesi indicated that
+there were two sets of bells in the clock, he described the first set by
+stating that:
+
+     ... there are three bells inside the clock: The largest, when
+     struck by a little hammer at each mean new moon, signifies the
+     new moon. The smallest indicates in the same way the full moon
+     at the time of the mean full moon, by automatic sound. When on
+     the equatorial earth, the sun appears anywhere in eclipse, two
+     bells (the largest and the medium) sounding together
+     automatically, announce that eclipse at the time of the mean
+     new moon. (I think it is evident that eclipses of the sun occur
+     at new moons and eclipses of the moon at full moon.)
+
+     When the moon is eclipsed, the smallest and the medium bells,
+     simultaneously and automatically, announce the event to the ear
+     at the time of the mean full moon. Besides, at the proper time
+     and automatically, the largest of these bells announces the
+     current solar hour and the smallest bell strikes the quarter
+     hours.
+
+In the clock today, the first set consists of a smaller bell fixed
+within a larger one. It is presumably these bells that indicate the
+eclipses and also strike the hours and quarter hours. A pull cord
+attached to the striking mechanism repeats the current hour and quarter
+hours at will. The second set consists of nine meshed bells struck with
+individual hammers operated by means of a pinned cylinder as in a music
+box. On the hour, the chimes play one of two melodies, which may be
+changed at will. While not identified, these appear to be Tyrolean folk
+melodies. The largest of this set of bells is dissimilar to the other
+chimes, and may be the third bell described by Father Borghesi to
+signify the new moon.
+
+
+CHRONOGRAMS
+
+One of the most curious aspects of the second clock produced by Father
+Borghesi and Bertolla, as well as of the second published volume, is the
+presence of chronograms which occur repeatedly on the clock dial and
+throughout the _Novissimum Theorico-Practicum Astronomicum Authoma_ from
+the title page to the end of the book. Interestingly enough, Father
+Borghesi did not utilize this device even once in his first little book.
+
+[Illustration: Figure 18.--A CHRONOGRAM in the text of Father Borghesi's
+second volume, indicating the year 1764. The poem is translated as: "In
+the Mount of 'Anáuni,' the inscrutable heavens are led, You learn from
+these all the labors of the sun and the moon. Here you are shown and
+hear the conjunction of the moon: And a bell brings to the ears by its
+sound, all eclipses."]
+
+Webster defines a chronogram as an inscription, sentence, or phrase in
+which certain letters express a date or epoch. The method used by Father
+Borghesi for forming chronograms was a simple one. He used combinations
+of uppercase and lowercase letters in two sizes in the inscriptions on
+the clock dial and in his writings. At first this curious combination in
+the inscriptions on the dial plate was a source of considerable
+speculation. The extremely fine quality of the engraving and artistry
+was such that these combinations could only be deliberate in nature and
+not the accidental whims or accidents of the engraver. Accordingly, they
+must be chronographic in intention. Such proved to be the case.
+
+Borghesi used the larger size of uppercase letters to form the
+chronogram, and each chronogram was complete within a phrase or line. He
+accomplished this by using for this purpose those letters of the
+alphabet which form the Roman numerals. The uppercase letters found
+within words are copied off in the order in which they appear in the
+inscription or phrase. These are then converted into their numerical
+equivalents, and totaled. Taking the uppermost inscription on the clock
+dial as the first example:
+
+    FranCIsCVs I sIt pLan. DoMInator aeternVs
+
+The letters which are intended to form the chronogram are:
+
+     C  I  C  V I I  L  D    M  I V
+
+    100 1 100 5 1 1 50 500 1000 1 5
+
+These figures added together total 1764.
+
+The second inscription on the clock dial which forms a chronogram is
+
+    LaVs saCrosanCtae TrIaDI VnI Deo, et DeIparae
+
+     L V  C   C  I  D  I V I  D   D  I
+
+    50 5 100 100 1 500 1 5 1 500 500 1 = 1764.
+
+The third inscription required a little more planning, because of its
+greater length. Accordingly, Father Borghesi divided it into nine parts,
+each of which is separated from the other by means of asterisks. Each of
+the nine parts of the inscription formed a chronogram which, in every
+instance, totals to the date 1764, the year in which the second clock
+was completed. The same procedure was followed with the inscriptions in
+the lower left and the lower right corners of the dial as well as with
+the maker's inscription within the central disk. This inscription is
+
+    BVrghesIo DoCtore, et BertoLLa LIMatore AnnanIensIbVs
+
+    V I  D   C   L  L  L I  M   I I V
+
+    5 1 500 100 50 50 50 1 1000 1 1 5 = 1764.
+
+The inscriptions within the chapter ring are not utilized for
+chronograms, however. It is apparent that Father Borghesi was required
+to make a most careful selection of the texts for his inscriptions in
+order that none of the phrases included any additional letters which
+formed Roman numerals than would total to the date he desired to
+indicate, namely, 1764. Where it was necessary, he employed an asterisk
+to separate parts of texts so that each would produce the same total.
+Any letter that did not form a Roman numeral, even if capitalized or
+used in a larger size, did not interfere with the formation of the
+chronograms.
+
+In spite of his ingenuity in designing a text which would include only
+such of the letters representing the Roman numerals which would provide
+the chronograms for 1764, Father Borghesi experienced some difficulties,
+particularly in place names. He accordingly changed them in order to
+avoid the inclusion of letters that would have disturbed his totals.
+Examples are MEGGL instead of MECHL, which had an extra C, and RVNNO
+instead of RVMO, which had an extra M.
+
+
+PUBLISHED DESCRIPTION OF THE SECOND CLOCK
+
+When the clock had been completed and proved to work successfully,
+Borghesi once more reduced a description of the clock and its function
+to published form in a second little volume published by Monauni. This
+second work was also in Latin, the title of which is translated as _The
+Most Recent Theoretical-Practical Astronomical Clock According to the
+Equally Most Recent System of the World_. As with his first book, Father
+Borghesi devoted a number of pages to a preface addressed to the reader,
+which is translated from the Latin:
+
+     This mechanical instrument was far from being ready for public
+     notice. A great deal of time and work remained to produce a
+     machine of this new system from the very foundations; then, by
+     a most accurate calculation to bring the motions of many wheels
+     up-to-date with the most recent astronomical observations; and,
+     finally, to fashion it with the craftsman's file, often enough
+     with a weary hand. All this work I had performed eagerly, so
+     that, while in my room, I might contemplate leisurely, both day
+     and night, the true face of the heavens and the seas unobscured
+     by clouds, even though I had no astronomical equipment. But,
+     then I remembered that, in my book on the first clock, I had
+     promised a description of a new (at least, as far as is known
+     to me) clock. Moreover, friends with astronomical interest, who
+     took part in the oft-repeated astronomical experiments
+     concerning this clock, persuaded me that the intellectual world
+     would enjoy having a greater knowledge and a description of
+     this work. However, it was not only the promises nor the
+     desires of many which moved me to write this work, but I also
+     thought it was necessary to set forth, before the description
+     of the clock, an exposition of the astronomical system
+     according to which this clock was constructed, so that the
+     complete work would be evident to all. I was concerned about
+     making this timepiece more acceptable and more understandable
+     to those people who are far distant and unable to see it, so
+     that this present exposition would obtain credulity among all.
+     I could find no better method than to set forth for the reader
+     the theory of the universe which I figured out after many
+     sleepless nights.
+
+     In testing this theory day after day, it not only appeared to
+     be complete, and true, but each day it appeared more
+     conformable to reality; it captured my mind in such a way that
+     I finally adhered to it. I desired, while I lived, to erect
+     this work as a monument to the theory. To do this, I digressed
+     a bit from the true-to-life pattern to the mechanical order so
+     that I could transfer all the movements of the heavens, etc.
+     (which I enjoyed thinking about more), to the plane surface of
+     the clock's face. In this way, the ecliptical spectacles of the
+     stars, etc., would appear at their proper times clearly before
+     the eyes of the viewer. I could also avoid many difficulties
+     which otherwise, perhaps, even the hands of the most skillful
+     craftsmen could never solve.
+
+[Illustration: Figure 19.--MOVEMENT OF THE BORGHESI CLOCK, viewed from
+the rear, showing rear of dial plate.]
+
+[Illustration: Figure 20.--TITLE PAGE of Father Borghesi's second
+book. The translation in its entirety is: "The Most Recent
+Theoretical-Practical Astronomical Clock According to the Equally Most
+Recent System of the World. Author: Francesco Borghesi of Mechel of
+Anáuni * Priest of Trent, Doctor of Philosophy * (The System of the
+Clock) Ingeniously connected to new theoretical laws published 1764: and
+the constructor, Bartholomeo Antonio Bertolla of Rumo, similarly from
+Anáuni * who skillfully produced this work * in this same current year
+of Our Lord * which is the year 5713 [sic] since God created this earth.
+(Trent: From the Printshop of Giovanni Battista Monauni, With Permission
+of the Superiors.)" (_Title page reproduced by courtesy of the
+Biblioteca della Citta di Trento._)]
+
+     You ought to know, therefore, that as a result of my nightly
+     meditations, I have rejected, after much consideration, all the
+     explanations of the universe thus far published. All other
+     theories of the make-up of the universe, however admirable, and
+     however many there are, turn the sun and earth around in an
+     ecliptic in an annual movement. Thus, Philolaus was the first
+     to move the earth from the center of the universe and move it
+     through the void; afterwards, Aristarchus of Samos and then
+     Copernicus moved the earth with the moon. The Egyptians, as
+     well as Pythagoras, Ptolemy, Tycho, Riciolus, Longomontanus,
+     etc., thought that the sun moved through the degrees of the
+     ecliptic each year. But I attributed this movement to neither
+     earth nor sun for the movement of both is only apparent. I did
+     not vainly surmise the annual equilibrium in all astronomical
+     observations to be from the daily movement of the same axis
+     moved at the poles of the heavens. Nor, in like manner, is
+     there a better way to satisfy physical experiments. To you,
+     then, most cultured reader: If you, perhaps, can make any use
+     or draw pleasure from this most faithful description of my new
+     theory and the mechanical instrument, refer it first to God on
+     High from whom is everything that is best, and then to those
+     avidly awaiting this little work. Lastly, if you find any
+     statement less fitting; in your humanity, do not disdain to
+     excuse it.
+
+
+
+
+Borghesian Theory of the Universe
+
+
+In Father Borghesi's second volume, there is a separate chapter entitled
+"An Exposition of the Latest Theory of the Universe." This follows the
+introduction to the reader, and in it Father Borghesi proposed:
+
+     That you might rightly conceive my new system of the world and
+     mechanically, as it were, construct it, imagine for yourself,
+     beneath that most happy seat of the Blessed and above all other
+     heavens, a kind of spherical convexity, everywhere equidistant
+     from the center of the earth, and endowed with absolutely no
+     motion.
+
+     On the inside, at two points diametrically opposite each other,
+     this convexity has two most sturdy poles (to speak
+     mechanically), projecting towards the center (which you call
+     the poles of the heavens), and the largest immobile semicircle,
+     in some manner is drawn from the center of one pole to the
+     center of the other. This semicircle in the middle, namely at a
+     point equidistant from each pole, is thought to be secured by
+     some sign, for example, by that "o," for arranging more
+     perceptibly the seat of the sun (as will be shown later). This
+     much must be conceived first.
+
+     You must understand that imposed on these poles is the first
+     mobile [Primum Mobile], everywhere convex, and divided, into 12
+     equal parts [Dodecatemoria], by the 6 greatest circles,
+     intersecting each other at the centers of the poles. Then it is
+     divided by another equally great circle, everywhere equidistant
+     from the poles, into two hemispheres. One hemisphere of 12
+     parts, proceeding in order from west [setting] to east [rising]
+     should be assigned the respective signs of the zodiac; that is,
+     one to Aries, the next to Taurus, and so on, etc. The circle
+     which cuts those 12 parts transversely in the middle, you call
+     the ecliptic. Then, these capital spaces of the Primum Mobile
+     are subdivided by degrees, minutes, etc., both in longitude and
+     in latitude, so that this heaven represents a kind of great
+     spherical net, extended to capture the longitude and latitude
+     of the stars, and Mobile on the aforementioned poles. Note,
+     however (and this is almost the leading point of the system),
+     in that circle of longitude which divides the sign of Gemini
+     from Cancer and Arcitenens [Sagittarius] from Capricorn, you
+     must conceive two points, directly opposite each other and
+     removed about twenty-three and a half degrees from the poles:
+     Boreal [the northern] between Gemini and Cancer; Austral [the
+     southern] between Sagittarius and Capricorn. These two points
+     by some power (imagine it is magnetic power), equal between
+     them, hold the terraqueous orb suspended in the middle, by
+     acting on the axis of the same orb (imagine it is iron) in such
+     a way that the earth is continually drawn to those two points
+     as to two opposite centers. It is never nearer to one, for as
+     it is about to move towards one, the opposite power is
+     constantly drawing it back. Thus, both those points and the
+     axis of the earth are always held in one common line, wherever
+     those points happen to be carried by the rotation of this
+     heaven.
+
+     Again, it is necessary for you to conceive in this heaven,
+     first, two great circles, bisecting each other at right angles
+     in the centers of these two magnets. One of these circles,
+     passing through the first point of Aries and Libra in the
+     ecliptic, is called equinoctial colure: the other circle,
+     passing consequently between the first point of Cancer and
+     Capricorn, is called solstitial colure. Beneath these are
+     likewise imagined many other great circles, in the centers of
+     the magnets dividing crosswise in the shape of an "X." But if,
+     receding from these magnets, you describe circles (parallel to
+     each other and ever greater and greater, up to the greatest
+     circle which you will perceive is called the equator),
+     equidistant from each magnet and obliquely splitting the
+     ecliptic in the equinoctial colure, you can then behold a
+     great, new, woven net in this heaven of the Primum Mobile. This
+     net most beautifully expands to extract the straight ascent and
+     descent of the stars, etc., from the vast ocean of the heavens,
+     catching the straight ascent in the greatest circles and, in
+     other unequal circles, parallel to each other and obliquely
+     cutting across, most safely catching the descent.
+
+     Immediately below the Primum Mobile place the heaven of the
+     fixed stars (and, that the idea might be clearer), revolving
+     separately on the same poles on which the Primum Mobile
+     revolves. Through this heaven, the filaments of the little
+     nets, etc., seem to the eyes of you on earth as if they shine.
+     In this heaven, you should conceive in their fixed places, the
+     fixed stars, a proportionate, inviolable distance from each
+     other, and, indeed, if you will, the heavenly images, etc.,
+     depicted, and all carried along at the same time with their
+     heaven by one motion.
+
+     Conceive a straight line running from the center of the earth
+     to that sign "o" noted in the semicircle of the supreme
+     immobile heaven. On this line, greatly below the heaven of the
+     fixed stars, place the center of the solar epicycle, holding an
+     area in common with the ecliptic and subject to absolutely no
+     motions, but at such a distance from the center of the earth
+     that the semidiameter of the earth has little, if any,
+     proportion with the distance of the solar epicycle from the
+     earth. Around the sun, moving continually in this epicycle (its
+     immobile palace) through the degrees of the anomaly, you can
+     revolve, with motions proportionate to the system, the five
+     planets: Mercury and Venus (the nearest barons of the sun),
+     then Mars, Jupiter and, most remote, Saturn, with its
+     respective satellites, etc., eccentrically surrounding the
+     earth itself and the moon in their immense ambit and wandering
+     by their proper motions through the zodiac.
+
+     Nevertheless, not far from the earth you should imagine
+     fabricated, as from most refined crystal, the heaven of the
+     moon everywhere equidistant from the center of the earth and
+     revolving separately on the same poles (prolonged even to this
+     place) on which the Primum Mobile and the heaven of the fixed
+     stars revolve. In the middle of this, that is, in some point
+     equally removed from the poles, you place the center of the
+     lunar epicycle, movable also by the common rotation of the
+     lunar heaven. I refrain from the other movements of the moon in
+     latitude, etc., as also those of the five planets, etc., which
+     the theory in no way excludes, lest by a variety of congested
+     motions explained too abundantly, either you might be confused
+     about the fundamental concept of the system or, while adorning
+     the theory and trying to embellish the least things more
+     widely, you might reject also the things which are capital.
+
+     Here you already have the whole machine, but still inert and to
+     be animated for the first time by motions accommodated to the
+     system. Nevertheless, before I assign motion to the individual
+     parts of the world, so that the thing might later appear more
+     clearly to you, I arrange all things thus: first, as if by
+     hand, I turn the Primum Mobile until the Boreal magnetic point
+     comes to the level or the area of the semicircle described in
+     the supreme immobile convexity; then I turn the heaven of the
+     fixed stars until, for example, the heel of Castor (a star of
+     the third magnitude), almost in the ecliptic and indeed in our
+     time not far distant from the solstitial colure, likewise falls
+     nearly at the level of the aforesaid semicircle. Later, I turn
+     the lunar heaven until I bring the center of the lunar epicycle
+     to the same level. Then, I turn the earth until some
+     predetermined city, for example, Trent, situated in the
+     northern zone with a latitude of about forty-six degrees, is
+     brought to the oft-mentioned level.
+
+     From things arranged in this way and from what has gone before,
+     it is evident (with the motions of the luminaries in epicycles
+     left out, however, lest you be distracted by the explanation)
+     that at Trent, just as in the whole northern hemisphere, it is
+     the summer solstice; and, conversely, in the southern
+     hemisphere, it is the winter solstice. The reason is because
+     the northern magnetic point together with the northern half of
+     the earthly axis is at its highest point towards the sun,
+     immovably residing in a line sent through the level of the
+     highest semicircle; and, conversely, the southern magnetic
+     point with the corresponding half of the axis is most removed
+     from the same. It further follows, that noonday and the new
+     moon coincide, and the heel of Castor almost reaches the
+     summit, etc.
+
+     Now, beginning from this hypothetical situation of the whole
+     world as from the root of the motions, I move all things in
+     their circles so that the earth turns on its axis with a
+     revolving motion from west to east in each 24 hours of median
+     time. The lunar heaven completes one circle around its poles
+     likewise from west to east in the time of 29 terrestrial
+     revolutions, hours 12.44.3.13.1. The sphere of the fixed stars
+     on the same poles revolves once from east to west within 365
+     revolutions of the earth, hours 6.9.29.1. The Primum Mobile on
+     the poles (common to the heaven of the fixed stars and the
+     heaven of the moon), is moved once in the same way from east to
+     west, a little faster, however, than the heaven of the fixed
+     stars, yet within 365 revolutions of the earth, hours 5.48.56;
+     that is, within a median astronomical year.
+
+     Now, behold for yourself a new world supported on new poles and
+     provided with new motions and laws. Now you, reader and lover
+     of the stars, turn it, and revolve it as long as it pleases
+     you, and compare it astronomically and physically with the
+     Copernican or the Tychonian systems or with whatever one
+     pleases you more, and judge which one seems more consonant with
+     nature when all things are examined. But if you aren't able to
+     reconcile this theory with some astronomical observations or
+     physical experiments and think it should be eliminated from
+     the group of theories, see that I might know this while life is
+     still my companion, so that I might think with you, if this is
+     possible. Also, so that, in gratitude for the detected or
+     perhaps hidden error, I might speak or write, and you won't
+     have to shout in vain in bold ridicule and with no applause
+     after the fleeing shades of the dead and the mute ashes. But,
+     if you object that the daily motion of the revolving earth and
+     the annual motion of its whirling axis do not sufficiently
+     agree with certain texts of Sacred Scripture, and if those
+     things which the Copernicans and the Longomontanists say do not
+     convince you, then reject my whole system as an old wives'
+     tale.
+
+       *       *       *       *       *
+
+GLOSSARY
+
+ANOMOLIA or anomaly, is the angular distance of a planet from its
+perihelion (that point of the orbit of a planet which is nearest to the
+sun) as seen from the sun.
+
+AEQUINOCTIUM or the equinox, is the time in which days and nights are
+equal in the space of hours. There are two equinoxes: the spring
+equinox--c. 8 calends of April in the sign of Aries; and the fall
+equinox--c. 10 calends of October in the sign of Libra.
+
+AERAS is derived from _aera_, _aerae_, which originally meant a given
+number, usually used in regard to money. The word was later extended to
+mean a number used in any calculation, and finally it came to mean a
+certain time from which subsequent times were counted, e.g., _Anno
+Domini_, after the Birth of Christ.
+
+COLURI or the Colures, which are two circles in the heavenly sphere,
+passing through the poles of the world and cutting each other at right
+angles: the one passes through the equinoctial points of Aries and Libra
+and is called _Colurus Aequinoctiorum_ or equinoctial colure; the other
+touches the _solstitialia_ of Cancer and Capricorn and is called
+_Colurus Solstitiorum_ or solstitial colure. They are called _Colurus_,
+which is translated as "mutilated tails," for the part which emerges in
+the Antarctic is not visible and is quasitruncated.
+
+ECLIPTICA or the ecliptic, is an imaginary line in the heavens in which
+the sun was supposed to have performed its annual course.
+
+EPICYCLUS or epicycle, is a small orb which, being fixed in the deferent
+of a planet, is carried along with its motion and yet, with its own
+peculiar motion, carries the body of the planet fastened to it round
+about its proper center.
+
+IRIS or the rainbow. In mythology, Iris was the daughter of Thaumatis
+and Electra, messenger of Juno of the goddesses and Jove of the gods.
+
+SOLSTITIUM or the solstice, is that time when the sun seems to stand
+still for a short time: when the sign of Cancer enters the month of June
+(equivalent to the summer solstice, when the sun begins to recede from
+us); and when the sign of Capricorn enters the month of December
+(equivalent to the winter solstice, when the sun begins to accede to
+us).
+
+       *       *       *       *       *
+
+
+
+
+Last Years
+
+
+There is a break in the story of Borghesi and Bertolla for the next five
+years. The second clock may have been the last project on which the
+priest and the clockmaker worked together, for very good reasons. The
+two clocks must have represented a considerable financial investment in
+materials and in time, and neither of the men was in sufficiently
+affluent circumstances to undertake the luxury of such a hobby without
+some form of recompense. The publication of the two little volumes must
+have also been done at Father Borghesi's expense. The income of the
+parish priest in a small mountain village could not have been equal to
+the relatively great costs of the projects that had been completed. It
+seems probable that the priest attempted to sell his clocks to a wealthy
+patron, perhaps the Baron of Cles, or he may have attempted to obtain
+some form of recompense for the continuation of his research. However,
+no records can be found of such patronage if it existed. If Borghesi had
+received financial assistance while the projects were in progress, he
+would certainly have made adequate mention of the patron's name and
+assistance in one or the other of the two volumes which he
+published.[17]
+
+The next record relating to Borghesi which has been found is the
+description of a letter written by an anonymous mathematician late in
+1768 or early in 1769. It was 28 pages in length, written in Latin, in
+the form of a reply to the writer's brother, on the subject of the clock
+invented by Borghesi. It consisted primarily of a criticism launched
+against Borghesi's first little volume published in 1763.
+
+The anonymous letter is without date, place, or signature. This writer
+claimed that Father Borghesi had made many errors in his book,
+presumably in the description of the clock's functions, and in the basic
+theories upon which the priest had predicated his research. No complete
+copy of the letter's text has been found for study, although it is
+described at length in Tovazzi's _Biblioteca Tirolese_. Tovazzi noted
+that four copies of the letter existed at that time, and that he
+personally had filed one in the Biblioteca di Cles in Trent. However,
+every attempt to locate a copy at the present time has been
+unsuccessful.
+
+If the anonymous letter was brought to the attention of Father Borghesi,
+it must have introduced a disturbing note into his life and cost the
+priest many unhappy moments. He was not, however, dissuaded from his
+preoccupation with horology. Several years later, in 1773, Father
+Borghesi was working on yet another astronomical clock, this time
+presumably without the assistance of Bertolla. This third clock was
+reported by Tovazzi to have been "of minimum expense but of maximum
+ingenuity."
+
+No subsequent information relating to it has come to light, and there is
+no record that it was actually completed.
+
+Again there is a period of silence in the life of Father Borghesi which
+no amount of research has yet been able to pierce. Whatever the
+circumstances may have been, it is reported by several of the sources
+noted that both the first and the second clock did, in fact, become the
+property of the Empress Maria Theresa in Vienna. The presentation was
+made sometime during the period between the completion of the second
+clock in 1764 and the year 1780. There is some discrepancy in the
+contemporary accounts as to whether Father Borghesi presented one or two
+clocks to the Empress, but all the sources with but one exception record
+that both clocks were acquired by the Empress.
+
+It is doubtful that Father Borghesi had originally intended to give his
+clocks to the Empress at the time that they were made, for he would most
+certainly have made some mention of such an intention in the two little
+volumes which he published about them. If he saw the letter published by
+the anonymous mathematician in late 1768 or 1769, it is possible that he
+decided to make the presentation in expiation of his sense of guilt for
+the amount of his time which the creation of the timepieces had
+consumed. On the other hand, it is just as possible that Father Borghesi
+may have forwarded copies of his two little volumes to the Imperial
+Court at Vienna, and that the Empress expressed a desire to acquire the
+clocks.
+
+Father Tovazzi states that in 1780 "the clock invented by him [Borghesi]
+was preserved in Vienna, Austria, at the Imperial Court from which the
+inventor was receiving an annual pension of 400 florins." No records in
+the Palace archives relating to the clock have yet been found, nor
+records of payment of an annuity to Father Borghesi. However, a more
+exhaustive investigation of the Furniture Depository of the Imperial
+Court may bring forth related records. It was the implication in Father
+Tovazzi's account that the second clock had been presented to the
+Empress prior to the publication of the anonymous, critical letter in
+1768 or 1769. He believed that it was envy of Father Borghesi's
+ingenuity, fame and financial benefit that had caused the anonymous
+mathematician to publish his letter, for Tovazzi asked "Who would have
+encountered opposition to such a marvel? Envy is not yet dead, and has
+always reigned."
+
+This last-mentioned theory about the presentation may be the most likely
+one. Some evidence may be found in the second clock itself which bears
+out this assumption. The multiple chapter ring, with its many
+inscriptions, is engraved and silvered in a relatively crude manner,
+presumably by Bertolla himself. The main dial plate, however, which is
+of gilt brass, is engraved with the utmost skill by one of the great
+masters of the art. The inscription below the Imperial Hapsburg eagle
+relates to Francis I, Emperor of the Holy Roman Empire. It is entirely
+possible that although Father Borghesi originally had no intention of
+giving the clock to the Emperor or the Empress at the time that it was
+made, he later changed his mind. Accordingly, he may have commissioned a
+master engraver, possibly in Trent or in Vienna itself, to produce a
+dial plate which would be of such a quality as to be worthy of the
+Emperor himself. If so, this was done shortly after the clock was
+completed, for the Emperor died in August of the following year. Perhaps
+by the time that the clock was ready, the Emperor had already died, and
+Father Borghesi gave the clock instead to Maria Theresa without revising
+the inscription.
+
+The acceptance of the clocks by the Empress, and the annuity which was
+his reward, would have constituted considerable honor even for one of
+the foremost clockmakers of the Empire, but for a humble parish priest
+in a little village, such notable Imperial recognition was overwhelming.
+Possibly as a result of it, a change was noted in Father Borghesi in the
+next few years. His conscience began to bother him, and he began to
+question whether he had done right in spending so much of his time and
+thought on his horological research. He became more and more confused in
+his own mind. Had he spent too much time in mechanical studies to the
+neglect of his ecclesiastical duties? If this had been the case, he had
+committed the most grievous sin.
+
+Exaggerated though these thoughts may appear, they were undoubtedly of
+the most critical importance to the middle-aged priest. His mental
+turbulence and confusion increased daily, and it soon became apparent to
+others around him. By June 1779, he was completely in the grip of his
+obsession, and his parishioners began to whisper amongst themselves that
+their pastor was being tortured by the devil. They were unable to help
+him, and he became more and more preoccupied with his problem. The years
+passed slowly as the pastor became more vague and more tortured by his
+conscience.[18]
+
+There probably was continued contact between Father Borghesi and
+Bertolla for at least some time after the development of his illness.
+Bertolla had retired from active work, but continued to pursue his
+interests in his clockshop as much as his health and advanced years
+permitted. A clock which he made at the age of 80 survives and is
+described and illustrated in the following section on "The Clocks of
+Bartolomeo Antonio Bertolla." Finally, on January 15, 1789, Bertolla
+passed away and Father Borghesi was left alone, deprived of the
+companionship he had enjoyed with the older man for the past two or
+three decades. One of Bertolla's nephews continued to work in the master
+clockmaker's workshop, but there did not appear to be any association
+between the younger man and Father Borghesi.
+
+At last, in 1794, Father Borghesi lost his sanity completely, and he was
+forced to relinquish his pastoral duties to a curate. For the remaining
+eight years of his life, he continued to live in the rectory of the
+little parish church in Mechel where most of his life had been spent,
+his needs undoubtedly attended by the parishioners he could no longer
+serve. During this period, until his death at the age of 79 on June 12,
+1802, Father Borghesi lived on, oblivious of those around him.
+Seemingly, he retired to another world; perhaps to that universe which
+he had tried to reproduce in his second clock.
+
+
+
+
+The Clocks of Bartolomeo Antonio Bertolla
+
+
+The ingenuity displayed in the Borghesi clock by its constructor,
+Bartolomeo Antonio Bertolla, requires a consideration of the other
+examples of his work that have survived. The most important of his
+clocks are probably the one in the Episcopal Palace at Trent and another
+made for the Baron of Cles.
+
+The one which survives in the Episcopal Palace to the present time, is
+extremely tall and is housed in an elaborately decorated narrow case of
+black or ebonized wood approximately 9 to 10 feet in height. The upper
+part of the case is decorated with elaborately carved and gilt rococo
+motifs. The movement operates for one year at a winding, indicates and
+strikes the hours, and shows the lunar phases. It has an alarm, and will
+repeat the strike at will, indicating the number of the past hour and
+the quarters. The gilt brass dial is decorated with silver-foliated
+scrollwork in relief at the corners, inside the chapter ring, and within
+the broken arch. Featured above the chapter ring is the coat of arms,
+executed in silver, of the patron for whom the clock was made,
+Cristoforo Sizzo di Noris. Di Noris was Bishop of Trent for 13 years,
+from 1763 to 1776.
+
+The clock which Bertolla made for the Baron of Cles is a tall, narrow,
+case clock of ebony or ebonized pearwood which is approximately 9-1/2
+feet in height. The decoration of the case is considerably more
+conservative than the one made for Di Noris, but the black wood is
+decorated with silver trim and carved designs in the wood itself. The
+dial is decorated with silver scrollwork and spandrels within and around
+a raised chapter ring. The clock operates for one month at each winding,
+has an alarm, indicates and strikes the hours, and will repeat the
+quarters. This handsome timepiece is still in the possession of the
+descendants of the Baron of Cles.
+
+[Illustration: Figure 21.--TALL-CASE CLOCK BY BERTOLLA in the Episcopal
+Palace in Trent, made for Bishop Cristoforo Sizzo di Noris. A striking
+and repeating clock with lunar phases. (_Courtesy of Museo Nazionale
+della Scienza e della Tecnica, Milan._)]
+
+[Illustration: Figure 22.--INTERIOR OF BERTOLLA'S WORKSHOP, showing
+detail of ceiling. (_Courtesy Museo Nazionale della Scienza e della
+Tecnica, Milan._)]
+
+[Illustration: Figure 23.--INTERIOR OF BERTOLLA'S WORKSHOP, showing the
+main workbench and the collection of clockmakers' tools. (_Courtesy of
+Museo Nazionale della Scienza e della Tecnica, Milan._)]
+
+[Illustration: Figure 24.--FUSEE CUTTER used by Bertolla. Now in the
+collection of the Museo Nazionale della Scienza e della Tecnica,
+Milan.]
+
+[Illustration: Figure 25.--INTERIOR OF BERTOLLA'S WORKSHOP, showing
+details of paneling and floor case with Bertolla manuscripts. (_Courtesy
+of Museo Nazionale della Scienza e della Tecnica, Milan._)]
+
+According to Pippa,[19] certain characteristics become apparent in a
+study of the surviving clocks by Bertolla. The tall-case clocks are
+narrow and range in height from 7-3/4 feet to 10-1/2 feet. The cases had
+this excessive height in order to obtain the greatest fall for the month
+and year movements which Bertolla constructed. For the weight assembly,
+he substituted a drum wound with a key at the point of the driving wheel
+in place of the customary pulley. The addition of an intermediate wheel
+augmented the drop of the weight.
+
+Bertolla's movements were solidly constructed from well-hammered brass
+and iron. He favored the recoil anchor escapement in his clocks and the
+Graham dead-beat anchor escapement with a seconds' pendulum. The
+escapement was not always placed in the traditional location in the
+upper center between the plates. Bertolla occasionally displaced the
+pendulum to one side, to the lower part of the movement or placed it
+entirely between two other small plates.[20]
+
+He utilized every type of striking work, including the music-box
+cylinder common in the clocks of the Black Forest and the rack and
+snail. Bertolla most frequently employed the hour strike and _grand
+sonnerie_. He often used a single hammer on two bells of different sound
+with the rack and snail. An example of this type is the clock he
+produced at the age of 80. To achieve the necessary axis of rotation for
+the hammer, which is perpendicular to the plate when it strikes the
+hours, it moves to an oblique position and displaces one of the two long
+pins in an elongated opening.
+
+Bertolla's dial plates were generally well executed, with a raised or
+separate chapter ring applied to a brass or copper plate, such as a
+copper-plate _repoussé_ and gilt with baroque motifs, or upon a smooth
+brass plate with spandrels of _repoussé_ work usually of silver, in
+relief and attached. The engraving of the chapter rings was excellent.
+The hands were well executed in steel or perforated bronze, and
+occasionally of _repoussé_ copper; gilt was applied to the hands made of
+forged steel.
+
+[Illustration: Figure 26.--DIAL PLATE of a brass lantern clock made by
+Bertolla, found in his workshop after his death. (_Courtesy of Museo
+Nazionale della Scienza e della Tecnica, Milan._)]
+
+In the course of time, Bertolla's home workshop passed from one
+generation to another within the family. Inevitably, it underwent many
+modifications until the only original part of the building that remained
+intact from Bertolla's time was his clockshop.
+
+[Illustration: Figure 27.--MOVEMENT of a brass lantern clock made by
+Bertolla. (_Courtesy of Museo Nazionale della Scienza e della Tecnica,
+Milan._)]
+
+Within the last few years, the workshop room was acquired complete with
+contents from Bertolla's descendants, and installed in the Museo
+Nazionale della Scienza e della Tecnica in Milan as an exhibit of a
+typical 18th-century clockmaker's shop. The original workshop was
+dismantled in Mocenigo di Rumo and completely rebuilt in the museum,
+including the walls, ceiling and floor. The paneling and woodwork of the
+walls and ceiling, which have been preserved intact, are hand-cut fir,
+with columns, trim and moldings carved by hand. A small painting is
+featured in the center of the coffered ceiling. The original shop
+benches and chests of drawers are set around the reconstructed shop and
+Bertolla's tools and equipment laid out as they had been originally.
+Other clockmaker's tools and equipment in the museum's collection are
+also displayed. Approximately 40 percent of the tools are the original
+items from Bertolla's shop. Parts of clocks and works in progress are
+on view on the benches as they were in Bertolla's time.[21] Also
+preserved in the museum are sketches found in Bertolla's manuscripts,
+some of which are reproduced on the following pages.
+
+[Illustration: Figure 28.--DETAIL OF WALL of Bertolla's workshop, with
+regulatory clock made by his nephew, Alessandro Bertolla of Venice. Note
+wheel layouts, etc., scribed in the paneling. (_Courtesy of Museo
+Nazionale della Scienza e della Tecnica, Milan._)]
+
+[Illustration: Figure 29.--TABLE CLOCK BY BERTOLLA in the collection of
+Doctor Vittorio dal Lago of Bergamo. The dial indicates the days of the
+week and of the month, the names of the months and lunar phases. The
+clock strikes the hours and quarters and repeats. (_Courtesy of Sig.
+Luigi Pippa of Milan._)]
+
+The shop contains two completed clocks made by Bertolla. One is a
+weight-driven lantern clock typical of the 18th century, Italian style
+with brass dial, plates and posts, anchor escapement, and striking
+work. The dial is engraved in the usual style of Bertolla's baroque
+design, and the hands are of pierced bronze. Another clock associated
+with Bertolla and found in the shop, was made by his nephew, Alessandro
+Bertolla, who worked in Venice after his apprenticeship with his uncle
+had been completed. This clock is a regulator with a seconds' pendulum
+and sweep hand on an enameled dial. The original case has not survived.
+
+[Illustration: Figure 30.--LAYOUT OF THE WHEELWORK of a clock made by
+Bertolla for His Excellency Paulo Dona, inscribed "Design No. 1."
+(_Courtesy of Museo Nazionale della Scienza e della Tecnica, Milan._)]
+
+[Illustration: Figure 31.--PENDULUM ARRANGEMENT SKETCH for an
+unidentified clock found in Bertolla's workshop. (_Courtesy of Museo
+Nazionale della Scienza e della Tecnica, Milan._)]
+
+[Illustration: Figure 32.--STRIKING CLOCK SKETCH found in Bertolla's
+manuscripts. (_Courtesy of Museo Nazionale della Scienza e della
+Tecnica, Milan._)]
+
+[Illustration: Figure 33.--FIFTEEN-DAY STRIKING CLOCK SKETCH, inscribed
+"Design No. 3," found in Bertolla's workshop. (_Courtesy of Museo
+Nazionale della Scienza e della Tecnica, Milan._)]
+
+[Illustration: Figure 34.--DIAL PLATE of a brass lantern clock made by
+Bertolla at the age of 80. (_Courtesy of Museo Nazionale della Scienza e
+della Tecnica, Milan._)]
+
+[Illustration: Figure 35.--MOVEMENT of brass lantern clock produced by
+Bertolla at the age of 80, showing details of movement and double bell.
+(_Courtesy of Museo Nazionale della Scienza e della Tecnica, Milan._)]
+
+One of the most interesting of Bertolla's clocks, and probably the last
+one which he produced, was found in his workshop. This timepiece
+indicates the hours, minutes and quarters by means of a single hand or
+index. The weight-driven clock strikes the hours and quarters on two
+bells with a single hammer. The chapter ring, which is soldered to the
+dial plate, is marked for the minutes on the outer rim and for the four
+quarters inside it. Over the center of it, is a semicircular opening in
+the dial plate through which is visible a revolving disk attached behind
+the dial plate. This disk is marked with the hours and revolves from
+right to left, the current hour being indicated by a projection from the
+minute ring. The brass dial plate is engraved with simple floral
+designs in the corners and around the broken arch. There is no
+comparison between this crude and simple decoration and the extremely
+fine quality of the engraving on the dial plate of the Borghesi clock,
+for instance. In the center of the dial plate is engraved the following:
+
+     "Questo orologio l'ideai e lo feci nella mia avanzata età
+     d'anni 80. Bart^{o} Ant^{o} Bertolla"
+
+     (I designed and made this clock at my advanced age of 80 years.
+     Bartolomeo Antonio Bertolla.)
+
+
+
+
+FOOTNOTES:
+
+[1] BORGHESI, _Novissimum Theorico-Practicum Astronomicum Authoma Juxta
+Pariter Novissimum Mundi Systema..._, pp. 8-9.
+
+[2] WENHAM, "Tall Case Clocks," p. 33.
+
+[3] VON BERTELE, "The Development of Equation Clocks," parts 1 through
+5.
+
+[4] ENGELMANN, _Philipp Matthäus Hahn_; VISCHER, _Beschreibung
+mechanischer Kunstwerke..._.
+
+[5] LLOYD, _Some Outstanding Clocks Over Seven Hundred Years,
+1250-1950_, pp. 116, 118, 120.
+
+[6] SAN CAJETANO, _Praktische Anleitung für Künstler..._.
+
+[7] FRANCH, _La Valle di Non_.
+
+[8] BONOMI, _Naturalisti, Medici e Tecnici Trentini_, p. 16
+
+[9] AMBROSI, _Scrittori ed Artisti Trentini_, pp. 132, 525.
+
+[10] Ibid.
+
+[11] PIPPA, "Antonio Bartolomeo Bertolla," pp. 22-23.
+
+[12] Ibid., p. 22.
+
+[13] Ibid., p. 23.
+
+[14] The abbreviation in the inscription "pLan" is difficult to
+interpret. According to Father F. X. Winters, S.J., it may represent
+"sit planetis" or "sit planetarum." The use of an abbreviation was
+necessary to prevent the addition of another letter I or M, which would
+have disturbed the formation of the chronogram desired. Literally, "sit
+planetis" means "May he be eternal ruler _by_ [or _through_] favor of
+the planets," while "sit planetarum" is to be translated "May he be
+eternal ruler _of_ the planets." Father Winters considered both versions
+somewhat overexaggerated and proposed that the best translation might be
+"Long Live Francis I, Emperor."
+
+[15] The word "Tempe" refers to the Vale of Tempe, in Thessaly, through
+which the Peneus River flows. It is between Mounts Olympus and Ossa, and
+is situated between the town of Larissa and the sea. In mythology, it is
+told that these mounts were originally joined and Hercules separated
+them to allow the river to pass between them. The word "Tempe" is also
+used to mean any pleasant place. Thus, the inscription "Tempe
+indesinenter clausa, Scaturigo signata" is literally translated "Tempe
+always closed, A fount of water sealed up" or, freely translated, as "A
+garden enclosed, a fountain sealed up."
+
+[16] "Phoebi" or Phoebus, called Apollo, the sun god; Phoebes or Diana,
+the moon goddess, sister of Apollo.
+
+[17] PIPPA, op. cit. (footnote 11), pp. 23-25.
+
+[18] PERINI, _Statistica del Trentino, Biblioteca Communale del
+Trentino_, vol. 2, p. 57 (cons. 6, carta 9); TOVAZZI, _Biblioteca
+Tirolese_, pp. 406-407.
+
+[19] PIPPA, op. cit. (footnote 11), pp. 24-25.
+
+[20] PIAMONTE, _La Nauna Descritta al Viaggiattore_.
+
+[21] ESPOSTI, "La Sala 'Innocente Binda' al Museo della Scienza e della
+Tecnica di Milano," pp. 18-21.
+
+
+
+
+Appendix
+
+SYNOPSIS OF THE COMPLETE MECHANICAL WORKS OF THE FIRST CLOCK
+
+     [Translated from the section entitled "Synopsis Totius Operis
+     Mechanici" in Francesco Borghesi's first book _Novissima Ac
+     Perpetua Astronomica Ephemeris Authomatica
+     Theorico-Practica..._.]
+
+
+I
+
+Of three movable indices, the farthest from the center of the dial is
+fitted with an index on either side and marked with four segments of a
+circle. Immediately below are five numbers, divided into the days of
+setting the measure of the mean-synodic age of the moon, and into signs,
+degrees of the signs, and of the distance of the moon from the sun.
+These, in each revolution, revolve once around the solar disk
+superimposed on the mean synodic-lunar disk, and also around the lunar
+disk. The upper indices, meanwhile, in the two external greatest orbits,
+measure the time continuously, in the accustomed manner of the
+Germans--the middle index measuring by hours and the uppermost by the
+first minutes [of hours].
+
+
+II
+
+Inside these three circles, perpendicular above their center, is a small
+index of the seconds of minutes. At each first minute of time, being the
+fastest of all, it describes the smallest orbit. Next to this are two
+other slightly larger circles divided into 30 degrees, one [rotating?]
+from the right, the other from the left. These two indices are arranged
+in such a fashion that the one rotating from the observer's left
+completes its period 12 times during one, mean, solar-astronomical year.
+The one [rotating] from the right likewise completes its cycle 12 times
+during the period of one mean-synodic moon. In between these, there is
+placed another small sphere, divided into 40 arbitrary parts, whose dial
+does not move automatically, but is moved by hand for speeding up or
+slowing down the course of the time, or of the perpendicular.
+
+
+III
+
+Diagonally from the sides of the center of the three larger indices, six
+other indices revolve: three on the left from one center, and three on
+the right from another. The uppermost of the three which are on the
+right of the observer [and which are] decorated with a small disk of the
+sun, runs its cycle once during a mean solar-astronomical year. The
+second measures the distance of the sun from its apogee. The third
+revolves 12 times, with each lunar revolution from one node to the same
+[repeated] node. Under the point of the uppermost index, first lie the
+months of the year which are inscribed, and the days of each month, but
+having only 28 days assigned to February; then the signs of the zodiac,
+and their several degrees. The circle corresponding to the middle index,
+extending through the first semicircle from apogee to the lower perigee
+and returning through the second semicircle to the upper locations of
+apogee, shows the true equation or eccentricity of the sun, joined with
+the little equation of the moon in syzygy. [These equations are]
+measured by geometric-astronomic proportion for each distance of the
+sun from its apogee or perigee in degrees, and in sufficiently small
+parts of degrees, with the title added above in their proper places,
+whether an addition is to be made to the mean location of the sun or a
+subtraction from the same, so that the true longitude of the sun may be
+calculated. Three circles are assigned to the lowest index, of which 30
+degrees of distance of the moon from its nodes comprise the larger. The
+middle circle is based on the hypothesis of the mean invariable
+diameters (that is, of the sun, the moon, and the terrestrial shadow),
+and is divided into hours and quarters of duration. The last circle is
+divided by the trigonometric laws into the inches of magnitude of lunar
+eclipses. Lying between these circles, there is another eccentric circle
+(black with a spot) exhibiting the shadow of the earth, in which the
+little moon sinks itself, carried by the lowest index. In any ecliptic
+full moons, the patent number of inches of immersion somehow affects the
+minds of the cultured, but also the scheme of maximum obscuration
+affects the eyes of the illiterate themselves.
+
+
+IV
+
+Of the three indices which revolve from the left, the uppermost
+completes its cycle within 12 hours, just as the hour index. The middle
+one with two pointers on diametrically opposite sides, carries the marks
+of conjunction and opposition of the luminous bodies, with a movement
+equal to the course of the sun from lunar apogee or perigee. The lowest
+index, fitted with a single pointer, indicates the motion of the moon
+from its apogee or perigee. Under these three indices, there is situated
+a common circle, divided into 12 parts, each of which are further
+divided into 30 parts through its outer circumference. I have said a
+common circle, for, with respect to the first index, the division
+represents 12 hours, and the double subdivision representing the double
+set of minutes of the hours serves for an excitator for anytime at all,
+at will. For as often as the little index reaches the twelfth hour,
+first being moved by hand wherever you prefer, a little hammer strikes
+the little bell many times. But if you observe the second or the third
+index, the first division provides the signs, and the subdivision of the
+signs gives the individual degrees of the distance of the sun from the
+lunar apogee, or of the moon from its apogee, respectively. To this is
+added two other interior circles from the same center: to the larger is
+inserted the equation of the center of the moon in its conjunctions and
+oppositions; and on the smaller the equation of the same moon in its
+quarters, astronomically-geometrically proportioned to the distance of
+the moon from its apogee or perigee. In the first case, the equation is
+to be subtracted from the mean longitude of the moon, descending from
+apogee to perigee; in the second case, to be added to the mean longitude
+of the moon ascending from perigee to apogee; and, in the third
+semicircle of the index, as the rubric directs, common to both
+equations, added around the center.
+
+
+V
+
+Perpendicularly under the center of the machine, two other indices are
+carried about one and the same center. The one nearer to the
+observer--bearing in one of two points diametrically opposite the small
+disk of the sun, in the other the disk of the moon--runs a course equal
+to the motion of the sun from the head or the tail of the dragon
+(_Draco_). The other, of simple construction, marked with a small moon,
+signifies in like manner the motion of the moon from the head or the
+tail of the dragon.
+
+Immediately below, there is a larger circle, common [referring] to both
+these indices, which is divided into 12 parts. Each of these parts in
+turn, in the outer periphery, is subdivided further into 30 parts, which
+are the 12 signs of the zodiac and the individual degrees of the signs
+of distance of the sun and the moon from the head of the dragon.
+
+In the second circle is read the latitude of the moon, measured by
+degrees, etc., on a trigonometric scale, by signs and degrees of
+distance of the moon from its nodes, that is, from the head or tail of
+the dragon. When the second index is descending from the head of the
+dragon to the tail, the latitude will be to the north of the solar path;
+that is, the ecliptic. On the other hand, it will be south of the
+ecliptic when the same index is returning upward from the tail to the
+head of the dragon as advised by the title inscribed on the third
+circle.
+
+Finally, on the fourth and last circle are seen more prime minutes of
+the circle for reducing the orbit of the moon to the ecliptic. That the
+true longitude of the moon may be obtained more accurately, these must
+be subtracted from the longitude of the moon already calculated in the
+first and third quadrant of the circle of the second index. On the other
+hand, they are to be added to the same in the second and fourth
+quadrant, as is noted in their respective places, according to the
+theory of right ascensions.
+
+Here, then, [you have] as finally completed, delineation of the great
+index which was partially described before in this book.
+
+From two points of that index which perpendicularly correspond to the
+center of these circles, a pair of compasses, by an unvaried aperture up
+to the circumference of the first larger circle, has marked off four
+segments of a circle. The two larger segments, equal among themselves,
+in one aperture refer to the sun, and the two smaller in the other,
+likewise equal, refer to the moon. The one pointer is for determining
+the solar eclipses; the other, for lunar. Both segments of each
+division, like little wings of the index, stretch to the extent of the
+degree of distance of the moon from its nodes, and to which that
+determined latitude corresponds. On one side, that latitude precisely
+equals the radii of the earth, the sun, and the moon, as the termini of
+solar eclipses; and, on the other side, precisely equals the radii of
+the earth's shadow and of the moon, as the confines of lunar eclipses.
+The apexes of the last index, diametrically limited [opposite], indicate
+the age of the moon, and its mean distance from the sun; one pointer,
+upon which the sun sits, measuring the mean days and degrees from the
+full moon; the other, on which the moon sits, measuring the mean days
+and degrees from the new moon.
+
+
+VI
+
+Besides the larger and smaller indices already mentioned, all [of which]
+revolve within the periphery of the three largest circles, six dials in
+this clock also revolve within the same circles which are to be seen
+through six openings of the frontispiece. The first of these, intended
+to indicate the phases of the moon by an unusual method (completely
+black, and decorated with the characters of the principal aspects of the
+moon) continually revolves interiorly around the center of the machine
+and at the new moon, it completely removes from sight the face of the
+moon through the round window. It continually recedes through the first
+half of the circle until, at the time of the full moon, it restores the
+moon, looking out with a full star. Soon again, too slow to be
+observed, it returns through the other half of the circle, so that in
+the next conjunction, the whole face of the moon may have a covering of
+darkness, once again to be removed.
+
+The other dials are moved by spontaneous advances at stated times. The
+first of these shows, through a square opening, the day of the month;
+the second, through another opening, shows the current day of the week
+with the characters of the seven planets which, according to ancient
+superstition, preside over each day of the week (now, by a truer form of
+religion divided by the Church into ferias, etc.); that is, the sun, the
+moon, Mars, Mercury, Jupiter, Venus and Saturn, to which I have added
+the numbers of the ferias. These two little dials are advanced daily, by
+a sudden movement at midnight. The remaining three are changed
+automatically only once a year on the first of January.
+
+The first of these dials contains five little cells, opening from a
+common window: in the first cell, at the edge of the dial, is found the
+dominical letter; in the second, the cycle of the sun; in the third, the
+character; in the fourth, the sign; and, in the fifth, the house of the
+planet dominating the year. The second dial shows the epacts, with the
+golden number. The third, and last of all, shows the Roman cycle.
+
+Finally, as indicated by the epact and the dominical letter in an
+immovable table added outside, are the feastdays and other movable
+events of the year; that is, Easter, the four seasons, the Rogation
+Days, etc.
+
+
+VII
+
+But lest the various movements of the indices and the various beginnings
+of the divisions tend to cause some fatigue, the precaution has been
+taken, that all the indices by common law are moved from the top towards
+the right of the observer, and from thence all the arithmetic divisions
+of the circles take their beginning. And lest the multitude of different
+figures should deceive the eye, the larger divisions of the circles have
+been marked by Roman numbers, that is, by capital letters of the
+alphabet; others, in other places, by differently colored numbers. Thus,
+the movements of the indices, the distribution of the circles and the
+multitude of numbers not only do not disturb the eyes and the mind, but
+rather marvelously delight them.
+
+
+VIII
+
+After having completed briefly the description of the dial and the
+indices and their motions, I have not without reason delayed in
+satisfying the desires of many who wish to learn at least the method by
+which, from this mechanism, may be calculated the true times of new and
+full moons, and their ecliptics. In order to make these matters clearer,
+it is necessary that they be explained here at greater length.
+
+With the indices, then, adjusted astronomically-geographically to the
+longitude of any given region, and to the mean time whether past,
+present or future, and assuming the clock to be in normal operation (as
+at present it has been for a whole year and more), then the moon will be
+in conjunction with the sun in the heavens. When the equations on the
+mechanism are examined, the sun and moon shall be found to be in the
+same degree of longitude, and in the same part of a degree. There will
+also be an ecliptic new moon that is in conjunction with a solar
+eclipse, or rather with a terrestrial eclipse. This will occur if, at
+that time, both apexes of the first index, located below the center of
+the clock, are hidden by the two segments of the circle extending from
+the center of the mechanism through the lowest index.
+
+And the eclipse will be greater and greater and, consequently, visible
+in more regions of the earth, the more deeply the two pointers,
+indicating the distance of the sun from its apogee, are hidden in the
+center of the segments.
+
+But whether the eclipse takes place in the head or in the tail of the
+dragon, or whether it is north or south, is indicated by the small disk
+of the sun attached to one of the two pointers hidden by the segments of
+the circle. If, at that time, the little disk shall be found in the head
+of the dragon inscribed on the plane of the dial, then the sun has been
+snatched from the earth and ingloriously entombed, as it were, in the
+huge jaw of the dragon. Then, ... the heavens themselves will lend aid
+to the woeful pomp of the senseless funeral in full darkness by suddenly
+lighting the unhappy lamps of the fixed stars. However, if the little
+disk occupies the tail of the dragon on the mechanism, then the sun in
+the heavens also, as if freed from the toils of the immense dragon's
+tail, will emerge without difficulty.
+
+The center of the eclipse will traverse the hemisphere of the earth
+north of the solar path, always nearer to the pole of the ecliptic, in
+proportion to the inclination of the disk to the north. On the other
+hand, if the little disk inclines to the left semicircle, then the
+people south of the solar path will enjoy the spectacle of the total
+central eclipse.
+
+But if the little disk remains neutral (inclining neither way) and
+remains halfway between the two sections of the circle, then the
+greatest solar eclipse will take place at the equator and those who live
+near the poles of the ecliptic will not enjoy a trace of that eclipse.
+This is because the half of the equatorial diameter enormously
+outmeasures even the greatest apparent semidiameters of the sun and of
+the moon, even taking as a norm the smallest horizontal parallax of the
+moon.
+
+What has been said about the true new moon is to be understood also,
+proportionately, about the true full moon. For when, with respect to the
+equations of the centers, the moon shall be distant on the mechanism by
+a full semicircle from the sun (also in the heavens it will be truly in
+opposition to the sun) there will be a true full moon. Likewise, the
+moon in the heavens will be in eclipse if, at the time of opposition,
+the pointers of the little index (which we mentioned before) situated
+below the center of the clock are so far away from the belly of the
+dragon that they are forced to lie under the two smaller segments of the
+circle which, in all full moons, are always to be moved from the index
+of the synodic moon to the region of that little index. As a matter of
+fact, the closer the little pointers approach to the middle of the
+segments, the more obscured it will be.
+
+You will know, furthermore, that the eclipse of the moon occurs in the
+head of the dragon if the disk of the little moon, attached to the other
+point of the little index, is raised to the head of the dragon;
+conversely, when the little disk of the moon inclines to the tail, the
+eclipse is taking place in the tail of the dragon.
+
+And, accordingly, when you observe the little moon of the index inclined
+to one or other section of the circle, so also in the heavens, the
+eclipse of the moon is only partial and the northern or the southern
+part of the moon is illuminated.
+
+The current time will indicate whether the lunar eclipse is visible or
+not. As the new moon ecliptic falls during the day, the eclipse will not
+be visible, since the earth denies a sight of the moon which is below
+the horizon. But, conversely, if there are no clouds, the eclipse will
+be visible anywhere, if the luminous bodies are ecliptically in
+opposition at night.
+
+Since lunar eclipses appear to all people as being of the same magnitude
+and duration, and begin and dissipate at the same absolute moment of
+time, I decided to reveal another facet of this spectacle on the right
+side of the center of the clock (see chapter III above). There, at the
+time of the true ecliptic full moon, as the pointer of the third little
+index shows, you can ascertain the hours, etc., of duration, and the
+inches of greatest obscuration. The little moon attached to the index is
+a model of the actual eclipsed moon.
+
+
+IX
+
+Thus, with the aid of this machine, solar and lunar eclipses of the past
+can be recalled and future ones can be foreseen. Indeed, if the index of
+prime minutes is speeded up by hand, whose wheel imparts motion to the
+other indices and shields, then, the dials and openings will foretell
+the year, month, day, hour, etc., of any future eclipse. I foresaw that
+the times would thus be evolved too slowly, and that the clock wheels
+would be considerably worn by repeated experiments (if, for instance, by
+the rotation of the index of prime minutes, to whose period only a
+single hour corresponds, the future new and full moon ecliptics were
+being investigated). Therefore, I took care that the wheel which
+immediately communicates motion to the index of the synodic moon should
+be so fitted internally to the mechanism that by the reversal of any
+external index, the wheel would be removed from its proper position;
+whenever desired, it could be quickly and most accurately restored to
+its proper place.
+
+In this way, since the close meshing of the wheels is released, you can
+extend the experiment for many years, even for many centuries. You have
+only to guide with your hand the index of the synodic moon on the
+circles, always intently observing whether, in the passage which this
+index makes over the little index, both pointers of the little index are
+hidden by the segments of the circle. Having observed this, look at the
+index moved by hand, for if this has carried the solar disk halfway
+between the two larger segments of the circle to the region of the
+hidden little index, then you will know that eclipse will be a solar
+eclipse. On the other hand, you will know that it will be a lunar
+eclipse, if the index (moved by hand) has carried the moon, situated
+between the two smaller segments of the circle, to the same region
+(i.e., the hidden part of the circle). The solar disk and the lunar disk
+alternately will reveal to you the circumstances of both eclipses. The
+current year will be given by the Julian period, reducible to any
+desired epoch, and, contained in the solar cycle, the golden number and
+the Roman cycle. The month of the year and also the day of the month
+will be indicated by the pointer of the little index, first on the right
+side of the clock. And what I have said of future eclipses should be
+equally understood of past eclipses, so long as the index, which can be
+moved either way at will, is moved in reverse.
+
+Finally, though 55 wheels were employed to carry so many dials, all are
+driven by one source of power not exceeding the third part of a Germanic
+hundred-weight which, suspended at the geometric height of five feet
+(about the ordinary stature of a man), keeps the whole machine in
+operation for a hundred days and more.
+
+Although the machine repeats hours and quarter hours at will and,
+consequently, the number of wheels and the rest of the apparatus
+necessary for these functions is thereby increased, it has not grown to
+an unwieldy size, however much one might erroneously imagine it to be.
+It does not exceed the bulk of ordinary clocks hanging from a wall;
+indeed, it scarcely equals these.
+
+The entire machine, ready for operation, does not weigh more than 156
+ounces, although it is made of steel or brass throughout and further
+weighted with two bells and a rather large brass dial-plate.
+
+Of course, there are many more things to be said, especially about the
+mechanical structure of the wheels, but fearing to tire my kind reader
+unduly by exceeding the bounds of a summary, I am forced to put an end,
+though unwillingly, to this sufficiently shortened explanation of the
+work. I have hope of giving satisfaction to many more when I shall have
+communicated to the learned world another and completely new automatic
+work, grander than this present one. It is already theoretically
+completed in all its calculations, but still to be worked out
+mechanically from the very beginning, if but God, thrice Best and
+Greatest, bless the undertaking and mercifully grant life and health--to
+whom be in, and from, and through all things, all honor and glory in
+eternity and beyond.
+
+
+
+
+BIBLIOGRAPHY
+
+
+The following works have been used in compiling the material for this
+paper. They are frequently referred to in the text in shortened form.
+
+     AMBROSI, FRANCESCO. _Scrittori ed artisti Trentini._ Trent:
+     Giovanni Zippel, 1883.
+
+     BONOMI, L. _Naturalisti, medici e tecnici Trentini._ Trent:
+     privately printed, 1930.
+
+     BORGHESI, FRANCESCO. _Novissima ac Perpetua Astronomica
+     Ephemeris Authomatica Theorico-Practica._ Trent: Giovanni
+     Battista Monauni, 1763(?).
+
+     ---- _Novissimum Theorico-Practicum Astronomicum Authoma Juxta
+     Pariter Novissimum Mundi Systema._ Trent: Giovanni Battista
+     Monauni, 1764.
+
+     ENGELMANN, MAX. Philipp Matthäus Hahn. Berlin: Verlag Fischer,
+     1923.
+
+     ESPOSTI, ALFREDO DEGLI. La sala 'Innocente Binda' al Museo
+     della Scienza e della Tecnica di Milano. _La Clessidra_ (July
+     1960), anno 16, no. 7, pp. 18-21.
+
+     FRANCH, LEONE. _La Valle di Non._ Trent, 1953.
+
+     LLOYD, H. ALAN. _Some outstanding clocks over seven hundred
+     years, 1250-1950._ London: Leonard Hill, 1958.
+
+     MOSNA, EZIO. _Trento._ Trent, 1914.
+
+     PERINI, AGOSTINO (compilatore). _Statistica del Trentino,
+     Biblioteca Communale del Trentino._ Vol. 2, p. 57 (cons. 6,
+     carta 9).
+
+     PIAMONTE, GUISEPPE. _La nauna descritta al viaggiattore._
+     Milan, 1829.
+
+     PIPPA, LUIGI. Antonio Bartolomeo Bertolla. _La Clessidra_
+     (January 1961), anno 17, no. 1, pp. 22-25.
+
+     SAN CAJETANO, DAVID À. _Praktische Anleitung für Künstler, alle
+     astronomische Perioden durch brauchbare bisher noch nie
+     gesehene ganz neue Räderwerke mit Leichtigkeit vom Himmel
+     unabweichlich genau auszuführen, sammt Erweiterung der Theorie
+     des neuen Rädergebäudes._ Vienna: privately printed, 1793.
+
+     TOVAZZI, GIANGRISOSTOMO. _Biblioteca Tirolese._ Vol. 2, art.
+     329, MS. 168, pp. 406-407. Trent, 1780.
+
+     VISCHER, GEORGE F. _Beschreibung mechanischer Kunstwerke,
+     welche unter der Direktion und Anweisung M. Philipp Matth.
+     Hahn, Pfarrers in Kornwestheim..._. Stuttgart: Mezler, 1774.
+
+     VON BERTELE, HANS. The development of equation clocks. _La
+     Suisse Horologere_ (1959-1961), parts 1 through 5.
+
+     WENHAM, EDWARD. Tall case clocks. _The Antiquarian Magazine_
+     (May 1927), vol. 8, no. 4, p. 33. [The Borghesi clock is
+     illustrated only from a photograph of the Anderson Art
+     Galleries in New York, and mislabeled "Astronomical Clock made
+     in Jena, 1656, in elaborate mahogany case."]
+
+       *       *       *       *       *
+
+U.S. GOVERNMENT PRINTING OFFICE: 1964
+
+For sale by the Superintendent of Documents, U.S. Government Printing
+Office Washington, D.C. 20402--Price 70 cents
+
+
+
+
+Index
+
+
+Aristarchus of Samos, 54
+
+
+Bertolla, Alessandro, 65
+
+Bertolla, Bartolomeo Antonio, 31, 34, 36, 47, 51, 52, 57, 62, 63
+
+Borghesi, Father Francesco, 31, 70, 71
+
+Brahe, Tycho, 54
+
+Butzjäger, Johann Georg, 36, 37
+
+
+Charles VI, Emperor of Austria, 32
+
+Cles, Baron of, 57, 59
+
+Copernicus, 54
+
+
+Di Noris, Cristoforo Sizzo, 59
+
+
+Evelyn, John, 32
+
+
+Francis I, Emperor of the Holy Roman Empire, 42, 44, 52, 58
+
+
+Hahn, Father Philipp Matthäus, 33
+
+
+Klein, Father ----, 33
+
+
+Lippi, Fra Lippo, 42
+
+Longomontanus, Christian Severin, 54
+
+
+Maria Theresa, Empress of Austria, 31, 41, 42, 44, 57, 58
+
+Meton, 48
+
+Monauni, Giovanni Battista, 40, 52
+
+
+Philolaus, 54
+
+Ptolemy, 54
+
+Pythagoras, 54
+
+
+Quare, Daniel, 32
+
+
+Riciolus, 54
+
+
+San Cajetano, Brother David à, 33
+
+San Daniele, Father Aurelianus à, 33
+
+Sully, Henry, 32
+
+
+Tompion, Thomas, 32
+
+Tovazzi, Giangrisostomo, 57, 58
+
+
+Williamson, Dowe, 32
+
+Williamson, Joseph, 32
+
+Winters, Father S. X., S.J., 42
+
+Winz, Johann Christian, 36, 37
+
+Wisshofer, Peter, 36, 37
+
+
+
+
+       *       *       *       *       *
+
+
+
+
+Transcriber's note:
+
+Footnotes have been moved to the end of the main section of the paper,
+and illustrations have been moved to eliminate breaks in paragraphs. Two
+'side bar' sections set off from the main text in the original are
+indicated by lines of asterisks before and after the side bar. Minor
+punctuation errors have been corrected without note. The following
+typographical errors have been corrected:
+
+    p. 37  ... his curiosity increased ... [Had 'curiousity'.]
+    p. 41  Bertolla apparently wavered in ...  [Had 'waivered'.]
+    p. 43  ... contained within asterisks, carries ... [Had 'carrie'.]
+    p. 45  ... Assidvo proni donant di cvncta labori. [Had 'ronip'.]
+    p. 45  ... assiduous laborer.) The same ... [Had 'saem'.]
+    p. 48  ... 12 signs of the anomaly, within ... [Had 'anamoly'.]
+    p. 51  ... the larger size of uppercase letters ... [Had 'letter'.]
+    p. 54  ... rightly conceive my new system of the ... [Had 'sytem'.]
+    p. 55  ... leading point of the system ... [Had 'they'.]
+    p. 55  ... Cancer; Austral [the southern] ... [Closing bracket added.]
+    p. 55  ... of the earth are always held in one ... [Had 'alway'.]
+    p. 56  ... all things in their circles so that ... [Had 'than'.]
+    p. 56  ... satellites, etc., eccentrically ... [Had 'excentrically'.]
+    Footnote 4: _Philipp Matthäus Hahn_ [Had 'Matthaus'.]
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK THE BORGHESI ASTRONOMICAL CLOCK IN THE MUSEUM OF HISTORY AND TECHNOLOGY ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

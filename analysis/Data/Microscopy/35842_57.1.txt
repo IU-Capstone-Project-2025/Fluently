@@ -1,0 +1,3538 @@
+﻿The Project Gutenberg eBook of Microscopes and Accessory Apparatus: Catalogue No. 40
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Microscopes and Accessory Apparatus: Catalogue No. 40
+
+Author: Ernst Leitz
+
+Release date: April 12, 2011 [eBook #35842]
+                Most recently updated: January 7, 2021
+
+Language: English
+
+Credits: Produced by Barbara Watson, Ross Cooling and the Online
+        Distributed Proofreading Canada Team at
+        http://www.pgdpcanada.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK MICROSCOPES AND ACCESSORY APPARATUS: CATALOGUE NO. 40 ***
+
+
+
+
+Produced by Barbara Watson, Ross Cooling and the Online
+Distributed Proofreading Canada Team at
+http://www.pgdpcanada.net
+
+
+
+
+
+
+
+
+
+  CATALOGUE No. 40.
+
+  MICROSCOPES
+  AND
+  ACCESSORY APPARATUS.
+
+  ERNST LEITZ
+  WETZLAR
+  GERMANY.
+
+  Founded in 1850.
+
+  Branch Offices:
+  NEW-YORK:                CHICAGO:            BERLIN NW.
+  411 West 59th Str.    32-38 Clark Str.    45 Luisenstrasse.
+  30 East 18th Street.
+
+  1903.
+
+  =„Highest award“= Worlds Columbian Exhibition =Chicago 1893=.
+
+
+
+
+  Contents.
+
+
+  New constructions                            5
+  Objectives and Eye-pieces                    7
+  Stands                                      16
+  Illuminating Apparatus                      20
+  Complete Microscope Outfits                 24
+  Microscopes for Mineralogical Research      57
+  Dissecting Microscopes and Lupes            62
+  Apparatus for Blood Examinations            70
+  Micrometers                                 73
+  Drawing Apparatus                           74
+  Mechanical Stages                           78
+  Photo-micrographic Apparatus                82
+  Projection Apparatus (Edinger)              84
+  The Large Projection Apparatus              87
+  Microtomes                                  92
+  Miscellaneous Accessories                   99
+  Publications                               104
+  Index                                      105
+
+
+
+
+  Notice.
+
+
+All previous editions of this catalogue are superceded by the present
+one, which should be exclusively used in ordering.
+
+Orders will be filled at once after their receipt.
+
+In ordering care should be taken to give the =number= of each article
+desired and to state listprice.
+
+To avoid delay and misunderstandings, we request that name and address
+be plainly written.
+
+Goods are forwarded at the expense and risk of the purchaser.
+
+Our instruments for use in =Universities, Colleges, Schools= &c. of the
+=United States= are by law free of duty and we shall be pleased to make
+specially low quotations for such orders.
+
+  ERNST LEITZ.
+
+
+
+
+  New Constructions.
+
+
+Since issueing our last catalogue, a number of new apparatus and
+accessories have been added. The following are the more important ones:
+
+1. A completely =new stand "A"= with extra fine micrometerscrew
+transmitting its movement directly to the tube. The stand is of elegant
+appearance and large dimensions, making it especially well adapted for
+work in photo-micrography.
+
+2. =Stand I= is now fitted out with the new special fine adjustment (each
+division {1/1000} mm).
+
+3. =Stand II= with round centering stage.
+
+4. =Stand IV= is replaced by a model of larger size.
+
+5. =Photo-micrographic apparatus= for use in horizontal and vertical
+position, having joint for inclination, large size bellows and
+plateholder.
+
+6. =Large projection-apparatus= for electric lamp of 30 Ampère with triple
+collecting lens of 210 mm aperture.
+
+7. =Objective 1 a= with adjustable mounting and changeable magnification.
+It is an excellent objective of low power for general purposes, having a
+comparatively short working distance.
+
+8. =Objective 1 b= with changeable magnification of lowest power, as far
+down as two diameters. It serves for drawing extended sections and
+specimens.
+
+9. =Saccharimeter after Mitcherlich= improved form.
+
+10. =Trichinoscope=, projection-apparatus of strong and simple
+construction.
+
+
+
+
+  =Preface.=
+
+
+Our American Branch house in New-York under the management of Mr. Wm.
+Krafft has now been established for over 10 years. This period has
+witnessed a gradual development of our business in the United States,
+making it necessary to establish some years ago a Western Branch in
+Chicago of which Mr. R. Gibson has charge.
+
+The cordial reception our firm received has been most gratifying and we
+take this opportunity to thank our many patrons for their kind
+consideration.
+
+It is our aim to co-operate with the scientists and construct new
+apparatus to meet their needs or improve others wherever this is
+possible.
+
+The foregoing list of additions and improvements made since issueing our
+last catalogue is proof that we spare no time nor labor to hold pace
+with the increased wants of modern times.
+
+We have now manufactured and sold over 71000 compound microscopes and
+31000 oil immersion objectives, a large number of which are used in the
+laboratories of Universities, Colleges, and other Educational
+Institutions of the United States.
+
+We are prepared at New-York and Chicago to repair our instruments or
+make alterations at short notice and at lowest prices. The optical part
+of a microscope should invariably be sent to the maker, as he is best in
+a position to repair same and has an added interest to bring a lens back
+to its original quality or even improve it.
+
+Microscopes, bacteriological apparatus and all other scientific
+instruments or preparations expressly imported for use in educational
+institutions are exempt from duty.
+
+Catalogues may be had on application by addressing:
+
+  =ERNST LEITZ,=
+
+  NEW-YORK               CHICAGO
+  411 West 59th Street   32 Clark, Cor. Lake Street.
+
+
+
+
+  =Objectives and Eye-pieces.=
+
+
+In the manufacture of our objectives only such glass is employed as has
+been subjected to the most rigid scientific tests. By these the exact
+index of refraction and the exact degree of dispersion of the glass are
+determined, and with these data available it is possible to very
+perfectly correct both spherical and chromatic aberrations while still
+making use of wide angular apertures in the objectives.
+
+The precise mathematical calculation, combined with accurate
+systematical working and testing methods, make it possible for us to
+guarantee our objectives to be all of equal and excellent quality.
+
+Every objective before leaving our hands, is subjected to the most
+careful test, and only such lenses as are of the highest grade, are sent
+out.
+
+For the past seventeen years we have used glasses manufactured by Schott
+& Co. of Jena. This glass has many points to recommend it for the
+construction of optical instruments, and only such kinds are employed by
+us, which have for many years been thoroughly tested as to their
+durability.
+
+Our lenses are therefore absolutely permanent. Objectives of the earlier
+type which have become cloudy, we shall gladly repair.
+
+[Illustration]
+
+The three illustrations given above afford an idea of the plan of
+construction of our achromatic objectives.
+
+The first figure represents the plan of our low power objectives, and it
+will be noted that they consist of two doublets, or triplets each
+carefully corrected.
+
+The central figure shows the construction of our high power dry
+objectives. A hemispherical front lens is combined with two doublets or
+sometimes triplets. The front lens is the chief magnifier of the
+combination, while the other lenses serve to correct the various
+aberrations.
+
+The Oil-immersion, represented by the last illustration consists of a
+front lens, hemispherical, behind which is a meniscus, which is in turn
+followed by a doublet and a triplet, these latter acting as the
+correcting lenses of the combination.
+
+We manufacture both =Achromatic= and =Apochromatic objectives=. They differ
+in that the glasses made use of in the apochromatics and the manner in
+which they are combined permit a more perfect correction of chromatic
+aberration. This advantage is not gained without a certain sacrifice of
+simplicity in construction; by avoiding the use of flint glass having a
+high refractive index and substituting materials to take the place of
+crownglass. The apochromatics as a matter of fact do resolve the fine
+markings of test objects (butterfly scales and diatomes) somewhat more
+clearly than the achromatics, but the difference is slight and in
+ordinary stained microscope preparations is hardly detectable.
+
+The correction of both achromatics and apochromatics is complete. The
+ordinary Huyghenian eye-pieces are consequently well adapted for use
+with the objectives of either construction. Only with the highest powers
+is it desirable to make use of the so-called "compensation" eye-pieces.
+
+The achromatics and Huyghenian eye-pieces are also well adapted to the
+requirements of photomicrography, special objectives being unnecessary
+for this purpose. This statement is substantiated by the excellent
+results obtained with our achromatic objectives, as shown in the
+photomicrographs accompanying our brochure on
+Photomicrography:--"Anleitung zur Mikrophotographie".
+
+In making use of the higher power objectives--from No. 5 on--it should
+be remembered, that the lenses are corrected for cover glasses of 0,17
+mm in thickness and for a microscope tube-length of 170 mm. When using
+the oil-immersion objectives it is particularly desirable, that this
+exact tube length should be employed. With a view to facilitate the
+adjustment of the tube-length the draw tubes of all our larger stands
+are graduated in millimeters, the scale indicating the exact length of
+the microscope tube in any given position of the draw tube. In this
+connection it should be remembered, that the width of the collar of the
+nose-pieces is 15 millimeters, and that consequently, when a nose-piece
+is attached to the tube the reading of the draw tube scale should be 155
+mm instead of 170 when the adjustment is proper.
+
+[Illustration: Figure comparative merits of the dry and immersion
+systems.]
+
+The above sketch may serve to make clear the advantages of the immersion
+objectives over those of the dry series. It is intended to represent
+diagrammatically a section through a cover-glass and the front lens of
+an objective, one half of the figure representing the conditions present
+in the case of the Oil-immersion, the other those which are present in
+the dry objectives. It will be noticed that by the interposition of a
+drop of oil of the same index of refraction as the glass between the
+cover-glass and the objective the refraction which occurs in the dry
+system when the light leaves the upper surface of the cover-glass is
+done away with. Since this second refraction is attended with much loss
+of light it must be evident, that in the immersion system a much greater
+quantity of light enters the objective than is possible, other things
+being equal, in objectives of the dry system.
+
+If we let _u_ represent one half the angular aperture of an objective,
+represented in the diagram by _D'BN_ in the case of the immersion, and
+_n_ the index of refraction of the medium interposed between the
+cover-glass and the objective we have in the formula _n_ sin. _u_ a
+mathematical expression of the optic power of the various systems of
+lenses, or in other words for what is designated the numerical aperture.
+
+The following table gives the numerical apertures of objectives of the
+various systems and of various angular apertures. In the dry system
+_n._, representing the index of refraction of air is taken as 1.00; in
+the immersion systems _n_ equals 1.33 for water, 1.52 for cedar oil and
+1.66 for monobromnaphthalin. A glance at the table will suffice to show
+the great advantage which the immersion objectives have over those of
+the dry series.
+
+  --------------+----+----+----+----+----+----+----+----+----+----+----+----+----+----
+  Angular       |10° |20° |30° |40° |50° |60° |70° |80° |90° |100°|110°|120°|130°|140°
+  aperture 2 _u_|    |    |    |    |    |    |    |    |    |    |    |    |    |
+
+  =Numerical apertures.=
+
+  --------------+----+----+----+----+----+----+----+----+----+----+----+----+----+----
+  Dry series    |0,09|0,18|0,26|0,34|0,42|0,50|0,57|0,64|0,71|0,77|0,82|0,87|0,91|0,94
+  _n_ = 1,00    |    |    |    |    |    |    |    |    |    |    |    |    |    |
+  --------------+----+----+----+----+----+----+----+----+----+----+----+----+----+----
+  Water-        |    |    |    |    |    |    |    |    |    |    |    |    |    |
+  Immersion     |0,12|0,24|0,35|0,46|0,56|0,66|0,76|0,85|0,94|1,02|1,09|1,15|1,20|1,25
+  _n_ = 1,33    |    |    |    |    |    |    |    |    |    |    |    |    |    |
+  --------------+----+----+----+----+----+----+----+----+----+----+----+----+----+----
+  Homogeneous   |    |    |    |    |    |    |    |    |    |    |    |    |    |
+  Oil-Immersion |0,14|0,26|0,40|0,52|0,64|0,76|0,87|0,98|1,07|1,16|1,24|1,32|1,38|1,43
+  _n_ = 1,52    |    |    |    |    |    |    |    |    |    |    |    |    |    |
+  --------------+----+----+----+----+----+----+----+----+----+----+----+----+----+----
+  Monobromide of|    |    |    |    |    |    |    |    |    |    |    |    |    |
+  Naphthaline-  |    |    |    |    |    |    |    |    |    |    |    |    |    |
+  Immersion     |0,15|0,29|0,43|0,57|0,70|0,83|0,95|1,07|1,17|1,27|1,36|1,44|1,50|1,56
+  _n_ = 1,66    |    |    |    |    |    |    |    |    |    |    |    |    |    |
+
+[Illustration: Photographic objectives with iris diaphragms, f/3.5]
+
+  ----------------+----+----+----+----
+  Focal length mm | 64 | 42 | 35 | 24
+  ----------------+----+----+----+----
+  Price $         | 20 | 18 | 18 | 18
+  ----------------+----+----+----+----
+
+
+
+
+  =Objective 1b.=
+
+
+It is designed principally for drawing extended sections and large
+specimens, and consists of two adjustable doublets. By varying their
+distance, a changeable magnification down to two diameters may be
+obtained.
+
+  Price $ 8.--
+
+
+  =Huyghenian Eye-pieces.=
+  ----------------+------+------+------+-------+------+------
+        Number    |  0   |  I   |  II  |  III  |  IV  |  V
+  ----------------+------+------+----------------------------
+  Focal length mm |  50  |  40  |  35  |   30  |  25  |  20
+  ----------------+------+------+----------------------------
+          Price of each eyepiece $ 2.00.
+
+
+The objectives designed for the Edinger apparatus of 64, 42, 35, and 24
+mm focal distance have been found to be very useful for a number of
+purposes and have come into great favor.
+
+(see. Dr. Kaiserling: Praktikum der wissenschaftlichen Photographie p.
+263).
+
+
+
+
+  =Achromatic Objectives.=
+
+  =============================================================================
+                  |              |Numerical   |  Micrometer    | Price
+  No. of Objective|Focal length  |Aperture    |    Values      |   $
+                  |              |(num. aper.)|                |
+  ————————————————+——————————————+————————————+————————————————+———————————————
+  Low power   { 1*|44 mm (1-3/4")|    0,09    | 0,054 mm = 54µ |  =3.25=[1]
+    Dry       { 1 |44 mm (1-3/4")|    0,09    | 0,054 mm = 54µ |  =6=
+    Series    { 1a| 39-27 mm     | 0,06--0,10 |    50--26µ     | =10= (adjustable
+                  |              |            |                |       mounting)
+              { 2 |30 mm (1-1/4")|    0,14    | 0,028 mm = 28µ |  =6=
+              { 3 |18 mm (3/4)   |    0,28    | 0,015 mm = 16µ |  =6=
+              { 4 | 8 mm (1/3)   |    0,55    | 0,009 mm =  9µ | =10=
+          ————————+——————————————+————————————+————————————————+———————————————
+  High power  { 5 |5,8 mm (1/4") |    0,77    |0,0045 mm = 4,5µ| =10=
+              { 6 |4,4 mm (1/6") |    0,82    |0,0034 mm = 3,5µ| =12=
+  (Fluorite)  { 6a|4,4 mm (1/6") |    0,82    |0,0034 mm = 3,5µ| =16=[2]
+              { 7 |3,2 mm (1/8") |    0,85    |0,0026 mm = 2,6µ| =12=
+  (Fluorite)  { 7a|3,2 mm (1/8") |    0,85    |0,0026 mm = 2,6µ| =16=[2]
+        "     { 8 |2,5 mm (1/10")|    0,87    |0,0020 mm = 2,0µ| =16=
+        "     { 9 |2,2 mm (1/12")|    0,87    |0,0017 mm = 1,7µ| =24=
+          ————————+——————————————+————————————+————————————————+———————————————
+  Water-          |              |            |                |
+     Immersion  10|2,2 mm (1/12")|    1,10    |0,0017 mm = 1,7µ| =26=
+          ————————+——————————————+————————————+————————————————+———————————————
+  Homogeneous{1/10|2,5 mm (1/10")|    1,30    |0,0022 mm = 2,2µ| =30=
+   Oil-      {1/12|2,1 mm (1/12")|    1,30    |0,0017 mm = 1,7µ| =40=
+   Immersion {1/16|1,7 mm (1/16")|    1,30    |0,0014 mm = 1,4µ| =60=
+  =============================================================================
+
+[Footnote 1: Objective 1* consists of only one doublet, carefully
+corrected. It is sufficient for many purposes, though it does not
+possess the same brilliancy of field as the No. 1 objective.]
+
+[Footnote 2: The objectives 6a. and 7a. are better corrected in
+achromatism than the regular No. 6 and 7.]
+
+
+
+
+  =Magnification=
+  of the Achromatic and Apochromatic Objectives in combination with the
+  Huyghenian Eye-pieces.
+
+  Tube-length 170 mm. Distance of image 250 mm.
+
+  ============================================================================
+                           |          Eye-pieces               |
+         Objectives        |-----------------------------------| Objectives
+                           |  0  |  I  | II  | III |  IV |  V  |
+  —————————————————————————+—————+—————+—————+—————+—————+—————+——————————————
+                      { 1* |  12 |  18 |  22 |  26 |  30 |  40 |
+                      { 1  |  12 |  18 |  22 |  26 |  30 |  40 |
+  Low Power           { 1a | 6-9 | 9-15|11-19|13-21|18-29|24-35|
+    Objectives        { 2  |  25 |  33 |  40 |  50 |  60 |  80 |
+                      { 3  |  45 |  60 |  70 |  80 | 105 | 130 |
+                      { 4  |  75 | 100 | 115 | 135 | 180 | 230 |
+  —————————————————————————+—————+—————+—————+—————+—————+—————|
+  High Power     {    5    | 140 | 180 | 210 | 250 | 325 | 420 |
+    Objectives   { 6 and 6a| 200 | 255 | 300 | 350 | 460 | 600 |  Achromatics
+   (Cover-glass  { 7 and 7a| 260 | 335 | 400 | 450 | 600 | 780 |
+    thickness    {    8    | 300 | 400 | 450 | 550 | 700 | 940 |
+    0,17 mm)     {    9    | 380 | 500 | 575 | 700 | 900 |1150 |
+  —————————————————————————+—————+—————+—————+—————+—————+—————|
+  Water-Immersion  { 10    | 405 | 535 | 610 | 745 | 950 |1200 |
+  —————————————————————————+—————+—————+—————+—————+—————+—————|
+  Homogeneous      { 1/10  | 310 | 415 | 470 | 575 | 730 | 940 |
+  Oil-Immersion    { 1/12  | 435 | 555 | 650 | 800 |1000 |1300 |
+                   { 1/16  | 520 | 700 | 800 | 950 |1250 |1680 |
+  —————————————————————————+—————+—————+—————+—————+—————+—————+——————————————
+  Dry              { 16    |  45 |  60 |  70 |  85 | 110 | 140 |
+  Lenses           {  8    |  95 | 125 | 145 | 170 | 225 | 295 | Apochromatics
+                   {  4    | 210 | 270 | 315 | 375 | 500 | 635 |
+  —————————————————————————+—————+—————+—————+—————+—————+—————|
+  Oil-Immersion       2    | 390 | 510 | 585 | 705 | 920 |1180 |
+  ============================================================================
+
+
+
+
+  =Apochromatic Objectives.=
+
+  ==================================================================
+    Objectives           |Focal length|Numerical|Micrometer| Price
+                         |    mm      | Aperture|  Values  |   $
+  ———————————————————————+————————————+—————————+——————————+————————
+                    { 16 |    16      |   0,30  | 0,015 mm |  =24=
+   Dry Series       { 8  |     8      |   0,65  | 0,007 mm |  =32=
+                    { 4  |     4      |   0,95  | 0,003 mm |  =48=
+                         |            |         |          |with correction
+                         |            |         |          |  collar
+  ———————————————————————+————————————+—————————+——————————+————————
+  Homogeneous       { 2  |     2      |   1,30  | 0,002 mm | =100=
+  Oil-Immersion     {    |            |         |          |
+  ———————————————————————+————————————+—————————+——————————+————————
+
+
+  Compensation Eye-pieces.
+  for Apochromatic Objectives.
+
+  =================================================
+  Eye-pieces    |   4  |   6  |   8  |  12  |  18
+  --------------+------+------+------+------+------
+  Price       $ |=6.50=|=6.50=| =10= | =10= |  =8=
+  =================================================
+    Compensation Eye-piece 6 with micrometer =$8.50=
+
+
+  =Magnification=
+  of the Apochromatic Objectives in combination with the Compensation
+  Eye-pieces.
+
+  ==================================================
+                      |         Eye-pieces
+    Objectives        |-----+-----+-----+-----+-----
+                      |  4  |  6  |  8  | 12  | 18
+  --------------------+-----+-----+-----+-----+-----
+                 { 16 |  70 | 100 | 125 | 155 | 225
+    Dry Series   {  8 | 140 | 200 | 260 | 325 | 465
+                 {  4 | 300 | 430 | 550 | 675 |1000
+  --------------------+-----+-----+-----+-----+-----
+  Oil-Immersion     2 | 575 | 820 |1080 |1500 |2250
+  ==================================================
+
+[Illustration: Double revolving Eye-piece.]
+
+Until very recently we have manufactured no arrangement for changing
+oculars on the microscope. This was due in part to the fact that there
+was no great demand for such an accessory and in part to the clumsiness
+of all those revolving eye-pieces which changed the entire ocular. The
+latter of these difficulties has been overcome in our present revolving
+eye-piece by such an adjustment of the collecting or lower lens of the
+eye-piece that it may remain permanently in position, the eye lens of
+the combination alone moving in the revolver. So accurate is the
+construction of the revolver and so carefully are the lenses adjusted
+that the eye-pieces may be changed while a specimen is in focus on the
+microscope stage without a readjustment of the focus.
+
+The revolving eye-piece is also particularly well adapted to use as a
+micrometer ocular, for when the eye lens is turned aside a micrometer
+scale may be inserted and rests upon the diaphragm of the eye-piece.
+Once adjusted in this way the micrometer values are the same for all the
+eye lenses of the combination.
+
+                                                                $
+  Prices: =Double revolving Eye-piece=, without eye lenses    =4.--=
+           Each eye lens                                      =1.25=
+          =Eye-piece Micrometer=, No. 86                      =2.--=
+
+
+
+
+  =Stands.=
+
+
+For the past thirty years division of labor has been employed to the
+utmost possible extent in the manufacture of our microscopes. This
+principle has been applied to our machinery as well as to our workmen,
+with the result that we have gradually accumulated a large plant of
+special machinery of the most accurate construction, each machine
+especially adapted to the manufacture of some particular part of our
+microscopes. By this development of mechanical appliances for microscope
+manufacture two ends have been attained:--The greatest accuracy and
+uniformity of construction of our microscopes has been made possible,
+while at the same time it has been possible to cheapen the cost of
+manufacture. Instruments which are the product of delicate machinery
+must always be more uniform, more accurate and should be less costly
+than those manufactured by hand.
+
+In the following remarks we refer more particularly to the larger
+microscope stands of our manufacture and draw attention to those
+parts which should be present in every well equipped microscope.
+
+The elements of these microscopes are:
+
+    1. =The foot and upright support with joint for inclination=,
+    2. =The stage=,
+    3. =The sub-stage, with condenser, iris diaphragm and mirror=,
+    4. =The body with the adjustments=,
+    5. =The tube, carrying eye-piece, nose-piece and objectives=.
+
+1. =The foot and upright support= are solid and are of such weight and
+shape as to permit inclination of the body of the microscope to a
+horizontal position. The foot is horse-shoe shaped and is made to touch
+the table at three points, thus insuring stability even on a surface
+which is not entirely level. Inclination of the body of the microscope
+is permitted by a joint in the upright, which joint may be fastened in
+the larger stands by a set-screw operated by a lever. Stands Ia and IIb
+are also made with the English foot. Abundant space is left under the
+stage for the various attachments of the sub-stage.
+
+2. =The stage= of Stands A, I, Ia and II is round, revolving and
+centering. The centering arrangement consists of two small thumb-screws
+so situated at the sides of the stage as to control motion of the stage
+in all directions, thus to a limited extent serving the purpose of a
+mechanical stage.
+
+=The other microscope= stands have square immovable stages, sufficiently
+large for general microscopic work. For the examination of very large
+sections two instruments are manufactured: the _Nebelthau_ sliding
+microscope (p. 50) and the stand after _Dölken_ (p. 52). The former is
+for magnifications up to 120 diam, whereas the latter can be used with
+any magnification.
+
+3. =The sub-stage= carries a plane and concave mirror, the condenser and
+the diaphragm for regulating the illumination of the object.
+
+=The Condenser= is so adjusted as to concentrate the rays of light about 2
+mm above its surface, which is the average thickness of the microscopic
+slides, under an angle equal to the angular aperture of the highest
+power objective, which is about 120°.
+
+In the lower power objectives the angular aperture is to be reduced by
+the iris diaphragm.
+
+To focus the Condenser properly it is adjustable by rack and pinion
+movement on Stands A, I, Ia, Ib, and by side screw on Stands II and IIa.
+
+4. =The body= of the microscope carries the tube and is fitted with two
+adjustments for focussing; a coarse adjustment and a fine adjustment.
+The smooth working of these adjustments is one of the chief requirements
+of a good microscope.
+
+=The coarse adjustment= consists of rack and pinion and moves the tube of
+the microscope in a vertical groove with the least possible friction.
+The teeth of the rack and pinion are set obliquely to the axis of the
+tube and are so adjusted that two teeth of each are always interlocked,
+thus avoiding all possibility of slipping or loss of motion in the
+movement.
+
+[Illustration: Figure of the Micrometer-screw of the fine adjustment.]
+
+=The fine adjustment= consists of a micrometer screw which moves the tube
+and arm of the microscope supporting the coarse adjustment vertically
+upon a triangular column. This column is virtually a continuation upward
+of the upright support of the base of the microscope. Around the column
+is a broad collar so accurately fitted that it moves smoothly upon it
+with a minimum of friction and still without lateral motion, the
+movement being controlled by means of a micrometer screw at the top of
+the column. The head of this micrometer screw, a section of which is
+shown in the accompanying figure, is milled and is graduated in such a
+way as to indicate the exact degree of motion of the microscope tube
+which is accomplished by turning the micrometer screw, each division of
+the graduation corresponding to a motion of the tube through 1/100
+millimeter, and a complete revolution of the screw corresponding to a
+motion of the tube through ½ millimeter. The accuracy of this adjustment
+and the smoothness of its motion must be conceded to be a triumph of
+mechanical skill.
+
+=Stands A.= and =I.= are fitted with a =new fine adjustment= device (one
+division on the micrometer screw corresponding to 1/1000 mm.) which is
+fully described on pages 25-26.
+
+5. =The tube= of the microscope encloses a second tube, or draw-tube,
+which latter carries the eye-piece, and is so graduated as to indicate
+the exact length of tube in use at any time. The lower end of the tube
+has a thread into which the various objectives or a nose-piece screw.
+Tube and objectives are provided with the so-called "Society screw".
+
+=The nose-piece= has now become an almost indispensable part of a working
+microscope. It can, however, be used to best advantage only on such
+stands as are provided with a coarse adjustment by rack and pinion.
+Aside from the advantage derived from the rapid changing of objectives,
+which it permits, it is so accurately made and centered as to materially
+facilitate the focussing of the various objectives. It is only necessary
+to focus with the fine adjustment to obtain a view of the same
+microscope field which had been under observation before the change was
+made.
+
+As it is necessary for this purpose that the objectives should be
+accurately adjusted to the nose-piece, it is very desirable that in
+ordering an instrument its nose-piece should be ordered at the same time
+if one is to be used, as subsequent ordering may necessitate the return
+of the stand and objectives to us.
+
+=Stands A, I, Ia, Ib, II, IIa, IIb and III= are those which are best
+suited to fine microscopical investigations. Among them the physician
+and bacteriologist will find an instrument entirely suited to his
+particular needs.
+
+=Stand III= is now provided with rack and pinion adjustment.
+
+=Stands IV and V= are small instruments, which serve nevertheless many
+purposes where the more elaborate outfits are unnecessary. They make
+excellent laboratory stands for elementary courses in microscopy.
+
+In =Stands IV and V= the coarse adjustment is by means of sliding tube.
+They are all provided with fine adjustment by micrometer screw.
+
+=Stand VI= is provided with rack and pinion adjustment only. It has a
+large stage, and is particularly intended for searching for trichinae
+and for similar examinations where a very strong durable stand is
+desired and where the use of high power objectives is unnecessary. It
+may also be useful as an auxiliary stand for purposes of demonstration
+in laboratories.
+
+=Stands III, IV, V, VI= have no joint for inclining the body.
+
+=Stands A, I, Ia, Ib, II, IIa, IIb, III, IV= have mahogany cases (provided
+with a nickelled handle), in which the microscopes stand.
+
+=Stands V and VI= are laid in mahogany boxes.
+
+These cases are furnished with the microscopes without extra charge,
+when a =complete outfit=, including oculars and objectives is purchased.
+
+Object clamps and test objects accompany every microscope.
+
+The objectives to Stands A, I, Ia, Ib, II, IIa, IIb are in brass boxes;
+those for Stands III, IV, V and VI are in morocco cases.
+
+
+
+
+  =Illuminating Apparatus.=
+
+
+  =a. Illuminating Apparatus of Stands A and I.=
+
+The apparatus includes the following parts:
+
+    Cylinder iris diaphragm.
+    Swing-out condenser.
+    Diaphragm carrier with iris diaphragm.
+    Plane and concave mirror.
+
+The cylinder iris diaphragm comes into play when the condenser
+is swung out of position. To do this the diaphragm carrier is
+turned to the side as shown in the diagram, a small knob is
+pressed, which liberates the condenser, and the latter is
+swung out to the side.
+
+The regulation of the cylinder iris diaphragm is accomplished
+by means of a lever. Before the condenser is swung back into
+position the cylinder iris should be opened to its fullest
+extent. The lower iris diaphragm is for use in connection with
+the condenser only. It is regulated by means of a small knob.
+A horizontal rack and pinion arrangement permits oblique
+illumination, and a vertical rack and pinion permits
+adjustment of the whole sub-stage. By these means a most
+perfect control of the illumination of the object is assured.
+Ground or colored glass discs may be inserted above the iris
+diaphragm if modification of the light is desired.             =$30.--=
+
+_This illuminating apparatus may also be fitted to Stands Ia and Ib._
+
+[Illustration: Abbe's Illuminating Apparatus for Stand A and I.
+
+Swing-out Condenser.
+
+Cylinder Iris Diaphragm.]
+
+  =b. Illuminating Apparatus of Stands Ia and Ib= (p. 30, 32, 34).
+
+[Illustration]
+
+The following are the parts of this apparatus:
+
+    Cylinder diaphragm with 3 stops of different apertures.
+    Condenser.
+    Diaphragm carrier with iris diaphragm.
+    Plane and concave mirror.
+
+To substitute the condenser for the cylinder diaphragm the
+diaphragm carrier is turned to the side and the cylinder
+diaphragm is drawn out of the sleeve which holds it in
+position and into which the condenser readily fits. The
+diaphragm carrier is then turned back into position and the
+amount of light regulated by manipulating the knob controlling
+the size of the iris. The whole sub-stage may be raised or
+lowered in the optical axis by means of a rack and pinion, and
+a similar arrangement permits lateral illumination by moving
+the iris diaphragm in the horizontal plane.
+
+Ground glass and colored plates may be inserted above the iris
+diaphragm.                                                     =$24.--=
+
+
+  =c. Illuminating Apparatus for Stand II and IIa= (p. 36 & 38).
+
+The condenser and iris diaphragm form one piece, giving
+central but no oblique illumination. The whole apparatus may
+be raised and lowered in the optical axis by means of a screw.
+The cylinder diaphragm may be inserted in place of the
+condenser. A ring below the iris diaphragm permits the
+insertion of glass discs for the purpose of modifying the
+light.                                                         =$12.--=
+
+
+  =d. Illuminating apparatus for Stand IIb= (p. 40).
+
+The same as for II and IIa fitted in a fixed sleeve; without
+the side-screw.                                                =$10.--=
+
+  =e. Small Illuminating Apparatus.=
+
+[Illustration: Small Illuminating Apparatus.]
+
+The small illuminating apparatus consists of a somewhat
+smaller condenser with iris diaphragm and can be adjusted to
+the Stand IV, when it has the cylinder diaphragm.               =$8.--=
+
+[Illustration: Cylinder iris diaphragm.]
+
+A cylinder iris diaphragm can be furnished in place of the
+ordinary cylinder diaphragm of Stand II, IIa and IIb at an
+additional cost of                                              =$6.--=
+
+[Illustration: Iris diaphragm fitted to stage of stand III.]
+
+Stand III can be had with iris diaphragm fitted in stage, in
+place of the wheel diaphragm (see page 43) Additional price     =$6.--=
+
+
+=_Complete Microscope Outfits._=
+
+The outfits comprised in the following pages are made up with achromatic
+objectives, which suffice for all ordinary needs.
+
+We are glad to supply any other combination of eye-pieces and objectives
+which may be preferred. The price of each outfit may be readily computed
+by adding together the cost of its various items.
+
+Microscope =stands=, without objectives, will not be sold separately.
+
+[Illustration: Stand A.--Universal Microscope.]
+
+
+  =Stand "A".=
+
+  Universal Microscope.
+
+In the construction of our new stand "A" we have taken special care to
+enlarge all the parts proportionately in order to secure strength and
+stability, at the same time adding to the beauty of the instrument.
+
+The upper pillar of the microscope is shaped in such a way as to form a
+convenient handle; and to increase the free working space over the
+stage, thereby allowing the examination of very large specimen and
+culture plates. A specially constructed mechanical stage larger than No.
+98 may be attached, which is adapted for slides up to 2×4 inches (50×100
+mm).
+
+The extra large dimensions of all the main parts of this microscope such
+as the base and stage etc., allow that freedom of movement so desired in
+a stand for photo-micrography.
+
+Both the body tube and graduated draw tube are very wide and permit the
+use of low power objectives to cover specimen of large extent; for the
+same reason the opening in the stage is very wide but can be narrowed
+down by a stop.
+
+The most important innovation on the microscope is the new fine
+adjustment device, which is unexcelled both in solidity of construction
+and accuracy of movement, representing the highest attainment of the
+designers and mechanics skill.
+
+Sectional cuts of this unique arrangement are shown in illustration (p.
+26-27).
+
+All that can be seen on the exterior are two small milled heads mounted
+below and somewhat back of the two larger knobs controlling the rack and
+pinion (coarse) adjustment of the microscope. The knob on the right side
+is provided with a graduated drum _r_, indicating the movement of the
+fine adjustment.
+
+The two knobs with drum are mounted on an axle _a_, which in its central
+portion is enlarged and provided with a worm gear. The latter in its
+turn drives the gear wheel, _d_. A spiral spring pressing against one of
+the journals into which the axle is mounted prevents any lost motion in
+the worm gear. Mounted on the same shaft with the gear-wheel _d_, is a
+heartshaped cam _f_. On this cam rests the steel roller _g_, fitted on
+the support _k_, which in its turn carries the microscope tube. By its
+weight and a spiral spring the latter presses on the cam _f_, and
+effects a direct vertical movement.
+
+[Illustration]
+
+The periphery of the heart shaped cam _f_, is exactly symmetrical and
+mathematically correct. The distance traversed by its curved sides from
+the lowest to the highest point and vice versa is 3 mm. There are cut 60
+teeth in the entire periphery of the gear-wheel _d_; the number
+corresponding to one side of the heart-shaped cam or 3 mm elevation, are
+30 teeth, therefore 1 tooth means a movement of 3/30 mm or 0,1 mm.
+
+This in turn requires one complete revolution of the axle _a_, the drum
+of which is graduated into 100 parts. The value of each division on the
+drum is therefore 0,1/100=0,001 mm.
+
+This micrometer fine adjustment is exceedingly accurate and reliable,
+and besides it has the following advantages;
+
+By virtue of its unique construction the movement is continuous, there
+is absolutely no limit to the motion of the micrometer screw, which may
+be turned forward or backward as the work requires.
+
+This movement extends in exact ratio to the revolution of the cam for a
+distance of 3 mm. As another advantage we may mention, that it is almost
+impossible to break the coverglass of the specimen with this fine
+adjustment.
+
+Should the objective come in contact with the coverglass and assuming
+the knob is turned still further then the tube, which is of aluminium
+and very light would simply rest on the specimen, without breaking the
+coverglass, as the latter will easily stand the small pressure of the
+tube and the fine spiral spring.
+
+[Illustration]
+
+No.                                                                $
+
+   1. New microscope stand "A" inclinable with hinged joint
+      and clamping lever, fitted with round revolving
+      centering stage, coarse adjustment by rack and pinion,
+      new fine adjustment by micrometer-screw (each division
+      1/1000 mm.) Wide tube, draw tube with millimeter scale.
+      Large illuminating apparatus with swing-out condenser
+      and cylinder-iris diaphragm                              =120.--=
+        Apochr. 16, 8, 4, oil-imm. 2 mm. N. A. 1,30            =204.--=
+        Compens. ocular 4, 8, 12, 18                            =34.50=
+        Compens. ocular No. 6 with micrometer and drawing
+          ocular No. 93                                         =18.50=
+        Large mechanical stage No. 99, for object slides
+          up to 2×4 inches                                      =32.--=
+        Triple nose-piece                                        =8.--=
+                                                                ——————
+           Magnif. 70—2250.                                    =417.--=
+
+   2. The same stand and illum. apparatus;
+      Object.: 2, 4, 6, oil-imm. 1/12, N. A. 1,30
+      Ocul. 0. I. III. IV. V. microm. ocul. II.
+      Triple nosepiece                                         =210.--=
+
+[Illustration: Stand I.]
+
+  Stand I.
+
+   3. =Large microscope=, inclinable, with hinged joint and
+      clamping lever and fitted with round revolving centering
+      stage. Coarse adjustment by rack and pinion, new fine
+      adjustment by micrometer-screw, the head of which is
+      graduated each division = 1/1000 mm. Draw-tube with (see
+      page 25-26) millimetre scale. Large illuminating
+      apparatus with swing-out condenser and cylinder iris
+      diaphragm (illustrated on page 21).
+        Mechanical stage, No. 98.
+        Triple nose-piece.
+        Drawing eye-piece, No. 93.
+        Micrometer eye-piece, No. 84.
+        Achromatic objectives Nos. 1, 3, 6.
+        Oil-Immersion 1/12, N. A. 1,30.
+        Eye-pieces 0, I, III, IV, V.
+        Magnifications 12—1300                                 =236.--=
+
+   4. =The same= stand and illuminating apparatus.
+        Triple nose-piece.
+        Micrometer eye-piece, No. 84.
+        Drawing eye-piece, No. 93.
+        Objectives 2, 4, 6, Oil-Immersion 1/12, N. A. 1,30.
+        Eye-pieces I, III, IV, V.
+        Magnifications 33-1300                                 =210.--=
+
+=The stand= and illuminating apparatus without objectives,
+oculars and nose-piece                                         =112.--=
+
+[Illustration: Stand Ia.]
+
+  =Stand Ia.=
+
+  4a. =Large Microscope=, of smaller size than Stand I,
+      fitted with horseshoe foot. The stand is inclinable and
+      fitted with revolving centering stage, coarse adjustment
+      by rack and pinion, fine adjustment by micrometer screw
+      with scale. Draw-tube with millimetre scale. Large
+      Illuminating Apparatus (Cf. p. 22, b) with rack and
+      pinion, and iris-diaphragm with oblique movement. The
+      cylinder-diaphragm and condenser may be readily
+      substituted for one another.
+        Triple nose-piece.
+        Objectives 2, 4, 6, Oil-Immersion 1/12, N. A. 1,30.
+        Eye-pieces I, III, IV, V.
+        Magnifications 33-1300                                 =160.--=
+
+  4b. =The same= with Illuminating Apparatus.
+        Triple nose-piece.
+        Objectives 3, 6, Oil-Immersion 1/12, N. A. 1,30.
+        Eye-pieces I, III, IV.
+        Magnifications 60-1000                                 =148.--=
+
+  4c. =The same= with Illuminating Apparatus.
+        Triple nose-piece.
+        Objectives 3, 6, Oil-Immersion 1/10, N. A. 1,30.
+        Eye-pieces II and IV.
+        Magnifications 70-730                                  =136.--=
+
+      =Stand= with Illuminating Apparatus, but without
+      objectives, eye-pieces and nose-piece                     =76.--=
+
+      =The same= with Illuminating Apparatus, Swing-out
+      Condenser and Cylinder Iris-diaphragm (p. 20, a)          =82.--=
+
+      Mechanical stage No. 98 can be fitted to this stand;
+      price                                                     =28.--=
+
+[Illustration: Stand Ia with English foot.]
+
+  =Stand Ia=
+  with English foot.
+
+  4d. =Large Microscope= differing from the foregoing (Ia)
+      stand only in being provided with an English foot, which
+      makes the stand somewhat steadier and lighter. The
+      prices and combinations are otherwise the same.
+
+      Dr. P. G. Unna of Hamburg uses this microscope in his
+      laboratory.
+
+      The stage revolves and centres. The illuminating
+      apparatus is that described on p. 22, b.
+        Triple nose-piece.
+        Objectives 2, 4, 6, Oil-Immersion 1/12, N. A. 1,30.
+        Eye-pieces I, III, IV, V.
+        Magnifications 33—1300                                 =160.--=
+
+  4e. =The same= with the illuminating apparatus.
+        Triple nose-piece.
+        Objectives 3, 6, Oil-Immersion 1/12, N. A. 1,30.
+        Eye-pieces I, III, IV.
+        Magnifications 60—1000                                 =148.--=
+
+  4f. =The same= with illuminating apparatus.
+        Triple nose-piece.
+        Objectives 3, 6, Oil-Immersion 1/10, N. A. 1,30.
+        Eye-pieces II, IV.
+        Magnifications 70—730                                  =136.--=
+
+      =The stand= with illuminating apparatus, but without
+      objectives, oculars and nose-piece                        =76.--=
+
+      =The stand= with swing-out condenser (p. 20, a)           =82.--=
+
+      Mechanical stage No. 98 can be fitted to this
+      stand; price                                              =28.--=
+
+[Illustration: Stand Ib.]
+
+  =Stand Ib.=
+
+   5. =Large Microscope=, which differs from Ia only in the
+      stage. The stage is fixed and square. The stand is
+      inclinable and has a hinged joint and clamping lever.
+      Draw-tube with millimetre scale. Coarse adjustment by
+      rack and pinion, fine adjustment by micrometer screw
+      with graduated head. Illuminating Apparatus, same as Ia
+      (p. 22, b).
+        Triple nose-piece.
+        Objectives 3, 6, Oil-Immersion 1/12, N. A. 1,30.
+        Eye-pieces I, III, IV.
+        Magnifications 60—1000                                 =142.--=
+
+   6. =The same= with simplified Illuminating Apparatus (p. 22, c).
+        Triple nose-piece.
+        Objectives 3, 6, Oil-Immersion 1/10, N. A. 1,30.
+        Eye-pieces I, III, IV.
+        Magnifications 60—730                                  =120.--=
+
+   7. =The same= without Illuminating Apparatus, with Cylinder-diaphragm.
+        Double nose-piece.
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 60—450                                   =74.--=
+
+   8. =The same= without Illuminating Apparatus and without
+      nose-piece.
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 60—450                                   =68.--=
+
+      =Stand= without objectives and eye-pieces, without
+      illuminating apparatus and without nose-piece             =46.--=
+
+      =Stand= without objectives and eye-pieces, with
+      illuminating apparatus, without nose-piece                =70.--=
+
+      =The same= with illuminating apparatus, with swing-out
+      condenser and cylinder iris-diaphragm (p. 22 a)           =76.--=
+
+[Illustration: Stand II.]
+
+  =Stand II.=
+
+  9a. =Medium Size Microscope=, inclinable, with revolving
+      centering vulcanite stage, coarse adjustment by rack and
+      pinion, fine adjustment by micrometer-screw. Draw-tube
+      with millimetre scale. Illuminating apparatus and iris-
+      diaphragm with lateral screw for raising and lowering.
+      A ring under the iris diaphragm serves to hold a ground
+      glass or colored disc. The illuminating apparatus and
+      cylinder diaphragm are easily interchangeable.
+        Triple nose-piece.
+        Objectives 3, 6, Oil-Immersion 1/12, N. A. 1,30.
+        Eye-pieces I, III, IV.
+        Magnifications 60—1000                                 =126.--=
+
+  9b. =The same= with Illuminating Apparatus.
+        Triple nose-piece.
+        Objectives 3, 6, Oil-Immersion 1/10, N. A. 1,30.
+        Eye-pieces II, IV.
+        Magnifications 70—730                                  =114.--=
+
+  9c. =The same= without Illuminating Apparatus.
+        Triple nose-piece.
+        Objectives 3, 6, 8.
+        Eye-pieces I, III.
+        Magnifications 60—550                                   =90.--=
+
+  9d. =The same= without Illuminating Apparatus.
+        Double nose-piece.
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 60—450                                   =72.--=
+
+  9e. =The same= without Illuminating Apparatus and nose-piece.
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 60—450                                   =66.--=
+
+      =Stand= with Illuminating Apparatus and Iris-diaphragm,
+      without objectives, eye-pieces and nose-piece.            =54.--=
+
+      =The same stand= with Cylinder Diaphragm                  =44.--=
+
+      =Stand= with illuminating apparatus, swing-out condenser
+      and cylinder iris diaphragm                               =60.--=
+
+      =Cylinder iris diaphragm= (Cf. p. 23)                      =6.--=
+
+[Illustration: Stand IIa.]
+
+  =Stand IIa.=
+
+  9. =Medium Size Microscope=, inclinable, coarse adjustment
+      by rack and pinion, fine adjustment by micrometer-screw.
+      Draw-tube with millimetre scale. Illuminating apparatus
+      and iris-diaphragm with lateral screw for raising and
+      lowering. A ring under the iris diaphragm serves to
+      hold a ground glass or colored disc. The illuminating
+      apparatus and cylinder diaphragm are easily interchangeable.
+        Triple nose-piece.
+        Objectives 3, 6, Oil-Immersion 1/12, N. A. 1,30.
+        Eye-pieces I, III, IV.
+        Magnifications 60—1000                                 =120.--=
+
+  10. =The same= with Illuminating Apparatus.
+        Triple nose-piece.
+        Objectives 3, 6, Oil-Immersion 1/10, N. A. 1,30.
+        Eye-pieces II, IV.
+        Magnifications 70—730                                  =108.--=
+
+  11. =The same= without Illuminating-Apparatus.
+        Triple nose-piece.
+        Objectives 3, 6, 8.
+        Eye-pieces I, III.
+        Magnifications 60—550                                   =84.--=
+
+  12. =The same= without Illuminating Apparatus.
+        Double nose-piece.
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 60—450                                   =66.--=
+
+  13. =The same= without Illuminating Apparatus and nose-piece.
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 60—450                                   =60.--=
+
+      =Stand= with Illuminating Apparatus and Iris-diaphragm,
+      without objectives, eye-pieces and nose-piece             =48.--=
+
+      =The same stand= with Cylinder Diaphragm                  =38.--=
+
+      =Cylinder iris-diaphragm= (Cf. p. 23)                      =6.--=
+
+[Illustration: Stand IIb.]
+
+  =Stand IIb.=
+
+ 14a. =Medium Size Microscope=, stand inclinable to the extent
+      of 45°, tripod foot, coarse adjustment by rack and
+      pinion, fine adjustment by micrometer screw. Draw-tube
+      with millimetre scale. Illuminating Apparatus and
+      Iris-diaphragm permanently connected and sliding in a
+      sleeve underneath the stage. The cylinder-diaphragm
+      is used in the same manner. A ring below the iris-diaphragm
+      serves to hold a ground glass or colored disc.
+        Triple nose-piece.
+        Objectives 3, 6, Oil-Immersion 1/12, N. A. 1,30.
+        Eye-pieces I, III, IV.
+        Magnifications 60—1000                                 =104.--=
+
+ 14b. =The same= with Illuminating Apparatus.
+        Triple nose-piece.
+        Objectives 3, 6, 8.
+        Eye-pieces II, IV.
+        Magnifications 70—700                                   =78.--=
+
+ 15a. =The same= without Illuminating Apparatus.
+        Double nose-piece.
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 60—450                                   =50.--=
+
+ 15b. =The same= without Illuminating Apparatus and nose-piece.
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 85—450                                   =44.--=
+
+      =Stand= with Illuminating Apparatus and Iris-diaphragm    =32.--=
+
+      =Stand= with Cylinder or Wheel-diaphragm                  =22.--=
+
+      =Cylinder iris-diaphragm= (p. 23)                          =6.--=
+
+      For the addition to this microscope of a lateral screw
+      for raising and lowering the illuminating apparatus as
+      on Stand IIa, an extra charge of $2.-- is made.
+
+[Illustration: Stand III.]
+
+  =Stand III.=
+
+Stand III is now provided with rack and pinion coarse adjustment instead
+of sliding tube. In consequence a nose-piece can be used on it to better
+advantage. It will be found an excellent laboratory stand at low price.
+
+ 16a. =Medium Size Microscope=, non-inclinable stand,
+      coarse adjustment by rack and pinion, fine adjustment by
+      micrometer-screw. The draw-tube has a millimetre scale.
+      Plane and concave mirror. Wheel-diaphragm.
+        Triple nose-piece.
+        Objectives 3, 6, 8.
+        Eye-pieces I, III.
+        Magnifications 60—550                                   =66.--=
+
+ 16b. =The same= without nose-piece.
+        Objectives 3, 6, 8.
+        Eye-pieces I, III.
+        Magnifications 60—550                                   =58.--=
+
+ 17a. =The same=, with double nose-piece.
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 60—450                                   =48.--=
+
+ 17b. =The same= without nose-piece.
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 60—450                                   =42.--=
+
+      =Stand= with wheel-diaphragm                              =20.--=
+
+      =This stand= can be supplied with iris diaphragm in
+      stage (see illustration p. 23) instead of
+      wheel-diaphragm.
+
+      =Stand= with iris diaphragm                               =26.--=
+
+[Illustration: Stand IV.]
+
+  =Stand IV.=
+
+The dimensions of this stand are now larger than formerly. The price has
+not been changed.
+
+  18. =Small Microscope.= Adjustable by sliding tube and
+      micrometer-screw. The draw-tube is graduated in
+      millimeters. Cylinder-diaphragm with sliding sleeve.
+      Concave and plane mirrors, obliquely adjustable.
+        Objectives 3, 6, 8.
+        Eye-pieces I, III.
+        Magnifications 60—550                                   =52.--=
+
+  19. =The same.=
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 60-450                                   =36.--=
+
+  20. =The same= without Cylinder Diaphragm, with Wheel
+      Diaphragm.
+        Objectives 3, 5, 7.
+        Eye-pieces I, III.
+        Magnifications 60—450                                   =44.--=
+
+  21. =The same.=
+        Objectives 1, 3, 7.
+        Eye-pieces I, III.
+        Magnifications 18—450                                   =40.--=
+
+  22. =The same.=
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 60—450                                   =34.--=
+
+      =Stand= with cylinder-diaphragm, without objectives
+      and eye-pieces                                            =14.--=
+
+      =Stand= with wheel-diaphragm, without objectives and
+      eye-pieces                                                =12.--=
+
+[Illustration: Stand V.]
+
+  =Stand V.=
+
+  23. =Small Microscope=. Adjustable by sliding tube and
+      micrometer-screw. Concave mirror.
+        Objectives 3, 7.
+        Eye-pieces I, III.
+        Magnifications 60—450                                   =30.--=
+
+  24. =The same.=
+        Objectives 3, 5.
+        Eye-pieces I, III.
+        Magnifications 60—250                                   =28.--=
+
+  25. =The same.= Plane mirror.
+        Objectives 1, 3.
+        Eye-pieces I, III.
+        Magnifications 18—80                                    =24.--=
+
+  26. =The same.=
+        Objectives 3.
+        Eye-pieces I, IV.
+        Magnifications 60—105                                   =18.--=
+
+  27. =Stand= without objectives and eye-pieces                  =8.--=
+
+[Illustration: Stand VI.]
+
+  28. =Auxiliary Laboratory Stand=, for the examination of
+      trichinae and for searching plate cultures. Very large
+      stage (3-1/2×4 inch.). Adjustable by means of a carefully
+      constructed rack and pinion, rendering it possible to
+      focus objectives of fairly high power.
+      =Stand=, without eye-pieces, objectives or case            =8.--=
+
+      29. This stand fitted with objective 3, eye-pieces 0 and
+      IV. Magnifications 40 to 100, in mahogany case fitted
+      with lock                                                 =18.--=
+
+ 29a. =The same stand= fitted with eye-piece II and
+      objective having separable front lens, yielding a
+      magnification of 40 and 100 diam                          =18.--=
+
+      =Glass compressor= with graduation                        =--.80=
+
+      =Glass compressor= without graduation, per pair           =--.40=
+
+
+  =Demonstration microscope.=
+
+[Illustration: Demonstration microscope with condenser.]
+
+ 30a. Adapted for low and medium power. Square stage
+      with wheel-diaphragm.
+
+      Adjustment by sliding tube; after being adjusted
+      the tube may be fixed by a ring clamp. Detachable
+      handle.
+
+      With clip to hold a sketch or label, etc. Stand
+      without objective and eye-piece.                           =6.--=
+
+ 30b. =The same= with objective 3 and eye-piece I,
+      magnifying 60 times                                       =14.--=
+
+ 30c. =The same= with adjusting screw for focussing high
+      power objectives, with condenser and iris-diaphragm,
+      without objectives and eye-pieces                         =18.--=
+
+ 30d. =The same= with objectives 3 and 6 and eye-piece I.
+      Magnifications 60 and 255                                 =38.--=
+
+[Illustration: Nebelthau's Sliding Microscope.]
+
+  =Nebelthau's Sliding Microscope.=
+
+  (Cf. Zeitschrift für wissenschaftliche Mikroskopie, XIII, 1896.)
+
+ 31. The sliding microscope is an instrument by means of
+     which very large microscope sections, as, for example,
+     large sections of the brain, can be systematically
+     examined. It is also of service in looking over plate
+     cultures of bacteria.
+
+     The microscope is carried on a heavy beam supported
+     by two stout pillars under which the stage
+     moves. The various movements are accomplished by
+     motion of the microscope on a lateral track upon
+     its support and by motion of the stage on a similar
+     track at right angles to the first. The motion of the
+     microscope is by means of a screw, that of the stage
+     by double rack and pinion. The extent of the movements
+     is indicated in each case by a scale, thus
+     permitting the systematic examination of the entire
+     specimen.
+
+     The stage consists of a glass plate, measuring
+     16×20 cm, which is carried in a frame supported on
+     four columns. The tracks permit a motion of the
+     microscope of 18 cm and of the stage of 13,5 cm. A
+     mirror under the stage affords ample illumination.
+
+     The microscope tube is so arranged that it can be
+     easily removed from the stand and a simple lens substituted
+     for it. The coarse adjustment of the microscope
+     is by rack and pinion. A screw above the objective
+     serves for fine adjustment. The price of this sliding
+     microscope, without objectives or oculars, but with a
+     lens holder and simple lens magnifying eight diameters
+     is                                                         =80.--=
+
+     =Flat glass dish= of the same size as the stage to hold
+     very large sections for the purpose of examining them
+     while in clearing fluid                                     =1.25=
+
+[Illustration: Dölken's Microscope stand.]
+
+  32. =Dölken's Stand.= (p. 52) The stand is larger than
+      Stand No. Ia, but is modified as shown in the cut so as
+      to permit the examination of unusually large
+      preparations. It is provided with the illuminating
+      apparatus b (p. 22) and with all the adjustments
+      necessary to the use of high powers.
+
+      =Stand= and illuminating apparatus, without nose-piece    =80.--=
+
+[Illustration: Travelling Microscope No. 33.]                                                                 $
+
+  33. =Travelling Microscope.= This microscope is ready for
+      use after spreading the foot, drawing out the tube and
+      setting the mirror and stage in position. It is provided
+      with all the adjustments of Stand No. V, consisting of
+      fine adjustment by micrometer-screw, coarse adjustment
+      by rack and pinion and illuminating apparatus d (p. 22).
+      The box is arranged so as to accommodate three
+      objectives and two oculars. It locks, has a handle, and
+      measures 25×15×7 cm, the whole apparatus weighing 5
+      pounds.
+
+      Price of this microscope with illuminating apparatus,
+      but without objectives or oculars                         =32.--=
+
+      =The same=, without illuminating apparatus                =24.--=
+
+[Illustration: Large Travelling Microscope No. 34.
+(Size of mahogany case 28×19×8 cm.)]
+
+This instrument (in size like the Ib.) combines all the essential
+features of a large laboratory microscope with a folding stand. It will
+be found invaluable on scientific expeditions, for research work etc.
+
+When lifted out of the case, spread the two parts forming the base,
+which are then held by a spring-catch. After raising the tube, turn the
+stage around and tighten it by means of a lever. It is supplied with
+large Abbe condenser and Iris diaphragm adjustable by side screw. Coarse
+adjustment by rack and pinion, fine adjustment by micrometer-screw.
+Graduated draw-tube. The stand has joint for inclination.
+
+[Illustration: Large travelling microscope No. 34 (set up).]
+
+  34. =Stand= with Abbe Condenser and Iris-Diaphragm, double
+      nose-piece                                                =66.--=
+
+  35. =The same=, with objectives 3, 6, Oil-Immersion 1/12",
+      N. A. 1,30. Eye-pieces I, III. Magnifications 60—800     =128.--=
+
+[Illustration: Horizontal-Microscope.]
+
+  36. =Horizontal Microscope.= This instrument consists of
+      a microscope tube placed horizontally on a long
+      extensible column, supported in turn by a tripod base
+      provided with levelling screws and a round spirit level.
+      The extension of the upright supporting column is
+      accomplished by two sliding motions, the lower,
+      controlled by a set screw only, being intended for
+      coarser adjustments, the upper, controlled by rack and
+      pinion, for finer adjustments. A millimeter scale and a
+      vernier serve to indicate the degrees of the various
+      motions, so that vertical motion of the microscope tube
+      to the extent of 1/10 mm may be accomplished.
+
+      The microscope tube carries a spirit level and revolves
+      upon a horizontal disc. The objective, consisting of two
+      separable doublets, permits three degrees of
+      magnification of 5, 9 and 48 cm focal distance
+      respectively. A rack and pinion adjustment serves as
+      adjustment of the microscope tube. A micrometer, 1 cm
+      long and divided into 100, in the diaphragm of the
+      ocular still further increases the availability of the
+      instrument for making fine and accurate measurements.
+
+      The instrument serves as a useful aid in many physical
+      and physiological investigations.
+
+      Price, including objective, ocular and micrometer         =40.--=
+
+
+
+
+  =Microscopes for Mineralogical Research.=
+
+
+We construct two Microscopes for mineralogical investigations. Both are
+adapted for determining the axes of elasticity and for the
+differentiation of isotropic and anisotropic bodies. Stand I alone is
+adapted for determining the optical axes and their angles.
+
+Only such objectives, condensers and oculars are available for
+mineralogical examinations as have been shown after careful examination
+in polarized light to be free from polarization.
+
+[Illustration: Mineralogical Stand I.]
+
+
+  =Mineralogical Stand I.=
+
+  37. This microscope corresponds in its dimensions to
+      Stand Ia as described on page 31. Coarse adjustment by
+      rack and pinion, fine adjustment by micrometer-screw,
+      the milled head of which has 50 divisions, each
+      representing a motion of the objective of 1/100 mm. The
+      condenser, iris-diaphragm and polarizer can be raised
+      and lowered by rack and pinion. A triple condenser
+      facilitates the observation of the axial lines in the
+      microscope. It is so arranged as to be easily replaced
+      by a simple diaphragm-carrier. By means of a collar
+      attached to the end of the tube the objective is brought
+      into coincidence with the centre of the revolving stage.
+      This revolving stage is divided into 360 degrees and
+      fitted with a vernier and index. Two scales on the
+      stage, at right angles to each other, permit accurate
+      location of specimens. The Nicol prism, which serves as
+      a polarizer, can, after turning the iris-diaphragm
+      aside, be drawn out from under the latter. The zero
+      position of the Nicol prism is indicated by a line, as
+      well as the angles 90, 180, 270°. The analyser is
+      mounted in metal and is firmly fixed above the eye-
+      piece. The analyser rotates on a disc graduated to 360
+      deg. The front of the tube has a movable window which
+      provides access to the inner tube. In the latter is an
+      opening for the introduction of a Bertrand lens. This
+      lens serves the purpose of magnifying the interference
+      figures produced by the converging rays of polarized
+      light. This lens and the eye-piece can be raised or
+      lowered by rack and pinion. In the analyzer is a slide
+      for the insertion of gypsum and quartz plates at an
+      angle of 45 degrees.
+
+      In many investigations it is advisable to employ an
+      analyzer introduced laterally into the tube, instead of
+      the one mentioned above.
+
+      The following parts are supplied to complete the outfit:
+        Triple nose-piece.
+
+        Eye-piece 0, with Bertrand's quartered quartz plate.
+
+        Eye-piece I with cross-lines, Brezina's Calcspath-plate,
+        cleft perpendicularly to its axis, made to fit over
+        eye-piece I, Klein's gypsum and quartz plates for
+        insertion in the opening over the objective.
+
+        Price of the stand with these accessories              =160.--=
+
+
+  38. =The same= with eye-piece III, objectives 1, 3, 5, 7.
+      1/12 Oil-Immersion, magnifications 18—800                =236.--=
+
+      The new mechanical stage No. 98 (See page 78) can be
+      fitted to the stand for the purpose of investigating
+      large preparations and serial sections.
+
+        Price                                                   =28.--=
+
+[Illustration: Mineralogical Stand II.]
+
+  =Mineralogical Stand II.=
+
+  39. The base and pillar are in one piece, neatly
+      japanned black. The coarse adjustment is by rack and
+      pinion.
+
+      The stage is revolving and graduated on the edge into
+      360 degrees. A pointer indicates its position.
+
+      The polarizer has stop at zeropoint and also marks at 90°,
+      180° and 270°. It is held in a spring-sleeve and the
+      substage can be raised and lowered by lateral screw, or
+      may be swung to one side. The condenser is mounted in
+      separate arm above the polarizer and swings out of the
+      optical axis by means of a lever, if parallel instead of
+      convergent rays are desired.
+
+      The analyzer fits into an opening of the tube above the
+      objectives and can be instantly thrown in or out of the
+      optical axis. There is a slot below the analyzer for the
+      insertion of quartz and gypsum plates.
+
+      By means of a collar with two centering screws attached to
+      the end of the tube, the objective may be brought into the
+      optical axis.
+
+      Price of this microscope with eye-piece I with cross-lines,
+      Klein's quartz wedge and gypsum plate, red, I. order
+      =$56.--=
+
+  40. =The same= with eye-piece III. and objectives 3 and 5.
+
+       Magnifications 60-250                                    =74.--=
+
+
+
+
+  =Dissecting Microscopes and Hand Lenses.=
+
+[Illustration: Large Dissecting Microscope No. 41.]
+
+
+  41. =Large Dissecting Microscope.=
+
+      Stand on heavy horse-shoe base, large stage with glass
+      plate, adjustment by rack and pinion. The lens-carrier
+      is movable for examining large plates. Illumination by
+      movable plane mirror and white glass plate. Metal hand-
+      rests covered with leather may be attached to the sides
+      of the stage. They fit inside the mahogany case.
+
+      A black metal plate with wheel-diaphragm or a milk-
+      glass-plate can be inserted below the stage, serving as
+      dark or white back-ground respectively.
+
+      Stand without lenses in mahogany case                     =16.--=
+
+  42. =The same= with three aplanatic lenses after
+      Steinheil, magnifying 8, 16 and 20 diameters              =28.--=
+
+  43. =The same= with these lenses and Abbe's drawing
+      apparatus                                                 =40.--=
+
+  44. =The same stand= with prism-tube No. 49 for erected
+      image. Objectives 1*, 2, 3, magnifying 18, 40 and 80
+      diam.                                                     =47.25=
+
+[Illustration: Simple Dissecting Microscope No. 45.]
+
+  45. =Simple Dissecting Microscope=, with adjustment by
+      rack and pinion, movable plane mirror and white glass
+      plate, glass stage in metal frame. Metal hand-rests
+      covered with leather fit inside the case. Stand without
+      lenses                                                     =8.--=
+
+  46. =The same= with two aplanatic lenses after
+      Steinheil, Magnification 10 and 20 diam.                  =16.--=
+
+  47. =The same stand= with prism-tube No. 49, for erected
+      image; with objectives 2 and 3, magnifying 40 and 80
+      diam.                                                     =36.--=
+
+[Illustration: Dissecting microscope with erected image after R.
+Pfeiffer.]
+
+=The Dissecting microscope with erected image according to Prof. R.
+Pfeiffer= has been constructed in such a way that all parts extending on
+both sides can be folded or turned, so that the instrument fits in a
+very small case.
+
+The base consists of two parts which may be folded. The stage can be
+brought in a position vertical to the optical axis and the metal hand
+rests laid on top of the stage. They are connected with the latter by
+joints. The mirror can also be turned and put parallel to the pillar.
+
+A round glassplate is set in the stage, below which is an iris diaphragm
+to properly regulate the illumination.
+
+The adjustment is by rack and pinion.
+
+Two rightangle prisms are mounted inside the tube in such a manner that
+the image obtained by the objective is reflected into the eye-piece and
+appears erected.
+
+The eye-piece is of the Ramsden form. Three objectives of different
+magnifying power with specially long working-distances have been
+constructed Nos. 1, 2, 3.
+
+      The following table shows the magnification of the
+      objectives in connection with the eye-piece.
+
+               Objective     1        2       3
+           Magnification    18       40      80 diam.
+        Working distance    58 mm    18 mm    6 mm
+
+          Prices:
+
+  48. Folding dissecting microscope, stand only                 =24.--=
+
+  49. Upper part of the microscope, consisting of tube
+      with prisms, and one eye-piece                            =16.--=
+
+  50. Objectives 1, 2, 3, a $ 6,00                              =18.--=
+                                                              ---------
+  51. Stand with complete outfit                                =58.--=
+
+      The instrument is furnished in a mahogany case with
+      nickelplated handle, lock and key.
+
+[Illustration: No. 52.  No. 53.  No. 54.
+Lens-holders.]
+
+  52. =Lens-holder= on iron foot with moveable arms, the
+      joints of which may be fixed by thumb-screws, rack and
+      pinion adjustment--without lens                            =7.20=
+
+  53. =Lens-holder=, nickel-plated stand with attachment
+      of the collar holding the lens by ball and socket joint    =4.--=
+
+  54. =Lens-holder= on heavy iron foot, ball and socket
+      joints, adjustable to any position--without lens           =3.25=
+
+  55. =Pocket microscope.= The size of an eye-piece, in box      =3.25=
+
+  56. =Lens= for examining Algae                                 =1.25=
+
+[Illustration: Dissecting Stage No. 57. With Lens No. 71.]
+
+  57. =Dissecting Stage= with white glass plate and moveable
+      lens-holder--without lens                                  =2.--=
+
+  58. The same with lens No. 71                                  =3.25=
+
+[Illustration: Simple Dissecting Microscope No. 58a.]
+
+ 58a. =Simple Dissecting Microscope=, consisting of a
+      wood case with plate glass stage, movable plane mirror,
+      two simple lenses of 4 and 8 times magnification. Price    =2.--=
+
+ 58b. =The same= with metal hand rests, moveable lens-holder
+      and doublet magnifier No. 71, Price                        =3.50=
+
+[Illustration: Demonstration lens-holder No. 59.    Focussing-lens
+                         Handle No. 61.                 No. 60.]
+
+  59. =Demonstration lens-holder=, consisting of a
+      hardrubber stage with handle, clamps for holding the
+      preparation in position, and with a moveable lens-
+      holder. Without lens                                       =2.40=
+
+  60. =Focussing lens= for photographic camera. Lens in
+      spring-sleeve with clamping ring                           =4.75=
+
+  61. =Handle= with ring for holding lens                        =1.25=
+
+[Illustration: Steinheil lens No. 63.    Steinheil lens No. 66.]
+
+      The =aplanatic triplets after Steinheil= are remarkable
+      for their large, flat field and excellent definition,
+      free from chromatic aberration.
+
+            Diameter  Visual field  Magnification
+
+  62.         24 mm       20 mm        8 diam.                   =4.--=
+
+  63.         15 "        15 "        10   "                     =4.--=
+
+  64.         12 "        12 "        12   "                     =4.--=
+
+  65.         10 "        10 "        16   "                     =4.--=
+
+  66.          6 "       3,5 "        20   "                     =4.--=
+
+  67.          5 "         2 "        30   "                     =4.--=
+
+  68.          3 "         1 "        40   "                     =4.--=
+
+      The =achromatic doublets= have a very large, clear and
+      flat field.
+
+  69.         30 mm       35 mm        5 diam.                   =4.--=
+
+  70.         23 "        20 "         8   "                     =3.25=
+
+      =Doublet magnifier=, consisting of two double convex
+      lenses.
+
+  71.  23 mm  25 mm  6 diam.                                     =1.25=
+
+      The doublet No. 69 can only be used as a hand lens. The
+      mounting of all the other lenses is such that they fit
+      any of the dissecting stands or lens holders. Aplanatic
+      triplets 64-68 can only be used on stands with rack and
+      pinion adjustment.
+
+[Illustration: Doublet No. 70.]
+
+[Illustration: Doublet No. 71.]
+
+[Illustration: Pocket lens No. 72.]
+
+      72. The aplanatic lenses Nos. 62-66 are also to be had
+      with a moveable cover and ring adapting them for use as
+      pocket lenses.
+
+  Price, when thus mounted                                       =4.75=
+
+[Illustration: Binocular Preparation Microscope.]
+
+  73. =The Binocular Preparation Microscope=, after the
+      model of Eilhard Schulze permits the convenient use of
+      both eyes in dissecting small anatomical and botanical
+      preparations. It consists of two Brücke lenses, adjusted
+      to an accurate focus.
+
+      Both tubes are moveable on a joint and are adjustable to
+      various distances between the observers eyes. The
+      distance of the eye from the preparation is about 250
+      millimetres; the field of vision is large and flat; the
+      magnification, four diameters; lenses are adjustable to
+      either vertical or horizontal position and may be raised
+      and lowered on the vertical support, thumb-screws fixing
+      them in the desired position. A rack and pinion serves
+      as fine adjustment                                        =24.--=
+
+[Illustration: Greenough's Binocular Microscope.]
+
+  74. =Greenough's Stereoscopic Binocular Microscope.=
+      Two microscope tubes are so arranged as to bring the
+      same object into focus in the axis of each tube, the
+      tubes being set at an angle to each other for this
+      purpose. The stand is provided with rack and pinion
+      adjustment and both draw-tubes are also regulated by a
+      rack and pinion arrangement, so that they may be adapted
+      to the correct distance of the observers eyes.
+
+      By interposition of prisms the image is rendered erect.
+      Magnification, 20 diam.                           Price   =80.--=
+
+ 74a. =Corneal-Microscope=, is designed for the examination of
+      the interior of the eye.
+
+      =Prismtube= No. 49 with eye-piece                         =16.--=
+
+      =Objective= of low power permitting 2 degrees of
+      magnification                                              =6.--=
+
+      =Stand= on heavy base, with rack and pinion adjustment
+      etc.                                                       =8.--=
+                                                                -------
+                                                                =30.--=
+
+
+
+
+  =Apparatus for Blood Examinations.=
+
+[Illustration: Micro-Spectroscope.]
+
+  75. =The Micro-Spectroscope= fits into the tube of the
+      microscope like any ordinary eye-piece and may be fixed
+      in any desired position by means of the thumb-screw M.
+      The position of the bright and dark lines of the
+      spectrum and their respective wave lengths are
+      ascertained by means of a scale. The flat drum A, the
+      interior of which is shown in section, contains the slit
+      and the comparison prism. The slit is regulated by the
+      screws F and H. The lever T moves the comparison prism
+      across one half of the slit. The cylinder Q above the
+      eye-piece contains the Amici prism. At the point N of
+      the horizontal tube RN is the micrometer scale,
+      illuminated by the mirror O. After raising the spring-
+      catch L the upper part of the spectroscope may be turned
+      round the pivot K, thus allowing of the adjustment of
+      the eye-piece                                             =66.--=
+
+        (A full description accompanies each instrument.)
+
+  76. =Hand-Spectroscope=, Browning's, for spectroscopic examination
+      of the blood                                              =12.--=
+
+ 76a. =Hand-Spectroscope= with comparison prism, mirror,
+      and holder for vials                                      =16.--=
+
+[Illustration: Thoma's Haemacytometer.]
+
+  77. =Thoma's Haemacytometer= consists of an object glass
+      with carefully constructed cell, a ground absolutely
+      plane coverglass and two pipettes for mixing the blood
+      and saline solution used in the examinations. One of
+      these pipettes, for estimating the number of red
+      corpuscles is so graduated as to permit dilution of the
+      blood 100 or 200 times as required; the other, for
+      counting the white corpuscles (leucocytes), is graduated
+      for dilution of the blood 10 or 20 times.
+
+      The volume contents of the pipettes are most carefully
+      determined and the depth of the cell is established by
+      accurate micrometric measurement, thus permitting very
+      exact observations by means of this instrument.
+
+        (A full description with each instrument)               =14.50=
+
+  78. =Mixing-Pipette for white corpuscles=                      =3.60=
+
+  79. =Mixing-Pipette for red corpuscles=                        =3.60=
+
+  80. =Thoma counting chamber, with coverglass=                  =5.75=
+
+  81. =Türck counting chamber with coverglass=                   =7.25=
+
+[Illustration: Counting chamber
+after Thoma       after Türck.]
+
+[Illustration: Ehrlich's Eye-piece.]
+
+  82. =Ehrlich's Eye-piece= is provided with a diaphragm
+      having a square opening, the size of which is regulated
+      by a small lever.
+
+      This eye-piece is designed to facilitate the estimation
+      of the relative numbers of red and white blood
+      corpuscles in dry preparations.
+
+      Full directions accompany each instrument                 =12.--=
+
+ 82a. =Apparatus= for the clinical determination of the
+      alcalinity of the blood, after Prof. C. S. Engel.
+
+      The following parts compose the apparatus:
+
+      1) a capillary pipette so graduated as to permit the
+      dilution of 0,05 cc. blood from the finger, up to 5 cc.
+      with distilled water.
+
+      2) a beaker, for the reception of the diluted blood.
+
+      3) a burette mounted on stand, capacity 10 cc. Full
+      directions accompany each outfit. Price in box             =8.--=
+
+
+
+
+  =Micrometers.=
+
+[Illustration: Screw Micrometer Eye-piece.]
+
+  83. =Screw-micrometer eye-piece= for accurate
+      measurement of large objects. Between the eye lens and
+      the collecting lens of a Huyghenian ocular there is a
+      millimeter scale etched on glass, above which is a
+      moveable indicator whose position is controlled by a
+      micrometer screw to which a graduated drum is attached.
+      The value of each graduation on the drum (about 1/20 of
+      the micrometer value of the objective) must be
+      determined for each combination of ocular and objective
+      by means of the stage micrometer. The eye lens of the
+      ocular is moveable to permit accurate focus upon the
+      scale. The apparatus slips into the tube of the
+      microscope like any ordinary eye-piece and is fixed in
+      position by a thumb-screw at the side                     =20.--=
+
+  84. =Micrometer eye-piece.= The mount unscrews in the
+      centre to permit the introduction of the micrometer
+      scale. The eye lens is moveable to permit of accurate
+      focus on the scale                                         =4.--=
+
+  85. =Glass-Micrometer for the eye-piece=, to drop on the
+      diaphragm of the eye-piece. Scale of 5 mm divided into
+      100 parts                                                  =2.50=
+
+  86. =The same=, 10 mm divided into 100 parts                   =2.--=
+
+  87. =Stage-Micrometer=, 1 mm divided into 100 parts
+      etched on glass                                            =3.75=
+
+  88. =Stage-Micrometer=, photographed on glass, 2 mm
+      divided into 200 parts                                     =1.40=
+
+  89. =Eye-piece Micrometer=, divided into squares for
+      counting scattered objects in the field. Mounted.
+      Distance between the lines 0,5 mm                          =2.--=
+
+  90. =Glass slide with cell= 2/10 mm deep, with ocular
+      micrometer No. 89, in box                                  =3.25=
+
+  91. =Glass slide with cell= the floor of which is
+      divided into squares, 1/400 square mm each, in box         =4.--=
+
+
+
+
+  =Drawing Apparatus.=
+
+
+      The two following =drawing eye-pieces= Nos. 92 and 93,
+      have quickly found favor among those having frequent
+      occasion to make drawings from microscopic preparations
+      and are now largely used in educational institutions as
+      an aid to students in the study of their specimens. In
+      both eye-pieces the prism is so adjusted as to
+      accomplish total reflection of the image, thus doing
+      away with loss of light and with secondary reflections,
+      such disturbing features of those forms of drawing
+      apparatus of which a mirror forms an essential part.
+
+[Illustration]
+
+  92. This =drawing eye-piece= is employed with the stand
+      in the vertical position. The reflected image lies at
+      the side of the microscope, the rays passing off at an
+      acute angle from the reflecting prism near the top of
+      the eye-piece. The eye-piece slips into the tube of the
+      microscope like any ordinary eye-piece and is held in
+      position by a thumb-screw. The drawing field is at once
+      visible without further adjustment, and the picture is
+      clear and sharp. The brightness of the drawing field may
+      be regulated by smoked glass plates mounted in two
+      moveable metal arms                                        =8.--=
+
+[Illustration: Drawing eye-piece for drawing with inclined stand.]
+
+  93. This =drawing eye-piece= is similar in construction
+      to that just described, but is so arranged as to throw
+      the image vertically downwards behind the microscope
+      when the latter is inclined at an angle of 45 degrees.
+      In this case also the picture reflected is clear and
+      sharp, devoid of all disturbing secondary images. As the
+      image is reflected vertically downwards upon the table,
+      no special drawing stand is necessary as there is no
+      distortion of the picture. The intensity of the light
+      may be modified by smoked glass plates mounted in two
+      moveable metal arms                                       =10.--=
+
+      For a description of these drawing eye-pieces and of the
+      principles involved in their construction reference may
+      be had to the Zeitschrift für wissenschaftliche
+      Mikroskopie, XII, 1895.
+
+[Illustration: Abbe's Drawing Apparatus.]
+
+  94. In =Abbe's Drawing Apparatus= the drawing field is
+      reflected by a mirror at the side of the instrument and
+      by a prism which fits over the eye-piece of the
+      microscope. The prism is supported on a vertical hinge
+      so that it may be readily turned out of the axis of the
+      microscope without disconnecting the whole apparatus
+      from the stand. It is shown turned to the side in the
+      figure. A cylindrical cap accompanies the apparatus
+      which fits over the prism holder and has six lateral
+      windows in which are smoked glasses of various
+      intensity, serving to regulate the lightness of the
+      reflected drawing field                                   =12.--=
+
+[Illustration: Drawing Board No. 95. Drawing Board after Giesenhagen.]
+
+      The =Drawing boards= serve two purposes. They afford a
+      smooth plane surface for the drawing paper and they are
+      so arranged that they may be inclined at such an angle
+      as to receive the rays of the reflected image at right
+      angle to their surface, thus doing away with any
+      distortion of the image on the paper.
+
+  95. This =drawing board= is especially adapted for use
+      with drawing eye-piece No. 92. When in the position
+      indicated in the figure its drawing surface forms an
+      angle of 12° to the horizontal                             =2.--=
+
+  96. In =Giesenhagen's drawing board= the drawing surface
+      may be adjusted at various angles and may be raised and
+      lowered                                                    =4.--=
+
+      For drawing eye-piece No. 93 and the Abbe drawing
+      apparatus the surface of the drawing board should be
+      horizontal.
+
+[Illustration: Drawing apparatus after v. Tubeuf.]
+
+  97. The =drawing apparatus= after v. Tubeuf serves for
+      drawing objects from nature. By means of a prism mounted
+      in a metal box, the object is reflected into the eye in
+      such a manner that its image appears erected on the
+      drawing surface. This is quite an advantage when drawing
+      from nature but is unimportant when using a drawing
+      apparatus on the microscope. Two smoked glasses mounted
+      in moveable metal arms serve to moderate the intensity
+      of the light. On the side of the prism nearest the eye
+      is a small wheel diaphragm attached to regulate the size
+      of the opening. The apparatus is mounted on a heavy
+      nickel-plated stand with vertical and lateral
+      adjustments controlled by thumb-screws                    =12.--=
+
+
+
+
+  =Mechanical Stages.=
+
+[Illustration: Mechanical stage No. 98.]
+
+  98. =Mechanical stage= adapted to Stands I, Ia and Ib.
+      The stage is readily attached to the microscope by means
+      of a small screw, _C_, which screws into a thread in the
+      microscope just behind its stage, and binds the
+      mechanical stage firmly in position and always in the
+      same position. It may be again removed by simply
+      unscrewing this set screw.
+
+      The movements of the stage are at right angles to one
+      another, are accomplished by carefully constructed rack
+      and pinion adjustments and the exact position of each
+      adjustment is indicated by vernier scales. The extent of
+      the lateral movement is 50 mm; that of the other 30 mm.
+
+      This stage permits the careful and systematic
+      examination of large specimens and its construction is
+      so perfect that by means of the vernier scales the most
+      minute objects may be readily replaced in the field of
+      vision, even after removal and readjustment of the
+      stage, provided only that their location when in the
+      field of vision as indicated by the scales had been
+      noted                                                     =28.--=
+
+  99. =Large mechanical stage= for stand, _A_, adapted for
+      slides 50×100 mm; both movements by rack and pinion
+      adjustments                                               =32.--=
+
+[Illustration: Mechanical stage No. 100.]
+
+ 100. =Mechanical Stage No. 100.= When a mechanical stage
+      is ordered subsequently to a microscope outfit and under
+      such circumstances that its correct adjustment to the
+      stand by a skillful mechanic is impossible we advise the
+      purchase of this more readily adjusted mechanical stage,
+      which may readily be attached to Stands I, Ia, Ib, IIa
+      and IIb by means of a thumb-screw. It is as carefully
+      constructed as Mechanical Stage No. 98 and serves the
+      same purpose in every particular                          =28.--=
+
+100a. =New Mechanical stage=, simplified form                   =20.--=
+
+[Illustration: Mechanical stage No. 100a.]
+
+ 101. =Warm stage= after Schultze. This consists of a
+      metal stage to which long lateral arms are attached,
+      through which the heat from one or more small lamps is
+      conducted to the central part of the stage and the
+      object. The apparatus is also provided with a condenser,
+      which affords illumination sufficient for the use of
+      high power objectives, and with a thermometer indicating
+      the exact temperature of the centre of the stage, which
+      may be carried as high as 100° C.                         =12.--=
+
+[Illustration: Schultze's Warm Stage No. 101.]
+
+ 102. =Warm stage= after Pfeiffer. It consists of a glass
+      chamber through which warm water may be made to flow. A
+      small cell is ground in its surface thus permitting its
+      use as a moist chamber                                     =6.--=
+
+ 103. =Warm stage= after Stricker. This stage consists of
+      a metal chamber, through which warm water is made to
+      flow when in use, and is provided also with a condenser
+      and thermometer. It may be screwed firmly to any of the
+      square microscope stages                                  =14.--=
+
+[Illustration: Stricker's Warm stage No. 103.]
+
+ 104. =Warm stage= after Errera, permitting rapid changes
+      from low to high temperature and vice-versa.
+
+      It includes 2 vessels for cold and hot water, mounted on
+      tripods, with rubber-tubing etc.                          =24.--=
+
+
+  =Photo-micrographic Apparatus.=
+
+[Illustration: Photo-micrographic Apparatus No. 105.]
+
+The method of employing this apparatus and the general technique of
+photo-micrography are treated of in a separate pamphlet containing also
+four photo-micrographs taken with this apparatus.
+
+This little work is furnished with each apparatus.
+
+ 105. =The Photo-micrographic Apparatus= consists of a
+      heavy iron foot supporting a stout column in which
+      another iron support moves vertically. This latter holds
+      the camera and may be firmly fixed at any height by
+      means of a thumb-screw. This permits the accurate
+      adjustment of the camera to microscope stands of various
+      sizes. The length of the camera is also adjustable by
+      means of a thumb-screw sliding in the upright support.
+      Regulation of the field of the camera is accomplished by
+      a revolving disc diaphragm with openings of five
+      different sizes situated in the neck of the camera. Two
+      simple plate-holders for plates 9×12 and 13×18 cm are
+      supplied with each camera, as are also a ground glass
+      plate and clear glass plate in the frame of the camera
+      serve to catch the picture in the plane of the
+      photographic plate, and a simple lens aids in obtaining
+      a correct focus of the image. A white glass plate,
+      mounted on a stand is of use in diffusing direct
+      sunlight so as to make it available for photographic
+      purposes, and three discs of yellow, blue and green
+      glass are provided which may be inserted over the iris-
+      diaphragm of the condenser when colored light is
+      required.
+
+      It is of great advantage to interpose an illuminating
+      lens between the source of light and the mirror, thereby
+      condensing the light-rays, giving a uniform illumination
+      and preventing the heating up of the entire stand, which
+      is a disturbing factor in retaining the focus. The
+      illuminating lens also serves to lessen the time of
+      exposure.
+
+      This photo-micrographic apparatus is also available when
+      it is desired to photograph gross specimens as, for
+      example, embryos, insects, etc., by reflected light, as
+      is represented in the figure on p. 86. The photographic
+      objective of 64 mm focal distance, is best adapted to
+      this purpose. It fits in a collar in the neck of the
+      camera and yields a magnified image of about 3
+      diameters. The object is brought into proper focus by
+      means of a small stand, the table of which may be raised
+      or lowered as required.
+
+      Price of the apparatus without microscope stand           =40.--=
+
+ 106. =Small stand for supporting specimens= to be
+      photographed by reflected light as mentioned above         =4.75=
+
+ 107. =Welsbach lamp= with reflector                             =6.--=
+
+ 108. =Illuminating lens= of 100 mm diam. on stand              =12.--=
+
+ 109. =Photo-micrographic apparatus=, for use in
+      horizontal and vertical position. It is in construction
+      similar to the foregoing, but is provided with joint for
+      inclination and clamping lever, and can be used at any
+      angle.
+
+      Large size bellows and plateholder, for plates up to
+      24×24 cm. Moveable platform with three leveling screws
+      and clamping-bar for holding stand. Price of the
+      apparatus, with 2 simple plate-holders, ground and plain
+      glass plate, etc., without microscope stand               =60.--=
+
+[Illustration: Photo-micrographic Apparatus No. 109.]
+
+  =Edinger's Projection Apparatus.=
+
+[Illustration: Edinger's Projection Apparatus with Nieser's Photographic
+Camera.]
+
+ 110. =Edinger's Projection Apparatus=--For projecting
+      and drawing large objects slightly magnified. (Cf.
+      Zeitschrift für wissensch. Mikroskopie. VIII. 1891.)
+
+      A polished wooden base, in which a lime wood drawing
+      tablet is inlaid, supports a wooden stand which in turn
+      holds a horizontal metal tube in which are a collecting
+      lens and a reflecting mirror. The upright also carries,
+      two arms, by rack and pinion adjustment, the one
+      supporting the object stage, the other regulating the
+      length of the camera. On the other side of the upright
+      is a support for a lamp. The rays of this lamp are
+      converged by the collecting lens upon the mirror, are
+      reflected downward to the object and through the
+      objective to the drawing board below. The various
+      adjustments permit considerable variation of
+      magnification with the same objective.
+
+      Price, including lamp                                     =18.--=
+
+      For photographic purposes this same apparatus may be had
+      with Nieser's photographic camera, plate holders,
+      focussing plate etc.
+
+ 111. =Edinger's Projection Apparatus with Camera= for
+      plates 9×12 cm and 13×18 cm                               =38.--=
+
+ 112. =Larger Projection Apparatus with Camera= for
+      plates 9×12, 13×18, 18×24 and 24×30 cm                    =56.--=
+
+      The following Objectives of 24, 35, 42 and 64 mm focal
+      distance respectively may be used in connection with
+      this apparatus for photographic purposes.
+
+ 113. }                            { of 24 mm focal distance    =18.--=
+ 114. }  =Photographic Objectives  {  " 35  "   "       "       =18.--=
+ 115. }  with Iris diaphragms=     {  " 42  "   "       "       =18.--=
+ 116. }                            {  " 64  "   "       "       =20.--=
+
+      The following table shows the size of the preparation
+      which may be resolved by each one of these objectives
+      and the magnification with the smaller and with the
+      larger Edinger Projection Apparatus.
+
+  -------------+----------------+--------------------------------------
+               |  Size of the   |              Magnification
+   Objective   |  Preparation   |                    |
+  Focal length |    Maximum     |  Smaller Apparatus | Larger Apparatus
+  -------------+----------------+--------------------+-----------------
+    24 mm      |     8 mm       |     7-15 diam.     |    13-25 diam.
+    35 mm      |    15 mm       |     5-12 diam.     |    10-20 diam.
+    42 mm      |    20 mm       |      3-9 diam.     |     6-13 diam.
+    64 mm      |    35 mm       |      2-4 diam.     |      3-8 diam.
+  -------------+----------------+--------------------+-----------------
+
+The time required for exposure in photographing with this
+apparatus is from 5 to 20 seconds according to the magnification
+and character of the specimen.
+
+The following figure shows a further use for the Objective
+of 64 mm focal distance in connection with the photomicrographic
+apparatus (page 82).
+
+[Illustration: Photo-micrographic apparatus No. 105 with small stand No. 106.]
+
+
+
+
+  =Large Projection Apparatus.=
+
+In this projection apparatus an electric projection lamp is made use of,
+the lamp being available for electric currents of 20 Ampères and about
+48 Volts. To regulate the current a rheostat is necessary. When using
+constant current the carbons should stand at an angle in order to
+utilize to best advantage the stronger light of the positive (upper)
+carbon. For spectroscopic projections the carbons of the lamp have to be
+in vertical position.
+
+Connected with the lamp is a triple condenser of 150 mm aperture. The
+latter should be protected from the heat-rays by a large mica-plate
+which is furnished with the apparatus.
+
+Various devices permit very accurate adjustment of the lamp and
+condenser. For example, two thumb-screws control the position of the
+carbons of the lamp so that the luminous point may be readily brought
+into the exact optical axis of the condenser. Again, the two inner
+lenses of the condenser are moveable and are controlled by two knobs
+conveniently situated as shown in the illustration.
+
+By this adjustment of the lenses of the condenser it is possible to do
+away with disturbing chromatic aberration. The rays of light leave the
+condenser in moderate convergence.
+
+For direct projection from the preparation the apparatus consists of the
+optical bench upon which are mounted the various accessories in proper
+succession (Fig. p. 88):
+
+1. A large cooling cell, which is to be filled with water or alum
+solution.
+
+2. The bellows with tube. This is connected with the cooling cell by
+means of a metal ring which slips over the end of the cell and is held
+in place by a screw. The metal ring is attached to one end of the
+bellows, while the other end carries a large tube.
+
+3. The microscope condensers and diaphragm holder. A larger tube fits
+over the tube of the bellows and carries on a revolving arm the cylinder
+diaphragm and the two condensers. For low power objectives Nos. 1-3, the
+cylinder diaphragm and the condenser of longer focus have to be used.
+The latter at the same time serves as the objective for lantern slide
+projection.
+
+The other condenser is especially needed when high powers are employed
+(Objectives 4 to 6). A small rack and pinion arrangement serves for the
+adjustment of condenser and diaphragm.
+
+4. The object stage and small cooler. The stage has connected with it a
+second cooling cell on which the preparation rests. This arrangement
+permits prolonged use of the condenser and the greatest intensity of
+light without burning the most delicate specimens. The adjustment of the
+object is accomplished by means of an arrangement which permits any
+particular point to be brought accurately into the field.
+
+[Illustration]
+
+5. The objective carrier is provided with a nose-piece for three
+objectives, with a broad projection tube, having an Iris diaphragm for
+the purpose of narrowing the aperture, and with a narrow tube which
+screws into the broad one, in case it is desired to use oculars in
+making the projection. The adjustments of the objectives are
+accomplished by rack and pinion and by micrometer screw.
+
+In order to change readily from microscopic to lantern-slide projection,
+the parts 4 and 5 have been provided with hinges, by means of which they
+can be thrown to one side after loosening a lever (see illustration
+below).
+
+6. Wooden cover with cloth curtain which fits over the diaphragm
+carrier, the stage and the objectives, to shut off any light which may
+escape at the sides.
+
+For the projection of large preparations of from 8-35 mm diameter our
+photographic objectives of 24, 35, 42 and 64 mm focal distance are best
+adapted (p. 86). In connection with these low powers the large tube only
+should be used.
+
+[Illustration]
+
+With this projection apparatus the powers of microscope objectives till
+number 6 may be well employed.
+
+The picture, even when the highest powers are made use of, and the
+screen is at a distance of twelve feet from the apparatus, is of
+sufficient clearness and brightness to be available for demonstration to
+a large audience.
+
+For the projection of lantern slides or of large section of tissue
+following parts of the apparatus are required: Lamp, condenser, cooler
+and bellows are the same as in the above described apparatus.
+
+The stage and objective carrier are swung to one side.
+
+The special-projection lens of 300 mm focal distance is to be used.
+
+A slide carrier slips into the frame of the bellows, which is
+sufficiently large to accommodate lantern slides 9×10 and 9×12 cm in
+size. The slide carrier has a stop at both ends which facilitates its
+adjustment in the axis of the instrument, and is arranged for the
+simultaneous reception of two slides, so that while one is being
+projected it may be charged with a second which may then without delay
+be pushed into the optical axis as the first is removed. In this way
+series of pictures may be thrown on the screen without interruption.
+
+When so arranged the projection can be made upon a screen 30 feet from
+the apparatus, over the heads of an audience.
+
+  Prices:
+
+ 117. =Projection-lamp= for current of 20 Ampères, with
+      centering arrangement                                     =92.--=
+
+      =Fixed rheostat=                                          =30.--=
+
+        (The same, adjustable  =$45.--=.)
+
+      Lamp and rheostat are furnished at factory prices. In
+      ordering it is well to state the strength of the
+      available electric current, also whether it is constant
+      or alternating.
+
+
+      =Outfit for projection of lantern slides:=
+
+      Metal-base with optical bench, triple collecting lens
+      (adjustable) of 150 mm aperture; large cooling cell;
+      slide carrier with bellows; triple revolving arm, with
+      rack and pinion adjustment                               =108.--=
+
+      Projection objective of 300 mm focal length               =20.--=
+
+        (A second objective of same focal length may be slipped
+        over the former, the two combined represent an objective
+        of 150 mm focus. Additional price =$20.--=.)
+
+
+      =Outfit for microscopical projections:=
+
+      Cylinder-diaphragm and condenser; objectstage and small
+      cooler with moveable slide-holder. Objective carrier
+      with triple nose-piece: rack and pinion adjustment and
+      micrometer-screw. Broad tube with Iris-diaphragm into
+      which the smaller draw-tube fits. Two projection eye-
+      pieces.
+
+      Object-stage and objective carrier are provided with
+      hinges. Wooden cover with cloth curtain                   =84.--=
+                                                     Transport =250.--=
+                                                               --------
+                                              Complete outfit  =334.--=
+
+
+ 118. =Megascope=, apparatus for the projection of opaque
+      objects; special offers will be made on application.
+
+ 119. =Attachment for spectroscopic examinations=, to be
+      used on the optical bench and in connection with the
+      lamp of the projection apparatus No. 117. Slit
+      mechanism, large triple prism, object-stage               =80.--=
+
+ 120. =Large projection apparatus=, of special design
+      with latest improvements, for lantern slides size 13×18
+      cm, for micro-projection, and megascope attachment.
+      Special offers for this apparatus will be made on
+      application.
+
+        (In ordering it is necessary to state the voltage of
+        the available electric current, also whether it is
+        direct or alternating.)
+
+ 121. =Trichinoscope.= Simple electric lamp (hand feed)
+      of 20 Ampère, mounted on adjustable stand, encased in
+      Russian iron box, double collecting lens (adjustable) of
+      120 mm Aperture, with condensing lens.
+
+      Mechanical stage for glass compressors, with movements
+      at right angles to each other, cooling cell for the
+      preparation with a continual flow of cold water.
+      Objective carrier with micrometer screw, wide tube with
+      Iris diaphragm                                           =120.--=
+
+      Projection objective of 35 mm focus, aperture f:3,5,
+      with Iris diaphragm                                       =18.--=
+                                                               --------
+                                                               =138.--=
+
+[Illustration: Trichinoscope No. 121.]
+
+
+
+
+  =Microtomes.=
+
+[Illustration: Large Sliding-Microtome.]
+
+Our larger microtomes are heavy and all their adjustments are of the
+most accurate construction, the result being that they are very steady
+when in use and permit the cutting of very thin and uniform sections.
+
+They are to be had in three different sizes. The larger two are slightly
+different in construction from the third. The two former microtomes are
+provided with an automatic feed attachement. A heavy knife-carrier
+slides smoothly and rapidly on a horizontal track and is so arranged
+that it may be manipulated by the hand of the operator alone or by a
+wheel and chain device, which tends to assure a perfectly uniform stroke
+of the knife.
+
+The objectclamp is raised vertically by a micrometer screw. This motion
+is accomplished by turning a large disc having teeth cut into its
+periphery and a turn of one tooth being equal to an elevation of 0.0025
+mm.
+
+The automatic feed is arranged as follows: With each return of the
+knife-carrier to the end of its track pressure is made upon an
+adjustable lever which regulates the motion of the micrometer wheel.
+This device may be so adjusted as to move the micrometer disc any number
+of teeth from one to ten with each sweep of the knife.
+
+Three different forms of clamps may be had for these microtomes, and
+freezing apparatus as well as paraffin tables can also be fitted.
+
+The Fixed clamp, No. 128, represented in the figure of the large sliding
+microtome, serves to clamp the specimen in position and does not allow
+any further adjustment.
+
+The Ball and Socket clamp permits the adjustments of the specimen after
+it is held in the clamp by means of a ball and socket joint--see figure
+of No. 129--a set-screw then holds it firmly in position.
+
+The Naples clamp permits the accurate adjustment of the specimen at any
+level, the clamp being supported on two horizontal axes at right angles
+to each other, the one controlled by rack and pinion, the other by
+endless screw.
+
+The knife-carrier is arranged to hold the Thoma form knives, which are
+fastened by means of a wing-screw. Other knives require a special
+holder, such as No. 139.
+
+ 122. =The Large Sliding Microtome= has a track 42 cm
+      long. Its price with automatic feed attachement, wheel
+      and chain arrangement for the knife carrier, and fixed
+      clamp, without knife                                      =62.--=
+
+ 123. =The same=, with knife holder for Jung microtome
+      knives                                                    =66.--=
+
+ 124. =The same=, but without the wheel and chain
+      arrangement for the knife carrier                         =50.--=
+
+ 125. =Medium size Sliding Microtome=--Track 32 cm long;
+      automatic feed attachement; wheel and chain motion of
+      knife carrier and fixed specimen clamp--without knife     =56.--=
+
+ 126. =The same=, with knife holder for Jung microtome
+      knives                                                    =60.--=
+
+ 127. =The same=, but without wheel and chain motion            =44.--=
+
+ 128. =Fixed Specimen Clamp=                                     =4.--=
+
+ 129. =Ball and Socket Clamp=                                    =6.--=
+
+ 130. =Naples Clamp=                                            =12.--=
+
+[Illustration: Ball and Socket Clamp No. 129.    Naples Clamp No. 130.]
+
+ 131. =The Support-Microtome= has a track 19 cm long. The
+      knife-carrier slides on a double flanged support and is
+      moved by means of a large knob. The motion is smooth and
+      quick. The specimen is held in a clamp supported on two
+      adjustable axes at right angles to each other, thus
+      permitting its adjustment in any position. The specimen
+      carrier is moved vertically by means of a micrometer
+      screw to which a large disc is attached. This disc is
+      graduated, each degree representing a motion of the
+      specimen carrier of 0,005 mm. The price of this
+      microtome with knifeholder No. 139, without box or knife
+      is                                                        =34.--=
+
+[Illustration: Support-Microtome No. 131.]
+
+131a. =Small Sliding Microtome=, length of bed 21 cm,
+      heavy knife-carrier, object clamp for specimen 25 mm
+      diam., micrometer screw with disc graduated into 100
+      degrees, each division representing a motion of 0,005
+      mm. Price including knifeholder No. 139, without knife    =24.--=
+
+[Illustration: Small Sliding Microtome No. 131a.]
+
+
+  =Microtome knives.=
+  (Made by W. Walb.)
+
+      =A. Thoma's Model=, plano-concave, with handle adapted
+      for clamping immediately to the knife carrier of the
+      microtome, in box.
+
+[Illustration]
+
+ 132. Length of cutting edge 36 cm                              =26.50=
+
+ 133.   "    "     "     "   24 cm                              =13.25=
+
+ 134.   "    "     "     "   16 cm                               =8.50=
+
+ 135.   "    "     "     "   12 cm                               =5.50=
+
+      =B. Jung's Model=--plano-concave--requires knife-holder
+      No. 139--in box.
+
+[Illustration]
+
+ 136. Length of cutting edge  24 cm                             =11.25=
+
+ 137.   "     "   "       "   17 cm                              =6.--=
+
+ 138.   "     "   "       "   12 cm                              =4.75=
+
+ 139. =Knife-holder= designed for Jung's Microtome knife         =4.--=
+
+ 140. =Freezing apparatus= for Microtomes                        =8.--=
+
+[Illustration: Freezing apparatus No. 140.]
+
+
+  =Hand Microtomes.=
+
+[Illustration: No. 141.]
+
+ 141. This =Hand Microtome=, shown in the figure above,
+      screws to the edge of the table. The specimen is held in
+      a clamp which may be removed from the instrument, and
+      which is raised by a micrometer screw to which a large
+      disc is attached, the edge of which is milled and
+      graduated, each degree of the graduation representing an
+      elevation of the specimen of 1/100 mm. The knife is
+      manipulated by hand and in cutting slides over two
+      narrow glass plates which serve as a track for it. The
+      length of this track is 7 cm                              =12.--=
+
+ 142. =Cylinder Microtome.= The specimen is held by means
+      of a clamp-screw in a hollow cylinder. This entire
+      cylinder is raised within another cylinder which bears
+      the cutting table by means of a screw with milled and
+      graduated head. Each division of the graduation
+      represents a motion of the inner cylinder of 1/100 mm.
+      In cutting the edge of the knife is made to pass over
+      the surface of the glass cutting table, the diameter of
+      which is 7 cm                                              =6.--=
+
+[Illustration: Cylinder Microtome.]
+
+ 143. =Microscopic section-cutter=--razor form--of best
+      quality, plano-concave, for microtomes No. 141 and 142     =1.25=
+
+
+
+  =Miscellaneous Accessories.=
+
+[Illustration:Analizer.  Polarizer.
+Polarizing Apparatus No. 144.]
+
+ 144. =Polarizing Apparatus= for Food Analysis.
+
+      The analizer forms part of an ocular which fits into the
+      tube of the microscope and is provided with a graduated
+      disc and index. It is fixed in any desired position by
+      means of a thumb-screw.
+
+      The polarizer, when used in connection with stands
+      fitted with a substage condenser and iris-diaphragm, is
+      hung in the carrier of the iris diaphragm; when used on
+      other stands it takes the place of the cylinder
+      diaphragm, and if desired may be furnished with a
+      condenser. Price                                          =22.--=
+
+ 145. =Simpler Polarizing Apparatus.= The analizer is
+      without an ocular and has no graduated disc. The
+      polarizer is as described above                           =14.--=
+
+ 146. =Gypsum= and =Mica plates= set of 8                        =6.--=
+
+ 147. =Coverglass Tester=, for measuring the thickness of
+      coverglasses                                               =3.75=
+
+147a. =Coverglass gauge=, dial form, for the rapid and
+      accurate measuring of coverglasses, thin plates etc. A
+      slight pressure on a lever opens a pair of steel clips.
+      The exact thickness is at once indicated by a pointer
+      moving over a divided circle on the lid of a metal box.
+      The gauge measures 0,01 up to 5 mm                        =12.--=
+
+ 148. =Nose-piece= for two objectives--Double nose-piece         =6.--=
+
+ 149. =Nose-piece= for three objectives--Triple nose-piece       =8.--=
+
+ 150. =Nose-piece= for four objectives--Quadruple nose-piece    =10.--=
+
+      Nose-pieces can be adjusted to our stands at any time
+      without charge.
+
+ 151. =Iris-diaphragm=                                           =6.--=
+
+[Illustration: Illuminating Lens No. 152.]
+
+ 152. =Illuminating Lens on stand=, 100 mm diameter             =12.--=
+
+ 153. =Illuminating Lens on stand=, 60 mm diameter               =8.--=
+
+ 154. =Glass slides=, hollow, per doz                           =--.75=
+
+ 155. =Glass slides=, English form 3×1", of plate-glass
+      with polished edges, per gross                             =1.--=
+
+ 156. =Glass slides=, with well, for moist chambers             =--.40=
+
+ 157. =Cover-glasses=, squares, 15×15 mm, per 100               =--.60=
+
+ 158. =Cover-glasses=, squares, 20×20 mm, per 100               =--.85=
+
+ 159. =Cover-glasses=, circles, 15 mm diameter, per 100         =--.85=
+
+ 160. =Cover-glasses=, circles, 20 mm diameter, per 100          =1.--=
+
+[Illustration: Turn-table No. 161.]
+
+ 161. =Turn-table=, for ringing, with adjustable slide clips     =4.--=
+
+ 162. =Thickened Cedar Oil= for oil-immersion lenses, 1 oz      =--.40=
+
+ 163. =Object Marker.= This is designed to indicate the
+      exact portion of an object which has been seen in the
+      field of the microscope. After finding the required
+      field, the objective of the microscope is unscrewed and
+      the marker is screwed into the tube in its place. By
+      then moving the tube so that the marker comes in contact
+      with the object that portion of the object which
+      occupied the optical axis of the microscope is indicated   =1.25=
+
+ 164. =Object Marker= with diamond point, by means of
+      which the object can be marked by drawing a circle         =4.--=
+
+ 165. =Demonstration Ocular= of Kuznitzky (Cf. Zeitschr. f.
+      wissensch. Mikroskopie, XIII, 1896).--Indicates any
+      particular portion of the image to which it is desired
+      to draw particular attention.
+
+      A small lever at the top of the ocular moves an
+      indicator just above the diaphragm of the ocular to any
+      part of the field                                          =3.25=
+
+[Illustration]
+
+ 166. =Opaque Illuminator=, for illuminating polished
+      pieces of metal whose structure is to be investigated by
+      means of high power objectives--A collar, carrying a
+      prism, screws into the tube of the microscope, and by
+      means of the prism sufficient light is thrown through
+      the objective upon the otherwise opaque object to permit
+      of its examination up to 1000 diameters magnification      =6.--=
+
+ 167. =Erecting Prism=--This is fastened over the ocular
+      and erects the image received from the compound
+      microscope, thereby materially assisting any dissection
+      or other operation on the stage of the microscope          =7.25=
+
+[Illustration]
+
+ 168. =Microscope= for the accurate reading of
+      thermometer scales, after Fridtjof Nansen.
+
+      Stand with spring-clamp to attach thermometers of
+      various sizes. With micrometer ocular and objective
+      magnifying 12 times                                       =20.--=
+
+[Illustration: Saccharimeter No. 169.]
+
+ 169. =Saccharimeter=, Mitscherlich's (improved form),
+      for determining the amount of sugar contained in
+      liquids, glucose etc. by measuring the angle of
+      rotation. Tube with concave mirror on stand, graduated
+      scale with vernier and lens for reading one-tenth of a
+      degree of rotation.
+
+      The rotation of the Nicol prism with the vernier is
+      performed by means of an endless screw. The adjustment
+      is accomplished as soon as the two squares of the
+      divided quartz-plate show the same color. Two tubes of
+      100 and 200 mm length, for the liquid to be examined,
+      are supplied with the apparatus. Should the rotation of
+      the substance examined be excessive, it is necessary to
+      use sodium light for illumination                         =52.--=
+
+
+  =Microscopical cases.=
+
+ 170. =Case=, containing a razor, spatula, two small
+      knives, straight and curved scissors, forceps, two
+      needles, two lancet-shaped needles                         =5.50=
+
+ 171. =Case=, containing a razor, spatula, a small knife,
+      two needles, small scissors, and forceps                   =4.--=
+
+ 172. =Case=, containing a small knife, small scissors,
+      forceps and two needles                                    =2.50=
+
+ 173. =Botanical Outfit= in case, containing a small
+      knife, forceps, self-closing forceps with horn handle,
+      two scissors, two needles and two lenses                   =5.50=
+
+ 174. =Outfit for Sputum Examinations=, after Kaatzer,
+      consisting of a platinum needle, blower, cover-glass
+      forceps, and a small rubber plate                          =4.75=
+
+ 175. =Leather Microscope case= to protect the mahogany
+      case when travelling                                       =8.--=
+
+ 176. =Leather case= to protect the mahogany cases of
+      larger size instruments                                   =12.--=
+
+ 177. =Bell jar= for covering microscope                         =2.--=
+
+
+
+
+  Any of the following publications will be sent on application:
+
+
+1. Catalogue of microscopes etc., which has been issued in three
+editions, viz. in
+
+    a) English,
+
+    b) German and
+
+    c) French.
+
+2. Anleitung zum Gebrauch des Microscops.
+
+3. Instructions pour l'emploi des microscopes.
+
+4. Directions for using the Microscope.
+
+5. On the method of counting red and white corpuscles with Thoma's
+Apparatus.
+
+6. Instructions pour l'emploi de l'hématimètre de Thoma.
+
+7. Anleitung zur Mikrophotographie, mit vier Mikrophotogrammen.
+
+8. Anleitung zum Gebrauch des Mikrospectroskops.
+
+9. Anleitung zum Gebrauch des Oculars nach Ehrlich.
+
+10. Description de l'oculaire d'Ehrlich.
+
+11. Direction for using Ehrlich's eye-piece.
+
+12. Anleitung zum Gebrauch des grossen Projectionsapparates.
+
+13. Anleitung zum Gebrauch des Saccharimeters.
+
+[Illustration]
+
+
+
+
+  =Index.=
+
+
+                                                            Page
+  =A.=
+
+  Achromatic Objectives                                       12
+  Adjusting screw                                             49
+  Adjustment, coarse, fine                                17, 18
+  Apertures                                                   10
+  Aplanatic Lenses                                            67
+  Apochromatic Lenses                                         14
+  Apparatus for Blood Examinations                            70
+
+
+  =B.=
+
+  Binocular Preparation Microscope                            68
+  Binocular Microscope after Greenough                        69
+  Bell jar                                                   103
+
+
+  =C.=
+
+  Camera                                                  81, 84
+  Cases for Stands                                            19
+  Cedar Oil                                                  101
+  Clamps for Microtomes                                       94
+    fixed clamp                                               94
+    ball and socket clamp                                     94
+    Naples clamp                                              94
+  Compensation Eye-pieces                                     14
+  Compressors                                                 49
+  Condenser                                                   20
+  Corneal microscope                                          69
+  Counting chambers                                           71
+  Coverglass gauge                                            99
+  Cover-glasses                                              100
+  Cover-glasses thickness                                      8
+  Coverglass Tester                                           99
+  Cylinder Iris Diaphragm                                 20, 23
+  Cylinder Microtome                                          98
+
+
+  =D.=
+
+  Demonstration Lens-holder                                   67
+  Demonstration Microscope                                    49
+  Demonstration Ocular                                       101
+  Dissecting Microscopes                                      62
+  Dissecting Microscope with erected image                    64
+  Dissecting Stage                                            66
+  Dölken's Microscope Stand                                   52
+  Drawing Apparatus after Abbe                                74
+  Drawing Apparatus after Tubeuf                              77
+  Drawing Board                                               76
+  Drawing Eye-pieces                                          74
+
+
+  =E.=
+
+  Edinger's Projection Apparatus                              84
+  Engel's Alcalinity Apparatus                                72
+  English screw                                               18
+  Erecting prism                                             102
+  Eye-pieces:
+    Compensation Eye-piece                                    14
+    Demonstration Ocular                                     101
+    Huyghenian Eye-piece                                      11
+    Micrometer Eye-piece                                      73
+  Ehrlich's Eye-piece                                         72
+  Eye-piece with cross lines                                  59
+  Eye-piece Micrometer with squares                           73
+
+
+  =F.=
+
+  Freezing Apparatus                                          97
+  Focussing lens                                              67
+
+
+  =G.=
+
+  Glass compressor                                            49
+  Glass-Micrometer for the Eye-piece                          73
+  Glass plates, ground, clear                                 82
+  Glass slides                                               100
+  Glass slides, hollow                                       100
+  Gypsum and Mica plates                                      99
+  Greenough Binocular Microscope                              69
+
+
+  =H.=
+
+  Haemacytometer after Thoma                                  71
+  Handle for holding lens                                     67
+  Hand Microtomes                                             97
+  Hand Spectroscope                                           71
+  Horizontal Microscope                                       56
+
+
+  =I.=
+
+  Illuminating Apparatus                                      20
+  Illuminating Lens                                          100
+  Immersion Objective                                     12, 13
+  Immersion Oil                                              101
+  Iris-diaphragm                                             100
+  Iris cylinder diaphragm                                     20
+
+
+  =K.=
+
+  Knife-carrier                                               93
+  Knife-holder                                                97
+  Knife after Thoma                                           96
+  Knives for Microtomes                                       96
+
+
+  =L.=
+
+  Lamp                                                        83
+  Leather case                                               103
+  Lenses:
+    aplanatic                                                 67
+    binocular                                                 68
+    for the pocket                                            68
+  Lens for Algae Examination                                  65
+  Lens-holders                                                65
+  Lens for Projection                                         90
+
+
+  =M.=
+
+  Magnification                                               13
+  Mechanical Stages                                           78
+  Megascope                                                   91
+  Micrometers                                                 73
+  Micrometer Eye-piece                                        73
+  Micrometer with squares                                     73
+  Micrometer-screw                                            18
+  Microscope after Dölken                                     52
+    "         "    Nebelthau                                  50
+    "         "    Unna                                       33
+    "        stereoscopic                                     69
+    "        mineralogical                                    57
+    "        for dissections                                  62
+    "        for reading thermometer scales                  102
+    "        for the examination of trichinae                 48
+  Microscopical Cases                                        103
+  Micro-Spectroscope                                          70
+  Microtomes                                                  92
+  Microtome knives                                            96
+  Moist chamber                                              100
+
+
+  =N.=
+
+  Nansen's Microscope                                        102
+  Nebelthau's Microscope                                      50
+  Net micrometers                                             73
+  Nose-pieces                                                100
+  Notice                                                       4
+
+
+  =O.=
+
+  Object Marker                                              101
+  Objectives achromatic                                       12
+    "        apochromatic                                     14
+    "        photographic                                     85
+  Ocular for Demonstrations                                  101
+  Oil-Immersion                                           12, 14
+  Opaque illuminator                                         102
+  Outfit for Sputum Examinations                             103
+
+
+  =P.=
+
+  Photographic Objectives                                     85
+  Photographic plates                                     82, 85
+  Photomicrography                                            82
+  Photo-micrographic Apparatus                                82
+  Photomicrographic Apparatus with joint for inclination      83
+  Pfeiffer dissecting microscope                              64
+  Pipettes                                                    70
+  Plate holders                                           82, 85
+  Pocket Microscope                                           65
+  Pocket Lens                                                 68
+  Polarizing Apparatus                                        99
+  Preface                                                      6
+  Projection                                                  87
+  Projection Apparatus, large size                            91
+  Projection Apparatus after Edinger                          84
+  Projection-lamp                                             90
+  Projection-lens                                             90
+  Projection-ocular                                           91
+  Publications                                               104
+
+
+  =R.=
+
+  Reflector                                                   83
+  Revolving Eye-piece                                         15
+  Rheostat                                                    90
+
+
+  =S.=
+
+  Saccharimeter, Mitcherlich                                 102
+  Screw-micrometer eye-piece                                  73
+  Simple dissecting microscope, wood case, with handrests     66
+  Sliding Microscope (Nebelthau's)                            50
+  Sliding Microtome                                       92, 95
+  Slide for counting the corpuscles of the blood              71
+  Spectroscope                                                70
+  Stage-Micrometer                                            73
+  Stage for Dissections                                       66
+  Stand for supporting specimens                              83
+  Stand A                                                     24
+  Stand I                                                     28
+  Stereoscopic Binocular stand                                69
+  Stand Ia                                                    30
+    "   Ia with English Foot                                  32
+    "   Ib                                                    34
+    "   II                                                    36
+    "  IIa                                                    38
+    "  IIb                                                    40
+    "  III                                                    42
+    "   IV                                                    44
+    "    V                                                    46
+    "   VI                                                    48
+    "    I for Mineralogical Research                         57
+    "   II  "        "           "                            60
+  Stereoscopic Microscope                                     69
+  Swing-out Condenser                                         20
+
+
+  =T.=
+
+  Thoma's Haemacytometer                                      71
+  Thoma Knives                                                96
+  Travelling Microscopes                                      53
+  Trichinoscope                                               91
+  Tube length                                                  8
+  Tubeuf drawing Apparatus                                    77
+  Turn-table                                                 101
+  Türck counting chamber                                      72
+
+
+  =U.=
+
+  Unna's Microscope                                           33
+
+
+  =W.=
+
+  Warm Stages                                                 80
+  Water-Immersion                                             12
+  Welsbach lamp                                               83
+
+
+  Printed by Fr. Richter, Leipzic.
+
+
+  =Transcriber's Notes:=
+  hyphenation, spelling and grammar have been preserved as in the original
+  minor punctuation changes made without notes
+  Page 5, and specimens. focal length. ==> and specimens.
+  Page 10, will suffice tho show ==> will suffice to show
+  Page 15, eye-pieces may he changed ==> eye-pieces may be changed
+  Page 17, movement on Stands AI, Ia ==> movement on Stands A, I, Ia
+  Page 22, the purpore of modifying ==> the purpose of modifying
+  Page 25, in tis central portion ==> in its central portion
+  Page 26, has the folloving advantages ==> has the following advantages
+  Page 26, is absolutly no limit ==> is absolutely no limit
+  Page 43, an excellent loboratory stand ==> an excellent laboratory stand
+  Page 47, Exe-pieces I, III. ==> Eye-pieces I, III.
+  Page 54, size like the I. b. ==> size like the Ib.
+  Page 59, stand with these accessoires ==> stand with these accessories
+  Page 61, the and of the tube ==> the end of the tube
+  Page 62, The fit inside ==> They fit inside
+  Page 64, The case consists ==> The base consists
+  Page 68, Aplantic triplets 64-68 ==> Aplanatic triplets 64-68
+  Page 69, Magnifikation, 20 diam. ==> Magnification, 20 diam.
+  Page 71, micrometric measurment ==> micrometric measurement
+  Page 78, Mechanical stage Nr. 98 ==> Mechanical stage No. 98
+  Page 85, 42 und 64 mm ==> 42 and 64 mm
+  Page 90, removed duplicate 'Transport 250.--'
+  Page 91, also wheter it is direct ==> also whether it is direct
+  Page 91, a continual, flow ==> a continual flow
+  Page 97, 136. Lenght of cutting edge ==> 136. Length of cutting edge
+  Page 98, with melled and graduated ==> with milled and graduated
+  Page 99, forms port of an ocular ==> forms part of an ocular
+  Page 99, any disired position ==> any desired position
+  Page 99, The gange measures 0,01 ==> The gauge measures 0,01
+  Page 103, light. for illumination ==> light for illumination
+  Page 103, 167. Bell jar ==> 177. Bell jar
+  Page 107, Stage-Mikrometer, 73 ==> Stage-Micrometer, 73
+
+
+
+
+
+End of Project Gutenberg's Microscopes and Accessory Apparatus, by Ernst Leitz
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK MICROSCOPES AND ACCESSORY APPARATUS: CATALOGUE NO. 40 ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

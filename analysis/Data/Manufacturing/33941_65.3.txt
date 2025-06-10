@@ -1,0 +1,3525 @@
+﻿The Project Gutenberg eBook of The Methods of Glass Blowing and of Working Silica in the Oxy-Gas Flame
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: The Methods of Glass Blowing and of Working Silica in the Oxy-Gas Flame
+
+Author: W. A. Shenstone
+
+Release date: October 6, 2010 [eBook #33941]
+
+Language: English
+
+Credits: Produced by Harry Lamé and the Online Distributed
+        Proofreading Team at http://www.pgdp.net (This file was
+        produced from images generously made available by The
+        Internet Archive/American Libraries.)
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK THE METHODS OF GLASS BLOWING AND OF WORKING SILICA IN THE OXY-GAS FLAME ***
+
+
+
+
+Produced by Harry Lamé and the Online Distributed
+Proofreading Team at http://www.pgdp.net (This file was
+produced from images generously made available by The
+Internet Archive/American Libraries.)
+
+
+
+
+
+  +-------------------------------------------------------------------+
+  |                   Transcriber's Notes:                            |
+  |                                                                   |
+  | Italics are indicated by the underscore character, as in _word_.  |
+  | Bold face is indicated by the equal character, as in =word=.      |
+  | Subscript is indicated by _{subscript}.                           |
+  | Footnotes have been moved to below the paragraph they refer to.   |
+  | Table of contents: 84-05 changed to 84-95.                        |
+  | Paragraph starting Uniting Pieces of Glass to Each Other, known as|
+  |   Welding, or Soldering: footnote anchor [1] and number 1. before |
+  |   next paragraph deleted.                                         |
+  | Caption FIG. 18 added to illustration.                            |
+  | Paragraph directly below FIG. 18: comma added (or better,...).    |
+  | 2nd paragraph under FIG. 19: _DE through E_ changed to _DE_       |
+  |   through _E_.                                                    |
+  | 2nd paragraph under FIG. 34: _whence it might gradually lead into_|
+  |   changed to _whence it might gradually leak into_.               |
+  | ToC: several sections added, so that all named sections are       |
+  |   included.                                                       |
+  | endiometer changed to eudiometer.                                 |
+  | Some minor typographical errors and inconsistencies corrected.    |
+  +-------------------------------------------------------------------+
+
+
+
+
+                      THE METHODS OF GLASS BLOWING
+                                 AND OF
+                             WORKING SILICA
+
+
+
+
+       BY THE SAME AUTHOR _With 25 Illustrations. Crown 8vo, 2s._
+
+       =A Practical Introduction to Chemistry.= Intended to
+       give a _practical_ acquaintance with the Elementary Facts
+       and Principles of Chemistry.
+
+                        LONGMANS, GREEN, AND CO.
+            LONDON, NEW YORK, BOMBAY, CALCUTTA, AND MADRAS.
+
+
+
+
+                      The Methods of Glass Blowing
+                                 AND OF
+                   Working Silica in the Oxy-Gas Flame
+
+                      _FOR THE USE OF CHEMICAL AND
+                           PHYSICAL STUDENTS_
+
+                                   BY
+
+                         W. A. SHENSTONE, F.R.S.
+
+           FORMERLY LECTURER ON CHEMISTRY IN CLIFTON COLLEGE
+
+                          _NINTH IMPRESSION_
+
+                       LONGMANS, GREEN, AND CO.
+                      39 PATERNOSTER ROW, LONDON
+                FOURTH AVENUE & 30TH STREET, NEW YORK
+                     BOMBAY, CALCUTTA, AND MADRAS
+
+                                 1916
+
+
+
+
+PREFACE
+
+
+This book consists of a reprint of the third edition of my Methods of
+Glass-blowing, together with a new chapter in which I have described the
+comparatively new art of working vitreous silica.
+
+The individual operations of glass-blowing are much less difficult than
+is usually supposed, and considerable success in the performance of most
+of them may be attained by any one who is endowed with average powers of
+manipulation and who is moderately persistent. Constructing finished
+apparatus is often more difficult, as it may involve the performance of
+several operations under disadvantageous conditions, and may demand a
+little ingenuity on the part of the operator. But I think the
+suggestions in Chapter IV. will make this comparatively easy also to
+those who have mastered the operations described in Chapter III.
+
+The working of vitreous silica, though more tedious and expensive than
+glass-blowing, is not really more difficult, and as it seems certain
+that this new material will soon play a useful part in chemical and
+physical research, I believe the addition now made to the earlier book
+will add considerably to its value.
+
+As glass is much less expensive to work with than silica, the beginner
+will find it best to spend a few days working with the common gas
+blow-pipe and glass before he attempts to manipulate the new and more
+refractory material. Therefore, in writing the new chapter, I have
+assumed that the reader is already more or less familiar with the rest
+of the book, and have given only such instructions and advice as will be
+required by one who is already able to carry out simple work at the
+blow-pipe.
+
+                                          W. A. SHENSTONE.
+
+  CLIFTON COLLEGE,
+  _Dec. 1901_.
+
+
+
+
+CONTENTS
+
+
+  CHAPTER I.
+
+  GLASS-BLOWER'S APPARATUS.
+                                                                  PAGE
+
+  Introductory--The Working-place--The Blow-pipe--The
+  Bellows--Automatic Blower--Blow-pipe Flames,                    1-11
+
+
+  CHAPTER II.
+
+  VARIETIES OF GLASS AND THEIR MANAGEMENT.
+
+  Characters of good Glass--Cleaning and Preparing a
+  Tube--Presenting Glass to the Flame--Methods of working with
+  Lead and Soft Soda Glass respectively--Management of Soda
+  Glass--Annealing--The Use of Combustion Tube,                  12-25
+
+
+  CHAPTER III.
+
+  CUTTING AND BENDING GLASS--FORMING GLASS APPARATUS BEFORE
+  THE BLOW-PIPE--MAKING AND GRINDING STOPPERS TO APPARATUS,
+  ETC.
+
+  Cutting Glass Tubes--Bending Glass Tubes--Rounding and
+  Bordering the Ends of Tubes--Sealing--Choking, or
+  Contracting the Bore of a Glass Tube--Widening
+  Tubes--Piercing Tubes--Uniting Pieces of Glass to Each
+  Other, Known as Welding, or Soldering--Blowing a Bulb or
+  Globe of Glass--Making and Grinding Stoppers,                  26-54
+
+
+  CHAPTER IV.
+
+  MAKING THISTLE FUNNELS, U-TUBES, ETC.--COMBINING THE PARTS
+  OF COMPLICATED APPARATUS--MERCURY, AND OTHER AIR-TIGHT
+  JOINTS--VACUUM TAPS--SAFETY TAPS--AIR-TRAPS.
+
+  Electrodes--U-Tubes--Spiral Tubes--Thistle Funnels--Closing
+  Tubes containing Chemicals--Construction of Apparatus
+  Consisting of Several Parts--Modes of Combining the Parts of
+  Heavy Apparatus--Mercury Joints--Vacuum Taps--Lubricating
+  Taps--Air-Traps,                                               55-69
+
+
+  CHAPTER V.
+
+  GRADUATING AND CALIBRATING GLASS APPARATUS.
+
+  To Graduate Tubes, etc.--To Divide a Given Line into Equal
+  Parts--To Calibrate Apparatus--To Calibrate Tubes for
+  Measuring Gases--To Calibrate the Tube of a Thermometer,       70-81
+
+
+  CHAPTER VI.
+
+  GLASS TUBING.
+
+  Diagrams of Glass Tubes, showing the chief sizes in which
+  they are made,                                                 82-83
+
+
+  CHAPTER VII.
+
+  VITREOUS SILICA
+
+  Introductory--Properties of Vitreous Silica--Preparing
+  non-splintering Silica from Brazil Pebble--Apparatus--The
+  Method of Making Silica Tubes--Precautions--Making Larger
+  Tubes and other Apparatus of Silica--Quartz Fibres,            84-95
+
+
+  INDEX,                                                            97
+
+
+
+
+CHAPTER I.
+
+_GLASS-BLOWER'S APPARATUS._
+
+
+=Introductory.=--I shall endeavour to give such an account of the
+operations required in constructing glass apparatus as will be useful to
+chemical and other students; and as this book probably will come into
+the hands of beginners who are not in a position to secure any further
+assistance, I shall include descriptions even of the simple operations
+which are usually learned during the first few hours of practical work
+in a chemical or physical laboratory. I shall not give any particular
+account of the manufacture of such apparatus as thermometers, taps,
+etc., because, being in large demand, they can be bought so cheaply that
+time is not profitably spent in making them. But it will be found that
+what is included will enable any one, who will devote sufficient time to
+acquiring the necessary manipulative dexterity, to prepare such
+apparatus as test-tubes, distillation flasks, apparatus for washing
+gases, ozone generating tubes, etc., when they are required, as they
+often are, without delay or for special purposes. The amateur probably
+will not succeed in turning out apparatus so finished in appearance as
+that of the professional glass-blower until after long practice, but
+after a little daily practice for the space of a few weeks, any one who
+is fairly skilful in ordinary manipulation, and who perseveres in the
+face of failure at first, will find himself able to make almost all the
+apparatus he needs for lecture or other experiments, with a considerable
+saving in laboratory expenses, and, which very often is more important,
+without the delay that occurs when one depends upon the professional
+glass-worker. In the case of those who, like myself, work in the
+provinces, this latter advantage is a very weighty one.
+
+After the description of the instruments used in glass-blowing, which
+immediately follows, the following arrangement of the subject has been
+adopted. In the first place, an account of the two chief kinds of glass
+is given, and of the peculiarities in the behaviour of each of them
+before the blow-pipe, which is followed by a tolerably minute
+description of the method of performing each of the fundamental
+operations employed in fashioning glass apparatus. These are not very
+numerous, and they should be thoroughly mastered in succession,
+preferably upon tubes of both soda and lead glass. Then follows, in
+Chapter IV., an account of the application of these operations to
+setting up complete apparatus, full explanations of the construction of
+two or three typical pieces of apparatus being given as examples, and
+also descriptions of the modes of making various pieces of apparatus
+which in each case present one or more special difficulties in their
+construction; together with an account, which, I think, will be found
+valuable, of some apparatus that has been introduced, chiefly during
+recent years, for experimenting upon gases under reduced pressure,
+_e.g._ vacuum taps and joints. Finally, in Chapter V., there is a short
+account of the methods of graduating and calibrating glass apparatus for
+use in quantitative experiments.
+
+
+=The Working-place.=--The blow-pipe must be placed in a position
+perfectly free from draughts. It should not face a window, nor be in
+too strong a light, if that can be avoided, for a strong light will
+render the non-luminous flames, which are used in glass-blowing, almost
+invisible, and seriously inconvenience the operator, who cannot apply
+the various parts of the flames to his glass with the degree of
+certainty that is necessary; neither can he perceive the condition of
+the glass so correctly in a strong light, for though in many operations
+the glass-worker is guided by feeling rather than by seeing, yet sight
+plays a very important part in his proceedings.
+
+My own blow-pipe is placed near a window glazed with opaque glass, which
+looks southwards, but is faced by buildings at a short distance. In dull
+weather the light obtained is good; but on most days I find it
+advantageous to shade the lower half of the window with a green baize
+screen. Some glass-blowers prefer gaslight to daylight.
+
+The form of the table used is unimportant, provided that it is of a
+convenient height, and allows free play to the foot which works the
+blower underneath it. The blower should be _fixed_ in a convenient
+position, or it will get out of control at critical moments. The table,
+or that part of it which surrounds the blow-pipe, should be covered with
+sheet-iron to protect it from the action of the fragments of hot glass
+that will fall upon it. The tubes that supply air and gas to the
+blow-pipe should come from beneath the table, and may pass through holes
+cut for the purpose.
+
+Many glass-blowers prefer to work at a rather high table, and sit on a
+rather high stool, so that they are well above their work. No doubt this
+gives extra command over the work in hand, which is often valuable. On
+the other hand, it is somewhat fatiguing. For a long spell of labour at
+work which is not of a novel character nor specially difficult, I am
+disposed to recommend sitting on a chair or low stool, at a table of
+such height as will enable the elbows to rest easily upon it whilst the
+glass is held in the flame. The precise heights that are desirable for
+the table and stool, and the exact position of the blow-pipe, will
+depend upon the height and length of arm of the individual workman, and
+it must therefore be left to each person to select that which suits him
+best. A moveable rest made of wood, for supporting the remote end of a
+long piece of glass tube a few inches above the table, whilst the other
+end is being heated in the flame, will be found convenient.
+
+
+=The Blow-pipe.=--Formerly a lamp, in which sweet oil or tallow was
+burnt, was employed for glass-working, and such lamps are still
+occasionally used. Thus, lamps burning oil or tallow were used on board
+the _Challenger_ for hermetically sealing up flasks of water collected
+at various depths to preserve them for subsequent examination. I shall
+not, however, give an account of such a lamp, for the gas apparatus is
+so much more convenient for most purposes that it has now practically
+superseded the oil lamps. Fig. 1 shows a gas blow-pipe of exceedingly
+simple construction, which can be easily made, and with which good work
+can be done.
+
+[Illustration: FIG. 1.]
+
+The tube _A_ is of brass, and has a side tube _B_ brazed to it, ten to
+twelve centimetres from the end _E_, according to the dimensions of the
+tube. A tube of glass, _EC_, is fitted into _A_ by a cork at _D_. _B_
+is connected to a supply of gas by a flexible tube, _C_ is similarly
+connected to the blower. By means of _CE_ a stream of air can be forced
+into gas burning at the mouth of the blow-pipe _G_, and various flames,
+with the characters described in a later section, can be produced with
+this instrument. For producing the pointed flame (Fig. 3, p. 9) the
+opening _E_ of the air-tube should be contracted to the size of a large
+knitting needle. For producing a flame of large size, rich in air (Fig.
+4, p. 9), the internal diameter of _E_ may be nearly half as great as
+that of _A_ without disadvantage.
+
+This blow-pipe may be fixed in position by the spike _F_, which will fit
+into holes in a block of wood or a large cork. Several of these holes in
+various positions should be made in the block, so that the position of
+the blow-pipe may be varied easily. Two taps must be provided in
+convenient positions near the edge of the table to enable the workman to
+regulate the supplies of air and gas. These taps should be fixed to the
+table and be connected with the gas and air supplies respectively on one
+side, and with the blow-pipe on the other, by flexible tubes. If
+blow-pipes of this kind be used, at least two of them should be
+provided; one of small dimensions for working on small tubes and joints,
+the other of larger size for operations on larger tubes. It will be
+convenient to have both of them ready for use at all times, as it is
+sometimes necessary to employ large and small flames on the same piece
+of work in rapid succession. By having several air-tubes of different
+sizes fitted to each blow-pipe, a greater variety of work may be done.
+
+For the larger blow-pipe, the internal diameter of _A_ may be fifteen to
+seventeen millimetres.
+
+For the smaller instrument, eleven millimetres for the diameter of _A_
+would be a useful size.
+
+When a slightly greater outlay can be afforded it will be most
+convenient to purchase the blow-pipe. They can be obtained of compact
+form, supported on stands with universal joints giving great freedom of
+movement, and with taps for regulating the supplies of gas and air, at
+comparatively small cost.
+
+As figures of various blow-pipes can be seen in the price-lists of most
+dealers in apparatus, they are not given here. Their introduction would
+be of but little service, for the construction of that which is adopted
+can be readily ascertained by taking it to pieces. The simplest
+blow-pipe usually used for glass-working is that of Herapath. This has
+two taps to regulate the air and gas supplies respectively, and will
+give a considerable variety of flames, which will be discussed
+subsequently.
+
+An excellent blow-pipe, made on the same principle as that shown in Fig.
+1, but more substantially and with interchangeable jets, can be obtained
+from Messrs. Muller of Holborn for a moderate outlay.
+
+Another very good blow-pipe is the Automaton blow-pipe of Mr. Fletcher
+of Warrington. In this, one tap regulates the supply both of air and
+gas, which is a great gain when difficult work is in hand. Automaton
+blow-pipes are made of two sizes. I have found that the larger size,
+with a powerful bellows, heats large pieces of lead glass very
+satisfactorily. On the other hand, the fine-pointed oxidising flame of
+the Herapath blow-pipe is, perhaps, the most suitable for working joints
+of lead glass. Therefore a good equipment would be a small Herapath
+blow-pipe and a large-sized Automaton. If only one blow-pipe is
+purchased it should be either a medium-sized Herapath, or the smaller
+Automaton, as those are most useful for general work.
+
+Mr. Fletcher also makes an ingenious combination of two blow-pipes in
+which the gas and air supplies are regulated by a single lever-handle.
+This is very convenient, and gives flames that answer well with tubes
+made of soft soda glass, and it is very useful for general work. For use
+with lead glass the supply of air is rather too small, and does not
+enable one to get such good results. This can be easily amended,
+however. By slightly increasing the size of the air-tube of the smaller
+blow-pipe, and having increased the supply of air to the larger
+blow-pipe also, by reducing the external diameter of the end of the
+innermost tube, I now get medium-sized brush flames and pointed flames
+with this blow-pipe, that are equal to any I have used for heating lead
+glass.
+
+For small laboratories the inexpensive No. 5 Bunsen burner of Mr.
+Fletcher, which is convertible into a blow-pipe, will be very useful.
+
+Jets of several sizes to fit the air-tubes of blow-pipes may be obtained
+with them, and will serve for regulating the supply of air to the flame.
+
+
+=The Bellows.=--The usual blowing apparatus is some form of foot-blower.
+These may be obtained fitted to small tables with sheet-iron tops. But a
+much less expensive apparatus is the large foot-blower made by Mr.
+Fletcher of Warrington, which can be used at an ordinary table or
+laboratory bench. Good foot-blowers can also be obtained from makers of
+furnace bellows.
+
+No part of the glass-blower's equipment exceeds the bellows in
+importance. The best blower procurable should therefore be adopted. A
+bellows which, when used with a large blow-pipe, will not enable you to
+heat large pieces of lead glass tube to redness without blackening the
+glass when the directions for heating lead glass on pages 17-21 are
+followed, should on no account be received. I am told that at some
+places, where the water-supply is at very high pressure, it is utilised
+for working blow-pipes by means of the apparatus described below, and
+that some glass-workers find it advantageous to use such automatic
+blowers. But after a little practice, the effort of working the blower
+with the foot whilst manipulating the glass is not a source of serious
+inconvenience. Indeed, as it gives a certain degree of control over the
+flame without the use of the hands, the foot-blower is preferable. It is
+worth while to describe an automatic blower, however.
+
+
+=Automatic Blower= (Fig. 2).--A strong glass tube _A_ is welded into a
+somewhat larger tube _B_ so that its end is about 2 mm. from the
+contraction at _G_. _B_ has a side tube _C_ joined to it. The narrow end
+of _B_ is fixed by an india-rubber cork to a strong bottle _D_ of two or
+three litres capacity. The india-rubber cork also carries an exit tube
+_E_, and _D_ is pierced near its bottom by a small hole at _F_.
+
+[Illustration: FIG. 2]
+
+In using the apparatus _A_ is connected with the water-supply, and water
+passing through _G_, carries air with it into _D_. The water escapes
+from _D_ by the opening at _F_, and the air is allowed to pass out by
+the tube _E_, its passage being regulated by a tap. Fresh supplies of
+air enter _B_ by _C_.
+
+
+=Blow-pipe Flames=--_The Pointed Flame._--If the gas tap of a Herapath
+blow-pipe be adjusted so that comparatively little gas can pass, and if
+the foot-blower be then worked cautiously, a long tongue of flame ending
+in a fine point will be produced (Fig. 3). This flame will subsequently
+be described as the _pointed flame_. It should be quite free from
+luminosity, and as the amount of air necessary for securing a pointed
+flame is large, in proportion to the gas, there is excess of oxygen
+towards the end _C_. By adjusting the proportions of air and gas,
+pointed flames of various dimensions can be obtained with the same
+blow-pipe. The part of a pointed flame to be used in glass-working is
+the tip, or in some cases the space slightly beyond the tip.
+
+[Illustration: FIG. 3.]
+
+[Illustration: FIG. 4.]
+
+_The Brush Flame._--If a large supply of gas be turned on and a
+considerable blast of air sent into the flame, a non-luminous flame of
+great size will be obtained (Fig. 4). In form it somewhat resembles a
+large camel's hair pencil, and may conveniently be described as a
+_brush flame_. The chief advantage of a large-sized blow-pipe is, that
+with it a large brush flame may be produced, which is often invaluable.
+By gradually diminishing the supply of gas and air smaller brush flames
+may be produced.
+
+The jet used to supply air to the Herapath blow-pipe is usually too
+fine, and consequently does not permit the passage of sufficient air to
+produce a brush flame that contains excess of oxygen, even with the aid
+of a very powerful blower. My own Herapath blow-pipe only gives a
+satisfactory oxidising brush flame when the jet is removed altogether
+from the end of the air-tube. For producing pointed flames the finer jet
+of the air-tube must be used, but when a highly oxidising flame of large
+size is required it must be removed. The internal diameter of the
+central air-tube should be nearly half as great as that of the outer or
+gas-supply tube. Fletcher's Automaton with the large air jet gives a
+very liberal supply of air, and produces an excellent oxidising brush
+flame. In the case of the larger-sized Automaton a consequence of this
+is, however, that when fitted with the large jet it will not give so
+good a pointed flame as the Herapath, which, in its turn, gives an
+inferior oxidising brush. By fitting finer jets to the air-tube of
+Fletcher's apparatus pointed flames can be secured when necessary.
+
+_The Smoky Flame._--By turning on a very free supply of gas, and only
+enough air to give an outward direction to the burning gas, a smoky
+flame, chiefly useful for annealing and for some simple operations on
+lead glass, is produced.
+
+The Gimmingham blow-pipe and Fletcher's combination blow-pipe, in
+addition to the above flames, are also adapted to produce a non-luminous
+flame, resembling that of the Bunsen gas-burner, which is very
+convenient for the preliminary heating of the glass, and also for
+gradually cooling finished apparatus. It is not necessary to describe
+the method of using these last-mentioned blow-pipes. With the more
+complicated of them directions for its use are supplied.
+
+Mr. Madan has suggested the use of oxygen in place of air for producing
+the oxidising flame required for working lead glass, and to produce a
+flame of high temperature for softening tubes of hard, or combustion,
+glass. For the latter purpose the employment of oxygen may be adopted
+with great advantage. For working lead glass, however, it is quite
+unnecessary if the directions already given are followed.
+
+The student's subsequent success will so largely depend upon his
+acquaintance with the resources of his blow-pipe, and on the facility
+with which he can take advantage of them, that no pains should be spared
+in the effort to become expert in its management as soon as possible. A
+few experiments should now be made, therefore, upon the adjustment of
+the flame, until the student is able to produce and modify any form of
+flame with promptness and certainty.
+
+[Illustration: FIG. 5.]
+
+The remaining apparatus used in glass-working consists of triangular and
+other files, charcoal pastils for cutting glass, pieces of sound
+charcoal of various diameters with conical ends; it is convenient to
+have one end somewhat less pointed than the other (Fig. 5). Corks of
+various sizes; the smallest, which are most frequently needed, should be
+carefully cut with sharpened cork borers from larger corks. Besides
+these there should be provided some freshly distilled turpentine in
+which camphor has been dissolved,[1] fine and coarse emery powder, and
+some sheets of cotton-wadding, an india-rubber blowing-bottle, glass
+tubes, a little white enamel, and a pair of iron tongs.
+
+[1] Half an ounce of camphor to about six ounces of turpentine will do
+very well.
+
+
+
+
+CHAPTER II.
+
+_VARIETIES OF GLASS AND THEIR MANAGEMENT._
+
+
+All the varieties of glass that are ordinarily met with contain silica
+(SiO_{2}) associated with metallic oxides. In a true glass there are at
+least two metallic oxides. The unmixed silicates are not suitable for
+the purposes of glass. They are not so capable of developing the viscous
+condition when heated as mixtures--some of them are easily attacked by
+water, and many of those which are insoluble are comparatively
+infusible. There is generally excess of silica in glass, that is, more
+than is necessary to form normal silicates of the metals present. The
+best proportions of the various constituents have been ascertained by
+glass-makers, after long experience; but the relation of these
+proportions to each other, from a chemical point of view, is not easy to
+make out.
+
+The varieties of glass from which tubes for chemical glass-blowing are
+made may be placed under three heads, and are known as[2]--
+
+  Soft soda glass.   Also known as French glass.
+  Lead glass.        Also known as English glass.
+  Hard glass.
+
+[2] For details of the composition of the various glasses, some work on
+glass-making may be consulted.
+
+In purchasing glass tubes, it is well to lay in a considerable stock of
+tubes made of each of the two first varieties, and, if possible, to
+obtain them from the manufacturer, for it frequently happens that pieces
+of glass from the same batch may be much more readily welded together
+than pieces of slightly different composition. Yet it is not well to lay
+in too large a stock, as sometimes it is found that glass deteriorates
+by prolonged keeping.
+
+As it is frequently necessary to make additions, alterations, or repairs
+to purchased apparatus, it is best to provide supplies both of soft soda
+glass and lead glass, for though purchased glass apparatus is frequently
+made of lead glass, yet sometimes it is formed from the soda glass, and
+as it is a matter of some difficulty to effect a permanent union between
+soda glass and lead glass, it is desirable to be provided with tubes of
+both kinds.
+
+Many amateurs find that soda glass is in some respects easier to work
+with than lead glass. But, on the other hand, it is somewhat more apt to
+crack during cooling, which causes much loss of time and disappointment.
+Also, perhaps in consequence of its lower conductivity for heat, it very
+often breaks under sudden changes of temperature during work. If,
+however, a supply of good soda glass is obtained, and the directions
+given in this book in regard to annealing it are thoroughly carried out,
+these objections to the use of soda glass will, to a great extent, be
+removed. I find, however, that when every precaution has been taken,
+apparatus made of soda glass will bear variations of temperature less
+well than that made of lead glass. Therefore, although the comparatively
+inexpensive soda glass may be employed for most purposes without
+distrust, yet I should advise those who propose to confine themselves to
+one kind of glass, to take the small extra trouble required in learning
+to work lead glass.
+
+In order to secure glass of good quality, a few pieces should be
+obtained as a sample, and examined by the directions given below. When
+the larger supply arrives, a number of pieces, taken at random, should
+be examined before the blow-pipe, to compare their behaviour with that
+of the sample pieces, and each piece should be separately examined in
+all other respects as described subsequently.
+
+Hard glass is used for apparatus that is required to withstand great
+heat. It is difficult to soften, especially in large pieces. It should
+only be employed, therefore, when the low melting points of soda or lead
+glass would render them unsuitable for the purpose to which the finished
+apparatus is to be put. What is sold as Jena combustion tube should be
+preferred when this is the case.
+
+
+=Characters of good Glass.=--Glass tubes for glass-blowing should be as
+free as possible from knots, air-bubbles, and stripes. They should be in
+straight pieces of uniform thickness, and cylindrical bore. It is not
+possible to obtain glass tubes of absolutely the same diameter from one
+end to the other in large quantities, but the variations should not be
+considerable.
+
+When a sharp transverse scratch is made with a good file on a piece of
+tube, and the scratch is touched with a rather fine point of red-hot
+glass (this should be lead glass for a lead glass tube, and soda glass
+for a tube of soda glass), the crack which is started should pass round
+the glass, so that it may be broken into two pieces with regular ends.
+If the crack proceeds very irregularly, and especially if it tends to
+extend along the tube, the glass has been badly annealed, and should not
+be employed for glass-blowing purposes. It is important that the point
+of hot glass used shall be very small, however. Even good glass will
+frequently give an irregular fracture if touched with a large mass of
+molten glass.
+
+Finally, glass tube which is thin and of small diameter should not
+crack when suddenly brought into a flame. But larger and thicker tubes
+will not often withstand this treatment. They should not crack, however,
+when they are brought into a flame gradually, after having been held in
+the warm air in front of it for a minute or so.
+
+Good glass does not readily devitrify when held in the blow-pipe flame.
+As devitrified glass very often may be restored to its vitreous
+condition by fusion, devitrification most frequently shows itself round
+the edges of the heated parts, and may be recognised by the production
+of a certain degree of roughness there. It is believed to be due to the
+separation of certain silicates in the crystallised form. Hard glass,
+which contains much calcium, is more apt to devitrify than the more
+fusible varieties.[3]
+
+[3] The presence of silicates of calcium and aluminum are considered to
+promote a tendency to devitrification in glass; and glasses of complex
+composition are more apt to devitrify than the simpler varieties. See
+_Glass-making_, by Powell, Chance, and Harris, Chap. IV.
+
+Glass tubes are made of various sizes. When purchasing a supply, it is
+necessary to be somewhat precise in indicating to the vendor the sizes
+required. I have therefore placed at the end of the book, in an
+appendix, a table of numbered diagrams. In ordering tubes it will
+usually only be necessary to give the numbers of the sizes wished for,
+and to specify the quantity of each size required. In ordering glass
+tubes by weight, it must be remembered that a great many lengths of the
+smaller sizes, but very few lengths of the larger sizes, go to the
+pound. Larger-sized tubes than those on the diagram are also made. In
+ordering them the external diameter and thickness of glass preferred
+should be stated.
+
+
+=Cleaning and Preparing a Tube.=--It is frequently much easier to clean
+the tube from which a piece of apparatus is to be made than to clean
+the finished apparatus. A simple method of cleaning a tube is to draw a
+piece of wet rag which has been tied to a string through the tube once
+or twice, or, with small tubes, to push a bit of wet paper or cotton
+wool through them. If the dirt cannot be removed in this way, the
+interior of the tube should be moistened with a little sulphuric acid in
+which some bichromate of potassium has been dissolved. In any case, it
+must finally be repeatedly rinsed with distilled water, and dried by
+cautiously warming it, and sucking or blowing air through it. In order
+to avoid heating delicate apparatus which has become damp and needs
+drying, the water may be washed out with a few drops of spirit, which is
+readily removed at a low temperature.
+
+Before using a glass tube for an operation in which it will be necessary
+to blow into it, one end of it must be contracted, unless it is already
+of such a size that it can be held between the lips with perfect ease;
+in any case, its edges must be rounded. For descriptions of these
+operations, see page 35. The other end must be closed. This may be done
+by means of a cork.
+
+
+=Presenting Glass to the Flame.=--Glass tubes must never be brought
+suddenly into the flame in which they are to be heated. All glass is
+very likely to crack if so treated. It should in all cases be held for a
+little while in front of the flame, rotated constantly in the hot air
+and moved about, in order that it may be warmed over a considerable
+area. When it has become pretty hot by this treatment, it may be
+gradually brought nearer to the flame, and, finally, into contact with
+it, still with constant rotation and movement, so as to warm a
+considerable part of the tube. When the glass has been brought fairly
+into contact with the flame, it will be safe to apply the heat at the
+required part only. Care must be taken in these preliminary operations
+to avoid heating the more fusible glasses sufficiently to soften them.
+
+
+=Methods of working with Lead and soft Soda Glass respectively.=--When
+lead glass is heated in the brush flame of the ordinary Herapath
+blow-pipe, or within the point of the pointed flame, it becomes
+blackened on its surface, in consequence of a portion of the lead
+becoming reduced to the metallic state by the reducing gases in the
+flame. The same thing will happen in bending a lead glass tube if it is
+made too hot in a luminous flame. A practical acquaintance with this
+phenomenon may be acquired by the following experiment:--
+
+Take a piece of lead glass tube, bring it gradually from the point of a
+pointed flame to a position well within the flame, and observe what
+happens. When the glass reaches the point _A_ (Fig. 3), or thereabouts,
+a dark red spot will develop on the glass, the area of the spot will
+increase as the glass is brought further in the direction _A_ to _B_. If
+the glass be then removed from the flame and examined, it will be found
+that a dark metallic stain covers the area of the dark red spot
+previously observed. Repeat the experiment, but at the first appearance
+of the dark spot slowly move the glass in the direction _A_ to _C_. The
+spot will disappear, and, if the operation be properly performed, in its
+place there will be a characteristically greenish-yellow luminous spot
+of highly heated glass. In this proceeding the reduced lead of the dark
+spot has been re-oxidised on passing into the hot gases, rich in oxygen,
+which abound at the point of the flame. If one end of the tube has been
+previously closed by a piece of cork, and if air be forced into the tube
+with the mouth from the open end before the luminous spot has become
+cool, the glass will expand. If the experiment be repeated several
+times, with pointed flames of various sizes, the operator will quickly
+learn how to apply the pointed flame to lead glass so that it may be
+heated without becoming stained with reduced lead.
+
+If the spot of reduced metal produced in the first experiment be next
+brought into the oxidising flame, it also may gradually be removed. On
+occasion, therefore, apparatus which has become stained with lead during
+its production, may be rendered presentable by suitable treatment in the
+oxidising flame. The process of re-oxidising a considerable surface in
+this way after it has cooled down is apt to be very tedious, however,
+and, especially in the case of thin tubes or bulbs, often is not
+practicable. In working with lead glass, therefore, any reduction that
+occurs should be removed by transferring the glass to the oxidising
+flame at once.
+
+Small tubes, and small areas on larger tubes of English glass, may be
+softened without reduction by means of the pointed oxidising flame; but
+it is not easy to heat any considerable area of glass sufficiently with
+a pointed flame. And though it is possible, with care, to employ the hot
+space immediately in front of the visible end of an ordinary brush
+flame, which is rich in air, yet, in practice, it will not be found
+convenient to heat large masses of lead glass nor tubes of large size,
+to a sufficiently high temperature to get the glass into good condition
+for blowing, by presenting them to the common brush flame.
+
+It may seem that as glass which has become stained with reduced lead can
+be subsequently re-oxidised by heating it with the tip of the pointed
+flame, the difficulty might be overcome by heating it for working in the
+brush flame, and subsequently oxidising the reduced lead. It is,
+however, difficult, as previously stated, to re-oxidise a large surface
+of glass which has been seriously reduced by the action of the reducing
+gases of the flame, after it has cooled. Moreover, there is this very
+serious objection, that if, as may be necessary, the action of the
+reducing flame be prolonged, the extensive reduction that takes place
+diminishes the tendency of the glass to acquire the proper degree of
+viscosity for working it, the glass becomes difficult to expand by
+blowing, seriously roughened on its surface, and often assumes a very
+brittle or rotten condition.
+
+When it is only required to bend or draw out tubes of lead glass, they
+may be softened sufficiently by a smoky flame, which, probably owing to
+its having a comparatively low temperature, does not so readily reduce
+the lead as flames of higher temperature. But for making joints,
+collecting masses of glass for making bulbs, and in all cases where it
+is required that the glass shall be thoroughly softened, the smoky flame
+does not give good results.
+
+In the glass-works, where large quantities of ornamental and other glass
+goods are made of lead or flint glass, the pots in which the glass is
+melted are so constructed that the gases of the furnace do not come into
+contact with the glass;[4] and as the intensely-heated sides of the
+melting-pot maintain a very high temperature within it by radiation, the
+workman has a very convenient source of heat to his hand,--he has, in
+fact, only to introduce the object, or that part of it which is to be
+softened, into the mouth of the melting-pot, and it is quickly heated
+sufficiently for his purpose, not only without contact of reducing
+gases, but in air. He can therefore easily work upon very large masses
+of glass. In a special case, such a source of heat might be devised by
+the amateur. Usually, however, the difficulty may be overcome without
+special apparatus. It is, in fact, only necessary to carry out the
+instructions given below to obtain a considerable brush flame rich in
+air, in which the lead glass can be worked, not only without
+discoloration, but with the greatest facility.
+
+[4] See _Principles of Glass-making_, p. 31.
+
+_To Produce an Oxidising Brush Flame._--The blower used must be
+powerful, the air-tube of the blow-pipe must be about half as great in
+diameter as the outer tube which supplies the gas. The operator must
+work his bellows so as to supply a strong and _steady_ blast of air, and
+the supply of gas must be regulated so that the brush flame produced is
+free from every sign of incomplete combustion,[5] which may be known by
+its outer zone being only faintly visible in daylight, and quite free
+from luminous streaks (see Fig. 4, p. 9). When a suitable flame has been
+produced, try it by rotating a piece of lead glass at or near the end of
+the inner blue part of the flame (_A_ Fig. 4); the appearance of the
+glass will quickly indicate reduction. When this occurs move the glass
+forward to the end of the outer zone _B_, but keep it sufficiently
+within the flame to maintain it at a high temperature. If all is right
+the metallic reduction will quickly disappear, the glass will become
+perfectly transparent once more, and will present the appearance
+previously observed in the experiments with the pointed flame, or, if
+very hot, assume a brownish-red appearance. If this does not occur, the
+supply of air must be increased or the supply of gas diminished until
+the proper effects are secured.
+
+[5] Nevertheless the supply of air must not be so excessive as to reduce
+the temperature of the flame sufficiently to prevent the thorough
+softening of the glass, which will occur if the bellows is worked with
+too much zeal.
+
+In working upon lead glass with the highly oxidising brush flame, it is
+a good plan to heat it in the reducing part of the flame _A_ for
+thoroughly softening the glass, and to remove it to the oxidising flame
+_B_ to burn away the reduced metal. In prolonged operations, in order
+that reduction may never go too far, hold the glass alternately in the
+hot reducing flame and in the oxidising flame. The inferiority of the
+outer oxidising flame to those portions nearer the inner blue zone for
+softening the glass, may perhaps be accounted for by the presence of a
+larger proportion of unconsumed air in the former, which being heated at
+the expense of the hot gases produced by combustion, thereby lowers the
+temperature of the flame. At or near _A_ (Fig. 4) where the combustion
+is nearly complete, but no excess of air exists, the temperature will
+naturally be highest.
+
+If a very large tube be rotated in the oxidising flame at _B_ (Fig. 4)
+it may happen that the flame is not large enough to surround the tube,
+and that as it is rotated those parts of it which are most remote from
+the flame will cool down too considerably to allow all parts of the tube
+to be simultaneously brought into the desired condition. This difficulty
+may be overcome by placing two blow-pipes exactly opposite to each
+other, at such a distance that there is an interval of about an inch
+between the extremities of their flames, and rotating the tube between
+the two flames. It may be necessary to provide two blowers for the
+blow-pipes if they are large.
+
+Again, if a very narrow zone of a tube of moderate size is to be heated,
+two pointed flames may be similarly arranged with advantage.
+Occasionally more than two flames are made to converge upon one tube in
+this manner.
+
+Another method of preventing one side of a tube from cooling down whilst
+the other is presented to the flame, is to place a brick at a short
+distance from the extremity of the flame. The brick checks the loss of
+heat considerably. A block of beech wood may be used for the same
+purpose, the wood ignites and thereby itself becomes a source of heat,
+and is even more effective than a brick.
+
+Fuller details of the management of lead glass under various
+circumstances will be found in the subsequent descriptions of operations
+before the blow-pipe.
+
+Before proceeding to work with soda glass, the student should not only
+verify by experiments what has been already said, but he should
+familiarise himself with the action of the blow-pipe flame on lead glass
+by trying the glass in every part of the flame, varying the proportions
+of gas and air in every way, repeating, and repeating, his experiments
+until he can obtain any desired effect with certainty and promptitude.
+He should practice some of the simpler operations given in Chapter III.
+in order to impress what he has learned well on his mind.
+
+
+=Management of Soda Glass.=--In working with soda glass the following
+points must be constantly kept in mind. That as it is much more apt than
+lead glass to crack when suddenly heated, great caution must be
+exercised in bringing it into the flame; and that in making large joints
+or in making two joints near each other, all parts of the tube adjacent
+to that which, for the moment, is being heated, must be kept hot, as it
+is very apt to crack when adjacent parts are unequally heated. This may
+be effected by stopping work at short intervals and warming the cooler
+parts of the tube, or by the use of the brick or block of wood to check
+radiation, or even by placing a supplementary blow-pipe or Bunsen burner
+in such a position that its flame plays upon the more distant parts of
+the work, not coming sufficiently into contact to soften the glass,
+however, but near enough to keep it well heated. Lastly, to prevent the
+finished work from falling to pieces after or during cooling, the
+directions given under the head of annealing must be carefully carried
+out.
+
+In very much of his work the glass-blower is guided more by the _feel_
+of the glass than by what he sees. The power of feeling glass can only
+be acquired by practice, and after a certain amount of preliminary
+failure. As a rule I have observed that beginners are apt to raise their
+glass to a higher temperature than is necessary, and that they employ
+larger flames than are wanted. If glass be made too soft it may fall so
+completely out of shape as to become unworkable except in very skilful
+hands. The following rules, therefore, should be strictly adhered to.
+Always employ in the first instance the smallest flame that is likely to
+do the work required. In operations involving _blowing out_ viscous
+glass, attempt to blow the glass at low temperatures before higher ones
+are tried. After a little experience the adoption of the right-sized
+flame for a given purpose, and the perception of the best condition of
+glass for blowing it, become almost automatic.
+
+I may add that glass which is to be bent needs to be much less heated
+than glass which is to be blown.
+
+
+=Annealing.=--If apparatus, the glass of which is very thin and of
+uniform substance, be heated, on removal from the source of heat it will
+cool equally throughout, and therefore may often be heated and cooled
+without any special precautions. If the glass be thick, and especially
+if it be of unequal thickness in various parts, the thinner portions
+will cool more quickly than those which are more massive; this will
+result in the production of tension between the thicker and thinner
+parts in consequence of inequality in the rates of contraction, and
+fractures will occur either spontaneously or upon any sudden shock.
+Thus, if a hot tube be touched with cold or wet iron, or slightly
+scratched with a cold file, the inequality of the rate of cooling is
+great, and it breaks at once. It is therefore necessary to secure that
+hot glass shall cool as regularly as possible. And this is particularly
+important in the case of articles made of soda glass. Some glass-blowers
+content themselves with permitting the glass to cool gradually in a
+smoky flame till it is covered with carbon, and then leave it to cool
+upon the table. But under this treatment many joints made of soda glass
+which are not quite uniform in substance, but otherwise serviceable,
+will break down. In glass-works the annealing is done in ovens so
+arranged that the glass enters at the hottest end of the oven where it
+is uniformly heated to a temperature not much below that at which it
+becomes viscous, and slowly passed through the cooler parts of the
+chamber so that it emerges cold at the other end. This method of
+annealing is not practicable in a small laboratory. But fortunately very
+good results can be obtained by the following simple device, viz.:--
+
+By wrapping the hot apparatus that is to be annealed closely in cotton
+wool, and leaving it there till quite cold. The glass should be wrapped
+up immediately after it is blown into its final shape, as soon as it is
+no longer soft enough to give way under slight pressure. And it should
+be heated as uniformly as possible, not only at the joint, but also
+about the parts adjacent to the joint, at the moment of surrounding it
+with the cotton. Lead glass appears to cool more regularly than soda
+glass, and these precautions may be more safely neglected with apparatus
+made of lead glass; but not always. At the date of writing I have had
+several well-blown joints of thick-walled capillary tube to No. 16 (see
+diagram, p. 82), break during cooling, in consequence of circumstances
+making it dangerous to heat the neighbourhood of the joint so much as
+was necessary.
+
+The black carbonaceous coat formed on hot glass when it is placed in
+cotton wool may be removed by wiping with methylated spirit, or, if it
+be very closely adherent, by gently rubbing with fine emery, moistened
+with the spirit.
+
+Cotton wool is rather dangerously inflammable; it should therefore be
+kept out of reach of the blow-pipe flame, and care should be taken that
+the glass is not placed in contact with it at a sufficiently high
+temperature to cause its ignition.
+
+Another method of annealing is to cover the hot glass with hot sand, and
+allow it to cool therein.
+
+As in the case of lead glass, so with soda glass. A thorough
+acquaintance with the effect of the various parts of the flame upon it
+should be gained before further work is entered upon, for which purpose
+an hour or more spent in observing its behaviour in the flame will be
+fully repaid by increased success subsequently.
+
+
+=The Use of Combustion Tube.=--It is often necessary to construct
+apparatus of what is known as hard glass or combustion tube. It is
+almost as easy to work combustion tube as to deal with lead and soda
+glass if the oxy-hydrogen flame be employed.
+
+It is not necessary to set up a special apparatus for this purpose; many
+of the ordinary blow-pipes can be used with oxygen instead of with air.
+It is only necessary to connect the air-tube of the blow-pipe with a
+bottle of compressed oxygen instead of with the bellows. The connecting
+tube should not be too wide nor too long, in order to avoid the
+accumulation in it, by accident, of large quantities of explosive
+mixtures.
+
+Two precautions are necessary in manipulating hard glass in the
+oxy-hydrogen flame. The glass must _not_ be overheated. At first one is
+very apt to go wrong in this direction. The supply of oxygen must _not_
+be too great; a small hissing flame is not what is wanted. If either of
+these precautions are neglected most glass will devitrify badly. With a
+little care and experience, devitrification can be absolutely avoided.
+Ordinary combustion tube can be used, but I find that the glass tube
+(Verbrennungsröhr) made by Schott & Co. of Jena, which can be obtained
+through any firm of dealers in apparatus, is far better than the
+ordinary tube.
+
+By following these instructions, any one who has learned how to work
+with lead or soda glass will find it easy to manipulate hard glass.
+
+
+
+
+CHAPTER III.
+
+_CUTTING AND BENDING GLASS--FORMING GLASS APPARATUS BEFORE THE
+BLOW-PIPE--MAKING AND GRINDING STOPPERS TO APPARATUS, ETC._
+
+
+In the later pages of this Chapter it will be assumed that the
+operations first described have been mastered. The beginner should
+therefore practise each operation until he finds himself able to perform
+it with some degree of certainty. Generally speaking, however, after the
+failure of two or three attempts to perform any operation, it is best to
+give up for a few hours, and proceed to the work next described,
+returning to that upon which you have failed subsequently. If,
+unfortunately, it should happen that the work next in order involves the
+performance of the operation in which the failure has occurred, it is
+best to pass on to some later work which does not demand this particular
+accomplishment, or to rest a while, and re-attack the difficulty when
+refreshed.
+
+
+=Cutting Glass Tubes.=--The simplest method of cutting a glass tube is
+to make a sharp scratch with a file across the glass at the point where
+it is desired to cut it, and on pulling apart the two ends, it will
+break clean off. It is important that the file be sharp. In pulling
+apart the ends the scratch should be held upwards, and the pull should
+have a downward direction, which will tend to open out the scratch. In
+the case of a large tube, a scratch will not ensure its breaking clean
+across. The tube must be filed to some depth, half-way, or even all
+round it. A good way of breaking a tube is to place the file in the
+table after scratching the glass, to hold the glass tube above its edge
+with one hand on each side of the scratch, and to strike the under side
+of the tube a sharp blow upon the edge of the file, directly beneath the
+scratch. In this way very even fractures of large and moderately thin
+tubes may be made. It answers particularly well for removing short ends
+of tube, not long enough to hold; the tube is held firmly upon the file,
+and a sharp blow given to the short end with a piece of large tube or a
+key.
+
+A file whose faces have been ground till they are nearly smooth, so as
+to leave very finely-serrated edges, will be found useful for cutting
+glass tubes. Such a file should be used almost as a knife is used for
+cutting a pencil in halves.
+
+The simple methods just described are too violent to be applied to
+delicate apparatus, too tedious when employed upon the largest tubes,
+and very difficult to apply when the tube to be cut is very thin, or too
+short to permit the operator to get a good grip of it on either side of
+the file mark. In such cases, one or other of the following methods will
+be useful:--
+
+1. Make a scratch with a file, and touch it with the end of a _very
+small_ piece of glass drawn out and heated at the tip to its melting
+point. It is important that the heated point of glass be very small,
+or the fracture is likely to be uneven, or to spread in several
+directions. Also, it is best to use hot soda glass for starting cracks
+in tubes of soda glass, and lead glass for doing so in lead glass
+tubes. If the crack does not pass quite round the tube, you may pull
+it asunder, as previously described, or you may bring the heated piece
+of glass with which the crack was started to one end of the crack, and
+slowly move it (nearly touching the glass) in the required direction;
+the crack will extend, following the movements of the hot glass.
+Instead of hot glass, pastils of charcoal are sometimes employed for
+this purpose. They continue to burn when once lighted, and there is
+no need to re-heat them from time to time. They should be brought as
+close to the glass as is possible without touching it, and, when no
+longer needed, should be extinguished by placing the lighted end under
+sand, or some other incombustible powder, for they must not be wetted.
+
+2. A method much practised by the makers of sheet glass, and suitable
+for large objects, is to wrap a thread of hot glass round the tube, at
+once removing it, and touching any point of the glass which the thread
+covered with water or a cold iron, when a crack will be started and will
+pass round the glass where it was heated by the thread.
+
+3. Tubes which are large and slightly conical may have a ring of red-hot
+iron passed over them till it comes into contact with the glass, then,
+the iron being removed, and a point on the heated glass being at once
+touched with cold iron as before, it will break as desired. Or a string,
+moistened with turpentine, may be loosely twisted round the tube, and
+the turpentine ignited, afterwards the application of sudden cold to any
+point on the zone of hot glass will usually start a crack, which, if
+necessary, may be continued in the usual manner. The last three methods
+are chiefly useful in dealing with the largest and thickest tubes, and
+with bottles.
+
+A fairly stout copper wire, bent into the form of a bow so that it can
+be applied when hot to a considerable surface of a glass tube, will be
+found superior to the point of hot glass or metal usually employed, for
+leading cracks in glass tubes. With such a wire a tube can be cut so
+that the cross section of the end is at any desired angle to the axis of
+the tube, with considerable precision. I am indebted for this suggestion
+to Mr. Vernon Boys and Dr. Ebert.
+
+
+=Bending Glass Tubes.=--The blow-pipe flame is not a suitable source of
+heat for bending tubes, except in certain cases which will be mentioned
+in a subsequent paragraph. For small tubes, and those of moderate size,
+a fish-tail burner, such as is used for purposes of illumination, will
+answer best. Use a flame from one to two inches in breadth--from _A_ to
+_A_ (Fig. 6), according to the size of the tube which is to be bent. If
+the length of tube that is heated be less than this, the bend will
+probably buckle on its concave side.
+
+[Illustration: FIG. 6.]
+
+The tube to be heated should be held in the position shown in Fig. 6,
+supported by the hands on each side. It should be constantly rotated in
+the flame, that it may be equally heated on all sides. In the figure the
+hands are represented above the tube, with their backs upwards. A tube
+can be held equally well from below, the backs of the hands being then
+directed downwards, and this, I think, is the more frequent habit. It is
+difficult to say which position of the hands is to be preferred. I
+lately observed how a tube was held by three skilful amateurs and by a
+professional glass-blower. All the former held the tube with the hands
+below it. The latter, however, held it from above, as in Fig. 6. He,
+however, was working with a rather heavy piece of tube, and I am
+inclined myself to recommend that position in such cases. During a long
+spell of work, the wrist may be rested from time to time by changing the
+position of the hands.
+
+When the tube has softened, remove it from the flame, and gently bend
+it to the desired angle. The side of the tube last exposed to the flame
+will be slightly hotter, and therefore softer, than that which is
+opposite to it. This hotter side should form the concave side of the
+bent tube.
+
+[Illustration: FIG. 7.]
+
+The exact condition in which the glass is most suitable for bending can
+only be learned by making a few trials. If it is too soft in consequence
+of being overheated, the sides will collapse. If, in the endeavour to
+heat the side _A_ of Fig. 7 a little more than _B_, _B_ is
+insufficiently heated, the tube will be likely to break on the convex
+side _B_. If the bent tube be likely to become flattened, and this
+cannot always be prevented in bending very thin tubes, the fault may be
+avoided by blowing gently into one end of the tube whilst bending it,
+for which purpose the other end should be closed beforehand. A tube
+already flattened may, to some extent, be blown into shape after
+closing one end and re-heating the bent portion, but it is not easy to
+give it a really good shape.
+
+When making a bend like that in Fig. 7, to secure that the arms of the
+tube _C_ and _D_, and the curve at _B_, shall be in one plane, the tube
+should be held in a position perpendicular to the body, and brought into
+the position shown in the figure during bending, by which means it will
+be found easy to secure a good result. Lead glass tubes must be removed
+from the flame before they become hot enough to undergo reduction. If
+they should become blackened, however, the stain may be removed by
+re-heating in the oxidising flame (see p. 18).
+
+When a very sharp bend is to be made, it is sometimes best to heat a
+narrow zone of the glass rather highly in the blow-pipe flame, and to
+blow the bend into shape at the moment of bending it, as previously
+described, one end having been closed for that purpose beforehand. Lead
+glass should be heated for this purpose in the oxidising flame (pp. 17
+to 22).
+
+The processes of bending large tubes, making U-tubes and spiral tubes,
+are more difficult operations, and will be explained in Chap. IV.
+
+
+=Rounding and Bordering the Ends of Tubes.=--After cutting a piece of
+glass tube in two pieces, the sharp edges left at its ends should be
+rounded by holding them in a flame for a few moments till the glass
+begins to melt. The oxidising point of a pointed flame may be used for
+both kinds of glass. The flame will be coloured yellow by soda glass at
+the moment of melting. This indication of the condition of soda glass
+should be noted, for it serves as a criterion of the condition of the
+glass. The ends of soda glass tubes may also be rounded in the flame of
+a common Bunsen's burner.
+
+When the end of a tube is to be closed with a cork or stopper, its
+mouth should be expanded a little, or =bordered=. To do this, heat the
+end of the tube by rotating it in the flame till it softens, then remove
+it from the flame, at once introduce the charcoal cone (Fig. 5, p. 11),
+and rotate it with gentle pressure against the softened glass till the
+desired effect is produced. In doing this it is very important that the
+end of the tube shall be uniformly heated, in order that the enlargement
+shall be of regular form. If the tube cannot be sufficiently expanded at
+one operation, it should be re-heated and the process repeated.
+
+Borders, such as are seen on test-tubes, are made by pressing the
+softened edge of the tube against a small iron rod. The end of the rod
+should project over the softened edge of the tube at a slight angle, and
+be pressed against it, passing the rod round the tube, or rotating the
+tube under the rod.
+
+=Sealing=, that is closing the ends of tubes, or other openings, in
+glass apparatus.
+
+In performing this and all the other operations of glass blowing, the
+following points must be constantly kept in mind:--
+
+(_a._) That it is rarely safe to blow glass whilst it is still in the
+flame, except in certain special cases that will be mentioned
+subsequently. Therefore always remove apparatus from the flame before
+blowing.
+
+(_b._) That when heating glass tubes, unless it is specially desired to
+heat one portion only, the tube must be constantly rotated in the flame
+to ensure that it shall be uniformly heated, and to prevent the tube or
+mass of glass from assuming an irregular form.
+
+(_c._) Always blow gently at first, and slowly increase the force
+applied till you feel or see the glass giving way. It is a good plan to
+force the air forward in successive short blasts rather than in one
+continued stream.
+
+(_d._) When it is necessary to force air into tubes of fine bore, such
+as thermometer tubes, the mouth must not be used, for moisture is
+thereby introduced into the tube, which it is very difficult to remove
+again in many cases. All tubes of very small bore should be blown with
+the aid of an india-rubber blowing-bottle, such as are used for
+spray-producers, Galton's whistles, etc. The tube to be blown must be
+securely fixed to the neck of the bottle, which is then held in one
+hand, and air is forced from it into the tube as it is required. These
+bottles are frequently of service to the glass-blower--_e.g._, when
+tubes of very fine bore have to be united, it is necessary to maintain
+an internal pressure slightly exceeding that of the air throughout the
+operation, in order to prevent the viscous glass from running together
+and closing the tube. An india-rubber blowing-ball is very convenient
+for this purpose.
+
+To seal the end of a glass tube (Fig. 8), adjust the flame so that it
+will heat a zone of glass about as broad as the diameter of the tube to
+be sealed (see _A_, Fig. 8). Hold the tube on each side of the point
+where it is to be sealed in the manner described in the description of
+bending glass tubes (p. 28). Bring the tube gradually into the flame,
+and heat it with constant rotation, till the glass softens (for lead
+glass the oxidising flame must be used, as has been already
+explained).[6] When the glass begins to thicken, gently pull asunder the
+two ends, taking care not to pull out the softened glass too much, but
+to allow the sides to fall together, as shown at _A_. When this has
+occurred, heat the glass at the narrow part till it melts, and pull
+asunder the two ends. The closed end should present the appearance
+shown at _D_. If the glass be drawn out too quickly its thickness will
+be unduly reduced, and it will present the appearance shown at _B_. In
+that case apply a pointed flame at _b_, and repeat the previous
+operation so as to contract the tube as at _c_, taking care not to allow
+the glass to become much increased nor decreased in thickness.
+
+[6] Remember that when the lead glass is heated to the proper
+temperature it will present an appearance which may be described as a
+greenish phosphorescence. At higher temperatures it assumes an
+orange-red appearance. If it loses its transparency and assumes a dull
+appearance, it must be moved further into the oxidising parts of the
+flame.
+
+If a considerable mass of glass be left at _d_, it may be removed by
+heating it to redness, touching it with the pointed end of a cold glass
+tube, to which it will adhere, and by which it may be pulled away.
+
+[Illustration: FIG. 8.]
+
+When the end of the tube presents the appearance shown in the diagram
+_D_, and the mass of glass at _d_ is small, the small lump that remains
+must be removed by heating it till it softens, and _gently_ blowing with
+the mouth, so as to round the end and distribute the glass more
+regularly, as shown in _E_. The whole end, from the dotted line _e_,
+must then be heated with constant rotation in the flame. If this final
+heating of the end _e_ be done skilfully, the glass will probably
+collapse and flatten, as at _F_. The end must then be gently blown into
+the form shown at _G_.
+
+If a flat end to the tube be desired, the tube may be left in the
+condition shown by _F_, or a thin rounded end may be flattened by
+pressure on a plate of iron.
+
+If a concave end be wished for, it is only necessary to gently suck air
+from the tube before the flattened end has become solid.
+
+In each case, _immediately_ after the tube is completed, it must be
+closely wrapped in cotton wool and left to cool. With good lead glass
+this last process, though advantageous, is not absolutely necessary; and
+as glass cools slowly when enveloped in cotton wool, this precaution may
+frequently be neglected in the case of apparatus made from lead glass.
+
+[Illustration: FIG. 9.]
+
+In order to draw out tubes for sealing, close to one end, and thus to
+avoid waste of material, it is a good plan to heat simultaneously the
+end of the glass tube _A_ which is to be sealed, and one end of a piece
+of waste tube _E_ of about the same diameter, and when they are fused to
+bring them together as at _DD_ (Fig. 9). _E_ will then serve as a handle
+in the subsequent operations on _A_. Such a rough joint as that at _D_
+must not be allowed to cool too much during the work in hand, or _E_ and
+_A_ may separate at an inconvenient moment. Or the glass at the end of
+the tube may be pressed together to close the tube, and the mass of
+glass may be seized with a pair of tongs and drawn away.
+
+
+=Choking, or Contracting the Bore of a Glass Tube.=--If it be not
+desired to maintain the uniformity of external dimensions of the tube
+whilst decreasing the diameter of the bore, the tube may be heated and
+drawn out as described in the description of sealing tubes on pp. 32-35.
+This may be done as shown at _A_ or _B_ in Fig. 8, according to the use
+to which the contracted tube is to be put.
+
+[Illustration: FIG. 10.]
+
+Greater strength and elegance will be secured by preserving the external
+diameter of the tube unchanged throughout, as shown in Fig. 10. For this
+purpose heat the tube with the pointed flame, if it be small, or in the
+brush flame if it be of large size, constantly rotating it till the
+glass softens and the sides show an inclination to fall together, when
+this occurs, push the two ends gently towards _A_. If the tube should
+become too much thickened at _A_, the fault may be corrected by removing
+it from the flame and gently pulling the two ends apart till it is of
+the proper size. If the bore at the contracted part of the tube should
+become too much reduced, it may be enlarged by closing one end of the
+tube with a small cork, and blowing gently into the open end after
+sufficiently heating the contracted part. The tube should be rotated
+during blowing or the enlargement produced may be irregular.
+
+When the external diameter of the tube is to be increased as well as its
+bore diminished, press together the ends of a tube heated at the part to
+be contracted, as already described, and regulate the size of the bore
+by blowing into the tube if at any time it threatens to become too much
+contracted.
+
+
+=Widening Tubes.=--Tubes may be moderately expanded at their extremities
+by means of the charcoal cone (see Bordering, p. 31). They may be
+slightly expanded at any other part by closing one end and gently
+blowing into the open end of the tube, after softening the glass at the
+part to be widened before the blow-pipe. But the best method of
+obtaining a wide tube with narrow extremities (Fig. 11) is to join
+pieces of narrow tube _AA_ to the ends of a piece of wider tube _B_ of
+the desired dimensions. The method of performing this operation is
+described under welding, on pp. 39-47.
+
+[Illustration: FIG. 11.]
+
+[Illustration: FIG. 12.]
+
+
+=Piercing Tubes.=--The glass-blower very frequently requires to make a
+large or small opening in some part of a tube or other piece of
+apparatus. This is known as piercing. Suppose it is desired to make a
+small hole at the point _a_ in _A_ (Fig. 12). When the tube has been
+brought to the flame with the usual precautions, allow the end of the
+pointed flame to touch it at _a_ till an area corresponding to the
+desired size of the opening is thoroughly softened. Then expand the
+softened glass by blowing to the form shown at _B_. Re-heat _a_, blow a
+small globe as at _C_, and carefully break the thin glass, then smooth
+the rough edges by rotating them in the flame till they form a mouth
+like that of _D_. Instead of leaving the bulb to be broken at the third
+stage _C_, it is a good plan to blow more strongly, so that the bulb
+becomes very thin and bursts, the removal of the thin glass is then
+accompanied by less risk of producing a crack in the thicker parts of
+the glass. Openings may be made in a similar manner in the sides of
+tubes or in globes, in fact, in almost any position on glass apparatus.
+If another tube is to be attached at the opening, it is a good plan to
+proceed to this operation before the tube has cooled down.
+
+[Illustration: FIG. 13.]
+
+The openings obtained by the method above described are too large when
+platinum wires are to be sealed into them. Suppose that it is necessary
+to pierce the tube _A_ of Fig. 13 in order to insert a platinum wire at
+_a_; direct the smallest pointed flame that will heat a spot of glass to
+redness on the point _a_. When the glass is viscous, touch it with the
+end of a platinum wire _w_, to which the glass will adhere; withdraw the
+wire and the viscous glass will be drawn out into a small tube, as shown
+at _B_; by breaking the end of this tube a small opening will be made.
+Introduce a platinum wire into the opening, and again allow the flame to
+play on the glass at that point; it will melt and close round the wire.
+Before the hot glass has time to cool, blow gently into the mouth of the
+tube to produce a slightly curved surface, then heat the neighbouring
+parts of the tube till the glass is about to soften, and let it cool in
+cotton wool. Unless this is done, I find that glass tubes into which
+platinum wires have been sealed are very apt to break during or after
+cooling.
+
+To ensure that the tube shall be perfectly air-tight, a small piece of
+white enamel should be attached to the glass at _a_ before sealing in
+the wire.
+
+
+=Uniting Pieces of Glass to Each Other, known as Welding, or
+Soldering.=--The larger and more complicated pieces of glass apparatus
+are usually made in separate sections, and completed by joining together
+the several parts. This is therefore a very important operation, and
+should be thoroughly mastered before proceeding to further work.
+
+In order to produce secure joints, the use of tubes made of different
+kinds of glass must be avoided. Soda glass may be joined securely to
+soda glass, especially if the tubes belong to the same batch, and lead
+glass to lead glass. But, though by special care a joint between lead
+glass and soda glass, if well made, will often hold together, yet it is
+never certain that it will do so.
+
+_To join two Tubes of Equal Diameters._--Close one end of one of the
+tubes with a small cork. Heat the open end of the closed tube, and
+either end of the other tube in a small flame until they are almost
+melted, taking care that only the ends of the tubes are heated, and not
+to let the glass be thickened; bring the two ends together with
+sufficient pressure to make them adhere, but not sufficient to compress
+the glass to a thickened ring. Before the joint has time to cool too
+much, adjust your blow-pipe for a pointed flame, if you are not already
+working with that kind of flame, and allow the point of the flame to
+play on any spot on the joint till it is heated to redness; rotate the
+tube a little so as to heat the glass adjacent to that which is already
+red-hot, and repeat this till the whole circumference of the rough joint
+has been heated.[7] Repeat the operation last described, but, when each
+spot is red-hot, blow gently into the open end of the tube so as to
+slightly expand the viscous glass. Finally, rotate the whole joint in
+the flame till the glass is softened, and blow gently as before into the
+open end of the tube, still rotating it, in order that the joint may be
+as symmetrical as possible. If in the last operation the diameter of the
+joint becomes greater than that of the rest of the tube, it may be
+cautiously re-heated and reduced by pulling it out, or this may be
+secured by gently pulling apart the two ends, whilst the operator blows
+it into its final shape.
+
+[7] Some glass-blowers at once work on the glass as next described,
+without this preliminary treatment. I find that some glass, usually soda
+glass, will not always bear the necessary movements without breaking
+unless first heated all round.
+
+[Illustration: FIG. 14.]
+
+When small tubes, or tubes of fine bore, are to be joined, in order to
+prevent the fused glass from running together and closing the tube, it
+is a good plan to border and enlarge the ends that are to be united, as
+at _A_ (Fig. 14). Some glass-blowers prefer to border all tubes before
+uniting them.
+
+When a narrow tube is to be joined to one that is only slightly wider,
+expand the end of the narrow tube till it corresponds in size to the
+larger tube. If the tube be too narrow to be enlarged by inserting a
+charcoal cone, seal one end and pierce it as directed (on p. 37).
+
+For joining small thin-walled tubes Mr. Crookes recommends the use of a
+small Bunsen flame.
+
+In welding pieces of lead glass tube, take care that the heated glass is
+perfectly free from reduced lead at the moment when the two ends of
+viscous glass are brought into contact.
+
+[Illustration: FIG. 15.]
+
+_To join Tubes of Unequal Sizes End to End_ (Fig. 15).--Draw out the
+larger tube and cut off the drawn-out end at the part where its diameter
+is equal to that of the smaller tube, then seal the smaller tube to the
+contracted end of the larger according to the directions given for
+joining tubes of equal size. When a good joint has been made, the tube
+presents the appearance of _A_, Fig. 15, the union being at about _bb_.
+Next heat the whole tube between the dotted lines _aa_, and blow it into
+the shape of _B_ in which the dotted line _dd_ should correspond to the
+actual line of junction of the two tubes.
+
+In making all joints it is important to leave no thick masses of glass
+about them. If the glass be fairly thin and uniformly distributed, it is
+less likely to break during or after annealing under any circumstances,
+and especially if it has to bear alternations of temperature.
+
+_Joining a Tube to the Side of another Tube_ (Fig. 16).--One of the
+tubes must be pierced as at _A_ in Fig. 16 (for the method, see p. 37),
+and its two ends closed with small pieces of cork. The edges of the
+opening, and one end of the other tube, must then be heated till they
+melt, and united by pressing them together. The joint may then be
+finished as before.
+
+[Illustration: FIG. 16.]
+
+A properly blown joint will not present the appearance of _B_ (Fig. 16),
+but rather that of _C_. This is secured by directing the pointed flame
+upon the glass at _aa_ (_B_) spot by spot, and blowing out each spot
+when it is sufficiently softened. If the tubes are large, the whole
+joint should subsequently be heated and blown, but in the case of small
+tubes this is of less importance. Finally it is to be wrapped whilst hot
+in cotton wool for the annealing process.
+
+If a second tube has to be joined near to the first one, say at _b_, it
+is well to proceed with it before the joint first made cools down, and
+the joint first made, especially if soda glass be used, must be held in
+the flame from time to time during the process of making the second
+joint to keep it hot; if this be not done the first joint is very likely
+to break. A joint previously made may, however, be re-heated, if well
+made and well annealed.
+
+A three-way tube, like that in Fig. 17, is made by bending _A_ (Fig. 16)
+to an angle, and joining _B_ to an opening blown on the convex side of
+the angle; or, _A_ of Fig. 16 may be bent as desired after attaching _B_
+in the ordinary way.
+
+[Illustration: FIG. 17.]
+
+Tubes may also be joined to openings made in the sides of globes or
+flasks; great care must be taken, however, especially if the walls of
+the globe be thin, to secure that the tube is well attached to the mouth
+of the opening when the melted ends are first brought into contact, for,
+with thin glass, any hole that may be left will probably increase whilst
+the joint is being blown into shape, owing to cohesion causing the glass
+to gather in a thickened ring round an enlargement of the original
+opening.[8]
+
+[8] If such an opening be observed, it may usually be closed by touching
+its edges with a fused point of glass at the end of a drawn out tube.
+
+In order to unite a tube of soda glass to a tube of lead glass, the end
+of the soda glass tube must be carefully covered with a layer of soft
+arsenic glass.[9] This must be done so perfectly that when the ends to
+be united are brought together the lead and soda glass are separated by
+the enamel at every point.
+
+[9] This can be obtained from Messrs. Powells, Whitefriars Glassworks.
+
+_To Seal a Tube inside a Larger Tube or Bulb._--Suppose that an air-trap
+(3 of Fig. 18) is to be constructed from a small bulb (_A_) blown on a
+glass tube (1).
+
+[Illustration: FIG. 18]
+
+Either cut off the tube close to the bulb at _B_, or better, remove the
+end by melting the glass and pulling it away from _B_, and then pierce
+_A_ at _B_, No. 2, by heating the glass there and blowing out a small
+bulb as described under Piercing.
+
+Prepare a tube (4) drawn out at _E_ with a bulb blown at _D_. Insert _E_
+into the opening _B_, press _D_ well against the mouth _B_ and slowly
+rotate before the blow-pipe till _D_ adheres to _B_. Then heat and blow
+the joint spot by spot as in other cases, taking care that the glass is
+blown out on each side of the joint; lastly, heat the whole joint
+between _aa_, and blow it into its final shape.
+
+These joints are very apt to break after a few minutes or hours if the
+glass of _D_ be much thicker than that of the bulb _A_. They should be
+wrapped in cotton wool for annealing as soon as possible, as the rate at
+which the tube _E_ cools is likely to be less rapid than that of the
+parts of the apparatus which are more freely exposed to the air;
+therefore all such internal joints require very careful annealing, and
+they should always be made as thin as is consistent with the use to
+which they are to be put.
+
+Tubes may also be sealed into the ends or sides of larger tubes by
+piercing them at the point at which the inserted tube is to be
+introduced, and proceeding as in the case of the air-trap just
+described.
+
+Ozone generators of the form shown on next page (Fig. 19), afford an
+interesting example of the insertion of smaller tubes into larger.
+
+On account of the small space that may be left between the inner and
+outer tubes of an ozone generator, and of the length of the inner tube,
+its construction needs great care. I find the following mode of
+procedure gives good results. Select the pieces of tube for this
+instrument as free from curvature as possible. For the inner tube, a
+tube 12 mm., or rather more, in external diameter, and of rather thin
+glass, is drawn out, as for closing, until only a very narrow tube
+remains at _C_, the end of _C_ is closed the area round _C_ is
+carefully blown into shape, so that by melting off _C_ the tube _A_ will
+be left with a well-rounded end. A small bulb of glass is next blown on
+_A_ at _B_. This bulb must be of slightly greater diameter than the
+contracted end _E_ of the larger tube (II.), so that _B_ will just fail
+to pass through _E_. The length from _B_ to _C_ must not be made greater
+than from _E_ to _G_ on the outside tube. The end at _C_ is then to be
+cut off so as to leave a pin-hole in the end of _A_.
+
+[Illustration: FIG. 19.]
+
+The outer tube (II.), whose diameter may be 5 or 6 mm. greater than that
+of _A_, is prepared by sealing a side tube on it at _F_, after
+previously contracting the end _E_. For this purpose the end _E_ should
+be closed and rounded, and then re-heated and blown out till the bulb
+bursts. To ensure that the diameter of the opening is less than that of
+the tube, care must be taken not to re-heat too large an area of the end
+before blowing it out. It is very important that the cross section at
+_E_ shall be in a plane at right angles to the axis of the tube.
+
+Wrap a strip of writing paper, one inch in breadth, closely round the
+end of _A_ at _C_ till the tube and paper will only just pass easily
+into the mouth _D_ of the outer tube, push the inner tube _A_, with the
+paper upon it, into _D_, and when the paper is entirely within _D_,
+withdraw _A_, and cautiously push the paper a little further into the
+outer tube. Insert _A_ into _DE_ through _E_, so that the bulb _B_ is
+embraced by _E_. Close _D_ with a cork. Ascertain that the paper does
+not fit sufficiently tightly between the two tubes to prevent the free
+passage of air, by blowing into the mouth _K_ of _A_. Air should escape
+freely from _E_ when this is done. Gradually bring the line of contact
+of _B_ and _E_ and the surrounding parts of the tube before a pointed
+flame, after previously warming them by holding near a larger flame, and
+rotate them before the flame so that the glass may soften and adhere.
+Then heat the joint spot by spot as usual. In blowing this joint, take
+care that the glass on each side of the actual joint is slightly
+expanded. It should present the form shown by the dotted lines in III.
+(these are purposely exaggerated, however). Finally, heat the whole
+joint between the lines _JI_ till it softens, and simultaneously blow
+and draw it into its final shape as seen at III.
+
+The side tube _F_ should not be too near the end _E_. If, however, it is
+necessary to have them close together, the joint _F_ must be very
+carefully annealed when it is made; it must also be very cautiously
+warmed up before the construction of the joint at _H_ is begun, and must
+be kept warm by letting the flame play over it from time to time during
+the process of making the latter joint.
+
+A good joint may be recognised by its freedom from lumps of glass, its
+regularity of curve, and by a sensibly circular line at _H_, where the
+two tubes are united.
+
+When the joint after annealing has become quite cold, the pin-hole at
+_C_ on the inner tube may be closed, after removing the paper support,
+by warming the outer tube, and then directing a fine pointed flame
+through _D_ on to _C_. And the end _D_ of the outer tube may be closed
+in the ordinary manner, or a narrow tube may be sealed to it. As the end
+of glass at _D_ will be too short to be held by the fingers when hot,
+another piece of tube of similar diameter must be attached to it to
+serve as a handle (see p. 35, Fig. 9).
+
+
+=Blowing a Bulb or Globe of Glass.=--For this purpose it is very
+important that the glass tube employed shall be of uniform substance.
+The size and thickness of the tube to be employed depends partly on the
+dimensions of the bulb desired, and partly on the size of neck that is
+required for the bulb. It is easier to blow large bulbs on large-sized
+tubes than on those of smaller size. When it is necessary to make a
+large globe on a small tube, it can be done, however, if great care be
+taken to avoid overheating that part of the small tube which is nearest
+to the mass of viscous glass from which the bulb is to be formed. For
+the purpose of blowing a very large bulb on a small tube, it is best to
+unite a wide tube to that which is to serve as the neck, as it will save
+some time in collecting the necessary mass of glass from which to form
+the globe.
+
+[Illustration: FIG. 20.]
+
+_To blow a Bulb at the End of a Tube._--Select a good piece of tube, say
+1·5 cm. in diameter, and about 30 cm. long; draw out one end to a light
+tail (_a_, Fig. 20) about 3 inches in length. Then heat up a _short_
+length of the tube at _b_, with a small brush flame, by rotating the
+glass in the flame, and gently press it together when soft to thicken
+it; blow into it if necessary to preserve the regularity of its figure.
+Repeat this process on the portion of tube nearest to that which has
+been first thickened, and so on, till as much glass has been heated and
+thickened as you judge will serve to make a bulb of the size desired.
+You should have a mass of glass somewhat resembling that shown at _B_
+(Fig. 20), but probably consisting of the results of more successive
+operations than are suggested in that diagram. Apply the flame as before
+to the narrower parts _cc_ of _B_, gently compress and blow until all
+the small bulbs first made are brought together into a mass still
+somewhat resembling the enlarged end of _B_, but more nearly
+cylindrical, with the glass as regularly distributed as possible, and of
+such length from _d_ to the contracted part that the whole of it may
+easily be heated simultaneously with the large brush flame of your
+blow-pipe. Take great care in the foregoing operations not to allow the
+sides of the mass of glass to fall in and run together, and, on the
+other hand, do not reduce the thickness of the glass needlessly by
+blowing it more than is necessary to give the glass as regular a form as
+possible. When you are satisfied with the mass of glass you have
+collected, melt off the tail _a_, and remove the pointed end of glass
+that remains, as directed on page 33. Turn on as large a brush flame as
+is necessary to envelop the whole mass of glass that you have collected,
+and heat it with constant rotation, so that it may gradually run
+together to the form seen at _C_ (Fig. 20), taking care that it does not
+get overheated near _d_, or the tube which is to form the neck will
+soften and give way.
+
+The position in which the mass of heated glass is to be held will depend
+upon circumstances; if the mass of glass be not too great, it is best to
+keep it in a nearly horizontal position. If the mass of glass be very
+large, it may be necessary to incline the end _B_ downwards; but as that
+is apt to result in an excess of glass accumulating towards _d_, avoid
+doing so if possible by rotating the glass steadily and rapidly. If at
+any time the glass shows indications of collapsing, it must be removed
+from the flame and gently blown into shape, during which operation it
+may be rotated in the perpendicular position; indeed, to promote a
+regular distribution of the glass by allowing it plenty of time to
+collect, it is well from time to time to remove the heated mass of glass
+from the flame, and slightly expand it by blowing. Finally, when a
+regular mass of glass, such as is shown at _C_ (Fig. 20) has been
+obtained, remove it from the flame, and blow it to its final dimensions.
+A succession of gentle puffs _quickly_ succeeding each other should be
+employed, in order that the progress of the bulb may be more easily
+watched and arrested at the right moment. During the process of blowing,
+the hot glass must be steadily rotated.
+
+To collect the glass for blowing a bulb of lead glass, employ the flame
+described on pp. 17-22 for heating lead glass.
+
+If the tube be held horizontally whilst the globe is blown, its form
+will most nearly approach that of a true globe. If it be held in the
+perpendicular position, with the mass of glass depending from it, the
+form of the bulb will usually be somewhat elongated. If it be held
+perpendicularly, with the mass of glass upwards, the resulting bulb will
+be flattened.
+
+When a bulb is not of a sufficiently regular form, it may sometimes be
+re-made by re-collecting the glass, and re-blowing it. The greatest care
+is needed at the earlier stages of re-heating to prevent the glass from
+collapsing into a formless and unworkable mass. This is to be prevented
+in all such cases by gently blowing it into shape from time to time
+whilst gathering the glass.
+
+[Illustration: FIG. 21.]
+
+_To blow a Bulb between two Points_ (Fig 21).--Select a piece of
+suitable tube, seal or cork one end, gather together a mass of glass at
+the desired part, as directed for blowing a bulb at the end of a tube;
+when a mass of glass has been collected of sufficient thickness, blow it
+into shape from the open end of the tube by a rapid succession of short
+blasts of air, till the expanding glass attains the desired dimensions.
+The tube must be held horizontally, and must be rotated steadily during
+the process. By slightly pressing together the glass while blowing, the
+bulb will be flattened; by slightly drawing apart the two ends of the
+tube, it will be elongated.
+
+A pear-shaped bulb may be obtained by gently re-heating an elongated
+bulb, say from _a_ to _a_, and drawing it out. It is easiest to perform
+this operation on a bulb which is rather thick in the glass.
+
+If the tubes _bb_ are to be small, and a globe of considerable size is
+wanted, contract a tube as shown in Fig. 22, taking care that the narrow
+portions of the tube are about the same axis as the wider portions, for
+if this be not the case, the mouths of the bulb will not be
+symmetrically placed; seal at _C_, cut off the wider tube at _B_, and
+make the bulb, as previously described, from the glass between _AA_.
+If, as probably will be the case, the contracted portions of the tube be
+not very regular, they may be cut off, one at a time, near the bulb, and
+replaced by pieces of tube of the size desired.
+
+[Illustration: FIG. 22.]
+
+When a bulb has to be blown upon a very fine tube, for example upon
+thermometer tubing, the mouth should not be employed, for the moisture
+introduced by the breath is extremely difficult to remove afterwards. A
+small india-rubber bottle or reservoir, such as those which are used in
+spray-producers, Galton's whistles, etc., securely attached to the open
+end of the tube, should be used. With the help of these bottles bulbs
+can be blown at the closed ends of fine tubes with ease, though some
+care is necessary to produce them of good shape, as it is difficult to
+rotate the hot glass properly when working in this way.
+
+
+=Making and Grinding Stoppers.=--Apparatus which is to contain chemicals
+that are likely to be affected by the free admission of air, needs to
+have stoppers fitted to it. Making a good stopper is a much less tedious
+process than is commonly supposed.
+
+Suppose that the tube I. of Fig. 23 is to be stoppered at _A_, it must
+be slightly enlarged by softening the end and opening it with a pointed
+cone of charcoal; or a conical mouth for the stopper may be made by
+slightly contracting the tube near one end, as at _B_, cutting off the
+cylindrical end of the tube at the dotted line _C_, and then very
+slightly expanding the end at _C_ with a charcoal cone after its edges
+have been softened by heat. In either case the conical mouth should be
+as long and regular as possible.
+
+[Illustration: FIG. 23.]
+
+For the stopper take a piece of rather thick tube, of such size that it
+will pass easily, but not too easily, into _A_ or _B_. Expand this tube
+at _D_, as shown in II., by softening the glass and gently compressing
+it. The configuration of the enlarged tube as shown at _D_ may be
+obtained by heating and compressing two or more zones of the tube that
+are adjacent, one zone being less expanded than the other, so as to give
+the sides of the imperfect stopper as nearly as possible the form shown
+at _D_, which, however, is much less regular than may easily be
+obtained. Seal off the head of the tube at _H_, and heat the glass till
+it runs together into a nearly solid mass; compress this with a pair of
+iron tongs to the flattened head _E_. In making _D_, aim at giving it a
+form which will as nearly as possible correspond to that of the tube
+into which it is to be ground, and make it slightly too large, so that
+only the lower part at _D_ can be introduced into the mouth of _A_ or
+_B_. Before it is ground, the stopper must be heated nearly to its
+softening-point and annealed.
+
+Moisten _D_ with a solution of camphor in recently distilled
+turpentine, and dust the wet surface with finely-ground emery, then
+gently grind it into its place till it fits properly. In this operation
+the tail _G_, which should fit loosely into the tube _A_, will be of
+assistance by preventing _D_ from unduly pressing in any direction on
+_A_ in consequence of irregular movements. The stopper should be
+completely rotated in grinding it. It must not be worked backwards and
+forwards, or a well-fitting stopper will not be produced. Renew the
+emery and camphorated turpentine frequently during the earlier part of
+the grinding; when the stopper almost fits, avoid using fresh emery, but
+continue to remove the stopper frequently at all stages of the
+operation. That added at the earlier stages will be reduced to a state
+of very fine division, and will therefore leave the stopper and mouth of
+_A_ with smoother surfaces than fresh emery.[10]
+
+[10] Mr. Gimmingham recommends giving stoppers a final polish with
+rotten-stone (_Proceedings of the Royal Society_, p. 396, 1876).
+
+NOTE.--The addition of camphor to the turpentine used for grinding glass
+is very important. Notwithstanding its brittle nature, glass will work
+under a file moistened with this solution almost as well as the metals.
+Small quantities should be made at a time, and the solution should be
+kept in a well-closed vessel, for after long exposure to the air it is
+not equally valuable.
+
+If the stopper is to fit a tube contracted like _B_, it must be
+constructed from a piece of tube that will pass through the contraction
+at _B_. The tail _GF_ will not do such good service as it does in the
+case of a tube which has been opened out to receive its stopper, but it
+will help to guide the stopper, and should be retained.
+
+When the stopper has been ground into its place, melt off the tail at
+_F_. The flame must be applied very cautiously, as glass which has been
+ground is particularly apt to crack on heating. To avoid all risk of
+this, the tail may simply be cut off, and its edges filed smooth with a
+file moistened freely with camphorated turpentine.
+
+The stoppers of bottles are not made exactly in the manner described
+above, though, on occasion, a new stopper may be made for a bottle by
+following those directions. Ill-fitting stoppers, which are very common,
+can be very easily re-ground with emery and camphorated turpentine.
+
+
+
+
+CHAPTER IV.
+
+_MAKING THISTLE FUNNELS, U-TUBES, ETC.--COMBINING THE PARTS OF
+COMPLICATED APPARATUS--MERCURY, AND OTHER AIR-TIGHT JOINTS--VACUUM
+TAPS--SAFETY TAPS--AIR-TRAPS._
+
+
+In Chapter III. the simpler operations used in making the separate parts
+of which apparatus is composed have been described. In this Chapter
+finished apparatus will be described, and the combination of the
+separate parts into the more or less complicated arrangements used in
+experiments will be so far explained as to enable the student to set up
+such apparatus as he is likely to require. I have thought it would be
+useful that I should add a short account of various contrivances that
+have come much into use of late years for experimenting under reduced
+pressure, such as safety taps, air-traps, vacuum joints, etc.
+
+[Illustration: FIG. 24.]
+
+=Electrodes.=--On page 38 (Fig. 13) is shown a simple form of electrode
+sealed into a glass tube, which for many purposes answers very well. But
+frequently, in order that there may be less risk of leakage between the
+glass and the metal, the latter is covered for a considerable part of
+its length with solid glass, which at one extremity is united to the
+apparatus. In Fig. 24 _W_ is the metal core of the electrode, and _G_
+the glass covering around it. The wire is fused into the glass, and the
+glass is then united to the apparatus; a little white enamel should be
+applied at one end and combined with the glass by fusion.
+
+
+=U-Tubes.=--A U-tube is but a particular case of a bent glass tube. It
+is scarcely possible when bending very large tubes in the manner
+described on p. 29 to produce regular curves of sufficient strength.
+
+To make a U-tube, or to bend a large tube, close one end of the tube
+selected with a cork, soften and compress the glass in the flame at the
+part where it is to be bent till a sufficient mass of glass for the bend
+is collected, then remove the mass of glass from the flame, let it cool
+a little, and simultaneously draw out the thickened glass, bend it to
+the proper form, and blow the bend into shape from the open end of the
+tube. Small irregularities may be partly corrected afterwards.
+
+To make a good U-tube of large size, and of uniform diameter from end to
+end, requires much practice, but to make a tolerably presentable piece
+of apparatus in which the two limbs are bent round till they are
+parallel, without any considerable constriction at the bend, can be
+accomplished without much difficulty.[11]
+
+[11] Large tubes may also be bent by rotating a sufficient length of the
+tube in a large flame till it softens, and bending in the same manner as
+in the case of smaller tubes, and after filling them with sand, closing
+one end completely, and the other so that the sand cannot escape, though
+heated air can do so.
+
+
+=Spiral Tubes.=--These may be made by twisting a tube gradually softened
+by heat round a metal cylinder. Spiral tubes made of small thin tubes
+possess considerable elasticity, and have been used by Mr. Crookes for
+making air-tight connections between separate pieces of apparatus when a
+rigid connection would have been unnecessary and inconvenient. By the
+use of such spiral tubes it is possible to combine comparatively free
+movement with all the advantages attached to hermetically-sealed joints.
+
+To make a flexible spiral tube, mount a copper cylinder on a screw, so
+that the cylinder will travel in the direction of its axis when it is
+rotated. Fix a fine glass tube to the cylinder, and direct a flame
+towards the cylinder so as to heat and soften the glass, which will then
+bend to the form of the cylinder. Gradually rotate the cylinder before
+the source of heat, so that fresh portions of tube are successively
+brought into position, softened, and bent. Useful spirals may also be
+made by hand without a cylinder. As each length of tube is bent, a fresh
+length may be united to it until the spiral is completed. The fine tubes
+employed are prepared by heating and drawing out larger tubes.
+
+[Illustration: FIG. 25.]
+
+
+=Thistle Funnels= (Fig. 25).--Seal a moderately thick piece of small
+glass tube at _A_, then heat a wide zone of it a little below _A_ by
+rotating it horizontally in the blow-pipe flame till the glass softens,
+and expand the glass to a bulb, as shown at _B_ of 1; during the
+operation of blowing this bulb, the end _A_ must be directed to the
+ground.
+
+Soften the end _A_ and a small portion of _B_ as before, and, holding
+the tube horizontally from the mouth, blow out the end _C_ as at 2. Heat
+the end of _C_ gradually, till the glass softens and collapses to the
+dotted line _dd_, and at once blow a steady stream of air into the open
+end of the tube, rotating it steadily, till it is about to burst;
+finally clean off the thin glass from round the edges of the funnel,
+which should have the form shown at 3, and round them. An inspection of
+a purchased thistle funnel will generally show that the head _B_ has
+been formed from a larger tube sealed to _E_ at _f_.
+
+[Illustration: FIG. 26.]
+
+
+=Closing Tubes containing Chemicals= for experiments at high
+temperatures.--Tubes of the hard glass used for organic analyses answer
+best for this purpose; the operation of drawing out the end of such a
+tube is practically identical with what has been described under the
+head of choking, p. 35. A well-sealed tube presents the appearance of
+that shown by Fig. 26.
+
+In order to secure a thick end to the point of the tube _a_, about an
+inch or so of the tube near the contracted part should be warmed a
+little, if it is not already warm, at the moment of finally sealing it;
+the contraction of the air in the tube, in consequence of the cooling of
+the warm tube, will then ensure the glass at _a_ running together to a
+solid end when it is melted in the flame.
+
+If it will be necessary to collect a gas produced during a chemical
+action from such a tube, make the contracted end several inches long,
+and bend it into the form of a delivery tube. It will then be possible
+to break the tip of this under a cylinder in a trough of liquid.
+
+
+=In order to explain the construction of apparatus consisting of several
+parts=, it will be sufficient to take as examples, two very well-known
+instruments, and to describe their construction in detail. From what is
+learned in studying these, the student will gather the information that
+is wanted.
+
+[Illustration: FIG. 27.]
+
+1. _To make Hofman's Apparatus for the electrolysis of water_ (Fig. 27).
+
+Take two tubes about 35 cm. in length, and 14 mm. in diameter for _AA_,
+join taps _TT_ to the end _B_ of each of them, draw out the other end,
+as shown at _D_, after sheets of platinum foil with wires attached to
+them[12] have been introduced into the tubes, and moved by shaking to
+_BB_. Then allow the platinum wires to pass through the opening _D_ left
+for the purpose, and seal the glass at _D_ round the platinum as at _E_.
+Pierce the tubes at _JJ_, and join them by a short piece of tube _K_,
+about 14 mm. in diameter, to which the tube _T_, carrying the reservoir
+_R_, has been previously united. _R_ may be made by blowing a bulb from
+a larger piece of tube attached to the end of _T_. The mouth _M_ of the
+reservoir being formed from the other end of the wide tube afterwards.
+One of the taps can be used for blowing through at the later stages.
+Each joint, especially those at _JJ_, must be annealed after it is
+blown. Some operators might prefer to join _AA_ by the tube _K_ in the
+first instance, then to introduce the electrodes at _E_ and _D_. In some
+respects this plan would be rather easier than the other, but, on the
+whole, it is better to make the joints at _JJ_ last in order, as they
+are more apt to be broken than the others during the subsequent
+manipulations.
+
+[12] Red-hot platinum welds very well. The wire may be joined to the
+sheet of foil by placing the latter on a small piece of fire-brick,
+holding the wire in contact with it at the place where they are to be
+united, directing a blow-pipe flame upon them till they are at an
+intense heat, and smartly striking the wire with a hammer. The blow
+should be several times repeated after re-heating the metal.
+
+2. I have before me the vacuum tube shown by Fig. 28, in which the
+dotted lines relate to details of manipulation only.
+
+[Illustration: FIG. 28.]
+
+It is usually possible to detect the parts of which a piece of apparatus
+has been built up, for even the best-made joints exhibit evidence of
+their existence. Thus, although I did not make the tube that is before
+me, and cannot therefore pretend to say precisely in what order its
+parts were made and put together, the evidence which it exhibits of
+joints at the dotted lines _A_, _B_, _C_, _D_, _E_, _F_, enables me to
+give a general idea of the processes employed in its construction, and
+to explain how a similar tube might be constructed. I should advise
+proceeding as follows:--
+
+Join a piece of tube somewhat larger than _M_ to its end _A_, draw out
+the other end of the larger tube, and blow a bulb _L_ as directed on p.
+47. Then seal the electrode _R_ into the bulb _L_ (p. 55).
+
+Blow a similar but larger bulb _N_ from a large piece of tube sealed
+between two tubes of similar size to _M_, as described at p. 50. Cut off
+one of the tubes at _B_, and join the bulb _N_ to _M_ at _B_. Form the
+bulb _Q_ in the same manner as in the case of _L_, seal into it the
+electrode _R_, and add the tube marked by the dotted lines at _F_.
+
+Seal a narrow tube _P_ to the end of a larger tube, and blow out the
+tube at the joint till the glass is thin and regular. Take a tube _O_,
+of similar size to _M_, slightly longer than _P_, contract its mouth
+slightly to meet the wide end of _P_ at _D_, and after loosely
+supporting _P_ inside _O_ with a cork, or otherwise, close the end _N_
+of _O_ by sealing or corking it, and join _P_ to _O_ at _D_. Cut off _O_
+just above _D_ at _E_, and join it to the bulb _Q_, closing either _O_
+or _F_ for the purpose. Cut off the end of _O_ at _C_ parallel to the
+end of _P_, and connect _O_ to _N_, using _F_ for blowing the joint at
+_C_. _F_ may be used subsequently for introducing any gas into the tube,
+and, when a vacuum has been established, may be sealed before the
+blow-pipe.
+
+
+[Illustration: FIG. 29.]
+
+=Modes of combining the Parts of Heavy Apparatus.=--It is often
+necessary to connect pieces of apparatus which are too heavy to be
+freely handled before the blow-pipe, and which, therefore, cannot be
+welded together as described on p. 39, by some more effective method
+than the ordinary one of connecting by india-rubber tubing. For example,
+apparatus which is to be exhausted by a Sprengel air-pump must be
+attached to the pump by a joint as perfectly air-tight as can be
+obtained. This, indeed, often may be done by welding the apparatus to be
+exhausted to the air-pump before the blow-pipe. But such a method is
+open to the obvious objection that it is very troublesome to connect and
+disconnect the parts as often as may be necessary, and that there is
+some risk of accidental breakages. Nevertheless it may be done on
+occasion, especially if there be no objection to the use of the
+flexible spiral tubes already alluded to. When the use of a spiral
+connecting-tube is not admissible the difficulty is considerably
+increased. For example, the author has lately required to attach an
+ozone generator, of the form shown by Fig. 19, which previously had been
+cemented into a heavy copper jacket, to a pressure-gauge rigidly fixed
+to a support, and of considerable size. The employment of a flexible
+spiral connection was prohibited by the fact that it was necessary that
+the volume of the connecting-tube should be but a small fraction of that
+of the ozone generator, a condition which compelled the use of a tube of
+almost capillary bore, and of inconsiderable length. At the same time
+the frailness of such a connection made it necessary to fix the
+generator and pressure-gauge rigidly to their supports, in order to
+avoid the possibility of breakage by slight accidental movements of
+either of them, and it was obviously necessary to fix the pieces of
+apparatus in their final positions before joining them, lest the fine
+tube which connected them should be fractured during adjustment. The
+possibility of a strain being caused by the contraction that would occur
+during the cooling down of the joint last made had to be provided for
+also. The desired object was effected as follows. In Fig. 29 _A_
+represents a section of the ozone generator at the point where the tube
+to connect it to the gauge was fixed. _B_ represents the top of the
+gauge, with the side tube _C_, which was to be connected with that from
+_A_, viz. _D_. The ends of _C_ and _D_ were expanded as shown at _D_ (by
+melting them and blowing them out), so that one of them, made rather
+smaller than the other, could be overlapped by the larger one. _A_ and
+_B_ being rigidly fixed in their final positions, with _C_ and _D_ in
+contact, as shown in the figure, all openings in the apparatus were
+closed, except one, to which was attached an india-rubber blowing-bottle
+by means of a tube of india-rubber long enough to be held in the hand of
+the operator, and to allow him to observe the operation of joining the
+tubes at _D_. When everything was in readiness, a very small-pointed
+flame from a moveable blow-pipe held in the hand was directed upon the
+glass at _D_ till it melted and the two tubes united. To prevent the
+fine tube when melted from running into a solid mass of glass, and so
+becoming closed, a slight excess of pressure was maintained inside the
+apparatus during the operation by forcing air into it with the
+india-rubber blower from the moment at which _C_ and _D_ united. A point
+of charcoal was kept in readiness to support the softened glass at _D_
+in case it showed any tendency to fall out of shape.
+
+The V-tube at _C_ served to prevent the subsequent fracture of the joint
+in consequence of any strain caused by the contraction of the glass in
+cooling.[13]
+
+[13] For a method of joining soda glass to lead glass, see p. 81.
+
+It is not difficult to connect several pieces of apparatus successively
+in this manner, nor is this method only useful in such cases as that
+just described. Pieces of apparatus of great length and weight may be
+joined in a similar manner, irrespective of the size of the tubes to be
+united.
+
+The ends to be joined, prepared as before, so that one slightly overlaps
+the other, must be held firmly in contact by clamps, and heated in
+successive portions by a blow-pipe held in the hand of the operator,
+each patch of glass being re-heated and gently blown, after a rough
+joint has been made. Finally, a larger flame may be used to heat up the
+whole joint for its final blowing. It is important to place the
+apparatus so that the operator has free access to it on all sides. A
+revolving table might be employed. An assistant to work the bellows is
+necessary. Or, better still, air may be admitted to the blow-pipe from a
+large gas-bag placed in some convenient position.
+
+But in most cases one or other of the following air-tight joints can be
+employed, and will be found to be very convenient:--
+
+=Mercury Joints.=--The simplest form of mercury joint is shown at Fig.
+30. _A_ and _B_ are the two tubes which are to be connected. A larger
+tube or cup _F_ is attached to _A_ by the india-rubber tube _E_, and
+placed on _A_ so that the end of _B_ may be brought into contact with
+_A_ at _C_, and connected to it by a well-fitting piece of india-rubber
+tube _C_. The cup _E_ is then brought into the position shown in Fig.
+30, and mercury is introduced till the india-rubber tube at _C_ is
+covered. As mercury and glass do not come into true contact, however,
+such a joint, though said to give good results in practice, is not
+theoretically air-tight, for air _might_ gradually find its way between
+the liquid and the glass. By covering the mercury with a little
+sulphuric acid or glycerine the risk of this occurring may be removed.
+The same result may be attained by the use of glycerine in place of the
+mercury in the cup _F_; but glycerine is less pleasant to work with than
+mercury.[14]
+
+[14] If the india-rubber tube _C_ be secured by wires, iron wire, not
+copper wire, should be employed.
+
+[Illustration: FIG. 30.]
+
+When sulphuric acid is to be employed in such a joint, or when for any
+other reason the use of an india-rubber tube is undesirable, the joint
+may consist of a hollow stopper _B_ (Fig. 31), made of glass tube, and
+ground to fit the neck of a thistle funnel _A_. _A_ and _B_ are joined
+respectively to the pieces of apparatus to be connected, and connection
+is made by placing _B_ in position in the neck of _A_; the joint is made
+air-tight by introducing mercury with strong sulphuric acid above it
+into the cup _A_. The joint may be rendered air-tight by introducing
+sulphuric acid only into the cup. But this plan must not be adopted if
+the interior of the apparatus is to be exhausted, as sulphuric acid is
+easily forced between the ground glass surfaces by external pressure.
+Mercury, however, will not pass between well-ground glass surfaces, and
+is therefore to be employed for connecting apparatus which is to be
+exhausted, and, if necessary, protected by a layer of strong sulphuric
+acid to completely exclude air.
+
+[Illustration: FIG. 31.]
+
+Tubes placed horizontally may be joined by a glycerine or mercury joint
+such as is shown in Fig. 32. The two tubes _A_ and _B_ are joined as
+before by an india-rubber connection _C_, or one may be ground to fit
+the other, and the joint is then enclosed within a larger jacketing-tube
+_D_, with a mouth at _F_, which is filled with glycerine or mercury. _D_
+is easily made by drawing out both ends of a piece of tube, leaving them
+large enough to pass over the connection at _C_, however, and piercing
+one side at _F_.
+
+[Illustration: FIG. 32.]
+
+=Vacuum Taps.=--It is not necessary to enter into a description of the
+construction of ordinary glass taps, which can be purchased at very
+reasonable prices. It may be remarked here, however, as a great many of
+them are very imperfectly ground by the makers, that they may easily be
+made air-tight by hand-grinding with camphorated turpentine and fine
+emery, finishing with rotten-stone. A well-ground tap, which is well
+lubricated, should be practically air-tight under greatly reduced
+pressure for a short period; but when it is necessary to have a tap
+which absolutely forbids the entrance of air into apparatus, one of the
+following may be employed:--
+
+[Illustration: FIG. 33.]
+
+[Illustration: FIG. 34.]
+
+(1.) _Mr. Cetti's Vacuum Tap_ (Fig. 34): This tap is cupped at _A_ and
+sealed at _B_, and the cup _A_ is filled with mercury when the tap is in
+use, so that if, for example, the end _C_ be attached to a flask, and
+_D_ to an apparatus for exhausting the flask, it will be possible to
+close the flask by turning off the tap _E_, and if no air be allowed
+access through _D_, the vacuum produced in the flask at _C_ cannot be
+affected by air leaking through the tap at _A_ or _B_.
+
+A passage _F_ must be drilled from the bottom of the plug _E_ to meet
+_G_, in order that when the plug is in position no residue of air shall
+be confined within _B_, whence it might gradually leak into any
+apparatus connected to it.
+
+It is obvious, however, that this tap does not protect a flask sealed
+to _C_ from the entrance of air through _D_, which, in fact, is the
+direction in which air is most likely to effect an entrance. When using
+one of these taps as part of an apparatus for supplying pure oxygen, I
+have guarded against this by attaching a trap (Fig. 33) to the end _D_,
+_C_ being joined to the delivery tube from the gas-holder. The structure
+and mode of action of the trap are as follows:--
+
+A narrow tube _G_ is joined to _D_ of Fig. 34, and terminates in the
+wide tube _I_, which is connected above to _H_, and below to the
+air-trap _J_. _J_ is connected at _K_, by a piece of flexible tube, to a
+reservoir of mercury, from which mercury enters the air-trap, and
+passing thence to _I_, can be employed for filling the V-trap _HLG_. The
+air-trap _J_ is in the first instance filled with mercury, and then
+serves to intercept any stray bubbles of air that the mercury may carry
+with it. The particular form of the trap shown at _HLG_ was adopted
+because with it the arm _LG_ is more readily emptied of mercury than
+with any other form of trap made of small tube that I have tried. It has
+been used in my apparatus in the following manner:--_H_ was connected
+with a vessel to be filled with pure oxygen, the tap _E_ closed, and the
+rise of mercury above _L_ prevented by a clamp on the flexible tube; the
+vessel to be filled and the trap were then exhausted by a Sprengel pump,
+and oxygen allowed to flow into the exhausted space by opening _E_, the
+operation of exhausting the tubes and admitting oxygen being repeated as
+often as necessary.
+
+To prevent access of air to _E_ on disconnecting the vessel at _H_, the
+mercury was allowed to flow into the trap till it reached to _MM_. _E_
+was then closed, and _H_ exposed without danger of air reaching _E_, the
+length of the arms of the trap being sufficient to provide against the
+effects of any changes of temperature and pressure that could occur.
+
+A delivery tube may be connected to _H_ and filled with mercury, by
+closing _E_ and raising the mercury reservoir. All air being in that
+way expelled from the delivery tube, and the supply of mercury cut off
+by clamping the tube from the reservoir, oxygen can be delivered from
+the tube by opening _E_, when it will send forward the mercury, and pass
+into a tube placed to receive it without any risk of air being derived
+from the delivery tube.
+
+[Illustration: FIG. 35.]
+
+(2.) _Gimmingham's Vacuum Tap_,[15] shown in Fig. 35, consists of three
+parts. A tube _A_ is ground to fit the neck of _B_. _B_ is closed at its
+lower end, and has a hole _d_ drilled through it; when _B_ is fitted to
+_C_, _d_ can be made to coincide with the slit _e_. When _A_, _B_, _C_
+are fitted together, if _d_ meet _e_, there is communication between any
+vessels attached to _A_ and any other vessel attached to _C_, entrance
+of external air being prevented by mercury being placed in the cups of
+_C_ and _B_. The tap may be opened and closed at pleasure by rotating
+_B_.
+
+[15] From _Proceedings of Royal Society_, vol. XXV. p. 396.
+
+If _A_ has to be removed, _C_ may be converted into a mercury joint _pro
+tem._ by letting a little mercury from the upper cup fall into the tube
+and cover _d_, the tap being closed. This mercury must be removed by a
+fine pipette in order to use the tap again. It should be noted, however,
+that though external air cannot enter by way of the ground glass joints,
+there is no absolute protection against the passage of air between _A_
+and _C_, or vessels joined to _A_ and _C_, even when the tap is closed.
+The passage of air from _A_ to _C_ depends upon the grinding and
+lubrication of the joint at _C_.
+
+
+=Lubricating Taps.=--For general purposes resin cerate answers very
+well. In special cases burnt india-rubber, or a mixture of burnt
+india-rubber and vaseline will answer well, or vaseline may be used
+alone. Sulphuric acid and glycerine are too fluid. When a lubricant is
+wanted that will withstand the action of ether, the tap may be
+lubricated by sprinkling phosphorus pentoxide upon it, and exposing it
+to air till the oxide becomes gummy. The joint must then be protected
+from the further action of the air if possible. For example, if a safety
+tap be used the cup may be filled with mercury.
+
+=Air-Traps.=--In Fig. 33, p. 66, an air-trap (_J_) is shown. An air-trap
+is a device for preventing the mercury supplied to Sprengel pumps, etc.,
+from carrying air into spaces that are exhausted, or are for any reason
+to be kept free from air. Figs. 36 and 37 give examples of air-traps. In
+the simpler of the two (Fig. 36) mercury flowing upwards from _C_ that
+may carry bubbles of air with it passes through the bulb _A_, which is
+_filled_ with mercury before use.[16] Any air which accompanies the
+mercury will collect at _a_, the mercury will flow on through _b_. So
+long as the level of the mercury in A is above _b_, the trap remains
+effective.
+
+[16] This may be done by clamping the tube which supplies mercury below
+_C_, exhausting _A_, and then opening the clamped tube and allowing the
+mercury to rise.
+
+[Illustration: FIG. 36.]
+
+[Illustration: FIG. 37.]
+
+In the trap shown by Fig. 37, the tube _d_, which corresponds to _b_ in
+Fig. 36, is protected at its end by the cup _E_. _E_ prevents the direct
+passage of minute bubbles of air through _d_. This trap, like the other,
+must be filled with mercury before it is used, and it will then remain
+effective for some time.
+
+
+
+
+CHAPTER V.
+
+_GRADUATING AND CALIBRATING GLASS APPARATUS._
+
+
+Although the subjects to which this concluding chapter is devoted do
+not, properly speaking, consist of operations in glass-blowing, they are
+so allied to the subject, and of such great importance, that I think a
+brief account of them may advantageously be included.
+
+=Graduating Tubes, etc.=--It was formerly the custom to graduate the
+apparatus intended for use in quantitative work into parts of equal
+capacity; for example, into cubic centimetres and fractions of cubic
+centimetres. For the operations of volumetric analysis by liquids this
+is still done. But for most purposes it is better to employ a scale of
+equal divisions by length, usually of millimetres, and to determine the
+relative values of the divisions afterwards, as described under
+calibration. It rarely happens that the tube of which a burette or
+eudiometer is made has equal divisions of its length of exactly equal
+capacities throughout its entire length, and indeed, even for ordinary
+volumetric work, no burette should be employed before its accuracy has
+been verified. An excellent method for graduating glass tubes by
+hand[17] has been described in Watts's _Dictionary of Chemistry_, and
+elsewhere. Another excellent plan, which I have permission to describe,
+has been employed by Professor W. Ramsay. It will be sufficient if I
+explain its application to the operation of graduating a tube or strip
+of glass in millimetre divisions.
+
+[17] Originally suggested by Bunsen.
+
+The apparatus required consists of a standard metre measure,[18] divided
+into millimetres along each of its edges, with centimetre divisions
+between them, a ruler adapted to the standard metre, as subsequently
+explained, and a style with a fine point for marking waxed surfaces.
+
+[18] Such measures can be obtained of steel for about _fifteen
+shillings_ each. They are made by Mr. Chesterman of Sheffield. They can
+be obtained also from other makers of philosophical instruments, at
+prices depending upon their delicacy. Those of the greatest accuracy are
+somewhat costly.
+
+[Illustration: FIG. 38.]
+
+Fig. 38 represents the standard measure, and the ruler.
+
+At _AA_ are the millimetre divisions on the edges of the measure, the
+longer transverse lines at _BB_ are placed at intervals of five
+millimetres and of centimetres. The ruler is in the form of a
+right-angled triangle; it is shown, by the dotted lines, in position on
+the standard metre measure at _I_; and again, with its under surface
+upwards, in the smaller figure at 2. It consists of a perfectly flat
+sheet of metal, about ten centimetres in length from _C_ to _C_,
+sufficiently thick to be rigid, and has a ledge, _DD_ in each figure,
+which is pressed against the side of the measure when using it, to
+ensure that the successive positions of the edge (_LL_) shall be
+parallel to each other. At _GG_ are two small holes, into which fit
+small screws with fine points. These must be in a line parallel to the
+edge (_LL_), so that when the ruler is in position on the scale, the
+points of the two screws, which project slightly, shall fall into
+corresponding cuts on the divided scales (_AA_).
+
+To graduate a strip of glass, or a glass tube (_HH_), the surface to be
+marked must first be coated with wax, which should be mixed with a
+little turpentine, and be applied to the surface of the glass,
+previously made _warm_ and _dry_, by means of a fine brush, so as to
+completely cover it with a thin, closely-adherent, and
+evenly-distributed coat of wax, which must be allowed to cool.
+
+Fix _HH_ firmly on a table, and fix the standard measure by the side of
+_HH_. If the thickness of _HH_ be about equal to, but not greater than
+that of the standard measure, this may be done by large drawing-pins.
+If, however, a large tube or thick sheet of glass is to be graduated,
+fix it in position by two strips of wood screwed to the table on each
+side of it. One of these wooden strips, on which the measure may be
+placed, may be about as broad as the standard measure, and of such
+thickness that when the measure lies upon it beside the tube to be
+graduated, the ruler, when moved along the measure, will move freely
+above the tube, but will not be elevated more than is necessary to
+secure free movement. The second strip of wood may be narrower, and of
+the same thickness as the broader piece on which the standard measure
+rests. In any case, let the standard measure and the object to be
+graduated be very firmly secured in their places. Bring the ruler into
+position at any desired part of the tube by placing the points of the
+screws (_GG_) in corresponding divisions of the scales (_AA_). With the
+style, which may be a needle mounted in a handle, make a scratch in the
+wax along the edge of the ruler at _F_, move the ruler so that the
+screws rest in the next divisions, and repeat the operation till the
+required number of lines has been ruled. Longer marks may be made at
+intervals of five and ten millimetres. Great care must be taken to hold
+the needle perpendicularly, and to press it steadily against the edge
+(_LL_) of the ruler in scratching the divisions.[19] The length of the
+lines marking the millimetre divisions should not be too long; about 1
+mm. is a good length. If they are longer than this, the _apparent_
+distance between them is diminished, and it is less easy to read
+fractions of millimetres. Before removing the scale to etch the glass,
+carefully examine it to see that no mistakes have been made. If it is
+found that any lines have been omitted, or that long lines have been
+scratched in the place of short ones, remelt the wax by means of a
+heated wire, and make new marks. Finally, mark the numbers on the scale
+with a needle-point, or better, with a fine steel pen.
+
+[19] To avoid variations of the position in which the needle is held
+when marking the divisions, the edge (_LL_) should not be bevelled; and
+an upright support may be placed upon the ruler, with a ring through
+which the handle of the needle passes, thereby securing that the angle
+formed by the needle and surface of the ruler is constant, and that
+equal divisions are marked.
+
+The marks on the wax should cut through it. When they are satisfactory,
+they may be etched by one of the following processes:--
+
+(1.) By moistening some cotton wool, tied to a stick, with solution of
+hydrofluoric acid, and gently rubbing this over the scratched surface
+for a minute or so; then washing away the acid with water, and cleaning
+off the wax. This is the simplest method, but the marks made are
+generally transparent, and therefore not very easy to read. The
+simplicity of this method is a great recommendation, however.
+
+(2.) Expose the tube to the fumes of hydrofluoric acid generated from a
+mixture of powdered fluor-spar and strong sulphuric acid, in a leaden
+trough. The marks produced in this way are usually opaque, and are
+therefore very visible, and easily read.
+
+After the above detailed account it will only be necessary to give an
+outline of the other process of graduating tubes.
+
+[Illustration: FIG. 39.]
+
+The standard scale to be copied, _A_, which may in this case be another
+graduated tube, or even a paper scale, and the object to be ruled, _B_,
+are securely fixed, end to end, a little distance apart, in a groove
+made in a board or in the top of a table. A stiff bar of wood, _C_, has
+a point fixed at _D_, and a knife edge at _E_, _D_ is placed in any
+division of _A_, _C_ is held firmly at _E_ and _D_, and a cut is made by
+the knife through the wax on _B_, the point _D_ is then moved into the
+next division, and the operation is repeated. To regulate the length and
+position of the cuts, _B_ is usually held in position by two sheets of
+brass projecting over the edges of the groove in which it lies; the
+metal sheets have notches cut into them at the intervals at which longer
+marks are to be made.
+
+When the scale is completed, the equality of the divisions in various
+parts of it may be, to some extent, verified as follows:--Adjust a
+compass so that its points fall into two divisions 5, 10, or 20 mm.
+apart. Then apply the points of the compass to various parts of the
+scale. In every part the length of a given number of divisions should be
+exactly the same. The individual divisions should also be carefully
+inspected by the eye; they should be sensibly equal. If badly ruled,
+long and short divisions will be found on the scale. Very often a long
+and a short division will be adjacent, and will be the more easily
+observed in consequence.
+
+=To Divide a Given Line into Equal Parts.=--Occasionally it is necessary
+to divide a line of given length into _x_ equal parts. For instance, to
+divide the stem of a thermometer from the freezing-point to the
+boiling-point into one hundred degrees.
+
+The following outline will explain how a line may be so divided. Suppose
+the line _AB_ (Fig. 40) is to be divided into nine equal parts. Adjust a
+hinged rule so that the points _A_ and _B_ coincide with the inside
+edges of the limbs, one of them, _A_, being at the ninth division
+(_e.g._ the ninth inch) of _CE_. Then if lines parallel to _ED_ be drawn
+from each division of the scale to meet _AB_, _AB_ will be divided into
+nine equal parts.
+
+[Illustration: FIG. 40.]
+
+A very convenient and simple arrangement on this principle for dividing
+a line into any number of equal parts with considerable accuracy, is
+described by Miss S. Marks in the _Proceedings of the Physical Society_,
+July 1885.[20] One limb of a hinged rule _D_ is made to slide upon a
+plain rule fixed to it; the plain rule carries needles on its under
+surface which hold the paper in position. The position of the divided
+rule and line to be divided being adjusted, the hinged rule is gently
+pushed forwards, as indicated by the arrow in Fig. 40, till division
+eight coincides with the line _AB_. A mark is made at the point of
+coincidence, and division seven on the scale is similarly brought to the
+line _AB_, and so on. The inner edge of _EC_ should have the divisions
+marked upon it, that their coincidence with _AB_ maybe more accurately
+noted. The joint _E_ must be a very stiff one.
+
+[20] Since this was printed I have observed that the above method is not
+identical with that described by Miss Marks, but for ordinary purposes I
+do not think it will be found to be inferior.
+
+A line drawn of given length or a piece of paper may be divided into any
+given number of equal parts, and will then serve as the scale _A_ of
+Fig. 39, p. 74, the thermometer or other object to be graduated taking
+the place of _B_.
+
+Scales carefully divided according to any of the methods described will
+be fairly accurate _if trustworthy instruments have been employed as
+standards_.
+
+It will be found possible when observing the volume of a gas over
+mercury, or the height of a column of mercury in a tube, to measure
+differences of one-sixth to one-eighth of a millimetre with a
+considerable degree of accuracy. To obtain more delicate measurements a
+vernier[21] must be employed.
+
+[21] For the nature and use of the vernier, a treatise on Physics or
+Physical Measurements may be consulted.
+
+=To Calibrate Apparatus.=--The glass tubes of which graduated apparatus
+is made are, as already stated, very rarely truly cylindrical
+throughout their entire lengths. It follows that the capacities of equal
+lengths of a tube will usually be unequal, and therefore it is necessary
+to ascertain by experiment the true values of equal linear divisions of
+a tube at various parts of it.
+
+A burette may be calibrated by filling it with distilled water, drawing
+off portions, say of 5 c.c. in succession, into a weighing bottle of
+known weight, and weighing them.
+
+Great care must be taken in reading the level of the liquid at each
+observation. The best plan is to hold a piece of white paper behind the
+burette, and to read from the lower edge of the black line that will be
+seen. Each operation should be repeated two or three times, and the mean
+of the results, which should differ but slightly, may be taken as the
+value of the portion of the tube under examination.
+
+If the weights of water delivered from equal divisions of the tube are
+found to be equal, the burette is an accurate one, but if, as is more
+likely, different values are obtained, a table of results should be
+drawn up in the laboratory book showing the volume of liquid delivered
+from each portion of the tube examined. And subsequently when the
+burette is used, the volumes read from the scale on the burette must be
+corrected. Suppose, for example, that a burette delivered the following
+weights of water from each division of 5 c.c. respectively:--
+
+     C.C.        Grams.
+
+   0 to  5  gave  4·90
+   5 "  10   "    4·91
+  10 "  15   "    4·92
+  15 "  20   "    4·93
+  20 "  25   "    4·94
+  25 "  30   "    4·95
+  30 "  35   "    4·96
+  35 "  40   "    4·97
+  40 "  45   "    4·98
+  45 "  50   "    4·99
+
+and that in two experiments 20 c.c. and 45 c.c. respectively of a liquid
+re-agent were employed. The true volumes calculated from the table would
+be as 19·66 to 44·46.
+
+If the temperature remained constant throughout the above series of
+experiments, and if the temperature selected were 4° C., the weights of
+water found, taken in grams, give the volumes in cubic centimetres, for
+one gram of water at 4° C. has a volume of one cubic centimetre. If the
+temperature at which the experiments were made was other than 4° C., and
+if great accuracy be desired, a table of densities must be consulted,
+with the help of which the volume of any weight of water at a known
+temperature can be readily calculated.
+
+Pipettes which are to be used as measuring instruments should also have
+the relation one to another of the volumes of liquid which they deliver
+determined, and also the proportions these bear to the values found for
+the divisions of the burettes in conjunction with which they will be
+employed.
+
+
+=To Calibrate Tubes for Measuring Gases.=--Prepare a small glass tube
+sealed at one end and ground at the other to a plate of glass. The tube
+should hold about as much mercury as will fill 10 mm. divisions of the
+graduated tube. Fill this tube with mercury, removing all bubbles of air
+that adhere to the sides by closing the open end of the tube with the
+thumb, and washing them away with a large air-bubble left for the
+purpose. If any persistently remain, remove them by means of a fine
+piece of bone or wood. Then completely fill the tube with mercury,
+removing any bubbles that may be introduced in the operation, and remove
+the excess of mercury by placing the ground-glass plate on the mouth of
+the tube, and pressing it so as to force out all excess of mercury
+between the two surfaces. Clean the outside of the tube, and place it on
+a small stand (this may be a small wide-mouthed glass bottle), with
+which it has been previously weighed when empty, and re-weigh. Repeat
+this operation several times. From the mean of the results, which should
+differ one from another but very slightly, the capacity of the tube can
+be calculated.
+
+The purest mercury obtainable should be used. Since the density of pure
+mercury at 0° C. is 13·596, the weight of mercury required to fill the
+tube at 0° C., taken in grams, when divided by 13·596, will give the
+capacity of the tube at 0° C. in cubic centimetres. If the experiment be
+not made at 0° C., and if a very exact determination of the capacity of
+the tube be required, the density of mercury must be corrected for
+expansion or contraction.
+
+Having now a vessel of known capacity, it can be employed for
+ascertaining the capacities of the divisions of a graduated tube in the
+following manner:--The graduated tube is fixed perpendicularly, mouth
+upwards, in a secure position. The small tube of known capacity is
+filled with mercury as previously described, and its contents are
+transferred to the divided tube. The number of divisions which the known
+volume of mercury occupies is noted after all air-bubbles have been
+removed. This process is repeated until the divided tube is filled. A
+table of results is prepared, showing the number of divisions occupied
+by each known volume of mercury introduced.
+
+In subsequently using the tube the volumes of the gases measured in it
+must be ascertained from the table of values thus prepared.
+
+In observing the level of the mercury, unless a cathetometer is
+available, a slip of mirror should be held behind the mercury close to
+the tube, in such a position that the pupil which is visible on the
+looking-glass is divided into two parts by the surface of the mercury.
+
+A correction must be introduced for the error caused by the meniscus of
+the mercury. As the closed end of the tube was downwards when each
+measured volume of mercury was introduced, and as the surface of mercury
+is convex, the volume of mercury in the tube when it is filled to any
+division _l_ (Fig. 41) is represented by _A_ of 1. But in subsequently
+measuring a gas over mercury in the same tube, when the mercury stands
+at the same division _l_, the volume of the gas will be as represented
+by _B_ of 2, which is evidently somewhat greater than _A_. This will be
+seen still more clearly in 3, where _a_ represents the boundary of the
+mercury, and _b_ the boundary of the air, when the tube is filled to the
+mark _l_ with mercury or a gas over mercury respectively.
+
+[Illustration: FIG. 41.]
+
+It is plain that when the level of the mercury in measuring a gas is
+read at _l_, the volume of the gas is greater than the volume of the
+mercury recorded, by twice the difference between the volume _A_ of
+mercury measured, and that which would fill the tube to the level _l_,
+if its surface were plane.
+
+The usual mode of finding the true volume of a gas collected over
+mercury is as follows:--
+
+Place the graduated tube mouth upwards, introduce some mercury, and,
+after removing all bubbles, note the division at which it stands. Then
+add a few drops of solution of mercuric chloride; the surface of the
+mercury will become level, read and record its new position. Then, in
+any measurement, having observed that the mercury stands at _n_
+divisions of the tube, add twice the difference between the two
+positions of the mercury to _n_, and ascertain the volume which
+corresponds to this reading from the table of capacities.
+
+
+=To Calibrate the Tube of a Thermometer.=--Detach a thread of mercury
+from half an inch to one inch in length from the body of the mercury.
+Move it from point to point throughout the length of the tube, and note
+its length in each position. If in one part it occupies a length of tube
+corresponding to eight degrees, and at another only seven degrees, then
+at the former point the value of each division is only seven-eighths of
+those at the latter position.
+
+From the results obtained, a table of corrections for the thermometer
+should be prepared.
+
+It is sometimes necessary to join soda glass to lead glass. In this case
+the edge of the lead glass tube may be bordered with white enamel before
+making the joint. Enough enamel must be used to prevent the lead and
+soda glasses from mingling at any point. The enamel is easily reduced,
+and must be heated in the oxidising flame. Dr. Ebert recommends _Verre
+d'urane_ for this purpose. It is supplied by Herr Götze of Leipzig
+(Liebigstrasse).
+
+
+
+
+CHAPTER VI.
+
+_GLASS TUBING._
+
+
+The diagrams given below show the sizes and thickness of the glass tubes
+most frequently required. In ordering, the numbers of these diagrams may
+be quoted, or the exact dimensions desired may be stated.
+
+Glass tubes are usually sold by weight, and therefore the weight of tube
+of each size that is wished for should be indicated, and also whether it
+is to be of lead or soda glass.
+
+[Illustration]
+
+[Illustration]
+
+
+
+
+CHAPTER VII.
+
+_VITREOUS SILICA._
+
+
+=Introductory.=--Vitreous Silica was made in fine threads by M. Gaudin
+in 1839,[22] and small tubes of it were made in 1869 by M. A. Gautier,
+but its remarkable qualities were not really recognised till 1889, when
+Professor C. V. Boys rediscovered the process of making small pieces of
+apparatus of this substance, and used the torsion of "quartz fibres" for
+measuring small forces. More recently the author of this book has
+devised a process for preventing the "splintering" of quartz which gave
+so much trouble to the earlier workers, and jointly with Mr. H. G.
+Lacell, has produced a variety of apparatus of much larger dimensions
+than had been attempted =previously=. At the time of writing we can
+produce by the processes described in the following pages tubes 1 to 1·5
+cm. in diameter and about 750 cm. in length, globes or flasks capable of
+containing about 50 cc., masses of vitreous silica weighing 100 grams or
+more, and a variety of other apparatus.
+
+[22] A brief summary of the history of this subject will be found in
+_Nature_, Vol. 62, and in the Proceedings of the Royal Institution,
+1901.
+
+
+=Properties of Vitreous Silica.=--For the convenience of those who are
+not familiar with the literature of this subject, I may commence this
+chapter with a brief account of the properties and applications of
+vitreous silica, as far as they are at present ascertained. Vitreous
+silica is less hard than chalcedony, but harder than felspar. Tubes and
+rods of it can be cut with a file or with a piece of sharpened and
+hardened steel, and can afterwards be broken like similar articles of
+glass. Its conducting power is low, and Mr. Boys has shown that fine
+fibres of silica insulate remarkably well, even in an atmosphere
+saturated with moisture. The insulating qualities of tubes or rods of
+large cross sections have not yet been fully tested; one would expect
+them to give good results provided that they are kept scrupulously
+clean. A silica rod which had been much handled would probably insulate
+no better than one of glass in a similar condition. The density of
+vitreous silica is very near to that of ordinary amorphous silica. In
+the case of a small rod not absolutely free from minute bubbles it was
+found to be 2·21.
+
+Vitreous silica is optically inactive, when homogeneous, and is highly
+transparent to ultraviolet radiations.
+
+The melting point of vitreous silica cannot be definitely stated. It is
+plastic over a considerable range of temperature. Professor Callendar
+has succeeded in measuring the rate of contraction of fine rods in
+cooling from 1200° to 1500° C., so that its plasticity must be very
+slight below the latter temperature. If a platinum wire embedded in a
+thick silica tube be heated from without by an oxy-hydrogen flame the
+metal may be melted at temperatures at which the silica tube will retain
+its form for a moderate length of time, but silica softens to a marked
+extent at temperatures a little above the melting point of platinum.
+
+It has been observed by Boys, Callendar, and others that fine rods of
+silica, and also the so-called "quartz fibres," are apt to become
+brittle after they have been heated to redness. But I have not observed
+this defect in the case of more massive objects, such as thick rods or
+tubes; and as I have repeatedly observed that mere traces of basic
+matter, such as may be conveyed by contact with the hand, seriously
+injure the surface of silica, and have found that silica quickly becomes
+rotten when it is heated to about 1000° in contact with an infusible
+base such as lime, I am disposed to ascribe the above-mentioned
+phenomenon to chemical rather than to purely physical causes.[23] It is
+certain, however, that silica apparatus must never be too strongly
+heated in contact with basic substances. Silica is easily attacked by
+alkalis and by lime, less readily by copper oxide, and still less by
+iron oxide.
+
+[23] In a recent communication Professor Callendar tells me that the
+devitrification commences at the outside and is hastened by particles of
+foreign matter.
+
+The rate of expansion of vitreous silica has been studied by H. le
+Chatelier, and more recently by Callendar. The former found its mean
+coefficient of expansion to be 0·0000007 between 0° and 10000°,[24] and
+that it contracted when heated above 700°.
+
+[24] The silica blocks used were prepared by fusion in an electric
+furnace; it is therefore probable that they were not quite pure.
+
+Professor Callendar used rods of silica prepared by the author from
+"Brazil crystal"; these were drawn in the oxy-gas flame and had never
+been heated in contact with solid foreign matter, so that they
+consisted, presumably, of very pure silica. His results differ in some
+respects from those obtained by Le Chatelier, for he finds the mean
+coefficient of expansion to be only 0·00000059, _i.e._ about one
+seventeenth as great as that of platinum. Callendar found the rods of
+silica expanded very regularly up to 1000° but less regularly above that
+temperature. Above 1200° they contracted when heated.
+
+The behaviour of vitreous silica under sudden changes of temperature is
+most remarkable. Large masses of it may be plunged suddenly when cold
+into the oxy-gas flame, and tubes or rods at a white heat may be thrust
+into cold water, or even into liquid air, with impunity. As a
+consequence of this, it is in one respect much more easily worked in the
+flame than any form of glass. Difficult joints can be thrust suddenly
+into the flame, or removed from it, at any stage, and they may be heated
+unequally in different parts with impunity. It is safe to say that
+joints, etc., in silica never crack whilst one is making them nor during
+the subsequent cooling. They may be set aside in an unfinished state and
+taken up again without any precautions. Therefore it is possible for an
+amateur to construct apparatus in silica which he would be quite unable
+to produce from glass.
+
+The behaviour of vitreous silica with solvents has not yet been fully
+investigated, but Mr. H. G. Lacell has this subject in hand. If it
+behaves like the other forms of anhydrous silica it will withstand the
+action of all acids except hydrofluoric acid. It is, of course, very
+readily acted upon by solutions of alkalis and alkaline salts.
+
+As regards the use of silica in experiments with gases, it must be
+remarked that vitreous silica, like platinum, is slightly permeable to
+hydrogen when strongly heated. One consequence of this is that traces of
+moisture are almost always to be found inside recently-made silica tubes
+and bulbs, however carefully we may have dried the air forced into them
+during the process of construction. Owing to the very low coefficient of
+expansion of silica, it is not possible to seal platinum wires into
+silica tubes. Nor can platinum be cemented into the silica by means of
+arsenic enamel, nor by any of the softer glasses used for such purposes.
+I have come near to success by using kaolin, but the results with this
+material do not afford a real solution of the problem, though they may
+perhaps point to a hopeful line of attack. Possibly platinum wires might
+be soldered into the tubes (see _Laboratory Arts_, R. Threlfall), but
+this also is uncertain.
+
+The process of preparing silica tubes, etc., from Lumps of Brazil
+Crystal may be described conveniently under the following headings. I
+describe the various processes fully in these pages, as those who are
+interested in the matter will probably wish to try every part of the
+process in the first instance. But I may say that in practice I think
+almost every one will find it advantageous to start with purchased
+silica tubes, just as a glass-worker starts with a supply of purchased
+glass tubes. The manufacturer can obtain his oxygen at a lower price
+than the retail purchaser, and a workman who gives much time to such
+work can turn out silica tube so much more quickly than an amateur, that
+I think it will be found that both time and money can be saved by
+purchasing the tube. At the same time the beginner will find it worth
+while to learn and practise each stage of the process at first, as every
+part of the work described may be useful in the production of finished
+apparatus from silica tubes.
+
+This being so, I am glad to be able to add that a leading firm of
+dealers in apparatus[25] has commenced making silica goods on a
+commercial scale, so that the new material is now available for all
+those who need it or wish to examine its properties.
+
+[25] Messrs. Baird and Tatlock.
+
+
+=Preparing non-splintering Silica from Brazil Pebble.=--The best variety
+of native Silica is Brazil Pebble, which may be obtained in chips or
+larger masses. These should be thoroughly cleaned, heated in boiling
+water, and dropped into cold water, the treatment being repeated till
+the masses have cracked to such an extent that they may be broken easily
+by blows from a clean steel pestle or hammer.
+
+The fragments thus produced must be hand-picked, and those which are not
+perfectly free from foreign matter should be rejected. The pure and
+transparent pieces must then be heated to a yellow-red heat in a covered
+platinum dish in a muffle or reverberatory furnace and quickly plunged
+into a deep clean vessel containing clean distilled water; this process
+being repeated, if necessary, till the product consists of semi-opaque
+friable masses, very much like a white enamel in appearance. After these
+have been washed with distilled water, well drained and dried, they may
+be brought into the hottest part of an oxy-gas flame safely, or pressed
+suddenly against masses of white hot silica without any preliminary
+heating, such as is necessary in the case of natural quartz. Quartz
+which has not been submitted to the above preparatory process, splinters
+on contact with the flame to such an extent that very few would care to
+face the trouble and expense of working with so refractory a material.
+But after the above treatment, which really gives little trouble, all
+the difficulties which hampered the pioneer workers in silica disappear
+as if by magic.
+
+
+=Apparatus.=--Very little special apparatus need be provided for working
+with silica, but it is absolutely essential to protect the eyes with
+very dark glasses. These should be so dark as to render it a little
+difficult to work with them at first. If long spells of work are
+undertaken, two pairs of spectacles should be provided, for the glasses
+quickly become hot enough to cause great inconvenience and even injury
+to the eyes.
+
+Almost any of the available oxy-gas burners may be used, but they vary
+considerably in efficiency, and it is economical to obtain a very
+efficient burner. The 'blow-through' burners are least satisfactory, and
+I have long since abandoned the use of them. Some of the safety
+'mixed-gas jets' have an inconvenient trick of burning-back, with sharp
+explosions, which are highly disconcerting, if the work be brought too
+near the nozzle of the burner. I have found the patent burner of Mr.
+Jackson (Brin's Oxygen Company, Manchester) most satisfactory, and it
+offers the advantage that several jets can be combined in a group easily
+and inexpensively for work on large apparatus. The large roaring flames
+such as are used, I understand, for welding steel are very expensive,
+and not very efficient for the work here described.
+
+
+=The method of making Silica Tubes.=--Before commencing to make a tube a
+supply of vitreous silica in rods about one or two millimetres in
+diameter must be prepared. To make one of these, hold a fragment of the
+non-splintering silica described above in the oxy-gas flame by means of
+forceps tipped with platinum so as to melt one of its corners, press a
+small fragment of the same material against the melted part till the two
+adhere and heat it from below upwards,[26] till it becomes clear and
+vitreous, add a third fragment in a similar manner, then a fourth, and
+so on till an irregular rod has been formed. Finally re-heat this rod in
+sections and draw it out whilst plastic into rods or coarse threads of
+the desired dimensions. If one works carefully the forceps do not suffer
+much. I have had one pair in almost constant use for several years; they
+have been used in the training of five beginners and are still
+practically uninjured.
+
+[26] This is to avoid bubbles in the finished glass.
+
+The beginner should work with a gauge and regulator on the bottle of
+oxygen, and should watch the consumption of oxygen closely. A large
+expenditure of oxygen does not by any means necessarily imply a
+corresponding output of silica, even by one who has mastered the initial
+difficulties.
+
+When a supply of the small rods of vitreous silica has been provided,
+bind a few of them round a rod of platinum (diameter say, 1 mm.) by
+means of platinum wires at the two ends and heat the silica gradually,
+beginning at one end after slightly withdrawing the platinum core from
+that end, till a rough tube about four or five centimetres in length has
+been formed. Close one end of this, expand it, by blowing, into a small
+bulb, attach a silica rod to the remote end of the bulb, re-heat the
+bulb and draw it out into a fine tube. Blow a fresh bulb on one end of
+this and again draw it out, proceeding in this way till you have a tube
+about six or eight centimetres in length. All larger tubes and vessels
+are produced by developing this fine tube suitably.
+
+
+=Precautions.=--The following points must be carefully kept in mind,
+both during the making of the first tube and afterwards:--
+
+(1) The hottest spot in the oxy-gas flame is at a point very near the
+tip of the inner cone of the flame, and silica can be softened best at
+this hot spot. The excellence of a burner does not depend on the size of
+its flame, so much as on the temperature of its "hot spot," and the
+success of the worker depends on his skill in bringing his work exactly
+to this part of the flame. Comparatively large masses of silica may be
+softened in a comparatively small jet if the hot spot is properly
+utilised.
+
+(2) Silica is very apt to exhibit a phenomenon resembling
+devitrification during working. It becomes covered with a white
+incrustation, which seems to be comparatively rich in alkali.[27] This
+incrustation is very easily removed by re-heating the whitened surface,
+provided that the material has been kept scrupulously clean. If the
+silica has been brought into the flame when dusty, or even after much
+contact with the hands of the operator, its surface is very apt to be
+permanently injured. _Too much attention cannot be given to cleanliness
+by the workman._
+
+[27] The rock crystal exhibits a yellow flame when first heated in the
+oxy-gas flame, and most samples contain spectroscopic quantities of
+lithium.
+
+(3) When a heated tube or bulb of silica is to be expanded by blowing,
+it is best not to remove it from the flame, for if that is done it will
+lose its plasticity quickly unless it be large. The better plan is to
+move it slightly from the "hot spot" into the surrounding parts of the
+flame at the moment of blowing.
+
+It is best to blow the bulb through an india-rubber tube attached to the
+open end of the silica tube. At first one frequently bursts the bulbs
+when doing this, but holes are easily repaired by stopping them with
+plastic silica applied by the softened end of a fine rod of silica and
+expanding the lump, after re-heating it, by blowing. After a few hours'
+practice these mishaps gradually become rare.
+
+I find it a good plan to interpose a glass tube packed with granulated
+potash between the mouth and the silica tube. This prevents the interior
+of the tube from being soiled. The purifying material must not be packed
+so closely in the tube as to prevent air from passing freely through it
+under a very low pressure.
+
+It may be mentioned here that a finished tube usually contains a little
+moisture, and a recognisable quantity of nitric peroxide. These may be
+removed by heating the tube and drawing filtered air through it, but not
+by washing, as it is difficult to obtain water which leaves no residue
+on the silica.
+
+
+=Making larger tubes and other apparatus of Silica.=--In order to
+convert a small bulb of silica into a larger one or into a large tube,
+proceed as follows:--Heat one end of a fine rod of silica and apply it
+to the bulb so as to form a ring as shown in the figure. Then heat the
+ring and the end of the bulb till it softens, and expand the end by
+blowing. If this process is repeated, the bulb first becomes ovate and
+then forms a short tube which can be lengthened at will, but the most
+convenient way to obtain a very long tube is to make several shorter
+tubes of the required diameter, and say 200 to 250 mm. in length, and to
+join these end to end. It does not answer to add lumps of silica to the
+end of the bulb, for the sides of the tube made in this way become too
+thin, and blow-holes are constantly formed during the making of them.
+These can be mended, it is true, but they spoil the appearance of the
+work.
+
+[Illustration]
+
+Tubes made in the manner described above are thickened by adding rings
+of silica and blowing them when hot to spread the silica. If a
+combination of several jets is employed, very large tubes can be
+constructed in this way. One of Messrs. Baird and Tatlock's workmen
+lately blew a bulb about 5 cm. in diameter, and it was clear that he
+could have converted it into a long cylindrical tube of equal diameter
+had it been necessary to do so.
+
+Very thin tubes of 1·5 cm. diameter, and tubes of considerable thickness
+and of equal size, are easily made after some practice, and fine
+capilliaries and millimetre tube can be made with about equal readiness.
+
+If a very fine tube of even bore is required, it may be drawn from a
+small thick cylinder after a little practice.
+
+When a tube becomes so large that it cannot be heated uniformly on all
+sides by rotating it in the flame, it is convenient to place a sheet of
+silica in front of the flame a little beyond the object to be heated, in
+order that the former may throw back the flame on those parts of the
+tube which are most remote from the jet. A suitable plate may be made by
+sticking together small lumps of silica rendered plastic by heat.
+
+The silica tubes thus made can be cut and broken like glass, they can be
+joined together before the flame, and they can also be drawn into
+smaller tubes when softened by heat.
+
+In order to make a side connection as in a T piece, a ring of silica
+should be applied to the tube in the position fixed upon for the joint.
+This ring must then be slightly expanded, a new ring added, and so on,
+till a short side tube is formed. To this it is easy to seal a longer
+tube of the required dimensions. It is thus possible to produce Geissler
+tubes, small distilling flasks, etc. Solid rods of silica are easily
+made by pressing together the softened ends of the fine rods or threads
+previously mentioned. Such rods and small masses can be ground and
+polished without annealing them.
+
+
+=Quartz Fibres.=--These were introduced into physical work by Mr. Boys
+in 1889. They may be made by attaching a fine rod of vitrified quartz to
+the tail of a small straw arrow provided with a needle-point; placing
+the arrow in position on a cross-bow, heating the rod of silica till it
+is thoroughly softened and then letting the arrow fly from the bow, when
+it will carry with it an extremely fine thread of silica. A little
+practice is necessary to ensure success, but a good operator can
+produce threads of great tenacity and great uniformity. Fuller accounts
+of the process and of the various properties and uses of quartz fibres
+will be found in Mr. Boys' lectures (Roy. Inst. Proc. 1889, and Proc.
+Brit. Assn. 1890), and in Mr. Threlfall's Laboratory Arts.
+
+
+
+
+  INDEX.
+
+
+  Air-traps,                                               69.
+  Annealing,                                               23.
+  Apparatus needed for Glass-working,                      11.
+  Appendix,                                                82.
+
+  Beginners, Failures of,                                  22.
+  Bellows, Position of,                                     3.
+    ---- Various forms of,                                  7.
+             _See also_ Blower.
+  Bending Glass Tubes,                                     28.
+  Blower, Automatic,                                        8.
+  Blow-pipe, Cheap form of,                                 4.
+    ---- Dimensions of,                                   4-5.
+    ---- Fletcher's Automaton,                              6.
+    ---- Fletcher's Compound,                               6.
+    ---- Gimmingham's,                                      6.
+    ---- Herapath's,                                        6.
+    ---- Jets for the,                                      7.
+    ---- Use of the,                                        8.
+             _See also_ Flames.
+  Blow-pipes, Use of several in combination,               21.
+  Brush Flame,                                              9.
+    ---- Oxidising,                                        20.
+  Bulbs, Methods of blowing,                               47.
+
+  Calibrating Apparatus,                                76-81.
+  Camphorated Turpentine,                                  11.
+  Cetti's Vacuum Tap,                                      66.
+  Charcoal Pastils,                                        11.
+  Choking or Contracting the Bores of Tubes,               35.
+  Combining the Parts of Complicated Apparatus,            61.
+  Combustion Tube, how to work it,                         25.
+  Contracting the Bore of a Tube,                          35.
+  Cotton Wool for Annealing,                               24.
+  Cutting Glass Tubes,                             26, 27, 28.
+
+  Dividing a Line into Equal Parts,                        75.
+
+  Electrodes,                                          38, 55.
+  Electrolysis, Making Apparatus for,                      59.
+
+  Files for Cutting Glass,                                 27.
+  Flame, the Pointed,                                       8.
+    ---- the Brush,                                         9.
+    ---- the Oxidising Brush,                              20.
+    ---- the Smoky,                                        10.
+  Fletcher's Automaton Blow-pipe,                           6.
+  Fletcher's Compound Blow-pipe,                            6.
+  Funnels, Thistle-headed,                                 57.
+
+  Gimmingham's Blow-pipe,                                   6.
+  Gimmingham's Vacuum Tap,                                 68.
+  Glass, Annealing,                                        23.
+    ---- Devitrification of,                               15.
+    ---- Method of Working with Lead,                      17.
+    ---- Method of Working with Soda,                      22.
+    ---- Nature of,                                        12.
+    ---- Presenting to the Flame,                          16.
+  Glass Tubes, Bending,                                    28.
+    ---- Bordering,                                        31.
+    ---- Characters of good,                               14.
+    ---- Choking,                                          35.
+    ---- Cleaning,                                         15.
+  Glass Tubes, Cutting,                            26, 27, 28.
+    ---- Piercing,                                         37.
+    ---- Purchase of,                                      12.
+    ---- Sealing,                                          32.
+    ---- Sealing Hermetically,                             58.
+    ---- Sizes of,                                         82.
+    ---- Welding or Soldering,                         39, 62.
+    ---- Widening the Ends of,                             36.
+  Graduating Apparatus,                                    70.
+  Grinding Stoppers,                                       51.
+
+  Herapath's Blow-pipe,                                     6.
+  Hofman's Apparatus for Electrolysis,                     59.
+
+  Inside Joints,                                           43.
+
+  Jets for Blow-pipes,                                      7.
+  Joints, Air-tight,                                       64.
+
+  Lead Glass, Method of Working with,                      17.
+  Lead Glass, Blackening of,                               17.
+  Light, Effect of, in Working,                             3.
+  Line, to Divide into Equal Parts,                        75.
+
+  Mercury Joints, Various,                                 64.
+
+  Non-splintering Silica, Preparation of, from Quartz,     88.
+
+  Ozone Generator, To Make an,                             44.
+
+  Pastils of Charcoal,                                     11.
+  Piercing Tubes, etc.,                                    37.
+  Platinum Electrodes, Sealing in,                     38, 55.
+  Pointed Flame, the,                                       9.
+
+  Quartz Fibres,                                           94.
+
+  Rounding Ends of Tubes,                                  31.
+
+  Sealing or Closing Openings in Tubes,                    32.
+  Side-tubes, Fixing,                                      41.
+  Smoky Flame,                                             10.
+  Soda Glass, Method of Working,                           22.
+  Soldering or Welding,                                39, 62.
+  Spiral Tubes,                                            56.
+  Stoppers, Making and Grinding,                           51.
+
+  Table for Glass-blower,                                   3.
+  Taps, Vacuum,                                            65.
+  Thistle-headed Funnels,                                  57.
+  Traps, Air,                                              69.
+  Tube, Combustion, how to work it,                        25.
+  Tubes. _See_ Glass Tubes.
+    ---- T-,                                               41.
+    ---- U-,                                               56.
+  Turpentine, Camphorated, for Grinding,                   11.
+
+  U-Tubes,                                                 56.
+
+  Vacuum Taps,                                          65-68.
+    ---- Tube, To Make a,                                  60.
+  Vitreous Silica, Apparatus required for Making,          89.
+    ---- Behaviour under sudden changes of Temperature,    87.
+    ---- Bulbs, etc., Making Joints on,                    93.
+    ---- Expansion of,                                     86.
+    ---- Hardness of,                                      85.
+    ---- Insulating Power of,                              85.
+    ---- Melting Point of,                                 85.
+    ---- Permeability to Gases,                            87.
+    ---- Properties of,                                    84.
+    ---- Rods, Making Joints on,                           94.
+    ---- Tubes, Method of Making,                          90.
+    ---- Tubes, Making Joints on,                          94.
+
+  Welding or Soldering Tubes together,                 39, 62.
+  White Enamel, Uses of,                               39, 56.
+  Widening the Ends of Tubes,                              36.
+  Working-place,                                            2.
+
+
+
+
+          Printed by T. and A. CONSTABLE, Printers to His Majesty
+                at the Edinburgh University Press, Scotland
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK THE METHODS OF GLASS BLOWING AND OF WORKING SILICA IN THE OXY-GAS FLAME ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

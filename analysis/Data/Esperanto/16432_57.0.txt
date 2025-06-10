@@ -1,0 +1,1649 @@
+﻿The Project Gutenberg eBook of Esperanto: Hearings before the Committee on Education
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Esperanto: Hearings before the Committee on Education
+
+Author: Richard Bartholdt
+        A. Christen
+
+Release date: August 4, 2005 [eBook #16432]
+                Most recently updated: December 12, 2020
+
+Language: English
+
+Credits: Produced by David Starner, William Patterson and the Online
+        Distributed Proofreading Team at https://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK ESPERANTO: HEARINGS BEFORE THE COMMITTEE ON EDUCATION ***
+
+
+
+
+Produced by David Starner, William Patterson and the Online
+Distributed Proofreading Team at https://www.pgdp.net
+
+
+
+
+
+========================================================================
+
+TRANSCRIBER'S NOTE:
+
+The Esperanto alphabet contains 28 characters. These are the
+characters of English, but with "q", "w", "x", and "y" removed, and
+six diacritical letters added. The diacritical letters are "c",
+"g", "h", "j" and "s" with circumflexes (or "hats", as Esperantists
+fondly call them), and "u" with a breve. Zamenhof himself suggested
+that where the diacritical letters caused difficulty, one could
+instead use "ch", "gh", "hh", "jh", "sh" and "u". A plain ASCII
+file is one such place; there are no ASCII codes for Esperanto's
+special letters.
+
+However, there are two problems with Zamenhof's "h-method". There is
+no difference between "u" and "u" with a breve, and there is no way
+to determine (without prior knowledge of the word(s) involved, and
+sometimes a bit of context) whether an "h" following one of those other
+five letters is really the second half of a diacritical pair, or just
+an "h" that happened to find itself next to one of them. Consequently
+other, unambiguous, methods have been used over the years. One is the
+"x-method", which uses the digraphs "cx", "gx", "hx", "jx", "sx" and
+"ux" to represent the special letters. There is no ambiguity because
+the letter "x" is not an Esperanto letter, and each diacritical letter
+has a unique transliteration. This is the method used in the ASCII
+versions of this Project Gutenberg e-text.
+
+However, in the discussion of the name "Washington", "W" and "sh" were
+indeed used in the original document. "Esparanto" and "flexbility" were
+also found in the original document and retained, along with a "than"
+where a "then" was probably intended.
+
+In addition, the 7-bit ASCII version of this book uses the German
+"-e" convention to represent characters with umlauts. The 8-bit ASCII
+version uses the ISO-8859-1 character set to represent these German and
+Volapük characters. The HTML version uses Unicode and therefore displays
+properly all the characters for the languages... including Esperanto!
+
+========================================================================
+
+
+
+                               ESPERANTO
+                               =========
+
+
+                                HEARINGS
+                               BEFORE THE
+                         COMMITTEE ON EDUCATION
+
+
+                        HOUSE OF REPRESENTATIVES
+                          SIXTY-THIRD CONGRESS
+                             SECOND SESSION
+
+
+                                   ON
+
+
+                              H. RES. 415
+           A RESOLUTION PROVIDING FOR THE STUDY OF ESPERANTO
+                        AS AN AUXILIARY LANGUAGE
+
+
+                                ========
+
+
+                             STATEMENTS OF
+
+                         HON. RICHARD BARTHOLDT
+              A REPRESENTATIVE FROM THE STATE OF MISSOURI
+
+                                  AND
+
+                           PROF. A. CHRISTEN
+
+
+                              ------------
+                             MARCH 17, 1914
+                              ------------
+
+
+                               WASHINGTON
+                       GOVERNMENT PRINTING OFFICE
+                                  1914
+
+
+
+
+                        COMMITTEE ON EDUCATION.
+
+
+            HOUSE OF REPRESENTATIVES, SIXTY-THIRD CONGRESS.
+
+
+                  DUDLEY M. HUGHES, Georgia, Chairman.
+
+WILLIAM W. RUCKER, Missouri.           JAMES F. BURKE, Pennsylvania.
+ROBERT L. DOUGHTON, North Carolina.    CALEB POWERS, Kentucky.
+JOHN W. ABERCROMBIE, Alabama.          HORACE M. TOWNER, Iowa.
+J. THOMPSON BAKER, New Jersey.         EDMUND PLATT, New York.
+JOHN R. CLANCY, New York.              ALLEN T. TREADWAY, Massachusetts.
+THOMAS C. THACHER, Massachusetts.      SIMEON D. FESS, Ohio.
+STEPHEN A. HOXWORTH, Illinois.         ARTHUR R. RUPLEY, Pennsylvania.
+
+                         James L. Fort, Clerk.
+
+
+
+                               ESPERANTO.
+
+
+                               ---------
+
+
+                                HOUSE OF REPRESENTATIVES,
+                                     COMMITTEE ON EDUCATION,
+                                           Tuesday, March 17, 1914
+
+The committee this day met, Hon. Dudley M. Hughes (chairman) presiding.
+
+                  STATEMENT OF HON. RICHARD BARTHOLDT,
+        A REPRESENTATIVE IN CONGRESS FROM THE STATE OF MISSOURI.
+
+Mr. BARTHOLDT. Mr. Chairman and gentlemen, I do not wish to occupy your
+time, for the reason that I can be here almost any time, while Prof.
+Christen has made a special trip from New York for this purpose, and I
+should like to give him all the time you can afford to devote to this
+bill.
+
+I merely wish to say, in explanation, that I have not, as you will
+notice, introduced this bill by request; I have assumed responsibility
+for it personally because I thoroughly believe in it. I first introduced
+the bill in the shape of a request to the Committee on Education
+to investigate the subject; that is, as to the practicability and
+advisability of introducing Esperanto as an auxiliary language in the
+public schools. That resolution was referred to the Committee on Rules
+and, of course, I could not get any action in that committee, and for
+that reason I introduced the bill in its present form, which merely
+provides that Esperanto be taught as a part of the course of study in
+the schools of Washington, this being the only jurisdiction we have in
+the matter of education.
+
+We Americans are known the world over as being deficient in the
+knowledge of languages. I think we might as well admit that. While
+every other nation is teaching two or three languages in its schools we
+have failed to do so, and yet the requirements of international trade
+and commerce make it absolutely essential that our young men should be
+taught at least one language or two languages besides their own. Now,
+this being the case and Esperanto now being taken up by nearly all the
+civilized countries as an auxiliary language, how easy it would be for
+us, instead of compelling our children in the schools to learn Spanish,
+French, and German, to simply take one lesson a week in Esperanto and
+thereby enable this nation to correspond and communicate in a common
+language with all the other nations of the world.
+
+The CHAIRMAN. Your idea would be that the various nations would
+understand Esperanto, and that whenever they would use that language all
+would understand and comprehend it? Is that your idea?
+
+Mr. BARTHOLDT. Yes. I want to say that there is a movement on foot in
+nearly every civilized country to make Esperanto a part of the course of
+study in the schools. If that were carried out, each country would learn
+its own language and Esperanto, in England English and Esperanto, and
+so on, so that the international language would really be Esperanto. As
+one who has studied languages to some extent I can feel the shortcomings
+and handicaps of a man who, for instance, having studied French for some
+time, comes to Paris. The very moment you open your mouth the people
+will notice that you are "a foreigner," no matter how well you speak
+French, so that the other man, the native, has a certain advantage over
+you. But if that Frenchman were obliged to speak Esperanto with you then
+you would be on a common level and neither would have an advantage over
+the other. I have read in several of the Esperanto newspapers that, for
+instance, in England the great manufacturing establishments are now
+printing their catalogues and price lists in Esperanto, and that other
+publications are sent all over the world printed in that language, in
+matters of trade and commerce. So you can see it is coming. And since
+we have not overcrowded the minds of our children with languages as
+yet, I think it would be advisable and profitable for us to start with
+Esperanto.
+
+I want to add that it is a very easy language. I have learned it in four
+lessons. Of course I have not had the time to keep it up, and you must
+keep in practice.
+
+The CHAIRMAN. Does Esperanto partake more of the Spanish language?
+
+Mr. BARTHOLDT. No. For an English speaking person it is very easy to
+learn, because it is composed of words taken from the English language,
+some from the German language, and some from the Latin. But the whole
+construction of the language is so remarkably simple, that you will
+wonder why it is that a universal language of that kind has not been
+introduced before for the use of civilized men.
+
+That is all I wish to say, gentlemen, and I take pleasure in introducing
+Prof. Christen, of New York, to you, whom I regard as one of the
+greatest living experts in that language and a missionary for Esperanto.
+
+                    STATEMENT OF PROF. A. CHRISTEN,
+                  46 MANHATTAN AVENUE, NEW YORK CITY.
+
+Prof. CHRISTEN. Mr. Chairman and gentlemen, this is quite a novel
+experience to me. I do not even know how these hearings are carried on,
+but I am entirely at your disposal and shall be very glad to answer
+questions. If I had my own way I would like to speak for at least an
+hour and a half or two hours, but I understand that you can not give
+me so much time. Therefore, it will be rather difficult to put in
+all the information I would like to lay before you. I should like to
+tell you something about the absurd and ridiculous linguistic chaos
+to which the world has been brought through those great agencies of
+progress which have now practically abolished distance and brought
+the ends of the earth nearer to each other than were the opposite
+frontiers of the smallest kingdom 400 years ago; (1)[1] then about the
+advisability, nay, the absolute necessity of an international language;
+how various attempts have been made to meet this growing demand for a
+special international language, not for home consumption but only for
+intercourse with all other nations, and why this one is, in my opinion
+and in that of many wiser men, bound to succeed, and that is because it
+absolutely fills the bill and is fool-proof; as a scientific and at the
+same time practical scheme, it can not be improved upon. Next, I should
+like to speak about the reason why neither English, nor any other living
+language, can ever become international. No living language can become
+international because they are all too difficult, too complicated, and
+not neutral; (2) and then, perhaps, I ought to give you a few outlines
+of the construction of Esperanto to show you why it is so easy, how
+it meets all the requirements of the case, and is going to succeed.
+However, I do not suppose I shall be able to do all of this, and,
+therefore, will merely take a few points.
+
+   [1]See additions to verbatim report of hearing.
+
+Dr. Bartholdt has mentioned to you the movement that is already in
+existence for Esperanto. Here is the official yearbook of the Universala
+Esperanto-Asocio (3), the best-organized international society that
+the movement has yet produced. This society is called the Universal
+Esperanto Association. It is not a propaganda society, but purely a
+commercial league for the coordained use of the language, not merely
+for the spread of it, but for its practical use among those who have
+already learned it. This association has 698 branches throughout the
+world, and is in its sixth year. Here is a map showing the places in
+which the society is represented, and to-day, if I want any information
+on any industrial, commercial, educational, scientific, or any other
+matter--say, in Portugal, Russia, Japan, Spain, Belgium, Holland, or
+China, etc.--I look up the place nearest to the district from which
+I want that information and find the address of the Esperanto center
+there. Then I write to the delegate and ask for the information in
+Esperanto, and no matter what language he speaks at home I will get a
+reply in Esperanto, and he will take any amount of trouble to satisfy
+my demands. This society has done a remarkable amount of excellent work
+in the last five years, and Esperanto is more and more used for all
+practical international purposes.
+
+Now, Dr. Bartholdt told you about many commercial houses in different
+countries already using Esperanto practically, that is to say, actually
+using it for their business purposes internationally, printing their
+circulars, price lists, catalogues, and so on, in Esperanto, and using
+it for correspondence.
+
+I am reminded that seven years ago, in the north of Scotland, I saw
+a communication to a Scotch railroad company from a French railroad
+company written in English, but across the communication there were
+stamped the words, "We correspond in Esperanto." And that was six or
+seven years ago, and since that time Esperanto has made very great
+strides.
+
+I have here a number of trade catalogues in Esperanto, and you will
+see from the nature of them that they are really very elaborate things
+and on which these firms have spent a great deal of money, which they
+would not do if they did not think the thing was actually paying. I have
+only about 40 such samples here because I can not carry them all about
+with me. For instance, here is a very elaborate, costly, and handsome
+catalogue from the biggest firm of photographic instrument makers in
+Germany, and, I believe, in the world.
+
+Here is a pamphlet issued by the Chamber of Commerce of Los Angeles,
+a very attractive pamphlet. That was published in order to attract
+European immigration to that portion of California, and that same
+chamber of commerce has made large use of Esperanto for that purpose.
+Two years ago they sent a man to lecture all over Europe and in some
+parts of Asia on the attractions of California. That lecturer visited 27
+different countries; he lectured in 120 different towns during 18 months
+and every one of his lectures was given in Esperanto, and in several
+places he was obliged to give his lecture two or three times, because
+the crowds that came were so large that it was impossible for everybody
+who desired to hear the lecture to get in at the same time. There were
+large numbers of people in every place who actually understood him;
+all did not understand him, but a large number did in every town. For
+instance, in Paris and Barcelona there are many thousands who understand
+Esperanto. Here is another German firm in Berlin. Here is a bookseller
+in Paris issuing a catalogue entirely in Esperanto. Here is a leaflet
+about the Panama Exposition published in Esperanto. Here is the town of
+Baden, a watering place near Vienna. They publish a guide of their town
+in Esperanto. Here is a catalogue issued by the Oliver Typewriter Co.
+printed in Esperanto. Cook's famous touring agency has used Esperanto
+for the last seven years. Here is a Scotch tea firm publishing a
+circular in Esperanto. Here is a bicycle-saddle maker in Germany using
+Esperanto for publicity. Here is a Berlin taximeter catalogue in
+Esperanto. Two years ago there was held in Leipsic the greatest hygienic
+exposition ever held anywhere. It was the most successful of its kind up
+to date, and hundreds of thousands of people attended from all over the
+world. In that exposition Esperanto was used to a great extent and the
+exhibition authorities published a guide to the exposition in Esperanto.
+Here is a railroad company that uses Esperanto. A great many railroad
+companies in Europe already use it. They issue regional guides to the
+most attractive parts of their districts in Esperanto. Here is a Paris
+automobile company with a circular in Esperanto. Here is the biggest
+iron works in England, the Consett Iron Co., of Durham, a firm that
+employs 30,000 hands, and that firm publishes its catalogues and price
+lists in Esperanto. This is only one of their Esperanto publications.
+
+Here is a circular issued by a Paris department store. All the big
+department stores of Paris not only use Esperanto in their publications,
+but actually have interpreters for Esperanto in their stores. The
+biggest ink firm in the world--the Stephens Blue Ink Co., in London--use
+this language for their correspondence. About six years ago they began
+to use Esperanto and published their advertisements and their circulars
+for foreign trade entirely in Esperanto. The town of Antwerp publishes
+an illustrated guide of the town in Esperanto. Here is a very big
+Anglo-American firm of medical supplies, Burroughs, Wellcome & Co.,
+and they use Esperanto in many of their circulars. The Government
+of Brazil three years ago sent a man to lecture in Europe as to the
+attractions of Brazil. That man lectured in Paris to an audience of
+3,000 people entirely in Esperanto, and the Government published his
+lecture in that language. Here is a curious document. This was issued by
+the anti-alcohol congress in Italy last year, and you will notice that
+Esperanto is used, and that it is recommended as the only remedy against
+the language trouble which entirely hampered the deliberations of this
+congress, as it does all international conventions of every kind. I will
+hand this to Mrs. Crafts, because she will be able to tell you more
+about it, since she was there.
+
+That is the commercial side of it, and these are only a very few
+samples of the actual and practical use being made of Esperanto in
+this one alone. I could produce, no doubt, a great many more such
+examples, but I can not carry them all about with me. Here are some 60
+to 70 guide leaflets published by so many different towns in France,
+in Italy, in Austria, in Germany, in England, and in several other
+countries--leaflets printed in Esperanto for the use of foreigners and
+tourists. They give them information in Esperanto about the various
+things they might first need to know on arriving at those cities. For
+instance, here is Milan, Italy, and Poitiers, France, and Insbruck.
+Austria, and Tavia, Italy, and Davos, Switzerland, and so on. In the
+same line here are 20 more elaborate guidebooks to various towns in
+Europe, published entirely in Esperanto by the local authorities. Of
+course, you will not have the time to look at all these things just now,
+but I will leave them with you. Then, again, I think I can safely say
+that there are over 100 periodicals published in Esperanto in different
+countries.
+
+Esperanto is making very rapid progress in Japan and China; for
+instance, I have here an excellent Esperanto paper published by a native
+society in Japan.
+
+The CHAIRMAN. In what nation is it progressing most rapidly?
+
+Prof. CHRISTEN. That is difficult to say, but seven years ago France was
+at the head, and Germany did not take it up for a long time. Then about
+five or six years ago England shot ahead of France, and then suddenly
+Germany took it up, and now I think Germany is ahead of all the other
+countries in the practical use of Esperanto. But it is making good
+progress everywhere--in France, in England, in Denmark, in Bulgaria, in
+Spain, in South America, in Germany, in India, in China, and in Japan.
+In Germany the authorities and scientific people have very strongly
+espoused Esperanto. For instance, the Government of Saxony sustains
+financially an Esperanto institute in Dresden, and that does a great
+deal of good work. The Government of Saxony is also a large contributor
+to an Esperanto library, which is the biggest in the world, as yet.
+And in many towns in Spain, in Germany, and in France, especially in
+France, whenever an Esperanto lecturer goes into a town he gets a
+stipend from the town; the town pays out of the city funds the expenses
+of his propaganda, or partly pays them; they contribute 50 or 100
+francs, and frequently more, according to the size of the place. That
+is the practice in many places in other countries besides France, but
+especially in France. Even the Russian Government gives financial aid to
+Esperanto propaganda.
+
+The CHAIRMAN. As I understand it, this is not supposed to be a universal
+language?
+
+Prof. CHRISTEN. No; an international language.
+
+The CHAIRMAN. But at the same time it is a language in which all the
+universe can meet upon a common plane and converse?
+
+Prof. CHRISTEN. That is the intention, to give the whole of the
+civilized world one and the same secondary language.
+
+The CHAIRMAN. In which they can all meet on a common plane?
+
+Prof. CHRISTEN. Yes; no matter where you may go, if you know Esperanto,
+you shall not be a foreigner anywhere. The intention is to do away with
+this terrible handicap of being unable to converse with your fellow men
+of the various countries you may visit unless you learn all or most of
+those languages, a thing which, as you know, is in most cases quite
+impossible. It is the intention to have all the nations understand
+Esperanto, and by that means make it possible for all the peoples of
+the world to commune directly with each other. The time has come in the
+world's history when a common vehicle of human expression is absolutely
+necessary, and the barrier of Babel must fall, as mostly all other
+obstacles to free intercourse have already fallen, before the triumphant
+advance of modern science and technology. It is positively fatuous and
+futile to ask the modern man, be he in commerce or science or what not,
+to become an expert in his particular line of endeavor and a polyglot
+besides. It can not be done. Languages are too many and each one too
+complicated for our crowded curricula. The obligatory study of foreign
+languages belongs to a remote past when there existed no sciences and
+no industrial arts, when life was less crowded and when there were
+fewer world languages. Even less than a hundred years ago a man was an
+accomplished cosmopolitan if he knew French and his own mother tongue.
+To-day he wants and ought to be conversant with French, German, and
+Spanish, at the very least, besides English, and before long he will
+have to tackle Russian and Japanese. As a matter of fact in some of the
+European countries and in South America the school children actually
+spend from 35 to 60 per cent of the school time in acquiring that sort
+of an education, which is really not education at all but only a means
+to an end.
+
+The CHAIRMAN. What progress has Esperanto made in the United States?
+
+Prof. CHRISTEN. In this matter the United States is behind all other
+progressive countries. There have been many sporadic efforts made and
+there are Esperanto groups in different places from New York and Boston
+to Chicago, San Francisco, Seattle, Portland, Tacoma, etc., but as
+a national movement it is not what it should be, and the difficulty
+is, to far as I can make it out, the enormous size of the country. It
+is difficult for a society, without very large funds, to carry on an
+effective propaganda all over the country.
+
+Then another difficulty is that Americans are not generally very much
+given to what I should call ethical ideas of this kind, that offer no
+immediate and sudden cash returns, until they really become a craze or
+until a certain class, perhaps, takes them up. (4) Let us not forget
+also that the American people are not so much in touch with the language
+difficulty as are other countries, and they do not yet appreciate the
+enormous use that Esperanto will be to them, for, in my opinion, no
+white people will benefit more from Esperanto than will the American
+people, chiefly because like all English-speaking nations they are very
+poor linguists. Then it is becoming more and more acknowledged among
+educational people that the English language is the only language that
+can not be taught. It is well known that if you put educated people from
+different countries together the Anglo-Saxon will invariably be the one
+who understands his own language least. That is due to the peculiar
+construction of the English language.
+
+However, Esperanto would not be difficult for the American people
+because it is so scientific, so logical, and entirely free of all
+irregularities. Prof. Mayer, of the University of Oxford, learned
+Esperanto in his seventy-ninth year. I heard him make a speech in
+the language about six or seven days after he took it up, and he
+declared that Esperanto ought to be introduced into the educational
+system of the country. He was professor of the Latin language at
+the Oxford University. He declared Esperanto ought to be introduced
+into the schools, into the kindergartens, where children of 5 years
+of age should begin with Esperanto, and I hold with him, because
+if children were to learn Esperanto it would be of help to them in
+their English. It is extremely easy to learn and can be learned in
+a very pleasant fashion, because it is so scientific and so simple. (5)
+
+If children understood Esperanto, they would understand English better,
+and much of the time we waste in trying to teach them English would be
+profitably spent, for they would have something to go upon, something to
+compare English with, and that something so scientific and so logical as
+Esperanto. Take, for instance, analysis. I will not say it is difficult
+but I will say it is impossible to analyze an English word, because
+every word can be so many things. It can generally be an adjective,
+a noun, a verb, a preposition, a conjunction, and an interjection,
+that is, the same word, without any structural change, so that it is
+difficult for a child to discriminate and label the word. Take the word
+"benefited." That might be used in the past tense (I benefited), or as
+a past participle: (We may have benefited), and it is impossible for
+a child to sense the difference, and such confusion occurs to a great
+extent with most words in the English language.
+
+I am a teacher of languages and have done nothing all my life but study
+and impart languages. If I had to teach you gentlemen, say, French
+upon the theory that you were going on an important mission this day
+12 months, and that it was absolutely necessary that you should speak
+French (or any other language that I could impart you) by that time, I
+would say it was impossible for a number of busy men to acquire a new
+language inside one year; that I could not guarantee useful results,
+but that if you would take two months to start with for the learning of
+Esperanto, then I might be able to teach you the other language in the
+rest of the time, because Esperanto is the best foundation for learning
+any language. And, as I say, an English-speaking student, be he young or
+old, knowing Esperanto would more easily distinguish the parts of speech
+in English and possess a real and valuable "linguistic feeling" (which
+he now entirely lacks) because of his Esperanto.
+
+The CHAIRMAN. Is Esperanto made up of the derivatives of the various
+languages?
+
+Prof. CHRISTEN. I will explain that, if you like, in a very few words.
+Esperanto is the work of a Polish scholar, Dr. Ludovico L. Zamenhof,
+who started with an inspired mind. I should say he was a great genius.
+He had studied a large number of languages, for, as a boy, nay, as a
+child in the cradle, he spoke four languages, because so many different
+languages were actually spoken in his home town. Then at school he
+learned several more and it is due to this polyglotic experience and the
+evils caused daily by Babel in his own circle that as a child, almost,
+he conceived the idea of constructing a language that should at once and
+for all time put an end to a foolish and intolerable situation. He must
+have been inspired in what he did, because he at once hit upon the only
+possible solution of the thing, and he hit upon it without knowing that
+scores of others, older and more learned, had tried the same thing and
+failed. His first stroke of genius was in the composing of his entire
+vocabulary by borrowing all his words from well-known sources. With the
+true insight of the genius he decided that the words of an artificial
+international language must be taken from international sources, and so
+he first of all hit upon the good idea to use first of all those words
+which are already common to most languages, and there are a great many
+more such words than we have dreamed of. He decided that that should be
+the starting point of his world tongue, because everybody would know
+those words to start with. Take the names of animals and produce that
+come from certain parts of the world and carry their names with them,
+such as elephant, tiger, lion, camel, and a great many more. Take the
+rose: the rose is a rose in every language; so an orange, a lemon, a
+nut, and tea, coffee, and tobacco, etc., are the same in most languages.
+They may not be spelled the same or pronounced the same, but they are
+international, and therefore they are Esperanto. That was the foundation
+of the vocabulary in Zamenhof's new language--take words that everybody
+would know and use them in Esperanto (6).
+
+Mr. TOWNER. How do you determine those common names?
+
+Prof. CHRISTEN. Well, he formed his vocabulary; he selected these words
+because they were international--to the exclusion of anything else.
+
+Mr. TOWNER. Well, that was not definite; it might be enlarged?
+
+Prof. CHRISTEN. Oh, yes.
+
+Mr. TOWNER. What was the vocabulary that he first issued?
+
+Prof. CHRISTEN. Offhand, I think, about 963 words.
+
+Mr. TOWNER. What is the vocabulary now?
+
+Prof. CHRISTEN. Probably about 3,000 words. Now, I have dealt with the
+so-called international words; but the bulk of every language consists
+of what I would call home words, which every country has for its own;
+and the only way to bring equivalents for such words into the language
+was to select them from all the principal languages under consideration,
+which means, of course, the European languages and to select these words
+on the principle of greatest internationality--that is to say, such
+verbs as to come, to do, to write, etc., or the nouns, hand, knife,
+water, table, etc., or adjectives, like good, bad, healthy, etc. Before
+he put these words into his vocabulary, Zamenhof had their equivalents
+in all the European languages before him, and then he took from the
+whole list the root which was the most prominent, the root that occurred
+oftenest, and this became Esperanto, the idea being that the words
+selected should be common to at least four or five different languages.
+
+Mr. TOWNER. You do not mean that, do you? You do not mean that the only
+words you would put into the Esperanto vocabulary would be those that
+might be common to at least four or five of the principal languages?
+
+Prof. CHRISTEN. Yes; whenever it is possible to find such words, and the
+words do not conflict with the general harmony of the language.
+
+Mr. TOWNER. That is what I thought you meant.
+
+Prof. CHRISTEN. The consequence is that a language formed on these lines
+must be a Latin or Romance language because Latin gave birth to at least
+six languages: French, Italian, Spanish, Portuguese, Roumanian, and
+English, and besides, Latin and French have influenced and enriched the
+literature and languages of every other modern nation. The dictionary
+of Latin words contained, for instance, in Russian or German would be
+a very large volume indeed. It is a fact that all modern attempts at
+making an artificial language, and their name is legion, especially
+since the acknowledged success of Esperanto, are based on Latin.
+Consequently also, the international language must be largely English,
+because mostly those Latin words will be chosen that are common at
+least to French and English. I have lectured to hundreds of English
+audiences, and I have given them numerous examples of Esperanto words
+in my lectures that could be easily understood by everybody. Take the
+words "skribi," to write; "lerni," to learn; "mangxi," to eat; "trinki,"
+to drink; "tablo," a table; "glaso," a glass; "nazo," the nose, and
+"busxo," the mouth; "mano," the hand; take the adjectives, bona, bela,
+granda, kapabla, etc. Few, indeed, are the Esperanto words that do not
+connect at all with the English; in most cases, in at least 87 cases
+out of 100, you will find those words connect with one or many English
+words.
+
+Mr. TOWNER. You mean that 87 per cent of the words now in the Esperanto
+vocabulary are formative words?
+
+Prof. CHRISTEN. Yes: they are connected with the English language, and
+from each Esperanto word you can form mechanically absolutely every
+word that sense and logic can possibly connect with the one and only
+meaning of the original Esperanto word. I am accustomed to lecturing
+before audiences and making this statement, which I make without fear
+of contradiction, that "if all of you were to take up Esperanto now and
+carry it on until you were as expert in it as I am, you would not in the
+whole of your studies come across more than 60 words, probably not more
+than 50 words, which are entirely new to you."
+
+Mr. TOWNER. Of course, a vocabulary of 3,000 words is a very limited
+vocabulary; it is a primitive vocabulary?
+
+Prof. CHRISTEN. Yes?
+
+Mr. TOWNER. How are you going to increase it? For instance, how are you
+going to make it a literary language? How are you going to write poems?
+
+Prof. CHRISTEN. Personally I should not want an international language
+for poetry, although Esperanto does in fact lend itself excellently
+to the purposes of the muses. But to answer your question: First of
+all, the Esperanto language does not contain any words at all; I think
+there are only 138 full-fledged words, prepositions, adverbs, and
+conjunctions, but the rest of the vocabulary is formed of roots only.
+Let us take the words "to sew," "to stitch." The root is "kudr." It is
+only a root, and that alone stands in the vocabulary. Now, if you want
+to make this root into a noun "o" is added to it, "kudro": if you want
+to make it an adjective, you add "a" to it, "kudra"; if you want to
+make it an adverb you add "e," kudre, which would mean by or through
+sewing, "sewingly," if it could be so expressed in English; and if you
+want to make it a verb it would be "kudri," because every infinitive
+ends in "i." You see, with that root to begin with you can form four
+words, and you can express a great deal more in Esperanto than anybody
+can possibly imagine; in fact Esperanto is, on account of its perfect
+and absolutely complete flexibility, more precise and more comprehensive
+than any language under the sun. As I said before, you can form four
+words from every root at the start if sense allows it, and sense allows
+you a great deal more leeway in Esperanto than anybody can possibly know
+about, because in no language are you allowed to proceed by sense. The
+English language does not allow it, nor does any other, not oven German
+or Greek, but it is allowed in this most logical of all languages,
+Esperanto. (7)
+
+Mr. TOWNER. Take the illustration you have just used. We say "The sewing
+is beautiful." and "We find her sewing assiduously." Now, we use the
+same word, but the formation of the sentence determines whether or not
+it is a noun or a verb.
+
+Prof. CHRISTEN. You mean the distinction between the participle and the
+noun?
+
+Mr. TOWNER. Yes.
+
+Prof. CHRISTEN. With your permission I will not answer that
+particularly, but will deal with the whole subject. I want to say that
+from every root you form four words, the four principal parts of speech.
+And the first thing to remember is this positive stroke of genius--that
+every noun ends with "o," every adjective with "a," every derived adverb
+with "e," and every infinitive with "i."
+
+Mr. TOWNER. How would you carry that to proper names?
+
+Prof. CHRISTEN. London would be Londono; Robert is Roberto, but proper
+names you are at liberty to do with as you please; give them the
+Esperanto ending or leave them in the original form.
+
+Mr. TOWNER. What about Washington?
+
+Prof. CHRISTEN. Washingtono.
+
+Mr. TOWNER. I mean, you would really change it?
+
+Prof. CHRISTEN. Yes; if you prefer it; that is, if it sounds better.
+
+Mr. TOWNER. In the language?
+
+Prof. CHRISTEN. Yes.
+
+Mr. TOWNER. For instance, if you were speaking about the city of
+Washington, you would not say Washington, but Washingtono?
+
+Prof. CHRISTEN. You will find it frequently printed as Washingtono.
+
+Mr. TOWNER. Why do you do that, because Washingtono is not the name of
+the city?
+
+Prof. CHRISTEN. Let me say that you say London in English, but that is
+not French.
+
+Mr. TOWNER. But we always spell Paris the French way, although we do not
+pronounce it the same way; that is, "Paree."
+
+Prof. CHRISTEN. But London is not London in French; it is "Londres" in
+French.
+
+Mr. TOWNER. Do you mean to say that if a letter were addressed to London
+from Paris the Frenchman would not pronounce and write it London but
+Londres?
+
+Prof. CHRISTEN. Yes.
+
+Mr. TOWNER. He does not say London?
+
+Prof. CHRISTEN. No, he says Londres. And the same is true with Dover;
+Dover is not French; The French would be Douvres. However, I want to say
+this, that after the first three or four years after I took up Esperanto
+geographical or proper names were left optional and they were not given
+any particular spelling in the Esperanto language and are not now. Many
+Esperantists now would say Washington and London. But you can make the
+change if you want to.
+
+Mr. TOWNER. Internationally, has not that come to be the custom, to
+pronounce the geographical names and proper names in the way they are
+pronounced in the country in which they originate?
+
+Prof. CHRISTEN. I think so. As I said, there is no arbitrary rule about
+personal names or geographical names. Now, let me proceed with this
+marvelous scheme and repeat that every part of speech is distinctive
+in itself; that is the reason a child, when it follows Esperanto, will
+not find English so hard and will understand English better than in any
+other way. Such a child will understand English far better than if it
+did not understand Esperanto, and that is a statement I often make in my
+lectures.
+
+Mr. RIPLEY. We had a man here the other day who has a language which he
+claims is an improvement on Esperanto.
+
+Prof. CHRISTEN. Yes?
+
+Mr. RIPLEY. He is from Ohio, I believe.
+
+Prof. CHRISTEN. I know. Since Esparanto began to move forward there have
+been at least 30 to 40 different schemes elaborated, and that is easily
+done. You can do it overnight. But there is no scheme that has ever
+touched and no scheme that can ever touch Esperanto, because it has hit
+the mark from the first. (8)
+
+Mr. TOWNER. What do you do with adverbs? Do they have a definite form?
+
+Prof. CHRISTEN. Every derived adverb ends in "e."
+
+Mr. TOWNER. So you could not distinguish from the form between a verb
+and an adverb, could you?
+
+Prof. CHRISTEN. Perfectly. The adverb ends in "e" and the infinitive
+ends in "i."
+
+Mr. RIPLEY. It is your contention that children will do better in
+English if they acquire a knowledge of Esperanto?
+
+Prof. CHRISTEN. Undoubtedly; this is a statement I make in my lectures:
+If you gentlemen will give me a number of children aged 4 or 5 years
+I will give them a quarter of an hour's pleasant explanation about
+grammar, that is Esperanto grammar, and they will understand it after a
+quarter of an hour's explanation; then I will jumble together a number
+of blocks, with various words on these blocks, and I will say to these
+children "pick out every noun," and they will be able to do it--that is,
+pick the nouns from the adjectives--and so with every part of speech.
+
+The CHAIRMAN. Because they will know to a certainty?
+
+Prof. CHRISTEN. Yes; every word tells its own tale on account of its
+distinctive ending. Now, that is a thing you can not do in English; that
+nobody can do in English, because we can not tell the parts of speech
+simply by the appearance of the words; we can only know from the context
+and that is not always easy!
+
+The CHAIRMAN. How does that apply to other languages?
+
+Prof. CHRISTEN. The same thing applies more or less to all, because they
+are all irregular; they were not formed; they have "growd" like Topsy.
+
+Mr. TOWNER. The Latin language is more regular?
+
+Prof. CHRISTEN. Yes: but it does not begin to compare with Esperanto.
+Now, we have had these four words, and I want to proceed a little
+further, and I will take up something that will help me to answer your
+questions. If I had to teach you gentlemen French I would have to make
+you commit to memory 2,667 endings and contractions for the verb alone;
+it would take you months and months to learn that alone. The same
+absurdities and even worse occur in Italian, in Spanish, in German, in
+English, and in all so-called natural languages.
+
+Mr. TOWNER. And we never could learn these irregularities and
+exceptions.
+
+Prof. CHRISTEN. Well, if you did learn them you would never remember
+them at the right time because the whole scheme is so complicated.
+This is only one of the many reasons which make us so shy at speaking
+foreign languages. Now, the same thing is true of German, and of all
+other languages, but it is not true of Esperanto. I will teach you the
+whole Esperanto conjugation in five minutes and you will never forget
+it, because there is nothing to remember. You already know that a noun
+ends in "o" and that the infinitive ends in "i," and so on: there is
+absolutely no difficulty whatever. (9) Now, I am sorry I have to speak
+so rapidly, because I would like to give you more information.
+
+The CHAIRMAN. We would be glad to have you add to your remarks.
+
+Mr. TOWNER. You can extend your remarks.
+
+Prof. CHRISTEN. Since my time is up and, indeed, far exceeded, I will
+be very glad to do so. But before I leave you, let me read one or two
+items, which will only take two minutes more. Here is a quotation
+from the British Esperantist, of November, 1913, showing the progress
+Esperanto is making:
+
+   The central Esperanto bureau, of Paris, gives the following
+   statistics: In 1889, there had been published 29 books in
+   Esperanto; in 1899, 128; in 1910, 1,554; in 1912 (to August
+   30), 1,837. Enough already to keep most readers going for
+   full five years of Sundays, and the output, both of bookshop
+   and of press, is increasing daily.
+
+Mr. TOWNER. In a general way, what is the character of this literature?
+
+Prof. CHRISTEN. Up to now chiefly textbooks for learning Esperanto,
+such as this little book [indicating], which can be purchased for 10
+cents. You can learn the whole mechanism of the language from one of
+these little books. Then there are a great many other publications,
+translations, scientific articles, etc., and we have already several
+novels originally written in the new language.
+
+Mrs. CRAFTS. May I say a word right here? I hold in my hand the New
+Testament, published by the British and Foreign Bible Society together
+with the Scotch Bible Society. It is a translation from Nestle's Greek
+Testament, and the Old Testament is now being translated by one of the
+most eminent Hebrew scholars in the world.
+
+Prof. CHRISTEN. Here is the next item, which I would like to read to
+you:
+
+   Evening classes for the study of Esperanto under the auspices of
+   the L.C.C. (London county council) are being held at the Halstow
+   Road Nonvocational Institute, Greenwich, S.E., on Thursday,
+   7.30-9.30 p.m., and at Bloomfield Road Commercial Institute,
+   Plumstead, S.E., on Fridays, 7.20-10.50 p. m. Instructor Mr.
+   William H. Dennis, B.D.E.A., 108, Eglinton Road, Plumstead,
+   S.E., from whom any information may be obtained. These classes
+   are designed especially to meet the requirements of the serious
+   student, beginner or advanced. (10)
+
+That is from London. Then I have another quotation which I want to read
+from Edinburgh:
+
+   The chief constable of Edinburgh has interested himself in Esperanto,
+   especially in view of the 1915 congress. The chief constable has
+   ordered a copy of "Esperanto For All," to be sent to the 650 members
+   of the Edinburgh police force, with a recommendation that the police
+   learn the language. A class for policemen is being arranged, for
+   which 14 names have been received.
+
+Esperanto classes for policemen have been conducted for several years
+in several towns in Germany, in France, in Spain, etc., and even during
+their hours of duty classes are going on in Esperanto so that policemen
+may learn Esperanto without the loss of their own personal time. I thank
+you, gentlemen, for bearing with me so long.
+
+Mr. BARTHOLDT. I should like to have an opportunity, if possible, at
+some future time to have you give us about 10 or 15 minutes to hear Mrs.
+Crafts.
+
+The CHAIRMAN. We shall be very glad indeed to give you that time.
+
+
+(The additional matter submitted by Prof. Christen follows:)
+
+
+(1) We are apt to lose sight of the fact that the whole world's
+business is daily becoming more and more internationalized and that
+what in former centuries was done parochially is now more and more
+done internationally.
+
+The first public international convention ever held took place
+less than 75 years ago; it is a significant fact that this was a
+peace convention. To-day there are over 300 societies: Commercial,
+scientific, religious, sociological, industrial, sporting, etc.,
+organized internationally. During those seventy-odd years over
+2,000 international congresses of one kind or another have actually
+taken place, and now a days not one year passes without several
+scores being added to the total. An incomplete list for 1914 gives
+49 such prospective international gatherings and over one score of
+exhibitions, fairs, and festivals of an international character.
+
+What lamentable and foolish and provoking situation at such gatherings
+is due to the multitude of tongues only those know who have wasted
+time and money in attending them. Usually three or more languages are
+officially accepted and most of the time is irretrievably lost in
+misunderstandings and more or less inadequate translations.
+
+Compare with this the nine yearly international Esperanto congresses
+held at Boulogne, Geneva, Cambridge, Dresden, Barcelona, Washington,
+Cracow, Antwerp, and Berne, at which from 800 to 1,500 delegates from
+20 to 30 different countries spent a week in complete communion through
+this wonderful language. Orations, discussions, sermons, concerts,
+theatrical performances, and general fellowship among the members being
+freely enjoyed by all, and often by individuals who had only had a few
+weeks of acquaintance with the language.
+
+An international language of some sort has become an absolute necessity
+of our new era of universal solidarity.
+
+A hopeful sign of progress is that many international organizations have
+already declared in favor of Esperanto for their future meetings.
+
+(2) The impossibility of ever making any national language international
+will at once become clear if we imagine the whole youth of the United
+States condemned to become proficient in French or Spanish or German.
+Say we take the easiest of them, Spanish: does anyone dream the thing
+possible? Only an infinitesimal fraction of our young people could
+attain even a smattering, and that at the cost of from two to three
+years' study; and even then it is quite unlikely that other nations
+would adopt the same language. But if they all did this impossible
+thing the Spanish speaking peoples would still have the pull on them
+all because they grow up with the language and have not to acquire it
+artificially.
+
+What holds good for Spanish holds good for even other so called natural
+language, including English, and more with English than any other on
+account of its barbarous spelling and pronunciation.
+
+None of these objections, neither structural nor national, apply to
+Esperanto, which is entirely neutral and ideally simple.
+
+(3) The U.E.A. (Universala Esperanto Asocio) has its central office
+at 10 Rue de la Bourse, Geneva, Switzerland. Yearly dues 50 cents for
+private members, $2.50 for business firms. These contributions entitle
+the members to use the machinery of the association for the acquisition
+of information--free of cost, except postage--on any subject whatever
+(except confidential matters), the only condition being that the request
+be written in Esperanto. A sufficient amount of Esperanto for this
+purpose can be acquired by anyone in a few days, or even in a few
+hours. It is not even necessary to have a teacher, the textbooks being
+very easy to master. In America, if local booksellers do not yet stock
+Esperanto literature, the would-be student may apply to Peter Reilly,
+Esperanto bookseller, 133 North Thirteenth Street, Philadelphia, Pa.
+
+A growing number of Esperantists all over the world are using the
+services of the U.E.A., not only in correspondence, but actually
+traveling through many countries for pleasure or profit by means of
+Esperanto alone, and finding everywhere helpful hints and congenial
+surroundings in the local Esperanto groups.
+
+In addition to the U.E.A. there is an international Esperanto society
+for the propaganda of the language; this has its world center at 51 Rue
+de Clichy, Paris, France, and powerful national societies in France (240
+branches), in England (118 branches), in Germany (over 250 branches),
+etc.
+
+(4) I should, however, add, in justice to the American people,
+that wherever Esperanto has been brought to their notice by press
+or platform it has been well received. I have myself lectured to
+large and sympathetic audiences in Chautauqua, Buffalo, New York,
+Philadelphia, Pittsburgh, and Washington. Public schools, high schools,
+and universities have frequently opened their doors to Esperanto, and
+in my own case the University of Pennsylvania and the University of
+Columbia have shown their open-mindedness to the extent of engaging a
+paid lecturer for a prolonged course.
+
+So has the Department of Education of the city of New York.
+
+In the Bureau of Standards, Washington, D.C., a considerable number of
+scientists have declared in favor of Esperanto, and are adepts of the
+language.
+
+My experience is that in this country the informed public warmly
+approves of Esperanto and the ideals it stands for, but expects
+the spread of the language to come through the schools. There is
+consequently in this country a special inertia in this matter, in spite
+of approval; this makes organised propaganda extremely difficult in such
+a vast territory.
+
+Accordingly the national organization, the E.A.N.A. (Esperanto
+Association of North America), central offices, Newton Center, Mass.,
+has so far had but a checkered and precarious existence.
+
+A rival society, the U.S.E.A. (United States Esperanto Association) has
+its headquarters at Shaller, Iowa.
+
+(5) If I were asked how Esperanto could best be introduced into the
+schools, I should suggest that a limited course of lecture lessons,
+say, from 6 to 12, to the teachers would suffice to give them all that
+is necessary to enable them to practice the language until complete
+proficiency is attained. In many places there is even now a supply of
+local Esperantists ready to cooperate with the schools.
+
+After a month's study any teacher should be able to teach others and
+perfect himself in the process. At that I would teach the language only
+to the pupils in their last year of school; many of them could make
+immediate use of Esperanto on entering business; most of them would
+probably get enough of the language during the last session at school
+to engage them to keep up the practice afterwards according to local
+opportunities.
+
+Please do not judge of this probability by your experience with other
+languages, which most students drop as soon as possible. Their endless
+complications make the study and practice irksome and futile, while
+Esperanto is positively fascinating.
+
+In my opinion two lessons of 45 minutes a week would amply suffice to
+secure practical results never dreamed of in the French, German, or
+Spanish classes. After a very short course of study, the boys and girls
+would get an opportunity to correspond with scholars of their own age
+and station in many lands. There are even now hundreds of school boys
+and girls in France, Germany, Austria, Spain, and even in China and
+Japan eager for such interchange of thoughts by means of Esperanto.
+
+The hour or hour and a half spent weekly on this subject would be amply
+repaid by the increased intelligence and linguistic feeling of the
+pupils, and ultimately the subject could be taught with great benefit to
+the whole school, doing away with the necessity of ineffectual attempts
+at teaching foreign languages to all and sundry, regardless of taste and
+capacity.
+
+(6) Perhaps a few remarks may be in place here to substantiate still
+more clearly the postulate that Esperanto fulfills absolutely the ideal
+requirement of a language that means to be introduced throughout the
+world as a secondary or auxiliary language: Facility of acquirement to
+all nations.
+
+(a) There is not one difficult sound, such as our th, our obscure
+vowels, the French nasals, the German ä, ö, ü, etc. The vowels are a,
+e, i, o, and u. Each has but one sound value, and that long and full,
+approximately as in the phrase: "Pa may we go, too?"
+
+(b) The tonic accent, an insuperable difficulty in English, on account
+of its irregularity and elusiveness, is in Esperanto invariably on the
+last vowel but one.
+
+(c) The grammar is reduced to a minimum, the whole mechanism of
+Esperanto being compassed within 16 rules which any one can grasp and
+assimilate inside one hour.
+
+(d) The vocabulary is extremely small, less than 1,000 roots, mostly
+common to every Aryan tongue, being sufficient for all ordinary purposes
+of language.
+
+This is due to the marvelously ingenious system of word building, which
+enables anyone to derive from a dozen to one hundred and more words from
+every root, there being to this derivation no limit but that of common
+sense.
+
+Of course, the vocabulary for science and technology is considerably
+larger, but equally flexible.
+
+(e) There are no troublesome genders; sex is expressed by the insertion
+of "in" before the "o" ending of nouns, and of course only in the case
+of animate creation. For instance, "viro" is man, "virino" woman,
+"frato" brother, "fratino" sister, "kuzo" male cousin, "kuzino" female
+cousin, etc. And here Esperanto has over all other languages not only
+the signal advantage that there are no irregularities, but the far
+more important advantage that the scheme is applicable to all cases.
+For instance, although we have in English from 30 to 40 different
+ways of forming the feminine such as father, mother; brother, sister;
+uncle, aunt; bull, cow; stallion, mare; fox, vixen; etc., yet in most
+cases we possess no decent or sensible way to indicate the sex of the
+individuals; as, for instance, in the cases of teacher, doctor, friend,
+cousin, neighbor, witness, elephant, camel, goat, typist, stenographer,
+companion, president, chairman, etc.
+
+Last, but not least, every word parses itself by its distinctive ending.
+
+(7) The stupendous flexibility of Esperanto will be still better
+understood if I state here that it possesses some 30 particles (prefixes
+and suffixes), each with a definite meaning and each available whenever
+you want to attach that particular meaning to any word.
+
+We have already seen that the suffix "in" expresses the female sex
+whenever it may be desirable to give it expression. So "id" denotes
+the offspring, "il" the tool or instrument, "isto" the profession,
+"ul" the person or individual, "ec" the quality (abstract), "ajx"
+the concrete thing, product, or result, "eg" means large, and "et"
+small, etc. Now, let us see how this works out in practice. Bovo is
+bull; bovino, cow; bovido, calf; bovajxo, beef; bovidino, female
+calf. And you may say bovego, boveto, bovinego, bovineto, bovidego,
+bovideto, bovidinego, and bovidineto if you wish to add the idea of size
+or smallness to the original or to the derived word.
+
+Again: "Lern" is the root for learning. We first get lerni, to learn;
+lerna, learned; lerne, learnedly; learno, learning. Next, using a few of
+the particles we can make: lernebla, capable of being learned; lernema,
+inclined to learn (studious); lerninda, worth learning; lernilo, a
+text book (a tool); lernisto (a professional learner), a student;
+lernulo, a learned person, a scholar; lerneco, learning in the abstract;
+lernajxo, the matter to be learned (concrete), etc. And once more
+note that what you can do with one root you can do with every root
+in the vocabulary. So that the originally available number of words
+is multiplied ten and hundred fold. Which simply means a tremendous
+saving of labor in learning words and forms and yet secures a range of
+expression and a degree of precision undreamed of in any other language.
+
+(8) On the possible rivals, past, present, or future, to Esperanto see
+closing remarks.
+
+(9) To complete what I said on the verb during the hearing I give here
+the entire paradigm of the verb in Esperanto.
+
+Paroli, to speak; parolanta, speaking; parolata, spoken.
+
+Present, I speak, etc.: Mi parolas, vi parolas, li parolas, sxi parolas,
+ni parolas, vi parolas, ili parolas, oni (one) parolas, gxi (it)
+parolas.
+
+There a thus only one ending "as" for the present of every verb and the
+same for every person.
+
+In the past the ending is "is": mi parolis, I spoke, etc.
+
+In the future "os" mi parolos, I shall speak, etc. In the conditional
+"us": mi parolus, I should speak, etc. In the subjunctive "u": ke
+mi parolu, that I may or might speak, the tense being sufficiently
+indicated by the antecedent verb.
+
+For the imperative we use the subjunctive without conjunction and
+generally without subject.
+
+The participle has a most ingenious flexbility, it having three forms,
+anta, inta, onta for the active, and ata, ita, ota for the passive;
+parolanta, speaking now; parolinta, having spoken; parolonta, about to
+be speaking; parolata, being spoken now; parolita, spoken formerly;
+parolota, to be spoken later.
+
+Only practice can reveal the wonderful usefulness of this scheme, again,
+of course, applicable to all verbs.
+
+One interesting sequel is, that as every word can be turned into a
+noun--if sense demands it--by simply changing the ending into o, we
+therefore get: parolanto, the present speaker; parolinto, the past
+speaker; parolonto, the future speaker.
+
+Let no one say that such richness and possibility of precision is of
+no importance; many a life's jeopardy has turned on less. Nor can it
+be said that this unlimited capacity of expression makes the mechanism
+of the language cumbersome, for the whole scheme of Esperanto can be
+thoroughly mastered in a few hours.
+
+(10) In England Esperanto has been on the school rates for several
+years; any technical or continuation school can apply to the board of
+education for permission to put Esperanto on its program. In 1909 it was
+already thus taught in 33 centers.
+
+The London Chamber of Commerce holds examinations in Esperanto every
+year, and has done so since 1907. The United Kingdom Association of
+Teachers prepares for the certificate of proficiency in Esperanto.
+
+In the town of Lille, France, Esperanto has been taught in the high
+schools for at least nine years; about 1,500 pupils benefiting yearly
+from this. The same is true of Rio de Janeiro, in Brasil.
+
+In conclusion, I wish to register my opinion as an unbiased student of
+the whole movement for the adoption of an international language that
+Esperanto has nothing to fear from any rival scheme--present, past, or
+future.
+
+Of upward of 150 different projects that have seen the light since the
+seventeenth century, not one was born with a life worth saving but
+Esperanto; not one has ever attained one-hundredth part the power and
+vogue and vitality that Esperanto has achieved.
+
+One only of all these schemes has ever come prominently before the
+public before Esperanto came into the field, Volapük, and this failed of
+its own defects.
+
+One only among some 20 or 30 imitations of Esperanto, namely, Ido,
+succeeded for a time in creating a diversion in the Esperanto camp.
+If Volapük died of its defects, it is permissible to say that Ido
+never lived on account of its numerous authors' everlasting chase
+after theoretical perfection, each one having a different opinion--and
+changing the same with every wind--as to what constitutes perfection
+in every one of a thousand features of a human language. Accordingly,
+the Idoists have altered their mock Esperanto a hundred times in six
+years, so that no one has been able to keep track of the changes, and
+the adherents of the secession themselves have never been able to learn,
+speak, and use the language.
+
+During these six years Esperanto has succeeded in establishing itself
+and getting a firm hold in every civilized country from China to Peru
+and from Greenland to Zanzibar, because it is a live and growing
+language, perfect in so far that it is endowed from the start with all
+the power of evolution without the need of any internal changes in its
+wonderfully simple structure.
+
+Here are a few quotations from great thinkers as to the need for an
+auxiliary language:
+
+   The diversity of languages is fatal for genius and progress. If
+   there were a universal language, we should save a third of life.
+   (Leibnitz.)
+
+   The interrelationships of the peoples are so great that they most
+   certainly need a universal language. (Montesquieu.)
+
+   One of the greatest torments of life is the diversity of language.
+   (Voltaire.)
+
+   What an immeasurable profit it would be for the human race if we were
+   able to intercommunicate by means of one language. (Volney.)
+
+   It seems to me quite possible--probable even--than an artificial
+   language to be universally used will be greed upon. (Herbert
+   Spencer.)
+
+   The learning of many languages fills the memory with words instead of
+   facts and thoughts, and this is a vessel which, with every person,
+   can only contain certain limited amount of records. Therefore the
+   learning of many languages is injudicious, inasmuch as it arouses
+   the belief in the possession of dexterity, and, as a matter of
+   fact, it lends a kind of delusive importance to social intercourse.
+   It is also injurious in that it opposes the acquirement of solid
+   knowledge and the intention to win the respect of men in an honest
+   way. Finally, it is the ax which is laid at the root of a delicate
+   sense of language in our mother tongue, which thereby is incurably
+   injured and destroyed. The two nations which have produced the
+   greatest stylists, the Greeks and the French, learned no foreign
+   languages; but as human intercourse grows more cosmopolitan, and
+   as, for instance, a good merchant in London must now be able to
+   read and write eight languages, the learning of many tongues has
+   certainly become a necessary evil; but which, when finally carried
+   to an extreme, will compel mankind to find a remedy, and in some far
+   off future there will be a new language used at first as a language
+   of commerce, then as a language of intellectual intercourse, then
+   for all, as surely as some time or other there will be aviation. Why
+   else should philology have studied the laws of language for a whole
+   century and have estimated the necessary, the valuable, and the
+   successful portion of each separate language? (Nietsche.)
+
+In this connection it may be well to repeat once more that Esperanto is
+only an "auxiliary" language. Nobody dreams of it being a "universal
+language."
+
+                         EXAMPLES OF ESPERANTO.
+
+Simpla, fleksebla, belsona, vere internacia en siaj elementoj[1],
+la lingvo Esperanto prezentas al la mondo civilizita la sole veran
+solvon[2] de lingvo internacia: cxar[3], tre facila por homoj nemulte
+instruitaj, Esperanto estas komprenata sen peno de la personoj bone
+edukitaj. Mil faktoj atestas la meriton praktikan de la nomita lingvo.
+
+   [1] "j" has the sound of English "y", as in boy, and is the sign for
+   the plural of nouns and adjectives.
+
+   [2] "n" is the mark of the accusative or object of the verb.
+
+   [3] The diacritic sign ^ occurs on c, g, h, j, s and has the force
+   of an h after the first and the last--ch, sh. gx is pronounced
+   like English g in George, which g without sign has the value of g in
+   good. jx is pronounced like s in pleasure, while j simple has the
+   sound of y in yes, esp. jes. hx occurs rarely and is doomed to
+   disappear in favor of k.
+
+Kaj se vi pregxas, vi ne devas esti kiel la hipokrituloj, kiuj volonte
+staras kaj pregxas en la lernejoj, kaj apud la anguloj de la stratetoj;
+por ke ili estu vidataj de la homoj. Vere, mi diras al vi: Ili ricevis
+sian pagon. Sed se vi pregxas, iru en la cxambreton kaj fermu la pordon,
+kaj pregxu al via patro en la kasxito, kaj via patro, kiu vidas en la
+kasxiton, rekompencos gxin al vi publike. Kaj se vi pregxas, vi ne
+devas multe babili, kiel la idolistoj, cxar ili opinias ke gxi estos
+akceptata, se ili faras multe da paroloj. Tial vi ne devas simili al
+ili. Via patro scias, kion vi bezonas, antaux ol vi petas lin. Tial
+vi devas pregxi tiamaniere. Patro nia en la cxielo. Via nomo estu
+sanktigata. Via regno venu. Via volo farigxu sur la tero, kiel en la
+cxielo. Nian panon cxiutagan donu al ni hodiaux. Kaj pardonu al ni
+niajn kulpojn, kiel ni pardonas niajn kulpulojn. Kaj ne konduku nin en
+tenton, sed savu nin de la malbono. Cxar via estas la regno, kaj la
+forto, kaj la gloro en eterneco. Amen. Cxar se vi pardonos al la homoj
+iliajn kulpojn, tiam via cxiela patro pardonos ankaux al vi. Sed se vi
+ne pardonos al la homoj iliajn kulpojn, tiam via cxiela patro ankaux ne
+pardonos al vi viajn kulpojn. (La Evangelio Sankta Mateo VI, 5-16.)
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK ESPERANTO: HEARINGS BEFORE THE COMMITTEE ON EDUCATION ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

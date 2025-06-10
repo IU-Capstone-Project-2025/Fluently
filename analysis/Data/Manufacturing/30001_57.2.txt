@@ -1,0 +1,2337 @@
+﻿The Project Gutenberg eBook of On the Origin of Clockwork, Perpetual Motion Devices, and the Compass
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: On the Origin of Clockwork, Perpetual Motion Devices, and the Compass
+
+Author: Derek J. de Solla Price
+
+Release date: September 16, 2009 [eBook #30001]
+                Most recently updated: October 24, 2024
+
+Language: English
+
+Credits: Produced by Chris Curnow, Turgut Dincer, Joseph Cooper and
+        the Online Distributed Proofreading Team at
+        https://www.pgdp.net.
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK ON THE ORIGIN OF CLOCKWORK, PERPETUAL MOTION DEVICES, AND THE COMPASS ***
+
+  +--------------------------------------------------------------+
+  |  This e-text includes characters that require UTF-8          |
+  |  (Unicode) file encoding:                                    |
+  |                                                              |
+  |    ḍ, ā, ḥ, ȧ, ī                                             |
+  |                                                              |
+  |  If any of these characters do not display properly--in      |
+  |  particular, if the dots do not appear under the letters     |
+  |  make sure your text reader’s “character set” or “file       |
+  |  encoding” is set to Unicode (UTF-8). You may also need to   |
+  |  change the default font. Depending on available fonts, some |
+  |  tables may not line up vertically.                          |
+  +--------------------------------------------------------------+
+
+
+
+
+  CONTRIBUTIONS FROM
+
+  THE MUSEUM OF HISTORY AND TECHNOLOGY:
+
+  PAPER 6
+
+
+
+
+  ON THE ORIGIN OF CLOCKWORK,
+
+  PERPETUAL MOTION DEVICES AND THE COMPASS
+
+  _Derek J. de Solla Price_
+
+
+
+  POWER AND MOTION GEARING                                   83
+
+  MECHANICAL CLOCKS                                          84
+
+  MECHANIZED ASTRONOMICAL MODELS                             88
+
+  PERPETUAL MOTION AND THE CLOCK BEFORE DE DONDI            108
+
+  THE MAGNETIC COMPASS AS A FELLOW-TRAVELER FROM CHINA      110
+
+
+
+
+  _ON THE ORIGIN OF CLOCKWORK,_
+
+  _PERPETUAL MOTION DEVICES_
+
+  _AND THE COMPASS_
+
+  _By Derek J. de Solla Price_
+
+
+_Ancestor of the mechanical clock has been thought by some to be the
+sundial. Actually these devices represent two different approaches to
+the problem of time-keeping. True ancestor of the clock is to be found
+among the highly complex astronomical machines which man has been
+building since Hellenic times to illustrate the relative motions of the
+heavenly bodies._
+
+_This study--its findings will be used in preparing the Museum's new
+hall on the history of time-keeping--traces this ancestry back through
+2,000 years of history on three continents._
+
+THE AUTHOR: _Derek J. de Solla Price wrote this paper while serving as
+consultant to the Museum of History and Technology of the Smithsonian
+Institution's United States National Museum._
+
+  In each successive age this construction, having become
+  lost, is, by the Sun's favour, again revealed to some one
+  or other at his pleasure. (_Sūrya Siddhānta_, ed.
+  Burgess, xiii, 18-19.)
+
+
+THE HISTORIES of the mechanical clock and the magnetic compass must be
+accounted amongst the most tortured of all our efforts to understand the
+origins of man's important inventions. Ignorance has too often been
+replaced by conjecture, and conjecture by misquotation and the false
+authority of "common knowledge" engendered by the repetition of
+legendary histories from one generation of textbooks to the next. In
+what follows, I can only hope that the adding of a strong new trail and
+the eradication of several false and weaker ones will lead us nearer to
+a balanced and integrated understanding of medieval invention and the
+intercultural transmission of ideas.
+
+For the mechanical clock, perhaps the greatest hindrance has been its
+treatment within a self-contained "history of time measurement" in which
+sundials, water-clocks and similar devices assume the natural role of
+ancestors to the weight-driven escapement clock in the early 14th
+century.[1] This view must presume that a generally sophisticated
+knowledge of gearing antedates the invention of the clock and extends
+back to the Classical period of Hero and Vitruvius and such authors
+well-known for their mechanical ingenuities.
+
+Furthermore, even if one admits the use of clocklike gearing before the
+existence of the clock, it is still necessary to look for the
+independent inventions of the weight-drive and of the mechanical
+escapement. The first of these may seem comparatively trivial; anyone
+familiar with the raising of heavy loads by means of ropes and pulley
+could surely recognize the possibility of using such an arrangement in
+reverse as a source of steady power. Nevertheless, the use of this
+device is not recorded before its association with hydraulic and
+perpetual motion machines in the manuscripts of Riḍwān, _ca._ 1200,
+and its use in a clock using such a perpetual motion wheel (mercury
+filled) as a clock escapement, in the astronomical codices of Alfonso
+the Wise, King of Castile, _ca._ 1272.
+
+The second invention, that of the mechanical escapement, has presented
+one of the most tantalizing of problems. Without doubt, the crown and
+foliot type of escapement appears to be the first complicated mechanical
+invention known to the European Middle Ages; it heralds our whole age of
+machine-making. Yet no trace has been found either of a steady evolution
+of such escapements or of their invention in Europe, though the
+astronomical clock powered by a water wheel and governed by an
+escapement-like device had been elaborated in China for several
+centuries before the first appearance of our clocks. We must now
+rehearse a revised story of the origin of the clock as it has been
+suggested by recent researches on the history of gearing and on Chinese
+and other astronomical machines. After this we shall for the first time
+present evidence to show that this story is curiously related to that of
+the _Perpetuum Mobile_, one of the great chimeras of science, that came
+from its medieval origin to play an important part in more recent
+developments of energetics and the foundations of thermodynamics.[2] It
+is a curious mixture, all the more so because, tangled inextricably in
+it, we shall find the most important and earliest references to the use
+of the magnetic compass in the West. It seems that in revising the
+histories of clockwork and the magnetic compass, these considerations
+of perpetual motion devices may provide some much needed evidence.
+
+[Illustration: Figure 1.--FRAMEWORK STRUCTURE OF THE ASTRONOMICAL CLOCK
+of Giovanni de Dondi of Padua, A.D. 1364.]
+
+
+
+
+Power and Motion Gearing
+
+It may be readily accepted that the use of toothed wheels to transmit
+power or turn it through an angle was widespread in all cultures several
+centuries before the beginning of our era. Certainly, in classical times
+they were already familiar to Archimedes (born 287 B.C.),[3] and in
+China actual examples of wheels and moulds for wheels dating from the
+4th century B.C. have been preserved.[4] It might be remarked that
+these "machine" gear wheels are characterized by having a "round number"
+of teeth (examples with 16, 24 and 40 teeth are known) and a shank with
+a square hole which fits without turning on a squared shaft. Another
+remarkable feature in these early gears is the use of ratchet-shaped
+teeth, sometimes even twisted helically so that the gears resemble worms
+intermeshing on parallel axles.[5] The existence of windmills and
+watermills testifies to the general familiarity, from classical times
+and through the middle ages, with the use of gears to turn power through
+a right angle.
+
+[Illustration: Figure 2.--ASTRONOMICAL CLOCK of de Dondi, showing
+gearing on the dial for Mercury and escapement crown wheel. Each of the
+seven side walls of the structure shown in figure 1 was fitted with a
+dial.]
+
+Granted, then, this use of gears, one must guard against any conclusion
+that the fine-mechanical use of gears to provide special ratios of
+angular movement was similarly general and widespread. It is customary
+to adduce here the evidence of the hodometer (taximeter) described by
+Vitruvius (1st century B.C.) and by Hero of Alexandria (1st century
+A.D.) and the ingenious automata also described by this latter author
+and his Islamic followers.[6] One may also cite the use of the reduction
+gear chain in power machinery as used in the geared windlass of
+Archimedes and Hero.
+
+Unfortunately, even the most complex automata described by Hero and by
+such authors as Riḍwān contain gearing in no more extensive context
+than as a means of transmitting action around a right angle. As for the
+windlass and hodometer, they do, it is true, contain whole series of
+gears used in steps as a reduction mechanism, usually for an
+extraordinarily high ratio, but here the technical details are so
+etherial that one must doubt whether such devices were actually realized
+in practice. Thus Vitruvius writes of a wheel 4 feet in diameter and
+having 400 teeth being turned by a 1-toothed pinion on a cart axle, but
+it is very doubtful whether such small teeth, necessarily separated by
+about 3/8 inch, would have the requisite ruggedness. Again, Hero
+mentions a wheel of 30 teeth which, because of imperfections, might need
+only 20 turns of a single helix worm to turn it! Such statements behove
+caution and one must consider whether we have been misled by the
+16th- and 17th-century editions of these authors, containing
+reconstructions now often cited as authoritative but then serving as
+working diagrams for practical use in that age when the clock was
+already a familiar and complex mechanism. At all events, even if one
+admits without substantial evidence that such gear reduction devices
+were familiar from Hellenistic times onwards, they can hardly serve as
+more than very distant ancestors of the earliest mechanical clocks.
+
+
+
+
+Mechanical Clocks
+
+Before proceeding to a discussion of the controversial evidence which
+may be used to bridge this gap between the first use of gears and the
+fully-developed mechanical clock we must examine the other side of this
+gap. Recent research on the history of early mechanical clocks has
+demonstrated certain peculiarities most relevant to our present
+argument.
+
+
+THE EUROPEAN TRADITION
+
+If one is to establish a _terminus ante quem_ for the appearance of the
+mechanical clock in Europe, it would appear that 1364 is a most
+reasonable date. At that time we have the very full mechanical and
+historical material concerning the horological masterpiece built by
+Giovanni de Dondi of Padua,[7] and probably started as early as 1348. It
+might well be possible to set a date a few decades earlier, but in
+general as one proceeds backwards from this point, the evidence becomes
+increasingly fragmentary and uncertain. The greatest source of doubt
+arises from the confusion between sundials, water-clocks, hand-struck
+time bells, and mechanical clocks, all of which are covered by the term
+_horologium_ and its vernacular equivalents.
+
+Temporarily postponing the consideration of evidence prior to _ca._
+1350, we may take Giovanni de Dondi as a starting point and trace a
+virtually unbroken lineage from his time to the present day. One may
+follow the spread of clocks through Europe, from large towns to small
+ones, from the richer cathedrals and abbeys to the less wealthy
+churches.[8] There is the transition from the tower clocks--showpieces
+of great institutions--to the simple chamber clock designed for domestic
+use and to the smaller portable clocks and still smaller and more
+portable pocket watches. In mechanical refinement a similar continuity
+may be noted, so that one sees the cumulative effect of the introduction
+of the spring drive (_ca._ 1475), pendulum control (_ca._ 1650), and the
+anchor escapement (_ca._ 1680). The transition from de Dondi to the
+modern chronometer is indeed basically continuous, and though much
+research needs to be done on special topics, it has an historical unity
+and seems to conform for the most part to the general pattern of steady
+mechanical improvement found elsewhere in the history of technology.
+
+[Illustration: Figure 3.--GERMAN WALL CLOCK, PROBABLY ABOUT 1450,
+showing the degeneration in complexity from that of de Dondi's clock.]
+
+Most remarkable however is the earliest period of this seemingly steady
+evolution. Side by side with the advances made in the earliest period
+extending for less than two centuries from the time of de Dondi one may
+see a spectacular process of degeneration or devolution. Not only is de
+Dondi's the earliest clock of which we have a full and trustworthy
+account, it is also far more complicated than any other (see figs. 1, 2)
+until comparatively modern times! Moreover, it was not an exceptional
+freak. There were others like it, and one cannot therefore reject as
+accidental this process of degeneration that occurs at the very
+beginning of the certain history of the mechanical clock in Europe.
+
+On the basis of such evidence I have suggested elsewhere[9] that the
+clock is "nought but a fallen angel from the world of astronomy." The
+first great clocks of medieval Europe were designed as astronomical
+showpieces, full of complicated gearing and dials to show the motions of
+the Sun, Moon and planets, to exhibit eclipses, and to carry through the
+involved computations of the ecclesiastical calendar. As such they were
+comparable to the orreries of the 18th century and to modern
+planetariums; that they also showed the time and rang it on bells was
+almost incidental to their main function. One must not neglect, too,
+that it was in their glorification of the rationality of the cosmos that
+they had their greatest effect. Through milleniums of civilization,
+man's understanding of celestial phenomena had been the very pinnacle of
+his intellect, and then as now popular exhibition of this sort was just
+as necessary, as striking, and as impressive. One does not have to go
+far to see how the paraphernalia of these early great astronomical
+clocks had great influence on philosophers and theologians and on poets
+such as Dante.
+
+It is the thesis of this part of my argument that the ordinary
+time-telling clock is no affiliate of the other simple time-telling
+devices such as sundials, sand glasses and the elementary water clocks.
+Rather it should be considered as a degenerate branch from the main stem
+of mechanized astronomical devices (I shall call them protoclocks), a
+stem which can boast a continuous history filling the gap between the
+appearance of simple gearing and the complications of de Dondi. We shall
+return to the discussion of this main stem after analyzing the very
+recently discovered parallel stem from medieval China, which reproduced
+the same evolution of mechanized astronomical devices and incidental
+time telling. Of the greatest significance, this stem reveals the
+crucial independent invention of a mechanical escapement, a feature not
+found in the European stem in spite of centuries of intensive historical
+research and effort.
+
+
+THE CHINESE TRADITION
+
+For this section I am privileged to draw upon a thrilling research
+project carried out in 1956 at the University of Cambridge by a team
+consisting of Dr. Joseph Needham, Dr. Wang Ling, and myself.[10] In the
+course of this work we translated and commented on a series of texts
+most of which had not hitherto been made available in a Western tongue
+and, though well known in China, had not been recognized as important
+for their horological content. The key text with which we started was
+the "Hsin I Hsiang Fa Yao," or "New Design for a (mechanized) Armillary
+(sphere) and (celestial) Globe," written by Su Sung in A.D. 1090. The
+very full historical and technical description in this text enabled us
+to establish a glossary and basic understanding of the mechanism that
+later enabled us to interpret a whole series of similar, though less
+extensive texts, giving a history of prior development of such devices
+going back to the introduction of this type of escapement by I-Hsing and
+Liang Ling-tsan, in A.D. 725, and to what seems to be the original of
+all these Chinese astronomical machines, that built by Chang Hêng _ca._
+A.D. 130. Filling the gaps between these landmarks are several other
+similar texts, giving ample evidence that the Chinese development is
+continuous and, at least from Chang Hêng onwards, largely independent of
+any transmissions from the West.
+
+So far as we can see, the beginning of the chain in China (as indeed in
+the West) was the making of simple static models of the celestial
+sphere. An armillary sphere was used to represent the chief imaginary
+circles (_e.g._, equator, ecliptic, meridians, etc.), or a solid
+celestial globe on which such circles could be drawn, together with the
+constellations of the fixed stars. The whole apparatus was then mounted
+so that it was free to revolve about its polar axis and another ring or
+a casing was added, external and fixed, to represent the horizon that
+provided a datum for the rising and setting of the Sun and the stars.
+
+In the next stage, reached very soon after this, the rotation of the
+model was arranged to proceed automatically instead of by hand. This was
+done, we believe, by using a slowly revolving wheel powered by dripping
+water and turning the model through a reduction mechanism, probably
+involving gears or, more reasonably, a single large gear turned by a
+trip lever. It did not matter much that the time-keeping properties were
+poor in the long run; the model moved "by itself" and the great wonder
+was that it agreed with the observed heavens "like the two halves of a
+tally."
+
+In the next, and essential, stage the turning of the water wheel was
+regulated by an "escapement" mechanism consisting of a weighbridge and
+trip levers so arranged that the wheel was held in check, scoop by
+scoop, while each scoop was filled by the dripping water, then released
+by the weighbridge and allowed to rotate until checked again by the
+trip-lever arrangement. Its action was similar to that of the anchor
+escapement, though its period of repose was much longer than its period
+of motion and, of course, its time-keeping properties were controlled not
+only by the mechanics of the device but also by the rate of flow of the
+dripping water.
+
+The Chinese escapement may justifiably be regarded as a missing link,
+just halfway between the elementary clepsydra with its steady flow of
+water and the mechanical escapement in which time is counted by chopping
+its flow into cycles of action, repeated indefinitely and counted by a
+cumulating device. With its characteristic of saving up energy for a
+considerable period (about 15 minutes) before letting it go in one
+powerful action, the Chinese escapement was particularly suited to the
+driving of jackwork and other demonstration devices requiring much
+energy but only intermittent activity.
+
+In its final form, as built by Su Sung after many trials and
+improvements, the Chinese "astronomical clock-tower" must have been a
+most impressive object. It had the form of a tower about 30 feet high,
+surmounted by an observation platform covered with a light roof (see
+fig. 4). On the platform was an armillary sphere designed for observing
+the heavens. It was turned by the clockwork so as to follow the diurnal
+rotation and thus avoid the distressing computations caused by the
+change of coordinates necessary when fixed alt-azimuth instruments were
+used. Below the platform was an enclosed chamber containing the
+automatically rotated celestial globe which so wonderfully agreed with
+the heavens. Below this, on the front of the tower was a miniature
+pagoda with five tiers; on each tier was a doorway through which, at due
+moment, appeared jacks who rang bells, clanged gongs, beat drums, and
+held tablets to announce the arrival of each hour, each quarter (they
+used 100 of them to the day) and each watch of the night. Within the
+tower was concealed the mechanism; it consisted mainly of a central
+vertical shaft providing power for the sphere, globe, and jackwheels,
+and a horizontal shaft geared to the vertical one and carrying the great
+water wheel which seemed to set itself magically in motion at every
+quarter. In addition to all this were the levers of the escapement
+mechanism and a pair of norias by which, once each day, the water used
+was pumped from a sump at the bottom to a reservoir at the top, whence
+it descended to work the wheel by means of a constant level tank and
+several channels.
+
+There were many offshoots and developments of this main stem of Chinese
+horology. We are told, for example, that often mercury and occasionally
+sand were used to replace the water, which frequently froze in winter in
+spite of the application of lighted braziers to the interior of the
+machines. Then again, the astronomical models and the jackwork were
+themselves subject to gradual improvement: at the time of I-Hsing, for
+example, special attention was paid to the demarcation of ecliptic as
+well as the normal equatorial coordinates; this was clearly an influx
+from Hellenistic-Islamic astronomy, in which the relatively
+sophisticated planetary mathematics had forced this change not otherwise
+noted in China.
+
+By the time of the Jesuits, this current of Chinese horology, long since
+utterly destroyed by the perils of wars, storms, and governmental
+reforms, had quite been forgotten. Matteo Ricci's clocks, those gifts
+that aroused so much more interest than European theological teachings,
+were obviously something quite new to the 16th-century Chinese scholars;
+so much so that they were dubbed with a quite new name, "self-sounding
+bells," a direct translation of the word "clock" (_glokke_). In view of
+the fact that the medieval Chinese escapement may have been the basis of
+European horology, it is a curious twist of fate that the high regard of
+the Chinese for European clocks should have prompted them to open their
+doors, previously so carefully and for so long kept closed against the
+foreign barbarians.
+
+[Illustration: Figure 4.--ASTRONOMICAL CLOCK TOWER OF SU SUNG in
+K'ai-feng, _ca._ A.D. 1090, from an original drawing by John
+Christiansen. (_Courtesy of Cambridge University Press._)]
+
+
+
+
+Mechanized Astronomical Models
+
+Now that we have seen the manner in which mechanized astronomical models
+developed in China, we can detect a similar line running from
+Hellenistic time, through India and Islam to the medieval Europe that
+inherited their learning. There are many differences, notably because of
+the especial development of that peculiar characteristic of the West,
+mathematical astronomy, conditioned by the almost accidental conflux of
+Babylonian arithmetical methods with those of Greek geometry. However,
+the lines are surprisingly similar, with the exception only of the
+crucial invention of the escapement, a feature which seems to be
+replaced by the influx of ideas connected with perpetual motion wheels.
+
+
+HELLENISTIC PERIOD
+
+Most interesting and frequently cited is the bronze planetarium said to
+have been made by Archimedes and described in a tantalisingly
+fragmentary fashion by Cicero and by later authors. Because of its
+importance as a prototype, we give the most relevant passages in
+full.[11]
+
+Cicero's descriptions of Archimedes' planetarium are (italics supplied):
+
+  Gaius Sulpicius Gallus ... at a time when ... he happened
+  to be at the house of Marcus Marcellus, his colleague in
+  the consulship [166 B.C.], ordered the celestial globe to
+  be brought out which the grandfather of Marcellus had
+  carried off from Syracuse, when that very rich and
+  beautiful city was taken [212 B.C.].... Though I had heard
+  this globe (sphaerae) mentioned quite frequently on
+  account of the fame of Archimedes, when I saw it I did not
+  particularly admire it; for that other celestial globe,
+  also constructed by Archimedes, which the same Marcellus
+  placed in the temple of Virtue, is more beautiful as well
+  as more widely known among the people. But when Gallus
+  began to give a very learned explanation of the device, I
+  concluded that the famous Sicilian had been endowed with
+  greater genius than one would imagine possible for human
+  being to possess. For Gallus told us that the other kind
+  of celestial globe, which was solid and contained no
+  hollow space, was a very early invention, the first one of
+  that kind having been constructed by Thales of Miletus,
+  and later marked by Eudoxus of Cnidus--a disciple of
+  Plato, it was claimed--with constellations and stars which
+  are fixed in the sky. He also said that many years later
+  Aratus ... had described it in verse.... But this newer
+  kind of globe, he said, on which were delineated the
+  motions of the sun and moon and of those five stars which
+  are called wanderers, or, as we might say, rovers
+  [_i. e._, the five planets], contained more than could be
+  shown on the solid globe, and the invention of Archimedes
+  deserved special admiration because he had thought out a
+  way to represent accurately by a single device for turning
+  the globe, those various and divergent movements with
+  their different rates of speed. And when Gallus moved
+  [_i.e._, set in motion] the globe, it was actually true
+  that the moon was always as many revolutions behind the
+  sun on the _bronze_ contrivance as would agree with the
+  number of days it was behind in the sky. Thus the same
+  eclipse of the sun happened on the globe as would actually
+  happen, and the moon came to the point where the shadow of
+  the earth was at the very time when the sun (appeared?)
+  out of the region ... [several pages are missing in the
+  manuscript; there is only one].
+
+    _De republica_, I, xiv (21-22), Keyes' translation.
+
+  When Archimedes put together in a globe the movements of
+  the moon, sun and five wandering [planets], he brought
+  about the same effect as that which the god of Plato did
+  in the Timaeus when he made the world, so that one
+  revolution produced dissimilar movements of delay and
+  acceleration.
+
+    _Tusculanae disputationes_, I, 63.
+
+Later descriptions from Ovid, Lactantius, Claudian, Sextus Empiricus,
+and Pappus, respectively, are (italics supplied):
+
+  There stands a globe suspended by a Syracusan's skill in
+  an enclosed bronze [frame, or sphere--or perhaps, in
+  enclosed air], a small image of the immense vault [of
+  heaven]; and the earth is equally distant from the top and
+  bottom; that is brought about by its [_i. e._, the outer
+  bronze globe's] round form. The form of the temple [of
+  Vesta] is similar....
+
+    Ovid, _Fasti_ (1st century, A.D.), VI, 277-280,
+      Frazer's translation.
+
+  The Sicilian Archimedes, was able to make a reproduction
+  and model of the world in concave _brass_ (concavo aere
+  similitudinem mundi ac figuram); in it he so arranged the
+  _sun_ and _moon_ and resembling the celestial revolutions
+  (caelestibus similes conversionibus); and while it
+  revolved it exhibited not only the accession and recession
+  of the sun and the waxing and waning of the moon
+  (incrementa deminutionesque lunae), but also the unequal
+  _courses of the stars_, whether fixed or wandering.
+
+    Lactantius, _Institutiones divinae_ (4th century, A.D.),
+      II, 5, 18.
+
+  Archimedes' sphere. When Jove looked down and saw the
+  heavens figured in a sphere of _glass_, he laughed and
+  said to the other gods: "Has the power of mortal effort
+  gone so far? Is my handiwork now mimicked in a fragile
+  globe?" An old man of Syracuse had imitated on earth the
+  laws of the heavens, the order of nature, and the
+  ordinances of the gods. Some hidden influence within the
+  sphere directs the various courses of the _stars_ and
+  actuates the lifelike mass with definite motions. A false
+  _zodiac_ runs through a year of its own and a toy _moon_
+  waxes and wanes month by month. Now bold invention
+  rejoices to make its own heaven revolve and sets the
+  _stars_ [planets?] in motion by human wit....
+
+    Claudian, _Carmina minora_ (_ca._ A.D. 400), LI (LXVIII),
+      Platnaure's translation.
+
+  The things that move by themselves are more wonderful than
+  those which do not. At any rate, when we behold an
+  Archimedean sphere in which the sun and the rest of the
+  stars move, we are immensely impressed by it, not by Zeus
+  because we are amazed at the _wood_, or at the movements
+  of these [bodies], but by the devices and causes of the
+  movements.
+
+    Sextus Empiricus, _Adversus mathematicos_ (3rd century,
+      A.D.), IX, 115, Epps' translation.
+
+  Mechanics understand the making of spheres and know how to
+  produce a model of the heavens (with the courses of the
+  stars moving in circles?) by mean of equal and circular
+  motions of _water_, and Archimedes the Syracusan,
+  according to some, knows the cause and reasons for all of
+  these.
+
+  Pappus (3rd century, A.D.), _Works_ (Hultsch edition),
+    VIII, 2, Epps' translation.
+
+A similar arrangement seems to be indicated in another mechanized globe,
+also mentioned by Cicero and said to have been made by Posidonius:
+
+  But if anyone brought to Scythia or Britain the globe
+  (sphaeram) which our friend Posidonius [of Apameia, the
+  Stoic philosopher] recently made, in which each revolution
+  produced the same (movements) of the _sun_ and _moon_ and
+  _five_ wandering stars as is produced in the sky each day
+  and night, who would doubt that it was by exertion of
+  reason?... Yet doubters ... think that Archimedes showed
+  more knowledge in producing movements by revolutions of a
+  globe than nature (does) in effecting them though the copy
+  is so infinitely inferior to the original....
+
+   _De natura deorum_, II, xxxiv-xxxv (88),
+    Yonge's translation.
+
+In spite of the lack of sufficient technical details in any case, these
+mechanized globe models, with or without geared planetary indicators
+(which would make them highly complex machines), bear a striking
+resemblance to the earliest Chinese device described by Chang Hêng. One
+must not reject the possibility that transmission from Greece or Rome
+could have reached the East by the beginning of the 2nd century, A.D.,
+when he was working. It is an interesting question, but even if such
+contact actually occurred, very soon afterwards, as we shall see, the
+western and eastern lines of evolution parted company and evolved so far
+as can be seen, quite independently until at least the 12th century.
+
+The next Hellenistic source of which we must take note is a fragmentary
+and almost unintelligible chapter in the works of Hero of Alexandria.
+Alone and unconnected with his other chapters this describes a model
+which seems to be static, in direct contrast to all other devices which
+move by pneumatic and hydrostatic pressures; it may well be conjectured
+that in its original form this chapter described a mechanized rather
+than a static globe:
+
+  The World represented in the Centre of the Universe: The
+  construction of a transparent globe containing air and
+  liquid, and also of a smaller globe, in the centre, in
+  imitation of the World. Two hemispheres of glass are made;
+  one of them is covered with a plate of bronze, in the
+  middle of which is a round hole. To fit this hole a light
+  ball, of small size, is constructed, and thrown into the
+  water contained in the other hemisphere: the covered
+  hemisphere is next applied to this, and, a certain
+  quantity of the liquid having been removed from the water,
+  the intermediate space will contain the ball; thus by the
+  application of the second hemisphere what was proposed is
+  accomplished.
+
+    _Pneumatics_, XLVI, Woodcroft's translation.
+
+It will be noted that these earliest literary references are concerned
+with pictorial, 3-dimensional models of the universe, moved perhaps by
+hand, perhaps by waterpower; there is no evidence that they contained
+complicated trains of gears, and in the absence of this we may incline
+to the view that in at least the earliest such models, gearing was not
+used.
+
+The next developments were concerned on the one hand with increasing the
+mathematical sophistication of the model, on the other hand with its
+mechanical complexity. In both cases we are most fortunate in having
+archaeological evidence which far exceeds any literary sources.
+
+The mathematical process of mapping a sphere onto a plane surface by
+stereographic projection was introduced by Hipparchus and had much
+influence on astronomical techniques and instruments thereafter. In
+particular, by the time of Ptolemy (_ca._ A.D. 120) it had led to the
+successive inventions of the anaphoric clock and of the planispheric
+astrolabe.[12] Both these devices consist of a pair of stereographic
+projections, one of the celestial sphere with its stars and ecliptic and
+tropics, the other of the lines of altitude and azimuth as set for an
+observer in a place at some particular latitude.
+
+In the astrolabe, an openwork metal rete containing markings for the
+stars, etc., may be rotated by hand over a disc on which the lines of
+altitude and azimuth are inscribed. In the anaphoric clock a disc
+engraved with the stars is rotated automatically behind a fixed grille
+of wires marking lines of altitude and azimuth. Power for rotating the
+disc is provided by a float rising in a clepsydra jar and connected, by
+a rope or chain passing over a pulley to a counterweight or by a rack
+and pinion, to an axle which supported the rotating disc and
+communicated this motion to it.[13]
+
+[Illustration: Figure 5. PLATE OF SALZBURG ANAPHORIC CLOCK, a
+reconstruction (see footnote 14) based on a photograph of the remaining
+fragment. (_Courtesy of Oxford University Press._)]
+
+Parts of two such discs from anaphoric clocks have been found, one at
+Salzburg[14] and one at Grand in the Vosges,[15] both of them dating
+from the 2nd century A.D. Fortunately there is sufficient evidence to
+reconstruct the Salzburg disc and show that it must have been originally
+about 170 cm. in diameter, a heavy sheet of bronze to be turned by the
+small power provided by a float, and a large and impressive device when
+working (see fig. 5). Literary accounts of the anaphoric clock have been
+analyzed by Drachmann; there is no evidence of the representation of
+planets moved either by hand or by automatic gearing, only in the
+important case of the sun was such a feature included of necessity. A
+model "sun" on a pin could be plugged in to any one of 360 holes drilled
+in at equal intervals along the band of the ecliptic. This pin could be
+moved each day so that the anaphoric clock kept step with the seasonal
+variation of the times of sunrise and sunset and the lengths of day and
+night.
+
+The anaphoric clock is not only the origin of the astrolabe and of all
+later planetary models, it is also the first clock dial, setting a
+standard for "clockwise" rotation, and leaving its mark in the rotating
+dial and stationary pointer found on the earliest time-keeping clocks
+before the change was made to a fixed dial and moving hand.
+
+We come finally to a piece of archaeological evidence that surpasses all
+else. Though badly preserved and little studied it might well be the
+most important classical object ever found; entailing a complete
+re-estimation of the technical prowess of the Hellenistic Greeks. In
+1901 a sunken treasure ship was discovered lying off the island of
+Antikythera, between Greece and Crete.[16] Many beautiful classical
+works of statuary were recovered from it, and these are now amongst the
+greatest treasures of the National Museum at Athens, Greece. Besides
+these obviously desirable art relics, there came to the surface some
+curious pieces of metal, accompanied by traces of what may have been a
+wooden casing. Two thousand years under the sea had reduced the metal to
+a mess of corroded fragments of plates, powdered verdigris, and still
+recognizable pieces of gear wheels.
+
+If it were not for the established dates for other treasure from this
+ship, especially the minor objects found, and for traces of inscriptions
+on this metal device written in letters agreeing epigraphically with the
+other objects, one would have little doubt in supposing that such a
+complicated piece of machinery dated from the 18th century, at the
+earliest. As it is, estimates agree on _ca._ 65 B.C. ±10 years, and we
+can be sure that the machine is of Hellenistic origin, possibly from
+Rhodes or Cos.
+
+[Illustration: Figure 6.--ANTIKYTHERA MACHINE, LARGEST FRAGMENT. (_Photo
+courtesy of National Museum, Athens._)]
+
+The inscriptions, only partly legible, lead one to believe that we are
+dealing with an astronomical calculating mechanism of some sort. This is
+born out by the mechanical construction evident on the fragments. The
+largest one (fig. 6) contains a multiplicity of gearing involving an
+annular gear working epicyclic gearing on a turntable, a crown wheel,
+and at least four separate trains of smaller gears, as well as a
+4-spoked driving wheel. One of the smaller fragments (fig. 7, bottom)
+contains a series of movable rings which may have served to carry
+movable scales on one of the three dials. The third fragment (fig. 7,
+top) has a pair of rings carefully engraved and graduated in degrees of
+the zodiac (this is, incidentally, the oldest engraved scale known, and
+micrometric measurements on photographs have indicated a maximum
+inaccuracy of about 1/2° in the 45° present).
+
+[Illustration: Figure 7.--ANTIKYTHERA MACHINE, TWO SMALLER FRAGMENTS.
+(_Photo courtesy of National Museum, Athens._)]
+
+Unfortunately, the very difficult task of cleaning the fragments is
+slow, and no publication has yet given sufficient detail for an adequate
+explanation of this object. One can only say that although the problems
+of restoration and mechanical analysis are peculiarly great, this must
+stand as the most important scientific artifact preserved from
+antiquity.
+
+Some technical details can be gleaned however. The shape of the gear
+teeth appears to be almost exactly equilateral triangles in all cases
+(fig. 8), and square shanks may be seen at the centers of some of the
+wheels. No wheel is quite complete enough for a count of gear teeth, but
+a provisional reconstruction by Theophanidis (fig. 9) has shown that the
+appearances are consistent with the theory that the purpose of the
+gears was to provide the correct angular ratios to move the sun and
+planets at their appropriate relative speeds.
+
+[Illustration: Figure 8.--ANTIKYTHERA MACHINE, DETAIL FROM FIGURE 6,
+showing gearing. (_Photo courtesy of National Museum, Athens._)]
+
+Thus, if the evidence of the Antikythera machine is to be taken at its
+face value, we have, already in classical times, the use of astronomical
+devices as complicated as any clock. In any case, the material supplied
+by the works ascribed to Archimedes, Hero, and Vitruvius, and the more
+certain evidence of the anaphoric clocks is sufficient to show that
+there was a strong classical tradition of such machines, a tradition
+that inspired, even if it did not directly influence, later developments
+in Islam and Europe on the one side, and, just possibly, China on the
+other.
+
+  _Note added in proof_:
+
+  Since the above lines were written, I have been privileged
+  to make a full examination of the fragments in the
+  National Museum in Athens. As a result we can read much
+  more inscription and make out many more details of the
+  mechanism. The cleaning and disentangling of the fragments
+  by the museum staff has proceeded to the stage where one
+  can assert much more positively that the device was an
+  astronomical computer for sidereal, solar, lunar, and
+  possibly also planetary phenomena. (See my article in the
+  _Scientific American_, June 1959, vol. 200, No. 6, pp.
+  60-67.) Relevant to the present study, it must also be
+  noted at this point that the machine is now shown to be
+  strongly related to the geared astrolabe of al-Biruni and
+  thereby the Hellenistic, Islamic, and European
+  developments are drawn together even more tightly.
+
+Let us now turn our attention to those civilizations which were
+intermediaries, geographically and culturally, between Greece and
+medieval Europe, and between both of these and China. From India there
+are only two references, very closely related and appearing in the best
+known astronomical texts in connection with descriptions of the
+armillary sphere and celestial globe. These texts are both quite
+garbled, but so far as one may understand them, it seems that the types
+of spheres and globes mentioned are more akin to those current in China
+than in the West. The relevant portions of text are as follows (italics
+supplied):
+
+  The circle of the horizon is midway of the sphere. As
+  covered with a casing and as left uncovered, it is the
+  sphere surrounded by Lokāloka [the mountain range which
+  formed the boundary of the universe in puranic geography].
+  By the application of water is made ascertainment of the
+  revolution of time. One may construct a sphere-instrument
+  combined with quicksilver: this is a mystery; if plainly
+  described, it would be generally intelligible in the
+  world. Therefore let the supreme sphere be constructed
+  according to the instruction of the preceptor [guru]. In
+  each successive age this construction, having become lost,
+  is, by the Sun's favour, again revealed to some one or
+  other, at his pleasure. So also, one should construct
+  instruments in order to ascertain time. When quite alone,
+  one should apply quicksilver to the wonder-causing
+  instrument. By the gnomon, staff, arc, wheel, instruments
+  for taking the shadow of various kinds.... By
+  water-instruments, the vessel, by the peacock, man,
+  monkey, and by stringed sand-receptacles one may determine
+  time accurately. Quicksilver-holes, water, and cords, and
+  oil and water, mercury and sand are used in these: these
+  applications, too, are difficult.
+
+    Sūrya Siddhānta_, xiii, 15-22,
+      E. Burgess' translation, New Haven, 1860.
+
+[Illustration: Figure 9.--ANTIKYTHERA MACHINE, PARTIAL RECONSTRUCTION
+BY THEOPHANIDIS (see footnote 16).]
+
+  A self-revolving instrument [or swayanvaha yantra]: Make a
+  wheel of light wood and in its circumference put hollow
+  spokes all having bores of the same diameter, and let them
+  be placed at equal distances from each other; and let
+  them also be placed at an angle verging somewhat from the
+  perpendicular: then half fill these hollow spokes with
+  mercury; the wheel thus filled will, when placed on an
+  axis supported by two posts, revolve of itself.
+
+  Or scoop out a canal in the tire of the wheel and then
+  plastering leaves of the Tȧla tree over this canal with
+  wax, fill one half of this canal with water and the other
+  half with mercury, till the water begins to come out, and
+  then cork up the orifice left open for filling the wheel.
+  The wheel will then revolve of itself, drawn around by the
+  water.
+
+  Description of a syphon: Make up a tube of copper or other
+  metal, and bend it in the form of an Ankus'a or elephant
+  hook, fill it with water and stop up both ends. And then
+  putting one end into a reservoir of water let the other
+  end remain suspended outside. Now uncork both ends. The
+  water of the reservoir will be wholly sucked up and fall
+  outside.
+
+  Now attach to the rim of the before described
+  self-revolving wheel a number of water-pots, and place the
+  wheel and these pots like the water wheel so that the
+  water from the lower end of the tube flowing into them on
+  one side shall set the wheel in motion, impelled by the
+  additional weight of the pots thus filled. The water
+  discharge from the pots as they reach the bottom of the
+  revolving wheel, should be drawn off into the reservoir
+  before alluded to by means of a water-course or pipe.
+
+  The self-revolving machine [mentioned by _Lalla_, etc.]
+  which has a tube with its lower end open is a vulgar
+  machine on account of its being dependant, because that
+  which manifests an ingenious and not a rustic contrivance
+  is said to be a machine.
+
+  And moreover many self-revolving machines are to be met
+  with, but their motion is procured by a trick. They are
+  not connected with the subject under discussion. I have
+  been induced to mention the construction of these, merely
+  because they have been mentioned by former astronomers.
+
+   _Siddhānta Siromaṇi_, xi, 50-57, L. Wilkinson's
+      translation, revised by Bȧpu̇ deva S(h)ȧstri,
+      Calcutta, 1861.
+
+Before proceeding to an investigation of the content of these texts it
+is of considerable importance to establish dates for them, though there
+are many difficulties in establishing any chronology for Hindu
+astronomy. The _Sūrya Siddhānta_ is known to date, in its original
+form, from the early Middle Ages, _ca._ 500. The section in question is
+however quite evidently an interpolation from a later recension, most
+probably that which established the complete text as it now stands; it
+has been variously dated as _ca._ 1000 to _ca._ 1150 A.D. The date of
+the _Siddhānta Siromaṇi_ is more certain for we know it was
+written in about 1150 by Bhāskara (born 1114). Thus both these
+passages must have been written within a century of the great clock-tower
+made by Su Sung. The technical details will lead us to suppose there is
+more than a temporal connection.
+
+We have already noted that the armillary spheres and celestial globes
+described just before these extracts are more similar in design to
+Chinese than to Ptolemaic practice. The mention of mercury and of sand
+as alternatives to water for the clock's fluid is another feature very
+prevalent in Chinese but absent in the Greek texts. Both texts seem
+conscious of the complexity of these devices and there is a hint (it is
+lost and revealed) that the story has been transmitted, only half
+understood, from another age or culture. It should also be noted that
+the mentions of cords and strings rather than gears, and the use of
+spheres rather than planispheres would suggest we are dealing with
+devices similar to the earliest Greek models rather than the later
+devices, or with the Chinese practice.
+
+A quite new and important note is injected by the passage from the
+Bhāskara text. Obviously intrusive in this astronomical text we have
+the description of two "perpetual motion wheels" together with a third,
+castigated by the author, which helps its perpetuity by letting water
+flow from a reservoir by means of a syphon and drop into pots around the
+circumference of the wheel. These seem to be the basis also, in the
+extract from the _Sūrya Siddhānta_, of the "wonder-causing
+instrument" to which mercury must be applied.
+
+In the next sections we shall show that this idea of a perpetual motion
+device occurs again in conjunction with astronomical models in Islam and
+shortly afterwards in medieval Europe. At each occurrence, as here,
+there are echoes of other cultures. In addition to those already
+mentioned we find the otherwise mysterious "peacock, man and monkey,"
+cited as parts of the jackwork of astronomical clocks of Islam,
+associated with the weight drive so essential to the later horology in
+Europe.
+
+We have already seen that in classical times there were already two
+different types of protoclocks; one, which may be termed
+"nonmathematical," designed only to give a visual aid in the conception
+of the cosmos, the other, which may be termed "mathematical" in which
+stereographic projection or gearing was employed to make the device a
+quantitative rather than qualitative representation. These two lines
+occur again in the Islamic culture area.
+
+Nonmathematical protoclocks which are scarcely removed from the
+classical forms appear continuously through the Byzantine era and in
+Islam as soon as it recovered from the first shocks of its formation.
+Procopius (died _ca._ 535) describes a monumental water clock which was
+erected in Gaza _ca._ 500.[17] It contained impressive jackwork, such as
+a Medusa head which rolled its eyes every hour on the hour, exhibiting
+the time through lighted apertures and showing mythological
+interpretations of the cosmos. All these effects were produced by
+Heronic techniques, using hydraulic power and puppets moved by strings,
+rather than with gearing.
+
+Again in 807 a similarly marvelous exhibition clock made of bronze was
+sent by Harun-al-Rashid to the Emperor Charlemagne; it seems to have
+been of the same type, with automata and hydraulic works. For the
+succeeding few centuries, Islam was in its Golden Age of development of
+technical astronomy (_ca._ 950-1150) and attention may have been
+concentrated on the more mathematical protoclocks. Towards the end of
+the 12th century, however, there was a revival of the old tradition,
+mainly at the court of the Emperor Saladin (1146-1173) when a great
+automaton water clock, more magnificent than any hitherto, was erected
+in Damascus. It was rebuilt, after 1168, by Muḥammad b. 'Alī b.
+Rustum, and repaired and improved by his son, Fakhr ad-dīn
+Riḍwān b. Muḥammad,[18] who is most important as the author of
+a book which describes in considerable technical detail the construction
+of this and other protoclocks. Closely associated with his book one also
+finds texts dealing with perpetual-motion devices, which we shall
+consider later.
+
+During the century following this horological exuberance in Damascus,
+the center of gravity of Islamic astronomy shifted from the East to the
+Hispano-Moorish West. At the same time there comes more evidence that
+the line of mathematical protoclocks had not been left unattended. This
+is suggested by a description given by Trithemius of another royal gift
+from East to West which seems to have been different from the automata
+and hydraulic devices of the tradition from Procopius to
+Riḍwān:[19]
+
+  In the same year [1232] the Saladin of Egypt sent by his
+  ambassadors as a gift to the emperor Frederic a valuable
+  machine of wonderful construction worth more than five
+  thousand ducats. For it appeared to resemble internally a
+  celestial globe in which figures of the sun, moon, and
+  other planets formed with the greatest skill moved, being
+  impelled by weights and wheels, so that performing their
+  course in certain and fixed intervals they pointed out the
+  hour night and day with infallible certainty; also the
+  twelve signs of the zodiac with certain appropriate
+  characters, moved with the firmament, contained within
+  themselves the course of the planets.
+
+[Illustration: Figure 10.--CALENDRICAL GEARING DESIGNED BY AL-BIRUNI,
+_ca._ A.D. 1000. The gear train count is 40-10+7-59+19-59+24-48. The
+gear of 48 therefore makes 19 (annual) rotations while that of 19-59
+shows 118 double lunations of 29+30=59 days. The gear of 40 shows a
+(lunar) rotation in exactly 28 days, and the center pinions 7+10 rotate
+in exactly one week. After Wiedemann (see footnote 20).]
+
+The phrase "resembled internally" is of especial interest in this
+passage; it may perhaps arise as a mistranslation of the technical term
+for stereographic projection of the sphere, and if so the device might
+have been an anaphoric clock or some other astrolabic device.
+
+This is made more probable by the existence of a specifically Islamic
+concentration on the astrolabe, and on its planetary companion
+instrument, the equatorium, as devices for mechanizing computation by
+use of geometrical analogues. The ordinary planispheric astrolabe, of
+course, was known in Islam from its first days until almost the present
+time. From the time of al-Biruni (_ca._ 1000)--significantly, perhaps,
+he is well known for his travel account of India--there is remarkable
+innovation.
+
+Most cogent to our purpose is a text, described for the first time by
+Wiedemann,[20] in which al-Biruni explains how a special train of
+gearing may be used to show the revolutions of the sun and moon at their
+relative rates and to demonstrate the changing phase of the moon,
+features of fundamental importance in the Islamic (lunar) calendrical
+system. This device necessarily uses gear wheels with an odd number of
+teeth (_e.g._, 7, 19, 59) as dictated by the astronomical constants
+involved (see fig. 10). The teeth are shaped like equilateral triangles
+and square shanks are used, exactly as with the Antikythera machine.
+Horse-headed wedges are used for fixing; a tradition borrowed from the
+horse-shaped _Farās_ used to fasten the traditional astrolabe. Of
+special interest for us is the lunar phase diagram, which is just the
+same in form and structure as the lunar volvelle that occurs later in
+horology and is still so commonly found today, especially as a
+decoration for the dial of grandfather clocks.
+
+[Illustration: Figure 11.--GEARED ASTROLABE BY MUḤAMMAD B. ABĪ BAKR
+OF ISFAHAN, A.D. 1221-1222. (_Photo courtesy of Science Museum,
+London._)]
+
+Biruni's calendrical machine is the earliest complicated geared device
+on record and it is therefore all the more significant that it carries a
+feature found in later clocks. From the manuscript description alone one
+could not tell whether it was designed for automatic action or merely to
+be turned by hand. Fortunately this point is made clear by the most
+happy survival of an intact specimen of this very device, without doubt
+the oldest geared machine in existence in a complete state.
+
+[Illustration: Figure 12.--GEARING FROM ASTROLABE SHOWN IN FIGURE 11.
+The gear train count is as follows: 48-13+8-64+64-64+10-60. The pinion
+of 8 has been incorrectly replaced by a more modern pinion of 10. The
+gear of 48 should make 13 (lunar) rotations while the double gear of
+64+64 makes 6 revolutions of double months (of 29-30 days) and the gear
+of 60 makes a single turn in the hegiral year of 354 days. (_Photo
+courtesy of Science Museum, London._)]
+
+This landmark in the history of science and technology is now preserved
+at the Museum of the History of Science, Oxford, England.[21] It is an
+astrolabe, dated 1221-22 and signed by the maker, Muḥammad b. Abī
+Bakr (died 1231-32) of Isfahan, Persia (see figs. 11 and 12). The very
+close resemblance to the design of Biruni is quite apparent, though the
+gearing has been simplified very cleverly so that only one wheel has an
+odd number of teeth (13), the rest being much easier to mark out
+geometrically (_e.g._, 10, 48, 60, and 64 teeth). The lunar phase
+volvelle can be seen through the circular opening at the back of the
+astrolabe. It is quite certain that no automatic action is intended;
+when the central pivot is turned, by hand, probably by using the
+astrolabe rete as a "handle," the calendrical circles and the lunar
+phase are moved accordingly. Using one turn for a day would be too slow
+for useful re-setting of the instrument, in practice a turn corresponds
+more nearly to an interval of one week.
+
+[Illustration: Figure 13.--ASTROLABE CLOCK, REGULATED BY A MERCURY DRUM,
+from the Alfonsine _Libros del saber_ (see footnote 22).]
+
+In addition to this geared development of the astrolabe, the same period
+in Islam brought forth a new device, the equatorium, a mechanical model
+designed to simulate the geometrical constructions used for finding the
+positions of the planets in Ptolemaic astronomy. The method may have
+originated already in classical times, a simple device being described
+by Proclus Diadochus (_ca._ 450), but the first general, though crude,
+planetary equatorium seems to have been described by Abulcacim Abnacahm
+(_ca._ 1025) in Granada; it has been handed down to us in the archaic
+Castilian of the Alfonsine _Libros del saber_.[22] The sections of this
+book, dealing with the _Laminas de las VII Planetas_, describe not only
+this instrument but also the improved modification introduced by
+Azarchiel (born _ca._ 1029, died _ca._ 1087).
+
+No Islamic examples of the equatorium have survived, but from this
+period onward, there appears to have been a long and active tradition of
+them, and ultimately they were transmitted to the West, along with the
+rest of the Alfonsine corpus. More important for our argument is that
+they were the basis for the mechanized astronomical models of Richard of
+Wallingford (_ca._ 1320) and probably others, and for the already
+mentioned great astronomical clock of de Dondi. In fact, the complicated
+gearwork and dials of de Dondi's clock constitute a series of equatoria,
+mechanized in just the same way as the calendrical device described by
+Biruni.
+
+It is evident that we are coming nearer now to the beginning of the true
+mechanical clock, and our last step, also from the Alfonsine corpus of
+western Islam, provides us with an important link between the anaphoric
+clock, the weight drive, and a most curious perpetual-motion device, the
+mercury wheel, used as an escapement or regulator. The Alfonsine book on
+clocks contains descriptions of five devices in all, four of them being
+due to Isaac b. Sid (two sundials, an automaton water-clock and the
+present mercury clock) and one to Samuel ha-Levi Adulafia (a candle
+clock)--they were probably composed just before _ca._ 1276-77.
+
+[Illustration: Figure 14.--ISLAMIC PERPETUAL MOTION WHEEL, after
+manuscript cited by Schmeller (see footnote 26).]
+
+The mercury clock of Isaac b. Sid consists of an astrolabe dial, rotated
+as in the anaphoric clock, and fitted with 30 leaf-shaped gear teeth
+(see fig. 13). These are driven by a pinion of 6 leaves mounted on a
+horizontal axle (shown very diagrammatically in the illustration) and at
+the other end of this axle is a wheel on which is mounted the special
+mercury drum which is powered by a normal weight drive.
+
+It is the mercury drum which forms the most novel feature of this
+device; the fluid, constrained in 12 chambers so as to just fill 6 of
+them, must slowly filter through small holes in the constraining walls.
+In practice, of course, the top mercury surfaces will not be level, but
+higher on the right so as to balance dynamically the moment of the
+applied weight on its driven rope. This curious arrangement shows point
+of resemblance to the Indian "mercury-holes," to the perpetual-motion
+devices found in the medieval European tradition and also in the texts
+associated with Riḍwān, which we shall next examine.
+
+[Illustration: Figure 15.--ANOTHER PERPETUAL MOTION WHEEL, after the
+text cited in figure 14.]
+
+It is of the greatest interest to our theme that the Islamic
+contributions to horology and perpetual motion seem to form a closely
+knit corpus. A most important series of horological texts, including
+those of Riḍwān and al-Jazarī, have been edited by Wiedemann
+and Hauser.[23] Other Islamic texts give versions of the water clocks
+and automata of Archimedes and of Hero and Philo of Alexandria.[24] In
+at least three cases[25] these texts are found also associated with
+texts describing perpetual-motion wheels and other hydraulic devices.
+Three manuscripts of this type have been published in German translation
+by Schmeller.[26] The devices include a many chambered wheel (see fig.
+14) similar to the Alfonsine mercury "escapement," a wheel of slanting
+tubes constructed like the noria (see fig. 15), wheels of weights
+swinging on arms as described by Villard of Honnecourt, and a remarkable
+device which seems to be the earliest known example of a weight drive.
+This latter machine is a pump, in which a chain of buckets is used to
+raise water by passing over a pulley which is geared to a drum powered
+by a falling weight (see fig. 16); perhaps for balance, the whole
+arrangement is made in duplicate with common axles for the corresponding
+parts.
+
+[Illustration: Figure 16.--ISLAMIC PUMP POWERED BY A WEIGHT DRIVE,
+after the text cited in figure 14.]
+
+The Islamic tradition of water clocks did not involve the use of gears,
+though very occasionally a pair is used to turn power through an angle
+when this is dictated by the use of a water wheel in the automata. In
+the main, everything is worked by floats and strings or by hydraulic or
+pneumatic forces, as in Heros devices. The automata are very elaborate,
+with figures of men, monkeys, peacocks, etc., symbolizing the passage of
+hours.
+
+
+MEDIEVAL EUROPE
+
+Echoes from nearly all the developments already noted from other parts
+of the world are found to occur in medieval Europe, often coming
+through channels of communication more precisely determinable than
+those hitherto mentioned. Before the influx of Islamic learning at the
+time of transmission of the Toledo Tables (12th century) and the
+Alfonsine Tables (which reached Paris _ca._ 1292), there are occasional
+references to the most primitive mechanized "visual aids" in astronomy.
+
+The most famous of these occurs in an historical account by Richer of
+Rheims about his teacher Gerbert (born 946, later Pope Sylvester II,
+990-1003). Several instruments made by Gerbert are described in detail;
+he includes a fine celestial globe made of wood covered with horsehide
+and having the stars and lines painted in color, and an armillary sphere
+having sighting tubes similar to those always found on Chinese
+instruments but never on the Ptolemaic variety. Lastly, he cites "the
+construction of a sphere, most suitable for recognizing the planets,"
+but unfortunately it is not clear from the description whether or not
+the model planets were actually to be animated mechanically. The text
+runs:[27]
+
+  Within this oblique circle (the zodiac on the ecliptic of
+  the globe) he hung the circles of the wandering stars (the
+  planets) with marvellous ingenuity, whose orbits, heights
+  and even the distance from each other he demonstrated to
+  his pupils most effectually. Just how he accomplished this
+  it is unsuitable to enter into here because of its extent
+  lest we should appear to be wandering from our main theme.
+
+Thus, although there is a hint of mechanical complexity, there is really
+no justification for such an assumption; the description might well
+imply only a zodiac band on which the orbits of the planets were
+painted. On the other hand it is not inconceivable that Gerbert could
+have learned something of Islamic and other extra-European traditions
+during his period of study with the Bishop of Barcelona--a traveling
+scholarship that seems to have had many repercussions on the whole field
+of European scholarship.
+
+Once the floodgates of Arabic learning were opened, a stream of
+mechanized astronomical models poured into Europe. Astrolabes and
+equatoria rapidly became very popular, mainly through the reason for
+which they had been first devised, the avoidance of tedious written
+computation. Many medieval astrolabes have survived, and at least three
+medieval equatoria are known. Chaucer is well known for his treatise on
+the astrolabe; a manuscript in Cambridge, containing a companion
+treatise on the equatorium, has been tentatively suggested by the
+present author as also being the work of Chaucer and the only piece
+written in his own hand.
+
+The geared astrolabe of al-Biruni is another type of protoclock to have
+been transmitted. A specimen in the Science Museum, London,[28] though
+unfortunately now incomplete, has a very sophistocated arrangement of
+gears for moving pointers to indicate the correct relative positions and
+movements of the sun and moon (see figs. 17 and 18). Like the earlier
+Muslim example it contains wheels with odd numbers of gear teeth (14,
+27, 39); however, the teeth are no longer equilateral in shape, but
+approximate a more modern slightly rounded form. This example is French
+and appears to date from _ca._ 1300. Another Gothic astrolabe with a
+similar gear ring on the rete, said to date from _ca._ 1400 (it could
+well be much earlier) is now in the Billmeier collection (London).[29]
+
+Turning from the mechanized astrolabe to the mechanized equatorium, we
+find the work of Richard of Wallingford (1292?-1336) of the greatest
+interest as providing an immediate precursor to that of de Dondi. He
+was the son of an ingenious blacksmith, making his way to Merton
+College, Oxford, then the most active and original school of astronomy
+in Europe, and winning later distinction as Abbot of St. Albans. A text
+by him, dated 1326-27, described in detail the construction of a great
+equatorium, more exact and much more elaborate than any that had gone
+before.[30] Nevertheless it is evidently a normal manually operated
+device like all the others. In addition to this instrument, Richard is
+said to have constructed _ca._ 1320, a fine planetary clock for his
+Abbey.[31] Bale, who seems to have seen it, regarded it as without rival
+in Europe, and the greatest curiosity of his time. Unfortunately, the
+issue was confused by Leland, who identified it as the Albion (_i.e._,
+all-by one), the name Richard gives to his manual equatorium. This clock
+was indeed so complex that Edward III censured the Abbot for spending so
+much money on it, but Richard replied that after his death nobody would
+be able to make such a thing again. He is said to have left a text
+describing the construction of this clock, but the absence of such a
+work has led many modern writers to support Leland's identification and
+suppose that the device was not a mechanical clock.
+
+[Illustration: Figure 17.--FRENCH GEARED ASTROLABE OF TREFOIL GOTHIC
+DESIGN, _ca._ A.D. 1300. The gearing on the pointer is, from the
+center: (32)/14-45+27-39, the last meshing with a concave annular gear
+of 180 teeth around the rim of the rete of the astrolabe. A second
+pointer, geared to this so as to follow the Moon, seems to be lacking.
+(_Photo courtesy of Science Museum. London._)]
+
+[Illustration: Figure 18.--GEAR TRAIN OF POINTER in figure 17. (_Photo
+courtesy of Science Museum, London._)]
+
+A corrective for this view is to be had from a St. Albans manuscript
+(now at Gonville and Caius College, Cambridge) that described the
+methods for setting out toothed wheels for an astronomical horologium
+designed to show the motions of the planets. Although the manuscript
+copy is to be dated _ca._ 1340, it clearly indicates that a geared
+planetary device was known in St. Albans at an early date, and it is
+reasonable to suppose that this was in fact the machine made by Richard
+of Wallingford. Unfortunately the text does not appear to give any
+relevant information about the presence of an escapement or any other
+regulatory device, nor does it mention the source of power.[32] Now a
+geared version of the Albion would appear to correspond very closely
+indeed to the dial-work which forms the greater part of the de Dondi
+clock, and for this reason we suggest now that the two clocks were very
+closely related in other ways too. This, circumstantial though it be, is
+evidence for thinking that the weight drive and some form of escapement
+were known to Richard of Wallingford, _ca._ 1320. It would narrow the
+gap between the clock and the protoclocks to less than half a century,
+perhaps a single generation, in the interval _ca._ 1285-1320. In this
+connection it may be of interest that Richard of Wallingford knew only
+the Toledo tables corpus, that of the Alfonsine school did not arrive in
+England until after his death.
+
+There are, of course, many literary references to the water-clocks in
+medieval literature. In fact most of these are from quotations which
+have often been produced erroneously in the history of the mechanical
+clock, thereby providing many misleading starts for that history, as
+noted previously in the discussion of the horologium. There are however
+enough mentions to make it certain that water clocks of some sort were
+in use, especially for ecclesiastic purposes, from the end of the 12th
+century onwards. Thus, Jocelin of Brakelond tells of a fire in the Abbey
+Church of Bury St. Edmunds in the year 1198.[33] The relics would have
+been destroyed during the night, but just at the crucial moment the
+clock bell sounded for matins and the master of the vestry sounded the
+alarm. On this "the young men amongst us ran to get water, some to the
+well and others to the clock"--probably the sole occasion on which a
+clock served as a fire hydrant.
+
+It seems probable that some of these water clocks could have been simple
+drip clepsydras, with perhaps a striking arrangement added. A most
+fortunate discovery by Drover has now brought to light a manuscript
+illumination that shows that these water clocks, at least by _ca,_ 1285,
+had become more complex and were rather similar in appearance to the
+Alfonsine mercury drum.[34] The illustration (fig. 19) is from a
+moralized Bible written in northern France, and accompanies the passage
+where King Hezekiah is given a sign by the Lord, the sun being moved
+back ten steps of the clock. The picture clearly shows the central water
+wheel and below it a dog's head spout gushing water into a bucket
+supported by chains, with a (weight?) cord running behind. Above the
+wheel is a carillon of bells, and to one side a rosette which might be a
+fly or a model sun. The wheel appears to have 15 compartments, each with
+a central hole (perhaps similar to that in the Alfonsine clock) and it
+is supported on a square axle by a bracket, the axle being wedged in the
+traditional fashion. The projections at the edge of the wheel might be
+gear teeth, but more likely they are used only for tripping the striking
+mechanism. If it were not for the running water spout it would be very
+close to the Alfonsine model; but with this evidence it seems impossible
+to arrive at a clear mechanical interpretation.
+
+From the adjacent region there is another account of a striking water
+clock, the evidence being inscriptions on slates, discovered in Villers
+Abbey near Brussels;[35] these may be closely dated as 1267 or 1268 and
+provide the remains of a memorandum for the sacrist and his assistants
+in charge of the clock.
+
+  Always set the clock, however long you may delay on [the
+  letter "A"] afterwards you shall pour water from the
+  little pot (pottulo) that is there, into the reservoir
+  (cacabum) until it reaches the prescribed level, and you
+  must do the same when you set [the clock] after compline
+  so that you may sleep soundly.
+
+A quite different sort of evidence is to be had from the writings of
+Robertus Anglicus in 1271 where one gets the impression that just at
+this time there was active interest in the attempt to make a
+weight-driven anaphoric clock and to regulate its motion by some
+unstated method so that it would keep time with the diurnal rotation of
+the heavens:[36]
+
+  Nor it is possible for any clock to follow the judgment of
+  astronomy with complete accuracy. Yet clockmakers
+  (artifices horologiorum) are trying to make a wheel
+  (circulum) which will make one complete revolution for
+  every one of the equinoctial circle, but they cannot quite
+  perfect their work. But if they could, it would be a
+  really accurate clock (horologium verax valde) and worth
+  more than an astrolabe or other astronomical instrument
+  for reckoning the hours, if one knew how to do this
+  according to the method aforesaid. The method of making
+  such a clock would be this, that a man make a disc
+  (circulum) of uniform weight in every part so far as could
+  possibly be done. Then a lead weight should be hung from
+  the axis of that wheel (axi ipsius rote) and this weight
+  would move that wheel so that it would complete one
+  revolution from sunrise to sunrise, minus as much time as
+  about one degree rises according to an approximately
+  correct estimate. For from sunrise to sunrise, the whole
+  equinoctial rises, and about one degree more, through
+  which degree the sun moves against the motion of the
+  firmament in the course of a natural day. Moreover, this
+  could be done more accurately if an astrolabe were
+  constructed with a network on which the entire equinoctial
+  circle was divided up.
+
+[Illustration: Figure 19.--MANUSCRIPT ILLUMINATION OF A MEDIEVAL
+WATERCLOCK, showing a partitioned wheel, a weight drive, and a carillion
+for striking. From Drover (see footnote 34).]
+
+The text then continues with technical astronomical details of the
+slight difference between the rate of rotation of the sun and of the
+fixed stars (because of the annual rotation of the sun amongst the
+stars) but it gives no indication of any regulatory device. Again it
+should be noted, this source comes from France; Robertus, though of
+English origin, apparently being then a lecturer either at the
+University of Paris or at that of Montpellier. The date of this passage,
+1271, has been taken as a _terminus post quem_ for the invention of the
+mechanical clock. In the next section we shall describe the text of
+Peter Peregrinus, very close to this in place and date, which describes
+just such a machine, conflating it with accounts of an armillary sphere,
+perpetual motion, and the magnetic compass--so bringing all these
+threads together for the first time in Europe.
+
+[Illustration: Figure 20.--ARRANGEMENT FOR TURNING A FIGURE OF AN ANGEL.
+It has been alleged that this drawing by Villard represents an
+escapement. After Lassus (see footnote 37).]
+
+We have reserved to the last one section of evidence which may or may
+not be misleading, the famous notebook of Villard (Wilars) of
+Honnecourt, near Cambrai. The album, attributed to the period 1240-1251,
+contains many drawings with short annotations, three of which are of
+special interest to our investigations.[37] These comprise a steeplelike
+structure labeled "cest li masons don orologe" (this is the house of a
+clock), a device including a rope, wheel and axle (fig. 20), marked "par
+chu fait om un angle tenir son doit ades vers le solel" (by this means
+an angel is made to keep his finger directed towards the sun), and a
+perpetual motion wheel which we shall reserve for later discussion.
+
+The clock tower, according to Drover, shows no place for a dial but
+suggests the use of bells because of its open structure, suitable for
+letting out the sound. Moreover, he suggests that the delicacy of the
+line indicates that it was not really a full-size steeple but rather a
+small towerlike structure standing only a few feet high within the
+church. There is, alas, nothing to tell us about the clock it was
+intended to house; most probably it was a water clock similar to that of
+the illustrated Bible of _ca._ 1285.
+
+The drawing of the rope, wheel and axles, for turning an angel to point
+towards the sun can have a simple explanation or a more complicated one.
+If taken at its face value the wheel on its horizontal axis acts as a
+windlass connected by the counterpoised rope to the vertical shaft which
+it turns, thereby moving (by hand) the figure of an angel (not shown)
+fixed to the top of this latter shaft. Such an explanation was in fact
+suggested by M. Quicherat,[38] who first called attention to the Villard
+album and pointed out that a leaden angel existed in Chartres before the
+fire there in 1836. It is a view also supported from another drawing in
+the album which describes an eagle whose head is made to turn towards
+the deacon when he reads the Gospel. Slight pressure on the tail of the
+bird causes a similar rope mechanism to operate.
+
+A quite different interpretation has been suggested by Frémont;[39] he
+believes that the wheel may have acted as a fly-wheel and the ropes and
+counterpoises, turning first one way then the other acted as a sort of
+mechanical escapement. Such an arrangement is however mechanically
+impossible without some complicated free-wheeling device between the
+drive and the escapement, and its only effect would be to oscillate the
+angel rapidly rather than turn it steadily. I believe that Frémont,
+over-anxious to provide a protoescapement, has done too much violence to
+the facts and turned away without good reason from the more simple and
+reasonable explanation. It is nevertheless still possible to adopt this
+simple interpretation and yet to have the system as part of a clock. If
+the left-hand counterpoise, conveniently raised higher than that on the
+right, is considered as a float fitting into a clepsydra jar, instead of
+as a simple weight, one would have a very suitable automatic system for
+turning the angel. On this explanation, the purpose of the wheel would
+be merely to provide the manual adjustment necessary to set the angel
+from time to time, compensating for irremediable inaccuracies of the
+clepsydra.
+
+[Illustration: Figure 21.--VILLARD'S PERPETUAL MOTION WHEEL, from Lassus
+(see footnote 37).]
+
+Having discussed the Villard drawings which are already cited in
+horological literature, we must draw attention to the fact that this
+medieval architect also gives an illustration of a perpetual motion
+wheel. In this case (fig. 21) it is of the type having weights at the
+end of swinging arms, a type that occurs very frequently at later dates
+in Europe and is also given in the Islamic texts. We cannot, in this
+case, suggest that drawings of clocks and of perpetual motion devices
+occur together by more than a coincidence, for Villard seems to have
+been interested in most sorts of mechanical device. But even this type
+of coincidence becomes somewhat striking when repeated often enough. It
+seems that each early mention of "self-moving wheels" occurs in
+connection with some sort of clock or mechanized astronomical device.
+
+Having now completed a survey of the traditions of astronomical models,
+we have seen that many types of device embodying features later found in
+mechanical clocks evolved through various cultures and flowed into
+Europe, coming together in a burst of multifarious activity during the
+second half of the 13th century, notably in the region of France. We
+must now attempt to fill the residual gap, and in so doing examine the
+importance of perpetual motion devices, mechanical and magnetic, in the
+crucial transition from protoclock to mechanical-escapement clock.
+
+
+
+
+Perpetual Motion and the Clock before de Dondi
+
+We have already noted, more or less briefly, several instances of the
+use of wheels "moving by themselves" or the use of a fluid for purposes
+other than as a motive power. Chronologically arranged, these are the
+Indian devices of _ca._ 1150 or a little earlier, as those of Riḍwān
+_ca._ 1200, that of the Alfonsine mercury clock, _ca._ 1272, and the
+French Bible illumination of _ca._ 1285. This strongly suggests a steady
+transmission from East to West, and on the basis of it, we now
+tentatively propose an additional step, a transmission from China to
+India and perhaps further West, _ca._ 1100, and possibly reinforced by
+further transmissions at later dates.
+
+One need only assume the existence of vague traveler's tales about the
+existence of the 11th-century Chinese clocks with their astronomical
+models and jackwork and with their great wheel, apparently moving by
+itself but using water having no external inlet or outlet. Such a
+stimulus, acting as it did on a later occasion when Galileo received
+word of the invention of the telescope in the Low Countries, might
+easily lead to the re-invention of just such perpetual-motion wheels as
+we have already noted. In many ways, once the idea has been suggested it
+is natural to associate such a perpetual motion with the incessant
+diurnal rotation of the heavens. Without some such stimulus however it
+is difficult to explain why this association did not occur earlier, and
+why, once it comes there seems to be such a chronological procession
+from culture to culture.
+
+We now turn to what is undoubtedly the most curious part of this story,
+in which automatically moving astronomical models and perpetual motion
+wheels are linked with the earliest texts on magnetism and the magnetic
+compass, another subject with a singularly troubled historical origin.
+The key text in this is the famous _Epistle on the magnet_, written by
+Peter Peregrinus, a Picard, in an army camp at the Siege of Lucera and
+dated August 8, 1269.[40] In spite of the precise dating it is certain
+that the work was done long before, for it is quoted unmistakably by
+Roger Bacon in at least three places, one of which must have been
+written before _ca._ 1250.[41]
+
+The _Epistle_ contains two parts; in the first there is a general
+account of magnetism and the properties of the loadstone, closing with a
+discussion "of the inquiry whence the magnet receives the natural virtue
+which it has." Peter attributed this virtue to a sympathy with the
+heavens, proposing to prove his point by the construction of a
+"terrella," a uniform sphere of loadstone which is to be carefully
+balanced and mounted in the manner of an armillary sphere, with its axis
+directed along the polar axis of the diurnal rotation. He then
+continues:
+
+  Now if the stone then move according to the motion of the
+  heavens, rejoice that you have arrived at a secret marvel.
+  But if not, let it be ascribed rather to your own want of
+  skill than to a defect of Nature. But in this position, or
+  mode of placing, I deem the virtues of this stone to be
+  properly conserved, and I believe that in other positions
+  or parts of the sky its virtue is dulled, rather than
+  preserved. By means of this instrument at all events you
+  will be relieved from every kind of clock (horologium),
+  for by it you will be able to know the Ascendant at
+  whatever hour you will, and all other dispositions of the
+  heavens which Astrologers seek after.
+
+It should be noted that the device is to be mounted like an astronomical
+instrument and used like one, rather than as a time teller, or as a
+simple demonstration of magnetism. In the second part of the _Epistle_
+Peter turns to practical instruments, describing for the first time, the
+construction of a magnetic compass consisting of a loadstone or iron
+needle pivoted with a casing marked with a scale of degrees. The third
+chapter of this section, concluding the _Epistle_, then continues with
+the description of a perpetual motion wheel, "elaboured with marvellous
+ingenuity, in the pursuit of which invention I have seen many people
+wandering about, and wearied with manifold toil. For they did not
+observe that they could arrive at the mastery of this by means of the
+virtue, or power of this stone."
+
+This tells us incidentally, that the perpetual motion device was a
+subject of considerable interest at this time.[42] Oddly enough, Peter
+does not now develop his idea of the terrella, but proceeds to something
+quite new, a device (see fig. 22) in which a bar-magnet loadstone is to
+be set towards the end of a pivoted radial arm with a circle fitted on
+the inside with iron "gear teeth," the teeth being there not to mesh
+with others but to draw the magnet from one to the next, a little bead
+providing a counterweight to help the inertia of rotation carry the
+magnet from one point of attraction to the next. It is by no means the
+sort of device that one would naturally evolve as a means of making
+magnetism work perpetually, and I suggest that the toothed wheel is
+another instance of some vague idea of protoclocks, perhaps that of Su
+Sung, being transmitted from the East.
+
+[Illustration: Figure 22.--MAGNETIC PERPETUAL MOTION WHEEL illustrated
+by Peter Peregrinus; from the edition of S. P. Thompson (see footnote
+40).]
+
+The work of Peter Peregrinus is cited by Roger Bacon in his _De
+secretis_ as well as in the _Opus majus_ and _Opus minus_. In the first
+and earliest of these occurs a description, taken from Ptolemy, of the
+construction of the (observing) armillary sphere. He says that this
+cannot be made to move naturally by any mathematical device, but "a
+faithful and magnificent experimentor is straining to make one out of
+such material, and by such a device, that it will revolve naturally with
+the diurnal heavenly rotation." He continues with the statement that
+this possibility is also suggested by the fact that the motions of
+comets, of tides, and of certain planets also follow that of the Sun and
+of the heavens. Only in the _Opus minus_, where he repeats reference to
+this device, does he finally reveal that it is to be made to work by
+means of the loadstone.
+
+The form of Bacon's reference to Peregrinus is strongly reminiscent of
+the statement by Robertus Anglicus, already mentioned as an indication
+of preoccupation with diurnally rotating wheels, at a date (1271)
+remarkably close to that of the _Epistle_ (1269)--so much so that it
+could well be thought that the friend to which Peter was writing was
+either Robert himself or somebody associated with him, perhaps at the
+University of Paris--a natural place to which the itinerant Peter might
+communicate his findings.
+
+The fundamental question here, of course, is whether the idea of an
+automatic astronomical device was transmitted from Arabic, Indian, or
+Chinese sources, or whether it arose quite independently in this case as
+a natural concomitant of identifying the poles of the magnet with the
+poles of the heavens. We shall now attempt to show that the history of
+the magnetic compass might provide a quite independent argument in
+favour of the hypothesis that there was a 'stimulus' transmission.
+
+
+
+
+The Magnetic Compass as a Fellow-traveler from China
+
+The elusive history of the magnetic compass has many points in common
+with that of the mechanical clock. Just as we have astronomical models
+from the earliest times, so we find knowledge of the loadstone and some
+of its properties. Then, parallel to the development of protoclocks in
+China throughout the middle ages, we have the evidence analyzed by
+Needham, showing the use of the magnet as a divinatory device and of the
+(nonmagnetic) south-pointing chariot, which has been confusedly allied
+to the story. Curiously, and perhaps significantly the Chinese history
+comes to a head at just the same time for compasses and clocks, and a
+prime authority for the Chinese compass is Shen Kua (1030-1093) who also
+appears in connection with the clock of Su Sung, and who wrote about the
+mechanized armillary spheres and other models _ca._ 1086.
+
+Another similarity occurs in connection with the history of the compass
+in medieval Europe. The treatise of Peter Peregrinus, already discussed,
+provides the first complete account of the magnetic compass with a
+pivoted needle and a circular scale, and this, as we have seen, may be
+connected with protoclocks and perpetual-motion devices. There are
+several earlier references, however, to the use of the directive
+properties of loadstone, mainly for use in navigation, but these
+earliest texts have a long history of erroneous interpretation which is
+only recently being cleared away. We know now that the famous passages
+in the _De naturis rerum_ and _De utensilibus_ of Alexander Neckham[43]
+(_ca._ 1187) and a text by Hugues de Berze[44] (after _ca._ 1204) refer
+to nothing more than a floating magnet without pivot or scale, but using
+a pointer at right angles to the magnet, so that it pointed to the east,
+rather than the north or south. A similar method is described (_ca._
+1200) in a poem by Guyot de Provins, and in a history of Jerusalem by
+Jacques de Vitry (1215).[45] It is of the greatest interest that, once
+more, all the evidence seems to be concentrated in France (Neckham was
+teaching in Paris) though at an earlier period than that for the
+protoclocks.
+
+The date might suggest the time of the first great wave of transmissal
+of learning from Islam, but it is clear that in this instance, peculiar
+for that reason, that Islam learned of the magnetic compass only after
+it was already known in the West. In the earliest Persian record, some
+anecdotes compiled by al-'Awfiī _ca._ 1230,[46] the instrument used
+by the captain during a storm at sea has the form of a piece of hollow
+iron, shaped like a fish and made to float on the water after
+magnetization by rubbing with a loadstone; the fishlike form is very
+significant, for this is distinctly Chinese practice. In a second Muslim
+reference, that of Bailak al-Qabājaqī (_ca._ 1282), the ordinary
+wet-compass is termed "al-konbas," another indication that it was
+foreign to that language and culture.[47]
+
+
+Chronological Chart
+
+------------------------------------------------------------------------
+
+  CHINA
+
+  4th C., B.C. Power gearing
+
+  CLASSICAL EUROPE
+
+  3rd C., B.C. Archimedes planetarium
+  2nd C., B.C. Hipparchus Stereographic Projection
+  1st C., B.C. Vitruvius hodometer and water clocks
+  65, B.C. (_ca._) Antikythera machine
+  1st C., A.D. Hero hodometer and water clocks
+  2nd C., A.D. Salzburg and Vosges anaphoric clocks
+
+  CHINA
+
+  2nd C., A.D. Chang Hêng animated globe hodometer
+      Continuing tradition of animated astronomical models
+   725 Invention of Chinese escapement by I-Hsing and Liang Ling-tsan
+
+  ISLAM
+
+   807 Harun-al-Rashid
+   850 (_ca._) Earliest extant astrolabes
+  1000 Geared astrolabe of al-Biruni
+
+  EUROPE
+
+  1000 Gerbert astronomical model
+
+  ISLAM
+
+  1025 Equatorium text
+
+  CHINA
+
+  1074 Shen Kua, clocks and magnetic compass
+  1080 Su Sung clock built
+  1101 Su Sung clock destroyed
+
+  INDIA
+
+  1100 (_ca._) Sūrya Siddhānta animated astronomical models
+          and perpetual motion
+  1150 (_ca._) Siddhānta Siromaṇi animated models and perpetual
+          motion
+
+  ISLAM
+
+  1150 Saladin clock
+
+  EUROPE
+
+  1187 Neckham on compass
+  1198 Jocelin on water clock
+
+  ISLAM
+
+  1200 (_ca._) Riḍwān water-clocks, perpetual motion
+          and weight drive
+  1206 al-Jazarī clocks, etc.
+  1221 Geared astrolabe
+  1232 Charlemagne clock
+  1243 al-Konbas (compass)
+
+  EUROPE
+
+  1245 Villard clocktower, "escapement," perpetual motion
+  1267 Villers Abbey clock
+  1269 Peregrinus, compass and perpetual motion
+  1271 Robertus Anglicus, animated models and "perpetual motion" clock
+
+  ISLAM
+
+  1272 Alfonsine corpus clock with mercury drum, equatoria
+
+  EUROPE
+
+  1285 Drover's water clock with wheel and weight drive
+  1300 (_ca._) French geared astrolabe
+  1320 Richard of Wallingford astronomical clock and equatorium
+  1364 de Dondi's astronomical clock with mechanical escapement
+  later 14th C. Tradition of escapement clocks continues
+    and degenerates into simple time-keepers
+------------------------------------------------------------------------
+
+There is therefore reasonable grounds for supporting the medieval
+European tradition that the magnetic compass had first come from China,
+though one cannot well admit that the first news of it was brought, as
+the legend states, by Marco Polo, when he returned home in 1260. There
+might well have been another wave of interest, giving the impetus to
+Peter Peregrinus at this time, but an earlier transmission, perhaps
+along the silk road or by travelers in crusades, must be postulated to
+account for the evidence in Europe, _ca._ 1200. The earlier influx does
+not play any great part in our main story; it arrived in Europe before
+the transmission of astronomy from Islam had got under way sufficiently
+to make protoclocks a subject of interest. For a second transmission, we
+have already seen how the relevant texts seem to cluster, in France
+_ca._ 1270, around a complex in which the protoclocks seem combined with
+the ideas of perpetual motion wheels and with new information about the
+magnetic compass.
+
+The point of this paper is that such a complex exists, cutting across
+the histories of the clock, the various types of astronomical machines,
+and the magnetic compass, and including the origin of "self-moving
+wheels." It seems to trace a path extending from China, through India
+and through Eastern and Western Islam, ending in Europe in the Middle
+Ages. This path is not a simple one, for the various elements make their
+appearances in different combinations from place to place, sometimes one
+may be dominant, sometimes another may be absent. Only by treating it as
+a whole has it been possible to produce the threads of continuity which
+will, I hope, make further research possible, circumventing the blind
+alleys found in the past and leading eventually to a complete
+understanding of the first complicated scientific machines.
+
+
+  FOOTNOTES:
+
+  [1] This traditional view is expressed by almost every history
+  of horology. An ultimate source for many of these has been the
+  following two classic treatments: J. Beckmann, _A history of
+  inventions and discoveries_, 4th ed., London, 1846, vol. 1, pp.
+  340 ff. A. P. Usher, _A history of mechanical inventions_, 2nd
+  ed., Harvard University Press. 1954, pp. 191 ff., 304 ff.
+
+  [2] There is a considerable literature dealing with the later
+  evolution of perpetual motion devices. The most comprehensive
+  treatment is H. Dircks, _Perpetuum mobile_, London, 1861; 2nd
+  ser., London, 1870. So far as I know there has not previously
+  been much discussion of the history of such devices before the
+  renaissance.
+
+  [3] For the early history of gearing in the West see C.
+  Matschoss, _Geschichte des Zahnrades_, Berlin, 1940. Also F. M.
+  Feldhaus, _Die geschichtliche Entwicklung des Zahnrades in
+  Theorie und Praxis_, Berlin, 1911.
+
+  [4] A general account of these important archaeological objects
+  will be published by J. Needham, _Science and civilisation in
+  China_, Cambridge, 1959(?), vol. 4. The original publications
+  (in Chinese) are as follows: Wang Chen-to, "Investigations and
+  reproduction in model form of the south-pointing carriage and
+  hodometer," _National Peiping Academy Historical Journal_,
+  1937, vol. 3, p. 1. Liu Hsien-chou, "Chinese inventions in
+  horological engineering," _Ch'ing-Hua University Engineering
+  Journal_, 1956, vol. 4, p. 1.
+
+  [5] For illustrations of intermeshing worms in Indian cotton
+  mills, see Matschoss, _op. cit._ (footnote 3), figs. 5, 6, 7,
+  p. 7.
+
+  [6] It is interesting to note that the Chinese hodometer was
+  contemporary with that of Hero and Vitruvius and very similar
+  in design. There is no evidence whatsoever upon which to decide
+  whether there may have been a specific transmission of this
+  invention or even a "stimulus diffusion."
+
+  [7] A summary of the content of the manuscript sources,
+  illustrated by the original drawings, has been published by H.
+  Alan Lloyd, _Giovanni de Dondi's horological masterpiece,
+  1364_, without date or imprint (?Lausanne, 1955), 23 pp. It
+  should be remarked that de Dondi declines to describe the
+  workings of his crown and foliot escapement (though it is well
+  illustrated) saying that this is of the "common" variety and if
+  the reader does not understand such simple things he need not
+  hope to comprehend the complexities of this mighty clock. But
+  this may be bravado to quite a large degree.
+
+  [8] See, for example, the chronological tables of the 14th
+  century and the later mentions of clocks in E. Zinner, _Aus der
+  Frühzeit der Räderuhr_, Munich, 1954, p. 29 ff. Unfortunately
+  this very complete treatment tends to confuse the factual and
+  legendary sources prior to the clock of de Dondi; it also
+  accepts the very doubtful evidence of the "escapement" drawn by
+  Villard of Honnecourt (see p. 107). An excellent and fully
+  illustrated account of monumental astronomical clocks
+  throughout the world is given by Alfred Ungerer, _Les horloges
+  astronomiques_, Strasbourg, 1931, 514 pp. Available accounts of
+  the development of the planetarium since the middle ages are
+  very brief and especially weak on the early history: Helmut
+  Werner, _From the Aratus globe to the Zeiss planetarium_,
+  Stuttgart, 1957; C. A. Crommelin, "Planetaria, a historical
+  survey," _Antiquarian Horology_, 1955, vol. 1, pp. 70-75.
+
+  [9] Derek J. Price, "Clockwork before the clock," _Horological
+  Journal_, 1955, vol. 97, p. 810, and 1956, vol. 98, p. 31.
+
+  [10] For the use of this material I am indebted to my
+  co-authors. I must also acknowledge thanks to the Cambridge
+  University Press, which in the near future will be publishing
+  our monograph, "Heavenly Clockwork." Some of the findings of
+  this paper are included in shorter form as background material
+  for that monograph. A brief account of the discovery of this
+  material has been published by J. Needham, Wang Ling, and Derek
+  J. Price, "Chinese astronomical clockwork," _Nature_, 1956,
+  vol. 177, pp. 600-602.
+
+  [11] For these translations from classical authors I am
+  indebted to Professor Loren MacKinney and Miss Harriet Lattin,
+  who had collected them for a history, now abandoned, of
+  planetariums. I am grateful for the opportunity of giving them
+  here the mention they deserve.
+
+  [12] A. G. Drachmann, "The plane astrolabe and the anaphoric
+  clock," _Centaurus_, 1954, vol. 3, pp. 183-189.
+
+  [13] A fuller description of the anaphoric clock and cognate
+  water-clocks is given by A. G. Drachmann, "Ktesibios, Philon
+  and Heron," _Acta Historica Scientiarum Naturalium et
+  Medicinalium_, Copenhagen, 1948, vol. 4.
+
+  [14] First published by O. Benndorf, E. Weiss, and A. Rehm,
+  _Jahreshefte des österreichischen archäologischen Institut in
+  Wien_, 1903, vol. 6, pp. 32-49. I have given further details of
+  its construction in _A history of technology_, ed. Singer,
+  Holmyard, and Hall, 1957, vol. 3, pp. 604-605.
+
+  [15] L. Maxe-Werly, _Mémoires de la Société Nationale des
+  Antiquaires de France_, 1887, vol. 48, pp. 170-178.
+
+  [16] The first definitive account of the Antikythera machine
+  was given by Perikles Rediadis in J. Svoronos, _Das Athener
+  Nationalmuseum_, Athens, 1908, Textband I, pp. 43-51. Since
+  then, other photographs (mostly very poor) have appeared, and
+  an attempt at a reconstruction has been made by Rear Admiral
+  Jean Theophanidis, _Praktika tes Akademias Athenon_, Athens,
+  1934, vol. 9, pp. 140-149 (in French). I am deeply grateful to
+  the Director of the Athens National Museum, M. Karouzos, for
+  providing me with an excellent new set of photos, from which
+  figures 6-8 are now taken.
+
+  [17] H. Diels Über die von Prokop beschriebene Kunstuhr von
+  Gaza, _Abhandlungen, Akademie der Wissenschaften_, Berlin,
+  Philos.-Hist. Klasse, 1917, No. 7.
+
+  [18] L. A. Mayer, _Islamic astrolabists and their works_,
+  Geneva, 1956, p. 62.
+
+  [19] The translation which follows is quoted from J. Beckmann,
+  _op. cit._ (footnote 1), p. 349.
+
+  [20] E. Wiedemann, "Ein Instrument das die Bewegung von Sonne
+  und Mond darstellt, nach al Biruni," _Der Islam_, 1913, vol. 4,
+  p. 5.
+
+  [21] I acknowledge with thanks to the Curator of that museum
+  the permission to reproduce photographs of this instrument. It
+  is item 5 in R. T. Gunther, _Astrolabes of the world_, Oxford,
+  1932.
+
+  [22] Abulcacim Abnacahm, _Libros del saber_, edition by Rico y
+  Sinobas, Madrid, 1866, vol. 3, pp. 241-271. The design of the
+  instrument has been very fully discussed by A. Wegener, "Die
+  astronomischen Werke Alfons X," _Bibliotheca Mathematica_,
+  1905, pp. 129-189. A more complete discussion of the historical
+  evolution of the equatorium is given in Derek J. Price, _The
+  equatorie of the planetis_, Cambridge (Eng.), 1955, pp.
+  119-133.
+
+  [23] E. Wiedemann, and F. Hauser, "Über die Uhren im Bereich d.
+  islamischen Kultur," _Nova Acta; Abhandlungen der königliche
+  Leopoldinisch-Carolinische Deutsche Akademie der Naturforscher
+  zu Halle_, 1915, vol. 100, no. 5.
+
+  [24] E. Wiedemann, and F. Hauser, _Die Uhr des Archimedes und
+  zwei andere Vorrichtungen_, Halle, 1918.
+
+  [25] The manuscripts in question are as follows: Gotha, Kat. v.
+  Pertsch. 3, 18, no. 1348; Oxford, Cod. 954; Leiden, Kat. 3,
+  288, no. 1414, Cod. 499 Warn; and another similar, Kat. 3, 291,
+  no. 1415, Cod. 93 Gol.
+
+  [26] H. Schmeller, Beiträge zur Geschichte der Technik in der
+  Antike und bei den Arabern, Erlangen, 1922 (_Abhandlungen zur
+  Geschichte der Naturwissenschaften und der Medizin_ no. 6).
+
+  [27] Once more I am indebted to Professor Loren MacKinney and
+  Miss Harriet Lattin (see footnote 11) for making their
+  collections on Gerbert available to me.
+
+  [28] Item 198 in Gunther, _op. cit._ (footnote 21). I am
+  grateful to the authorities of that museum for permission to
+  reproduce photographs of this instrument.
+
+  [29] Sotheby and Co., London, sale of March 14, 1957, lot 154.
+  The outer rim of the rete has 120 teeth.
+
+  [30] The Latin text of the treatise on the Albion, has been
+  transcribed by Rev. H. Salter and published in R. T. Gunther,
+  _Early science in Oxford_, Oxford, 1923, vol. 2, pp. 349-370.
+  An analysis of its design is given in Price, _op. cit._
+  (footnote 22), pp. 127-130.
+
+  [31] Such evidence as there is for the existence and form of
+  the clock is collected by Gunther, _op. cit._ (footnote 30), p.
+  49.
+
+  [32] I have discussed this new manuscript source in "Two
+  medieval texts on astronomical clocks," _Antiquarian Horology_,
+  1956, vol. 1, no. 10, p. 156. The manuscript in question is ms.
+  230/116, Gonville and Caius College, Cambridge, folios
+  11ᵛ-14ᵛ = pp. 31-36.
+
+  [33] _The Chronicle of Jocelin of Brakelond_ ..., H. E. Butler
+  (ed.), London, 1949, p. 106.
+
+  [34] C. B. Drover, "A medieval monastic water-clock,"
+  _Antiquarian Horology_, 1954, vol. 1, no. 5, pp. 54-58, 63.
+  Because this water clock uses wheels and strikes bells one must
+  reject the evidence of literary reference, such as by Dante,
+  from which the mention of wheels and bells have been taken as
+  positive proof of the existence of mechanical clocks with
+  mechanical escapements. The to-and-fro motion of the mechanical
+  clock escapement is quite an impressive feature, but there
+  seems to be no literary reference to it before the time of de
+  Dondi.
+
+  [35] _Annales de la Société Royale d'Archéologie de Bruxelles_,
+  1896, vol. 1/8, pp. 203-215, 404-451. The translation here is
+  cited from Drover, _op. cit._, (footnote 34), p. 56.
+
+  [36] L. Thorndike, _The sphere of Sacrobosco and its
+  commentators_, Chicago, 1949, pp. 180, 230.
+
+  [37] The album was published with facsimiles by J. B. A.
+  Lassus, 1858. An English edition with facsimiles of 33 of the
+  41 folios was published by Rev. Robert Willis, Oxford, 1859. An
+  extensive summary of this section is given, with illustrations,
+  by J. Drummond Robertson, _The evolution of clockwork_, London,
+  1931, pp. 11-15.
+
+  [38] M. Jules Quicherat, _Revue Archèologique_, 1849, vol. 6.
+
+  [39] M. C. Frémont. _Origine de l'horloge à poids_, Paris,
+  1915.
+
+  [40] For this, I have used and quoted from the very beautiful
+  edition in English, prepared by Silvanus P. Thompson, London,
+  Chiswick Press, 1902.
+
+  [41] See E. G. R. Taylor, "The South-pointing needle," _Imago
+  Mundi_, Leiden, 1951, vol. 8, pp. 1-7 (especially pp. 1, 2).
+
+  [42] I have wondered whether the medieval interest in perpetual
+  motion could be connected with the use of the "Wheel of
+  Fortune" in churches as a substitute for bell-ringing on Good
+  Friday. Unfortunately I can find no evidence for or against the
+  conjecture.
+
+  [43] W. E. May, "Alexander Neckham and the pivoted compass
+  needle," _Journal of the Institute of Navigation_, 1955, vol.
+  8, no. 3, pp. 283-284.
+
+  [44] W. E. May, "Hugues de Berze and the mariner's compass,"
+  _The Mariner's Mirror_, 1953, vol. 39, no. 2, pp. 103-106.
+
+  [45] H. Balmer, _Beiträge zur Geschichte der Erkenntnis des
+  Erdmagnetismus_, Aarau, 1956, p. 52.
+
+  [46] The collection is the _Gami 'al Hikajat_; the relevant
+  passage being given in German translation in Balmer. _op. cit._
+  (footnote 45), p. 54.
+
+  [47] Balmer, op. _cit._ (footnote 45), p. 53.
+
+
+
+U.S. GOVERNMENT PRINTING OFFICE: 1959
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK ON THE ORIGIN OF CLOCKWORK, PERPETUAL MOTION DEVICES, AND THE COMPASS ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

@@ -1,0 +1,2457 @@
+﻿The Project Gutenberg eBook of Humpback Whales in Glacier Bay National Monument, Alaska
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Humpback Whales in Glacier Bay National Monument, Alaska
+
+Author: United States. Marine Mammal Commission
+
+Release date: August 15, 2011 [eBook #37101]
+                Most recently updated: January 8, 2021
+
+Language: English
+
+Credits: Produced by Chris Curnow, Tom Cosmas, Joseph Cooper and
+        the Online Distributed Proofreading Team at
+        https://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK HUMPBACK WHALES IN GLACIER BAY NATIONAL MONUMENT, ALASKA ***
+
+
+
+
+Produced by Chris Curnow, Tom Cosmas, Joseph Cooper and
+the Online Distributed Proofreading Team at
+https://www.pgdp.net
+
+
+
+
+
+
+
+
+
+ U.S. DEPARTMENT OF COMMERCE
+ National Technical Information Service
+
+ PB80-141559
+
+ HUMPBACK WHALES IN GLACIER BAY NATIONAL MONUMENT, ALASKA
+
+ MARINE MAMMAL COMMISSION
+ WASHINGTON, D.C.
+
+ FEBRUARY 1980
+
+
+
+
+QL 737 .C424 H86x
+
+Humpback whales in Glacier Bay National Monument, Alaska
+
+
+
+
+ Report No. MMC-79/01
+
+ HUMPBACK WHALES IN GLACIER BAY NATIONAL MONUMENT, ALASKA
+
+ Marine Mammal Commission
+ 1625 I Street, N.W.
+ Washington, D.C.  20006
+
+ Published February 1980
+
+ Availability Unlimited
+
+ Prepared by
+
+ U.S. Marine Mammal Commission
+ 1625 I Street, N.W.
+ Washington, D.C.  20006
+
+
+
+
+NOTICE
+
+THIS DOCUMENT HAS BEEN REPRODUCED FROM THE BEST COPY FURNISHED US BY
+THE SPONSORING AGENCY. ALTHOUGH IT IS RECOGNIZED THAT CERTAIN PORTIONS
+ARE ILLEGIBLE, IT IS BEING RELEASED IN THE INTEREST OF MAKING
+AVAILABLE AS MUCH INFORMATION AS POSSIBLE.
+
+
+
+
+                                              REPORT DOCUMENTATION PAGE
+ +------------------------+---------------+----------------------------+
+ |1. Report No.           |2.             |3. Recipient's Accession No.|
+ |                        |               |                            |
+ |  MMC-79/01             |               |      PB 80 141559          |
+ +------------------------+---------------+----------------------------+
+ |4. Title and Subtitle                   |5. Report Date              |
+ |                                        |  October 1979              |
+ |  Humpback Whales in Glacier Bay        +----------------------------+
+ |  National Monument, Alaska             |6.                          |
+ +----------------------------------------+----------------------------+
+ |7. Author(s)                            |8. Performing Organization  |
+ |                                        |   Report No.               |
+ |  Marine Mammal Commission              |                            |
+ +----------------------------------------+----------------------------+
+ |9. Performing Organization Name         |10. Project/Task/Work       |
+ |   and Address                          |    Unit No.                |
+ |                                        |                            |
+ |  Marine Mammal Commission              +----------------------------+
+ |  1625 I Street, N.W.                   |11. Contract or Grant No.   |
+ |  Washington, D.C.  20006               |                            |
+ |                                        +----------------------------+
+ +----------------------------------------+13. Type of Report          |
+ |12. Sponsoring Organization Name        |                            |
+ |    and Address                         |  Final Report              |
+ |                                        |                            |
+ |  Same as above.                        +----------------------------+
+ |                                        |14.                         |
+ +----------------------------------------+----------------------------+
+ |15. Supplementary Notes                                              |
+ |                                                                     |
+ |                                                                     |
+ +---------------------------------------------------------------------+
+ |16. Abstract                                                         |
+ |                                                                     |
+ |  The waters of Glacier Bay National Monument, Alaska, appear to be  |
+ |  an important humpback whale (_Megaptera novaeangliae_) summering   |
+ |  area.  In 1979, fewer whales used Glacier Bay than expected, based |
+ |  on previous observations.  This report, of an Interagency Review   |
+ |  Meeting held in Seattle, Washington, on 12-13 October 1979,        |
+ |  discusses management and research activities relating to humpback  |
+ |  whales in Glacier Bay National Monument and surrounding  waters.   |
+ |                                                                     |
+ +----------------------------------------+----------------------------+
+ |17. Originator's Key Words              |18. Availability Statement  |
+ |  Humpback Whales                       |                            |
+ |   (_Megaptera novaeangliae_)           |                            |
+ |  Glacier Bay National Monument, Alaska |  Availability unlimited    |
+ |  Southeast Alaska                      |                            |
+ |                                        |                            |
+ +----------------------------------------+----------------------------+
+ |19. U.S. Security  |20. U.S. Security   |21. No. of Pages |22. Price |
+ |    Classif. of    |    Classif. of     |                 |          |
+ |    the Report     |    This Page       |                 |          |
+ |                   |                    |                 |          |
+ +-------------------+--------------------+-----------------+----------+
+  This Form may be reproduced.
+
+
+
+
+ TABLE OF CONTENTS
+
+
+                                                                  Page
+
+ PREFACE                                                             1
+
+ INTRODUCTION                                                        2
+
+ BACKGROUND                                                          2
+
+      Distribution and Abundance of Humpback Whales
+      in the North Pacific                                           2
+
+      Glacier Bay                                                    3
+
+      Humpback Whales in Glacier Bay                                 7
+
+      Human Use of Glacier Bay                                      10
+
+ POSSIBLE CAUSE-EFFECT RELATIONSHIPS BETWEEN HUMAN USE
+ OF GLACIER BAY AND THE DISPLACEMENT OF HUMPBACK WHALES
+ FROM THE BAY                                                       13
+
+ ADEQUACY OF EXISTING DATA                                          21
+
+ MANAGEMENT AND RESEARCH ACTIVITIES TAKEN OR
+ UNDER CONSIDERATION                                                21
+
+ ALTERNATIVE MANAGEMENT ACTIONS                                     23
+
+ IDENTIFYING AND SELECTING THE MOST APPROPRIATE
+ RESEARCH/MANAGEMENT STRATEGY                                       24
+
+ AGENCY RESPONSIBILITIES AND NEED FOR COOPERATION
+ AND COORDINATION                                                   26
+
+ SUMMARY                                                            27
+
+ REFERENCES                                                         29
+
+ APPENDICES
+
+
+
+
+ LIST OF TABLES
+
+
+                                                                  Page
+
+ 1. Relative abundance and distribution of identified
+    humpback whales in southeast Alaskan waters 1967-79              8
+
+ 2. Number of humpback whales (individual census)
+    entering Glacier Bay during "influxes"                           9
+
+ 3. Age composition of humpback whales per year in
+    Glacier Bay                                                      9
+
+ 4. Juraszs' description of "stress behavior"                       11
+
+ 5. Juraszs' vessel/aircraft classes                                12
+
+ 6. Number of visitors and vessels to Glacier Bay
+    National Monument                                               14
+
+ 7. Number of vessel sightings per month in each
+    class as seen from the Juraszs' R/V GINJUR                      15
+
+ 8. Average vessel sightings per day in each class
+    as seen from the Juraszs' R/V GINJUR                            16
+
+
+
+
+ LIST OF FIGURES
+
+
+                                                                  Page
+
+ 1. Southeast Alaska, Alexander Archipelago                          4
+
+ 2. Glacier Bay, Alaska                                              5
+
+ 3. Glacier Bay, Alaska showing former positions of
+    termini 1760-1966                                                6
+
+ 4. Commercial fishing vessel visits to Glacier Bay                 17
+
+ 5. Commercial fishing activity Glacier Bay                         18
+
+ 6. Fishing charter boats and private boat visits
+    to Glacier Bay 1970-1977                                        19
+
+
+
+
+PREFACE
+
+
+In 1976, the National Park Service initiated a study to determine
+whether increased boat traffic or boating activities were having an
+adverse impact on humpback whales inhabiting Glacier Bay National
+Monument during the summer months. In 1978, the whales entered the Bay
+as usual, but left sooner than expected. The scientists conducting the
+whale studies believed that the early departure of the whales was
+precipitated by increased boat traffic in the Bay and, in 1979, the
+Park Service, in consultation with the cruise ship industry, developed
+and implemented operational guidelines for vessel course and speed in
+designated areas, where it was felt that vessel interactions with
+incoming whales could cause the most disturbance.
+
+Researchers spent many hours looking for whales in the Bay during the
+early part of the 1979 summer season, but few whales were seen.
+Several interactions between vessels and those whales present in the
+Bay were observed and, on one occasion, a whale known to have had an
+interaction with a vessel left the Bay. Monument personnel discussed
+the problem with the area office of the National Park Service. A
+number of options, including emergency closure of the Bay were
+considered. It was decided to provide funds for a more thorough
+analysis of the available information on whale/vessel interactions,
+and to consult with the National Marine Fisheries Service pursuant to
+Section 7 of the Endangered Species Act.
+
+The NMFS was advised of the situation and, on 10 August 1979, NPS and
+NMFS representatives met in Seattle, Washington to review available
+information concerning the nature and possible causes of the departure
+of whales from the Bay. Another meeting was held in late August to
+discuss the problem with members of the cruise ship industry. It was
+agreed that additional research was needed to better define the nature
+and possible causes of the problem and that a meeting should be held
+to discuss possible research approaches with other professionals in
+the marine mammal field. These decisions led to the meeting described
+in this report.
+
+Subsequent to the meeting reported here, the National Marine Fisheries
+Service in a letter dated December 3, 1979, responded to the National
+Park Service's request for a Section 7 consultation. A copy of the
+NMFS's response is provided in Appendix D of this report.
+
+
+
+
+INTRODUCTION
+
+
+Humpback whales (_Megaptera novaeangliae_) inhabit the inland waters
+of southeast Alaska, including Glacier Bay during the summer months
+(June-August). In the years from 1967 through 1977, 20 to 25
+individually recognizable whales were observed feeding in Glacier Bay.
+In 1978, the whales entered the bay but left earlier than expected. In
+1979, only a few humpbacks entered Glacier Bay. The limited
+information available suggests that increased human activity in the
+Bay may have been responsible, at least in part, for the observed
+shift in distribution. Increased human use of coastal waters is not
+limited to Glacier Bay and the movement of humpbacks from Glacier Bay
+to areas outside the Bay may be symptomatic of a larger problem.
+
+The purposes of this meeting were: (1) to review available information
+concerning the nature and possible causes of the movement of whales
+from Glacier Bay; (2) to review present and planned research and
+management actions relating to humpback whales in Glacier Bay and
+southeast Alaska; and (3) to identify additional research or
+management actions that may be necessary to conserve and protect the
+North Pacific population(s) of humpback whales.
+
+The meeting was held on the 12th and 13th of October 1979, at the
+College of Fisheries, University of Washington, Seattle. The meeting
+agenda is included as Appendix A. Individuals who made formal
+presentations at the meeting are identified on the agenda. A list of
+the meeting attendees, their organizations, addresses, and telephone
+numbers are listed in Appendix B.
+
+
+
+
+BACKGROUND
+
+
+=Distribution and Abundance of Humpback Whales in the North
+Pacific=[1]
+
+Humpback whales are seasonal migrants found in all of the world's
+oceans. In the North Pacific, humpback whales winter in tropical
+regions over the shallow coastal shelfs associated with the Hawaiian
+Islands, Baja California, central Mexico, the Ryukyu Islands, Bonin
+Islands, and Mariana Islands. They summer in cold temperate regions,
+also over shallow coastal shelfs, from Point Conception, California,
+north through Alaska, west through the Aleutians, and south to Honshu
+Island, Japan. Calving and probably breeding occur on the wintering
+grounds. Feeding is believed to occur primarily in the summering
+grounds.
+
+In Alaska, humpback whales are known to inhabit Prince William Sound,
+the waters of the Alexander Archipelago, and the waters adjacent to
+Kodiak Island and the Aleutians. Some whales may also overwinter in
+the northern summering areas.
+
+The distribution, movements, abundance, and habitat requirements of
+humpback whales are not well known. Based upon Japanese catch
+statistics, the pre-exploitation population of humpback whales in the
+North Pacific is estimated to have been approximately 15,000. Much of
+the exploitation of humpback whales occurred in the twentieth century,
+especially during the early 1960's. A small number of whaling stations
+established in southeast Alaska took humpbacks between 1907 and 1922.
+In 1966, the International Whaling Commission imposed a worldwide ban
+on the taking of humpback whales.
+
+The present population of humpback whales in the North Pacific is
+estimated to be about 1,000 animals. The number occurring in tropical
+waters during the winter is thought to be about 600-700 in Hawaii,
+200-300 in Mexican waters, and a "few whales" in the western North
+Pacific. More than 100 individual whales have been identified in
+the inland waters of southeast Alaska during the summer. Tagging
+experiments with Discovery Marks indicate movement between
+the Aleutian Islands and the Western North Pacific; recent
+photo-identification studies have shown movement from Southeast Alaska
+to both the Hawaiian Islands and Baja (and southern coastal) Mexico.
+There is no substantive evidence to indicate whether the number of
+humpback whales, on either summer or winter grounds, in the North
+Pacific is increasing or decreasing.
+
+    [Footnote 1: This summary is based on information provided at
+      the meeting by Drs. Michael Tillman and Louis Herman.]
+
+
+
+    [Illustration: FIGURE 1. (from Jurasz and Jurasz, 1979)]
+      Map showing location of Glacier Bay, Lynn Canal and
+      Fredrick Hole in Southeast Alaska Alexander Archipelago
+
+
+    [Illustration: FIGURE 2. NOS Chart 17300]
+      Soundings in Fathoms Scale 1:209,978
+
+
+    [Illustration: Figure 3. GLACIER BAY, ALASKA]
+      SHOWING FORMER POSITIONS OF TERMINI 1760-1966
+      (from Hale and Wright, 1979)
+
+
+=Glacier Bay=[2]
+
+Glacier Bay is located near the north end of the Alexander Archipelago
+(Figures 1 and 2). The Bay opens into Cross Sound and Icy Strait of
+the Inside Passage of southeast Alaska. When Vancouver discovered the
+area in 1780, glacial ice filled the Bay to its mouth (Figure 3). In
+1891, when the Bay was first mapped, Muir Inlet was still filled with
+ice. Today the ice has retreated up the right (Muir Inlet) arm of the
+"Y" shaped Bay to tide-water levels. Recently, glacial ice has started
+to readvance in the upper reaches of the west inlets of the Bay.
+
+The Bay is defined by shallow sills at its entrance and the entrance
+to Muir Inlet. Constricted channels in which tidal currents are
+locally strong occur between sediment covered shores in the lower end
+of the Bay and the east (Muir) inlet. Deep, unconstricted bedrock
+channels and basins with weak currents occur in mid-Bay and the west
+inlet. These features and the configuration of the bay produce a tidal
+range of 8 meters. There is reduced mixing of waters within the Bay
+and between the Bay and Cross Sound/Icy Strait. Annual precipitation
+up to 4 meters, coupled with glacial melt water, create a surface
+layer and flow of cold fresh water out of the Bay. Strong flood tides
+push sea water into the Bay over the sills. The dynamics of the flow
+may effect the behavior and timing of the movement of whales into (on
+flood tides) and out of (on ebb tides) the Bay (see below).
+
+During the winter, an increase in sea water flow and mixing occur.
+Increased nutrient levels and sunlight in spring/summer provide
+sufficient nutrients and energy for phytoplankton "blooms" to occur.
+In turn, zooplankters appear, especially in the open areas of mid and
+lower Bay (e.g., euphausiids) and along glacial ice faces (e.g.,
+mysids and amphipods). By autumn, plankton concentrations diminish as
+light and nutrient levels decrease. Small schooling fish, (e.g.,
+capelin, _Mallotus villosus_ and Pacific sand lance, _Ammodytes
+hexapterus_), feed on the plankton when it becomes available. Both
+fish and plankton are consumed by humpback whales as well as by other
+predators. Other marine mammal species reported in the Bay are harbor
+seals (_Phoca vitulina_), harbor porpoise (_Phocoena phocoena_),
+killer whales (_Orcinus orca_), and minke whales (_Balaenoptera
+acutorostrata_).
+
+    [Footnote 2: This summary is based on information provided at
+      the meeting by Mr. Gregory Streveler.]
+
+
+=Humpback Whales in Glacier Bay=[3]
+
+The distribution in and use of Glacier Bay by humpback whales was not
+well known until Charles and Virginia Jurasz began observations in
+1973. Prior to this, only personal recollections of Park Service
+employees of the occurrence of humpback whales in the 1950's and the
+1960's exist. In 1967, 60 identifiable humpback whales were observed
+in three southeast Alaskan areas, i.e., Lynn Canal, Frederick Sound,
+and Glacier Bay. The number of identifiable whales remained relatively
+constant until 1974 in Lynn Canal, and 1978 (July 17) in Glacier Bay
+(Tables 1-3). In the respective areas, the number of identified whales
+decreased from 15 and 19 to 1 and 3, respectively. Concurrently, the
+number of identified whales sighted in Frederick Sound increased.
+
+
+ TABLE 1. Relative abundance and distribution of identified humpback
+          whales in southeast Alaskan waters 1967-79[a]
+
+ Year        67  68  69  70  71  72  73  74  75  76  77  78       79
+ -------------------------------------------------------------------
+
+ Glacier Bay 20  20  20  20  20  20  25  25  25  25  25  19/3[b]   3
+ -------------------------------------------------------------------
+
+ Lynn Canal  15  15  15  15  15  15  15   1   3   3   3  1/5       5
+ -------------------------------------------------------------------
+
+ Frederick   25  25  25  25  25  25  25  35  40  40  40  40/50    80
+ Sound
+ -------------------------------------------------------------------
+
+ Total       60  60  60  60  60  60  65  61  68  68  68  60/58    88
+ -------------------------------------------------------------------
+
+    [Footnote a: Specific dates of censuses, sighting techniques and
+    sighting effort not given. Based on a table presented by the
+    Juraszs at the meeting.]
+
+    [Footnote b: First number signifies number originally counted at
+      beginning of season/second number after decrease in number of
+      whales in Glacier Bay and increase in other areas. The
+      identified whales that left Glacier Bay are not necessarily the
+      same individuals that produced the increased numbers in Lynn
+      Canal and Frederick Sound later.]
+
+
+ TABLE 2. Number of humpback whales (individual census) entering
+          Glacier Bay during "influxes".
+          (modified from Jurasz and Jurasz, 1979)
+
+ ------------------------------------------------------
+ Year                          1976      1977      1978
+
+ First Influx                     9         7         7
+
+ Second Influx                   11        17        16
+
+ Seasonal Maximum                20        24        23
+ ------------------------------------------------------
+
+
+ TABLE 3. Age composition of humpback whales per year in Glacier Bay
+         (modified from Jurasz and Jurasz, 1979)
+
+ ----------------------------------------------------------
+ YEAR                          1976      1977      1978
+ ----------------------------------------------------------
+
+ NO. OF CALVES                    1         2         4
+
+ NO. OF IDENTIFIED ADULTS        14        14        18
+
+ NO. OF JUVENILES                           6         1
+
+ TOTAL NO. OF ADULTS             19        19        18
+ ----------------------------------------------------------
+
+
+Identifiable humpback whales were sighted in Glacier Bay each year,
+1976-1977, for a six to twelve week period. In 1978, all but three
+whales departed the Bay after 16 days. In the summers of 1976-1978 two
+influxes of whales occurred (Table 2). The Juraszs' define an influx
+of whales as those whales that enter and remain in the Bay for a
+minimum of three weeks. The second influx arrived 7-14 days after
+extreme low tides occurred in late June-early July and presumably
+moved into the Bay on flood tides. In 1979, a single influx comprised
+of 3 whales entered the Bay. The age composition of identified whales
+using Glacier Bay was categorized by the Juraszs' for 1976-1978 (Table
+3).
+
+During the period spent in the Bay, humpback whales have been observed
+to feed on capelin, euphausiids (_Euphausia pacifica_), and pandalid
+shrimp (_Pandulus borealis_). There appear to be three generalized
+feeding relationships: 1) early-season feeding on shrimp in the upper
+Bay; 2) mid-season feeding by concentrations of whales on capelin in
+the lower Bay; and 3) late-season feeding (around August 5) by
+concentrations of whales on euphausiids in mid-Bay.
+
+Behaviorally, humpback whales appear to lunge up through concentrated
+schools of prey during mid-season and use "bubble-netting" as a means
+of concentrating less dense and/or numerically fewer prey earlier and
+later in the season. In other areas of southeast Alaska, humpbacks are
+reported to also feed on herring (_Clupea harengus pallasi_), shrimp,
+and possibly other small schooling (swarming) prey. The Juraszs'
+believe that humpbacks establish feeding territories in the Bay, and
+have described eight "stress behaviors" associated with violations of
+those territories (Table 4). The data collected by the Juraszs are
+extensive (including human use of Glacier Bay) but have not yet been
+completely analyzed.
+
+    [Footnote 3: This summary is based on information provided at
+      the meeting by Charles and Virginia Jurasz.]
+
+
+=Human Use of Glacier Bay=[4]
+
+John Muir popularized Glacier Bay, leading to tourist activity into
+the early 1900's, when loose ice resulting from earthquake activity
+prevented cruise vessels from operating within the Bay. Glacier Bay
+was designated a National Monument February 26, 1925, the area being
+added to April 18, 1939.
+
+Vessel and tourist numbers remained low until the late 1960's-early
+1970's. Close to 100 percent of the visitors to the Bay use vessels,
+either entering the Bay aboard them or making use of them to tour the
+Bay after arriving by aircraft. The Juraszs' developed a
+classification scheme for vessels and aircraft based upon activities
+of the craft in the Bay, their size, hull design, and engine
+characteristics (Table 5).
+
+ TABLE 4. Juraszs' description of "stress behavior" (Progressing from
+          the least "stressful" to the most "stressful")
+          (modified from Jurasz and Jurasz, 1979.)
+
+ ---------------------------------------------------------------------
+ Mode              Description
+ ---------------------------------------------------------------------
+
+ Vocalization     Bellowing or trumpeting noise produced by a whale
+                  and heard above and below the water. Emanates from
+                  the blowhole at the time of the expiration.
+
+ Bubbling          Premature or underwater release of breath in a
+                   straight line or as a single "belch" allowing the
+                   whale to avoid having a visible blow.  Bubbles
+                   released usually 2-3 m below the water's surface.
+
+ Finning           Flipper slapping; the striking of the water's
+                   surface with the pectoral fins.
+
+ Tail Lobbing      Raising the flukes well out of the water and
+                   crashing or slapping them back flat against the
+                   water's surface producing a loud sound.
+
+ Tail Rake         A subset of the tail lobbing is the rake in which
+                   the flukes are raked laterally across the water's
+                   surface.
+
+ Half or Full      A leap from the water in which a portion of the
+ Bodied Breach     whale's body emerges from the water only to reenter
+                   with a large splash.
+
+ Avoidance         The temporary leaving of an area or a change in the
+                   direction of travel.
+
+ Abandonment       Leaving an area prematurely and not being seen
+                   again for at least one season in that area.
+ ---------------------------------------------------------------------
+
+
+ TABLE 5. Juraszs' vessel/aircraft classes
+          (after Jurasz and Jurasz, 1979)
+
+ --------------------------------------------------------------------
+
+ Class 1       Touring Vessel Over 10k Tons
+
+ Class 2       Touring Vessel   5k-10k tons
+
+ Class 3       Commercial Fishing/Crabbing
+
+ Class 4       Charter & Pleasure
+
+ Class 5       Cabined High RPM Outdrive Units
+
+ Class 6       Sailboat Using Aux. Power
+
+ Class 7       Utility Craft, Outboard Engine
+
+ Class 8       Kayak, Sailboat (no engines)
+
+ Class 9       Aircraft, Fixed
+
+ Class 10      Aircraft, Rotor
+
+ Class 11      Aircraft, Jet
+
+ Class 12      Hydrofoil
+
+ Class 13      Another Humpback
+
+ Class 14      Killer whales
+
+ Class 15      Minke Whales
+
+ Class 16      R/V GINJUR (Juraszs' research vessel)
+
+ Class 17      Wake Only
+
+
+The increase in visitors and vessels to Glacier Bay is presented in
+Tables 6-8. (Data included in Table 6 cannot be compared to data
+presented in Table 7 because of difference in methods of data
+collection, sample area, time, effort, etc.)
+
+Commercial fishing vessel activity in the Bay was probably low until
+the 1970's. Since 1972 (it is not known whether data are available
+prior to 1972) commercial fishing vessel visits have fluctuated
+(Figure 4), but fishing activity has been greatest during the summer
+months (Figure 5). Sport fishing visits have increased during the same
+time period (Figure 6).
+
+    [Footnote 4: This summary is based on information presented at
+      the meeting by Mr. John Chapman and Charles and Virginia
+      Jurasz.]
+
+
+
+
+POSSIBLE CAUSE-EFFECT RELATIONSHIPS BETWEEN HUMAN USE OF GLACIER BAY
+AND THE DISPLACEMENT OF HUMPBACK WHALES FROM THE BAY[5]
+
+
+The meeting participants agreed that the observed decrease in the
+number of whales in Lynn Canal in 1974 and Glacier Bay in 1978 may be
+attributable to a number or combination of factors. Available evidence
+suggests human activity was at least one of the causes, or served to
+trigger otherwise "natural events". In Lynn Canal, humpback whales
+were known to feed on herring (_Clupea harengus pallasi_). In 1974,
+the year a herring fishery began, the number of humpback whales
+dropped to one (Table 1). Between 1974 and 1978 fishing continued.
+There was no fishing in 1979.
+
+Use of the Canal by Class 5 vessels (cabin cruisers with high RPM
+outdrive units) increased by 15-20 percent each year after 1970
+(Jurasz and Jurasz, 1979, p. 85). Three humpback whales were seen in
+Lynn Canal during the 1975-1977 seasons, the number increasing to five
+in 1978-1979. The relationship between vessel activity, fishing
+effort, fish take, fish abundance, and the presence and activity of
+whales in Lynn Canal does not appear to be documented.
+
+In Glacier Bay, increased vessel traffic may be one of the factors
+responsible for the movement of humpback whales from the Bay in 1978
+and 1979. The Juraszs' data, while not evaluated fully, suggest that
+there has been a general increase in avoidance by humpback whales of
+Class 1 through 5 vessels over the three year period, 1976-1978.
+
+TABLE 6. Number of visitors and vessels to Glacier
+           Bay National Monument.[a]
+
+ ---------------------------------------------------------------------
+                                  Cruise Ships    Private Vessels
+                                  Juraszs'        (incomplete count)
+ Year Visitation  Increase        Classes 1-2     Juraszs' Classes 4-8
+ ---------------------------------------------------------------------
+
+ 1965     1,800
+ ---------------------------------------------------------------------
+
+ 1969    16,000   789% over 1965                          450
+ ---------------------------------------------------------------------
+
+ 1970    29,700    86% over 1969
+ ---------------------------------------------------------------------
+
+ 1972                                  33
+ ---------------------------------------------------------------------
+
+ 1978   109,500   269% over 1970      123                1800
+                  584% over 1969
+ ---------------------------------------------------------------------
+
+ 1979                                 123
+ ---------------------------------------------------------------------
+
+    [Footnote a: Based on a table and information provided at the
+      meeting by Mr. John Chapman, National Park Service.
+      (Modified by adding Juraszs' classes of vessels.)]
+
+
+ TABLE 7. Number of vessel sightings per month in each class as seen
+          from the Juraszs' R/V GINJUR. (from Jurasz and Jurasz, 1979)
+
+ ---------------------------------------------------------------------
+               1977                           1978
+        ----------------------------   -------------------------------
+ Vessel
+ Class   June   July   August  TOTAL    June   July   August   TOTAL
+ ---------------------------------------------------------------------
+
+  1       20     22     11      53      17     25      8       50
+
+  3       67     18      6      91      62     31      64     157
+
+  4       37     42     30     109      29    125      64     218
+
+  5       38     45     17     100      27     61      24     112
+
+  6        3     14      0      17       0     29      19      48
+
+  7        6      4      6      16       8      4       5      17
+
+  8        7      2      7      16       2     12       3      17
+
+ 12                                             4       3       7
+
+
+ TABLE 8. Average vessel sightings per day in each class as seen from
+          the Juraszs' R/V GINJUR. (Modified from Jurasz and
+          Jurasz, 1979)
+
+
+ -----------------------------------------------------------
+ Vessel                          Percent       Percent
+ Class       1977      1978      Decrease      Increase
+
+ 1           3.90      3.20       18%
+
+ 3           5.74     13.47                    135%
+
+ 4           8.38     16.87                    101%
+
+ 5           6.93      8.19                     18%
+
+ 6           1.11      3.99                    259%
+
+ 7           1.21      1.38                     14%
+
+ 8           1.24      1.18         5%
+ -----------------------------------------------------------
+
+
+ [Illustration: Figure 4. COMMERCIAL FISHING VESSEL VISITS TO
+                          GLACIER BAY (from Hale and Wright, 1979)]
+
+
+ [Illustration: Figure 5. COMMERCIAL FISHING ACTIVITY GLACIER BAY
+                          (from Hale and Wright, 1979)]
+
+
+              J    F    M    A    M    J    J    A    S    O    N    D
+
+ =SALMON=
+
+  King        L    L    L    L    M    H    H    H    M    L    L    L
+             |--------------------------------------------------------|
+
+  Red                             L    M    M    M    L
+                                |---------------------|
+
+  Coho                                 H    H    H    H
+                                     |----------------|
+
+  Pink                            L    H    H    H    M
+                                |---------------------|
+
+  Chum                            L    H    H    M    M
+                                |---------------------|
+
+ =HALIBUT=    |---------------------|
+
+ =CRAB=
+
+  Tanner     ------------------|                             |--------
+
+  King       -------|                                 |---------------
+
+  Dungeness                           |----------------|
+
+
+ Key
+  |---------| commercial fishing occurs
+     L           Low level
+       M           Medium level
+         H           High level
+
+
+[Illustration: Figure 6. FISHING CHARTER BOATS AND PRIVATE
+                         BOAT VISITS TO GLACIER BAY 1970-1977
+                         (from Hale and Wright, 1979)]
+
+
+Natural changes in the environment and/or in the behavior of whales
+have occurred concurrently with increased human/vessel activity in
+Glacier Bay. Such natural changes include spatial and temporal trends
+or cycles in the physical (temperature, tides, currents, turbidity,
+etc.), chemical (salinity, dissolved gases, inorganic/organic
+substances--nutrients, etc.) or biological (primary productivity,
+zooplankton, nekton, benthic species, predators, etc.) properties or
+characteristics of the waters within and outside the Bay. Temporal
+and/or spatial differences in relative abundance of three different
+prey species within and outside the Bay may have occurred and been
+responsible, at least in part, for the movement of humpbacks from
+Glacier Bay. At this time, data are inadequate to relate the movement
+of humpback whales from Glacier Bay in 1978 and 1979 to physical,
+chemical, or biological factors. Meeting participants felt that
+physical and chemical factors were unlikely to have changed
+sufficiently between 1976 and 1978 to affect humpback whales, while
+biological factors, perhaps as a result of physio-chemical changes,
+could have changed sufficiently to have caused or contributed to the
+movement.
+
+Human activity may have caused changes in the physical, chemical, or
+biological environment, effecting humpbacks directly or indirectly.
+Human and vessel activities may have occurred such that the space
+(vertical and/or horizontal) available to whales for normal activities
+was less than that necessary (below some threshold level or value).
+"Too many" vessels may have transited an area and/or approached whales
+"too closely" for "too long" a period of time, producing visual,
+acoustic, tactile, chemical, or other as yet unknown stimuli at levels
+or values (magnitude, intensity, duration, frequency, interval, etc.)
+greater than the whales would tolerate. The physical-acoustic
+environment may have changed as a result of sounds produced by
+vessels. Vessel sounds may be modified, amplified, intensified, etc.,
+as a result of the geological/topographical features of Glacier Bay
+(and perhaps Lynn Canal as well). Direct interference with the whales'
+own sounds may have occurred or "environmental" sound levels may have
+exceeded certain thresholds. Basic data on the acoustic properties and
+characteristics of Glacier Bay with and in the absence of vessels are
+lacking.
+
+Changes in water quality may have occurred through pollution. Data are
+insufficient to document the past or present levels of pollution, but
+they were thought by meeting participants to be relatively low.
+
+Changes in the biological environment induced by human activity may be
+contributory to the movement of whales. Movement from Lynn Canal may
+have resulted from direct competition for the same resource at the
+same time, by depletion of the resource below levels sufficient to
+support humpbacks or as a result of noise or the presence of fishing
+vessels. Fishing activity or overharvesting (depletion of resource) of
+other species at other trophic levels may indirectly impact humpbacks
+through the food web/chains. There are insufficient data to prove or
+disprove such hypotheses at this time.
+
+In summary, a best interpretation of the available data is that
+uncontrolled increase of vessel traffic, particularly of erratic
+charter/pleasure craft, may have adversely altered the behavior of
+humpback whales in Glacier Bay and thus may be implicated in their
+departure from the Bay the past two years. The causal mechanism of
+this adverse reaction to increased vessel traffic remains unknown. The
+effects of increasing vessel traffic apparently are exacerbated by the
+narrow physical confines of Glacier Bay. This analysis is not
+clear-cut, however, and may be confounded, at least in 1979, by
+possible shifts in the occurrence and availability of preferred prey
+species of humpback whales.
+
+    [Footnote 5: This summary is based on information presented at
+      the meeting and resulting discussions.]
+
+
+
+
+ADEQUACY OF EXISTING DATA
+
+
+In the Background and Possible Cause and Effect sections it
+was stated that insufficient data exist to indicate cause and effect
+relationships. Data are not sufficient in many areas, e.g.:
+
+    1) environmental baseline data (biological, chemical, and
+       physical) are inadequate;
+
+    2) data available (i.e., Juraszs') have not been analyzed fully;
+
+    3) changes in human use of areas are not adequately quantified
+       (e.g., for fishing, cruising, touring, pleasure boating); and
+
+    4) data on the acoustic characteristics of Glacier Bay or the
+       vessels occurring in the Bay are not available.
+
+
+
+
+
+MANAGEMENT AND RESEARCH ACTIVITIES
+TAKEN OR UNDER CONSIDERATION[6]
+
+
+The National Park Service (NPS) is responsible for managing and
+overseeing the use of Glacier Bay National Monument in support of the
+objectives defined for the Service, when it was established in 1916;
+an excerpt from the Act creating the Service in 1916 states that the
+purpose of the Service is:
+
+    "To conserve the scenery and the natural and historic objects
+    and the wildlife therein and to provide for the enjoyment of the
+    same in such manner and by such means as will leave them
+    unimpaired for the enjoyment of future generations."
+
+
+The intent in establishing the Monument is defined in the
+Proclamations of 1925 and 1939, sections of which are excerpted and
+presented below.
+
+    "Whereas, there are around Glacier Bay ... a number of
+    tide-water glaciers of the first rank in a magnificent setting
+    of lofty peaks, and more accessible to ordinary travel than any
+    similar regions of Alaska,
+
+    "And, Whereas, the region is said by the Ecological Society of
+    America to contain a great variety of forest covering consisting
+    of mature areas, bodies of youthful trees which have become
+    established since the retreat of the ice which should be
+    preserved in absolutely natural condition, and great stretches
+    now bare that will become forested in the course of the next
+    century,
+
+    "And, Whereas, this area presents a unique opportunity for the
+    scientific study of glacial behavior and of resulting movements
+    and development of flora and fauna and of certain valuable
+    relics of ancient interglacial forests." (Proclamation
+    establishing Glacier Bay National Monument, February 26, 1925.)
+
+    "Whereas, it appears that certain public lands, part of which
+    are within the Tongass National Forest ... have situated thereon
+    glaciers and geologic features of scientific interest; and
+
+    "Whereas, a portion of the aforesaid public lands ... are
+    necessary for the proper care, management, and protection of the
+    objects of scientific interest situated on the lands...."
+    (Proclamation of April 18, 1939, adding lands to the Monument.)
+
+
+The management plans developed by the National Park Service for the
+Glacier Bay National Monument did not anticipate, and apparently have
+not been adequate to deal with, the increased visitor and vessel
+traffic and their use of the marine environment in the 1970's. Title
+36 of the Code of Federal Regulations, under which the National Park
+Service operates, contains a section requiring any commercial business
+conducted or operating within the boundaries of Service area to have a
+permit issued by the Service. The cruise ship industry companies have
+not as yet been placed under a permit system. However, it is the
+intent of the Service to establish a regular system in the future. All
+other commercial ventures operating on lands and waters of the
+Monument are under contract or permit. Fishing vessel activity is
+unregulated although the take of Pacific halibut, (_Hippoglossus
+stenolepis_) is regulated by the International Pacific Halibut
+Commission, and the take of salmon and other finfish and shellfish is
+regulated by the Alaska Department of Fish and Game (ADFG). The need
+for additional resource/use plans and regulatory programs is
+recognized by the National Park Service.
+
+The NPS funded field studies of humpback whales by the Juraszs in
+1976-1979, analysis of some of the Juraszs' data, and Hale's and
+Rice's (of the NPS Alaska area office) report, "The Glacier Bay Marine
+Ecosystem--A Conceptual, Ecological Model" completed in April 1979.
+
+The movement of humpback whales in 1978 from Glacier Bay to
+surrounding waters and the suggestion by the Juraszs' field
+observations, that there may be a cause and effect relationship
+between vessel activity and the whales' movement, led the NPS to
+restrict some vessel activities in the 1979 season, and to seek
+Endangered Species Act Section 7 consultations with the National
+Marine Fisheries Service in August 1979. The Section 7 consultations
+were not completed at the beginning of the meeting. Based in part upon
+NMFS's recommendations, the NPS will consider various future
+management alternatives. Restrictions imposed in 1979 were temporary
+(emergency closure authority under Title 36 C.F.R.). Any regulations
+imposed for 1980 cannot be under emergency closure authority (unless
+an emergency does arise which was unforeseen in setting up regulatory
+systems). Regulations which can be foreseen at this time as being
+necessary would have to proceed through the normal Federal Register
+publication process. Enforcement of all Federal laws and regulations
+within Glacier Bay is considered to be the responsibility of the NPS.
+
+The National Marine Fisheries Service (NMFS) has overall
+responsibility, under the Marine Mammal Protection Act of 1972, for
+the conservation and protection of all whales including humpback
+whales. The National Marine Fisheries Service in cooperation with the
+Juraszs has conducted censuses of humpback whales in southeast Alaskan
+waters in 1975 and 1976, used radio tags to follow individual whales
+in Alaskan waters in 1976-78, maintains a catalogue of humpback
+whale photographs and has developed a computerized retrieval
+photo-identification system. No research was conducted by NMFS in
+1979. NMFS enforcement of laws and regulations is conducted by a few
+people responsible for large areas in southeast Alaska. A contract
+with the State of Alaska until August 1, 1979, provided a broader
+presence of enforcement personnel. That contract was not renewed. The
+NMFS is now fully responsible for enforcement activities relating to
+humpback whales except in areas such as Glacier Bay where the
+responsibility is shared.
+
+    [Footnote 6: This summary is based on information presented at
+      the meeting by National Park Service and National Marine
+      Fisheries Service Personnel.]
+
+
+
+
+ALTERNATIVE MANAGEMENT ACTIONS
+
+
+Based on available information, vessel activity may have been a factor
+contributing to the movement of whales from Glacier Bay in 1978 and
+1979. Alternatives available to manage vessel traffic (assuming
+increased traffic has had or will have an adverse effect on humpback
+whales) include:
+
+  1. Total closure of Glacier Bay to all vessels.
+
+  2. Closure to all vessels during the whale season.
+
+  3. Closure to all vessels during part of the whale season.
+
+
+  4. Total closure to all but certain classes of vessels--e.g.,
+      cruise vessels
+      charter vessels
+      fishing vessels
+
+  5. Seasonal closure to all but certain classes of
+     vessels--e.g.,
+        cruise vessels
+        charter vessels
+        fishing vessels
+
+  6. Partial season closure to all but certain classes of
+     vessels--e.g.
+        cruise vessels
+        charter vessels
+        fishing vessels
+
+  7. Alternatives 4, 5, or 6 with limitations on total numbers of
+     vessels of various classes given access
+
+  8. Alternatives 4, 5, 6 or 7 with restrictions applying only to
+    certain areas of the Bay
+
+  9. Establishment of a ceiling for all vessels or certain classes of
+    vessels during all or part of the whale season
+
+ 10. No restrictions on access but certain activities prohibited or
+     limited to certain areas or vessel classes--e.g.:  establish
+     traffic lanes and permit "deliberate" whale-watching only by a
+     few trained and licensed charter-boat operators.
+
+ 11. No restrictions.
+
+
+
+
+IDENTIFYING AND SELECTING THE MOST APPROPRIATE
+RESEARCH/MANAGEMENT STRATEGY
+
+
+Factors that should be considered in making research/management
+decisions include (1) that the humpback whale is an endangered
+species; (2) that there are statutory requirements to protect the
+whales and their habitats; (3) that the cause of the present problem
+is uncertain; (4) that the purpose of the Monument is to provide for
+educational, recreational, and scientific experiences; and (5) that
+limiting access or restricting or closing the Monument to some or all
+vessel activity could affect commercial and private enterprises,
+including fishing.
+
+Additionally, there are a number of types and possible consequences of
+decision errors that should also be considered--e.g.,
+
+ 1. If Glacier Bay is a critical habitat, and if the movement of
+    humpbacks is in response to whale watching vessels, pleasure
+    boats, cruise vessels, etc., and if the movement is or will be
+    irreversible; then the humpback whale population will be adversely
+    impacted (e.g., carrying capacity reduced) if no action is taken.
+
+ 2. If Glacier Bay is not a critical habitat, and if movement is due
+    to whale watching vessels, etc., and it is or will be irreversible;
+    then only the quality of visitor experience/value of monument is
+    decreased if no action is taken. The impact on the population of
+    humpbacks is not critical so long as suitable habitat is available
+    elsewhere. However, the NPS mandate established in the 1916 Act
+    still would not be fulfilled.
+
+ 3. If all, or a specific type of, vessel traffic is prohibited or
+    regulated, and the movement from the Bay is not caused, directly
+    or indirectly by such traffic; then there will be decreased
+    opportunity for human activity within the Bay, and increased
+    economic impacts on fishermen and commercial operators that may
+    have been unnecessarily restricted.
+
+
+The optimal short-term research/management strategy would minimize the
+risks associated with the kinds of errors discussed above, and include
+actions such as the following:
+
+ 1) by early 1980, compile and complete the analysis and evaluation of
+    all existing and relevant data;
+
+ 2) based upon the evaluation of the best available data, promulgate
+    temporary (one season) whale watching regulations and/or restrict
+    access by all or certain classes of vessels or the number,
+    frequency, or duration of visits of all or certain classes of
+    vessels to certain areas at certain times of the year, as may be
+    appropriate;
+
+ 3) continue and, if appropriate expand, surveys of whale/vessel
+    numbers, distribution, movements, behavior and interactions in and
+    outside Glacier Bay;
+
+ 4) identify and initiate additional research that is needed to
+    identify and mitigate the cause or causes of the observed humpback
+    whale movement from the Bay, e.g.,
+
+    a. characterize the acoustical environment of Glacier Bay and
+       other areas in which humpbacks occur;
+
+    b. characterize the sounds generated by various classes of vessels
+       and aircraft;
+
+    c. design and conduct sound playback experiments to test hypotheses
+       concerning the possible effects of vessel activities on humpback
+       whale movements and behavior; and
+
+    d. assess and monitor the physical, chemical, and biological
+       characteristics of Glacier Bay, especially the distribution and
+       abundance of prey species upon which humpback whales feed.
+
+The optimal long-range research/management strategy would include:
+
+ 1) the development and implementation of a humpback whale recovery
+    plan to include humpback whales in all of Glacier Bay, all of
+    southeast Alaska and the North Pacific in general, including: the
+    identification, designation and protection of critical humpback
+    whale habitat;
+
+ 2) the development of a universal and/or site-specific definition
+    of "harassment" to apply to humpback whales in Glacier Bay,
+    southeast Alaska and the North Pacific in general;
+
+ 3) the development and implementation of a long-range
+    research/management plan for the Monument including whale and
+    environmental monitoring;
+
+ 4) a determination as to the direct and indirect effects of
+    incidental take, whale watching, fishing activity, etc. on humpback
+    whales in Glacier Bay, Southeast Alaska and the North Pacific in
+    general; and
+
+ 5) a determination as to the long-term cumulative impacts of the
+    degradation and destruction of habitat on the survival of the
+    humpback whale throughout its range in the North Pacific.
+
+
+
+
+
+AGENCY RESPONSIBILITIES AND NEED FOR
+COOPERATION AND COORDINATION
+
+
+There are many individuals, groups and organizations interested or
+involved in finding solutions to problems associated with humpback
+whales and human activities in Glacier Bay. The need for management
+planning and research programs has been identified. The
+identification of interested and responsible organizations is
+necessary so that cooperative, coordinated planning and research can
+occur. Hopefully, by developing such plans or projects, minimum
+resources will be expended to obtain satisfactory solutions. In
+addition, by involving all interested and responsible individuals,
+groups, or organizations at an early stage, cooperative efforts can be
+maximized and disagreements identified and minimized.
+
+The prime responsibilities of the National Marine Fisheries Service
+and the National Park Service have been identified. Other Federal
+agencies that should or might profitably be involved include the
+Bureau of Land Management, the Office of Coastal Zone Management, Sea
+Grant, the U.S. Fish and Wildlife Service, the U.S. Geological Survey,
+the U.S. Coast Guard, the Environmental Protection Agency, and the
+Army Corps of Engineers. State agencies that should or might be
+profitably involved include the Alaska Department of Fish and Game,
+the State Coastal Zone Management Commission, and the Alaska
+Department of Natural Resources. Commercial and recreational companies
+that organize fishing, tour, and charter activities, private boaters,
+academic/scientific communities, and environmental organizations are
+also important. Some of these organizations have on-going, or plan to
+initiate, research projects, which may provide data and information of
+importance to the problems discussed in this report.
+
+The Bureau of Land Management, New York Outer Continental Shelf (OCS)
+Office, is presently initiating noise effects studies on marine
+mammals. The U.S. Geological Survey at Tacoma, Washington and Menlo
+Park, California is describing and mapping marine sediment
+distribution, thickness and characteristics within Glacier Bay. J. P.
+Mathews, of the Institute of Marine Science, University of Alaska, is
+summarizing the physical characteristics, especially water mass
+characteristics and dynamics, of Glacier Bay. If possible, these
+studies should be coordinated such that a maximum amount of
+information can be obtained and used in the management and research
+activities related to Glacier Bay National Monument and the humpback
+whale.
+
+
+
+
+SUMMARY
+
+
+Humpback whales in the North Pacific are migratory, spending the
+summer months in northern waters including the inland waters of
+southeast Alaska. Records have been maintained on the number of
+identifiable humpbacks seen in these waters including Glacier Bay. In
+1978, humpbacks departed Glacier Bay after being "in residence" for a
+far shorter time period than recorded previously; all but three whales
+left the Bay within 24 hours of entering in 1979.
+
+There has been an increase in vessel traffic and activity within
+Glacier Bay during the 1970's. Such activity may have been a factor in
+the movement of humpbacks from Glacier Bay. Other factors which may
+have been at least contributing but for which no known information
+exists, or is inadequate at best, include: natural environmental
+changes (chemical, physical, biological) or natural changes in the
+movement of the whales.
+
+Present management and research plans and activities did not
+anticipate and, therefore, are inadequate to deal effectively with
+present day problems associated with a rapidly growing influx of
+people and vessels/aircraft into any environment with limited space
+and resources. Some human activities and the activities and behavioral
+patterns of humpback whales may be mutually exclusive.
+
+The most apparent important short-term research need is to analyze and
+evaluate all available data, in order to develop short and long term
+management plans and research programs.
+
+
+
+
+REFERENCES
+
+
+ Hale, L. Z. and R. G. Wright, 1979. The Glacier Bay Marine
+   Ecosystem. A Conceptual Ecological Model. U.S. Department of the
+   Interior, NPS, Anchorage Office. 177 pp.
+
+ Jurasz, C.M. and V. Jurasz. 1979. Ecology of Humpback Whales. Draft
+   final report to the National Park Service.
+
+
+
+
+APPENDIX A
+
+
+AGENDA
+
+ Meeting to Review Information and Actions
+ Concerning Humpback Whales in
+ Glacier Bay National Monument, Alaska
+ 12-13 October 1979
+ Room 208, College of Fisheries
+ University of Washington, Seattle, Washington
+
+
+ =12 October 1979=
+
+ 9:00    Discussion of meeting objectives, agenda, and procedures
+         (Dr. Robert Hofman, Marine Mammal Commission)
+
+ 9:15    Overview of available information on the distribution,
+         abundance, and habitat requirements of humpback whales in the
+         North Pacific (presentation by Dr. Michael Tillman, National
+         Marine Fisheries Service)
+
+ 9:30    Physical/chemical characterization and history of Glacier
+         Bay (presentation by Mr. Gregory Streveler, Glacier Bay
+         National Monument)
+           a.   location, dimensions, geomorphology
+           b.   geologic history and structure of the basin
+           c.   glaciology
+           d.   current patterns
+           e.   water characteristics (temperature, salinity,
+               nutrients)
+           f.   climate
+
+ 10:00   Review of available information concerning the past and
+         present utilization of Glacier Bay by humpback whales
+         (presentation by Mr. Charles Jurasz)
+           a.  historical distribution, movement, and abundance
+           b.  present distribution, movement, abundance, and
+               behavior
+
+ 10:30   Coffee Break
+
+ 10:45   Review of information concerning the past and present human
+         use and its possible effects on Glacier Bay (presentation by
+        Mr. John Chapman)
+
+ 11:15   Possible reasons for observed changes in utilization of Glacier
+         Bay by humpback whales (discussion led by Dr. Robert Hofman)
+
+ 12:15   Lunch
+
+ 1:30    Review of on-going and planned research and management
+         activities in Glacier Bay and contiguous waters
+           a.  1:30--National Park Service (presentation by Mr. Jim
+               Larson and/or Mr. John Chapman)
+           b.  1:50--National Marine Fisheries Service (presentation
+               by Mr. Milsted Zahn and/or Dr. Michael Tillman)
+
+ 2:15    Identification of additional research/management actions, if
+         any, needed to protect humpback whales in Glacier Bay, e.g.:
+           a.  Research
+               1.  Physical
+                   i.  acoustic characteristics of the Bay
+                   ii. water currents and tidal factors
+               2.  Biological
+                   i.  identification of whale food and its distribution
+                       and abundance
+                   ii.  additional whale behavior studies including
+                        harassment indicators
+               3.  Human Factors
+                   i.  acoustic characteristics of vessels
+           b.  Management
+               1.  comprehensive monitoring of vessel use patterns
+                   throughout the Bay
+               2.  vessel routing, number, and speed controls
+               3.  seasonal and/or area closures
+
+ 4:30    As possible, summarize and rank research and management
+         activities not included in on-going or planned activities.
+
+ 5:00    Adjourn
+
+
+ =13 October 1979=
+
+ 9:00    Continue discussion on ranking research and management
+         activities not included in on-going or planned activities
+
+ 10:00   Coffee Break
+
+ 10:15   As possible, identify target initiation dates, target
+         completion dates, optimal methods, time, money, personnel,
+         logistic support, and equipment needed to initiate and complete
+         ranked research and management projects
+
+ 11:45   Closing Remarks
+
+ 12:00   Adjourn
+
+
+
+
+ APPENDIX B
+
+
+LIST OF PARTICIPANTS AT MEETING TO REVIEW INFORMATION AND ACTIONS
+CONCERNING HUMPBACK WHALES IN GLACIER BAY NATIONAL MONUMENT
+
+
+ Mr. James A. Blaisdell
+ National Park Service
+ Fourth & Pike Building, Room 601
+ Seattle, Washington 98101
+    206/442-1355
+    FTS:  399-1355
+
+ Mr. Rob Bosworth
+ Institution for Marine Studies--HA-35
+ University of Washington
+ Seattle, Washington 98105
+    206/543-7004
+
+ Mr. John F. Chapman
+ Superintendent
+ Glacier Bay National Monument
+ P.O. Box 1089
+ Juneau, Alaska 99802
+    907/586-7137
+
+ Dr. William C. Cummings
+ Scripps Institution of Oceanography
+ Marine Physical Laboratory (A005)
+ La Jolla, California 92093
+    714/452-2852
+      and
+ Oceanographic Consultants
+ 5948 Eton Court
+ San Diego, California 92122
+    714/453-3257
+
+ Dr. Frederick C. Dean
+ Professor of Wildlife Management
+ Cooperative Park Studies Unit
+ Room 210, Irving Building
+ University of Alaska
+ Fairbanks, Alaska  99701
+    907/479-7672
+
+ Dr. Donald R. Field
+ Regional Chief Scientist
+ National Park Service
+ Pacific Northwest Region
+ Fourth & Pike Building, Room 601
+ Seattle, Washington  98195
+    206/442-1355
+    FTS:  399-1355
+
+ Mr. Robert Giersdorf
+ President
+ Glacier Bay Lodge, Inc.
+ Park Place Building, Suite 312
+ Seattle, Washington 98101
+    206/624-8551
+
+ Dr. Louis Herman
+ University of Hawaii, Kewalo Basin
+ Marine Mammal Laboratory
+ 1129 Ala Moana
+ Honolulu, Hawaii  96814
+    808/537-2042
+
+ Mr. Larry Hobbs
+ Wildlife Biologist
+ U.S. Fish and Wildlife Service
+ National Fish and Wildlife Laboratory
+ Smithsonian Institution
+ Washington, D.C.  20560
+    202/343-4516
+
+ Mr. Charles M. Jurasz
+ Ms. Virginia Jurasz
+ Sea Search
+ P.O. Box 93
+ Auke Bay, Alaska 99821
+
+ Mr. James W. Larson
+ Deputy Regional Chief Scientist
+ National Park Service
+ Alaska Area Office
+ 540 W. 5th Avenue
+ Anchorage, Alaska  99501
+    907/271-4243
+
+ Mr. Paul A. Larson
+ Chief Resource Management and
+ Visitor Protection
+ National Park Service
+ Pacific Northwest Region
+ Fourth & Pike Building, Room 601
+ Seattle, Washington 98101
+    206/442-5670
+    FTS:  399-5670
+
+ Mr. William Lawton
+ National Marine Mammal Laboratory
+ NOAA/NMFS
+ 7600 Sand Point Way, N.W., Building 32
+ Seattle, Washington  98115
+    206/442-5215
+
+ Dr. Jack W. Lentfer
+ Alaska Department of Fish and Game
+ 210 Ferry Way
+ Juneau, Alaska 99801
+    907/586-6702
+
+ Dr. Katherine Ralls
+ Office of Zoological Research
+ National Zoo
+ Smithsonian Institution
+ Washington, D.C.  20008
+    202/381-7315
+
+ Mr. Dale W. Rice
+ National Marine Mammal Laboratory
+ NOAA/NMFS
+ 7600 Sand Point Way, N.E., Building 32
+ Seattle, Washington 98115
+    206/442-5004
+
+ Mr. G. P. Streveler
+ Research Biologist
+ Glacier Bay National Monument
+ Gustavus, Alaska 99826
+    907/697-3341
+
+ Mr. Steven L. Swartz
+ 1592 Sunset Cliffs Boulevard
+ San Diego, California 92107
+    714/222-9978
+
+ Dr. Michael F. Tillman, Director
+ National Marine Mammal Laboratory
+ NOAA/NMFS
+ 7600 Sand Point Way, N.E., Building 32
+ Seattle, Washington 98115
+    206/442-4712
+    FTS:  399-4711
+
+ Mr. Douglas G. Warnock
+ Deputy Director Alaska Area
+ National Park Service
+ 540 West 5th Avenue, Room 202
+ Anchorage, Alaska  99501
+    907/271-4243
+
+ Mr. Roland H. Wauer
+ Chief, Division of Natural Resources
+ National Park Service
+ 1100 L Street, N.W.
+ Washington, D.C.  20240
+    202/523-5127
+
+ Dr. A. R. Weisbrod
+ Endangered Species Coordinator
+ National Park Service
+ 1100 L Street, N.W.
+ Washington, D.C.  20240
+    202/523-5127
+
+ Mr. Allen A. Wolman
+ National Marine Mammal Laboratory
+ NOAA/NMFS
+ 7600 Sand Point Way, N.E., Building 32
+ Seattle, Washington 98115
+    206/442-4583
+
+ Mr. Milsted C. Zahn
+ Enforcement Division
+ Alaska Regional Office
+ National Marine Fisheries Service
+ Box 1668
+ Juneau, Alaska  99802
+    907/586-7228
+
+
+
+
+APPENDIX C
+
+
+Data/Information and Research Needs Relative to Humpback Whales in
+Glacier Bay and Elsewhere (these lists are examples and not
+necessarily all inclusive).
+
+ A.    Compilation and analyses of existing data (available data
+       presently are not in a form that is optimally useful)
+
+       I.   =Whales=
+
+            a.  whale distribution and abundance in Glacier Bay and
+                surrounding areas--by year, season, time of day, age,
+                sex, weather (tide, rain, etc.), birds, boats (by total
+                and by class), depth of water, distance from shore, prey
+                species, effort,----
+
+            b.  movements/habitat use patterns--home range,
+                temporal/spatial distribution of sightings of
+                individually recognizable animals--are there resident,
+                migratory and/or transient animals in the Bay or
+                surrounding waters--do individuals have seasonal, annual
+                cycles as to when/where they occur
+
+            c.  undisturbed ("normal"--baseline) whale behavior--by age,
+                sex, group size, group composition, time of day, season,
+                location (descriptive and quantitative)
+
+                1.   resting dive times/breathing    a.  vocalization
+                2.   traveling                           1.
+                3.   feeding                             2.
+                     i.  lunge-feeding                   3.
+                    ii.  bubble net-feeding              "
+                   iii.  other                       b.  tail lob
+                                                     c.  raking
+                                                     d.  finning
+                                                     e.  breaching
+                                                     f.  avoidance
+                                                     g.  other
+
+                4.  interaction with other whales/social organization
+                    of whales
+
+            d.  disturbed whale behavior--stimulus/response--behavior
+                (as above) before, during and after an event--response
+                distance (by age, sex, pre-event  activity, location,
+                time between events, time of day, season, weather,
+                etc.)--recovery time (by age, sex, etc.).
+
+       II.  =Boat and Aircraft Traffic=
+
+            a.  distribution and abundance in Glacier Bay and
+                surrounding areas--by type (class), year, season,
+                time of day, weather
+
+            b.  movements/use patterns--by type, year, etc.
+
+            c.  activities (behavior)--by type, year, etc.
+                1.  whale watching
+                2.  fishing (sport/commercial)
+
+       III. =Habitat= (physical, chemical, biological environment--by
+            year, season, etc.)
+
+            a.  physical--water temperature, sediment load
+
+            b.  chemical--salinity, oxygen content, inorganic nutrient,
+              pollutants
+
+            c.  biological
+                1.  distribution and abundance of primary and secondary
+                    prey species--by year, season, time of day
+                2.  distribution, size, and species composition of fish
+                    catch, including by-catch--by year and season
+                3.  distribution and abundance of predators (killer
+                    whales) and competitors other than man--by year,
+                    season, time of day, etc.
+
+ B.    Improve base line data
+
+       I.  =Acoustic=
+
+            a.  ambient noise levels--representative areas (in and
+                outside Bay), seasons, time of day, weather and tide
+                conditions, sea state
+
+            b.  boat- and plane-related noise--representative types,
+                representative areas (in and outside Bay), speed
+                (prop rpm), season, time of day, sea state
+
+       II.  =Whales=--in and outside the Bay
+
+            a.  abundance
+
+            b.  distribution
+
+            c.  movements (habitat use pattern)
+
+            d.  activity patterns
+
+            e.  behavior vocalization
+
+            f.  habitat requirement/areas of special significance
+
+      III.  =Boats and Planes=--in and outside the Bay
+
+            a.  abundance--by type, season, time of day
+
+            b.  distribution--  "     "       "      "
+
+            c.  movements--     "     "       "      "
+
+            d.  activity in patterns  "       "      "
+
+      IV.   =Habitat=
+
+            a.  physical
+
+            b.  chemical--pollutant levels
+
+            c.  biological
+
+                1.  distribution, abundance and dynamics of primary
+                    and secondary prey species--in and outside the Bay
+
+                2.  distribution, size and species composition of fish
+                    catch--in and outside the Bay
+
+                3.  distribution, abundance and movements of competing
+                    and predatory species
+
+ C.    Experiments to validate hypothesis concerning possible effects
+       of various stimuli on whales--representative stimuli,
+       representative whales (age, sex), representative
+       activities/behaviors (resting, feeding, traveling, vocalizing,
+       etc.), representative areas, seasons, times of day, weather and
+       environmental conditions.
+
+ D.    Long-term monitoring (at regular intervals)
+
+         I.  =Environment= (physical, chemical)
+
+        II.  =Whales= (distribution, abundance, movements, activity
+             patterns, vocalization patterns, cow/calf ratios)
+
+       III.  =Boat/Planes= (abundance, type, distribution, movements,
+             activities)
+
+        IV.  =Prey species=
+
+         V.  =Fish catch=
+
+
+
+
+APPENDIX D
+
+
+ [NOAA Letterhead--Cut off]
+ National Oceanic and Atmospheric Administration
+ NATIONAL MARINE FISHERIES SERVICE
+
+ Washington, D.C.     20235
+
+ DEC 3 1979                               F6:TRL
+
+
+ Mr. John Chapman
+ Superintendent
+ Glacier Bay National Monument
+ National Park Service
+ P.O. Box 1089
+ Juneau, Alaska 99802
+
+Dear Mr. Chapman:
+
+This letter responds to your August 4, 1979, request for consultation
+pursuant to Section 7 of the Endangered Species Act of 1973, as
+amended, relative to the population of the humpback whale in Glacier
+Bay, Alaska.
+
+Your problem statement of the same date outlines the basic issue of
+human activity in Glacier Bay National Monument that might be
+affecting humpback whales. Section 7 of the Endangered Species Act
+requires that each federal agency insure that its actions do not
+jeopardize the continued existence of any listed species or result in
+the destruction or adverse modification of critical habitat of such
+species. The consultation process requires our comment and opinion on
+the problem.
+
+Within this context, our response addresses those National Park
+Service (NPS) actions controlling human activity that may, in turn,
+affect the humpback whales within Glacier Bay.
+
+
+=Biological Background=
+
+In the North Pacific, the summer range of the humpback whale
+encompasses the area from Bering Strait south to the Subarctic
+Boundary (ca. 40° N lat) and extends in the east to about Point
+Conception, California, and the Sanriku Coast of Honshu Island in the
+west. Humpbacks range into shallow coastal waters more frequently than
+do most other balaenopterids and regularly occur in sheltered inside
+waters of Prince William Sound and the Alexander Archipelago of
+southeastern Alaska.
+
+The wintering grounds of humpbacks in the North Pacific are centered
+in three areas: (1) the coast and adjacent islands of west-central
+Mexico; (2) the main Hawaiian Islands; and (3) the Bonin, Ryukyu, and
+Mariana Islands in the western North Pacific. Some humpbacks that
+summer in southeastern Alaska are known to migrate to both the Mexican
+and Hawaiian wintering grounds, although others are found in
+southeastern Alaska during all months of the year.
+
+Prior to the rise of modern whaling in the late 1800's, the world
+population of humpback whales exceeded 100,000, mostly in the Southern
+Hemisphere. The North Pacific population probably numbered roughly
+15,000 at the turn of the century.
+
+Whaling in southeastern Alaska began in 1907 with the establishment of
+two land stations. The number of humpback whales at the start of this
+earliest exploitation is unknown. Consistent catch records are
+available only for 1912-1922, during which time 185 humpbacks were
+taken, with a peak catch of 39 in 1916.
+
+Since 1922, no whaling has been conducted in the territorial waters of
+southeastern Alaska. However, the humpback whales of the inside waters
+were exposed to additional exploitation as they migrated across the
+high seas or through the coastal territorial waters of British
+Columbia, Washington, California, and Baja California.
+
+By 1966, when humpbacks were accorded complete legal protection by the
+International Whaling Commission, the world population of the species
+had been reduced to about 5,000. The North Pacific population now
+numbers about 1,000, of which 600 or 700 winter in the Hawaiian
+Islands, and 200 or 300 winter in Mexico. Only a few humpbacks have
+been sighted on the western North Pacific wintering grounds in recent
+years. Since 1966 no trends in abundance have been observed either for
+the North Pacific population as a whole or on any of its wintering or
+summering grounds, including southeastern Alaska.
+
+Based upon aerial and vessel surveys, the population that spends the
+summer in the inside waters of southeastern Alaska numbers at least
+70. Photoidentification studies now underway tentatively reveal that
+the population may exceed 100. Although it ranges throughout the area
+from Sumner Strait northward, its main concentration areas are
+Frederick Sound-Stephens Passage, where a minimum of 40 whales occurs,
+and Glacier Bay, where 20-25 whales occur. Humpback whales congregate
+in these areas to feed upon the summer blooms of euphausiids, herring,
+and capelin. Some whales arrive in June and stay on through early
+September, although as mentioned earlier, other animals appear to
+remain through the winter months.
+
+When humpback whales historically began occupying Glacier Bay is
+unknown, but they have occurred there every summer over the past seven
+years of investigation. Photoidentification techniques indicate that
+certain individuals repeatedly return to feed there.
+
+The availability of these and other feeding areas in southeastern
+Alaska has not been constant over the years. Although Glacier Bay has
+lately been a prominent feeding area, this was not always so since the
+area was covered by an ice sheet during the 18th century; at that time
+the humpback population was presumably at its maximum pre-exploitation
+level. There is some indication that a seasonal feeding area in Lynn
+Canal was avoided by humpbacks coincident with the onset of a herring
+fishery in 1972. With the cessation of that fishery, humpbacks
+reoccupied the area in 1979. The possibility cannot be discarded that
+these events are related.
+
+
+=Present Glacier Bay Situation=
+
+The NPS records indicate that during 1976 and 1977, 20-24 individual
+humpback whales moved into Glacier Bay during June and remained there
+into August. In 1978 this pattern of use changed when most of the
+animals departed by mid-July. In 1979 this use was modified further
+with fewer whales entering the Bay and very few of those remaining in
+the Bay. Observations prior to 1976 are more general in nature, rather
+than numerical counts of record.
+
+Human use of the Bay is reflected in NPS records, to wit:
+
+           Visitor      Large    Private  Fishing
+ Year      Days         Ships    Boats    Vessels
+ ----      -------      -----    -------  -------
+ 1965        1,800
+ 1969       16,000               115
+ 1970       30,000               165
+ 1975       72,000      113      353      824
+ 1976       85,000      123      318      656
+ 1977      120,000      142      534      523
+ 1978      109,000      123      699      458
+
+
+Most visitor use is via water access, with cruise ship and
+recreational craft visitation levels increasing rapidly in recent
+years.
+
+The recent NPS study indicates that increasing vessel traffic in
+Glacier Bay may be implicated in the apparent departure of whales from
+Glacier Bay in 1978 and 1979. Data on the number of observed
+whale-vessel interactions in Glacier Bay enables calculation of the
+following "interaction" index (data for 1979 not available):
+
+         Whale-vessel     Hours         Index
+ Year    Interactions     Observed      (interactions/hour)
+ -----   ------------     --------      -------------------
+ 1976     98              261.1          0.38
+ 1977    201              407.1          0.49
+ 1978    268              397.5          0.67
+
+
+Thus the occurrence of whale-vessel interactions increased 29 percent
+and 76 percent respectively in 1977 and 1978 over the 1976 base level.
+Despite mitigative regulations in 1979, observers noted that
+whale-vessel interactions continued at substantial frequencies.
+
+The NPS data indicate that behavior of the humpback whales in Glacier
+Bay changed significantly in 1978. Comparison of the frequency
+distributions of behavioral responses indicates that, whereas
+distributions were the same in 1976 and 1977, both years were
+statistically different from 1978. In 1978, more avoidance behavior
+occurred than in previous years, suggesting that the whales reacted to
+the increased level of vessel traffic in 1978. However, the causal
+mechanism for these reactions (whether it be increased noise or visual
+stimuli) remains unknown.
+
+All classes of vessels were not implicated equally in the increased
+level of interactions which occurred in 1978. Cruise ship visitations
+actually decreased 14 percent in 1978 from the 1977 high, while
+charter/pleasure craft visitations increased 120 percent between 1976
+and 1978. Commercial fishing vessel traffic decreased 30 percent
+between 1976 and 1978. Charter/pleasure craft were often observed to
+change direction and travel toward whales for a closer look. Cruise
+ships and commercial fishing vessels, on the other hand, neither
+paused for nor actively followed whales. Thus the most likely source
+for increased interaction would appear to be the increased visitations
+by charter/pleasure craft in 1978.
+
+This conclusion seems to agree with the perceptions of scientists
+examining other similar situations. The workshop on problems related
+to Hawaiian humpback whales, sponsored by the Marine Mammal Commission
+in 1977, concluded that vessel traffic not oriented toward whales did
+not ordinarily seem to disturb them. Indeed, it was concluded that
+whales seem readily to habituate to constant or familiar noises such
+as those produced by ships of passage. A recent review on the possible
+effects of noises emanating from offshore oil and gas development
+concluded that, unlike the abrupt response to sudden disturbances,
+most whales become habituated to low-level background noises such as
+would be associated with ship traffic (Geraci, J. R., and D. J. St.
+Aubin, "Possible Effects of Offshore Oil and Gas Development on Marine
+Mammals," prepared for the Marine Mammal Commission, August 1979.)
+Moreover, it was noted that such behavior forms the underlying basis
+for the success of whale watching cruises. Thus the erratic actions of
+charter/pleasure craft rather than the more constant action of cruise
+ships may be the major factor in possible harassment by vessels within
+Glacier Bay.
+
+Cruise ships also may be implicated as potential sources of
+disturbance due to the physical setting within Glacier Bay. A direct
+analogy may be seen in the lagoons of Baja California where gray
+whales calve. Heavy barge and freighter traffic associated with the
+salt industry, as well as a dredge operating continuously in the
+lagoon's mouth, apparently drove gray whales out of Laguna Guerrero
+Negro between 1957 and 1967. The whales reinvaded in substantial
+numbers when vessel traffic was eliminated. The continued high use of
+Laguna Ojo de Liebre by gray whales suggests that the movement of salt
+barges, beginning there in 1967, may not have been such a nuisance.
+However, since Laguna Ojo de Liebre is a much larger area than Laguna
+Guerrero Negro and has a much wider entrance, the whales there may
+simply have been able to move and coexist next to the barges. Such
+luxury of space may not be available to the humpback whales of Glacier
+Bay and, due to geological configurations of its basin, vessel noise
+may be accentuated there. These factors may account for the unexpected
+reaction of humpbacks to cruise ships in Glacier Bay.
+
+The apparent departure of humpback whales from Glacier Bay in 1978 and
+1979 may also be due in part to a change in the availability of food.
+Euphausiids have historically been the primary feed within Glacier Bay
+in July-August, although little research has been done to compare
+yearly levels of this feed or to determine what level is necessary to
+support the whales. The only available information derives from
+vertical plankton tows by the REGINA MARIS in August 1979, which
+indicated that fewer euphausiids (5 percent) occurred in Glacier Bay
+as compared to Frederick Sound-Stephens Passage. The humpbacks may
+have found the Glacier Bay food levels to be too low, particularly in
+the face of continued high vessel use, and simply departed to search
+for better concentrations elsewhere.
+
+A similar abandonment of a prime feeding area, the Grand Banks, was
+observed for the Northwest Atlantic humpback population and was
+thought to be associated with the overfishing of capelin stocks there.
+Consequently, the occurrence and distribution of humpback whales may
+be generally dependent upon the occurrence and availability of its
+desired prey species.
+
+In a worst case analysis, Glacier Bay is a feeding ground, and its
+long-term abandonment would not be conducive to the conservation of
+the humpback whale. Up to 20 or 25 individual whales would relocate to
+other areas, increasing competition for food there. In such case a
+greater expenditure of energy might be required to obtain the same
+quantities of food than would be required in Glacier Bay. An increased
+energy expenditure would tend to decrease the likelihood of humpbacks
+successfully increasing their numbers, since growth and the onset of
+sexual maturity would be delayed.
+
+
+=Conclusions=
+
+Our present interpretation of the available data is that uncontrolled
+increase of vessel traffic, particularly of erratically traveling
+charter/pleasure craft, probably has altered the behavior of humpback
+whales in Glacier Bay and thus may be implicated in their departure
+from the Bay the past two years. Our conclusion, then, is that
+continued increase in the amount of vessel traffic, particularly
+charter/pleasure craft, in Glacier Bay is likely to jeopardize the
+continued existence of the humpback whale population frequenting
+Southeast Alaska. The alteration in the distribution of the whales in
+Southeast Alaska can be expected to appreciably reduce the likelihood
+of the recovery of the North Pacific humpback population, especially
+when viewed as an incremental aggravation of the problem of
+humpback/human interaction in general.
+
+
+=Recommendations=
+
+Until research reveals the need for more specific action, if any, we
+offer the following as reasonable and prudent alternatives that the
+NPS should institute in Glacier Bay to avoid jeopardizing the
+continued existence of the North Pacific population of humpback
+whales:
+
+We recommend that total vessel use of the Bay be restricted to 1976
+levels, at the very least, since that year preceeded the high point of
+visitor use in Glacier Bay during 1977. Commercial use of the Bay is
+predicated on a permit system that should offer good control and
+accountability of the tour industry. The routing of large vessels is
+relatively easy to regulate. Recreational craft present the greater
+challenge to management control. The continuing increase in the amount
+of recreational traffic in the Bay lends considerable urgency to
+establishing effective controls.
+
+Collectively, regulations should address vessel routing and vessel
+maneuvering. The NPS has already regulated these activities to some
+extent. Specific routes should be published, but the system should be
+flexible enough to accommodate changes of areas of concentrated
+feeding activity.
+
+We further recommend curtailment of vessel operator discretion in
+pursuing, or approaching, whales. General guidelines prohibiting the
+pursuit or willful or persistent disturbance of whales through vessel
+maneuvering probably would offer better enforceability and public
+compliance than would detailed regulations based on specified
+distances. Vessel operator behavior should receive a thorough public
+educational effort, possibly through an informative notice to each
+vessel.
+
+Finally, we recommend that monitoring of the humpback population and
+of whale-vessel interactions be continued and that all current data be
+fully analyzed. New research should also be undertaken (1) to
+characterize the food and feeding behavior of humpback whales in
+Glacier Bay and other areas; (2) to ascertain the acoustic
+characteristics of vessels within the Bay and in other areas with the
+aim of identifying equipment and/or modes of operation which are
+inimical to the whales; and (3) to compare behavioral responses of the
+humpbacks to vessels in Glacier Bay with those observed in other areas
+of southeastern Alaska.
+
+The conclusions and recommendations stated herein constitute our
+biological opinion, and we consider consultation on this matter to be
+at an end. Should significant new information or factors not
+considered in this opinion arise, however, either we or NPS are
+obligated to reinitiate consultation.
+
+Sincerely yours,
+
+ [signature]
+ Terry L. Leitzell
+ Assistant Administrator
+ for Fisheries
+
+
+
+
+       *       *       *       *       *
+
+Transcriber's Notes
+
+The text herein presented is essentially that in the original report.
+To preserve continuity, some text was moved to rejoin text which had
+been split by Figures or Tables. Footnotes were moved to the end of
+the section in which they occur. To help distinguish them from text
+body footnotes, Table footnotes were changed from numbers to lower
+alpha characters. Three typos were corrected (see below). In order to
+present some of the tables in the allotted 70 character width, some of
+the text was rearranged.
+
+Emphasis Notation:
+
+  _Text_ -- italicized
+
+  =Text= -- underlined
+
+The original report appears to have been a typewritten document and
+species names were underlined instead of italicized as is usually the
+case. Some other text is also underlined, the assumption was made that
+the text would have been underlined (and/or bold).
+
+Typographical Corrections
+
+Page 11 (TABLE 4.): visable  => visible
+
+Page 25 (Item 1.):  move-    => movement
+
+Page 33 (3rd Item): Wildlive => Wildlife
+
+       *       *       *       *       *
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK HUMPBACK WHALES IN GLACIER BAY NATIONAL MONUMENT, ALASKA ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

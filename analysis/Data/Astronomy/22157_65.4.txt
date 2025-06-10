@@ -1,0 +1,2749 @@
+﻿The Project Gutenberg eBook of Lectures on Stellar Statistics
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Lectures on Stellar Statistics
+
+Author: C. V. L. Charlier
+
+Release date: July 27, 2007 [eBook #22157]
+
+Language: English
+
+Credits: Produced by Susan Skinner and the Online Distributed
+        Proofreading Team at http://www.pgdp.net (The original
+        copy of this book was generously made available for scanning
+        by the Department of Mathematics at the University of
+        Glasgow.)
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK LECTURES ON STELLAR STATISTICS ***
+
+
+
+
+Produced by Susan Skinner and the Online Distributed
+Proofreading Team at http://www.pgdp.net (The original
+copy of this book was generously made available for scanning
+by the Department of Mathematics at the University of
+Glasgow.)
+
+
+
+
+
+[Transcriber's Note: This text uses utf-8 (unicode) file encoding. If
+you don't see 8 characters in the next line:
+α β γ ε λ ο ς ″
+make sure your text reader's "character set" or "file encoding" is set
+to Unicode (UTF-8). You may also need to change the default font. As a
+last resort, use the latin-1 version of the file instead.
+
+In the original text, the units h and m, and ordinals th and st were
+printed as superscripts. For readability, they have not been represented
+as such in this file. Similarly for the + and - signs when used to
+describe intermediate stellar colours.
+
+Other superscripts are indicated by the carat symbol, ^, and subscripts
+by an underline, _.]
+
+
+
+
+LECTURES
+ON STELLAR STATISTICS
+
+BY
+
+C. V. L. CHARLIER
+
+SCIENTIA PUBLISHER
+LUND 1921
+
+
+HAMBURG 1921
+PRINTED BY _LÜTCKE & WULFF_
+
+
+
+
+CHAPTER I.
+
+APPARENT ATTRIBUTES OF THE STARS.
+
+
+1. Our knowledge of the stars is based on their _apparent_ attributes,
+obtained from the astronomical observations. The object of astronomy is
+to deduce herefrom the real or _absolute_ attributes of the stars, which
+are their position in space, their movement, and their physical nature.
+
+The apparent attributes of the stars are studied by the aid of their
+_radiation_. The characteristics of this radiation may be described in
+different ways, according as the nature of the light is defined.
+(Undulatory theory, Emission theory.)
+
+From the statistical point of view it will be convenient to consider the
+radiation as consisting of an emanation of small particles from the
+radiating body (the star). These particles are characterized by certain
+attributes, which may differ in degree from one particle to another.
+These attributes may be, for instance, the diameter and form of the
+particles, their mode of rotation, &c. By these attributes the optical
+and electrical properties of the radiation are to be explained. I shall
+not here attempt any such explanation, but shall confine myself to the
+property which the particles have of possessing a different mode of
+deviating from the rectilinear path as they pass from one medium to
+another. This deviation depends in some way on one or more attributes of
+the particles. Let us suppose that it depends on a single attribute,
+which, with a terminology derived from the undulatory theory of
+HUYGHENS, may be called the _wave-length_ (λ) of the particle.
+
+The statistical characteristics of the radiation are then in the first
+place:--
+
+(1) the total number of particles or the _intensity_ of the radiation;
+
+(2) the _mean wave-length_ (λ_0) of the radiation, also called (or
+nearly identical with) the _effective_ wave-length or the colour;
+
+(3) _the dispersion of the wave-length_. This characteristic of the
+radiation may be determined from the _spectrum_, which also gives the
+variation of the radiation with λ, and hence may also determine the mean
+wave-length of the radiation.
+
+Moreover we may find from the radiation of a star its apparent place on
+the sky.
+
+The intensity, the mean wave-length, and the dispersion of the
+wave-length are in a simple manner connected with the _temperature_
+(_T_) of the star. According to the radiation laws of STEPHAN and WIEN
+we find, indeed (compare L. M. 41[1]) that the intensity is proportional
+to the fourth power of _T_, whereas the mean wave-length and the
+dispersion of the wave-length are both inversely proportional to _T_. It
+follows that with increasing temperature the mean wave-length
+diminishes--the colour changing into violet--and simultaneously the
+dispersion of the wave-length and also even the total length of the
+spectrum are reduced (decrease).
+
+
+2. _The apparent position of a star_ is generally denoted by its right
+ascension (α) and its declination (δ). Taking into account the apparent
+distribution of the stars in space, it is, however, more practical to
+characterize the position of a star by its galactic longitude (_l_) and
+its galactic latitude (_b_). Before defining these coordinates, which
+will be generally used in the following pages, it should be pointed out
+that we shall also generally give the coordinates α and δ of the stars
+in a particular manner. We shall therefore use an abridged notation, so
+that if for instance α = 17h 44m.7 and δ = +35°.84, we shall write
+
+    (αδ) = (174435).
+
+If δ is negative, for instance δ = -35°.84, we write
+
+    (αδ) = (1744{35}),
+
+so that the last two figures are in italics.
+
+[Transcriber's Note: In this version of the text, the last two figures
+are enclosed in braces to represent the italics.]
+
+This notation has been introduced by PICKERING for variable stars and is
+used by him everywhere in the Annals of the Harvard Observatory, but it
+is also well suited to all stars. This notation gives, simultaneously,
+the characteristic _numero_ of the stars. It is true that two or more
+stars may in this manner obtain the same characteristic _numero_. They
+are, however, easily distinguishable from each other through other
+attributes.
+
+The _galactic_ coordinates _l_ and _b_ are referred to the Milky Way
+(the Galaxy) as plane of reference. The pole of the Milky Way has
+according to HOUZEAU and GOULD the position (αδ) = (124527). From the
+distribution of the stars of the spectral type B I have in L. M. II,
+14[2] found a somewhat different position. But having ascertained later
+that the real position of the galactic plane requires a greater number
+of stars for an accurate determination of its value, I have preferred to
+employ the position used by PICKERING in the Harvard catalogues, namely
+(αδ) = (124028), or
+
+    α = 12h 40m = 190°, δ = +28°,
+
+which position is now exclusively used in the stellar statistical
+investigations at the Observatory of Lund and is also used in these
+lectures.
+
+The galactic longitude (_l_) is reckoned from the ascending node of the
+Milky Way on the equator, which is situated in the constellation
+_Aquila_. The galactic latitude (_b_) gives the angular distance of the
+star from the Galaxy. On plate I, at the end of these lectures, will be
+found a fairly detailed diagram from which the conversion of α and δ of
+a star into _l_ and _b_ may be easily performed. All stars having an
+apparent magnitude brighter than 4m are directly drawn.
+
+Instead of giving the galactic longitude and latitude of a star we may
+content ourselves with giving the galactic _square_ in which the star is
+situated. For this purpose we assume the sky to be divided into 48
+squares, all having the same surface. Two of these squares lie at the
+northern pole of the Galaxy and are designated GA_1 and GA_2. Twelve lie
+north of the galactic plane, between 0° and 30° galactic latitude, and
+are designated GC_1, GC_2, ..., GC_12. The corresponding squares south
+of the galactic equator (the plane of the Galaxy) are called GD_1, GD_2,
+..., GD_12. The two polar squares at the south pole are called GF_1 and
+GF_2. Finally we have 10 B-squares, between the A- and C-squares and 10
+corresponding E-squares in the southern hemisphere.
+
+The distribution of the squares in the heavens is here graphically
+represented in the projection of FLAMSTEED, which has the advantage of
+giving areas proportional to the corresponding spherical areas, an
+arrangement necessary, or at least highly desirable, for all stellar
+statistical researches. It has also the advantage of affording a
+continuous representation of the whole sky.
+
+The correspondence between squares and stellar constellations is seen
+from plate II. Arranging the constellations according to their galactic
+longitude we find north of the galactic equator (in the C-squares) the
+constellations:--
+
+    Hercules, Cygnus, Cepheus, Cassiopæa, Auriga, Gemini, Canis Minor,
+    Pyxis, Vela, Centaurus, Scorpius, Ophiuchus,
+
+and south of this equator (in the D-squares):--
+
+    Aquila, Cygnus, Lacerta, Andromeda, Perseus, Orion, Canis Major,
+    Puppis, Carina, Circinus, Corona australis, Sagittarius,
+
+mentioning only one constellation for each square.
+
+At the north galactic pole (in the two A-squares) we have:--
+
+    Canes Venatici and Coma Berenices,
+
+and at the south galactic pole (in the two F-squares):--
+
+    Cetus and Sculptor.
+
+
+3. _Changes in the position of a star._ From the positions of a star on
+two or more occasions we obtain its apparent motion, also called the
+_proper motion_ of the star. We may distinguish between a _secular_ part
+of this motion and a _periodical_ part. In both cases the motion may be
+either a reflex of the motion of the observer, and is then called
+_parallactic_ motion, or it may be caused by a real motion of the star.
+From the parallactic motion of the star it is possible to deduce its
+distance from the sun, or its parallax. The periodic parallactic proper
+motion is caused by the motion of the earth around the sun, and gives
+the _annual parallax_ (π). In order to obtain available annual
+parallaxes of a star it is usually necessary for the star to be nearer
+to us than 5 siriometers, corresponding to a parallax greater than
+0″.04. More seldom we may in this manner obtain trustworthy values for a
+distance amounting to 10 siriometers (π = 0″.02), or even still greater
+values. For such large distances the _secular_ parallax, which is caused
+by the progressive motion of the sun in space, may give better results,
+especially if the mean distance of a group of stars is simultaneously
+determined. Such a value of the secular parallax is also called, by
+KAPTEYN, the _systematic_ parallax of the stars.
+
+When we speak of the proper motion of a star, without further
+specification, we mean always the secular proper motion.
+
+
+4. Terrestrial distances are now, at least in scientific researches,
+universally expressed in kilometres. A kilometre is, however, an
+inappropriate unit for celestial distances. When dealing with distances
+in our planetary system, the astronomers, since the time of NEWTON, have
+always used the mean distance of the earth from the sun as universal
+unit of distance. Regarding the distances in the stellar system the
+astronomers have had a varying practice. German astronomers, SEELIGER
+and others, have long used a stellar unit of distance corresponding to
+an annual parallax of 0″.2, which has been called a “Siriusweite”. To
+this name it may be justly objected that it has no international use, a
+great desideratum in science. Against the theoretical definition of this
+unit it may also be said that a distance is suitably to be defined
+through another distance and not through an angle--an angle which
+corresponds moreover, in this case, to the _harmonic_ mean distance of
+the star and not to its arithmetic mean distance. The same objection may
+be made to the unit “parsec.” proposed in 1912 by TURNER.
+
+For my part I have, since 1911, proposed a stellar unit which, both in
+name and definition, nearly coincides with the proposition of SEELIGER,
+and which will be exclusively used in these lectures. A _siriometer_ is
+put equal to 10^6 times the planetary unit of distance, corresponding to
+a parallax of 0″.206265 (in practice sufficiently exactly 0″.2).
+
+In popular writings, another unit: a _light-year_, has for a very long
+time been employed. The relation between these units is
+
+    1 siriometer = 15.79   light-years,
+    1 light-year =  0.0633 siriometers.
+
+
+5. In regard to _time_ also, the terrestrial units (second, day, year)
+are too small for stellar wants. As being consistent with the unit of
+distance, I have proposed for the stellar unit of time a _stellar year_
+(st.), corresponding to 10^6 years. We thus obtain the same relation
+between the stellar and the planetary units of length and time, which
+has the advantage that a _velocity_ of a star expressed in siriometers
+per stellar year is expressed with the same numerals in planetary units
+of length per year.
+
+Spectroscopic determinations of the velocities, through the
+DOPPLER-principle, are generally expressed in km. per second. The
+relation with the stellar unit is the following:
+
+    1 km./sec. = 0.2111 sir./st.,
+               = 0.2111 planetary units per year,
+    1 sir./st. = 4.7375 km./sec.
+
+Thus the velocity of the sun is 20 km./sec. or 4.22 sir./st. (= 4.22
+earth distances from the sun per year).
+
+Of the numerical value of the stellar velocity we shall have opportunity
+to speak in the following. For the present it may suffice to mention
+that most stars have a velocity of the same degree as that of the sun
+(in the mean somewhat greater), and that the highest observed velocity
+of a star amounts to 72 sir./st. (= 340 km./sec.). In the next chapter I
+give a table containing the most speedy stars. The least value of the
+stellar velocity is evidently equal to zero.
+
+
+6. _Intensity of the radiation._ This varies within wide limits. The
+faintest star which can give an impression on the photographic plates of
+the greatest instrument of the Mount Wilson observatory (100 inch
+reflector) is nearly 100 million times fainter than Sirius, a star which
+is itself more than 10000 million times fainter than the sun--speaking
+of apparent radiation.
+
+The intensity is expressed in _magnitudes_ (_m_). The reason is partly
+that we should otherwise necessarily have to deal with very large
+numbers, if they were to be proportional to the intensity, and partly
+that it is proved that the human eye apprehends quantities of light as
+proportional to _m_.
+
+This depends upon a general law in psycho-physics, known as FECHNER's
+_law_, which says that changes of the apparent impression of light are
+proportional not to the changes of the intensity but to these changes
+divided by the primitive intensity. A similar law is valid for all
+sensations. A conversation is inaudible in the vicinity of a waterfall.
+An increase of a load in the hand from nine to ten hectograms makes no
+great difference in the feeling, whereas an increase from one to two
+hectograms is easily appreciable. A match lighted in the day-time makes
+no increase in the illumination, and so on.
+
+A mathematical analysis shows that from the law of FECHNER it follows
+that the impression increases in _arithmetical_ progression (1, 2, 3, 4,
+...) simultaneously with an increase of the intensity in _geometrical_
+progression (_I_, _I_^2, _I_^3, _I_^4, ...). It is with the sight the
+same as with the hearing. It is well known that the numbers of
+vibrations of the notes of a harmonic scale follow each other in a
+geometrical progression though, for the ear, the intervals between the
+notes are apprehended as equal. The magnitudes play the same rôle in
+relation to the quantities of light as do the logarithms to the
+corresponding numbers. If a star is considered to have a brightness
+intermediate between two other stars it is not the _difference_ but the
+_ratio_ of the quantities of light that is equal in each case.
+
+The branch of astronomy (or physics) which deals with intensities of
+radiation is called _photometry_. In order to determine a certain scale
+for the magnitudes we must choose, in a certain manner, the _zero-point_
+of the scale and the _scale-ratio_.
+
+Both may be chosen arbitrarily. The _zero-point_ is now almost
+unanimously chosen by astronomers in accordance with that used by the
+Harvard Observatory. No rigorous definition of the Harvard zero-point,
+as far as I can see, has yet been given (compare however H. A. 50[3]),
+but considering that the Pole-star (α Ursæ Minoris) is used at Harvard
+as a fundamental star of comparison for the brighter stars, and that,
+according to the observations at Harvard and those of HERTZSPRUNG (A. N.
+4518 [1911]), the light of the Pole-star is very nearly invariable, we
+may say that _the zero-point of the photometric scale is chosen in such
+a manner that for the Pole-star _m_ = 2.12_. If the magnitudes are given
+in another scale than the Harvard-scale (H. S.), it is necessary to
+apply the zero-point correction. This amounts, for the Potsdam
+catalogue, to -0m.16.
+
+It is further necessary to determine the _scale-ratio_. Our magnitudes
+for the stars emanate from PTOLEMY. It was found that the
+scale-ratio--giving the ratio of the light-intensities of two
+consecutive classes of magnitudes--according to the older values of the
+magnitudes, was approximately equal to 2½. When exact photometry began
+(with instruments for measuring the magnitudes) in the middle of last
+century, the scale-ratio was therefore put equal to 2.5. Later it was
+found more convenient to choose it equal to 2.512, the logarithm of
+which number has the value 0.4. The magnitudes being themselves
+logarithms of a kind, it is evidently more convenient to use a simple
+value of the logarithm of the ratio of intensity than to use this ratio
+itself. This scale-ratio is often called the POGSON-scale (used by
+POGSON in his “Catalogue of 53 known variable stars”, Astr. Obs. of the
+Radcliffe Observatory, 1856), and is now exclusively used.
+
+It follows from the definition of the scale-ratio that two stars for
+which the light intensities are in the ratio 100:1 differ by exactly 5
+magnitudes. A star of the 6th magnitude is 100 times fainter than a star
+of the first magnitude, a star of the 11th magnitude 10000 times, of the
+16th magnitude a million times, and a star of the 21st magnitude 100
+million times fainter than a star of the first magnitude. The star
+magnitudes are now, with a certain reservation for systematic errors,
+determined with an accuracy of 0m.1, and closer. Evidently, however,
+there will correspond to an error of 0.1 in the magnitude a considerable
+uncertainty in the light ratios, when these differ considerably from
+each other.
+
+    Sun         -26m.60
+    Full moon   -11m.77
+    Venus       - 4m.28
+    Jupiter     - 2m.35
+    Mars        - 1m.79
+    Mercury     - 0m.90
+    Saturn      + 0m.88
+    Uranus      + 5m.86
+    Neptune     + 7m.66
+
+A consequence of the definition of _m_ is that we also have to do with
+_negative_ magnitudes (as well as with negative logarithms). Thus, for
+example, for _Sirius_ _m_ = -1.58. The magnitudes of the greater
+planets, as well as those of the moon and the sun, are also negative, as
+will be seen from the adjoining table, where the values are taken from
+“Die Photometrie der Gestirne” by G. MÜLLER.
+
+The apparent magnitude of the sun is given by ZÖLLNER (1864). The other
+values are all found in Potsdam, and allude generally to the maximum
+value of the apparent magnitude of the moon and the planets.
+
+The brightest star is _Sirius_, which has the magnitude _m_ = -1.58. The
+magnitude of the faintest visible star evidently depends on the
+penetrating power of the instrument used. The telescope of WILLIAM
+HERSCHEL, used by him and his son in their star-gauges and other stellar
+researches, allowed of the discerning of stars down to the 14th
+magnitude. The large instruments of our time hardly reach much farther,
+for visual observations. When, however, photographic plates are used, it
+is easily possible to get impressions of fainter stars, even with rather
+modest instruments. The large 100-inch mirror of the Wilson Observatory
+renders possible the photographic observations of stars of the 20th
+apparent magnitude, and even fainter.
+
+The observations of visual magnitudes are performed almost exclusively
+with the photometer of ZÖLLNER in a more or less improved form.
+
+
+7. _Absolute magnitude._ The apparent magnitude of a star is changed as
+the star changes its distance from the observer, the intensity
+increasing indirectly as the square of the distance of the star. In
+order to make the magnitudes of the stars comparable with each other it
+is convenient to reduce them to their value at a certain unit of
+distance. As such we choose one siriometer. The corresponding magnitude
+will be called the _absolute_ magnitude and is denoted by _M_.[4] We
+easily find from the table given in the preceding paragraph that the
+absolute magnitude of the sun, according to ZÖLLNER's value of _m_,
+amounts to +3.4, of the moon to +31.2. For Jupiter we find _M_ = +24.6,
+for Venus _M_ = +25.3. The other planets have approximately _M_ = +30.
+
+For the absolute magnitudes of those stars for which it has hitherto
+been possible to carry out a determination, we find a value of _M_
+between -8 and +13. We shall give in the third chapter short tables of
+the absolutely brightest and faintest stars now known.
+
+
+8. _Photographic magnitudes._ The magnitudes which have been mentioned
+in the preceding paragraphs all refer to observations taken with the
+eye, and are called _visual_ magnitudes. The total intensity of a star
+is, however, essentially dependent on the instrument used in measuring
+the intensity. Besides the eye, the astronomers use a photographic
+plate, bolometer, a photo-electric cell, and other instruments. The
+difference in the results obtained with these instruments is due to the
+circumstance that different parts of the radiation are taken into
+account.
+
+The usual photographic plates, which have their principal sensibility in
+the violet parts of the spectrum, give us the _photographic_ magnitudes
+of the stars. It is, however, to be remarked that these magnitudes may
+vary from one plate to another, according to the distributive function
+of the plate (compare L. M. 67). This variation, which has not yet been
+sufficiently studied, seems however to be rather inconsiderable, and
+must be neglected in the following.
+
+The photographic magnitude of a star will in these lectures be denoted
+by _m′_, corresponding to a visual magnitude _m_.
+
+In practical astronomy use is also made of plates which, as the result
+of a certain preparation (in colour baths or in other ways), have
+acquired a distributive function nearly corresponding to that of the
+eye, and especially have a maximum point at the same wave-lengths. Such
+magnitudes are called _photo-visual_ (compare the memoir of PARKHURST in
+A. J. 36 [1912]).
+
+The photographic magnitude of a star is generally determined from
+measurements of the diameter of the star on the plate. A simple
+mathematical relation then permits us to determine _m′_. The diameter of
+a star image increases with the time of exposure. This increase is due
+in part to the diffraction of the telescope, to imperfect achromatism or
+spherical aberration of the objective, to irregular grinding of the
+glass, and especially to variations in the refraction of the air, which
+produce an oscillation of the image around a mean position.
+
+The _zero-point_ of the photographic magnitudes is so determined that
+this magnitude coincides with the visual magnitude for such stars as
+belong to the spectral type A0 and have _m_ = 6.0, according to the
+proposal of the international solar conference at Bonn, 1911.
+
+Determinations of the photographic or photo-visual magnitudes may now be
+carried out with great accuracy. The methods for this are many and are
+well summarised in the Report of the Council of the R. A. S. of the year
+1913. The most effective and far-reaching method seems to be that
+proposed by SCHWARZSCHILD, called the half-grating method, by which two
+exposures are taken of the same part of the sky, while at one of the
+exposures a certain grating is used that reduces the magnitudes by a
+constant degree.
+
+
+9. _Colour of the stars._ The radiation of a star is different for
+different wave-lengths (λ). As regarding other mass phenomena we may
+therefore mention:--(1) the _total radiation_ or intensity (_I_), (2)
+the _mean wave-length_ (λ_0), (3) the _dispersion of the wave-length_
+(σ). In the preceding paragraphs we have treated of the total radiation
+of the stars as this is expressed through their magnitudes. The mean
+wave-length is pretty closely defined by the _colour_, whereas the
+dispersion of the wave-length is found from the _spectrum_ of the stars.
+
+There are blue (B), white (W), yellow (Y) and red (R) stars, and
+intermediate colours. The exact method is to define the colour through
+the mean wave-length (and not conversely) or the _effective_ wave-length
+as it is most usually called, or from the _colour-index_. We shall
+revert later to this question. There are, however, a great many direct
+eye-estimates of the colour of the stars.
+
+_Colour corresponding to a given spectrum._
+
+    _Sp._    _Colour_       _Number_
+     B3        YW-            161
+     A0        YW-            788
+     A5        YW             115
+     F5        YW, WY-        295
+     G5        WY             216
+     K5        WY+, Y-        552
+     M         Y, Y+           95
+     -----------------------------
+                     Sum ... 2222
+
+_Spectrum corresponding to a given colour._
+
+    _Colour_       _Sp._       _Number_
+     W, W+          A0           281
+     YW-            A0           356
+     YW             A5           482
+     YW+, YW-       F3           211
+     WY             G4           264
+     WY+, Y-        K1           289
+     Y, Y+          K4           254
+     RY-, RY        K5            85
+     --------------------------------
+                        Sum ... 2222
+
+The signs + and - indicate intermediate shades of colour.
+
+The preceding table drawn up by Dr. MALMQUIST from the colour
+observations of MÜLLER and KEMPF in Potsdam, shows the connection
+between the colours of the stars and their spectra.
+
+The Potsdam observations contain all stars north of the celestial
+equator having an apparent magnitude brighter than 7m.5.
+
+We find from these tables that there is a well-pronounced _regression_
+in the correlation between the spectra and the colours of the stars.
+Taking together all white stars we find the corresponding mean spectral
+type to be A0, but to A0 corresponds, upon an average, the colour
+yellow-white. The yellow stars belong in the mean to the K-type, but the
+K-stars have upon an average a shade of white in the yellow colour. The
+coefficient of correlation (_r_) is not easy to compute in this case,
+because one of the attributes, the colour, is not strictly graduated
+(_i.e._ it is not expressed in numbers defining the colour).[5] Using
+the coefficient of contingency of PEARSON, it is, however, possible to
+find a fairly reliable value of the coefficient of correlation, and
+MALMQUIST has in this way found _r_ = +0.85, a rather high value.
+
+In order to facilitate the discussion of the relation between colour and
+spectrum it is convenient to deal here with the question of the spectra
+of the stars.
+
+
+10. _Spectra of the stars._ In order to introduce the discussion I first
+give a list of the wave-lengths of the FRAUENHOFER lines in the
+spectrum, and the corresponding chemical elements.
+
+    _FRAUENHOFER line_    _Element_          λ
+       A                                   759.4
+       B                                   686.8
+       C(α)               H (hydrogen)     656.3
+       D_1                Na (sodium)      589.6
+       D_3                He               587.6
+       E                  Fe (iron)        527.0
+       F(β)               H                486.2
+        (γ)               H                434.1
+       G                  Ca (calcium)     430.8
+       h(δ)               H                410.2
+       H(ε)               Ca(H)            396.9
+       K                  Ca               393.4
+
+The first column gives the FRAUENHOFER denomination of each line.
+Moreover the hydrogen lines α, β, γ, δ, ε are denoted. The second column
+gives the name of the corresponding element, to which each line is to be
+attributed. The third column gives the wave-length expressed in
+millionths of a millimeter as unit (μμ).
+
+On plate III, where the classification of the stellar spectra according
+to the Harvard system is reproduced, will be found also the wave-lengths
+of the principal H and He lines.
+
+By the visual spectrum is usually understood the part of the radiation
+between the FRAUENHOFER lines A to H (λ = 760 to 400 μμ), whereas the
+photographic spectrum generally lies between F and K (λ = 500 to 400
+μμ).
+
+In the earliest days of spectroscopy the spectra of the stars were
+classified according to their visual spectra. This classification was
+introduced by SECCHI and was later more precisely defined by VOGEL. The
+three classes I, II, III of VOGEL correspond approximately to the colour
+classification into white, yellow, and red stars. Photography has now
+almost entirely taken the place of visual observations of spectra, so
+that SECCHI's and VOGEL's definitions of the stellar spectra are no
+longer applicable. The terminology now used was introduced by PICKERING
+and Miss CANNON and embraces a great many types, of which we here
+describe the principal forms as they are defined in Part. II of Vol.
+XXVIII of the Annals of the Harvard Observatory. It may be remarked that
+PICKERING first arranged the types in alphabetical order A, B, C, &c.,
+supposing that order to correspond to the temperature of the stars.
+Later this was found to be partly wrong, and in particular it was found
+that the B-stars may be hotter than those of type A. The following is
+the temperature-order of the spectra according to the opinion of the
+Harvard astronomers.
+
+_Type O_ (WOLF-RAYET stars). The spectra of these stars consist mainly
+of bright lines. They are characterized by the bright bands at
+wave-lengths 463 μμ and 469 μμ, and the line at 501 μμ characteristic of
+gaseous nebulae is sometimes present.
+
+This type embraces mainly stars of relatively small apparent brightness.
+The brightest is γ Velorum with _m_ = 2.22. We shall find that the
+absolute magnitude of these stars nearly coincides with that of the
+stars of type B.
+
+The type is grouped into five subdivisions represented by the letters
+Oa, Ob, Oc, Od and Oe. These subdivisions are conditioned by the varying
+intensities of the bright bands named above. The due sequence of these
+sub-types is for the present an open question.
+
+Among interesting stars of this type is ζ Puppis (Od), in the spectrum
+of which PICKERING discovered a previously unknown series of helium
+lines. They were at first attributed (by RYDBERG) to hydrogen and were
+called “additional lines of hydrogen”.
+
+_Type B_ (Orion type, Helium stars). All lines are here dark. Besides
+the hydrogen series we here find the He-lines (396, 403, 412, 414, 447,
+471, 493 μμ).
+
+To this type belong all the bright stars (β, γ, δ, ε, ζ, η and others)
+in Orion with the exception of Betelgeuze. Further, Spica and many other
+bright stars.
+
+On plate III ε Orionis is taken as representative of this type.
+
+_Type A_ (Sirius type) is characterized by the great intensity of the
+hydrogen lines (compare plate III). The helium lines have vanished.
+Other lines visible but faintly.
+
+The greater part of the stars visible to the naked eye are found here.
+There are 1251 stars brighter than the 6th magnitude which belong to
+this type. Sirius, Vega, Castor, Altair, Deneb and others are all
+A-stars.
+
+_Type F_ (Calcium type). The hydrogen lines still rather prominent but
+not so broad as in the preceding type. The two calcium lines H and K
+(396.9, 393.4 μμ) strongly pronounced.
+
+Among the stars of this type are found a great many bright stars
+(compare the third chapter), such as Polaris, Canopus, Procyon.
+
+_Type G_ (Sun type). Numerous metallic lines together with relatively
+faint hydrogen lines.
+
+To this class belong the sun, Capella, α Centauri and other bright
+stars.
+
+_Type K._ The hydrogen lines still fainter. The K-line attains its
+maximum intensity (is not especially pronounced in the figure of plate
+III).
+
+This is, next to the A-type, the most numerous type (1142 stars) among
+the bright stars.
+
+We find here γ Andromedæ, β Aquilæ, Arcturus, α Cassiopeiæ, Pollux and
+Aldebaran, which last forms a transition to the next type.
+
+_Type M._ The spectrum is banded and belongs to SECCHI's third type. The
+flutings are due to titanium oxide.
+
+Only 190 of the stars visible to the naked eye belong to this type.
+Generally they are rather faint, but we here find Betelgeuze, α
+Herculis, β Pegasi, α Scorpii (Antares) and most variables of long
+period, which form a special sub-type _Md_, characterized by bright
+hydrogen lines together with the flutings.
+
+Type M has two other sub-types Ma and Mb.
+
+_Type N_ (SECCHI's fourth type). Banded spectra. The flutings are due to
+compounds of carbon.
+
+Here are found only faint stars. The total number is 241. All are red.
+27 stars having this spectrum are variables of long period of the same
+type as Md.
+
+The spectral types may be summed up in the following way:--
+
+    White stars:--SECCHI's type I:--Harvard B and A,
+    Yellow  "  :--   "      "  II:--   "    F, G and K,
+    Red     "  :--   "      " III:--   "    M,
+     "      "  :--   "      "  IV:--   "    N.
+
+The Harvard astronomers do not confine themselves to the types mentioned
+above, but fill up the intervals between the types with sub-types which
+are designated by the name of the type followed by a numeral 0, 1, 2,
+..., 9. Thus the sub-types between A and F have the designations A0, A1,
+A2, ..., A9, F0, &c. Exceptions are made as already indicated, for the
+extreme types O and M.
+
+
+11. _Spectral index._ It may be gathered from the above description that
+the definition of the types implies many vague moments. Especially in
+regard to the G-type are very different definitions indeed accepted,
+even at Harvard.[6] It is also a defect that the definitions do not
+directly give _quantitative_ characteristics of the spectra. None the
+less it is possible to substitute for the spectral classes a continuous
+scale expressing the spectral character of a star. Such a scale is
+indeed implicit in the Harvard classification of the spectra.
+
+Let us use the term _spectral index_ (_s_) to define a number expressing
+the spectral character of a star. Then we may conveniently define this
+conception in the following way. Let A0 correspond to the spectral index
+_s_ = 0.0, F0 to _s_ = +1.0, G0 to _s_ = +2.0, K0 to _s_ = +3.0 M0 to
+_s_ = +4.0 and B0 to _s_ = -1.0. Further, let A1, A2, A3, &c., have the
+spectral indices +0.1, +0.2, +0.3, &c., and in like manner with the
+other intermediate sub-classes. Then it is evident that to all spectral
+classes between B0 and M there corresponds a certain spectral index _s_.
+The extreme types O and N are not here included. Their spectral indices
+may however be determined, as will be seen later.
+
+Though the spectral indices, defined in this manner, are directly known
+for every spectral type, it is nevertheless not obvious that the series
+of spectral indices corresponds to a continuous series of values of some
+attribute of the stars. This may be seen to be possible from a
+comparison with another attribute which may be rather markedly
+graduated, namely the colour of the stars. We shall discuss this point
+in another paragraph. To obtain a well graduated scale of the spectra it
+will finally be necessary to change to some extent the definitions of
+the spectral types, a change which, however, has not yet been
+accomplished.
+
+
+12. We have found in §9 that the light-radiation of a star is described
+by means of the total intensity (_I_), the mean wave-length (λ_0) and
+the dispersion of the wave-length (σ_λ). λ_0 and σ_λ may be deduced from
+the spectral observations. It must here be observed that the
+observations give, not the intensities at different wave-lengths but,
+the values of these intensities as they are apprehended by the
+instruments employed--the eye or the photographic plate. For the
+derivation of the true curve of intensity we must know the distributive
+function of the instrument (L. M. 67). As to the eye, we have reason to
+believe, from the bolometric observations of LANGLEY (1888), that the
+mean wave-length of the visual curve of intensity nearly coincides with
+that of the true intensity-curve, a conclusion easily understood from
+DARWIN's principles of evolution, which demand that the human eye in the
+course of time shall be developed in such a way that the mean
+wave-length of the visual intensity curve does coincide with that of the
+true curve (λ = 530 μμ), when the greatest visual energy is obtained (L.
+M. 67). As to the dispersion, this is always greater in the true
+intensity-curve than in the visual curve, for which, according to §10,
+it amounts to approximately 60 μμ. We found indeed that the visual
+intensity curve is extended, approximately, from 400 μμ to 760 μμ, a
+sixth part of which interval, approximately, corresponds to the
+dispersion σ of the visual curve.
+
+In the case of the photographic intensity-curve the circumstances are
+different. The mean wave-length of the photographic curve is,
+approximately, 450 μμ, with a dispersion of 16 μμ, which is considerably
+smaller than in the visual curve.
+
+
+13. Both the visual and the photographic curves of intensity differ
+according to the temperature of the radiating body and are therefore
+different for stars of different spectral types. Here the mean
+wave-length follows the formula of WIEN, which says that this
+wave-length varies inversely as the temperature. The total intensity,
+according to the law of STEPHAN, varies directly as the fourth power of
+the temperature. Even the dispersion is dependent on the variation of
+the temperature--directly as the mean wave-length, inversely as the
+temperature of the star (L. M. 41)--so that the mean wave-length, as
+well as the dispersion of the wave-length, is smaller for the hot stars
+O and B than for the cooler ones (K and M types). It is in this manner
+possible to determine the temperature of a star from a determination of
+its mean wave-length (λ_0) or from the dispersion in λ. Such
+determinations (from λ_0) have been made by SCHEINER and WILSING in
+Potsdam, by ROSENBERG and others, though these researches still have to
+be developed to a greater degree of accuracy.
+
+
+14. _Effective wave-length._ The mean wave-length of a spectrum, or, as
+it is often called by the astronomers, the _effective_ wave-length, is
+generally determined in the following way. On account of the refraction
+in the air the image of a star is, without the use of a spectroscope,
+really a spectrum. After some time of exposure we get a somewhat round
+image, the position of which is determined precisely by the mean
+wave-length. This method is especially used with a so-called
+_objective-grating_, which consists of a series of metallic threads,
+stretched parallel to each other at equal intervals. On account of the
+diffraction of the light we now get in the focal plane of the objective,
+with the use of these gratings, not only a fainter image of the star at
+the place where it would have arisen without grating, but also at both
+sides of this image secondary images, the distances of which from the
+central star are certain theoretically known multiples of the effective
+wave-lengths. In this simple manner it is possible to determine the
+effective wave-length, and this being a tolerably well-known function of
+the spectral-index, the latter can also be found. This method was first
+proposed by HERTZSPRUNG and has been extensively used by BERGSTRAND,
+LUNDMARK and LINDBLAD at the observatory of Upsala and by others.
+
+
+15. _Colour-index._ We have already pointed out in §9 that the colour
+may be identified with the mean wave-length (λ_0). As further λ_0 is
+closely connected with the spectral index (_s_), we may use the spectral
+index to represent the colour. Instead of _s_ there may also be used
+another expression for the colour, called the colour-index. This
+expression was first introduced by SCHWARZSCHILD, and is defined in the
+following way.
+
+We have seen that the zero-point of the photographic scale is chosen in
+such a manner that the visual magnitude _m_ and the photographic
+magnitude _m′_ coincide for stars of spectral index 0.0 (A0). The
+photographic magnitudes are then unequivocally determined. It is found
+that their values systematically differ from the visual magnitudes, so
+that for type B (and O) the photographic magnitudes are smaller than the
+visual, and the contrary for the other types. The difference is greatest
+for the M-type (still greater for the N-stars, though here for the
+present only a few determinations are known), for which stars if amounts
+to nearly two magnitudes. So much fainter is a red star on a
+photographic plate than when observed with the eye.
+
+_The difference between the photographic and the visual magnitudes is
+called the colour-index (_c_)._ The correlation between this index and
+the spectral-index is found to be rather high (_r_ = +0.96). In L. M.
+II, 19 I have deduced the following tables giving the spectral-type
+corresponding to a given colour-index, and inversely.
+
+TABLE 1.
+
+_GIVING THE MEAN COLOUR-INDEX CORRESPONDING TO A GIVEN SPECTRAL TYPE OR
+SPECTRAL INDEX._
+
++-------------------+----------------+
+|   Spectral        |  Colour-index  |
+| type  |   index   |                |
++-------+-----------+----------------+
+|  B0   |   -1.0    |    -0.46       |
+|  B5   |   -0.5    |    -0.23       |
+|  A0   |    0.0    |     0.00       |
+|  A5   |   +0.5    |    +0.23       |
+|  F0   |   +1.0    |    +0.46       |
+|  F5   |   +1.5    |    +0.69       |
+|  G0   |   +2.0    |    +0.92       |
+|  G5   |   +2.5    |    +1.15       |
+|  K0   |   +3.0    |    +1.38       |
+|  K5   |   +3.5    |    +1.61       |
+|  M0   |   +4.0    |    +1.84       |
++-------+-----------+----------------+
+
+TABLE 1*.
+
+_GIVING THE MEAN SPECTRAL INDEX CORRESPONDING TO A GIVEN COLOUR-INDEX._
+
++----------------+-------------------+
+| Colour-index   |      Spectral     |
+|                | index   |   type  |
++----------------+---------+---------+
+|                |         |         |
+|     -0.4       | -0.70   |   B3    |
+|     -0.2       | -0.80   |   B7    |
+|      0.0       | +0.10   |   A1    |
+|     +0.2       | +0.50   |   A5    |
+|     +0.4       | +0.90   |   A9    |
+|     +0.6       | +1.30   |   F3    |
+|     +0.8       | +1.70   |   F7    |
+|     +1.0       | +2.10   |   G1    |
+|     +1.2       | +2.50   |   G5    |
+|     +1.4       | +2.90   |   G9    |
+|     +1.6       | +3.30   |   K3    |
+|     +1.8       | +3.70   |   K7    |
+|     +2.0       | +4.10   |   M1    |
++----------------+---------+---------+
+
+From each catalogue of visual magnitudes of the stars we may obtain
+their photographic magnitude through adding the colour-index. This may
+be considered as known (taking into account the high coefficient of
+correlation between _s_ and _c_) as soon as we know the spectral type of
+the star. We may conclude directly that the number of stars having a
+photographic magnitude brighter than 6.0 is considerably smaller than
+the number of stars visually brighter than this magnitude. There are,
+indeed, 4701 stars for which _m_ < 6.0 and 2874 stars having _m′_ < 6.0.
+
+
+16. _Radial velocity of the stars._ From the values of α and δ at
+different times we obtain the components of the proper motions of the
+stars perpendicular to the line of sight. The third component (_W_), in
+the radial direction, is found by the DOPPLER principle, through
+measuring the displacement of the lines in the spectrum, this
+displacement being towards the red or the violet according as the star
+is receding from or approaching the observer.
+
+The velocity _W_ will be expressed in siriometers per stellar year
+(sir./st.) and alternately also in km./sec. The rate of conversion of
+these units is given in §5.
+
+
+17. Summing up the remarks here given on the apparent attributes of the
+stars we find them referred to the following principal groups:--
+
+I. _The position of the stars_ is here generally given in galactic
+longitude (_l_) and latitude (_b_). Moreover their equatorial
+coordinates (α and δ) are given in an abridged notation (αδ), where the
+first four numbers give the right ascension in hours and minutes and the
+last two numbers give the declination in degrees, the latter being
+printed in italics if the declination is negative.
+
+Eventually the position is given in galactic squares, as defined in §2.
+
+II. _The apparent motion of the stars_ will be given in radial
+components (_W_) expressed in sir./st. and their motion perpendicular to
+the line of sight. These components will be expressed in one component
+(_u_0_) parallel to the galactic plane, and one component (_v_0_)
+perpendicular to it. If the distance (_r_) is known we are able to
+convert these components into components of the linear velocity
+perpendicular to the line of sight (_U_ and _V_).
+
+III. _The intensity of the light_ of the stars is expressed in
+magnitudes. We may distinguish between the _apparent_ magnitude (_m_)
+and the _absolute_ magnitude (_M_), the latter being equal to the value
+of the apparent magnitude supposing the star to be situated at a
+distance of one siriometer.
+
+The apparent magnitude may be either the _photographic_ magnitude
+(_m′_), obtained from a photographic plate, or the _visual_ magnitude
+(_m_) obtained with the eye.
+
+The difference between these magnitudes is called the _colour-index_
+(_c_ = _m′_-_m_).
+
+IV. _The characteristics of the stellar radiation_ are the mean
+wave-length (λ_0) and the dispersion (σ) in the wave-length. _The mean
+wave-length_ may be either directly determined (perhaps as _effective_
+wave-length) or found from the spectral type (spectral index) or from
+the colour-index.
+
+There are in all eight attributes of the stars which may be found from
+the observations:--the spherical position of the star (_l_, _b_), its
+distance (_r_), proper motion (_u_0_ and _v_0_), radial velocity (_W_),
+apparent magnitude (_m_ or _m′_), absolute magnitude (_M_), spectral
+type (_Sp_) or spectral index (_s_), and colour-index (_c_). Of these
+the colour-index, the spectral type, the absolute magnitude and also (to
+a certain degree) the radial velocity may be considered as independent
+of the place of the observer and may therefore be considered not as only
+apparent but also as _absolute_ attributes of the stars.
+
+Between three of these attributes (_m_, _M_ and _r_) a mathematical
+relation exists so that one of them is known as soon as the other two
+have been found from observations.
+
+FOOTNOTES:
+
+[Footnote 1: Meddelanden från Lunds Observatorium, No. 41.]
+
+[Footnote 2: Meddelanden från Lunds Astronomiska Observatorium, Serie
+II, No. 14.]
+
+[Footnote 3: Annals of the Harvard Observatory, vol. 50.]
+
+[Footnote 4: In order to deduce from _M_ the apparent magnitude at a
+distance corresponding to a parallax of 1″ we may subtract 3m.48. To
+obtain the magnitude corresponding to a parallax of 0″.1 we may add
+1.57. The latter distance is chosen by some writers on stellar
+statistics.]
+
+[Footnote 5: The best colour-scale of the latter sort seems to be that
+of OSTHOFF.]
+
+[Footnote 6: Compare H. A. 50 and H. A. 56 and the remarks in L. M. II,
+19.]
+
+
+
+
+CHAPTER II.
+
+SOURCES OF OUR PRESENT KNOWLEDGE OF THE STARS.
+
+
+18. In this chapter I shall give a short account of the publications in
+which the most complete information on the attributes of the stars may
+be obtained, with short notices of the contents and genesis of these
+publications. It is, however, not my intention to give a history of
+these researches. We shall consider more particularly the questions
+relating to the position of the stars, their motion, magnitude, and
+spectra.
+
+
+19. _Place of the stars._ _Durchmusterungs._ The most complete data on
+the position of the stars are obtained from the star catalogues known as
+“Durchmusterungs”. There are two such catalogues, which together cover
+the whole sky, one--visual--performed in Bonn and called the _Bonner
+Durchmusterung_ (B. D.), the other--photographic--performed in Cape _The
+Cape Photographic Durchmusterung_ (C. P. D.). As the first of these
+catalogues has long been--and is to some extent even now--our principal
+source for the study of the sky and is moreover the first enterprise of
+this kind, I shall give a somewhat detailed account of its origin and
+contents, as related by ARGELANDER in the introduction to the B. D.
+
+B. D. was planned and performed by the Swedish-Finn ARGELANDER (born in
+Memel 1799). A scholar of BESSEL he was first called as director in Åbo,
+then in Hälsingfors, and from there went in 1836 to Bonn, where in the
+years 1852 to 1856 he performed this great _Durchmusterung_. As
+instrument he used a FRAUENHOFER comet-seeker with an aperture of 76 mm,
+a focal length of 650 mm, and 10 times magnifying power. The field of
+sight had an extension of 6°.
+
+In the focus of the objective was a semicircular piece of thin glass,
+with the edge (= the diameter of the semicircle) parallel to the circle
+of declination. This edge was sharply ground, so that it formed a
+narrow dark line perceptible at star illumination. Perpendicular to this
+diameter (the “hour-line”) were 10 lines, at each side of a middle line,
+drawn at a distance of 7′. These lines were drawn with black oil colour
+on the glass.
+
+The observations are performed by the observer A and his assistant B. A
+is in a dark room, lies on a chair having the eye at the ocular and can
+easily look over 2° in declination. The assistant sits in the room
+below, separated by a board floor, at the _Thiede_ clock.
+
+From the beginning of the observations the declination circle is fixed
+at a certain declination (whole degrees). All stars passing the field at
+a distance smaller than one degree from the middle line are observed.
+Hence the name “Durchmusterung”. When a star passes the “hour line” the
+magnitude is called out by A, and noted by B together with the time of
+the clock. Simultaneously the declination is noted by A in the darkness.
+On some occasions 30 stars may be observed in a minute.
+
+The first observation was made on Febr. 25, 1852, the last on March 27,
+1859. In all there were 625 observation nights with 1841 “zones”. The
+total number of stars was 324198.
+
+The catalogue was published by ARGELANDER in three parts in the years
+1859, 1861 and 1862[7] and embraces all stars between the pole and 2°
+south of the equator brighter than 9m.5, according to the scale of
+ARGELANDER (his aim was to register all stars up to the 9th magnitude).
+To this scale we return later. The catalogue is arranged in accordance
+with the declination-degrees, and for each degree according to the right
+ascension. Quotations from B. D. have the form B. D. 23°.174, which
+signifies: Zone +23°, star No. 174.
+
+ARGELANDER's work was continued for stars between δ = -2° and δ = -23°
+by SCHÖNFELD, according to much the same plan, but with a larger
+instrument (aperture 159 mm, focal length 1930 mm, magnifying power 26
+times). The observations were made in the years 1876 to 1881 and include
+133659 stars.[8]
+
+The positions in B. D. are given in tenths of a second in right
+ascension and in tenths of a minute in declination.
+
+
+20. _The Cape Photographic Durchmusterung_[9] (C. P. D.). This embraces
+the whole southern sky from -18° to the south pole. Planned by GILL, the
+photographs were taken at the Cape Observatory with a DALLMEYER lens
+with 15 cm. aperture and a focal-length of 135 cm. Plates of 30 × 30 cm.
+give the coordinates for a surface of 5 × 5 square degrees. The
+photographs were taken in the years 1885 to 1890. The measurements of
+the plates were made by KAPTEYN in Groningen with a “parallactic”
+measuring-apparatus specially constructed for this purpose, which
+permits of the direct obtaining of the right ascension and the
+declination of the stars. The measurements were made in the years 1886
+to 1898. The catalogue was published in three parts in the years 1896 to
+1900.
+
+The positions have the same accuracy as in B. D. The whole number of
+stars is 454875. KAPTEYN considers the catalogue complete to at least
+the magnitude 9m.2.
+
+In the two great catalogues B. D. and C. P. D. we have all stars
+registered down to the magnitude 9.0 (visually) and a good way below
+this limit. Probably as far as to 10m.
+
+A third great Durchmusterung has for some time been in preparation at
+Cordoba in Argentina.[10] It continues the southern zones of SCHÖNFELD
+and is for the present completed up to 62° southern declination.
+
+All these Durchmusterungs are ultimately based on star catalogues of
+smaller extent and of great precision. Of these catalogues we shall not
+here speak (Compare, however, §23).
+
+A great “Durchmusterung”, that will include all stars to the 11th
+magnitude, has for the last thirty years been in progress at different
+observatories proposed by the congress in Paris, 1888. The observations
+proceed very irregularly, and there is little prospect of getting the
+work finished in an appreciable time.
+
+
+21. _Star charts._ For the present we possess two great photographic
+star charts, embracing the whole heaven:--The _Harvard Map_ (H. M.) and
+the _FRANKLIN-ADAMS Charts_ (F. A. C.).
+
+_The Harvard Map_, of which a copy (or more correctly two copies) on
+glass has kindly been placed at the disposal of the Lund Observatory by
+Mr. PICKERING, embraces all stars down to the 11th magnitude. It
+consists of 55 plates, each embracing more than 900 square degrees of
+the sky. The photographs were taken with a small lens of only 2.5 cms.
+aperture and about 32.5 cms. focal-length. The time of exposure was one
+hour. These plates have been counted at the Lund Observatory by Hans
+HENIE. We return later to these counts.
+
+The _FRANKLIN-ADAMS Charts_ were made by an amateur astronomer
+FRANKLIN-ADAMS, partly at his own observatory (Mervel Hill) in England,
+partly in Cape and Johannesburg, Transvaal, in the years 1905-1912. The
+photographs were taken with a _Taylor_ lens with 25 cm. aperture and a
+focal-length of 114 cm., which gives rather good images on a field of 15
+× 15 square degrees.
+
+The whole sky is here reproduced on, in all, 206 plates. Each plate was
+exposed for 2 hours and 20 minutes and gives images of the stars down to
+the 17th magnitude. The original plates are now at the observatory in
+Greenwich. Some copies on paper have been made, of which the Lund
+Observatory possesses one. It shows stars down to the 14th-15th
+magnitudes and gives a splendid survey of the whole sky more complete,
+indeed, than can be obtained, even for the north sky, by direct
+observation of the heavens with any telescope at present accessible in
+Sweden.
+
+The F. A. C. have been counted by the astronomers of the Lund
+Observatory, so that thus a complete count of the number of stars for
+the whole heaven down to the 14th magnitude has been obtained. We shall
+later have an opportunity of discussing the results of these counts.
+
+A great star map is planned in connection with the Paris catalogue
+mentioned in the preceding paragraph. This _Carte du Ciel_ (C. d. C.) is
+still unfinished, but there seems to be a possibility that we shall one
+day see this work carried to completion. It will embrace stars down to
+the 14th magnitude and thus does not reach so far as the F. A. C., but
+on the other hand is carried out on a considerably greater scale and
+gives better images than F. A. C. and will therefore be of a great value
+in the future, especially for the study of the proper motions of the
+stars.
+
+
+22. _Distance of the stars._ As the determination, from the annual
+parallax, of the distances of the stars is very precarious if the
+distance exceeds 5 sir. (π = 0″.04), it is only natural that the
+catalogues of star-distances should be but few in number. The most
+complete catalogues are those of BIGOURDAN in the Bulletin astronomique
+XXVI (1909), of KAPTEYN and WEERSMA in the publications of Groningen Nr.
+24 (1910), embracing 365 stars, and of WALKEY in the “Journal of the
+British Astronomical Association XXVII” (1917), embracing 625 stars.
+Through the spectroscopic method of ADAMS it will be possible to enlarge
+this number considerably, so that the distance of all stars, for which
+the spectrum is well known, may be determined with fair accuracy. ADAMS
+has up to now published 1646 parallax stars.
+
+
+23. _Proper motions._ An excellent catalogue of the proper motions of
+the stars is LEWIS BOSS's “Preliminary General Catalogue of 6188 stars”
+(1910) (B. P. C.). It contains the proper motions of all stars down to
+the sixth magnitude (with few exceptions) and moreover some fainter
+stars. The catalogue is considered by the editor only as a preliminary
+to a greater catalogue, which is to embrace some 25000 stars and is now
+nearly completed.
+
+
+24. _Visual magnitudes._ The Harvard observatory has, under the
+direction of PICKERING, made its principal aim to study the
+magnitudes of the stars, and the history of this observatory is at the
+same time the history of the treatment of this problem. PICKERING, in
+the genuine American manner, is not satisfied with the three thirds of
+the sky visible from the Harvard observatory, but has also founded a
+daughter observatory in South America, at Arequipa in Peru. It is
+therefore possible for him to publish catalogues embracing the whole
+heaven from pole to pole. The last complete catalogue (1908) of the
+magnitudes of the stars is found in the “Annals of the Harvard
+Observatory T. 50” (H. 50). It contains 9110 stars and can be considered
+as complete to the magnitude 6m.5. To this catalogue are generally
+referred the magnitudes which have been adopted at the Observatory of
+Lund, and which are treated in these lectures.
+
+A very important, and in one respect even still more comprehensive,
+catalogue of visual magnitudes is the “Potsdam General Catalogue” (P. G.
+C.) by MÜLLER and KEMPF, which was published simultaneously with H. 50.
+It contains the magnitude of 14199 stars and embraces all stars on the
+northern hemisphere brighter than 7m.5 (according to B. D.). We have
+already seen that the zero-point of H. 50 and P. G. C. is somewhat
+different and that the magnitudes in P. G. C. must be increased by
+-0m.16 if they are to be reduced to the Harvard scale. The difference
+between the two catalogues however is due to some extent to the colour
+of the stars, as has been shown by Messrs. MÜLLER and KEMPF.
+
+
+25. _Photographic magnitudes._ Our knowledge of this subject is still
+rather incomplete. The most comprehensive catalogue is the
+“Actinometrie” by SCHWARZSCHILD (1912), containing the photographic
+magnitudes of all stars in B. D. down to the magnitude 7m.5 between the
+equator and a declination of +20°. In all, 3522 stars. The photographic
+magnitudes are however not reduced for the zero-point (compare §6).
+
+These is also a photometric photographic catalogue of the stars nearest
+to the pole in PARKHURST's “Yerkes actinometry” (1912),[11] which
+contains all stars in B. D. brighter than 7m.5 between the pole and 73°
+northern declination. The total number of stars is 672.
+
+During the last few years the astronomers of Harvard and Mount Wilson
+have produced a collection of “standard photographic magnitudes” for
+faint stars. These stars, which are called the _polar sequence_,[12] all
+lie in the immediate neighbourhood of the pole. The list is extended
+down to the 20th magnitude. Moreover similar standard photographic
+magnitudes are given in H. A. 71, 85 and 101.
+
+A discussion of the _colour-index_ (_i.e._, the difference between the
+photographic and the visual magnitudes) will be found in L. M. II, 19.
+When the visual magnitude and the type of spectrum are known, the
+photographic magnitude may be obtained, with a generally sufficient
+accuracy, by adding the colour-index according to the table 1 in §15
+above.
+
+
+26. _Stellar spectra._ Here too we find the Harvard Observatory to be
+the leading one. The same volume of the Annals of the Harvard
+Observatory (H. 50) that contains the most complete catalogue of visual
+magnitudes, also gives the spectral types for all the stars there
+included, _i.e._, for all stars to 6m.5. Miss CANNON, at the Harvard
+Observatory, deserves the principal credit for this great work. Not
+content with this result she is now publishing a still greater work
+embracing more than 200000 stars. The first four volumes of this work
+are now published and contain the first twelve hours of right
+ascension, so that half the work is now printed.[13]
+
+
+27. _Radial velocity._ In this matter, again, we find America to be the
+leading nation, though, this time, it is not the Harvard or the Mount
+Wilson but the Lick Observatory to which we have to give the honour. The
+eminent director of this observatory, W. W. CAMPBELL, has in a high
+degree developed the accuracy in the determination of radial velocities
+and has moreover carried out such determinations in a large scale. The
+“Bulletin” No. 229 (1913) of the Lick Observatory contains the radial
+velocity of 915 stars. At the observatory of Lund, where as far as
+possible card catalogues of the attributes of the stars are collected,
+GYLLENBERG has made a catalogue of this kind for the radial velocities.
+The total number of stars in this catalogue now amounts to 1640.[14]
+
+
+28. Finally I shall briefly mention some comprehensive works on more
+special questions regarding the stellar system.
+
+On _variable stars_ there is published every year by HARTWIG in the
+“Vierteljahrschrift der astronomischen Gesellschaft” a catalogue of all
+known variable stars with needful information about their minima &c.
+This is the completest and most reliable of such catalogues, and is
+always up to date. A complete historical catalogue of the variables is
+given in “Geschichte und Literatur des Lichtwechsels der bis Ende 1915
+als sicher veränderlich anerkannten Sterne nebst einem Katalog der
+Elemente ihres Lichtwechsels” von G. MÜLLER und E. HARTWIG. Leipzig
+1918, 1920.
+
+On _nebulae_ we have the excellent catalogues of DREYER, the “New
+General Catalogue” (N. G. C.) of 1890 in the “Memoirs of the
+Astronomical Society” vol. 49, the “Index catalogues” (I. C.) in the
+same memoirs, vols. 51 and 59 (1895 and 1908). These catalogues contain
+all together 13226 objects.
+
+Regarding other special attributes I refer in the first place to the
+important Annals of the Harvard Observatory. Other references will be
+given in the following, as need arises.
+
+FOOTNOTES:
+
+[Footnote 7: “Bonner Sternverzeichnis” in den Astronomischen
+Beobachtungen auf der Sternwarte zu Bonn, Dritter bis Fünfter Band. Bonn
+1859-62.]
+
+[Footnote 8: “Bonner Durchmusterung”, Vierte Sektion. Achter Band der
+Astronomischen Beobachtungen zu Bonn, 1886.]
+
+[Footnote 9: “The Cape Photographic Durchmusterung” by DAVID GILL and J.
+C. KAPTEYN, Annals of the Cape Observatory, vol. III-V (1896-1900).]
+
+[Footnote 10: “Cordoba Durchmusterung” by J. THOME. Results of the
+National Argentine Observatory, vol. 16, 17, 18, 21 (1894-1914).]
+
+[Footnote 11: Aph. J., vol. 36.]
+
+[Footnote 12: H. A., vol. 71.]
+
+[Footnote 13: H. A., vol. 91, 92, 93, 94.]
+
+[Footnote 14: A catalogue of radial velocities has this year been
+published by J. VOUTE, embracing 2071 stars. “First catalogue of radial
+velocities”, by J. VOUTE. Weltevreden, 1920.]
+
+
+
+
+CHAPTER III.
+
+SOME GROUPS OF KNOWN STARS.
+
+
+29. The number of cases in which all the eight attributes of the stars
+discussed in the first chapter are well known for one star is very
+small, and certainly does not exceed one hundred. These cases refer
+principally to such stars as are characterized either by great
+brilliancy or by a great proper motion. The principal reason why these
+stars are better known than others is that they lie rather near our
+solar system. Before passing on to consider the stars from more general
+statistical points of view, it may therefore be of interest first to
+make ourselves familiar with these well-known stars, strongly
+emphasizing, however, the exceptional character of these stars, and
+carefully avoiding any generalization from the attributes we shall here
+find.
+
+
+30. _The apparently brightest stars._ We begin with these objects so
+well known to every lover of the stellar sky. The following table
+contains all stars the apparent visual magnitude of which is brighter
+than 1m.5.
+
+The first column gives the current number, the second the name, the
+third the equatorial designation (αδ). It should be remembered that the
+first four figures give the hour and minutes in right ascension, the
+last two the declination, italics showing negative declination. The
+fourth column gives the galactic square, the fifth and sixth columns the
+galactic longitude and latitude. The seventh and eighth columns give the
+annual parallax and the corresponding distance expressed in siriometers.
+The ninth column gives the proper motion (μ), the tenth the radial
+velocity _W_ expressed in sir./st. (To get km./sec. we may multiply by
+4.7375). The eleventh column gives the apparent visual magnitude, the
+twelfth column the absolute magnitude (_M_), computed from _m_ with the
+help of _r_. The 13th column gives the type of spectrum (_Sp_), and the
+last column the photographic magnitude (_m′_). The difference between
+_m′_ and _m_ gives the colour-index (_c_).
+
+TABLE 2.
+
+_THE APPARENTLY BRIGHTEST STARS._
+
++--+---------------------+----------+--------+-----+-------+-------+-------+
+| 1|         2           |    3     |    4   |  5  |   6   |   7   |   8   |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+|  |                     |           Position              |   Distance    |
+|  | _Name_              |----------+--------+-----+-------+-------+-------+
+|  |                     |   (αδ)    | Square | _l_ |  _b_  |   π   |  _r_ |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+|  |                     |          |        |     |       |       | sir.  |
+| 1|Sirius               |(0640{16})|  GD_7  | 195°| - 8°  |0″.876 |  0.5  |
+| 2|Canopus              |(0621{52})|  GD_8  | 229 | -24   | 0.007 | 29.5  |
+| 3|Vega                 |(183338)  |  GC_2  |  30 | +17   | 0.094 |  2.2  |
+| 4|Capella              |(050945)  |  GC_5  | 131 | + 5   | 0.066 |  3.1  |
+| 5|Arcturus             |(141119)  |  GA_2  | 344 | +68   | 0.075 |  2.7  |
+| 6|α Centauri           |(1432{60})|  GD_10 | 284 | - 2   | 0.759 |  0.3  |
+| 7|Rigel                |(0509{08})|  GD_6  | 176 | -24   | 0.007 | 29.5  |
+| 8|Procyon              |(073405)  |  GC_7  | 182 | +14   | 0.324 |  0.6  |
+| 9|Achernar             |(0134{57})|  GE_8  | 256 | -59   | 0.051 |  4.0  |
+|10|β Centauri           |(1356{59})|  GC_10 | 280 | + 2   | 0.037 |  5.6  |
+|11|Altair               |(194508)  |  GD_1  |  15 | -10   | 0.238 |  0.9  |
+|12|Betelgeuze           |(054907)  |  GD_6  | 168 | - 8   | 0.030 |  6.9  |
+|13|Aldebaran            |(043016)  |  GD_5  | 149 | -19   | 0.078 |  2.8  |
+|14|Pollux               |(073928)  |  GC_6  | 160 | +25   | 0.064 |  3.2  |
+|15|Spica                |(1319{10})|  GB_8  | 286 | +51   |  ..   |  ..   |
+|16|Antares              |(1623{26})|  GC_11 | 320 | +14   | 0.029 |  7.1  |
+|17|Fomalhaut            |(2252{30})|  GE_10 | 348 | -66   | 0.138 |  1.5  |
+|18|Deneb                |(203844)  |  GC_2  |  51 | + 1   |  ..   |  ..   |
+|19|Regulus              |(100312)  |  GB_6  | 196 | +50   | 0.033 |  6.3  |
+|20|β Crucis             |(1241{59})|  GC_10 | 270 | + 3   | 0.008 | 25.8  |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+|  |                     |          |        |     |       |       | sir.  |
+|  |   Mean              |    ..    |   ..   |  .. |  23°.5|0″.134 |  7.3  |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+
+
++--+---------------------+------+--------+---------+---------+----+------+
+| 1|         2           |   9  |   10   |    11   |    12   | 13 |  14  |
++--+---------------------+------+--------+---------+---------+----+------+
+|  |                     |    Motion     |     Magnitude     | Spectrum  |
+|  | _Name_              +------+--------+---------+---------+----+------+
+|  |                     | μ    |  _W_   |   _m_   |   _M_   |_Sp_| _m′_ |
++--+---------------------+------+--------+---------+---------+----+------+
+|  |                     |      |sir./st.|         |         |    | _m′_ |
+| 1|Sirius               | 1″.32|  - 1.56| -1m.58  | -0m.3   |A   |-1.58 |
+| 2|Canopus              |  0.02|  + 4.39|  -0.86  |   -8.2  |F   |-0.40 |
+| 3|Vega                 |  0.35|  - 2.91|   0.14  |   -1.6  |A   | 0.14 |
+| 4|Capella              |  0.44|  + 6.38|   0.21  |   -2.8  |G   | 1.13 |
+| 5|Arcturus             |  2.28|  - 0.82|   0.24  |   -1.9  |K   | 1.62 |
+| 6|α Centauri           |  3.68|  - 4.69|   0.33  |   +3.2  |G   | 1.25 |
+| 7|Rigel                |  0.00|  + 4.77|   0.34  |   -7.0  |B8p | 0.25 |
+| 8|Procyon              |  1.24|  - 0.74|   0.48  |   +1.5  |F5  | 1.17 |
+| 9|Achernar             |  0.09|   ..   |   0.60  |   -2.4  |B5  | 0.87 |
+|10|β Centauri           |  0.04|  + 2.53|   0.86  |   -2.9  |B1  | 0.45 |
+|11|Altair               |  0.66|  - 6.97|   0.89  |   +1.2  |A5  | 1.12 |
+|12|Betelgeuze           |  0.03|  + 4.43|   0.92  |   -3.3  |Ma  | 2.76 |
+|13|Aldebaran            |  0.20|  +11.63|   1.06  |   -1.2  |K5  | 2.67 |
+|14|Pollux               |  0.07|  + 0.82|   1.21  |   -1.3  |K   | 2.59 |
+|15|Spica                |  0.06|  + 0.34|   1.21  |    ..   |B2  | 0.84 |
+|16|Antares              |  0.03|  - 0.63|   1.22  |   -3.0  |Map | 3.06 |
+|17|Fomalhaut            |  0.37|  + 1.41|   1.29  |   +0.4  |A3  | 1.43 |
+|18|Deneb                |  0.00|  - 0.84|   1.33  |    ..   |A2  | 1.42 |
+|19|Regulus              |  0.25|   ..   |   1.34  |   -2.7  |B8  | 1.25 |
+|20|β Crucis             |  0.06|  + 2.74|   1.50  |   -5.6  |B1  | 1.09 |
++--+---------------------+------+--------+---------+---------+----+------+
+|  |                     |      |        |         |         |    | _m′_ |
+|  |   Mean              | 0″.56|    3.26| +0m.64  |  -2m.1  |F1  |+1.13 |
++--+---------------------+------+--------+---------+---------+----+------+
+
+The values of (αδ), _m_, _Sp_ are taken from H. 50. The values of _l_,
+_b_ are computed from (αδ) with the help of tables in preparation at the
+Lund Observatory, or from the original to plate I at the end, allowing
+the conversion of the equatorial coordinates into galactic ones. The
+values of π are generally taken from the table of KAPTEYN and WEERSMA
+mentioned in the previous chapter. The values of μ are obtained from B.
+P. C., those of the radial velocity (_W_) from the card catalogue in
+Lund already described.
+
+There are in all, in the sky, 20 stars having an apparent magnitude
+brighter than 1m.5. The brightest of them is _Sirius_, which, owing to
+its brilliancy and position, is visible to the whole civilized world. It
+has a spectrum of the type A0 and hence a colour-index nearly equal to
+0.0 (observations in Harvard give _c_ = +0.06). Its apparent magnitude
+is -1m.6, nearly the same as that of Mars in his opposition. Its
+absolute magnitude is -0m.3, _i.e._, fainter than the apparent
+magnitude, from which we may conclude that it has a distance from us
+smaller than one siriometer. We find, indeed, from the eighth column
+that _r_ = 0.5 sir. The proper motion of Sirius is 1″.32 per year, which
+is rather large but still not among the largest proper motions as will
+be seen below. From the 11th column we find that Sirius is moving
+towards us with a velocity of 1.6 sir./st. (= 7.6 km./sec.), a rather
+small velocity. The third column shows that its right ascension is 6h
+40m and its declination -16°. It lies in the square GD_7 and its
+galactic coordinates are seen in the 5th and 6th columns.
+
+The next brightest star is _Canopus_ or α Carinæ at the south sky. If we
+might place absolute confidence in the value of _M_ (= -8.2) in the 12th
+column this star would be, in reality, a much more imposing apparition
+than Sirius itself. Remembering that the apparent magnitude of the moon,
+according to §6, amounts to -11.6, we should find that Canopus, if
+placed at a distance from us equal to that of Sirius (_r_ = 0.5 sir.),
+would shine with a lustre equal to no less than a quarter of that of the
+moon. It is not altogether astonishing that a fanciful astronomer should
+have thought Canopus to be actually the central star in the whole
+stellar system. We find, however, from column 8 that its supposed
+distance is not less that 30 sir. We have already pointed out that
+distances greater than 4 sir., when computed from annual parallaxes,
+must generally be considered as rather uncertain. As the value of _M_
+is intimately dependent on that of _r_ we must consider speculations
+based on this value to be very vague. Another reason for a doubt about a
+great value for the real luminosity of this star is found from its type
+of spectrum which, according to the last column, is F0, a type which, as
+will be seen, is seldom found among giant stars. A better support for a
+large distance could on the other hand be found from the small proper
+motion of this star. Sirius and Canopus are the only stars in the sky
+having a negative value of the apparent visual magnitude.
+
+Space will not permit us to go through this list star for star. We may
+be satisfied with some general remarks.
+
+In the fourth column is the galactic square. We call to mind that all
+these squares have the same area, and that there is therefore the same
+probability _a priori_ of finding a star in one of the squares as in
+another. The squares GC and GD lie along the galactic equator (the Milky
+Way). We find now from column 4 that of the 20 stars here considered
+there are no less than 15 in the galactic equator squares and only 5
+outside, instead of 10 in the galactic squares and 10 outside, as would
+have been expected. The number of objects is, indeed, too small to allow
+us to draw any cosmological conclusions from this distribution, but we
+shall find in the following many similar instances regarding objects
+that are principally accumulated along the Milky Way and are scanty at
+the galactic poles. We shall find that in these cases we may _generally_
+conclude from such a partition that we then have to do with objects
+_situated far from the sun_, while objects that are uniformly
+distributed on the sky lie relatively near us. It is easy to understand
+that this conclusion is a consequence of the supposition, confirmed by
+all star counts, that the stellar system extends much farther into space
+along the Milky Way than in the direction of its poles.
+
+If we could permit ourselves to draw conclusions from the small material
+here under consideration, we should hence have reason to believe that
+the bright stars lie relatively far from us. In other words we should
+conclude that the bright stars seem to be bright to us not because of
+their proximity but because of their large intrinsic luminosity. Column
+8 really tends in this direction. Certainly the distances are not in
+this case colossal, but they are nevertheless sufficient to show, in
+some degree, this uneven partition of the bright stars on the sky. The
+mean distance of these stars is as large as 7.5 sir. Only α Centauri,
+Sirius, Procyon and Altair lie at a distance smaller than one
+siriometer. Of the other stars there are two that lie as far as 30
+siriometers from our system. These are the two giants Canopus and Rigel.
+Even if, as has already been said, the distances of these stars may be
+considered as rather uncertain, we must regard them as being rather
+large.
+
+As column 8 shows that these stars are rather far from us, so we find
+from column 12, that their absolute luminosity is rather large. The mean
+absolute magnitude is, indeed, -2m.1. We shall find that only the
+greatest and most luminous stars in the stellar system have a negative
+value of the absolute magnitude.
+
+The mean value of the proper motions of the bright stars amounts to
+0″.56 per year and may be considered as rather great. We shall, indeed,
+find that the mean proper motion of the stars down to the 6th magnitude
+scarcely amounts to a tenth part of this value. On the other hand we
+find from the table that the high value of this mean is chiefly due to
+the influence of four of the stars which have a large proper motion,
+namely Sirius, Arcturus, α Centauri and Procyon. The other stars have a
+proper motion smaller than 1″ per year and for half the number of stars
+the proper motion amounts to approximately 0″.05, indicating their
+relatively great distance.
+
+That the absolute velocity of these stars is, indeed, rather small may
+be found from column 10, giving their radial velocity, which in the mean
+amounts to only three siriometers per stellar year. From the discussion
+below of the radial velocities of the stars we shall find that this is a
+rather small figure. This fact is intimately bound up with the general
+law in statistical mechanics, to which we return later, that stars with
+large masses generally have a small velocity. We thus find in the radial
+velocities fresh evidence, independent of the distance, that these
+bright stars are giants among the stars in our stellar system.
+
+We find all the principal spectral types represented among the bright
+stars. To the helium stars (B) belong Rigel, Achernar, β Centauri,
+Spica, Regulus and β Crucis. To the Sirius type (A) belong Sirius, Vega,
+Altair, Fomalhaut and Deneb. To the Calcium type (F) Canopus and
+Procyon. To the sun type (G) Capella and α Centauri. To the K-type
+belong Arcturus, Aldebaran and Pollux and to the M-type the two red
+stars Betelgeuze and Antares. Using the spectral indices as an
+expression for the spectral types we find that the mean spectral index
+of these stars is +1.1 corresponding to the spectral type F1.
+
+
+31. _Stars with the greatest proper motion._ In table 3 I have collected
+the stars having a proper motion greater than 3″ per year. The
+designations are the same as in the preceding table, except that the
+names of the stars are here taken from different catalogues.
+
+In the astronomical literature of the last century we find the star 1830
+Groombridge designed as that which possesses the greatest known proper
+motion. It is now distanced by two other stars C. P. D. 5h.243
+discovered in the year 1897 by KAPTEYN and INNES on the plates taken for
+the Cape Photographic Durchmusterung, and BARNARD's star in Ophiuchus,
+discovered 1916. The last-mentioned star, which possesses the greatest
+proper motion now known, is very faint, being only of the 10th
+magnitude, and lies at a distance of 0.40 sir. from our sun and is
+hence, as will be found from table 5 the third nearest star for which we
+know the distance. Its linear velocity is also very great, as we find
+from column 10, and amounts to 19 sir./st. (= 90 km./sec.) in the
+direction towards the sun. The absolute magnitude of this star is 11m.7
+and it is, with the exception of one other, the very faintest star now
+known. Its spectral type is Mb, a fact worth fixing in our memory, as
+different reasons favour the belief that it is precisely the M-type that
+contains the very faintest stars. Its apparent velocity (_i.e._, the
+proper motion) is so great that the star in 1000 years moves 3°, or as
+much as 6 times the diameter of the moon. For this star, as well as for
+its nearest neighbours in the table, observations differing only by a
+year are sufficient for an approximate determination of the value of the
+proper motion, for which in other cases many tens of years are
+required.
+
+Regarding the distribution of these stars in the sky we find that,
+unlike the brightest stars, they are not concentrated along the Milky
+Way. On the contrary we find only 6 in the galactic equator squares and
+12 in the other squares. We shall not build up any conclusion on this
+irregularity in the distribution, but supported by the general thesis of
+the preceding paragraph we conclude only that these stars must be
+relatively near us. This follows, indeed, directly from column 8, as not
+less than eleven of these stars lie within one siriometer from our sun.
+Their mean distance is 0.87 sir.
+
+TABLE 3.
+
+_STARS WITH THE GREATEST PROPER MOTION._
+
++--+---------------------+----------+--------+-----+-------+-------+-------+
+| 1|         2           |    3     |    4   |  5  |   6   |   7   |   8   |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+|  |                     |           Position              |   Distance    |
+|  | _Name_              |----------+--------+-----+-------+-------+-------+
+|  |                     |   (αδ)    | Square | _l_ |  _b_  |  π   |  _r_  |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+|  |                     |          |        |     |       |       | sir.  |
+| 1|Barnards star        |(175204)  |  GC_12 | 358°| +12°  |0″.515 |  0.40 |
+| 2|C. Z. 5h.243         |(0507{44})|  GE_7  | 218 | -35   | 0.319 |  0.65 |
+| 3|Groom. 1830          |(114738)  |  GA_1  | 135 | +75   | 0.102 |  2.02 |
+| 4|Lac. 9352            |(2259{36})|  GE_10 | 333 | -66   | 0.292 |  0.71 |
+| 5|C. G. A. 32416       |(2359{37})|  GF_2  | 308 | -75   | 0.230 |  0.89 |
+| 6|61 Cygni             |(210238)  |  GD_2  |  50 | - 7   | 0.311 |  0.66 |
+| 7|Lal. 21185           |(105736)  |  GB_5  | 153 | +66   | 0.403 |  0.51 |
+| 8|ε Indi               |(2155{57})|  GE_9  | 304 | -47   | 0.284 |  0.73 |
+| 9|Lal. 21258           |(110044)  |  GB_4  | 135 | +64   | 0.203 |  1.02 |
+|10|O^2 Eridani          |(0410{07})|  GE_5  | 168 | -36   | 0.174 |  1.19 |
+|11|Proxima Centauri     |(1422{62})|  GD_10 | 281 | - 2   | 0.780 |  0.26 |
+|12|Oe. A. 14320         |(1504{15})|  GB_9  | 314 | +35   | 0.035 |  5.90 |
+|13|μ Cassiopeiæ         |(010154)  |  GD_4  |  93 | - 8   | 0.112 |  1.84 |
+|14|α Centauri           |(1432{60})|  GD_10 | 284 | - 2   | 0.759 |  0.27 |
+|15|Lac. 8760            |(2111{39})|  GE_10 | 332 | -44   | 0.248 |  0.83 |
+|16|Lac. 1060            |(0315{43})|  GE_7  | 216 | -55   | 0.162 |  1.27 |
+|17|Oe. A. 11677         |(111466)  |  GB_8  | 103 | +50   | 0.198 |  1.04 |
+|18|Van Maanens star     |(004304)  |  GD_8  |  92 | -58   | 0.246 |  0.84 |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+|  |                     |          |        |     |       |       | sir.  |
+|  |   Mean              |   ..     |   ..   |     |  41°  |0″.298 |  0.87 |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+
+
++--+---------------------+------+--------+---------+---------+----+------+
+| 1|         2           |   9  |   10   |    11   |    12   | 13 |  14  |
++--+---------------------+------+--------+---------+---------+----+------+
+|  |                     |    Motion     |     Magnitude     | Spectrum  |
+|  | _Name_              +------+--------+---------+---------+----+------+
+|  |                     |  μ   |  _W_   |   _m_   |   _M_   |_Sp_| _m′_ |
++--+---------------------+------+--------+---------+---------+----+------+
+|  |                     |      |sir./st.|         |         |    | _m′_ |
+| 1|Barnards star        |10″.29|  -19   |    9m.7 |   +11m.7|Mb  |11.5  |
+| 2|C. Z. 5h.243         |  8.75|  +51   |     9.2 |   +10.1 |K2  |10.6  |
+| 3|Groom. 1830          |  7.06|  -20   |     6.5 |    +5.0 |G5  | 7.6  |
+| 4|Lac. 9352            |  6.90|   +2   |     7.5 |    +8.2 |K   | 8.9  |
+| 5|C. G. A. 32416       |  6.11|   +5   |     8.2 |    +8.5 |G   | 9.1  |
+| 6|61 Cygni             |  5.27|  -13   |     5.6 |    +6.5 |K5  | 7.2  |
+| 7|Lal. 21185           |  4.77|  -18   |     7.6 |    +9.1 |Mb  | 8.9  |
+| 8|ε Indi               |  4.70|   -8   |     4.7 |    +5.4 |K5  | 6.3  |
+| 9|Lal. 21258           |  4.47|  +14   |     8.5 |    +8.5 |Ma  |10.3  |
+|10|O^2 Eridani          |  4.11|   -9   |     4.7 |    +4.3 |G5  | 5.8  |
+|11|Proxima Centauri     |  3.85|   ..   |    11.0 |   +13.9 |..  |13.5  |
+|12|Oe. A. 14320         |  3.75|  +61   |     9.0 |    +5.1 |G0  | 9.9  |
+|13|μ Cassiopeiæ         |  3.73|  -21   |     5.7 |    +4.4 |G3  | 6.8  |
+|14|α Centauri           |  3.68|   -5   |     0.3 |    +3.2 |G   | 1.2  |
+|15|Lac. 8760            |  3.53|   +3   |     6.6 |    +7.0 |G   | 7.5  |
+|16|Lac. 1060            |  3.05|  +18   |     5.6 |    +5.1 |G5  | 6.7  |
+|17|Oe. A. 11677         |  3.03|   ..   |     9.2 |    +9.1 |Ma  |11.0  |
+|18|Van Maanens star     |  3.01|   ..   |    12.3 |   +12.7 |F0  |12.9  |
++--+---------------------+------+--------+---------+---------+----+------+
+|  |                     |      |sir./st.|         |         |    | _m′_ |
+|  |   Mean              | 5″.00|   17.8 |    7m.3 |    +7m.6|G8  | 8.7  |
++--+---------------------+------+--------+---------+---------+----+------+
+
+That the great proper motion does not depend alone on the proximity of
+these stars is seen from column 10, giving the radial velocities. For
+some of the stars (4) the radial velocity is for the present unknown,
+but the others have, with few exceptions, a rather great velocity
+amounting in the mean to 18 sir./st. (= 85 km./sec.), if no regard is
+taken to the sign, a value nearly five times as great as the absolute
+velocity of the sun. As this is only the component along the line of
+sight, the absolute velocity is still greater, approximately equal to
+the component velocity multiplied by √2. We conclude that the great
+proper motions depend partly on the proximity, partly on the great
+linear velocities of the stars. That both these attributes here really
+cooperate may be seen from the absolute magnitudes (_M_).
+
+The apparent and the absolute magnitudes are for these stars nearly
+equal, the means for both been approximately 7m. This is a consequence
+of the fact that the mean distance of these stars is equal to one
+siriometer, at which distance _m_ and _M_, indeed, do coincide. We find
+that these stars have a small luminosity and may be considered as
+_dwarf_ stars. According to the general law of statistical mechanics
+already mentioned small bodies upon an average have a great absolute
+velocity, as we have, indeed, already found from the observed radial
+velocities of these stars.
+
+As to the spectral type, the stars with great proper motions are all
+yellow or red stars. The mean spectral index is +2.8, corresponding to
+the type G8. If the stars of different types are put together we get the
+table
+
+    _Type_    _Number_       _Mean value of M_
+      G         8                 5.3
+      K         4                 7.5
+      M         4                 9.6
+
+We conclude that, at least for these stars, the mean value of the
+absolute magnitude increases with the spectral index. This conclusion,
+however, is not generally valid.
+
+
+32. _Stars with the greatest radial velocities._ There are some kinds of
+nebulae for which very large values of the radial velocities have been
+found. With these we shall not for the present deal, but shall confine
+ourselves to the stars. The greatest radial velocity hitherto found is
+possessed by the star (040822) of the eighth magnitude in the
+constellation Perseus, which retires from us with a velocity of 72
+sir./st. or 341 km./sec. The nearest velocity is that of the star
+(010361) which approaches us with approximately the same velocity. The
+following table contains all stars with a radial velocity greater than
+20 sir./st. (= 94.8 km./sec.). It is based on the catalogue of VOUTE
+mentioned above.
+
+Regarding their distribution in the sky we find 11 in the galactic
+equator squares and 7 outside. A large radial velocity seems therefore
+to be a galactic phenomenon and to be correlated to a great distance
+from us. Of the 18 stars in consideration there is only one at a
+distance smaller than one siriometer and 2 at a distance smaller than 4
+siriometers. Among the nearer ones we find the star (050744), identical
+with C. P. D. 5h.243, which was the “second” star with great proper
+motion. These stars have simultaneously the greatest proper motion and
+very great linear velocity. Generally we find from column 9 that these
+stars with large radial velocity possess also a large proper motion. The
+mean value of the proper motions amounts to 1″.34, a very high value.
+
+In the table we find no star with great apparent luminosity. The
+brightest is the 10th star in the table which has the magnitude 5.1. The
+mean apparent magnitude is 7.7. As to the absolute magnitude (_M_) we
+see that most of these speedy stars, as well as the stars with great
+proper motions in table 3, have a rather great _positive_ magnitude and
+thus are absolutely faint stars, though they perhaps may not be directly
+considered as dwarf stars. Their mean absolute magnitude is +3.0.
+
+Regarding the spectrum we find that these stars generally belong to the
+yellow or red types (G, K, M), but there are 6 F-stars and, curiously
+enough, two A-stars. After the designation of their type (A2 and A3) is
+the letter _p_ (= peculiar), indicating that the spectrum in some
+respect differs from the usual appearance of the spectrum of this type.
+In the present case the peculiarity consists in the fact that a line of
+the wave-length 448.1, which emanates from magnesium and which we may
+find on plate III in the spectrum of Sirius, does not occur in the
+spectrum of these stars, though the spectrum has otherwise the same
+appearance as in the case of the Sirius stars. There is reason to
+suppose that the absence of this line indicates a low power of radiation
+(low temperature) in these stars (compare ADAMS).
+
+TABLE 4.
+
+_STARS WITH THE GREATEST RADIAL VELOCITY._
+
++--+---------------------+----------+--------+-----+-------+-------+-------+
+| 1|         2           |    3     |    4   |  5  |   6   |   7   |   8   |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+|  |                     |           Position              |   Distance    |
+|  | _Name_              |----------+--------+-----+-------+-------+-------+
+|  |                     |  (αδ)    | Square | _l_ |  _b_  |   π   |  _r_  |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+|  |                     |          |        |     |       |       | sir.  |
+| 1|A. G. Berlin 1366    |(040822)  |  GD_5  | 141°| -20°  |0″.007 | 30.8  |
+| 2|Lal. 1966            |(010361)  |  GD_4  |  93 | - 2   | 0.016 | 12.9  |
+| 3|A. Oe. 14320         |(1504{15})|  GB_9  | 314 | +35   | 0.035 |  5.9  |
+| 4|C. Z. 5h.243         |(0507{44})|  GE_7  | 218 | -35   | 0.319 |  0.6  |
+| 5|Lal. 15290           |(074730)  |  GC_6  | 158 | +26   | 0.023 |  9.0  |
+| 6|53 Cassiop.          |(015563)  |  GC_4  |  98 | + 2   |  ..   |  ..   |
+| 7|A. G. Berlin 1866    |(055719)  |  GD_6  | 159 | - 2   | 0.021 |  9.8  |
+| 8|W Lyræ               |(181136)  |  GC_2  |  31 | +21   |  ..   |  ..   |
+| 9|Boss 1511            |(0559{26})|  GD_7  | 200 | -20   | 0.012 | 17.0  |
+|10|ω Pavonis            |(1849{60})|  GD_11 | 304 | -24   |  ..   |  ..   |
+|11|A. Oe. 20452         |(2017{21})|  GE_10 | 351 | -31   | 0.015 | 13.5  |
+|12|Lal. 28607           |(1537{10})|  GB_10 | 325 | +34   | 0.033 |  6.2  |
+|13|A. G. Leiden 5734    |(161132)  |  GB_1  |  21 | +45   | 0.002 | 89.2  |
+|14|Lal. 37120           |(192932)  |  GC_2  |  33 | + 6   | 0.050 |  4.1  |
+|15|Lal. 27274           |(1454{21})|  GB_9  | 308 | +34   | 0.013 | 16.2  |
+|16|Lal. 5761            |(030225)  |  GD_5  | 126 | -28   | 0.039 |  5.1  |
+|17|W. B. 17h.517        |(172906)  |  GC_12 | 358 | +20   | 0.014 | 14.1  |
+|18|Lal. 23995           |(1247{17})|  GB_8  | 271 | +46   | 0.012 | 17.0  |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+|  |                     |          |        |     |       |       | sir.  |
+|  |   Mean              |    ..    |   ..   |     |  23°.9|0″.041 | 16.7  |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+
+
++--+---------------------+------+--------+---------+---------+----+------+
+| 1|         2           |   9  |   10   |    11   |    12   | 13 |  14  |
++--+---------------------+------+--------+---------+---------+----+------+
+|  |                     |    Motion     |     Magnitude     | Spectrum  |
+|  | _Name_              +------+--------+---------+---------+----+------+
+|  |                     |   μ  |  _W_   |   _m_   |   _M_   |_Sp_| _m′_ |
++--+---------------------+------+--------+---------+---------+----+------+
+|  |                     |      |sir./st.|         |         |    | _m′_ |
+| 1|A. G. Berlin 1366    | 0″.54|  +72   |  8m.9   |  +1m.4  |F0  | 9.4  |
+| 2|Lal. 1966            |  0.64|  -69   |   7.9   |   +2.3  |F3  | 8.5  |
+| 3|A. Oe. 14320         |  3.75|  +61   |   9.0   |   +5.1  |G0  | 9.9  |
+| 4|C. Z. 5h.243         |  8.75|  +51   |   9.2   |  +10.1  |K2  |10.6  |
+| 5|Lal. 15290           |  1.96|  -51   |   8.2   |   +3.4  |G0  | 9.1  |
+| 6|53 Cassiop.          |  0.01|  -44   |   5.6   |    ..   |B8  | 5.5  |
+| 7|A. G. Berlin 1866    |  0.76|  -40   |   9.0   |   +4.0  |F0  | 9.9  |
+| 8|W Lyræ               | ..   |  -39   |   var.  |    ..   |Md  | var. |
+| 9|Boss 1511            |  0.10|  +39   |   5.2   |   -1.0  |G5  | 6.4  |
+|10|ω Pavonis            |  0.14|  +38   |   5.1   |    ..   |K   | 6.5  |
+|11|A. Oe. 20452         |  1.18|  -38   |   8.1   |   +2.4  |G8p | 9.4  |
+|12|Lal. 28607           |  1.18|  -36   |   7.3   |   +3.3  |A2p | 7.4  |
+|13|A. G. Leiden 5734    |  0.04|  -35   |   8.3   |   -1.5  |K4  | 9.9  |
+|14|Lal. 37120           |  0.52|  -34   |   6.6   |   +3.5  |G2  | 7.6  |
+|15|Lal. 27274           |  0.79|  +34   |   8.3   |   +2.2  |F4  | 8.9  |
+|16|Lal. 5761            |  0.86|  -32   |   8.0   |   +4.4  |A3p | 8.1  |
+|17|W. B. 17h.517        |  0.63|  -31   |   8.6   |   +2.8  |F1  | 9.1  |
+|18|Lal. 23995           |  0.88|  +30   |   8.2   |   +2.0  |F3  | 8.8  |
++--+---------------------+------+--------+---------+---------+----+------+
+|  |                     |      |sir./st.|         |         |    | _m′_ |
+|  |   Mean              | 1″.34|   16.7 |  7m.7   |  +3m.0  |F9  | 8.5  |
++--+---------------------+------+--------+---------+---------+----+------+
+
+
+33. _The nearest stars._ The star α in Centaurus was long considered as
+the nearest of all stars. It has a parallax of 0″.75, corresponding to a
+distance of 0.27 siriometers (= 4.26 light years). This distance is
+obtained from the annual parallax with great accuracy, and the result is
+moreover confirmed in another way (from the study of the orbit of the
+companion of α Centauri). In the year 1916 INNES discovered at the
+observatory of Johannesburg in the Transvaal a star of the 10th
+magnitude, which seems to follow α Centauri in its path in the heavens,
+and which, in any case, lies at the same distance from the earth, or
+somewhat nearer. It is not possible at present to decide with accuracy
+whether _Proxima Centauri_--as the star is called by INNES--or α
+Centauri is our nearest neighbour. Then comes BARNARD's star (175204),
+whose large proper motion we have already mentioned. As No. 5 we find
+Sirius, as No. 8 Procyon, as No. 21 Altair. The others are of the third
+magnitude or fainter. No. 10--61 Cygni--is especially interesting, being
+the first star for which the astronomers, after long and painful
+endeavours in vain, have succeeded in determining the distance with the
+help of the annual parallax (BESSEL 1841).
+
+From column 4 we find that the distribution of these stars on the sky is
+tolerably uniform, as might have been predicted. All these stars have a
+large proper motion, this being in the mean 3″.42 per year. This was a
+priori to be expected from their great proximity. The radial velocity
+is, numerically, greater than could have been supposed. This fact is
+probably associated with the generally small mass of these stars.
+
+Their apparent magnitude is upon an average 6.3. The brightest of the
+near stars is Sirius (_m_ = -1.6), the faintest Proxima Centauri (_m_ =
+11). Through the systematic researches of the astronomers we may be sure
+that no bright stars exist at a distance smaller than one siriometer,
+for which the distance is not already known and well determined. The
+following table contains without doubt--we may call them briefly all
+_near_ stars--all stars within one siriometer from us with an apparent
+magnitude brighter than 6m (the table has 8 such stars), and probably
+also all near stars brighter than 7m (10 stars), or even all brighter
+than the eighth magnitude (the table has 13 such stars and two near the
+limit). Regarding the stars of the eighth magnitude or fainter no
+systematic investigations of the annual parallax have been made and
+among these stars we may get from time to time a new star belonging to
+the siriometer sphere in the neighbourhood of the sun. To determine
+the total number of stars within this sphere is one of the fundamental
+problems in stellar statistics, and to this question I shall return
+immediately.
+
+TABLE 5.
+
+_THE NEAREST STARS._
+
++--+----------------------+----------+--------+-----+-------+-------+-------+
+| 1|         2            |    3     |    4   |  5  |   6   |   7   |   8   |
++--+----------------------+----------+--------+-----+-------+-------+-------+
+|  |                      |           Position              |   Distance    |
+|  | _Name_               |----------+--------+-----+-------+-------+-------+
+|  |                      |   (αδ)   | Square | _l_ |  _b_  |   π   | _r_   |
++--+----------------------+----------+--------+-----+-------+-------+-------+
+|  |                      |          |        |     |       |       | sir.  |
+| 1|Proxima Centauri      |(1422{62})|  GD_10 | 281°| - 2°  |0″.780 |  0.26 |
+| 2|α Centauri            |(1432{60})|  GD_10 | 284 | - 2   | 0.759 |  0.27 |
+| 3|Barnards p. m. star   |(175204)  |  GC_12 | 358 | +12   | 0.515 |  0.40 |
+| 4|Lal. 21185            |(105736)  |  GB_5  | 153 | +66   | 0.403 |  0.51 |
+| 5|Sirius                |(0640{16})|  GD_7  | 195 | - 8   | 0.376 |  0.55 |
+| 6|            ..        |(1113{57})|  GC_6  | 158 | + 3   | 0.337 |  0.60 |
+| 7|τ Ceti                |(0139{16})|  GF_1  | 144 | -74   | 0.334 |  0.62 |
+| 8|Procyon               |(073405)  |  GC_7  | 182 | +14   | 0.324 |  0.64 |
+| 9|C. Z. 5h.243          |(0507{44})|  GE_7  | 218 | -35   | 0.319 |  0.65 |
+|10|61 Cygni              |(210238)  |  GD_2  |  50 | - 7   | 0.311 |  0.66 |
+|11|Lal. 26481            |(1425{15})|  GB_9  | 124 | -40   | 0.311 |  0.66 |
+|12|ε Eridani             |(0328{09})|  GE_5  | 153 | -42   | 0.295 |  0.70 |
+|13|Lac. 9352             |(2259{36})|  GE_10 | 333 | -66   | 0.292 |  0.71 |
+|14|Pos. Med. 2164        |(184159)  |  GC_2  |  56 | +24   | 0.292 |  0.71 |
+|15|ε Indi                |(215557)  |  GE_9  | 304 | -47   | 0.284 |  0.73 |
+|16|Groom. 34             |(001243)  |  GD_3  |  84 | -20   | 0.281 |  0.73 |
+|17|Oe. A. 17415          |(173768)  |  GC_8  |  65 | +32   | 0.268 |  0.77 |
+|18|Krüger 60             |(222457)  |  GC_3  |  72 |   0   | 0.256 |  0.81 |
+|19|Lac. 8760             |(2111{39})|  GE_10 | 332 | -44   | 0.248 |  0.88 |
+|20|van Maanens p. m. star|(004304)  |  GE_3  |  92 | -58   | 0.246 |  0.84 |
+|21|Altair                |(194508)  |  GD_1  |  15 | -10   | 0.238 |  0.87 |
+|22|C. G. A. 32416        |(2359{37})|  GF_2  | 308 | -75   | 0.230 |  0.89 |
+|23|Bradley 1584          |(1129{32})|  GC_6  | 252 | +28   | 0.216 |  0.95 |
++--+----------------------+----------+--------+-----+-------+-------+-------+
+|  |                      |          |        |     |       |       | sir.  |
+|  |   Mean               |   ..     |   ..   |  .. |  30°.8|0″.344 |  0.67 |
++--+----------------------+----------+--------+-----+-------+-------+-------+
+
+
++--+-----------------------+------+--------+---------+---------+----+------+
+| 1|         2             |   9  |   10   |    11   |    12   | 13 |  14  |
++--+-----------------------+------+--------+---------+---------+----+------+
+|  |                       |    Motion     |     Magnitude     | Spectrum  |
+|  | _Name_                +------+--------+---------+---------+----+------+
+|  |                       | μ |  _W_   |   _m_   |   _M_   |_Sp_| _m′_ |
++--+-----------------------+------+--------+---------+---------+----+------+
+|  |                       |      |sir./st.|         |         |    | _m′_ |
+| 1|Proxima Centauri       | 3″.85|   ..   | 11m.0   | +13m.9  |..  |13.5  |
+| 2|α Centauri             |  3.68|  - 5   |   0.33  |  + 3.2  |G   | 1.25 |
+| 3|Barnards p. m. star    | 10.29|  -19   |   9.7   |  +11.7  |Mb  |11.5  |
+| 4|Lal. 21185             |  4.77|  -18   |   7.6   |  + 9.1  |Mb  | 8.9  |
+| 5|Sirius                 |  1.32|  - 2   |  -1.58  |  - 0.3  |A   |-1.58 |
+| 6|            ..         |  2.72|   ..   |  ..     |  ..     |..  |12.5  |
+| 7|τ Ceti                 |  1.92|  - 3   |   3.6   |  + 4.6  |K0  | 4.6  |
+| 8|Procyon                |  1.24|  - 1   |   0.48  |  + 1.5  |F5  | 0.90 |
+| 9|C. Z. 5h.243           |  8.75|  +51   |   9.2   |  +10.1  |K2  |10.6  |
+|10|61 Cygni               |  5.27|  -13   |   5.6   |  + 6.5  |K5  | 7.2  |
+|11|Lal. 26481             |  0.47|   ..   |   7.8   |  + 8.7  |G5  | 8.9  |
+|12|ε Eridani              |  0.97|  + 3   |   3.8   |  + 4.6  |K0  | 4.8  |
+|13|Lac. 9352              |  6.90|  + 2   |   7.5   |  + 8.2  |K   | 8.9  |
+|14|Pos. Med. 2164         |  2.28|   ..   |   8.9   |  + 9.6  |K   |10.3  |
+|15|ε Indi                 |  4.70|  - 8   |   4.7   |  + 5.4  |K5  | 6.3  |
+|16|Groom. 34              |  2.89|  + 1   |   8.1   |  + 8.8  |Ma  | 9.5  |
+|17|Oe. A. 17415           |  1.30|   ..   |   9.1   |  + 9.7  |K   |10.5  |
+|18|Krüger 60              |  0.94|   ..   |   9.2   |  + 9.6  |K5  |10.8  |
+|19|Lac. 8760              |  3.53|  + 3   |   6.6   |  + 7.0  |G   | 7.5  |
+|20|van Maanens p. m. star |  3.01|   ..   |  12.3   |  +12.7  |F0  |12.9  |
+|21|Altair                 |  0.66|  - 7   |   0.9   |  + 1.2  |A5  | 1.12 |
+|22|C. G. A. 32416         |  6.11|  + 5   |   8.2   |  + 8.5  |G   | 9.1  |
+|23|Bradley 1584           |  1.06|  - 5   |   6.1   |  + 6.2  |G   | 6.9  |
++--+-----------------------+------+--------+---------+---------+----+------+
+|  |                       |      |sir./st.|         |         |    | _m′_ |
+|  |   Mean                | 3″.42|    9.1 |  6m.3   |  +7m.3  |G6  | 7.5  |
++--+-----------------------+------+--------+---------+---------+----+------+
+
+The mean absolute magnitude of the near stars is distributed in the
+following way:--
+
+    _M_         0 1 3 4 5 6 7 8 9 10 11 12 13
+    Number      1 2 1 2 1 2 1 4 4 1  1  1  1.
+
+What is the absolute magnitude of the near stars that are not contained
+in table? Evidently they must principally be faint stars. We may go
+further and answer that _all stars with an absolute magnitude brighter
+than 6m_ must be contained in this list. For if _M_ is equal to 6 or
+brighter, _m_ must be brighter than 6m, if the star is nearer than one
+siriometer. But we have assumed that all stars apparently brighter than
+6m are known and are contained in the list. Hence also all stars
+_absolutely_ brighter than 6m must be found in table 5. We conclude that
+the number of stars having an absolute magnitude brighter than 6m
+amounts to 8.
+
+If, finally, the spectral type of the near stars is considered, we find
+from the last column of the table that these stars are distributed in
+the following way:--
+
+    Spectral type   B A F G K M
+    Number          0 2 2 5 9 3.
+
+For two of the stars the spectrum is for the present unknown.
+
+We find that the number of stars increases with the spectral index. The
+unknown stars in the siriometer sphere belong probably, in the main, to
+the red types.
+
+If we now seek to form a conception of the _total_ number in this sphere
+we may proceed in different ways. EDDINGTON, in his “Stellar movements”,
+to which I refer the reader, has used the proper motions as a scale of
+calculation, and has found that we may expect to find in all 32 stars in
+this sphere, confining ourselves to stars apparently brighter than the
+magnitude 9m.5. This makes 8 stars per cub. sir.
+
+We may attack the problem in other ways. A very rough method which,
+however, is not without importance, is the following. Let us suppose
+that the Galaxy in the direction of the Milky Way has an extension of
+1000 siriometers and in the direction of the poles of the Milky Way an
+extension of 50 sir. We have later to return to the fuller discussion of
+this extension. For the present it is sufficient to assume these values.
+The whole system of the Galaxy then has a volume of 200 million cubic
+siriometers. Suppose further that the total number of stars in the
+Galaxy would amount to 1000 millions, a value to which we shall also
+return in a following chapter. Then we conclude that the average number
+of stars per cubic siriometer would amount to 5. This supposes that the
+density of the stars in each part of the Galaxy is the same. But the sun
+lies rather near the centre of the system, where the density is
+(considerably) greater than the average density. A calculation, which
+will be found in the mathematical part of these lectures, shows that the
+density in the centre amounts to approximately 16 times the average
+density, giving 80 stars per cubic siriometer in the neighbourhood of
+the sun (and of the centre). A sphere having a radius of one siriometer
+has a volume of 4 cubic siriometers, so that we obtain in this way 320
+stars in all, within a sphere with a radius of one siriometer. For
+different reasons it is probable that this number is rather too great
+than too small, and we may perhaps estimate the total number to be
+something like 200 stars, of which more than a tenth is now known to the
+astronomers.
+
+We may also arrive at an evaluation of this number by proceeding from
+the number of stars of different apparent or absolute magnitudes. This
+latter way is the most simple. We shall find in a later paragraph that
+the absolute magnitudes which are now known differ between -8 and +13.
+But from mathematical statistics it is proved that the total range of a
+statistical series amounts upon an average to approximately 6 times the
+dispersion of the series. Hence we conclude that the dispersion (σ) of
+the absolute magnitudes of the stars has approximately the value 3 (we
+should obtain σ = [13 + 8] : 6 = 3.5, but for large numbers of
+individuals the total range may amount to more than 6 σ).
+
+As, further, the number of stars per cubic siriometer with an absolute
+magnitude brighter than 6 is known (we have obtained 8 : 4 = 2 stars per
+cubic siriometer brighter than 6m), we get a relation between the total
+number of stars per cubic siriometer (_D_0_) and the mean absolute
+magnitude (_M_0_) of the stars, so that _D_0_ can be obtained, as soon
+as _M_0_ is known. The computation of _M_0_ is rather difficult, and is
+discussed in a following chapter. Supposing, for the moment, _M_0_ = 10
+we get for _D_0_ the value 22, corresponding to a number of 90 stars
+within a distance of one siriometer from the sun. We should then know a
+fifth part of these stars.
+
+
+34. _Parallax stars._ In §22 I have paid attention to the now available
+catalogues of stars with known annual parallax. The most extensive of
+these catalogues is that of WALKEY, containing measured parallaxes of
+625 stars. For a great many of these stars the value of the parallax
+measured must however be considered as rather uncertain, and I have
+pointed out that only for such stars as have a parallax greater than
+0″.04 (or a distance smaller than 5 siriometers) may the measured
+parallax be considered as reliable, as least generally speaking. The
+effective number of parallax stars is therefore essentially reduced.
+Indirectly it is nevertheless possible to get a relatively large
+catalogue of parallax stars with the help of the ingenious spectroscopic
+method of ADAMS, which permits us to determine the absolute magnitude,
+and therefore also the distance, of even farther stars through an
+examination of the relative intensity of certain lines in the stellar
+spectra. It may be that the method is not yet as firmly based as it
+should be,[15] but there is every reason to believe that the course
+taken is the right one and that the catalogue published by ADAMS of 500
+parallax stars in Contrib. from Mount Wilson, 142, already gives a more
+complete material than the catalogues of directly measured parallaxes. I
+give here a short resumé of the attributes of the parallax stars in this
+catalogue.
+
+The catalogue of ADAMS embraces stars of the spectral types F, G, K and
+M. In order to complete this material by parallaxes of blue stars I add
+from the catalogue of WALKEY those stars in his catalogue that belong to
+the spectral types B and A, confining myself to stars for which the
+parallax may be considered as rather reliable. There are in all 61 such
+stars, so that a sum of 561 stars with known distance is to be
+discussed.
+
+For all these stars we know _m_ and _M_ and for the great part of them
+also the proper motion μ. We can therefore for each spectral type
+compute the mean values and the dispersion of these attributes. We thus
+get the following table, in which I confine myself to the mean values of
+the attributes.
+
+
+TABLE 6.
+
+_MEAN VALUES OF _m_, _M_ AND THE PROPER MOTIONS (μ) OF PARALLAX STARS OF
+DIFFERENT SPECTRAL TYPES._
+
++---+-------+-------+-------+-------+
+|Sp.|Number |  _m_  |  _M_  |   μ   |
++---+-------+-------+-------+-------+
+| B |  15   | +2.03 | -1.67 | 0″.05 |
+| A |  46   | +3.40 | +0.64 | 0.21  |
+| F | 125   | +5.60 | +2.10 | 0.40  |
+| G | 179   | +5.77 | +1.68 | 0.51  |
+| K | 184   | +6.17 | +2.31 | 0.53  |
+| M |  42   | +6.02 | +2.30 | 0.82  |
++---+-------+-------+-------+-------+
+
+We shall later consider all parallax stars taken together. We find from
+table 6 that the apparent magnitude, as well as the absolute magnitude,
+is approximately the same for all yellow and red stars and even for the
+stars of type F, the apparent magnitude being approximately equal to +6m
+and the absolute magnitude equal to +2m. For type B we find the mean
+value of M to be -1m.7 and for type A we find M = +0m.6. The proper
+motion also varies in the same way, being for F, G, K, M approximately
+0″.5 and for B and A 0″.1. As to the mean values of _M_ and μ we cannot
+draw distinct conclusions from this material, because the parallax stars
+are selected in a certain way which essentially influences these mean
+values, as will be more fully discussed below. The most interesting
+conclusion to be drawn from the parallax stars is obtained from their
+distribution over different values of _M_. In the memoir referred to,
+ADAMS has obtained the following table (somewhat differently arranged
+from the table of ADAMS),[16] which gives the number of parallax stars
+for different values of the absolute magnitude for different spectral
+types.
+
+A glance at this table is sufficient to indicate a singular and well
+pronounced property in these frequency distributions. We find, indeed,
+that in the types G, K and M the frequency curves are evidently
+resolvable into two simple curves of distribution. In all these types we
+may distinguish between a bright group and a faint group. With a
+terminology proposed by HERTZSPRUNG the former group is said to consist
+of _giant_ stars, the latter group of _dwarf_ stars. Even in the stars
+of type F this division may be suggested. This distinction is still more
+pronounced in the graphical representation given in figures (plate IV).
+
+TABLE 7.
+
+_DISTRIBUTION OF THE PARALLAX STARS OF DIFFERENT SPECTRAL TYPES OVER
+DIFFERENT ABSOLUTE MAGNITUDES._
+
++-------------------------------------------------+
+|       |    |    |     |     |     |     ||      |
+|   M   |  B |  A |   F |   G |   K |   M || All  |
+|-------+----+----+-----+-----+-----+-----++------|
+|       |    |    |     |     |     |     ||      |
+|  - 4  | .. | .. |  .. |  .. |  .. |   1 ||  ..  |
+|  - 3  | .. | .. |  .. |  .. |  .. |  .. ||  ..  |
+|  - 2  |  1 |  4 |   1 |   7 |  .. |   2 ||  15  |
+|  - 1  |  2 |  7 |   7 |  28 |  15 |   4 ||  63  |
+|  - 0  |  3 | 10 |   6 |  32 |  40 |  10 ||  91  |
+|  + 0  |  1 | 11 |   6 |   7 |  14 |  11 ||  50  |
+|  + 1  |  1 |  3 |  20 |   9 |   4 |   1 ||  38  |
+|  + 2  | .. |  5 |  48 |  26 |  .. |   1 ||  80  |
+|  + 3  | .. |  1 |  32 |  36 |   2 |  .. ||  71  |
+|  + 4  | .. |  1 |   5 |  25 |  25 |  .. ||  56  |
+|  + 5  | .. |  1 |  .. |   6 |  25 |  .. ||  32  |
+|  + 6  | .. |  2 |  .. |   3 |  10 |  .. ||  15  |
+|  + 7  | .. |  1 |  .. |  .. |  14 |  .. ||  15  |
+|  + 8  | .. | .. |  .. |  .. |   3 |   7 ||  10  |
+|  + 9  | .. | .. |  .. |  .. |   2 |   4 ||   6  |
+|  +10  | .. | .. |  .. |  .. |  .. |  .. ||  ..  |
+|  +11  | .. | .. |  .. |  .. |  .. |   1 ||   1  |
+|-------+----+----+-----+-----+-----+-----++------|
+| Total |  8 | 46 | 125 | 179 | 154 |  42 || 554  |
++-------------------------------------------------+
+
+In the distribution of all the parallax stars we once more find a
+similar bipartition of the stars. Arguing from these statistics some
+astronomers have put forward the theory that the stars in space are
+divided into two classes, which are not in reality closely related. The
+one class consists of intensely luminous stars and the other of feeble
+stars, with little or no transition between the two classes. If the
+parallax stars are arranged according to their apparent proper motion,
+or even according to their absolute proper motion, a similar bipartition
+is revealed in their frequency distribution.
+
+Nevertheless the bipartition of the stars into two such distinct classes
+must be considered as vague and doubtful. Such an _apparent_
+bipartition is, indeed, necessary in all statistics as soon as
+individuals are selected from a given population in such a manner as the
+parallax stars are selected from the stars in space. Let us consider
+three attributes, say _A_, _B_ and _C_, of the individuals of a
+population and suppose that the attribute _C_ is _positively_ correlated
+to the attributes _A_ and _B_, so that to great or small values of _A_
+or _B_ correspond respectively great or small values of _C_. Now if the
+individuals in the population are statistically selected in such a way
+that we choose out individuals having great values of the attributes _A_
+and small values of the attribute _B_, then we get a statistical series
+regarding the attribute _C_, which consists of two seemingly distinct
+normal frequency distributions. It is in like manner, however, that the
+parallax stars are selected. The reason for this selection is the
+following. The annual parallax can only be determined for near stars,
+nearer than, say, 5 siriometers. The direct picking out of these stars
+is not possible. The astronomers have therefore attacked the problem in
+the following way. The near stars must, on account of their proximity,
+be relatively brighter than other stars and secondly possess greater
+proper motions than those. Therefore parallax observations are
+essentially limited to (1) bright stars, (2) stars with great proper
+motions. Hence the selected attributes of the stars are _m_ and μ. But
+_m_ and μ are both positively correlated to _M_. By the selection of
+stars with small _m_ and great μ we get a series of stars which
+regarding the attribute _M_ seem to be divided into two distinct
+classes.
+
+The distribution of the parallax stars gives us no reason to believe
+that the stars of the types K and M are divided into the two supposed
+classes. There is on the whole no reason to suppose the existence at all
+of classes of giant and dwarf stars, not any more than a classification
+of this kind can be made regarding the height of the men in a
+population. What may be statistically concluded from the distribution of
+the absolute magnitudes of the parallax stars is only that the
+_dispersion_ in _M_ is increased at the transition from blue to yellow
+or red stars. The filling up of the gap between the “dwarfs” and the
+“giants” will probably be performed according as our knowledge of the
+distance of the stars is extended, where, however, not the annual
+parallax but other methods of measuring the distance must be employed.
+
+TABLE 8.
+
+_THE ABSOLUTELY FAINTEST STARS._
+
++--+---------------------+----------+--------+-----+-------+-------+-------+
+| 1|         2           |    3     |    4   |  5  |   6   |   7   |   8   |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+|  |                     |             Position            |   Distance    |
+|  | _Name_              |----------+--------+-----+-------+-------+-------+
+|  |                     |    (αδ)  | Square | _l_ |  _b_  |   π   | _r_   |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+|  |                     |          |        |     |       |       | sir.  |
+| 1|Proxima Centauri     |(1422{62})|  GD_10 | 281°| - 2°  |0″.780 |  0.26 |
+| 2|van Maanens star     |(004304)  |  GE_8  |  92 | -58   | 0.246 |  0.84 |
+| 3|Barnards star        |(175204)  |  GC_12 | 358 | +12   | 0.515 |  0.40 |
+| 4|17 Lyræ C            |(190332)  |  GC_2  |  31 | +10   | 0.128 |  1.60 |
+| 5|C. Z. 5h.243         |(0507{44})|  GE_7  | 218 | -35   | 0.319 |  0.65 |
+| 6|Gron. 19 VIII 234    |(161839)  |  GB_1  |  29 | +44   | 0.162 |  1.27 |
+| 7|Oe. A. 17415         |(173768)  |  GB_8  |  65 | +32   | 0.268 |  0.77 |
+| 8|Gron. 19 VII 20      |(162148)  |  GB_2  |  41 | +43   | 0.133 |  1.55 |
+| 9|Pos. Med. 2164       |(184159)  |  GC_2  |  56 | +24   | 0.292 |  0.71 |
+|10|Krüger 60            |(222457)  |  GC_8  |  72 |   0   | 0.256 |  0.81 |
+|11|B. D. +56°532        |(021256)  |  GD_8  | 103 | - 4   | 0.195 |  1.06 |
+|12|B. D. +55°581        |(021356)  |  GD_8  | 103 | - 4   | 0.185 |  1.12 |
+|13|Gron. 19 VIII 48     |(160438)  |  GB_1  |  27 | +46   | 0.091 |  2.27 |
+|14|Lal. 21185           |(105736)  |  GB_5  | 153 | +66   | 0.403 |  0.51 |
+|15|Oe. A. 11677         |(111466)  |  GB_3  | 103 | +50   | 0.198 |  1.04 |
+|16|Walkey 653           |(155359)  |  GB_2  |  57 | +45   | 0.175 |  1.18 |
+|17|Yerkes parallax star |(021243)  |  GD_8  | 107 | -16   | 0.045 |  4.58 |
+|18|B. D. +56°537        |(021256)  |  GD_8  | 103 | - 4   | 0.175 |  1.18 |
+|19|Gron. 19 VI 266      |(062084)  |  GC_3  |  97 | +27   | 0.071 |  2.80 |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+|  |                     |          |        |     |       |       | sir.  |
+|  |   Mean              |   ..     |   ..   |  .. |  27°.5|0″.244 |  0.99 |
++--+---------------------+----------+--------+-----+-------+-------+-------+
+
+
++--+---------------------+------+--------+---------+---------+----+------+
+| 1|         2           |   9  |   10   |    11   |    12   | 13 |  14  |
++--+---------------------+------+--------+---------+---------+----+------+
+|  |                     |    Motion     |     Magnitude     | Spectrum  |
+|  | _Name_              +------+--------+---------+---------+----+------+
+|  |                     |   μ  |  _W_   |   _m_   |   _M_   |_Sp_| _m′_ |
++--+---------------------+------+--------+---------+---------+----+------+
+|  |                     |      |sir./st.|         |         |    | _m′_ |
+| 1|Proxima Centauri     | 3″.85|   ..   | 11m.0    |+13m.9  |..  |13.5  |
+| 2|van Maanens star     |  3.01|   ..   |  12.3   |  +12.7  |F0  |12.95 |
+| 3|Barnards star        | 10.29|  -19   |   9.7   |  +11.7  |Mb  | 8.9  |
+| 4|17 Lyræ C            |  1.75|   ..   |  11.3   |  +10.3  |..  |12.5  |
+| 5|C. Z. 5h.243         |  8.75|  +51   |   9.2   |  +10.1  |K2  |10.68 |
+| 6|Gron. 19 VIII 234    |  0.12|   ..   |  10.3   |  + 9.8  |..  |  ..  |
+| 7|Oe. A. 17415         |  1.30|   ..   |   9.1   |  + 9.7  |K   |10.5  |
+| 8|Gron. 19 VII 20      |  1.22|   ..   |  10.5   |  + 9.6  |..  |  ..0 |
+| 9|Pos. Med. 2164       |  2.28|   ..   |   8.9   |  + 9.6  |K   |10.3  |
+|10|Krüger 60            |  0.94|   ..   |   9.2   |  + 9.6  |K5  |10.8  |
+|11|B. D. +56°532        |   .. |   ..   |   9.5   |  + 9.4  |..  |  ..  |
+|12|B. D. +55°581        |   .. |   ..   |   9.4   |  + 9.2  |G5  |10.2  |
+|13|Gron. 19 VIII 48     |  0.12|   ..   |  11.1   |  + 9.3  |..  |  ..  |
+|14|Lal. 21185           |  4.77|  -18   |   7.6   |  + 9.1  |Mb  | 8.9  |
+|15|Oe. A. 11677         |  3.03|   ..   |   9.2   |  + 9.1  |Ma  |11.0  |
+|16|Walkey 653           |   .. |   ..   |   9.5   |  + 9.1  |..  |  ..  |
+|17|Yerkes parallax star |   .. |   ..   |  12.4   |  + 9.1  |..  |  ..  |
+|18|B. D. +56°537        |   .. |   ..   |   9.4   |  + 9.0  |..  |  ..  |
+|19|Gron. 19 VI 266      |  0.09|   ..   |  11.3   |  + 9.0  |..  |  ..  |
++--+---------------------+------+--------+---------+---------+----+------+
+|  |                     |      |sir./st.|         |         |    | _m′_ |
+|  |   Mean              | 2″.96|   29.3 | 10m.0   |  +9m.9  |K1  |10.9  |
++--+---------------------+------+--------+---------+---------+----+------+
+
+Regarding the absolute brightness of the stars we may draw some
+conclusions of interest. We find from table 7 that the absolute
+magnitude of the parallax stars varies between -4 and +11, the extreme
+stars being of type M. The absolutely brightest stars have a rather
+great distance from us and their absolute magnitude is badly determined.
+The brightest star in the table is Antares with _M_ = -4.6, which value
+is based on the parallax 0″.014 found by ADAMS. So small a parallax
+value is of little reliability when it is directly computed from annual
+parallax observations, but is more trustworthy when derived with the
+spectroscopic method of ADAMS. It is probable from a discussion of the
+_B_-stars, to which we return in a later chapter, that the absolutely
+brightest stars have a magnitude of the order -5m or -6m. If the
+parallaxes smaller than 0″.01 were taken into account we should find that
+Canopus would represent the absolutely brightest star, having _M_ =
+-8.17, and next to it we should find RIGEL, having _M_ = -6.97, but both
+these values are based on an annual parallax equal to 0″.007, which is
+too small to allow of an estimation of the real value of the absolute
+magnitude.
+
+If on the contrary the _absolutely faintest_ stars be considered, the
+parallax stars give more trustworthy results. Here we have only to do
+with near stars for which the annual parallax is well determined. In
+table 8 I give a list of those parallax stars that have an absolute
+magnitude greater than 9m.
+
+There are in all 19 such stars. The faintest of all known stars is
+INNES' star “Proxima Centauri” with _M_ = 13.9. The third star is
+BARNARD's star with _M_ = 11.7, both being, together with α Centauri,
+also the nearest of all known stars. The mean distance of all the faint
+stars is 1.0 sir.
+
+There is no reason to believe that the limit of the absolute magnitude
+of the faint stars is found from these faint parallax stars:--Certainly
+there are many stars in space with _M_ > 13m and the mean value of _M_,
+for all stars in the Galaxy, is probably not far from the absolute value
+of the faint parallax stars in this table. This problem will be
+discussed in a later part of these lectures.
+
+FOOTNOTES:
+
+[Footnote 15: Compare ADAMS' memoirs in the Contributions from Mount
+Wilson.]
+
+[Footnote 16: The first line gives the stars of an absolute magnitude
+between -4.9 and -4.0, the second those between -3.9 and -3.0, &c. The
+stars of type B and A are from WALKEY's catalogue.]
+
+
+
+
+[Illustration: PLATE I.
+
+_CONVERSION OF EQUATORIAL COORDINATES INTO GALACTIC COORDINATES._]
+
+
+
+
+[Illustration: PLATE II.
+
+_Squares and Constellations._]
+
+
+
+
+[Illustration: PLATE III.
+
+_The Harvard Classification of Stellar Spectra._]
+
+
+
+
+[Illustration: Plate IV.
+
+_Distribution of the parallax stars over different absolute
+magnitudes._]
+
+
+
+
+SCIENTIA PUBLISHER
+
+K. G. MALMQUIST:
+    A study of the stars of spectral type A. L. M. II, 22.
+                                                          _Price: 6 Kr._
+
+C. V. L. CHARLIER:
+    Vorlesungen über die Grundzüge der mathematischen Statistik.
+                                                         _Price: 10 Kr._
+
+F. ESSCHER:
+    Über die Sterblichkeit in Schweden. 1886-1914. Eine Stabilitäts- und
+    Korrelationsuntersuchung. L. M. II, 23.               _Price: 6 Kr._
+
+B. FÄNGE:
+    On the distances and luminosities of stars of spectral type G as derived
+    from their proper motions. L. M. II, 25.              _Price: 5 Kr._
+
+C. V. L. CHARLIER:
+    Introduction to Stellar Statistics.                   _Price: 4 Kr._
+
+NILS H. RASMUSON:
+    A Research on moving clusters. L. M. II, 26.          _Price: 5 Kr._
+
+SIGFRID RAAB:
+    A Research on open clusters. L. M. II, 28.            _Price: 8 Kr._
+
+CARL WIRTZ:
+    Flächenhelligkeiten von 566 Nebelflecken und Sternhaufen. Nach
+    photometrischen Beobachtungen am 49 cm-Refraktor der
+    Universitäts-Sternwarte Straßburg (Elsaß) 1911-1916. L. M. II, 29.
+                                                          _Price: 5 Kr._
+
+C. V. L. CHARLIER:
+    Stargauges by William Herschel (H) and John Herschel (h). L. M. II, 30.
+                                                          _Price: 5 Kr._
+
+
+PRINTED BY LÜTCKE & WULFF, HAMBURG
+
+       *       *       *       *       *
+
+[Transcriber's Note: The following corrections have been made to the
+original text.
+
+Page 4: "Terrestial distances" changed to "Terrestrial distances"
+
+Page 9: "we must chose," changed to "we must choose,"
+
+Page 12: "acromasie" changed to "achromatism"
+
+Page 15: "inparticular" changed to "in particular"
+
+"supposing, that" changed to "supposing that"
+
+Page 16: "393.4 mm" changed to "393.4 μμ"
+
+Page 20: "for which stars if" changed to "for which stars it"
+
+Page 22: "sphaerical" changed to "spherical"
+
+Page 23: "principal scource" changed to "principal source"
+
+Page 25: "lense with 15 cm" changed to "lens with 15 cm"
+
+Page 27: "Through the spectroscopie method" changed to "Through the
+spectroscopic method"
+
+"made to its principal" changed to "made its principal"
+
+"american manner" changed to "American manner"
+
+Page 35: "many tenths of a year" changed to "many tens of years"
+
+Page 38: "same appearence" changed to "same appearance"
+
+Page 47: "red stears" changed to "red stars"
+
+"_dispersion_ in M" changed to "_dispersion_ in _M_"
+
+Page 49: "smaller the" changed to "smaller than"]
+
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK LECTURES ON STELLAR STATISTICS ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

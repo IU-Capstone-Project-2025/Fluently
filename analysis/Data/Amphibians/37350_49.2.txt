@@ -1,0 +1,1468 @@
+﻿The Project Gutenberg eBook of The Ancestry of Modern Amphibia: A Review of the Evidence
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: The Ancestry of Modern Amphibia: A Review of the Evidence
+
+Author: Theodore H. Eaton
+
+Release date: September 8, 2011 [eBook #37350]
+
+Language: English
+
+Credits: Produced by Chris Curnow, Charlene Taylor, Joseph Cooper
+        and the Online Distributed Proofreading Team at
+        http://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK THE ANCESTRY OF MODERN AMPHIBIA: A REVIEW OF THE EVIDENCE ***
+
+
+
+
+Produced by Chris Curnow, Charlene Taylor, Joseph Cooper
+and the Online Distributed Proofreading Team at
+http://www.pgdp.net
+
+
+
+
+
+
+
+
+
+    University of Kansas Publications
+      Museum of Natural History
+
+
+  Volume 12, No. 2, pp. 155-180, 10 figs.
+  -----------July 10, 1959---------------
+
+
+  The Ancestry of Modern Amphibia:
+    A Review of the Evidence
+
+      BY
+
+  THEODORE H. EATON, JR.
+
+
+       University of Kansas
+           Lawrence
+             1959
+
+University of Kansas Publications, Museum of Natural History
+
+Editors: E. Raymond Hall, Chairman, Henry S. Fitch, Robert W. Wilson
+
+
+    Volume 12, No. 2, pp. 155-180
+    Published July 10, 1959
+
+
+    University of Kansas
+    Lawrence, Kansas
+
+
+    PRINTED IN
+    THE STATE PRINTING PLANT
+    TOPEKA, KANSAS
+    1959
+
+    [Illustration]
+
+    27-8362
+
+
+
+
+[Transcriber's Notes: Several typos have been regulated.
+
+One typo of "ancester" for "ancestor" was corrected.
+
+One instance of "salamanderlike" corrected to "salamaner-like".]
+
+
+
+
+The Ancestry of Modern Amphibia: A Review of the Evidence
+
+BY
+THEODORE H. EATON, JR.
+
+
+
+
+INTRODUCTION
+
+
+In trying to determine the ancestral relationships of modern orders of
+Amphibia it is not possible to select satisfactory structural ancestors
+among a wealth of fossils, since very few of the known fossils could
+even be considered possible, and scarcely any are satisfactory, for such
+a selection. The nearest approach thus far to a solution of the problem
+in this manner has been made with reference to the Anura. Watson's paper
+(1940), with certain modifications made necessary by Gregory (1950),
+provides the paleontological evidence so far available on the origin of
+frogs. It shows that several features of the skeleton of frogs, such as
+the enlargement of the interpterygoid spaces and orbits, reduction of
+the more posterior dermal bones of the skull, and downward spread of the
+neural arches lateral to the notochord, were already apparent in the
+Pennsylvanian _Amphibamus_ (Fig. 1), with which Gregory synonymized
+_Miobatrachus_ and _Mazonerpeton_. But between the Pennsylvanian and the
+Triassic (the age of the earliest known frog, _Protobatrachus_) there
+was a great lapse of time, and that which passed between any conceivable
+Paleozoic ancestor of Urodela and the earliest satisfactory
+representative of this order (in the Cretaceous) was much longer still.
+The Apoda, so far as known, have no fossil record.
+
+Nevertheless it should be possible, first, to survey those characters of
+modern Amphibia that might afford some comparison with the early
+fossils, and second, to discover among the known Paleozoic kinds those
+which are sufficiently unspecialized to permit derivation of the modern
+patterns. Further circumstantial evidence may be obtained by examining
+some features of Recent Amphibia which could not readily be compared
+with anything in the fossils; such are the embryonic development of the
+soft structures, including cartilaginous stages of the skeleton, the
+development and various specializations of the ear mechanism, adaptive
+characters associated with aquatic and terrestrial life, and so on.
+
+
+
+
+COMPARISON OF MODERN ORDERS WITH THE
+LABYRINTHODONTS AND LEPOSPONDYLS
+
+
+[Illustration: Fig. 1. _Saurerpeton_ (× 1/2, after Romer, 1930, fig. 6);
+_Amphibamus_, the palatal view × 2-1/4, from Watson, 1940, fig. 4 (as
+_Miobatrachus_), the dorsal view × 2-1/2, from Gregory's revised figure
+of _Amphibamus_ (1950, Fig. 1); _Protobatrachus_, × 1, from Watson,
+1940, fig. 18, 19.]
+
+In both Anura and Urodela the skull is short, broad, relatively flat,
+with reduced pterygoids that diverge laterally from the parasphenoids
+leaving large interpterygoid vacuities, and with large orbits. (These
+statements do not apply to certain larval or perennibranchiate forms.)
+The skull in both orders has lost a number of primitive dermal bones in
+the posterior part; these are: basioccipital, supraoccipital,
+postparietal, intertemporal, supratemporal, and tabular. The
+exoccipitals form the two condyles but there are no foramina for the
+11th and 12th nerves, since these are not separate in modern Amphibia.
+The opisthotic is missing in all except Proteidae (but see discussion
+of the ear). Although the skull is normally autostylic, a movable
+basipterygoid articulation is present among Hynobiid salamanders and in
+at least the metamorphic stages of primitive frogs, and therefore should
+be expected in their ancestors. The vertebrae are, of course, complete;
+see discussion in later section. The quadratojugal, lost in salamanders,
+is retained in frogs, and conversely the lacrimal, absent in frogs,
+occurs in a few primitive salamanders. The situation in Apoda is
+different, but postfrontal and jugal should be noted as bones retained
+in this order while lost in the others.
+
+Thus, in spite of minor differences, the above list shows that there are
+numerous and detailed similarities between Anura and Urodela with
+respect to the features in which they differ from the Paleozoic orders.
+Pusey (1943) listed 26 characters which _Ascaphus_ shares with
+salamanders but not with more advanced frogs; a few of these might be
+coincidental, but most of them are of some complexity and must be taken
+to indicate relationship. The main adaptive specializations of Anura,
+however, including loss of the adult tail, extreme reduction in number
+of vertebrae, formation of urostyle, elongation of the ilium and
+lengthening of the hind legs, must have appeared at a later time than
+the separation of that order from any possible common stem with Urodela,
+although they are only partially developed in the Triassic
+_Protobatrachus_.
+
+Turning to the Paleozoic Amphibia, there are two groups in which some
+likelihood of a relationship with modern order exists. In the
+Pennsylvanian Trimerorhachoidea (Labyrinthodontia, order Temnospondyli)
+some members, such as _Eugyrinus_, _Saurerpeton_, and notably
+_Amphibamus_ (Fig. 1) had short, broad heads, an expansion of palatal
+and orbital openings, posterior widening of the parasphenoid associated
+with divergence of the pterygoids, a movable basipterygoid articulation,
+and reduction in size (but not loss) of the more posterior dermal bones
+of the skull. In recognition of Watson's (1940) evidence that these
+animals make quite suitable structural ancestors of frogs, Romer (1945)
+placed _Amphibamus_ in an order, Eoanura, but Gregory (1950) indicated
+that it might better be left with the temnospondyls. Association of the
+urodele stem with this group does not seem to have been proposed
+hitherto.
+
+The other group of Paleozoic Amphibia that has been considered probably
+ancestral to any modern type is the subclass Lepospondyli, containing
+three orders, Aistopoda, Nectridia and Microsauria. In these the
+vertebrae are complete (holospondylous), the centra presumably formed by
+cylindrical ossification around the notochord, and there is no evidence
+as to the contributions from embryonic cartilage units. It is important
+to note at this point that precisely the same statement can be made
+regarding the vertebrae of _adults_ of all three Recent orders, yet for
+all of them, as shown in a later section, we have ample evidence of the
+part played by cartilage elements in vertebral development. Therefore
+(a) we cannot say that there were no such elements in embryonic stages
+of lepospondyls, and (b) it would take more than the evidence from adult
+vertebrae to relate a particular modern order (for example, Urodela) to
+the Lepospondyli. Vague similarities to Urodela have been noted by many
+authors in the Nectridia, Aistopoda and Microsauria, but these are not
+detailed and refer mainly to the vertebrae. The skulls do not show,
+either dorsally or in the palate, any striking resemblance to those of
+generalized salamanders, and certainly most known lepospondyls are too
+specialized to serve as the source of Urodela. It is true that the
+elongate bodies, small limbs, and apparent aquatic habitus of some
+lepospondyls accord well with our usual picture of a salamander, but
+such a form and way of life have appeared in many early Amphibia,
+including the labyrinthodonts. The family Lysorophidae (Fig. 2), usually
+placed among microsaurs, is sufficiently close in skull structure to the
+Apoda to be a possible ancestor of these, but it probably has nothing to
+do with Urodela, by reason of the numerous morphological specializations
+that were associated with its snakelike habitus.
+
+[Illustration: Fig. 2. _Lysorophus tricarinatus_, lateral and posterior
+views × 2-1/2, modified after Sollas, 1920, Figs. 8 and 12,
+respectively; palatal view after Broom, 1918, × 1-1/2. For explanation
+of abbreviations see Fig. 3.]
+
+McDowell's (1958) suggestion that it would be profitable to look among
+the Seymouriamorpha for the ancestors of frogs seems to be based upon a
+few details of apparent resemblance rather than a comprehensive view of
+the major characters of the animals. In most points which he mentions
+(limb girdles, form of ear, pterygoid articulation) the present writer
+does not see a closer similarity of frogs to Seymouriamorpha than to
+Temnospondyli.
+
+Still other opinions have been expressed. Herre (1935), for instance,
+concludes "on anatomical, biological and paleontological grounds" that
+the orders of Urodela, Anura, Apoda and Stegocephali were all
+independently evolved from fish, but beyond citing the opinions of a
+number of other authors he does not present tangible evidence for this
+extreme polyphyletic interpretation.
+
+More notable are the views of several Scandinavian workers
+(Säve-Söderbergh, 1934; Jarvik, 1942; Holmgren, 1933, 1939, 1949a, b),
+of whom Jarvik, in a thorough analysis of the ethmoid region, would
+derive the Urodela from Porolepid Crossopterygii, and all other
+tetrapods from the Rhipidistia; Säve-Söderbergh and Holmgren, the latter
+using the structure of carpus and tarsus, see a relationship of Urodela
+to Dipnoi, but accept the derivation of labyrinthodonts and other
+tetrapods from Rhipidistia. All of this work is most detailed and
+laborious, and has produced a great quantity of data useful to
+morphologists, but the diphyletic theory is not widely adopted; the
+evidence adduced for it seems to consist largely of minutiae which,
+taken by themselves, are inconclusive, or lend themselves to other
+interpretation. For instance Holmgren's numerous figures of embryonic
+limbs of salamanders show patterns of cartilage elements that he would
+trace to the Dipnoan type of fin, yet it is difficult to see that the
+weight of evidence requires this, when the pattern does not differ in
+any fundamental manner from those seen in other embryonic tetrapods, and
+the differences that do appear may well be taken to have ontogenetic
+rather than phylogenetic meaning. Further, the Dipnoan specialization of
+dental plates and autostylic jaw suspension, already accomplished early
+in the Devonian, would seem to exclude Dipnoi from possible ancestry of
+the Urodela, an order unknown prior to the Mesozoic, in which the teeth
+are essentially similar to those of late Paleozoic Amphibia, and the jaw
+suspension is not yet in all members autostylic.
+
+
+
+
+THE EAR
+
+
+[Illustration: Fig. 3. Occipital region of skulls of _Megalocephalus
+brevicornis_ (× 3/10, after Watson, 1926, as _Orthosaurus_),
+_Dvinosaurus_ (× 1/4, modified after Bystrow, 1938; the lower figure
+after Sushkin, 1936), and _Necturus maculosus_ (× 3, original, from K.
+U., No. 3471).
+
+Abbreviations Used in Figures
+
+   b'd.c.--basidorsal cartilage (neural arch)
+   b'oc.--basioccipital
+   ce._{1-4}--centrale_{1-4}
+   ch.--ceratohyal
+   clav.--clavicle
+   clei.--cleithrum
+   cor.--coracoid
+   d.c._{1-4}--distal carpal_{1-4}
+   diap.--diapophysis
+   exoc.--exoccipital
+   ep.--episternum
+   hyost.--hyostapes
+   i.--intermedium
+   Mk.--Meckel's cartilage
+   n.--notochord
+   om.--omosternum
+   op.--operculum
+   opis.--opisthotic
+   par.--parietal
+   par. proc.--paroccipital process
+   peri. cent.--perichordal centrum
+   p'p.--postparietal
+   prep.--prepollex
+   pro.--prootic
+   p'sp.--parasphenoid
+   pt.--pterygoid
+   p.t.f.--post-temporal fossa
+   postzyg.--postzygapophysis
+   qj.--quadratojugal
+   qu.--quadrate
+   ra.--radiale
+   r.hy.--hyomandibular ramus of VII
+   rib-b.--rib-bearer
+   r.md.--mandibular ramus of VII
+   sc.--scapula
+   sc'cor.--scapulocoracoid
+   s'd.--supradorsal cartilage
+   s'd.(postzyg.)--supradorsal (postzygapophysis)
+   soc.--supraoccipital
+   sp.c.--spinal cord
+   sq.--squamosal
+   s'sc.--suprascapula
+   s't.--supratemporal
+   sta.--stapes
+   ster.--sternum
+   tab.--tabular
+   uln.--ulnare
+   v.a.--vertebral artery
+   xiph.--xiphisternum
+   I,IV--digits I and IV
+   V, VII, X, XII--foramina for cranial nerves of these numbers (in
+     Fig. 4, VII is the facial nerve)
+]
+
+In temnospondylous Amphibia the tympanum generally occupied an otic
+notch, at a high level on the skull, bordered dorsomedially by the
+tabular and ventrolaterally by the squamosal. In this position the
+tympanum could receive airborne sounds whether the animal were entirely
+on land or lying nearly submerged with only the upper part of its head
+exposed. Among those Anura in which the ear is not reduced the same is
+true, except that the tabular is lost. In Temnospondyli (Fig. 3) the
+posterior wall of the otic capsule was usually formed by the opisthotic,
+which extended up and outward as a buttress from the exoccipital to the
+tabular, and sometimes showed a paroccipital process for the insertion,
+presumably, of a slip or tendon of the anterior axial musculature. The
+stapes, in addition to its foot in the fenestra ovalis and its tympanic
+or extrastapedial process to the tympanum, bore a dorsal process (or
+ligament) to the tabular, an "internal" process (or ligament) to the
+quadrate or an adjacent part of the squamosal, and a ligament to the
+ceratohyal. Some of these attachments might be reduced or absent in
+special cases, but they seem to have been the ones originally present
+both phylogenetically and embryonically in Amphibia.
+
+Among typical frogs (Fig. 4) the base, or otostapes, is present and
+bony, the extrastapedial process (extracolumella, or hyostapes) is
+usually cartilaginous, the dorsal process (processus paroticus) is of
+cartilage or ligament, but the other two attachments are absent in the
+adult. The exoccipital extends laterally, occupying the posterior face
+of the otic capsule. Between it and the otostapes is a small disc,
+usually ossified, the operculum, which normally fits loosely in a
+portion of the fenestral membrane, and is developed from the otic
+capsule. The opercularis muscle extends from this disc to the
+suprascapula, in many but by no means all families of Anura.
+
+[Illustration: Fig. 4. Diagram of middle ear structures in _Rana_ (upper
+figure, after Stadtmüller, 1936, and lower left after DeBeer, 1937), and
+_Ambystoma_ (lower right, after DeBeer, 1937); all × 4. For explanation
+of abbreviations see Fig. 3.]
+
+Among Urodela (Fig. 4) the middle ear cavity and tympanum are lacking,
+and the stapes (columella) consists of no more than its footplate and
+the stylus, which is attached to the border of the squamosal, thus
+corresponding to the "internal" process. In families in which
+individuals metamorphose and become terrestrial (Hynobiidae,
+Ambystomidae, Salamandridae, Plethodontidae), an operculum and
+opercularis muscle appear in the adult, just as in frogs, except that in
+Plethodontidae, the most progressive family, the operculum fuses with
+the footplate of the stapes. Among neotenous or perennibranchiate
+urodeles there is no separate operculum or opercularis. The evidence
+given by Reed (1915) for fusion of the operculum with the columella in
+_Necturus_ appears inconclusive, in spite of the great care with which
+his observations were made. On the other hand, _Necturus_ and _Proteus_
+alone among living salamanders have a distinct opisthotic on the
+posterior wall of the otic capsule (Fig. 3), as do the Cretaceous
+_Hylaeobatrachus_ and the Eocene _Palaeoproteus_. Probably these
+Proteidae should be regarded as primitive in this respect, although many
+other features may be attributed to neoteny.
+
+There is a contrast between Anura and most Urodela in the relative
+positions of the stapes and facial nerve, as shown in DeBeer's (1937)
+diagrams. In the latter (_Ambystoma_) the nerve is beneath, and in the
+former (_Rana_) above, the stapes. Judging by figures of _Neoceratodus_,
+_Hypogeophis_, and several types of reptiles and mammals, the Urodela
+are exceptional. _Necturus_, however, has the nerve passing above its
+stapes, and this may be primitive in the same sense as the persistent
+opisthotic. There can be, of course, no question of the nerve having
+worked its way through or over the obstructing stapes in order to come
+below it in salamanders; rather, the peripheral growth of neuron fibers
+in the embryo must simply pursue a slightly different course among the
+partially differentiated mesenchyme in the two contrasting patterns.
+
+Although DeBeer (1937) shows in his figure of _Hypogeophis_ (one of the
+Apoda) an operculum, this is apparently a mistake. The stapes has a
+large footplate, and its stylus articulates with the quadrate, but no
+true operculum or opercularis has been described in the Apoda. The
+facial nerve passes above the stapes. It does not seem necessary to
+regard the conditions in this order as related directly to those of
+either salamanders or frogs, but a reduction of the stapes comparable to
+that in salamanders has occurred.
+
+The presence in both frogs and terrestrial salamanders of a special
+mechanism involving the opercularis muscle and an operculum cut out in
+identical fashion from the wall of the otic capsule behind the stapes
+seems to require some other explanation than that of a chance
+convergence or parallelism. Although the stapes and otic region are
+readily visible in a number of labyrinthodonts and lepospondyls, no
+indication of an operculum seems to be reported among them. But in the
+Triassic _Protobatrachus_ (Fig. 1), which is unmistakably a frog in its
+skull, pelvis and some other features, Piveteau (1937) has shown,
+immediately behind the foot of the stapes, a small bony tubercle, which
+he and Watson (1940) designated opisthotic. Very clearly it served for
+insertion of a muscle, and it is equally clear that the bone is a
+reduced opisthotic, carrying the paroccipital process already mentioned
+as characteristic of it in some temnospondyls. Since the remainder of
+the posterior wall of the otic capsule consists of cartilage, meeting
+the exoccipital, it may be that the opisthotic becomes the operculum in
+frogs. _Protobatrachus_ was too far specialized in the Anuran direction,
+although it still had a tail, and the forelegs and hind legs were nearly
+the same size, to be considered a possible ancestor of the Urodeles. But
+at one stage in the general reduction of the skull in the ancestry of
+both groups, a condition similar to that in _Protobatrachus_ may have
+characterized the otic region, long before the Triassic.
+
+In the argument thus far we have considered terrestrial, adult
+amphibians, since it is only in these that either the normal middle ear
+and tympanum, or the opercular apparatus, is present. But among the
+urodeles several neotenic types occur (this term applies also to the
+perennibranchs). For most of these there is nothing about the otic
+region that would be inconsistent with derivation, by neoteny, from
+known families in which adults are terrestrial; for example,
+_Cryptobranchus_ could have had a Hynobiid-like ancestor. But this, as
+mentioned above, does not hold for the Proteidae, which possess an
+opisthotic of relatively large size, distinctly separate from the
+exoccipital and prootic. Either this bone is a neomorph, which seems
+improbable, or there has not been in the ancestry of this particular
+family an episode of reduction comparable to that seen in the
+terrestrial families, where there is an operculum instead of a normal
+opisthotic. Therefore the Proteidae probably are not derived from the
+general stem of other salamanders, but diverged sufficiently long ago
+that the bones of the otic region were reduced on a different pattern.
+They need not be removed from the order, but, in this respect,
+recognized as more primitive than any other existing Urodela or Anura. A
+recent paper by Hecht (1957) discusses many features of _Necturus_ and
+_Proteus_, and shows that they are remote from each other; his evidence
+does not seem to prove, however, that they were of independent origin or
+that they need be placed in separate families.
+
+
+
+
+VERTEBRAE AND RIBS
+
+
+Development of the vertebrae and ribs of Recent Amphibia has been
+studied by Gamble (1922), Naef (1929), Mookerjee (1930 a, b), Gray
+(1930) and Emelianov (1936), among others. MacBride (1932) and Remane
+(1938) provide good summaries. In this section reference will be made to
+the embryonic vertebral cartilages by the names used for them in these
+studies, although the concept of "arcualia" is currently considered of
+little value in comparative anatomy.
+
+[Illustration: Fig. 5. Development of Anuran vertebrae. Upper left, late
+tadpole of _Xenopus laevis_; lower left, same just after metamorphosis;
+upper right, diagram of general components of primitive Anuran vertebra.
+(After MacBride, 1932, Figs. 35, 38, 47D, respectively.) Lower right,
+section through anterior portion of urostyle, immediately posterior to
+sacral vertebra, in transforming _Ascaphus truei_ (original, from
+specimen collected on Olympic Peninsula, Washington). All × 20 approx.
+For explanation of abbreviations see Fig. 3.]
+
+The centrum in Anura (Fig. 5) is formed in the perichordal sheath
+(_Rana_, _Bufo_) or only in the dorsal portion thereof (_Bombinator_,
+_Xenopus_). The neural arch develops from the basidorsal cartilages that
+rest upon, and at first are entirely distinct from, the perichordal
+sheath. Ribs, present as separate cartilages associated with the 2nd,
+3rd and 4th vertebrae in the larvae of _Xenopus_ and _Bombinator_, fuse
+with lateral processes (diapophyses) of the neural arches at
+metamorphosis, but in _Leiopelma_ and _Ascaphus_ the ribs remain freely
+articulated in the adult. Basiventral arcualia have been supposed to be
+represented by the hypochord, a median rod of cartilage beneath the
+shrinking notochord in the postsacral region, which at metamorphosis
+ossifies to produce the bulk of the urostyle. Fig. 5, lower right, a
+transverse section taken immediately posterior to the sacral ribs in a
+transforming specimen of _Ascaphus_, shows that the "hypochord" is a
+mass of cartilage formed in the perichordal sheath itself, and very
+obviously is derived from the ventral part of postsacral perichordal
+centra; there are, then, no basiventral arcualia, and the discrete
+hypochord shown in MacBride's diagram (Fig. 5, upper right) of a frog
+vertebra does not actually occur below the centrum, but only below the
+notochord in the postsacral region.
+
+[Illustration: Fig. 6. Development of Urodele vertebrae. Upper figures,
+_Triton_: at left, larva at 20 mm., at right, diagram of components of
+vertebra (from MacBride, 1932, figs. 17, 47C). Middle figures, _Molge
+vulgaris_ larva: left, at 18 mm.; middle, at 20-22 mm.; right, at 25 mm.
+(from Emelianov, 1936, figs. 33, 36, 38 respectively). Lower figures,
+_Necturus maculosus_ larva: left, at 21 mm.; right, at 20 mm. (from
+MacBride, 1932, figs. 41.5, 41.3 respectively, after Gamble, 1922). All
+× 20 approx. For explanation of abbreviations see Fig. 3.]
+
+In Urodela (Fig. 6) the pattern of vertebral and rib development is more
+complex, and there has been much controversy over its interpretation.
+Neural arches and perichordal centra form in the same manner as in
+frogs, but with the addition in certain cases (_Triton_) of a median
+supradorsal cartilage, which gives rise to the zygapophyses of each
+neural arch. Difficulty comes, however, in understanding the
+relationship of the ribs to the vertebrae. Each rib, usually
+two-headed, articulates with a "transverse process" that in its early
+development seems to be separate from both the vertebra and the rib, and
+is therefore known, noncommittally, as "rib-bearer." This lies laterally
+from the centrum, neural arch, and vertebral artery; upon fusing with
+the vertebra it therefore encloses the artery in a foramen separate from
+the one between the capitulum and tuberculum of the rib (the usual
+location of the vertebral artery). At least four different
+interpretations of these structures have been suggested:
+
+(1) Naef (1929) considered the rib-bearer a derivative of the
+basiventral, which, by spreading laterally and dorsally to meet the
+neural arch, enclosed the vertebral artery. He then supposed that by
+reduction of the rib-bearer in other tetrapods (frogs and amniotes) the
+vertebrarterial foramen and costal foramen were brought together in a
+single foramen transversarium. The implication is that the Urodele
+condition is primitive, but it cannot now be supposed that Urodela are
+ancestral to any other group, and the rib-bearer is most probably a
+specialization limited to salamanders. This does not, of course,
+invalidate the first part of his interpretation.
+
+(2) Remane (1938), noting that rib insertions of early Amphibia are
+essentially as in Amniota, argued that the rib-bearer is not from the
+basiventral but is a neomorph which originates directly from the neural
+arch and grows ventrally. This he inferred mainly from Gamble's (1922)
+observation on _Necturus_, but his assumption that _Necturus_ is more
+primitive than other salamanders (such as the Salamandridae), where the
+pattern differs from this, is not necessarily correct. Rather, the
+perennibranchs are distinguished mainly by their neotenous features, and
+their development is likely to show simplifications which are not
+necessarily primitive. The suggestion of a "neomorph" ought not to be
+made except as a last resort, for it is simply an acknowledgment that
+the author does not recognize homology with any structure already known;
+sometimes further information will make such recognition possible.
+
+(3) Gray (1930), using _Molge taeniatus_, concluded that the normal
+capitulum of the rib was lost, but that the tuberculum bifurcated to
+make the two heads seen in Urodela, thus accounting for the failure of
+the costal foramen to coincide with that of the vertebral artery. This
+answer, too, seems to entail an unprovable assumption which should not
+be made without explicit evidence.
+
+(4) Finally, Emelianov (1936) regarded the rib-bearer as a rudimentary
+_ventral_ rib, on account of its relationship to the vertebral artery,
+and considered the actual rib to be a neomorph in the _dorsal_ position
+characteristic of tetrapod ribs in general. This argument would fit the
+ontogenetic picture satisfactorily, provided that (_a_) there were some
+evidence of ventral, rather than dorsal, ribs in early Amphibia, and
+(_b_) we accept the invention of another neomorph in modern Amphibia as
+an unavoidable necessity. Emelianov's conclusion (p. 258) should be
+quoted here (translation): "The ribs of Urodela are shown to be upper
+ribs, yet we find besides these in Urodela rudimentary lower ribs fused
+with the vertebral column. The ribs of Apoda are lower ribs. In Anura
+ribs fail to develop fully, but as rare exceptions rudiments of upper
+ribs appear."
+
+Of these various interpretations, that of Naef seems to involve the
+minimum of novelty, namely, that the rib-bearer is the basiventral,
+expanded and external to the vertebral artery. It is not necessary to
+take this modification as the ancestral condition in tetrapods, of
+course. The basiventral (=intercentrum) would merely have expanded
+sufficiently to provide a diapophysis for the tuberculum as well as the
+(primitive) facet for the capitulum. No neomorph appears under this
+hypothesis, which has the distinct advantage of simplicity.
+
+Figures of early stages in vertebral development by the authors
+mentioned show that the basidorsals chondrify first, as neural arches,
+while a separate mass of mesenchyme lies externally and ventrally from
+these. This mesenchyme may chondrify either in one piece (on each side)
+or in two; in _Molge_ the part adjacent to the centrum is ossified in
+the 20-mm. larva, and subsequently unites with the more dorsal and
+lateral cartilaginous part, while the rib, appearing farther out, grows
+inward to meet this composite "rib-bearer." In _Necturus_ the mesenchyme
+below the neural arch differentiates into a cartilage below the
+vertebral artery (position proper to a basiventral), a bridge between
+this and the neural arch, and a rib, the latter two chondrifying later
+than the "basiventral" proper. In the "axolotl" (presumably _Ambystoma
+tigrinum_) the rib-bearer grows downward from its first center of
+chondrification at the side of the neural arch (Emelianov, 1936).
+
+Thus it appears that the simplest hypothesis to account for the
+rib-bearer is that (_a_) it is the basiventral, (_b_) it is recognizable
+just before chondrification as a mass of mesenchyme in contact with both
+the notochordal sheath and the basidorsal cartilage, (_c_) it may
+chondrify or ossify first in its ventral portion or in its dorsal
+portion, the two then joining before it fuses with the rest of the
+vertebra, (_d_) the enclosure of the vertebral artery is a consequence
+of the extension of the basiventral beyond the position occupied by it
+in primitive Amphibia, and (_e_) there is no indication that this took
+place in other orders than the Urodela.
+
+It seems that the vertebrae in Urodela have at least the following
+components: perichordal centra, separate basidorsal cartilages, and
+basiventrals, which are somewhat specialized in their manner of
+development. The vertebrae of Anura develop in the fashion just
+described except that basiventrals are lacking. It would seem no more
+difficult to accept the derivation of salamander vertebrae from the
+temnospondylous type than it is in the case of frogs, if other evidence
+points to such an ancestry.
+
+[Illustration: Fig. 7. Vertebrae of _Eusthenopteron_ (×1) and
+_Ichthyostega_ (×2/3, after Jarvik, 1952), _Trimerorhachis_ (×1-1/2,
+after Case), and _Amphibamus_ (×10, after Watson, 1940) in lateral and
+end views; the two lower right-hand figures are from Watson (1940, as
+_Miobatrachus_); the lower left is from a cast of the "_Miobatrachus_"
+specimen in Chicago Natural History Museum, No. 2000, in the presacral
+region (original, ×10).]
+
+Fig. 7, lower right, is Watson's (1940) illustration of the anterior
+trunk vertebrae of _Amphibamus_ (_Miobatrachus_), in which the
+intercentrum is shown as a single median piece. Fig. 7, lower left,
+shows two of the more posterior trunk vertebrae seen as impressions in a
+cast of the type of "_Miobatrachus romeri_;" evidently the inter-centra
+were paired at about the level of the 16th vertebra, and relatively
+large. Gregory's (1950) figure of the type specimen of "_Mazonerpeton_"
+(also equivalent to _Amphibamus_) shows the anterior trunk vertebrae in
+relation to the ribs essentially as they appear to me in the cast of
+_Miobatrachus_, and rather differently from Watson's figure of the
+latter. Gregory is probably right in considering the specimens to
+represent various degrees of immaturity. So far as present information
+goes, then, the vertebrae of salamanders and frogs show no _clear_
+evidence of derivation from those of any particular group among the
+early Amphibia, but their features are not inconsistent with a
+simplification of the pattern of Temnospondyli.
+
+[Illustration: Fig. 8. Pectoral girdles of _Protobatrachus_ (after
+Piveteau, 1937), _Notobatrachus_ (after Stipanicic and Reig, 1956),
+Ascaphus (after Ritland, 1955 a) and _Rana_ (original); all ×2. For
+explanation of abbreviations see Fig. 3.]
+
+
+
+
+PECTORAL GIRDLE
+
+
+Hecht and Ruibal (Copeia, 1928:242) make a strong point of the nature of
+the pectoral girdle in _Notobatrachus_, as described recently by
+Stipanicic and Reig (1955, 1956) from the Jurassic of Patagonia, and
+quite rightly recommend that the significance of the arciferal and
+firmisternal types of girdle be restudied. That of _Notobatrachus_ is
+said to be firmisternal; in view of the arciferal condition in the
+supposedly primitive _Leiopelma_, _Ascaphus_, _Bombinator_, etc., this
+comes as a surprise. Is the firmisternal girdle, as seen in _Rana_,
+_Bufo_, and others, actually the ancestral type, and has the arciferal
+been derived from something like this?
+
+In the figures given by Stipanicic and Reig the ossified parts of the
+girdle are figured in detail (Fig. 8) and Reig's discussion of it is
+thorough. The decision to call it firmisternal was taken with some
+hesitancy, for no median elements are indicated, and the position and
+shape of those seen is closely similar to the ossified parts in
+_Ascaphus_ and _Leiopelma_; there is no bony sternum or omosternum. It
+is safe to suppose that some cartilage lay in the midline between the
+clavicles and coracoids, but there is no evidence as to its extent,
+rigidity, or degree of overlapping if any. Apparently, then, there is
+not sufficient reason to infer that this Jurassic frog had a pectoral
+girdle comparable with the modern firmisternal type.
+
+Piveteau (1955:261) remarks that the only living Anuran that can be
+compared usefully with _Protobatrachus_ (Triassic) with regard to its
+pectoral girdle is _Ascaphus_. Again, the extent of cartilage in
+_Protobatrachus_ (Fig. 8) can only be inferred, and there are no median
+elements. The agreement with _Ascaphus_ includes the presence, in both,
+of a separate coracoid ossification situated posterior to the ossified
+"scapulocoracoid" (actually scapula). This ossification is evidently
+that shown in _Notobatrachus_ as "coracoid." Direct comparison of the
+three genera with one another suggests that if we use the term arciferal
+for any, we should use it for all.
+
+In the remote predecessor of Anura, _Amphibamus_ of the Pennsylvanian,
+the pectoral girdle was less substantial than in many of its
+contemporaries, but it contained the primitive median interclavicle in
+addition to the clavicle, cleithrum, and scapulocoracoid. (The figure of
+Watson, 1940, and that by Gregory, 1950, are of individuals of different
+ages, the latter being older.) It is clear that the paired elements of
+such a girdle were held rigid by their attachment to the interclavicle,
+_via_ the clavicles. Subsequent elimination of the interclavicle in the
+Anuran line of descent, and decrease of ossification, left a girdle like
+that of _Protobatrachus_, _Notobatrachus_, _Ascaphus_ and _Leiopelma_.
+But in several advanced families a more rigid median "sternum," of one
+or two bony pieces plus cartilage, is developed secondarily, possibly
+(as Cope, 1889: 247, suggested) in correlation with axillary amplexus.
+
+Among Urodela no dermal bones occur in the pectoral girdle. There is
+usually a scapulocoracoid ossified as a single piece, from which a thin
+cartilaginous suprascapula extends dorsally and a broad cartilaginous
+coracoid plate extends medially, overlapping the one from the opposite
+side; a precoracoid lobe of this reaches forward on either side, and a
+median, posterior "sternum" of cartilage may make contact with the
+edges of the two coracoids. In _Siren_ and _Amphiuma_ two centers of
+ossification are found for each scapulocoracoid, and in _Triton_ and
+_Salamandra_ three. Probably the more dorsal and lateral of these
+represents the primitive scapula and the other one (or two) the
+primitive coracoid.
+
+Comparing the girdle of a salamander with that of a frog, the closest
+similarity can be seen between _Ascaphus_ and a salamander in which the
+scapula and coracoid ossify separately. Both have the median "sternum"
+in contact with the coracoid plates. The major difference, of course, is
+the lack of clavicle and cleithrum in the salamander.
+
+
+
+
+CARPUS AND TARSUS
+
+
+In _Ascaphus_ (Ritland, 1955a; cleared and stained specimens of nearly
+grown males) distal carpals 1, 2, 3 and 4 are present and separate,
+increasing in size in the order given (Fig. 9). A prepollex rests
+against centrale 1; centralia 2 and 3 are fused; the radiale fuses with
+centrale 4, and the intermedium fuses with the ulnare; radius and ulna
+are fused with each other as in other frogs. The digits (and
+metacarpals) are considered by Ritland to be 1-4, in addition to the
+prepollex, rather than 2-5.
+
+[Illustration: Fig. 9. Skeleton of fore foot of _Notobatrachus_ (after
+Stipanicic and Reig, 1956, terminology revised) and _Ascaphus_ (after
+Ritland, 1955 a); all ×5. For explanation of abbreviations see Fig. 3.]
+
+In the Jurassic _Notobatrachus_ Stipanicic and Reig (1956) have shown
+the carpus with surprising clarity (Fig. 9). If their nomenclature of
+the parts be revised, we obtain a fairly close resemblance to
+_Ascaphus_, except that centralia 2 and 3 are not fused, distal carpals
+1 and 2 do not show (which would easily be understood if they were of
+the size of those in _Ascaphus_, or not ossified), and the intermedium
+remains separate from the ulnare.
+
+In _Salamandra_ (Francis, 1934; Nauck, 1938) distal carpals 1 and 2 are
+fused in both larva and adult, and 3 and 4 are separate; the radiale,
+intermedium and ulnare are separate in the larva but the latter two fuse
+in the adult; centrale 1 (labelled prepollical cartilage by Francis) and
+centrale 2 are separate. Francis considers the digits (and metacarpals)
+to be 1-4. Apparently the arrangement here indicated for the larva is
+characteristic of other larval salamanders, except where further
+reduced, and reduction below the number given for the adult is common in
+other terrestrial forms. The radius and ulna are, of course, separate.
+
+The ossification of carpals is more likely to be complete in adult frogs
+than in salamanders, but some ossification of all parts named is found
+in several of the latter. A common ancestor of frogs and salamanders
+could be expected to have the following elements present and ossified in
+the adult: distal carpals 1-4 separate; 3 centralia; radiale,
+intermedium and ulnare separate. Comparison with fossils older than
+_Notobatrachus_ is fruitless on these points, unless we go back to forms
+too distant to have any special value, such as _Eryops_. This is because
+of inadequate preservation and because the elements are not fully
+ossified in many immature specimens.
+
+For the purpose of this review there is no special value in a comparison
+of the tarsi of frogs and salamanders, since the leaping adaptation of
+the former leaves very little common pattern between them. Even in
+_Protobatrachus_, where the legs were not yet conspicuously lengthened,
+the tibiale and fibulare ("astragalus" and "calcaneum" respectively)
+were already considerably elongated. The carpus and tarsus of
+_Amphibamus_ are as yet undecipherable.
+
+
+
+
+THE LARVA
+
+
+Considering the postembryonic developmental stages of modern Amphibia,
+there can be no doubt that a gill-bearing, four-legged larva of a
+salamander, in which lateral line pores and a gular fold are present,
+represents much more closely the type of larva found in labyrinthodonts
+than does the limbless, plant-nibbling tadpole of the Anura.
+Salamander-like larvae of labyrinthodonts are well known, especially
+those formerly supposed to comprise the order Branchiosauria. Many,
+perhaps the majority of, labyrinthodonts show some features associated
+with aquatic life even when full-grown, as do the lepospondyls. These
+features may include impressions of sensory canals on the dermal bones
+of the skull, persistence of visceral arches, reduction in size of
+appendages, and failure of tarsal and carpal elements to ossify. In
+fact, it appears that very few of the Paleozoic Amphibia were successful
+in establishing themselves as terrestrial animals even as adults.
+
+Nevertheless, in the ancestry of Anura, and that of at least the
+Hynobiid, Ambystomid, Salamandrid and Plethodontid salamanders, there
+must certainly have been a terrestrial adult, transforming from an
+aquatic larva. The leaping mechanism of Anura, shown in so many features
+of their anatomy, is perhaps to be explained as a device for sudden
+escape from land into the water, but it was not yet perfected in the
+Triassic _Protobatrachus_ or the Jurassic _Notobatrachus_.
+
+The middle ear, its sound-transmitting mechanism, and the tympanum, well
+developed in most Anura, are readily derived from those of early
+labyrinthodonts, and are presumably effective for hearing airborne
+sounds whether on land or while floating in the water. Reduction of
+these organs in Urodela may be correlated with their customary
+restriction to subsurface habitats and inability to maintain a floating
+position while in water.
+
+Some light may be shed on the significance of the tadpole of Anura by
+considering the early stages of the ribbed frogs, Liopelmidae.
+_Leiopelma_ and _Ascaphus_ are so closely similar in the adult that
+there is no doubt that they belong in one family, primitive in some
+respects (including articulated ribs; pyriformis and
+caudalipuboischiotibialis muscles) but not in others (absence of
+tympanum and middle ear). In both genera the eggs are large, 5 mm. in
+_Leiopelma_, 4.5 mm. in _Ascaphus_, and unpigmented; but at this point
+the resemblance ends.
+
+[Illustration: Fig. 10. _Leiopelma hochstetteri_ larva, lateral and
+ventral (after Stephenson, 1955), ×4.]
+
+Stephenson (1955) showed that embryos of _L. hochstetteri_ develop
+equally well on land (in damp places) or in the water, and that embryos
+prematurely released from egg capsules develop successfully in the
+water. The larvae possess both pairs of legs (Fig. 10) and a broad gular
+fold similar to that of larval salamanders. In _L. hochstetteri_ the
+fold grows back over the forelegs temporarily, but remains free from the
+body and presently the legs reappear, whereas in _L. archeyi_ the
+forelegs are not covered at any time. No branchial chamber or spiracle
+is formed. Of course direct development, without a tadpole, occurs in
+several other groups of Anura, but in each case terrestrial adaptations
+are obvious. This is not true of _Leiopelma_, which Stephenson regards
+as more nearly comparable with Urodela in its development than with
+other Anura, and he sees in it a "primary and amphibious" mode instead
+of a terrestrial specialization.
+
+The _Ascaphus_ tadpole bears no outward resemblance to the larva of
+_Leiopelma_, but is a normal tadpole in form, although sluggish in
+activity. Its greatly expanded labial folds bear numerous rows of horny
+epidermal "teeth," which, with the lips, serve to anchor the tadpole to
+stones in the swift water of mountain brooks. Noble (1927) noticed that
+particles of food were taken in through the external nares, and that a
+current of water passed through these openings and out by way of the
+median spiracle. It appears that any action by the teeth and jaws in
+scraping algae from the rocks (which were bare in the stream where I
+have collected _Ascaphus_) would be quite incidental, and that the lips
+and teeth must be primarily a clinging mechanism. Certain other mountain
+brook tadpoles (for example, _Borborocoetes_) show similar devices, but
+these are developed independently, as specializations from the usual
+sort of tadpole.
+
+May it not be that closure of the gill-chamber by the opercular (=gular)
+fold, retardation of limb development, expansion of the lips, growth of
+parallel rows of horny teeth, and other correlated features that make a
+tadpole, were brought about as an adaptation of the primitive Anuran
+larva to a swift-stream habitat, and that this "basic patent" then later
+served to admit the tadpoles of descendant types to an alga-scraping
+habit in quiet water as well? The tadpole, as a unique larval type among
+vertebrates, bears the hallmarks of an abrupt adaptive shift, such as
+might have occurred within the limits of a single family, and it seems
+difficult to imagine the enclosed branchial chamber, the tooth-rows, and
+lips of a familiar tadpole as having evolved without some kind of
+suctorial function along the way.
+
+
+
+
+SUMMARY
+
+
+The Anura probably originated among temnospondylous labyrinthodonts,
+through a line represented approximately by _Eugyrinus_, _Amphibamus_,
+and the Triassic frog _Protobatrachus_, as shown by Watson, Piveteau and
+others. The known Paleozoic lepospondyls do not show clear indications
+of a relationship with Urodela, but _Lysorophus_ may well be on the
+ancestral stem of the Apoda.
+
+Between Urodela and Anura there are numerous resemblances which seem to
+indicate direct relationship through a common stock: (1) a similar
+reduction of dermal bones of the skull and expansion of palatal
+vacuities; (2) movable basipterygoid articulation in primitive members
+of both orders; (3) an operculum formed in the otic capsule, with
+opercularis muscle; (4) many details of cranial development, cranial
+muscles, and thigh muscles, especially between _Ascaphus_ and the
+Urodela, as shown by Pusey and Noble; (5) essentially similar manner of
+vertebral development, quite consistent with derivation of both orders
+from Temnospondyli; (6) presence in the larva of _Leiopelma_ of a
+salamander-like gular fold, four limbs, and no suggestion of
+modification from a tadpole (Stephenson).
+
+
+
+
+LITERATURE CITED
+
+
+Broom, R.
+
+   1918. Observations on the genus _Lysorophus_ Cope. Ann. Mag. Nat.
+   Hist., (9)2:232-239.
+
+Bystrow, A. P.
+
+   1938. Dvinosaurus als neotenische Form der Stegocephalen. Acta
+   Zool., 19:209-295.
+
+Case, E. C.
+
+   1935. Description of a collection of associated skeletons of
+   _Trimerorhachis_. Contrib. Mus. Pal. Univ. Michigan, 4:227-274.
+
+Cope, E. D.
+
+   1889. The Batrachia of North America. Bull. U. S. Nat. Mus.,
+   34:1-525.
+
+de Beer, G. R.
+
+   1937. The development of the vertebrate skull. Pp. xxiii + 552.
+   Oxford, Clarendon Press.
+
+de Villiers, C. G. S.
+
+   1934. Studies of the cranial anatomy of _Ascaphus truei_
+   Stejneger, the American "Liopelmid." Bull. Mus. Comp. Zool.,
+   77:1-38.
+
+Emelianov, S. W.
+
+   1936. Die Morphologie der Tetrapodenrippen. Zool. Jahrb. (Anat.),
+   62:173-274.
+
+Francis, E. T. B.
+
+   1934. The anatomy of the salamander. Pp. xxxi + 381. Oxford,
+   Clarendon Press.
+
+Gamble, D. L.
+
+   1922. The morphology of the ribs and the transverse processes of
+   _Necturus maculatus_. Jour. Morph., 36:537-566.
+
+Gray, P.
+
+   1930. On the attachments of the Urodele rib to the vertebra and
+   their homologies with the capitulum and tuberculum of the Amniote
+   rib. Proc. Zool. Soc. London, 1930(1931):907-911.
+
+Gregory, J. T.
+
+   1950. Tetrapods from the Pennsylvanian nodules from Mazon Creek,
+   Illinois. Am. Jour. Sci., 248:833-873.
+
+Hecht, M. E.
+
+   1957. A case of parallel evolution in salamanders. Proc. Zool.
+   Soc. Calcutta, Mookerjee Mem.:283-292.
+
+Holmgren, N.
+
+   1933. On the origin of the tetrapod limb. Acta Zool., 14:185-295.
+
+   1939. Contributions to the question of the origin of the tetrapod
+   limb. Acta Zool., 20:89-124.
+
+   1949a. Contributions to the question of the origin of tetrapods.
+   Acta Zool., 30:459-484.
+
+   1949b. On the tetrapod limb problem again. Acta Zool., 30:485-508.
+
+Herre, W.
+
+   1935. Die Schwanzlurche der mitteleocänen (oberlutetischen)
+   Braunkohle des Geiseltales und die Phylogenie der Urodelen unter
+   Einschluss der fossilen Formen. Zoologica, 33:87, 1-5.
+
+Jarvik, E.
+
+   1942. On the structure of the snout of Crossopterygians and lower
+   gnathostomes in general. Zool. Bidrag fran Upsala, 21:235-675.
+   1952. On the fish-like tail in the Ichthyostegid Stegocephalians.
+   Meddelelser on Grønland, 114(12):1-90.
+
+Mookerjee, H.K.
+
+   1930a. On the development of the vertebral column of the Urodela.
+   Phil. Trans. Roy. Soc. London, B 218:415-446.
+
+   1930b. On the development of the vertebral column of the Anura.
+   Philos. Trans. Royal Soc. London, B 219:165-196.
+
+MacBride, E.W.
+
+   1932. Recent work on the development of the vertebral column.
+   Cambridge, Biol. Rev., 7:108-148.
+
+McDowell, S.B.
+
+   1958. Are the frogs specialized seymouriamorphs? (Abstract) Anat.
+   Rec., 132(3):472.
+
+Naef, A.
+
+   1929. Notizen zur Morphologie und Stammesgeschichte der
+   Wirbeltiere. 15. Dreissig Thesen über Wirbelsäule und Rippen,
+   insbesondere bei den Tetrapoden. Zool. Jahrb., 50:581-600.
+
+Noble, G. K.
+
+   1922. The phylogeny of the Salientia; I. The osteology and the
+   thigh musculature; their bearing on classification and phylogeny.
+   Bull. Amer. Mus. Nat. Hist., 46:1-87.
+
+   1927. The value of life-history data in the study of the evolution
+   of the Amphibia. Annals New York Acad. Sci., 30:31-128.
+
+Piveteau, J.
+
+   1937. Un Amphibien du Trias inférieur. Essai sur l'origine et
+   l'évolution des Amphibiens Anoures. Annales de Paléontologie,
+   26:135-176.
+
+   1955. Anoura. In: Traité de Paléontologie, 5:250-274. J. Piveteau,
+   Masson et Cie, Paris.
+
+Pusey, H. K.
+
+   1943. On the head of the liopelmid frog, _Ascaphus truei_. I. The
+   chondrocranium, jaws, arches, and muscles of a partly grown larva.
+   Quart. Jour. Micr. Sci., 84:105-185.
+
+Reed, H. D.
+
+   1915. The sound-transmitting apparatus in Necturus. Anat. Rec.,
+   9:581-590.
+
+Remane, A.
+
+   1936. Wirbelsäule und ihre Abkömmlinge. In: Handbuch der
+   vergleichenden Anatomie der Wirbeltiere, L. Bolk _et al._,
+   4:1-206. Urban and Schwarzenberg, Berlin, Vienna.
+
+Ritland, R. M.
+
+   1955a. Studies on the post-cranial morphology of Ascaphus truei.
+   I. Skeleton and spinal nerves. Jour. Morph., 97:119-174.
+
+   1955b. Studies on the post-cranial morphology of Ascaphus truei.
+   II. Myology. Jour. Morph., 97:215-282.
+
+Romer, A. S.
+
+   1945. Vertebrate paleontology. 2nd edition. Pp. viii + 687. Univ.
+   Chicago Press.
+
+   1947. Review of the Labyrinthodontia. Bull. Mus. Comp. Zool.,
+   99:3-368.
+
+Säve-Söderbergh, G.
+
+   1934. Some points of view concerning the evolution of the
+   vertebrates and the classification of this group. Arkiv för
+   Zoologi, 26A:1-20.
+
+Stadtmüller, F.
+
+   1936. Kranium und Visceralskelett der Stegocephalen und Amphibien.
+   In: Handbuch der vergleichenden Anatomie der Wirbeltiere, by L.
+   Bolk _et al._, 4:501-698.
+
+Stephenson, N. G.
+
+   1955. On the development of the frog, _Leiopelma hochstetteri_
+   Fitzinger. Proc. Zool. Soc. London, 124(4):785-795.
+
+Stipanicic, P. N. and Reig, O. A.
+
+   1955. Breve noticia sobre el hallazgo de anuros en el denominado
+   "Complejo Porfirico de la Patagonia Extraandina," con
+   consideraciones acerca de la composicion geologica del mismo.
+   Revista de la Asoc. Geol. Argentina, 10(4):215-233.
+
+   1956. El "complejo porfirico de la Patagonia extraandina" y su
+   fauna de Anuros. Acta Geol. Lilloana (Univ. Nac. del Tucuman),
+   1:185-297.
+
+Sushkin, P. P.
+
+   1936. Notes on the pro-Jurassic Tetrapoda from U. S. S. R. III.
+   Dvinosaurus Amalitzky, a perennibranchiate stegocephalian from the
+   Upper Permian of North Dvina. Trav. Inst. Pal. Acad. Sci. URSS,
+   5:43-91.
+
+Watson, D. M. S.
+
+   1940. The origin of frogs. Trans. Roy. Soc. Edinburgh,
+   40(7):195-231.
+
+
+
+
+_Transmitted April 7, 1959._
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK THE ANCESTRY OF MODERN AMPHIBIA: A REVIEW OF THE EVIDENCE ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

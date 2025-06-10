@@ -1,0 +1,2682 @@
+﻿The Project Gutenberg eBook of Makers of Many Things
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Makers of Many Things
+
+Author: Eva March Tappan
+
+Release date: April 21, 2009 [eBook #28569]
+                Most recently updated: January 4, 2021
+
+Language: English
+
+Credits: Produced by C. St. Charleskindt and the Online Distributed
+        Proofreading Team at https://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK MAKERS OF MANY THINGS ***
+
+
+
+
+Produced by C. St. Charleskindt and the Online Distributed
+Proofreading Team at https://www.pgdp.net
+
+
+
+
+
+
+
+
+
+THE INDUSTRIAL READERS
+
+_Book III_
+
+MAKERS OF MANY THINGS
+
+BY
+
+EVA MARCH TAPPAN, PH.D.
+
+_Author of "England's Story," "American Hero Stories,"
+"Old World Hero Stories," "Story of the Greek People,"
+"Story of the Roman People," etc. Editor of
+"The Children's Hour."_
+
+
+[Illustration]
+
+
+HOUGHTON MIFFLIN COMPANY
+
+BOSTON    NEW YORK    CHICAGO
+
+
+
+
+COPYRIGHT, 1916, BY EVA MARCH TAPPAN
+
+ALL RIGHTS RESERVED
+
+
+
+
+The Riverside Press
+
+CAMBRIDGE . MASSACHUSETTS
+
+U . S . A
+
+
+
+
+PREFACE
+
+
+The four books of this series have been written not merely to provide
+agreeable reading matter for children, but to give them information.
+When a child can look at a steel pen not simply as an article
+furnished by the city for his use, but rather as the result of many
+interesting processes, he has made a distinct growth in intelligence.
+When he has begun to apprehend the fruitfulness of the earth, both
+above ground and below, and the best way in which its products may be
+utilized and carried to the places where they are needed, he has not
+only acquired a knowledge of many kinds of industrial life which may
+help him to choose his life-work wisely from among them, but he has
+learned the dependence of one person upon other persons, of one
+part of the world upon other parts, and the necessity of peaceful
+intercourse. Best of all, he has learned to see. Wordsworth's familiar
+lines say of a man whose eyes had not been opened,--
+
+  "A primrose by a river's brim
+  A yellow primrose was to him,
+  And it was nothing more."
+
+These books are planned to show the children that there is "something
+more"; to broaden their horizon; to reveal to them what invention has
+accomplished and what wide room for invention still remains; to teach
+them that reward comes to the man who improves his output beyond the
+task of the moment; and that success is waiting, not for him who works
+because he must, but for him who works because he may.
+
+Acknowledgment is due to the Diamond Match Company, Hood Rubber
+Company, S. D. Warren Paper Company, The Riverside Press, E. Faber,
+C. Howard Hunt Pen Company, Waltham Watch Company, Mark Cross Company,
+I. Prouty & Company, Cheney Brothers, and others, whose advice and
+criticism have been of most valuable aid in the preparation of this
+volume.
+
+EVA MARCH TAPPAN.
+
+
+
+
+CONTENTS
+
+     I. THE LITTLE FRICTION MATCH                                 1
+
+    II. ABOUT INDIA RUBBER                                        6
+
+   III. "KID" GLOVES                                             16
+
+    IV. HOW RAGS AND TREES BECOME PAPER                          25
+
+     V. HOW BOOKS ARE MADE                                       36
+
+    VI. FROM GOOSE QUILLS TO FOUNTAIN PENS AND LEAD PENCILS      46
+
+   VII. THE DISHES ON OUR TABLES                                 56
+
+  VIII. HOW THE WHEELS OF A WATCH GO AROUND                      64
+
+    IX. THE MAKING OF SHOES                                      73
+
+     X. IN THE COTTON MILL                                       82
+
+    XI. SILKWORMS AND THEIR WORK                                 92
+
+
+
+
+THE INDUSTRIAL READERS
+
+BOOK III
+
+MAKERS OF MANY THINGS
+
+
+
+
+I
+
+THE LITTLE FRICTION MATCH
+
+
+I remember being once upon a time ten miles from a store and one mile
+from a neighbor; the fire had gone out in the night, and the last
+match failed to blaze. We had no flint and steel. We were neither
+Indians nor Boy Scouts, and we did not know how to make a fire by
+twirling a stick. There was nothing to do but to trudge off through
+the snow to the neighbor a mile away and beg some matches. Then was
+the time when we appreciated the little match and thought with
+profound respect of the men who invented and perfected it.
+
+It is a long way from the safe and reliable match of to-day back to
+the splinters that were soaked in chemicals and sold together with
+little bottles of sulphuric acid. The splinter was expected to blaze
+when dipped into the acid. Sometimes it did blaze, and sometimes it
+did not; but it was reasonably certain how the acid would behave, for
+it would always sputter and do its best to spoil some one's clothes.
+Nevertheless, even such matches as these were regarded as a wonderful
+convenience, and were sold at five dollars a hundred. With the next
+kind of match that appeared, a piece of folded sandpaper was sold, and
+the buyer was told to pinch it hard and draw the match through the
+fold. These matches were amazingly cheap--eighty-four of them for only
+twenty-five cents! There have been all sorts of odd matches. One kind
+actually had a tiny glass ball at the end full of sulphuric acid. To
+light this, you had to pinch the ball and the acid that was thus let
+out acted upon the other chemicals on the match and kindled it--or was
+expected to kindle it, which was not always the same thing.
+
+Making matches is a big business, even if one hundred of them are
+sold for a cent. It is estimated that on an average each person uses
+seven matches every day. To provide so many would require some seven
+hundred million matches a day in this country alone. It seems like
+a very simple matter to cut a splinter of wood, dip it into some
+chemicals, and pack it into a box for sale; and it would be simple
+if it were all done by hand, but the matches would also be irregular
+and extremely expensive. The way to make anything cheap and uniform
+is to manufacture it by machinery.
+
+[Illustration: THE ENDLESS MATCH MACHINE
+
+The match splints are set in tiny holes like pins in a pincushion, and
+the belt revolves, passing their heads through various chemicals.]
+
+The first step in making matches is to select some white-pine plank of
+good quality and cut it into blocks of the proper size. These are fed
+into a machine which sends sharp dies through them and thus cuts the
+match splints. Over the splint cutter a carrier chain is continuously
+moving, and into holes in this chain the ends of the match splints
+are forced at the rate of ten or twelve thousand a minute.
+
+The splints remain in the chain for about an hour, and during this
+hour all sorts of things happen to them. First, they are dipped into
+hot paraffin wax, because this will light even more easily than wood.
+As soon as the wax is dry, the industrious chain carries them over a
+dipping-roll covered with a layer consisting partly of glue and rosin.
+Currents of air now play upon the splint, and in about ten minutes the
+glue and rosin on one end of it have hardened into a hard bulb. It is
+not a match yet by any means, for scratching it would not make it
+light. The phosphorus which is to make it into a match is on another
+dipping-roll. This is sesqui-sulphide of phosphorus. The common yellow
+phosphorus is poisonous, and workmen in match factories where it was
+used were in danger of suffering from a terrible disease of the jaw
+bone. At length it was discovered that sesqui-sulphide of phosphorus
+would make just as good matches and was harmless. Our largest match
+company held the patent giving them the exclusive right to certain
+processes by which the sesqui-sulphide was made; and this patent they
+generously gave up to the people of the United States.
+
+After the splints have been dipped into the preparation of phosphorus,
+they are carried about on the chain vertically, horizontally, on the
+outside of some wheels and the inside of others, and through currents
+of air. Then they are turned over to a chain divided into sections
+which carries them to a packing-machine. This machine packs them into
+boxes, a certain number in each box, and they are slid down to girls
+who make the boxes into packages. These are put into wooden containers
+and are ready for sale.
+
+As in most manufactures, these processes must be carried on with
+great care and exactness. The wood must be carefully selected and of
+straight grain, the dipping-rolls must be kept covered with a fresh
+supply of composition, and its depth must be always uniform. Even the
+currents of air in which the splints are dried must be just warm
+enough to dry them and just moist enough not to dry them too rapidly.
+
+The old sulphur matches made in "card and block" can no longer be
+bought in this country; the safety match has taken their place. One
+kind of safety match has the phosphorus on the box and the other
+igniting substances on the match, so that the match will not light
+unless it is scratched on the box; but this kind has never been a
+favorite in the United States. The second kind, the one generally
+used, may be struck anywhere, but these matches are safe because
+even stepping upon one will not light it; it must be scratched.
+
+A match is a little thing, but nothing else can do its work.
+
+
+
+
+II
+
+ABOUT INDIA RUBBER
+
+
+When you pick a dandelion or a milkweed, a white sticky "milk" oozes
+out; and this looks just like the juice of the various sorts of trees,
+shrubs, and vines from which India rubber is made. The "rubber plant"
+which has been such a favorite in houses is one of these; in India it
+becomes a large tree which has the peculiar habit of dropping down
+from its branches "bush-ropes," as they are called. These take root
+and become stout trunks. There is literally a "rubber belt" around the
+world, for nearly all rubber comes from the countries lying between
+the Tropic of Cancer and the Tropic of Capricorn. More than half of
+all that is brought to market is produced in the valley of the Amazon
+River; and some of this "Para rubber," as it is called, from the
+seaport whence it is shipped, is the best in the world.
+
+[Illustration: _Courtesy General Rubber Co._
+
+TAPPING RUBBER TREES IN SUMATRA
+
+The plantation on which this photograph was taken has 45,000 acres of
+planted rubber trees, and employs 14,000 coolies.]
+
+The juice or latex flows best about sunrise, and so the natives who
+collect it have to be early risers. They make little cuts in the bark
+of the tree, stick on with a bit of clay a tiny cup underneath each
+cut, and move on through the forest to the next tree. Sometimes they
+make narrow V-shaped cuts in the bark, one above another, but all
+coming into a perpendicular channel leading to the foot of the tree.
+Later in the day the collectors empty the cups into great jugs and
+carry them to the camp.
+
+When the rubber juice reaches the camp, it is poured into a great
+bowl. The men build a fire of sticks, and always add a great many palm
+nuts, which are oily and make a good deal of smoke. Over the fire they
+place an earthen jar shaped like a cone, but without top or bottom.
+Now work begins. It is fortunate that it can be done in the open air,
+and that the man can sit on the windward side, for the smoke rises
+through the smaller hole thick and black and suffocating. The man
+takes a stick shaped like a paddle, dips it into the bowl, and holds
+it in the smoke and heat, turning it rapidly over and over till the
+water is nearly dried out of the rubber and it is no longer milky, but
+dark-colored. Then he dips this paddle in again and again. It grows
+heavier at each dipping, but he keeps on till he has five or six
+pounds of rubber. With a wet knife he cuts this off, making what are
+called "biscuits." After many years of this sort of work, some one
+found that by resting one end of a pole in a crotched stick and
+holding the other in his hand, a man could make a much larger biscuit.
+
+For a long time people thought that rubber trees could not be
+cultivated. One difficulty in taking them away from their original
+home to plant is that the seeds are so rich in oil as to become rancid
+unusually soon. At length, however, a consignment of them was packed
+in openwork baskets between layers of dried wild banana leaves and
+slung up on deck in openwork crates so as to have plenty of air. By
+this means seven thousand healthy little plants were soon growing in
+England, and from there were carried to Ceylon and the East.
+
+On the rubber plantations collecting juice from trees standing near
+together and in open ground is an altogether different matter from
+cutting a narrow path and forcing one's way through a South American
+or African jungle. The bark of the trees is cut in herringbone
+fashion. The collector simply slices a thin piece off the bark and at
+once milk begins to ooze out.
+
+On the great plantations of the East the rubber is collected chiefly
+by Chinese and Indians. They are carefully taught just how to tap the
+trees. They begin four or five feet from the ground, and work down,
+cutting the thinnest possible slice at each visit. When they have
+almost reached the ground, they begin on the opposite side of the
+trunk; and by the time they have reached the ground on that side the
+bark on the first side has renewed itself. The latex is strained and
+mixed with some acid, usually acetic, in order to coagulate or thicken
+it. It is then run between rollers, hung in a drying house, and
+generally in a smokehouse.
+
+The rubber arrives at the factory in bales or cases. First of all
+it must be thoroughly washed in order to get rid of sand or bits of
+leaves and wood. A machine called a "washer" does this work. It forces
+the rubber between grooved rolls which break it up; and as this is
+done under a spray of water, the rubber is much cleaner when it comes
+out. Another machine makes it still cleaner and forms it into long
+sheets about two feet wide.
+
+Having thoroughly wet the rubber, the next step is to dry it
+thoroughly. The old way was to hang it up for several weeks. The new
+way is to cut it into strips, lay it upon steel trays, and place it
+in a vacuum dryer. This is kept hot, and whatever moisture is in the
+rubber is either evaporated or sucked out by a vacuum pump. It now
+passes through another machine much like the washer, and is formed
+into sheets. The square threads from which elastic webbing is made may
+be cut from these sheets, though sometimes the sheet is wound on an
+iron drum, vulcanized by being put into hot water, lightly varnished
+with shellac to stiffen it, then wound on a wooden cylinder, and cut
+into square threads. Boiling these in caustic soda removes the
+shellac. To make round threads, softened rubber is forced through a
+die. Rubber bands are made by cementing a sheet of rubber into a tube
+and then cutting them off at whatever width may be desired. Toy
+balloons are made of such rubber. Two pieces are stamped out and
+joined by a particularly noisy machine, and then the balloon is blown
+out by compressed air.
+
+Early in the nineteenth century it was known that rubber would keep
+out water, but it was sticky and unmanageable. After a while a Scotch
+chemist named McIntosh succeeded in dissolving rubber in naphtha and
+spreading it between two thicknesses of cloth. That is why his name
+is given to raincoats made in this way. Overshoes, too, were made of
+pure rubber poured over clay lasts which were broken after the rubber
+had dried. These overshoes were waterproof,--there was no denying
+that; but they were heavy and clumsy and shapeless. When they were
+taken off, they did not stand up, but promptly fell over. In hot
+weather they became so sticky that they had to be kept in the cellar;
+and in winter they became stiff and inelastic, but they never wore
+out. How to get rid of the undesirable qualities and not lose the
+desirable ones was the question. It was found out that if sulphur was
+mixed with rubber, the disagreeable stickiness would vanish; but the
+rubbers continued to melt and to freeze by turns until an American
+named Charles Goodyear discovered that if rubber mixed with sulphur
+was exposed to about 300° F. of heat for a number of hours, the rubber
+would remain elastic, but would not be sticky and would no longer be
+affected by heat or cold. This is why you often see the name Goodyear
+on the bottom of rubbers.
+
+Rubber overshoes were improved at once. As they now are made, the
+rubber is mixed with sulphur, whiting, litharge, and several other
+substances. An honest firm will add only those materials that will be
+of service in making the rubber more easy to mould or will improve it
+in some way. Unfortunately, substances are often added, not for this
+purpose, but to increase the weight and apparent value of the
+articles. That is why some rubber overshoes, for instance, wear out
+so much faster than others.
+
+To make an overshoe, the rubber is run through rollers and formed into
+thick sheets for soles and thinner sheets for uppers. Another machine
+coats with gum the cloth used for lining and stays. Rubber and
+rubber-lined cloth go to the cutting-room, where all the different
+parts of the shoes are cut out. They are then put together and
+varnished. While still on the last, they are dipped into a tank of
+varnish and vulcanized--a very simple matter now that Goodyear has
+shown us how, for they are merely left in large, thoroughly heated
+ovens for eight or ten hours. The rubber shoe or boot is now elastic,
+strong, waterproof, ready for any temperature, and so firmly cemented
+together with rubber cement that it is practically all in one piece.
+
+During the last few years there have been frequent calls from various
+charities for old rubber overshoes, pieces of rubber hose, etc. These
+are of considerable value in rubber manufacturing. They are run
+through a machine which tears them to shreds, then through a sort of
+fanning-mill which blows away the bits of lining. Tiny pieces of iron
+may be present from nails or rivets; but these are easily removed by
+magnets. This "reclaimed" rubber is powdered and mixed with the new,
+and for some purposes the mixture answers very well. Imitation rubber
+has been made by heating oil of linseed, hemp, maize, etc., with
+sulphur; but no substitute for rubber is a success for all uses.
+
+[Illustration: _Courtesy U. S. Tire Co._
+
+HOW RUBBER GOES THROUGH THE FACTORY
+
+Splitting Para biscuits, mixing the rubber, rolling the rubber fabric
+on cylinders, and building tires on the tire machines.]
+
+There are many little conveniences made of rubber which we should
+greatly miss, such as the little tips put into pencil ends for erasing
+pencil marks. These are made by filling a mould with rubber. Rubber
+corks are made in much the same manner. Tips for the legs of chairs
+are made in a two-piece mould larger at the bottom than at the top,
+and with a plunger that nearly fits the small end. Often on chair tips
+and in the cup-shaped eraser that goes over the ends of some pencils
+you can see the "fin," as the glassworkers call it, where the two
+pieces of the mould did not exactly fit. Rubber cannot be melted and
+cast in moulds like iron, but it can be gently heated and softened,
+and then pressed into a mould. Rubber stamps are made in this way. The
+making of rubber heels and soles is now a large industry; hose for
+watering and for vacuum and Westinghouse brakes is made in increasing
+quantities. The making of rubber tires for automobiles and carriages
+is an important industry. The enormous and increasing use of
+electricity requires much use of rubber as an insulator. Rubber gloves
+will protect an electrical workman from shock and a surgeon from
+infection. Rubber beds and cushions filled with air are a great
+comfort in illness. Rubber has great and important uses; but we should
+perhaps miss quite as much the little comforts and conveniences which
+it has made possible.
+
+Rubber and gutta-percha are not the same substance by any means.
+Both of them are made of the milky juice of trees, but of entirely
+different trees. The gutta-percha milk is collected in an absurdly
+wasteful manner, namely, by cutting down the trees and scraping up
+the juice. When this juice reaches the market, it is in large reddish
+lumps which look like cork and smell like cheese. It has to be
+cleaned, passed through a machine that tears it into bits, then
+between rollers before it is ready to be manufactured. It is not
+elastic like rubber; it may be stretched; but it will not snap back
+again as rubber does. It is a remarkably good nonconductor of
+electricity, and therefore it has been generally used to protect ocean
+cables, though recently rubber has been taking its place. It makes
+particularly excellent casts, for when it is warm it is not sticky,
+but softens so perfectly that it will show the tiniest indentation of
+a mould. It is the best kind of splint for a broken bone. If a boy
+breaks his arm, a surgeon can put a piece of gutta-percha into hot
+water, set the bone, bind on the softened gutta-percha for a splint,
+and in a few minutes it will be moulded to the exact shape of the arm,
+but so stiff as to keep the bone in place. Another good service which
+gutta-percha renders to the physician results from its willingness
+to dissolve in chloroform. If the skin is torn off, leaving a raw
+surface, this dissolved gutta-percha can be poured over it, and soon
+it is protected by an artificial skin which keeps the air from the raw
+flesh and gives the real skin an opportunity to grow again.
+
+
+
+
+III
+
+"KID" GLOVES
+
+
+There is an old proverb which says, "For a good glove, Spain must
+dress the leather, France must cut it, and England must sew it." Many
+pairs of most excellent gloves have never seen any one of these
+countries, but the moral of the proverb remains, namely, that it takes
+considerable work and care to make a really good glove.
+
+The first gloves made in the United States were of thick buckskin, for
+there was much heavy work to be done in the forest and on the land.
+The skin was tanned in Indian fashion, by rubbing into the flesh side
+the brains of the deer--though how the Indians ever thought of using
+them is a mystery. Later, the white folk tried to tan with pigs'
+brains; but however valuable the brains of a pig may be to himself,
+they do not contain the properties of soda ash which made those of
+the deer useful for this purpose.
+
+[Illustration: CUTTING HIDES INTO GLOVES
+
+The hides are kept in racks, and before cutting are stretched by hand.
+Then the steel die cuts out the shape of the glove. Notice the
+curiously shaped cut for the thumb.]
+
+Years ago, when a man set out to manufacture gloves, usually only a
+few dozen pairs, he cut out a pattern from a shingle or a piece of
+pasteboard, laid it upon a skin, marked around it, and cut it out with
+shears. Pencils were not common, but the glovemaker was fully equal
+to making his own. He melted some lead, ran it into a crack in the
+kitchen floor--and cracks were plentiful--and then used this
+"plummet," as it was called, for a marker. After cutting the large
+piece for the front and back of the glove, he cut out from the scraps
+remaining the "fourchettes," or _forks_; that is, the narrow strips
+that make the sides of the fingers. Smaller scraps were put in to welt
+the seams; and all this went off in great bundles to farmhouses to
+be sewed by the farmers' wives and daughters for the earning of
+pin-money. If the gloves were to be the most genteel members of the
+buckskin race, there was added to the bundle a skein of silk, with
+which a slender vine was to be worked on the back of the hand. The
+sewing was done with a needle three-sided at the point, and a stout
+waxed thread was used. A needle of this sort went in more easily than
+a round one, but even then it was rather wearisome to push it through
+three thicknesses of stout buckskin. Moreover, if the sewer happened
+to take hold of the needle too near the point, the sharp edges were
+likely to make little cuts in her fingers.
+
+After a while sewing machines were invented, and factories were built,
+and now in a single county of the State of New York many thousand
+people are at work making various kinds of leather coverings for their
+own hands and those of other folk. Better methods of tanning have been
+discovered, and many sorts of leather are now used, especially for
+the heavier gloves. Deer are not so common as they used to be, and a
+"buckskin" glove is quite likely to have been made of the hide of
+a cow or a horse. "Kid" generally comes from the body of a sheep
+instead of that of a young goat. Our best real kidskin comes from a
+certain part of France, where the climate seems to be just suited to
+the young kids, there is plenty of the food that they like, and, what
+is fully as important, they receive the best of care. It is said that
+to produce the very finest kidskin, the kids are fed on nothing but
+milk, are treated with the utmost gentleness, and are kept in coops or
+pens carefully made so that there shall be nothing to scratch their
+tender skins.
+
+Glovemakers are always on the lookout for new kinds of material, and
+when, not many years ago, there came from Arabia with a shipment of
+Mocha coffee two bales of an unknown sort of skin, they were eager to
+try it. It tanned well and made a glove that has been a favorite from
+the first. The skin was found to come from a sheep living in Arabia,
+Abyssinia, and near the headwaters of the river Nile. It was named
+Mocha from the coffee with which it came, and Mocha it has been ever
+since. The Suède glove has a surface much like that of the Mocha. Its
+name came from "Swede," because the Swedes were the first to use the
+skin with the outside in.
+
+Most of our thinner "kid" gloves are made of lambskin; but dressing
+the skins is now done so skillfully in this country that "homemade"
+gloves are in many respects fully as good as the imported; indeed,
+some judges declare that in shape and stitching certain grades are
+better. When sheepskins and lambskins come to market from a distance,
+they are salted. They have to be soaked in water, all bits of flesh
+scraped off, and the hair removed, generally by the use of lime. After
+another washing, they are put into alum and salt for a few minutes;
+and after washing this off, they are dried, stretched, and then are
+ready for the softening. Nothing has been found that will soften the
+skins so perfectly as a mixture of flour, salt, and the yolk of
+eggs--"custard," as the workmen call it. The custard and the skins
+are tumbled together into a great iron drum which revolves till the
+custard has been absorbed and the skins are soft and yielding. Now
+they are stretched one way and another, and wet so thoroughly that
+they lose all the alum and salt that may be left and also much of
+the custard.
+
+Now comes dyeing. The skin is laid upon a table, smooth side up, and
+brushed over several times with the coloring matter; very lightly,
+however, for if the coloring goes through the leather, the hands of
+the customers may be stained and they will buy no more gloves of that
+make. The skins are now moistened and rolled and left for several
+weeks to season. When they are unrolled, the whole skin is soft and
+pliable. It is thick, however, and no one who is not an expert can
+thin it properly. The process is called "mooning" because the knife
+used is shaped like a crescent moon. It is flat, its center is cut
+out, and the outer edge is sharpened. Over the inner curve is a
+handle. The skin is hung on a pole, and the expert workman draws
+the mooning knife down it until any bit of dried flesh remaining has
+been removed, and the skin is of the same thickness, or, rather,
+thinness throughout.
+
+All this slow, careful work is needed to prepare the skin for cutting
+out the glove; and now it goes to the cutter. There is no longer any
+cutting out of gloves with shears and pasteboard patterns, but there
+is a quick way and a slow way nevertheless. The man who cuts in the
+quick way, the "block-cutter," as he is called, spreads out the skin
+on a big block made by bolting together planks of wood with the grain
+running up and down. He places a die in the shape of the glove upon
+the leather, gives one blow with a heavy maul, and the glove is cut
+out. This answers very well for the cheaper and coarser gloves, but to
+cut fine gloves is quite a different matter. This needs skill, and it
+is said that no man can do good "table-cutting" who has not had at
+least three years' experience; and even then he may not be able to do
+really first-class work. He dampens the skin, stretches it first one
+way and then the other, and examines it closely for flaws or scratches
+or weak places. He must put on his die in such a way as to get two
+pairs of ordinary gloves or one pair of "elbow gloves" out of the skin
+if possible, and yet he must avoid the poor places if there are any.
+No glove manufacturer can afford to employ an unskilled or careless
+cutter, for he will waste much more than his wages amount to. There
+used to be one die for the right hand and another for the left, and
+it was some time before it occurred to any one that the same die would
+cut both gloves if only the skin was turned over.
+
+[Illustration: CLOSING THE GLOVE
+
+When sewing time comes, the glove goes from hand to hand down the
+workroom, each stitcher doing a certain seam or seams.]
+
+[Illustration: WHERE THE GLOVE GETS ITS SHAPE
+
+After inspection the glove goes to a row of men who fit it on a
+steam-heated brass hand, giving it its final shape and finish.]
+
+Now comes the sewing. Count the pieces in a glove, and this will give
+some idea of the work needed to sew them together. Notice that the
+fourchettes are sewed together on the wrong side, the other seams on
+the right side, and that the tiny bits of facing and lining are hemmed
+down by hand. Notice that two of the fingers have only one fourchette,
+while the others have two fourchettes each. Notice how neatly the ends
+of the fingers are finished, with never an end of thread left on the
+right side. The embroidery must be in exactly the right place, and it
+must be fastened firmly at both ends. This embroidery is not a
+meaningless fashion, for the lines make the hand look much more
+slender and of a better shape. Sewing in the thumbs needs special care
+and skill. There must be no puckering, and the seam must not be so
+tightly drawn as to leave a red line on the hand when the glove is
+taken off. No one person does all the sewing on a glove; it must pass
+through a number of hands, each doing a little. Even after all the
+care that is given it, a glove is a shapeless thing when it comes from
+the sewing machines. It is now carried to a room where stands a long
+table with a rather startling row of brass hands of different sizes
+stretching up from it. These are heated, the gloves are drawn upon
+them, and in a moment they have shape and finish, and are ready to be
+inspected and sold.
+
+The glove is so closely associated with the hand and with the person
+to whom the hand belongs that in olden times it was looked upon as
+representing him. When, for instance, a fair could not be opened
+without the presence of some noble, it was enough if he sent his
+glove to represent him. To throw down one's glove before a man was to
+challenge him to a combat. At the coronation of Queen Elizabeth, as of
+many other sovereigns of England, the "Queen's champion," a knight in
+full armor, rode into the great hall and threw down his glove, crying,
+"If there be any manner of man that will say and maintain that our
+sovereign Lady, Queen Elizabeth, is not the rightful and undoubted
+inheritrix to the imperial crown of this realm of England, I say he
+lieth like a false traitor, and therefore I cast him my gage."
+
+
+
+
+IV
+
+HOW RAGS AND TREES BECOME PAPER
+
+
+It was a great day for the children on the farm when the tin peddler
+came around. He had a high red wagon, fairly bristling with brooms,
+mop-handles, washtubs, water-pails, and brushes. When he opened his
+mysterious drawers and caverns, the sunshine flashed upon tin pans,
+dippers, dustpans, and basins. Put away rather more choicely were
+wooden-handled knives, two-tined forks, and dishes of glass and china;
+and sometimes little tin cups painted red or blue and charmingly
+gilded, or cooky-cutters in the shape of dogs and horses. All these
+rare and delightful articles he was willing to exchange for rags. Is
+it any wonder that the thrifty housewife saved her rags with the
+utmost care, keeping one bag for white clippings and one for colored?
+
+These peddlers were the great dependence of the paper mills, for the
+finest paper is made from linen and cotton rags. When the rags reach
+the factory, they are carefully sorted. All day long the sorters sit
+before tables whose tops are covered with coarse wire screens, and
+from masses of rags they pick out buttons, hooks and eyes, pins, bits
+of rubber, and anything else that cannot possibly be made into paper.
+At the same time they sort the rags carefully into different grades,
+and with a knife shaped like a small sickle fastened upright to the
+table they cut them into small pieces. Some of the dust falls through
+the screen; but to remove the rest of it, the cut-up rags are tossed
+about in a wire drum. Sometimes they are so dusty that when they come
+out of the drum they weigh only nine tenths as much as when they go
+in. The dust is out of them, but not the dirt. To remove that, they
+are now put into great boilers full of steam; and here they cook and
+turn over, and turn over and cook for hours. Lime and sometimes soda
+are put with them to cleanse them and remove the coloring material;
+but when they are poured out, they look anything but clean, for they
+are of a particularly dirty brown; and the water that is drained away
+from them looks even more uninteresting. Of course the next step is to
+wash this dirty brown mass; and for at least four hours it is scrubbed
+in a machine which beats it and rolls it and chops it and tumbles it
+about until the wonder is that anything is left of it. All this while,
+the water has been flowing through it, coming in clean and going out
+dirty; and at length the mass becomes so light a gray that making
+white paper of it does not seem quite hopeless. It is now bleached
+with chloride of lime, and washed till it is of a creamy white color
+and free from the lime, and then beaten again. If you fold a piece of
+cheap paper and tear it at the fold, it will tear easily; but if you
+do the same thing with paper made of linen and cotton, you will find
+it decidedly tough. Moreover, if you look closely at the torn edge of
+the latter, you will see the fibers clearly. It is because of the
+beating that the fibers are so matted together and thus make the paper
+tough. While the pulp is in the beater, the manufacturer puts in the
+coloring matter, if he wishes it to be tinted blue or rose or lavender
+or any other color. No one would guess that this white or creamy or
+azure liquid had ever been the dirty rags that came into the mill and
+were sorted on the wire tables. Besides the coloring, a "filler" is
+usually added at this time, such as kaolin, the fine clay of which
+china is made. This fills the pores and gives a smoother surface to
+the finished paper--a good thing if too much is not put in. A little
+sizing is also added, made of rosin. Save for this sizing, ink would
+sink into even the finished paper as it does into blotting paper.
+After this, more water is added to the pulp and it is run into tanks.
+
+Now the preparation is completed, and the pulp is pumped to large and
+complicated machines which undertake to make it into paper. It first
+flows through screens which are shaken all the while as if they were
+trembling. This shaking lets the liquid and the finer fibers through,
+but holds back the little lumps, if any remain after all the beating
+and straining and cutting that it has had. The pulp flows upon an
+endless wire screen. Rubber straps at the sides keep it in, but the
+extra water drops through the meshes. The pulp is flowing onward, and
+so the tiny fibers would naturally straighten out and flow with it,
+like sticks in a river; but the wire screen is kept shaking sideways,
+and this helps the fibers to interlace, and the paper becomes nearly
+as strong one way as the other.
+
+If you hold a sheet of paper up to the light, it will show plainly
+what is next done to it. Sometimes you can see that it is marked by
+light parallel lines running across it close together, and crossed by
+other and stouter lines an inch or two apart. Sometimes the name of
+the paper or that of the manufacturer is marked in the same way by
+letters lighter than the rest of the sheet. Sometimes the paper is
+plain with no markings whatever. This difference is made by what is
+called the "dandy," a cylinder covered with wire. For the first, or
+"laid" paper, the small wires run the length of the cylinder and the
+stouter ones around it. Wherever the wires are, the paper is a little
+thinner. In some papers this thinness can be seen and felt. For the
+second kind of paper the design, or "watermark," is formed by wires a
+little thicker than the rest of the covering. For the third, or "wove"
+paper, the dandy is covered with plain woven wire like that of the
+wire cloth; so there are no markings at all. This work can be easily
+done because at this point the paper is so moist.
+
+The paper is now not in sheets, but in a long web like a web of cloth.
+It passes between felt-covered rollers to press out all the water
+possible, then over steam-heated cylinders to be dried, finally going
+between cold iron rollers to be made smooth, and is wound on a reel,
+trimmed and cut into sheets of whatever size is desired. The finest
+note papers are not finished in this way, but are partly dried,
+passed through a vat of thin glue, any excess being squeezed off by
+rollers, then cut into sheets, and hung up to dry thoroughly at their
+leisure.
+
+Paper made of properly prepared linen and cotton is by far the best,
+but there are so many new uses for paper that there are not rags
+enough in the world to make nearly what is needed. There are scores of
+newspapers and magazines where there used to be one; and as for paper
+bags and cartons and boxes, there is no limit to their number and
+variety. A single manufacturer of pens and pencils calls for four
+thousand different sorts and sizes of boxes. School-children's use of
+paper instead of slates, the fashion of wrapping Christmas gifts in
+white tissue, and the invention of the low-priced cameras have
+increased enormously the amount of paper called for. In the attempt to
+supply the demand all sorts of materials have been used, such as hemp,
+old rope, peat, the stems of flax, straw, the Spanish and African
+esparto grass, and especially wood; but much more paper is made of
+wood than of all the rest together. Poplar, gum, and chestnut trees,
+and especially those trees which bear cones, such as the spruce, fir,
+balsam, and pine are used. There are two methods of manufacturing wood
+pulp; the mechanical, by grinding up the wood, and the chemical, by
+treating it chemically. By the mechanical method the wood is pressed
+against a large grindstone which revolves at a high speed. As fast as
+the wood is ground off, it is washed away by a current of water, and
+strained through a shaking sieve and a revolving screen which drives
+out part of the water by centrifugal force. In a great vat of pulp a
+drum covered with wire cloth revolves, and on it a thin sheet of pulp
+settles. Felting, pressed against this sheet, carries it onward
+through rolls. The sheets are pressed between coarse sacking. Such
+paper is very poor stuff. In its manufacture the fiber of the wood is
+so ground up that it has little strength. It is used for cardboard,
+cartons, and packing-papers. Unfortunately, it is also used for
+newspapers; and while it is a good thing for some of them to drop to
+pieces, it is a great loss not to have the others permanent. When we
+wish to know what people thought about any event fifty years ago, we
+can look back to the papers of that time; but when people fifty years
+from now wish to learn what we thought, many of the newspapers will
+have fallen to pieces long before that time.
+
+[Illustration: _Courtesy S. D. Warren Co._
+
+WHERE RAGS BECOME PAPER
+
+The vat where the rags cook and turn over, and the big room where the
+web of finished paper is passed through rollers and cut into a neat
+pile of trimmed sheets.]
+
+There is, however, a method called the "sulphite process," used
+principally in treating the coniferous woods, by which a much better
+paper can be made. In all plants there is a substance called
+"cellulose." This is what gives strength to their stems. The wood is
+chipped and put into digesters large enough to hold twenty tons, and
+is steam-cooked together with bisulphite of magnesium or calcium for
+seven or eight hours. Another method used for cooking such woods as
+poplar and gum, is to boil the wood in caustic soda, which destroys
+everything except the cellulose. Wood paper of one kind or another is
+used for all daily papers and for most books. Whether the best wood
+paper will last as long as the best rag paper, time only can tell.
+
+The Government of the United States tests paper in several ways
+before buying it. First, a single sheet is weighed; then a ream is
+put on the scales to see if it weighs four hundred and eighty times
+as much. This shows whether the paper runs evenly in weight. Many
+sheets are folded together and measured to see if the thickness is
+regular. To test its strength, a sheet is clamped over a hole one
+square inch in area, and liquid is pressed against it from below to
+see how much it will stand before bursting. Strips of the paper are
+pulled in a machine to test its breaking strength. A sheet is folded
+over and over again to see whether holes will appear at the corners
+of the folds. It is examined under the microscope to see of what
+kind of fibers it is made and how much loading has been used in its
+manufacture. To test blotting paper, strips are also put into water
+to see how high the water will rise on them.
+
+Besides writing and wrapping papers and the various kinds of board,
+there are many sorts which are used for special purposes. India paper,
+for instance, is light, smooth, and strong, so opaque that printing
+will not show through it, and so lasting that if it is crumpled, it
+can be ironed out and be as good as new. This is used for books that
+are expected to have hard wear but must be of light weight. There are
+tissue papers, crêpe papers for napkins, and tarred paper to make
+roofs and even boats water-tight. If tar is brushed on, it may make
+bubbles which will break afterwards and let water in; but if tar is
+made a part of the paper itself, it lasts. Paper can easily be waxed
+or paraffined, and will then keep out air and moisture for some time.
+Better still, it can be treated with oil and will then make a raincoat
+that will stand a year's wear, or even, if put on a bamboo frame, make
+a very good house, as the Japanese found out long ago. Paper coated
+with powdered gum and tin is used for packing tea and coffee. Transfer
+or carbon papers so much used in making several copies of an article
+on the typewriter are made by coating paper with starch, flour, gum,
+and coloring matter. Paper can be used for shoes and hats, ties,
+collars, and even for "rubbers." It has been successfully used for
+sails for light vessels, and is excellent made into light garments
+for hospital use because it is so cheap that it can be burned after
+wearing. Wood pulp can be run through fine tubes into water and made
+so pliable that it can be twisted into cord or spun and woven into
+"silk." Not only water but also fire can be kept out by paper if it is
+treated with the proper substances. An object can be covered with a
+paste of wood pulp, silica, and hemp; and when this is dry, a coat of
+water-glass will afford considerable protection. There has been some
+degree of success in making transparent paper films for moving
+pictures; and if these are coated with water-glass, they will not
+burn. Paper can be so treated that it will either conduct electricity
+or become a nonconductor, as may be desired. In Germany, a "sandwich
+paper" has been made by pressing together four layers--felt, pulp,
+cotton, pulp--which is cheap and strong and useful for many purposes.
+
+When we come to papier maché, there is no end to the kinds of articles
+that are made of it. The papier maché, or _paper pulped_, is made by
+kneading old newspapers or wrapping papers with warm water into a
+pulp. Clay and coloring are added and something of the nature of glue;
+and it is then put into a mould. Sometimes to make it stronger for
+large mouldings, bits of canvas or even wire are also used. The best
+papier maché is made of pure wood cellulose. The beautiful boxes and
+trays covered with lacquer which the Japanese and Chinese make are
+formed of this; but it has many much humbler uses than these. Paper
+screws are employed in ornamental wood work, and if a hole is begun
+for such a screw, it will twist its way into soft wood as well as
+steel would do. Barrels of paper reinforced with wire are common. Gear
+wheels and belt pulleys are made of papier maché, and even the wheels
+of railroad coaches; at least the body of the wheels is made of it,
+although the tire, hub, and axle are of cast-steel. Circular saws of
+pulp are in use which cut thin slices of veneer so smoothly that they
+can be used without planing. Papier maché is used for water pipes,
+the bodies of carriages, hencoops, and garages. Indeed, it is quite
+possible to build a house, shingle it, decorate it with elaborate
+mouldings and cornices, finish it with panels, wainscoting, imitation
+tiling, and furnish it with light, comfortable furniture covered with
+imitation leather, silk, or cloth, and spread on its floors soft,
+thick carpets or rugs woven in beautiful designs--and all made of wood
+pulp. Even the window panes could be made of pulp; and if they were
+not perfectly transparent, they would at least let in a soft,
+agreeable light, and they would not break. Pails, washtubs, bathtubs,
+and even dishes of paper can be easily found. There are not only the
+paper cups provided on railroad trains and the cheap picnic plates
+and saucers, but some that are really pretty. Ice cream is sometimes
+served in paper dishes and eaten with paper spoons. Milk bottles are
+successfully made of paper, with a long strip of some transparent
+material running up and down the side to show how much--or how
+little--cream is within. Napkins and tablecloths made of paper thread
+woven into "cloth" are cheaper than linen and can be washed as easily.
+Paper towels and dishcloths are already common; but when paper shall
+fully come to its own, it is quite possible that there will be little
+washing of dishes. They can be as pretty as any one could wish, but so
+cheap that after each meal they can be dropped into the fire. Indeed,
+there are few things in a house, except a stove, that cannot be made
+of some form of paper,--and perhaps that too will be some day.
+
+
+
+
+V
+
+HOW BOOKS ARE MADE
+
+
+The first step in making ready to print a manuscript is to find out
+how many words there are in it, what kind of type to use, how much
+"leading" or space between the lines there shall be, and what shall
+be the size of the page. In deciding these questions, considerable
+thinking has to be done. If the manuscript is a short story by a
+popular author, it may be printed with wide margins and wide leading
+in order to make a book of fair size. If it is a lengthy manuscript
+which will be likely to sell at a moderate but not a high price, it
+is best to use only as much leading as is necessary to make the line
+stand out clearly, and to print with a margin not so wide as to
+increase the expense of the book. The printer prints a sample of the
+page decided upon, any desired changes are made, and then the making
+of the book begins.
+
+[Illustration: _Courtesy The Riverside Press._
+
+WHERE THIS BOOK WAS SET UP
+
+The monotype girl wrote these words on her keyboard, where they made
+tiny holes in a roll of paper. The roll went to the casting-room where
+it guided a machine to make the type much as a perforated music-roll
+guides a piano to play a tune.]
+
+The type is kept in a case at which the compositor stands. This case
+is divided into shallow compartments, each compartment containing a
+great many e's or m's as the case may be. The "upper case" contains
+capitals; the "lower case," small letters. Those letters which are
+used most often are put where the compositor can reach them most
+readily. He stands before his case with a "composing stick" in his
+hand. This "stick" is a little iron frame with a slide at the side,
+so that the line can be made of any length desired. The workman soon
+learns where each letter is, and even an apprentice can set the type
+in his stick reasonably rapidly. On one side of every piece of type
+there is a groove, so that he can tell by touch whether it is right
+side up or not. He must look out especially to make his right-hand
+margins regular. You will notice in books that the lines are all of
+the same length, although they do not contain the same number of
+letters. The compositor brings this about by arranging his words and
+spaces skillfully. The spaces must be as nearly as possible of the
+same length, and yet the line must be properly filled. If a line is
+too full, he can sometimes place the last syllable on the following
+line; if it is not full enough, he can borrow a syllable, and he can
+at least divide his space so evenly that the line will not look as if
+it were broken in two.
+
+Not many years ago all type was set in this manner; but several
+machines have now been invented which will do this work. In one of the
+best of them the operator sits before a keyboard much like that of a
+typewriter. When he presses key _a_, for instance, a mould or matrix
+of the letter _a_ is set free from a tube of _a_'s, and slides down to
+its place in the stick. At the end of the line, the matrices forming
+it are carried in front of a slot where melted type metal from a
+reservoir meets them. Thus a cast is made of the matrices, and from
+this cast the printing is done. This machine is called a linotype
+because it casts a whole line of type at a time.
+
+Most book work is done on the monotype machine. When a manuscript
+goes to the press to be set up in this way, the copy is given to the
+keyboard operator who sets it up on a machine which looks much like
+a typewriter. Instead of writing letters, however, the machine punches
+tiny holes in a strip of paper which is wound on a roll. When the
+roll is full it goes to the casting room where it is put on another
+machine containing hot type metal and bronze matrices from which the
+letters of the words are to be cast. The holes in the paper guide the
+machine to make the type much as a perforated music roll guides a
+piano to play a tune. The reason why the machine is called a monotype
+is that the letters are made one at a time, and _monos_ is the Greek
+word for _one_.
+
+By the linotype and monotype machines type can be set in a "galley,"
+a narrow tray about two feet long, with ledges on three sides. When a
+convenient number of these galleys have been filled, long slips are
+printed from them called "galley proofs." These have wide margins, but
+the print is of the width that the page of the book will be. They are
+read by the proof-readers, and all such mistakes as the slipping in
+of a wrong letter, or a broken type, the repetition of a word, or the
+omission of space between words are corrected. Then the proof goes to
+the author, who makes any changes in his part of the work which seem
+to him desirable; and it is also read by some member of the editorial
+department. If there are many changes to be made, another proof is
+usually taken and sent to the author.
+
+The reason for this extreme carefulness is that it costs much less to
+make changes in the galley proof than in the "page proof." This latter
+is made by dividing the galley into pages, leaving space for the
+beginnings of chapters and for pictures, if any are to appear on the
+printed pages, and setting up the numbers of the pages and their
+running titles. Page proof also goes to proof-readers and to the
+author. Corrections on page proof are more expensive than on galley
+proof because adding or striking out even a few words may make it
+necessary to change the arrangement on every page to the end of the
+chapter.
+
+Years ago all books were printed directly from the type; and some are
+still printed so. After printing, the letters were returned to their
+compartments. If a second edition was called for, the type had to be
+set again. Now, however, books are generally printed not from type,
+but from a copper model of the type. To make this, an impression of
+the page of type is made in wax and covered with graphite, which will
+conduct electricity. These moulds are hung in a bath of copper
+sulphate, where there are also large plates of copper. A current of
+electricity is passed through it, and wherever the graphite is, a
+shell of copper is deposited, which is exactly like the face of the
+type. This shell is very thin, but it is made strong by adding a heavy
+back of melted metal. From these plates the books are printed. A
+correction made in the plate is more expensive than it would have been
+if made in the galley or in the page, because sawing out a word or a
+line is slow, delicate work; and even if one of the same length is
+substituted, the types spelling it have to be set up, a small new
+plate cast, and soldered in.
+
+[Illustration: _Courtesy The Riverside Press._
+
+WHERE THIS BOOK WAS PRINTED
+
+The girls are feeding big sheets of paper into the presses, thirty-two
+pages being printed at one time. The paper is fed into many modern
+presses by means of a machine attached to the press. The pressmen see
+that the printing is done properly.]
+
+Printing one page at a time would be altogether too slow; therefore
+the plates are arranged in such a way that sixteen, thirty-two, or
+sometimes sixty-four pages can be printed on one side of the paper,
+and the same number on the other side. Every page must come in its
+proper place when the sheet is folded for binding. Try to arrange a
+sheet of even sixteen pages, eight on each side, so that when it is
+folded every page will be in the right place with its printing right
+side up, and you will find that it is not very easy until you have had
+considerable experience. If the sheet is folded into four leaves, the
+book is called a "quarto," or "4to"; if into eight, it is an "octavo,"
+or "8vo"; if into twelve, a "duodecimo," or "12mo." Books are
+sometimes advertised in these terms; but they are not definite,
+because the sheets of the different varieties of paper vary in size.
+Of late years, publishers have often given the length and width of
+their books in inches.
+
+After the sheets come from the press, they are folded to page size.
+Sometimes this is done by hand, but more often by a folding machine
+through which the sheet of paper travels, meeting blunt knives which
+crease it and fold it. If you look at the top of a book you will see
+that the leaves are put together in groups or "signatures." These
+signatures usually contain eight, sixteen, or thirty-two pages. If
+the paper is very thick, not more than eight leaves will be in a
+signature; if of ordinary thickness, sixteen are generally used. The
+signatures are piled up in order, and a "gatherer" collects one from
+each pile for every book.
+
+The book is now gathered and "smashed," or pressed enough to make it
+solid and firm for binding. Next the signatures are sewed and the book
+is trimmed so the edges will be even. If the edges are to be gilded,
+the book is put in a gilding press and a skillful workman covers the
+edges with a sizing made of the white of eggs. Gold leaf is then laid
+upon them and they are burnished with tools headed with agate and
+bloodstone or instruments of various sorts until they are bright.
+Sometimes the edges are "marbled," and this is an interesting process
+to watch. On the surface of a vat of thin sizing the marbler drops a
+little of many colors of paint. Then he draws a comb lightly across
+the surface, making all sorts of odd figures, no two alike. The book
+is held tight and the edges are allowed to touch the sizing. All these
+odd figures are now transferred to the edges of the leaves and will
+stand a vast amount of hard use before they will wear off.
+
+Thus far the book is flat at the edges of the leaves and at the back.
+Books are sometimes bound in this way, but the backs are usually
+rounded into an outward curve, and the fronts into an inward curve.
+This is done by a machine. At each end of the outward curve a deep
+groove is pressed to receive the cover. To make the covers of a
+cloth-bound book, two pieces of pasteboard of the right size are cut
+and laid upon a piece of cloth coated with glue. The edges of the
+cloth are turned over and pressed down, as you can often see if the
+paper lining of the cover is not too heavy. The cover needs now only
+its decorations to be complete. A die is made for these, and the
+lettering and ornamentation are stamped on in colors. If more than one
+color is used, a separate die has to be made for each. If this work
+is to be done in gold, the design is stamped on lightly and sizing
+made of white of eggs is brushed on wherever the gold is to come. Gold
+leaf is laid upon this sizing, and the cover is stamped again. The
+same die is used, but this time it is hot enough to make the gold and
+egg stick firmly to the cover. To put the cover on, a piece of muslin
+called a "super" is glued to the back of the book with its ends
+projecting over the sides, and a strip of cartridge paper is glued
+over the super. Then the book is pasted into the cover. It is now kept
+under heavy pressure for a number of hours until it is thoroughly dry
+and ready to be sent away for sale.
+
+So it is that a well-made cloth-bound book is manufactured.
+Leather-bound books are more expensive, not only because their
+materials cost more, but also because the greater part of the work of
+binding and decorating has to be done by hand. If a book is to be
+illustrated, this must also be attended to, the number and style of
+the pictures decided upon, and the artist engaged before the book is
+put in press, in order that there may be no delay in completing it.
+
+Many publishers do not print at all, but have their work done at some
+printing establishment. Where all the making of a book, however, from
+manuscript to cover, is in the hands of one firm, there is a certain
+fellow-feeling among the different departments, and a wholesome pride
+in making each one of "our books" as excellent as possible in every
+detail. As one of the women workers in such an establishment said to
+me, "I often think that we become almost as interested in a book as
+the author is."
+
+
+
+
+VI
+
+FROM GOOSE QUILLS TO FOUNTAIN PENS AND LEAD PENCILS
+
+
+Whenever there was a convenient goosepond on the way to school, the
+children of less than one hundred years ago used to stop there to hunt
+for goose quills. They carried these to the teacher, and with his
+penknife--which took its name from the work it did--he cut them into
+the shape of pens. The points soon wore out, and "Teacher, will you
+please mend my pen?" was a frequent request.
+
+When people began to make pens of steel, they made them as nearly like
+quill pens as possible, with pen and holder all in one. These were
+called "barrel pens." They were stiff, hard, and expensive, especially
+as the whole thing was useless as soon as the pen was worn out, but
+they were highly esteemed because they lasted longer than quills and
+did not have to be mended. After a while separate pens were
+manufactured that could be slipped into a holder; and one improvement
+after another followed until little by little the cheap, convenient
+writing tool that we have to-day was produced.
+
+A pen is a small thing, but each one is worked upon by twenty to
+twenty-four persons before it is allowed to be sold. The material is
+the best steel. It comes in sheets five feet long and nineteen inches
+wide, and about one fortieth of an inch thick, that is, three times
+as thick as the finished pen. The first machine cuts the sheet
+crosswise into strips from two to three inches wide, varying according
+to the size of the pen to be made. These strips are put into iron
+boxes and kept at a red heat for a number of hours to anneal or soften
+them. Then they pass between heavy rollers, a process which not only
+helps to toughen them, but also stretches the steel so that it is now
+fifty inches long instead of nineteen.
+
+At least six or seven people have handled the material already, and
+even now there is nothing that looks like pens; but the next machine
+cuts them out, by dies, of course. The points interlap; and the
+cutting leaves odd-shaped openwork strips of steel for the scrap-heap.
+This part of the work is very quick, for the machine will cut
+thousands of pens in an hour. Now is when the little hole above the
+slit is punched and the side slits cut. To make the steel soft and
+pliable, it must be annealed again, kept red hot for several hours,
+and then cooled. Thus far it has looked like a tiny fence paling, but
+at length it begins to resemble a pen, for it is now stamped with
+whatever letters or designs may be desired, usually the name of the
+maker and the name and number of the variety of pen, and it is pressed
+between a pair of dies to form it into a curve. The last annealing
+left the metal soft so that all this could be done, but too soft to
+work well as a pen; and it has to be heated red hot again, and then
+dropped into cold oil to harden it. Centrifugal force, which helps in
+so many manufactures, drives the oil away, and the pens are dried in
+sawdust. They are now sufficiently hard, but too brittle. They must be
+tempered. To do this, they are placed in an iron cylinder over a fire,
+and the cylinder revolved till the pen is as elastic as a spring.
+
+The pen is of the correct shape, is tough and elastic; and now it is
+put into "tumbling barrels" which revolve till it is bright and ready
+for the finishing touches. If you look closely at the outside of a
+steel pen just above the nib, you will see that across it run tiny
+lines. They have a use, for they hold the ink back so that it will
+not roll down in drops, and they help to make the point more springy
+and easier to write with.
+
+The pen must be slit up from the point. This is done by a machine, and
+a most accurate one, for the cut must go exactly through the center of
+the point and not reach beyond the little hole that was punched. Only
+one thing is lacking now to make the pen a useful member of society,
+ready to do its work in the world; and that is to grind off the points
+and round them in order to keep them from sticking into the paper.
+
+After so much careful work, it does seem as if not one pen out of a
+thousand could be faulty; but every one has to be carefully examined
+to make sure that the cutting, piercing, marking, forming, tempering,
+grinding, and slitting, are just what they should be. These pens carry
+the maker's name, and a few poor ones getting into the market might
+spoil the sale of thousands of boxes; therefore the examiner sits
+before a desk covered with black glass and looks at every pen. The
+faulty ones are heated so that they cannot be used, and they go to
+the scrap-heap.
+
+Now the pens are ready so far as usefulness goes, but people have
+preferences in color. Some prefer bronze, some gray, and some black;
+so off the pens go to the tempering-room, their last trip, and there
+are heated in a revolving cylinder till the right color appears; then
+they are chilled and lacquered, put into boxes, labeled, packed, and
+sold for such low prices that the good folk of a century ago, who
+paid from twenty-five to fifty cents for a pen, would have opened
+their eyes in amazement. When the typewriter was invented, some
+people said, "That will be the death of the steel pen"; but as a
+matter of fact, it has greatly increased its sale. The typewriter
+makes writing so easy and so quick that many more letters are written
+than formerly. All these letters have to be answered, and few people
+compared with the whole number own typewriters, and therefore the pen
+still holds its place.
+
+The lacquer on a steel pen protects it until it has been used for a
+while. After that, it will rust, if it is not wiped, and it will wear
+out whether it is wiped or not. All that the gold pen asks is not
+to be bent or broken, and it will last almost forever. It has the
+flexibility of the quill, but does not have to be "mended." Gold pens
+are made in much the same way as are steel pens; but just at the point
+a tiny shelf is squeezed. Upon this shelf a bit of the alloy of two
+exceedingly hard metals, iridium and osmium, is secured by melting
+the gold around it; and it is this bit which stands all the wear of
+rubbing on the paper. When gold pens were first made, tiny bits of
+diamonds or rubies were soldered on for points; but they were
+expensive, and they had a disagreeable fashion of falling off.
+
+A century ago, writers would have thought it the height of luxury to
+have a gold pen; but now they are not satisfied unless they can be
+saved the trouble of dipping it into an inkstand, and they look upon
+the fountain pen as their special friend. The fountain pen carries its
+supplies with it. The pen itself is like any other gold pen, but the
+barrel is full of ink. A little tube carries the ink to the point, and
+the slight bending back of the pen as one writes lets it run out upon
+the paper. At the end of the slit, at the back of the pen, is a hole
+to let air into the barrel as the ink runs out. A perfect fountain pen
+ought to be prepared to write--without shaking--whenever the cap is
+taken off, and not to refuse to work so long as a drop of ink remains
+in the barrel. It should never drop ink at the point and, whether the
+point is up or down, it should never leak there or anywhere else.
+
+The stylographic pen is quite a different article. There is no pen to
+it; the writing is done with the end of a needle which projects
+through a hole at the point. The barrel and point are full of ink; but
+even if the pen is held point down, it will not leak because the
+needle fills up the hole. When you press the point on paper to write,
+the needle falls back just enough to let out what ink is needed. The
+flow stops the instant the pen ceases to touch the paper. The special
+advantage of the stylographic is that the mere weight of the pen is
+sufficient pressure, and therefore many hours of writing do not tire
+the muscles of the hand. The advantage of the fountain pen is that it
+has the familiar action of the gold pen, and that it will adapt itself
+to any style of handwriting.
+
+A pen of almost any kind is a valuable article, but for
+rough-and-ready use we should find it hard to get on without its
+humble friend, the lead pencil. A lead pencil, by the way, has not a
+particle of lead in it. The "lead" is all graphite, or plumbago. Years
+ago sticks of lead were used for marking, and made a pale-gray line.
+When graphite was introduced, its mark was so black that people called
+it black lead, and the name has stuck. No one who has ever tried to
+use a pencil of real lead could fail to appreciate graphite, and when
+a graphite mine was discovered in England, it was guarded by armed men
+as watchfully as if it had been a mine of diamonds. That mine was
+exhausted long ago, but many others have been found. The best graphite
+in the world comes from Ceylon and Mexico.
+
+When graphite was first used for pencils, it was cut into slabs and
+these slabs into small strips. The broken and powdered graphite was
+not used until it was discovered that it could be mixed with clay and
+so made into sticks. In a lead pencil there are only three substances,
+graphite, clay, and wood, but a really good one must be manufactured
+with as much care as if it were made up of twenty. First of all, the
+graphite is ground and ground and ground, until, if you take a pinch
+of it between your thumb and finger, you can hardly feel that anything
+is there. It is now sifted through fine silk and mixed with water and
+finely powdered clay, and becomes a wet, inky mass. This clay comes
+from Austria and Bohemia and is particularly smooth and fine. The
+amount put in is carefully weighed. If you have a hard pencil, it was
+made by using considerable clay; if your pencil is soft, by using very
+little; and if it is very soft and black, it is possible that a little
+lampblack was added.
+
+This inky mass is ground together between millstones for several
+weeks. Then it goes between rollers, and at length is squeezed
+through a die and comes out in soft, doughy black strings. These are
+the "leads" of the pencils. They have been thoroughly wet, and now
+they must be made thoroughly dry. They are laid on boards, then taken
+off, cut into pieces the length of a pencil, and put into ovens and
+baked for hours in a heat twenty times as great as that of a hot
+summer day. They certainly ought to be well dried and ready for the
+wood. The red cedar of Florida, Tennessee, Georgia, and Alabama is
+the best wood for pencils because it is soft and has a fine, straight
+grain. It is cut into slabs about as long as one pencil, as wide as
+six, and a little thicker than half a pencil. Every piece must be
+examined to make sure that it is perfect, and it must be thoroughly
+seasoned and kiln-dried to free it from oil. Then it goes through a
+grooving-machine which cuts out a groove half as deep as the lead.
+The lead is laid into one piece, another is glued on top of it; and
+there is a pencil ready for work.
+
+[Illustration: _Courtesy Joseph Dixon Crucible Co._
+
+HOW THE LEAD GETS INTO A PENCIL
+
+(1) The cedar slab. (2) Planed and grooved. (3) The leads in place.
+(4) Covered with the other half of the slab. (5) The round pencils cut
+out. (6) The pencil separated and smoothed. (7) The pencil varnished
+and stamped.]
+
+Such a pencil would be useful, but to sell well it must also be
+pretty; and therefore it goes through machinery which makes it round
+or oval or six-sided, as the case may be, rubs it smooth, and
+varnishes it, and then, with gold leaf or silver leaf or aluminum or
+ink, stamps upon it the name of the maker, and also a number or letter
+to show how hard the lead is.
+
+The pencil is now ready for sale, but many people like to have an
+eraser in the end, and this requires still more work. These erasers
+are round or flat or six-sided or wedge-shaped. They are let into the
+pencil itself, or into a nickel tip, or drawn over the end like a cap,
+so that any one's special whim may be gratified. Indeed, however hard
+to please any one may be, he ought to be able to find a pencil to suit
+his taste, for a single factory in the United States makes more than
+six hundred kinds of pencils, and makes so many of them that if they
+were laid end to end they would reach three times across the continent.
+
+There are many exceedingly cheap pencils, but they are expensive in
+the end, because they are poorly made. The wood will often split in
+sharpening, and the lead is of poor materials so badly mixed that it
+may write blacker in one place than another, and is almost sure to
+break. Good pencils bearing the name of a reliable firm are cheapest.
+
+
+
+
+VII
+
+THE DISHES ON OUR TABLES
+
+
+If any one should give you a lump of clay and ask you to make a bowl,
+how should you set about it? The first thing would be, of course, to
+put it on a table so you could work on it with both hands. You would
+make a depression at the top and push out the sides and smooth them as
+best you could. It would result in a rough, uneven sort of bowl, and
+before it was done, you would have made one discovery, namely, that if
+the table only turned around in front of you, you could see all sides
+of the bowl from the same position, and it would be easier to make it
+regular. This is just what the potter's wheel does. It is really two
+horizontal wheels. The upper one is a disk a foot or two in diameter.
+This is connected by a shaft with the lower one, which is much larger.
+When the potter was at work at a wheel of this sort, he stood on one
+foot and turned the lower wheel with the other, thus setting the upper
+wheel in motion. This was called a "kick-wheel." As wheels are made
+now, the potter sits at his work and turns the wheel by means of a
+treadle.
+
+Almost any kind of clay will make a dish, but no one kind will make
+it so well that the addition of some other kind would not improve it.
+Whatever clays are chosen, they must be prepared with great care to
+make sure that not one grain in them is coarser than any other.
+Sometimes one will slip through, and you can see on the finished dish
+what a bad-looking place it makes. Even for the coarsest earthenware,
+such as flower-pots, the moist clay is forced down a cylinder and
+through a wire sieve; and for stoneware and porcelain it has to go
+through several processes. When flint and feldspar are used, they are
+ground fine at the quarry. On reaching the factory, they are mixed
+with the proper quantities of other clays--but in just what proportions
+is one of the secrets of the trade. Then they go into "plungers" or
+"blungers," great round tanks with arms extending from a shaft in the
+center. The shaft revolves and the arms beat the clay till all the sand
+and pebbles have settled on the bottom, and the fine clay grains are
+floating in the water above them. These pass into canvas bags. The
+water is forced out through the canvas, and on every bag there is left
+a thin sheet of moist clay. If this is to be used for the finest work,
+it is ground and pounded and washed still more, until it is a wonder
+that any of it survives; then it is sifted through a screen so fine
+that its meshes are only one one hundred and fiftieth of an inch
+across. Now it becomes "slip," and after a little more beating and
+tumbling about, it is ready to go to the man at the wheel.
+
+This man is called the "thrower," because he lifts the lump of clay
+above his head and throws it down heavily upon the center of the
+wheel. The things that happen to that lump of clay when he touches it
+and the wheel revolves seem like the work of magic. He presses his
+thumbs into it from above and draws the walls up between his thumbs
+and fingers. He clasps his hands around it, and it grows tall and
+slender. He lays his finger on the top of the little column of clay,
+and it flattens in a moment. He points his finger at it, barely
+touching it, and a little groove appears, running around the whole
+mass. He seems to be wasting considerable time in playing with it, but
+all the while he is making sure that the clay is perfectly uniform and
+that there are no bubbles of air in it. He holds a piece of leather
+against the outside surface and a wet sponge against the inside, to
+make them perfectly smooth; and in a moment he has made a bowl. He
+holds his bent finger against the top of the bowl, and it becomes a
+vase. With another touch of his magical finger the top of the vase
+rolls over into a lip. If he makes a cup or a mug, he models a handle
+in clay and fastens it in place with slip. When it is done, he draws a
+wire deftly between the article and the table, and puts it on a board
+to dry.
+
+When you watch a potter at work, it all looks so simple and easy that
+you feel sure you could do it; but see how skillfully he uses his
+hands, how strong they are, and yet how lithe and delicate in their
+movements. See into what odd positions he sometimes stretches them;
+and yet these are plainly the only positions in which they could do
+their work. See how every finger does just what he wishes it to do.
+Notice all these things, and you will not be so certain that making
+pottery is the easiest thing in the world.
+
+No two pieces of hand work are exactly the same; and skillful as the
+potter is, his pieces are not precisely alike. Many of them therefore
+are passed over to the turner for finishing. He uses an ordinary
+lathe, and with this he thins any place that may be a little too
+thick, rounds the edge, and smooths it. The article is partly dried
+when he takes it, and so its walls can be cut thinner. When it leaves
+his lathe, all signs of hand work have vanished, but the dish is
+exactly like the others of the set, and this is what the greater
+number of people want. In some potteries there is hardly a throwing
+wheel in use, and articles are formed in plaster of Paris moulds.
+There are two ways of using these moulds. By one method, the mould is
+put upon a "jigger," a power machine which keeps it revolving, and
+clay is pressed against its walls from within. Above the mould is a
+piece of iron cut in the shape of the inside curve of the bowl or
+whatever is being made. This skims off all the extra clay from the
+inside of the walls. Plates and saucers are made on a jigger. The
+mould used for this work is a model of the top of the plate. The
+workman makes a sort of pancake of clay and throws it upon the mould.
+A second mould, shaped like half of the bottom of the plate, is
+brought down close and revolves, cutting off all the extra clay and
+shaping the bottom of the plate.
+
+When the very finest ware is to be made, the mould is used in quite
+another fashion. If a pitcher, for instance, is to be cast, the mould
+is made in two sections and tied tightly together. Then the slip is
+poured into it and left for a while. The plaster of Paris absorbs the
+water and a layer of clay is formed all about the walls. When this
+is thick enough, the liquid is poured out, and after the pitcher has
+dried awhile, the mould is carefully opened and the pitcher is very
+gently taken out. The handle is made in a little mould of its own and
+fastened on with slip. "Eggshell" porcelain is made in this way. The
+clay shell becomes smaller as it dries, so there is no trouble about
+removing it from the mould--if one knows how. If a large article is to
+be cast, the mould is made in sections. Of course this fine ware must
+all be made by hand, especially as machines do not work well with the
+finest clays; but cheap dishes are all made by machinery.
+
+After any clay article is thrown, or moulded, or cast, it is passed
+through a little doorway and set upon a shelf in a great revolving
+cage. The air in this cage is kept at about 85° F.; but this heat is
+nothing to what is to follow; and after the articles are thoroughly
+dry, they are placed in boxes of coarse fire-clay, which are called
+"saggers," piled up in a kiln, the doors are closed, and the fires are
+lighted. For a day and night, sometimes for two days and two nights,
+the fires burn. The heat goes up to 2000° or 2500° F. Every few hours
+test pieces, which were put in for this purpose, are taken out. When
+they are found to be sufficiently baked, the fire-holes are bricked up
+and the furnace is left for two days longer to cool. The ware is then
+called "biscuit."
+
+Biscuit is dull and porous. It is soon to be glazed, but first whatever
+underglaze decorating is desired may be done. Sometimes the decorations
+are painted by hand, and sometimes they are printed on thin paper, laid
+upon the ware, and rubbed softly till they stick fast. After a while
+the paper is pulled off, but the colors remain. Gold must be applied
+over the glaze, and the article fired a second time.
+
+After this decorating, the ware is generally passed to a man who
+stands before a tub of glaze, and dips in each article, though
+sometimes he stands before the pieces of ware and sprays them with an
+air brush. Many different kinds of glaze are used, made of ground
+flint, feldspar, white clay, and other substances. Common sea salt
+works exceedingly well, not in liquid form, but thrown directly into
+the fire. The chief thing to look out for in making a glaze is to see
+that the materials in it are so nearly like those in the ware that
+they will not contract unevenly and make little cracks. This glaze is
+dried in a hot room, then looked over by "trimmers," who scrape it off
+from such parts as the feet of cups and plates, so that they will not
+stick to the saggers in firing. Besides this, little props of burned
+clay are used to hold the dishes up and keep them from touching one
+another. These props have fanciful names, such as "spurs," "stilts,"
+"cockspurs," etc. Often you can see on the bottom of a plate the marks
+made by these supports.
+
+[Illustration: IN THE POTTERY
+
+Pieces of coarse pottery being delivered to the kiln for firing.]
+
+The articles now are sent to a kiln to be fired. When they come out
+there is another chance for decorating, for colors may be put on, and
+another firing will make them look like underglaze painting If the
+decorator wishes the ware to have the appearance of being ornamented
+with masses of gold, he can trace his design in yellow paste, fire it,
+cover it with gold, and fire it again. To make the "gilt-band china"
+so beloved by the good housewives of the last century, the decorator
+puts the plate upon a horizontal wheel, holds his brush full of gold
+against it, and turns the wheel slowly. Sometimes the outlines of a
+design are printed and the coloring put in by hand. When broad bands
+of color are desired to be put around a plate or other article, the
+decorator sometimes brushes on an adhesive oil where the color is to
+go, and paints the rest of the plate with some water-color and sugar;
+then when the oil is partly dry, he dusts on the color in the form of
+powder. A plunge into water will wash away the water-color and leave
+the oil with the powder sticking to it. Shaded groundwork is made with
+an atomizer. Indeed, there are almost as many methods of decorating
+wares of clay as there are persons who work at it. The results are
+what might be expected from the prices; some articles are so cheap and
+gaudy that any one will soon tire of them. Others are really artistic
+and will be a "joy forever"--until they break.
+
+
+
+
+VIII
+
+HOW THE WHEELS OF A WATCH GO AROUND
+
+
+If an electric automobile could be charged in fifteen seconds and then
+would run for forty hours without recharging, it would be looked upon
+as a great wonder; but to wind a watch in fifteen seconds and have it
+run for forty hours is so common that we forget what a wonder it is.
+When you wind your watch, you put some of the strength of your own
+right hand into it, and that is what makes it go. Every turn of the
+key or the stem winds up tighter and tighter a spring from one to two
+feet long, but so slender that it would take thousands to weigh a
+pound. This is the main spring. It is coiled up in a cup-shaped piece
+of metal called a "barrel"; and so your own energy is literally
+barreled up in your watch. The outer end of this spring is held fast
+by a hook on the inside of the barrel; the inner end is hooked to the
+hub of a wheel which is called the "main wheel," and around this hub
+the spring is coiled.
+
+This spring has three things to do. It must send the "short hand,"
+or hour hand, around the dial or face of the watch, once in twelve
+hours; it must send the "long hand," or minute hand, around once an
+hour; and it must also send the little "second hand" around its own
+tiny circle once a minute. To do this work requires four wheels. The
+first or main wheel is connected with the winding arrangements, and
+sets in motion the second, or center wheel, so called because it is
+usually in the center of the watch. This center wheel revolves once
+an hour and turns the minute hand. By a skillful arrangement of cogs
+it also moves the hour hand around the dial once in twelve hours. The
+center wheel moves the third wheel. The chief business of the third
+wheel is to make the fourth turn in the same direction as the center
+wheel. The fourth wheel revolves once a minute, and with it turns
+the tiny second hand.
+
+Suppose that a watch has been made with only the main spring, the four
+wheels, and the three hands, what would happen when it was wound? You
+can tell very easily by winding up a mechanical mouse or a train of
+cars or any other toy that goes by a spring. It will go fast at first,
+then more and more slowly, then it will stop. This sort of motion
+might do for a mouse, but it would not answer for a watch. A watch
+must move with steadiness and regularity. To bring this about, there
+is a fifth wheel. Its fifteen teeth are shaped like hooks, and it has
+seven accompaniments, the balance wheel, the hair spring, and five
+others. This wheel, together with its accompaniments, is able to stop
+the motion of the watch five times a second and start it again so
+quickly that we do not realize its having been stopped at all. A tiny
+arm holds the wheel firmly, and then lets it escape. Therefore, the
+fifth wheel and its accompaniments are called the "escapement." This
+catching and letting go is what makes the ticking.
+
+A watch made in this way would run very well until a hot day or a cold
+day came; then there would be trouble. Heat makes metals expand and
+makes springs less elastic. Therefore in a hot day the watch would go
+more slowly and so lose time; while in a cold day it would go too fast
+and would gain time. This fault is corrected by the balance, a wheel
+whose rim is not one circle, but two half-circles, and so cunningly
+made that the hotter this rim grows, the smaller its diameter becomes.
+In the rim of the wheel are tiny holes into which screws may be
+screwed. By adding screws or taking some away, or changing the
+position of some of them, the movement of the watch can be made to
+go faster or slower.
+
+All this would be difficult enough to manage if a watch was as large
+as a cart wheel, with wheels a foot in diameter; but it does seem a
+marvel how so many kinds of wheels and screws and springs, one hundred
+and fifty in all, can be put into a case sometimes not more than an
+inch in diameter, and can find room to work; and it is quite as much
+of a marvel how they can be manufactured and handled.
+
+Remembering how accurate every piece must be, it is no wonder that in
+Switzerland, where all this work used to be done by hand, a boy had to
+go to a "watch school" for fourteen years before he was considered
+able to make a really fine watch. He began at the beginning and was
+taught to make, first, wooden handles for his tools, then the tools
+themselves, such as files, screw drivers, etc. His next work was to
+make wooden watchcases as large as dinner-plates. After this, he was
+given the frame to which the various wheels of a watch are fastened
+and was taught how and where to drill the holes for wheels and screws.
+After lessons in making the finer tools to be used, he was allowed to
+make a watch frame. All this took several years, for he had to do the
+same work over and over until his teachers were satisfied with it.
+Then he was promoted to the second room. Here he learned to adjust the
+stem-winding parts, to do fine cutting and filing, and to make watches
+that would strike the hour and even the minute. Room three was called
+the "train room," because the wheels of a watch are spoken of as "the
+train." The model watch in this room was as large as a saucer. The
+young man had to study every detail of this, and also to learn the use
+of a delicate little machine doing such fine work that it could cut
+twenty-four hundred tiny cogs on one of the little wheels of a watch.
+In the fourth room he learned to make the escapement wheel and some
+other parts; and he had to make them, not merely passably, but
+excellently. In the fifth and last room, he must do the careful,
+patient work that makes a watch go perfectly. There are special little
+curves that must be given to the hair spring; and the screws on the
+balance wheel must be carefully adjusted. If the watch ran faster when
+it was lying down than when it was hanging up, he learned that certain
+ones of the bearings were too coarse and must be made finer. In
+short, he must be able to make a watch that, whether hanging up or
+lying down, and whether the weather was hot or cold, would not vary
+from correct time more than two and a half seconds a day at the most.
+Then, and not till then, was the student regarded as a first-class
+watchmaker.
+
+The graduate of such a school knew how to make a whole watch, but he
+usually limited his work to some one part. Every part of a watch was
+made expressly for that watch, but sometimes a hundred different
+persons worked on it. The very best of the Swiss watches were
+exceedingly good; the poorest were very bad, and much worse to own
+than a poor American watch because it costs more to repair a Swiss
+watch than an American watch.
+
+[Illustration: _Courtesy Waltham Watch Co._
+
+WHERE WATCHES ARE MADE
+
+Once a single man made a whole watch by hand. Now one watch may be
+the product of a hundred hands, each man doing his particular part.]
+
+Even though in America the parts of watches are made by machinery,
+an apprentice has to undergo just as careful and just as extended
+training here as in Switzerland. A poor watch is worse than none at
+all, and careless work would not be tolerated in any watch factory.
+Of late even Switzerland has been importing American machinery in order
+to compete with the United States. These machines do such careful,
+minute, intricate work that, as you stand and watch them, you feel
+as if they must know what they are about. One of them takes the
+frame,--that is, the plates to which the wheels are fastened,--makes
+it of the proper thinness, cuts the necessary holes in it, and passes
+it over to the next machine, which is reaching out for it. The feeder
+gives the first machine another plate; and so the work goes on down
+a whole line of machines. At length the plate is taken in hand by a
+machine, or rather a group of machines, which can do almost anything.
+Before they let it go, they actually perform one hundred and forty-two
+different operations, each bringing it nearer completion. These
+machines are automatic, but nevertheless they must be constantly
+watched by expert machinists to keep them in order and make sure of
+their turning out perfect work.
+
+While one line of machines has been perfecting the plate, others have
+been at work on screws and wheels and springs. As many of these as are
+needed for one watch are put into a little division of a tray and
+carried to another room for its jewels and the rest of its outfit.
+The jewels, which are pieces of rubies, sapphires, garnets, or even
+diamonds, are very valuable to a watch. When you know that the little
+wheels are in constant motion, and that the balance wheel, for
+instance, vibrates eighteen thousand times an hour, it is plain that
+a vast amount of wear comes upon the spot where the pivots of these
+wheels rest. No metal can be made smooth enough to prevent friction,
+and there is no metal hard enough to prevent wear. The "jewels" are
+smoother and harder. They are sawed into slabs so thin that fifty of
+them piled up would measure only an inch. These are stuck to blocks
+to be polished, cut into disks flat on one side but with a little
+depression on the other to receive oil, bored through the center,
+and placed wherever the wear is greatest--provided the purchaser is
+willing to pay for them. A "full-jeweled" watch contains twenty-three
+jewels; that is, in twenty-three of the places where the most severe
+wear comes, or where friction might prevent the watch from going with
+perfect smoothness, there will be practically no wear and no friction.
+A low-priced watch contains only seven jewels, but if you want a watch
+to last, it pays to buy one that is full-jeweled.
+
+And now these plates and wheels and screws are to be put together, or
+"assembled," as this work is called. This is a simple matter just as
+soon as one has learned where the different parts belong, for they are
+made by machinery and are sure to fit. After the assembling comes the
+adjusting of the balance wheel and the hair spring. There is nothing
+simple about this work, for the tiny screws with the large heads must
+be put into the rim of the balance wheel with the utmost care, or
+else all the other work will be useless, and the watch will not be
+a perfect time keeper; that is, one that neither loses nor gains more
+than thirty seconds a month.
+
+It is said that the earliest watches made in Europe cost fifteen
+hundred dollars and took a year to make. There has always been a
+demand for a cheap pocket timepiece, and of late this demand has been
+satisfied by the manufacture of the "dollar watch." Properly speaking,
+this is not a watch at all, but a small spring clock. It has no
+jewels, and its parts are stamped out of sheets of brass or steel by
+machinery. The hair springs are made in coils of eight and then
+broken apart; and the main springs are made by the mile. Twenty holes
+are drilled at a time, and the factory in which "dollar watches" were
+first manufactured is now able to turn out fifteen thousand a day.
+
+
+
+
+IX
+
+THE MAKING OF SHOES
+
+
+Did you ever stop to think how many different qualities you expect
+in a shoe? You want the sole to be hard and firm so as to protect
+your feet in rough walking; and also soft and yielding so as to
+feel springy and not board-like. You want the upper leather to
+keep the cold air from coming in; and also porous enough to let the
+perspiration out. Your feet are not exactly like those of any one
+else; and yet you expect to find at any shoe store a comfortable shoe
+ready-made. You expect that shoe to come close to your foot, and yet
+allow you to move it with perfect freedom. You expect all these good
+qualities, and what is more remarkable, it does not seem difficult for
+most people to get them. There is an old saying, "To him who wears
+shoes, the whole earth is covered with leather"; and although many
+different materials have been tried in shoemaking, leather is the only
+one that has proved satisfactory, for the sole of the shoe at least.
+Of late, however, rubber and rubber combinations and felts and felt
+combinations have been used.
+
+Most hides of which soles are made come from the large beef
+packing-houses or from South America. Goatskins come from Africa and
+India. The greater part of a hide is made up of a sort of gelatine.
+This easily spoils, and therefore it has to be "tanned"; that is,
+soaked in tannin and water. When a man set out to build a tannery, he
+used to go into the woods where he could be sure of enough oak trees
+to supply him for many years with the bark from which tannin is made;
+but it has been found that the bark of several other kinds of trees,
+such as larch, chestnut, spruce, pine, and hemlock, will tan as well
+as that of oak. Tannin is now prepared in the forest and brought to
+the tanners, who put their tanneries where they please, usually near
+some large city. The hides are first soaked in water, and every
+particle of flesh is scraped away. They are laid in heaps for a while,
+then hung in a warm room till the hair loosens and can be easily
+removed, then soaked in tannic extract and water. The tannin unites
+with the gelatine; and thus the hide becomes leather. This process
+requires several months. Hides are also tanned by the use of
+chemicals, in what is called "chrome" tanning. This process requires
+only a few hours, but it is expensive.
+
+In earlier times the shoemaker used to go from house to house with his
+lapstone, waxed end, awl, and other tools. The farmer provided the
+leather, which he had tanned from the hides of his own cattle. Now,
+however, manufacturers can buy the soles of one merchant, the heels of
+another, the box toe and stiffenings of another, and so on. In the
+United States there are many factories which do nothing but cut soles,
+or rather stamp them out with dies, a hundred or more in a minute.
+These soles and also the less heavy inner soles go through machines
+that make all parts of them of a uniform thickness. The traveling
+shoemaker always hammered his sole leather to make it wear better; but
+now a moment between very heavy rollers answers the same purpose.
+Another machine splits the inner sole for perhaps a quarter of an inch
+all the way around, and thus makes a little lip to which to sew the
+welt. A number of layers or "lifts" of leather are cemented together
+for the heel, and are put under heavy pressure.
+
+The upper parts of a shoe, the "uppers," as they are called, are the
+vamp or front of the shoe, the top, the tip, and (in a laced shoe)
+the tongue. Nearly all the upper leather that shows when a shoe is
+on is made from the hides of cattle, calves, goats, and sheep; but
+besides the parts that show there are stiffeners for the box toe
+and the counters to support the quarters over the heel; there are
+linings, and many other necessary "findings," forty-four parts in all
+in an ordinary shoe. Much experimenting and more thinking have gone
+into every one of these forty-four parts; and much remembering that
+shoes have harder wear than anything else in one's wardrobe. The
+cotton linings, for instance, must be woven in a special way in order
+to make them last and not "rub up" when they are wet with water or
+perspiration. They are bleached with the utmost care not to weaken
+them, and they are singed between red-hot copper plates to remove
+all the nap.
+
+Then, too, a good deal of metal is used in making a shoe, not only the
+ornamental buckles on dress shoes and the heavy, useful buckles on
+storm boots, but various pieces that help to make the shoe strong and
+enduring. There are nails, shanks to strengthen the arch of the shoe,
+metal shanks to the buttons, and eyelets. Not many years ago, eyelets
+soon wore brassy, and then the shoe looked old and cheap. They are now
+enameled, or the top of them is made of celluloid in a color to match
+the shoe. The tags on lacings and the hooks for holding lacings are
+also enameled. A "box-toe gum" is used to support the box-toe
+stiffening. Cement covers the stitches; and many sorts of blacking
+are used in finishing the work. It is by no means a simple operation
+to make a pair of shoes.
+
+At a busy shoe factory it is always "tag day," for when an order is
+received, the first step in filling it is to make out a tag or form
+stating how the shoe is to be made up and when it is to be finished.
+These records are preserved, and if a customer writes, "Send me 100
+pairs of shoes like those ordered October 10, 1910," the manufacturer
+has only to read the record in order to know exactly what is wanted.
+
+[Illustration: _Courtesy United Shoe Mchy. Co._
+
+THE GOODYEAR PULLING-OVER MACHINE
+
+This machine cost $1,500,000 and five years of experiment to perfect.
+It shapes the forepart of the upper of a shoe over a wooden last.]
+
+Next, the leather is selected, first grade or second grade, according
+to the price to be paid. The patterns for the uppers are now brought
+into play--and, by the way, it is no small matter to prepare the
+hundreds of patterns needed for a new line of shoes in all the
+different widths and sizes. In some factories the cutting is done by
+machinery; in others the "upper cutter" lays the leather on a block
+and cuts around the pattern with a small but very sharp knife. It
+needs skill and judgment to be a cutter; for a careless workman can
+easily waste the skins badly by not laying the patterns on to the best
+advantage. While this work is going on, the linings, trimmings, soles,
+and other parts are also being prepared, and all these many pieces now
+meet in the "stitching-room." At the first glance, it does not seem as
+if the right ones could ever come together, even though they are
+marked, and sometimes it does happen that a 4a vamp, for instance, is
+put with 5a quarters, and nobody knows the difference until the
+experienced eye of the foreman notices that something is wrong with
+the shoe. The uppers of the shoe are now stitched up, and after a
+careful inspection, they are sent on to the "lasting-room." The "last"
+of the earlier times was roughly whittled out, and it was the same for
+both feet; but the last of to-day is almost a work of art, so
+carefully is it made and polished. The shoe manufacturers jokingly
+declare that lasts must be changed three times a day in order to keep
+up with the fashions. Feet do not change in form, save when they have
+been distorted by badly shaped shoes; but in spite of this, people
+insist upon having their shoes long and narrow, or short and wide,
+with high heels or with low heels, with broad toes or with pointed
+toes, as the whim of the moment may be. It really is a big problem
+for the shoe manufacturers to suit people's fancies and yet give them
+some degree of comfort.
+
+While the uppers are being stitched, the soles and inner soles and
+counters have been made ready and brought to the lasting-room. The toe
+stiffeners and also the counters are now cemented into their places.
+The inner sole is tacked to the last, and the uppers are put in place
+and held there by a tack at the heel. This is done by machines; but
+their working is simple compared with that of the machine which now
+takes charge of the half-made shoe. This machine puts out sturdy
+little pincers which seize the edge of the uppers, pull it smoothly
+and evenly into place, and drive a tack far enough in to keep it from
+slipping. Now comes the welting. A welt is a narrow strip of leather
+which is sewed to the lower edge of the upper all the way around the
+shoe except at the heel. This brings the upper, the lip of the inner
+sole, and the welt together. The inside of the shoe is now smooth and
+even, but around the outside of the sole is the ridge made by the welt
+and the sewing, and within the ridge a depression that must be filled
+up. Tarred paper or cork in a sort of cement are used for this. The
+shank is fastened into its place and the welt made smooth and even.
+The outer sole is coated with rubber cement, put into position under
+heavy pressure to shape it exactly like the sole of the last, and then
+sewed to the welt. If it was not for the welt, the outer sole would
+have to be sewed directly to the inner sole. The nailing and pegging
+of the old-fashioned shoemaker are also reproduced by the modern
+machine.
+
+The shoe is still open at the heel; but now the heel parts of both
+sole and uppers are fastened together; the edges have been nicely
+trimmed, and next the heels are nailed to the shoe by another machine
+which does the work at a blow, leaving the nails standing out a little
+below the lowest lift. Another lift is forced upon these; and that
+is why the heel of a new shoe shows no signs of nails. The heel is
+trimmed, and then come the final sandpapering and blackening. The
+bottom of a new shoe has a peculiar soft, velvety appearance and
+feeling; and this is produced by rubbing it with fine emery paper
+fastened upon a little rubber pad. A stamping-machine marks the sole
+with the name of the manufacturer. Last of all, the shoe is put upon
+a treeing machine, where an iron foot stretches it into precisely
+the shape of the wooden last on which it was made.
+
+This is the method by which large numbers of shoes are made, but
+there are many details which differ. Laced shoes must have tongues
+as well as eyelets, while buttoned shoes must have buttons and
+buttonholes. "Turned" shoes have no inner sole, but uppers and
+outer sole are sewed together wrong side out and then turned. In
+shoemaking, as in all other business, if a manufacturer is to
+succeed, he must see that there is no waste. He has of course no
+use for a careless cutter, who would perhaps waste large pieces of
+leather; but even the tiniest scraps are of value for some purpose.
+They can be treated with chemicals, softened by boiling, and pressed
+into boards or other articles or made into floor coverings. At any
+rate, they must be used for something. No business is small enough
+or large enough to endure waste.
+
+
+
+
+X
+
+IN THE COTTON MILL
+
+
+If you ravel a bit of cotton cloth, you will find that it is made up
+of tiny threads, some going up and down, and others going from right
+to left. These threads are remarkably strong for their size. Look at
+one under a magnifying glass, in a brilliant light, and you will see
+that the little fibers of which it is made shine almost like glass.
+Examine it more closely, and you will see that it is twisted. Break
+it, and you will find that it does not break off sharp, but rather
+pulls apart, leaving many fibers standing out from both ends.
+
+Cotton comes to the factory tightly pressed in bales, and the work of
+the manufacturer is to make it into these little threads. The bales
+are big, weighing four or five hundred pounds apiece. They are
+generally somewhat ragged, for they are done up in coarse, heavy jute.
+The first glance at an opened cotton bale is a little discouraging,
+for it is not perfectly clean by any means. Bits of leaves and stems
+are mixed in with the cotton, and even some of the smaller seeds which
+have slipped through the gin. There is dust, and plenty of it, that
+the coarse burlap has not kept out. The first thing to do is to loosen
+the cotton and make it clean. Great armfuls are thrown into a machine
+called a "bale-breaker." Rollers with spikes, blunt so as not to
+injure the fiber, catch it up and tear the lumps to pieces, and
+"beaters" toss it into a light, foamy mass. Something else happens to
+the cotton while it is in the machine, for a current of air is passing
+through it all the while, and this blows out the dust and bits of
+rubbish. This current is controlled like the draft of a stove, and it
+is allowed to be just strong enough to draw the cotton away from the
+beater when it has become light and open, leaving the harder masses
+for more beating. When it comes out of the opener, it is in sheets or
+"laps" three or four feet wide and only half an inch thick. They are
+white and fleecy and almost cloudlike; and so thin that any sand or
+broken leaves still remaining will drop out of their own weight.
+
+In this work the manufacturer has been aiming, not only at cleaning
+the cotton and making it fluffy, but also at mixing it. There are many
+sorts of cotton, some of longer or finer or more curly or stronger
+fiber than others, some white and some tinged with color; but the
+cloth woven of cotton must be uniform; therefore all these kinds must
+be thoroughly mixed. Even the tossing and turning and beating that
+it has already received is not enough, and it has to go into a
+"scutcher," three or four laps at a time, one on top of another, to
+have still more beating and dusting. When it comes out, it is in a
+long roll or sheet, so even that any yard of it will weigh very nearly
+the same as any other yard. The fibers, however, are lying "every
+which way," and before they can be drawn out into thread, they must be
+made to lie parallel. This is brought about in part by carding. When
+people used to spin and weave in their own houses, they used "hand
+cards." These were somewhat like brushes for the hair, but instead of
+bristles they had wires shaped much as if wire hairpins had been bent
+twice and put through leather in such a way as to form hooks on one
+side of it. This leather was then nailed to a wooden back and a handle
+added. The carder took one card in each hand, and with the hooks
+pointing opposite ways brushed the cotton between them, thus making
+the fibers lie parallel. This is just what is done in a mill, only by
+machinery, of course. Instead of the little hand cards, there are
+great cylinders covered with what is called "card clothing"; that is,
+canvas bristling with the bent wires, six or seven hundred to the
+square inch. This takes the place of one card. The place of the other
+is filled by what are called "flats," or narrow bars of iron covered
+with card clothing. The cylinders move rapidly, the flats slowly, and
+the cotton passes between them. It comes out in a dainty white film
+not so very much heavier than a spider's web, and so beautifully white
+and shining that it does not seem as if the big, oily, noisy machines
+could ever have produced it. In a moment, however, it is gone
+somewhere into the depths of the machine. We have seen the last of the
+fleecy sheet, for the machinery narrows it and rounds it, and when it
+comes into sight again, it looks like a soft round cord about an inch
+thick, and is coiled up in cans nearly a yard high. This cord is
+called "sliver."
+
+[Illustration: IN A COTTON MILL
+
+The "sliver" coming through the machine, and the "roving" being
+twisted and wound on bobbins.]
+
+The sliver is not uniform; even now its fibers are not entirely
+parallel, and it is as weak as wet tissue paper. It now pays a visit
+to the "drawing-frame." Four or six slivers are put together and run
+through this frame. They go between four pairs of rollers, the first
+pair moving slowly, the others more rapidly. The slow pair hold the
+slivers back, while the fast one pull them on. The result is that
+when the sliver comes out from the rollers, its fibers are much
+straighter. This process is repeated several times; and at last when
+the final sliver comes out, although it looks almost the same as when
+it came from the carding-machine, its fibers are parallel. It is much
+more uniform, but it is very fragile, and still has to be handled
+with great care. It is not nearly strong enough to be twisted into
+thread; and before this can be done, it must pass through three other
+machines. The first, or "slubber," gives it a very slight twist, just
+enough to suggest what is coming later, and of course in doing this
+makes it smaller. The cotton changes its name at every operation, and
+now it is called "roving." It has taken one long step forward, for
+now it is not coiled up in cans, but is wound on "bobbins," or great
+spools. The second machine, the "intermediate speeder," twists it a
+very little more and winds it on fresh bobbins. It also puts two
+rovings together, so that if one happens to be thin in one place,
+there is a chance for it to be strengthened by a thicker place in
+the other. The third machine, the "fine speeder," simply makes a
+finer roving.
+
+All this work must be done merely to prepare the raw cotton to be
+twisted into the tiny threads that you see by raveling a piece of
+cotton cloth. Now comes the actual twisting. If you fasten one end
+of a very soft string and twist the other and wind it on a spool, you
+will get a spool of finer, stronger, and harder-twisted string than
+you had at first. This is exactly what the "ring-spinner" does.
+Imagine a bobbin full of roving standing on a frame. Down below it are
+some rolls between which the thread from the bobbin passes to a second
+bobbin which is fast on a spindle. Around this spindle is the
+"spinning-ring," a ring which is made to whirl around by an endless
+belt. This whirling twists the thread, and another part of the machine
+winds it upon the second bobbin. Hundreds of these ring-spinners and
+bobbins are on a single "spinning-frame" and accomplish a great deal
+in a very short time. The threads that are to be used for the "weft"
+or "filling" go directly into the shuttles of the weavers after being
+spun; but those which are to be used for "warp" are wound first on
+spools, then on beams to go into the loom.
+
+Little children weave together strips of paper, straws, and
+splints,--"over one, under one,"--and the weaving of plain cotton
+cloth is in principle nothing more than this. The first thing to do
+in weaving is to stretch out the warp evenly. This warp is simply
+many hundreds of tiny threads as long as the cloth is to be,
+sometimes forty or fifty yards. They must be stretched out side by
+side and close together. To make them regular, they are passed
+between the teeth of a sort of upright comb; then they are wound upon
+the loom beam, a horizontal beam at the back of the loom. Here they
+are as close together as they will be in the cloth. With a magnifying
+glass it is easy to count the threads of the warp in an inch of
+cloth. Some kinds of cloth have a hundred or even more to the inch.
+In order to make cloth, the weaver must manage in some way to lower
+every other one of these little threads and run his shuttle over
+them, as the children do the strips of paper in their paper weaving.
+Then he must lower the other set and run the shuttle over _them_.
+"Drawing in" makes this possible. After the threads leave the beam,
+they are drawn through the "harnesses." These are hanging frames, one
+in front of the other, filled with stiff, perpendicular threads or
+wires drawn tight, and with an eye in each thread. Through these eyes
+the threads of the warp are drawn, the odd ones through one, and the
+even through the other. Then, keeping the threads in the same order,
+they pass through the teeth of a "reed,"--that is, a hanging frame
+shaped like a great comb as long as the loom is wide; and last, they
+are fastened to the "front beam," which runs in front of the weaver's
+seat and on which the cloth is to be rolled when it has been woven.
+Each harness is connected with a treadle. The weaver puts his foot on
+the treadle of the odd threads and presses them down. Then he sends
+his shuttle, containing a bobbin full of thread, sliding across over
+the odd threads and under the even. He puts his foot on the treadle
+of the even threads and sends the shuttle back over the even and
+under the odd. At each trip of the shuttle, the heavy reed is drawn
+back toward the weaver to push the last thread of the woof or filling
+firmly into place.
+
+This is the way cloth is woven in the hand looms which used to be in
+every household. The power loom used in factories is, even in its
+simplest form, a complicated machine; but its principle is exactly the
+same. If colors are to be used, great care is needed in arranging warp
+and woof. If you ravel a piece of checked gingham, you will see that
+half the warp is white and half colored; and that in putting in the
+woof or filling, a certain number of the threads are white and an
+equal number are colored. If you look closely at the weaving of a
+tablecloth, you will see that the satin-like figures are woven by
+bringing the filling thread not "over one and under one," but often
+over two or three and under one. In drilling or any other twilled
+goods, several harnesses have to be used because the warp thread is
+not lowered directly in line with the one preceding, but diagonally.
+Such work as this used to require a vast amount of skill and patience;
+but the famous Jacquard machine will do it with ease, and will do more
+complicated weaving than any one ever dreamed of before its invention,
+for it will weave not only regular figures extending across the cloth,
+but can be made to introduce clusters of flowers, a figure, or a face
+wherever it is desired. By the aid of this, every little warp thread
+or cluster of threads can be lifted by its own hooked wire without
+interfering with any other thread. Cards of paper or thin metal are
+made for each pattern, leaving a hole wherever the hook is to slip
+through and lift up a thread. After the cards are once made, the work
+is as easy as plain weaving; but there must be a separate card for
+every thread of filling in the pattern, and sometimes a single design
+has required as many as thirty thousand pattern cards.
+
+The machines in a cotton mill are the result of experimenting, lasting
+through many years. They do not seem quite so "human" as those which
+help to carry on some parts of other manufactures; but they are
+wonderfully ingenious. For instance, the sliver is so light that it
+seems to have hardly any weight, but it balances a tiny support. If
+the sliver breaks, the support falls, and this stops the machine.
+Again, if one of the threads of the warp breaks when it is being wound
+on the beam, a slender bent wire that has been hung on it falls. It
+drops between two rollers and stops them. Then the workman knows that
+something is wrong, and a glance will show where attention is needed.
+Success in a cotton mill demands constant attention to details. A mill
+manager who has been very successful has given to those of less
+experience some wise directions about running a mill. For one thing,
+he reminds them that building is expensive and that floor space
+counts. If by rearranging looms space can be made for more spindles,
+it is well worth while to rearrange. He tells them to study their
+machines and see whether they are working so slowly that they cannot
+do as much as possible, or so fast as to strain the work. He bids them
+to keep their gearings clean, to be clear and definite in their
+orders, and to read the trade papers; but above everything else to
+look out for the little things, a little leak in the mill dam, a
+little too much tightness in a belt, or the idleness of just one
+spindle. Herein lies, he says, one of the great differences between
+a successful and an unsuccessful superintendent.
+
+Weaving as practiced in factories is a complicated business; but
+whether it is done with a simple hand loom in a cottage or with a big
+power loom in a great factory, there are always three movements. One
+separates the warp threads; one drives the shuttle between them; and
+one swings the reed against the filling thread just put in.
+
+
+
+
+XI
+
+SILKWORMS AND THEIR WORK
+
+
+About silk there is something particularly agreeable. There are few
+people who do not like the sheen of a soft silk, the sparkle of light
+on a "taffeta," and the richness of the silk that "can stand alone."
+Its delicate rustle is charming, and the "feel" of it is a delight.
+It has not the chill of linen, the deadness of cotton, or the
+"scratchiness" of woolen. It pleases the eye, the ear, and the touch.
+
+The caterpillars of a few butterflies and of many moths are spinners
+of fibers similar to silk. Among these last is the beautiful
+pale-green lunar moth. Spiders spin a lustrous fiber, and it is said
+that a lover of spiders succeeded, by a good deal of petting and
+attention, in getting considerable material from a company of them.
+Silkworms, however, are the only providers of real silk for the world.
+Once in a while glowing accounts are published of the ease with which
+they can be raised and the amount of money which can be made from them
+with very small capital. This business, however, like all other kinds
+of business, requires close attention and skill if it is to be a
+success. An expert has said that it needs more time to build a spool
+of silk than a locomotive.
+
+The way to begin to raise silkworms is first of all to provide
+something for them to eat. They are very particular about their bill
+of fare. The leaf of the osage orange will answer, but they like much
+better the leaf of the white mulberry. Then send to a reliable dealer
+for a quarter of an ounce of silkworm eggs. That sounds like a small
+order, but it will bring you nine or ten thousand eggs, ready to
+become sturdy little silkworms if all goes well with them. Put them on
+a table with a top of wire netting covered with brown paper, and keep
+them comfortably warm. In a week or two, there will appear some little
+worms about an eighth of an inch long and covered with black hairs.
+These tiny worms have to become three inches or more in length, and
+they are expected to accomplish the feat in about a month. If a boy
+four feet tall should grow at the silkworm's rate for one month, he
+would become forty-eight feet tall. It is no wonder that the worms
+have to make a business of eating, or that the keeper has to make a
+business of providing them with food. They eat most of the time, and
+they make a queer little crackling sound while they are about it. They
+have from four to eight meals a day of mulberry leaves. The worms from
+a quarter of an ounce of eggs begin with one pound a day, and work up
+to between forty and fifty. Silkworms like plenty of fresh air, and if
+they are to thrive, their table must be kept clean. A good way to
+manage this is to put over them paper full of holes large enough for
+them to climb through. Lay the leaves upon the paper; the worms will
+come up through the holes to eat, and the litter on their table can
+be cleared away. As the worms grow larger, the holes must be made
+larger. It is no wonder that their skins soon become too tight for
+them. They actually lose their appetite for a day or two, and they
+slip away to some quiet corner under the leaves, and plainly wish
+there were no other worms to bother them. Soon the skin comes off,
+and they make up for lost time so energetically that they have to drop
+their tight skins three times more before they are fully grown. Wet
+mulberry leaves must not be given them, or they will become sick and
+die, and there will be an end of the silkworm business from that
+quarter-ounce of eggs. They must have plenty of room on their table as
+well as in their skins. At first a tray or table two feet long and a
+little more than one foot wide will be large enough; but when they are
+full-grown, they will need about eighty square feet of table or
+shelves. At spinning time, even this will not be enough.
+
+After the worms have shed their skins four times and then eaten as
+much as they possibly can for eight or ten days, they begin to feel
+as if they had had enough. They now eat very little and really become
+smaller. They are restless and wander about. Now and then they throw
+out threads of silk as fine as a spider's web. They know exactly what
+they want; each little worm wants to make a cocoon, and all they ask
+of you is to give them the right sort of place to make it in. When
+they live out of doors in freedom, they fasten their cocoons to twigs;
+and if you wish to give them what they like best, get plenty of dry
+twigs and weave them together in arches standing over the shelves.
+Pretty soon you will see one worm after another climb up the twigs and
+select a place for its cocoon. Before long it throws out threads from
+its spinneret, a tiny opening near the mouth, and makes a kind of net
+to support the cocoon which it is about to weave.
+
+The silkworm may have seemed greedy, but he did not eat one leaf too
+much for the task that lies before him. There is nothing lazy about
+him; and now he works with all his might, making his cocoon. He begins
+at the outside and shapes it like a particularly plump peanut of a
+clear, pale yellow. The silk is stiffened with a sort of gum as it
+comes out of the spinneret. The busy little worm works away, laying
+its threads in place in the form of a figure eight. For some time the
+cocoon is so thin that one can watch him. It is calculated that his
+tiny head makes sixty-nine movements every minute.
+
+The covering grows thicker and the room for the silkworm grows
+smaller. After about seventy-two hours, put your ear to the cocoon,
+and if all is quiet within, it is completed and the worm is shut up
+within it. Strange things happen to him while he sleeps in the quiet
+of his silken bed, for he becomes a dry brown chrysalis without head
+or feet. Then other things even more marvelous come to pass, for in
+about three weeks the little creature pushes the threads apart at one
+end of the cocoon and comes out, not a silkworm at all, but a moth
+with head and wings and legs and eyes. This moth lays hundreds of
+eggs, and in less than three weeks it dies.
+
+This is what the silkworm will do if it is left alone; but it is the
+business of the silk-raiser to see that it is not left alone. About
+eight days after the cocoon is begun, it is steamed or baked to kill
+the chrysalis so that it cannot make its way out and so spoil the
+silk. The quarter of an ounce of eggs will make about thirty pounds
+of cocoons. Now is the time to be specially watchful, for there is
+nothing in which rats and mice so delight as a plump, sweet chrysalis;
+and they care nothing whatever for the three or four thousand yards of
+silk that is wound about each one.
+
+To take this silk off is a delicate piece of work. A single fiber is
+not much larger than the thread of a cobweb, and before the silk can
+be used, several threads must be united in one. First, the cocoon is
+soaked in warm water to loosen the gum that the worm used to stick its
+threads together. Ends of silk from half a dozen or more cocoons are
+brought together, run through a little hole in a guide, and wound on a
+reel as one thread. This needs skill and practice, for the reeled silk
+must be kept of the same size. The cocoon thread is so slender that,
+of course, it breaks very easily; and when this happens, another
+thread must be pieced on. Then, too, the inner silk of the cocoon is
+finer than the outer; so unless care is taken to add threads, the
+reeled silk will be irregular. The water must also be kept just warm
+enough to soften the gum, but not too hot.
+
+The silk is taken off the reel, and the skeins are packed up in bales
+as if it were of no more value than cotton. Indeed, it does not look
+nearly so pretty and attractive as a lap of pure white cotton, for it
+is stiff and gummy and has hardly any luster. Now it is sent to the
+manufacturer. It is soaked in hot soapy water for several hours, and
+it is drawn between plates so close together that, while they allow
+the silk to go through, they will not permit the least bit of
+roughness or dirt to pass. If the thread breaks, a tiny "faller," such
+as are used in cotton mills, falls down and stops the machine. The
+silk must now be twisted, subjected to two or three processes to
+increase its luster, and dyed,--and if you would like to feel as if
+you were paying a visit to a rainbow, go into a mill and watch the
+looms with their smooth, brilliant silks of all the colors that can
+be imagined. After the silk is woven, it is polished on lustering
+machines, singed to destroy all bits of free fibers or lint, freed of
+all threads that may project, and scoured if it is of a light color;
+then sold.
+
+[Illustration: _Courtesy Cheney Bros._
+
+HOW SPUN SILK IS MADE
+
+Every manufacturer saves everything he can, and even the waste silk
+which cannot be wound on reels is turned into a salable product]
+
+The moth whose cocoon provides most of our silk is called the "bombyx
+mori." There are others, however, and from some of these tussah silk,
+Yamamai, and Shantung pongee are woven. These wild moths produce a
+stronger thread, but it is much less smooth than that of the bombyx.
+
+There is also a great amount of "wood silk," or artificial silk, on
+the market. To make this, wood pulp is dissolved in ether and squirted
+through fine jets into water. It is soon hard enough to be twisted
+into threads and woven. It makes an imitation of silk, bright and
+lustrous, but not wearing so well as the silk of the silkworm.
+Nevertheless, for many purposes it is used as a substitute for silk,
+and many braids and passementeries are made of it. Then, too, there
+are the "mercerized" goods, which often closely resemble real silk,
+although there is not a thread of silk in them. It was discovered many
+years ago that if a piece of cotton cloth was boiled in caustic soda,
+it would become soft and thick and better able to receive delicate
+dyes. Unfortunately, it also shrank badly. At length it occurred to
+some one that the cloth might be kept from shrinking by being
+stretched out during the boiling in soda. He was delighted to find
+that this process made it more brilliant than many silks.
+
+The threads that fasten the cocoon to the bush and those in the heart
+of the cocoon are often used, together with the fiber from any cocoons
+through which the worms have made their way out. This is real silk, of
+course, but it is made of short fibers which cannot be wound. It is
+carded and spun and made into fabric called "spun silk," which is used
+extensively for the heavier classes of goods. Then, too, silks are
+often "weighted"; that is, just before they are dyed, salts of iron or
+tin are added. One pound of silk will absorb two or three pounds of
+these chemicals, and will apparently be a heavy silk, while it is
+really thin and poor. Moreover, this metallic weighting rubs against
+the silk fiber and mysterious holes soon begin to appear. A wise "dry
+cleaner" will have nothing to do with such silks, lest he should be
+held responsible for these holes. It is this weighting which produces
+the peculiar rustle of taffeta; and if women would be satisfied with
+a taffeta that was soft and thin, the manufacturers would gladly leave
+out the salts of iron, and the silks would wear much better. Cotton
+is seldom mixed with the silk warp thread; but it is used as "filling"
+in a large class of goods with silk warp. The custom has arisen of
+advertising such goods as "silk," which of course is not a fair
+description of them. Advertisements sometimes give notice of amazing
+sales of "Shantung pongee," which has been made in American looms and
+is a very different article from the imported "wild silk" pongee.
+
+With so many shams in the market, how is a woman to know what she is
+buying and whether it will wear? There are a few simple tests that are
+helpful. Ravel a piece of silk and examine the warp and woof. If they
+are of nearly the same size, the silk is not so likely to split. See
+how strong the thread is. Burn a thread. If it burns with a little
+flame, it is cotton. If it curls up and smells like burning wool, it
+is probably silk. Another test by fire is to burn a piece of the
+goods. If it is silk, it will curl up; if it is heavily weighted, it
+will keep its shape. If you boil a sample in caustic potash, all the
+silk in it will dissolve, but the cotton will remain. If the whole
+sample disappears, you may be sure that it was all silk. Soft, finely
+woven silks are safest because they will not hold so much weighting.
+Crêpe de chine is made of a hard twisted thread and therefore wears
+well. Taffeta can carry a large amount of weighting, and is always
+doubtful; it may wear well, and it may not. There is always a reason
+for a bargain sale of silks. The store may wish to clear out a
+collection of remnants or to get rid of a line of goods which are no
+longer to be carried; but aside from this, there is usually some
+defect in the goods themselves or else they have failed to please the
+fashionable whim of the moment. Silk is always silk, and if you want
+it, you must pay for it.
+
+
+
+
+Transcriber's Note
+
+Some illustrations have been moved from their original locations
+to paragraph breaks, so as to be nearer to their corresponding text,
+or for ease of document navigation.
+
+
+
+
+
+End of Project Gutenberg's Makers of Many Things, by Eva March Tappan
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK MAKERS OF MANY THINGS ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

@@ -1,0 +1,1863 @@
+﻿The Project Gutenberg eBook of Experiments upon magnesia alba, Quicklime, and some other Alcaline Substances
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Experiments upon magnesia alba, Quicklime, and some other Alcaline Substances
+
+Author: Joseph Black
+
+Release date: February 13, 2008 [eBook #24591]
+                Most recently updated: January 3, 2021
+
+Language: English
+
+Credits: Produced by Bryan Ness, Greg Bergquist, Jamie Atiga and
+        the Online Distributed Proofreading Team at
+        https://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK EXPERIMENTS UPON MAGNESIA ALBA, QUICKLIME, AND SOME OTHER ALCALINE SUBSTANCES ***
+
+
+
+
+Produced by Bryan Ness, Greg Bergquist, Jamie Atiga and
+the Online Distributed Proofreading Team at
+https://www.pgdp.net
+
+
+
+
+
+
+
+
+
+Alembic Club Reprints--No. 1.
+
+EXPERIMENTS
+
+UPON
+
+MAGNESIA ALBA,
+
+QUICKLIME,
+
+AND SOME OTHER
+
+ALCALINE SUBSTANCES.
+
+
+BY JOSEPH BLACK, M.D.,
+_Professor of Chemistry in the University of Edinburgh, 1766-1797_.
+
+(1755.)
+
+
+Edinburgh:
+PUBLISHED BY THE ALEMBIC CLUB.
+
+_Edinburgh Agent:_
+WILLIAM F. CLAY, 18 TEVIOT PLACE.
+
+_London Agents:_
+SIMPKIN, MARSHALL, HAMILTON, KENT, & CO. LTD.
+
+1898.
+
+[Illustration: Insignia]
+
+
+
+
+PREFACE.
+
+
+Black's Paper entitled "Experiments upon Magnesia Alba, Quicklime, and
+some other Alcaline Substances" was read in June 1755, and was first
+published in "Essays and Observations, Physical and Literary. Read
+before a Society in Edinburgh, and Published by them," Volume II.,
+Edinburgh, 1756; pp. 157-225. It was subsequently reprinted several
+times during the life of the author, not only in later editions of these
+Essays, but also in a separate form. Copies of the original Paper are
+now very difficult to obtain, and the later reprints have also become
+scarce.
+
+The present reprint is a faithful copy of the Paper as it first appeared
+in 1756, the spelling, &c., of the original having been carefully
+reproduced.
+
+The Paper constitutes a highly important step in the laying of the
+foundations of chemistry as an exact science, and furnishes a model of
+carefully planned experimental investigation, and of clear reasoning
+upon the results of experiment. It is neither so widely read by the
+younger chemists nor is it so readily accessible as it ought to be, and
+the object of the Alembic Club in issuing it as the first volume of a
+series of Reprints of historically important contributions to Chemistry,
+is to place it within easy reach of every student of Chemistry and of
+the History of Chemistry.
+
+The student's attention may be particularly called to Black's tacit
+adoption of the quantitative method in a large number of his
+experiments, and to the way in which he bases many of his conclusions
+upon the results obtained in these experiments. Even yet it is very
+frequently stated that the introduction of the quantitative method into
+Chemistry (which did not by any means originate with Black) took place
+at a considerably later date.
+
+L. D.
+
+
+
+
+EXPERIMENTS
+
+UPON
+
+MAGNESIA ALBA, QUICKLIME,
+
+AND SOME OTHER
+
+ALCALINE SUBSTANCES;
+
+BY JOSEPH BLACK, M.D.[1]
+
+PART I.
+
+
+Hoffman, in one of his observations, gives the history of a powder
+called _magnesia alba_, which had long been used and esteemed as a mild
+and tasteless purgative; but the method of preparing it was not
+generally known before he made it public.[2]
+
+It was originally obtained from a liquor called the _mother of nitre_,
+which is produced in the following manner:
+
+Salt-petre is separated from the brine which first affords it, or from
+the water with which it is washed out of nitrous earths, by the process
+commonly used in crystallizing salts. In this process the brine is
+gradually diminished, and at length reduced to a small quantity of an
+unctuous bitter saline liquor, affording no more salt-petre by
+evaporation; but, if urged with a brisk fire, drying up into a confused
+mass which attracts water strongly, and becomes fluid again when exposed
+to the open air.
+
+To this liquor the workmen have given the name of the _mother of
+nitre_; and _Hoffman_, finding it composed of the _magnesia_ united to
+an acid, obtained a separation of these, either by exposing the compound
+to a strong fire in which the acid was dissipated and the _magnesia_
+remained behind, or by the addition of an alkali which attracted the
+acid to itself: and this last method he recommends as the best. He
+likewise makes an inquiry into the nature and virtues of the powder thus
+prepared; and observes, that it is an absorbent earth which joins
+readily with all acids, and must necessarily destroy any acidity it
+meets in the stomach; but that its purgative power is uncertain, for
+sometimes it has not the least effect of that kind. As it is a mere
+insipid earth, he rationally concludes it to be purgative only when
+converted into a sort of neutral salt by an acid in the stomach, and
+that its effect is therefore proportional to the quantity of this acid.
+
+Altho' _magnesia_ appears from this history of it to be a very innocent
+medicine, yet having observed, that some hypochondriacs who used it
+frequently, were subject to flatulencies and spasms, he seems to have
+suspected it of some noxious quality. The circumstances however which
+gave rise to his suspicion, may very possibly have proceeded from the
+imprudence of his patients, who, trusting too much to _magnesia_, (which
+is properly a palliative in that disease,) and neglecting the assistance
+of other remedies, allowed their disorder to increase upon them. It may
+indeed be alledged, that _magnesia_, as a purgative, is not the most
+eligible medicine for such constitutions, as they agree best with those
+that strengthen, stimulate and warm; which the saline purges commonly
+used are not observed to do. But there seems at least to be no objection
+to its use when children are troubled with an acid in their stomach; for
+gentle purging in this case is very proper, and it is often more
+conveniently procured by means of _magnesia_ than of any other medicine,
+on account of its being intirely insipid.
+
+The above-mentioned Author observing, some time after, that a bitter
+saline liquor, similar to that obtained from the brine of salt-petre,
+was likewise produced by the evaporation of those waters which contain
+common salt, had the curiosity to try if this would also yield a
+_magnesia_. The experiment succeeded: and he thus found out another
+process for obtaining this powder, and at the same time assured himself
+by experiments, that the product from both was exactly the same.[3]
+
+My curiosity led me some time ago to inquire more particularly into the
+nature of _magnesia_, and especially to compare its properties with
+those of the other absorbent earths, of which there plainly appeared to
+me to be very different kinds, altho' commonly confounded together under
+one name. I was indeed led to this examination of the absorbent earths,
+partly by the hope of discovering a new sort of lime and lime-water,
+which might possibly be a more powerful solvent of the stone than that
+commonly used; but was disappointed in my expectations.
+
+I have had no opportunity of seeing _Hoffman's_ first _magnesia_ or the
+liquor from which it is prepared, and have therefore been obliged to
+make my experiments upon the second.
+
+In order to prepare it, I at first employed the bitter saline liquor
+called _bittern_, which remains in the pans after the evaporation of sea
+water. But as that liquor is not always easily procured, I afterwards
+made use of a salt called _epsom-salt_, which is separated from the
+bittern by crystallization, and is evidently composed of _magnesia_ and
+the vitriolic acid.
+
+There is likewise a spurious kind of Glauber salt, which yields plenty
+of _magnesia_, and seems to be no other than the epsom salt of sea water
+reduced to crystals of a larger size. And common salt also affords a
+small quantity of this powder; because being separated from the bittern
+by one hasty crystallization only, it necessarily contains a portion of
+that liquor.
+
+Those who would prepare a _magnesia_ from epsom-salt, may use the
+following process.
+
+Dissolve equal quantities of epsom-salt, and of pearl ashes separately
+in a sufficient quantity of water; purify each solution from its dregs,
+and mix them accurately together by violent agitation: then make them
+just to boil over a brisk fire.
+
+Add now to the mixture three or four times its quantity of hot water;
+after a little agitation, allow the _magnesia_ to settle to the bottom,
+and decant off as much of the water as possible. Pour on the same
+quantity of cold water; and, after settling, decant it off in the same
+manner. Repeat this washing with the cold water ten or twelve times: or
+even oftner, if the _magnesia_ be required perfectly pure for chemical
+experiments.
+
+When it is sufficiently washed, the water may be strained and squeezed
+from it in a linen cloth; for very little of the _magnesia_ passes
+thro'.
+
+The alkali in the mixture uniting with the acid, separates it from the
+_magnesia_; which not being of itself soluble in water, must
+consequently appear immediately under a solid form. But the powder which
+thus appears is not intirely _magnesia_; part of it is the neutral salt,
+formed from the union of the acid and alkali. This neutral salt is
+found, upon examination, to agree in all respects with vitriolated
+tartar, and requires a large quantity of hot water to dissolve it. As
+much of it is therefore dissolved as the water can take up; the rest is
+dispersed thro' the mixture in the form of a powder. Hence the necessity
+of washing the _magnesia_ with so much trouble; for the first affusion
+of hot water is intended to dissolve the whole of the salt, and the
+subsequent additions of cold water to wash away this solution.
+
+The caution given of boiling the mixture is not unnecessary; if it be
+neglected, the whole of the _magnesia_ is not accurately separated at
+once; and by allowing it to rest for some time, that powder concretes
+into minute grains, which, when viewed with the microscope, appear to be
+assemblages of needles diverging from a point. This happens more
+especially when the solutions of the epsom-salt and of the alkali are
+diluted with too much water before they are mixed together. Thus, if a
+dram of epsom-salt and of salt of tartar be dissolved each in four
+ounces of water, and be mixed, and then allowed to rest three or four
+days, the whole of the _magnesia_ will be formed into these grains. Or
+if we filtrate the mixture soon after it is made, and heat the clear
+liquor which passes thro'; it will become turbid, and deposite a
+_magnesia_.
+
+I had the curiosity to satisfy myself of the purgative power of
+_magnesia_, and of _Hoffman's_ opinion concerning it, by the following
+easy experiment. I made a neutral salt of _magnesia_ and distilled
+vinegar; choosing this acid as being, like that in weak stomachs, the
+product of fermentation. Six drams of this I dissolved in water, and
+gave to a middle-aged man, desiring him to take it by degrees. After
+having taken about a third, he desisted, and purged four times in an
+easy and gentle manner. A woman of a strong constitution got the
+remainder as a brisk purgative, and it operated ten times without
+causing any uneasiness. The taste of this salt is not disagreeable, and
+it appears to be rather of the cooling than of the acrid kind.
+
+Having thus given a short sketch of the history and medical virtues of
+_magnesia_, I now proceed to an account of its chemical properties. By
+my first experiments, I intended to learn what sort of neutral salts
+might be obtained by joining it to each of the vulgar acids; and the
+result was as follows.
+
+Magnesia is quickly dissolved with violent effervescence, or explosion
+of air, by the acids of vitriol, nitre, and of common salt, and by
+distilled vinegar; the neutral saline liquors thence produced having
+each their peculiar properties.
+
+That which is made with the vitriolic acid, may be condensed into
+crystals similar in all respects to epsom-salt.
+
+That which is made with the nitrous is of a yellow colour, and yields
+saline crystals, which retain their form in a very dry air, but melt in
+a moist one.
+
+That which is produced by means of spirit of salt, yields no crystals;
+and if evaporated to dryness, soon melts again when exposed to the air.
+
+That which is obtained from the union of distilled vinegar with
+_magnesia_, affords no crystals by evaporation, but is condensed into a
+saline mass, which, while warm, is extremely tough and viscid, very much
+resembling a strong glue both in colour and consistence, and becomes
+brittle when cold.
+
+By these experiments _magnesia_ appears to be a substance very different
+from those of the calcarious class; under which I would be understood to
+comprehend all those that are converted into a perfect quick-lime in a
+strong fire, such as _lime-stone_, _marble_, _chalk_, those _spars_ and
+_marles_ which effervesce with aqua fortis, all _animal shells_ and the
+bodies called _lithophyta_. All of these, by being joined with acids,
+yield a set of compounds which are very different from those we have
+just now described. Thus, if a small quantity of any calcarious matter
+be reduced to a fine powder and thrown into spirit of vitriol, it is
+attacked by this acid with a brisk effervescence; but little or no
+dissolution ensues. It absorbs the acid, and remains united with it in
+the form of a white powder, at the bottom of the vessel, while the
+liquor has hardly any taste, and shews only a very light cloud upon the
+addition of alkali.[4]
+
+The same white powder is also formed when spirit of vitriol is added to
+a calcarious earth dissolved in any other acid; the vitriolic expelling
+the other acid, and joining itself to the earth by a stronger
+attraction; and upon this account the _magnesia_ of sea-water seems to
+be different from either of those described by _Hoffman_. He says
+expressly, that the solutions of each of his powders, or, what is
+equivalent, that the liquors from which they are obtained, formed a
+coagulum, and deposited a white powder, when he added the vitriolic
+acid;[5] which experiment I have often tried with the marine bittern,
+but without success. The coagulum thus formed in the mother of nitre may
+be owing to a quantity of quick-lime contained in it; for quick-lime is
+used in extracting the salt-petre from its matrix. But it is more
+difficult to account for the difference between _Hoffman's_ bittern and
+ours, unless we will be satisfied to refer it to this, that he got his
+from the waters of salt springs, which may possibly be different from
+those of the sea.
+
+Magnesia is not less remarkably distinguished from the calcarious
+earths, by joining it to the nitrous and vegetable acids, than to the
+vitriolic. Those earths, when combined with spirit of nitre, cannot be
+reduced to a crystalline form, and if they are dissolved in distilled
+vinegar, the mixture spontaneously dries up into a friable salt.
+
+Having thus found _magnesia_ to differ from the common alkaline earths,
+the object of my next inquiry was its peculiar degree of attraction for
+acids, or what was the place due to it in Mr. _Geoffroy's_ table of
+elective attractions.
+
+Three drams of _magnesia_ in fine powder, an ounce of salt ammoniac, and
+six ounces of water were mixed together, and digested six days in a
+retort joined to a receiver.
+
+During the whole time, the neck of the retort was pointed a little
+upwards, and the most watery part of the vapour, which was condensed
+there, fell back into its body. In the beginning of the experiment, a
+volatile salt was therefore collected in a dry form in the receiver, and
+afterwards dissolved into spirit.
+
+When all was cool, I found in the retort a saline liquor, some
+undissolved _magnesia_, and some salt ammoniac crystallized. The saline
+liquor was separated from the other two, and then mixed with the
+alkaline spirit. A coagulum was immediately formed, and a _magnesia_
+precipitated from the mixture.
+
+The _magnesia_ which had remained in the retort, when well washed and
+dried, weighed two scruples and fifteen grains.
+
+We learn by the latter part of this experiment, that the attraction of
+the volatile alkali for acids is stronger than that of _magnesia_, since
+it separated this powder from the acid to which it was joined. But it
+also appears, that a gentle heat is capable of overcoming this
+superiority of attraction, and of gradually elevating the alkali, while
+it leaves the less volatile acid with the _magnesia_.
+
+Dissolve a dram of any calcarious substance in the acid of nitre or of
+common salt, taking care that the solution be rendered perfectly
+neutral, or that no superfluous acid be added. Mix with this solution a
+dram of _magnesia_ in fine powder, and digest it in the heat of boiling
+water about twenty four hours; then dilute the mixture with double its
+quantity of water, and filtrate. The greatest part of the earth now left
+in the filtre is calcarious, and the liquor which passed thro', if mixed
+with a dissolved alkali, yields a white powder, the largest portion of
+which is a true _magnesia_.
+
+From this experiment it appears, that an acid quits a calcarious earth
+to join itself to _magnesia_; but the exchange being performed slowly,
+some of the _magnesia_ is still undissolved, and part of the calcarious
+earth remains yet joined to the acid.
+
+When a small quantity of _magnesia_ is thrown into a solution of the
+corrosive sublimate of mercury, it soon separates part of the mercury in
+the form of a dark red powder, and is itself dissolved.
+
+Imagining that I perceived some resemblance between the properties of
+_magnesia_ and those of alkalis, I was led to try what change this
+substance would suffer from the addition of quick-lime, which alters in
+such a peculiar manner the alkaline salts.
+
+Twenty seven grains of _magnesia_ in fine powder were mixed with
+eighteen ounces of lime-water in a flask, which was corked close and
+shaken frequently for four days. During this time, I frequently dipp'd
+into it little bits of paper, which were coloured with the juice of
+violets; and these became green as soon as they touched the water, until
+the fourth day, when their colour did not seem to be altered. The water
+being now poured off, was intirely insipid, and agreed in every
+chemical trial with pure water. The powder, after being perfectly well
+dried, weighed thirty seven grains. It did not dissolve intirely in
+spirit of vitriol; but, after a brisk effervescence, part of it subsided
+in the same manner as the calcarious earths, when mixed with this acid.
+
+When I first tried this experiment, I was at the trouble of digesting
+the mixture in the heat of boiling water, and did not then know that it
+would succeed in the heat of the air. But Dr. _Alston_, who has obliged
+the world with many curious and useful discoveries on the subject of
+quick-lime, having had occasion to repeat it, I learned from him that
+heat is not necessary; and he has moreover added an useful purpose to
+which this property of _magnesia_ may be applied; I mean the sweetening
+of water at sea, with which lime may have been mixed to prevent its
+putrefaction.
+
+That part of the dried powder which does not dissolve in spirit of
+vitriol, consists of the lime separated from the water.
+
+Quick-lime itself is also rendered mild by _magnesia_, if these two are
+well rubbed together and infused with a small quantity of water.
+
+By the following experiments, I proposed to know whether this substance
+could be reduced to a quick-lime.
+
+An ounce of _magnesia_ was exposed in a crucible for about an hour to
+such a heat as is sufficient to melt copper. When taken out, it weighed
+three drams and one scruple, or had lost 7/12 of its former weight.
+
+I repeated, with the _magnesia_ prepared in this manner, most of those
+experiments I had already made upon it before calcination, and the
+result was as follows.
+
+It dissolves in all the acids, and with these composes salts exactly
+similar to those described in the first set of experiments: but what is
+particularly to be remarked, it is dissolved without any the least
+degree of effervescence.
+
+It slowly precipitates the corrosive sublimate of mercury in the form of
+a black powder.
+
+It separates the volatile alkali in salt ammoniac from the acid, when it
+is mixed with a warm solution of that salt. But it does not separate an
+acid from a calcarious earth, nor does it induce the least change upon
+lime-water.
+
+Lastly, when a dram of it is digested with an ounce of water in a bottle
+for some hours, it does not make any the least change in the water. The
+_magnesia_, when dried, is found to have gained ten grains; but it
+neither effervesces with acids, nor does it sensibly affect lime-water.
+
+Observing _magnesia_ to lose such a remarkable proportion of its weight
+in the fire, my next attempts were directed to the investigation of this
+volatile part, and, among other experiments, the following seemed to
+throw some light upon it.
+
+Three ounces of _magnesia_ were distilled in a glass retort and
+receiver, the fire being gradually increased until the _magnesia_ was
+obscurely red hot. When all was cool, I found only five drams of a
+whitish water in the receiver, which had a faint smell of the spirit of
+hartshorn, gave a green colour to the juice of violets, and rendered the
+solutions of corrosive sublimate and of silver very slightly turbid. But
+it did not sensibly effervesce with acids.
+
+The _magnesia_, when taken out of the retort, weighed an ounce, three
+drams, and thirty grains, or had lost more than the half of its weight.
+It still effervesced pretty briskly with acids, tho' not so strongly as
+before this operation.
+
+The fire should have been raised here to the degree requisite for the
+perfect calcination of _magnesia_. But even from this imperfect
+experiment, it is evident, that of the volatile parts contained in that
+powder, a small proportion only is water; the rest cannot, it seems, be
+retained in vessels, under a visible form. Chemists have often observed,
+in their distillations, that part of a body has vanished from their
+senses, notwithstanding the utmost care to retain it; and they have
+always found, upon further inquiry, that subtile part to be air, which
+having been imprisoned in the body, under a solid form, was set free and
+rendered fluid and elastic by the fire. We may therefore safely
+conclude, that the volatile matter, lost in the calcination of
+_magnesia_, is mostly air; and hence the calcined _magnesia_ does not
+emit air, or make an effervescence, when mixed with acids.
+
+The water, from its properties, seems to contain a small portion of
+volatile alkali, which was probably formed from the earth, air, and
+water, or from some of these combined together; and perhaps also from a
+small quantity of inflammable matter which adhered accidentally to the
+_magnesia_. Whenever Chemists meet with this salt, they are inclined to
+ascribe its origin to some animal, or putrid vegetable, substance; and
+this they have always done, when they obtained it from the calcarious
+earths, all of which afford a small quantity of it. There is, however,
+no doubt that it can sometimes be produced independently of any such
+mixture, since many fresh vegetables and tartar afford a considerable
+quantity of it. And how can it, in the present instance, be supposed,
+that any animal or vegetable matter adhered to the _magnesia_, while it
+was dissolved by an acid, separated from this by an alkali, and washed
+with so much water?
+
+Two drams of _magnesia_ were calcined in a crucible, in the manner
+described above, and thus reduced to two scruples and twelve grains.
+This calcined _magnesia_ was dissolved in a sufficient quantity of
+spirit of vitriol, and then again separated from the acid by the
+addition of an alkali, of which a large quantity is necessary for this
+purpose. The _magnesia_ being very well washed and dryed, weighed one
+dram and fifty grains. It effervesced violently, or emitted a large
+quantity of air, when thrown into acids, formed a red powder when mixed
+with a solution of sublimate, separated the calcarious earths from an
+acid, and sweetened lime-water: and had thus recovered all those
+properties which it had but just now lost by calcination: nor had it
+only recovered its original properties, but acquired besides an addition
+of weight nearly equal to what had been lost in the fire; and, as it is
+found to effervesce with acids, part of the addition must certainly be
+air.
+
+This air seems to have been furnished by the alkali from which it was
+separated by the acid; for Dr. _Hales_ has clearly proved, that alkaline
+salts contain a large quantity of fixed air, which they emit in great
+abundance when joined to a pure acid. In the present case, the alkali is
+really joined to an acid, but without any visible emission of air; and
+yet the air is not retained in it: for the neutral salt, into which it
+is converted, is the same in quantity, and in every other respect, as if
+the acid employed had not been previously saturated with _magnesia_, but
+offered to the alkali in its pure state, and had driven the air out of
+it in their conflict. It seems therefore evident, that the air was
+forced from the alkali by the acid, and lodged itself in the _magnesia_.
+
+These considerations led me to try a few experiments, whereby I might
+know what quantity of air is expelled from an alkali, or from
+_magnesia_, by acids.
+
+Two drams of a pure fixed alkaline salt, and an ounce of water, were put
+into a Florentine flask, which, together with its contents, weighed two
+ounces and two drams. Some oil of vitriol diluted with water was dropt
+in, until the salt was exactly saturated; which it was found to be, when
+two drams, two scruples, and three grains of this acid had been added.
+The vial with its contents now weighed two ounces, four drams, and
+fifteen grains. One scruple, therefore, and eight grains were lost
+during the ebullition, of which a trifling portion may be water, or
+something of the same kind. The rest is air.
+
+The celebrated _Homberg_ has attempted to estimate the quantity of solid
+salt contained in a determined portion of the several acids. He
+saturated equal quantities of an alkali with each of them; and,
+observing the weight which the alkali had gained, after being perfectly
+dryed, took this for the quantity of solid salt contained in that share
+of the acid which performed the saturation. But we learn from the above
+experiment, that his estimate was not accurate, because the alkali loses
+weight as well as gains it.
+
+Two drams of _magnesia_, treated exactly as the alkali in the last
+experiment, were just dissolved by four drams, one scruple, and seven
+grains of the same acid liquor, and lost one scruple and sixteen grains
+by the ebullition.
+
+Two drams of _magnesia_ were reduced, by the action of a violent fire,
+to two scruples and twelve grains, with which the same process was
+repeated, as in the two last experiments; four drams, one scruple, and
+two grains of the same acid were required to compleat the solution, and
+no weight was lost in the experiment.
+
+As in the separation of the volatile from the fixed parts of bodies, by
+means of heat, a small quantity of the latter is generally raised with
+the former; so the air and water, originally contained in the
+_magnesia_, and afterwards dissipated by the fire, seem to have carried
+off a small part of the fixed earth of this substance. This is probably
+the reason, why calcined _magnesia_ is saturated with a quantity of
+acid, somewhat less than what is required to dissolve it before
+calcination: and the same may be assigned as one cause which hinders us
+from restoring the whole of its original weight, by solution and
+precipitation.
+
+I took care to dilute the vitriolic acid, in order to avoid the heat and
+ebullition which it would otherwise have excited in the water; and I
+chose a Florentine flask, on account of its lightness, capacity, and
+shape, which is peculiarly adapted to the experiment; for the vapours
+raised by the ebullition circulated for a short time, thro' the wide
+cavity of the vial, but were soon collected upon its sides, like dew,
+and none of them seemed to reach the neck, which continued perfectly dry
+to the end of the experiment.
+
+We now perceive the reason, why crude and calcined _magnesia_, which
+differ in many respects from one another, agree however in composing the
+same kind of salt, when dissolved in any particular acid; for the crude
+_magnesia_ seems to differ from the calcined chiefly by containing a
+considerable quantity of air, which air is unavoidably dissipated and
+lost during the dissolution.
+
+From our experiments, it seems probable, that the increase of weight
+which some metals acquire, by being first dissolved in acids, and then
+separated from them again by alkalis, proceeds from air furnished by the
+alkalis. And that in the _aurum fulminans_, which is prepared by the
+same means, this air adheres to the gold in such a peculiar manner,
+that, in a moderate degree of heat, the whole of it recovers its
+elasticity in the same instant of time; and thus, by the violent shock
+which it gives to the air around, produces the loud crack or fulmination
+of this powder. Those who will imagine the explosion of such a minute
+portion of fixed air, as can reside in the _aurum fulminans_, to be
+insufficient for the excessive loudness of the noise, will consider,
+that it is not a large quantity of motion communicated to the air, but
+rather a smart stroke which produces sound, and that the explosion of
+but a few particles of fixed air may be capable of causing a loud noise,
+provided they all recover their spring suddenly, and in the same
+instant.
+
+The above experiments lead us also to conclude, that volatile alkalis,
+and the common absorbent earths, which lose their air by being joined to
+acids, but shew evident signs of their having recovered it, when
+separated from them by alkalis, received it from these alkalis which
+lost it in the instant of their joining with the acid.
+
+The following are a few experiments upon three of the absorbent earths,
+made in order to compare them with one another, and with _magnesia_.
+
+Suspecting that _magnesia_ might possibly be no other than a common
+calcarious earth, which had changed its nature, by having been
+previously combined with an acid, I saturated a small quantity of chalk
+with the muriatic acid, separated the acid from it again by means of a
+fixed alkali, and carefully washed away the whole of the salt.
+
+The chalk when dryed was not found to have suffered any alteration; for
+it effervesced with the vitriolic acid, but did not dissolve in it; and
+when exposed to a violent fire, was converted into a quick-lime, in all
+respects similar to that obtained from common chalk.
+
+In another experiment of the same kind, I used the vitriolic acid with
+the same event.
+
+Any calcarious matter reduced to a fine powder, and thrown into a warm
+solution of alum, immediately raises a brisk effervescence. But the
+powder is not dissolved; it is rather increased in bulk: and if the
+addition be repeated until it is no longer accompanied with
+effervescence, the liquor loses all taste of the alum, and yields only a
+very light cloud upon the admixture of an alkali.
+
+From this experiment we learn, that acids attract the calcarious earths
+more strongly than they do the earth of alum; and as the acid in this
+salt is exactly the same with the vitriolic, it composes with the
+calcarious earth a neutral substance, which is very difficultly soluble
+in water, and therefore falls down to the bottom of the vessel along
+with the earth of alum which is deprived of its acid. The light cloud
+formed by the alkali proceeds from the minute portion of the calcarious
+compound which saturates the water.
+
+The earth of animal bones, when reduced to a fine powder and thrown into
+a diluted vitriolic acid, gradually absorbs the acid in the same manner
+as the calcarious earths, but without any remarkable effervescence. When
+it is added to the nitrous or to the muriatic acid, it is slowly
+dissolved. The compound liquor thence produced is extremely acrid, and
+still changes the colour of the juice of violets to a red, even after it
+is fully saturated with the absorbent. Distilled vinegar has little or
+no effect upon this earth; for after a long digestion it still retains
+its sour taste, and gives only a light cloud upon the addition of an
+alkali.
+
+By dropping a dissolved fixed alkali into a warm solution of alum, I
+obtained the earth of this salt, which, after being well washed and
+dried, was found to have the following properties.
+
+It is dissolved in every acid but very slowly, unless assisted by heat.
+The several solutions, when thoroughly saturated, are all astringent
+with a slight degree of an acid taste, and they also agree with a
+solution of alum in this, that they give a red colour to the infusion of
+turnsol.
+
+Neither this earth, nor that of animal bones, can be converted into
+quick-lime by the strongest fire, nor do they suffer any change worth
+notice. Both of them seem to attract acids but weakly, and to alter
+their properties less when united to them than the other absorbents.
+
+
+
+
+PART II.
+
+
+In reflecting afterwards upon these experiments, an explication of the
+nature of lime offered itself, which seemed to account, in an easy
+manner, for most of the properties of that substance.
+
+It is sufficiently clear, that the calcarious earths in their native
+state, and that the alkalis and magnesia in their ordinary condition,
+contain a large quantity of fixed air, and this air certainly adheres to
+them with considerable force, since a strong fire is necessary to
+separate it from magnesia, and the strongest is not sufficient to expel
+it entirely from fixed alkalis, or take away their power of effervescing
+with acid salts.
+
+These considerations led me to conclude, that the relations between
+fixed air and alkaline substances was somewhat similar to the relation
+between these and acids; that as the calcarious earths and alkalis
+attract acids strongly and can be saturated with them, so they also
+attract fixed air, and are in their ordinary state saturated with it:
+and when we mix an acid with an alkali or with an absorbent earth, that
+the air is then set at liberty, and breaks out with violence; because
+the alkaline body attracts it more weakly than it does the acid, and
+because the acid and air cannot both be joined to the same body at the
+same time.
+
+I also imagined, that, when the calcarious earths are exposed to the
+action of a violent fire, and are thereby converted into quick-lime,
+they suffer no other change in their composition than the loss of a
+small quantity of water and of their fixed air. The remarkable acrimony
+which we perceive in them after this process, was not supposed to
+proceed from any additional matter received in the fire, but seemed to
+be an essential property of the pure earth, depending on an attraction
+for those several substances which it then became capable of corroding
+or dissolving, which attraction had been insensible as long as the air
+adhered to the earth, but discovered itself upon the separation.
+
+This supposition was founded upon an observation of the most frequent
+consequences of combining bodies in chemistry. Commonly when we join two
+bodies together, their acrimony or attraction for other substances
+becomes immediately either less perceivable or entirely insensible;
+altho' it was sufficiently strong and remarkable before their union, and
+may be rendered evident again by disjoining them. A neutral salt, which
+is composed of an acid and alkali, does not possess the acrimony of
+either of its constituent parts. It can easily be separated from water,
+has little or no effect upon metals, is incapable of being joined to
+inflammable bodies, and of corroding and dissolving animals and
+vegetables; so that the attraction both of the acid and alkali for these
+several substances seems to be suspended till they are again separated
+from one another.
+
+Crude lime was therefore considered as a peculiar acrid earth rendered
+mild by its union with fixed air: and quick-lime as the same earth, in
+which, by having separated the air, we discover that acrimony or
+attraction for water, for animal, vegetable, and for inflammable
+substances.
+
+That the calcarious earths really lose a large quantity of air when they
+are burnt to quick-lime, seems sufficiently proved by an experiment of
+Mr. _Margraaf_,[6] an exceedingly accurate and judicious Chemist. He
+subjected eight ounces of _osteocolla_ to distillation in an earthen
+retort, finishing his process with the most violent fire of a
+reverberatory, and caught in the receiver only two drams of water, which
+by its smell and properties shewed itself to be slightly alkaline. He
+does not tell us the weight of the _osteocolla_ remaining in the retort,
+and only says, that it was converted into quick-lime; but as no
+calcarious earth can be converted into quick-lime, or bear the heat
+which he applied without losing above a third of its weight, we may
+safely conclude, that the loss in his experiment was proportional, and
+proceeded chiefly from the dissipation of fixed air.
+
+According to our theory, the relation of the calcarious earth to air and
+water appeared to agree with the relation of the same earth to the
+vitriolic and vegetable acids. As chalk for instance has a stronger
+attraction for the vitriolic than for the vegetable acid, and is
+dissolved with more difficulty when combined with the first, than when
+joined to the second: so it also attracts air more strongly than water,
+and is dissolved with more difficulty when saturated with air than when
+compounded with water only.
+
+A calcarious earth deprived of its air, or in the state of quick-lime,
+greedily absorbs a considerable quantity of water, becomes soluble in
+that fluid, and is then said to be slaked; but as soon as it meets with
+fixed air, it is supposed to quit the water and join itself to the air,
+for which it has a superior attraction, and is therefore restored to its
+first state of mildness and insolubility in water.
+
+When slaked lime is mixed with water, the fixed air in the water is
+attracted by the lime, and saturates a small portion of it, which then
+becomes again incapable of dissolution, but part of the remaining slaked
+lime is dissolved and composes lime-water.
+
+If this fluid be exposed to the open air, the particles of quick-lime
+which are nearest the surface gradually attract the particles of fixed
+air which float in the atmosphere. But at the same time that a particle
+of lime is thus saturated with air, it is also restored to its native
+state of mildness and insolubility; and as the whole of this change
+must happen at the surface, the whole of the lime is successively
+collected there under its original form of an insipid calcarious earth,
+called the cream or crusts of lime-water.
+
+When quick-lime itself is exposed to the open air, it absorbs the
+particles of water and of fixed air which come within its sphere of
+attraction, as it meets with the first of these in greatest plenty, the
+greatest part of it assumes the form of slaked lime; the rest is
+restored to its original state; and if it be exposed for a sufficient
+length of time, the whole of it is gradually saturated with air, to
+which the water as gradually yields its place.
+
+We have already shown by experiment, that magnesia alba is a compound of
+a peculiar earth and fixed air. When this substance is mixed with
+lime-water, the lime shews a stronger attraction for fixed air than that
+of the earth of magnesia; the air leaves this powder to join itself to
+the lime. And as neither the lime when saturated with air, nor the
+magnesia when deprived of it, are soluble in water, the lime-water
+becomes perfectly pure and insipid, the lime which it contained being
+mixed with the magnesia. But if the magnesia be deprived of air by
+calcination before it is mixed with the lime-water, this fluid suffers
+no alteration.
+
+If quick-lime be mixed with a dissolved alkali, it likeways shews an
+attraction for fixed air superior to that of the alkali. It robs this
+salt of its air, and thereby becomes mild itself, while the alkali is
+consequently rendered more corrosive, or discovers its natural degree of
+acrimony or strong attraction for water, and for bodies of the
+inflammable, and of the animal and vegetable kind; which attraction was
+less perceivable as long as it was saturated with air. And the volatile
+alkali when deprived of its air, besides this attraction for various
+bodies, discovers likeways its natural degree of volatility, which was
+formerly somewhat repressed by the air adhering to it, in the same
+manner as it is repressed by the addition of an acid.
+
+This account of lime and alkalis recommended itself by its simplicity,
+and by affording an easy solution of many _phænomena_, but appeared upon
+a nearer view to be attended with consequences that were so very new and
+extraordinary, as to render suspicious the principles from which they
+were drawn.
+
+I resolved however to examine, in a particular manner, such of these
+consequences as were the most unavoidable, and found the greatest number
+of them might be reduced to the following propositions:
+
+     I. If we only separate a quantity of air from lime and alkalis,
+     when we render them caustic they will be found to lose part of
+     their weight in the operation, but will saturate the same quantity
+     of acid as before, and the saturation will be performed without
+     effervescence.
+
+     II. If quick-lime be no other than a calcarious earth deprived of
+     its air, and whose attraction for fixed air is stronger than that
+     of alkalis, it follows, that, by adding to it a sufficient quantity
+     of alkali saturated with air, the lime will recover the whole of
+     its air, and be entirely restored to its original weight and
+     condition: and it also follows, that the earth separated from
+     lime-water by an alkali, is the lime which was dissolved in the
+     water now restored to its original mild and insoluble state.
+
+     III. If it be supposed that slaked lime does not contain any parts
+     which are more firey, active or subtile than others, and by which
+     chiefly it communicates its virtues to water; but that it is an
+     uniform compound of lime and water: it follows, that, as part of it
+     can be dissolved in water, the whole of it is also capable of being
+     dissolved.
+
+     IV. If the acrimony of the caustic alkali does not depend on any
+     part of the lime adhering to it, a caustic or soap-ley will
+     consequently be found to contain no lime, unless the quantity of
+     lime employed in making it were greater than what is just
+     sufficient to extract the whole air of the alkali; for then as much
+     of the superfluous quick-lime might possibly be dissolved by the
+     ley as would be dissolved by pure water, or the ley would contain
+     as much lime as lime-water does.
+
+     V. We have shewn in the former experiments, that absorbent earths
+     lose their air when they are joined to an acid; but recover it, if
+     separated again from that acid, by means of an ordinary alkali: the
+     air passing from the alkali to the earth, at the same time that the
+     acid passes from the earth to the alkali.
+
+If the caustic alkali therefore be destitute of air, it will separate
+magnesia from an acid under the form of a magnesia free of air, or which
+will not effervesce with acids; and the same caustic alkali will also
+separate a calcarious earth from acids under the form of a calcarious
+earth destitute of air, but saturated with water, or under the form of
+slaked lime.
+
+These were all necessary conclusions from the above suppositions. Many
+of them appeared too improbable to deserve any further attention: some
+however, I found upon reflection, were already seconded by experience.
+Thus _Hoffman_ has observed, that quick-lime does not effervesce with
+spirit of vitriol;[7] and it is well known that the caustic spirit of
+urine, or of salt ammoniac, does not emit air, when mixed with acids.
+This consideration excited my curiosity, and determined me to inquire
+into the truth of them all by way of experiment. I therefore engaged
+myself in a set of trials; the history of which is here subjoined. Some
+new facts are likeways occasionally mentioned; and here it will be
+proper to inform the reader, that I have never mentioned any without
+satisfying myself of their truth by experiment, tho' I have sometimes
+taken the liberty to neglect describing the experiments when they seemed
+sufficiently obvious.
+
+Desiring to know how much of an acid a calcarious earth will absorb, and
+what quantity of air is expelled during the dissolution, I saturated two
+drams of chalk with diluted spirit of salt, and used the Florentine
+flask, as related in a similar experiment upon magnesia. Seven drams and
+one grain of the acid finished the dissolution, and the chalk lost two
+scruples and eight grains of air.
+
+This experiment was necessary before the following, by which I proposed
+to inquire into the truth of the first proposition so far as it relates
+to quick-lime.
+
+Two drams of chalk were converted into a perfect quick-lime, and lost
+two scruples and twelve grains in the fire. This quick-lime was slaked
+or reduced to a milky liquor with an ounce of water, and then dissolved
+in the same manner, and with the same acid, as the two drams of chalk in
+the preceding experiment. Six drams, two scruples and fourteen grains of
+the acid finished the saturation without any sensible effervescence or
+loss of weight.
+
+It therefore appears from these experiments, that no air is separated
+from quick-lime by an acid, and that chalk saturates nearly the same
+quantity of acid after it is converted into quick-lime as before.
+
+With respect to the second proposition, I tried the following
+experiments.
+
+A piece of perfect quick-lime made from two drams of chalk, and which
+weighed one dram and eight grains, was reduced to a very fine powder,
+and thrown into a filtrated mixture of an ounce of a fixed alkaline salt
+and two ounces of water. After a slight digestion, the powder being well
+washed and dried, weighed one dram and fifty eight grains. It was
+similar in every trial to a fine powder of ordinary chalk, and was
+therefore saturated with air which must have been furnished by the
+alkali.
+
+A dram of pure salt of tartar was dissolved in fourteen pounds of
+lime-water, and the powder thereby precipitated, being carefully
+collected and dried, weighed one and fifty grains. When exposed to a
+violent fire, it was converted into a true quick-lime, and had every
+other quality of a calcarious earth.
+
+This experiment was repeated with the volatile alkali, and also with the
+fossil or alkali of sea-salt, and exactly with the same event.
+
+The third proposition had less appearance of probability than the
+foregoing; but, as an accurate experiment was the only test of its
+truth, I reduced eight grains of perfect quick-lime made of chalk, to an
+exceedingly subtile powder, by slaking it in two drams of distilled
+water boiling hot, and immediately threw the mixture into eighteen
+ounces of distilled water in a flask. After shaking it, a light
+sediment, which floated thro' the liquor, was allowed to subside and
+this, when collected with the greatest care, and dryed, weighed, as
+nearly as I could guess, one third of a grain. The water tasted strongly
+of the lime, had all the qualities of lime-water, and yielded twelve
+grains of precipitate, upon the addition of salt of tartar. In repeating
+this experiment, the quantity of sediment was sometimes less than the
+above, and sometimes amounted to half a grain. It consisted partly of an
+earth which effervesced violently with _aqua fortis_, and partly of an
+ochry powder, which would not dissolve in that acid. The ochry powder,
+as it usually appears in chalk to the eye, in the form of veins running
+thro' its substance, must be considered only as an accidental or foreign
+admixture; and, with respect to the minute portion of alkaline earth
+which composed the remainder of the sediment, it cannot be supposed to
+have been originally different from the rest, and incapable, from its
+nature, of being converted into quick-lime, or of being dissolved in
+water; it seems rather to have consisted of a small part of the chalk in
+its mild state, or saturated with air, which had either remained, for
+want of a sufficient fire to drive it out entirely, or had been
+furnished by the distilled water.
+
+I indeed expected to see a much larger quantity of sediment produced
+from the lime, on account of the air which water constantly contains,
+and with a view to know whether water retains its air when fully
+saturated with lime, a lime-water was made as strong as possible; four
+ounces of which were placed under the receiver of an air-pump, together
+with four ounces of common water in a vial of the same size; and, upon
+exhausting the receiver, without heating the vials, the air arose from
+each in nearly the same quantity: from whence it is evident, that the
+air, which quick-lime attracts, is of a different kind from that which
+is mixed with water. And that it is also different from common elastic
+air, is sufficiently proved by daily experience; for lime-water, which
+soon attracts air, and forms a crust when exposed in open and shallow
+vessels, may be preserved, for any time, in bottles which are but
+slightly corked, or closed in such a manner as would allow free access
+to elastic air, were a vacuum formed in the bottle. Quick-lime therefore
+does not attract air when in its most ordinary form, but is capable of
+being joined to one particular species only, which is dispersed thro'
+the atmosphere, either in the shape of an exceedingly subtile powder, or
+more probably in that of an elastic fluid. To this I have given the name
+of fixed air, and perhaps very improperly; but I thought it better to
+use a word already familiar in philosophy, than to invent a new name,
+before we be more fully acquainted with the nature and properties of
+this substance, which will probably be the subject of my further
+inquiry.
+
+It is, perhaps, needless to mention here, that the calcarious substances
+used in making the above experiments should be of the purest kind, and
+burnt with the utmost violence of heat, if we would be sure of
+converting them into perfect quick-lime. I therefore made use of chalk
+burnt in a small covered crucible with the fiercest fire of a
+Black-smith's forge, for half an hour, and found it necessary to employ,
+for this purpose, a crucible of the _Austrian_ kind, which resemble
+black lead; for if any calcarious substance be heated to such a degree
+in an ordinary or _Hessian_ crucible, the whole of it is melted down,
+together with part of the vessel, into glass.
+
+I now prepared to inquire into the properties of the caustic alkali; in
+order to which, I made a caustic or soap ley in the following manner.
+
+Twenty six ounces of very strong quick-lime made of chalk, were slaked
+or reduced to a sort of fluid paste, with eleven pounds of boiling
+water, and then mixed in a glass vessel with eighteen ounces of a pure
+fixed alkaline salt, which had been first dissolved in two pounds and a
+half of water. This mixture was shaken frequently for two hours, when
+the action of the lime upon the alkali was supposed to be over, and
+nothing remained but to separate them again from one another. I
+therefore added 12 pounds of water, stirred up the lime, and, after
+allowing it to settle again, poured off as much of the clear ley as
+possible.
+
+The lime and alkali were mixed together under the form of a very thick
+milky liquor or fluid paste; because they are thus kept in perpetual
+contact and equal mixture until they have acted sufficiently upon one
+another: whereas in the common way of using a larger quantity of water,
+the lime lies for the most part at bottom, and, tho' stirred up ever so
+often, cannot exert its influence so fully upon the alkali, which is
+uniformly diffused thro' every part of the liquor.
+
+The above ley was found upon trial to be saturated by acids without the
+least effervescence or diminution of weight.
+
+It was now proper to examine whether the alkali suffered any loss in
+becoming caustic, which I proposed to attempt by ascertaining the
+strength of the ley, or the quantity of salt which a given portion of it
+contained; from which by computation some imperfect knowledge might be
+obtained of the quantity of caustic produced from the eighteen ounces of
+mild salt.
+
+I therefore evaporated some of my ley, but soon perceived that no
+certain judgment could be formed of its strength in this way, because it
+always absorbed a considerable quantity of air during the evaporation,
+and the dried salt made a pretty brisk effervescence with acids, so that
+the ley appeared stronger than it really was; and yet, upon proceeding
+in the estimate from this rude and unfair trial, it appeared that the
+salt had lost above a sixth in becoming caustic, and the quantity of
+acid saturated by two drams of it was to the quantity of acid saturated
+by two drams of salt of tartar, nearly as six to five.
+
+These experiments are therefore agreeable to that part of the second
+proposition which relates to the caustic alkali.
+
+Upon farther examining what changes the alkali had undergone, I found
+that the ley gave only an exceeding faint milky hue to lime-water;
+because the caustic alkali wants that air by which salt of tartar
+precipitates the lime. When a few ounces of it were exposed in an open
+shallow vessel for four and twenty hours, it imbibed a small quantity of
+air, and made a slight effervescence with acids. After a fortnight's
+exposure in the same manner, it became entirely mild, effervesced as
+violently with acids, and had the same effect upon lime-water as a
+solution of an ordinary alkali. It likeways agrees with lime-water in
+this respect, that it may be kept in close vessels, or even in bottles
+which are but slightly covered, for a considerable time, without
+absorbing a sensible quantity of air.
+
+In order to know how much lime it contained, I evaporated ten ounces in
+a small silver dish over a lamp, and melted the salt, after having
+dissipated the water.[8]
+
+The caustic thus produced was dissolved again in a small quantity of
+water, and deposited a trifling portion of sediment, which I imagined at
+first to be lime; but finding that it could easily be dissolved in a
+little more water, concluded it to be a vitriolated tartar, which always
+accompanies the fixed alkali of vegetables.
+
+I then saturated the solution of the caustic salt with spirit of
+vitriol, expecting thus to detect the lime; because that acid
+precipitates a calcarious earth from its ordinary solutions. During the
+saturation, a large quantity of white powder was formed; but this
+likeways turned out to be a vitriolated tartar, which had appeared in
+the form of a powder, because there was not enough of water in the
+mixture to dissolve it.
+
+Lastly, I exposed a few ounces of the ley in an open shallow vessel so
+long, that the alkali lost the whole of its causticity, and seemed
+entirely restored to the state of an ordinary fixed alkali; but it did
+not however deposite a single atom of lime. And to assure myself that my
+caustic ley was not of a singular kind, I repeated the same experiments
+with an ordinary soap-ley, and with one made by mixing one part of a
+pure fixed alkaline salt with three parts of common stone lime fresh
+slaked and sifted; nor could I discover any lime in either. The first of
+these contained a small quantity of brimstone, and was far from being
+perfectly caustic, for it made a pretty brisk effervescence with acids;
+but the last was so entirely deprived of its air, that it did not
+diminish in the least the transparency of lime-water.
+
+These experiments seem therefore to support the fourth proposition, and
+to shew that the caustic alkali does not contain any lime.
+
+As it seems probable, from the quickness and ease wherewith the alkali
+was rendered caustic, that more lime had been employed than what was
+just sufficient to extract the whole of its air, we are surprised to
+find that little or none of the superfluous quick-lime was dissolved by
+the water. But this _phænomenon_ will become less surprizing, by
+comparing it with some similar instances in chemistry. Water may be made
+to deposite a salt, by the admixture of a substance which it attracts
+more strongly than it does that salt; such as spirit of wine; and
+quick-lime itself may be separated from water upon the same principle;
+for if that spirit is added to an equal quantity of lime-water, the
+mixture becomes turbid and deposites a sediment, which, when separated
+and dissolved again in distilled water, composes lime-water. We may
+therefore refer the above _phænomenon_, with respect to the ley, to the
+same cause with these, and say, that the water did not dissolve the
+lime, because it already contained a caustic alkali, for which it has a
+superior attraction.
+
+I also rendered the volatile alkali caustic, in order to examine what
+change it suffered in the operation, and obtained an exceedingly
+volatile and acrid spirit, which neither effervesced with acids, nor
+altered in the least the transparency of lime-water; and, altho' very
+strong, was lighter than water, and floated upon it like spirit of wine.
+
+I next inquired into the truth of the fifth proposition, in the
+following manner.
+
+Two drams of epsom-salt were dissolved in a small quantity of water, and
+thrown into two ounces of the caustic-ley; the mixture instantly became
+thick, like a decoction of starch or barley, by the magnesia, which was
+precipitated. I then added spirit of vitriol by degrees, until the
+mixture became perfectly clear, or the whole of the magnesia was again
+dissolved; which happened without any effervescence or emission of air.
+
+Half an ounce of chalk was dissolved in spirit of salt, the quantity of
+which was so adjusted, that the mixture was not acid in the least
+degree; and the solution was thrown into twelve ounces of the caustic
+ley; which quantity I found, by experiment, to be sufficient for
+precipitating almost the whole of the chalk. I now filtrated this turbid
+liquor, and laid the powder remaining in the paper upon a chalk-stone,
+in order to draw as much of the water from it as possible, and thereby
+reduce it to the form of a more dense and heavy powder, that it might
+subside the more perfectly in the following part of the experiment. I
+then mixed it with about twenty ounces of pure water in a flask, and,
+after allowing the powder to subside, poured off the water, which had
+all the qualities of lime-water. And I successively converted eight
+waters more into lime-water, seven of these in the same quantity, and
+with the same management, as the first. The eighth was likeways in the
+same quantity; but I allowed it to remain with the chalk, and shook it
+frequently, for two days. This, after being filtrated, formed a cream or
+crust upon its surface when exposed to the air; changed the colour of
+the juice of violets into green; separated an orange-coloured powder
+from a solution of corrosive sublimate; became turbid upon the addition
+of an alkali; was entirely sweetened by magnesia; and appeared so
+strong to the taste, that I could not have distinguished it from
+ordinary lime-water. And when I threw some salt ammoniac into the lime
+which remained, the vapour of the volatile alkali immediately arose from
+the mixture.
+
+In this experiment therefore the air is first driven out of the chalk by
+an acid, and then, in order to separate this acid from it, we add an
+alkali which has been previously deprived of its air; by which means,
+the chalk itself is also obtained free of air, and in an acrid form, or
+in the form of slaked lime.
+
+We have also several processes for obtaining the volatile alkali in a
+caustic form, which seem to be only so many methods of obtaining it in
+its pure state, and free of fixed air. The first of these is the
+separation of the alkali from an acid, merely by heat; an instance of
+which we have from Mr. _Margraaf_.[9] He prepared from urine an
+ammoniacal salt, the acid of which is the basis of the phosphorus, and
+is of such a peculiar nature, that it endures a red heat without being
+dissipated. Sixteen ounces of the neutral salt were subjected by him to
+distillation. The acid remained in the retort, and he found in the
+receiver eight ounces of an alkaline spirit, which, he tells us, was
+extremely volatile, very much resembling the spirit of salt ammoniac
+distilled with quick-lime; and no crystals were formed in it, when
+exposed to the cold air.
+
+A caustic volatile alkali may also be obtained, by mixing salt ammoniac
+with half its weight of a caustic fixed alkali, or of magnesia which has
+been previously deprived of its air by fire; and then submitting these
+mixtures to distillation: Or merely by adding any ordinary volatile
+alkali to a proper quantity of a caustic ley; for in this case the air
+passes from the volatile to the fixed alkali, by a superior attraction
+for the last, and, by a gentle heat, the compound yields a spirit
+similar to that prepared from salt ammoniac and quick-lime.
+
+It is therefore probable, that, had we also a method of separating the
+fixed alkali from an acid, without, at the same time, saturating it with
+air, we should then obtain it in a caustic form; but I am not acquainted
+with an instance of this separation in chemistry. There are two indeed
+which, at first sight, appear to be of this kind; these are the
+separation of the fixed alkali from the nitrous acid by means of
+inflamed charcoal, in the process for making _nitrum fixatum_, and of
+the same alkali, from vegetable acids merely by heat; but, upon
+examining the product of each process, we find the alkali either fully
+or nearly saturated with air. In the first, either the charcoal or the
+acid, or both together, are almost wholly converted into air; a part of
+which is probably joined to the alkali. In the second, the acid is not
+properly separated, but rather destroyed by the fire: a considerable
+portion of it is converted into an inflammable substance and we learn
+from Dr. _Hales_, that the bodies of this class contain a large quantity
+of fixed air.
+
+When we consider that the attraction of alkalis for fixed air is weaker
+than that of the calcarious earths, and reflect upon the effects of heat
+in chemistry, we are led to imagine, that alkalis might be entirely
+deprived of their air, or rendered perfectly caustic, by a fire somewhat
+weaker than that which is sufficient to produce the same change upon
+lime; but this opinion does not seem agreeable to experience.
+
+The alkalis do, however, acquire some degree of causticity in a strong
+fire, as appears from their being more easily united with spirit of wine
+after having been kept in fusion for some time. For that fluid, which
+cannot be tinctured by a mild salt of tartar, will soon take a very deep
+colour from a few drops of a strong caustic ley. The circumstances which
+hinder us from rendering these salts perfectly caustic by heat, are
+their propensity to dissipation in the utmost violence of the fire,
+their extreme acrimony, and the imperfection of our common vessels. For
+before the heat becomes very intense, the alkalis either evaporate, or
+dissolve a part of the crucibles in which they are contained, and often
+escape thro' their pores; which happens, especially as soon as they have
+already acquired some degree of additional acrimony, by the loss of part
+of their air.
+
+The fusion also, which they so readily undergo, is well known by
+Chemists, as a strong obstacle to the separation of the volatile from
+the fixed parts of a compound by fire; accordingly, in several
+processes, we are directed to add to the fusible compound some porous
+substance which is incapable of fusion, and will retain the whole in a
+spongy form, thereby to facilitate the dissipation of the volatile
+parts.
+
+In order to know whether an alkali would lose a part of its air, and
+acquire a degree of causticity, when exposed, with this precaution, to
+the action of a strong fire, I mixed an ounce and a half of salt of
+tartar with three ounces of black-lead, a substance of any the most
+unchangeable by chemical operations. This mixture I exposed, for several
+hours, in a covered crucible, to a fire somewhat stronger than what is
+necessary to keep salt of tartar in fusion. When allowed to cool, I
+found it still in the form of a loose powder; and taking out one half, I
+diluted it with water, and by filtration obtained a ley, which, when
+poured into a solution of white marble in _aqua fortis_, precipitated
+the marble under the form of a weak quick-lime: for the turbid mixture
+gave a green colour to the juice of violets, and threw up a crust like
+that of lime-water; and the precipitated powder collected and mixed with
+salt ammoniac immediately yielded the scent of the volatile alkali.
+
+Lest it should here be suspected, that the alkaline qualities of this
+mixture, and of the precipitated marble, were not owing to a lime into
+which the marble was converted, but to the alkali itself which was
+added, it is proper to observe, that I mixed so small a proportion of
+the ley with the solution of marble as made me sure, from certain
+experiments, that the whole of the alkali was spent in performing the
+precipitation, and was consequently converted into a neutral salt by
+attracting the acid. The properties therefore of the mixture can only be
+referred to a lime, as is indeed sufficiently evident from the crust
+which is peculiar to lime-water.
+
+I was therefore assured by this experiment, that an alkali does really
+lose a part of its air, and acquire a degree of causticity, by the
+proper application of heat; but finding by several trials, that the
+degree of causticity which it had thus acquired was but weak, and that
+the quick-lime produced in this experiment was exhausted and rendered
+mild by a small quantity of water, I exposed the crucible together with
+that half of the alkali which remained in it to a stronger fire, in
+order to expel a larger quantity of air, and render it more remarkably
+caustic; but the whole of it was dissipated by the force of the heat,
+and the black lead, which still retained the form of a loose and subtile
+powder, yielded little or nothing to water.
+
+We learn then from the above experiment the reason why the alkali newly
+obtained from the ashes of vegetables is generally of the more acrid
+kinds of that salt. It never appears until the subject be converted into
+ashes, and is supposed to be formed by the fire, and to be the result of
+a particular combination of some of the principles of the vegetable; one
+of which principles is air, which is contained in large quantity in all
+vegetable matters whatever. But as soon as the smallest part of a
+vegetable is converted into ashes, and an alkali is thus formed, this
+salt necessarily suffers a calcination, during which it is kept in a
+spongy form by the ashes, and shews a very considerable degree of
+acrimony if immediately applied to the body of an animal but if the
+ashes are for any time exposed to the air, or if we separate the alkali
+from them by the addition of a large quantity of water and subsequent
+evaporation, the salt imbibes fixed air from the atmosphere, and becomes
+nearly saturated with it: tho' even in this condition it is generally
+more acrid than salt of tartar, when this is prepared with a gentle
+heat.
+
+Borax has sometimes been referred to the class of alkalis, on account of
+some resemblance it bears to those salts: but it has been demonstrated
+by accurate experiments, that we should rather consider it as a neutral
+salt; that it is composed of an alkali and of a particular saline
+substance called the sedative salt, which adheres to the alkali in the
+same manner as an acid, but can be separated by the addition of any acid
+whatever, the added acid joining itself to the alkali in the place of
+the sedative salt. As this conjunction of an acid with the alkali of
+borax happens without the least effervescence, our principles lay us
+under a necessity of allowing that alkali to be perfectly free of air,
+which must proceed from its being incapable of union with fixed air and
+with the sedative salt at the same time: whence it follows, that, were
+we to mix the sedative salt with an alkali saturated with air, the air
+would immediately be expelled, or the two salts in joining would produce
+an effervescence. This I found to be really the case upon making the
+trial, by mixing a small quantity of the sedative salt with an equal
+quantity of each of the three alkalis, rubbing the mixtures well in a
+mortar, and adding a little water. It is however proper in this place
+to observe, that, if the experiments be made in a different manner, they
+are attended with a singular circumstance. If a small quantity of the
+sedative salt be thrown into a large proportion of a dissolved fixed
+alkali, the sedative salt gradually disappears, and is united to the
+alkali without any effervescence; but if the addition be repeated
+several times, it will at last be accompanied with a brisk
+effervescence, which will become more and more remarkable, until the
+alkali be entirely saturated with the sedative salt.
+
+This _phænomenon_ may be explained by considering the fixed alkalis as
+not perfectly saturated with air: and the supposition will appear very
+reasonable, when we recollect, that those salts are never produced
+without a considerable degree of heat, which may easily be imagined to
+dissipate a small portion of so volatile a body as air. Now, if a small
+quantity of the sedative salt be thrown into an alkaline liquor, as it
+is very slowly dissolved by water, its particles are very gradually
+mixed with the atoms of the alkali. They are most strongly attracted by
+such of these atoms as are destitute of air, and therefore join with
+them without producing an effervescence; or, if they expel a small
+quantity of air from some of the salt, this air is at the same time
+absorbed by such of the contiguous particles as are destitute of it, and
+no effervescence appears until that part of the alkali, which was in a
+caustic form or destitute of air, be nearly saturated with the sedative
+salt. But if, on the other hand, a large proportion of the sedative salt
+be perfectly and suddenly mixed with the alkali, the whole, or a large
+part, of the air is as suddenly expelled.
+
+In the same manner may we also explain a similar _phænomenon_, which
+often presents itself in saturating an alkali with the different acids:
+the effervescence is less considerable in the first additions of acid,
+and becomes more violent as the mixture approaches the point of
+saturation. This appears most evidently in making the _sal diureticus_
+or regenerated tartar: The particles of the vegetable acid here employed
+being always diffused thro' a large quantity of water, are more
+gradually applied to those of the alkali, and during the first additions
+are chiefly united to those that are freest of air.[10]
+
+That the fixed alkali, in its ordinary state, is seldom entirely
+saturated with air, seems to be confirmed by the following experiment.
+
+I exposed a small quantity of a pure vegetable fixed alkali to the air,
+in a broad and shallow vessel, for the space of two months; after which
+I found a number of solid crystals, which resembled a neutral salt so
+much as to retain their form pretty well in the air, and to produce a
+considerable degree of cold when dissolved in water. Their taste was
+much milder than that of ordinary salt of tartar; and yet they seemed to
+be composed only of the alkali, and of a larger quantity of air than is
+usually contained in that salt, and which had been attracted from the
+atmosphere: for they still joined very readily with any acid, but with a
+more violent effervescence than ordinary; and they could not be mixed
+with the smallest portion of vinegar, or of the sedative salt, without
+emitting a sensible quantity of air.
+
+As it now appeared that several alkaline substances have an attraction
+for fixed air, I tried a few experiments to learn the relative strength
+of their several attractions.
+
+Twenty four grains of magnesia in fine powder were mixed with five
+ounces of the caustic ley in a small vial, which was immediately corked
+and shaken frequently for four hours. The ley was then poured off, and
+the magnesia washed with repeated affusions of water, and dried. It had
+lost about the half of its weight, and when reduced to a fine powder was
+readily dissolved by acids with an effervescence which was hardly
+perceivable: the alkali had therefore extracted its air. I also threw
+some fresh magnesia into the ley which had been poured off, and thereby
+rendered it perfectly mild and similar to a solution of salt of tartar;
+so that it effervesced briskly with acids.
+
+With an ounce of the mild spirit of salt ammoniac, I mixed a dram of
+magnesia in very fine powder which had been previously deprived of its
+air by fire; and observing that the magnesia had a tendency to concrete
+into a solid mass, I shook the vial very frequently. After some days the
+powder was increased to more than double its former bulk; and when the
+vial was opened, the alkaline spirit emitted a most intolerably pungent
+smell. It likewise floated upon water, but was not perfectly caustic;
+for it still yielded some air when mixed with acids, and also rendered
+lime-water turbid: neither of which would probably have happened if I
+had used a greater quantity of magnesia, or had allowed the mixture to
+remain a longer time in the vial. I now washed out the whole of the
+mixture into a bowl, and dryed the magnesia until it lost all smell of
+the alkali. It weighed a dram and fifty eight grains, effervesced
+violently with acids, and therefore contained a large quantity of air,
+which had been drawn from the alkali by a stronger attraction.
+
+Having formerly shewn, that magnesia saturated with air separates an
+acid from a calcarious earth, which it is not able to do after being
+deprived of its air by fire; I now suspected that the air was the cause
+of this separation, because I found that it was joined to the calcarious
+earth at the same time that the acid was joined to the earth of
+magnesia; and imagined that a pure calcarious earth might possibly have
+a stronger attraction for acids than a earth of magnesia.
+
+I therefore dissolved two drams of magnesia in the marine acid, and
+thus obtained a compound of an acid and of the pure earth of this
+substance; for the air which was at first attached to it, was expelled
+during the dissolution. I then added thirty grains of strong quick-lime
+in exceeding fine powder, shook the mixture well, and filtrated it. The
+powder remaining in the paper, after being well washed, was found to be
+a magnesia, which, as I expected, was destitute of air; for it was
+dissolved by the vitriolic acid without effervescence. And the filtrated
+liquor contained the lime united to the acid; for upon dropping spirit
+of vitriol into it, a white powder was immediately formed.
+
+We must therefore acknowledge a stronger attraction between the
+calcarious earths and acids than between these and magnesia: but how
+does it then happen, that, if magnesia saturated with air be mixed with
+a compound of acid and calcarious earth, these two last, which attract
+one another the most strongly, do not remain united; but the acid is
+joined to the magnesia, and the calcarious earth to the air which it
+attracts much more weakly than it does the acid? Is it because the sum
+of the forces which tend to join the magnesia to the acid and the
+calcarious earth to the air, is greater than the sum of the forces which
+tend to join the calcarious earth to the acid, and the magnesia to the
+air: and because there is a repulsion between the acid and air, and
+between the two earths; or they are somehow kept asunder in such a
+manner as hinders any three of them from being united together?
+
+The first part of this supposition is favoured by our experiments, which
+seem to shew a greater difference between the forces wherewith the
+calcarious earth and magnesia attract fixed air, than between those
+which dispose them to unite with the acid. The repulsions however hinted
+in the second are perhaps more doubtful, tho' they are suggested in many
+other instances of decomposition; but the bounds of my present purpose
+will not allow me to enter upon this subject, which is one of the most
+extensive in chemistry.
+
+We meet also with a difficulty with respect to the volatile alkali
+similar to the above. Thus a calcarious earth that is pure or free of
+air has a much stronger attraction for acids than a pure volatile
+alkali, as is evident when we mix quick-lime with salt ammoniac; for the
+alkali is then immediately detached from the acid: and agreeably to this
+I found, upon trial, that a pure or caustic volatile alkali does not
+separate a calcarious earth from an acid. Yet, if we mix a mild volatile
+alkali, which is a compound of alkali and air, with a compound of acid
+and calcarious earth, these two last, which attract one another most
+strongly, do not remain united; but the acid is joined to the alkali and
+the earth to the air, as happens in the precipitation of a calcarious
+earth from an acid, by means of the common or mild volatile alkali.
+
+I remember likewise a parallel instance with regard to quick-silver.
+This metal has an attraction for the vitriolic acid, and when joined to
+it appears under the form of turbith mineral: but this attraction is
+weaker than that of the fixed alkali for the same acid; for if we mix a
+dissolved salt of tartar with turbith mineral, the turbith is converted
+into a brown powder, and the alkali into vitriolated tartar; which
+change happens the sooner, if the pure or caustic alkali is used. Yet,
+if to a compound of quick-silver and the nitrous acid, we add a compound
+of the fixed alkali and the vitriolic acid, or a vitriolated tartar, and
+digest the mixture with a strong heat, the vitriolic acid does not
+remain with the alkali, but is joined to the quick-silver which it
+attracts more weakly, composing with it a turbith mineral; while the
+alkali is joined to the nitrous acid which it likeways attracts more
+weakly than it does the vitriolic, and is converted into salt-petre.
+
+From some of the above experiments, it appears, that a few alterations
+may be made in the column of acids in Mr. _Geoffroy's_ table of elective
+attractions, and that a new column may be added to that table, according
+to the following scheme, where the alkaline substances are all
+considered as in their pure state and free of fixed air.
+
+
+                Acids.                 Fixed air.
+  ------------------------------    -----------------
+           Fixed alkali,            Calcarious earth.
+         Calcarious earth,           Fixed alkali.
+   Volatile alkali and magnesia.       Magnesia.
+                                     Volatile alkali.
+       ----------------------        ---------------
+
+At the foot of the first column several of the metals might follow, and
+after these the earth of alum; but as I don't know what number of the
+metals should precede that earth, I have left it to be determined by
+further experience.
+
+The volatile alkali and magnesia are placed in the same line of this
+column; because their force of attraction seems pretty equal. When we
+commit a mixture of magnesia and salt ammoniac to distillation, the
+alkali arises and leaves the acid with the magnesia; because this earth,
+by attracting the acid, represses its volatility, and it seems also to
+diminish the cohesion of the acid and alkali, and to render them
+separable by a gentle heat. If the magnesia be saturated with air, this
+likewise, on account of its volatile nature and attraction for the
+alkali, is driven up along with it, and makes it appear under a mild
+form, and in the same manner do the alkali and air arise from a mixture
+of salt ammoniac and of a crude calcarious earth.
+
+
+Footnotes:
+
+[1] June 5. 1755.
+
+[2] Hoff. Op. T. iv. p. 479.
+
+[3] Hoff. Op. T. iv. p. 500.
+
+[4] Mr. _Margraaf_ has lately demonstrated, by a set of curious and
+accurate experiments, that this powder is of the nature, and possesses
+the properties, of the gypseous or selenitic substances. That such
+substances can be resolved into vitriolic acid and calcarious earth, and
+can be again composed by joining these two ingredients together. Mem. de
+l'Acad. de Berlin. an. 1750, p. 144.
+
+[5] Hoff. Op. T. iv. p. 480 & 500.
+
+[6] Mem. de l'Acad. de Berlin. an. 1748, p. 57.
+
+[7] Hoff. Op. T. iv. p. 480.
+
+[8] This evaporation was performed in a silver dish, on account of the
+acrimony of the salt; which is so very great, that, having once
+evaporated a part of the same ley in a bowl of English earthen or stone
+ware, and melted the caustic with a gentle heat, it corroded and
+dissolved a part of the bowl, and left the inside of it pitted with
+small holes.
+
+[9] Mem. de l'Acad. de Berlin. an. 1746, p. 87.
+
+[10] Boerh. Operat. Chem. process. LXXVI.
+
+
+Transcribers Notes:
+
+1. Author's spelling has been retained.
+
+2. Minor punctuation issues have been corrected without note.
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK EXPERIMENTS UPON MAGNESIA ALBA, QUICKLIME, AND SOME OTHER ALCALINE SUBSTANCES ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

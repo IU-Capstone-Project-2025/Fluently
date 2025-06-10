@@ -1,0 +1,3237 @@
+﻿The Project Gutenberg eBook of Rig Veda Americanus
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Rig Veda Americanus
+
+Editor: Daniel G. Brinton
+
+Release date: February 9, 2005 [eBook #14993]
+                Most recently updated: December 19, 2020
+
+Language: English, Nahuatl
+
+Credits: Produced by David Starner, Ben Beasley and the PG Online Distributed
+        Proofreading Team.
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK RIG VEDA AMERICANUS ***
+
+
+
+
+Produced by David Starner, Ben Beasley and the PG Online Distributed
+Proofreading Team.
+
+
+
+
+
+LIBRARY
+OF
+ABORIGINAL AMERICAN
+LITERATURE.
+
+No. VIII.
+
+EDITED BY
+D.G. BRINTON
+
+
+[Illustration: XIPPE TOTEC, GOD OF SILVERSMITHS, IN FULL COSTUME. HYMN
+XV.]
+
+
+BRINTON'S LIBRARY OF
+ABORIGINAL AMERICAN LITERATURE.
+NUMBER VIII.
+
+
+RIG VEDA AMERICANUS.
+
+
+SACRED SONGS OF THE ANCIENT MEXICANS,
+WITH A GLOSS IN NAHUATL.
+
+EDITED, WITH A PARAPHRASE, NOTES AND
+VOCABULARY,
+
+BY
+DANIEL G. BRINTON
+
+1890
+
+
+
+
+PREFACE.
+
+In accordance with the general object of this series of volumes--which
+is to furnish materials for study rather than to offer completed
+studies--I have prepared for this number the text of the most ancient
+authentic record of American religious lore. From its antiquity and
+character, I have ventured to call this little collection the RIG VEDA
+AMERICANUS, after the similar cyclus of sacred hymns, which are the most
+venerable product of the Aryan mind.
+
+As for my attempted translation of these mystic chants I offer it with
+the utmost reserve. It would be the height of temerity in me to pretend
+to have overcome difficulties which one so familiar with the ancient
+Nahuatl as Father Sahagun intimated were beyond his powers. All that I
+hope to have achieved is, by the aid of the Gloss--and not always in
+conformity to its suggestions--to give a general idea of the sense and
+purport of the originals.
+
+The desirability of preserving and publishing these texts seems to me to
+be manifest. They reveal to us the undoubtedly authentic spirit of the
+ancient religion; they show us the language in its most archaic form;
+they preserve references to various mythical cycli of importance to the
+historian; and they illustrate the alterations in the spoken tongue
+adopted in the esoteric dialect of the priesthood. Such considerations
+will, I trust, attract the attention of scholars to these fragments of a
+lost literature.
+
+In the appended Vocabulary I have inserted only those words and
+expressions for which I can suggest correct--or, at least,
+probable--renderings. Others will have to be left to future
+investigators.
+
+
+
+
+CONTENTS.
+
+
+Preface
+
+Introduction
+
+    I. Hymn of Huitzilopochtli
+
+   II. War Song of the Huitznahuac
+
+  III. Hymn of Tlaloc
+
+   IV. Hymn to the All-Mother
+
+    V. Hymn to the Virgin Mother
+
+   VI. Hymn to the God of Fire
+
+  VII. Hymn of Mixcoatl
+
+ VIII. Hymn to the God of Flowers
+
+   IX. Hymn to the Goddess of Artists
+
+    X. Hymn to the God of Fishing
+
+   XI. Hymn of the Otomi Leader
+
+  XII. Hymn to the Goddess of Childbirth
+
+ XIII. Hymn to the Mother of Mortals
+
+  XIV. Hymn Sung at a Fast every Eight Years
+
+   XV. Hymn to a Night God
+
+  XVI. Hymn to the Goddess of Food
+
+ XVII. Hymn to the Gods of Wine
+
+XVIII. Hymn to the Master of Waters
+
+  XIX. Hymn to the God of Flowers
+
+   XX. Hymn to the God of Merchants
+
+Glossary
+
+Index
+
+
+
+
+LIST OF ILLUSTRATIONS.
+
+
+Xippe Totec, God of Silversmiths, in Full Costume, Frontispiece
+
+Priest of Xippe Totec, Drinking and Playing on a Drum, Hymn XV
+
+Chicomecoatl, Goddess of Food and Drink, Hymn XVI
+
+Totochtin, the Rabbits, Gods of the Drunkards, Hymn XVII
+
+Atlaua, Singing and Dancing, Hymn XVIII
+
+
+
+
+INTRODUCTION.
+
+
+As in a previous number of the Library of Aboriginal American Literature
+I have discussed in detail the character of the ancient Mexican poetry,
+I shall confine myself at present to the history of the present
+collection. We owe its preservation to the untiring industry of Father
+Bernardino de Sahagun, one of the earliest missionaries to Mexico, and
+the author of by far the most important work on the religion, manners
+and customs of the ancient Mexicans.
+
+By long residence and close application Sahagun acquired a complete
+mastery of the Nahuatl tongue. He composed his celebrated _Historia de
+las Cosas de la Nueva España_ primarily in the native language, and from
+this original wrote out a Spanish translation, in some parts
+considerably abbreviated. This incomplete reproduction is that which was
+published in Spanish by Lord Kingsborough and Bustamente, and in a
+French rendering with useful notes by Dr. Jourdanet and M. Rémi Simeon.
+
+So far as I know, the only complete copy of the Nahuatl original now in
+existence is that preserved in the Bibliotheca Laurentio-Mediceana in
+Florence, where I examined it in April, 1889. It is a most elaborate and
+beautiful MS., in three large volumes, containing thirteen hundred and
+seventy-eight illustrations, carefully drawn by hand, mostly colored,
+illustrative of the native mythology, history, arts and usages, besides
+many elaborate head and tail pieces to the chapters.
+
+There is another Nahuatl MS. of Sahagun's history in the private
+library of the King of Spain at Madrid, which I examined in May, 1888,
+and of which I published a collation in the _Mémoires de la Sociétè
+Internationale des Américanistes_, for that year. It is incomplete,
+embracing only the first six books of the _Historia_, and should be
+considered merely as a _borrador_ or preliminary sketch for the
+Florentine copy. It contains, however, a certain amount of material not
+included in the latter, and has been peculiarly useful to me in the
+preparation of the present volume, as not only affording another reading
+of the text, valuable for comparison, but as furnishing a gloss or
+Nahuatl paraphrase of most of the hymns, which does not appear in the
+Florentine MS. As evidently the older of the two, I have adopted the
+readings of the Madrid MS. as my text, and given the variants of the
+Florentine MS. at the end of each hymn.
+
+Neither MS. attempts any translation of the hymns. That at Madrid has no
+Spanish comment whatever, while that at Florence places opposite the
+hymns the following remarks, which are also found in the printed copies,
+near the close of the Appendix of the Second Book of the _Historia_:--
+
+"It is an old trick of our enemy the Devil to try to conceal himself in
+order the better to compass his ends, in accordance with the words of
+the Gospel, 'He whose deeds are evil, shuns the light.' Also on earth
+this enemy of ours has provided himself with a dense wood and a ground,
+rough and filled with abysses, there to prepare his wiles and to escape
+pursuit, as do wild beasts and venomous serpents. This wood and these
+abysses are the songs which he has inspired for his service to be sung
+in his honor within the temples and outside of them; for they are so
+artfully composed that they say what they will, but disclose only what
+the Devil commands, not being rightly understood except by those to whom
+they are addressed. It is, in fact, well recognized that the cave, wood
+or abysses in which this cursed enemy hides himself, are these songs or
+chants which he himself composed, and which are sung to him without
+being understood except by those who are acquainted with this sort of
+language. The consequence is that they sing what they please, war or
+peace, praise to the Devil or contempt for Christ, and they cannot in
+the least be understood by other men."
+
+Lord Kingsborough says in a note in his voluminous work on the
+_Antiquities of Mexico_ that this portion of Sahagun's text was
+destroyed by order of the Inquisition, and that there was a memorandum
+to that effect in the Spanish original in the noble writer's possession.
+This could scarcely have referred to a translation of the hymns, for
+none such exists in any MS. I have consulted, or heard of; and Sahagun
+intimates in the passage quoted above that he had made none, on account
+of the obscurity of the diction. Neither does any appear in the
+Florentine MS., where the text of the hymns is given in full, although
+the explanatory Gloss is omitted. This last-mentioned fact has prevented
+me from correcting the text of the Gloss, which in some passages is
+manifestly erroneous; but I have confined myself to reproducing it
+strictly according to the original MS., leaving its correction to those
+who will make use of it.
+
+The Florentine MS. has five colored illustrations of the divinities, or
+their symbols, which are spoken of in the chants. These are probably
+copied from the native hieroglyphic books in which, as we learn from
+Sahagun, such ancient songs were preserved and transmitted. These
+illustrations I had copied with scrupulous fidelity and reproduced by
+one of the photographic processes, for the present work.
+
+Such is the history of this curious document, and with this brief
+introduction I submit it to those who will have the patience and skill
+to unravel its manifold difficulties.
+
+
+
+
+RIG VEDA AMERICANA
+
+
+
+
+I. _Vitzilopochtli icuic._
+
+
+  1. Vitzilopuchi, yaquetlaya, yyaconay, ynohuihuihuia: anenicuic,
+toçiquemitla, yya, ayya, yya y ya uia, queyanoca, oya tonaqui, yyaya,
+yya, yya.
+
+  2. Tetzauiztli ya mixtecatl, ce ymocxi pichauaztecatla pomaya,
+ouayyeo, ayyayya.
+
+  3. Ay tlaxotla tenamitl yuitli macoc mupupuxotiuh, yautlatoa ya,
+ayyayyo, noteuh aya tepanquizqui mitoaya.
+
+  4. Oya yeua uel mamauia, in tlaxotecatl teuhtla milacatzoaya,
+itlaxotecatl teuhtla milacatzoaya.
+
+  5. Amanteca toyauan xinechoncentlalizquiuia ycalipan yauhtiua,
+xinechoncentlalizqui.
+
+  6. Pipiteca toyauan xinechoncentlalizquiuia: ycalipan, yautiua,
+xinechoncentlalizqui.
+
+_Var._ 6. This verse is omitted in the Medicean MS.
+
+
+_Gloss._
+
+  1. In ivitzilopochtli ayac nouiui, _id est_, ayac nechneneuilia, ayac
+iuhqui, in iuhqui. Anenicuic, _id est_, amo ca nen nonicuic, in
+quetzali, in chalchihuitl in ixquich ynotlatqui, toçiquemitl. Queyanoca
+oya tonaqui, _id est_, onocatonat, onocatlatuit.
+
+  2. _Q.n._, tetzauiztli, _id est_, oquintetzauito, in mixteca inic
+oquiyaochiuhqui: oquimanilito in imicxi in pichauazteca, ioan in
+mixteca.
+
+  3. Ay tlaxotla tenamitl, _q.n._, quitepeua inin tena in aquique
+yauchiuallo. Iuitli macoc, _q.n._, oncan quitema in tiçatl in ihuitl.
+Mopopuxotiuh yauhtlatuaya, _q.n._, inic mopopuxoticalaqui yauc, ioan,
+_q.n._, yeuatl quitemaca y yauyutl quitemaceualtia, tepanquizqui,
+mitoayaqui yehuatl quichioa yauyutl.
+
+  4. Oya yeua huel mamauia, _q.n._, çan oc momamauhtiaya in aya
+momochiua yauyutl. Teuhtla milacatzoaya _q.n._, in noteuh in opeuh
+yauyutl, aocac momauhtica iniquac ynoteuhtli moquetza ynoteuhtica
+tlayoa(lli).
+
+  5. Amanteca toyauan, _q.n._, yn iyaoan yn aquique in cani
+omocentlalique ca in calipan in yautioa ca tlatlaz ynin cal.
+
+  6. Pipiteca, toyaoan, xinechoncentlalizque, _q.n._, in pipiteca y
+yaoan mochiuhque. Yn calla in mochiua yauyutl in i calipan.
+
+
+_Translation._
+
+_The Hymn of Huitzilopochtli._
+
+  1. Huitzilopochtli is first in rank, no one, no one is like unto him:
+not vainly do I sing (his praises) coming forth in the garb of our
+ancestors; I shine; I glitter.
+
+  2. He is a terror to the Mixteca; he alone destroyed the
+Picha-Huasteca, he conquered them.
+
+  3. The Dart-Hurler is an example to the city, as he sets to work. He
+who commands in battle is called the representative of my God.
+
+  4. When he shouts aloud he inspires great terror, the divine hurler,
+the god turning himself in the combat, the divine hurler, the god
+turning himself in the combat.
+
+  5. Amanteca, gather yourselves together with me in the house of war
+against your enemies, gather yourselves together with me.
+
+  6. Pipiteca, gather yourselves together with me in the house of war
+against your enemies, gather yourselves together with me.
+
+
+_Notes._
+
+Huitzilopochtli was the well-known war-god of the Azteca, whose
+functions are described by Sahagun (_Historia_, Lib. I., cap. 1) and
+many other writers. The hymn here given is probably the _tlaxotecuyotl_,
+which was chanted at the celebration of his feast in the fifteenth month
+of the Mexican calendar (see Sahagun, _Historia_, Lib. II., cap. 34).
+The word means "his glory be established." It was commenced at sunset
+and repeated till sunrise.
+
+  1. "In the garb of our ancestors" (_to-citli-quemitl_). The high
+priest appeared in the insignia of Quetzalcoatl, which, says Sahagun,
+"were very gorgeous." (_Hist._, Lib. II., Appendix.)
+
+  2. Mixteca, plural of Mixtecatl, an inhabitant of Mixtecapan, near the
+Pacific. The Huasteca, a nation of Maya lineage, lived on the Gulf
+coast.
+
+  3. The god was called the Hurler, as he was believed to hurl the
+lightning serpent (the _xiuhcoatl_).
+
+  5. Sahagun recites the legends about the Amanteca (_Historia_, Lib.
+IX., cap. 18). Here the name refers to the inhabitants of the quarter
+called Amantlan.
+
+  6. _Pipiteca_, a _nomen gentile_, referring doubtless to a certain
+class of the hearers.
+
+This hymn may be compared to another, descriptive of the same divinity,
+preserved in Sahagun's MS. in Madrid. It is as follows, with my
+translation by its side.
+
+Vitzilopuchtli                     Huitzilopochtli,
+
+Can maceualli                      Only a subject,
+
+Can tlacatl catca.                 Only a mortal was.
+
+Naualli                            A magician,
+
+Tetzauitl                          A terror,
+
+Atlacacemelle                      A stirrer of strife,
+
+Teixcuepani                        A deceiver,
+
+Quiyocoyani in yaoyotl             A maker of war,
+
+Yautecani                          An arranger of battles,
+
+Yautlatoani;                       A lord of battles;
+
+Ca itechpa mitoaya                 And of him it was said
+
+Tepan quitlaza                     That he hurled
+
+In xiuhcoatl                       His flaming serpent,
+
+Immamalhuaztli                     His fire stick;
+
+Quitoznequi yaoyotl                Which means war,
+
+Teoatl tlachinolli.                Blood and burning;
+
+Auh iniquac ilhuiq'xtililoya       And when his festival was celebrated,
+
+Malmicouaya                        Captives were slain,
+
+Tlaaltilmicoaya                    Washed slaves were slain,
+
+Tealtilaya impochteca.             The merchants washed them.
+
+Auh inic mochichiuaya:             And thus he was arrayed:
+
+Xiuhtotonacoche catca              With head-dress of green feathers,
+
+Xiuhcoanauale                      Holding his serpent torch,
+
+Xiuhtlalpile                       Girded with a belt,
+
+Matacaxe                           Bracelets upon his arms,
+
+Tzitzile                           Wearing turquoises,
+
+Oyuvale.                           As a master of messengers.
+
+When in Florence, in 1889, I had an accurate copy made of the Nahuatl
+text and all the figures of the first book of Sahagun's History. The
+colored figure of Huitzilopochtli is in accordance with the above
+description.
+
+
+
+
+II. _Uitznaoac yautl icuic._
+
+
+  1. Ahuia tlacochcalco notequioa ayayui nocaquia tlacatl, ya
+nechyapinauia, ayaca nomati, nitetzauiztli, auia, ayaca nomati niya,
+yautla, aquitoloc tlacochcalco notequioa, iuexcatlatoa ay nopilchan.
+
+  2. Ihiya quetl tocuilechcatl quauiquemitl nepapan oc uitzetla.
+
+  3. Huia oholopa telipuchtla, yuiyoc yn nomalli, ye nimauia, ye
+nimauia, yuiyoc yn nomalli.
+
+  4. Huia uitznauac telepochtla yuiyoc, yn nomalli, ye nimauia, ye
+nimauia yuiyoc, ynomalli.
+
+  5. Huia ytzicotla telipochtla, yuiyoc, yn nomalli, ye nimauia, ye
+nimauia, yuiyoc yn nomalli.
+
+  6. Uitznauac teuaqui, machiyotla tetemoya, ahuia oyatonac, yahuia
+oyatonac, machiyotla tetemoya.
+
+  7. Tocuilitla teuaqui, machiyotla tetemoya, ahuia oyatonac, yahuia
+oyatonac uia, machiyotla tetemoya.
+
+_Var._ 6. Vitzanaoac teuhoaqui machiotla. _MS. Med._
+
+
+_The War Song of the Huitznahuac._
+
+  1. What ho! my work is in the hall of arms, I listen to no mortal, nor
+can any put me to shame, I know none such, I am the Terror, I know none
+other, I am where war is, my work is said to be in the hall of arms, let
+no one curse my children.
+
+  2. Our adornment comes from out the south, it is varied in color as
+the clothing of the eagle.
+
+  3. Ho! ho! abundance of youths doubly clothed, arrayed in feathers,
+are my captives, I deliver them up, I deliver them up, my captives
+arrayed in feathers.
+
+  4. Ho! youths for the Huitznahuac, arrayed in feathers, these are my
+captives, I deliver them up, I deliver them up, arrayed in feathers, my
+captives.
+
+  5. Youths from the south, arrayed in feathers, my captives, I deliver
+them up, I deliver them up, arrayed in feathers, my captives.
+
+  6. The god enters, the Huitznahuac, he descends as an example, he
+shines forth, he shines forth, descending as an example.
+
+  7. Adorned like us he enters as a god, he descends as an example, he
+shines forth, he shines forth, descending as an example.
+
+
+_Notes._
+
+There is no Gloss to this hymn, but its signification seems clear.
+_Huitznahuac_ was a name applied to several edifices in the great temple
+at Tenochtitlan, as we are informed at length by Sahagun. The word is a
+locative from _huitznahua_. This term means "magicians from the south"
+or "diviners with thorns," and was applied in the Quetzalcoatl mythical
+cyclus to the legendary enemies of Huitzilopochtli, whom he is said to
+have destroyed as soon as he was born. (See my discussion of this myth
+in _Proceedings of the American Philosophical Society_ for 1887.)
+Apparently to perpetuate the memory of this exploit, the custom was, at
+the festival of Huitzilopochtli, for the slaves who were to be
+sacrificed to form two bands, one representing the Huitznahua and the
+other the partisans of the god, and to slaughter each other until the
+arrival of the god Paynal put an end to the combat (Sahagun,
+_Historia_, Lib. II., cap. 34). The song here given belongs to this
+portion of the ancient rite.
+
+  1. The _tlacochcalli_, "house of arrows" (_tlacochtli_, arrow,
+_calli_, house), was a large hall in the temple of Huitzilopochtli where
+arrows, spears and other arms were kept (Sahagun, Lib. VIII., cap. 32).
+
+  2. The "adornment from the south" refers to the meaning of the name
+_Huitznahua_. (See Glossary.)
+
+  3. Sahagun (_ubi sup._) informs us that the slaves condemned to die
+fought against free warriors, and when any of the latter were captured
+they were promptly put to death by their captors.
+
+
+
+
+III. _Tlalloc icuic._
+
+
+  1. Ahuia Mexico teutlaneuiloc amapanitla anauhcampa, ye moquetzquetl,
+aoyequene y chocaya.
+
+  2. Ahuia anneuaya niyocoloc, annoteua eztlamiyaual, aylhuiçolla nic
+yauicaya teutiualcoya.
+
+  3. Ahuia annotequiua naualpilli aquitlanella motonacayouh tic yachiuh
+quitla catlachtoquetl, çan mitziyapinauia.
+
+  4. Ahuia cana catella nechyapinauia anechyaca uelmatia, anotata yn
+oquacuillo ocelocoatl aya.
+
+  5. Ahuia tlallocana, xiuacalco aya quizqui aquamotla, acatonalaya.
+
+  6. Ahuia xiyanouia, nahuia xiyamotecaya ay poyauhtla, ayauh
+chicauaztica, ayauicalo tlallocanaya.
+
+  7. Aua nacha tozcuecuexi niyayalizqui aya y chocaya.
+
+  8. Ahuia queyamica xinechiuaya, temoquetl aitlatol, aniquiya
+ilhuiquetl, tetzauhpilla niyayalizqui aya y chocaya.
+
+  9. Ahuia nauhxiuhticaya itopanecauiloc ayoc ynomatia, ay motlapoalli,
+aya ximocaya ye quetzalcalla nepanauia ay yaxcana teizcaltequetl.
+
+  10. Ahuia xiyanouia, ahuia xiyamotequaya ay poyauhtla, ayauh
+chicauaztlica ayauicallo tlalloca.
+
+_Var._ 1. Amopanitl.
+
+
+_Gloss._
+
+  1. Auia Mexico teutlanauiloc, _q.n._, yn Mexico onetlanauiloc in
+tlaloc. Amapanitl annauhcampa ye moquetzquetl, _q.n._, amapanitl
+nauhcampa omoquequetz. Aoyeque naichocaya, _id est_, itlaocuyaya.
+
+  2. Auia anneuaya niyocoloc, _q.n._, ynehuatl ni tlalloc oniyocoloc.
+Annoteua eztlamiyaual, _q.n._, noteu eztlamiyaualtitiuh. Aylhuiçolla,
+_q.n._, yn umpa ilhuiçololo. Inic yauicaya teuitualcoya, _q.n._ in
+teuitualoc.
+
+  3. Auia annotequiua naualpilli, _q.n._ in tinoteuh naualpilli, _i.e._,
+tlalloc. Aquitlanella motonacayouh, _q.n._, ca nelli teuatl
+ticmochiuilia in motonacayouh. Catlachtoquetl, _q.n._, teuatl
+ticmochiuilia auh in aquin timitzpinauia.
+
+  4. Ahuia cana catella nechyapinauia, _q.n._, catel nechpinauia ca
+monechuelmati. Annotata ynoquacuillo ocelocoatl aya, _q.n._, yn notaua
+ioan yna quacuiloa yn oceloquacuili.
+
+  5. Ahuia tlallocana xiuacalco, _q.n._, in tlalocan xiuhcalco, _id
+est_, acxoyacalco. Ayaquizqui, _q.n._, umpa ualquizque. Aquamotla
+acatonalaya, _q.n._, y notauan yn oquacuiloan acatonal.
+
+  6. Ahuia xicanouia nauia xiyamotecaya, _q.n._, xiuian ximotecati. Ay
+poyauhtlan, _q.n._, in umpa poyauhtlan tepeticpac. Ayauh chicauaztica
+ayauicalo tlalocana, _q.n._, ayauh chicauaztica in auicalo tlalocan.
+
+  7. Aua nach tozcuecuexi niyayalizqui, _q.n._, y nach tozcuecuex y ye
+niauh niman ye choca.
+
+  8. Ahuia queyamica xinechiuaya, _q.n._, quenamican y ya niauh aço
+anechtemozque. Aniquiya ilhuiquetl tetzapilla niyayalizqui ayaichocaya,
+_q.n._, onquilhui yn tetzapilli ye niyauh niman ye choca.
+
+  9. Ahuia nauhxiuhticaya nitopanecauiloc, _q.n._, nauhxiuhtica in
+topanecauiloz, _id est_, in tepan mochiuaz. Ayoc inomatia ay
+motlapoalli, _q.n._, aocmo nomatia iniquin motlapoalpan. Ca oximoac ye
+quetzalcalla nepanauia, _q.n._, ye qualcan ye netlamachtiloyan ynemca.
+Ay yaxcana teizcaltiquetl, _q.n._, iniaxca inic oteizcalli.
+
+  10. Ahuia xiyanouia, _q.n._, xiuia. Auia xiya motecaya ay poyauhtla,
+_q.n._, ximotecati in umpa poyauhtla. Ayauh chicauaztica auicallo
+tlalocan, _q.n._, ayauh chicauaztica in auicallo in umpa tlallocan.
+
+
+_The Hymn of Tlaloc._
+
+  1. In Mexico the god appears; thy banner is unfolded in all
+directions, and no one weeps.
+
+  2. I, the god, have returned again, I have turned again to the place
+of abundance of blood-sacrifices; there when the day grows old, I am
+beheld as a god.
+
+  3. Thy work is that of a noble magician; truly thou hast made thyself
+to be of our flesh; thou hast made thyself, and who dare affront thee?
+
+  4. Truly he who affronts me does not find himself well with me; my
+fathers took by the head the tigers and the serpents.
+
+  5. In Tlalocan, in the verdant house, they play at ball, they cast the
+reeds.
+
+  6. Go forth, go forth to where the clouds are spread abundantly, where
+the thick mist makes the cloudy house of Tlaloc.
+
+  7. There with strong voice I rise up and cry aloud.
+
+  8. Go ye forth to seek me, seek for the words which I have said, as I
+rise, a terrible one, and cry aloud.
+
+  9. After four years they shall go forth, not to be known, not to be
+numbered, they shall descend to the beautiful house, to unite together
+and know the doctrine.
+
+  10. Go forth, go forth to where the clouds are spread abundantly,
+where the thick mist makes the cloudy house of Tlaloc.
+
+
+_Notes._
+
+The god Tlaloc shared with Huitzilopochtli the highest place in the
+Mexican Pantheon. He was the deity who presided over the waters, the
+rains, the thunder and the lightning. The annual festival in his honor
+took place about the time of corn-planting, and was intended to secure
+his favor for this all-important crop. Its details are described at
+great length by Diego Duran, _Historia de Nueva España_, cap. 86, and
+Sahagun, _Historia_, Lib. II., cap. 25, and elsewhere. His name is
+derived from _tlalli_, earth. _Tlalocan_, referred to in v. 5, "the
+place of Tlaloc," was the name of a mountain east of Tenochtitlan, where
+the festival of the god was celebrated; but it had also a mythical
+meaning, equivalent to "the earthly Paradise," the abode of happy souls.
+
+It will be observed that v. 10 is a repetition of v. 6. The word
+_ayauicalo_ refers to the _ayauhcalli_, "house of mist," the home of the
+rain god, which Sahagun informs us was represented at the annual
+festival by four small buildings near the water's edge, carefully
+disposed to face the four cardinal points of the compass (Sahagun, _ubi
+supra_).
+
+In v. 8 the expression _tetzauhpilli_ (_tetzauhqui_, to frighten) may
+be explained by the figure of Tlaloc, whose statue, says Duran, was that
+of _un espantable monstruo, la cara muy fea_ (_ibid._).
+
+The compound in v. 10, _nauhxiuhtica_, "after four years," appears to
+refer to the souls of the departed brave ones, who, according to Aztec
+mythology, passed to the heaven for four years and after that returned
+to the terrestrial Paradise,--the palace of Tlaloc. (See my paper, _The
+Journey of the Soul_, in _Proceedings of the Numismatic and Antiquarian
+Society of Philadelphia, 1883_.)
+
+
+
+
+IV. _Teteuynan ycuic._
+
+
+  1. Ahuiya coçauic xochitla oya cueponca yeua tonana teumechaue
+moquiçican tamoanchan, auayye, auayya, yyao, yya, yyeo, aye ayo, ayy
+ayyaa.
+
+  2. Coçauic xochitla oya moxocha yeua tonana, teumechaue, moquiçica
+tamoanchan, ouayye, auayya, yyao, yya, yyeo, ayo aye, ayya, ayyaa.
+
+  3. Ahuia iztac xochitla, oya cueponca yeua tonana teumechaue moquiçica
+tamoanchan, ouayye, auayya, yyao yya, yyeo, ayeaye, ayya ayyaa.
+
+  4. Ahuiya iztac xochitla oya moxocha yeua tonana teumechaue moquiçica
+tamoanchan, ouayye, auayya, yyao, yya, yyeo, aye aye, ayya ayyaa.
+
+  5. Ahuia ohoya teutl ca teucontli paca tona aya, itzpapalotli, auayye,
+yyao, yya, yyeo, ayyaa.
+
+  6. Ao, auatic ya itaca chicunauixtlauatla maçatl yyollo, ica
+mozcaltizqui tonan tlaltecutli, ayao, ayyao, ayyaa.
+
+  7. Aho, ye yancuic tiçatla ye yancuic yuitla oya potoniloc yn
+auicacopa acatl xamontoca.
+
+  8. Aho maçatl mochiuhca teutlalipan mitziya noittaco, yeua xiuhnello,
+yeua mimichan.
+
+_Var._ 7. Xamantoca. 8. Yehoa.
+
+
+_Gloss._
+
+  1. _Q.n._, in tonan ocueponya umpa oalquiz yn tamoanchan.
+
+  2. _Q.n._, in amona ca izcui yn xochiuh ca umpa oquiz yn tmoanchan.
+
+  3. _Q.n._ In tonan ocuepo in umpa oquiz tamoanchan.
+
+  4. _Q.n._, in amona iztac in oxochiuh yn umpa oniquiz tamoanchan.
+
+  5. _Q.n._, in tonan ca teucumitl icpac in quiz yn itzpapalotl.
+
+  6. _Q.n._, in tonan ixtlauan in mozcaltito auh inic mozcalti macatl y
+yollo y yeua tonan tlaltecutli.
+
+  7. _Q.n._, auh inic potoniloc, tonan, yancuic tiçatl ioan yancuic yn
+iuitl, auh nauhcampa quite ynacatl.
+
+  8. _Q.n._, in macatl yeuan can iliaya yn ixtlauacan yuhqui inic quic
+noitayan y yeuatl inimich ioan in xiuhnel.
+
+
+_Hymn to the Mother of the Gods._
+
+  1. Hail to our mother, who caused the yellow flowers to blossom, who
+scattered the seeds of the maguey, as she came forth from Paradise.
+
+  2. Hail to our mother, who poured forth flowers in abundance, who
+scattered the seeds of the maguey, as she came forth from Paradise.
+
+  3. Hail to our mother, who caused the yellow flowers to blossom, she
+who scattered the seeds of the maguey, as she came forth from Paradise.
+
+  4. Hail to our mother, who poured forth white flowers in abundance,
+who scattered the seeds of the maguey, as she came forth from Paradise.
+
+  5. Hail to the goddess who shines in the thorn bush like a bright
+butterfly.
+
+  6. Ho! she is our mother, goddess of the earth, she supplies food in
+the desert to the wild beasts, and causes them to live.
+
+  7. Thus, thus, you see her to be an ever-fresh model of liberality
+toward all flesh.
+
+  8. And as you see the goddess of the earth do to the wild beasts, so
+also does she toward the green herbs and the fishes.
+
+
+_Notes._
+
+The goddess to whom this hymn is devoted was called _Teteoinan_, the
+Mother of the Gods, _Toçi_, our Mother (maternal ancestor), and also by
+another name which signified "the Heart of the Earth," the latter being
+bestowed upon her, says Duran, because she was believed to be the cause
+of earthquakes. Her general functions were those of a genius of
+fertility, extending both to the vegetable and the animal world. Thus,
+she was the patroness of the native midwives and of women in childbirth
+(Sahagun). Her chief temple at Tepeyacac was one of the most renowned in
+ancient Mexico, and it was a felicitous idea of the early missionaries
+to have "Our Lady of Guadalupe" make her appearance on the immediate
+site of this ancient fane already celebrated as the place of worship of
+the older female deity. The _Codex Ramirez_ makes her a daughter of the
+first King of Culhuacan.
+
+  1. _Tamoanchan._ This word Sahagun translates "we seek our homes,"
+while the _Codex Telleriano-Remensis_ gives the more intelligible
+rendering "there is their home whither they descend," and adds that it
+is synonymous with _Xochitlycacan_, "the place where the flowers are
+lifted." It was the mystical Paradise of the Aztecs, the Home of the
+Gods, and the happy realm of departed souls. The Codex just quoted adds
+that the gods were born there, which explains the introduction of the
+word into this hymn.
+
+  5. For _teucontli_ (see Glossary) I should suggest _teocomitl_, a
+species of ornament, (cf. Sahagun, _Historia_, Lib. II., cap. 37.)
+
+
+
+
+V. _Chimalpanecatl icuic ioan tlaltecaua (nanotl)._
+
+
+  1. Ichimalipan chipuchica ueya, mixiuiloc yautlatoaya, ichimalipan
+chipuchica ueya, mixiuiloc yautlatoa.
+
+  2. Coatepec tequiua, tepetitla moxayaual teueuel aya quinelli
+moquichtiuiui tlalli cuecuechiuia aqui moxayaual teueuella.
+
+
+_Var._ Title. Tlaltecaoannanotl. 2. Cohoatepechquiua.
+
+
+_Gloss._
+
+  1. _Q.n._, yautlatolli ipa omixiuh ynanotl chimalipan in omixiuh, _id
+est_, ipa oquitlacatilli ynanotl in uitzilopochtli y yauyutl.
+
+  2. _Q.n._, coatepec otepeuh tepetitla yc moxaual ioan y teueuel, _id
+est_, ichimal ic otepeuh aocac omoquichquetz iniquac peualoque coatepec
+a iniquac otlalli cuecuechiuh, _id est_, iquac opopoliuhque.
+
+
+_Hymn to Chimalipan in Parturition._
+
+  1. Chimalipan was a virgin when she brought forth the adviser of
+battles; Chimalipan was a virgin when she brought forth the adviser of
+battles.
+
+  2. On the Coatepec was her labor; on the mountain he ripened into age;
+as he became a man truly the earth was shaken, even as he became a man.
+
+
+_Notes._
+
+The goddess Chimalipan is not mentioned by the authorities at my
+command; but from the tenor of the hymn it is evident that the name is
+a synonym for the virgin mother of Huitzilopochtli, who is distinctly
+referred to by his title _Yautlatoani_ (see _ante_, p. 18). In the myth,
+she dwelt upon the Coatepetl, the Serpent Mountain, on the site of
+Tulan. For a full discussion of this myth I refer to my inquiry, "_Were
+the Toltecs an Historic Nationality?_" in _Proceedings of the Amer.
+Phil. Soc._ for Sept. 1887, and _American Hero-Myths_, chap. 11.
+(Phila., 1881).
+
+The Gloss distinctly states that the mother of Huitzilopochtli is
+referred to in the hymn. We must regard Chimalipan therefore as
+identical with _Chimalman_, who, according to another myth dwelt in Tula
+as a virgin, and was divinely impregnated by the descending spirit of
+the All-father in the shape of a bunch of feathers.
+
+In other myths she is mentioned as also the mother of the Huitznahua,
+the enemies and the brothers of Huitzilopochtli, referred to in the
+second of this collection of chants.
+
+
+
+
+VI. _Ixcoçauhqui icuic._
+
+
+  1. Huiya tzonimolco notauane ye namech maya pinauhtiz, tetemoca ye
+namech maya pinauhtiz.
+
+  2. Xonca mecatla notecua icçotl mimilcatoc chicueyocan naualcalli
+nauali temoquetlaya.
+
+  3. Huiya tzonimolco cuicotipeuhque, aya tzonimolco cuicotipeuhque, aya
+iztleica naual moquizcauia, iztlauan naual moquizca.
+
+  4. Huia tzonimolco maceualli maya temacouia, oya tonaqui, oya tonaqui
+maceualli, maya temacouiya.
+
+  5. Huiya tzonimolco xoxolcuicatl cacauantoc ya ayouica mocuiltonoaci
+tontecuitl moteicnelil mauiztli.
+
+  6. Huiya ciuatontla xatenonotza, ayyauhcalcatl quiyauatla,
+xatenonotza.
+
+_Var._ 2. Xoncan mecatlan notechoan. 3. Iztleica (for iztlauan). 6. Ia
+ayiauhcalcatl.
+
+
+_Gloss._
+
+  1. _Q.n._, yn itzonmolcatl notauane ye nemechpinauhtiz nachcan nochan
+tetemoan, ye nemechpinauhtiz.
+
+  2. _Q.n._, yn mecatla amo tecuhuan in oncan icçotl mimilcatoc
+ueyaquixtoc icçotl uncan in temoc in chicueyocan.
+
+  3. _Q.n._, yn tzonmolco otipeuhque macuico yn tzonmolco macuico
+otipeuhque tleica in amo anualquiça tleica yn ayaualquiça.
+
+  4. _Q.n._, yn tzonmolco otonac auh in omaceualhoan xinechinacaqui
+notechpouizque yn enetoltiloyan.
+
+  5. _Q.n._, yn cuicatl tzomolco ca ye cauani in aic necuiltonollo
+netotilo in tetecuti yeua moteicnelil ca mauiztic.
+
+  6. _Q.n._, yn ciuatontli xitenonotza in quiauat ayauhcalcatl, _id
+est_, in ticiuatontli xitenonotza.
+
+
+_Hymn to Ixcoçauhqui._
+
+  1. In the Hall of Flames let me not put to shame my ancestors;
+descending there, let me not put you to shame.
+
+  2. I fasten a rope to the sacred tree, I twist it in eight folds, that
+by it I, a magician, may descend to the magical house.
+
+  3. Begin your song in the Hall of Flames; begin your song in the Hall
+of Flames; why does the magician not come forth? Why does he not rise
+up?
+
+  4. Let his subjects assist in the Hall of Flames; he appears, he
+appears, let his subjects assist.
+
+  5. Let the servants never cease the song in the Hall of Flames; let
+them rejoice greatly, let them dance wonderfully.
+
+  6. Call ye for the woman with abundant hair, whose care is the mist
+and the rain, call ye for her.
+
+
+_Notes._
+
+_Ixcoçauhqui_, "the Yellow Faced," was the Mexican God of Fire.
+Torquemada gives as his synonyms _Xiuhtecutli_, "Lord of Fire," and
+_Huehueteotl_, "the Ancient God" (_Monarquia Indiana_, Lib. VI., cap.
+28). Elsewhere he identifies him with the Sun-god (_Ibid._, Lib. XIV.,
+cap. 4). Sahagun describes his annual festival (_Hist._, Lib. II., cap.
+38), and gives another of his names, _Cueçaltzin_, a reverential form of
+_cuezalotl_, flame (_Hist._, Lib. I., cap. 13).
+
+The _tzonmolco_ so often referred to in this hymn was the sixty-fourth
+edifice in the great temple of Tenochtitlan, and was devoted to the
+worship of Ixcoçauhqui (Sahagun). The word literally means "the place of
+spreading hairs," the rays or ornaments spreading from the head of the
+statue of the god representing flames (Sahagun).
+
+The reference in v. 6 seems to be to one of the women who were
+sacrificed at the festival, as related by Sahagun (Lib. II., App.).
+
+
+
+
+VII. _Mimixcoa icuic._
+
+
+  1. Chicomoztoc quinexaqui, çani aueponi, çani, çani, teyomi.
+
+  2. Tziuactitlan quinexaqui, çani a aueponi, çani, çani, teyomi.
+
+  3. Oya nitemoc, oya nitemoc, aya ica nitemoc notziuaquimiuh, aya ica
+nitemoc notziuaquimiuh.
+
+  4. Oya nitemoc, oya nitemoc, ayayca nitemoc nomatlauacal.
+
+  5. Ni quimacui, ni quimacui, yuaya niquimacui, niquimacui, yuanya ayo
+macuiui.
+
+  6. Tlachtli icpacaya, uel incuicaya, quetzalcuxcuxaya, quinanquilia
+çinteutla, aay.
+
+_Var._ 1. Quinehoaqui. 2. Quineuaqui. 6. Ipac.
+
+
+_Gloss._
+
+  1. _Q.n._, chicomoztoc oniualleuac çani aueponi, ichichimecatlatol,
+çani aueponi, çani, çani teyomi.
+
+  2. _Q.n._, tziuactli in itlan oniualleuac çani aueponi, çani, çani
+teyomi.
+
+  3. Oya nitemoc, _q.n._, onitemoc onitlacatl ipan ynotziuacmiuh;
+onitemoc ipan ynotziuacmiuh ça niman ipan nitlacat ynotlauitol ynomiuh.
+
+  4. _Q.n._, onitemoc onitlacat inipan nomatlauacal ça niman ipan
+nitlacat.
+
+  5. Y yacatlatol. Yc a a inya in chichimeca in chichimecatlatol.
+
+  6. _Q.n._, yn tlataçica tictecazque totlach uncan ticuicazque
+noyehuatl in quetzalcocox.
+
+
+_Hymn of Mixcoatl._
+
+  1. I come forth from Chicomoztoc, only to you, my friends, to you,
+honored ones.
+
+  2. I come forth from Tziuactitlan, only to you my friends, only to you
+honored ones.
+
+  3. I sought, I sought, in all directions I sought with my pack; in all
+directions I sought with my pack.
+
+  4. I sought, I sought, in all directions I sought with my traveling
+net.
+
+  5. I took them in hand, I took them in hand; yes, I took them in hand;
+yes, I took them in hand.
+
+  6. In the ball ground I sang well and strong, like to the quetzal
+bird; I answered back to the god.
+
+
+_Notes._
+
+"The Chichimecs," says Sahagun (_Hist._, Lib. VI., cap. 7), "worshipped
+only one god, called _Mixcoatl_." The _Anales de Cuauhtitlan_ speaks of
+Mixcoatl as one of the leaders of the ancient Nahuas from their
+primitive home Chicomoztoc, the land of the Seven Caves. This is what is
+referred to in the above hymn. In later times Mixcoatl became god of
+hunting and of the tornado, and his worship extended to the Otomis.
+
+_Tzihuactitlan_, "the land of the tzihuac bushes," I have not found
+mentioned by any of the Spanish authorities, but it is named in
+connection with Chicomoztoc in an ancient war-song given in my _Ancient
+Nahuatl Poetry_, pp. 88 and 140.
+
+The hymn appears to be in memory of the leadership of Mixcoatl in
+conducting the ancestors of the Nahua on their long wanderings after
+leaving their pristine seats. It should be read in connection with the
+earlier pages of the _Annals of Cuauhtitlan_.
+
+The reduplicated form of the name, _Mimixcoatl_, is not found elsewhere,
+and appears to be a poetic license.
+
+
+
+
+VIII. _Xochipilli icuic._
+
+
+  1. Ye cuicaya tocniuaya ouaya yeo, ye cuicaya ye quetzalcoxcuxa
+yoaltica tlao çinteutla, oay.
+
+  2. Çan quicaquiz nocuic ocoyoalle teumechaue, oquicaquiz nocuica in
+cipactonalla atilili, ouayya.
+
+  3. Ayao, ayao, ayao, ayao, nitlanauati ay tlalocan tlamacazque, ayao,
+ayao, ayao.
+
+  4. Ayao, ayao, ayao, tlalocan tlamacazque nitlanauati, aya, ayao,
+ayyao.
+
+  5. Ao çani uallaçic, otli nepaniuia, cani çinteutla campa ye noyaz,
+campa otli nicyatoca ça oay.
+
+  6. Ayao, aya, ayao, tlalocan tlamacazque, quiauiteteu, ayyao, aya,
+ayao.
+
+
+_Gloss._
+
+  1. _Q.n._, ca otonac, ca otlatuic ca ye cuico ca ye cuica centeotl in
+quetzalcocox.
+
+  2. _Q.n._, macaco in tocuic ynican maquicaquican yn nican tlaca.
+
+  3. _Q.n._, in tlaloque tlamacazque niquinnauatia ye niauh in nochan.
+
+  4. _Q.n._, yn tlaloque tlamacazque niquinnauatia ye niauh in nochan.
+
+  5. _Q.n._, ca onitlanauati ni tlaloca catli ye nictocaz utli.
+
+  6. _Q.n._, yn antlaloque yn antlamacazque catli nictocaz yn anteteuh.
+
+
+_Hymn to Xochipilli._
+
+  1. O friends, the quetzal bird sings, it sings its song at midnight to
+Cinteotl.
+
+  2. The god will surely hear my song by night, he will hear my song as
+the day begins to break.
+
+  3. I send forth the priests to the house of Tlaloc.
+
+  4. The priests to the house of Tlaloc do I send forth.
+
+  5. I shall go forth, I shall join myself unto them, I shall go where
+is Cinteotl, I shall follow the path to him.
+
+  6. The priests go forth to the house of Tlaloc, to the home of the
+gods of the plain.
+
+
+_Notes._
+
+_Xochipilli_, "lord of flowers," otherwise named _Macuilxochitl_, "five
+flowers" (the name of a small odorous plant), was the deity who gave and
+protected all flowering plants. As one of the gods of fertility and
+production, he was associated with Tlaloc, god of rains, and Cinteotl,
+god of maize. His festival is described in Sahagun (_Historia_, Lib. I.,
+cap. 14).
+
+  2. _Cipactonalla_, from _cipactli_, and _tonalli_, may refer to
+_Cipactonal_, the reputed discoverer of the Aztec calendar. See
+_Sahagun_, _Historia_, Lib. IV., cap. I.
+
+
+
+
+IX. _Xochiquetzal icuic._
+
+
+  1. Atlayauican ni xochiquetzalli tlacya niuitza ya motencaliuan
+tamoanchan oay.
+
+  2. Ye quitichocaya tlamacazecatla piltzintecutlo quiyatemoaya ye
+xochinquetzalla xoyauia ay topa niaz, oay.
+
+_Var._ 2. Icotochiquetzalla.
+
+
+_Gloss._
+
+  1. _Q.n._, ompa niuitz ynixochiquetzal tamoanchan.
+
+  2. _Q.n._, choca piltzintecutli quitemoa in xochiquetzal xoyauia no
+umpa niaz.
+
+
+_Hymn to Xochiquetzal._
+
+  1. I, Xochiquetzal, go forth willingly to the dancing place by the
+water, going forth to the houses in Tamoanchan.
+
+  2. Ye noble youths, ye priests who wept, seeking Xochiquetzal, go
+forth there where I am going.
+
+
+_Notes._
+
+_Xochiquetzal_, "plumage of flowers," was the deity of the artists, the
+painters, weavers, engravers on metal, silver and goldsmiths, and of all
+who dealt in fine colors. Her figure was that of a young woman with gay
+garments and jewelry (Duran, _Historia_, cap. 94). In the _Codex
+Telleriano-Remensis_ she is assigned as synonyms _Ichpochtli_, the
+Virgin, and _Itzpapalotl_, literally "the obsidian butterfly," but which
+was probably applied to a peculiar ornament of her idol.
+
+On _Tamoanchan_ see notes to Hymn IV.
+
+The term _atlayauican_, which I have translated "the dancing place by
+the water," appears to refer to the "jar dance," _baile de las jicaras_,
+which took place at the festival of the goddess, in the month of
+October. Duran informs us this was executed at a spot by the shore of
+the lake. Ceremonial bathing was carried on at the same festival, and
+these baths were considered to cleanse from sin, as well as from
+physical pollution.
+
+
+
+
+X. _Amimitl icuic._
+
+
+  1. Cotiuana, cotiuana, cali totoch maca huiya yyalimanico,
+oquixanimanico, tlacochcalico, oua, yya yya, matonicaya, matonicalico,
+oua yya yo, çana, çana, ayoueca niuia, çana canoya, ueca niuia, yya,
+yya, yyeuaya, çana, çana, yeucua niuia.
+
+  2. Ye necuiliyaya, niuaya, niuaya, niuaya, ay ca nauh niuahuaya,
+niuaya, niuaya, ay ca nauh.
+
+  3. Tlaixtotoca ye ca nauhtzini, tlaixtotoca ye ca nauhtzini, ayoaya,
+yoaya, ye ca nauhtzini.
+
+  4. Aueya itzipana nomauilia, aueya itzipana nomauilia, aueya itzipana
+nomauilia.
+
+_Var._ 1. Manca. Matinicaya.
+
+
+_Gloss._
+
+In amimitl icuic yuh mitoa in ueli chichimeca cuic amo uel caquizti in
+quein quitoa in tonauatlatol ypa.
+
+
+_Hymn to Amimitl._
+
+  1. Join together your hands in the house, take hands in the sequent
+course, let them spread forth, spread forth in the hall of arrows. Join
+hands, join hands in the house, for this, for this have I come, have I
+come.
+
+  2. Yes, I have come, bringing four with me, yes I have come, four
+being with me.
+
+  3. Four noble ones, carefully selected, four noble ones, carefully
+selected, yes, four noble ones.
+
+  4. They personally appear before his face, they personally appear
+before his face, they personally appear before his face.
+
+
+_Notes._
+
+The brief Gloss to this Hymn states that it is of ancient Chichimec
+origin and that it cannot well be rendered in Nahuatl. Its language is
+exceedingly obscure, but it is evidently a dancing song.
+
+_Amimitl_, "the water-arrow," or "fish-spear," was, according to
+Torquemada, especially worshipped at Cuitlahuac. He was god of fishing,
+and visited the subjects of his displeasure with diseases of a dropsical
+or watery character (_Monarquia Indiana_, Lib. VI., cap. 29). On slender
+and questionable grounds Clavigero identifies him with Opochtli, the god
+of net makers and fishers with nets (_Storia Antica del Messico_, Tom.
+II., p. 20).
+
+The four noble ones referred to in vv. 3 and 4 probably refer to those
+characters in the Mexican sacred dances called "the four auroras," four
+actors clothed respectively in white, green, yellow and red robes. See
+Diego Duran, _Historia_, cap. 87.
+
+
+
+
+XI. _Otontecutli icuic._
+
+
+  1. Onoalico, onoalico, pomaya, yyaya, ayyo, ayyo, aya, aya, ayyo.
+
+  2. Chimalocutitlana motlaqueuia auetzini nonoualico, quauinochitla,
+cacauatla motlaqueuia auetzini.
+
+  3. Ni tepanecatli aya cuecuexi, ni quetzallicoatli aya cuecuexi.
+
+  4. Cane ca ya itziueponi, cane ca ya itziueponi.
+
+  5. Otomico, noyoco, nauaco, mexicame ya yauilili, noyoco, nauaco,
+mexicame ya.
+
+  6. A chimalli aya, xa, xauino quiyauilili, noyoco, nauaco, mexicame
+ya.
+
+_Var._ 2. Nonoualco.
+
+
+_Hymn of Olontecutli._
+
+  1. At Nonoalco he rules, at Nonoalco, Oho! Oho!
+
+  2. In the pine woods he prepares your destruction at Nonoalco, in the
+tuna woods, in the cacao woods he prepares your destruction.
+
+  3. I, dweller in the palace, shook them; I, Quetzalcoatl, shook them.
+
+  4. There was a splendor of spears, a splendor of spears.
+
+  5. With my captain, with my courage, with my skill, the Mexicans were
+put to flight; even the Mexicans, with my courage, with my skill.
+
+  6. Go forth, ye shield bearers, put the Mexicans to flight with my
+courage, with my skill.
+
+
+_Notes._
+
+The absence of a Gloss to this hymn adds to the difficulty of a
+translation. _Otontecutli_ was the chief deity of the Otomis, and the
+chant appears to be one of their war songs in their conflict with the
+Azteca. The name is a compound of _otomitl_, an Otomi, and _tecutli_,
+ruler or lord. He is slightly referred to by Sahagun as "the first ruler
+to govern the ancestors of the Otomis." (_Historia_, Lib. X, cap. 29,
+sec. 5.)
+
+
+
+
+XII. _Ayopechtli icuic._
+
+
+  1. Cane cana ichan, ayopechcatl cozcapantica mixiuhtoc.
+
+  2. Cane cana ichan ayopechcatl cozcapantica mixiuhtoc, cane ichan
+chacayoticaya.
+
+  3. Xiualmeuayauia, xiua xiualmeuayaauiaya yancuipilla, xiualmeuaya.
+
+  4. Auiya xiualmeuaya, ueya, xiua, xiualmeuaya, cozcapilla xiualmeuaya.
+
+
+_Gloss._
+
+  1. _Q.n._, in oncan ichan ayopechtli oncan mixiuiqui tlacatilia in
+cuzcatl quetzalli.
+
+  2. Cane cana ichan, _q.n._, in oncan ichan ayopechcatl oncan
+quitlacatilia in cozcatl quetzalli oncan yoliua, tlacatiua.
+
+  3. _Q.n._, ximeua, ximeua, in tipiltzintli xiualmeua in quinotitlacat
+tipiltzintli.
+
+  4. _Q.n._, xiualmeua, xiualmeua, in tipiltzintli in ti cuzcatl, in ti
+quetzalli.
+
+
+_Hymn to Ayopechcatl._
+
+  1. Truly in whatever house there is a lying-in, Ayopechcatl takes
+charge of the child.
+
+  2. Truly in whatever house there is a lying-in, Ayopechcatl takes
+charge of the child, there where it is weeping in the house.
+
+  3. Come along and cry out, cry out, cry out, you new comer, come along
+and cry out.
+
+  4. Come along and cry out, cry out, cry out, you little jewel, cry
+out.
+
+
+_Notes._
+
+The name of Ayopechcatl does not appear among the divinities named by
+Sahagun, Duran or the other authorities at my command. Her name
+indicates her function as the goddess of the child-bed and the neonatus,
+and the above hymn establishes her claim to a place in the Aztec
+pantheon.
+
+
+
+
+XIII. _Ciuacoatl icuic._
+
+
+  1. Quaui, quaui, quilaztla, coaeztica xayaualoc uiuiya quauiuitl
+uitzalochpa chalima aueuetl ye colhoa.
+
+  2. Huiya tonaca, acxolma centla teumilco chicauaztica, motlaquechizca.
+
+  3. Uitztla, uitztla, nomactemi, uitztla, uitztla nomactemi, açan
+teumilco chicauaztica motlaquechizca.
+
+  4. Malinalla nomactemi, açan teumilco chicauaztica motlaquechizca.
+
+  5. A omei quauhtli, ye tonanaya chalmecatecutli ay tziuac y mauiztla
+nechyatetemilli, yeua nopiltzinaya mixcoatla.
+
+  6. Ya tonani, yauçiuatzin, aya tonan yauçiuatzi aya y maca coliuacan y
+yuitla y potocaya.
+
+  7. Ahuiya ye tonaquetli, yautlatocaya, ahuiya ye tonaquetli
+yautlatocaya moneuila no tlaca cenpoliuiz aya y maca coliuaca y yuitla y
+potocaya.
+
+  8. Ahuia quauiuitl amo xayaualli onauiya yecoyametl amo xayaualli.
+
+_Var._ 1. Cohoaeztica. 2. Acxoima. 7. Maneuila, cenpoalihuiz, inmaca.
+
+
+_Gloss._
+
+  1. _Q.n._, in quauhcihuatl, ic oxaualoc in coaetztli, ioan in quauhtli
+yhuitli in moteneua iquauhtzon, ipan iualuicoc yn umpa colhuacan.
+
+  2. _Q.n._, inic motocaya çentli, in mochiuaya teumilpa, ichicauaztica
+inic tlatatacaya, inic tocaya.
+
+  3. Uitztla, _q.n._, nomactemi nochicauaztica inic nitocaya, inic
+nitlatatacaya.
+
+  4. Malinalla, uictli, _q.n._, uictica in tlachpanaya, _id est_,
+iceliniquia, yn uncan teumilpan auh ychicauaztica inic nitlatatacaya,
+inic tocaya.
+
+  5. _Q.n._, matlactli omei quauhtli yn notonal innamona auh ynan
+nopilhoan in chalmeca xicuiti in tziuactli xinechtemilica.
+
+  6. _Q.n._, in iyauciuatzin yn amona umpa nochan in coluaca auh in
+quauiuitl nictemaca ynic oquauhtiuac.
+
+  7. _Q.n._, ca otonac ca otlatuic momochiua yauyutl ma tlamalo
+tlalpiliuiz nic temaca in quauiuitl.
+
+  8. _Q.n._, aahuia yn otlamaloc in quauiuitl yc moxaua.
+
+
+_Hymn to Cihuacoatl._
+
+  1. Quilaztli, plumed with eagle feathers, with the crest of eagles,
+painted with serpents' blood, comes with her hoe, beating her drum, from
+Colhuacan.
+
+  2. She alone, who is our flesh, goddess of the fields and shrubs, is
+strong to support us.
+
+  3. With the hoe, with the hoe, with hands full, with the hoe, with
+hands full, the goddess of the fields is strong to support us.
+
+  4. With a broom in her hands the goddess of the fields strongly
+supports us.
+
+  5. Our mother is as twelve eagles, goddess of drum-beating, filling
+the fields of tzioac and maguey like our lord Mixcoatl.
+
+  6. She is our mother, a goddess of war, our mother, a goddess of war,
+an example and a companion from the home of our ancestors (Colhuacan).
+
+  7. She comes forth, she appears when war is waged, she protects us in
+war that we shall not be destroyed, an example and companion from the
+home of our ancestors.
+
+  8. She comes adorned in the ancient manner with the eagle crest, in
+the ancient manner with the eagle crest.
+
+
+_Notes._
+
+Cihuacoatl was the mythical mother of the human race. Her name,
+generally translated "serpent woman," should be rendered "woman of
+twins" or "bearing twins," as the myth related that such was her
+fertility that she always bore two children at one lying-in.
+(Torquemada, _Monarquia Indiana_, Lib. VI., cap. 31.) She was also known
+by the title _Tonan_ or _Tonantzin_, "our mother," as in v. 5 and 6.
+Still another of her appellations was _Quilaztli_, which is given her in
+v. 1. (Comp. Sahagun, _Historia_, Lib. VI., cap. 27.) She was
+essentially a goddess of fertility and reproduction. The name
+_cihuacoatl_ was also applied to one of the higher magistrates and war
+chiefs in the Aztec army (Sahagun). Reference is made to this in v. 6.
+As a goddess of venerable antiquity, she is spoken of as coming from
+Colhuacan, "the place of the old men," or of the ancestors of the tribe.
+This name is derived from _coloa_, to bend down, as an aged person,
+_colli_, an old man. (See my _Ancient Nahuatl Poetry_, pp. 172-3).
+
+
+
+
+XIV. _Izcatqui yn cuicatl chicuexiuhtica meuaya iniquac atamalqualoya._
+
+
+  1. Xochitl noyollo cuepontimania ye tlacoyoalle, oaya, oouayaye.
+
+  2. Yecoc ye tonan, yecoc ye teutl tlacolteutla, oaya, ooayaya.
+
+  3. Otlacatqui çenteutl tamiyoanichan ni xochitlicacani. Çey xochitli
+yantala, yantata, ayyao, ayyaue, tilili yao, ayaue, oayyaue.
+
+  4. Otlacatqui çenteutl, atl, yayaui cani tlaca pillachiualoya
+chalchimichuacan, yyao, yantala, yatanta, a yyao, ayyaue tilili yao,
+ayyaue, oayyaue.
+
+  5. Oya tlatonazqui tlauizcalleuaya inan tlachinaya nepapan quechol,
+xochitlacacan y yantala, yantata, ayyao, ayyaue, tilili yao, ayyaue,
+oayyayaue.
+
+  6. Tlalpa timoquetzca, tianquiz nauaquia nitlacatla, ni quetzalcoatla,
+yyao, yantala, yantata, ayyao, ayyaue, tilili yao ayyaue, oayyayue.
+
+  7. Ma ya auiallo xochinquauitl itlani nepapan quecholli ma ya in
+quecholli xicaquiya tlatoaya y toteuh, xicaquiya tlatoaya y quechol
+amach yeua tonicauh tlapitza amach ychan tlacaluaz, ouao.
+
+  8. Aye oho, yyayya, ça miquiyecauiz ça noxocha tonaca xochitli ye
+izqui xochitla, xochitlicacan, yyaa.
+
+  9. Ollama, ollama uiue xolutl nauallachic, ollama ya xolutl
+chalchiuecatl xiquitta mach, oya moteca piltzintecutli yoanchan,
+yoanchan.
+
+  10. Piltzintle, piltzintle toçuitica timopotonia tlachco, timotlalli
+yoanchan, yoanchan.
+
+  11. Oztomecatla yyaue, oztomecatla xochiquetzal quimama, ontlatca
+cholola, ayye, ayyo, oye maui noyol, oye maui noyol, aoya yecoc
+centeutl, matiuia obispo, oztomecatl chacalhoa, xiuhnacochtla, yteamic
+ximaquiztla yteamico, ayye, ayye.
+
+  12. Cochina, cochina, cocochi ye nicmaololo, ni cani ye çiuatl ni
+cochina yyeo, ouayeo, yho, yya, yya.
+
+_Var._ 3. Çenteuteutl. 4. Uillachiualoia. 5. Oya tonazqui. 6. Tlapan.
+10. Timotlalia. 11. Suchiquetzal. Ontlatoa cholollan.
+
+
+_This is the Hymn which they sang every eight years when they fasted on
+bread and water._
+
+  1. The flower in my heart blossoms and spreads abroad in the middle of
+the night.
+
+  2. Tonan has satisfied her passion, the goddess Tlazolteotl has
+satisfied her passion.
+
+  3. I, Cinteotl, was born in Paradise, I come from the place of
+flowers. I am the only flower, the new, the glorious one.
+
+  4. Cinteotl was born from the water; he came born as a mortal, as a
+youth, from the cerulean home of the fishes, a new, a glorious god.
+
+  5. He shone forth as the sun; his mother dwelt in the house of the
+dawn, varied in hue as the quechol bird, a new, a glorious flower.
+
+  6. I came forth on the earth, even to the market place like a mortal,
+even I, Quetzalcoatl, great and glorious.
+
+  7. Be ye happy under the flower-bush varied in hue as the quetzal
+bird; listen to the quechol singing to the gods; listen to the singing
+of the quechol along the river; hear its flute along the river in the
+house of the reeds.
+
+  8. Alas! would that my flowers would cease from dying; our flesh is as
+flowers, even as flowers in the place of flowers.
+
+  9. He plays at ball, he plays at ball, the servant of marvellous
+skill; he plays at ball, the precious servant; look at him; even the
+ruler of the nobles follows him to his house.
+
+  10. O youths! O youths! follow the example of your ancestors; make
+yourselves equal to them in the ball count; establish yourselves in your
+houses.
+
+  11. She goes to the mart, they carry Xochiquetzal to the mart; she
+speaks at Cholula; she startles my heart; she startles my heart; she has
+not finished, the priest knows her; where the merchants sell green jade
+earrings she is to be seen, in the place of wonders she is to be seen.
+
+  12. Sleep, sleep, sleep, I fold my hands to sleep, I, O woman, sleep.
+
+
+_Notes._
+
+In default of a Gloss to this hymn, the indispensable Sahagun again
+comes to our aid. He informs us in the Appendix to the second book of
+his _Historia_ that "When the Indians celebrated the festival called
+_atamalqualiztli_, which took place every eight years, certain natives
+called Mazateca swallowed living serpents and frogs, and received
+garments as a recompense for their daring." We are not informed as to
+the purpose of the festival, and its name, which signifies "eating
+bread made with water," is merely that of one of the regular systems of
+fasting in vogue in ancient Mexico. (See Sahagun, Lib. III., cap. 8.)
+The song before us appears to be a recitation calling on a number of the
+Nahua divinities.
+
+  1. "The flower in my heart" is a metaphorical expression for song.
+
+  2. _Tonan_, "Our Mother"; _Tlazolteotl_, the goddess of lascivious
+love, _Venus impudica_. The verb _yecoa_ appears to have its early
+signification, expressing carnal connection.
+
+  3. _Centeotl_, god of maize and fertility.
+
+  8. The flowers referred to are the youths and maidens who die young.
+
+  9. The house of the ball player is the tomb.
+
+  11. This verse is very obscure and is obviously corrupt. It contains
+the only Spanish word in the text of these hymns--_obispo_--a word
+including two letters, _b_ and _s_, not in the Nahuatl alphabet.
+
+  12. The woman referred to is Xochiquetzal. See Hymn IX.
+
+
+
+
+[Illustration: PRIEST OF XIPPE TOTEC, DRINKING AND PLAYING ON A DRUM.
+HYMN XV.]
+
+
+
+
+XV. _Xippe icuic, Totec, yoallauana._
+
+
+  1. Yoalli tlauana, iztleican nimonenequia xiyaqui mitlatia
+teocuitlaquemitl, xicmoquenti quetlauia.
+
+  2. Noteua chalchimamatlaco, apana, y temoya ay quetzallaueuetl, ay
+quetzalxiuicoatl, nechiya iqui nocauhquetl, ouiya.
+
+  3. Maniyauia, nia nia poliuiz, ni yoatzin achalchiuhtla noyollo,
+ateucuitlatl nocoyaitaz, noyolceuizqui tlacatl achtoquetl tlaquauaya,
+otlacatqui yautlatoaquetl ouiya.
+
+  4. Noteua ce in tlaco xayailiuiz çonoa y yoatzin motepeyocpa
+mitzualitta moteua, noyolceuizquin tlacatl achtoquetl tlaquauaya,
+otlacatqui yautlatoaquetl, ouiya.
+
+_Var._ 1. Quetloujia. 2. Noteuhoa chalchimmama tlacoapana itemoia. 3.
+Achalchiuhtla. 4. Centlaco, mitzualitla.
+
+
+_Gloss._
+
+  1. _Q.n._, yn ti yoallauana, ti xipe, totec, tleica in ti monequi in
+timoçuma, in timotlatia, _id est_, tleica in amo quiauiteocuitlaquemitl,
+xicmoquenti, _q.n._, ma quiaui, ma ualauh yn atl.
+
+  2. _Q.n._, yn ti noteuh, otemoc in mauhoualla yn mauh; ay quetzalla
+ueuetl, _id est_, ye tlaquetzalpatia ye tlaxoxouia, ye xopantla. Ay
+quetzal xiuhcoatl nechia iqui no cauhquetl, _id est_, ca ye otechcauh yn
+mayanaliztli.
+
+  3. _Q.n._, ma mauh, ma nipoliui yn ni yoatzin, _id est_, in catleuatl,
+yuhquin chalchiuitl noyollo. A teocuitlatl nocoyaitaz, _q.n._, in
+catleuatl achtomochiuaz ninoyolceuiz.
+
+  4. _Q.n._, yn oteuh cequi tlatlacotyan in mochiua initonacayouh,
+auh in tlein tlatlacotyan achto mochiua mochi tlacatl achto mitzualmaca,
+auh iniquac ye omochimochiuh occeppa nomochi tlacatl mitzualmaca yn
+motonacayuh.
+
+
+_Hymn of the High Priest of Xipe Totec._
+
+  1. The nightly drinking, why should I oppose it? Go forth and array
+yourselves in the golden garments, clothe yourselves in the glittering
+vestments.
+
+  2. My god descended upon the water, into the beautiful glistening
+surface; he was as a lovely water cypress, as a beauteous green serpent;
+now I have left behind me my suffering.
+
+  3. I go forth, I go forth about to destroy, I, Yoatzin; my soul is in
+the cerulean water; I am seen in the golden water; I shall appear unto
+mortals; I shall strengthen them for the words of war!
+
+  4. My god appears as a mortal; O Yoatzin, thou art seen upon the
+mountains; I shall appear unto mortals; I shall strengthen them for the
+words of war.
+
+
+_Notes._
+
+There is slight mention of the deity Xipe Totec in the Spanish writers.
+He was the patron divinity of the silversmiths, and his festival,
+attended with peculiarly bloody rites, was celebrated in the first month
+of the calendar. (Duran, _Historia_, cap. 87; Sahagun, Lib. I., cap. 18,
+Lib. II., cap. 21, etc.) Totec is named as one of the companions of
+Quetzalcoatl, and an ancient divinity whose temple stood on the
+_Tzatzitepec_ (see the _Codex Vaticanus_; Tab. XII., in Kingsborough's
+_Mexico_). His high priest was called _Youallauan_, "the nocturnal
+tippler" (_youalli_, night, and _tlauana_, to drink to slight
+intoxication), and it was his duty to tear out the hearts of the human
+victims (Sahagun, _u.s._). The epithet _Yoatzin_, "noble night-god,"
+bears some relation to the celebration of his rites at night.
+
+
+
+
+[Illustration: CHICOMECOATL, GODDESS OF FOOD AND DRINK. HYMN XVI.]
+
+
+
+
+XVI. _Chicomecoatl icuic._
+
+
+  1. Chicomollotzin xayameua, ximiçotica aca tona titech icnocauazqui
+tiyauia mochan tlallocan nouia.
+
+  2. Xayameua ximiçotica aca tonan titech icnocauazqui tiyauian mochan
+tlallocan nouiya.
+
+_Var._ 1. Xaia mehoa.
+
+
+_Gloss._
+
+  1. _Q.n._, yn ti chicomolotl, _id est_, in ti centli ximeua, xiça,
+xixoa, ca otimouicaya in mochan tlallocan.
+
+  2. _Q.n._, xayameua, _id est_, ximeua, xixua, xiça, ca otimouicaya in
+mochantzinco in tlallocan ca yuhquin ti tonatzon.
+
+
+_Hymn to Chicomecoatl._
+
+  1. O noble Chicomolotl, arise, awake, leave us not unprotected on the
+way, conduct us to the home of Tlaloc.
+
+  2. Arise, awake, leave us not unprotected on the way, conduct us to
+the home of Tlaloc.
+
+
+_Notes._
+
+The goddess Chicomecoatl, "seven guests," was the deity who presided
+over food and drink. Hence in the first verse she is referred to as
+Chicomolotl, "seven ears of corn," and is spoken of as a guide to
+Tlalocan, or the home of abundance.
+
+Father Duran, who gives a long chapter on this goddess (_Historia_, cap.
+92), translates her name "serpent of seven heads," and adds that she was
+also called _Chalciucihuatl_, "Lady of the Emerald," and _Xilonen_,
+"goddess of the tender ears of maize." Every kind of seed and vegetable
+which served for food was under her guardianship, and hence her festival,
+held about the middle of September, was particularly solemn. Her statue
+represented her as a girl of about twelve years old.
+
+
+
+
+[Illustration: TOTOCHTIN, THE RABBITS, GODS OF THE DRUNKARDS. HYMN XVII.]
+
+
+
+
+XVII. _Totochtin incuic Tezcatzoncatl._
+
+
+  1. Yyaha, yya yya, yya ayya, ayya ouiya, ayya yya, ayya yya, yyauiyya,
+ayya ayya, yya ayya, yya yya yye.
+
+  2. Coliuacan mauizpan atlacatl ichana, yya ayya, yyayyo.
+
+  3. Tezcatzonco tecpan teutl, macoc ye chocaya, auia, macaiui, macayui
+teutl, macoc yye chocaya.
+
+  4. Auia axalaco tecpanteutl, macoc yye chocaya, macayui, macayui
+teutl, macoc yye chocaya.
+
+_Var._ 3. Tezcatzoncatl tepan. 4. Axalaca.
+
+
+_Gloss._
+
+  1. Y tlauelcuic, tlauelcuica.
+
+  2. Coliuacan mauizpa tlacatlichana, _q.n._, in tlacatl, _id est_,
+octli ompa ichan ni colhoacan. Mauizpa, _q.n._, temamauhtican.
+
+  3. Tezcatzonco tecpanteutl, _q.n._, ye choca in omacoc teutl
+tezcatzonco tecpan, _id est_, octli. Quimonacayotia in teutl. Macaiui
+teutl, _q.n._, macamo omatoni in teutl, _id est_, octli, ye choca cayamo
+ynemac.
+
+  4. Aia axalaco tecpanteutl, _q.n._, axala in tecpanteutl. Ye choca yn
+omacoc, _id est_, octli axalatecpan, ye choca in omacoc, macamo omaco ni
+ye choca cayamo ynemac.
+
+
+_Hymn to Tezcatzoncatl Totochtin._
+
+  1. Alas! alas! alas! alas! alas! alas!
+
+  2. In the home of our ancestors this creature was a fearful thing.
+
+  3. In the temple of Tezcatzoncatl he aids those who cry to him, he
+gives them to drink; the god gives to drink to those who cry to him.
+
+  4. In the temple by the water-reeds the god aids those who call upon
+him, he gives them to drink; the god aids those who cry unto him.
+
+
+_Notes._
+
+Tezcatzoncatl was one of the chief gods of the native inebriating
+liquor, the pulque. Its effects were recognized as most disastrous, as
+is seen from his other names, _Tequechmecaniani_, "he who hangs people,"
+and _Teatlahuiani_, "he who drowns people." Sahagun remarks, "They
+always regarded the pulque as a bad and dangerous article." The word
+_Totochtin_, plural of _tochtli_, rabbit, was applied to drunkards, and
+also to some of the deities of special forms of drunkenness.
+
+The first verse is merely a series of lamentations. The second speaks of
+the sad effects of the pulque in ancient times. (On Colhuacan see Notes
+to Hymn XIII.)
+
+
+
+
+[Illustration: ATLAUA, SINGING AND DANCING. HYMN XVIII.]
+
+
+
+
+XVIII. _Atlaua Icuic._
+
+
+  1. Auia nichalmecatl, nichalmecatl, neçaualcautla, neçaualcautla, olya
+quatonalla olya.
+
+  2. Ueya, ueya, macxoyauh quilazteutl y tlapani macxoyauh.
+
+  3. Nimitz acatecunotzaya, chimalticpao moneçoya nimitzacatecunotzaya.
+
+  4. Ayac nomiuh timalla aytolloca nacatl nomiuh aca xeliui timalla.
+
+  5. Tetoma amo yolcana tlamacazquinte tometl, açan axcan ye
+quetzaltototl, nic ya izcaltiquetla.
+
+  6. Y yopuchi noteuh atlauaquetl, aça naxcan ye quetzaltototl, nic ya
+izcaltiquetla.
+
+  1. Neçaualcactla. 2. Itlamani. 4. Aitollaca acatl. Timalli. 5. Tetonac
+amo yolcana tlamacaz quin tetometl.
+
+
+_Gloss._
+
+  1. _Q.n._, ynichalmecatl, yn ineçaualac oqixicauhteuac y nioholti, y
+nioya, ixquatechimal iquatunal.
+
+  2. _Q.n._, ma xiyauh ti quilazteutl, momactemi in macxoyauh.
+
+  3. _Q.n._, iniquac onimitznotz, mochimalticpac timiçoya.
+
+  4. _Q.n._, atle nomiuh yc notimaloa, ca uel itoloc in acatl nomiuh, yn
+acatl xeliui yc ninotimaloa.
+
+  5. _Q.n._, oncan euac in tetuman nitlacochtetumetl. Auh inaxcan ye
+quetzaltotol inic ni tlazcaltia.
+
+  6. _Q.n._, tiacauh in oteuh in atlaua, auh inaxcan yuhqui quetzaltotol
+in nitlazcaltia.
+
+
+_The Hymn of Atlaua._
+
+  1. I Chalmecatl, I Chalmecatl, I leave behind my sandles, I leave my
+sandles and my helmet.
+
+  2. Go ye forth and follow the goddess Quilaztli, follow her
+
+  3. I shall call upon thee to arise when among the shields, I shall
+call upon thee to arise.
+
+  4. I boast of my arrows, even my reed arrows, I boast of my arrows,
+not to be broken.
+
+  5. Arrayed in priestly garb, take the arrow in thy hand, for even now
+I shall arise and come forth like the quetzal bird.
+
+  6. Mighty is my god Atlaua; truly I shall arise and come forth like
+the quetzal bird.
+
+
+_Notes._
+
+_Atlaua_, mentioned by Olmos, who translates the word "Master of
+waters," is a divinity of whom little is known. The derivation from
+_atlatl_, arrow, would seem more appropriate to the words of this hymn.
+_Chalmecatl_, used as a synonym in v. 1, appears to be from _chalania_,
+to beat, to strike, as a drum.
+
+On _Quilaztli_ see notes to Hymn XIII.
+
+
+
+
+XIX. _Macuilxochitl Icuic._
+
+
+  1. Ayya, yao, xochitlycaca umpan iuitza tlamacazecatla tlamocoyoalca.
+
+  2. Ayya, yao, ayo intinotzicaya teumechaue oya, yao, tlauizcalac
+yacallea tlamacazecatlo tlamocoyoualca.
+
+  3. Tetzauhteutla notecuyo tezcatlipuca quinanquilican çinteutla, oay.
+
+  4. Tezcatzonco moyolca ayyaquetl yya tochin quiyocuxquia noteuh,
+niquiyatlacaz, niquiyamamaliz, mixcoatepetl colhoacan.
+
+  5. Tozquixaya, nictzotzoniyao, yn tezcatzintli tezcatzintli
+tezcaxocoyeua, tzoniztapaliati tlaoc xoconoctlia ho, a.
+
+1. Tlamocoioaleua. 5. Tozquiuaia. Tzoniztapalatiati.
+
+
+_Gloss._
+
+  1. _Q.n._, ompa nochan in xochitlicacan in itlamacazqui ni
+macuilxochitl.
+
+  2. _Q.n._, motilinia in tinoçi in ompa titlaecoltilozque umpa tochan
+ez.
+
+  3. _Q.n._, yn tetzauitl in tezcatlipoca ca oyaque auh ynic tiui umpa
+titlananquilizque in centeotl.
+
+  4. Tezcatzonco moyolcan, _q.n._, tezcatzonco oyol in tochtli ynic yaz,
+oquiyocux, oquipic, y noteuh oquito nittlaçaz, nicmamaliz, in
+mixcoatepetl colhoacan, _id est_, nictepeuaz.
+
+  5. Tozquixaya nictzotzomiao, _q.n._, nictzotzona, in tezcatzintli
+oncan nexa in tezcatzonco, oncan oyol tzoniztapalatiati ocxoni ni octli.
+
+
+_Hymn to Macuilxochitl._
+
+  1. Yes, I shall go there to-night, to the house of flowers; I shall
+exercise the priestly office to-night.
+
+  2. We labor in thy house, our mother, from dawn unto night, fulfilling
+the priestly office, laboring in the night.
+
+  3. A dreadful god is our god Tezcatlipoca, he is the only god, he will
+answer us.
+
+  4. His heart is in the Tezcatzontli; my god is not timid like a hare
+nor is he peaceable; I shall overturn, I shall penetrate the Mixcoatepec
+in Colhuacan.
+
+  5. I sing, I play on an instrument, I am the noble instrument, the
+mirror; I am he who lifts the mirror; I cry aloud, intoxicated with the
+wine of the tuna.
+
+
+_Notes._
+
+As before stated (Notes to Hymn VIII), Macuilxochitl is another title of
+the flower-god Xochipilli.
+
+
+
+
+XX. _Yacatecutli icuic._
+
+
+  1. Anomatia aytoloc, anomatia aytoloc, tzocotzontla aytoloc,
+tzocotzontla anomatia aytoloc.
+
+  2. Pipitla aytoloc, pipitla anomatia aytoloc, cholotla aytoloc,
+pipitla anomatia aytoloc.
+
+  3. Tonacayutl nicmaceuh aça naxcan noquacuillo atliyollo,
+nechualyauicatiaque xalli itepeuhya.
+
+  4. Chalchiuhpetlacalco ni naxcan aça naxcan noquacuillo, atliyollo
+nechualyauicatiaque xalli itepeuhya.
+
+
+_Gloss._
+
+  1. Anomatia, _q.n._, amo nixpan in omito yauyutl inic otepeualoc
+tzocotzontla, amo nomatia in omito yauyutl.
+
+  2. Pipitla aytoloc, _q.n._, ynic tepeualoc pipitla amo nicmati inic
+omito yauyutl, in cholotla ic otepeualloc amo nixpan ynic oyautlatolloc.
+
+  3. Tonacayutl nicmaceuh, _q.n._, yn tonacayutl inic onicmaçeuh
+ayaxcan, onechualhuicaque in oquacuiloan in xochayutl, in çoqniayutl in
+teuelteca, quimilhui in iquintonaz tlatuiz anoquacuiloan ayezque. Xalli
+tepeuhya, _id est_, tlalocan. Quilmach chalchiuhpetlacalli in quitepeuh
+inic tepeuh.
+
+  4. Chalchiuhpetlacalco ninaxcan, _q.n._, onca ninotlati in chalchiuh
+petlacalco. Ayaxcan ynechualhuicatiaque yn oquacuiloan atliyoloa in umpa
+tlallocan.
+
+
+_Hymn to Yacatecutli._
+
+  1. I know not what is said, I know not what is said, what is said
+about Tzocotzontlan, I know not what is said about Tzocotzontlan.
+
+  2. I know not what is said of Pipitlan, what is said of Pipitlan, nor
+what is said of Cholollan, what of Pipitlan, of Pipitlan.
+
+  3. Now I seek our food, proceeding to eat it and to drink of the
+water, going to where the sand begins.
+
+  4. Now I go to my beautiful house, there to eat my food, and to drink
+of the water, going to where the sand begins.
+
+
+_Notes._
+
+The god Yacatecutli, whose name means "lord of travelers," or "the lord
+who guides," was the divinity of the merchants. Sahagun (_Historia_,
+Lib. I, cap. 19) and Duran (_Historia_, cap. 90) furnish us many
+particulars of his worship.
+
+The hymn is extremely obscure, containing a number of archaic words, and
+my rendering is very doubtful. The writer of the Gloss is, I think, also
+at fault in his paraphrase. The general purpose of the hymn seems to be
+that of a death-song, chanted probably by the victims about to be
+sacrificed. They were given the sacred food to eat, as described by
+Duran, and then prepared themselves to undergo death, hoping to go to
+"the beautiful house," which the Gloss explains as Tlalocan, the
+Terrestrial Paradise.
+
+
+
+
+GLOSSARY.
+
+
+A
+
+A, prefix, negative, or positive prefix, = _atl_, water.
+Acatecunotzaya, XVIII, 3. Equivalent, according to the Gloss, to
+                _onimitznotz_.
+Acatona, XVI, 1, 2. For _ac a tonan_. _See_ v. 2.
+Acatonalaya, III, 5. From _acatl_, reed (?).
+Achalchiuhtla, XV, 3. Comp. of _atl_, and _chalchiuitl_.
+Achtoquetl, XV, 3, 4. In the first place, first.
+Acxolma, XIII, 2. Apparently related to _acxoyatl_, wild laurel.
+Açan, XIII, 3. Much, many times.
+Aça naxcan, XVIII, 5, 6; XX, 3, 4. Only now, for _çan axcan_.
+Ahuia, II, 1. An interjection.
+Amanteca, I, 5. Workers in mechanic arts (Molina), especially feathers
+          (Sahagun).
+Amapanitl, III, 1. _Panitl_, banner, flag, with possessive pronoun.
+Amo, _adv._, no, not, negative; _pron._, your.
+Anauhcampa, III, 1. "To all four quarters of the water," i.e., in all
+            directions.
+Anneuaya, III, 2. Poetic for _in nehuatl_, "ego ipse."
+Annotata, III, 4. Poetic for _in no-tauan_, my forefathers.
+Annotequina, III, 3. According to the Gloss, equivalent to _in tino
+             teuh_, thou my god.
+Annoteua, III, 2. Poetic for _in no-teuh_, my lord.
+Anomatia, XX, 1. Not to know, to be ignorant of.
+Aoyequene, III, 1. For _aoc yequene_, "and also no one."
+Apana, XV, 2. Comp. of _atl_, water, and _pani_, upon, postpos.
+Aquamotla, III, 5. From _quammomotla_, to play ball (?).
+Aquitoloc, II, 1. A negative, _itoa_, to say, to tell, in the passive
+           preterit.
+Ateucuitlatl, XV, 3. Golden water. Comp. of _atl_, and _teocuitlatl_.
+Atilili, VIII, 2. _Atilia_, to become clear or light.
+Atl, XIV, 4. Water. In composition, _a_.
+Atliyollo, XX, 3, 4. From _atli_, to drink water. (?)
+Aua, III, 7. An interjection (?).
+Auatic, IV, 6. Mistress of the waters (_atl_, water).
+A-uetztini, XI, 2. From _uetzi_, to fall; "your fall," "your destruction."
+Auiallo, XIV, 7. From _auia_, to be content, to rejoice.
+Axalaco, XVII, 4. From _axalli_, a water plant, and loc. term. _co_.
+Ayac, I, 1, _et sæpe_. Nobody, no one.
+Ayauh, III, 6. Fog, mist; compound form of _ayauitl_.
+Ayauhcalcatl, VI, 6. One who has charge of the mist. Compare
+              _tepancalcatl_, a gardener.
+Ayailicalo, III, 6. From _ayauh_, _calli_, the house of mist, but the
+            Gloss renders it by _auicalo_, the fresh, dewy house (cf.
+            Sah., p. 150).
+Aylhuiçolla, III, 2. Derived by the Gloss from _ilhuice_, more, hence,
+             to make to grow, to increase.
+Ayouica, VI, 5. For _ayaic_, never.
+Aytoloc, XVIII, 4; XX, 1, 2. From _itoa_, to say, to tell, with negative
+         prefix.
+Ayya, I, 1, _et sæpe_; also in the forms _yya_, _ya_, _yyo_, _yye_,
+      _aya_, _ayyo_, etc. An interjection, or shout.
+
+
+C
+
+Ca. 1. And, also. 2. To be.
+Ça, Çan, VII, 1. Only, solely.
+Cacauantoc, VI, 5. Reduplicated from _caua_, to cease, stop, leave off.
+Cacauatla, XI, 2. "Among the cacao trees."
+Calli, I, 5, 6. House; _calipan_, in the house.
+Cana, XII, 1. Somewhere.
+Cane, XII, 1. For _ca nel_, and truly.
+Caqui, VIII, 2. To hear, to listen.
+Caquia, II, 1. From _caqui_, to hear.
+Catlachtoquetl, III, 3. Apparently compounded of the interrogative
+                _catli_ and _tlacatl_, man, mortal; what mortal?
+Catella, III, 4. For _catel_; who indeed?
+Caua, XIV, 7; XV, 2. To cease, to stop; to surpass; to lay down.
+Ce, I, 2; XV, 4. One, a, an.
+Cenpoliuiz, XIII, 7. From _cempoliui_, to perish wholly.
+Centeutl, VII, 6; VIII, 1, 5; XIV, 4; XIX, 3. Prop. name. The god of
+          maize.
+Centla, XIII, 2. For _centli_, ear of corn, dried corn.
+Centlalia, I, 5, 6. To assemble.
+Chacalhoa, XIV, 11. For _chachaloa_, to tinkle, to resound.
+Chalchimamatlaco, XV, 2. Compound of _chalchiuitl_, jade, turquoise;
+                  hence of that color; _mama_, to carry; ref. to betake
+                  oneself; _atl_, water; _co_, postposition.
+Chalchimichuacan, XIV, 4. "The cerulean home of the fishes."
+Chalchiuhecatl, XIV, 9. From _chalchiuitl_, jade; metaphorically,
+                anything precious.
+Chalmecatl, XVIII, 1. From _chalani_, to beat, to strike. Apparently a
+            proper name.
+Chalmecatecutli, XIII, 5. "Ruler of the (drum) beaters." Comp. v. 1.
+Chalima, XIII, 1. Apparently for _chalani_, to strike, to beat,
+         especially a drum.
+Chan, XVI, 1, 2; XVII, 2. House, home.
+Chicauaztica, III, 6; XIII, 2, 3. Strongly, boldly, energetically.
+Chicomoztoc, VII, 1. "At the seven caves." _See_ Notes to Hymn VII.
+Chicomollotzin, XVI, 1. _See_ Notes, p. 59.
+Chicueyocan, VI, 2. In eight folds. From _chicuei_, eight.
+Chicunaui, IV, 6. Nine; but used generally in the sense of "many,"
+           "numerous."
+Chimal, XI, 2. For _chimalli_, buckler, shield.
+Chimalticpac, XVIII, 3. "Above the shield."
+Chipuchica, V, 1. Metastasis for _ichpochtica_, from _ichpochtli_,
+            virgin.
+Chiua, III, 3. To make, to form, to do.
+Chocaya, III, 1, 7. From _choca_, to weep, to cry out.
+Chocayotica, XII, 2. Adverbial from _choca_: "weepingly."
+Cholola, XIV, 11; XX, 2. Proper name. "Place of the fugitives."
+Cipactonalla, VIII, 2. From _tonalli_, the sun, day. Perhaps a proper
+              name.
+Ciuatontla, VI, 6. For _ciuatontli_, little woman.
+Coatepec, V, 1. At the _Coatepetl_, or Serpent Hill.
+Cochina, XIV, 12. From _cochi_, to sleep.
+Colhoa, XIII, 1. For _Colhoacan_, proper name.
+Coliuacan, XVII, 2; XIX, 4. Proper name, for _Colhoacan_.
+Cotiuana, X, 1. Probably for _xo(xi-on)titaana_, tie hands, join hands.
+Coçauic, IV, 1, 2. Poetic for _coztic_, yellow; literally, "yellowed,"
+         from _coçauia_.
+Cozcapantica, XII, 1. Adverbial, from _cozcatl_, a jewel, fig., an
+              infant.
+Cozcapilla, XII, 4. From _cozcatl_, _pilli_, "jewel of a babe."
+Cuecuechiuia, V, 2. From _cuecuechoa_, to shake.
+Cuecuexi, XI, 3. From _cuecuechoa_, to shake.
+Cueponi, IV, 1, etc. To bloom, to blossom.
+Cuicatl, I, 1, _et sæpe_. Hymn, song. In compos., _cuic_.
+
+
+E
+
+Eztlamiyaual, III, 2. Apparently from _eztli_, blood, race, and
+              _tlamiauati_, to surpass, to excel.
+
+
+H
+
+Huia, II, 3. _See_ _Ahuia_.
+
+
+Y
+
+Y, I. For _in_ (_yn_), he, it, the, that, etc.
+Ya. _See_ Ayya.
+Yancuic, IV, 7. New, fresh, green.
+Yancuipilla, XII, 3. New-born babe.
+Yantata, XIV, 3. An exclamation.
+Yaquetlaya, I, 1. Apparently a form of _tlayacati_, or of _yaque_, both
+            from the root _yac-_, a point, a prominence, to be
+            prominent. But the etymology is not clear.
+Yauciuatzin, XIII, 6. _Yaotl-cihuatl-tzin_, "the revered war-woman."
+Yauicaya, III, 2. From _yauh_, to go.
+Yauilili, XI, 5. Causative form of _yauh_, "to cause to go," to put to
+          flight.
+Yautiua, I, 5, 6. Freq. from _yaotia_, to fight.
+Yautlatoaquetl, XV, 3, 4. _See_ _yautlatoaya_.
+Yautlatoaya, I, 3; V. 1. From _yaotl_, war, _tlatoa_, to speak.
+             _Yautlatoani_, ruler in war, was one of the titles of
+             Huitzilopochtli.
+Yaxcana, III, 9. _Axcan_, now. _Axcatl_, goods, property. _Yaxca_, his,
+         its, property.
+Yayalezqui, III, 7, 8. Frequent. of _yaliztli_; to go and come, go back
+            and forth.
+Yca, IV, 6. With which.
+Icçotl, VI, 2. A tree planted in front of temples. Its bark was used for
+        mats (Sahagun).
+Icnocaua, XVI, 1, 2. To leave unprotected, as orphans.
+Ye, VIII, 1. Already, this, but, nevertheless.
+Yecoa, XIII, 8; XIV, 2. 1. To have carnal connection. 2. To end, to
+       finish.
+Yeua, I, 4, etc. For _yehuatl_, he, it, that.
+Ihuitl, I, 3; IV, 7. A feather; _met._, a model, pattern.
+Ihiya, II, 2. Apparently for _iye_, yes, affirmative particle.
+Ilhuiquetl, III, 8. From _ilhuia_, to say, to call.
+Iliuiz, XV, 5. Thoughtlessly; with negative prefix _a_, not
+        thoughtlessly.
+Ymocxi, I, 2. Poetic for _in micti_, from _mictia_, to slaughter.
+Yoalticatla, VIII, 1. _Yoalli-ticatla_, midnight.
+Yoalli, XV, 1. Night.
+Yoatzin, XV, 3, 4. Reverential of _yoalli_, night.
+Yocoxquia, XIX, 4. Peaceably, quietly.
+Yolcan, XVIII, 5. Place of birth.
+Yolceuiz, XV, 3, 4. To appease, to please.
+Yollotl, IV, 6. Heart, mind, center.
+Itaca, IV, 6. For _itacatl_, food, sustenance.
+Iteamic, XIV, 11. From _itta_, to see.
+Itlani, XIV, 7. _See_ _Tlani_.
+Itontecuitl, VI, 5. Explained by the Gloss by _in tetecuti_, which I
+             take to be an error for _in teteuctin_.
+Itopanecauiloc, III, 9. The Gloss gives _ni topan_. The verbal is a
+                passive from _caua_, to leave, to abandon.
+Itta, IV, 8. To see, to esteem.
+Ytzicotla, II, 5. For _uitzicotla_, lit., place abounding in thorns;
+           fig., the south.
+Itzipana, X, 4. Apparently a compound of _ixtli_, face, and _pan_, for
+          the more usual _ixpan_, before, in front of; _ixtli_ in comp.
+          sometimes becomes _itz_, as in _itzoca_, "tener sucia la
+          cara," Molina, _Vocabulario_.
+Itziueponi, XI, 4. For _itztle-cueponi_, "resplendent with spears."
+Itzpapalotl, IV, 5. "The obsidian butterfly," an image of gold and
+             feathers, worn as a royal insignia. _See_ Sahagun, Lib.
+             VII, Cap. 12.
+Yua, III, 8. To send.
+Yuitla, XIII, 6. _See_ _ihuitl_.
+Yuiyoc, II, 3, 4, 5. From _yuiyotl_, a feather, _yuiyoa_, to be dressed
+        in feathers, or feather garments.
+Ixtlauatl, IV, 6. Open field, uncultivated region.
+Yyaconay, I, 1. For _ayac-on-ay_, as appears by the gloss.
+Yya. _See_ Ayya.
+Izqui, XIV, 8. As many as.
+Iztac, IV, 3, 4. White.
+Iz tleica, VI, 3; XV, 1. "Here is why." The interrogative changed into
+           the predicative form. _See_ Paredes, _Compendio_, p. 154.
+
+
+M
+
+Ma, VI, 1. 1. Sign of negative, no, not. 2. Sign of imperative.
+Macaiui, XVII, 3, 4. From _macoa_, and _i_, to drink.
+Maceualli, VI, 4. Subjects, servants.
+Maceuh, XX, 3. From _maceua_, to seek for, to obtain.
+Mach, XIV, 7. Intensive particle.
+Machiyotla, II, 6, 7. For _machiotl_, sign, example.
+Macoa, I, 3; XVII, 3. To aid, to assist.
+Macxoyauh, XVIII, 3. By the Gloss, for _ma-xi-yauh_, imper. of _yauh_,
+           to go.
+Malinalli, XIII, 4. A broom.
+Malli, II, 3, 4, 5. Captive; one taken by hand.
+Mama, XIV, 11. To carry a load on the shoulders.
+Mamalia, XIX, 4. To penetrate.
+Mamauia, I, 4. To frighten, frequentative-causative, from _maui_, to
+         fear.
+Maololo, XIV, 12. From _ma-ololo_, to cover with the hand.
+Mati, II, 1. To know.
+Matiuia, XIV, 11. For _matihuia_, from _mati_.
+Matlauacal, VII, 4. A net-basket.
+Ma-tonicaya, X, 1. Let it shine, let it be bright; from _tona_.
+Mauia, II, 3, 4, 5. To give into the hands of, to deliver up.
+Maui noyol, XIV, 11. To fear in my heart.
+Mauiztli, VI, 5, XIII, 5. An honor (_cosa de estima_, _Molina_). A
+          person of honor.
+Mazatl, IV, 6. (Doubtful.) Deer; any large wild animal.
+Mecatla, VI, 2. For _mecatl_, cord, rope.
+Milacatzoa, I, 4. _Mo-ilacatzoa_, to twine oneself, as a serpent around
+            a tree; refers to the _xiuhcoatl_, fire-serpent, of
+            Huitzilopochtli.
+Mimicha, IV, 8. Fish, for _michin_.
+Mimilcatoc, VI, 2. Twisted, twined.
+Miquiyecauiz, XIV, 8. Compound of _miqui_, to die, and _yecaui_, to
+              cease; "to cease dying."
+Mitoaya, I, 3. For _mo-itoa-ya_, it is said, they said.
+Mixcoatepetl, XIX, 4. The mountain or town of Mixcoatl.
+Mixcoatl, XIII, 5. A proper name.
+Mixiui, XII, 1. To accouch, to bear a child.
+Mixtecatl, I, 2. A proper name. The Mixteca lived on the Pacific coast,
+           to the southwest, and were not of Nahuatl lineage.
+Mixiuiloc, V, 1. From _mixiui_, to accouch, to bear a child.
+Mo-cuiltonoa, VI, 5. To rejoice or enjoy greatly.
+Moneçoya, XVIII, 3. From _neçi_, to appear.
+Mo-neuila, XIII, 7. From _eua_, to rise up, to come forth.
+Mo-quetzquetl, III, 1. For _m-oquequetz_, frequent. of _quetza_; to flow
+               forth, to run from and out. A poetic form, not uncommon.
+Moquichtiuiui, V, 2. _Oquichuia_, to suffer manfully.
+Mo-teca, XIV, 9. They assemble; impers. from _teca_, to place oneself,
+         to lie down.
+Moteua, XV, 4. Perhaps from _itoa_, to say, "it is said."
+Mo-tlaquechizca, XIII, 2, 3, 4. Strengthened form of _tlaquechia_, to
+                 rest upon; to bear down upon; to press upon.
+Mo-tlaqueuia, XI, 2. To seek people, or to hire them to work injury to
+              others.
+Mo-tonacayouh, III, 3. Our flesh; the usual form is _tonacayo_.
+Moxayaual, V, 2. From _yaualoa_, to wander about.
+Moxocha, IV, 2, 4. Probably a compound of _moxochitl-cha-yaui_, to sow
+         flowers.
+Mozcaltizqui, IV, 6. From _mo-izcali_, to resuscitate, to animate.
+
+
+N
+
+Nacha, III, 7. For _nachcan_, there, in that place.
+Nacochtla, XIV, 11. The ears.
+Nahuia, III, 6. From _naui_, four.
+Nanquilia, VII, 6; XIX, 3. To answer.
+Nauaco, XI, 5. "With (my) skill."
+Naualpilli, III, 3. "Master magician;" said by the Gloss to be a name of
+            Tlaloc. Sahagun gives this as one of the gods of the
+            goldsmiths (Lib. IX, cap. 18).
+Naualachic, XIV, 9. Skilfully; from _naualchiua_, to do something
+            skilfully.
+Nauaquia, XIV, 6. Perhaps for _nahuaque_, an epithet of divinity.
+Nauhxiuhtica, III, 9. "After four years" (Molina).
+Neçazualcactla, XVIII, 1. From the Gloss equivalent to _neçaualacautla_,
+                from _neçaualiztli_, fast, fasting, and _caua_, to
+                leave.
+Nechyatetemilli, XIII, 5. Reverential of _temi_, to lie down, to fill.
+Necuilia, X, 2. To bring some one.
+Nella, III, 3. For _nelli_, truly.
+Nen, adv. I, 1. In vain, of no advantage.
+Nenequia, XV, 1. To oppose, to be angry with.
+Nenoualico, XI, 2. See _Onoalico_. _Ne_ is the impersonal, pronominal
+            prefix.
+Nepaniui, VIII, 5. To join, to unite oneself to.
+Nepanauia, III, 9. _Nepan_, thither, and _yauh_, to go.
+Nepapan, II, 2; XIV, 5. Diverse, varied.
+Ne-qui-macui, VII, 5. "I take them by the hand." Explained by the Gloss
+              to be an archaic (_chicimeca_) expression used in leading
+              or guiding (in dance or song).
+Niuaya, X, 2. For _ni-ihua-ya_, I sent (some one).
+Ni-yocoloc, III, 2. Passive preterit from _yocoya_; _yocolia_, to be
+            made, composed, created.
+No. 1. Possess, pron. my, mine. 2. Adv. also, yet.
+Noca, I, 1. Of me, my, mine.
+Nohuihuihuia, I, 1. Poetic form for _neuiuilia_, to equal some one.
+Nomactemi, XIII, 3, 4. _No-maitl-c-temi_, my hand it fills, = with full
+           hands.
+Nomauilia, X, 4. To do a thing personally.
+Nomiuh, XVIII, 4. _No-omitl_, my bone, point, arrow.
+Nopeltzin, XIII, 5. _No-pilli-tzin_, "my revered lord."
+No-tauane, VI, 1. Our fathers.
+No-tecua, VI, 2. For _nic-tecuia_, I tie it, I make it fast. The Gloss,
+          _amo-tecuhuan_, is not intelligible.
+No-teuh, I, 3; XX, 2, 4. "My god."
+Noyoco, XI, 5. Apparently for _niyoco_, "with me alone."
+Noyollo, XV, 3. From _yollotl_, heart, soul, courage, etc.
+
+
+O
+
+Oc, II, 2. Yet, besides this.
+Ocelocoatl, III, 4. "Tiger snake."
+Ocoyoalle, VIII, 2. "The night pine." Apparently a proper name.
+Ocutitlana, XI, 2. "Among the pine woods."
+Oholopa, II, 3. Poetic compound of _ololoa_, to cover, to dress, and
+         _oppa_, twice.
+Ollama, XIV, 9. To play at ball; from _olli_, a ball.
+Olya, XVIII, 1. A form from _ololoa_, to cover or clothe oneself.
+Omei, XIII, 5. For _ome_, two; the Gloss reads _matlactli ome_, twelve.
+On, I, 1, _et sæpe_. A particle, merely euphonic, or signifying action
+    at a distance.
+Onca, _sæpe_. There.
+Onoalico, XI, 1. Proper name, derived from _onoua_, the impersonal form
+          of _onoc_, and meaning "a peopled place," a thickly inhabited
+          spot. The terminal, _co_, is the postposition, at.
+Opuchi, XVIII, 6. "Left-handed;" by the Gloss = _tiacauh_, brave,
+        valiant.
+Oquixanimanico, X, 1. A form in the second person plural, compounded of
+                _quiça_ and _mani_, "coming forth, scatter yourselves
+                around."
+Otlacatqui, XIV, 3, 4. _Ilacati_, to be born.
+Otli, VIII, 5. Path, road.
+Ouayyeo, I, 2. An interjection.
+Oya, _sæpe_. 1. An interjection. 2. Preterit of _yauh_, to go.
+Oyatonac, II, 6, 7. For _otonac_, from _tona_, to shine.
+Oztomecatl, XIV, 11. A merchant.
+
+
+P
+
+Petlacalco, XX, 4. From _petlatl_, mat, _calli_, house, and _co_,
+            post-position.
+Peua, VI, 3. To begin.
+Picha-huazteca, I, 2. Proper name, "The frozen Huastecs," perhaps those
+                living on the high Sierra, who were the nearest to the
+                Nahuas.
+Pillachiualoyan, XIV, 4. Locative from _pilli-chiua_, to engender
+                 offspring.
+Piltzintecutli, IX, 2; XIV, 9. Lord of the youths or children,
+                _piltzintli_.
+Pipiteca, I, 6. Those having charge of the spies, from _pipia_, to spy.
+Pipitla, XX, 2. Reduplicated locative from _pilli_, a child.
+Pinauhtia, VI, 1. To make ashamed.
+Pinauia, II, 1; III, 3, 4. To affront, to put to shame; to censure, to
+         blame.
+Poliuiz, XV, 3. From _poloa_, to destroy.
+Pomaya, I, 2; XI, 1. Apparently for _panauia_, to conquer.
+Potocaya, XIII, 6, 7. _Potli_, companion.
+Potonia, IV, 7; XIV, 10. To be liberal, to give equally or freely; to
+         adorn with feathers.
+Poyauhtla, III, 6. Among the fogs, from _poctli_, smoke, fog, mist;
+           _atl_, water.
+Pupuxotiuh, I, 3. A gerundive form from _popoxoa_, to till, to work the
+            soil; here used figuratively.
+
+
+Q
+
+Quacuillo, III, 4; XX, 3. From _qua_, to eat.
+Quatonalla, XVIII, 1. "Head bright," the helmet on the head.
+Quaui, XIII, 1. A shortened form of _quauiuitl_, in the same verse;
+       compound of _quauhtli_, eagle, _iuitl_, feather; a decoration
+       explained in the Gloss, usually called the _quauhtzontli_, eagle
+       crest.
+Quauinochitla, XI, 2. "Among the tuna trees."
+Quauiquemitl, II, 2. From _quauhtli_, eagle, _quemitl_, clothing, garb.
+Quechol, XIV, 5, 7. A bird.
+Quentia, XV, 1. To dress oneself.
+Quetl, II, 2. Poetic for _quetza_, to rise, to come out of or from. See
+       Gloss to III, 7.
+Quetza, XIV, 6. To arise from.
+Quetzalaueuetl, XV, 2. Of _quetzal_, beautiful, and _aueuetl_, the water
+                cypress, fig. chief, lord.
+Quetzalcalla, III, 9. "The house of the quetzal," beautiful as the
+              quetzal bird. Explained in the Gloss to be the Place of
+              Joy.
+Quetzalcoatli, XI, 3; XIV, 6. Proper name.
+Quetzalcocox, VII, 6; VIII, 7. The pheasant.
+Queyamica, III, 8. For _quenamican_, how there?
+Queyanoca, I, 1. According to the Gloss, equivalent to _onoca_, from
+           _onoc_.
+Quiauiteteu, VIII, 6. Rain gods; _quiauitl_, rain; _teteu_, plural of
+             _teotl_, god.
+Quilaztla, XIII, 1. For Quilaztli, another name of Cihuacoatl.
+Quilazteutl, XVIII, 2. _See_ _Quilaztla_.
+Quinexaqui, VII, 1. Explained by the Gloss by _oniualleuac_, I came
+            quickly (_eua_, in composition, signifies precipitation).
+            Hence it is a form from _yauh_, _yaqui_.
+Quiyauatla, VI, 6. Poetic for _quiauitl_, rain.
+
+
+T
+
+Tamoanchan, IV, 1, etc. "We seek our home," a name applied to the
+            Earthly Paradise. See p. 29.
+Teacuitlaquemitl, XV, 1. Golden garb.
+Teca, III, 6. To spread out, especially of liquids.
+Tecpanteutl, XVII, 3, 4. "Palace god."
+Teicnellili, VI, 5. A benefit, an advantage.
+Teizcaltequetl, III, 9. That which gives wisdom and life. "Teizcali,
+                cosa que da doctrina, y aviva, y da entendimiento"
+                (Molina).
+Telipuchtla, II, 3, 4, 5. For _telpochtli_, a youth.
+Temacouia, VI, 4. From _temaca_, to give, to deliver into the hands of.
+Temoquetl, III, 8. From _temoa_, to seek, _quiza_, to go forth.
+Tenamitl, I, 3. The wall of a city; hence, a town or city.
+Tepanecatl, XI, 3. "Dweller in the palace." A proper name.
+Tepanquizqui, I, 3. A substitute, one who represents another.
+Tepetitlan, V, 2. "Among the mountains."
+Tepeuh, XX, 3, 4. From _peua_, to begin.
+Tepeyocpa, XV, 4. From _tepetl_, _pan_.
+Tequiua, II, 1; V, 2, From _tequiutl_, task, labor, but explained by the
+         Gloss as equivalent to _tepeua_, to overthrow, to conquer.
+Tetemoya, II, 6, 7. Frequentative from _temo_, to descend, to come down,
+          _tetemo_.
+Tetoma, XVIII, 5. From _toma_, to open, to send forth, to let loose.
+Tezauhpilla, III, 8. "Master of fear."
+Tetzauiztli, I, 2. An object which causes fear. A name of
+             Huitzilopochtli. See Tezozomoc, _Cronica Mexicana_, cap.
+             VI.
+Teuaqui, II, 6, 7. From _teotl_, god, _aqui_, to enter, to penetrate.
+Teucontlipaca, IV, 5. Explained by the Gloss as _teucumitl icpac_, upon
+               the thorn bush _teocumitl_, espina grande, Molina). But I
+               should think it to be a compound of _teotl_, _conetl_,
+               _icpac_, "upon the son of the goddess." The son of
+               Teteunan was especially Centeotl, god of maize.
+Teueuel, V, 2. Poetic from _ueue_, the ancients, the elders.
+Teumechaue, IV, 1, 2, 3, 4; VIII, 2; XIX, 2. Perhaps from
+            _teo-ome-chayaue_, "the twice divine seed-thrower," or
+            _teometl-chayaue_, the planter of the divine maguey.
+Teumilco, XIII, 2. From _teotl_, _milli_, _co_, "in the divine
+          cornfield," fig. reference to the battlefield.
+Teutiualcoya, III, 2. The Gloss reads _teuitualcoya_, from _teotl_, god,
+              _ittualo_, passive of _itta_, to see.
+Teu-tlaneuiloc, III, 1. Explained by the Gloss as equivalent to
+                _onetlanauiloc_, an impersonal, passive, preterit, from
+                _naua_, "it was danced." The peculiar sacred dance
+                called _tlanaua_, performed by young girls, is described
+                by Sahagun, Lib. II, cap. 24.
+Teutlalipan, IV, 8. In the divine earth.
+Teyomi, VII, 1. From _teyo_, esteemed, honored.
+Tezcatlipuca, XIX, 2. Proper name of a divinity.
+Tezcatzintli, XIX, 5. Proper name from _tezcatl_, mirror.
+Tezcatzonco, XVII, 3; XIX, 4. Apparently the name of a part of the
+             temple.
+Tianquiz, XIV, 6. The market place.
+Tiçatl, IV, 7. Chalk; fig., model, pattern.
+Timalla, XVIII, 4. Form of _timalloa_, to swell, to increase; fig., to
+         rejoice, to glorify oneself.
+Tlacaluaz, XIV, 7. For _tlacaluaztli_, a blow-pipe.
+Tlacati, XV, 3, 4. For _tlacatl_.
+Tlacatl, II, 1; XIII, 7. Mortal, creature, person.
+Tlaçaz, XIX, 4. From _tlaça_, to overturn.
+Tlachco, XIV, 10. The place of the ball play.
+Tlachinaya, XIV, 5. From _tlachia_, to see.
+Tlachtli, VII, 6. The ball.
+Tlacochcalco, II, 1; X, 1. From _tlacochtli_, arrow, or generally,
+              weapon, _calli_, house, _co_, post-position, in "the hall
+              of weapons," or arsenal. It was a room in that part of the
+              temple dedicated to Huitzilopochtli, and was filled with
+              arrows, spears, etc. Sahagun, Lib. VIII, cap. 32.
+Tlaçolteutla, XIV, 2. Name of a Mexican goddess.
+Tlacoyoalle, XIV, 1. At midnight.
+Tlacyaniuitza, IX, 1. Probably for _tlayauani ni-huitz_, I come dancing,
+               as a dancer.
+Tlaixtotoca, X, 3. _Ixtotoca_, to search for.
+Tlalli, XIV, 10. To place oneself; earth, ground.
+Tlalocan, III, 5; XVI, 1. The home of Tlaloc. See p. 25.
+Tlaloc tlamacazque, VIII, 3, 4, 6. "Dispensers of the benefits of
+                    Tlaloc"; the name applied to the priests of this
+                    divinity.
+Tlalpa, XIV, 6. From _tlalli_, earth, and _pan_.
+Tlaltecutli, IV, 6. _Tlalli_, _tecutli_; lord of the earth or land.
+Tlamacazecatlo, XIX, 2. For _tlamacaztecatl_, one concerned with the
+                priestly office.
+Tlamocoyoualca, XIX, 1, 2. Apparently from _tlamaca_, to serve.
+Tlani, XIV, 7. Below; _i-tlani_, below it.
+Tlanuati, VIII, 3, 4. To send.
+Tlapani, XVIII, 2. To break.
+Tlapitza, XIV, 7. A flute.
+Tlapoalli, III, 9. To number, to reckon.
+Tlapomaya, _see_ _Pomaya_.
+Tlaquaua, XV, 3, 4. To make strong, or hard.
+Tlatia, XV, 1. 1. To hide oneself. 2. To burn oneself.
+Tlatoa, XIV, 7, 11. To sing, to chant, to speak.
+Tlatol, III, 8. For _tlatolli_, speech, discourses, prayers.
+Tlatonazqui, XIV, 5. From _tona_, to shine.
+Tlauana, XV, 1. To drink wine (_octli_),
+Tlauia, XV, 1. To appear red or shining.
+Tlauizcalle, XIV, 5; XIX, 2. Master of the house of the dawn. The
+             terminal _ê_ signifies an active possessive.
+Tlayauican, IX, 1. The dancing-place; from _tlayaua_, to dance in a
+            certain manner.
+Tlaxotecatl teuhtla, I, 4. _See_ Tlaxotla.
+Tlaxotla, I, 3. Passive form from _tlaça_, to hurl, to throw.
+          Huitzilopochtli was specifically "the hurler." _See_ Notes to
+          Hymn I.
+Toçiquemitl, I, 1. From _to-citli-quemitl_, vestment of our ancestress.
+Tocniuaya, VIII, 1. _To-icniuh_, our friend.
+Tocuilitla, II, 7. _See_ Tocuilechcatl.
+Toçiuitica, XIV, 10. From _to-citli-yuitl_, with adverbial ending; "in
+            the feather garb of our ancestors."
+Tocuilechcatl, II, 2. _To_, our, _cuilia_, to paint, adorn; "our
+               adornment."
+To-naca, XIII, 2. "Our flesh."
+Tonanaya, XIII, 5. Reduplicated for _tonaya_, to shine forth.
+Tonaqui, I, 1. A form from _tona_, to shine.
+Tonana, IV, 1. "Our mother;" _nantli_.
+Topaniaz, IX, 2. The Gloss reads more correctly, _no umpa niaz_, "also
+          there I shall go."
+Totoch, X, 1; XVII, title. _Tochtli_, a rabbit; the name of a god of
+        wine; also, of a day of the week.
+Toyauan, I, 5, 6. _To-yauan_, our enemies. (_See_ Olmos. _Gram._, p.
+         25.)
+Tozquiuaua, XIX, 5. From _tozquitl_, voice.
+Tzioac, XIII, 5. For _tzioactli_, a sacred tree; here apparently fig.
+        for a sacred person.
+Tzioactitlan, VII, 2. "In the tzihuac bushes;" the tzihuac was a kind of
+              maguey of a sacred character. _See_ my _Ancient Nahuatl
+              Poetry_, p. 140.
+Tziuaquimiuh, VII, 3. "My havresac made of tzihuac fibres."
+Tzocotzontla, XX, 1. From _tzocoton_, little, _tzontli_, hair.
+Tzonimolco, VI, 1. "Where the hair spreads abroad." The name of the hall
+            sacred to the god of fire in the temple. The expression
+            refers figuratively to the flames blazing upwards like hair
+            from a head.
+Tzotzonia, XIX, 5. To play on an instrument.
+
+
+U
+
+Ualitla, XV, 4. Comp. of _uallauh_ and _itla_.
+Uallaçic, VIII, 5. From _uallauh_, to come, and _acic_, which adds the
+          sense of approaching near.
+Ualmeua, XII, 3. To cry lustily.
+Ueca, X, 1. Far.
+Uel, or Huel, adv., I, 4. Well.
+Uelmatia, III, 4. To appear well, to be well.
+Ueponi, VII, 1. _Uepollotl_, kin, relations.
+Uexcaitoa, II, 1. To offer harm, to curse.
+Uicacapa, IV, 7. Towards, to.
+Uitzalochpan, XIII, 1. Compound of _huitz_, to come, and _tlaloa_, to
+              run.
+Uitzetla, II, 2. For _uitzlan_, in at the south, or the place of thorns.
+Uitznauac, II, 4. For Huitznauac. _See_ Notes to Hymn II.
+Uitztla, XIII, 3. According to the Gloss to v. 4, this is a poetic form
+         for _uictli_, a hoe, the native agricultural implement.
+
+
+X
+
+Xamontoca, IV, 7. _Xi-am-on-itta_, from _itta_, to look, to see. Compare
+           the Gloss.
+Xatenonotza, VI, 6. For _xi-tenonotza_, call ye upon, pray ye to.
+Xayaualli, XIII, 8. From _xayaua_, to adorn oneself in the ancient
+           manner.
+Xeliui, XVIII, 4. To split, to divide.
+Ximocaya, III, 9. Rendered by the Gloss as equivalent to _ximoayan_, the
+          Paradise of Souls; _see_ my _Ancient Nahuatl Poetry_, p. 132.
+Ximiçotica, XVI, 1, 2. From _iça_, to wake up, awake.
+Xiuh, IV, 8. Green; grass.
+Xiuacalco, III, 5. From _xiuh_, _calli_, _co_, in the green house; the
+           Gloss explains it by _acxoyacalco_, "in the house of the wild
+           laurel," or decorated with wild laurel, a plant probably
+           sacred to Tlaloc.
+Xiuicoatl, XV, 2. Grass snake, or green snake. From _xiuitl_, _coatl_.
+Xiyanouia, III, 6. Imperative from _yauh_, to go.
+Xochinquauitl, XIV, 7. The flower-tree.
+Xochiquetzal, XIV, 11. Proper name of a deity.
+Xochitla, IV, 1, etc. Flowers, place of, or abundance of. From
+          _xochitl_.
+Xochitlicacan, XIV, 3, 5. The place of flowers.
+Xoconoctli, XIX, 5. From _xocotl_, fruit, apple.
+Xocoyeua, XIX, 5. From _xococtl_, fruit.
+Xolotl, XIV, 9. A servant, a page.
+Xoyauia, IX, 2. From _xoyaui_, to begrime, to spoil; _xoyauian_, the
+         place of blackness, or of decay.
+Xoxolcuicatl, VI, 5. From _xolotl_, servant, page, and _cuicatl_, song.
+
+
+
+
+INDEX.
+
+
+Abundance, the fabled house of,
+Amanteca,
+Amantlan; a quarter of the city of Tenochtitlan,
+Amimitl, the god:
+  hymn to,
+  his functions,
+Ancient god, the, a name of the god of fire,
+"Ancient Nahuatl Poetry," quoted,
+Arrows:
+  the house of,
+  god of,
+Artists, the goddess of,
+Atlaua, the god:
+  hymn to,
+  signification of,
+Auroras, the four,
+Ayopechtli _or_ Ayopechcatl, a goddess:
+  hymn to,
+  functions of,
+Aztec:
+  Mythology, Paradise of,
+  nation, wars of,
+
+Ball, the game of,
+Bibliotheca Laurentio-Mediceana,
+Bread and water, fasting on,
+Bustamente, his edition of Sahagun's _Historia_,
+
+Cardinal points as symbols,
+Chalchiucihuatl, a name of the goddess Chicomecoatl,
+Chalmecatl, name of a deity,
+Chichimecs, an ancient tribe,
+Chicomecoatl, the goddess:
+  hymn to,
+  functions of,
+  her names,
+Chicomolotl, a name of the goddess Chicomecoatl,
+Chicomoztoc, the "seven caves,"
+Childbirth, goddess of,
+Chimalman, the goddess of,
+Chimalipan, the virgin-mother,
+Cholula or Chollolan, a place name,
+Cihuacoatl, the goddess:
+  hymn to,
+  functions of,
+Cinteotl or Centeotl, the god,
+  his birthplace,
+  his functions,
+Cipactonalli, a fabled personage,
+Clavigero, quoted,
+Coatepec, the sacred serpent mountain,
+Codex Ramirèz, the,
+Codex Telleriano-Remensis, the,
+Codex Vaticanus, the,
+Colhuacan:
+  first King of,
+  derivation of,
+  reference to,
+Colors, symbolism of,
+Cuauhtitlan, the Annals of,
+Cuezaltzin, a name of the god of fire,
+
+Dance:
+  the jar,
+  of the "four auroras,"
+Death-song, a,
+Drum, use of the,
+Drum-beating, goddess of,
+Drunkenness, deities of,
+Duran, Diego, quoted,
+
+Eagle's crest, as ornament,
+Earth:
+  goddess of the,
+  heart of the,
+Eight, as a sacred number,
+Emerald, the Lady of the,
+
+Feathers:
+  as ornaments,
+  symbol of the spirit,
+Fertility, genius of,
+Fire, the Mexican god of,
+Fire-stick, the,
+Fish-spear, god of the,
+"Five flowers," the, a plant,
+Flames, the Hall of,
+Flowers:
+  the god of,
+  plumage of,
+  as symbols,
+Food, the goddess of,
+Four, as sacred number,
+
+Gods:
+  mother of the,
+  home of the,
+Green corn, goddess of,
+Guadalupe, Our Lady of,
+
+Hair, as a symbol of flames,
+Heads, serpent of seven,
+Hearts of victims torn out,
+Hieroglyphic books, native,
+Huasteca, a tribe,
+Huehueteotl, a name of the god of fire,
+Huitzilopochtli:
+  hymn to,
+  his functions,
+  description of his idol,
+  festival of,
+  temple of,
+  mother of,
+Huitznahuac:
+  war song of,
+  brother of Huitzilopochtli,
+Hurler, the; epithet applied to Huitzilopochtli,
+
+Ichpochtli, the virgin goddess,
+Illustrations, colored,
+Inquisition, action on Sahagun's Historia,
+Intoxicating drink, the gods of,
+Itzpapalotl, a goddess,
+Ixcoçauhqui, the god of fire, hymn to,
+
+Jade, ornaments of, mentioned,
+Jourdanet, Dr., his translation of Sahagun's _Historia_,
+
+Kingsborough, Lord:
+  his edition of Sahagun's _Historia_,
+  his _Mexican Antiquities_,
+
+Lightning, as a serpent,
+Lying-in, goddesses of. _See_ Childbirth.
+
+Macuilxochitl:
+  name of a deity,
+  hymn to,
+Maguey, brought from Paradise,
+Maize:
+  the god of,
+  goddess of,
+Maya tribes in Mexico,
+Mazateca, a certain tribe or caste,
+Merchants, the god of,
+Mexicans, the,
+Mexicans, poetry of,
+Mexico, ancient,
+Mimixcoa. _See_ Mixcoatl.
+Mirror, the use of,
+Mist, the house of,
+Mixcoatl, the god:
+  hymn of,
+  his functions,
+  hill of,
+Mixcoatepec, mountain so called,
+Mixteca   } : a nation,
+Mixtecatl }
+Mixtecapan, a locality,
+Mother of the gods,
+  "our mother,"
+  the virgin,
+
+Nahua, the, as tribal name,
+Nahuatl language, the,
+  MSS.,
+Naualpilli, "noble magician," a name of Tlaloc,
+Night, the god of,
+Nonoalco, a place name,
+
+"Obsidian butterfly," a kind of ornament,
+Olmos, quoted,
+Opochtli, the god of netmakers,
+Otomis, the tribe so-called,
+  war song of,
+Otontecutli, the god:
+  hymn to,
+  his functions,
+
+Paradise, the terrestrial,
+Paynal, the god,
+Parturition, goddess of. _See_ Childbirth.
+Picha-Huasteca, a tribe,
+Pipitlan, a place name,
+Pipiteca, a nomen gentile,
+Poetry, ancient Mexican,
+Pulque, the god of,
+
+Quechol bird, the,
+Quetzal bird, the,
+Quetzalcoatl:
+  priests adopt his garb,
+  as speaker,
+  his companion,
+Quilaztli:
+  name of a goddess,
+  related to Atlaua,
+
+Rain, the god of,
+Rain gods, the, the house of,
+Reproduction, the goddess of,
+
+Sacrifices, human,
+Sahagun, Bernardino de:
+  MS. of his _Historia_,
+  his remarks on the chants,
+  action of Inquisition on,
+  quoted,
+Serpent:
+  the lightning,
+  mountain,
+  the serpent woman,
+  serpent's blood,
+  swallowing of,
+  of seven heads,
+Seven, as a sacred number,
+Simeon, Remi, his notes to Sahagun's _Historia_,
+Slaves, sacrifice of,
+Soul, place in Aztec mythology,
+South, the, as origin of deities,
+Sun-god, the,
+
+Tamoanchan:
+  its signification,
+  the houses of,
+Teatlahuiani, a name of the god of the pulque,
+Temple of Tenochtitlan,
+Tenochtitlan, ancient name of the city of Mexico, temple of,
+Tepeyacac, temple at,
+Tequechmecaniani, a name of the god of drunkenness,
+Teteuinan, hymn of,
+Tezcatlipoca, the god,
+Tezcatzoncatl, god of the pulque,
+  hymn to,
+Tezcatzontli,
+Thorns, diviners with,
+Tlaloc, the god:
+  song of,
+  house of,
+  functions of,
+  figure of,
+Tlalocan, the terrestrial Paradise,
+  guide to,
+  explained,
+Tlazolteotl, the love goddess,
+Toçi, our mother, a goddess,
+Toltecs, the fabulous nation of,
+Torquemada, quoted,
+Totec, the god:
+  hymn to,
+  a companion of Quetzalcoatl,
+Totochtin, gods of intoxication,
+Tochtli, the rabbit, as a god of drunkards,
+Tonan _or_ Tonantzin, the goddess,
+Travelers, the deity of,
+Tulan, the site of,
+Turquoises as ornaments,
+Twins, the goddess of,
+Tzatzitepec, the hill of proclamation,
+Tziuactitlan, a place name,
+Tzocatzontlan, a place name,
+
+Uitznahuac. _See_ Huitznabruac.
+
+Venus impudica, the Mexican,
+Vitzilopochtli. _See_ Huitzilopochtli.
+
+War:
+  the god of,
+  goddess of,
+Water cypress, the,
+Waters, master of the,
+Woman, sacrifice of,
+
+Xilonen, goddess of green corn,
+Xippe Totec, the god, hymn to,
+Xiuhtecutli, a name of the god of fire,
+Xochipilli, the god of flowers:
+  hymn to,
+  functions of,
+  synonym,
+Xochitlycacan, name of the earthly Paradise, its meaning,
+Xochiquetzal, the goddess:
+  hymn to,
+  functions of,
+  reference to,
+
+Yacatecutli, god of travelers, hymn to,
+Yoatzin, the god of night,
+Youallauan, the nocturnal tippler, high priest of Totec,
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK RIG VEDA AMERICANUS ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

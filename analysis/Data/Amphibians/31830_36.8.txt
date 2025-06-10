@@ -1,0 +1,1056 @@
+﻿The Project Gutenberg eBook of Genera of Leptodactylid Frogs in México
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Genera of Leptodactylid Frogs in México
+
+Author: John D. Lynch
+
+Release date: March 30, 2010 [eBook #31830]
+                Most recently updated: January 6, 2021
+
+Language: English
+
+Credits: Produced by Chris Curnow, Joseph Cooper, Diane Monico, and
+        the Online Distributed Proofreading Team at
+        https://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK GENERA OF LEPTODACTYLID FROGS IN MÉXICO ***
+
+
+
+
+Produced by Chris Curnow, Joseph Cooper, Diane Monico, and
+the Online Distributed Proofreading Team at
+https://www.pgdp.net
+
+
+
+
+
+
+
+
+
+
+
+UNIVERSITY OF KANSAS PUBLICATIONS
+MUSEUM OF NATURAL HISTORY
+
+Volume 17, No. 11, pp. 503-515, 5 figs.
+March 20, 1968
+
+
+
+Genera of Leptodactylid Frogs in México
+
+
+BY
+
+JOHN D. LYNCH
+
+
+UNIVERSITY OF KANSAS
+LAWRENCE
+1968
+
+
+
+
+UNIVERSITY OF KANSAS PUBLICATIONS, MUSEUM OF NATURAL HISTORY
+
+Editors: E. Raymond Hall, Chairman, Henry S. Fitch,
+Frank B. Cross
+
+
+Volume 17, No. 11, pp. 503-515, 5 figs.
+Published March 20, 1968
+
+
+UNIVERSITY OF KANSAS
+Lawrence, Kansas
+
+
+PRINTED BY
+ROBERT R. (BOB) SANDERS, STATE PRINTER
+TOPEKA, KANSAS
+1968
+
+31-9418
+
+
+
+
+Genera of Leptodactylid Frogs in México
+
+BY JOHN D. LYNCH
+
+
+INTRODUCTION
+
+According to the most recent review of the Mexican amphibian fauna
+(Smith and Taylor, 1948), six genera of leptodactylid frogs occur in
+México. One other genus, _Pleurodema_, occurs in Lower Central America.
+Smith and Taylor recognized one species of _Engystomops_, 28 of
+_Eleutherodactylus_, three of _Leptodactylus_, eight of
+_Microbatrachylus_, 12 of _Syrrhophus_, and five of _Tomodactylus_.
+Subsequent to the publication of their checklist of the Mexican
+amphibia (1948), numerous taxonomic changes have been proposed. Many
+species of _Eleutherodactylus_ have been added to the fauna, either
+through the extension of their recorded ranges into México from
+Guatemala or by the recognition of species unknown in 1948, whereas
+some nominal species have been synonymized. _Microbatrachylus_ has been
+regarded as synonymous with _Eleutherodactylus_ (Lynch, 1965); four
+species of _Microbatrachylus_ currently are regarded as valid
+(Duellman, 1961, Lynch, 1965). _Syrrhophus_ was revised in part by
+Duellman (1958) and Firschein (1954), and a species of _Tomodactylus_
+transferred to _Syrrhophus_ by Dixon (1957), who redefined
+_Tomodactylus_ and added more species to the genus.
+
+Since beginning my studies of the Mexican leptodactylids in 1962, I
+have become acutely aware of difficulties involved in defining the
+genera. A revision of _Eleutherodactylus_ and a review of _Syrrhophus_
+are nearing completion, but prior to their publication it is desirable
+to redefine the genera of the Mexican leptodactylids, and in so doing
+recognize an heretofore unnamed genus. The definitions of
+_Eleutherodactylus_ and _Leptodactylus_ may need to be altered in the
+future, since both are widespread in South America and occur in the
+West Indies. Their definitions as given here are as precise as present
+knowledge permits. _Syrrhophus_ and _Tomodactylus_ are small
+assemblages that occur only in southwestern United States, México, and
+Guatemala.
+
+Taylor (1952) synonymized _Engystomops_ with _Eupemphix_ which,
+although related, should be regarded as generically distinct (Gallardo,
+1965). Perhaps the most conservative classification is that of Myers
+(1962) who, without published evidence, combined _Eleutherodactylus_,
+_Syrrhophus_, and the South American _Lithodytes_ in a single genus.
+
+The major problem for students working with the Mexican leptodactylids
+has not been the separation of _Engystomops_ or _Leptodactylus_ from
+other genera but the separation and definition of the eleutherodactyline
+frogs currently placed in three genera, _Eleutherodactylus_,
+_Syrrhophus_, and _Tomodactylus_. As will be shown in this paper, these
+are more conveniently placed in four genera. Once a fourth genus is
+recognized, certain phylogenetic problems disappear and a reasonable
+zoogeographic interpretation is possible for Middle American
+leptodactylid distribution.
+
+
+
+
+ANALYSIS OF CHARACTERS
+
+
+In México and northern Central America approximately 55 species of
+eleutherodactyline frogs (_Eleutherodactylus_, _Syrrhophus_, and
+_Tomodactylus_) are known. Four genera can be recognized on the basis
+of the nature of inguinal glands, morphology of the hands and feet, and
+certain osteological features.
+
+[Illustration: FIG. 1. _Tomodactylus angustidigitorum_ (UMMZ 114305,
+× 4.5) illustrating the lumbo-inguinal gland typical of members of the
+genus. From a kodachrome by Wm. E. Duellman.]
+
+
+Glands
+
+Leptodactylids have a variety of glands that have been used as generic
+characters. Smith and Taylor (1948) regarded the so-called inguinal
+gland as a generic character in Mexican eleutherodaycty-lines. Lynch
+(1965) showed that _Eleutherodactylus_ and _Microbatrachylus_ cannot
+be separated by the nature of the gland or the condition of the
+prevomers (dentate or not). _Syrrhophus_ and _Tomodactylus_, as defined
+by Smith and Taylor (1948), are not generically distinct because of
+overlap in the condition of the prevomers and in the development of the
+gland. Firschein (1954) stated that _Syrrhophus_ differed from
+_Tomodactylus_ by having an axillary gland, but it is now known that
+one species of _Syrrhophus_ lacks the gland.
+
+The inguinal glands of _Eleutherodactylus_ and _Syrrhophus_, if
+present, are diffuse, irregular in outline, and generally not
+prominent; in _Tomodactylus_ the gland is higher on the body (a
+lumbo-inguinal gland), compact, oval in outline, and prominent (Fig.
+1). Axillary glands occur in most _Syrrhophus_ but are not known in
+_Tomodactylus_ or _Eleutherodactylus_.
+
+
+Hands and feet
+
+The tips of the digits are laterally expanded in most
+_Eleutherodactylus_, _Syrrhophus_, and _Tomodactylus_. Two species
+of _Eleutherodactylus_ (_augusti_ and _tarahumarensis_) and two
+_Tomodactylus_ (_angustidigitorum_ and _grandis_) lack any expansion
+of the digital tips. All but two of the species of eleutherodactyline
+frogs (_E. augusti_ and _E. tarahumarensis_) have a transverse groove
+across the tips of the digits (Fig. 2).
+
+[Illustration: FIG. 2. Palmar views of the hands and lateral views of
+the tip of the third digits of _Eleutherodactylus alfredi_ (left, KU
+93994, × 5) and _Hylactophryne augusti_ (right, KU 102594, × 3).]
+
+Supernumerary tubercles rarely are present on the feet of
+_Eleutherodactylus_, but are present and numerous in every species of
+_Syrrhophus_, _Tomodactylus_, and in the members of the _augusti_ group
+of _Eleutherodactylus_ (Fig. 3). The tubercles are small and numerous
+in _Syrrhophus_ and larger in _Tomodactylus_ and the _Eleutherodactylus
+augusti_ group. Most species of _Eleutherodactylus_ have no plantar
+supernumerary tubercles; a few species have such tubercles, which never
+extend between the metatarsal tubercles as in _Syrrhophus_ and
+_Tomodactylus_.
+
+[Illustration: FIG. 3. Plantar views of feet of _Eleutherodactylus
+alfredi_ (left, KU 93994, × 4.5), _Syrrhophus pipilans nebulosus_
+(middle, KU 58900, × 7.5), and _Hylactophryne augusti_ (right, KU
+102594, × 3) showing differences in size and arrangement of
+supernumerary tubercles.]
+
+Tarsal folds and tubercles are lacking in _Syrrhophus_, _Tomodactylus_,
+and the _augusti_ group of _Eleutherodactylus_. Several species of
+_Eleutherodactylus_ lack tarsal folds and tubercles, but in nearly
+every species group, one or more species possess either an inner tarsal
+fold, inner tarsal tubercle(s), or outer tarsal tubercles.
+
+The terminal phalanges of _Syrrhophus_, _Tomodactylus_, and all
+_Eleutherodactylus_ (except the frogs of the _augusti_ group) are
+distinctly T-shaped. In the latter, the bones are knob-shaped distally
+(Fig. 4). T-shaped terminal phalanges also are present in _Lithodytes_
+and _Trachyphrynus_ but not in other leptodactylid genera. At least one
+species of _Eupsophus_ (_E. quixensis_) has terminal phalanges that
+resemble those of the _Eleutherodactylus augusti_ group. Several
+species of _Eleutherodactylus_, _Syrrhophus_, and _Tomodactylus_ with
+slender fingers have T-shaped terminal phalanges although the terminal
+dilations proportionately are only scarcely wider than the finger tips
+in the _Eleutherodactylus augusti_ group. The presence of a terminal
+groove at the tip of the finger is an external indicator of the
+T-shaped terminal phalanges.
+
+[Illustration: FIG. 4. Terminal phalanges of four leptodactylid frogs
+(all × 13.5). (a) _Eleutherodactylus mexicanus_, KU 55593; (b)
+_Eupsophus roseus_, KU 84731; (c) _Eupsophus quixensis_, UIMNH 59643;
+and (d) _Hylactophryne augusti_, KU 56192.]
+
+
+Skull
+
+All Mexican eleutherodactyline frogs have quadratojugal-maxillary
+articulations, completely roofed skulls in adults, median contact of
+the nasals, separated occipital condyles, and large prevomers. The
+premaxillae of all species are visible when the skulls are viewed from
+directly above. The pterygoid lacks a medioventral flange and does not
+meet the palatine. In no species is the anterior arm of the squamosal
+in contact with the maxillary. Of the numerous species examined (30
+_Eleutherodactylus_, four _Syrrhophus_, and four _Tomodactylus_), the
+species in the _Eleutherodactylus augusti_ group are unique in having a
+sphenethmoid with a blunt anterior edge.
+
+
+Pectoral Girdle
+
+All species have large cartilaginous plates in the pectoral girdles;
+none possesses a bony style. No divergent modifications of the clavicle
+and coracoid bones are known in the family.
+
+
+
+
+GENERIC ACCOUNTS
+
+
+Genus ~Eleutherodactylus~ Dumeril and Bibron, 1841
+
+     _Type-species._--_Hylodes martinicensis_ Tschudi, 1838
+
+     _Diagnosis and definition._--Small to large frogs (12 to 110
+     mm. snout-vent length) having slightly to widely expanded
+     digital pads, each pad bearing a terminal transverse groove;
+     lumbo-inguinal, inguinal, and axillary glands absent, or if
+     present, diffuse, irregular in outline, not compact; plantar
+     supernumerary tubercles absent, or if present, six or fewer,
+     restricted to distal area of plantar surface, and not
+     extending between metatarsal tubercles; tarsus bearing inner
+     or outer tubercles or folds or not; toes free to one-half
+     webbed; terminal phalanges T-shaped; sternum cartilaginous,
+     lacking bony style; sphenethmoid not truncate anteriorly;
+     nasals in contact medially; maxillary and quadratojugal in
+     contact; anterior arm of squamosal not in contact with
+     maxillary; dermal cranial elements not involved in
+     integumentary-cranial co-ossification; prevomers large,
+     dentigerous processes present or not, dentate or not;
+     maxillary and premaxillary bones dentate; occipital condyles
+     separated; development direct.
+
+     _Composition._--About 420 names have been applied to frogs
+     of this genus; many of these names are synonyms, and many
+     other species remain undescribed and unnamed. Perhaps the
+     genus contains 350 species. Thirty-one species occur in
+     México and northern Central America.
+
+     _Distribution._--From Tamaulipas and Sinaloa, México,
+     exclusive of the Mexican Plateau, to at least Peru and
+     southernmost Brazil and throughout the West Indies.
+     Introduced into Florida.
+
+     _Etymology._--Greek (_eleuthero_ + _dactylus_) meaning
+     free-toed.
+
+
+Genus ~Engystomops~ Jiménez de la Espada, 1872
+
+     _Type species._--_Engystomops petersi_ Jiménez de la Espada,
+     1872
+
+     _Diagnosis and definition._--Small frogs (20 to 40 mm.
+     snout-vent length) having undilated digital tips lacking
+     transverse grooves; lumbo-inguinal or inguinal glands
+     absent; plantar supernumerary tubercles present, extending
+     between metatarsal tubercles; tarsus bearing spinelike
+     tubercle on inner edge; toes free; terminal phalanges
+     pointed; sternum bearing bony style; spenethmoid not
+     truncate anteriorly; nasals in contact medially; maxillary
+     and quadratojugal in articular contact; anterior arm of
+     squamosal not in contact with maxillary; dermal cranial
+     elements not involved in integumentary-cranial
+     co-ossification; prevomers moderate in size, lacking teeth;
+     maxillary and premaxillary bones edentate; occipital
+     condyles separated; tadpole free living.
+
+     _Composition._--Four nominal species (_E. petersi_, _E.
+     pustulatus_, _E. pustulosus_ and _E. schereri_).
+
+     _Distribution._--Central Veracruz and eastern Oaxaca,
+     México, to Trinidad, Bolivia, and Peru, east of the Andes.
+
+     _Etymology._--Greek (_engys_ + _stoma_) meaning narrow-mouthed.
+
+
+Genus ~Hylactophryne~ new genus
+
+     _Type-species._--_Hylodes augusti_ Dugés, 1879
+
+     _Diagnosis and definition._--Medium to large frogs (37 to 94
+     mm. snout-vent length) having undilated digital tips lacking
+     terminal grooves; lumbo-inguinal or inguinal glands absent;
+     plantar supernumerary tubercles present, prominent,
+     extending to but not between metatarsal tubercles; tarsus
+     lacking tubercles or folds; toes free of webbing; terminal
+     phalanges knob-shaped, lacking elongate lateral expansions;
+     sternum cartilaginous, lacking bony style; sphenethmoid
+     truncate anteriorly; nasals in contact medially; maxillary
+     and quadratojugal in articular contact; anterior arm of
+     squamosal not in contact with maxillary; dermal cranial
+     elements not involved in integumentary-cranial
+     co-ossification; prevomers large, bearing dentigerous
+     processes; maxillary and premaxillary bones dentate;
+     occipital condyles separated; development direct.
+
+     _Composition._--Two species, _H. augusti_ and _H.
+     tarahumarensis_, the former composed of four subspecies
+     (Zweifel, 1956).
+
+     _Distribution._--From Arizona, New Mexico, and Texas to
+     Guerrero and Puebla, México, and a relict population on
+     Cerro Quingola (just west of the Isthmus of Tehuantepec,
+     México).
+
+     _Etymology._--Greek (_hylactor_ + _phryne_) meaning barking
+     toad; in reference to the voice and common name.
+
+
+Genus ~Leptodactylus~ Fitzinger, 1826
+
+     _Type-species._--_Leptodactylus typhonia_ Fitzinger, 1826
+
+     _Diagnosis and definition._--Small to large frogs (30 to
+     about 200 m., snout-vent length) having undilated to
+     slightly expanded digital tips bearing pads, no transverse
+     groove at tips of digits; lumbo-inguinal, axillary, and/or
+     ventral glands present or not, low, diffuse; plantar
+     supernumerary tubercles generally absent, if present not
+     extending between metatarsal tubercles; tarsus bearing
+     tarsal folds or not; toes free of webbing, extensive lateral
+     fringes present in some species; terminal phalanges pointed,
+     not T-shaped; sternum bearing bony style; sphenethmoid not
+     truncate anteriorly; nasals in contact medially; maxillary
+     and quadratojugal in articular contact; anterior arm of
+     squamosal not in contact with maxillary; dermal cranial
+     elements not involved in integumentary-cranial
+     co-ossification; prevomers large, bearing dentigerous
+     processes; maxillary and premaxillary bones dentate;
+     occipital condyles separated; tadpole free living.
+
+     _Composition._--Sixty species according to Smith and Taylor
+     (1948); 54 according to Gorham (1963); Argentinian authors
+     have described several more in recent years.
+
+     _Distribution._--Southern Sonora, México, and southern Texas
+     throughout the Central and South American lowlands to
+     Argentina. Also known from Hispaniola and Puerto Rico in the
+     Greater Antilles and a few islands in the Lesser Antilles.
+
+     _Entymology._--Greek (_leptos_ + _dactylus_) meaning slender
+     toes.
+
+
+Genus ~Syrrhophus~ Cope, 1878
+
+     _Type-species._--_Syrrhophus marnockii_ Cope, 1878
+
+     _Diagnosis and definition._--Small to medium sized frogs (18
+     to 40 mm. snout-vent) having slight to prominent digital
+     expansions with transverse groove at tip of each digit;
+     lumbo-inguinal and inguinal gland flattened, irregular in
+     outline, not compact and oval; axillary glands present or
+     not; plantar supernumerary tubercles numerous, more than
+     eight, usually extending between metatarsal tubercles;
+     tarsus lacking tubercles or folds; toes free or basally
+     webbed; terminal phalanges T-shaped; sternum cartilaginous,
+     lacking bony style; sphenethmoid not truncate anteriorly;
+     nasals in contact medially; maxillary and quadratojugal in
+     articular contact; anterior arm of squamosal not in contact
+     with maxillary; dermal cranial elements not involved in
+     integumentary-cranial co-ossification; prevomers large,
+     usually lacking dentigerous processes and teeth; maxillary
+     and premaxillary bones dentate; occipital condyles
+     separated; development direct.
+
+     _Composition._--Thirteen species; the species described as,
+     or later referred to, _Syrrhophus_ from Lower Central
+     America and South America are _Eleutherodactylus_ or
+     _Eupsophus_.
+
+     _Distribution._--Low to moderate elevations from Sinaloa,
+     México, to Guatemala on the Pacific versant; from the
+     Edwards and Stockton plateaus of Texas to British Honduras
+     on the Caribbean versant.
+
+     _Etymology._--Greek, emendation of _syrrhaptos_, meaning
+     sewn together in reference to the united outer metatarsals.
+
+
+Genus ~Tomodactylus~ Günther, 1900
+
+     _Type-species._--_Tomodactylus amulae_ Günther, 1900.
+
+     _Diagnosis and definition._--Small frogs (20 to 35 mm.
+     snout-vent length) having digital expansions or not, with
+     transverse groove across tip of each digit; lumbo-inguinal
+     gland prominently elevated, compact, oval, often patterned;
+     axillary glands absent; plantar supernumerary tubercles
+     numerous, more than eight, usually extending between
+     metatarsal tubercles; tarsus lacking tubercles or folds; toes
+     free; terminal phalanges T-shaped; sternum cartilaginous,
+     lacking bony style; sphenethmoid not truncate anteriorly;
+     nasals in contact medially; maxillary and quadratojugal in
+     articular contact; anterior arm of squamosal not in contact
+     with maxillary; dermal cranial elements not involved in
+     integumentary-cranial co-ossification; prevomers large,
+     usually bearing dentigerous processes; maxillary and
+     premaxillary bones dentate; occipital condyles separated;
+     development direct.
+
+     _Composition._--Ten species.
+
+     _Distribution._--The southern edge of the Mexican Plateau
+     from Sinaloa to Veracruuz and onto the Oaxaca highlands and
+     Sierra Madre del Sur.
+
+     _Etymology._--Greek (_tomis_ + _dactylus_) meaning knife
+     toe; in reference to either the sharp subarticular tubercles
+     or the unwebbed toes.
+
+
+
+
+DISCUSSION
+
+
+The preceding definitions only slightly alter the present generic
+limits of Mexican leptodactylids. Two species, previously regarded as
+_Eleutherodactylus_, are transferred to the new genus _Hylactophryne_.
+The arrangement of the species of _Syrrhophus_ and _Tomodactylus_
+remains the same as concluded by Dixon (1957), Duellman (1958), and
+Firschein (1954) in their reviews of the genera.
+
+Lumbo-inguinal glands are most prominent in the genera _Pleurodema_ and
+_Tomodactylus_. Various nondescript glands are present in many genera,
+but none is so well developed as those of _Pleurodema_ and
+_Tomodactylus_.
+
+At least nine leptodactylid genera are either known or thought to be
+terrestrial breeders lacking a free-living tadpole stage
+(_Eleutherodactylus_, _Euparkerella_, _Hylactophryne_, _Niceforonia_,
+_Noblella_, _Sminthillus_, _Syrrhophus_, _Tomodactylus_ and
+_Trachyphrynus_). _Niceforonia_ and _Trachyphrynus_, and probably
+_Hylactophryne_, are not closely related to the other genera. Direct
+development probably is an adaptation to adverse environmental
+conditions since many of the species occur in semi-arid or cold (Andean
+páramos) areas. _Eleutherodactylus_ is generally thought to be the
+stock from which _Euparkerella_, _Noblella_, and _Sminthillus_ evolved
+(Griffiths, 1959) and from which _Syrrhophus_ and _Tomodactylus_ are
+derived (Firschein, 1954).
+
+The present distribution of _Hylactophryne_ (isolated on the Mexican
+Plateau) and its digital form (like that of Papuan and many primitive
+South American leptodactylids) suggest that the genus was isolated in
+México throughout the Tertiary, whereas the other Central American
+genera are either post-Pliocene derivatives of _Eleutherodactylus_ or
+invaders of Central America from South America since the mid-Pliocene
+land bridge was formed (Lloyd, 1963).
+
+Piatt (1934) presented arguments against assigning _Eleutherodactylus
+latrans_ to the genus _Lithodytes_ and concluded that it was a "true"
+_Eleutherodactylus_. Contrary to his arguments, _latrans_ (= _augusti_
+of Zweifel) and _E. tarahumarensis_ Taylor differ from all other
+_Eleutherodactylus_ (and _Syrrhophus_ and _Tomodactylus_) in the nature
+of the tips of the digits (external and skeletal). The digits of
+_Hylactophryne_ are like those of _Eupsophus_. My study of nearly all
+genera of leptodactylids indicates that Noble (1925) was correct in
+suggesting that _Borborocoetes_ (= _Eupsophus_) is a close relative of
+_Eleutherodactylus latrans_, although Noble's arguments were based in
+part upon false evidence concerning the breeding habits of _E.
+latrans_, then thought to have a free-living tadpole.
+
+Kellogg (1932) and Piatt (1934) argued that the terminal phalanges of
+_E. latrans_ were typically eleutherodactyline. The variation of this
+character in _Eupsophus_ (see Fig. 4) ranges from knobbed to bifurcate
+or Y-shaped (T-shaped in _Eleutherodactylus_, _Syrrhophus_ and
+_Tomodactylus_) and encompasses the nature of the character represented
+in _Hylactophryne_. _Eupsophus_ differs from _Hylactophryne_ in
+possessing a frontoparietal fontanelle, in generally having a
+maxillary-quadratojugal gap, and in having a free swimming tadpole
+stage.
+
+[Illustration: FIG. 5. Outline drawings of _Leptodactylus melanonotus_
+(left, KU 65704, × 2) and _Eleutherodactylus alfredi_ (right, KU 93994,
+× 2).]
+
+
+
+
+KEY TO MEXICAN LEPTODACTYLID GENERA
+
+
+1. Small (20-40 mm.), pustular, toadlike frogs;
+   maxillary and premaxillary bones not bearing teeth    _Engystomops_
+
+   Large (20-110 mm.), smooth skinned and non-toadlike
+   frogs; maxillary and premaxillary bones bearing teeth            2
+
+2. No conspicuous waist (Fig. 5); sternum bearing
+   bony style,                                         _Leptodactylus_
+
+   Constrictions at waist (Fig. 5); sternum
+   cartilaginous, no bony style                                     3
+
+3. Few (less than six), if any, supernumerary
+   tubercles on plantar surface                    _Eleutherodactylus_
+
+   Many (more than 8) supernumerary tubercles on
+   plantar surfaces                                                 4
+
+4. Terminal, transverse groove across tip of
+   digits, especially outer two fingers, digits
+   expanded or not; small frogs (18 to 40 mm.)                      5
+
+   Tips of digits lacking transverse groove;
+   digits unexpanded; medium-sized to large frogs
+   (37 to 94 mm.)                                      _Hylactophryne_
+
+5. Lumbo-inguinal gland compact, oval                   _Tomodactylus_
+
+   Lumbo-inguinal or inguinal gland absent or
+   diffuse and irregular in outline                       _Syrrhophus_
+
+
+
+
+LITERATURE CITED
+
+
+DIXON, J. R.
+
+     1957. Geographic variation and distribution of the genus
+           _Tomodactylus_ in Mexico. Texas Jour. Sci., 9:379-409,
+           December.
+
+DUELLMAN, W. E.
+
+     1958. A review of the frogs of the genus Syrrhophus in
+           western Mexico. Occas. Papers Mus. Zool. Univ.
+           Michigan, 594:1-15, June 6.
+
+     1961. The amphibians and reptiles of Michoacan, Mexico. Univ.
+           Kansas Publ. Mus. Nat. Hist., 15:1-148, December 20.
+
+FIRSCHEIN, I. L.
+
+     1954. Definition of some little understood members of the
+           leptodactylid genus _Syrrhophus_, with a description
+           of a new species. Copeia, 1:48-58, February 19.
+
+GALLARDO, J. M.
+
+     1965. A proposito de los Leptodactylidae (Amphibia Anura).
+           Papeis Avulsos, 17:77-87, January 30.
+
+GORHAM, S. W.
+
+     1963. The comparative number of species of amphibians in
+           Canada and other countries. III. Summary of species
+           of anurans. Canadian Field-Nat., 77:13-48, March.
+
+GRIFFITHS, I.
+
+     1959. The phylogeny of Sminthillus limbatus and the status of
+           the Brachycephalidae (Amphibia Salientia). Proc. Zool.
+           Soc. London, 132:457-87, May.
+
+KELLOGG, R.
+
+     1932. Mexican tailless amphibians in the United States
+           National Museum. Bull. U. S. Natl. Mus., 160:224 pp.,
+           March 31.
+
+LLOYD, J. J.
+
+     1963. Tectonic history of the south Central-American orogen,
+           _in_ Childs and Beebe eds., Backbone of the Americas.
+           Amer. Assoc. Petroleum Geol., pp. 88-100.
+
+LYNCH, J. D.
+
+     1965. A review of the eleutherodactylid frog genus
+           _Microbatrachylus_ (Leptodactylidae). Nat. Hist. Misc.,
+           182:1-12, December 15.
+
+MYERS, G. S.
+
+     1962. The American leptodactylid frog genus _Eleutherodactylus_,
+           _Hylodes_ (= _Elosia_), and _Caudiverbera_
+           (= _Calytocephalus_). Copeia, 1:195-202, April 11.
+
+NOBLE, G. K.
+
+     1925. An outline of the relation of the ontogeny to
+           phylogeny within the Amphibia. I. Amer. Mus. Nov.,
+           165:1-17, April 16.
+
+PIATT, J.
+
+     1934. The systematic status of Eleutherodactylus latrans
+           (Cope). Amer. Midl. Nat., 15:89-91, February 15.
+
+SMITH, H. M. and TAYLOR, E. H.
+
+     1948. An annotated checklist and key to the Amphibia of
+           Mexico. Bull. U. S. Natl. Mus., 194:1-118. June 7.
+
+TAYLOR, E. H.
+
+     1952. A review of the frogs and toads of Costa Rica. Univ.
+           Kansas Sci. Bull., 35:577-942, July 1.
+
+ZWEIFEL, R. G.
+
+     1956. A survey of the frogs of the _augusti_ group, genus
+           _Eleutherodactylus_. Amer. Mus. Novitates, 1813:1-35,
+           December 23.
+
+
+_Transmitted July 11, 1967._
+
+
+31-9418
+
+
+
+
+       *       *       *       *       *
+
+Transcriber's Notes
+
+
+Bold text is shown within ~tildes~.
+
+Italicized text is shown within _underscores_.
+
+Illustrations have been moved to avoid breaking up paragraphs of text.
+
+Page 507: Changed know to known (are not know in Tomodactylus).
+
+Page 507: Added closing parenthesis in Fig. 2 caption after × 3.
+
+Page 509: Changed compeltely to completely (compeltely roofed skulls).
+
+Page 512: Veracruuz may be a typo for Veracruz (Sinaloa to Veracruuz).
+
+Page 514: Changed two occurrences of Hylatophryne to Hylactophryne.
+
+
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK GENERA OF LEPTODACTYLID FROGS IN MÉXICO ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

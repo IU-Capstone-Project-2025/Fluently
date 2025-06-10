@@ -1,0 +1,2990 @@
+﻿The Project Gutenberg eBook of Amphibians and Reptiles of the Rainforests of Southern El Petén, Guatemala
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Amphibians and Reptiles of the Rainforests of Southern El Petén, Guatemala
+
+Author: William Edward Duellman
+
+Release date: December 24, 2011 [eBook #38398]
+
+Language: English
+
+Credits: Produced by Chris Curnow, Joseph Cooper and the Online
+        Distributed Proofreading Team at http://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK AMPHIBIANS AND REPTILES OF THE RAINFORESTS OF SOUTHERN EL PETÉN, GUATEMALA ***
+
+
+
+
+Produced by Chris Curnow, Joseph Cooper and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+
+
+
+
+
+  =================================
+
+  UNIVERSITY OF KANSAS PUBLICATIONS
+  MUSEUM OF NATURAL HISTORY
+
+  Volume 15, No. 5, pp. 205-249, pls. 7-10, 6 figs.
+
+  -------------- October 4, 1963 --------------
+
+  Amphibians and Reptiles of the Rainforests
+  of Southern El Petén, Guatemala
+
+  BY
+  WILLIAM E. DUELLMAN
+
+  UNIVERSITY OF KANSAS
+  LAWRENCE
+  1963
+
+  UNIVERSITY OF KANSAS PUBLICATIONS, MUSEUM OF NATURAL HISTORY
+
+  Editors: E. Raymond Hall, Chairman, Henry S. Fitch,
+  Theodore H. Eaton, Jr.
+
+  Vol. 15, No. 5, pp. 205-249, pls. 7-10, 6 figs.
+  Published October 4, 1963
+
+  UNIVERSITY OF KANSAS
+  Lawrence, Kansas
+
+  PRINTED BY
+  JEAN M. NEIBARGER, STATE PRINTER
+  TOPEKA, KANSAS
+  1963
+
+  [Illustration: Printer's Logo]
+
+  29-5935
+
+
+
+
+  Amphibians and Reptiles of the Rainforests of Southern El Petén,
+  Guatemala
+
+  BY
+
+  WILLIAM E. DUELLMAN
+
+
+
+
+CONTENTS
+
+
+                                                                    PAGE
+  INTRODUCTION                                                       207
+    Acknowledgments                                                  208
+
+  DESCRIPTION OF AREA                                                208
+    Physiography                                                     209
+    Climate                                                          209
+    Vegetation                                                       209
+
+  GAZETTEER                                                          210
+
+  THE HERPETOFAUNA OF THE RAINFOREST                                 211
+    Composition of the Fauna                                         212
+    Ecology of the Herpetofauna                                      212
+    Relationships of the Fauna                                       217
+
+  ACCOUNTS OF SPECIES                                                218
+
+  HYPOTHETICAL LIST OF SPECIES                                       246
+
+  SUMMARY                                                            247
+
+  LITERATURE CITED                                                   247
+
+
+
+
+INTRODUCTION
+
+
+Early in 1960 an unusual opportunity arose to carry on biological field
+work in the midst of virgin rainforest in southern El Petén, Guatemala.
+At that time the Ohio Oil Company of Guatemala had an air strip and camp
+at Chinajá, from which place the company was constructing a road
+northward through the forest. In mid-February, 1960, J. Knox Jones, Jr.
+and I flew into El Petén to collect and study mammals, reptiles, and
+amphibians. While enjoying the comforts of the fine field camp at
+Chinajá, we worked in the surrounding forest and availed ourselves of
+the opportunity to be on hand when the road crews were cutting the tall
+trees in the forest, thereby bringing to the ground many interesting
+specimens of the arboreal fauna. We stayed at Chinajá until late March,
+with the exception of a week spent at Toocog, another camp of the Ohio
+Oil Company located 15 kilometers southeast of La Libertad and on the
+edge of the savanna. Thus, at Toocog we were able to work both in the
+forest and on the savanna. In the summer of 1960, John Wellman
+accompanied me to El Petén for two weeks in June and July. Most of our
+time was spent at Chinajá, but a few days were spent at Toocog and other
+localities in south-central El Petén.
+
+Many areas in Guatemala have been studied intensively by L. C. Stuart,
+who has published on the herpetofauna of the forested area of
+northeastern El Petén (1958), the savannas of central El Petén (1935),
+and the humid mountainous region to the south of El Petén in Alta
+Verapaz (1948 and 1950). The area studied by me and my companions is
+covered with rainforest and lies to the north of the highlands of Alta
+Verapaz and to the south of the savannas of central El Petén. A few
+specimens of amphibians and reptiles were obtained in this area in 1935
+by C. L. Hubbs and Henry van der Schalie; this collection, reported on
+by Stuart (1937), contained only one species, _Cochranella
+fleischmanni_, not present in our collection of 77 species and 617
+specimens.
+
+
+Acknowledgments
+
+I am grateful to L. C. Stuart of the University of Michigan, who made
+the initial arrangements for our work in El Petén, aided me in the
+identification of certain specimens, and helped in the preparation of
+this report. J. Knox Jones, Jr. and John Wellman were able field
+companions, who added greatly to the number of specimens in the
+collection. In Guatemala, Clark M. Shimeall and Harold Hoopman of the
+Ohio Oil Company of Guatemala made available to us the facilities of the
+company's camps at Chinajá and Toocog. Alberto Alcain and Luis Escaler
+welcomed us at Chinajá and gave us every possible assistance. Juan
+Monteras and Antonio Aldaña made our stay at Toocog enjoyable and
+profitable. During our visits to southern El Petén, Julio Bolón C.
+worked for us as a collector, and between March and June he collected
+and saved many valuable specimens; his knowledge of the forest and its
+inhabitants was a great asset to our work. Jorge A. Ibarra, Director of
+the Museo Nacional de Historia Natural in Guatemala assisted us in
+obtaining necessary permits and extended other kindnesses. To all of
+these people I am indebted for the essential parts that they played in
+the completion of this study.
+
+Field work in the winter of 1960 was made possible by funds from the
+American Heart Association for the purposes of collecting mammalian
+hearts. My field work in the summer of 1960 was supported by a grant
+from the Graduate Research Fund of the University of Kansas.
+
+
+
+
+DESCRIPTION OF THE AREA
+
+
+A vast lowland region stretches northward for approximately 700
+kilometers from the highlands of Guatemala to the Gulf of Mexico. The
+northern two-thirds of this low plain is bordered on three sides by seas
+and forms the Yucatán Peninsula. The lowlands at the base of the
+Yucatán Peninsula make up the Departamento El Petén of Guatemala. The
+area with which this report is concerned consists of the south-central
+part of El Petén.
+
+
+Physiography
+
+Immediately south of Chinajá is a range of hills, the Serrania de
+Chinajá, having an almost due east-west axis and a crest of about 600
+meters above sea level. South of the Serrania de Chinajá are
+succeedingly higher ridges building up to the Meseta de Cobán and Sierra
+de Pocolha and eventually to the main Guatemalan highlands. The northern
+face of the Serrania de Chinajá is a fault scarp dropping abruptly from
+about 650 meters at the crest to about 140 meters at the base. From the
+base of the Serrania de Chinajá northward to the Río de la Pasión at
+Sayaxché the terrain is gently rolling and has a total relief of about
+50 meters. North of the Río de la Pasión is a low dome reaching an
+elevation of 170 meters at La Libertad; see Stuart (1935:12) for further
+discussion of the physiography of central El Petén. The rocks in
+southern El Petén are predominately Miocene marine limestones; there are
+occasional pockets of Pliocene deposits. There is little evidence of
+subterranean solution at Chinajá, but northward in central El Petén
+karsting is common. The upper few inches of soil is humus rich in
+organic matter; below this is clay.
+
+
+Climate
+
+The climate of El Petén is tropical with equable temperatures throughout
+the year. Temperatures at Chinajá varied between a night-time low of 65°
+F. and a daytime high of 91° F. during the time of our visits. In the
+Köppen system of classification the climate at Chinajá and Toocog is Af.
+Rain falls throughout the year, but there is a noticeable dry season. To
+anyone who has traveled from south to north in El Petén and the Yucatán
+Peninsula, it is obvious from the changes in vegetation that there is a
+decrease in rainfall from south to north. There is a noticeable
+difference between Chinajá and Toocog. Although rainfall data are not
+available for Chinajá and Toocog, there are records for nearby stations
+(Sapper, 1932). At Paso Caballos on the Río San Pedro about 40
+kilometers northwest of Toocog the average annual rainfall amounts to
+1620 mm.; the driest month is March (21 mm.), and the wettest months are
+June (269 mm.) and September (265 mm.). At Cubilquitz, Alta Verapaz,
+about 35 kilometers south-southwest of Chinajá and at an elevation of
+300 meters, the average annual rainfall is 4006 mm.; the driest month is
+March (128 mm.), and the wettest months are July (488 mm.) and October
+(634 mm.).
+
+During the 18 days in February and March, 1960, that we kept records on
+the weather at Chinajá moderate to heavy showers occurred on seven days.
+During our stay there in June and July rain fell every day, as it did in
+Toocog. However, during the week spent at Toocog in March no rain fell.
+
+
+Vegetation
+
+The vegetation of northern and central El Petén has been studied by
+Lundell (1937), who made only passing remarks concerning the plants of
+the southern part of El Petén. No floristic studies have been made
+there. The following remarks are necessarily brief and are intended
+only to give the reader a general picture of the forest. I have included
+names of a few of the commoner trees that I recognized.
+
+Chinajá is located in a vast expanse of unbroken rainforest. In this
+forest there is a noticeable stratification of the vegetation. Three
+strata are apparent; in the uppermost layer the tops of the trees are
+from 40 to 50 meters above the ground. The spreading crowns of the trees
+and the interlacing vines form a nearly continuous canopy over the lower
+layers. Among the common trees in the upper stratum are _Calophyllum
+brasiliense_, _Castilla elastica_, _Cedrela mexicana_, _Ceiba
+pentandra_, _Didalium guianense_, _Ficus_ sp., _Sideroxylon lundelli_,
+_Swietenia macrophylla_, and _Vitex_ sp. (Pl. 1, fig. 1). The middle
+layer of trees have crowns about 25 meters above the ground; these trees
+in some places where the upper canopy is missing form the tallest trees
+in the forest. This is especially true on steep hillsides. Common trees
+in the middle layer include _Achras zapote_, _Bombax ellipticum_,
+_Cecropia mexicana_, _Orbignya cohune_, and _Sabal_ sp. The lowermost
+layer reaches a height of about 10 meters; in many places in the forest
+this layer is absent. Common trees in the lower stratum include
+_Crysophila argentea_, _Cymbopetalum penduliflorum_, _Casearia_ sp., and
+_Hasseltia dioica_.
+
+The ground cover is sparce; apparently only a few small herbs and ferns
+live on the heavily shaded forest floor. Important herpetological
+habitats include the leaf litter, rotting stumps, and rotting tree
+trunks on the forest floor and the buttresses of many of the gigantic
+trees, especially _Ceiba pentandra_ (Pl. 2). Epiphytes, especially
+various kinds of bromeliads, are common. Most frequently these are in
+the trees in the upper and middle strata.
+
+At Toocog there is sharp break between savanna and forest (Pl. 7, fig.
+2). The forest is noticeably drier and more open than at Chinajá (Pl.
+9). The crowns of the trees are lower, and there is no nearly continuous
+canopy between 40 and 50 meters above the ground. Although _Swietenia
+macrophylla_ and other large trees occur, they are less common than at
+Chinajá. Especially common at Toocog are _Achras zapote_, _Brosimum
+alicastrum_, and various species of _Ficus_.
+
+
+
+
+GAZETTEER
+
+
+The localities from which specimens were obtained are cited below and
+shown on the accompanying map (Fig. 1).
+
+[Illustration: FIG. 1. Map of El Petén, Guatemala, showing localities
+mentioned in text.]
+
+      Chinajá.--Lat. 16° 02´, long. 90° 13´, elev. 140 m. Camp of
+      the Ohio Oil Company of Guatemala and formerly a small
+      settlement. On some maps Chinajá is located just to the north
+      of the Alta Verapaz--El Petén boundary; recent surveys place
+      the location just to the south of the imaginary line through
+      the rainforest. Field work was conducted in the immediate
+      vicinity of the camp, on the lower slopes of the Serrania de
+      Chinajá, and at several sites to the northwest and
+      north-northwest of Chinajá, where the forest was being
+      cleared. The entire area supports rainforest.
+
+      La Libertad.--Lat. 16° 47´, long. 90° 07´, elev., 170 m. A
+      town on the savannas in central El Petén; although we
+      collected there in the rainy season, the specimens obtained on
+      the savannas are not included in this report.
+
+      Paso Subín.--Lat. 16° 38´, long. 90° 12´, elev. 90 m. A small
+      settlement on the Río Subín, a tributary of the Río de la
+      Pasión. Specimens were obtained in rainforest in the immediate
+      vicinity of the settlement.
+
+      Río de la Pasión.--A large river flowing northward through
+      southern El Petén and thence westward into the Río Usumacinta.
+      Specimens were obtained along the river between the Río Subín
+      and Sayaxché.
+
+      Río San Román.--A river flowing northward in south-central El
+      Petén to the Río Salinas (Usumacinta). We collected along the
+      river at a place about 16 kilometers north-northwest of
+      Chinajá, approximately at Lat. 16° 10´, long. 90° 17´, elev.
+      110 m. In the dry season the river was clear; it is surrounded
+      by rainforest.
+
+      Sayaxché.--Lat. 16° 31´, long. 90° 09´, elev. 80 m. A town on
+      the southern bank of the Río de la Pasión. Specimens were
+      obtained in the rainforest and in cleared areas in the
+      immediate vicinity of the town.
+
+      Toocog (formerly Sojío).--Lat. 16° 41´, long. 90° 02´, elev.
+      140 m. A camp of the Ohio Oil Company of Guatemala located at
+      the rainforest-savanna edge, 15 kilometers southeast of La
+      Libertad. Although we collected on the savannas as well as in
+      the forest, especially to the east of the camp, only species
+      obtained in the forest are considered in this report.
+
+
+
+
+THE HERPETOFAUNA OF THE RAINFOREST
+
+
+In presenting an account of the herpetofauna of southern El Petén three
+items need to be considered: (1) The composition of the fauna; (2) the
+ecology of the fauna; (3) the relationships of the fauna. Each of these
+topics is discussed briefly below. Logically a discussion of the origin
+of the fauna should follow, but this is being withheld for inclusion in
+a report on the herpetofauna of the entire El Petén by L. C. Stuart and
+the author; at that time the above topics will be expanded to cover the
+herpetofauna of the whole region.
+
+
+Composition of the Fauna
+
+TABLE 1.--COMPOSITION OF THE HERPETOFAUNA IN SOUTHERN EL PETÉN,
+GUATEMALA.
+
+  =============+============+============+============
+      Group    |  Families  |   Genera   |  Species
+  -------------+------------+------------+------------
+  Gymnophiona  |     (1)[A] |    (1)     |    (1)
+  Caudata      |     1      |    1       |    2
+  Salientia    |     6      |   10 (1)   |   19 (1)
+  Crocodilia   |     1      |    1       |    1
+  Testudines   |     4      |    7       |    8
+  Sauria       |     6      |   13 (1)   |   19 (1)
+  Serpentes    |     4      |   21 (7)   |   29 (10)
+               +------------+------------+------------
+  Total        |    22 (1)  |   53 (10)  |   78 (13)
+  -------------+------------+------------+------------
+
+[Footnote A: Numbers in parenthesis indicate the number of additional
+taxa that probably occur.]
+
+
+A total of 78 species of amphibians and reptiles has been found in the
+rainforests in southern El Petén; a break down into families and genera
+is given in table 1. Another 13 species probably occur in southern El
+Petén (see Hypothetical List of Species). The fauna primarily is
+composed of typical humid lowland forest inhabitants, such as:
+
+  _Hyla ebraccata_
+  _Hyla loquax_
+  _Phyllomedusa callidryas taylori_
+  _Smilisca phaeota cyanosticta_
+  _Anolis biporcatus_
+  _Anolis capito_
+  _Anolis humilis uniformis_
+  _Eumeces sumichrasti_
+  _Ameiva festiva edwardsi_
+  _Imantodes cenchoa leucomelas_
+  _Leptophis ahaetulla praestans_
+  _Xenodon rabdocephalus mexicanus_
+  _Bothrops nasutus_
+  _Bothrops schlegeli schlegeli_
+
+Nevertheless, the region also provides at least a limited amount of
+habitat suitable for some species that are more frequently found in open
+forest of a drier nature; such species include:
+
+  _Hyla microcephala martini_
+  _Hyla staufferi_
+  _Hypopachus cuneus nigroreticulatus_
+  _Anolis sericeus sericeus_
+  _Eumeces schwartzei_
+  _Oxybelis aeneus aeneus_
+
+Because of the absence of sufficiently open habitat or owing to the
+presence of competitors, some conspicuous members of sub-humid forests
+are not present in southern El Petén. Conspicuous absentees are the
+following:
+
+  _Rhinophrynus dorsalis_
+  _Phrynohyas spilomma_
+  _Triprion petasatus_
+  _Anolis tropidonotus_
+  _Ctenosaura similis_
+  _Ameiva undulata_
+  _Cnemidophorus angusticeps_
+  _Conophis lineatus_
+  _Masticophis mentovarius mentovarius_
+
+PLATE 7
+
+[Illustration: FIG. 1. Edge of rainforest along airstrip at Chinajá, El
+Petén, Guatemala.]
+
+[Illustration: FIG. 2. Rainforest at edge of savanna at Toocog, El
+Petén, Guatemala.]
+
+PLATE 8
+
+[Illustration: Interior of rainforest at Chinajá. Notice size of
+buttresses on large tree (_Ceiba pentandra_).]
+
+PLATE 9
+
+[Illustration: Interior of rainforest at Toocog. Notice less dense
+vegetation as compared with Pl. 8.]
+
+PLATE 10
+
+[Illustration: FIG. 1. Rainforest along Río San Román, 16 kilometers
+north-northwest of Chinajá.]
+
+[Illustration: FIG. 2. Rain pond in forest at Toocog. This was a
+breeding site for six species of frogs.]
+
+
+Ecology of the Herpetofauna
+
+Our two visits to Chinajá and Toocog afforded the opportunity to gather
+data on the ecology of the rainforests of southern El Petén and to study
+the relationships between the environment and members of the
+herpetofauna. Tropical rainforests present the optimum conditions
+for life, and it is in this environment that life reaches its greatest
+diversity. Here, too, biological inter-relationships are most complex.
+This complexity is illustrated by the presence of many species of some
+genera, all of which are found together in the same geographic region.
+In the rainforests of southern El Petén there are six species of
+_Anolis_, five of _Hyla_, four of _Bothrops_, and three of
+_Coniophanes_. Obviously, the diversity of ecological niches in the
+rainforest is sufficient to support a variety of related species. Of the
+examples mentioned above, fairly adequate ecological data were obtained
+for most of the species of _Anolis_, which will be used to show the
+ecological diversity and vertical stratification of sympatric species in
+the rainforests.
+
+Of the six species of _Anolis_, all except _A. sericeus_ are typically
+found in humid forests. _Anolis sericeus sericeus_ is poorly represented
+in the collections from southern El Petén, where it may be in
+competition with _Anolis limifrons rodriguezi_ that resembles _Anolis s.
+sericeus_ in size, coloration, and habits. Therefore, _Anolis sericeus
+sericeus_ is excluded from the following discussion. The common
+terrestrial species is _Anolis humilis uniformis_; sometimes this small
+species perches or suns on the bases of small trees or buttresses of
+some large trees. When disturbed it takes to the ground and seeks cover
+in the leaf litter or beneath logs or palm fronds. _Anolis lemurinus
+bourgeaei_ is about twice the size of _Anolis humilis uniformis_ and is
+usually observed on buttresses of large trees or on the lower two meters
+of tree trunks. Individuals were seen foraging on the ground along with
+_Anolis humilis uniformis_. At no time were _Anolis lemurinus bourgeaei_
+observed to ascend the trunks of large trees; they always took refuge
+near the bases of trees. _Anolis limifrons rodriguezi_ is found on the
+stems and branches of bushes. It is a small species that sometimes is
+observed on the ground but was never seen ascending large trees. _Anolis
+capito_ is about the same size as _Anolis lemurinus bourgeaei_ and lives
+on the trunks of large trees. In the tops of the trees lives a large
+green species, _Anolis biporcatus_.
+
+Similar segregation habitatwise can be demonstrated for other members of
+the herpetofauna. The avoidance of interspecific competition in feeding
+is well illustrated by three species of snakes that probably are the
+primary ophidian predators on frogs. _Drymobius margaritiferus
+margaritiferus_ is diurnal and terrestrial; it feeds on frogs at the
+edges of breeding ponds by day. Also during the day _Leptophis mexicanus
+mexicanus_ feeds on frogs in bushes and trees. At night the activities
+of both of these species is replaced by those of _Leptodeira
+septentrionalis polysticta_, which not only feeds on the frogs in the
+trees and bushes, but descends to the ground and even enters the water
+in search of food.
+
+From the examples discussed above, the importance of the three
+dimensional aspect of the rainforest is apparent. The presence of a
+large and diverse habitat above the ground is of great significance in
+the rainforest, for of the non-aquatic components of the herpetofauna in
+the rainforests of southern El Petén, 42 per cent of the species spend
+at least part of their lives in the bushes and trees. Another important
+part of the forest is the subterranean level--the rich mulch,
+underground tunnels, and rotting subterranean vegetation. Of the 78
+species of amphibians and reptiles in southern El Petén, seven are
+primarily fossorial, and half-a-dozen others are secondarily fossorial.
+Probably the fossorial members of the fauna are the least well
+represented in the collection, for such widespread species as _Dermophis
+mexicanus mexicanus_, _Rhadinaea decorata decorata_ and _Tantilla
+schistosa schistosa_ were expected, but not found.
+
+In the following discussion of the ecological distribution of amphibians
+and reptiles in the rainforest I have depended chiefly on my
+observations made in southern El Petén, but have taken into
+consideration observations made on the same species in other regions,
+together with reports from other workers. The reader should keep in mind
+that the evidence varies from species to species. Of some species I have
+observed only one animal in the field; of others, I have seen scores and
+sometimes hundreds of individuals. For species on which I have few
+observations or rather inconclusive evidence, the circumstance of
+inadequate data is mentioned.
+
+In analyzing the ecological distribution within the forest, it is
+convenient to recognize five subdivisions (habitats); each is treated
+below as a unit.
+
+1. AQUATIC.--This habitat includes permanent streams and rivers (Pl. 10,
+fig. 1), some of which are clear and others muddy. In the rainy season
+temporary ponds form in depressions on the forest floor (Pl. 10, fig.
+2); these are important as breeding sites for many species of
+amphibians. Aquatic members of the herpetofauna are here considered to
+be those species that either spend the greatest part of their lives in
+the water or usually retreat to water for shelter. Seven species of
+turtles and one crocodilian are aquatic. Of these, _Dermatemys mawi_,
+_Staurotypus triporcatus_, and _Pseudemys scripta ornata_ inhabit clear
+water, whereas _Chelydra rossignoni_, _Claudius angustatus_,
+_Kinosternon acutum_, and _K. leucostomum_ inhabit muddy water.
+_Crocodylus moreleti_ apparently inhabits both clear and muddy water,
+for in the dry season it lives along the clear rivers, but in the rainy
+season inhabits flooded areas in the forest as well.
+
+2. AQUATIC MARGIN.--Extensive marshes were lacking in the part of
+southern El Petén that I visited; consequently, the aquatic margin
+habitat is there limited to the edges of rivers and borders of temporary
+ponds. _Bufo marinus_, _Rana palmipes_, and _Rana pipiens_ are
+characteristic inhabitants of the aquatic margin, although in the rainy
+reason _Bufo marinus_ often is found away from water. Observations
+indicate that _Tretanorhinus nigroluteus lateralis_ inhabits the margins
+of ponds and streams and actually spends considerable time in the water.
+Although _Iguana iguana rhinolopha_ is arboreal, it lives in trees along
+rivers, into which it plunges upon being disturbed. Species included in
+this category are those that customarily spend most of their lives at
+the edge of permanent water. Frogs and toads that migrate to the water
+for breeding and the snakes that prey on the frogs at that time are not
+assigned to the aquatic-margin habitat.
+
+3. FOSSORIAL.--Characteristic inhabitants of the mulch on the forest
+floor are _Bolitoglossa moreleti mulleri_, _Lepidophyma flavimaculatum
+flavimaculatum_, _Scincella cherriei cherriei_, _Ninia sebae sebae_,
+_Pliocercus euryzonus aequalis_, and _Micrurus affinis apiatus_. Other
+species of snakes that spend most of their lives above ground often
+forage in the mulch layer; among these are _Coniophanes bipunctatus
+biserialis_, _Coniophanes fissidens fissidens_, _Coniophanes imperialis
+clavatus_, _Lampropeltis doliata polyzona_, and _Stenorrhina
+degenhardti_. Among the amphibians, at least _Hypopachus cuneus
+nigroreticulatus_, _Eleutherodactylus rostralis_, and _Syrrhophus
+leprus_ are known to seek shelter in the mulch.
+
+4. TERRESTRIAL.--One turtle, _Geoemyda areolata_, is primarily
+terrestrial. Among the lizards, conspicuous terrestrial species are
+_Anolis humilis uniformis_ and _Ameiva festiva edwardsi_; _Anolis
+lemurinus bourgeaei_ and _Basiliscus vittatus_ spend part of their lives
+on the ground, but also live on trees and in bushes. _Eumeces
+schwartzei_ and _E. sumichrasti_ apparently are terrestrial. The only
+terrestrial lizard that is nocturnal is _Coleonyx elegans elegans_,
+which by day hides in the leaf litter or below ground. Nocturnal
+amphibians that are terrestrial include _Bufo marinus_, _Bufo valliceps
+valliceps_, _Eleutherodactylus rugulosus rugulosus_, _Syrrhophus
+leprus_, and _Hypopachus cuneus nigroreticulatus_. A large number of
+active diurnal snakes are terrestrial; these include _Boa constrictor
+imperator_, _Clelia clelia clelia_, _Dryadophis melanolomus laevis_,
+_Drymarchon corais melanurus_, _Drymobius margaritiferus
+margaritiferus_, _Pseustes poecilonotus poecilonotus_, and _Spilotes
+pullatus mexicanus_. Nocturnal terrestrial snakes include three kinds of
+_Bothrops_ (_B. atrox asper_, _B. nasutus_, and _B. nummifer nummifer_),
+all of which seem to be equally active by day.
+
+5. ARBOREAL.--In this habitat the third dimension (height) of
+the rainforest probably is the most complex insofar as the
+inter-relationships of species and ecological niches are concerned. I
+have attempted to categorize species as to microhabitats within the
+arboreal habitat; in so doing, I recognize four subdivisions--bushes,
+tree trunks, tree tops, and epiphytes.
+
+Bush inhabitants include several species of lizards and snakes, all of
+which have rather elongate, slender bodies, and long tails. Common
+bush-inhabitants in southern El Petén are _Anolis limifrons rodriguezi_,
+_Basiliscus vittatus_, _Laemanctus deborrei_, _Leptophis mexicanus
+mexicanus_, and _Oxybelis aeneus aeneus_. All of these are diurnal, and
+all but _Laemanctus_ have been observed sleeping on bushes at night.
+
+Tree-trunk inhabitants include five species of lizards. _Thecadactylus
+rapicaudus_ lives on the trunks of large trees; _Sphaerodactylus
+lineolatus_ lives beneath the bark on dead trees and on corozo palms.
+_Anolis lemurinus bourgeaei_ lives on the bases and buttresses of large
+trees, from which it often descends to the ground. _Corythophanes
+cristatus_ and _Anolis capito_ were found only on tree trunks and large
+vines.
+
+The least information is available for the species living in the tree
+tops. The following species were obtained from tops of trees when they
+were felled, or have been observed living in the tree tops: _Anolis
+biporcatus_, _Iguana iguana rhinolopha_, _Celestus rozellae_,
+_Leptodeira septentrionalis polysticta_, _Leptophis ahaetulla
+praestans_, _Sibon dimidiata dimidiata_, and _Sibon nebulata nebulata_.
+
+Epiphytes, especially the bromeliads, provide refuge for a variety of
+tree frogs and small snakes. Of the tree frogs, _Hyla picta_, _Hyla
+staufferi_, _Phyllomedusa callidryas taylori_, _Similisca baudini_, and
+_Similisca phaeota cyanosticta_ have been found in bromeliads; other
+species probably occur there. Among the snakes, _Imantodes cenchoa
+leucomelas_, _Leptodeira frenata malleisi_, _Leptodeira septentrionalis
+polysticta_, _Sibon dimidiata dimidiata_, and _Sibon nebulata nebulata_
+are frequent inhabitants of bromeliads; all of these snakes are
+nocturnal.
+
+
+Relationships of the Fauna
+
+Most of the 78 species of amphibians and reptiles definitely known from
+the rainforest in southern El Petén have extensive ranges in the
+Atlantic lowlands of southern México and Central America; many extend
+into South America. Sixty-two (80%) of the species belong to this group
+having extensive ranges in Middle America. Three species (_Syrrhophus
+leprus_, _Leptodeira frenata_, and _Kinosternon acutum_) are at the
+southern limits of their distributions in southern El Petén and northern
+Alta Verapaz, whereas _Eleutherodactylus rostralis_ and _Thecadactylus
+rapicaudus_ are at the northern and western limits of their
+distributions in El Petén. Nine (11%) species have the center of their
+distributions in El Petén and the Yucatán Peninsula; representatives of
+this group include _Claudius angustatus_, _Dermatemys mawi_, _Laemanctus
+deborrei_, and _Eumeces schwartzei_.
+
+In determining a measure of faunal resemblance, I have departed from the
+formulae discussed by Simpson (1960) and have analyzed the degree of
+resemblance by the following formula used to calculate an index of
+faunal relationships:
+
+      C (2) / (N_{1} + N_{2}) = R, where
+
+      C = species common to both faunas.
+
+      N_{1} = number of species in the first fauna.
+
+      N_{2} = number of species in the second fauna.
+
+      R = degree of relationships (when R = 1.00, the faunas are
+      identical; when R = 0, the faunas are completely different).
+
+The herpetofauna of southern El Petén has been compared with that in the
+Tikal-Uaxactún area (Stuart, 1958), that in the humid lowlands of Alta
+Verapaz (Stuart, 1950, plus additional data), and that in the Mexican
+state of Yucatán (Smith and Taylor, 1945, 1948, and 1950). The
+herpetofaunas of lowland Alta Verapaz and Yucatán are the largest,
+having respectively 94 and 91 species, where as there are 78 species
+known from southern El Petén and 64 from the Tikal-Uaxactún area. An
+analysis of faunal relationships (Table 2) shows that the faunas of the
+rainforests of southern El Petén and lowland Alta Verapaz are closely
+related. The relationships between these two areas and the
+Tikal-Uaxactún area in northern El Petén is notably less. Apparently
+the biggest faunal changes take place between southern El Petén and the
+Tikal-Uaxactún area, and between the latter and Yucatán. As stated by
+Stuart (1958:7) the Tikal-Uaxactún is transitional between the humid
+rainforests to the south and the dry outer end of the Yucatán Peninsula.
+The transitional nature of the environment is exemplified by a rather
+depauperate herpetofauna consisting of some species of both dry and
+humid environments and lacking a large fauna typical of either.
+Contrariwise, the continuity of the environment from southern El Petén
+to the lowlands of Alta Verapaz is reflected in degree of resemblance of
+the herpetofaunas.
+
+TABLE 2.--INDEX OF FAUNAL RELATIONSHIPS BETWEEN SOUTHERN EL PETÉN AND
+OTHER REGIONS.
+
+  ======================+==========+==========+==========+==========
+                        | Lowland  | Southern |  Tikal-  |
+                        |   Alta   |    El    | Uaxactún | Yucatán
+                        | Verapaz  |  Petén   |   Area   |
+  ----------------------+----------+----------+----------+----------
+  Lowland Alta Verapaz  |          |    .85   |    .61   |    .43
+  ----------------------+----------+----------+----------+----------
+  Southern El Petén     |    .85   |          |    .64   |    .41
+  ----------------------+----------+----------+----------+----------
+  Tikal-Uaxactún Area   |    .61   |    .64   |          |    .63
+  ----------------------+----------+----------+----------+----------
+  Yucatán               |    .43   |    .41   |    .63   |
+  ----------------------+----------+----------+----------+----------
+
+Most of the species of amphibians and reptiles found in southern El
+Petén are found in humid tropical forests from the Isthmus of
+Tehuantepec southeastward on the Atlantic lowlands well into Central
+America.
+
+
+
+
+ACCOUNTS OF SPECIES
+
+
+In the following pages various aspects of the occurrence, life
+histories, ecology, and variation of the species of amphibians and
+reptiles known from southern El Petén are discussed. Only _Cochranella
+fleischmanni_ reported by Stuart (1937) from Río Subín at Santa Teresa
+was not collected by us and is excluded. Because more worthwhile
+information was gathered for some species than others, the length and
+completeness of the accounts vary. All specimens listed are in the
+Museum of Natural History at the University of Kansas, to which
+institution all catalog numbers refer. Preceding the discussion of each
+species is an alphabetical list of localities from which specimens were
+obtained; numbers after a locality indicate the number of specimens
+obtained at each locality.
+
+
+=Bolitoglossa dofleini= (Werner)
+
+      Chinajá, 1.
+
+An adult female having minute ovarian eggs has a snout-vent length of 81
+mm., a tail length of 59 mm., 13 costal grooves, two intercostal spaces
+between adpressed toes, 38-35 vomerine teeth in irregular rows forming a
+broad arch from a point posterolaterad to the internal nares to a point
+near the anterior edge of the parasphenoid teeth, and 43-44
+maxilliary-premaxillary teeth. In life the dorsum was rusty brown with
+irregular black and orange spots and streaks. The flanks were bluish
+gray with black in the costal grooves and creamy tan flecks along the
+ventral edge of the flank. The belly and underside of the tail were
+yellowish tan with dark brown spots laterally. The limbs were orange
+proximally and black distally; the pads of the feet were bluish black.
+The dorsal and lateral surfaces of the tail were yellowish orange with
+black spots. The iris was grayish yellow.
+
+Stuart (1943:17) reported this species from Finca Volcán, Alta Verapaz.
+He diagnosed his specimens as having 13 costal grooves and two or three
+intercostal spaces between adpressed toes. He stated that the vomerine
+teeth were about 12 in number and that in life the dorsum was mottled
+gray and black, the sides gray and brown, and the undersurfaces
+uniformly dark gray. These specimens differ noticeably from the
+individual from Chinajá in the number of vomerine teeth and in
+coloration.
+
+In August, 1961, I obtained a specimen of _Bolitoglossa dofleini_ at
+Finca Los Alpes, Alta Verapaz, approximately 13 kilometers airline
+south-southwest of Finca Volcán and at approximately the same elevation.
+Although the salamander was dead when found, it obviously was more
+heavily pigmented than the individual from Chinajá. The belly was bluish
+gray with black spots laterally; the dorsum was dull brownish gray with
+some brownish red streaks. The specimen is a female having small ovarian
+eggs, a snout-vent length of 90 mm., 13 costal grooves, and two
+intercostal spaces between adpressed limbs. There are 28-29 vomerine
+teeth, more than twice as many as in specimens from Finca Volcán
+(Stuart, 1943:17), but noticeably fewer than in the specimen from
+Chinajá.
+
+The presence of this species at Chinajá lends support to the idea that
+the specimen from the Río de la Pasión listed by Brocchi (1882:116)
+also is _Bolitoglossa dofleini_. Furthermore, the confirmed presence of
+this species in the lowlands of El Petén suggests that there may be
+genetic connection between _B. dofleini_ in the Alta Verapaz and _B.
+yucatana_ in the Yucatán Peninsula. _Bolitoglossa yucatana_ differs from
+_B. dofleini_ in having five intercostal spaces between adpressed toes
+and in having a different color pattern. Both are robust species having
+no close relationships to other species of _Bolitoglossa_ in northern
+Central America.
+
+The specimen from Chinajá was found in water in the axil of a large
+elephant-ear plant (_Xanthosoma_) by day in March. Its stomach contained
+fragments of beetles and a large roach. The natives did not know
+salamanders and had no name for them.
+
+
+=Bolitoglossa moreleti mulleri= (Brocchi)
+
+      Chinajá, 2; Río San Román, 1.
+
+One specimen is a female having a snout-vent length of 80 mm., a tail
+length of 82 mm., and a total length of 162 mm. It contains 63 large
+eggs, the largest of which has a diameter of about three millimeters.
+This specimen has 13 costal grooves, four intercostal spaces between
+adpressed toes, and 12-13 vomerine teeth. A juvenile having a snout-vent
+length of 39 mm. and a tail length of 33 mm. has 12 costal grooves,
+three intercostal spaces between adpressed toes, and 8-8 vomerine teeth.
+In life these salamanders were uniformly dull brownish black above with
+a dull creamy yellow irregular dorsal stripe beginning on the occiput
+and continuing onto the tail. There are no yellow or orange streaks or
+flecks on the head or limbs. The specimen from the Río San Román was
+taken from the stomach of a _Pliocercus euryzonus aequalis_ and has not
+been studied in detail, because of its poor condition.
+
+The present specimens show no tendency for the development of a broad
+irregular dorsal band that encloses black spots or forms irregular
+dorsolateral stripes, as is characteristic of _B. moreleti mexicanus_, a
+subspecies that has been reported from La Libertad (Stuart, 1935:35) and
+Piedras Negras (Taylor and Smith, 1945:545) in El Petén, and from
+Xunantunich, British Honduras (Neill and Allen, 1959:20).
+
+Schmidt (1936:151) and Stuart (1943:13) found _B. moreleti mulleri_ in
+bromeliads at Finca Samac, Alta Verapaz. Taylor and Smith's (1945:545)
+and Neill and Allen's (1959:20) specimens of _B. moreleti mexicanus_
+were obtained from bromeliads, but Neill and Allen (_loc. cit._) stated
+that the natives in British Honduras said that they had found
+salamanders beneath rubbish on the forest floor. My specimens were
+obtained from beneath logs on the forest floor in the rainy season.
+Possibly in drier environments the species characteristically inhabits
+bromeliads, at least in the dry season.
+
+
+=Bufo marinus= (Linnaeus)
+
+      Chinajá, 3; 10 km. NNW of Chinajá, 1; 11 km. NNW of Chinajá,
+      1.
+
+During both visits to Chinajá this large toad was breeding in a small
+permanent pond in the camp. During the day the toads took refuge in
+crevices beneath the buildings or beneath large boulders by the pond. At
+dusk from four to ten males congregated at the pond and called. Tadpoles
+of this species were in the pond in March and in July. One juvenile was
+found beneath a rock in the forest, and another was on the forest floor
+by day.
+
+The natives' name for this species and the following one is _sapo_.
+
+
+=Bufo valliceps valliceps= Wiegmann
+
+      Chinajá, 52; Río San Román, 8; Sayaxché, 2; Toocog, 1.
+
+This is one of the most abundant, or at least conspicuous, amphibians
+inhabiting the forest. Breeding congregations were found on February 24,
+March 2, March 11, and June 27. At these times the toads were
+congregated at temporary ponds in the forest or along small sluggish
+streams. Throughout the duration of both visits to Chinajá individual
+males called almost nightly at the permanent pond at the camp.
+
+The variation in snout-vent length of 20 males selected at random is
+56.7 to 72.5 mm. (average, 64.8 mm.). Two adult females have snout-vent
+lengths of 80.4 and 87.6 mm. In all specimens the parotid glands are
+somewhat elongated and not rounded as in _Bufo valliceps wilsoni_ (see
+Baylor and Stuart, 1961:199). My observations on the condition of the
+cranial crests of the toads in El Petén agree with the findings of
+Baylor and Stuart (_op. cit._:198) in that hypertrophied crests are
+usual in large females. In the shape of the parotids and nature of the
+cranial crests the specimens from El Petén are like those from the
+Isthmus of Tehuantepec in México. As I pointed out (1960:53), the
+validity of the subspecies _Bufo valliceps macrocristatus_, described
+from northern Chiapas by Firschein and Smith (1957:219) and supposedly
+characterized by hypertrophied cranial crests, is highly doubtful.
+
+In the toads from El Petén the greatest variation is in coloration. The
+dorsal ground-color varies from orange and rusty tan to brown, yellowish
+tan, and pale gray. In some individuals the flanks and dorsum are one
+continuous color, whereas in others a distinct dorsolateral pale colored
+band separates the dorsal color from dark brown flanks. In some
+individuals the venter is uniform cream color, in others it bears a few
+scattered black spots, and in still others there are many spots, some of
+which are fused to form a black blotch on the chest. In breeding males
+the vocal sac is orange tan. All specimens have a coppery red iris.
+
+Aside from the breeding congregations, active toads were found on the
+forest floor at night; a few were there by day. Some individuals were
+beneath logs during the day.
+
+
+=Eleutherodactylus rostralis= (Werner)
+
+      Chinajá, 10.
+
+Because of the multiplicity of names and the variation in coloration,
+the small terrestrial _Eleutherodactylus_ in southern México and
+northern Central America are in a state of taxonomic confusion. Stuart
+(1934:7, 1935:37, and 1958:17) referred specimens from El Petén to
+_Eleutherodactylus rhodopis_ (Cope). Stuart (1941b:197) described
+_Eleutherodactylus anzuetoi_ from Alta Verapaz and El Quiché, Guatemala,
+suggested that the new species was an upland relative of
+_Eleutherodactylus rostralis_ (Werner), and used that name for the frogs
+that he earlier had referred to _Eleutherodactylus rhodopis_. Dunn and
+Emlen (1932:24) placed _E. rostralis_ in the synonymy of _E. gollmeri_
+(Peters). Examination of series of these frogs from southern México,
+Guatemala, and Costa Rica causes me to think that there are four
+species; these can be distinguished as follows:
+
+      _E. rhodopis._--No web between toes; one tarsal tubercle;
+      tibiotarsal articulation reaches to nostril; iris bronze in
+      life.
+
+      _E. anzuetoi._--No web between toes; a row of tarsal
+      tubercles; tibiotarsal articulation reaches to tip of snout;
+      color of iris unknown.
+
+      _E. rostralis._--A vestige of web between toes; no tarsal
+      tubercles; tibiotarsal articulation reaches snout or slightly
+      beyond; iris coppery red in life.
+
+      _E. gollmeri._--A vestige of web between toes; no tarsal
+      tubercles; tibiotarsal articulation reaches well beyond snout;
+      iris coppery red in life.
+
+The presence of webbing between the toes, the absence of tarsal
+tubercles, and the coppery red iris distinguish _E. rostralis_ and _E.
+gollmeri_ from the other species. Probably _E. rostralis_ and _E.
+gollmeri_ are conspecific, but additional specimens are needed from
+Nicaragua and Honduras to prove conspecificity. On the other hand, the
+characters of the frogs from Chinajá clearly show that they are related
+to _E. gollmeri_ to the south and not to _E. rhodopis_ to the north in
+México.
+
+At Chinajá, _Eleutherodactylus rostralis_ was more abundant than the
+few specimens indicate, for upon being approached the frogs moved
+quickly and erratically, soon disappearing in the leaf litter on the
+forest floor. Most of the specimens were seen actively moving on the
+forest floor in the daytime; one was found beneath a rock, and one was
+on the forest floor at night.
+
+
+=Eleutherodactylus rugulosus rugulosus= (Cope)
+
+      Chinajá, 2; 15 km. NW of Chinajá, 4.
+
+These frogs were found on the forest floor by day. With the exception of
+one female having a snout-vent length of 69.5 mm., all are juveniles.
+The apparent rarity of this species at Chinajá may be due to the absence
+of rocky streams, a favorite habitat of this frog. The local name for
+this frog is _sapito_, meaning little toad.
+
+
+=Leptodactylus labialis= (Cope)
+
+      Toocog, 1.
+
+One juvenile having a snout-vent length of 16.4 mm. was found at night
+beside a pond in the forest. The scarcity of the species of
+_Leptodactylus_ in the southern part of El Petén probably is due to the
+lack of permanent marshy ponds.
+
+
+=Leptodactylus melanonotus= (Hallowell)
+
+      Sayaxché, 1.
+
+One individual was found beneath a rock beside a stream in the forest.
+The local name is _ranita_, meaning little frog.
+
+
+=Syrrhophus leprus= Cope
+
+      Chinajá, 2; 15 km NW of Chinajá, 1.
+
+An adult female having a snout-vent length of 27.5 mm. was found on the
+forest floor by day. Two juveniles having snout-vent lengths of 15.5 and
+19.0 mm. were beneath rocks on the forest floor. The specimens are
+typical of the species as defined by Duellman (1958:8).
+
+
+=Hyla ebraccata= Cope
+
+      Toocog, 66.
+
+This small tree frog congregated in large numbers at a forest pond at
+Toocog. Between June 30 and July 2 we collected specimens and observed
+the breeding habits of this and other species at the pond. Calling males
+were distributed around the pond, where they called from low herbaceous
+vegetation at the edge of the pond or from plants rising above the
+water. Calling commenced at dusk and continued at least into the early
+hours of the morning. On one occasion a female was observed at a
+distance of about 50 centimeters away from a calling male sitting on a
+blade of grass. The female climbed another blade of grass until she was
+about eight centimeters away from the male, at which time he saw her,
+stopped calling, jumped to the blade of grass on which she was sitting
+and clasped her. Clasping pairs were observed on blades of grass and
+leaves of plants above the water; most pairs were less than 50
+centimeters above the surface of the pond.
+
+The eggs are deposited on the dorsal surfaces of leaves above the water.
+All eggs are in one plane (a single layer) on the leaf. External
+membranes are barely visible, as the eggs consist of a single coherent
+mass. Eggs in the yolk plug stage have diameters of 1.2 to 1.4 mm.
+Seventeen eggs masses were found; these contained from 24 to 76 (average
+44) eggs. The jelly is extremely viscous and tacky to the touch. At time
+of hatching the jelly becomes less viscous; the tadpoles wriggle until
+they reach the edge of the leaf and drop into the water.
+
+Eleven tadpoles were preserved as they hatched; these have total lengths
+of 4.5 to 5.0 (average 4.77) mm. Hatchling tadpoles are active swimmers
+and have only a small amount of yolk. The largest tadpoles preserved
+have total lengths of 13.0 and 13.5 mm. At this size distinctive
+sword-tail and bright coloration have developed.
+
+[Illustration: FIG. 2. Tadpole of _Hyla ebraccata_ (KU 59986) from
+Toocog, El Petén, Guatemala. × 6.]
+
+Description of fully developed tadpole (KU 59986): Total length, 13.5
+mm.; tail-length, 8.4 mm., 62 per cent of total length. Snout, in dorsal
+view, bluntly rounded; in lateral view less bluntly rounded; body
+depressed; head flattened; mouth terminal; eye large, its diameter 25
+per cent of length of body; nostrils near tip of snout and directed
+anteriorly; spiracle sinistral and situated postero-ventrad to eye;
+cloaca median. Tail-fin thrice depth of tail-musculature, which extends
+beyond posterior end of tail-fin giving sword-tail appearance (Fig. 2).
+In life, black stripe on each side of body and on top of head; black
+band on anterior part of tail and another on the posterior part; body
+and anterior part of tail creamy yellow; dark red band between black
+bands on tail. Mouth terminal, small, its width about one-fifth width of
+body; fleshy ridge dorsally and ventrally; row of small papillae on
+ventral lip; no lateral indentations of lips; upper beak massive,
+convex, and finely serrate; lower beak small and mostly concealed behind
+upper; no teeth (Fig. 3).
+
+[Illustration: FIG. 3. Mouthparts of larval _Hyla ebraccata_ (KU 59986)
+from Toocog, El Petén, Guatemala. × 100.]
+
+
+=Hyla loquax= Gaige and Stuart
+
+      Toocog, 14.
+
+These specimens were found at night when they were calling from low
+vegetation in a forest pond. Most of the frogs were several meters away
+from the edge of the pond. Although two clasping pairs were found, we
+obtained no eggs or tadpoles referable to this species.
+
+
+=Hyla microcephala martini= Smith
+
+      Chinajá, 1; Toocog, 21.
+
+The specimen from Chinajá was calling from a small bush at the edge of a
+temporary grassy pond in a clearing in the forest. At Toocog this
+species was closely associated with _Hyla ebraccata_; males were calling
+from herbaceous vegetation in and around the forest pond. These frogs
+were not so abundant in the forest at Toocog as they were around ponds
+on the savanna at La Libertad.
+
+
+=Hyla picta= (Günther)
+
+      Toocog, 8.
+
+This small tree frog was calling from herbs in a pond in the forest on
+June 30 and July 2. The voice is weak; probably greater numbers of males
+were present than are indicated by the few specimens collected, for the
+din from the more vociferous species made it impossible to hear _Hyla
+picta_ unless one was calling close by.
+
+
+=Hyla staufferi= Cope
+
+      Chinajá, 1.
+
+This individual was calling from a low bush in the clearing at Chinajá.
+None was found in the pond in the forest at Toocog. Stuart (1935:38) and
+Duellman (1960:63) noted that _Hyla staufferi_ breeds early in the rainy
+season. Nevertheless, I think early breeding habits do not account for
+the near absence of this species in our collections from southern El
+Petén. In early July, 1960, a few individuals were heard at a pond on
+the savanna at La Libertad. In mid-July of the same year they were
+calling sporadically from temporary ponds in the lower Motagua Valley.
+Possibly the individual collected at Chinajá was accidentally
+transported there in cargo from Toocog, from which camp at the edge of
+the savanna planes fly to Chinajá weekly. My observations on this
+species throughout its range in México and Central America indicate that
+it inhabits savannas and semi-arid forests and usually is absent from
+heavy rainforest. Stuart (1948:34) obtained this species at Cubilquitz
+in the lowlands of Alta Verapaz.
+
+
+=Phyllomedusa callidryas taylori= Funkhouser
+
+      Toocog, 25.
+
+Between June 30 and July 2 this species was abundant at a pond in the
+forest at Toocog. Calling males were as high as five meters in bushes
+and trees around the pond. At dusk males were observed descending a
+vine-covered tree at the edge of the pond; this strongly suggests that
+the frogs retreat to this tree and others like it for diurnal seclusion.
+Clasping pairs were found on branches and leaves above the water. The
+eggs are deposited in clumps usually on vertical leaves, but sometimes
+on horizontal leaves or on branches, vines, and aerial roots above the
+water. Twenty-six clutches of eggs contained from 14 to 44 (average 29)
+eggs. In a clutch in which the eggs are in yolk plug stage the average
+diameter of the embryos is 2.3 mm. and that of the vitelline membranes,
+3.4 mm. Most of the eggs are in the external part of the gelatinous
+mass; the jelly is clear. The yolk is pale green, and the animal pole is
+brown. As development ensues, the yolk becomes yellow and the embryo
+first dark brown and then pale grayish tan. Upon hatching the tadpoles
+wriggle free of the jelly and drop into the water. One clutch of 19 eggs
+was observed to hatch in three minutes. Apparently, on dropping into the
+water the hatchling tadpoles go to the bottom of the pond, for one or
+two minutes pass from the time they enter the water until they reappear
+near the surface. The average total length of seven hatchling tadpoles
+is 7.4 mm. There is a moderate amount of yolk, but this does not form a
+large ventral bulge. Large tadpoles congregate in the sunny parts of the
+pond, where they were observed just beneath the surface. Many had their
+mouths at the surface. Except for constant fluttering of the tip of the
+tail, they lie quietly with the axis of the body at an angle of about 45
+degrees with the surface of the water.
+
+Description of tadpole (KU 60006): total length, 24.5 mm.; tail-length,
+15.4 mm.; body broader than deep; head moderately flattened; snout
+viewed from above blunt; nostrils close to snout and directed dorsally;
+eyes of moderate size and directed laterally; mouth directed
+anteroventrally; anus median; spiracle ventral, its opening just to left
+of midline slightly more than one-half distance from tip of snout to
+vent. Tail-fin slightly more than twice as deep as tail musculature,
+which curves upward posteriorly; tail-fin narrowly extending to tip of
+tail (Fig. 4). Color in life pale gray; in preservative white with
+scattered melanophores; tail-fin transparent.
+
+[Illustration: FIG. 4. Tadpole of _Phyllomedusa callidryas taylori_ (KU
+60006) from Toocog, El Petén, Guatemala. × 4.]
+
+Upper lip having single row of papillae laterally, but none medially;
+lower lip having single row of papillae; no lateral indentation of lips;
+two or more rows of papillae at lateral corners of lips; tooth-rows 2/3;
+second upper tooth row as long as first, interrupted medially; inner
+lower tooth-row as long as upper rows, interrupted medially; second and
+third lower rows decreasingly shorter; upper beak moderate in size and
+having long lateral projections; lower beak moderate in size; both beaks
+finely serrate (Fig. 5).
+
+[Illustration: FIG. 5. Mouthparts of larval _Phyllomedusa callidryas
+taylori_ (KU 60006) from Toocog, El Petén, Guatemala. × 30.]
+
+
+=Smilisca baudini= (Duméril and Bibron)
+
+      Chinajá, 9; 20 km. NNW of Chinajá, 42; Río de la Pasión, 1;
+      Río San Román, 5; Sayaxché; Toocog, 2.
+
+Individuals of this species were found at night sitting on bushes and
+small trees in the forest in February and March and again in June and
+July. One was in the axil of a leaf of a _Xanthosoma_. In June and July
+males were heard nearly every night. The series of specimens from 20
+kilometers north-northwest of Chinajá was taken from a breeding
+congregation in a shallow muddy pool in the forest. Tadpoles of this
+species were in small, often muddy pools in the forest. To my knowledge
+_Smilisca baudini_ is the only hylid to breed in these pools at Chinajá,
+although perhaps _Smilisca phaeota_ also utilizes them. The only other
+amphibian at Chinajá known to breed in the pools is _Bufo valliceps
+valliceps_. Although two specimens were on bushes at night at Toocog,
+_Smilisca baudini_ was not present at the pond where five other species
+of hylids were breeding. Nevertheless, _Smilisca baudini_ was calling
+from two ponds on the savannas near La Libertad. All of the specimens
+from southern El Petén have yellow or yellowish white flanks and
+ventrolateral surfaces.
+
+
+=Smilisca phaeota cyanosticta= (Smith)
+
+      Chinajá, 4; 10 km. NNW of Chinajá, 1.
+
+All specimens were found in February and March. Those from Chinajá were
+obtained from _Xanthosoma_ and bromeliads; the individual from 10
+kilometers north-northwest of Chinajá is an adult male that was calling
+from a puddle in a fallen tree on March 13. A juvenile having a
+snout-vent length of 34.7 mm. lacks the pale blue spots on the thighs;
+instead, the anterior and posterior surfaces of the thighs are bright
+red.
+
+
+=Hypopachus cuneus nigroreticulatus= Taylor
+
+      Toocog, 1.
+
+An adult male having a snout-vent length of 41.7 mm. was found at night
+on the forest floor at the edge of a temporary pond. In life the dorsum
+was dark brown with chocolate brown markings; the stripe on the side of
+the head was white; the middorsal stripe was pale orange; the belly was
+black and white, and the iris was a bronze color.
+
+Characteristically this species inhabits savannas and open forest; thus,
+its occurrence in the rainforest at Toocog is surprising. This is the
+southernmost record for the species in El Petén; to the south in the
+highlands it is replaced by the smaller _Hypopachus inguinalis_, having
+rounded, instead of compressed, metatarsal tubercles.
+
+
+=Rana palmipes= Spix
+
+      Chinajá, 11; 15 km. NW of Chinajá, 1; 20 km. NNW of Chinajá,
+      1.
+
+With the exception of one recently metamorphosed juvenile having a
+snout-vent length of 30.7 mm. that was found on the forest floor by day
+on June 24, and one that was found beside a pool in a cave, all
+individuals were found at temporary woodland pools or along sluggish
+streams at night. The largest specimen is a female having a snout-vent
+length of 107 mm.
+
+
+=Rana pipiens= Schreber
+
+      Chinajá, 1; 20 km. NNW of Chinajá, 1; Río San Román, 1;
+      Toocog, 1.
+
+All specimens were found near water at night. The largest individual is
+a female having a snout-vent length of 112.5 mm.
+
+
+=Crocodylus moreleti= Duméril and Duméril
+
+      Chinajá, 1; Río San Román, 1.
+
+One specimen was obtained from a quiet pool in the Río San Román at
+night; another was found in a small sluggish stream at Chinajá. Two
+large individuals were seen in tributaries to the Río San Román. On the
+savannas at Toocog two small individuals were obtained in the dry
+season, at which time the crocodiles apparently were migrating to water.
+The local name for this species is _lagarto_.
+
+
+=Chelydra rossignoni= (Bocourt)
+
+      Chinajá, 1; 20 km. NNW of Chinajá, 1.
+
+The paucity of specimens of _Chelydra_ from Central America has resulted
+in rather inadequate diagnoses of various populations. The present
+specimens have carapace lengths of 250 and 238 mm. and plastral lengths
+of 185 and 176 mm. The length of carapace/bridge ratio is 6.0 and 6.1
+per cent. Each individual has four barbels, the median pair of which are
+extremely long. In KU 55977 the lateral pair of barbels is forked at the
+base. The relative length of the plastral bridge in these specimens
+compares favorable with the ratio (.06-.08) given by Schmidt (1946:4)
+for five specimens from Honduras. _Chelydra serpentina_, which may occur
+sympatrically with _C. rossignoni_ in some parts of Central America, has
+a narrower plastral bridge and only two barbels beneath the chin.
+Furthermore, _C. rossignoni_ and _C. osceola_ in Florida have long, flat
+tubercles on the dorsal and lateral surfaces of the neck, whereas _C.
+serpentina_ has short, round tubercles.
+
+The specimen from Chinajá was found in a small sluggish stream; the
+other individual was in a muddy pool in the forest. The local name is
+_sambodanga_.
+
+
+=Claudius angustatus= Cope
+
+      20 km. NNW of Chinajá, 1.
+
+One specimen was unearthed from the bank of a small muddy stream by a
+bulldozer. This individual represents the second record for the species
+in Guatemala; the first was provided by specimens, likewise found in
+muddy waters, at Tikal (Stuart, 1958:19). The local name is _caiman_.
+
+
+=Kinosternon acutum= Gray
+
+      20 km. NNW of Chinajá, 4; 30 km. NNW of Chinajá, 2.
+
+These turtles were found on the forest floor, in small sluggish streams,
+and in pools in the forest. One adult male had, in life, the top of the
+head yellow with black spots; the stripes on the head and neck were red.
+Specimens were obtained both in the dry and rainy seasons. The local
+name for both species of _Kinosternon_ is _pochitoque_.
+
+
+=Kinosternon leucostomum= Duméril and Bibron
+
+      Chinajá, 3; 15 km. NW of Chinajá, 1; 20 km. NNW of Chinajá, 2.
+
+Individuals of this turtle were found on the forest floor and in small
+sluggish streams. In life most specimens had a tan or pale brown head
+with pinkish tan stripes on the head and neck. All individuals were
+obtained in February and March. No ecological differences between this
+species and _K. acutum_ were evident.
+
+
+=Staurotypus triporcatus= (Wiegmann)
+
+      Paso Subín, 1.
+
+This species is represented in the collection by one complete shell
+found on the bank of the Río Subín. The carapace has a length of 292 mm.
+The local name is _Guao_. Natives stated that this turtle was not
+uncommon in clear rivers and lakes, a habitat suggested for the species
+by Stuart (1958:19).
+
+
+=Dermatemys mawi= Gray
+
+      Chinajá, 1; Río San Román, 4.
+
+The record from Chinajá is based on a carapace found in a chiclero camp,
+where the turtle evidently had been brought for food. The four specimens
+from the Río San Román were obtained from edges of deep pools in clear
+water. In adult males the top of the head was reddish orange in life.
+One of the specimens from the Río San Román currently is living in the
+Philadelphia Zoological Gardens. The local name for this turtle is
+_tortuga blanca_; it is sought for its meat.
+
+
+=Geoemyda areolata= (Duméril and Bibron)
+
+      Chinajá, 2.
+
+Two specimens were obtained from dense forest at Chinajá. The local name
+is _mojina_.
+
+
+=Pseudemys scripta ornata= (Gray)
+
+      Paso Subín, 1.
+
+One subadult was obtained from clear water in the Río Subín. The stripes
+on the head and neck were yellow; there was no red "ear" on the side of
+the head. The stripes on the forelimbs were orange, and the ocelli on
+the carapace were red. The local name is _jicotea_.
+
+
+=Coleonyx elegans elegans= Gray
+
+      Toocog, 1.
+
+One adult male having a snout-vent length of 89 mm. was found beneath a
+log in the forest. Locally this gecko is known as _escorpión_; the
+natives believe it to be deadly poisonous. The use of the name
+_escorpión_ seems to be restricted to lizards thought to be venomous.
+Nearly everywhere in México and Central America some species of lizard
+carries this appellation. In El Petén I heard the name used only for
+_Coleonyx elegans_ and _Thecadactylus rapicaudus_; in the lowlands of
+Guerrero, México, the name is applied to geckos of the genus
+_Phyllodactylus_. The venomous lizards of the genus _Heloderma_ in the
+lowlands of western México are called _escorpiónes_. In the mountains of
+southern México various skinks of the genus _Eumeces_, as well as
+lizards of the genus _Xenosaurus_, carry the same appellation. _Abronia_
+in the mountains of México and _Gerrhonontus_ throughout México and
+Central America likewise are called _escorpiónes_. Although many people
+in various parts of Middle America consider most lizards poisonous,
+there is a unanimity of opinion concerning the venomous qualities of the
+various kinds of _escorpiónes_. I know of only two other lizards in
+Middle America that are so uniformly regarded in native beliefs; these
+are _Enyaliosaurus clarki_ in the Tepalcatepec Valley in Michoacán,
+called _nopiche_, and _Phrynosoma asio_ in western México, called
+_cameleón_.
+
+
+=Sphaerodactylus lineolatus= Lichtenstein
+
+      15 km. NW of Chinajá, 1; Toocog, 1.
+
+These small geckos were much more abundant than the few specimens
+indicate. They frequently were seen on the trunks of corozo palms, where
+they quickly took refuge in crevices at the bases of the fronds. The
+specimen obtained at Toocog was under the bark of a standing dead tree.
+In life the ventral surface of the tail was orange. The individual from
+Chinajá was in the leaf litter on the ground at the base of a dead tree.
+
+
+=Thecadactylus rapicaudus= (Houttuyn)
+
+      15 km. NW of Chinajá, 1; 20 km. NNW of Chinajá, 2.
+
+Two specimens were found beneath the bark of standing dead trees;
+another was found in the crack in the trunk of a mahogany tree about 13
+meters above the ground. In life the dorsum was yellowish tan with dark
+brown markings; the venter was yellowish tan with brown flecks, and the
+iris was olive-tan. The largest specimen is a male having a snout-vent
+length of 95 mm.; all specimens have regenerated tails. Individuals when
+caught twisted their bodies and attempted to bite; upon grabbing a
+finger they held on with great tenacity.
+
+
+=Anolis biporcatus= (Wiegmann)
+
+      14 km. NNW of Chinajá, 1; 17 km. NNW of Chinajá, 1; 20 km. NNW
+      of Chinajá, 3; 30 km. NNW of Chinajá, 1; Sayaxché, 1.
+
+All specimens of this large anole were obtained from trees. Some
+individuals were found in the tops of trees immediately after they were
+felled. My limited observations on this anole suggest that it is an
+inhabitant of the upper levels of the forest. In life an adult male from
+20 kilometers north-northwest of Chinajá was brilliant green above; the
+eyelids were bright yellow; the belly was white. The outer part of the
+dewlap was pale orange, and the median part was pinkish blue. A juvenile
+having a snout-vent length of 47 mm. and a tail length of 86 mm. was
+pale grayish green with pale gray flecks on the dorsum. The largest male
+has a snout-vent length of 98 mm. and a tail length of 217 mm.; the same
+measurements of the largest female are 89 and 213 mm. This species,
+together with all other anoles, is known locally as _toloque_.
+
+
+=Anolis capito= Peters
+
+      Chinajá, 2; 14 km. NNW of Chinajá, 1; Río de la Pasión, 1.
+
+All individuals were observed on trunks of trees between heights of
+three and ten meters above the ground. The largest male has a snout-vent
+length of 81 mm. and a tail length of 155 mm.; the same measurements of
+the largest female are 87 and 150 mm. The streaked brown dorsum,
+combined with the lizards' habit of pressing the body against the trunks
+of trees, make this anole especially difficult to see.
+
+
+=Anolis humilis uniformis= Cope
+
+      Chinajá, 24; 15 km. NW of Chinajá, 22; 20 km. NNW of Chinajá,
+      6; Sayaxché, 1.
+
+This small dull brown anole is a characteristic inhabitant of the forest
+floor, where the lizards move about in a series of quick, short hops and
+thus easily evade capture. Three individuals were found on small bushes,
+and four were on the bases of trees; otherwise, all were observed on the
+ground. Observations indicate that this species is active throughout
+the day, except during and immediately after heavy rains. The males have
+a deep red dewlap with a dark blue median spot.
+
+
+=Anolis lemurinus bourgeaei= Bocourt
+
+      Chinajá, 11; 20 km. NNW of Chinajá, 4; 30 km. NNW of Chinajá,
+      2; Río de la Pasión, 1; Río San Román, 1; Sayaxché, 8; Toocog,
+      6.
+
+This moderate-sized anole characteristically inhabits the low bushes and
+bases of trees in the forest. Individuals were most readily observed on
+the buttresses of some of the gigantic mahogany and ceiba trees. When
+approached the lizards usually ran around the tree or ducked to the
+other side of the buttress; if the observer moved closer, they jumped to
+the ground and ran off. None was observed to ascend large trees. Some
+individuals were observed foraging on the forest floor; these took
+shelter on the bases of trees. One individual was sleeping on a palm
+frond at night. The adult males have a uniformly orange-red dewlap.
+
+
+=Anolis limifrons rodriguezi= Bocourt
+
+      15 km. NW of Chinajá, 2; 20 km. NNW of Chinajá, 1.
+
+In dry forests and more open situations than occur at Chinajá this
+little anole is abundant, but in the wet forests of southern El Petén,
+only three specimens were found. Two were on palm fronds about two
+meters above the ground; the other was on a low bush. I suspect that
+ecologically this species overlaps _A. humilis uniformis_ and _A.
+lemurinus bourgeaei_, but too few observations are recorded to justify a
+definite statement at this time.
+
+
+=Anolis sericeus sericeus= Hallowell
+
+      Chinajá, 2; Sayaxché, 1; Toocog, 1.
+
+This small anole is common and widespread in the Atlantic lowlands of
+southern México and northern Central America; usually it inhabits
+sub-humid regions. Consequently, its presence in the wet forests of
+southern El Petén was unexpected. The specimens from Chinajá were
+sleeping on low bushes at night, whereas the others were found on bushes
+by day.
+
+
+=Basiliscus vittatus= Wiegmann
+
+      Chinajá, 6; Río de la Pasión, 1; Río San Román, 1; Sayaxché,
+      3; Toocog, 1.
+
+Individuals of this abundant species were most frequently seen in dense
+bushes along the margins of rivers or small streams. None was observed
+far from water. These lizards, like the anoles, are known locally as
+_toloque_.
+
+
+=Corythophanes cristatus= (Merrem)
+
+      Chinajá, 3; 20 km. NNW of Chinajá, 1.
+
+Three individuals were found on tree trunks; the fourth was on a thick
+vine about one meter above the ground. The two largest males have
+snout-vent lengths of 121 and 115 mm. and tail lengths of 265 and 243
+mm. The largest female (KU 59603), obtained on June 28, has a snout-vent
+length of 125 mm. and a tail length of 247 mm. This individual contained
+eight ova varying in greatest diameter from 10.6 to 12.2 (average 11.1)
+mm. Also present are numerous ovarian eggs having diameters up to about
+3.5 mm.
+
+One of the large males displayed a defensive behavior prior to capture.
+When first observed the lizard was clinging to a tree trunk about one
+and one-half meters above the ground. When I approached, the lizard
+turned its flanks towards me; then it flattened the body laterally,
+extended the dewlap, opened its mouth, and made short rushing motions.
+When touched it bit viciously. On the ground these lizards have a rather
+awkward bipedal gait that is much slower than in _Basiliscus vittatus_.
+
+In life an adult male (KU 55804) was reddish brown dorsally with dark
+chocolate brown markings; the venter was creamy white, and the iris was
+dark red. The natives call this lizard _piende jente_.
+
+
+=Iguana iguana rhinolopha= Wiegmann
+
+      Río San Román, 2.
+
+The _iguana_, as this lizard is called locally, seems to be uncommon in
+the forested areas of southern El Petén. Possibly this is due to the
+fact that the flesh of this lizard is relished as food by the natives.
+My two specimens were in large trees at the edge of the river.
+
+
+=Laemanctus deborrei= Boulenger
+
+      Chinajá, 1; Toocog, 5.
+
+On June 26 a female having a snout-vent length of 129 mm. and a tail
+length of 502 mm. was found on a bush in the forest. The lizard, when
+approached, faced the collector and opened its mouth. In life the dorsum
+was bright green; the lateral stripe was white, and the iris was
+yellowish brown. This specimen contained four ova having lengths of 13.4
+to 14.2 (average 13.9) mm.
+
+On June 30 at Toocog five white-shelled eggs were found in a rotting
+log. Measurements of the eggs are--length, 23.5 to 25.0 (average 24.2)
+mm.; width, 15.0 to 15.5 (average 15.4) mm. These eggs hatched on August
+30. The five young had snout-vent lengths of 43 to 45 (average 44) mm.,
+and tail lengths of 137 to 140 (average 138) mm. In life the hatchlings
+had a dull dark green dorsum, pale bright green venter and stripes on
+head, and reddish brown iris. In preservative the hatchlings are creamy
+tan above with five or six square dark brown blotches middorsally.
+
+The natives consider this lizard to be one of the anoles; consequently,
+it is known as _toloque_.
+
+
+=Lepidophyma flavimaculatum flavimaculatum= Duméril
+
+      Chinajá, 8; 15 km. NW of Chinajá, 2.
+
+Individuals were found beneath logs on the forest floor or moving about
+in the litter on the forest floor. One was observed crawling across a
+trail during a heavy rain. In some adults the tan dorsal spots are large
+and distinct; in others the spots are small and indistinct. Two
+juveniles, apparently recent hatchlings, were found on June 28 and July
+5. These specimens have snout-vent lengths of 29 mm. and tail lengths of
+38 and 41 mm.
+
+
+=Eumeces schwartzei= Fischer
+
+      Chinajá, 1.
+
+One specimen (KU 59551) was found on the forest floor at midday; it is
+an adult female having a snout-vent length of 125 mm. and a tail length
+of 210 mm. This specimen is larger than those recorded by Taylor
+(1936:99) and extends the known range of the species south of Ramate,
+approximately 125 kilometers south-south-westward to Chinajá.
+
+
+=Eumeces sumichrasti= (Cope)
+
+      20 km. NNW of Chinajá, 1.
+
+One adult male having a snout-vent length of 82 mm. was found beneath a
+palm frond on the forest floor. In life the dorsum was dull brown; the
+chin was cream; the belly was yellow, and the underside of the tail was
+orange. A juvenile having a black body, yellow dorsal stripes, and a
+bright blue tail was observed on the forest floor.
+
+
+=Scincella cherriei cherriei= (Cope)
+
+      Chinajá, 2; 30 km. NNW of Chinajá, 1; Toocog, 1.
+
+All individuals of this lizard were found in the leaf litter on the
+forest floor; many escaped capture. In life the tail is dull bluish
+gray. The number of dorsal scales varies from 59 to 61 (average 60);
+thus, these specimens fall within the range of variation of _S. cherriei
+cherriei_, and thereby differ from _S. cherriei stuarti_ to the west and
+_S. cherriei ixbaac_ to the north.
+
+
+=Ameiva festiva edwardsi= Bocourt
+
+      Chinajá, 16; 15 km. NW of Chinajá, 10; Sayaché, 4; Toocog, 1.
+
+This abundant terrestrial lizard, locally called _lagartijo_, is found
+throughout the forest. A juvenile obtained on March 14 at Sayaxché has a
+snout-vent length of 42 mm. and a prominent umbilical scar. Other
+juveniles were observed at Chinajá in February and March, thereby
+indicating that the young probably hatch in the early part of the year.
+Juveniles have bright blue tails.
+
+
+=Celestus rozellae= Smith
+
+      20 km. NNW of Chinajá, 2.
+
+Two specimens were obtained from trees by workmen in February. These
+lizards have snout-vent lengths of 70 and 83 mm. and tail lengths of 133
+and 135 mm. There are 21 and 23 lamellae beneath the fourth toe; each
+has 31 longitudinal rows of scales around the body.
+
+
+=Boa constrictor imperator= Daudin
+
+      15 km. NW of Chinajá, 1; 20 km. NNW of Chinajá, 2; Toocog, 1.
+
+All specimens were found on the forest floor. One individual was found
+in combat with a large _Drymarchon corais melanurus_. Apparently, the
+_Drymarchon_ was attempting to devour the _Boa_, which had a total
+length of 1683 mm. Locally this snake is called _masacuata_; it is one
+of the few snakes believed by the local inhabitants to be non-poisonous.
+
+
+=Clelia clelia clelia= Daudin
+
+      15 km. NW of Chinajá, 1; 20 km. NNW of Chinajá, 1.
+
+One specimen is represented only by the head; the snake was killed on
+the forest floor by workmen. Another individual was found in a pool of
+water at the base of a limestone outcropping in the forest; this
+specimen (KU 58167) is a female having a body length of 2220 mm. and a
+total length of 2634 mm. This snake contained 22 ova averaging 56 × 23
+mm. Both specimens were uniform shiny black above and cream-color below.
+The local name is _sumbadora_.
+
+
+=Coniophanes bipunctatus bipunctatus= (Günther)
+
+      Chinajá, 1.
+
+This snake was found on the forest floor by day; it is a male having 130
+ventrals, an incomplete tail; cream-colored belly, and a pair of large
+brown spots on each ventral scute.
+
+
+=Coniophanes fissidens fissidens= (Günther)
+
+      Toocog, 1.
+
+This male specimen was found beneath a rock in a sink hole. It has 122
+ventrals and 77 caudals. A narrow temporal stripe extends along the
+upper edge of the anterior temporal and the lower edge of the upper
+secondary temporal. The belly is ashy white with a pair of small black
+spots on each ventral.
+
+
+=Coniophanes imperialis clavatus= (Peters)
+
+      Chinajá, 3.
+
+All specimens were found on the forest floor by day. These small snakes
+are capable of rapid movement and quickly disappear in the litter on the
+ground. Two individuals evaded capture. The belly is creamy white
+anteriorly and vermillion red posteriorly.
+
+
+=Dryadophis melanolomus laevis= (Fischer)
+
+      Chinajá, 3.
+
+These snakes, locally known as _sumbadora_, were found on the forest
+floor; two others were seen, but escaped. The variation in coloration
+has been a source of confusion in this species in northern Central
+America (see Stuart, 1941:86). All of the present specimens are males:
+KU 55709 has 178 ventrals, 121 caudals, and a total length of 914 mm.;
+the dorsum is olive-tan with six darker cross-bars on the neck; the
+belly is creamy white. KU 58160 has 188 ventrals, 123 caudals, and a
+total length of 1365 mm.; the dorsum is uniform olive-brown, except that
+some dorsal scales at midbody have black anterior borders like _D.
+melanolomus melanolomus_ has in the Yucatán Peninsula; the venter is
+pale yellow. KU 58158 has 179 ventrals, 122 caudals, and a total length
+of 723 mm.; the dorsum is rich chocolate brown with eight dark
+cross-bars on the neck; the belly is bright orange.
+
+Stuart (1941a:87) stated that in life two distinct color phases were
+observed in specimens collected by him in Alta Verapaz, Guatemala. One
+had an olive-brown dorsum and the other, a reddish orange dorsum.
+Stuart made no mention of variation in the color of the venter. Similar
+variation is known in _D. melanolomus alternatus_ in Costa Rica, where
+some individuals have orange-red venters. This color phase has been
+recognized as a distinct species, _Dryadophis sanguiventris_, by Taylor
+(1954:722). Examination of 18 specimens from Costa Rica shows no
+differences in scutellation, nor geographic segregation of two
+populations. I am convinced that the red-bellied _Dryadophis_ in Costa
+Rica, like those in Guatemala, represent a color phase of the subspecies
+inhabiting those areas and that _Dryadophis sanguiventris_ Taylor is a
+synonym of _Dryadophis melanolomus alternatus_ (Bocourt).
+
+
+=Drymarchon corais melanurus= (Duméril, Bibron and Duméril)
+
+      15 km. NW of Chinajá, 1; Sayaxché, 1.
+
+The specimen from Sayaxché was found at the edge of a clearing in the
+forest; that from 15 kilometers northwest of Chinajá was found on the
+forest floor coiled with a _Boa constrictor imperator_, which the
+_Drymarchon_ apparently was trying to eat. The _Drymarchon_ is a giant
+specimen having a total length of 2950 mm. (see Duellman, 1961:368). The
+_Boa_ with which it was coiled has a total length of 1683 mm. I was
+attracted to the snakes by a loud thrashing noise. When I approached the
+writhing mass, the snakes separated, but I was able to see that the
+_Drymarchon_ had its teeth firmly imbedded in the posterior part of the
+head of the _Boa_. From the _Drymarchon_ I forced the regurgitation of a
+recently ingested _Bothrops nummifer nummifer_ having a total length of
+953 mm. These observations show that the snake-eating capabilities of
+_Drymarchon_ can hardly be over-estimated.
+
+In both _Drymarchon_ the anterior one-half of the body is olive-tan,
+which changes to bluish black posteriorly. The local name is
+_sumbadora_.
+
+
+=Drymobius margaritiferus margaritiferus= (Schlegel)
+
+      Chinajá, 3; Sayaxché, 1.
+
+All individuals were obtained in clearings in the forest by day in the
+rainy season. Two individuals each contained a _Similisca baudini_ and
+another contained a _Bufo valliceps valliceps_. Locally this snake is
+known by the appropriate name of _ranera_.
+
+
+=Imantodes cenchoa leucomelas= Cope
+
+      Chinajá, 4.
+
+With the exception of one that was found dead in camp, all individuals
+were taken from low vegetation by day. The dorsum is creamy tan with 28
+to 35 (average 32) chocolate brown blotches, and the venter is ashy
+white with small brown flecks. Three males have 238 to 248 (average 244)
+ventrals and 148 to 154 (average 151) caudals; one female has 239
+ventrals and 142 caudals. The largest specimen, a male, has a body
+length of 660 mm. and a total length of 943 mm.
+
+
+=Lampropeltis doliata polyzona= Cope
+
+      Chinajá, 1.
+
+One female (KU 57156) having 230 ventrals and 54 caudals was found on
+the forest floor by day. This individual has a black snout with a white
+bar across the nasals and prefrontals, a white spot in the middle of the
+frontal, and a white band across the temporals and parietals that is
+bordered posteriorly by a black band. There are 28 white and 28 red
+rings on the body. The tips of the red scales are darkened. The black
+rings between the white and red rings are not so expanded as to
+interrupt the white rings dorsally as in _L. doliata abnorma_ as
+identified by Stuart (1948:70). Locally this snake, like all red, black,
+and white or yellow banded snakes, is called _coral_ or _coralillo_.
+
+
+=Leptodeira frenata malleisi= Dunn and Stuart
+
+      Toocog, 1.
+
+This specimen, a male having 173 ventrals and 69 caudals, was found
+beneath the bark on a log in the forest. In life the dorsum was pinkish
+tan with 36 chocolate brown blotches on the body; the venter was rosy
+pink.
+
+
+=Leptodeira septentrionalis polysticta= Günther
+
+      Chinajá, 3; Toocog, 11.
+
+If numbers of specimens are indicative of abundance, this is the most
+common snake in southern El Petén. All were found at night in the rainy
+season. At a pond in the forest at Toocog these snakes were observed on
+low vegetation, on the ground, and in the water. Evidently they
+congregate at breeding choruses of frogs. One _Leptodeira_ contained a
+_Smilisca baudini_ and another contained eggs of _Phyllomedusa
+callidryas taylori_. The natives call this snake _nahuyaca_.
+
+
+=Leptophis ahaetulla praestans= (Cope)
+
+      13 km. NNW of Chinajá, 1; 20 km. NNW of Chinajá, 1.
+
+Both specimens were obtained from trees when they were felled. One
+individual (KU 55716) has a body length of 1345 mm. and a total length
+of 2035 mm. In life the entire snake was uniform bright green; the eye
+was yellow. In preservative the dorsum is dark blue, and the venter is
+green.
+
+
+=Leptophis mexicanus mexicanus= Duméril, Bibron and Duméril
+
+      Chinajá, 1; 15 km. NW of Chinajá, 1; Sayaxché, 4.
+
+All specimens came from low trees in the forest. The largest specimen is
+a male having a body length of 724 mm. and a total length of 1236 mm. In
+life the middorsum was a golden tan; the top of the head was a vivid
+green. One individual had ingested a _Smilisca baudini_. The local name
+is _bejuquillo_.
+
+
+=Ninia sebae sebae= (Duméril, Bibron and Duméril)
+
+      Toocog, 1.
+
+This specimen, a male having 144 ventrals and 55 caudals, was found
+beneath bark on a log in the forest. There is a black band five scales
+in length on the nape followed posteriorly by a red band six scales in
+length and then by a complete black band one and one-half scales in
+length. The rest of the body is dull red with 16 incomplete black bands
+one to one and one-half scales in length on the anterior two-thirds of
+the body.
+
+
+=Oxybelis aeneus aeneus= (Wagler)
+
+      Chinajá, 1; 20 km. NNW of Chinajá, 1.
+
+One individual was found in a low tree; the other was in a bush. Both
+specimens are males; the largest has a body length of 754 mm. and a
+total length of 1286 mm. Bogert and Oliver (1945:388) distinguished _O.
+aeneus aeneus_ in Central and South America from _O. aeneus auratus_ in
+México in that the diameter of the eye is more than the length of the
+internasal, whereas in _O. aeneus auratus_ the diameter of the eye is
+less than the length of the internasal. Stuart (1958:27) stated that on
+the basis of this character three specimens from Tikal in northeastern
+El Petén definitely were _O. aeneus aeneus_. Of the present specimens
+from southern El Petén, one has an internasal:eye ratio of 1.08; the
+other has a ratio of 0.87. A careful review of these snakes is needed to
+verify the validity of the characters used to separate the subspecies
+and to determine areas of intergradation. The local name for the
+vine-snake is _bejuquillo_.
+
+
+=Pliocercus euryzonus aequalis= Salvin
+
+      Chinajá, 1; Río San Román, 1.
+
+These specimens are tentatively referred to _P. euryzonus_. KU 57160 is
+a female having 130 ventrals, 87 caudals, and 23 black rings on the
+body; KU 58150 is a juvenile having 128 ventrals, 79 caudals, and 27
+black rings on the body. In both specimens the tip of the snout is
+yellow; a broad yellow band on the parietals and temporals is bordered
+posteriorly by a black band on the nape. The black rings on the body are
+not bordered by yellow, but black rings on the tail have yellow borders
+ventrally. In the red interspaces between the black rings, black flecks
+and spots, especially posteriorly, tend to form secondary black rings
+(Fig. 6a). According to Stuart (1948:71), _P. euryzonus aequalis_ has 25
+to 27 black rings on the body, whereas _P. elapoides salvini_, which
+also occurs in El Petén, has 15 to 23 black rings.
+
+[Illustration: FIG. 6. Dorsal color patterns of _Pliocercus euryzonus
+aequalis_ (A) and _Micrurus affinis apiatus_ (B).]
+
+The specimen from the Río San Román contained a partly digested
+_Bolitoglossa moreleti mulleri_. Locally _Piocercus_ is called _coral_
+or _coralillo_.
+
+
+=Pseustes poecilonotus poecilonotus= (Günther)
+
+      Chinajá, 3; 20 km. NNW of Chinajá, 1.
+
+Two juveniles were on the forest floor; one juvenile and an adult were
+on low bushes. The juveniles have a tan dorsum with reddish brown
+blotches; the belly is gray, and the iris is cream-color above and brown
+below. The one adult is olive-brown above and creamy white below on the
+anterior three-fourths of the body; posteriorly it is black above and
+below. There are no paravertebral dark stripes nor pale spots on the
+dorsal scales.
+
+Two specimens (one juvenile and the adult) when encountered compressed
+the anterior part of the body laterally and struck repeatedly. Locally
+the adults are called _sumbadora_.
+
+
+=Sibon dimidiata dimidiata= (Günther)
+
+      20 km. NNW of Chinajá, 2.
+
+Both snakes were obtained from trees when they were felled. In life the
+dorsum was pinkish orange with dark chocolate brown blotches narrowly
+edged with black.
+
+
+=Sibon nebulata nebulata= (Linnaeus)
+
+      20 km. NW of Chinajá, 1.
+
+This specimen, a male having a body length of 544 mm. and a tail length
+of 198 mm., was found in a felled tree. In life the belly was pink and
+black; the dorsal black blotches were narrowly outlined with pink.
+
+
+=Spilotes pullatus mexicanus= (Laurenti)
+
+      Chinajá, 3; 20 km. NNW of Chinajá, 1; Sayaxché, 1.
+
+This large snake, locally called _mica_, seems to be equally at home on
+the ground and in low trees and bushes. It is fast moving for a large
+snake; two individuals escaped capture. The natives said that this snake
+eats other snakes, but examination of stomachs revealed no supporting
+evidence.
+
+
+=Stenorrhina degenhardti= (Berthold)
+
+      Chinajá, 1.
+
+This specimen, a female having 158 ventrals, 37 caudals, and a total
+length of 489 mm., was found on the forest floor. On the olive-brown
+dorsum are 27 irregular, narrow, dark brown, transverse bands. The head
+is uniform olive-brown; the chin and labials are cream-color. The
+venter is cream-color with a row of brown spots forming a midventral
+stripe. A large spider was found in the stomach.
+
+I have refrained from assigning a subspecific name to this snake.
+Cursory examination of specimens from throughout México and Central
+America reveals a bewildering array of variation in coloration that
+suggests that the subspecies _mexicanus_ is not recognizable, or that
+two species occur sympatrically in parts of southern México and northern
+Central America.
+
+
+=Tretanorhinus nigroluteus lateralis= Bocourt
+
+      Chinajá, 1.
+
+A single male having 136 ventrals, 75 caudals, and a total length of 407
+mm. was found by a stream in camp. The dorsum is pale grayish tan with
+34 pairs of small chocolate brown spots, some of the anterior ones of
+which are connected across the back. A cream-colored lateral stripe is
+on the third and fourth dorsal scale-rows anteriorly and the second and
+third rows posteriorly. The lower dorsal scale rows are black. The
+venter is dark grayish brown with cream-colored flecks anteriorly and
+creamy gray posteriorly where the dark color is restricted to the
+midventral region and the lateral edges of ventrals and first dorsal
+scale-row.
+
+
+=Xenodon rabdocephalus mexicanus= Smith
+
+      Chinajá, 1; 20 km. NNW of Chinajá, 1.
+
+Both individuals were found on the forest floor. An adult male having a
+total length of 420 mm. has a cream-colored venter with brown flecks. A
+juvenile having a total length of 172 mm. has a creamy white belly with
+black crossbands.
+
+At the suggestion of L. C. Stuart, I am following Schmidt (1941:501) in
+placing _X. mexicanus_ as a subspecies of _X. rabdocephalus_.
+
+
+=Micrurus affinis apiatus= (Jan)
+
+      20 km. NNW of Chinajá, 2; Sayaxché, 1.
+
+All specimens were found beneath litter on the forest floor. All are
+males having 202 to 211 (average 205) ventrals, 53 to 56 (54.6) caudals,
+and 34 to 48 (41) primary black rings on the body. There are no yellow
+rings, and black spots in the red interspaces tend to form secondary
+black rings (Fig. 6b), the same as in _Pliocercus euryzonus aequalis_.
+The local name is _coral_ or _coralillo_.
+
+
+=Bothrops atrox asper= (Garman)
+
+      15 km. NW of Chinajá, 1; Sayaxché, 1.
+
+Although we found only two specimens, natives and workmen at the camp at
+Chinajá stated that the _barba amarilla_, as this snake is known
+locally, had been abundant when the camp had been established less than
+two years before our visit.
+
+
+=Bothrops nasutus= Bocourt
+
+      12 km. NW of Chinajá, 1.
+
+This specimen, a male having a total length of 415 mm., was found on the
+forest floor. The dorsum is brown with dark brown blotches separated
+middorsally by a narrow orange-tan stripe extending from the nape to the
+base of the tail. The belly is grayish tan with white flecks on the
+lateral edges of the ventrals. The local name is _nahuyaca_.
+
+
+=Bothrops nummifer nummifer= (Rüppell)
+
+      15 km. NW of Chinajá, 2; Sayaxché, 1.
+
+Two individuals were found on the forest floor, and one adult, having a
+total length of 953 mm., was removed from the stomach of a large
+_Drymarchon corais melanurus_. There is considerable variation in color
+and pattern. A juvenile (KU 58104), having a total length of 332 mm.,
+has a tan dorsum with 19 interconnected dark brown, diamond-shaped,
+middorsal blotches, the lateral extensions of which are black; the belly
+is a cream-color with brown squares. An adult female (KU 55706), having
+a total length of 779 mm., has a dorsal coloration like the preceding
+specimen, except that the lateral extensions of the dorsal blotches are
+brown; the belly is a uniform cream-color. A second adult female (KU
+55707), having a total length of 953 mm., has a brown dorsum with 21
+interconnected black, diamond-shaped, middorsal blotches, the lateral
+extensions of which are black; the belly is a cream-color with black
+squares.
+
+The local name for this species is _braza de piedra_.
+
+
+=Bothrops schlegeli schlegeli= (Berthold)
+
+      Paso Subín, 1.
+
+This specimen was taken from the thatched roof of a house at the edge of
+the forest and contained the remains of a small mammal. The local name
+is _nahuyaca_.
+
+
+
+
+HYPOTHETICAL LIST OF SPECIES
+
+
+Listed below are thirteen species that have not been found in southern
+El Petén but that probably occur there.
+
+      =_Dermophis mexicanus mexicanus_= (Duméril and Bibron).--Natives
+      at Chinajá know caecilians, which they call _dos cabezas_.
+      This species has been taken in Tabasco and northern Chiapas.
+      Its occurrence in southern El Petén is expected. Less likely,
+      the caecilian known to the natives at Chinajá is _Gymnopis
+      oligozona_, which is known from Finca Volcán on the southern
+      slopes of the valley of the Río Cahabón in Alta Verapaz.
+
+      =_Gastrophryne elegans_= (Boulenger).--This small fossorial frog
+      is known from Piedras Negras (Taylor and Smith, 1945:604), 12
+      miles east of Yaxha (Stuart, 1934:7), and Tikal (Stuart,
+      1958:18), all in northern and central El Petén. Two specimens
+      in the collection of the University of Kansas are from 28
+      kilometers northeast of Campur, Alta Verapaz. Probably the
+      species ranges throughout the forested lowlands of northern
+      Alta Verapaz and El Petén.
+
+      =_Mabuya brachypoda_= Taylor.--The absence of this widespread
+      lizard in our collections cannot be explained. Probably it
+      occurs in southern El Petén, for it is known in northern and
+      central El Petén and in Alta Verapaz.
+
+      =_Dendrophidion vinitor_= Smith.--This snake is known from
+      Piedras Negras, El Petén and from various localities in Alta
+      Verapaz; it is an inhabitant of humid forest and should occur
+      in southern El Petén.
+
+      =_Elaphe triaspis mutabilis_= (Cope).--The subspecies _E.
+      triaspis mutabilis_ is known from Alta Verapaz and _E.
+      triaspis triaspis_ from the Yucatán Peninsula, British
+      Honduras, and Uaxactún in northern El Petén. Because of the
+      much higher degree of resemblance between the faunas of
+      southern El Petén and Alta Verapaz as compared with southern
+      El Petén and Yucatán, _E. triaspis mutabilis_ would be
+      expected to occur in southern El Petén.
+
+      =_Ninia diademata nietoi_= Burger and Werler.--This snake is
+      known from Tikal and from Alta Verapaz; it is a small
+      cryptophile that probably occurs in southern El Petén.
+
+      =_Oxyrhophus petola aequifasciatus_= Werner.--This snake, which
+      probably is conspecific with _Oxyrhophus baileyi_ in southern
+      Veracruz, México, is known from Tikal, British Honduras, and
+      Alta Verapaz; it is expected in southern El Petén.
+
+      =_Pliocercus elapoides salvini_= Müller.--This species is
+      widespread in the Atlantic lowlands of southern México and
+      northern Central America; the subspecies _P. elapoides
+      salvini_ occurs in Alta Verapaz and probably in southern El
+      Petén.
+
+      =_Rhadinaea decorata decorata_= (Günther).--This is another
+      small cryptophile that is widespread on the Atlantic lowlands
+      from México to Panamá; it definitely is expected at places
+      like Chinajá in southern El Petén.
+
+      =_Scaphiodontophis annulatus_= (Duméril and Bibron).--Three
+      subspecies of _Scaphiodontophis annulatus_ are recognized in
+      northern Central America: _S. annulatus annulatus_ from Alta
+      Verapaz, _S. annulatus hondurensis_ from northern Honduras,
+      and _S. annulatus carpicinctus_ from Piedras Negras and Tikal
+      in El Petén and from British Honduras. This rare and highly
+      variable species probably occurs in southern El Petén.
+
+      =_Tantilla schistosa schistosa_= (Bocourt).--This widespread
+      species in Central America is known from several localities in
+      Alta Verapaz and almost certainly occurs in southern El Petén.
+
+      =_Tropidodipsas sartori sartori_= Cope.--This fossorial species
+      has been collected in northern El Petén and in Alta Verapaz.
+      The natives at Chinajá described to me a _coral_ having orange
+      rings on a black body that likely was this species.
+
+      =_Micrurus elegans veraepacis_= Schmidt.--This species has been
+      collected at various localities in Alta Verapaz and in
+      Chiapas, inhabits areas like those in southern El Petén, and
+      probably occurs there.
+
+
+
+
+SUMMARY
+
+
+A study of the amphibians and reptiles in the rainforests of southern El
+Petén, Guatemala, reveals the presence of 78 species; an additional 13
+species probably occur there. In this tropical area having a high amount
+of rainfall most of the species of amphibians and reptiles have
+extensive ranges in the wet forests on the Atlantic lowlands of southern
+México and northern Central America; some species that more frequently
+are found in sub-humid forests also occur.
+
+Ecologically the fauna is divided into five major habitats--aquatic,
+aquatic margin, fossorial, terrestrial, and arboreal. Forty-two per cent
+of the 78 species are wholly or partly arboreal. The fauna is most
+closely related to that in Alta Verapaz, Guatemala, but includes many
+species that occur in the Tikal-Uaxactún area in northeastern Guatemala.
+
+_Eleutherodactylus rostralis_ (Werner) and _E. rhodopis_ (Cope) are
+redefined and their relationships are suggested. The color phases of
+_Dryadophis melanolomus laevis_ and _D. m. alternatus_ are discussed;
+_Dryadophis sanguiventris_ Taylor is synonymized with _Dryadophis
+melanolomus alternatus_ (Bocourt).
+
+The breeding habits, eggs, and tadpoles of the hylid frogs _Hyla
+ebraccata_ and _Phyllomedusa callidryas taylori_ are described, as are
+the eggs and juveniles of _Laemanctus deborrei_.
+
+
+
+
+LITERATURE CITED
+
+
+BAYLOR, E. R. AND STUART, L. C.
+
+      1961. A new race of _Bufo valliceps_ from Guatemala. Proc.
+      Biol. Soc. Washington, 74:195-202, August 11.
+
+BOGERT, C. M. AND OLIVER, J. A.
+
+      1945. A preliminary analysis of the herpetofauna of Sonora.
+      Bull. Amer. Mus. Nat. Hist., 83:297-426, March 30.
+
+BROCCHI, P.
+
+      1881-1883 Étude des batraciens de l'Amerique Centrale. Mission
+      scientifique au Mexique. Paris, Imprimerie Nationale, 3
+      (2):1-122, pls. 1-21.
+
+DUELLMAN, W. E.
+
+      1958. A review of the frogs of the genus _Syrrhophus_ in
+      western Mexico. Occas. Papers Mus. Zool. Univ. Michigan,
+      594:1-15, pls. 1-3, June 6.
+
+      1960. A distributional study of the amphibians of the Isthmus
+      of Tehuantepec, México. Univ. Kansas Publ. Mus. Nat. Hist.,
+      13:21-72, August 16.
+
+      1961. A record size for _Drymarchon corais melanurus_. Copeia,
+      1960 (4):367-368, January.
+
+DUNN, E. R. AND EMLEN, J. T.
+
+      1932. Reptiles and amphibians from Honduras. Proc. Acad. Nat.
+      Sci. Philadelphia, 84:21-32, March 22.
+
+FIRSCHEIN, I. L. AND SMITH, H. M.
+
+      1957. A high-crested race of toad (_Bufo valliceps_) and other
+      noteworthy reptiles and amphibians from southern Mexico.
+      Herpetologica, 13:219-222, October 31.
+
+LUNDELL, C. L.
+
+      1937. The vegetation of Petén. Carnegie Institute Washington
+      Publ. 178:1-244, pls. 1-39. June 16.
+
+NEILL, W. T. AND ALLEN, R.
+
+      1959. Studies on the amphibians and reptiles of British
+      Honduras. Publ. Ross Allen's Reptile Inst., 2:1-76, November
+      10.
+
+SAPPER, K.
+
+      1932. Klimakunde von Mittelamerika. _In_ Handbuch Klimakunde,
+      2:1-74, Taf. 1-13.
+
+SCHMIDT, K. P.
+
+      1936. Guatemalan salamanders of the genus _Oedipus_. Zool.
+      Ser. Field Mus. Nat. Hist., 20:135-166, October 31.
+
+      1941. The amphibians and reptiles of British Honduras. Zool.
+      Ser. Field Mus. Nat. Hist, 22:475-510, December 30.
+
+      1946. Turtles collected by the Smithsonian Biological Survey
+      of the Panamá Canal Zone. Smithsonian Misc. Coll., 106
+      (8):1-9, pl. 1, August 1.
+
+SIMPSON, G. G.
+
+      1960. Notes on the measurement of faunal resemblance. Amer.
+      Jour. Sci., 258-A:300-311.
+
+SMITH, H. M. AND TAYLOR, E. H.
+
+      1945. An annotated checklist and key to the snakes of Mexico.
+      Bull. U. S. Natl. Mus., 187: iv + 239 pp., October 5.
+
+      1948. An annotated checklist and key to the amphibia of
+      Mexico. Bull. U. S. Natl. Mus., 194: iv + 118 pp., June 17.
+
+      1950. An annotated checklist and key to the reptiles of Mexico
+      exclusive of the snakes. Bull. U. S. Natl. Mus., 199: v + 253
+      pp., October 26.
+
+STUART, L. C.
+
+      1934. A contribution to a knowledge of the herpetological
+      fauna of El Peten, Guatemala. Occas. Papers Mus. Zool. Univ.
+      Michigan, 292:1-18, June 29.
+
+      1935. A contribution to a knowledge of the herpetology of a
+      portion of the savanna region of central Petén, Guatemala.
+      Misc. Publ. Mus. Zool. Univ. Michigan, 29:1-56, pls. 1-4,
+      October 1.
+
+      1937. Some further notes on the amphibians and reptiles of the
+      Peten forest of northern Guatemala. Copeia, 1937 (1):67-70,
+      April 10.
+
+      1941a. Studies of Neotropical Colubrinae VIII. A revision of
+      the genus _Dryadophis_ Stuart, 1939. Misc. Publ. Mus. Zool.
+      Univ. Michigan, 49:1-105, pls. 1-4, March 19.
+
+      1941b. Two new species of _Eleutherodactylus_ from Guatemala.
+      Proc. Biol. Soc. Washington, 54:197-200, December 8.
+
+      1943. Taxonomic and geographic comments on Guatemalan
+      salamanders of the genus _Oedipus_. Misc. Publ. Mus. Zool.
+      Univ. Michigan, 56:1-33, pls. 1-2, January 30.
+
+      1948. The amphibians and reptiles of Alta Verapaz, Guatemala.
+      Misc. Publ. Mus. Zool. Univ. Michigan, 69:1-109, June 12.
+
+      1950. A geographic study of the herpetofauna of Alta Verapaz,
+      Guatemala. Contr. Lab. Vert. Biol. Univ. Michigan, 45:1-77,
+      pls. 1-9, May.
+
+      1958. A study of the herpetofauna of the Uaxactun-Tikal area
+      of northern El Peten, Guatemala. Contr. Lab. Vert. Biol. Univ.
+      Michigan, 75:1-30, June.
+
+TAYLOR, E. H.
+
+      1936. A taxonomic study of the cosmopolitan scincoid lizards
+      of the genus _Eumeces_. Univ. Kansas Sci. Bull., 23:1-643,
+      August 15.
+
+      1954. Further studies on the serpents of Costa Rica. Univ.
+      Kansas Sci. Bull., 36:673-801, July 15.
+
+TAYLOR, E. H. AND SMITH, H. M.
+
+      1945. Summary of collections of amphibians made in Mexico
+      under the Walter Rathbone Bacon Traveling Scholarship. Proc.
+      U. S. Natl. Mus., 95:521-613, June 30.
+
+_Transmitted November 29, 1962._
+
+29-5935
+
+
+
+
+UNIVERSITY OF KANSAS PUBLICATIONS MUSEUM OF NATURAL HISTORY
+
+
+Institutional libraries interested in publications exchange may obtain
+this series by addressing the Exchange Librarian, University of Kansas
+Library, Lawrence, Kansas. Copies for individuals, persons working in a
+particular field of study, may be obtained by addressing instead the
+Museum of Natural History, University of Kansas, Lawrence, Kansas. There
+is no provision for sale of this series by the University Library, which
+meets institutional requests, or by the Museum of Natural History, which
+meets the requests of individuals. However, when individuals request
+copies from the Museum, 25 cents should be included, for each separate
+number that is 100 pages or more in length, for the purpose of defraying
+the costs of wrapping and mailing.
+
+* An asterisk designates those numbers of which the Museum's supply (not
+the Library's supply) is exhausted. Numbers published to date, in this
+series, are as follows:
+
+ Vol.  1. Nos. 1-26 and index. Pp. 1-638, 1946-1950.
+
+*Vol.  2. (Complete) Mammals of Washington. By Walter W. Dalquest.
+              Pp. 1-444, 140 figures in text. April 9, 1948.
+
+ Vol. 3.  *1. The avifauna of Micronesia, its origin, evolution, and
+              distribution. By Rollin H. Baker. Pp. 1-359, 16 figures
+              in text. June 19, 1951.
+
+          *2. A quantitative study of the nocturnal migration Of birds.
+              By George H. Lowery, Jr. Pp. 361-472, 47 figures in text.
+              June 29, 1951.
+
+           3. Phylogeny of the waxwings and allied birds. By M. Dale
+              Arvey. Pp. 473-530, 49 figures in text, 13 tables. October
+              10, 1951.
+
+          *4. Birds from the state of Veracruz, Mexico. By George H.
+              Lowery, Jr., and Walter W. Dalquest. Pp. 531-649, 7
+              figures in text, 2 tables. October 10, 1951.
+
+          Index. Pp. 651-681.
+
+*Vol.  4. (Complete) American weasels. By E. Raymond Hall. Pp. 1-466, 41
+              plates, 31 figures in text. December 27, 1951.
+
+ Vol.  5. Nos. 1-37 and index. Pp. 1-676, 1951-1953.
+
+*Vol.  6. (Complete) Mammals of Utah, _taxonomy and distribution_. By
+              Stephen D. Durrant. Pp. 1-549, 91 figures in text, 30
+              tables. August 10, 1952.
+
+ Vol.  7. Nos. 1-15 and index. Pp. 1-651, 1952-1955.
+
+ Vol.  8. Nos. 1-10 and index. Pp. 1-675. 1954-1956.
+
+ Vol.  9. *1. Speciation of the wandering shrew. By James S. Findley.
+              Pp. 1-68, 18 figures in text. December 10, 1955.
+
+           2. Additional records and extension of ranges of mammals from
+              Utah. By Stephen D. Durrant, M. Raymond Lee, and Richard
+              M. Hansen. Pp. 69-80. December 10, 1955.
+
+           3. A new long-eared myotis (Myotis evotis) from northeastern
+              Mexico. By Rollin H. Baker and Howard J. Stains. Pp.
+              81-84. December 10, 1955.
+
+           4. Subspeciation in the meadow mouse, Microtus
+              pennsylvanicus, in Wyoming. By Sydney Anderson. Pp.
+              85-104, 2 figures in text. May 10, 1956.
+
+           5. The condylarth genus Ellipsodon. By Robert W. Wilson. Pp.
+              105-116, 6 figures in text. May 19, 1956.
+
+           6. Additional remains of the multituberculate genus
+              Eucosmodon. By Robert W. Wilson. Pp. 117-123, 10 figures
+              in text. May 19, 1956.
+
+           7. Mammals of Coahuila, Mexico. By Rollin H. Baker. Pp.
+              125-335, 75 figures in text. June 15, 1956.
+
+           8. Comments on the taxonomic status of Apodemus peninsulae,
+              with description of a new subspecies from North China. By
+              J. Knox Jones, Jr. Pp. 337-346, 1 figure in text, 1 table.
+              August 15, 1956.
+
+           9. Extensions of known ranges of Mexican bats. By Sydney
+              Anderson. Pp. 347-351. August 15, 1956.
+
+          10. A new bat (Genus Leptonycteris) from Coahuila. By Howard
+              J. Stains. Pp. 353-356. January 21, 1957.
+
+          11. A new species of pocket gopher (Genus Pappogeomys) from
+              Jalisco, Mexico. By Robert J. Russell. Pp. 357-361.
+              January 21, 1957.
+
+          12. Geographic variation in the pocket gopher, Thomomys
+              bottae, in Colorado. By Phillip M. Youngman. Pp. 363-387,
+              7 figures in text. February 21, 1958.
+
+          13. New bog lemming (genus Synaptomys) from Nebraska. By J.
+              Knox Jones, Jr. Pp. 385-388. May 12, 1958.
+
+          14. Pleistocene bats from San Josecito Cave, Nuevo León,
+              México. By J. Knox Jones, Jr. Pp. 389-396. December 19,
+              1958.
+
+          15. New subspecies of the rodent Baiomys from Central America.
+              By Robert L. Packard. Pp. 397-404. December 19, 1958.
+
+          16. Mammals of the Grand Mesa, Colorado. By Sydney Anderson.
+              Pp. 405-414, 1 figure in text. May 20, 1959.
+
+          17. Distribution, variation, and relationships of the montane
+              vole, Microtus montanus. By Sydney Anderson. Pp. 415-511,
+              12 figures in text, 2 tables. August 1, 1959.
+
+          18. Conspecificity of two pocket mice, Perognathus goldmani
+              and P. artus. By E. Raymond Hall and Marilyn Bailey
+              Ogilvie. Pp. 513-518, 1 map. January 14, 1960.
+
+          19. Records of harvest mice, Reithrodontomys, from Central
+              America, with description of a new subspecies from
+              Nicaragua. By Sydney Anderson and J. Knox Jones, Jr. Pp.
+              519-529. January 14, 1960.
+
+          20. Small carnivores from San Josecito Cave (Pleistocene),
+              Nuevo León, México. By E. Raymond Hall. Pp. 531-538, 1
+              figure in text. January 14, 1960.
+
+          21. Pleistocene pocket gophers from San Josecito Cave, Nuevo
+              León, México. By Robert J. Russell. Pp. 539-548, 1 figure
+              in text. January 14, 1960.
+
+          22. Review of the insectivores of Korea. By J. Knox Jones,
+              Jr., and David H. Johnson. Pp. 549-578. February 23, 1960.
+
+          23. Speciation and evolution of the pygmy mice, genus Baiomys.
+              By Robert L. Packard. Pp. 579-670, 4 plates, 12 figures in
+              text. June 16, 1960.
+
+          Index. Pp. 671-690
+
+ Vol. 10.  1. Studies of birds killed in nocturnal migration. By
+              Harrison B. Tordoff and Robert M. Mengel. Pp. 1-44, 6
+              figures in text, 2 tables. September 12, 1956.
+
+           2. Comparative breeding behavior of Ammospiza caudacuta and
+              A. maritima. By Glen E. Woolfenden. Pp. 45-75, 6 plates, 1
+              figure. December 20, 1956.
+
+           3. The forest habitat of the University of Kansas Natural
+              History Reservation. By Henry S. Fitch and Ronald R.
+              McGregor. Pp. 77-127, 2 plates, 7 figures in text, 4
+              tables. December 31, 1956.
+
+           4. Aspects of reproduction and development in the prairie
+              vole (Microtus ochrogaster). By Henry S. Fitch. Pp.
+              129-161, 8 figures in text, 4 tables. December 19, 1957.
+
+           5. Birds found on the Arctic slope of northern Alaska.  By
+              James W. Bee. Pp. 163-211, plates 9-10, 1 figure in text.
+               March 12, 1958.
+
+          *6. The wood rats of Colorado: distribution and ecology. By
+              Robert B. Finley, Jr. Pp. 213-552, 34 plates, 8 figures
+              in text, 35 tables. November 7, 1958.
+
+           7. Home ranges and movements of the eastern cottontail in
+              Kansas. By Donald W. Janes. Pp. 553-572, 4 plates, 3
+              figures in text. May 4, 1959.
+
+           8. Natural history of the salamander, Aneides hardyi. By
+              Richard F. Johnston and Gerhard A. Schad. Pp. 573-585.
+              October 8, 1959.
+
+           9. A new subspecies of lizard, Cnemidophorus sacki, from
+              Michoacán, México. By William E. Duellman. Pp. 587-598,
+              2 figures in text. May 2, 1960.
+
+          10. A taxonomic study of the middle-American snake, Pituophis
+              deppei. By William E. Duellman. Pp. 599-610, 1 plate, 1
+              figure in text. May 2, 1960.
+
+          Index. Pp. 611-626.
+
+ Vol. 11. Nos. 1-10 and index. Pp. 1-703, 1958-1960.
+
+ Vol. 12.  1. Functional morphology of three bats: Sumops, Myotis,
+              Macrotus. By Terry A. Vaughan. Pp. 1-153, 4 plates, 24
+              figures in text. July 8, 1959.
+
+          *2. The ancestry of modern Amphibia: a review of the evidence.
+              By Theodore H. Eaton, Jr. Pp. 155-180, 10 figures in text.
+              July 10, 1959.
+
+           3. The baculum in microtine rodents. By Sydney Anderson. Pp.
+              181-216, 49 figures in text. February 19, 1960.
+
+          *4. A new order of fishlike Amphibia from the Pennsylvanian of
+              Kansas. By Theodore H. Eaton, Jr., and Peggy Lou Stewart.
+              Pp. 217-240, 12 figures in text. May 2, 1960.
+
+           5. Natural history of the bell vireo. By Jon C. Barlow. Pp.
+              241-296, 6 figures in text. March 7, 1962.
+
+           6. Two new pelycosaurs from the lower Permian of Oklahoma. By
+              Richard C. Fox. Pp. 297-307, 6 figures in text. May 21,
+              1962.
+
+           7. Vertebrates from the barrier island of Tamaulipas, México.
+              By Robert K. Selander, Richard F. Johnston, B. J. Wilks,
+              and Gerald G. Raun. Pp. 309-345, pls. 5-8. June 18, 1962.
+
+           8. Teeth of Edestid sharks. By Theodore H. Eaton, Jr. Pp.
+              347-362, 10 figures in text. October 1, 1962.
+
+              More numbers will appear in volume 12.
+
+ Vol. 13.  1. Five natural hybrid combinations in minnows (Cyprinidae).
+              By Frank B. Cross and W. L. Minckley. Pp. 1-18. June 1,
+              1960.
+
+           2. A distributional study of the amphibians of the
+              Isthmus of Tehuantepec, México. By William E. Duellman.
+              Pp. 19-72, pls. 1-8, 3 figures in text. August 16, 1960.
+
+           3. A new subspecies of the slider turtle (Pseudemys scripta)
+              from Coahuila, México. By John M. Legler. Pp. 73-84, pls.
+              9-12, 3 figures in text. August 16, 1960.
+
+           4. Autecology of the copperhead. By Henry S. Fitch. Pp.
+              85-288, pls. 13-20, 26 figures in text. November 30, 1960.
+
+           5. Occurrence of the garter snake, Thamnophis sirtalis, in
+              the Great Plains and Rocky Mountains. By Henry S. Fitch
+              and T. Paul Maslin. Pp. 289-308, 4 figures in text.
+              February 10, 1961.
+
+           6. Fishes of the Wakarusa river in Kansas. By James E. Deacon
+              and Artie L. Metcalf. Pp. 309-322, 1 figure in text.
+              February 10, 1961.
+
+           7. Geographic variation in the North American cyprinid fish,
+              Hybopsis gracilis. By Leonard J. Olund and Frank B. Cross.
+              Pp. 323-348, pls. 21-24, 2 figures in text. February 10,
+              1961.
+
+           8. Descriptions of two species of frogs, genus Ptychohyla;
+              studies of American hylid frogs, V. By William E.
+              Duellman. Pp. 349-357, pl. 25, 2 figures in text. April
+              27, 1961.
+
+           9. Fish populations, following a drought, in the Neosho and
+              Marais des Cygnes rivers of Kansas. By James Everett
+              Deacon. Pp. 359-427, pls. 26-30, 3 figs. August 11, 1961.
+
+          10. Recent soft-shelled turtles of North America (family
+              Trionychidae). By Robert G. Webb. Pp. 429-611, pls. 31-54,
+              24 figures in text. February 16, 1962.
+
+          Index. Pp. 613-624.
+
+ Vol. 14.  1. Neotropical bats from western México. By Sydney Anderson.
+              Pp. 1-8. October 24, 1960.
+
+           2. Geographic variation in the harvest mouse. Reithrodontomys
+              megalotis, on the central Great Plains and in adjacent
+              regions. By J. Knox Jones, Jr., and B. Mursaloglu. Pp.
+              9-27, 1 figure in text. July 24, 1961.
+
+           3. Mammals of Mesa Verde National Park, Colorado. By Sydney
+              Anderson. Pp. 29-67, pls. 1 and 2, 3 figures in text. July
+              24, 1961.
+
+           4. A new subspecies of the black myotis (bat) from eastern
+              Mexico. By E. Raymond Hall and Ticul Alvarez. Pp. 69-72,
+              1 figure in text. December 29, 1961.
+
+           5. North American yellow bats, "Dasypterus," and a list of
+              the named kinds of the genus Lasiurus Gray. By E. Raymond
+              Hall and J. Knox Jones, Jr. Pp. 73-98, 4 figures in text.
+              December 29, 1961.
+
+           6. Natural history of the brush mouse (Peromyscus boylii) in
+              Kansas with description of a new subspecies. By Charles A.
+              Long. Pp. 99-111, 1 figure in text. December 29, 1961.
+
+           7. Taxonomic status of some mice of the Peromyscus boylii
+              group in eastern Mexico, with description of a new
+              subspecies. By Ticul Alvarez. Pp. 113-120, 1 figure in
+              text. December 29, 1961.
+
+           8. A new subspecies of ground squirrel (Spermophilus
+              spilosoma) from Tamaulipas, Mexico. By Ticul Alvarez. Pp.
+              121-124. March 7, 1962.
+
+           9. Taxonomic status of the free-tailed bat, Tadarida
+              yucatanica Miller. By J. Knox Jones, Jr., and Ticul
+              Alvarez. Pp. 125-133, 1 figure in text. March 7, 1962.
+
+          10. A new doglike carnivore, genus Cynaretus, from the
+              Clarendonian Pliocene, of Texas. By E. Raymond Hall and
+              Walter W. Dalquest. Pp. 135-138, 2 figures in text. April
+              30, 1962.
+
+          11. A new subspecies of wood rat (Neotoma) from northeastern
+              Mexico. By Ticul Alvarez. Pp. 139-143. April 30, 1962.
+
+          12. Noteworthy mammals from Sinaloa, Mexico. By J. Knox Jones,
+              Jr., Ticul Alvarez, and M. Raymond Lee. Pp. 145-159, 1
+              figure in text. May 18, 1962.
+
+          13. A new bat (Myotis) from Mexico. By E. Raymond Hall. Pp.
+              161-164, 1 figure in text. May 21, 1962.
+
+          14. The mammals of Veracruz. By E. Raymond Hall and Walter W.
+              Dalquest. Pp. 165-362, 2 figures. May 20, 1963.
+
+          15. The recent mammals of Tamaulipas, México. By Ticul
+              Alvarez. Pp. 363-473, 5 figures in text. May 20, 1963.
+
+              More numbers will appear in volume 14.
+
+ Vol. 15.  1. The amphibians and reptiles of Michoacán, México. By
+              William E. Duellman. Pp. 1-148, pls. 1-6, 11 figures in
+              text. December 20, 1961.
+
+           2. Some reptiles and amphibians from Korea. By Robert G.
+              Webb, J. Knox Jones, Jr., and George W. Byers. Pp.
+              149-173. January 31, 1962.
+
+           3. A new species of frog (Genus Tomodactylus) from western
+              México. By Robert G. Webb, Pp. 175-181, 1 figure in text.
+              March 7, 1962.
+
+           4. Type specimens of amphibians and reptiles in the Museum
+              of Natural History, the University of Kansas. By William
+              E. Duellman and Barbara Berg. Pp. 183-204. October 26,
+              1962.
+
+           5. Amphibians and Reptiles of the Rainforests of Southern El
+              Petén, Guatemala. By William E. Duellman. Pp. 205-249,
+              pls. 7-10, 6 figures in text. October 4, 1963.
+
+              More numbers will appear in volume 15.
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK AMPHIBIANS AND REPTILES OF THE RAINFORESTS OF SOUTHERN EL PETÉN, GUATEMALA ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

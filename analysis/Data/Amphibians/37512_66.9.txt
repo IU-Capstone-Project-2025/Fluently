@@ -1,0 +1,3251 @@
+﻿The Project Gutenberg eBook of A Revision of Snakes of the Genus Conophis (Family Colubridae, from Middle America)
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: A Revision of Snakes of the Genus Conophis (Family Colubridae, from Middle America)
+
+Author: John Wellman
+
+Release date: September 23, 2011 [eBook #37512]
+
+Language: English
+
+Credits: Produced by Chris Curnow, Tom Cosmas, Joseph Cooper and
+        the Online Distributed Proofreading Team at
+        http://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK A REVISION OF SNAKES OF THE GENUS CONOPHIS (FAMILY COLUBRIDAE, FROM MIDDLE AMERICA) ***
+
+
+
+
+Produced by Chris Curnow, Tom Cosmas, Joseph Cooper and
+the Online Distributed Proofreading Team at
+http://www.pgdp.net
+
+
+
+
+
+
+
+Transcriber's Note
+
+Typographical corrections are listed at the end of this version.
+The list of publications has been compiled after the article's text.
+
+       *       *       *       *       *
+
+
+  UNIVERSITY OF KANSAS PUBLICATIONS
+  MUSEUM OF NATURAL HISTORY
+
+  Volume 15, No. 6, pp. 251-295, 9 figs.
+
+  October 4, 1963
+
+  A Revision of Snakes of the Genus Conophis
+  (Family Colubridae, from Middle America)
+
+  BY
+  JOHN WELLMAN
+
+  UNIVERSITY OF KANSAS
+  LAWRENCE
+  1963
+
+
+
+  UNIVERSITY OF KANSAS PUBLICATIONS, MUSEUM OF NATURAL HISTORY
+
+  Editors: E. Raymond Hall, Chairman, Henry S. Fitch,
+  Theodore H. Eaton, Jr.
+
+  Volume 15, No. 6, pp. 251-295, 9 figs.
+  Published October 4, 1963
+
+  UNIVERSITY OF KANSAS
+  Lawrence, Kansas
+
+  PRINTED BY
+  JEAN M. NEIBARGER. STATE PRINTER
+  TOPEKA. KANSAS
+  1963
+
+  [Illustration: Union Label]
+
+  29-5936
+
+
+
+
+A Revision of Snakes of the Genus Conophis
+(Family Colubridae, from Middle America)
+
+BY
+
+JOHN WELLMAN
+
+
+
+
+CONTENTS
+
+                                                                  PAGE
+
+ INTRODUCTION                                                      253
+
+ ACKNOWLEDGMENTS                                                   254
+
+ MATERIALS AND METHODS                                             254
+
+ GENUS Conophis Peters                                             255
+   Key to the Species and Subspecies                               257
+   Analysis of Characters                                          257
+   Scutellation                                                    258
+   Size and Proportions                                            258
+   Color Pattern                                                   260
+   Sexual Dimorphism                                               260
+   _C. lineatus_                                                   262
+   _C. lineatus dunni_                                             262
+   _C. lineatus lineatus_                                          267
+   _C. lineatus concolor_                                          270
+   _C. nevermanni_                                                 272
+   _C. pulcher_                                                    274
+   _C. vittatus_                                                   277
+   Skull                                                           282
+   Dentition                                                       288
+   Vertebrae                                                       288
+   Hemipenes                                                       289
+   Food and Feeding                                                289
+   Effect of Poison                                                290
+
+ TAXONOMIC RELATIONSHIPS AND EVOLUTION                             291
+
+ SUMMARY                                                           292
+
+ LITERATURE CITED                                                  293
+
+
+
+
+INTRODUCTION
+
+
+Need for a comprehensive systematic review of the snakes of the genus
+_Conophis_ was pointed out by Stuart (1954a, b). Since these snakes
+appeared to be of zoogeographic importance in the Central American
+region, I undertook the review as set forth on the following pages.
+
+
+
+
+ACKNOWLEDGMENTS
+
+
+For permission to examine specimens, and for information concerning
+specimens in their care, I am grateful to Mr. L. C. Battersby and Miss
+Alice G. C. Grandison, British Museum (Natural History); Mr. Charles
+M. Bogert and Dr. Richard G. Zweifel, American Museum of Natural
+History; Dr. Doris M. Cochran, United States National Museum; Prof.
+William B. Davis, Agricultural and Mechanical College of Texas; Dr.
+Josef Eiselt, Naturhistorisches Museums, Vienna; Prof. Norman Hartweg
+and Prof. Laurence C. Stuart, Museum of Zoology, University of
+Michigan; Dr. Robert F. Inger, Chicago Natural History Museum; Dr.
+Alan E. Leviton, California Academy of Sciences; Mr. Edmond V.
+Malnate, Academy of Natural Sciences, Philadelphia; Prof. George S.
+Myers, Stanford University Natural History Museum; Mr. Wilfred T.
+Neill, Ross Allen's Reptile Institute; Mr. Neil D. Richmond, Carnegie
+Museum; Dr. William J. Riemer, University of Florida Collections;
+Prof. Robert C. Stebbins, Museum of Vertebrate Zoology, University of
+California; Prof. Hobart M. Smith, University of Illinois Natural
+History Museum; and Dr. Ernest E. Williams, Museum of Comparative
+Zoology, Harvard.
+
+Prof. William E. Duellman supplied invaluable information and guidance
+in my study. I am grateful to Prof. E. Raymond Hall for use of
+facilities of the Museum of Natural History and editorial assistance.
+I thank Prof. Laurence C. Stuart and Prof. Edward H. Taylor for
+information and suggestions. My own field experience in Middle America
+came as a result of assisting Professor Duellman in his own researches
+supported by a grant from the National Science Foundation (NSF-G
+9827). For these things I am deeply grateful. Specimens that I have
+seen alive were collected by field companions Dale L. Hoyt and Jerome
+B. Tulecke. Finally, I am grateful to my wife, Margaret L. Wellman,
+for much help including typing much of the manuscript.
+
+
+
+
+MATERIALS AND METHODS
+
+
+Of the 325 specimens of the genus _Conophis_ available to me,
+representing most of those in museum collections, scale counts were
+made in the usual manner on 309. Ventrals were counted following the
+system proposed by Dowling (1951:97-99); the anal plate was not
+included. The anteroposterior position of the place where reduction
+occurs in the number of the dorsal rows of scales is designated by
+citing the number of the ventral scale directly beneath that place.
+
+Measurements were taken to the nearest millimeter by means of a
+millimeter stick. Body length is the distance from the tip of the
+snout to the posterior edge of the anal plate; tail length, from the
+latter point to the tip of the tail; and total length, the sum of the
+body plus tail.
+
+Descriptions of color are based on preserved specimens. Where
+descriptions of the color of living individuals are given, the data
+were taken from Kodachrome slides made available to me by William E.
+Duellman. Due to the transient nature of the longitudinal dark stripes
+in these snakes, no standard terminology has been devised, except that
+the posterior continuations of the stripes which on the head pass
+through the eye are termed lateral stripes; the posterior
+continuations of the median stripe of the head are termed
+dorsolateral stripes. A paravertebral stripe is one that is present
+on the scale-row on either side of, but not including, the mid-dorsal
+(vertebral) scale-row.
+
+In order to reduce confusion in the discussion of variation, the
+numbers designating the rows of dorsal scales are written as 1st, 2nd,
+whereas the numbers designating the stripes are written as first,
+second.
+
+Except in three dried skeletons, teeth were counted on dentigerous
+bones _in situ_. Since teeth are often missing, the sockets were
+counted in order to obtain an accurate count.
+
+In accounts of the species and subspecies, the observed range of
+variation is followed by the mean in parentheses; in some instances
+the mean is followed by the standard deviation, also in parentheses.
+An example is 65-79 (70.6 ± 3.93).
+
+Each synonymy includes all generic and specific combinations known to
+me that have been used for the genus, and, in addition, references to
+catalogues, checklists, and reports of collections.
+
+Localities of occurrence that are not plotted on the distribution maps
+are recorded in italic type under Specimens Examined. In the list of
+Specimens Examined the localities and specimens are listed in the
+following order: countries in alphabetical order; states or
+departments in alphabetical order in each country; localities in
+alphabetical order in each state or department; museum numbers in
+numerical order after the abbreviations of names of museums. When more
+than one specimen bears a single catalogue number, the number of
+specimens is given in parentheses following the museum catalogue
+number. Specimens for which data are given only as to country or to
+state or department are listed first after the name of that political
+unit under "no specific locality."
+
+The abbreviations for the museum collections are:
+
+  AMNH     American Museum of Natural History
+  ANSP     Academy of Natural Sciences of Philadelphia
+  BMNH     British Museum (Natural History)
+  CAS      California Academy of Sciences
+  CNHM     Chicago Natural History Museum
+  ERA-WTN  E. Ross Allen-Wilfred T. Neill, Ross Allen's Reptile Institute
+  KU       University of Kansas Museum of Natural History
+  MCZ      Museum of Comparative Zoology, Harvard
+  MVZ      Museum of Vertebrate Zoology, University of California
+  NMW      Naturhistorisches Museums Wien, Vienna
+  SU       Stanford University Natural History Museum
+  TCWC     Texas Cooperative Wildlife Collection, Agricultural and
+             Mechanical College of Texas
+  UF       University of Florida Collections
+  UIMNH    University of Illinois Museum of Natural History
+  UMMZ     University of Michigan Museum of Zoology
+  USNM     United States National Museum
+
+
+
+
+Family COLUBRIDAE
+
+Subfamily Xenodontinae
+
+Genus =Conophis= Peters
+
+
+  _Tomodon_ (part) Duméril, Bibron and Duméril, Erpétologie Générale,
+     7(pt.2):936, February 7(pt.2):936, February 25, 1854 (_lineatus_
+     and _vittatus_); Salvin, Proc. Zool. Soc. London, 28:455, 1860
+     (_pulcher_).
+
+  _Psammophis_ (part), Günther, Catalogue of Colubrine Snakes in
+    the Collection of the British Museum, London, 1858:135
+    (_lineatus_).
+
+  _Conophis_ Peters, Monatsb. Akad. Wiss. Berlin, 1860:519-520,
+    pl., fig. 3 (_vittatus_); Cope, Proc. Acad. Nat. Sci.
+    Philadelphia, 13:300, December 28, 1861 (_lineatus concolor_);
+    Proc. Acad. Nat. Sci. Philadelphia, 18:318-319, February 20,
+    1867 (_lineatus concolor_); Proc. Acad. Nat. Sci.
+    Philadelphia, ser. 2, 8:137, 1876 (_pulcher_); Bocourt in
+    Duméril, Bocourt and Mocquard, Mission Scientifique au Mexique
+    et dans l'Amerique Centrale, 2:643-644, pl. 38, fig. 5, 1886
+    (_lineatus lineatus_); Cope, Proc. Amer. Philos. Soc., 23:489,
+    October 28, 1886; Hoffmann, Klassen und Ordnungen des
+    Thier-Reichs. Reptilien. Bd. 6, 3:1707, 1890; Cope, Trans.
+    Amer. Philos. Soc., 18:207, April 15, 1895; Dunn, Bull.
+    Antivenin Inst. Amer., 2(1):21, 24, April, 1928; Copeia, no.
+    4:214, December 31, 1937 (_nevermanni_).
+
+  _Tachymenis_ (in part), Garman, Bull. Essex Inst., 16:33,
+    January 9, 1884 (_vittatus_ and _lineatus_).
+
+  _Erythrolamprus_ (in part), Ditmars, Bull. Antivenin Inst.
+    Amer., 2(2):27-29, June.
+
+  _Coniophanes_ (in part), Wettstein, Sitz. Akad. Wiss. Wien,
+    mathem-naturw. kl. 143:37-38, 1934 (_nevermanni_).
+
+_Historical summary._--In 1854 Duméril, Bibron and Duméril described
+and figured _Tomodon lineatum_ from America. In 1860 Peters described
+and figured as a new genus and species, _Conophis vittatus_, based on
+a specimen that he had obtained from a dealer in Hamburg. The
+provenance of this specimen is not known, for it was discovered aboard
+a ship near the mouth of the Mississippi River. It was not until 1871
+that Cope included _lineatus_ in the genus _Conophis_. Cope (1861)
+proposed the name _Conophis vittatus_ (_nec_ Peters, 1860). Later
+(1900) he changed its name to _Conophis lineaticeps_. Early
+uncertainty of the relationships of the species _lineatus_ caused
+Günther (1858) to place it in the genus _Psammophis_. With the
+exception of Garman (1884a and 1884b) who placed _lineatus_ in the
+genus _Tachymenis_, and Wettstein (1934) who reported five specimens
+of _Conophis nevermanni_ as _Coniophanes i. imperialis_, all specimens
+reported after 1876 were placed in the genus _Conophis_.
+
+The only previous attempt to review the systematics of this genus was
+made by Smith (1941) who based his study primarily on specimens in the
+United States National Museum. He examined only 28 specimens,
+including none of one species (_nevermanni_).
+
+_Description._--Hemipenis slightly bifurcate having forked sulcus
+spermaticus, large spines near base, and smaller spines or papillae on
+flounces nearer apices; prediastemal maxillary teeth 8-12, subequal in
+length, and followed by short diastema and one enlarged fang or two;
+fangs grooved, only one functional at any one time, unless snake is in
+process of shedding teeth; teeth 6-10 on palatine, 15 to 19 on
+pterygoid, 15 to 21 on dentary; teeth on dentary decreasing in size
+posteriorly; large parotid (venom) gland on either side of head in
+temporal region; head shields of basically unmodified colubrid type
+excepting decurved rostral; rostral concave below and therein modified
+for burrowing; internasals and prefrontals paired; nasals divided;
+loreal single; preocular one, rarely two; postoculars, two;
+supralabials, 7-8, 3rd and 4th or 4th and 5th under eye; infralabials,
+8-11, usually 9 or 10; temporals, normally 1 plus 2 plus 3;
+chin-shields subequal in length; ventrals, 149-183, rounded and
+overlapping; caudals, 55-89, paired and imbricate; anal divided;
+dorsal scales smooth and in 19 rows at mid-body with no apical pits
+or keels; scale reduction normally involving fusion of 3rd and 4th
+rows, resulting in 17 scale-rows near tail; tail length more than 20
+per cent of body length; maximum total length exceeding 1.1 meters;
+dorsal color pattern consisting of dark stripes, or no darkening, on
+paler ground-color; ventral surfaces immaculate pale yellowish or
+white, except on specimens having single lateral dark spots on some or
+all ventrals; pupil round; diurnal or crepuscular; feeding primarily
+on small lizards, sometimes on small mammals or other snakes.
+
+_Distribution._--Semi-arid regions of southern México and Central
+America as far south as Costa Rica.
+
+
+KEY TO THE SPECIES AND SUBSPECIES
+
+Although many juveniles differ greatly in general coloration from the
+adults, both the juveniles and the adults of any species or subspecies
+can be identified from the following key; juveniles differ from adults
+in extent and intensity of dark pigmentation but not in rows of scales
+involved.
+
+ 1. Seven supralabials (3rd and 4th below orbit); 3 to 8 dark
+    stripes along body                                               2
+
+    Eight supralabials (4th and 5th below orbit); unstriped or with
+    more than 4 dark stripes along body, or dark with 2 or 4 pale
+    stripes                                                          3
+
+ 2. Dark stripes involving no more than one longitudinal
+    scale-row                    _C. lineatus lineatus_ (part), p. 267
+
+    Dark stripes involving at least two adjacent scale-rows
+                                                 _C. vittatus_, p. 277
+
+ 3. Supralabials having black borders above; head and body
+    generally black with 2 or 4 white lines running length
+    of body                                    _C. nevermanni_, p. 272
+
+    Supralabials immaculate or having dark borders below; head
+    and body usually pale with dark stripes, or without stripes      4
+
+ 4. Lateral dark stripe through eye involving upper half of second
+    scale-row; dark stripe on paravertebral row, at least
+    posteriorly                                   _C. pulcher_, p. 274
+
+    Lateral dark stripe becoming indistinct on body, or restricted
+    to 4th or 3rd and 4th rows anteriorly, not involving 2nd
+    scale-row on anterior 1/3 of body (an auxiliary lateral stripe
+    sometimes present involving 2nd row); no paravertebral stripes   5
+
+ 5. Stripes disappearing posteriorly (except for small spots of
+    pigment on scale-row 4 or 7); 1st scale-row unpigmented
+                                        _C. lineatus concolor_, p. 270
+
+    Stripes present posteriorly; 1st scale-row pigmented             6
+
+ 6. Lateral stripes narrow on nape, restricted to 4th scale-row
+    on body                      _C. lineatus lineatus_ (part), p. 267
+
+    Lateral stripes involving 3rd and 4th rows, at least on
+    nape                                   _C. lineatus dunni_, p. 262
+
+
+Analysis of Characters
+
+Characters showing inter-specific and intra-specific variation and
+that have a wide range of variation were analyzed statistically, when
+possible, in order to determine extent of variation. One character
+(see table 3) was analyzed for sexual dimorphism, and for it the
+coefficient of difference is also given. The statistical terms and
+formulae have been adopted from Mayr, Linsley and Usinger (1953).
+Dorsal head shields varied individually and were of no taxonomic
+importance. Osteological and hemipeneal characters did not show enough
+variation to be considered here.
+
+
+Scutellation
+
+Labials, dorsals, ventrals, and subcaudals were the most useful
+scales.
+
+_Labials._--All species usually have eight supralabials except _C.
+vittatus_, which has seven. The only other population having a
+relatively high frequency of occurrence of seven supralabials is _C.
+l. lineatus_. In specimens having eight supralabials, the fourth and
+fifth enter the orbit; in specimens having seven supralabials, the
+third and fourth enter the orbit (the second and third are fused).
+Usually there are ten infralabials, sometimes nine or eleven;
+specimens having seven supralabials usually have nine infralabials,
+sometimes eight, rarely ten.
+
+_Dorsals._--Although there is no variation in the number of rows of
+dorsal scales, there is some in the method of scale reduction. There
+are 19 rows of dorsal scales from close behind the head to about
+midway on the body where two rows are lost, leaving 17 rows from there
+to near the base of the tail. This reduction is accomplished by fusion
+of the scales of the 3rd and 4th rows or sometimes by the dropping out
+of the 3rd row. The place at which reduction occurs in number of
+dorsal scales in relation to the ventral (scale) directly below is
+highly variable and of little taxonomic importance (table 1).
+
+TABLE 1.--VARIATION IN THE PLACE OF DOSAL SCALE REDUCTION IN CONOPHIS.
+
+ Key to Columns
+ ====================================
+ Std. Dev. = Standard Deviation
+ Std. Err. = Standard Error
+ Coe. Var. = Coefficient of Variation
+
+ ==============+===========+========+=======+======+======+======
+               | Number of |        |       | Std. | Std. | Coe.
+     Taxon     | Specimens | Range  | Mean  | Dev. | Err. | Var.
+ --------------+-----------+--------+-------+------+------+------
+ _l. concolor_ |     45    | 89-114 | 102.5 | 5.57 | 0.83 | 5.43
+ _l. dunni_    |     36    | 91-111 | 102.1 | 4.59 | 0.77 | 4.50
+ _l. lineatus_ |     26    | 91-107 | 100.2 | 3.59 | 0.72 | 3.58
+ _nevermanni_  |      6    | 84- 97 |  93.2 | 4.71 | 1.92 | 5.05
+ _pulcher_     |     26    | 94-119 | 104.6 | 4.90 | 0.96 | 4.68
+ _vittatus_    |    170    | 84-118 | 102.3 | 6.60 | 0.16 | 6.45
+ --------------+-----------+--------+-------+------+------+------
+
+
+_Ventrals._--The number of ventral scutes varies from 149-183, and
+shows no significant variation in the means (table 2).
+
+_Subcaudals._--The number of subcaudal scutes varies from 55 to 89. In
+some populations there is no overlap in the range of variation of
+males and females. The total variation and sexual dimorphism are
+analyzed in table 3.
+
+
+Size and Proportions
+
+Although considerable variation in size is observable, little
+taxonomic use is made of size since sufficient series are not
+available to determine age classes. The subspecies attaining the
+largest size is _C. lineatus concolor_; all others are smaller and of
+about the same size and proportions. The longest specimen, a male of
+_C. l. concolor_, has a body length of 893 mm., a tail length of 274
+mm., and a total length of 1167 mm.
+
+TABLE 2.--VARIATION IN THE NUMBER OF VENTRALS IN CONOPHIS.
+
+ Key to Columns
+ ====================================
+ Std. Dev. = Standard Deviation
+ Std. Err. = Standard Error
+ Coe. Var. = Coefficient of Variation
+
+ ==============+===========+=========+=======+======+======+======
+               | Number of |         |       | Std. | Std. | Coe.
+     Taxon     | Specimens |  Range  | Mean  | Dev. | Err. | Var.
+ --------------+-----------+---------+-------+------+------+------
+ _l. concolor_ |     45    | 158-170 | 163.7 | 1.56 | 0.23 | 0.95
+ _l. dunni_    |     36    | 159-178 | 167.2 | 4.56 | 0.76 | 2.72
+ _l. lineatus_ |     26    | 157-169 | 163.5 | 3.59 | 0.72 | 2.20
+ _nevermanni_  |      6    | 173-183 | 176.5 | 4.00 | 1.63 | 2.27
+ _pulcher_     |     26    | 149-180 | 169.5 | 5.31 | 1.04 | 3.13
+ _vittatus_    |    171    | 149-180 | 163.7 | 6.33 | 0.15 | 3.87
+ --------------+-----------+---------+-------+------+------+------
+
+
+TABLE 3.--SEXUAL DIMORPHISM AS INDICATED BY VARIATION IN THE NUMBER OF
+   SUBCAUDALS IN CONOPHIS.
+
+ Key to Columns
+ ====================================
+ Num. Spc. = Number of Specimens
+ Std. Dev. = Standard Deviation
+ Std. Err. = Standard Error
+ Coe. Var. = Coefficient of Variation
+ Coe. Dif. = Coefficient of Difference
+
+ ====================+=====+====+=======+======+======+======+======+=====
+                     |     |Num.|       |      | Std. | Std. | Coe. | Coe.
+        Taxon        | Sex |Spc.| Range | Mean | Dev. | Err. | Var. | Dif.
+ --------------------+-----+----+-------+------+------+------+------+-----
+ _lineatus concolor_ | [M] | 22 | 68-74 | 70.3 | 2.14 | 0.46 | 3.04 |
+                     |     |    |       |      |      |      |      | 1.97
+                     | [F] | 16 | 56-65 | 61.8 | 2.18 | 0.55 | 3.53 |
+                     |     |    |       |      |      |      |      |
+ _lineatus dunni_    | [M] | 14 | 67-80 | 74.5 | 3.86 | 1.03 | 5.18 |
+                     |     |    |       |      |      |      |      | 0.95
+                     | [F] | 16 | 60-72 | 67.1 | 3.91 | 0.97 | 5.82 |
+                     |     |    |       |      |      |      |      |
+ _lineatus lineatus_ | [M] | 11 | 67-73 | 69.8 | 6.17 | 1.85 | 8.84 |
+                     |     |    |       |      |      |      |      | 0.60
+                     | [F] |  9 | 60-66 | 62.4 | 6.17 | 2.06 | 9.89 |
+                     |     |    |       |      |      |      |      |
+ _nevermanni_        | [M] |  3 | 82-89 | 85.3 | .... | .... | .... |
+                     |     |    |       |      |      |      |      | ....
+                     | [F] |  2 | 71-76 | 73.5 | .... | .... | .... |
+                     |     |    |       |      |      |      |      |
+ _pulcher_           | [M] |  7 | 70-79 | 74.3 | 3.11 | 1.17 | 4.19 |
+                     |     |    |       |      |      |      |      | 0.93
+                     | [F] | 11 | 65-71 | 68.2 | 3.42 | 1.08 | 5.01 |
+                     |     |    |       |      |      |      |      |
+ _vittatus_          | [M] | 95 | 59-76 | 67.8 | 3.33 | 0.34 | 4.91 |
+                     |     |    |       |      |      |      |      | 1.28
+                     | [F] | 58 | 55-66 | 60.0 | 2.75 | 0.36 | 4.58 |
+ --------------------+-----+----+-------+------+------+------+------+-----
+
+
+Color Pattern
+
+This is the primary feature used to separate species and subspecies in
+this genus. The color pattern consists of three black or deep brown
+stripes on the dorsal part of the head, one mid-dorsally, and one on
+each side of the head passing through the eye. On the body, there are
+usually dark longitudinal stripes on a pale tan or white background.
+There may be as few as three in _vittatus_, and as many as 13 in _l.
+dunni_; except that there is none in _C. l. concolor_. There are two
+pairs of primary dark stripes. The first is the body stripe that is
+the posterior extension of the stripe which on the head passes through
+the eye and is termed the lateral stripe. The other primary stripe is
+the posterior continuation of the mid-dorsal head stripe. Usually it
+is split into two dorsolateral stripes on the body. Stripes may be
+present on the scale-row to either side of the primary stripe. These
+stripes are usually dark brown or black and are the secondary stripes.
+Finally, additional stripes may be present that are paler brown and
+bear no direct relationship to the primary stripes. These are
+auxiliary stripes.
+
+Every stripe originates either as broad continuous stripe or as a row
+of spots or dashes, forming a discontinuous stripe, which in some
+specimens becomes continuous posteriorly. The stripes are usually
+black or deep brown, although auxiliary stripes are sometimes paler.
+The dorsal ground color is pale brown, tan, olive, or white; usually
+the ground color is palest ventrally and darkest dorsally.
+
+In some specimens of _Conophis_ the lateral tips of the ventrals are
+spotted, one spot on each end of each ventral. Otherwise, the ventrals
+are immaculate white.
+
+In some species there is considerable ontogenetic change in color
+pattern, although the juveniles bear the basic color characteristics
+of the adults. For example, juveniles of the sympatric species _C.
+lineatus dunni_ and _C. pulcher_ can be separated on the basis of
+which scale-rows are darkly pigmented. _C. l. dunni_ has eight stripes
+in juveniles and as many as 13 in adults. Juveniles show a greater
+contrast between the black stripes and the pale ground color than do
+adults. With increased age (size) the stripes in some populations
+become paler and are split; simultaneously the ground color becomes
+darker.
+
+
+Sexual Dimorphism
+
+Sexual dimorphism is evident in all species and subspecies of
+_Conophis_. Differences always exist in the number of subcaudals and
+in the tail/body ratio; males have more subcaudals and relatively
+longer tails than do females (table 3). Otherwise, there is little
+sexual dimorphism in these snakes. Males and females cannot be
+differentiated by any feature of coloration.
+
+Formulation of a biological concept of the species as defined by Mayr
+(1942) is difficult when most of the data primarily relied upon are
+from preserved specimens. Nevertheless, a total view of variation was
+attempted so that differences within and between populations could be
+recognized. Differences, between populations, that seem to be part of
+a continuous or internal cline (Huxley, 1942) are not used for
+characterizing subspecies.
+
+   [Illustration: FIG. 1. Patterns of dorsal coloration at
+      mid-body of adults of all species and subspecies of the genus
+      _Conophis_ except _C. lineatus concolor_. A. _C. lineatus
+      dunni_ (UMMZ 107339) from Santa Rosa, Guatemala. B. _C.
+      lineatus dunni_ (UMMZ 116537) from 1.5 mi. N Matagalpa,
+      Nicaragua. C. _C. lineatus dunni_ (ANSP 3480) from "San Jose,"
+      Costa Rica. D. _C. l. lineatus_ (KU 23253) from Río Blanco,
+      20 km. WNW Piedras Negras, Veracruz, México. E. _C. nevermanni_
+      (ANSP 22424) "San Jose," Costa Rica. F. _C. pulcher_ (UIMNH
+      33646) from Soconusco, Chiapas, México. G. _C. vittatus_ (KU
+      39626) from Atencingo, Puebla, México. H. _C. vittatus_ (TCWC
+      9473) from 1 mi. S Colotlipa, Guerrero, México. I. _C.
+      vittatus_ (UMMZ 82653) from "vicinity of" Salina Cruz, Oaxaca,
+      México. Approximately × 3/4.]
+
+
+=Conophis lineatus= (Duméril, Bibron and Duméril)
+
+  _Tomodon lineatum_ (in part) Duméril, Bibron and Duméril,
+    Érpétologie Genérale, 7(pt. 2):936-938, February 25, 1854.
+
+_Diagnosis._--No dark pigmentation posterior to nape; lateral dark
+stripe anteriorly passing through eye and posteriorly involving 4th or
+3rd and 4th scale-rows only; first scale-row darkly pigmented; no
+paravertebral dark stripe; six to thirteen (or no) dark stripes at
+mid-body; usually eight (sometimes seven) supralabials immaculate
+white or having dark ventral margins.
+
+_Variation._--The variation in this species is discussed more
+completely in the descriptions of the subspecies. One hundred and
+seven specimens have 157 to 178 (164.8) ventrals. Eighty-eight of
+these snakes having complete tails have 56 to 80 (68.0) subcaudals;
+the number of ventrals plus subcaudals varies from 222 to 247 (233.5)
+in 87 of these. On 107 specimens the reduction from 19 to 17 dorsal
+scale-rows takes place between ventrals 89 and 114 (101.8). Sexual
+dimorphism is evident in the number of subcaudals; there are, on the
+average, fewer subcaudals in females than in males of each subspecies.
+The largest specimen is a male _C. l. concolor_ (USNM 46345) from
+Chichén Itzá, Yucatán, México, having a body length of 893 mm., a tail
+length of 274 mm. and a total length of 1167 mm. The smallest is a
+juvenile _C. l. dunni_ (MCZ 49749) from Tegucigalpa, Honduras, having
+a body length of 162 mm., a tail length of 51 mm. and a total length
+of 213 mm.
+
+The greatest variation is in coloration. Dark color, or lack thereof,
+has been used to separate the subspecies of _C. lineatus_. The
+ground-color is pale brown, pale olive or white, either with no
+stripes on the body or with eight to thirteen dark stripes at
+mid-body. Specimens having dark stripes on the body always have black
+or dark brown pigmentation on the first, 4th and 7th dorsal
+scale-rows. In some there is dark pigmentation on the 2nd, 3rd, 8th
+and 10th rows of scales. The stripes appear on the nape or farther
+posteriorly, usually on the anterior third of the body, either as a
+series of spots or dashes that form a continuous stripe farther
+posteriorly or as a continuous stripe.
+
+The ventrals usually have more or less conspicuous dark spots
+laterally on those specimens having dark stripes present on the
+dorsum; spots are absent on all specimens having no dorsal stripes and
+on some specimens having dorsal stripes. Except for the dark lateral
+spots (when present) the ventrals are immaculate white. Usually the
+dorsal ground-color is pale tan, especially on the striped forms. The
+ground-color is usually palest on the lower dorsal scale rows and
+darkest dorsally.
+
+Three populations are separable as subspecies; one has no stripes on
+the body and occurs in the Yucatán Peninsula. The other two have
+stripes on the dorsum and vary clinally in coloration from the north
+(Veracruz, México) to south (Costa Rica) (Fig. 2). Reasons for
+separating these widespread, variable snakes into two subspecies are
+that they are discontinuous in distribution (the population in
+Veracruz is disjunct from the one that extends from Guatemala to Costa
+Rica), and that these populations have distinctly different color
+patterns.
+
+   [Illustration: FIG. 2. Selected locality records for the
+      subspecies of _Conophis lineatus_.]
+
+
+=Conophis lineatus dunni= Smith
+
+  _Psammophis lineatus_, Günther, Catalogue of Colubrine Snakes
+    in the Collection of the British Museum, p. 135, 1858.
+
+  _Conophis lineatus_, Cope, 3rd Ann. Rept. Peabody Acad. Sci.,
+    p. 82, 1871; Proc. Acad. Nat. Sci. Philadelphia, 23:204,
+    October 24, 1871; Journ. Acad. Nat. Sci. Philadelphia, ser. 2,
+    8:137, 1876; Bull. U. S. Natl. Mus., 32:77, 1887; Günther,
+    Biologia Centrali-Americana, p. 165, March, 1895; Boulenger,
+    Catalogue of the Snakes in the British Museum (Natural
+    History), 3:122-123, 1896; Werner, Arch. Naturges., 90, abt. A,
+    12:143, 1925; Schmidt, Zool. Ser. Field Mus. Nat. Hist.,
+    12:199-200, November 21, 1928; Amaral, Mem. Inst. Butantan,
+    4:212, 1929; Werner, Zool. Jahrb., 57:184, 1929; Stuart, Occas.
+    Papers Mus. Zool. Univ. Michigan, 292:5, June 29, 1934; Dunn,
+    Copeia, no. 4:214, December 31, 1937.
+
+  _Conophis lineatus similis_ Smith, Journ. Washington Acad.
+    Sci., 31:123-124, March 15, 1941 (Type.--United States National
+    Museum, No. 79963; type locality.--Managua, Nicaragua; _nec_
+    Bocourt _in_ Duméril, Bibron and Mocquard, Mission Scientifique
+    au Mexique et dans l'Amerique Centrale, 2:647-648, 1886);
+    Cochran, Bull. U. S. Natl. Mus., 220:167, 1961.
+
+  _Conophis lineatus dunni_ Smith, Proc. U. S. Natl. Mus.
+    92:394-395, November 5, 1942; Savage, Trans. Kansas Acad. Sci.,
+    50:483-486, December 31, 1949; Taylor, Univ. Kansas Sci. Bull.,
+    34(pt. 1):145, October 1, 1951; Neill and Allen, Publ. Res.
+    Div. Ross Allen's Rept. Inst., 2:56, November 10, 1959;
+    Herpetologica, 16:146-148, fig. 2, September 23, 1960.
+
+  _Conophis pulcher pulcher_, Stuart, Misc. Publ. Mus. Zool.
+    Univ. Michigan, 69:79, June 12, 1948; Contr. Lab. Vert. Biol.
+    Univ. Michigan, 45:24, May, 1950; Contr. Lab. Vert. Biol.
+    Univ. Michigan, 49:14, August, 1951; Contr. Lab. Vert. Biol.
+    Univ. Michigan, 65:19-20 (part), March, 1954.
+
+  _Conophis pulcher plagosus_, Mertens, Zool. Anz., 148:93,
+    February, 1952; Abhand. Senken. Naturw. Gesell., 487:61-62,
+    December 1, 1952.
+
+  _Conophis lineatus nevermanni_, Taylor, Univ. Kansas Sci.
+    Bull., 37(pt. 1):563-565, fig. 16, October 15, 1955.
+
+
+_Type._--United States National Museum, no. 79963, obtained by Lt. H.
+C. Kellers. Type locality: Managua, Nicaragua. There are also three
+paratypes; one a topotype (USNM 79964), one from "Nicaragua" (USNM
+25237), and one from Esparta, Costa Rica (USNM 37758).
+
+_Diagnosis._--Lateral dark stripe anteriorly passing through eye and
+posteriorly involving 3rd and 4th scale-rows; 1st scale-row darkly
+pigmented; no paravertebral dark stripe, although vertebral row
+sometimes darkly pigmented; six to thirteen stripes at mid-body; eight
+supralabials immaculate or having dark ventral margins.
+
+_Variation._--Thirty-six specimens have 159 to 178 (167.2 ± 4.56)
+ventrals. Thirty of these snakes having complete tails have 60 to 80
+(70.5 ± 5.36) subcaudals; the number of ventrals plus subcaudals
+varies from 224 to 247 (237.6). In 36 specimens the reduction from 19
+to 17 dorsal scales takes place between ventrals 91 and 111 (102.1 ±
+4.59). Sexual dimorphism is evident in the number of subcaudals; 16
+females have 60 to 72 (67.1), and 14 males have 67 to 80 (74.5)
+subcaudals. The largest specimen (ERA-WTN BH-300) is a female from
+Augustine, British Honduras, having a body length of 732 mm., a tail
+length of 183 mm. and a total length of 915 mm. A juvenile (MCZ 49794)
+from Tegucigalpa, Honduras, has a body length of 162 mm., a tail
+length of 51 mm. and a total length of 213 mm.
+
+The greatest variation is in coloration. The ground-color is pale
+brown or white with dark stripes of black or deep brown present
+dorsally and laterally. Some specimens from Costa Rica have as many as
+13 dark stripes at mid-body (fig. 1, C). In these snakes the first
+row of dorsal scales bears a series of large, slightly elongated, dark
+spots; on the 2nd row a narrow dark brown stripe on the middle of the
+scales; on the 3rd a black stripe on the dorsal one-third to one-half
+of the scales; on the 4th and the 7th rows black stripes on the medial
+half of the scales of each row; on the 8th and 10th (vertebral) rows
+dark brown stripes on the medial third of the scales of each row. A
+specimen from Guatemala (UMMZ 107339) shows the greatest reduction of
+stripes and dark pigmentation (fig. 1, A); it has only eight stripes
+at mid-body: on the first row of dorsal scales a discontinuous stripe
+is formed by a series of dashes; the 3rd row bears a series of small
+black spots near the base and tip of each scale; the 4th and 7th rows
+bear continuous black stripes on the medial third to fourth of the
+scales of each row; the 8th row has extremely small dark spots near
+the tips of some scales.
+
+The primary stripes, characteristic of the species _lineatus_, are
+those on the 1st, 4th and 7th rows of dorsal scales; these are the
+most prominent stripes. In some specimens these primary stripes begin
+as spots or dashes on the nape and become continuous stripes
+posteriorly; in others they are continuous for the length of the body.
+The stripe on the 1st row is most variable; usually it consists of
+only a discontinuous series of dashes for most of its length. The
+secondary stripes are those on the 3rd and 8th rows; of these, only
+the one on the 3rd scale-row is present on the nape. The stripe on the
+3rd row in combination with the dark stripe on the 4th row is the
+posterior continuation of the dark stripe that on the head passes
+through the eye; this stripe is characteristic of _C. lineatus dunni_.
+Both secondary stripes usually begin anteriorly as a series of spots
+or dashes and become continuous stripes posteriorly; occasionally near
+the base of the tail they fuse with the primary stripes on the 4th and
+7th rows. In some specimens in Costa Rica indistinct stripes are
+present on the 10th (posteriorly the 9th) rows, and in some specimens
+in Honduras, Nicaragua, and Costa Rica similar indistinct stripes are
+present on the 2nd row.
+
+Usually there are more or less conspicuous dark spots laterally on the
+ventrals, but in some specimens there are no spots. Except for the
+dark lateral spots (when present) the ventrals are immaculate white.
+The dorsal ground-color is a pale brown or brownish white in preserved
+specimens on the 1st, 2nd, 3rd and 4th rows of scales where dark
+stripes or spots are not present. The ground-color of the dorsum
+between the 5th rows on each side is a somewhat darker shade of pale
+to medium brown.
+
+Never is more than the lower one-third of each of the supralabials
+brown. In many specimens little or no brown is present on the lower
+margins of these scales. Some of the specimens having brown on the
+supralabials also have dusky markings of tan or gray on the chin and
+infralabials. Specimens from the northern part of the range
+(Guatemala) less frequently have dark chins and supralabials than do
+specimens from the southern part of the range (Costa Rica). There is,
+nevertheless, at any one locality considerable variation in the amount
+of dark pigmentation present on the chin and supralabials, thereby
+indicating that the slight geographic trend in this character is not
+significant.
+
+Probably the most common pattern of dorsal coloration consists of
+eight or ten dark stripes (fig. 1, B). In snakes having this pattern
+the stripes on the 1st, 3rd, 4th and 7th rows are always present and
+prominent, although those on the 1st and 3rd rows sometimes are
+present as discontinuous rows of dashes. The ground-color from the
+venter to the 7th row is usually pale brown, and that dorsally between
+the 7th rows on each side is usually a darker, medium brown. A series
+of spots or dashes or a continuous stripe is sometimes present on the
+8th row of scales.
+
+Snakes having a larger number of dark stripes and more dark
+pigmentation occur in the southern part of the range. There seems to
+be a cline from paler snakes having fewer stripes in the north to
+darker snakes in the south.
+
+   [Illustration: FIG. 3. Patterns of dorsal coloration at
+      mid-body of juveniles of two sympatric species of _Conophis_.
+      A. _C. lineatus dunni_ (MCZ 49794) from Tegucigalpa, Honduras.
+      B. _C. pulcher_ (MCZ 49791) from Tegucigalpa, Honduras.
+      Approximately × 1.]
+
+In juveniles, there are six or eight black stripes boldly contrasting
+with a white or pale tan ground-color (fig. 3, A). The first pair of
+stripes is on the 1st scale-row; the second pair, on the 3rd and 4th
+scale-rows; the third pair, on the 7th row; the fourth pair (when
+present), on the 8th row. Ontogenetic change in coloration consists of
+the splitting of the second pair of dark stripes in the juvenile.
+Additional stripes may form later on the 2nd and/or 10th rows of
+dorsal scales.
+
+_Remarks._--Savage (1949:483-486) stated that his specimen of _C. l.
+dunni_ (from Honduras) resembled _l. lineatus_ in having secondary
+stripes on the 2nd and 8th rows and dark pigmentation throughout the
+length of the 2nd row. As can be seen from the preceding discussion of
+variation, a specimen having this color pattern is clearly within the
+observed range of variation of _l. dunni_. The specimen in no way
+represents an intergrade between _C. l. dunni_ and _l. lineatus_.
+
+A specimen in the British Museum (Natural History), catalogued in 1853
+(no. 53.2.4.16), has the locality listed as "México." Since this
+specimen is of _C. l. dunni_ and this subspecies occurs only south of
+México, the locality must be considered erroneous; possibly the
+locality as recorded referred only to the fact that the specimen came
+from tropical Middle America.
+
+The absence of paravertebral stripes, the presence of a lateral
+dark stripe on the nape involving the 3rd and 4th rows of scales,
+and the darkly pigmented 1st scale-row, in combination with the
+characteristics of the genus, distinguish _C. l. dunni_ from all other
+snakes in México and Central America. The only sympatric species of
+this genus, _C. pulcher_, differs in that it has paravertebral stripes
+(though never a vertebral dark stripe). _Conophis pulcher_ has a
+lateral dark stripe that includes the upper half of the second
+scale-row on the anterior part of the body; stripes of _C. l. dunni_
+never include more than the 3rd and 4th rows. Even as juveniles the
+paravertebral row is not darkly pigmented in _C. l. dunni_ as it is in
+_C. pulcher_.
+
+_Distribution._--Semi-arid habitats from sea level to elevations of
+1000 m. from the Cuilco Valley in western Guatemala, El Peten and
+British Honduras southeastward to northeastern and southern Honduras,
+western Nicaragua and northwestern Costa Rica (fig. 2).
+
+_Specimens examined._--Total of 41 specimens, as follows: BRITISH
+HONDURAS: _Cayo District_: Augustine, ERA-WTN BH-300; _Mountain Pine
+Ridge, 10 mi. E Augustine_, ERA-WTN BH-298.
+
+COSTA RICA: _no specific locality_, AMNH 17309. "_Cartago_," BMNH
+71.11.22.15. _Puntarenas_: 32 km. N Barranca, KU 35630; Esparta, USNM
+37758. "_San José_," ANSP 3480, 12232.
+
+EL SALVADOR: _Morazan_: El Divisadero, CNHM 10999. _San Miguel: San
+Pedro_, MCZ 57061.
+
+GUATEMALA: _El Petén_: Sojio (Toocog), AMNH 69969, 69986.
+_Huehuetenango_: flood plain Río Cuilco, W of Finca Canibal, 18 km. N
+Tacaná, UMMZ 98283. _Santa Rosa_: Santa Rosa, UMMZ 107339.
+
+HONDURAS: _no specific locality_, AMNH 32814, UF 7657. _Cortes:
+Cofradía_, SU 8422; _Gracias_, CNHM 28560; _Hacienda de Santa Ana, W
+San Pedro Sula_, CNHM 5297; San Pedro Sula, UMMZ 68695(2); _near San
+Pedro Sula_, MCZ 27563. _Francisco Morazan: Potrero de Melio, Escuela
+Agricola Pan-americana_, MCZ 49987; Tegucigalpa, MCZ 49784, 49786,
+49789-90, 49792, 49794.
+
+MÉXICO: _no specific locality_, BMNH 53.2.4.16.
+
+NICARAGUA: _no specific locality_, UMMZ 65633, USNM 25237. _Leon_: El
+Polvón, MCZ 5645, 5696. _Managua_: Managua, USNM 79963-64; _3 mi. SW
+Managua_, KU 42315; _8 mi. WNW Managua_, KU 42314; _1 mi. N Sabana
+Grande_, KU 42311-13. _Matagalpa_: 1.5 mi. N Matagalpa, UMMZ 116537.
+
+
+=Conophis lineatus lineatus= (Duméril, Bibron and Duméril)
+
+  _Tomodon lineatum_ (in part) Duméril, Bibron and Duméril,
+    Érpétologie Genérale, 7(pt. 2):936-938, atlas, pl. 73,
+    February 25, 1854; Bocourt, Journ. de Zool., 5:406-407, 1876.
+
+  _Tomodon lineatus_, Jan, Arch. Zool. Anat. Fis., Genoa,
+    2(2):234, March 1863; Elenco sistematico degli ofidi. Milano,
+    p. 57, 1863; Muller, Reisen in den Vereinigten Staaten,
+    Canada, und México. Bd. 3. Beitrage zur Geschichte, Statistik,
+    und Zoologie von Mexiko. 3:607, 1865; Jan and Sordelli,
+    Iconographie Generale des Ophidiens, Milano. liv. 19, pl. 6,
+    fig. 3, December, 1866; liv. 50, pl. 2, fig. 34, November,
+    1881.
+
+  _Tachymenis lineata_ (in part), Garman, Bull. Essex Inst., 16:
+    33, January 9, 1884; Mem. Mus. Comp. Zool., 8:60-61, July,
+    1884.
+
+  _Conophis lineatus_, Bocourt _in_ Duméril, Bocourt and
+    Mocquard, Mission Scientifique au Mexique et dans l'Amerique
+    Centrale, 2:643-644, pl. 38, fig. 5, 1886; Cope, Trans. Amer.
+    Philos. Soc., 18:218, pl. 28, fig. 2, (hemipenis), April 15,
+    1895; Boulenger, Catalogue of the Snakes in the British Museum
+    (Natural History), 3:122-123 (part), 1896; Cope, Ann. Rept. U.
+    S. Natl. Mus. for 1898, pp. 1094-1095, 1242, pl. 26, fig. 2,
+    (hemipenis), 1900; Amaral, Mem. Inst. Butantan, 4:212, 1929;
+    Mittleman, Copeia, no. 2:122, June 30, 1944.
+
+  _Conophis lineatus lineatus_, Smith, Journ. Washington Acad.
+    Sci., 31:122, March 15, 1941; Proc. U. S. Natl. Mus., 92:395,
+    November 5, 1942; Proc. U. S. Natl. Mus., 93:407, October 29,
+    1943; Smith and Taylor, Bull. U. S. Natl. Mus., 187:43,
+    October 5, 1945; Shannon and Smith, Trans. Kansas Acad. Sci.,
+    52:505, December 31, 1949; Smith and Taylor, Univ. Kansas Sci.
+    Bull., 33(pt. 2):351, March 20, 1950; Werler and Smith, Texas
+    Journ. Sci. 4(4):565, December 30, 1952; Fugler and Dixon,
+    Herpetologica, 14:186, December 1, 1958.
+
+_Type._--Museum National d'Histoire Naturelle, Paris, no. 3738. Type
+locality.--"México," restricted to Veracruz, Veracruz, México, by
+Smith and Taylor (1950:351). Little is known about the type specimen,
+and nothing, concerning its collector or the locality at which it was
+collected. Smith (1941:122) assumed that the specimen illustrated by
+Bocourt in Duméril, Bocourt, and Mocquard (1886:pl. 38, fig. 5) was
+the type of _C. l. lineatus_. I have also made this assumption
+concerning the identity of the type specimen of this species,
+especially because of the many inconsistencies appearing in the plate
+accompanying the description by Duméril, Bibron and Duméril (1854:pl.
+73), and by Jan and Sordelli (1866:pl. 6). Neither show the nape nor a
+regular number of dorsal scales by which accurate determination of
+color pattern can be made and by means of which _C. l. dunni_ and _C.
+l. lineatus_ can be separated.
+
+_Diagnosis._--Lateral dark stripe anteriorly passing through eye and
+posteriorly involving fourth scale-row only; first scale-row darkly
+pigmented; no paravertebral stripe; no dark pigment on vertebral row;
+six or eight dark stripes at mid-body, secondary stripes often present
+posteriorly; usually eight (sometimes seven) supralabials immaculate
+or having dark ventral margins.
+
+_Variation._--Twenty-six specimens have 157 to 169 (163.5 ± 3.59)
+ventrals. Twenty of these snakes having complete tails have 60 to 73
+(66.5 ± 4.26) subcaudals; the number of ventrals plus subcaudals
+varies from 224 to 238 (230.1) in nineteen of these. In 26 specimens
+the reduction from 19 to 17 dorsal scale-rows takes place between
+ventrals 91 and 107 (100.2 ± 3.59). Sexual dimorphism is evident in
+the number of subcaudals; nine females have 60 to 66 (62.4), and 11
+males have 68 to 73 (69.8) subcaudals. The largest specimen (AMNH
+19643) is a male from "México," having a body length of 626 mm., a
+tail length of 168 mm. and a total length of 786 mm. No small
+juveniles have been examined; the smallest specimen (AMNH 19618) is a
+male from Veracruz, México, having a body length of 325 mm., a tail
+length of 90 mm. and a total length of 415 mm.
+
+The greatest variation is in coloration. In preserved specimens the
+ground-color is white, tannish-white, or often pale blue, with dark
+stripes of black or deep brown present dorsolaterally and laterally.
+Secondary stripes of paler brown are sometimes present, but the pale
+browns have faded badly on many specimens. Normally four black stripes
+are present at mid-body--a lateral pair on the 4th row of dorsal scales
+and a dorsolateral pair on the 7th row (fig. 1, D). The lateral pair
+is the posterior continuation of the stripe that on the head passes
+through the eye; it continues on the nape as a narrow stripe on the
+4th row only. In a few specimens the lateral stripe broadens to
+include the upper third of the 3rd row posterior to the nape. In some
+specimens both the dorsolateral and lateral dark stripes are present
+on the nape as a row of elongated spots or dashes that become
+continuous stripes of even width one-third to one-half of the distance
+posteriorly along the body; in other specimens the stripes are
+continuous on the nape. Posterior to the place of dorsal
+scale-reduction from 19 to 17 rows by the fusion of the 3rd and 4th
+rows, the lateral and dorsolateral stripes are moved downward by one
+row. In some specimens secondary black or dark brown stripes are
+present in the form of a series of dashes on the 5th and 8th rows;
+posterior to the place of scale reduction, these dashes are on the 4th
+and 7th rows. These dashes form a continuous stripe near the base of
+the tail. On the tail the secondary and primary stripes on adjacent
+rows sometimes fuse into a single broader stripe.
+
+Usually the 1st row of dorsal scales is dark brown; in some specimens
+the brown on the 1st or 7th row has faded in preservative. A few
+specimens have small black spots on the moderate brown background of
+the 1st row; in others the 1st row is only a somewhat darker brown
+than the ground-color. The 2nd row sometimes is a medium brown, and
+appears to be an additional stripe.
+
+The ventrals usually have more or less conspicuous dark spots
+laterally; in some specimens there are no spots. Except for the
+lateral spots (when present) the ventrals are immaculate white. The
+dorsal ground-color is pale brownish-white, white or pale blue between
+the 4th and 7th rows of dorsal scales and dorsally between the 7th
+rows on each side. Stripes are never present on the uniformly pale
+colored 8th, 9th and vertebral scale-rows.
+
+Usually there are eight supralabials on each side; however, seven of
+the 27 specimens examined have seven supralabials on each side, and
+three others have seven on one side, and eight on the other. Never is
+more than the lower third of the supralabials dark brown. In many
+specimens little or no brown is on the supralabials. There is little
+or no brown on the chin.
+
+Variation in coloration and in number of supralabials appears to be of
+no geographic significance.
+
+Although no juveniles have been collected, I expect that juveniles
+resemble adults in coloration. Probably there would be a greater
+contrast between the dark stripes and the pale ground-color in
+juveniles.
+
+In life an adult from three miles northwest of Lerdo de Tejada,
+Veracruz, México (UMMZ 114484), had black stripes on the 4th and 7th
+rows of dorsal scales, and black spots on a brown background on the
+1st row. The 2nd row had a medial, pale to medium brown auxiliary
+stripe on a brownish-white background. Posterior to the nape the 3rd
+row was medium brown. The area between the 4th and 7th rows and the
+dorsum between the 7th row of scales on each side was a pale
+brownish-white. Posterior to the place of scale-reduction the primary
+stripes were displaced downward by one row to the 3rd and 6th rows and
+secondary stripes originated as elongated spots on the 4th and 7th
+rows. Near the tail the secondary stripes were broad and continuous.
+The head was white or tannish-white with three dark brown or black
+stripes.
+
+_Remarks._--In his diagnosis of _C. l. lineatus_, Smith (1941:122)
+states: "lateral dark stripe ... very narrow posterior to nape,
+extending along fourth scale row; posteriorly a stripe along third and
+eighth (farther posteriorly the seventh) scale rows; a narrow dark
+stripe along sixth scale row, continuous throughout length of
+body...." I fail to find a dark stripe on the 6th row throughout the
+length of the body. In all specimens that I have seen, there is a dark
+stripe on the 7th row anteriorly and on the 6th row posteriorly. In
+many specimens the stripes on the 3rd and 8th (posteriorly the 7th)
+scale-rows are absent or present so far posteriorly that the 8th row
+is never involved.
+
+The dark brown on the first scale-row and the presence of a lateral
+dark stripe on the 4th row of dorsal scales only, in combination with
+the characteristics of the genus, distinguish _C. l. lineatus_ from
+all other snakes in México.
+
+_Distribution._--Semi-arid habitats on the coastal plain of Veracruz,
+México, from Tecolutla to Lerdo de Tejada and Piedras Negras (fig. 2).
+
+_Specimens examined._--Total of 27, as follows: MÉXICO: _no specific
+locality_, AMNH 19614-15, 19621-24, 19642-43, NMW 16827. _Veracruz: no
+specific locality_, AMNH 19618-20, CAS 73640, NMW 16829; _4 km. S
+Alvarado_, KU 58124; _14 mi. N Alvarado_, UIMNH 46978; 6 mi. SE Boca
+del Río, UIMNH 28023; Etiopa, 2 mi. S Tecolutla, UIMNH 3847; _ca._ 30
+mi. E Jalapa, AMNH 81948; 3 mi. NW Lerdo de Tejada, UMMZ 114484-85;
+Paso del Macho, USNM 109708; Río Blanco, 20 km. WNW Piedras Negras, KU
+23253; Veracruz, AMNH 19612, UF 8990; _W side Veracruz_, AMNH 19616;
+_2 mi. W Veracruz_, AMNH 19617, 19619.
+
+
+=Conophis lineatus concolor= Cope
+
+  _Conophis vittatus_ Cope, Proc. Acad. Nat. Sci. Philadelphia,
+    13:300, December 28, 1861 (_nec_ Peters, 1860; type.--United
+    States National Museum, no. 4941; type locality--"Petén,"
+    Guatemala); Journ. Acad. Nat. Sci. Philadelphia, ser. 2,
+    8:137, 1876; Bull. U. S. Natl. Mus., 32:76, 1887.
+
+  _Conophis concolor_ Cope, Proc. Acad. Nat. Sci. Philadelphia,
+    18:318-319, February 20, 1867; Journ. Acad. Nat. Sci.
+    Philadelphia, ser. 2, 8:137, 1876; Bocourt _in_ Duméril,
+    Bocourt and Mocquard, Mission Scientifique au Mexique et dans
+    l'Amerique Centrale, 2:648, 1886; Müller, Verh. Ges. Basel,
+    8:263, 1887; Cope, Bull. U. S. Natl. Mus., 32:77; 1887; Ann.
+    Rept. U. S. Natl. Mus. for 1898, p. 1095, 1900; Schmidt and
+    Andrews, Zool. Ser. Field Mus. Nat. Hist., 20:178, October 31,
+    1936; Andrews, Zool. Ser. Field Mus. Nat. Hist., 20:358,
+    December 28, 1937; Smith, Occas. Papers Mus. Zool. Univ.
+    Michigan, 388:7, October 31, 1938; Taylor and Smith, Univ.
+    Kansas Sci. Bull., 25:253, July 10, 1939; Smith, Zool. Ser.
+    Field Mus. Nat. Hist., 24:31, January 30, 1939; Cochran, Bull.
+    U. S. Nat. Mus., 220:167, 1961; Neill and Allen,
+    Herpetologica, 17:44-46, fig. 3, April 15, 1961.
+
+  _Conophis lineatus_ (in part), Günther, Biologica
+    Centrali-Americana, p. 165, March, 1895; Gaige _in_ Pearse,
+    _et al._ Carnegie Inst. Washington Publ., 457:302, February 5,
+    1936.
+
+  _Conophis lineaticeps_ Cope, Ann. Rept. U. S. Natl. Mus. for
+    1898, pp. 1094-95, 1900 (Substitute name for _Conophis
+    vittatus_ Cope, 1861, _nec_ Peters, 1860).
+
+  _Conophis lineatus concolor_, Smith, Journ. Washington Acad.
+    Sci., 31:122-123, March 15, 1941; Proc. U. S. Natl. Mus.,
+    92:395, November 5, 1942; Proc. U. S. Natl. Mus., 93:407,
+    October 29, 1943; Smith and Taylor, Bull. U. S. Natl. Mus.,
+    187:43, October 5, 1945; Univ. Kansas Sci. Bull., 33(pt.
+    2):352, March 20, 1950.
+
+_Types._--Two in the United States National Museum, no. 12368 (two
+specimens). Type locality: "Yucatán," restricted to Chichén Itzá,
+Yucatán, México by Smith and Taylor (1950:352).
+
+_Diagnosis._--Dark stripes either absent posterior to the nape, or
+present as a row of small spots on fourth or seventh scale-row; no
+dark stripe on first scale-row; eight supralabials having dark ventral
+margins.
+
+_Variation._--Forty-five specimens have 158 to 170 (163.7 ± 1.56)
+ventrals. Thirty-eight of these snakes having complete tails have 56
+to 74 (66.7 ± 4.77) subcaudals; the number of ventrals plus subcaudals
+varies from 222 to 245 (230.6). In 45 specimens the reduction from 19
+to 17 dorsal scales takes place between ventrals 89 and 114 (102.5 ±
+5.57). Sexual dimorphism is evident in the number of subcaudals; 16
+females have 56 to 65 (61.8), and 22 males have 68 to 74 (70.3)
+subcaudals. The longest specimen (USNM 46395) is a male from Chichén
+Itzá, Yucatán, having a body length of 893 mm., a tail length of 274
+mm., and a total length of 1167 mm. A juvenile (AMNH 38833) from
+Chichén Itzá, Yucatán, has a body length of 194 mm., a tail length of
+50 mm., and a total length of 244 mm.
+
+The venter is immaculate white or pale yellow and the dorsum of the
+body is immaculate pale gray to pale olive. Some specimens have small
+dark brown spots on the tips of the scales of the 4th or of the 7th
+row, but never on both. Only on the nape are spots present on both the
+4th and the 7th rows; these spots are the posterior continuations of
+the dark stripes on the head and on many specimens do not reach the
+nape. Posterior to the place of scale reduction from 19 to 17 rows by
+the fusion of the 3rd and 4th rows of scales, the dark spots (when
+present) are on the 3rd or 6th row of scales.
+
+The coloration of juveniles is the same as that of adults. Color in
+life is thought not too different from that of preserved specimens,
+for notes on the color of living individuals (Neill and Allen,
+1961:44) agree with what I have observed on preserved snakes.
+
+_Remarks._--The specimen from "Petén" (USNM, no. 4941) is the only
+specimen that has a controversial history. As can be seen from the
+synonymy of the species, the relationship of this specimen with the
+rest of the genus has been interpreted in several ways. Smith
+(1941:122-123) stated that the above specimen was catalogued as being
+from El Salvador; however, the locality was presumed by him to be El
+Petén, Guatemala, due to the presence in the bottle of a piece of
+paper inscribed "_Conophis vittatus_, Petén, J. M. Dow." This specimen
+is the one mentioned by Cope (1861:300, 1876:76, and 1900:1094-95),
+and in the first paper is ascribed to Guatemala. In 1900 this specimen
+was named _C. lineaticeps_ by Cope who thought the specimen differed
+significantly from _C. concolor_ (Cope, 1867:318-319). This specimen
+has the coloration normal for _C. l. concolor_ as far posteriorly as
+mid-body; beyond mid-body the dark lines, typical of _C. l. lineatus_
+or of _C. l. dunni_, are present. It is likely that this specimen is
+an intergrade between _C. l. concolor_ and _C. l. dunni_, the other
+subspecies present in Guatemala.
+
+The only specimen not from the Yucatán Peninsula is allegedly from
+Patuca, Honduras (USNM 20271). It was obtained in the 1870's. Possibly
+more collecting will verify the presence of _C. l. concolor_ in
+northern Honduras. This individual may be merely a genetically
+aberrant specimen from an area where normal specimens are _C. l.
+dunni_. Neill and Allen (1961:44-45) suggested that the specimen from
+Patuca implies widely overlapping distributions for _C. l. dunni_ and
+_C. concolor_. The occurrence of _C. l. concolor_ in Honduras needs to
+be verified before this assumption is made. There can, therefore, at
+present be no objection to the view that intergradation between the
+subspecies _C. l. dunni_ and _C. l. concolor_ could occur through a
+relatively broad area of El Petén and British Honduras.
+
+Neill and Allen (1961:44-45) further suggest that the present range of
+_C. l. dunni_ extends "presumably still farther northward toward the
+Méxican state of Veracruz where _C. l. lineatus_ exists." Actually the
+presence of the subspecies _C. l. dunni_ and _C. l. lineatus_ as
+presently disjunct populations implies merely that they were
+presumably a continuous population at some time in the past.
+
+The characteristics of the genus in combination with the reduction of
+dark coloration posterior to the head distinguish this snake from all
+other snakes in México and Central America.
+
+_Distribution._--The Yucatán Peninsula: eastern Campeche, all of
+Yucatán, probably in Quintana Roo, and the northern third of British
+Honduras. A record for northeastern Honduras is questioned (fig. 2).
+
+_Specimens examined._--Total of 48, as follows: BRITISH HONDURAS:
+_Belize District_: 13.0 mi. W, 1.5 mi. S Belize, ERA-WTN BH-1562.
+
+GUATEMALA: _El Petén, no specific locality_, USNM 4941.
+
+HONDURAS: _Colón_: Patuca, USNM 20271.
+
+MÉXICO: _Campeche_: Champotón, UMMZ 73063-66; Encarnación, CNHM
+106462. _Yucatán: no specific locality_, BMNH 80.7.13.30; Chichén
+Itzá, AMNH 38826, 38833, CNHM 20610-11, 26986-87, 36299-300, 36303-04,
+36307, 36316, MCZ 7422, 28748, UMMZ 68236, 73060-62, 80806, USNM
+46395; Kantunil, CNHM 36301, 36305-06, 36308-09, 36312-13; _Libré
+Union_, CNHM 36298, 36302, 36310-11, 36314; Mayapán, CNHM 40720;
+Mérida, CNHM 19411, 19413, NMW 16828; Progreso, CNHM 40721; Tekom,
+CNHM 49374; Yokdzonot, CNHM 36315.
+
+
+=Conophis nevermanni= Dunn
+
+  _Coniophanes imperialis imperialis_, Wettstein, Sitz. Akad.
+    Wiss. Wien. mathem-naturw. Kl., 143:37-38, 1934.
+
+  _Conophis nevermanni_ Dunn, Copeia, no. 4:214, December 31,
+    1937; Smith, Proc. U. S. Natl. Mus., 92:395, November 5, 1942;
+    Savage, Trans. Kansas Acad. Sci., 50:484, December 31, 1949;
+    Taylor, Univ. Kansas Sci. Bull., 34(pt. 1): 145-146, October
+    1, 1951.
+
+_Type._--Academy of Natural Sciences of Philadelphia, no. 22423,
+obtained by Emmet R. Dunn from Prof. Manuel Valerio. Type locality:
+Río Poas de Aserri (a few miles south of San José), Costa Rica.
+
+_Diagnosis._--Head and body dark brown or black above with two or four
+white stripes along body; usually two white lines on head immediately
+above eye passing from canthus rosetralis posteriorly to connect with
+white stripe on 6th row of dorsal scales; eight supralabials with
+black margins above.
+
+_Variation._--Six specimens have 173 to 183 (176.5 ± 4.00) ventrals.
+Five of these snakes having complete tails have 71 to 89 (80.6 ± 7.15)
+subcaudals; the number of ventrals plus subcaudals varies from 250 to
+263 (257.0). In the six specimens the reduction from 19 to 17 dorsal
+scales takes place between ventrals 84 and 97 (93.2 ± 4.71). Sexual
+dimorphism is evident in the number of subcaudals; two females have 71
+and 76 (73.5), and three males have 82 to 89 (85.3) subcaudals. The
+longest specimen (ANSP 22424) is a female from San José, Costa Rica,
+having a body length of 660 mm., a tail length of 168 mm. and a total
+length of 828 mm.
+
+The dorsal coloration (fig. 1, E) varies from a black ground-color
+with two or four narrow white stripes to a dark brown ground-color
+with a series of black stripes and four white stripes. In the black
+specimens there are no dark stripes. The darkest specimen (NMW
+16838:1) has only two white stripes; these more or less continuous
+stripes are on the ventral third of the 2nd row of scales and
+occasionally on the dorsalmost part of the first scale-row. The venter
+is immaculate white except for black on the tips of the ventral
+scales. The dorsum above the 2nd scale-row is uniform black. There are
+no white stripes on the head.
+
+The palest specimen (NMW 16838:2) has four dorsal white stripes; the
+lateral pair of these stripes is on the ventral half of the 2nd and
+the dorsal third of the 1st scale-rows; the dorsolateral pair is on
+the dorsal two-thirds of the 6th and the ventral third of the 7th rows
+of scales. This latter stripe is the posterior continuation of the
+white stripe on the head, which originates immediately posterior to
+the rostral scale and passes posteriorly along the canthus rostralis
+and along the lateral margin of the supraocular scale to the nape.
+Posterior to the place of scale reduction, the dorsolateral white
+stripe is displaced ventrally one scale-row. Except for black flecks
+or spots on the lateral margins of the ventrals, the venter is
+immaculate white. The dorsum above the lateral white stripes is brown
+and black; there is a pair of dorsolateral white stripes. The dorsal
+half of the 2nd, most of the 3rd, 4th and 5th rows of scales are
+black; the dorsal margin of the 3rd, both margins of the 4th, and the
+ventral margin of the 5th rows are paler brown. The dorsal two-thirds
+of the 7th, all but the dorsal most part of the 8th, and the middle
+two-thirds of the 10th scale-rows are black; the areas between are a
+medium brown.
+
+Only six specimens are available on which to base a description of the
+variation in this species. Furthermore, there are no juveniles, notes
+on the colors of living individuals, or photographs of this species.
+
+   [Illustration: FIG. 4. Selected locality records for _Conophis
+      pulcher_ and _Conophis nevermanni_.]
+
+_Remarks._--Taylor (1955:563-565) hesitantly referred a specimen (KU
+35630) from 32 kilometers north of Barranca, Puntarenas Province,
+Costa Rica, to _Conophis lineatus nevermanni_. This specimen, a
+female, has 169 ventrals and ventral scale-reduction taking place
+opposite the 109th ventral; both of these characters are well out of
+the range of _C. nevermanni_. Furthermore, the ventral margins of the
+supralabials are brown, and the pale dorsal stripes are tan and too
+wide for _C. nevermanni_ (compare figs. 1, C and E). The specimen
+definitely is _C. lineatus dunni_, and corresponds well with another
+specimen from Costa Rica (ANSP 12232).
+
+The dark brown or black dorsum with two or four white stripes and the
+presence of eight supralabials having dark brown dorsal margins, in
+combination with the characters of the genus, serve to distinguish
+_Conophis nevermanni_ from other Central American snakes.
+
+_Distribution._--Pacific coastal plain of northwestern Costa Rica and
+the Meseta Central of central Costa Rica (fig. 4).
+
+_Specimens examined._--Total of six, as follows: COSTA RICA:
+_Guanacaste_: Bebedero, Río Tenorio, NMW 16838(5). "_San José_," ANSP
+22424.
+
+
+=Conophis pulcher= Cope
+
+  _Tomodon lineatus_ (in part), Salvin, Proc. Zool. Soc. London,
+    28:455, 1860.
+
+  _Conophis pulcher_ Cope, Proc. Acad. Nat. Sci. Philadelphia,
+    20(5):308, 1869; Journ. Acad. Nat. Sci. Philadelphia, ser. 2,
+    8:137, 1876; Bocourt _in_ Duméril, Bocourt and Mocquard,
+    Mission Scientifique au Mexique et dans l'Amerique Centrale,
+    2:646-648, pl. 38, fig. 6, 1886; Ferrai-Perez, Proc. U. S.
+    Natl. Mus., p. 196, September 28, 1886; Cope, Bull. U. S.
+    Natl. Mus., 32:77, 1887; Trans. Amer. Philos. Soc., 18:194,
+    April 15, 1895; Ann. Rept. U. S. Natl. Mus. for 1898, p. 1095,
+    1900; Alvarez del Toro, Reptiles de Chiapas, pp. 154-155,
+    1960.
+
+  _Tomodon pulcher_, Bocourt, Journ. de Zool., p. 408, 1876.
+
+  _Conophis pulcher_ var. _similis_ Bocourt _in_ Duméril,
+    Bocourt and Mocquard, Mission Scientifique au Mexique et dans
+    l'Amerique Centrale, 2:647-648, pl. 38, fig. 6, 1886
+    [Type.--Museum National d'Histoire Naturelle, Paris, no. 6090;
+    type locality.--unknown, restricted to Tonalá, Chiapas, by
+    Smith and Taylor (1950:326)].
+
+  _Conophis lineatus_, Günther, Biologia Centrali-Americana, p.
+    165, March, 1895; Boulenger, Catalogue of the Snakes in the
+    British Museum (Natural History), 3:122-123, 1896; Stuart,
+    Occas. Papers Mus. Zool. Univ. Michigan, 292:5, June 29, 1934;
+    Slevin, Proc. California Acad. Sci. 4th Ser., 23:409, December
+    29, 1939.
+
+  _Conophis pulcher pulcher_, Smith, Journ. Washington Acad.
+    Sci., 31:121, March 15, 1941; Proc. U. S. Natl. Mus., 92:395,
+    November 5, 1942; Stuart, Contr. Lab. Vert. Biol. Univ.
+    Michigan, 65:19-20 (part), March, 1954; Contr. Lab. Vert.
+    Biol. Univ. Michigan, 68:63, November, 1954; Cochran, Bull. U.
+    S. Natl. Mus., 220:167, 1961.
+
+  _Conophis pulcher plagosus_ Smith, Journ. Washington Acad.
+    Sci. 31:121-122, March 15, 1941 (Type.--United States National
+    Museum, no. 109707; type locality: Tonalá, Chiapas); Smith and
+    Taylor, Univ. Kansas Sci. Bull., 33(pt. 2):326, March 20,
+    1950; Stuart, Contr. Lab. Vert. Biol. Univ. Michigan,
+    65:19-20, March, 1954; Cochran, Bull. U. S. Natl. Mus.,
+    220:167, 1961.
+
+  _Conophis pulcher similis_, Smith, Proc. U. S. Natl. Mus.,
+    92:395, November 5, 1942; Proc. U. S. Natl. Mus., 93:408,
+    October 29, 1943; Smith and Taylor, Bull. U. S. Natl. Mus.,
+    187:43-44, October 5, 1945; Univ.  Kansas Sci. Bull., 33(pt.
+    2):43-44, March 20, 1950; Maldonado-Koerdell, Inst. Mexicanos
+    Recursos Nat. Renov. pp. 132-133, 1953.
+
+_Types._--Three in the United States National Museum, nos. 6751 (2
+specimens) and 6803, obtained by Henery Hague. Type locality: "Petén,"
+or "Verapaz," Guatemala. There is much doubt about localities for many
+of Hague's specimens collected in the 1860's (Stuart, 1948:10). Since
+_Conophis pulcher_ is found predominantly in semi-arid environments,
+the types might have come from the semi-arid Cahabón, Negro, or Salamá
+river basins--all places near the sugar plantation that Hague managed
+at San Jerónimo, Baja Verapaz. Possibly the types were obtained from
+as far away as the Motagua Valley or the southeastern highlands of
+Guatemala, both of which areas Hague is known to have visited.
+
+_Diagnosis._--Paravertebral stripes present at least posteriorly (fig.
+1, F); eight or ten stripes at mid-body; lateral dark stripe passing
+through eye anteriorly and including at least upper one-half of second
+scale-row from neck region posteriorly to place of scale reduction
+near mid-body; eight supralabials immaculate or having dark ventral
+margins.
+
+_Variation._--Twenty-six specimens have 161 to 182 (169.5 ± 5.31)
+ventrals. Eighteen of these snakes with complete tails have 65 to 79
+(70.6 ± 3.93) subcaudals; the number of ventrals plus subcaudals
+varies from 231 to 251 (239.3). In 26 specimens the reduction from 19
+to 17 dorsal scales takes place between ventrals 94 and 119 (104.6 ±
+4.90). Sexual dimorphism is evident in the number of subcaudals;
+eleven females have 65 to 71 (68.2), and seven males have 70 to 79
+(74.3) subcaudals. The longest specimen (AMNH 58364) is a female from
+El Zamarano, Honduras, having a body length of 703 mm., a tail length
+of 164 mm. and a total length of 867 mm. The smallest juvenile (MCZ
+49793) from Tegucigalpa, Honduras, has a body length of 162 mm., a
+tail length of 46 mm. and a total length of 208 mm.
+
+The dorsal ground-color is pale brown or white; black or dark brown
+stripes are present dorsally and laterally. Normally ten stripes are
+present at mid-body; the first pair on the first row of dorsal scales;
+the second pair on the upper half of 2nd and lower part of 3rd rows;
+the third pair on 4th row; the fourth pair on 7th and sometimes part
+of 8th rows; the fifth pair (paravertebral stripes) on the 9th row.
+Posterior to the place of reduction from 19 to 17 rows by the fusion
+of the 3rd and 4th rows, the third, fourth and fifth pairs of stripes
+are displaced downward one row. Sometimes the second and third pairs
+of stripes are fused resulting in only eight stripes at mid-body. On
+some specimens the fourth and fifth pairs of stripes are close
+together, but in none are they fused so as to result in a pattern of
+six stripes at mid-body.
+
+The paravertebral stripes begin anteriorly on the nape or at any point
+on the anterior one-third of the body and continue as discrete stripes
+onto the base of the tail. Anteriorly these stripes are always broken
+into a series of dashes; posteriorly the stripes are continuous. In
+specimens in which the paravertebral stripes do not begin on the
+anterior-most part of the body, there is no paravertebral pigmentation
+anteriorly.
+
+In addition to the paravertebrals, the other dorsal dark stripes are
+variable. In some specimens the stripes are present anteriorly and
+gradually disappear near mid-body (the first dark stripe only on three
+specimens). In other specimens the stripes are present anteriorly as
+dashes and become continuous at mid-body; in others the stripes are
+continuous throughout. Posteriorly continuous stripes are of uniform
+width; anteriorly sometimes they are wide on the tip of each scale and
+narrow on the base (fig. 1, F). The variation in continuity and width
+described above is found in all of the dorsal dark stripes.
+
+The ventrals usually have more or less conspicuous dark spots
+laterally; in some specimens there are no spots. Except for the dark
+lateral spots, when present, the ventrals are immaculate white.
+Usually the dorsal ground-color is a pale tan, especially between the
+first and second, and the third and fourth dark stripes. The areas
+between the second and third dark stripes and across the dorsum
+between the fourth stripes on each side are pale brown. In some
+specimens the dorsum between the paravertebral stripes is still paler
+brown.
+
+Never is more than the lower third of the supralabials brown. Many
+specimens have little brown, and others none. In most of those
+specimens having brown on the supralabials, the chin and infralabials
+are dusky tan or gray. There is little or no brown on the supralabials
+or the chin in the northern part of the range (Chiapas), whereas the
+greatest amount of brown on the labials and chin is found on some
+specimens from the southern part of the range (Honduras). Since there
+is considerable variation in the amount of brown on the chin and
+labials of specimens from single localities, the slight geographic
+trend in this character seemingly is not significant.
+
+In juveniles six black or dark brown stripes boldly contrast with a
+white or pale tan ground-color. At mid-body the first pair of dark
+stripes is on the 1st scale row; the second pair on the 3rd and 4th
+rows; the third pair on the 7th, 8th and at least the lower half of
+the 9th rows (fig. 3, B). Ontogenetic change in coloration consists of
+the splitting of the second and third pairs of dark stripes in the
+juvenile. The first stripe does not split. Consequently adults have
+ten dark stripes.
+
+In life an adult from Tonalá, Chiapas, had black stripes. The
+ground-color below the second stripe, and between the third and fourth
+dark stripes was tan. The area between the second and third dark
+stripes was reddish-brown, as was the dorsum between the fourth pair
+of dark stripes, except that the 10th scale-row was paler.
+
+Three excellent photographs of this species have been published under
+the name _Conophis lineatus_ (Ditmars, 1931:pls. 26 and 27).
+
+_Remarks._--Smith (1941:121-122) described _C. pulcher plagosus_ from
+Tonalá, Chiapas, and characterized the subspecies by its having "(1)
+the ventrals completely unspotted; (2) secondary lines on
+paravertebral rows not continuous posteriorly; (3) all other lines on
+body also somewhat spotted in appearance; (4) dusky markings on chin
+and supralabial border very dim (less distinct than in _p. pulcher_ or
+any member of the _lineatus_ series)." Although all Chiapan specimens
+lack ventral spots, specimens from Guatemala have no spots, small
+spots, or large spots. Even in specimens from Tegucigalpa, Honduras,
+the southernmost limit of the range, the spotting varies from a few
+inconspicuous spots to many large spots. Paravertebral rows were
+continuous posteriorly in all specimens examined by me. Likewise, all
+other stripes were continuous bands of uniform width posteriorly,
+having appeared anteriorly as rows of spots or dashes. The amount of
+brown on the chin and labials has been shown previously not to be
+geographically significant. The absence of characters of adequate
+significance to separate populations precludes the naming of
+subspecies in this species.
+
+Mertens (1952a:93, and 1952b:61-62) designated three specimens from El
+Salvador as _C. pulcher plagosus_. In the latter paper, Mertens, on
+the basis of a description of a specimen of "_C. lineatus_" from
+Divisadero, El Salvador, given by Schmidt (1928:200), referred that
+specimen also to _C. pulcher plagosus_. I have examined this specimen
+and refer it to _C. lineatus dunni_. Although I have not seen Merten's
+specimens, on the basis of the excellent descriptions given by Mertens
+(1952b:61-62), I refer the three Salvadoranean specimens to _C.
+lineatus dunni_.
+
+The presence of paravertebral stripes in combination with the
+characteristics of the genus distinguish _Conophis pulcher_ from all
+other snakes in southern México and Central America. The only
+sympatric species of this genus, _C. lineatus dunni_, differs in that
+it lacks paravertebral stripes, although it may have a single
+vertebral stripe. _Conophis lineatus dunni_ has lateral dark stripes
+that are present on the 3rd and 4th scale-rows, never on the anterior
+third of the body as in _C. pulcher_. Even in juveniles the third pair
+of dark stripes includes the lower part of the 9th scale-row in _C.
+pulcher_, whereas the dorsal most dark stripe of _C. lineatus dunni_
+never includes more than the lower part of the 8th scale-row.
+
+_Distribution._--Pacific coastal region of Chiapas, México,
+southeastward into Guatemala; southeastern highlands and the dry
+valley of central and eastern Guatemala; Caribbean lowlands of
+Honduras southward to the region of Tegucigalpa, Honduras (fig. 4).
+
+_Specimens examined._--Total of 27, as follows: GUATEMALA: _no
+specific locality_, CNHM 22912, NMW 16830. _Jutiapa_: Hacienda Mongoy,
+UMMZ 106725. _El Progreso_: El Progreso, CAS 67000; _El Rancho_, UMMZ
+106724; _San Antonio_, CAS 66999. "Peten," USNM 6751(2), 6803.
+_Sacatepequez_: Dueñas, BMNH 64.1.26.17, 64.1.26.126-127. _Zacapa_:
+Pepesca, AMNH 72555-56.
+
+HONDURAS: _no specific locality_, AMNH 58364. _Cortes_: San Pedro
+Sula, CNHM 5295-96. _Francisco Morazan: El Zamarano_, AMNH 70189;
+Tegucigalpa, MCZ 49785, 49787-88, 49791, 49793, 49795.
+
+MÉXICO: _Chiapas_: _Soconusco_, UIMNH 33646-47; Tonalá, USNM 109707.
+
+
+=Conophis vittatus= Peters
+
+  _Tomodon lineatum_ (in part), Duméril, Bibron and Duméril,
+    Érpétologie Genérale, 7(pt. 2):936-938, February 25, 1854.
+
+  _Conophis vittatus_ Peters, Monatsb. Akad. Wiss. Berlin, pp.
+    519-520, pl.,  fig. 3, October, 1860; Cope, Proc. Amer.
+    Philos. Soc., 11:162, 1870; Bocourt _in_ Duméril, Bocourt and
+    Mocquard, Mission Scientifique au Mexique et dans l'Amerique
+    Centrale, 2:644-646, pl. 38, fig. 7, 1886; Günther, Biologia
+    Centrali-Americana, p. 165, March, 1895; Boulenger, Catalogue
+    of the Snakes in the British Museum (Natural History),
+    3:123-124, 1896; Cope, Amer. Nat., 30:1024, 1896; Ann. Rept.
+    U. S. Natl. Mus. for 1898, pp. 1094-1095, 1232, 1900; Gadow,
+    Proc. Zool. Soc. London, 2:225, 1905; Amaral, Mem. Inst.
+    Butantan, 4:211, 1929; Gadow, Jorullo, p. 55, 1930; Smith,
+    Zool. Ser. Field Mus. Nat. Hist., 24:31-32, January 30, 1939;
+    Taylor and Smith, Univ. Kansas Sci. Bull., 25:252-253, pl. 23,
+    July 10, 1939; Stuart, Contr. Lab. Vert. Biol. Univ. Michigan,
+    65:23, March, 1954; Alvarez del Toro, Reptiles de Chiapas, pp.
+    153-154, 1960.
+
+  _Conophis lineatus_ Cope, Proc. Acad. Nat. Sci. Philadelphia,
+    16(3):167, 1864 [_nec_ Duméril, Bibron and Duméril,
+    Érpétologie Genérale, 7(pt. 2):936-938, atlas, pl. 73,
+    February 25, 1854; specimen from Colima]; Sumichrast, Arch.
+    Sci. Nat., p. 246, 1873.
+
+  _Tomodon vittatus_, Bocourt, Journ. de Zool., p. 407, 1876.
+
+  _Conophis sumichrasti sumichrasti_ Cope, Journ. Acad. Nat.
+    Sci. Philadelphia, ser. 2, 8:137, 1876 (Types.--United
+    States National Museum, nos. 29123, 30258; type
+    locality.--Tehuantepec, México); Bull. U. S. Natl. Mus.,
+    32:77, 1887; Smith and Taylor, Univ. Kansas Sci. Bull., 33(pt.
+    2):334, March 20, 1950; Maldonado-Koerdell, Inst. Mexicanos
+    Recursos Nat. Renov., p. 124, 1953.
+
+  _Conophis sumichrasti viduus_ Cope, Journ. Acad. Nat. Sci.,
+    Philadelphia, ser. 2, 8:137, 1876 (Type.--United States
+    National Museum, no. 30259; type locality.--Tehuantepec,
+    México); Bull. U. S. Natl. Mus., 32:77, 1887; Cochran,
+    Bull. U. S. Natl. Mus., 220:167, 1961.
+
+  _Conophis sumichrasti_, Cope, Proc. Amer. Philos. Soc.,
+    18:271, August 11, 1879; Sumichrast, Bull. Soc. Zool. France,
+    p. 182, 1880; Cope, Trans. Amer. Philos. Soc., 18:194, April
+    15, 1895; Cochran, Bull. U. S. Natl. Mus., 220:167, 1961.
+
+  _Tachymenis lineata_ (in part), Garman, Mem. Mus. Comp. Zool.,
+    8:60-61, July, 1884.
+
+  _Conophis vittatus sumichrasti_, Cope, Ann. Rept. U. S. Natl.
+    Mus. for 1898, p. 1095, 1900.
+
+  _Conophis vittatus videns_ Cope, Ann. Rept. U. S. Natl. Mus.,
+    for 1898, p. 1095, 1900 (apparent _lapus_ for _viduus_).
+
+  _Conophis vittatus vittatus_, Cope, Ann. Rept. U. S. Natl.
+    Mus. for 1898, p. 1095, 1900; Smith, Journ. Washington Acad.
+    Sci., 31:119-120, March 15, 1941; Proc. U. S. Natl. Mus.,
+    92:395, November 5, 1942; Proc. U. S. Natl. Mus., 93:408,
+    October 29, 1943; Ann. Carnegie Mus., 30:91, November 2, 1944;
+    Smith and Taylor, Bull. U. S. Natl. Mus., 187:44, October 5,
+    1945; Smith, Rev. Soc. Mexicanos Hist. Nat., 7:71, December,
+    1946; Smith and Taylor, Univ. Kansas Sci. Bull., 33(pt.
+    2):331, March 20, 1950; Davis and Smith, Herpetologica, 8:134,
+    January 30, 1953; Maldonado-Koerdell, Inst. Mexicanos Recursos
+    Nat. Renov., p. 130, 1953; Peters, Occas. Papers Mus. Zool.
+    Univ. Michigan, 554:22, June 23, 1954; Duellman, Occas. Papers
+    Mus. Zool. Univ. Michigan, 560:15, October 22, 1954; Webb and
+    Fugler, Herpetologica, 13:35, March 30, 1957; Duellman, Occas.
+    Papers Mus. Zool. Univ. Michigan, 589:15, March 21, 1958;
+    Zweifel, Amer. Mus. Novitates, 1949:2, 5, June 17, 1959;
+    Duellman, Univ. Kansas Publ. Mus. Nat. Hist., 15(1):91-92,
+    December 20, 1961.
+
+  _Conophis vittata_, Gadow, Proc. Zool. Soc. London, 2:196,
+    1905; Through Southern México, p. 181, 1908.
+
+  _Conophis viduus_, Smith, Zool. Ser. Field Mus. Nat. Hist.,
+    24:31, January 30, 1939; Hartweg and Oliver, Misc. Publ. Mus.
+    Zool. Univ. Michigan, 47:26-27, July 13, 1940.
+
+  _Conophis vittatus viduus_, Smith, Journ. Washington Acad.
+    Sci., 31:120-121, March 15, 1941; Proc. U. S. Natl. Mus.,
+    92:395, November 5, 1942; Proc. U. S. Natl. Mus., 93:408,
+    October 29, 1943; Woodbury and Woodbury, Journ. Washington
+    Acad. Sci., 34(11):370, 1944; Smith and Taylor, Proc. U. S.
+    Natl. Mus., 187:44, October 5, 1945; Univ. Kansas Sci. Bull.,
+    33(pt. 2):340, March 20, 1950; Werler and Smith, Texas Journ.
+    Sci., 4:565, fig. 16, December 30, 1952; Maldonado-Koerdell,
+    Inst. Mexicanos Recursos Nat. Renov., p. 130, 1953; Davis and
+    Dixon, Proc. Biol. Soc. Washington, 72:82-83, July 24, 1959.
+
+  _Conophis vittatus vittatus_ × _Conophis vittatus viduus_,
+    Alvarez del Toro and Smith, Herpetologica, 12:13, March 6,
+    1956.
+
+_Type._--Zoologisches Museum Berlin. Type locality not given, for the
+specimen was purchased from a dealer in Hamburg. The type locality was
+first restricted to "Acapulco," Guerrero, by Smith (1941:119), then to
+Laguna Coyuca, Guerrero, México, by Smith and Taylor (1950:331).
+
+_Diagnosis._--Three or four dorsal dark stripes, each involving two or
+more adjacent scale-rows; never having brown or black on the 1st
+scale-row; seven supralabials immaculate white or pale tannish-white.
+
+_Variation._--One hundred seventy-one specimens have 149 to 181 (163.7
+± 6.33) ventrals. One hundred fifty-three of these having complete
+tails have 55 to 76 (64.8 ± 4.90) subcaudals; the number of ventrals
+plus subcaudals varies from 214 to 245 (228.5). In 170 specimens the
+reduction from 19 to 17 dorsal scales takes place between ventrals 84
+and 118 (102.3 ± 6.60). Sexual dimorphism is evident in the number of
+subcaudals; 58 females have 55 to 66 (60.0) and 95 males have 59 to 76
+(67.8) subcaudals. The longest specimen (AMNH 68004) is a male from
+Escurano, Oaxaca, México, having a body length of 668 mm., a tail
+length of 182 mm. and a total length of 850 mm. A juvenile (CNHM
+40435) from Tehuantepec, Oaxaca, México, has a body length of 133 mm.,
+a tail length of 31 mm. and a total length of 164 mm.
+
+Variation in coloration is of such magnitude that it has been used as
+the basis for recognition of subspecies. Unfortunately, until this
+time, most specimens reported upon in the literature represented the
+two extremes of variation. After examining the coloration of 174
+specimens with respect to geographic distribution, I conclude that
+only one highly variable species is represented. Specimens from the
+northern and western parts of the range (Michoacán, Colima, and
+Durango) have the color pattern of _C. vittatus_ as described by
+Peters (1860:518-521); these snakes have four narrow black stripes on
+a white or pale tan background, and an immaculate white venter. The
+lateral dark stripe, which on the head passes through the eye, is
+present on the dorsal half of the 3rd and the ventral half of the 4th
+scale-rows; the dorsolateral dark stripe, which passes along the
+middle of the head and splits on the nape, is present on the middle of
+the 8th scale-row. The other extreme in color pattern consists of
+three broad stripes; the two dorsolateral stripes are fused. This
+pattern is prevalent in specimens from the area around Tehuantepec,
+Oaxaca. The lateral stripes include the dorsal half to two-thirds of
+the 2nd, all of the 3rd and 4th, and half of the 5th scale-rows; the
+fused dorsolateral stripes sometimes cover all of the area dorsal to
+and including the dorsal third of the 7th scale-row.
+
+Snakes from areas between Tehuantepec and the margins of the
+distribution of this species are variously intermediate between the
+extremes described above. In some snakes from these areas the lateral
+stripes are broad and include either the dorsal half of the 2nd
+scale-row or the ventral half of the 5th scale-row, but not both on
+the same specimen. Also, the dorsolateral stripes are broad and
+include most of the 9th and a part of the 10th scale-rows. Many
+specimens from the area around Tehuantepec, where the three-striped
+pattern is prevalent, have an intermediate pattern. Some have white on
+the center of the 10th scale-row or lateral stripes that are not so
+broad as to include the 3rd and 4th and half of each of the 2nd and
+5th scale-rows.
+
+The supralabials are immaculate white or pale tan, except that in some
+specimens the dorsalmost part of some supralabials are dark brown or
+black as they are included in the ventral boundary of the dark stripe
+that passes through the eye. There are no dusky markings on the chin
+or on any of the ventral scales.
+
+There is no ontogenetic change in color pattern; juveniles have the
+same coloration as adults from the same geographic area.
+
+Color in life is not greatly different from that of preserved
+specimens. One specimen (UMMZ 114483) from 10.8 miles south of Oaxaca,
+had in life black stripes, a pale yellowish tan dorsal ground-color
+and a pale off-white venter.
+
+An excellent photograph of this species appears in Schmidt and Inger
+(1957:230) under the name _Conophis lineatus_.
+
+_Remarks._--I have been unable to find variation of geographic
+importance in scutellation in this species. A wide range of variation
+in the characters of scutellation is present in specimens from most
+localities; it shows no significant clinal or geographic trends. As I
+have stated previously, in the discussion of variation, coloration has
+been the feature primarily used by previous workers to distinguish two
+"subspecies" for this species; _C. vittatus vittatus_ having four
+black stripes and _C. vittatus viduus_ having three black stripes.
+Most of the three-striped snakes occur in the vicinity of Tehuantepec,
+Oaxaca, whereas the four-striped snakes are found near the margins of
+the range of the species in Durango, Colima, Michoacán, Morelos and
+Puebla. Specimens that would have to be considered intergrades between
+the "subspecies" are found in Michoacán, Guerrero, Oaxaca and Chiapas.
+At the time the subspecies were proposed only specimens from
+Tehuantepec or from marginal areas were known. Utilizing the large
+number of specimens of this species presently available, geographic
+variation is found to be clinal, from those with three stripes from
+near Tehuantepec, through several intermediate patterns present on
+specimens from single localities in Guerrero, Oaxaca and Chiapas, to
+those with four dark stripes in areas farthest removed to the north
+and west from Tehuantepec. Since only coloration shows geographic
+variation, and since this variation represents a continuous cline,
+subspecies cannot be recognized for this species.
+
+The presence and position of the three or four dark stripes on the
+body and the absence of brown on the 1st scale-row or on the ventral
+scales, in combination with the generic characters, distinguish
+_Conophis vittatus_ from all other Méxican snakes. The only other
+snake that occurs in western México that has been confused with _C.
+vittatus_ is _Coniophanes piceivittus taylori_, which has 25, instead
+of 19, scale-rows.
+
+_Distribution._--Semi-arid habitats on Pacific slopes from extreme
+southern Durango southeastward to Tuxtla Gutierrez, Chiapas, and
+inland in the eastern Balsas Basin to Morelos and western Puebla
+(fig. 5).
+
+   [Illustration: FIG. 5. Selected locality records for _Conophis
+      vittatus_.]
+
+_Specimens examined._--Total of 174, as follows: MÉXICO: _no specific
+locality_, AMNH 66150-52, SU 9465. _Chiapas_: Piedra Parada, USNM
+121453. _Pizo de Oro_, UIMNH 40821. Tuxtla Gutierrez, Parque Madero,
+UIMNH 37992-93, 38036-37. _Colima: no specific locality_, MCZ 46860,
+USNM 31394, 31396-97. 1 mi. SW Colima, AMNH 12783. S of Manzanillo,
+AMNH 19641. _Durango_: Hacienda de Gabriel, AMNH 14217. _Guerrero:
+Acahuizotla_, TCWC 7419, 9469. _1 mi. W Acahuizotla_, TCWC 7418. 3 mi.
+W Acapulco, AMNH 71626. _6 mi. E Acapulco_, TCWC 9476-77. _10 mi. S
+Acapulco_, TCWC 8578. _Agua del Obispo_, CNHM 104948, TCWC 11586. near
+Chilpancingo, MVZ 45067, UMMZ 85722-23. _1 mi. SW Colotlipa_, TCWC
+9471-74. _2 mi. SW Colotlipa_, TCWC 9475. 14 mi. S Ixtapán de la Sal,
+KU 67648. _Laguna Coyuca_, CNHM 25881, UMMZ 80942. near La Unión, AMNH
+66337. _Magueyes, Laguna Coyuca_, AMNH 66149. _Playa Encantada_, TCWC
+9470. 1 mi. S Tierra Colorada, KU 67649. near _Xaltinanguis, km. 405_,
+CNHM 104947. _Michoacán_: Coalcomán, UMMZ 104693. _1/2 mi. SE
+Coalcomán_, UMMZ 104492. _1 mi. N. Coalcomán_, UMMZ 112543. _1 mi. NE
+Coalcomán_, UMMZ 104692. Puerta de la Playa, UMMZ 105155. 12 mi. S
+Tzitzio (by road), UMMZ 99153. _Morelos: 12 km. NW Axochiapan_, TCWC
+7311, UIMNH 17613, 25924. 7 mi. SE Cuernavaca, MVZ 32258. _Huajintlán,
+km. 133_, CNHM 103270. 12 km. S Puente de Ixtla, km. 133, CNHM 104949.
+_Oaxaca: Bisiliana_, AMNH 68010. _near Caoba, foot of Cerro Arenal_,
+AMNH 68009. _Cerro Arenal_, AMNH 68000-03. _Cerro de Laollaga_, UIMNH
+36213. _Cerro de San Pedro_, UIMNH 17616. _Cerro Palma de Oro_, UIMNH
+37116. "_C. Madrena, Sto. T. Quieri_," UIMNH 46904. near Chivela, MCZ
+25021. Cinco Cerros, UIMNH 37114. _Dami Liesa_, AMNH 66877, UIMNH
+6158, 37115. _Escuranos_, AMNH 66873-74, 68004-06. _Finca Santa
+Teresa, 2 km. NW Tehuantepec_, UMMZ 82648. _Huilotepec_, AMNH 66878,
+UIMNH 40820. _between Huilotepec and Tehuantepec_, AMNH 65106, UMMZ
+82644-45. _Las Tejas_, UIMNH 6151-54. _Mixtequilla_, UIMNH 6157,
+36211. _between Mixtequilla Mountains and Tehuantepec_, UMMZ 82652.
+_between Niltepec and "Carixxal,"_ AMNH 68876. 10.8 mi. SE Oaxaca,
+UMMZ 114483. _Quiengola_, UIMNH 17617. _between Quiengola Mountains
+and Tehuantepec_, UMMZ 82647. _Rancho Poso Río, 6 km. S Tehuantepec_,
+UIMNH 6144-49, 37117-19, UMMZ 82649-51. _Rincón Bamba_, CNHM
+105129-30, UIMNH 17615. _Salazar_, AMNH 66875. _vicinity of Salina
+Cruz_, UMMZ 82653. _San Gerónimo_, AMNH 4306, CNHM 1457. _San Lucas
+Ixtepec_, UIMNH 36206. San Juan Lajarcia, UIMNH 36212. San Mateo del
+Mar, AMNH 65914. _San Pablo_, UIMNH 36207. _Santa María (Cerro de
+Liesa)_, AMNH 68011. Tapanatepec, MCZ 27806-11. Tehuantepec, AMNH
+19644, 65107-09, 65907-13 plus 7, 66871-72, 66879, 68007-08, CNHM
+40435-36, 105126-28, MCZ 46403, UIMNH 6150, 17614, 17618, 29692,
+36208, 37120-21, UMMZ 82642-43, 82646, USNM 109709-14, _1-2 leagues
+SSE Tehuantepec_, UMMZ 82639-41. Tenango, UIMNH 36209-10. between
+Tlacolulita and Tequisistlán, CNHM 105125. _Yerba Santa_, UIMNH
+6155-56. Puebla: Atencingo, KU 39626.
+
+
+Skull
+
+In studying the osteology of the genus _Conophis_, I have examined
+two complete skeletons (one _C. vittatus_ and one _C. lineatus_); two
+additional skulls of _C. vittatus_ and _C. lineatus_; and 24 sets of
+dentigerous bones, representing all of the species. Terminology
+of the skeletal elements is that of Duellman (1958), Parker (1878),
+Radovanovic (1937) and Szunyoghy (1932). The drawing of
+the right side of the skull of a specimen of _Tomodon lineatus_ that
+appears in Jan and Sordelli (1881:liv. 50, pl. 2, fig. 34) is of little
+value due to its small size and lack of detail.
+
+The skull of _Conophis_ is typical of a relatively unspecialized
+colubrid snake. Skulls of _Conophis lineatus concolor_ and _C. vittatus_
+closely resemble each other. The following description is based
+primarily on the skull of _C. lineatus concolor_ (UMMZ S-778).
+
+The elements are discussed in the following order: nasal region,
+cranium and associated elements, maxillo-palatal-pterygoid arch,
+mandible, dentition, and vertebrae.
+
+   [Illustration: FIG. 6. The skull, lacking dentigerous bones, of
+      _Conophis lineatus concolor_ (UMMZ S-788) showing (A) dorsal,
+      (B) lateral, and (C) ventral views. × 3.]
+
+_Nasal region._--The premaxillary is relatively heavy and has a
+concavity posteroventrally. The lateral processes slope downward, but
+remain fairly thick, and do not project far laterally. This shape
+(fig. 6) tends to strengthen the nasal region; this anterior
+strengthening may be a reflection of the fossorial habits of these
+snakes. There are no posterior processes of the premaxillary; thus the
+line of fusion with the nasals and septo-maxillaries is broad. The
+nasal plate is more than twice as long as wide. The nasals are
+relatively flat above, although each curves slightly downward medially
+and fuses into the medial nasal septum; laterally each nasal is
+narrower and deflected downward, forming a small dorsal shield over
+the nasal cavity. The septo-maxillaries are closely associated with
+the vomers and form the cavity in which the organ of Jacobson is
+situated. The broad medial part of the septo-maxillary forms the roof
+and anterior border of the cavity, whereas the anterior part of the
+vomer contains the main part of the capsule and forms the posterior
+and most of the lateral borders of the cavity. The vomer has a thin
+anterior ridge that gradually disappears before it reaches the border
+of the premaxillary. The vomer is approximately U-shaped, when viewed
+from below. It has no posterior process and does not articulate with
+the parasphenoid; there is a sizeable gap between the two bones. The
+septo-maxillary has a lateral process that terminally is directed
+slightly anteriorly.
+
+_Cranium and associated elements._--The frontal is almost three times
+as long as it is wide; it is flat above with an emarginate
+dorsolateral margin that forms the upper limit of the optic capsule.
+Ventrally the frontal is concave and forms the median limits of the
+optic cavity. Farther ventrally the frontal joins with the
+parasphenoid, which at this place forms the ventral extent of the
+skull, and together with the basisphenoid forms the ventral part of
+the posterior three-fourths of the skull. In ventral aspect, the
+parasphenoid is a long, thin bone, slightly expanded anteriorly. It
+forms the anterior floor of the optic foramen; whereas the frontal
+forms the anterior roof of the same opening. The frontal and its
+septo-maxillary process surround the olfactory fenestra. The
+prefrontal articulates with the anterolateral process of the frontal.
+The posterior surface of the prefrontal forms the anterior wall of the
+orbit of the eye. The articulating surface upon which the median
+process of the maxillary bone rests is situated ventrally. The
+anterior dorsal surface of the prefrontal, together with the
+anterolateral edge of the frontal, extends slightly over the nasal
+cavity, affording some degree of protection for the contained organs
+and forming the posterior border of the cavity. A small nasal process
+also extends anteriorly from the ventrolateral surface of the
+prefrontal. The orbital-nasalis foramen is located in the anterior
+surface of the prefrontal. The parietals are fused into one large bone
+that forms the roof and sides of the middle part of the cranial
+cavity. From its suture with the frontal, the dorsal surface of the
+parietal is relatively flat in the area bounded laterally by the
+parietal crests, which extend posteromedially from the anterolateral
+corners of the bone and converge medially at a point near its
+posterior margin. A slight posterior extension of the parietal crests
+forms the supratemporal crest, which is present on the posterior part
+of the parietal and on the anterior part of the supraoccipital. The
+postfrontals are attached to the anterolateral processes of the
+parietal. Together the anterior surfaces of these two bones form the
+posterior rim of the orbit of the eye. The postfrontal extends
+laterally and ventrally and has a terminal extension that projects
+anterolaterally. In an articulated skull the trans-palatine articulates
+with the ventrolateral articulating surface of the postfrontal.
+Anteromedially, the parietal forms the roof and posterior margin of
+the optic foramen. The basisphenoid, which is fused with the
+parasphenoid, also forms a small part of the posteroventral margin of
+the optic foramen. The basisphenoid forms the floor of the middle part
+of the cranial cavity and the ventromedial down-pouching that
+contains the pituitary body. Posterolateral to the parietal and dorsal
+to the posterior part of the basisphenoid is the prootic. Laterally
+this bone is deeply emarginate; posteriorly it forms a large part of
+the otic notch, through which the columella passes. The columella is a
+long, thin bony rod that terminates posteriorly in cartilage. It is
+the cartilagenous part of the columella that connects with the
+external sound detecting mechanism. There are several foramina on the
+lateral surface of the prootic. On the anterolateral surface of the
+prootic, branches of the trigeminal nerve pass through three foramina
+whereas the facial nerve passes through the single posterior foramen
+near the otic notch. The squamosal is attached dorsoventrally to the
+posterior part of the parietal and to the lateral part of the prootic.
+At this place of attachment there is on the prootic a relatively heavy
+crest that forms a rather broad articulating base. The squamosal is
+long, flat, and curves slightly in a dorsal direction throughout its
+length; it becomes thinner and narrower posteriorly. The posterior
+third of the squamosal forms a broad base by means of which the
+squamosal articulates with the quadrate. The columella and the
+squamosal extend posteriorly beyond the limits of the braincase.
+Posteriorly the skull consists of four bones: an unpaired median
+dorsal supraoccipital, an unpaired median ventral basioccipital and
+two lateral exoccipitals. The basioccipital does not have noticeable
+pterygoid processes, but is rather smooth ventrally and only slightly
+emarginate on its posterolateral margins. Posteriorly, this bone forms
+the ventral part of the occipital condyle. The rest of the condyle, on
+each side, is formed by the exoccipitals. The exoccipitals also form
+part of the base to which the squamosal is attached. The exoccipitals
+extend around the sides of the foramen magnum and meet dorsally. Each
+exoccipital also forms the posterior part of the otic notch, which
+traverses the exoccipital. The exoccipitals bear moderate occipital
+crests that extend posterolaterally across the supraoccipital as
+branches from the supratemporal crest. The supraoccipital also has a
+medial crest that extends a short distance posteriorly from the
+supratemporal crest onto the exoccipitals at their dorsal line of
+fusion.
+
+   [Illustration: FIG. 7. The maxillo-palatal-pterygoid arch of
+      _Conophis lineatus concolor_ (UMMZ S-788) showing (A) dorsal,
+      (B) lateral, and (C) ventral views. × 3. Teeth shown by means
+      of broken lines were represented only by their sockets.]
+
+_Maxillo-palatal-pterygoid arch._--In an articulated skull, the
+anterior edge of the maxillary is immediately posterior to the lateral
+tip of the premaxillary (fig. 7). The maxillary is curved moderately
+laterally and is not robust at its tip, but it becomes heavier about
+one-third of its length posteriorly. A dorsomedian process begins at
+about one-third of its distance from the anterior end; the prefrontal
+articulates with this process. The process is broad and almost flat,
+except that at its medial end, an elongate, rounded knob extends
+ventrally. The dorsomedian process of the maxillary extends toward,
+but does not meet, a lateral process from the palatine. The maxillary
+teeth are set in sockets on the ventral surface of the bone. Just
+posterior to the level of the last prediastemal tooth is the median
+trans-palatine process that articulates with the anteromedian part of
+the trans-palatine. Immediately posterior to this process, the
+maxillary narrows slightly; then it broadens to form an obliquely
+oriented knob. The posteroventral surface of the posterior knob of the
+maxillary bears one or two enlarged maxillary teeth. (These teeth are
+discussed further in the section on Dentition.) The anterolateral part
+of the trans-palatine articulates with the dorsal surface of the
+posterior knob of the maxillary. Toward the middle of its length, the
+trans-palatine narrows considerably; then it broadens again and
+articulates with the pterygoid. The palatine is slightly rounded at
+its anterior end, which extends anteriorly to the posterior margin of
+the vacuity containing Jacobson's organ. The palatine extends
+posteriorly to the trans-palatine process of the maxilla, where the
+palatine articulates with the pterygoid. A posterior pterygoid process
+from the palatine projects posteromedially from the end of the
+palatine and overlaps the anterior end of the pterygoid. Just less
+than one-half the distance from the anterior end of the palatine,
+there is a lateral process that curves ventrolaterally forming a blunt
+tip posteriorly. Slightly more posteriorly and on the medial side of
+the palatine, is a medial sphenoid process, which is thin, rather
+broad, and curves ventromedially; ultimately it comes to lie near the
+anterior part of the parasphenoid. The palatine teeth are set in
+shallow sockets on the ventral edge of the bone. Of the bones of the
+maxillo-palatal-pterygoid arch, those on the pterygoid extend farthest
+posteriorly. The pterygoid is broad medially and posteriorly, although
+pointed at its posterior tip. The trans-palatine articulates in a
+broad line at about one-third of the distance along the lateral margin
+of the pterygoid. Immediately posterior to this articulation, there is
+a median ridge on the pterygoid; lateral to the pterygoid ridge is an
+abrupt hollow, the pterygoid groove. Posteromedially, this groove
+becomes gradually more shallow and disappears. The dorsal surface of
+the pterygoid is rounded anteriorly and somewhat flattened
+posteriorly, whereas the ventral surface is gently rounded along its
+length, except that there is a high median crest. The pterygoid teeth
+are situated in shallow sockets along this crest. The teeth diminish
+in size posteriorly.
+
+   [Illustration: FIG. 8. The left mandible and associated
+      quadrate of _Conophis lineatus concolor_ (UMMZ S-788) showing
+      (A) lateral and (B) medial views. × 3. Teeth shown by means of
+      broken lines were represented only by their sockets.]
+
+_Mandible._--The dentary (fig. 8) is compressed laterally and rounded
+below. The teeth, which are longest about one-third of the way from
+the anterior end of the dentary, are set in sockets on the medial side
+of the bone. The posterior half of the dentary overlies the fused
+surangular-prearticular part of the articular. Ventrally, the
+posterior part of the dentary underlies the splenial, which is set in
+a median trench within the dentary. Near the common suture of the
+dentary and the splenial is the large inferior alveolar foramen;
+completely within the splenial and ventral to the inferior alveolar
+foramen is the anterior mylohyoid foramen. Posterior to the splenial
+and also forming a part of the ventral surface of the mandible is the
+wedge-shaped angular, which lies directly beneath the fused
+surangular-prearticular. As has been implied, the articular, the
+surangular, and the prearticular are fused. The prearticular part of
+this bone forms a part of Meckel's canal. In the surangular part,
+immediately posterior to the end of the dentary, is the large
+surangular foramen. Lying in a longitudinal axis along the medial
+surface of the articular is a high crest, dorsal to which is a deep
+hollow. The lateral wall of the articular above this hollow is thin
+and rounded dorsally; the ventral surface is uniformly round and
+slightly curved dorsally, except that it ends with a short tympanic
+crest, which projects beyond the articulation with the quadrate. Where
+the quadrate articulates with the dorsolateral surface of the
+posterior portion of the squamosal, the former is broad and has a high
+mid-lateral crest, which extends about one-third of the distance down
+the quadrate before disappearing. The columellar process (the place of
+fusion of the columella) is about two-thirds of the way down the
+medial surface of the quadrate. Ventrally the quadrate has a narrow
+neck dorsal to its articulation with the articular. The articulation
+is formed by two lateral flanges of the quadrate that fit over a
+medial ridge formed by the articular.
+
+
+Dentition
+
+Teeth on the maxillary and pterygoid decrease in size posteriorly,
+whereas those of the dentary do likewise except for the first one or
+two that are usually slightly smaller than those immediately
+posterior. The palatine teeth are subequal in size. The enlarged,
+grooved teeth on the maxillary are in shallow sockets on the
+posteroventral surface of the posterior knob of the maxillary. These
+teeth point posteriorly. The grooves are deep and are situated
+anterolaterally. One or two enlarged grooved teeth are present on a
+given maxillary. There seems to be a correlation between the type of
+preservation, the age of the snake, and the number of grooved teeth.
+Old (large) individuals always have only one grooved tooth that is
+rooted and functional, whereas some of the younger animals have two in
+place. Usually replacement teeth are present in alcoholic specimens,
+but these unrooted teeth are lost in the preparation of dried
+skeletons. Thus, it seems that in _Conophis_ only one pair of grooved
+teeth is functional at any one time, although usually replacement
+teeth are present behind and beside the functional one. Some specimens
+have one tooth in the medial socket on one side and one in the lateral
+socket on the other. Replacement teeth on the maxillary and dentary
+are present in the buccal tissue on the medial side of the bones,
+whereas on the palatines and pterygoids, the replacement teeth are
+present laterally. Apparently there are no significant differences in
+dentition among the members of the genus _Conophis_.
+
+
+Vertebrae
+
+The fiftieth vertebra of _Conophis vittatus_ (UMMZ 82642) can be
+described as follows: The neural spine is elongate, thin and low; the
+posterior edge is sharply emarginate, and the anterior edge is only
+slightly emarginate. The zygosphene is thin dorsoventrally; in a
+ventral or dorsal view the zygosphene has a slightly concave anterior
+edge, the flat surface of which is oriented ventrolaterally. The
+centrum is elongate and triangular from below; it is widest at the
+paradiapophyses and narrowest at the short condylar neck. The condylus
+is directed posteriorly. The centrum, when viewed laterally, is
+slightly concave and has prominent subcentral ridges that extend from
+the median side of the paradiapophysial articular surfaces posteriorly
+to the neck of the condylus. The paradiapophysial articular surfaces
+are well developed and have two facets. The diapophysial surface is
+larger and more spherical than the parapophysial one. The
+parapophysial process projects beyond the parapophysial articular
+surface and is nearly even with the lip of the cotyle, which is
+slightly oval. The neural arch is slightly depressed; its width is
+somewhat less than the width of the cotyle. The articular surfaces of
+the postzygapophyses are oval and are directed posterolaterally. There
+is a strongly developed concave interzygapophysial ridge. A
+well-developed accessory spine extends laterally beyond the oval
+articular facets of the pre-zygapophysis and forms a slightly
+flattened, blunt spine. Excellent drawings of the middle thoracic
+vertebra of _Conophis lineatus dunni_ from Honduras were published by
+Auffenberg (1958:6).
+
+
+Hemipenes
+
+The hemipenes of _Conophis_ are moderately caliculate, having spines
+covering the surface from the base to near the apex (fig. 9). These
+spines are largest near the base and are reduced to small papillate
+projections near the apex. The apex terminates in a small disc having
+three to five laminae in _C. vittatus_ and one lamina in _C. lineatus
+concolor_. The sulcus is bifurcate; the fork is near the base and
+almost gives the appearance of two sulci on some specimens. Distally
+the apices are widely separated, and the intervening space gives the
+hemipenis a slightly bilobed appearance in some species (especially
+_C. vittatus_) or a deeply bilobed appearance in others (especially
+_C. lineatus concolor_).
+
+   [Illustration: FIG. 9. The everted left hemipenis of _Conophis
+      vittatus_ (UMMZ 82650). × 5.]
+
+The everted hemipenis reaches posteriorly to the eighth subcaudal
+scale. The sulcus bifurcates at the third subcaudal scale. The
+situation is similar _in situ_ (Cope, 1895:pl. 28, fig. 2).
+
+There are no apparent hemipenial differences among the species of the
+genus _Conophis_. As can be seen in the above description, the
+hemipenis of _C. vittatus_ is less bilobed and has a more pronounced
+disc at the apex than the others. The hemipenis of _C. lineatus
+concolor_ is most bilobed, but has the smallest apical disc. The other
+species and subspecies vary widely within these extremes.
+
+
+Food and Feeding
+
+_Conophis_ eats mostly small lizards, especially _Cnemidophorus_. In
+México _Conophis_ occurs in semi-arid habitat where _Cnemidophorus_ is
+common. A specimen each of _Conophis vittatus_ and _C. lineatus
+lineatus_ were obtained while I was collecting _Cnemidophorus_. The
+only record of _Conophis_ having fed on a warm-blooded vertebrate was
+obtained in the course of this study, when I recovered from the
+stomach of a _Conophis lineatus concolor_ (CNHM 36299) from Chichén
+Itzá, Yucatán, a heteromyid rodent (_Heteromys gaumeri_).
+
+Ralph Axtell (personal communication) observed _Conophis_ actively
+searching for food at dusk. His observations were made near
+Tehuantepec, Oaxaca, and the snakes were seen to chase lizards of the
+genus _Cnemidophorus_. Near Alvarado, Veracruz, in the late afternoon,
+I watched a _Conophis lineatus lineatus_ follow a lizard into a hole.
+
+Mittleman (1944:122) presents the only discussion of the mode of
+feeding of a captive specimen of _Conophis lineatus_ ssp. When
+presented with a _Thamnophis_ slightly smaller than itself, the
+_Conophis_ struck, and within eight minutes immobilized the
+_Thamnophis_. Within one-half hour the _Thamnophis_ was swallowed.
+Three days later the _Conophis_ ate another _Thamnophis_, though still
+distended from its first meal; nine days later it ate a _Storeria_. In
+the course of several months, the _Conophis_ ate various toads and
+hylids and two more _Storeria_. Apparently members of the genus
+_Conophis_ do not constrict their prey, but rely upon a combination of
+loss of blood and action of the venom to completely immobilize their
+prey.
+
+Ditmars (1931:pls. 26-27) showed three photographs of "_Conophis
+lineatus_" (actually _Conophis pulcher_) ingesting another snake,
+identified by him as a young _Ophis (= Xenodon) colubrinus_.
+
+
+Effect of Poison
+
+The rear fangs of these snakes are large for the size of the snake.
+Various collectors have been bitten, and several reports of the effect
+of the poison have been published. The snakes are aggressive and bite
+constantly while being handled. A field companion, Dale L. Hoyt, was
+bitten on the forefinger by a specimen of _C. l. lineatus_ and
+immediately felt a burning sensation. The finger swelled, much as it
+would if stung by a wasp, but it returned to normal size in about
+twenty-four hours. Ditmars (1931:legend pl. 27) reported immediate
+burning pain and a localized swelling, an inch in diameter and half an
+inch high, which lasted for several hours. Mertens (1952b:83) reported
+merely that the hand of the gardener at the Instituto Tropical in San
+Salvador bled strongly for a full hour. Edward H. Taylor was bitten by
+a specimen of _Conophis vittatus_ (Taylor and Smith, 1939:252); pain
+and swelling lasted for some time. Taylor (personal communication) is
+still troubled by damage incurred by that bite, which apparently
+resulted in mechanical damage to the second joint of the middle
+finger, for the joint swells when the finger is used or exercised.
+William E. Duellman (personal communication) was bitten on the hand in
+July, 1956. There was immediate pain and localized swelling, both of
+which disappeared several hours later.
+
+
+
+
+TAXONOMIC RELATIONSHIPS AND EVOLUTION
+
+
+The genus _Conophis_ is known only from the Recent. Except that
+_Conophis_ belongs to the subfamily xenodontinae and probably is of
+New World origin, little is known about the relationships of the
+genus. Auffenberg (1958) described a new genus and species of fossil
+colubrid snake from the Miocene of Montana as _Dryinoides oxyrhachis_
+and compared it with several recent genera. This specimen, of which
+there is a relatively complete skull and a series of vertebrae, seems
+most closely to resemble a specimen of _Conophis lineatus dunni_ (UF
+7657) from Honduras, with which it was compared in basic osteology.
+The two genera could be related, for the progenitors of _Conophis_
+possibly inhabited much of North America in the Miocene.
+
+Another possibility is that the main stock of the xenodontines reached
+South America in earliest Tertiary times, and that the formation of
+the Panamanian and Colombian seaways that separated South America and
+Central America from the Late Paleocene to the middle of the Pliocene
+left the _Conophis_ stock isolated in Middle America where members of
+the genus dispersed through semi-arid habitats.
+
+Turning our attention now to the species within the genus, instead of
+the genus as a whole, _Conophis vittatus_ is readily set apart from
+other members of the genus on the basis of the universal presence of
+seven supralabials. In basic coloration it also differs, having no
+stripe on the 1st scale-row, or spots on the venter, and a maximum of
+four broad stripes on the body. The other species appear to be more
+closely related; these make up the _C. lineatus_-group. _Conophis
+nevermanni_ differs so much from the other species that it might be
+placed in a separate group. Nevertheless, the basic striped pattern,
+which is masked by the increased melanism of many specimens, indicates
+that _nevermanni_ is more closely related to the _lineatus_-group than
+to _vittatus_. The _lineatus_-group, thus, consists of _pulcher_,
+_nevermanni_ and the three subspecies of _lineatus_. In this group the
+color pattern is characterized by the high frequency of ventral
+spotting, darkening of part of the supralabials, dark pigmentation on
+the 1st scale-row, and more than four dark stripes on the body of
+adults. _Conophis lineatus concolor_, on which the dark pigmentation
+on the body apparently is secondarily lost, is an exception.
+
+If differences in color pattern be used as an indication of the
+relationships between the species and subspecies of the genus
+_Conophis_, I would consider _C. vittatus_ the most divergent unit.
+The subspecies of _lineatus_ closely resemble one another and, as a
+unit, resemble _pulcher_ from which they differ primarily in the
+position of the dorsalmost stripes. _Conophis nevermanni_ is more
+divergent than is _pulcher_ from the species _lineatus_, but probably
+is not so far removed from _lineatus_ as is _vittatus_.
+
+In the light of what has been pointed out immediately above with
+respect to resemblances of, and differences between, the species, an
+hypothesis to account for their formation and for their presence in
+the areas where they are today is the following: Concurrent with
+climatic fluctuations in the Late Pliocene and Pleistocene, the
+northernmost population differentiated into the species _vittatus_,
+and has subsequently spread north and west from the region of
+Tehuantepec, México. During the same period _nevermanni_ became
+isolated in northern Costa Rica.
+
+The species _pulcher_ probably differentiated from the remaining
+_lineatus_ stock during the Early Pleistocene orogenic upheaval in
+Guatemala. The _pulcher_ stock was isolated on the Pacific Coastal
+slopes of Guatemala, while _lineatus_ moved through the subhumid
+corridor of northern Middle America into México and southward toward
+Costa Rica (Stuart, 1954a). In the Late Pleistocene and Recent,
+_pulcher_ moved back across the central Guatemalan highlands occupying
+its present range in northern Middle America. Primarily because of the
+formation of unsuitable habitat (wet forest) that presently separates
+the geographic ranges of populations of _lineatus_, this species
+differentiated into three subspecies.
+
+
+
+
+SUMMARY
+
+
+The genus _Conophis_ Peters, 1860, contains four species. Three are
+monotypic and the fourth has three subspecies, making a total of six
+taxa.
+
+The genus is characterized by maxillary teeth of equal size followed
+by a diastema and two enlarged grooved fangs. The scales are smooth,
+in 19 rows at mid-body, and 17 nearer the tail. The anal is divided,
+apical pits are lacking, the head shields are normal for a colubrid,
+and the hemipenis is bilobed having many large basal spines.
+
+The six taxa are separated primarily on the basis of color pattern,
+but characters of scutellation, including numbers of dorsals,
+ventrals, caudals, and places of reduction of the number of dorsal
+scale-rows, were analyzed.
+
+Snakes of this genus are distributed throughout semi-arid environments
+from southern México southward into Costa Rica. They feed upon
+lizards, primarily of the genus _Cnemidophorus_; in addition they are
+known to eat small rodents and other snakes.
+
+_Conophis_ is a member of the subfamily Xenodontinae and, as presently
+understood, has no known living close relatives. A single specimen of
+_Dryinoides_ from the Miocene of Montana has been compared with this
+genus. The genus _Conophis_ is thought to have evolved in Middle
+America. The present distribution and differentiation probably are
+primarily the result of climatic fluctuations in Middle America, which
+produced the areas of subhumid environment where _Conophis_ presently
+lives.
+
+
+
+
+LITERATURE CITED
+
+
+AUFFENBERG, W.
+
+    1958.  A new genus of colubrid snake from the Upper Miocene of
+           North America. Amer. Mus. Novitates, 1874:1-16. February 27.
+
+
+COPE, E. D.
+
+    1861.  Contributions to the ophiology of Lower California,
+           México and Central America. Proc. Acad. Nat. Sci.
+           Philadelphia, 13:292-306. December 28.
+
+    1867.  Fifth contribution to the herpetology of tropical
+           America. Proc. Acad. Nat. Sci. Philadelphia, 18:317-323.
+           February 20.
+
+    1871.  Ninth contribution to the herpetology of tropical
+           America. Proc. Acad. Nat. Sci. Philadelphia, 23(2):200-224.
+           October 24.
+
+    1876.  On the batrachia and reptilia of Costa Rica. Journ.
+           Acad. Nat. Sci. Philadelphia, series 2, 8(4):93-154, 6 pls.
+
+    1895.  The classification of the ophidia. Trans. Amer. Philos.
+           Soc., 18:186-219, 33 pls. April 15.
+
+    1900.  The crocodilians, lizards, and snakes of North America.
+           Ann. Rept. U. S. Natl. Mus. for 1898, pp. 153-1270, 36 pls.
+
+
+DITMARS, R. L.
+
+    1931.  Snakes of the World. New York, The MacMillan Company,
+           1931. xi + 207 pp., 84 pls.
+
+
+DOWLING, H. G.
+
+    1951.  A proposed standard system of counting ventrals in
+           snakes. British Journ. Herpetology, 1(5):97-99, fig. 1.
+
+
+DUELLMAN, W. E.
+
+    1958.  A preliminary analysis of the herpetofauna of Colima,
+           Mexico. Occas. Papers Mus. Zool. Univ. Michigan, 589:1-22,
+           March 21.
+
+
+DUMÉRIL, A. M. C., BIBRON, G., AND DUMÉRIL, A. H. A.
+
+    1854.  Érpétologie genérale, ou histoire naturelle des
+           reptiles. Paris, 7(pt. 2):xii + 785. February 25.
+           Atlas, 24 pp., 108 pls.
+
+
+DUMÉRIL, A. H. A., BOCOURT, M., AND MOCQUARD, F.
+
+    1870-1909. Mission Scientifique au Mexique et dans l'Amerique
+           Centrale ... Etudes sur les Reptiles. Paris, vol. 2:xiv +
+           1012 pp., 77 pls.
+
+
+GARMAN, S.
+
+    1884a. The North American reptiles and batrachians. Bull.
+           Essex Inst., 16:1-46. January 9.
+
+    1884b. The reptiles and batrachians of North America. Mem.
+           Mus. Comp. Zool., 8(3):xxxi + 185 pp., 9 pls. July.
+
+
+GÜNTHER, A. C. L. G.
+
+    1858.  Catalogue of colubrine snakes in the collection of the
+           British Museum. London. xiv + 281 pp.
+
+
+HUXLEY, J.
+
+    1942.  Evolution. The Modern Synthesis. London. 645 pp.
+
+
+JAN, G. AND SORDELLI, F.
+
+    1866.  Iconographie Generale des Ophidiens. Milano. livr. 19,
+           pls. 1-6. December.
+
+    1881.  Iconographie Generale des Ophidiens. Milano. livr. 50,
+           pls. 1-7. November.
+
+
+MAYR, E.
+
+    1942.  Systematics and the Origin of Species. New York, x +
+           334 pp., 29 figs.
+
+
+MAYR, E., LINSLEY, E. G., AND USINGER, R. L.
+
+    1953.  Methods and Principles of Systematic Zoology. New York.
+           ix + 328 pp., 45 figs.
+
+
+MERTENS, R.
+
+    1952a. Neues uber die Reptilienfauna von El Salvador. Zool.
+           Anz., 148:87-93. February.
+
+    1952b. Die Amphibien und Reptilien von El Salvador auf grund
+           der reisen von R. Mertens und A. Zilch. Abhand. Senken.
+           Naturw. Gesell., 487:83, 1 Kart., 16 taf. December 1.
+
+
+MITTLEMAN, M. B.
+
+    1944.  Feeding habits of a Central American opisthoglyph snake.
+           Copeia, no. 2:122. June 30.
+
+
+NEILL, W. T. AND ALLEN, R.
+
+    1961.  Further studies on the herpetology of British Honduras.
+           Herpetologica, 17(1):37-52. April 15.
+
+
+PARKER, W. K.
+
+    1878.  On the structure and development of the skull in the
+           common snake (_Tropidonotus natrix_). Phil. Trans. Roy.
+           Soc. London, pt. 2:385-417, pp., pls. 27-33.
+
+
+PETERS, W.
+
+    1860.  Drei neue amerikanisches Schlangen. Monatsb. Akad. Wiss.
+           Berlin, 1860:517-521, pl., fig. 3. October.
+
+
+RADOVANOVIC, M.
+
+    1937.  Osteologie des Schlangenkopfs. Jenaische Zeitschr.
+           Naturw., 71(2):179-312.
+
+
+SAVAGE, J. M.
+
+    1949.  Notes on the Central American snake, _Conophis lineatus
+           dunni_ Smith, with a record from Honduras. Trans. Kansas
+           Acad. Sci., 50:483-486. December 31.
+
+
+SCHMIDT, K. P.
+
+    1928.  Reptiles collected in Salvador for the California
+           Institute of Technology. Zool. Ser. Field Mus. Nat. Hist.,
+           12(16):193-201. November 21.
+
+
+SCHMIDT, K. P. AND INGER, R. F.
+
+    1957.  Living Reptiles of the World. Garden City, New York,
+           Hanover House. 287 pp.
+
+
+SMITH, H. M.
+
+    1941.  Notes on snakes of the genus _Conophis_. Journ.
+           Washington Acad. Sci., 31(3):117-124. March 15.
+
+
+SMITH, H. M. AND TAYLOR, E. H.
+
+    1950.  Type localities of Méxican reptiles and amphibians.
+           Univ. Kansas Sci. Bull., 33:313-380. March 20.
+
+
+STUART, L. C.
+
+    1948.  The amphibians and reptiles of Alta Verapaz, Guatemala.
+           Misc. Publ. Mus. Zool. Univ. Michigan, 69:1-109. June 12.
+
+    1954a. A description of a subhumid corridor across northern
+           Central America, with comments on its herpetofaunal
+           indicators. Contr. Lab. Vert. Biol. Univ. Michigan,
+           65:1-26 pp., 6 pls. March.
+
+    1954b. Herpetofauna of the southeast highlands of Guatemala.
+           Contr. Lab. Vert. Biol. Univ. Michigan, 68:1-65 pp.,
+           3 pls. November.
+
+
+SZUNYOGHY, J.
+
+    1932.  Beitrage zur vergleichenden Formenlehre des
+           Colubridenschadels, nebst einer Kraniologischen Synopsis
+           der fossilen Schlangen Ungarns. Acta Zool., 13:1-56.
+
+
+TAYLOR, E. H.
+
+    1955.  Additions to the known herpetological fauna of Costa
+           Rica with comments on other species. No. II. Univ. Kansas
+           Sci. Bull., 37:299-575. October 15.
+
+
+TAYLOR, E. H. AND SMITH, H. M.
+
+    1939.  Miscellaneous notes on Mexican snakes. Univ. Kansas Sci.
+           Bull., 25:239-258. July 10.
+
+
+WETTSTEIN, O.
+
+    1934.  Ergibnisse der osterreichischen biologischen Costa
+           Rica--Expedition 1930. Die Amphibia und Reptilien. Stiz.
+           Akad. Wiss. Wien, mathem-naturw. kl., Abt. 1, bd. 143:1-39.
+
+
+
+_Transmitted November 30, 1962._
+
+
+  29-5936
+    []
+
+
+
+UNIVERSITY OF KANSAS PUBLICATIONS
+
+MUSEUM OF NATURAL HISTORY
+
+
+Institutional libraries interested in publications exchange may obtain
+this series by addressing the Exchange Librarian, University of Kansas
+Library, Lawrence, Kansas. Copies for individuals, persons working in
+a particular field of study, may be obtained by addressing instead the
+Museum of Natural History, University of Kansas, Lawrence, Kansas.
+There is no provision for sale of this series by the University
+Library, which meets institutional requests, or by the Museum of
+Natural History, which meets the requests of individuals. However,
+when individuals request copies from the Museum, 25 cents should be
+included, for each separate number that is 100 pages or more in
+length, for the purpose of defraying the costs of wrapping and
+mailing.
+
+* An asterisk designates those numbers of which the Museum's supply
+(not the Library's supply) is exhausted. Numbers published to date, in
+this series, are as follows:
+
+
+  Vol.  1.  Nos. 1-26 and index. Pp. 1-638, 1946-1950.
+
+ *Vol.  2.  (Complete) Mammals of Washington. By Walter W. Dalquest.
+               Pp. 1-444, 140 figures in text. April 9, 1948.
+
+  Vol.  3. *1. The avifauna of Micronesia, its origin, evolution,
+               and distribution. By Rollin H. Baker. Pp. 1-359,
+               16 figures in text. June 12, 1951.
+
+           *2. A quantitative study of the nocturnal migration of
+               birds.  By George H. Lowery, Jr. Pp. 361-472,
+               47 figures in text. June 29, 1951.
+
+            3. Phylogeny of the waxwings and allied birds. By
+               M. Dale Arvey. Pp. 473-530, 530, 49 figures in text,
+               13 tables. October 10. 1951.
+
+           *4. Birds from the state of Veracruz, Mexico. By George H.
+               Lowery, Jr., and Walter W. Dalquest. Pp. 531-649,
+               7 figures in text, 2 tables. October 10, 1951.
+
+            Index. Pp. 651-681.
+
+ *Vol.  4. (Complete) American weasels. By E. Raymond Hall. Pp. 1-466,
+               41 plates, 31 figures in text. December 27, 1951.
+
+  Vol.  5. Nos. 1-37 and index. Pp. 1-676, 1951-1953.
+
+ *Vol.  6. (Complete) Mammals of Utah, taxonomy and distribution. By
+               Stephen D. Durrant. Pp. 1-549, 91 figures in text,
+               30 tables. August 10, 1952.
+
+  Vol.  7. Nos. 1-15 and index. Pp. 1-651, 1952-1955.
+
+  Vol.  8. Nos. 1-10 and index. Pp. 1-675, 1954-1956.
+
+  Vol.  9. *1. Speciation of the wandering shrew. By James S. Findley.
+               Pp. 1-68, 18 figures in text. December 10, 1955.
+
+            2. Additional records and extension of ranges of mammals
+               from Utah. By Stephen D. Durrant, M. Raymond Lee, and
+               Richard M. Hansen. Pp. 69-80. December 10, 1955.
+
+            3. A new long-eared myotis (Myotis evotis) from northeastern
+               Mexico. By Rollin H. Baker and Howard J. Stains. Pp. 81-84.
+               December 10, 1955.
+
+            4. Subspeciation in the meadow mouse, Microtus pennsylvanicus,
+               in Wyoming. By Sydney Anderson. Pp. 85-104, 2 figures in
+               text. May 10, 1956.
+
+            5. The condylarth genus Ellipsodon. By Robert W. Wilson.
+               Pp. 105-116, 6 figures in text. May 19, 1956.
+
+            6. Additional remains of the multituberculate genus
+               Eucosmodon. By Robert W. Wilson. Pp. 117-123,
+               10 figures in text. May 19, 1956.
+
+            7. Mammals of Coahulia, Mexico. By Rollin H. Baker. Pp.
+               125-335, 75 figures in text. June 15, 1956.
+
+            8. Comments on the taxonomic status of Apodemus peninsulae,
+               with description of a new subspecies from North China.
+               By J. Knox Jones, Jr. Pp. 337-346, 1 figure in text,
+               1 table. August 15, 1956.
+
+            9. Extensions of known ranges of Mexican bats. By Sydney
+               Anderson. Pp. 347-351. August 15, 1956.
+
+           10. A new bat (Genus Leptonycteris) from Coahulia. By
+               Howard J. Stains. Pp. 353-356. January 21, 1957.
+
+           11. A new species of pocket gopher (Genus Pappogeomys) from
+               Jalisco, Mexico. By Robert J. Russell. Pp. 357-361.
+               January 21, 1957.
+
+           12. Geographic variation in the pocket gopher, Thomomys
+               bottae, in Colorado. By Phillip M. Youngman. Pp.
+               363-384, 7 figures in text. February 21, 1958.
+
+           13. New bog lemming (genus Synaptomys) from Nebraska.
+               By J. Knox Jones, Jr. Pp. 385-388. May 12, 1958.
+
+           14. Pleistocene bats from San Josecito Cave, Nuevo León,
+               México. By J. Knox Jones, Jr. Pp. 389-396.
+               December 19, 1958.
+
+           15. New subspecies of the rodent Baiomys from Central America.
+               By Robert L. Packard. Pp. 397-404. December 19, 1958.
+
+           16. Mammals of the Grand Mesa, Colorado. By Sydney Anderson.
+               Pp. 405-414, 1 figure in text, May 20, 1959.
+
+           17. Distribution, variation, and relationships of the montane
+               vole, Microtus montanus. By Sydney Anderson. Pp. 415-511,
+               12 figures in text, 2 tables.  August 1, 1959.
+
+           18. Conspecificity of two pocket mice, Perognathus goldmani
+               and P. artus. By E. Raymond Hall and Marilyn Bailey
+               Ogilvie. Pp. 513-518, 1 map, January 14, 1960.
+
+           19. Records of harvest mice, Reithrodontomys, from Central
+               America, with description of a new subspecies from
+               Nicaragua. By Sydney Anderson and J. Knox Jones, Jr.
+               Pp. 519-529. January 14, 1960.
+
+           20. Small carnivores from San Josecito Cave (Pleistocene),
+               Nuevo León, México. By E. Raymond Hall. Pp. 531-538,
+               1 figure in text. January 14, 1960.
+
+           21. Pleistocene pocket gophers from San Josecito Cave, Nuevo
+               León, México. By Robert J. Russell. Pp. 539-548, 1 figure
+               in text. January 14, 1960.
+
+           22. Review of the insectivores of Korea. By J. Knox Jones,
+               Jr., and David H. Johnson. Pp. 549-578. February 23, 1960.
+
+           23. Speciation and evolution of the pygmy mice, genus
+               Baimoys. By Robert L. Packard. Pp. 579-670, 4 plates,
+               12 figures in text. June 16, 1960.
+
+           Index. Pp. 671-690
+
+  Vol. 10.  1. Studies of birds killed in nocturnal migration.
+               By Harrison B. Tordoff and Robert M. Mengel. Pp. 1-44,
+               6 figures in text, 2 tables. September 12, 1956.
+
+            2. Comparative breeding behavior of Ammospiza caudacuta
+               and A. maritima. By Glen E. Woolfenden. Pp. 45-75,
+               6 plates, 1 figure. December 20, 1956.
+
+            3. The forest habitat of the University of Kansas Natural
+               History Reservation. By Henry S. Fitch and Ronald R.
+               McGregor. Pp. 77-127, 2 plates, 7 figures in text,
+               4 tables. December 31, 1956.
+
+            4. Aspects of reproduction and development in the prairie
+               vole (Microtus ochrogaster). By Henry S. Fitch. Pp.
+               129-161, 8 figures in text, 4 tables. December 19, 1957.
+
+            5. Birds found on the Arctic slope of northern Alaska.
+               By James W. Bee. Pp. 163-211, plates 9-10, 1 figure
+               in text. March 12, 1958.
+
+           *6. The wood rats of Colorado: distribution and ecology.
+               By Robert B. Finley, Jr. Pp. 213-552, 34 plates, 8 figures
+               in text, 35 tables. November 7, 1958.
+
+            7. Home ranges and movements of the eastern cottontail in
+               Kansas. By Donald W. Janes. Pp. 553-572, 4 plates,
+               3 figures in text. May 4, 1959.
+
+            8. Natural history of the salamander, Aneides hardyi.
+               By Richard F. Johnston and Gerhard A. Schad. Pp. 573-585.
+               October 8, 1959.
+
+            9. A new subspecies of lizard, Cnemidophorus sacki, from
+               Michoacán, México. By William E. Duellman. Pp. 587-598,
+               2 figures in text. May 2, 1960.
+
+           10. A taxonomic study of the middle American snake, Pituophis
+               deppei. By William E. Duellman. Pp. 599-610. 1 plate,
+               1 figure in text. May 2, 1960.
+
+           Index. Pp. 611-626.
+
+  Vol. 11. Nos. 1-10 and index. Pp. 1-703, 1958-1960.
+
+  Vol. 12.  1. Functional morphology of three bats: Sumops, Myotis,
+               Macrotus. By Terry A. Vaughan. Pp. 1-153, 4 plates,
+               24 figures in text. July 8, 1959.
+
+           *2. The ancestry of modern Amphibia: a review of the evidence.
+               By Theodore H. Eaton, Jr. Pp. 155-180, 10 figures in text.
+               July 10, 1959.
+
+            3. The baculum in microtine rodents. By Sydney Anderson.
+               Pp. 181-216, 49 figures in text. February 19, 1960.
+
+           *4. A new order of fishlike Amphibia from the Pennsylvanian
+               of Kansas. By Theodore H. Eaton, Jr., and Peggy Lou
+               Stewart. Pp. 217-240, 12 figures in text. May 2, 1960.
+
+            5. Natural history of the bell vireo. By Jon C. Barlow.
+               Pp. 241-296, 6 figures in text. March 7, 1962.
+
+            6. Two new pelycosaurs from the lower Permian of Oklahoma.
+               By Richard C. Fox. Pp. 297-307, 6 figures in text.
+               May 21, 1962.
+
+            7. Vertebrates from the barrier island of Tamaulipas, México.
+               By Robert K. Selander, Richard F. Johnston, B. J. Wilks,
+               and Gerald G. Raun. Pp. 309-345, pls. 5-8. June 18, 1962.
+
+            8. Teeth of Edestid sharks. By Theodore H. Eaton, Jr.
+               Pp. 347-362, 10 figures
+               in text. October 1, 1962.
+
+           More numbers will appear in volume 12.
+
+  Vol. 13.  1. Five natural hybrid combinations in minnows (Cyprinidae).
+               By Frank B. Cross and W. L. Minckley. Pp. 1-18.
+               June 1, 1960.
+
+            2. A distributional study of the amphibians of the Isthmus
+               of Tehuantepec, México. By William E. Duellman. Pp. 19-72,
+               pls. 1-8, 3 figures in text. August 16, 1960.
+
+            3. A new subspecies of the slider turtle (Pseudemys
+               scripta) from Coahulia, México. By John M. Legler.
+               Pp. 73-84, pls. 9-12, 3 figures in text. August
+               16, 1960.
+
+            4. Autecology of the copperhead. By Henry S. Fitch.
+               Pp. 85-288, pls. 13-20, 26 figures in text.
+               November 30, 1960.
+
+            5. Occurrence of the garter snake, Thamnophis sirtalis, in
+               the Great Plains and Rocky Mountains. By Henry S. Fitch
+               and T. Paul Maslin. Pp. 289-308, 4 figures in text.
+               February 10, 1961.
+
+            6. Fishes of the Wakarusa river in Kansas. By James E. Deacon
+               and Artie L. Metcalf. Pp. 309-322, 1 figure in text.
+               February 10, 1961.
+
+            7. Geographic variation in the North American cyprinid fish,
+               Hybopsis gracilis. By Leonard J. Olund and Frank B. Cross.
+               Pp. 323-348, pls. 21-24, 2 figures in text.
+               February 10, 1961.
+
+            8. Descriptions of two species of frogs, genus Ptychohyla;
+               studies of American hylid frogs, V. By William E. Duellman.
+               Pp. 349-357, pl. 25, 2 figures in text. April 27, 1961.
+
+            9. Fish populations, following a drought, in the Neosho and
+               Marais des Cygnes rivers of Kansas. By James Everett Deacon.
+               Pp. 359-427, pls. 26-30, 3 figs. August 11, 1961.
+
+           10. Recent soft-shelled turtles of North America (family
+               Trionychidae). By Robert G. Webb. Pp. 429-611, pls. 31-54,
+               24 figures in text. February 16, 1962.
+
+           Index. Pp. 613-624.
+
+  Vol. 14.  1. Neotropical bats from western México.  By Sydney Anderson.
+               Pp. 1-8. October 24, 1960.
+
+            2. Geographic variation in the harvest mouse.
+               Reithrodontomys megalotis, on the central Great Plains
+               and in adjacent regions. By J. Knox Jones, Jr., and
+               B. Mursaloglu. Pp. 9-27, 1 figure in text. July 24, 1961.
+
+            3. Mammals of Mesa Verde National Park, Colorado. By Sydney
+               Anderson. Pp. 29-67, pls. 1 and 2, 3 figures in text.
+               July 24, 1961.
+
+            4. A new subspecies of the black myotis (bat) from eastern
+               Mexico. By E. Raymond Hall and Ticul Alvarez. Pp. 69-72,
+               1 figure in text. December 29, 1961.
+
+            5. North American yellow bats, "Dasypterus," and a list of
+               the named kinds of the genus Lasiurus Gray. By E. Raymond
+               Hall and J. Knox Jones, Jr. Pp. 73-98, 4 figures in text.
+               December 29, 1961.
+
+            6. Natural history of the brush mouse (Peromyscus boylii) in
+               Kansas with description of a new subspecies. By Charles A.
+               Long. Pp. 99-111, 1 figure in text. December 29, 1961.
+
+            7. Taxonomic status of some mice of the Peromyscus boylii
+               group in eastern Mexico, with description of a new
+               subspecies. By Ticul Alvarez. Pp. 113-120, 1 figure in
+               text. December 29, 1961.
+
+            8. A new subspecies of ground squirrel (Spermophilus
+               spilosoma) from Tamaulipas, Mexico. By Ticul Alvarez.
+               Pp. 121-124. March 7, 1962.
+
+            9. Taxonomic status of the free-tailed bat, Tadarida
+               yucatanica Miller. By J. Knox Jones, Jr., and Ticul
+               Alvarez. Pp. 125-133, 1 figure in text. March 7, 1962.
+
+           10. A new doglike carnivore, genus Cynaretus, from the
+               Clarendonian Pliocene, of Texas. By E. Raymond Hall and
+               Walter W. Dalquest. Pp. 135-138, 2 figures in text.
+               April 30, 1962.
+
+           11. A new subspecies of wood rat (Neotoma) from northeastern
+               Mexico. By Ticul Alvarez. Pp. 139-143. April 30, 1962.
+
+           12. Noteworthy mammals from Sinaloa, Mexico. By J. Knox Jones,
+               Jr., Ticul Alvarez, and M. Raymond Lee. Pp. 145-159,
+               1 figure in text. May 18, 1962.
+
+           13. A new bat (Myotis) from Mexico. By E. Raymond Hall.
+               Pp. 161-164, 1 figure in text. May 21, 1962.
+
+           14. The mammals of Veracruz. By E. Raymond Hall and Walter W.
+               Dalquest. Pp. 165-362, 2 figures. May 20, 1963.
+
+           15. The recent mammals of Tamaulipas, México. By Ticul Alvarez.
+               Pp. 363-473, 5 figures in text. May 20, 1963.
+
+           More numbers will appear in volume 14.
+
+  Vol. 15.  1. The amphibians and reptiles of Michoacán, México. By
+               William E. Duellman. Pp. 1-148, pls. 1-6, 11 figures in
+               text. December 20, 1961.
+
+            2. Some reptiles and amphibians from Korea. By Robert G. Webb,
+               J. Knox Jones, Jr., and George W. Byers. Pp. 149-173.
+               January 31, 1962.
+
+            3. A new species of frog (Genus Tomodactylus) from western
+               México. By Robert G. Webb. Pp. 175-181, 1 figure in text.
+               March 7, 1962.
+
+            4. Type specimens of amphibians and reptiles in the Museum
+               of Natural History, the University of Kansas. By William
+               E. Duellman and Barbara Berg. Pp. 183-204. October 26, 1962.
+
+            5. Amphibians and Reptiles of the Rainforests of Southern El
+               Petén, Guatemala. By William E. Duellman. Pp. 205-249, pls.
+               7-10, 6 figures in text. October 4, 1963.
+
+            6. A revision of snakes of the genus Conophis (Family
+               Colubridae, from Middle America). By John Wellman.
+               Pp. 251-295, 9 figures in text. October 4, 1963.
+
+            More numbers will appear in volume 15.
+
+
+
+
+Transcriber's Notes
+
+For consistancy, a number of word which had alternate spellings were
+altered to match the most prevalent version used. For example, where
+the word Mexico was used in the body of the article, the more frequent
+spelling (México) was substituted. However, in the reference sections,
+the spelling was not altered as that may have been the spelling used
+by the article's author. All occurrances of Érpétologie Genérale were
+correcteded to Erpétologie Générale (Pp. 255, 262, 267, 277, and 278).
+
+
+ On page 279 under _Variation_ there appears to be a miscalculation:
+    668 mm. + 182 mm. = 850 mm. not 840 as in original text.
+
+
+Typographical Corrections
+
+  Page  Correction
+  ===== ===========================================
+  264   immaculaate => immaculate
+  264   chacteristic => characteristic
+  266   elevatons => elevations
+  267   Dumeril => Duméril
+  277   Duméil => Duméril
+  279   Tehauntepec => Tehuantepec
+  280   Deleted repeated "Oaxaca,"
+  292   primarly => primarily
+  295   hertetofaunal => herpetofaunal
+    i   V.  9 No. 12: Pp. 363-387 => Pp. 363-384
+  iii   V. 13 No.  8: Decriptions => Descriptions
+  iii   V. 14 No.  8: anad => and
+  iii   V. 14 No. 14: anad => and
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK A REVISION OF SNAKES OF THE GENUS CONOPHIS (FAMILY COLUBRIDAE, FROM MIDDLE AMERICA) ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

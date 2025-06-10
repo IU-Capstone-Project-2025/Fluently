@@ -1,0 +1,1302 @@
+﻿The Project Gutenberg eBook of The House Fly and How to Suppress It
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: The House Fly and How to Suppress It
+
+Author: L. O. Howard
+        F. C. Bishopp
+
+Release date: March 26, 2006 [eBook #18050]
+
+Language: English
+
+Credits: Produced by K.D. Thornton and the Online Distributed
+        Proofreading Team at http://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK THE HOUSE FLY AND HOW TO SUPPRESS IT ***
+
+
+
+
+Produced by K.D. Thornton and the Online Distributed
+Proofreading Team at http://www.pgdp.net
+
+
+
+
+
+
+U. S. DEPARTMENT OF AGRICULTURE
+
+FARMERS' BULLETIN No. 1408
+
+_The_ HOUSE FLY AND HOW TO SUPPRESS IT
+
+[Illustration: fly]
+
+[Illustration: USDA seal]
+
+
+
+
+The presence of flies is an indication of uncleanliness, insanitary
+conditions, and improper disposal of substances in which they breed.
+They are not only annoying; they are actually dangerous to health,
+because they may carry disease germs to exposed foods.
+
+It is therefore important to know where and how they breed, and to apply
+such knowledge in combating them. This bulletin gives information on
+this subject. Besides giving directions for ridding the house of flies
+by the use of screens, fly papers, poisons, and flytraps, it lays
+especial emphasis on the explanation of methods of eliminating breeding
+places and preventing the breeding of flies.
+
+This bulletin supersedes Farmers' Bulletin 851.
+
+Washington, D. C. Issued April, 1925; revised November, 1926
+
+
+
+
+THE HOUSE FLY[1] AND HOW TO SUPPRESS IT.
+
+By L. O. HOWARD, _Chief of the Bureau of Entomology_, and F. C. BISHOPP,
+_Entomologist_.
+
+       *       *       *        *       *
+
+
+                                    CONTENTS.
+                                                                      Page.
+  Kinds of flies found in houses                                         1
+  Where the true house fly lays its eggs                                 2
+  How the house fly passes the winter                                    6
+  Carriage of disease by the house fly                                   6
+  Excluding and capturing flies                                          7
+    The use of screens                                                   7
+    Fly papers and poisons                                               8
+    Fly sprays                                                           8
+    Flytraps                                                             9
+  Preventing the breeding of flies                                       9
+    Construction and care of stables                                     9
+    Fly-tight manure pits                                               10
+    Frequency with which manure should be removed in cities and towns   10
+    Health office regulations for control of house flies in cities      10
+    Disposal of manure in rural and suburban districts                  11
+    Chemical treatment of manure to destroy fly maggots                 12
+    Maggot trap for destruction of fly larvæ from horse manure          13
+    Compact heaping of manure                                           15
+    Garbage disposal and treatment of miscellaneous breeding places     15
+    Sewage disposal in relation to the prevention of fly-borne diseases 15
+  What communities can do to eliminate the house fly                    16
+
+
+       *       *       *        *       *
+
+
+KINDS OF FLIES FOUND IN HOUSES.
+
+
+Several species of flies are found commonly in houses. Some of them so
+closely resemble the true house fly that it requires very careful
+observation to distinguish them from it.
+
+One of these is the biting stable fly[2] (fig. 1). It occurs frequently
+in houses and differs from the house fly in the important particular
+that its mouth parts are formed for piercing the skin. This fly is so
+often mistaken for the house fly that most people think that the house
+fly can bite.
+
+Another frequent visitant of houses, particularly in the spring and
+fall, is the cluster fly.[3] It is somewhat larger than the house fly,
+and is distinguished by its covering of fine yellowish hairs.
+Occasionally this fly occurs in houses in such numbers as to cause great
+annoyance. It gets its name of "cluster fly" from its habit of
+collecting in compact groups or clusters in protected corners during
+cold periods.
+
+Several species of metallic greenish or bluish flies also are found
+occasionally in houses. These include a blue-bottle fly,[4] the black
+blowflies,[5] and the green-bottle (fig. 2) flies.[6] They breed in
+decaying animal matter.
+
+[Footnote 1: _Musca domestica_ L.]
+[Footnote 2: _Stomoxys calcitrans_ L.]
+[Footnote 3: _Pollenia rudis_ Fab.]
+[Footnote 4: _Calliphora erythrocephala_ Meig.]
+[Footnote 5: _Phormia regina_ Meig. and _P. terrae-novae_ Desv.]
+[Footnote 6: _Lucilia caesar_ L., _L. sericata_ Meig., and other species
+of the genus.]
+
+There is still another species, smaller than any of those so far
+mentioned, which is sometimes called the "lesser house fly."[7] This
+insect is distinguished from the ordinary house fly by its paler and
+more pointed body. The male, which is commoner than the female, has
+large pale patches at the base of the abdomen, which are translucent
+when the fly is seen on the window pane. These little flies are not the
+young of the larger flies. Flies do not grow after the wings have once
+expanded and dried.
+
+[Footnote 7: _Fannia canicularis_ L.]
+
+[Illustration: FIG. 1.--The stable fly. Much enlarged.]
+
+[Illustration: FIG. 2.--One of the green-bottle flies (_Lucilia
+caesar_). Much enlarged.]
+
+In late summer and autumn many specimens of a small fruit fly, known as
+the "vinegar fly,"[8] make their appearance, attracted by the odor of
+overripe fruit.
+
+All of these species, however, are greatly dwarfed in numbers by the
+common house fly. In 1900 the senior author made collections of the
+flies in dining rooms in different parts of the country, and found that
+the true house fly made up 98.8 per cent of the whole number captured.
+The remainder comprised various species, including those mentioned
+above.
+
+[Footnote 8: _Drosophila ampelophila_ Loew.]
+
+[Illustration: Fig. 3.--The true house fly. Enlarged.]
+
+
+
+
+WHERE THE TRUE HOUSE FLY LAYS ITS EGGS.
+
+
+The true house fly (fig. 3), which is found in nearly all parts of the
+world, is a medium-sized fly with four black stripes on the back and a
+sharp elbow in one of the veins of the wings. The house fly can not
+bite, its mouth parts being spread out at the tip for sucking up liquid
+substances.
+
+The eggs (figs. 4, 5) are laid upon horse manure. This substance seems
+to be its favorite larval food. It will breed also in human excrement,
+and because of this habit it is very dangerous to the health of human
+beings, carrying as it does the germs of intestinal diseases, such as
+typhoid fever and cholera, from the excreta to food supplies. It has
+also been found to breed freely in hog manure, in considerable numbers
+in chicken dung, and to some extent in cow manure. Indeed, it will lay
+its eggs on a great variety of decaying vegetable and animal materials,
+but of the flies that infest dwelling houses, both in cities and on
+farms, a vast proportion come from horse manure.
+
+[Illustration: FIG. 4.--Eggs of the house fly. About natural size.
+(Newstead.)]
+
+It often happens, however, that this fly is very abundant in localities
+where little or no horse manure is found, and in such cases it breeds in
+other manure, such as chicken manure in backyard poultry lots, or in
+slops or fermenting vegetable material, such as spent hops, moist bran,
+ensilage, or rotting potatoes. Accumulations of organic material on the
+dumping grounds of towns and cities often produce flies in great
+numbers.
+
+[Illustration: FIG. 5.--Eggs of the house fly. Highly magnified.
+(Newstead.)]
+
+The house fly begins laying eggs in from 2 1/2 to 20 days after
+emerging, the time interval depending to a large extent upon
+temperature, humidity, and character and abundance of food. The number
+of eggs laid by an individual fly at one time ranges from 120 to 159 and
+a single female will usually lay two and sometimes four such batches.
+Dunn has recently reported that in Panama a fly may deposit as many as
+2,367 eggs in 21 batches, and sometimes an interval of only 36 hours may
+occur between the deposition of large batches of eggs. The enormous
+numbers in which the insects occur are thus plainly accounted for,
+especially when the abundance and universal occurrence of appropriate
+larval food is considered. The eggs are deposited below the surface in
+the cracks and interstices of the manure, several females usually
+depositing in one spot, so that the eggs commonly are found in large
+clusters (fig. 4) in selected places near the top of the pile, where a
+high degree of heat is maintained by the fermentation below. The second
+batch of eggs is laid from 8 to 10 days after the first. The eggs
+usually hatch in less than 24 hours. Under the most favorable conditions
+of temperature and moisture the egg state may last hardly more than 8
+hours. The maggots which issue from the eggs are very small and
+transparent. They grow rapidly, completing the growth of the larva stage
+in three days under the most favorable conditions, although this stage
+usually lasts from 4 to 7 days. The larval period may be prolonged
+greatly by low temperature or by dryness or scarcity of the larval food.
+As the larvæ (fig. 6) attain full size they gradually assume a creamy
+white color. A few hours before pupation they become very restless and
+migrate from their feeding ground in search of a favorable place in
+which to pass the pupa stage. They will often congregate at the edges of
+manure piles near the ground or burrow into the soil beneath, or they
+may crawl considerable distances away from the pile to pupate in the
+ground or in loose material under the edges of stones, boards, etc.
+
+[Illustration: FIG. 6.--Larvæ, or maggots, of the house fly. About
+natural size. (Newstead.)]
+
+The pupæ (fig 7), or "sleepers," are more or less barrel shaped and dark
+brown in color. In midsummer this stage usually lasts from 3 to 6 days.
+The pupa stage is easily affected by temperature changes and may be
+prolonged during hibernation for as long as 4 or 5 months. Numerous
+rearing experiments in various parts of the country have shown that the
+shortest time between the deposition of eggs and the emergence of the
+adult fly is 8 days, and 10 and 12 day records were very common.
+
+The adult fly, upon emerging from the puparium, works its way upward
+through the soil or manure and upon reaching the air it crawls about
+while its wings expand and the body hardens and assumes its normal
+coloration. In from 2 1/2 to 20 days, as previously stated, the female
+is ready to deposit eggs. As in the case of other periods of its life
+history, so the preoviposition period is prolonged considerably by the
+lower temperatures of spring and fall. In midsummer, with a
+developmental period of from 8 to 10 days from egg to adult, and a
+preoviposition period of from 3 to 4 days, a new generation would be
+started every 11 to 14 days. Thus the climate of the District of
+Columbia allows abundance of time for the development of from 10 to 12
+generations every season.
+
+[Illustration: FIG. 7.--Pupæ of the house fly. About natural size.
+(Newstead.)]
+
+Flies usually remain near their breeding places if they have plenty of
+food, but experiments recently made at Dallas, Tex., show that they may
+migrate considerable distances; in fact, house flies, so marked that the
+particular individuals could be identified, have been recaptured in
+traps as far as 13 miles from the place where they were liberated.
+
+
+
+
+HOW THE HOUSE FLY PASSES THE WINTER.
+
+
+The prevailing opinion that the house fly lives through the winter as an
+adult, hiding in cracks and crevices of buildings, etc., appears to be
+erroneous. Under outdoor conditions house flies are killed during the
+first really cold nights, that is, when the temperature falls to about
+15° or 10° F. In rooms and similar places protected from winds and
+partially heated during the winter flies have been kept alive in cages
+for long periods, but they never lived through the entire winter. In
+longevity experiments one record of 70 days and another of 91 days was
+obtained. No uncaged house flies were found during three seasons'
+observations in unheated and only partially heated attics, stables,
+unused rooms, etc., where favorable temperature conditions prevailed.
+The common occurrence in such places of the cluster fly and a few other
+species, which may be easily mistaken for the house fly, is responsible
+for the prevailing belief as to the way the house fly overwinters. There
+is therefore no reliable evidence whatever that adult house flies
+emerging during October and November pass the winter and are able to
+deposit their eggs the following spring, although they may continue
+active in heated buildings until nearly the end of January. On the other
+hand, there is evidence that house flies pass the winter as larvæ and
+pupæ, and that they sometimes breed continuously throughout the winter.
+In experiments at both Dallas, Tex., and Bethesda, Md., house flies have
+been found emerging during April from heavily infested manure heaps
+which had been set out and covered with cages during the preceding
+autumn. In the Southern States, during warm periods in midwinter, house
+flies may emerge and become somewhat troublesome; they frequently lay
+eggs on warm days.
+
+The second way in which the house fly may pass the winter is by
+continuous breeding. House flies congregate in heated rooms with the
+approach of the winter season. If no food or breeding materials are
+present they eventually die. However, where they have access to both
+food and suitable substances for egg laying they will continue breeding
+just as they do outdoors during the summer. Even in very cold climates
+there are undoubtedly many places, especially in cities, where house
+flies would have opportunity to pass the winter in this manner.
+
+
+
+
+CARRIAGE OF DISEASE BY THE HOUSE FLY.
+
+
+The body of the house fly is covered thickly with hairs and bristles of
+varying lengths, and this is especially true of the legs. Thus, when it
+crawls over infected material it readily becomes loaded with germs, and
+subsequent visits to human foods result in their contamination. Even
+more dangerous than the transference of germs on the legs and body of
+the fly is the fact that bacteria are found in greater numbers and live
+longer in its alimentary canal. These germs are voided, not only in the
+excrement of the fly, but also in small droplets of regurgitated matter
+which have been called "vomit spots." When we realize that flies
+frequent and feed upon the most filthy substances (it may be the excreta
+of typhoid or dysentery patients or the discharges of one suffering from
+tuberculosis), and that subsequently they may contaminate human foods
+with their feet or excreta or vomit spots, the necessity and importance
+of house-fly control is clear.
+
+In army camps, in mining camps, and in great public works, where large
+numbers of men are brought together for a longer or shorter time, there
+is seldom the proper care of excreta, and the carriage of typhoid germs
+from the latrines and privies to food by flies is common and often
+results in epidemics of typhoid fever.
+
+And such carriage of typhoid is by no means confined to great temporary
+camps. In farmhouses in small communities, and even in badly cared for
+portions of large cities, typhoid germs are carried from excrement to
+food by flies, and the proper supervision and treatment of the breeding
+places of the house fly become most important elements in the prevention
+of typhoid.
+
+In the same way other intestinal germ diseases, such as Asiatic cholera,
+dysentery, enteritis (inflammation of the intestine), and infantile
+diarrhea, are all so carried. There is strong circumstantial evidence
+also that tuberculosis, anthrax, yaws, ophthalmia, smallpox, tropical
+sore, and the eggs of parasitic worms may be and are carried in this
+way. In the case of over 30 different disease organisms and parasitic
+worms, actual laboratory proof exists, and where lacking is replaced by
+circumstantial evidence amounting almost to certainty.
+
+
+
+
+EXCLUDING AND CAPTURING FLIES.
+
+
+The principal effort to control this dangerous insect must be made at
+the source of supply--its breeding places. Absolute cleanliness and the
+removal or destruction of anything in which flies may breed are
+essential; and this is something that can be done even in cities.
+Perhaps it can be done more easily in the cities than in villages, on
+account of their greater police power and the lesser insistence on the
+rights of the individual. Once people are educated to the danger and
+learn to find the breeding places, the rest will be easy.
+
+In spite of what has just been said, it is often necessary to catch or
+otherwise destroy adult flies, or to protect food materials from
+contamination and persons from annoyance or danger; hence the value of
+fly papers and poisons, flytraps, and insect screens.
+
+
+THE USE OF INSECT SCREENS.
+
+A careful screening of windows and doors during the summer months, with
+the supplementary use of sticky fly papers, is a protective measure
+against house flies known to everyone. As regards screening, it is only
+necessary here to emphasize the importance of keeping food supplies
+screened or otherwise covered so that flies can gain no access to them.
+This applies not only to homes but also to stores, restaurants, milk
+shops, and the like. Screening, of course, will have no effect in
+decreasing the number of flies, but at least it has the virtue of
+lessening the danger of contamination of food.
+
+Insect screens for doors and windows should be well made and must fit
+tightly, otherwise they will not keep insects out. It is equally
+important that they be made of good and durable screen cloth. Copper
+insect screen cloth, although a little higher in price, will prove more
+economical in the long run, as it lasts many years. If, however, the
+cost of copper screen cloth is objectionable, steel screen cloth, either
+painted or galvanized, can be used. Painted steel screen cloth will last
+one or more years without repainting, its durability depending upon the
+climate. In humid regions, of course, it will rust more quickly than it
+will where the climate is dry. The same may be said of galvanized steel
+insect screen cloth.
+
+Insect screen cloth made with 16 meshes to the inch is recommended, for
+16-mesh screen cloth will keep out flies and most mosquitoes[9] and
+other small insects which at times are found almost everywhere.
+
+[Footnote 9: Where the yellow fever or dengue fever mosquito occurs,
+18-mesh screen cloth (or 16-mesh screen cloth made from extra heavy
+wire) should be used.]
+
+
+FLY PAPERS AND POISONS.
+
+[Illustration: FIG. 8.--Conical hoop flytrap side view. _A_, Hoops
+forming frame at bottom. _B_, Hoops forming frame at top. _C_, Top of
+trap made of barrel head. _D_, Strips around door. _E_, Door frame. _F_,
+Screen on door. _G_, Buttons holding door. _H_, Screen on outside of
+trap. _I_, Strips on side of trap between hoops. _J_, Tips of these
+strips projecting to form legs. _K_, Cone. _L_, United edges of screen
+forming cone. _M_, Aperture at apex of cone. (Bishopp.)]
+
+The use of sticky fly papers to destroy flies that have gained access to
+houses is well known. Fly-poison preparations also are common. Many of
+the commercial fly poisons contain arsenic, and their use in the
+household is attended with considerable danger, especially to children.
+This danger is less with the use of a weak solution of formalin. A very
+effective fly poison is made by adding 3 teaspoonfuls of the commercial
+formalin to a pint of milk or water sweetened with a little brown sugar.
+A convenient way of exposing this poison is by partly filling an
+ordinary drinking glass with the solution. A saucer or plate is then
+lined with white blotting paper cut the size of the dish and placed
+bottom up over the glass. The whole is then quickly inverted and a small
+match stick placed under the edge of the glass. As the solution
+evaporates from the paper more flows out from the glass and thus the
+supply is automatically renewed.
+
+
+FLY SPRAYS.
+
+Sprays designed to destroy or repel house flies fill a certain need in
+connection with the house-fly problem. No very satisfactory repellent
+substances for this insect have been found which are at the same time
+adaptable to general use about the home, or places where foods are
+handled. Extracts of pyrethrum flowers are now generally available
+commercially, and these give fairly good results in the destruction of
+house flies in buildings. Most of the sprays of pyrethrum extract
+contain kerosene oil as a carrier, and undoubtedly the kerosene has much
+to do with the toxicity of the spray. Such materials are most applicable
+to buildings which become infested with flies and which can be readily
+closed up at night and the air within thoroughly saturated with the
+spray by means of an atomizer. Under such conditions the flies are
+rather quickly overcome by the spray and if a sufficient quantity is
+used they will not revive.
+
+
+FLYTRAPS.
+
+Flytraps may be used to advantage in decreasing the number of flies.
+Their use has been advocated not only because of the immediate results,
+but because of the chances that the flies may be caught before they lay
+eggs, and the number of future generations will be reduced greatly.
+
+Many types of flytraps are on the market. As a rule the larger ones are
+the more effective. Anyone with a few tools can construct flytraps for a
+small part of the price of the ready-made ones. A trap (fig. 8) which is
+very effective in catching flies and is easily made, durable, and cheap,
+may be made of four barrel hoops, four laths, a few strips of boxing,
+and 8 1/2 lineal feet of screening, 24 inches wide. (For greater details
+see Farmers' Bulletin 734.)
+
+The effectiveness of the traps will depend on the selection of baits. A
+good bait for catching house flies is 1 part of blackstrap molasses to 3
+parts of water, after the mixture has been allowed to ferment for a day
+or two. Overripe or fermenting bananas crushed and placed in the bait
+pans give good results, especially with milk added to them. A mixture of
+equal parts brown sugar and curd of sour milk, thoroughly moistened,
+gives good results after it has been allowed to stand for three or four
+days.
+
+
+
+
+PREVENTING THE BREEDING OF FLIES.
+
+
+As previously stated, fly papers, poisons, and traps are at best only
+temporary expedients. The most logical method of abating the fly
+nuisance is the elimination or treatment of all breeding places. It
+would appear from what is known of the life history and habits of the
+common house fly that it is perfectly feasible for cities and towns to
+reduce the numbers of this annoying and dangerous insect so greatly as
+to render it of comparatively slight account. On farms also, in dairies,
+and under rural conditions generally, much can and should be done to
+control the fly, which here, as elsewhere, constitutes a very serious
+menace to health.
+
+
+CONSTRUCTION AND CARE OF STABLES.
+
+In formulating rules for the construction and care of stables and the
+disposal of manure the following points must be taken into
+consideration. In the first place, the ground of soil-floor stables may
+offer a suitable place for the development of fly larvæ. The larvæ will
+migrate from the manure to the soil and continue their growth in the
+moist ground. This takes place to some extent even when the manure is
+removed from the stables every day. Even wooden floors are not entirely
+satisfactory unless they are perfectly water-tight, since larvæ will
+crawl through the cracks and continue their development in the moist
+ground below. Water-tight floors of concrete or masonry, therefore, are
+desirable. Flies have been found to breed in surprising numbers in small
+accumulations of material in the corners of feed troughs and mangers,
+and it is important that such places be kept clean.
+
+
+FLY-TIGHT MANURE PITS.
+
+The Bureau of Entomology for a number of years has advised that manure
+from horse stables be kept in fly-tight pits or bins. Such pits can be
+built in or attached to the stable so that manure can be easily thrown
+in at the time of cleaning and so constructed that the manure can be
+readily removed. It is desirable that the manure be placed in these
+fly-proof receptacles as soon as possible after it is voided. The
+essential point is that flies be prevented from reaching the manure, and
+for this reason the pit or bin must be tightly constructed, preferably
+of concrete, and the lid kept closed except when the manure is being
+thrown in or removed. The difficulty has been that manure often becomes
+infested before it is put into the container, and flies frequently breed
+out before it is emptied and often escape through the cracks. To obviate
+these difficulties a manure box or pit with a modified tent trap or cone
+trap attached is desirable.
+
+In order to retain the fertilizing value of manure to the greatest
+extent it is advisable that air be excluded from it as much as possible
+and that it be protected from the leaching action of rains. This being
+the case, there is really no necessity for covering a large portion of
+the top of the box with a trap, but merely to have holes large enough to
+attract flies to the light, and to cover these holes with ordinary
+conical traps, with the legs cut off, so, that the bottoms of the traps
+will fit closely to the box. The same arrangement can be made where
+manure is kept in a pit. If manure boxes or pits are kept fly tight they
+are satisfactory under farm or dairy conditions for the storage of
+manure during the busy season when it can not be hauled out daily.
+
+
+FREQUENCY WITH WHICH MANURE SHOULD BE REMOVED IN CITIES AND TOWNS.
+
+In deciding the question as to how often manure should be removed in
+cities and towns, it should be borne in mind that when the larvæ have
+finished feeding they will often leave the manure and pupate in the
+ground below or crawl some distance away to pupate in débris under
+boards or stones and the like. Hence the manure should be removed before
+the larvæ reach the migratory stage; that is to say, removal is
+necessary every three days, and certainly not less frequently than twice
+a week during the summer months. A series of orders issued in 1906 by
+the health department of the District of Columbia, on the authority of
+the Commissioners of the District, covers most of these points, and
+these orders, which may well serve as a model to other communities
+desiring to undertake similar measures, may be briefly condensed as
+follows:
+
+
+   HEALTH OFFICE REGULATIONS FOR CONTROL OF HOUSE FLIES IN CITIES.
+
+     All stalls in which animals are kept shall have the surface of the
+     ground covered with a water-tight floor. Every person occupying a
+     building where domestic animals are kept shall maintain in
+     connection therewith a bin or pit for the reception of manure and,
+     pending the removal from the premises of the manure from the animal
+     or animals, shall place such manure in said bin or pit. This bin
+     shall be so constructed as to exclude rain water and shall in all
+     other respects be water-tight, except as it may be connected with
+     the public sewer. It shall be provided with a suitable cover and
+     constructed so as to prevent the ingress and egress of flies. No
+     person owning a stable shall keep any manure or permit any manure
+     to be kept in or upon any portion of the premises other than the
+     bin or pit described, nor shall he allow any such bin or pit to be
+     overfilled or needlessly uncovered. Horse manure may be kept
+     tightly rammed into well-covered barrels for the purpose of removal
+     in such barrels. Every person keeping manure in the more densely
+     populated parts of the District shall cause all such manure to be
+     removed from the premises at least twice every week between June 1
+     and October 31, and at least once every week between November 1 and
+     May 31 of the following year. No person shall remove or transport
+     any manure over any public highway in any of the more densely
+     populated parts of the District except in a tight vehicle, which,
+     if not inclosed, must be effectually covered with canvas, so as to
+     prevent the manure from being dropped. No person shall deposit
+     manure removed from the bins or pits within any of the more densely
+     populated parts of the District without a permit from the health
+     officer. Any person violating any of the provisions shall, upon
+     conviction thereof, be punished by a fine of not more than $40 for
+     each offense.
+
+Not only must horse stables be cared for, but chicken yards, piggeries,
+and garbage receptacles as well. In cities, with better methods of
+disposal of garbage and with the lessening of the number of horses and
+horse stables consequent upon electric street railways, bicycles, and
+automobiles, the time may come, and before very long, when window
+screens may be discarded.
+
+
+DISPOSAL OF MANURE IN RURAL AND SUBURBAN DISTRICTS.
+
+The control of flies in rural and suburban districts offers a much more
+difficult problem. Here it is often out of the question to remove all
+manure from the premises twice a week, and the problem is to find some
+method of disposal or storage which will conserve the fertilizing value
+of the manure and at the same time prevent all flies from breeding, or
+destroy such as do breed there.
+
+With this idea in mind, it has been recommended that stable manure be
+collected every morning and hauled out at once and spread rather thinly
+on the fields. This procedure is advisable from the point of view of
+getting the maximum fertilizing value from the manure. Immediate
+spreading on the fields is said largely to prevent the loss of plant
+food which occurs when manure is allowed to stand in heaps for a long
+time. This method will be effective in preventing the breeding of flies
+only if the manure is hauled out promptly every morning and spread
+thinly so that it will dry, since it is unfavorable for fly development
+in desiccated condition. The proper scattering of the manure on the
+fields is best and most easily and quickly accomplished by the use of a
+manure spreader, and many dairies, and even farms, are practicing the
+daily distribution of manure in this way. Removal every three or four
+days will not be sufficient. Observations have shown that if manure
+becomes flyblown and the maggots attain a fairly good size before the
+manure is scattered on the fields, they can continue their development
+and will pupate in the ground.
+
+
+CHEMICAL TREATMENT OF MANURE TO DESTROY FLY MAGGOTS.
+
+During the summer months, when fly breeding is going on most actively,
+the farmer is also busy and often can not spare the time to remove
+manure regularly. The general practice, therefore, has been to keep the
+manure in heaps located, as a rule, very near the stables. How can fly
+breeding be prevented in such accumulations? As a result of recent
+investigations, it is now possible to point out two methods which are
+practical and effective.
+
+The first is the treatment of the manure pile with chemical substances
+which will kill the eggs and maggots of the house fly. The Bureau of
+Entomology, in cooperation with the Bureau of Chemistry and the Bureau
+of Plant Industry, has conducted a series of experiments in which a
+large number of chemicals were applied to infested manure and
+observations made, not only on their efficiency in killing the maggots
+but also as to their effect on the chemical composition and bacterial
+flora of the manure. The object was to find some cheap chemical which
+would be effective in destroying the fly larvæ and at the same time
+would not reduce the fertilizing value of the manure.
+
+
+TREATMENT WITH HELLEBORE.
+
+Of the numerous substances tried, the one which seems best to fulfill
+these conditions is powdered hellebore.[10] For the treatment of manure a
+water extract of the hellebore is prepared by adding 1/2 pound of the
+powder to every 10 gallons of water, and after stirring it is allowed to
+stand 24 hours. The mixture thus prepared is sprinkled over the manure
+at the rate of 10 gallons to every 8 bushels (10 cubic feet) of manure.
+From the result of 12 experiments with manure piles treated under
+natural conditions it appears that such treatment results in the
+destruction of from 88 to 99 per cent of the fly larvæ.
+
+Studies of treated manure indicated that its composition and rotting
+were not interfered with. Furthermore, several field tests showed that
+there was no apparent injury to growing crops when fertilized with
+treated manure.
+
+Since the solution is somewhat poisonous it should not be left exposed
+where it might be drunk by livestock. It is quite safe to say that
+chickens will not be injured by pecking at hellebore-treated manure.
+This has been tested carefully. Hellebore can be obtained both in ground
+and powdered form, but the powder gives the best results in the
+destruction of fly larvæ.
+
+[Footnote 10: _Veratrum viride_ or _V. aloum_.]
+
+
+TREATMENT WITH POWDERED BORAX.
+
+Another chemical found to be even more effective as a larvicide is
+powdered borax. This substance is available in commercial form in all
+parts of the country. It has the advantage of being comparatively
+nonpoisonous and noninflammable and is easily transported and handled.
+The minimum amount necessary to kill fly larvæ was found to be 0.62
+pound per 8 bushels of manure, or about 1 pound per 16 cubic feet. Best
+results were obtained when the borax was applied in solution, or when
+water was sprinkled on after the borax had been scattered evenly over
+the pile. Borax is not only effective in killing the larvæ, but when it
+comes in contact with the eggs it prevents them from hatching. When
+applied at the rate of 1 pound to 16 cubic feet it was found to kill
+about 90 per cent of the larvæ, heavier applications killing from 98 to
+99 per cent.
+
+Borax has no injurious effect on the chemical composition or rotting of
+the manure. However, when added in large quantities with manure to the
+soil it will cause considerable injury to growing plants. A number of
+experiments have been conducted to determine the effect on crops of the
+use of manure treated with borax as herein recommended. When applied at
+the rate of 15 tons per acre it appears that no injury as a rule will
+follow. Some crops are more sensitive to borax than others, and also the
+tendency to injury appears to vary on different soils. It is necessary,
+therefore, to repeat the warning issued in connection with a previous
+bulletin[11] on this subject, that great care be exercised, in the
+application of borax, that the manure does not receive more than 1 pound
+for every 16 cubic feet, and that not more than 15 tons of manure so
+treated are applied to the acre.
+
+In view of the possible injury from the borax treatment as a result of
+carelessness in applying it, or from other unforeseen conditions, it is
+recommended that horse manure and other farmyard manures which are to be
+used as fertilizer be treated with hellebore. Borax, on the other hand,
+is such a good larvicide that it call be used with advantage on the
+ground of soil-floor stables, in privies, on refuse piles, and on any
+accumulations of fermenting organic matter which are not to be used for
+fertilizing purposes.
+
+[Footnote 11: Department Bulletin 118, U. S. Department of Agriculture,
+p. 25.]
+
+
+TREATMENT WITH CALCIUM CYANAMID AND ACID PHOSPHATE.
+
+Many experiments with mixtures of commercial fertilizers were tried to
+determine whether fly larvæ would be killed by any substance the
+addition of which would increase the fertilizing value of the manure. A
+mixture of calcium cyanamid and acid phosphate was found to possess
+considerable larvicidal action. Several experiments showed that 1/2
+pound of calcium cyanamid plus 1/2 pound of acid phosphate to each
+bushel of manure give an apparent larvicidal action of 98 per cent. The
+mixture in the form of a powder was scattered evenly over the surface
+and then wet down with water. The use of this mixture adds to the manure
+two important elements, nitrogen and phosphorus.
+
+
+MAGGOT TRAP FOR DESTRUCTION OF FLY LARVÆ FROM HORSE MANURE.
+
+The second method of handling manure is one which does not require the
+application of chemicals. It is based on the fact, mentioned on page 4,
+that the larvæ of the house fly, a few hours before they are ready to
+pupate, show a strong tendency to migrate. This migration takes place
+mostly at night, and the larvæ sometimes crawl considerable distances
+from the manure pile. Now it is possible by means of a very simple
+arrangement called a maggot trap to destroy fully 99 per cent of all
+maggots breeding in a given lot of manure. A successful maggot trap
+which the Maryland Agricultural College constructed at the college barn
+is shown in Figure 9. The trap was designed by R. H. Hutchison and
+constructed under his supervision. The manure, instead of being thrown
+on the ground, is heaped carefully on a slatted platform, which stands
+about 1 foot high. This particular platform measures 10 by 20 feet.
+There are six 2 by 4 pieces running lengthwise 2 feet apart. Across
+these are nailed 1-inch strips with 1/2 to 1 inch spaces between them.
+The wooden platform stands on a concrete floor, and a rim or wall of
+concrete 4 inches high surrounds the floor. The floor slopes a little
+toward one corner from which a pipe leads to a small cistern near by.
+This pipe is plugged with a stopper of soft wood, and the concrete floor
+is filled with water to a depth of 1 inch in the shallowest part. Flies
+will lay their eggs on the manure as usual, but the maggots, when they
+have finished feeding and begin to migrate, crawl out of the manure,
+drop into the water below, and are drowned. Each week the plug is
+removed from the pipe, and all the maggots are washed into the cistern.
+The floor is then cleaned of any solid particles by means of a
+long-handled stable broom or by a strong stream of water from a hose.
+The pipe being again plugged, the floor is again partly filled with
+water and the trap is ready for another week's catch. A platform of this
+size will hold the manure accumulating from four horses during the
+period of four months, or about 20 days' accumulation from 25 horses, if
+the heap is well built and made at least 5 feet high.
+
+[Illustration: FIG. 9. A maggot trap for house-fly control. View showing
+the concrete basin containing water in which larvæ are drowned, and the
+wooden platform on which manure is heaped. (Hutchison.)]
+
+Experience with this maggot trap clearly indicates that best results can
+be secured if the manure is compactly heaped on the platform and kept
+thoroughly moistened. It is best to apply a small amount of water each
+morning after the stable cleanings have been added to the pile. It
+should be borne in mind that in order to make this trap a success the
+platform beneath the pile must be kept comparatively free of
+accumulations of manure, and moisture applied regularly to drive the
+maggots out.
+
+
+COMPACT HEAPING OF MANURE.
+
+Another method of disposing of manure has been recommended by English
+writers. The manure is built up in a compact rectangular heap, the sides
+of which are beaten hard with shovels. The ground around the edges of
+the heap is made smooth and hard and loose straw is placed in small
+windrows around the manure pile about 1 foot from the edge. The
+exclusion of the air, together with the high temperature and gases
+formed by fermentation, tends to make the heap unfavorable for the
+development of fly larvæ. Those which do happen to develop in the
+surface layers will migrate and pupate in the ring of straw around the
+heap, where they are destroyed by burning.
+
+
+GARBAGE DISPOSAL AND TREATMENT OF MISCELLANEOUS BREEDING PLACES.
+
+It is just as true under farm conditions as in cities that breeding
+places other than horse manure must be attended to. Garbage must be
+disposed of, hog and poultry manure must be cared for, and especially on
+dairy farms it is extremely important that every precaution be taken to
+prevent the contamination of milk by flies.
+
+It is very desirable that all refuse possible, accumulated from cities
+and towns, be burned. Incineration has been practiced successfully by a
+number of towns and cities with populations of from 10,000 to 15,000 and
+over. In larger cities provision should be made for burning carcasses as
+well as garbage and other refuse. If city and town garbage is sold to
+hog feeders the municipal authorities should have control of the
+sanitary conditions about the feeding yards, as there is great danger
+from fly breeding in such places if not kept clean.
+
+
+SEWAGE DISPOSAL IN RELATION TO THE PREVENTION OF FLY-BORNE DISEASES.
+
+In the consideration of these measures we have not touched upon the
+remedies for house flies breeding in human excrement. On account of the
+danger of the carriage of typhoid fever, the dropping of human excrement
+in the open in cities or towns, either in vacant lots or in dark
+alleyways, should be made a misdemeanor, and the same care should be
+taken by the sanitary authorities to remove or cover up such depositions
+as is taken in the removal of the bodies of dead animals. For modern
+methods of sewage disposal adapted for farm use one should consult
+Department of Agriculture Department Bulletin No. 57. In the absence of
+modern methods of sewage disposal, absolutely sanitary privies are prime
+necessities, whether in towns or on farms. Directions for building and
+caring for such privies will be found in Farmers' Bulletin 463 and in
+Yearbook Separate 712, "Sewage Disposal on the Farm." The box privy is
+always a nuisance from many points of view, and is undoubtedly dangerous
+as a breeder of flies which may carry the germs of intestinal diseases.
+The dry-earth treatment of privies is unsatisfactory. No box privy
+should be permitted to exist unless it is thoroughly and regularly
+treated with some effective larvicide. Since the fecal matter in such
+privies is seldom used for fertilizing purposes it may well be treated
+liberally with borax. The powdered borax may be scattered two or three
+times a week over the exposed surface so as to whiten it.
+
+
+
+
+WHAT COMMUNITIES CAN DO TO ELIMINATE THE HOUSE FLY.
+
+
+Antifly crusades have been very numerous in recent years, and some have
+been noteworthy both in methods and in results. However, it will not be
+amiss here to emphasize the importance of concerted, organized effort on
+the part of whole communities, not only cities, but suburban and rural
+neighborhoods as well. By the most painstaking care one may prevent all
+fly breeding on his premises, but it will avail him little if his
+neighbors are not equally careful. Some sort of cooperation is
+necessary. One of the first and most important elements in any antifly
+crusade is a vigorous and continued educational campaign. It has been
+the experience of those who have undertaken such crusades that people
+generally regard the fly as a somewhat harmless nuisance and that the
+first work of the campaign was to bring the people to a realization of
+the dangers from flies and the possibility of getting rid of them. In
+the educational campaign every possible means of publicity can be
+employed, including newspapers, lectures, moving pictures, posters,
+handbills, cartoons, instruction in schools, etc.
+
+The antifly crusade is a matter of public interest and should be
+supported by the community as a whole and engineered by the health
+officers. But health officers can do little toward the necessary work of
+inspection and elimination without funds, and therefore the support of
+the campaign must manifest itself in increased appropriations for
+public-health work. Very often it is lack of funds which prevents the
+health officers from taking the initiative in the antifly crusades, and
+there must necessarily be much agitation and education before they can
+profitably take up the work. Right here lies a field for civic
+associations, women's clubs, boards of trade, etc., to exercise their
+best energy, initiative, and leadership.
+
+
+
+
+ORGANIZATION OF THE UNITED STATES DEPARTMENT OF AGRICULTURE WHEN THIS
+PUBLICATION WAS LAST PRINTED
+
+  _Secretary of Agriculture_              ARTHUR M. HYDE.
+
+  _Assistant Secretary_                   R. W. DUNLAP.
+
+  _Director of Scientific Work_           A. F. WOODS.
+
+  _Director of Regulatory Work_           WALTER G. CAMPBELL.
+
+  _Director of Extension Work_            C. W. WARBURTON.
+
+  _Director of Personnel and Business
+       Administration_                    W. W. STOCKBERGER.
+
+  _Director of Information_               M. S. EISENHOWER.
+
+  _Solicitor_                             E. L. MARSHALL.
+
+  _Bureau of Agricultural Economics_      NILS A. OLSEN, _Chief_.
+
+  _Bureau of Agricultural Engineering_    S. H. MCCRORY, _Chief_.
+
+  _Bureau of Animal Industry_             JOHN R. MOHLER, _Chief_.
+
+  _Bureau of Biological Survey_           PAUL G. REDINGTON, _Chief_.
+
+  _Bureau of Chemistry and Soils_         H. G. KNIGHT, _Chief_.
+
+  _Office of Cooperative Extension Work_  C. B. SMITH, _Chief_.
+
+  _Bureau of Dairy Industry_              O. E. REED, _Chief_.
+
+  _Bureau of Entomology_                  C. L. MARLATT, _Chief_.
+
+  _Office of Experiment Stations_         JAMES T. JARDINE, _Chief_.
+
+  _Food and Drug Administration_          WALTER G. CAMPBELL, _Director_
+                                          _of Regulatory Work, in Charge._
+
+  _Forest Service_                        R. Y. STUART, _Chief_.
+
+  _Grain Futures Administration_          J. W. T. DUVEL, _Chief_.
+
+  _Bureau of Home Economics_              LOUISE STANLEY, _Chief_.
+
+  _Library_                               CLARIBEL R. BARNETT, _Librarian_.
+
+  _Bureau of Plant Industry_              WILLIAM A. TAYLOR, _Chief_.
+
+  _Bureau of Plant Quarantine_            LEE A. STRONG, _Chief_.
+
+  _Bureau of Public Roads_                THOMAS H. MACDONALD, _Chief_.
+
+  _Weather Bureau_                        CHARLES F. MARVIN, _Chief_.
+
+
+U. S. GOVERNMENT PRINTING OFFICE: 1938
+
+
+For sale by the Superintendent of Documents, Washington, D. C.
+Price 5 cents
+
+
+[Transcriber's Note:
+Footnotes 10 & 11 renumbered to avoid the confusion generated
+by two footnote 9's.]
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK THE HOUSE FLY AND HOW TO SUPPRESS IT ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

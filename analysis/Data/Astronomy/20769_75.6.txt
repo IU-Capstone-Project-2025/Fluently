@@ -1,0 +1,4579 @@
+﻿The Project Gutenberg eBook of A Field Book of the Stars
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: A Field Book of the Stars
+
+Author: William Tyler Olcott
+
+Release date: March 9, 2007 [eBook #20769]
+
+Language: English
+
+Credits: Produced by Audrey Longhurst, Christine D. and the Online
+        Distributed Proofreading Team at http://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK A FIELD BOOK OF THE STARS ***
+
+
+
+
+Produced by Audrey Longhurst, Christine D. and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+
+
+
+
+
+
+
+  A FIELD BOOK
+  OF
+  THE STARS
+
+
+
+BY
+
+WILLIAM TYLER OLCOTT
+
+
+_Second Edition, revised and enlarged_
+
+
+WITH FIFTY DIAGRAMS
+
+
+
+  G.P. PUTNAM'S SONS
+  NEW YORK AND LONDON
+  The Knickerbocker Press
+
+  COPYRIGHT, 1907
+  BY
+  WILLIAM TYLER OLCOTT
+  COPYRIGHT, 1914
+  BY
+  WILLIAM TYLER OLCOTT
+  (For Second Edition)
+
+[Illustration: The Knickerbocker Press, New York]
+
+_Printed in the United States of America_
+
+
+
+
+INTRODUCTION.
+
+
+Considering the ease with which a knowledge of the constellations can
+be acquired, it seems a remarkable fact that so few are conversant
+with these time-honored configurations of the heavens. Aside from a
+knowledge of "the Dipper" and "the Pleiades," the constellations to
+the vast majority, are utterly unknown.
+
+To facilitate and popularize if possible this fascinating recreation
+of star-gazing the author has designed this field-book. It is limited
+in scope solely to that purpose, and all matter of a technical or
+theoretical nature has been omitted.
+
+The endeavor has been to include in these pages only such matter as
+the reader can observe with the naked eye, or an opera-glass.
+Simplicity and brevity have been aimed at, the main idea being that
+whatever is bulky or verbose is a hindrance rather than a help when
+actually engaged in the observation of the heavens.
+
+The constellations embraced in this manual are only those visible from
+the average latitude of the New England and Middle States, and owe
+their place in the particular season in which they are found to the
+fact that in that season they are favorably situated for observation.
+
+With this brief explanatory note of the purpose and design of the
+book, the author proceeds to outline the scheme of study.
+
+
+
+
+SCHEME OF STUDY.
+
+
+The table of contents shows the scheme of study to be pursued, and to
+facilitate the work it is desirable that the student follow the
+therein circumscribed order.
+
+A knowledge on the part of the reader of Ursa Major, or "the Dipper"
+as it is commonly called, and "the Pleiades," the well-known group in
+Taurus, is presupposed by the author.
+
+With this knowledge as a basis, the student is enabled in any season
+to take up the study of the constellations. By following out the order
+dictated, he will in a few nights of observation be enabled to
+identify the various configurations making up the several
+constellations that are set apart for study in that particular season.
+
+A large plate, showing the appearance of the heavens at a designated
+time on the first night of the quarter, is inserted before each
+season's work. This should be consulted by the student before he makes
+an observation, in order that he may obtain a comprehensive idea of
+the relative position of the constellations, and also know in what
+part of the heavens to locate the constellation which he wishes to
+identify.
+
+A knowledge of one constellation enables the student to determine the
+position of the next in order. In this work, the identification of
+each constellation depends on a knowledge of what precedes, always
+bearing in mind the fact that each season starts as a new and distinct
+part to be taken by itself, and has no bearing on that which comes
+before.
+
+
+
+
+CONTENTS
+
+                                                             PAGE
+
+  INTRODUCTION                                                iii
+
+  SCHEME OF STUDY                                               v
+
+
+  The Constellations of Spring.
+
+  MAP OF THE HEAVENS 9 P.M., APRIL FIRST                        3
+
+  1.  URSA MAJOR                                                4
+
+  2.  URSA MINOR                                                6
+      Located by the pointer stars in Ursa Major.
+
+  3.  GEMINI                                                    8
+      Located by a line drawn through designated stars
+      in Ursa Major.
+
+  4.  AURIGA                                                   10
+      Located in the same manner as Gemini.
+
+  5.  CANCER                                                   12
+      Located by a line drawn from Auriga to Gemini
+      and prolonged.
+
+  6.  HYDRA                                                    14
+      The head of Hydra is to be seen just below Cancer.
+
+  7.  LEO                                                      16
+      Located by a line drawn from Gemini to Cancer
+      and prolonged.
+
+  8.  COMA BERENICES                                           18
+      Position indicated by drawing a line through
+      designated stars in Leo.
+
+  9.  CANIS MINOR                                              20
+      Located by a line drawn from Auriga to Gemini
+      and prolonged.
+
+  10. CORVUS                                                   22
+      Located by a line drawn from Ursa Minor through
+      Ursa Major and prolonged.
+
+  11. CRATER                                                   24
+      Located south of Leo and just west of Corvus.
+
+  METEORIC SHOWERS, APRIL TO JULY                              26
+
+
+  The Constellations of Summer.
+
+  MAP OF THE HEAVENS 9 P.M., JULY FIRST                        31
+
+  12. DRACO                                                    32
+      Lies between Ursa Major and Ursa Minor, coiling
+      about the latter.
+
+  13. LYRA                                                     34
+      Vega, its brightest star, is 12° S.W. of the Dragon's
+      head.
+
+  14. CYGNUS                                                   36
+      Deneb, its brightest star, is about 20° east of Vega.
+
+  15. AQUILA                                                   38
+      Located by a line drawn from the Dragon's head
+      through Vega and prolonged.
+
+  16. DELPHINUS                                                40
+      Located about 10° northeast of Altair in Aquila.
+
+  17. SAGITTARIUS                                              42
+      Located by a line drawn from Cygnus to Aquila
+      and prolonged.
+
+  18. OPHIUCHUS AND SERPENS                                    44
+      Located by a line drawn from Delphinus to Aquila
+      and prolonged.
+
+  19. SCORPIUS                                                 46
+      Located just under Ophiuchus, and west of Sagittarius.
+
+  20. LIBRA                                                    48
+      Located about 15° west of the head of Scorpius.
+
+  21. CORONA BOREALIS                                          50
+      Located just above the head of Serpens.
+
+  22. HERCULES                                                 52
+      Located by lines drawn from either Vega or Altair
+      to Corona.
+
+  23. BOÖTES                                                   54
+      Located just west of the Crown. Arcturus, its
+      brightest star, is about 30° southeast of η Ursae
+      Majoris.
+
+  24. VIRGO                                                    56
+      Spica, its brightest star, is located by a line drawn
+      from Antares in Scorpius through α in Libra and
+      prolonged about 20°.
+
+  25. CANES VENATICI                                           58
+      Cor Caroli, its brightest star, is about 17° south
+      of Alioth in Ursa Major.
+
+  METEORIC SHOWERS, JULY TO OCTOBER                            60
+
+
+  The Constellations of Autumn.
+
+  MAP OF THE HEAVENS 9 P.M., OCTOBER FIRST                     65
+
+  26. CASSIOPEIA                                               66
+      Located by a line drawn from Ursa Major through
+      the Pole star, the position of which is indicated
+      by the pointer stars α and β Ursae Majoris.
+
+  27. CEPHEUS                                                  68
+      Located by pointer stars in Cassiopeia.
+
+  28. PEGASUS                                                  70
+      The great square of Pegasus is located by a line
+      drawn from Polaris to Cassiopeia and prolonged.
+
+  29. ANDROMEDA                                                72
+      The star Alpheratz in Andromeda is at the northeast
+      corner of the great square of Pegasus.
+
+  30. PERSEUS                                                  74
+      Lies 9° east of γ Andromedae.
+
+  31. PISCES                                                   76
+      The Circlet in Pisces is to be seen just below
+      Pegasus.
+
+  32. TRIANGULUM                                               78
+      A line drawn from Pegasus to Perseus passes through
+      β in Triangulum.
+
+  33. AQUARIUS                                                 80
+      The position of the water jar of Aquarius is determined
+      by pointer stars in Pegasus.
+
+  34. CAPRICORNUS                                              82
+      The head of the Sea Goat is located by a line drawn
+      from α Pegasi through ζ and θ Pegasi and prolonged
+      about 25°.
+
+  35. ARIES                                                    84
+      Lies just south of Triangulum. A line drawn
+      from γ Andromedae through β Trianguli points
+      out α Arietis.
+
+  36. CETUS                                                    86
+      The head of Cetus lies about 20° southeast of
+      Aries.
+
+  37. MUSCA                                                    88
+      Located between Triangulum and Aries.
+
+  METEORIC SHOWERS, OCTOBER TO JANUARY                         90
+
+
+  The Constellations of Winter.
+
+  MAP OF THE HEAVENS 9 P.M., JANUARY FIRST                     95
+
+  38. TAURUS                                                   96
+      Contains the celebrated and unmistakable group,
+      The Pleiades, to be seen almost overhead in
+      the early evening during the Winter months.
+
+  39. ORION                                                    98
+      The tips of the horns of the Bull are pointer stars
+      to Betelgeuze, in Orion.
+
+  40. LEPUS                                                   100
+      Located just below Orion.
+
+  41. COLUMBA                                                 102
+      Located south of Lepus, close to the horizon.
+
+  42. CANIS MAJOR                                             104
+      Located by a line drawn from the stars forming
+      Orion's girdle.
+
+  43. ARGO NAVIS                                              106
+      Located by a line drawn from Orion to Canis
+      Major and prolonged 18°.
+
+  44. MONOCEROS                                               108
+      Located just east of Orion.
+
+  45. ERIDANUS                                                110
+      Located just west of Rigel, in Orion.
+
+  METEORIC SHOWERS, JANUARY TO APRIL                          112
+
+  THE PLANETS                                                 115
+
+  THE MILKY WAY                                               124
+
+  THE MOTIONS OF THE STARS                                    126
+
+  METEORS, OR SHOOTING STARS                                  130
+
+  NAMES OF THE STARS AND THEIR MEANINGS                       133
+
+  INDEX                                                       159
+
+
+
+
+THE DIAGRAMS.
+
+
+The diagrams, it will be observed, are grouped under the seasons, and
+they indicate the positions of the constellations as they appear at 9
+o'clock P.M. in mid-season.
+
+To facilitate finding and observing the constellations, the student
+should face in the direction indicated in the text. This applies to
+all constellations excepting those near the zenith.
+
+The four large plates are so arranged that the observer is supposed to
+be looking at the southern skies. By turning the plate about from left
+to right, the eastern, northern, and western skies are shown
+successively.
+
+On many of the diagrams the position of nebulæ is indicated. These are
+designated by the initial letter of the astronomer who catalogued
+them, preceded by his catalogue number, as for instance 8 M. signifies
+nebula number 8 in Messier's catalogue.
+
+The magnitudes assigned to the stars in the diagrams are derived from
+the Harvard Photometry. When a star is midway between two magnitudes
+the numeral is underlined, thus _2_, indicates a star of magnitude 2.5.
+
+If a star's magnitude is between 1 and 1.5 it is regarded as a
+first-magnitude star. If it lies between 1.5 and 2 it is designated
+second magnitude.
+
+
+
+
+THE CONSTELLATIONS OF SPRING.
+
+[Illustration: Map showing the principal stars visible from Lat. 40°
+N. at 9 o'clock April 1st.]
+
+
+
+
+URSA MAJOR (er´sa mā´-jor)--THE GREAT BEAR. (Face North.)
+
+
+LOCATION.--Ursa Major is probably the best known of the
+constellations, and in this work I presuppose that the reader is
+familiar with its position in the heavens. It is one of the most noted
+and conspicuous constellations in the northern hemisphere, and is
+readily and unmistakably distinguished from all others by means of a
+remarkable cluster of seven bright stars in the northern heavens,
+forming what is familiarly termed "The Dipper."
+
+The stars α and β are called the pointers, because they always point
+toward the Pole Star, 28¾° distant from α.
+
+Alioth is very nearly opposite Shedir in Cassiopeia, and at an equal
+distance from the Pole. The same can be said of Megres, in Ursa Major,
+and Caph, in Cassiopeia.
+
+The star ο is at the tip of the Bear's nose. A clearly defined
+semicircle begins at ο and ends in the pair ι and κ at the extremity
+of the Bear's right fore paw. This group of stars resembles a sickle.
+Note little Alcor close to Mizar. This star was used by the Arabs as a
+test of good eyesight.
+
+Mizar and Alcor are known as the horse and his rider.
+
+This plate shows the Bear lying on his back, his feet projected up the
+sky; three conspicuous pairs of stars represent three of his four
+feet.
+
+The Chaldean shepherds and the Iroquois Indians gave to this
+constellation the same name. The Egyptians called it "The Thigh."
+
+α and η are moving through space in a contrary direction to the
+remaining five stars in "The Dipper."
+
+[Illustration: URSA MAJOR]
+
+
+
+
+URSA MINOR (er´-sa mi´-nor)--THE LITTLE BEAR. (Face North.)
+
+
+LOCATION.--The two pointer stars in Ursa Major indicate the position
+of Polaris, the North Star, which represents the tip of the tail of
+the Little Bear, and the end of the handle of the "Little Dipper." In
+all ages of the world, Ursa Minor has been more universally observed
+and more carefully noticed than any other constellation, on account of
+the importance of the North Star.
+
+Polaris is a little more than 1¼° from the true pole. Its light
+takes fifty years to reach us.
+
+A line joining β Cassiopeiæ, and Megres, in Ursa Major, will pass
+through Polaris.
+
+At the distance of the nearest fixed star our sun would shine as a
+star no brighter than Polaris which is presumably about the sun's
+size.
+
+Polaris revolves around the true pole once in twenty-four hours in a
+little circle 2½° in diameter. Within this circle two hundred stars
+have been photographed.
+
+The North Star is always elevated as many degrees above the horizon as
+the observer is north of the equator.
+
+Compare the light of the four stars forming the bowl of the "Little
+Dipper," as they are each of a different magnitude. A standard
+first-magnitude star is 2½ times brighter than a standard second
+magnitude star, etc.
+
+[Illustration: URSA MINOR]
+
+
+
+
+GEMINI (jem´-i-ni)--THE TWINS. (Face West.)
+
+
+LOCATION.--A line drawn from β to κ Ursæ Majoris and prolonged an
+equal distance ends near Castor, in Gemini. Gemini is characterized by
+two nearly parallel rows of stars. The northern row if extended would
+reach Taurus, the southern one Orion. Note the fine cluster 35 M.
+Herschel discovered Uranus in 1781 a short distance southwest of it.
+Two wonderful streams of little stars run parallel northwest on each
+side of the cluster. Where the ecliptic crosses the solstitial colure
+is the spot where the sun appears to be when it is farthest north of
+the equator, June 21st. Castor is a fine double for a telescope, and
+Pollux has three little attendant stars. An isoceles triangle is
+formed by Castor, Aldebaran in Taurus, and Capella in Auriga. There is
+a record of an occultation in Gemini noted about the middle of the
+fourth century B.C.
+
+The Arabs saw in this group of stars two peacocks, the Egyptians two
+sprouting plants, and the Hindus twin deities, while in the Buddhist
+zodiac they represented a woman holding a golden cord. Since classic
+times, however, the figure has always been that of human twins.
+
+At the point indicated near θ a new star was discovered by Enebo in
+March, 1912. It attained a maximum of about magnitude 3.5 and has at
+this writing waned to the eleventh magnitude.
+
+[Illustration: GEMINI]
+
+
+
+
+AURIGA (â-ri´-ga)--THE CHARIOTEER. (Face Northwest.)
+
+
+LOCATION.--A line drawn from δ to α Ursæ Majoris, and prolonged about
+45°, ends near the bright Capella, in Auriga, a star of the first
+magnitude, and one of the most brilliant in the heavens. It is
+unmistakable, having no rival in brightness near it. Auriga is a
+beautiful and conspicuous constellation. It is characterized by a
+clearly defined pentagon. Note the three fourth-magnitude stars near
+Capella known as "The Kids." The star β is common to Auriga and
+Taurus, being the former's right foot and the latter's northern horn.
+The field within the pentagon is particularly rich in clusters.
+Capella forms a rude square with Polaris, ε Cassiopeiæ, and ο Ursæ
+Majoris, and forms an equilateral triangle with Betelgeuze in Orion,
+and the Pleiades in Taurus.
+
+A line from θ to α Aurigæ prolonged about 20° ends near α Persei.
+
+Capella is visible at some hour of every clear night throughout the
+year. Of the first-magnitude stars it is nearest to the Pole, and it
+rises almost exactly in the northeast.
+
+To the Arabs Capella was "The Driver," because it seemed to rise
+earlier than the other stars and so apparently watched over them, or
+still more practically as "The Singer" who rode before the procession
+cheering on the camels, which last were represented by the Pleiades.
+
+[Illustration: AURIGA]
+
+
+
+
+CANCER (kan´-ser)--THE CRAB. (Face West.)
+
+
+LOCATION.--Cancer lies between Gemini and Leo. A line drawn from Nath
+in Auriga to Pollux in Gemini, and prolonged about 15°, ends in
+Præsepe, the Manger, the great star cluster in Cancer, which is also
+called "The Bee Hive." It contains 300 stars. The stars γ and δ are
+called the Aselli--the ass's colts feeding from the silver manger.
+
+The star β lies about 10° northeast of Procyon. Acubens, α lies on the
+same line the same distance beyond β. These two stars form the tips of
+the inverted "Y" which distinguishes Cancer.
+
+An imaginary line from Capella through Pollux will point out Acubens.
+Close to it are two faint stars. The Bee Hive lies within an irregular
+square formed by γ, δ, η, and θ, and looks like a nebula to the naked
+eye.
+
+In June, 1895, all the planets except Neptune were in this quarter of
+the heavens, and Halley's comet was in this constellation on its first
+appearance in 1531.
+
+The dimness of γ and δ is an infallible precursor of rain, and if the
+Bee Hive is not visible in a clear sky, it is a presage of a violent
+storm.
+
+[Illustration: CANCER]
+
+
+
+
+HYDRA (hi´-dra)--THE SEA-SERPENT. (Face South and Southwest.)
+
+
+LOCATION.--The head of Hydra, a striking and beautiful arrangement of
+stars, lies just below the Bee Hive, in Cancer, 6° south of Acubens in
+that constellation, and forms a rhomboidal figure of five stars.
+
+Hydra is about 100° in length and reaches almost from Canis Minor to
+Libra. Its stars are all faint except Alphard, or the Hydra's heart, a
+second-magnitude star remarkable for its lonely situation, southwest
+of Regulus, in Leo. A line drawn from γ Leonis through Regulus points
+it out. It is of a rich orange tint. Castor and Pollux, in Gemini,
+point southeast to it.
+
+The constellations Crater, the Cup, and Corvus, the Crow, both stand
+on the coils of Hydra, south of Denebola, the bright star in the tail
+of the Lion.
+
+Hydra is supposed to be the snake shown on a uranographic stone from
+the Euphrates, 1200 B.C.
+
+The little asterism Sextans, the Sextant, lies in the region between
+Regulus and Alphard. It contains no stars brighter than the fourth
+magnitude.
+
+[Illustration: HYDRA]
+
+
+
+
+LEO (le´o)--THE LION. (Face South.)
+
+
+LOCATION.--A line drawn from Pollux, in Gemini, to γ in Cancer, and
+prolonged about 12°, strikes Regulus, the brilliant star in the heart
+of the Lion. Regulus lies about 9° east of Acubens, in Cancer, and
+about 12° northeast of Alphard, in the heart of Hydra.
+
+Leo is one of the most beautiful constellations in the zodiac. It lies
+south of the Great Bear, and its principal stars are arranged in the
+form of a sickle which nearly outlines the Lion's head. This group is
+so striking as to be unmistakable. Regulus is in the handle of the
+sickle. It is one of the stars from which longitude is reckoned, lies
+almost exactly on the ecliptic, and is visible for eight months in the
+year.
+
+Denebola, the bright star in the Lion's tail, lies 25° east of
+Regulus, and about 35° west of Arcturus, in Boötes. It is the same
+distance northwest of Spica, in Virgo, and forms with Spica and
+Arcturus a large equilateral triangle.
+
+ζ is double, and has three faint companion stars.
+
+ε has two seventh-magnitude companion stars, forming a beautiful
+little triangle.
+
+Regulus is white in color, γ yellow, π red.
+
+γ is a beautiful colored telescopic double star and has a companion
+visible in an opera-glass.
+
+The figure of Leo very much as we now have it appears in all the
+Indian and Egyptian zodiacs.
+
+[Illustration: LEO
+
+THE SICKLE]
+
+
+
+
+COMA BERENICES (kō´-ma ber-e-ni´-sez)--BERENICE'S HAIR.
+
+
+LOCATION.--A line drawn from Regulus to Zosma, in Leo, and prolonged
+an equal distance, strikes this fine cluster, which is 18° northeast
+of Zosma, δ Leonis.
+
+The group lies well within a triangle formed by Denebola, Arcturus, in
+Boötes, and Cor Caroli, in Canes Venatici, which triangle is the upper
+half of the Diamond of Virgo.
+
+Twenty or thirty stars in this group can be counted with an opera-glass,
+and the group can be easily distinguished with the naked eye, when the
+moon is not visible.
+
+The first half of the month of April can be called the most brilliant
+sidereal period of the year. At this time eleven first-magnitude stars
+are visible in this latitude at 9 P.M. From east to west they are:
+Vega, Arcturus, Spica, Regulus, Pollux, Procyon, Sirius, Capella,
+Aldebaran, Betelgeuze, and Rigel, truly a glorious company, an
+incomparable sight.
+
+[Illustration: COMA BERENICES]
+
+
+
+
+CANIS MINOR (kā´-nis mi´-nor)--THE LESSER DOG. (Face West.)
+
+
+LOCATION.--Procyon, the Little Dog Star, lies about 23° south of
+Pollux, in Gemini. A line drawn from Nath, in Auriga, to Alhena, in
+Gemini, and prolonged about 18°, reaches Procyon.
+
+Procyon is equidistant from Betelgeuze in Orion, and Sirius in Canis
+Major, and forms with them an equilateral triangle. It forms a large
+right-angled triangle with Pollux and Betelgeuze.
+
+The light from Procyon is golden yellow. Four degrees northwest of it
+is the third-magnitude star Gomeisa. The glass shows two small stars
+forming a right-angled triangle with it.
+
+Procyon was distinctly mentioned by Ptolemy. It rises in this latitude
+a little north of east about half an hour before Sirius, the Dog Star,
+hence it was called Procyon from two Greek words which signify "before
+the dog."
+
+Procyon is one of our nearest neighbors in space, at a distance of ten
+light years, and is attended by a very faint companion which is only
+visible in the largest telescopes.
+
+[Illustration: CANIS MINOR]
+
+
+
+
+CORVUS (kôr´-vus)--THE CROW. (Face South.)
+
+
+LOCATION.--A line drawn from the Bee Hive, in Cancer, through Regulus,
+in Leo, and prolonged about 40°, ends near the conspicuous
+quadrilateral which distinguishes Corvus. The brightest star in this
+region of the sky is Spica, in Virgo. It lies about 10° northeast of
+Algorab.
+
+ζ is a double star for an opera-glass. A faint pair of stars lie close
+below and to the west of β. The Crow is represented as standing on,
+and pecking at, the coils of Hydra. The star Al Chiba is in the Crow's
+bill.
+
+Corvus was known as the Raven in Chaucer's time.
+
+δ is an interesting telescopic double.
+
+A line drawn from γ to β Corvi and prolonged twice its length locates
+the third-magnitude star ι Centauri in the right shoulder of the
+Centaur. The brightest stars in this constellation are not visible in
+this latitude.
+
+[Illustration: CORVUS]
+
+
+
+
+CRATER (krā´-ter)--THE CUP. (Face South.)
+
+
+LOCATION.--Crater is situated 15° west of Corvus, and due south of θ
+Leonis. It is easily distinguished by reason of a beautiful and very
+striking semicircle of six stars of the fourth magnitude, forming the
+bowl of the cup.
+
+The constellation resembles a goblet with its base resting on the
+coils of Hydra.
+
+The star Alkes is common to Hydra and Crater, and may be seen 24°
+southeast of Alphard in the heart of Hydra. It is distinguished by its
+forming an equilateral triangle with α and γ, stars of the same
+magnitude 6° south and east of it.
+
+Corvus and Crater are to be seen half-way up the southern sky during
+the early evenings in spring.
+
+δ is now the lucida.
+
+Crater is situated at about the centre of Hydra and is on the
+meridian, April 26th. Owing to its many faint stars it is best seen on
+a clear moonless night.
+
+The zodiacal light is well worth observing at this season of the year.
+It is to be seen in the western sky shortly after sundown, and is most
+intense during the evenings of March.
+
+[Illustration: CRATER]
+
+
+
+
+METEORIC SHOWERS.
+
+APRIL TO JULY.
+
+
+  +--------------------+---------+--------------------+---------------+-------------+--------+
+  |                    |         |                    |               | Other Dates |        |
+  | Name of Shower     | Date    |   Radiant Point    |Characteristics|      of     |Location|
+  |                    |         |                    |               | Observation |        |
+  +--------------------+---------+--------------------+---------------+-------------+--------+
+  |     Beta or Mu     |Apr. 9-16| The Dragon's head  |               |             |  N.E.  |
+  |     Draconids      | Apr. 18 |                    |    Sw. F.     |  Apr. 17-25 |        |
+  |  Beta Serpentids   |         | The Serpent's head |               |             |  S.E.  |
+  +--------------------+---------+--------------------+---------------+-------------+--------+
+  |      Lyrids,       |         |   About 10° from   |               |             |        |
+  |    rich shower     | Apr. 20 |    Vega toward     |    V. Sw.     |             |  N.E.  |
+  |                    |         |      Hercules      |               |             |        |
+  +--------------------+---------+--------------------+---------------+-------------+--------+
+  |   Eta Aquarids,    |  May 6  |   Near the Water   |    Sw. Sk.    | After 2 A.M.|   E.   |
+  | fine annual shower |         |        Jar         |               |             |        |
+  +--------------------+---------+--------------------+---------------+-------------+--------+
+  |   Alpha Coronids,  | May 11  |     Near Gemma     |    Sl. F.     |  May 7-18   |   N.   |
+  |well defined in 1885|         |   (α) Coronæ B.    |               |             |        |
+  +--------------------+---------+--------------------+---------------+-------------+--------+
+  |   Iota Pegasids,   |         |   Between Cygnus   |               |   May 29-   |        |
+  |well defined shower | May 30  |   and the Great    |    Sw. Sk.    |June 4 after |  N.E.  |
+  |                    |         |       Square       |               |   10 P.M.   |        |
+  +--------------------+---------+--------------------+---------------+-------------+--------+
+  |  Beta Herculids    | June 7  |  Near the Crown    |    Sl. B.     | A fire ball |  S.E.  |
+  |                    |         | About 8°S. of Ras  |               |   radiant   |        |
+  |  Beta Ophiuchids   | June 10 |      Alhague       |      Sl.      | June 10, 13 |  S.E.  |
+  +--------------------+---------+--------------------+---------------+-------------+--------+
+  |   Delta Cepheids   | June 20 |  About 13° from    |               | June 10-28, |        |
+  |                    |         |  (β) Cassiopeiæ    |      Sw.      |July 19, Aug.|   N.   |
+  |                    |         |                    |               |  25, etc.   |        |
+  +--------------------+---------+--------------------+---------------+-------------+--------+
+
+The Abbreviations under _Characteristics_ are as follows:
+
+ V.--very.
+ M.--moderately.
+ Sw.--swift.
+ Sl.--slow.
+ Sh.--short.
+ B.--bright.
+ F.--faint.
+ Sk.--streak-leaving meteors.
+ T.--train-leaving meteors.
+
+
+
+
+THE CONSTELLATIONS OF SUMMER.
+
+[Illustration: Maps showing the principal stars visible from Lat. 40°
+N. at 9 o'clock, July first.]
+
+
+
+
+DRACO (drā´-ko)--THE DRAGON. (Face North.)
+
+
+LOCATION.--About 10° from α Ursæ Majoris--from α to δ is 10°--slightly
+south of, that is above, the line from α to Polaris, is Giansar, λ in
+the tip of the Dragon's tail. Above λ, and almost in line with it, are
+two more stars in Draco, which form with two stars in Ursa Major a
+quadrilateral. (See diagram.) Draco now curves sharply eastward,
+coiling about the Little Bear as shown, then turns abruptly southerly,
+ending in a characteristic and clearly defined group of four stars,
+forming an irregular square, representing the Dragon's head. This
+group is almost overhead in the early evening in summer. The star in
+the heel of Hercules lies just south of the Dragon's head. The
+brilliant Vega will be seen about overhead, 12° southwest of the
+Dragon's head. Eltanin, one of the Dragon's eyes, is noted for its
+connection with the discovery of the law of aberration of light. It is
+of an orange hue, while the star β, near it, is white. Note Thuban,
+once the Pole Star, at one corner of a quadrilateral that Draco forms
+with Ursa Major.
+
+Thuban could be seen by day or night from the bottom of the central
+passage of several of the Pyramids in Egypt.
+
+The rising of Eltanin was visible about thirty-five hundred years B.C.
+through the central passages of the temples of Hathor at Denderah. The
+Egyptians called Draco "The Hippopotamus."
+
+Vega and the four stars in the Dragon's head offer an opportunity to
+compare the first five stellar magnitudes with which all should be
+familiar.
+
+[Illustration: DRACO]
+
+
+
+
+LYRA (lī´-ra)--THE LYRE.
+
+
+LOCATION.--Lyra may be easily distinguished because of the brilliant
+Vega, its brightest star, which is situated about 12° southwest of the
+Dragon's head. It is unmistakable, as it is the brightest star in this
+region of the heavens, and the third brightest in this latitude. In
+July and August Vega is close to the zenith in the early evening.
+
+The six bright stars in Lyra form an equilateral triangle on one
+corner of a rhomboid. A very characteristic figure.
+
+ε is a pretty double for an opera-glass, and a 3" glass reveals the
+duplicity of each star of this pair. ε is therefore a double double.
+
+ζ is a double for a good glass.
+
+β is a variable, changing from magnitude 3.4 to 4.4 in twelve days. At
+its brightest it is about equal to its near neighbor γ Lyræ.
+
+The noted ring nebula lies between β and γ. A 3" glass reveals it but
+a powerful telescope is required to render its details visible.
+
+If the distance from the earth to the sun equalled one inch, the
+distance from the earth to Vega would be 158 miles.
+
+Vega was the first star to be photographed, in 1850. It is visible at
+some hour every clear night, and has been called the arc-light of the
+sky. Its light has the bluish-white hue that suggests "a diamond in
+the sky."
+
+The spectroscope reveals that Vega is a star probably only in its
+infancy, as hydrogen is its predominating element.
+
+[Illustration: LYRA]
+
+
+
+
+CYGNUS (sig´-nus)--THE SWAN, OR THE NORTHERN CROSS.
+
+
+LOCATION.--Deneb, the brightest star in Cygnus, is at the top of the
+cross, and a little over 20° east of Vega. It forms a triangle with
+Vega and Altair in Aquila--Altair being at the apex, about 35° from
+Deneb and Vega.
+
+β Cygni is at the base of the cross, and a line drawn from Vega to
+Altair nearly touches it. It is a beautiful colored double for a small
+telescope.
+
+Note "61," one of the nearest stars to us. It was the first star whose
+distance was measured (by Bessel in 1838). It is a double star and
+10.4 light years distant.
+
+The cross is nearly perfect and easily traced out. It lies almost
+wholly in the Milky Way.
+
+Note "The Coal Sack," one of the dark gap in the Milky Way.
+
+Cygnus contains an unusual number of deeply colored stars and variable
+stars.
+
+ο Cygni has a sixth-magnitude companion, and γ is in the midst of a
+beautiful stream of faint stars.
+
+This region is perhaps richer than any similar extent in the heavens.
+An opera-glass will reveal many of its beauties.
+
+Herschel counted 331,000 stars in an area of only 5° in Cygnus.
+
+[Illustration: CYGNUS]
+
+
+
+
+AQUILA (ak´-wi-lä)--THE EAGLE, AND ANTINOÜS. (Face Southeast.)
+
+
+LOCATION.--Half-way up the sky in the Milky Way, you will see three
+stars in a line, the middle one much brighter than the other two. This
+bright star is Altair, in Aquila. It forms with Vega and Deneb an
+isosceles triangle. Altair is at the apex, about 35° from the other
+two. A triangle is formed by Vega, Altair, and Ras Alhague, in the
+Serpent Bearer, which is about 30° west of Altair.
+
+This is a double constellation composed of Aquila and Antinoüs. Altair
+is in the neck of the Eagle, Alschain in the head of Antinoüs.
+
+When the moon is absent, a rude arrowhead can be traced out, embracing
+almost all the stars in Aquila.
+
+η is an interesting variable star, changing from magnitude 3.5 to 4.7
+and back again within a period of 7 days 4 hours 12 minutes.
+
+Altair rises about 8° north of the exact eastern point on the horizon.
+
+In A.D. 389 a wonderful temporary star flashed out near Altair that
+equalled Venus in brightness and vanished within three weeks' time.
+
+[Illustration: AQUILA
+
+ANTINOÜS]
+
+
+
+
+DELPHINUS (del-fi´-nus)--THE DOLPHIN, OR JOB'S COFFIN. (Face
+Southeast.)
+
+
+LOCATION.--The little cluster of five stars forming Delphinus is to be
+seen about 10° northeast of Altair, and, though there are no bright
+stars in the group, it can hardly escape notice. A line drawn from
+Vega to Albireo, and prolonged about 20°, strikes the star ε in the
+tail of the Dolphin. The four other stars of prominence in the
+constellation are a little above ε, and form a diamond-shaped figure.
+
+The little asterisms Sagitta, the Arrow, and Vulpecula and Anser, the
+Fox and Goose, are shown just above Delphinus.
+
+Delphinus is also called Job's Coffin. The origin of this appellation
+is unknown.
+
+In Greece, Delphinus was the Sacred Fish, the sky emblem of
+philanthropy. The Arabs called it the "Riding Camel."
+
+The star γ Delphini is a fine double for a small telescope with a
+marked and beautiful contrast of colors.
+
+The names for α and β reversed spell "Nicolaus Venator," the Latinized
+name of the assistant to the astronomer Piazzi.
+
+[Illustration: DELPHINUS]
+
+
+
+
+SAGITTARIUS (saj-i-tā-ri-us)--THE ARCHER. (Face South.)
+
+
+LOCATION.--A line drawn from Deneb, in Cygnus, to Altair, in Aquila,
+and prolonged an equal distance, terminates in Sagittarius about 10°
+east of its distinguishing characteristic, the Milk Dipper.
+Sagittarius is one of the signs of the zodiac, and lies between
+Capricornus, on the east, and Scorpius, on the west.
+
+The bow is easily traced out. γ marks the arrow's tip.
+
+Note the star μ, which serves to point out the Winter Solstice, where
+the solstitial colure intersects the ecliptic.
+
+On a clear night, the pretty cluster known as Corona Australis, the
+Southern Crown, can be seen about 10° below the bowl of the Milk
+Dipper. Its lucida, the fourth-magnitude star Alfecca Meridiana
+culminates at 9 P.M., August 13th.
+
+Sagittarius is about due south, in a splendid position for
+observation, during the month of July, between the hours of
+nine-thirty and eleven o'clock P.M.
+
+Observe with an opera-glass the fine clusters 20 M. and 8 M., also an
+almost circular black void near the stars γ and δ, and to the east of
+this spot another of narrow crescent form.
+
+The stars φ and ζ in the Milk Dipper are moving in opposite
+directions. Future generations therefore will not have this
+time-honored figure to guide them in locating the Archer in their
+summer night skies.
+
+[Illustration: SAGITTARIUS]
+
+
+
+
+OPHIUCHUS (of-i-ū-kus)--THE SERPENT BEARER, AND SERPENS. (Face
+Southwest.)
+
+
+LOCATION.--A line drawn from ε Delphini to γ Aquilæ, prolonged about
+30°, strikes the star Ras Alhague, the brightest star in the
+constellation and the head of Ophiuchus. It is at one angle of an
+isosceles triangle, of which Altair is at the apex, and Vega the third
+angle.
+
+Two constellations are here combined. Ophiuchus is represented as an
+old man, holding in his hands a writhing serpent.
+
+Ras Algethi, marking the head of Hercules, lies just west of Ras
+Alhague.
+
+Equally distant southeast and southwest of Ras Alhague are to be seen
+two stars close together, representing the shoulders of Ophiuchus. His
+foot rests on the Scorpion just above Antares.
+
+The head of Serpens is the star group in the form of an "X" just below
+the Crown.
+
+1604 indicates the spot where in that year a famous temporary star
+appeared, called Kepler's star.
+
+Note the asterism the "Bull of Poniatowski" just east of γ. The star
+marked 70 is one of the most distant stars for which a parallax has
+been obtained. Its distance from the earth = 1,300,000 radii of the
+earth's orbit, or 120 quadrillion miles.
+
+There is something remarkable in the central position of this gigantic
+figure. It is situated almost exactly in the mid-heavens, being nearly
+equidistant from the poles, and midway between the vernal and autumnal
+equinoxes.
+
+[Illustration: OPHIUCHUS
+
+SERPENS]
+
+
+
+
+SCORPIUS (skôr´-pi-us)--THE SCORPION. (Face South.)
+
+
+LOCATION.--Scorpius, one of the signs of the zodiac, is a beautiful
+star group, and one that is easily traced out. It lies just under the
+Serpent Bearer, between Sagittarius and Libra.
+
+The resemblance to a Scorpion is not difficult to see, hence this
+constellation is perhaps the most aptly named of any.
+
+The ruddy star Antares, the brightest star in the constellation, is in
+the heart of the Scorpion. It lies about 40° southwest of Ras Alhague,
+in Ophiuchus, and a little over 20° west of the bow of Sagittarius.
+The fact that it is the most brilliant star in this region of the sky
+renders its identity unmistakable. It is one of the reddest stars in
+the firmament.
+
+There are several star clusters and double stars to be seen in this
+constellation. Their position is indicated in the diagram.
+
+The curved tail of the Scorpion is very conspicuous. λ and υ are a
+striking pair and the fine clusters above them can be seen with the
+naked eye.
+
+A record of a lunar occultation of β Scorpii in 295 B.C. is extant.
+
+Note a pair just below β. They are known as ω¹ and ω².
+
+In this region of the sky have appeared many of the brilliant
+temporary stars, the first one in astronomical annals being discovered
+in 134 B.C.
+
+Scorpius is mentioned by all the early writers on astronomy and is
+supposed to be so named because in Egypt it was a sickly time of the
+year when the sun entered this sign.
+
+[Illustration: SCORPIUS]
+
+
+
+
+LIBRA (lī´-bra)--THE SCALES. (Face Southwest.)
+
+
+LOCATION.--Libra is one of the signs of the zodiac, and lies between
+Virgo and Scorpius. Its two chief stars, α and β, may be recognized
+west of and above the head of the Scorpion.
+
+The star ι Libræ is about 20° northwest of Antares in the Scorpion.
+Spica in Virgo, a star of the first magnitude, is a little over 20°
+northwest of α Libræ.
+
+A quadrilateral is formed by the stars α, β, γ, ε, which characterizes
+the constellation.
+
+The star α Libræ looks elongated. An opera-glass shows that it has a
+fifth-magnitude companion.
+
+β is a pale green star. Its color is very unusual.
+
+Lyra, Corona, and Hercules are almost directly overhead in the early
+evening, during July and August, and can best be observed in a
+reclining position. Thus placed, with an opera-glass to assist the
+vision, you may study to the best advantage the wonderful sight spread
+out before you, and search depths only measured by the power of your
+glass.
+
+When the sun enters the sign Libra the days and nights are equal all
+over the world and seem to observe a certain equilibrium like a
+balance, hence the name of the constellation.
+
+[Illustration: LIBRA]
+
+
+
+
+CORONA BOREALIS (kō-rō´nä bō-rē-a´-lis)--THE NORTHERN CROWN.
+
+
+LOCATION.--A line drawn from α Cygni, to α Lyræ, and projected a
+little over 40°, terminates in the Crown, which lies between Hercules
+and Boötes, and just above the diamond-shaped group of stars in the
+head of the Serpent.
+
+The characteristic semicircle resembling a crown is easily traced out.
+The principal stars are of the fourth magnitude excepting Gemma, which
+is a second-magnitude star and known as the "Pearl of the Crown."
+
+Gemma, sometimes called Alphacca, forms with the stars Seginus and
+Arcturus, in Boötes, an isosceles triangle, the vertex of which is at
+Arcturus.
+
+Close to ε a famous temporary appeared suddenly May 12, 1866, as a
+second-magnitude star. It was known as the "Blaze Star" and was
+visible to the naked eye only eight days, fading at that time to a
+tenth-magnitude star, and then rising to an eighth-magnitude, where it
+still remains.
+
+The native Australians called this constellation "The Boomerang." To
+the Hebrews it was "Ataroth" and by this name it is known in the East
+to-day. No two of the seven stars composing the Crown are moving in
+the same direction or at the same rate.
+
+α Coronæ is seventy-eight light years distant and sixty times brighter
+than the sun.
+
+[Illustration: CORONA BOREALIS]
+
+
+
+
+HERCULES (her´-kū-lēz)--THE KNEELER.
+
+
+LOCATION.--A line drawn from either Vega, in Lyra, or Altair, in Aquila,
+to Gemma, in Corona Borealis, passes through this constellation. The
+left foot of Hercules rests on the head of Draco, on the north, and his
+head nearly touches the head of Ophiuchus on the south.
+
+The star in the head of Hercules, Ras Algethi, is about 25° southeast
+of Corona Borealis.
+
+α Ophiuchi and α Herculis are only about 5° apart.
+
+The cluster 13 M., the Halley Nebula, can be easily seen in an
+opera-glass. In a recent photograph of this cluster 50,000 stars are
+shown in an area of sky which would be entirely covered by the full
+moon.
+
+Hercules occupies the part of the heavens toward which the sun is
+bearing the earth and planets at the rate of twelve miles a second or
+373 million miles a year.
+
+On a clear night the asterism Cerberus, the three-headed dog, which
+Hercules holds in his hand, can be seen.
+
+This constellation is said to have been an object of worship in
+Phœnicia. There is a good deal of mystery about its origin. The
+ancient Greeks called it "The Phantom" and "The Man upon his Knees."
+
+The stars ε, ζ, η, and π form a keystone shaped figure that serves to
+identify the constellation.
+
+[Illustration: HERCULES]
+
+
+
+
+BOÖTES (bō-ō´tēz)--THE HERDSMAN, OR BEAR DRIVER. (Face West.)
+
+
+LOCATION.--Boötes lies just west of the Crown, and east of Cor Caroli.
+It may be easily distinguished by the position and splendor of its
+principal star, Arcturus, which shines with a golden yellow lustre. It
+is about 35° east of Denebola, in Leo, and nearly as far north of
+Spica, in Virgo, and forms with these two a large equilateral
+triangle. A line drawn from ζ to η Ursæ Majoris and prolonged about
+30° locates it, as does one from δ Herculis to γ Coronæ prolonged its
+length.
+
+The brightest stars in Boötes outline a characteristic kite-shaped
+figure. Arcturus is mentioned in the Book of Job and is often referred
+to as "The Star of Job."
+
+Three stars of the fourth magnitude are situated in the right hand.
+They are about 5° north of η Ursæ Majoris.
+
+Contrast the color of Arcturus with Spica, Antares, and Vega.
+
+The trapezium β, γ, δ, and μ, was called "The Female Wolves," by the
+Arabians; θ, ι, κ and λ, "The Whelps of the Hyenas." They knew the
+constellation as "The Vociferator."
+
+Arcturus is the fourth brightest star in the northern hemisphere. It
+is 1000 times the size of our sun and rushes through space toward
+Virgo at the astounding rate of ninety miles a second. It is forty
+light years distant.
+
+The ancient Greeks called this constellation "Lycaon," a name which
+signifies a Wolf. The Hebrew name for it was "The Barking Dog."
+
+[Illustration: BOÖTES]
+
+
+
+
+VIRGO (ver´-gō)--THE VIRGIN. (Face West.)
+
+
+LOCATION.--An imaginary line drawn from Antares in Scorpius through α
+Libræ and prolonged a little over 20° strikes Spica, the brightest
+star in Virgo, which star is about 30° southwest of Arcturus.
+
+Arcturus, Cor Caroli, Denebola, and Spica form a figure about 50° in
+length, called the Diamond of Virgo.
+
+The equator, ecliptic, and equinoctial colure intersect each other at
+a point close to the star η. This is called the autumnal equinox.
+
+The star ε is known as the "Grape Gatherer." It is observed to rise
+just before the sun at vintage time.
+
+Within the rude square formed by Denebola, and ε, γ, and β, Virginis,
+the telescope reveals many wonderful nebulæ; hence this region of the
+sky has been called "The Field of the Nebula."
+
+Spica is an extremely beautiful pure white star. It rises a very
+little south of the exact eastern point on the horizon.
+
+γ is a fine double star for a small telescope.
+
+Virgo is mentioned by the astronomers of all ages. By the Egyptians it
+was intended to represent the goddess Isis, and the Greeks knew it as
+Ceres. Spica represents the ear of corn held in the Virgin's left
+hand.
+
+[Illustration: VIRGO]
+
+
+
+
+CANES VENATICI (kā´-nēz ve-nat´-i-cī)--THE HUNTING DOGS. (Face
+Northwest.)
+
+
+LOCATION.--Cor Caroli, the bright star in this constellation, when on
+the meridian is about 17° south of ε Ursæ Majoris. A line drawn from η
+Ursæ Majoris, through Berenice's Hair, to Denebola, in Leo, passes
+through it.
+
+The dogs, Asterion and Chara, are represented as being held in leash
+by Boötes, the herdsman, in his pursuit of the Great Bear.
+
+Cor Caroli is in the southern hound, Chara, and represents the heart
+of Charles II of England. It is a beautiful double star in a small
+telescope.
+
+The so-called "Diamond of Virgo," is clearly shown on this plate. It
+is formed by connecting with lines the stars Cor Caroli, Denebola,
+Spica, and Arcturus.
+
+The fifth-magnitude star La Superba, about 7° north and 2½° west of
+Cor Caroli, is especially noteworthy because of the flashing
+brilliancy of its prismatic rays.
+
+[Illustration: CANES VENATICI]
+
+
+
+
+METEORIC SHOWERS.
+
+JULY TO OCTOBER.
+
+
+  +---------------+--------+----------------+---------------+----------------+--------+
+  |               |        |                |               |   Other Dates  |        |
+  |Name of Shower |  Date  | Radiant Point  |Characteristics|       of       |Location|
+  |               |        |                |               | of Observation |        |
+  +---------------+--------+----------------+---------------+----------------+--------+
+  |               |        |   Between      |               | June 13-July 7 |        |
+  |Vulpeculids or | July 4 |  Cygnus and    |     Sw.       |    Apr. 20,    |  E.    |
+  | Eta Sagittids |        |   Delphinus    |               |     May 30     |        |
+  +---------------+--------+----------------+---------------+----------------+--------+
+  |               |        |  Near Deneb    |               |  July 11-19,   |        |
+  |   Cygnids     |July 19 |   (α) Cygni    |  Sh. Sw. F.   |  Aug. 22, July |  E.    |
+  |               |        |                |               |  6-Aug. 16     |        |
+  +---------------+--------+----------------+---------------+----------------+--------+
+  |               |        |  Between (α)   |  Sw. B. Sk.   | July 23-Aug. 4 |        |
+  |(α)-(β)        |July 25 |      and       |    after      |    Sept. 15,   |  N.E.  |
+  |Perseids       |        |  (β) Persei    |    10 P.M.    |    Nov. 13     |        |
+  +---------------+--------+----------------+---------------+----------------+--------+
+  |Aquarids, a    |        |    Near the    |               |                |        |
+  |conspicuous    |July 28 |  water jar of  |   Sl. B.      |                |  E.    |
+  |shower         |        |    Aquarius    |               |                |        |
+  +---------------+--------+----------------+---------------+----------------+--------+
+  |Perseids, fine |Aug. 10 |   Near (α)     |  v. Sw. Sk.   |                |  N.E.  |
+  |shower         |        |    Persei      |               |                |        |
+  +---------------+--------+----------------+---------------+----------------+--------+
+  |Kappa Cygnids  |Aug. 17 |    Near the    | Sw. B.T. Sh.  |Jan. 17, Aug. 4,|  S.E.  |
+  |               |        |  Dragon's head |               |Aug. 21-25      |        |
+  +---------------+--------+----------------+---------------+----------------+--------+
+  |               |        | Near Capella   | After 9.30    |   Sept. 22,    |        |
+  |Alpha Aurigids |Aug. 21 |  (α) Aurigæ    |     P.M.      |    Oct. 2      |  N.E.  |
+  |               |        |                | v. Sw. Sk.    |                |        |
+  +---------------+--------+----------------+---------------+----------------+--------+
+  |   Omicron     |        |    Near the    |               |                |        |
+  |Draconids. Rich|Aug. 22 | Dragon's head  |    Sl. T.     |  Aug. 21-25    |   N    |
+  |shower in 1879 |        |                |               |                |        |
+  +---------------+--------+----------------+---------------+----------------+--------+
+  |               |        |Between Capella |  After 10     |  Aug. 21, 25,  |        |
+  |  Epsilon      |Sept. 7 |    and the     |     P.M.      | Sept. 6-8, 21, |  N.E.  |
+  | Perseids      |        |    Pleiades    | v. Sw. Sk.    |    Nov. 29.    |        |
+  +---------------+--------+----------------+---------------+----------------+--------+
+  |Alpha Arietids |Sept. 21|   Near Hamal   |   Sl. T.      | Aug. 12, Oct. 7|   E.   |
+  |               |        |  (α) Arietis   |               |                |        |
+  +---------------+--------+----------------+---------------+----------------+--------+
+  |Gamma Pegasids |Sept. 22| Near and S.E.  |    Sl.        | July 31, Aug.  |   E.   |
+  |               |        |  of Great Sq.  |               |   25, etc.     |        |
+  +---------------+--------+----------------+---------------+----------------+--------+
+
+The Perseids are of a yellowish color, and move with medium velocity.
+Their line of flight is from northeast to southwest. They are probably
+visible for more than a month, from the latter half of July to the
+last week in August.
+
+The August meteors are known as the "Tears of St. Lawrence."
+
+The Abbreviations under _Characteristics_ are as follows:
+
+ v.--very
+ Sl.--Slow
+ Sk.--Streak-leaving meteors.
+ M.--Moderately
+ B.--Bright
+ T.--Train-leaving meteors.
+ Sw.--Swift
+ F.--Faint
+ Sh.--Short meteors.
+
+
+
+
+THE CONSTELLATIONS OF AUTUMN.
+
+[Illustration: Map showing the principal stars visible from Lat. 40°
+N. at 9 o'clock, October first.]
+
+
+
+
+CASSIOPEIA (kas-i-ō-pē´-ya)--THE LADY IN THE CHAIR. (Face North.)
+
+
+LOCATION.--A line drawn from δ Ursæ Majoris, through Polaris, strikes
+α Cassiopeiæ. It is situated the same distance from Polaris as Ursa
+Major, and about midway between Polaris and the zenith in the Milky
+Way. Cassiopeia is characterized by a zigzag row of stars which form a
+rude "W," but in mid-autumn, to an observer facing north, the "W"
+appears more like an "M," and is almost overhead. Note the spot marked
+1572. This is where a very famous temporary star appeared in that
+year. It was bright enough at one time to be seen in full sunshine.
+The star η is sixteen light years distant.
+
+Caph is equidistant from the Pole, and exactly opposite the star
+Megres in Ursa Major; with α Andromedæ and γ Pegasi it marks the
+equinoctial colure. These stars are known as "The Three Guides."
+
+The chair can be readily traced out; β, α, and γ mark three of the
+four corners of the back, and δ and ε, one of the front legs. The word
+"Bagdei," made up of the letters for the principal stars, assists the
+memory.
+
+The stars γ and β are pointer stars to a fifth-magnitude star the
+lucida of the asterism Lacerta, the lizard about 15° from β.
+
+Cassiopeia makes an excellent illuminated clock. When β is above
+Polaris it is noon, when it is in the west at right angles to its
+first position it is 6 P.M. At midnight it is on the northern horizon,
+and at 6 P.M. it is due east.
+
+This is sidereal time which agrees with mean time on March 22d, and
+gains on the latter at the rate of two hours a month.
+
+[Illustration: CASSIOPEIA]
+
+
+
+
+CEPHEUS (sē´-fūs) (Face North.)
+
+
+LOCATION.--A line drawn from α to β Cassiopeiæ and prolonged about 18°
+strikes α Cephei. The nearest bright star west of Polaris is γ Cephei.
+Cepheus is an inconspicuous constellation, lying partly in the Milky
+Way. A view of this constellation through an opera-glass will repay
+the observer. Cepheus is characterized by a rude square, one side of
+which is the base of an isosceles triangle. Look for the so-called
+garnet star μ, probably the reddest star visible to the naked eye in
+the United States. The star ζ has a blue companion star.
+
+α forms an equilateral triangle with Polaris and ε Cassiopeiæ.
+
+It is claimed that Cepheus was known to the Chaldæans twenty-three
+centuries before our era.
+
+Surrounding δ, ε, ζ, and λ, which mark the king's head, is a vacant
+space in the Milky Way, similar to the Coal Sack of Cygnus.
+
+About 4° from γ, in the direction of κ is a pretty pair of
+sixth-magnitude stars.
+
+Owing to precession, γ, β, and α Cephei will be successively the Pole
+Star in 4500, 6000, and 7500 A.D. respectively.
+
+δ is a double whose components are yellow and blue. It is an
+interesting variable changing from magnitude 3.7 to 4.9 at intervals
+of 5 days 8 hours 47 minutes. As it is three times as bright at
+maximum as at minimum and can be observed with the naked eye its
+variations are well worth observing.
+
+[Illustration: CEPHEUS]
+
+
+
+
+PEGASUS (peg´-a-sus)--THE WINGED HORSE. (Face South.)
+
+
+LOCATION.--One corner of the Great Square is found by drawing a line
+from Polaris to Cassiopeia, and prolonging it an equal distance.
+
+The Great Square is a stellar landmark. Three of the corners of the
+square are marked by stars in Pegasus; the fourth, and northeastern,
+corner is marked by the star Alpheratz in Andromeda. Each side of the
+square is about 18° long.
+
+The horse is generally seen upside down, with his fore feet projected
+up into the sky. Only the head, neck, and fore feet are represented.
+The star Enif marks the nose.
+
+π is an interesting double, easily seen in an opera-glass. All the
+stars of the Square are approaching us at an inconceivable speed.
+
+The position of the asterism Equus or Equūleus, the Little Horse, or
+Horse's Head, is shown in the diagram.
+
+Delphinus, the water jar of Aquarius, and the circlet in the Western
+Fish, are all in the vicinity of Pegasus, and indicated in the
+diagram.
+
+The winged horse is found on coins of Corinth 500 to 430 B.C. The
+Greeks called this constellation ἱπποσ.
+
+Pegasus seems to have been regarded in Phœnicia and Egypt as the sky
+emblem of a ship.
+
+Within the area of the Square Argelander counted thirty naked-eye
+stars.
+
+Note a fine pair in Equūleus just west of the star Enif in Pegasus.
+
+The position of the equinoctial colure is defined by a line connecting
+Polaris, β Cassiopeiæ, α Andromedæ, and γ Pegasi.
+
+[Illustration: PEGASUS]
+
+
+
+
+ANDROMEDA (an-drom´-e-dä)--THE CHAINED LADY.
+
+
+LOCATION.--The star α Alpheratz is at the northeastern corner of the
+great square of Pegasus, one of the stellar landmarks.
+
+Running east from α, at almost equal distances, are four other stars,
+two of which are of the second magnitude. The most easterly one is β
+Persei, known as Algol, the famous variable. Lines connecting the
+stars γ Andromedæ, Algol, and α Persei form a right-angled triangle.
+The right angle is marked by Algol.
+
+The chief object of interest in this constellation is the great
+nebula, the first to be discovered. It can be seen by the naked eye
+and it is a fine sight in an opera-glass. Its location is indicated in
+the diagram.
+
+The star γ is the radiant point of the Bielid meteors, looked for in
+November. It is a colored double visible in a 3" glass.
+
+The great nebula has been called the "Queen of the Nebulæ." It is said
+to have been known as far back as A.D. 905, and it was described 986
+A.D. as the "Little Cloud."
+
+Andromeda is very favorable for observation in September, low in the
+eastern sky.
+
+Note the characteristic "Y" shaped asterism known as Gloria Frederika
+or Frederik's Glory. It lies about at the apex of a nearly isosceles
+triangle of which a line connecting Alpheratz and β Pegasi is the
+base. A line drawn from δ to α Cassiopeiæ and prolonged a little over
+twice its length points it out.
+
+[Illustration: ANDROMEDA]
+
+
+
+
+PERSEUS (per´-sūs)--THE CHAMPION. (Face Northeast.)
+
+
+LOCATION.--α Persei lies on a line drawn from β to γ Andromedæ, and is
+about 9° from the latter. The most striking feature in Perseus is the
+so-called "segment of Perseus," a curve of stars beginning about 12°
+below Cassiopeia, and curving toward Ursa Major. Note the famous
+variable Algol the Demon star. It represents the Medusa's head which
+Perseus holds in his hand. It varies from the second to the fourth
+magnitude in about three and one-half hours, and back again in the
+same time, after which it remains steadily brilliant for two and
+three-quarters days, when the same change recurs. Algenib and Algol
+form with γ Andromedæ, a right-angled triangle.
+
+Note a dull red star near Algol, and a pretty pair just above Algenib.
+
+An opera-glass reveals much that is worthy of observation in this
+region of the sky. It has been said of the clusters between Cassiopeia
+and Perseus that they form the most striking sidereal spectacle in the
+northern heavens. They are visible to the naked eye. Algenib never
+sets in the latitude of New York, just touching the horizon at its
+lower culmination. It is estimated that Algol is a little over a
+million miles in diameter, η has three faint stars on one side nearly
+in a line, and one on the other--a miniature representation of Jupiter
+and his satellites.
+
+Algol, when on the meridian of New York City, is only one tenth of a
+degree from the zenith point. This remarkable variable has a dark
+companion star revolving near it obscuring its light in part from us
+at stated intervals. By means of the spectroscope the speed diameter
+and mass of this invisible star has been reckoned.
+
+[Illustration: PERSEUS]
+
+
+
+
+PISCES (pis´ēz)--THE FISHES. (Face Southeast.)
+
+
+LOCATION.--This constellation is represented by two fishes each with a
+ribbon tied to its tail. One, the Northern Fish, lies just below β
+Andromedæ,--the other, represented by the circlet, is just below
+Pegasus. The ribbons, represented by streams of faint stars, from a
+"V" with elongated sides, and terminate in the star Al Rischa, The
+Knot.
+
+Below ω, and to the east of λ the spot marked (*) is the place which
+the sun occupies at the time of the equinox. It is one of the two
+crossing places of the equinoctial, or equator, of the heavens, and
+the ecliptic, or sun's path.
+
+Below Pisces is Cetus, the Whale.
+
+Pisces is thought to have taken its name from its coincidence with the
+sun during the rainy season.
+
+Three distinct conjunctions of Jupiter and Saturn took place in this
+constellation in the year 747 of Rome.
+
+Pisces was considered the national constellation of the Jews, as well
+as a tribal symbol.
+
+In 1881, Jupiter, Saturn, and Venus were grouped together in Pisces.
+
+The Circlet is a very striking group forming a pentagon. The glass
+reveals two faint stars in addition, making the figure seven-sided or
+elliptical in form.
+
+As to the number of the stars as classified according to their
+magnitude, that is their brightness, it may be mentioned that there
+are approximately 20 stars of the first magnitude, 65 of the second,
+300 of the third, and 450 of the fourth. We cannot see stars fainter
+than the sixth magnitude with the naked eye.
+
+[Illustration: PISCES]
+
+
+
+
+TRIANGULUM (trī-an´-gū-lum)--THE TRIANGLE. (Face East.)
+
+
+LOCATION.--A line drawn from the star γ Pegasi to Algol in Perseus
+passes through β Trianguli.
+
+The triangle is clearly defined and a beautiful figure. It lies just
+below Andromeda, and above Aries.
+
+Triangulum is a very ancient constellation, being formerly named
+Deltoton, from the Greek letter Delta Δ.
+
+It was in this locality that Piazzi discovered the asteroid Ceres,
+January 1, 1800.
+
+α Trianguli is sometimes called "Caput Trianguli."
+
+α and β Trianguli were known as "The Scale Beam." According to
+Argelander the constellation contains fifteen stars.
+
+The Triangle has been likened to the Trinity, and the Mitre of St.
+Peter.
+
+[Illustration: TRIANGULUM]
+
+
+
+
+AQUARIUS (a-kwā´ri-us)--THE WATER CARRIER. (Face Southwest.)
+
+
+LOCATION.--A line drawn from β Pegasi to α of the same constellation,
+and prolonged as far again, ends just east of the so-called water jar
+of Aquarius, which is formed by a group of four stars in the form of a
+"Y," as indicated in the diagram. The Arabians called these four stars
+a tent.
+
+The jar is represented as inverted, allowing a stream of water
+represented by dim stars in pairs and groups of three stars, to
+descend, ending in the bright star Fomalhaut, the mouth of the
+Southern Fish.
+
+A rough map of South America can be traced in the stars θ, λ, τ, δ,
+88, ι.
+
+A rude dipper can be made out in the western part of the
+constellation, formed of the stars α, β, ν, ε.
+
+The stars τ and ζ are doubles. Of the former pair, one is white, the
+other orange in color. Fomalhaut was the object of sunrise worship in
+the temple of Demeter at Eleusis in 500 B.C. The ancients called this
+region of the sky "the Sea."
+
+In the vicinity of δ, Mayer observed in 1756 what he termed a fixed
+star. Herschel thought it a comet. It proved to be the planet Uranus.
+
+ζ is almost exactly on the celestial equator.
+
+λ is a red star, the most prominent of the first stars in the stream.
+The stars in Piscis Australis can be traced out with an opera-glass.
+
+Fomalhaut and Capella, in Auriga, rise almost exactly at the same
+minute.
+
+Fomalhaut is one of the four "royal stars" of astrology. The others
+are Regulus, Antares, and Aldebaran.
+
+[Illustration: AQUARIUS]
+
+
+
+
+CAPRICORNUS (kap-ri-kôr´-nus)--THE SEA GOAT. (Face Southwest.)
+
+
+LOCATION.--A line drawn from α Pegasi through ζ and θ in the same
+constellation, and projected about 25°, strikes α and β in
+Capricornus.
+
+This constellation contains three principal stars--α and β mentioned
+above, and δ about 20° east of them.
+
+The water jar of Aquarius is about the same distance northeast of δ
+Capricorni that Fomalhaut, in the Southern Fish, is southeast of it.
+
+α has a companion which can be seen by the naked eye. It is a fine
+sight in an opera-glass. These two stars are gradually separating.
+
+β is a double star, one being blue, the other yellow.
+
+The constellation resembles a chapeau, or peaked hat, upside down.
+
+The stars in the head of the Sea Goat, α and β are only 2° apart, and
+can hardly be mistaken by an observer facing the southwestern sky
+during the early evening in autumn.
+
+Five degrees east of δ is the point announced by Le Verrier as the
+position of his predicted new planet, Neptune.
+
+Flammarion claims that the Chinese astronomers noted the five planets
+in conjunction in Capricornus, in the year 2449 B.C.
+
+The sign of the Goat was called by the ancient Orientalists "The
+Southern Gate of the Sun."
+
+[Illustration: CAPRICORNUS]
+
+
+
+
+ARIES (ā´-ri-ēz)--THE RAM. (Face Southeast.)
+
+
+LOCATION.--The star α in Aries, known as Hamal, and sometimes as
+Arietis, a star of the second magnitude, is about 7° south of α
+Trianguli. A line drawn from the Pole Star to γ Andromedæ, and
+prolonged about 20°, ends at Hamal.
+
+Aries contains three principal stars, forming a characteristic
+obtuse-angled triangle.
+
+The star γ Arietis was one of the first double stars discovered. A
+telescope is required to split it. Hamal lies near the path of the
+moon, and is one of the stars from which longitude is reckoned.
+
+Below Aries may be seen the characteristic pentagon in the head of
+Cetus, the Whale.
+
+More than two thousand years ago Aries was the leading constellation
+of the zodiac, and now stands first in the list of zodiacal signs.
+
+The Arabians knew this constellation as Al Hamal, the sheep.
+
+β and γ are one instance out of many where stars of more than ordinary
+brightness are seen together in pairs, the brightest star being
+generally on the east.
+
+[Illustration: ARIES]
+
+
+
+
+CETUS (sē´-tus)--THE WHALE. (Face Southeast.)
+
+
+LOCATION.--A line drawn from Polaris, to δ Cassiopeiæ, and prolonged
+two and one third times its original length, reaches the centre of
+this constellation.
+
+It lies just below Aries and the Triangle, and resembles the figure of
+the prehistoric icthyosaurus, while some see in the outline an easy
+chair. The head of the beast is characterized by a clearly traced
+pentagon, about 20° southeast of Aries. The brightest star in the
+constellation is α of the second magnitude. It is at one apex of the
+pentagon, about 15° east of Al Rischa in Pisces, and 37° directly
+south of Algol.
+
+The noted variable Mira also known as ο Ceti is the chief object of
+interest in this constellation.
+
+It was discovered by Fabricius in 1596 and varies from the ninth
+magnitude to the third or fourth in a period of 334 days. It can be
+observed during its entire range with a 3" glass.
+
+In 1779 Mira is reported to have been as bright as the first-magnitude
+star Aldebaran. It lies almost exactly on a line joining γ and ζ Ceti
+a little nearer the former. Ten degrees south of it are four faint
+stars about 3° apart forming a square.
+
+τ Ceti is one of our nearest neighbors at a distance of nine light
+years.
+
+ζ is a naked-eye double star.
+
+[Illustration: CETUS]
+
+
+
+
+MUSCA (mus´-kä)--THE FLY. (Face Southeast.)
+
+
+LOCATION.--Musca lies between Triangulum and Aries, the diagram
+clearly defining its position.
+
+The four stars composing it form a group shaped like the letter "Y."
+
+There is nothing of particular interest to be noted in this asterism.
+It does not appear on modern star charts and is considered obsolete.
+
+So great is the distance that separates us from the stars that as for
+the great majority had they been blotted out of existence before the
+Christian era, we of to-day should still receive their light and seem
+to see them just as we do. When we scan the nocturnal skies we study
+ancient history. We do not see the stars as they are but as they were
+centuries on centuries ago.
+
+[Illustration: MUSCA]
+
+
+
+
+METEORIC SHOWERS.
+
+OCTOBER TO JANUARY.
+
+
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  |                 |       |                |               | Other Dates  |        |
+  | Name of Shower  | Date  | Radiant Point  |Characteristics|       of     |Location|
+  |                 |       |                |               | Observation  |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  |                 |       | Between Great  |               |              |        |
+  |     Ursids      |Oct. 4 |Bear's head and |    Sw. Sk.    |  Aug. 20-24  |   N.   |
+  |                 |       |    Polaris     |               |              |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  |Epsilon Arietids |       | East of Hamal, |               | Oct. 11-24,  |        |
+  |   Rich shower   |Oct. 14|   near Musca   |    M. Sw.     |   Oct. 30-   |   E.   |
+  |      1877       |       |                |               |    Nov. 4    |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  |    Orionids     |Oct. 18| Near Alhena in | After 11 P.M. |  Oct. 16-22  |   E.   |
+  |   Fine shower   |       |     Gemini     |    Sw. Sk.    |              |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  |                 |       |Near Castor and | After 10 P.M. |   Nov. 7,    |        |
+  | Delta Geminids  |Oct. 29|     Pollux     |  v. Sw. Sk.   |   Dec. 4,    |  N.E.  |
+  |                 |       |                |               |  Oct. 16-22  |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  |(e) Taurids. Rich|Nov. 2 | About 13° S.E. |   Sl. B.T.    |   Nov. 2-3   |   E.   |
+  | shower in 1886  |       |  of Aldebaran  |               |              |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  |     Leonids     |       |Near (γ) Leonis |After midnight.|              |        |
+  |Brilliant shower |Nov. 13| In the Sickle  |    v. Sw.     |  Nov. 12-14  |  N.E.  |
+  |                 |       |                |      Sk.      |              |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  |                 |       | Near (μ) Ursæ  | After 10 P.M. |  Sept. 15,   |        |
+  |  Leo Minorids   |Nov. 16|Maj., the Great |  v. Sw. Sk.   |   Oct. 16    |   N.   |
+  |                 |       |Bear's hind feet|               |              |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  |  Andromedids.   |       |  Near (γ)      |               |  Nov. 17-23  |        |
+  |  The Bielids.   |Nov. 27|  Andromedæ     |    Sl. T.     |  Nov. 21-28  |Overhead|
+  |  Fine display   |       |                |               |              |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  |                 |Nov. 30|Between Capella |               |  Aug. 16     |        |
+  |    Taurids      |       |and (α) Persei  |    V. Sw.     |  Sept. 15,   |Overhead|
+  |                 |       |                |               |  Nov. 20     |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  |  Zeta Taurids.  |Dec. 6 | Near the horns |               |              |        |
+  |  Active shower  |       |  of the Bull   |   Sl. B.      |              |    E.  |
+  |     in 1876     |       |                |               |              |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  |    Geminids.    |Dec. 10| Near Castor    |     Sw.       |   Dec. 1-14  |    E.  |
+  |   Fine shower   |       |                |               |              |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  | Kappa Draconids |Dec. 22| Near Thuban    |               |  Nov. 14-23  |        |
+  |                 |       | (α) Draconis   |    Sw. Sk.    |  Dec. 18-29  |        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+  | Fire Ball Dates |       |                |               |   Nov. 29    |        |
+  |                 |       |                |               |Dec. 2, 19, 21|        |
+  +-----------------+-------+----------------+---------------+--------------+--------+
+
+The Andromedes are usually red, sluggish in their movements, and leave
+only a small train.
+
+Brilliant displays were seen in 1872 and 1885.
+
+The Leonids are characterized by their exceedingly swift flight. They
+are of a greenish or bluish tint and leave behind them a vivid and
+persistent train. In most years the display is not especially
+noteworthy. Once in thirty-three years they afford an exhibition grand
+beyond description as in 1833 and 1866.
+
+
+
+
+THE CONSTELLATIONS OF WINTER.
+
+[Illustration: Map showing the principal stars visible from Lat. 40°
+N. at 9 o'clock, January first.]
+
+
+
+
+TAURUS (tâ´-rus)--THE BULL. (Face Southwest.)
+
+
+LOCATION.--Taurus contains the well-known and unmistakable group the
+Pleiades, on the right shoulder of the Bull. A "V" shaped group known
+as the Hyades is just to the southeast of the Pleiades, in the face of
+the Bull, forming one of the most beautiful objects in the sky.
+
+The brightest star in Taurus is Aldebaran, a ruddy-hued star known as
+"The Follower." It is at the beginning of the "V" in the Hyades, and
+is at the apex of a triangle formed by Capella, in Auriga, and α
+Persei, and equally distant from them both.
+
+The star β called Nath, is peculiarly white, and is common to Taurus
+and Auriga. It represents the tip of one of the Bull's horns, and the
+right foot of the Charioteer. The Pleiades are mentioned in Chinese
+annals in 2357 B.C. On a photograph of the group over 2000 stars have
+been counted.
+
+The ecliptic passes a little south of a point midway between the two
+horns, where a scattered and broken stream of minute stars can be
+seen.
+
+Note two pretty pairs in the Hyades, one south of Aldebaran, the other
+northwest of it.
+
+There are rich clusters below the tip of the horn over Orion's head.
+
+Taurus was an important object of worship by the Druids.
+
+Aldebaran is near one eye of the Bull, and used to be called "The
+Bull's Eye." An occultation of it by the moon, which not infrequently
+occurs, is a striking phenomenon.
+
+The Eskimos regard the Pleiades as a team of dogs in pursuit of a
+bear. The group is receding from us at the rate of thirteen miles a
+second and has a common eastward motion of about ten seconds a
+century.
+
+[Illustration: TAURUS]
+
+
+
+
+ORION (ŏ-rī´-on)--THE GIANT HUNTER. (Face South.)
+
+
+LOCATION.--Orion is considered the finest constellation in the
+heavens. A line drawn from Nath to ζ Tauri (the tips of the Bull's
+horns), and extended 15°, strikes the brilliant Betelgeuze in Orion,
+known as the martial star. It forms the northeast corner of a
+conspicuous parallelogram. The splendid first-magnitude star Rigel is
+diagonally opposite Betelgeuze, and the girdle and sword of the Hunter
+lie within the parallelogram, a very striking group. The former is
+represented by three bright stars in a line 3° long known as the
+"Three Stars," because there are no other stars in the heavens that
+exactly resemble them in position and brightness.
+
+In the sword there is the most remarkable nebula in the heavens. It
+may be seen with an opera-glass and in a telescope it is a wonderful
+sight. Bellatrix is called the Amazon star. Note the contrasting
+colours of α and β.
+
+About 9° west of Bellatrix are eight stars in a curved line running
+north and south. These point out the Lion's skin held in the Hunter's
+left hand.
+
+Below λ there are two stars forming a triangle with it. Flammarion
+calls this region the California of the sky.
+
+The celestial equator passes nearly through δ.
+
+Orion was worshipped in China during the one thousand years before our
+era, and was known to the Chinese as the "White Tiger."
+
+The Eskimos see in the Belt stars the three steps cut by some
+celestial Eskimo in a steep snow bank to enable him to reach the top.
+
+[Illustration: ORION]
+
+
+
+
+LEPUS (lē´-pus)--THE HARE. (Face South.)
+
+
+LOCATION.--Lepus crouches under Orion's feet. Four stars in the
+constellation form an irregular and conspicuous quadrilateral.
+
+γ is a beautiful double of a greenish hue.
+
+Four or five degrees south of Rigel are four faint stars which are in
+the ear of the hare. They can be seen on a clear night with the naked
+eye.
+
+The curved line of three stars θ, η, and ζ, are in the back of the
+hare.
+
+Lepus is about 18° west of Canis Major, and, by reason of the earth's
+motion, the Great Dog seems to be pursuing the Hare around the
+heavens.
+
+The first-magnitude stars that are visible in the winter season in
+this latitude present a fine contrast in color. Even the untrained eye
+can see a decided difference between the bluish white color of the
+brilliant Sirius, the Dog star that the Belt stars point south to, and
+Rigel, and the ruddy Betelgeuze. Procyon has a yellowish tinge and
+resembles the condition of our sun, while Betelgeuze is surrounded by
+heavy metallic vapors and is thought to be approaching extinction.
+
+R marks the location of "Hind's crimson star," a famous variable.
+
+[Illustration: LEPUS]
+
+
+
+
+COLUMBA NOACHI (co-lum´-bä nō-ä´-ki)--NOAH'S DOVE. (Face South.)
+
+
+LOCATION.--Columba is situated just south of Lepus. A line drawn from
+Rigel, in Orion, to β Leporis, and prolonged as far again, ends near α
+and β, the two brightest stars in Columba.
+
+A line drawn from the easternmost star in the belt of Orion, 32°
+directly south, will point out Phaet, in Columba. It makes with
+Sirius, in Canis Major, and Naos, in the Ship, a large equilateral
+triangle.
+
+The star β Columbæ may be known by means of a smaller star just east
+of it, marked γ.
+
+The Chinese call α Chang Jin, the old Folks. Lockyer thinks it was of
+importance in Egyptian temple worship, and observed from Edfu and
+Philæ as far back as 6400 B.C.
+
+On a clear starlight night there are not more than a thousand stars
+visible to the naked eye at one time. The largest telescope reveals
+nearly a hundred million.
+
+[Illustration: COLUMBA]
+
+
+
+
+CANIS MAJOR (kā´-nis mā-jor)--THE GREATER DOG. (Face South.)
+
+
+LOCATION.--The three stars in Orion's girdle point southeast to
+Sirius, the dog star, in Canis Major, the most brilliant star in the
+heavens. It was connected in the minds of the Egyptians with the
+rising of the Nile, and is receding from the earth at the rate of
+twenty miles a second.
+
+The star ν is a triple. The cluster (41 M.) can be seen with an
+opera-glass, just below it.
+
+Between δ and ο¹ note a remarkable array of minute stars, also the
+very red star 22.
+
+δ and ζ are doubles for an opera-glass.
+
+Below η there is a fine group.
+
+Betelgeuze, in Orion, Procyon, in Canis Minor, and Sirius form a
+nearly equilateral triangle. These stars with Naos, in the Ship, and
+Phaet, in the Dove, form a huge figure known as the Egyptian "X."
+
+From earliest times Sirius has been known as the Dog of Orion. It is
+324 times brighter than the average sixth-magnitude star, and is the
+nearest to the earth of all the stars in this latitude, its distance
+being 8.7 light years. At this distance the Sun would appear as a star
+a little brighter than the Pole Star.
+
+[Illustration: CANIS MAJOR]
+
+
+
+
+ARGO NAVIS (är´-go nā´-vis)--THE SHIP ARGO. (Face South.)
+
+
+LOCATION.--Argo is situated southeast of Canis Major. If a line
+joining Betelgeuze and Sirius be prolonged 18° southeast, it will
+point out Naos, a star of the second magnitude in the rowlock of the
+Ship. This star is in the southeast corner of the Egyptian "X."
+
+The star π is of a deep yellow or orange hue. It has three little
+stars above it, two of which form a pretty pair.
+
+The star ζ has a companion, which is a test for an opera-glass.
+
+The star κ is a double for an opera-glass.
+
+Note the fine star cluster (46 M.).
+
+The star Markeb forms a small triangle with two other stars near it.
+
+The Egyptians believed that this was the ark that bore Osiris and Isis
+over the Deluge.
+
+The constellation contains two noted objects invisible in this
+latitude, Canopus, the second brightest star, and the remarkable
+variable star η.
+
+[Illustration: PUPPIS]
+
+
+
+
+MONOCEROS (mō-nos´-e-ros)--THE UNICORN. (Face South.)
+
+
+LOCATION.--Monoceros is to be found east of Orion between Canis Major
+and Canis Minor. Three of its stars of the fourth magnitude form a
+straight line northeast and southwest, about 9° east of Betelgeuze,
+and about the same distance south of Alhena, in Gemini.
+
+The region around the stars 8, 13, 17 is particularly rich when viewed
+with an opera-glass.
+
+Note also a beautiful field about the variable S, and a cluster about
+midway between α and β.
+
+Two stars about 7° apart in the tail of the Unicorn are pointer stars
+to Procyon. These stars are known as 30 and 31. The former is about
+16° east of Procyon, and is easily identified as it has a
+sixth-magnitude star on either side of it. About 4° southwest of this
+star a good field-glass will reveal a beautiful star cluster.
+
+[Illustration: MONOCEROS]
+
+
+
+
+ERIDANUS (ē-rid´-a-nus)--OR THE RIVER PO. (Face Southwest.)
+
+
+LOCATION.--Three degrees north and 2° west of Rigel, in Orion, lies β
+Eridani, the source of the River. Thence it flows west till it reaches
+π Ceti, then drops south 5°, thence east southeast, its total length
+being about 130°.
+
+The great curve the River takes, just east of the Whale, resembles a
+horseshoe.
+
+Acherna, the first-magnitude star in Eridanus, is too far south to be
+seen in this latitude.
+
+Note the pretty star group around β and a pair of stars of an orange
+hue below ν.
+
+The asterism known as "The Brandenburg Sceptre," consisting of four
+stars of the fourth and fifth magnitudes, can be seen arranged in a
+straight line north and south below the first bend in the River just
+west of Lepus.
+
+[Illustration: ERIDANUS]
+
+
+
+
+METEORIC SHOWERS.
+
+JANUARY TO APRIL.
+
+
+  +---------------+--------+------------------+---------------+-------------+----------+
+  |               |        |                  |               | Other Dates |          |
+  |Name of Shower | Date   |   Radiant Point  |Characteristics|     of      |Location  |
+  |               |        |                  |               | Observation |          |
+  +---------------+--------+------------------+---------------+-------------+----------+
+  | Quadrantids.  | Jan. 2 |   (44) Boötis,   |               |             |          |
+  |  Rich annual  |        |between Boötes and|   M. Sw. B.   |    Jan 3.   |   E.     |
+  |    shower     |        |  Dragon's head   |               |             |          |
+  +---------------+--------+------------------+---------------+-------------+----------+
+  | Zeta Cancrids |Jan. 2-4|   (ζ) Cancri,    |               |             |   E.     |
+  |               |        |  near Bee Hive   |               |             |          |
+  +---------------+--------+------------------+---------------+-------------+----------+
+  | Theta Ursids  | Jan. 5 | About 10° from β |     Small     |             |          |
+  |               |        |  away from γ     |  Sh. Sw. F.   |  Jan. 2-8   |   N.     |
+  |               |        |    Ursæ Maj.     |               |             |          |
+  +---------------+--------+------------------+---------------+-------------+----------+
+  |Alpha Draconids| Feb. 1 |   Near Thuban    |      Sl.      |   Jan. 9    |   N.     |
+  |               |        |   α Draconis     |               |   Dec. 8    |          |
+  +---------------+--------+------------------+---------------+-------------+----------+
+  |               |        |   Near Capella   |               |   Aug. 21   |High in   |
+  |Alpha Aurigids | Feb. 7 |     α Aurigæ     |      Sl.      | Sept. 12-22 |Southern  |
+  |               |        |                  |               |             |  Sky     |
+  +---------------+--------+------------------+---------------+-------------+----------+
+  | Tau Leonids   |Feb. 16 |   τ Leonis,      |               |   Nov. 27   |          |
+  |               |        |  between Leo     |    Sl. Sk.    |   Dec. 12   |   E.     |
+  |               |        |  and Crater      |               |   Mar. 1-4  |          |
+  +---------------+--------+------------------+---------------+-------------+----------+
+  |  Alpha Canum  |Feb. 20 | Near Cor Caroli  |               |             |          |
+  |   Ven. Well   |        |   and Coma       |   V. Sw. B.   |             |   E.     |
+  | defined 1877  |        |   Berenices      |               |             |          |
+  +---------------+--------+------------------+---------------+-------------+----------+
+  |     α-β       |Mar. 1  |   Between α      |     V. Sl.    |  July--Dec. |   N.W.   |
+  |   Perseids    |        |  and β Persei    |               |  Mar. 13-19 |          |
+  +---------------+--------+------------------+---------------+-------------+----------+
+  |Beta Leonids or|Mar. 14 |  Near Denebola   |     Sl. B.    |  Mar. 3, 4  |   S.E.   |
+  |Beta Virginids |        |    β Leonis      |               |  Dec. 12    |          |
+  +---------------+--------+------------------+---------------+-------------+----------+
+  |Kappa Cepheids |Mar. 18 |   Near Polaris   |     Sl. B.    |  Oct. 4-17  |   N.     |
+  |               |        |                  |               |  Mar. 13-19 |          |
+  +---------------+--------+------------------+---------------+-------------+----------+
+  |               |        |                  |               | Apr. 10-16  |          |
+  |  Beta Ursids  |Mar. 24 |     Near β       |       Sw.     |  Mar. 13-14 |   N.     |
+  |               |        |    Ursæ Maj.     |               |  Dec. 2-9   |          |
+  |               |        |                  |               |   Precise   |          |
+  +---------------+--------+------------------+---------------+-------------+----------+
+  |Zeta Draconids |Mar. 28 |    Near the      |       Sl.     |  July 29    |   N.     |
+  |               |        |  Dragon's Head   |               |Aug. 24, etc.|          |
+  +---------------+--------+------------------+---------------+-------------+----------+
+
+The Abbreviations under _Characteristics_ are as follows:
+
+ V.   Very
+ Sh.  Short
+ M.   Moderately
+ B.   Bright
+ Sw.  Swift
+ F.   Faint
+ Sl.  Slow
+ Sk.  Streak leaving meteors
+ T.   Train leaving meteors
+
+If you know the constellations, and memorize the following rhyme you
+will have ever at hand for reference at night, a reliable time-piece,
+a compass, and a perpetual calendar.
+
+The numbers above the star names indicate consecutively the months of
+the year in which these respective objects rise about the first
+instant in the eastern sky. In addition to first-magnitude stars the
+rhyme refers to the head of Capricornus, the Sea Goat, the Great
+Square of Pegasus, and Orion's Belt. All except Arcturus rise between
+9 and 9.30 P.M. Arcturus rises at 10 P.M., February 1st.
+
+           1
+  First Regulus gleams on the view,
+      2       3      4
+  Arcturus, Spica, Vega, blue,
+     5            6
+  Antares, and Altair,
+        7             8            9
+  The Goat's head, Square, and Fomalhaut,
+      10          11
+  Aldebaran, the Belt, a-glow,
+         12
+  Then Sirius most fair.
+
+Eight months of the year are identified by the position of the Dipper
+at 9 P.M. In April and May it is north of the zenith. During July and
+August it is west of north. In October and November it lies close to
+the northern horizon and in January and February it is east of north
+with the pointers highest.
+
+
+
+
+THE PLANETS.
+
+
+It is not within the scope of this work to dwell at length on a
+discussion of the planets. Certain explanatory matter regarding them
+is necessary, however, to prevent confusion; for the student must bear
+in mind the fact that from time to time the planets appear in the
+constellations, and unless identified would lead him to think that the
+diagrams were inaccurate.
+
+The reader is referred to any one of the four large plates that
+precede each season. He will observe that a portion of an ellipse has
+been traced on each of them, and that this line has been designated
+the Ecliptic, which simply means the sun's apparent pathway across the
+sky.
+
+This pathway is divided into twelve equal parts of thirty degrees
+each, and to these twelve divisions are given the names of the
+constellations of the Zodiac in the following order: Aries (♈), Taurus
+(♉), Gemini (♊), Cancer (♋), Leo (♌), Virgo (♍), Libra (♎), Scorpio
+(♏), Sagittarius (♐), Capricornus (♑), Aquarius (♒), Pisces (♓).
+
+The sun, starting from the first degree of Aries, the first day of
+spring, passes through one constellation a month. The planets follow
+the same pathway.
+
+Confusion, therefore, respecting their identity can only arise in
+connection with a study of one of the twelve constellations named
+above, so that whenever a star of any size is seen in one of these
+constellations, not accounted for in the diagram, the student may
+conclude that this is a planet; especially if the unknown star does
+not twinkle. It now remains to identify the planet.
+
+This can best be done by referring to an almanac, which states what
+planets are above the horizon, and which are morning and evening
+stars. By morning star is meant that the planet is east of the sun; by
+evening star, that it is west of the sun.
+
+If the planet is in the west, and very brilliant, it is safe to assume
+that it is the planet Venus.
+
+If it is brighter than any of the fixed stars, and is some distance
+from the sun, it is doubtless the colossal Jupiter.
+
+If it is very red, it will probably be Mars.
+
+Saturn is distinguished because of its pale, steady, yellow light.
+
+As for Mercury, Uranus, and Neptune, the former is very near the sun,
+and seldom seen; while Uranus and Neptune are so inconspicuous as to
+lead to no confusion on the part of the novice.
+
+A few notes of interest relative to the planets follow, taking them up
+in regular order passing outward from the sun: Mercury, Venus, Mars,
+Jupiter, Saturn, Uranus, Neptune.
+
+
+MERCURY.
+
+Mercury is the nearest to the sun of any of the planets. On this
+account, and because of its rapid changes, it is seldom seen.
+
+The most favorable time for observing it is just after sunset, or just
+before sunrise, during the months of March, April, August, and
+September, when it may be seen for a few successive days.
+
+The greatest distance it ever departs from the sun on either side
+varies approximately from sixteen to twenty-eight degrees. Its motion
+resembles a pendulum, swinging from one side of the sun to the other.
+
+
+VENUS.
+
+Venus approaches nearer to the earth and is more brilliant than any
+other planet. It is bright enough to cast a shadow at night, and is
+sometimes visible even at noonday. It is almost as large as the earth,
+and appears to oscillate, as Mercury does, on either side of the sun.
+
+It never appears more than three hours after sunset, and as long
+before the sunrise, and is never more than forty-eight degrees from
+the sun.
+
+
+MARS.
+
+Mars is most like the earth of any of the planets, and, although not
+as interesting an object to view as the more brilliant planets, Venus
+and Jupiter, it claims our attention chiefly because of the surmises
+respecting its habitability.
+
+Mars appears to the naked eye as a bright red star, and when at a
+favorable opposition to the earth (which occurs only once in every
+fifteen years) it rivals Jupiter in splendor.
+
+The planet may be mistaken for the first magnitude stars, Antares in
+Scorpius, and Aldebaran in Taurus, near which it frequently passes.
+
+The fixed stars, however, twinkle, while Mars glows steadily. If there
+is any doubt in the student's mind as to the identity of the planet, a
+few nights of observation, noting the changes in the planet's
+position, will decide the point. It takes Mars about fifty-seven days
+to pass through one constellation in the Zodiac.
+
+
+JUPITER.
+
+Jupiter is the largest of all the planets in the solar system, and it
+is easily distinguished from the fixed stars because of its brilliancy
+and splendor, exceeding in brightness all the planets excepting Venus,
+and casting a perceptible shadow.
+
+It moves slowly and majestically across the sky, advancing through the
+Zodiac at the rate of one constellation yearly. It is therefore a
+simple matter to forecast its position, for, in whatever constellation
+it is seen to-day, one year hence it will be seen equally advanced in
+the next constellation.
+
+Although Jupiter appears to move slowly, it really travels at the
+incomprehensible rate of five hundred miles a minute.
+
+The most interesting feature about Jupiter for the amateur astronomer
+consists in observing four of its moons, which are visible with a
+small telescope. They appear like mere dots of light, and their
+transit of or occultation with the planet (that is, their
+disappearance before or behind its disk) can be watched, and is a
+never failing source of pleasure. A large telescope alone reveals
+Jupiter's four other moons.
+
+
+SATURN.
+
+Saturn is farther removed from the earth than any of the planets in
+the solar system, visible to the naked eye. It is distinguished from
+the fixed stars by the steadiness of its light, which is dull and of a
+yellow hue, though to some it appears to be of a greenish tinge. It
+seems barely to move, so slow is its motion among the stars, for it
+takes two and one half years to pass through a single constellation of
+the Zodiac.
+
+Saturn has eight moons. Titan, its largest one, can be seen with a 3"
+glass. Its celebrated rings are telescopic objects but a small glass
+reveals them.
+
+
+URANUS.
+
+The student will hardly mistake Uranus for a fixed star, as it is only
+under the most favorable circumstances that it can be seen with the
+naked eye.
+
+At its nearest approach to the earth, it is as bright as a
+sixth-magnitude star. Uranus is accompanied by four moons, and takes
+seven years to pass through a constellation of the Zodiac.
+
+
+NEPTUNE.
+
+Neptune is the most distant of the planets in the solar system, and is
+never visible to the naked eye.
+
+The earth comes properly under a discussion of the planets, but a
+description of it is hardly within the scope of this work.
+
+Confusion in identifying the planets is really confined to Mars and
+Saturn, for Venus and Jupiter are much brighter than any of the fixed
+stars, and their position in the heavens identifies them, as we have
+seen before.
+
+The following table of first-magnitude stars in the Zodiacal
+constellations confines the question of identifying the planets to a
+comparison of the unknown star with the following-named stars:
+
+  Castor and Pollux in Gemini.
+  Spica             "  Virgo.
+  Regulus           "  Leo.
+  Aldebaran         "  Taurus.
+  Antares           "  Scorpius.
+
+The first four stars named above are white in color, so that either
+Mars or Saturn is readily distinguished from them.
+
+As for Aldebaran and Antares, which are both red stars, not unlike
+Mars and Saturn in color and magnitude, the fact that the latter do
+not twinkle, and that they do not appear in the diagrams, should
+satisfy the observer of their identity. Reference to an almanac, or a
+few nights of observation, will in any case set at rest any doubt in
+the matter.
+
+[Illustration: THE PLANETARY ORBITS]
+
+[Illustration: COMPARATIVE SIZE OF THE PLANETS.]
+
+
+
+
+THE MILKY WAY.
+
+
+The Milky Way, or Galaxy as it is sometimes called, is a great band of
+light that stretches across the heavens. Certain portions of it are
+worthy of being viewed with an opera-glass, which separates this
+seemingly confused and hazy stream into numberless points of light,
+emanating from myriads of suns.
+
+This wonderful feature of the heavens is seen to best advantage during
+the months of July, August, September, and October. Beginning near the
+head of Cepheus, about thirty degrees from the North Pole, it passes
+through Cassiopeia, Perseus, Auriga, part of Orion, and the feet of
+Gemini, where it crosses the Ecliptic, and thence continues into the
+southern hemisphere, beyond our ken in these latitudes.
+
+It reappears in two branches in the region of Ophiuchus, one running
+through the tail of Scorpius, the bow of Sagittarius, Aquila,
+Delphinus, and Cygnus; the other above and almost parallel to it,
+uniting with the first branch in Cygnus, and passing to Cepheus, the
+place of beginning.
+
+The student should note especially the strange gap between α, γ, and
+ε Cygni. This dark space has been called the "Coal Sack."
+
+The Milky Way in the vicinity of Cassiopeia is particularly rich, and
+well repays a search with an opera-glass.
+
+"The Galaxy covers more than one tenth of the visible heavens,
+contains nine-tenths of the visible stars, and seems a vast
+zone-shaped nebula, nearly a great circle of the sphere, the poles
+being at Coma and Cetus."
+
+
+
+
+THE MOTIONS OF THE STARS.
+
+
+It may be that the student desires to proceed in this conquest of the
+sky at a more rapid pace than the scheme of study permits. To assist
+such, it should be borne in mind that the circumpolar constellations,
+as Ursa Major, Ursa Minor, Draco, Cepheus, and Cassiopeia, are
+designated,--are visible in our latitude in the northern sky every
+night.
+
+A reference to their diagrams, and a glance at any of the large plates
+showing the entire group in their respective positions, will suffice
+for the student to identify them.
+
+The hours of darkness alone limit the speed with which a knowledge of
+the constellations can be acquired.
+
+Let us suppose that the student begins his search for the
+constellations on the night of April 1st, at nine P.M. He has for his
+guide the large plate, and the spring group of eleven constellations
+set forth in the diagrams. The remaining three constellations of the
+circumpolar group are, as we have seen before, visible in the north.
+
+If he faces the western sky, he will see Andromeda just setting, and
+Perseus, Taurus, Orion, Lepus, and Canis Major but a short distance
+above the horizon. If he is so fortunate as to be able to identify
+these, and the spring group, he may turn his attention wholly to the
+eastern sky, where new constellations await him.
+
+In the southeast he may see Virgo. In the east well up blazes
+Arcturus, the gem of Boötes, below which is the beautiful Northern
+Crown, with the diamond in the head of Serpens beneath it. Hercules is
+rising, and Vega in the Lyre should be seen just flashing on the view
+in the northeast.
+
+This completes the list of wonders visible at this precise time, but
+the stars apparently are never still, and doubtless, while the student
+has been passing from one constellation to another in the western and
+southern skies, others have been rising in the east and northeast.
+
+At ten P.M. the Lyre is well up, and Ophiuchus and Libra can be
+discerned. At midnight Scorpius and Cygnus are ready to claim the
+attention. By two o'clock A.M., Aquila, Delphinus, and Sagittarius
+have risen, and at break of day Andromeda, Pegasus, and Capricornus
+can be seen if the student has had the courage to remain awake this
+length of time.
+
+In no way can the seeming movement of the stars be better understood
+than by actual observation. The observer must bear in mind that the
+movement is an apparent one: that it is the earth that is moving and
+not the stars. He has only to think of the analogy of the moving train
+beside the one that is standing still, and the true state of affairs
+will at once be evident.
+
+To further appreciate this apparent change in the situation of the
+constellations, the student should refer to the large plates
+successively. In each successive one he will note the advancement
+westward of the constellations mentioned above, rising in the east
+late at night.
+
+The student can best get an idea of this westward apparent movement of
+the stars by noting the position of some bright first-magnitude star
+from night to night. He will soon be able to calculate the position of
+this star a month or more ahead, and this calculation applies to all
+the constellations and stars.
+
+It is not within the scope of this work to go into this matter in
+detail. The author merely desires to mention this fact of apparent
+change of position in the stars, a fact that will be noticeable to the
+observer in a short time, and a fact that it is hoped he will be able
+to explain to his own satisfaction with the aid of the foregoing
+remarks.
+
+It will be noticed that the stars on the diagrams are all numbered and
+lettered. The numbers refer to the magnitude of the star,--that is,
+the brightness of it, the first-magnitude stars being the brightest,
+the second-magnitude stars two-and-a-half times less bright, etc.
+
+The letters are those of the Greek alphabet, and the student if not
+familiar with it is advised to consult a Greek grammar.
+
+In the text, in referring to certain stars in the constellations, the
+genitive case of the Latin name of the constellation is given; for
+example, Vega is known as α Lyrae, meaning alpha of Lyra, Aldebaran as
+α Tauri, alpha of Taurus, etc.
+
+The twilight hour affords an excellent opportunity of fixing the
+relative positions of the first-magnitude stars in the mind, for at
+that time they alone, save the planets, are visible.
+
+
+
+
+METEORS, OR SHOOTING-STARS.
+
+
+As this work is designed primarily to cover what is observable in the
+starlit heavens with the naked eye, the subject of meteors, or
+shooting-stars, comes properly within its scope.
+
+There are few persons, if any, who have not witnessed the sight of a
+splendid meteor speeding across the sky, and such a sight always calls
+forth exclamations of wonder and delight.
+
+Apparently these evanescent wanderers in space are without distinctive
+features, and baffle classification; but, like all that nature reveals
+to us, they have been found, for the most part, to conform to certain
+laws, and to bear certain marks of resemblance that permit of their
+identification and classification.
+
+By careful observation for over fifty years the meteors, generally
+speaking, have been so arranged that they come under the head of one
+of the nearly three hundred distinct showers which are now recognized
+by astronomers.
+
+Many of these showers are too feeble and faint to be worthy of the
+attention of one not especially interested in the subject, but certain
+ones are well worth observing. There is always a pleasure in being
+able to recognize at a glance a certain definite manifestation of
+nature, be it a rare flower or a flashing meteor.
+
+The generally accepted theory respecting the meteors is that they were
+all originally parts of comets now disintegrated, and the four
+well-known showers of April 20th, August 10th and 14th, and November
+27th, bear testimony to this theory.
+
+The apparent velocity of the meteors is between ten and forty-five
+miles a second, and their average height is about seventy-six miles at
+first appearance, and fifty-one miles at disappearance. Occasionally a
+meteor is so large and compact as to escape total destruction, and
+falls to the earth. Specimens of these meteorites are to be found in
+our best museums.
+
+I have seen fit to divide the principal meteor showers into four
+groups, according to the seasons in which they appear, and have placed
+them respectively at the conclusion of each season's work on the
+constellations.
+
+By radiant point is meant the point from which the meteors start on
+their flight. This point is an apparent one, however, due to an
+illusion of perspective, for the meteors really approach the earth in
+parallel paths.
+
+The dates given for these showers are those of the maxima, and the
+meteors should be looked for several nights before and after the dates
+specified.
+
+The showers that are to be seen after midnight are, unless of special
+note, omitted.
+
+There are, besides the meteors that have been classified, certain
+shooting-stars that apparently have no determined radiant point. These
+are called sporadic meteors.
+
+In these lists of meteors, the radiant point is only approximately
+given; for scientific purposes a far more exact position is required
+in terms of right ascension and declination. There are several good
+lists of meteoric showers to be obtained, which afford this
+information for those who care to pursue the matter more in detail.
+See the Rev. T.W. Webb's book, entitled _Celestial Objects for Common
+Telescopes_. For purposes of identification, the radiant points here
+given will be found for the most part sufficient.
+
+
+NOTE.
+
+    Many readers of this book may be the fortunate possessors of
+    small telescopes. It may be that they have observed the
+    heavens from time to time in a desultory way and have no
+    notion that valuable and practical scientific research work
+    can be accomplished with a small glass. If those who are
+    willing to aid in the great work of astrophysical research
+    will communicate with the author he will be pleased to
+    outline for them a most practical and fascinating line of
+    observational work that will enable them to share in the
+    advance of our knowledge respecting the stars. It is work
+    that involves no mathematics, and its details are easily
+    mastered.
+
+
+
+
+THE NAMES OF THE STARS AND THEIR MEANINGS.
+
+
+  ACUBENS, α _Cancri_, "the claws."
+
+    Situated in one of the Crab's claws. It is white in color
+    and culminates[1] March 18th.
+
+  A-DAR´-A, ε _Canis Majoris_, "the virgins," a name for four
+    stars, of which Adara is brightest.
+
+    Situated in the Dog's right thigh. It is pale orange in
+    color, and culminates Feb. 11th.
+
+  ADHIL, ε _Andromedæ_, "the train of a garment."
+
+    Situated in the left shoulder of the chained lady.
+
+  ALADFAR (al-ad-fär), μ _Lyræ_, "the talons" (of the falling
+    eagle)
+
+  AL BALI, ε _Aquarii_, "the good fortune of the swallower."
+
+  AL-BI´-REO, or AL-BIR´Ë-O β _Cygni_, origin doubtful. Means
+    the beak of the hen.
+
+    Situated in the beak of the Swan and the base of the Cross.
+    Its color is topaz yellow, and it culminates Aug. 28th.
+
+  ALCAID, η _Ursæ Majoris_. _See_ Benetnasch.
+
+  ALCHIBA (al-kē-bä´), α _Corvi_, "the tent," the desert title
+    for the constellation.
+
+    Situated in the eye of the Crow. Orange in color.
+
+  ALCOR (al´-kôr), g _Ursæ Majoris_, "the cavalier" or "the
+    rider."
+
+    Situated close to Mizar in the handle of the "Dipper."
+    Silver white in color. The Arabs called this star "Saidak,"
+    meaning "the proof," because they used it to test a good
+    eye.
+
+  AL-CY´-O-NE, η _Tauri_.
+
+    Greenish yellow in color. The brightest of the Pleiades.
+    Situated in the neck of the Bull.
+
+  AL-DEB´-A-RAN, α _Tauri_, "the hindmost" or the "follower,"
+    _i.e._ of the Pleiades.
+
+    Situated in the eye of the Bull. Pale rose in color. It is
+    receding from the earth at the rate of thirty miles per
+    second, and culminates Jan. 10.
+
+    α Tauri is sometimes called Palilicium.
+
+  ALDERAMIN (Al-der-am´-in), α _Cephei_ "the right arm." It
+    now marks the shoulder of Cepheus.
+
+    White in color. It culminates Sept. 27th.
+
+  ALDHAFERA, ζ _Leonis_.
+
+    Situated in the "Sickle," and the neck of the Lion. It
+    culminates April 8th.
+
+  ALFIRK (al-ferk´), or ALPHIRK, "stars of the flock," β
+    _Cephei_.
+
+    The Arab name for the constellation. Situated in the girdle
+    of Cepheus. White in color. It culminates Oct. 2d.
+
+  ALGEIBA (al-jē´-bä), γ _Leonis_, "the mane."
+
+    Situated in the "Sickle," and the shoulder of the Lion. It
+    is approaching the earth at the rate of twenty-four miles
+    per second, and culminates April 9th.
+
+  AL´-GE-NIB, γ _Pegasi_, "the wing," possibly the "flank" or
+    "side."
+
+    Situated in the wing of the Horse. White in color, and
+    culminates Nov. 14th.
+
+  AL´-GE-NIB, α _Persei_, "the side," or Mirfak, "the elbow."
+
+    Situated in the right side of Perseus. Lilac in color and
+    approaching the earth at the rate of six miles per second.
+    It culminates Jan. 1st. This star is also called Alchemb.
+
+  ALGENUBI (al-je-nö´-bi), ε _Leonis_, "the head of the Lion."
+
+    A yellow star situated in the Lion's mouth.
+
+  AL´-GOL, β _Persei_, "the ghoul" or "demon."
+
+    Situated in the head of the Medusa held in the Hero's left
+    hand. White in color. It is approaching the earth at the
+    rate of one mile per second, and culminates Dec. 23d.
+
+  ALGORAB (al-go-räb´), or ALGORES, (δ) _Corvi_, "the raven."
+
+    Situated on the right wing of the Crow. Pale yellow in
+    color. It culminates May 14th.
+
+  ALHENA (al-hen´-a), γ _Geminorum_, "a brand on the right
+    side of the camel's neck," or a "ring" or "circlet."
+
+    Situated in the left foot of Pollux. White in color, and
+    culminates Feb. 8th. Alhena is sometimes called Almeisam.
+
+  AL-I-OTH, ε _Ursæ Majoris_, disputed derivation.
+
+    Situated in the tail of the Great Bear. It is approaching
+    the earth at the rate of nineteen miles per second. It
+    culminates May 20th. Alioth, the name sometimes given to α
+    and θ Serpentis.
+
+  AL-KAID (al-kād), _See_ ALCAID.
+
+  ALKALUROPS (al-ka-lū´-rops), μ _Boötis_, "a herdsman's club,
+    crook, or staff."
+
+    Situated near the right shoulder of the Herdsman. Its color
+    is flushed white.
+
+  ALKES (al´-kes), α _Crateris_, from Al Kas, "the cup," the
+    Arab name for the constellation.
+
+    Situated in the base of the Cup. Orange in color, and
+    culminates April 20th.
+
+  ALMAC, γ _Andromedæ_, "a badger," possibly "the boot."
+
+    Situated in the left foot of Andromeda. Orange in color, and
+    culminates Dec. 8th.
+
+  AL NAAIM, τ and ν Pegasi, "the cross bars over a well."
+
+  AL NASL (al-nas´l), or ELNASL (el-nas´-l), γ _Sagittarii_,
+    "the point head of the arrow."
+
+    Situated in the arrow's tip. It is yellow in color, and
+    culminates Aug. 4th. This star sometimes called Nushaba and
+    Warida.
+
+  AL NATH, or NATH γ _Aurigæ_, and β _Tauri_, "the heel of the
+    rein-holder," the "butter" _i.e._ the "horn."
+
+    Situated in the right foot of the Charioteer, and the
+    tip of the northern horn of the Bull. Brilliant white in
+    color, and culminates Dec. 11th.
+
+  ALNILAM (al-ni-lam´), ε _Orionis_, "a belt of spheres or
+    pearls."
+
+    Situated in Orion's belt. It is bright white in color, and
+    is receding from the earth at the rate of sixteen miles per
+    second. It culminates Jan. 25th.
+
+  ALNITAK (al-ni-tak´), ζ _Orionis_, "the girdle."
+
+    Situated in Orion's belt. Topaz yellow in color. It is
+    receding from the earth at the rate of nine miles per
+    second, and culminates Jan. 26th.
+
+  AL-NIYAT, σ _Scorpii_, "the outworks of the heart."
+
+    Situated near the Scorpion's heart. It is creamy white in
+    color.
+
+  AL´-PHARD, or (al-färd´), α _Hydræ_, "the solitary one in the
+    serpent."
+
+    Situated in the heart of Hydra. Orange in color, and
+    culminates Mar. 26th. The Chinese called this star "the Red
+    Bird."
+
+  AL-PHEC´-CA, α _Coronæ Borealis_, "the bright one of the
+    dish." _See_ Gemma. Century Dictionary gives meaning "the
+    cup or platter of a dervish."
+
+  AL´-PHE-RATZ or (al-fe-rats´), α _Andromedæ_, "the head of
+    the woman in chains." "The navel of the horse."
+
+    Situated in the head of Andromeda. White and purplish in
+    color. It culminates Nov. 10th. Alpheratz is some times
+    called Sirrah.
+
+  AL-PHIRK, β _Cephei_, from al-Firk, the flock.
+
+  AL RAKIS, μ _Draconis_, "the dancer."
+
+    Situated in the Dragon's nose. Brilliant white in color. The
+    Century Dictionary gives for this star Arrakis, "The
+    trotting camel."
+
+  AL RESCHA, α _Piscium_, "the cord or knot."
+
+    Situated in the knot joining the ribbons that hold the
+    Fishes together. Pale green in color, and culminates Dec.
+    7th.
+
+  ALSAFI σ _Draconis_.
+
+  ALSCHAIN (al-shān´), β _Aquilæ_, part of the Arab name for
+    the constellation.
+
+    Situated in the head of Antinoüs. Pale orange in color, and
+    culminates Sept. 3d.
+
+  AL SHAT, ν _Capricorni_, "the sheep."
+
+  AL´-TAIR, or ATAIR, α _Aquilæ_, "the flying eagle," part of
+    the Arab name for the constellation.
+
+    Situated in the neck of the Eagle. Yellow in color, and
+    culminates Sept. 1st.
+
+  ALTERF (al-terf´), λ _Leonis_, "the glance," _i.e._ the
+    Lion's eye.
+
+    Situated in the Lion's mouth, the point of the Sickle. Red
+    in color.
+
+  ALUDRA (al-ö´-dra), η _Canis Majoris_, "the virgins." The
+    four stars near each other in Canis Major.
+
+    Situated in the Great Dog's tail. Pale red in color, and
+    culminates Feb. 21st.
+
+  ALULA BOREALIS, ν _Ursæ Majoris_.
+
+  ALULA AUSTRALIS, ζ _Ursæ Majoris_ The "northern and southern
+    wing."
+
+    Situated in the Southern hind foot of the Great Bear. The
+    latter star is sometimes called El Acola.
+
+  AL´-YA, θ _Serpentis_.
+
+    Situated in the tip of the Serpent's tail. Pale yellow in
+    color. It culminates Aug. 18th.
+
+  ANCHA, θ _Aquarii_, "the hip."
+
+    Situated in the right hip of Aquarius.
+
+  ANT-ĀR-ES, or AN-TA´-REZ, α _Scorpii_, "the rival of Mars."
+
+    Situated in the heart of the Scorpion. Fiery red and emerald
+    green in color. It culminates July 11th.
+
+  ARC-TŪ-RUS, α _Boötis_, "the leg of the lance-bearer," or
+    "the bear-keeper."
+
+    Situated in the left knee of the Herdsman. Golden yellow in
+    color. It culminates June 8th.
+
+  ARIDED, _See_ DENEB.
+
+  ARNEB (är´-neb), α _Leporis_, "the hare," the Arab name for
+    the constellation.
+
+    Situated in the heart of the Hare. Pale yellow in color. It
+    culminates Jan. 24th. α _Leporis_ is sometimes called Arsh.
+
+  ARKAB (är´-kab), β _Sagittarii_, "the tendon uniting the
+    calf of the leg to the heel."
+
+    Situated in the Archer's left fore leg.
+
+  ASHFAR, μ and ε _Leonis_, "the eyebrows."
+
+    Situated close to the Lion's right eye. μ orange in color,
+    sometimes called Alshemali or Asmidiske.
+
+  ASPIDISKI (as-pi-dis´ke), or ASMIDISKE, ι _Argus_, "in the
+    gunwale."
+
+    Situated in the shield which ornaments the vessel's stern.
+    Pale yellow in color. The Century Dictionary gives "a little
+    shield" as the meaning for this star name.
+
+  ASCELLA, ζ _Sagittarii_, "the armpit."
+
+    Situated near the Archer's left armpit. It culminates Aug.
+    19th.
+
+  ASCELLUS, θ _Boötis_.
+
+    It marks the finger tips of the Herdsman's upraised hand.
+
+  ASCELLUS BOREALIS, ν _Cancri_, "northern ass."
+
+    Straw color.
+
+  ASCELLUS AUSTRALIS, δ _Cancri_, "the southern ass."
+
+    Situated on the back of the Crab. Straw color.
+
+  ATIK, ο _Persei_.
+
+    Situated in the wing on the right foot of Perseus.
+
+  AZELFAFAGE, π _Cygni_, "the horse's foot or track."
+
+  AZHA, η _Eridani_, "the ostrich's nest."
+
+    Pale yellow in color.
+
+
+  BAHAM, θ _Pegasi_, "the young of domestic animals."
+
+    Situated near the left eye of Pegasus.
+
+  BAT´EN KAITOS, ζ _Ceti_, "the whale's belly."
+
+    A topaz-yellow-colored star, which culminates Dec. 5th.
+
+  BEID (bā´-id), ο _Eridani_, "the egg."
+
+    A very white star.
+
+  BEL´-LA-TRIX, γ _Orionis_, "the female warrior." The Amazon
+    star.
+
+    Situated in the left shoulder of Orion. Pale yellow in
+    color. It is receding from the earth at the rate of six
+    miles per second, and culminates Jan. 22d. The Century
+    Dictionary gives the color as very white.
+
+  BE-NET´-NASCH, η _Ursæ Majoris_, "the chief or governor of
+    the mourners" (alluding to the fancied bier).
+
+    Situated in the tip of the Great Bear's tail. Brilliant
+    white in color. It is approaching the earth at the rate of
+    sixteen miles per second, and culminates June 2d. This star
+    is also called Alkaid, from al-kaid, "the Governor."
+
+  BETELGEUZE (BET-EL-GERZ´), α _Orionis_, "the giant's
+    shoulder," or "the armpit of the central one."
+
+    Situated in the right shoulder of Orion. Orange in color. It
+    is receding from the earth at the rate of ten miles per
+    second, and culminates Jan. 29th.
+
+    Sometimes called Mirzam, the roarer.
+
+  BOTEIN (bō-tē-in´), δ _Arietis_, "the little belly."
+
+
+  CA-PEL´-LA, α _Aurigæ_, "the she-goat."
+
+    Situated in the left shoulder of the Charioteer. It is a
+    white star, and is receding from the earth at the rate of
+    fifteen miles per second. It culminates Jan. 19th. The color
+    of Capella is nearly that of the sun.
+
+  CAPH (kaf), β _Cassiopeiæ_, "the camel's hump," or "the
+    hand."
+
+    It is white in color, and culminates Nov. 11th.
+
+  CAS´-TOR, α _Geminorum_, "the horseman of the twins."
+
+    Its color is bright white, and it culminates Feb. 23d.
+    Situated in the head of Castor. The Century Dictionary gives
+    the color as greenish.
+
+  CHELEB, β _Ophiuchi_, also CEB´ELRÁI from kelb, the
+    shepherd's dog.
+
+    Situated in the head of the Serpent. It is a yellow star,
+    and culminates Aug. 30th.
+
+  CHORT (chôrt), θ _Leonis_.
+
+    Situated in the hind quarters of the Lion. It culminates
+    April 24th. The Century Dictionary has θ _Centauri_ for this
+    star.
+
+  COR CAROLI (kôr kar´-ō-lī), α _Can. Ven._, "the heart of
+    Charles II."
+
+    It is flushed white in color, and culminates May 20th. A
+    yellowish star according to the Century Dictionary.
+
+  CUJAM, ω _Herculis_. Word used by Horace for the club of
+    Hercules.
+
+  CURSA (KER´ SA), β _Eridani_, "the footstool of the central
+    one," or "the chair or throne."
+
+    Situated about at the source of the river near Orion. Topaz
+    yellow in color, and culminates January 13th. This star is
+    also known as Dhalim (Tha´lim) ("the ostrich").
+
+
+  DABIH (dä´-be), β _Capricorni_, "the lucky one of the
+    slaughterers," or "the slayer's lucky star."
+
+    Situated in the head of the Sea-Goat. It is an
+    orange-colored star, and culminates Sept. 10th.
+
+  DĒ´-NEB, or ARIDED (ar´-i-ded), α _Cygni_, "the hen's tail,"
+    "the hindmost."
+
+    Situated in the tail of the Swan, and at the top of the
+    Cross. Brilliant white in color. It is approaching the earth
+    at the rate of thirty-six miles per second. It culminates
+    Sept. 16th.
+
+  DENEB AL OKAB (den´-eb al-ō-kâb), ε and ζ _Aquilæ_, "the
+    eagle's tail."
+
+  DENEB ALGEDI (den´-eb al´-jē-dē), δ _Capricorni_, "the tail
+    of the goat."
+
+    Situated in the tail of the Sea-Goat.
+
+  DENEB AL SHEMALI (den´-eb-al-she-mä-le), ι _Ceti_
+
+    A bright yellow star situated at the tip of the northern
+    fluke of the monster's tail.
+
+  DENEB KAITOS (den´-eb kī´-tos), β _Ceti_, "the tail of the
+    whale."
+
+    Situated in the tail of the Whale. It is a yellow star, and
+    culminates Nov. 21st. This star sometimes called Diphda.
+
+  DE-NEB´-O-LA, β _Leonis_, "the lion's tail."
+
+    It is a blue star which is approaching the earth at the rate
+    of twelve miles per second. It culminates May 3d. This star
+    also called Dafirah, and Serpha.
+
+  DSCHUBBA, δ _Scorpii_, "the front of the forehead."
+
+    Situated in the head of the Scorpion. It culminates July
+    4th.
+
+  DSIBAN, ψ _Draconis_.
+
+    Pearly white in color.
+
+  DUB´-HE (döb´-he), α _Ursæ Majoris_, "a bear."
+
+    The northern pointer star. It is a yellow star, and is
+    approaching the earth at the rate of twelve miles per
+    second. It culminates April 21st. The Arabs called the four
+    stars in the Dipper the "bier."
+
+
+  EL NATH β _Tauri_, the one who butts. This star is receding
+    at the rate of five miles a second.
+
+  ELTANIN, or ETANIN (et´-ā-nin), γ _Draconis_, "the dragon,"
+    "the dragon's head."
+
+    It is orange in color and culminates Aug. 4th. Rasaben is
+    another name for this star.
+
+  E´-NIF, or en´-if, ε _Pegasi_, "the nose."
+
+    Situated in the nose of Pegasus. It is a yellow star, which
+    is receding from the earth at the rate of five miles per
+    second, and culminates Oct. 4th. This star was also called
+    fum-al-far-as, "the mouth of the horse."
+
+  ER RAI (er-rā´-ē), γ _Cephei_, "the shepherd."
+
+    Situated in the left knee of Cepheus. It is yellow in color
+    and culminates Nov. 10th.
+
+
+  FOMALHAUT (Fō´-mal-ō), (disputed pronunciation), α _Piscis
+    Austri_, "the fish's mouth."
+
+    Situated in the head of the Southern Fish. It is reddish in
+    color, and culminates Oct. 25th. This star was also known as
+    the first frog, the second frog being β Ceti.
+
+  FURUD, or PHURUD (fu-rōd), ζ _Canis Majoris_, "the bright
+    single one."
+
+    Situated in the left hind paw of the Greater Dog. It is
+    light orange in color.
+
+
+  GEM´-MA, α _Coronæ Borealis_, "a bud."
+
+    The brightest star in the Northern Crown. It is brilliant
+    white in color, and is receding from the earth at the rate
+    of twenty miles per second. It culminates June 28th. This
+    star is also known as Alphecca and Alfeta.
+
+  GIANSAR λ _Draconis_, "the twins," "the poison place."
+
+    Situated in the tip of the Dragon's tail. An orange-colored
+    star. It culminates April 28th.
+
+  GIEDI, α _Capricorni_, also called Algied´-i, the goat.
+
+    Situated in the head of the Sea-Goat. It is a yellow star,
+    and culminates Sept. 9th.
+
+  GIENAH, γ _Corvi_, "the right wing of the raven."
+
+    Situated in the Crow's wing. It culminates May 10th.
+
+  GIENAH, ε _Cygni_, "the wing."
+
+    Situated in the Swan's wing. It is a yellow star, and
+    culminates Sept. 17th.
+
+  GOMEISA (gō-mī´-zä), GOMELZA, β _Canis Minoris_,
+    "Watery-eyed, weeping." A white star.
+
+    Situated in the neck of the Lesser Dog.
+
+  GRAFFIAS, β _Scorpii_, derivation unknown; the name may mean
+    "the crab." This star was also called Ak´rab, the Scorpion.
+
+    Situated in the head of the Scorpion. It is a pale white
+    star, and culminates July 5th.
+
+  GRUMIUM (grö´-mi-um), ξ _Draconis_, "the dragon's under
+    jaw."
+
+    A yellow star.
+
+
+  HAM´-AL or (ha-mäl´), α _Arietis_, "the head of the sheep."
+
+    Situated in the forehead of the Ram. It is yellow in color,
+    and is approaching the earth at the rate of nine miles per
+    second. It culminates Dec. 11th.
+
+  HOMAM (ho-mam´), ζ _Pegasi_, "the lucky star of the hero, or
+    the whisperer."
+
+    Situated in the neck of Pegasus. Light yellow in color. It
+    culminates Oct. 22d. The Century Dictionary gives this star
+    name to η _Pegasi_.
+
+  HYADUM I, γ _Tauri_.
+
+    Situated in the Hyades, the nose of the Bull. A yellow star.
+
+
+  IZAR (ē-zär), Mirach, or Mizar, ε _Boötis_, "the girdle."
+
+    Pale orange in color. It is approaching the earth at the
+    rate of ten miles per second, and culminates June 16th. A
+    beautiful colored double star.
+
+
+  JABBAH (Jab´-bä), ν _Scorpii_, "crown of the forehead."
+
+    A triple star.
+
+
+  KAUS (kâs), AUSTRALIS, ε _Sagittarii_, "the southern part of
+    the bow."
+
+    An orange-colored star. It culminates Aug. 8th.
+
+  KAUS (kâs), BOREALIS, λ _Sagittarii_, "the northern part of
+    the bow."
+
+    Orange color.
+
+  KITALPHA, α _Equulei_, the Arab name for the asterism. In
+    the head of the Little Horse. It culminates Sept. 24th.
+
+  KO´-CHAB (kō-käb´), β _Ursæ Minoris_, "the star of the
+    North."
+
+    Situated in the right shoulder of the Little Bear. One of
+    the two Guardians of the Pole. It is reddish in color, and
+    is receding from the earth at the rate of eight miles per
+    second. It culminates June 19th.
+
+  KORNEPHOROS, β _Herculis_, the Arab name for the
+    constellation.
+
+    Situated in the right arm-pit of Hercules. Pale yellow in
+    color. It is approaching the earth at the rate of twenty-two
+    miles per second. It culminates July 12th.
+
+
+  LESUTH, ν _Scorpii_, "the sting."
+
+    Situated in the tip of the Scorpion's tail. It culminates
+    July 27th.
+
+
+  MARFAK (mär´fak), θ _Cassiopeiæ_, "the elbow."
+
+    Situated in the left elbow of Cassiopeia. This star name is
+    also given to μ Cassiopeiæ.
+
+  MARFIC (mär´-fik), λ _Ophiuchi_, "the elbow."
+
+    Situated in the left elbow of the Serpent Bearer. Yellowish
+    white in color.
+
+  MARFIK (mär´ fik), or MARSIC, κ _Herculis_, "the elbow."
+
+    Situated in the right elbow of Hercules. Light yellow in
+    color.
+
+  MAR´-KAB (mär´kab), α _Pegasi_, Arab word for "saddle".
+    Century Dictionary gives "a wagon" or "chariot."
+
+    Situated in the base of the Horse's neck. It is a white star
+    which is receding from the earth at the rate of three
+    quarters of a mile a second. It culminates Nov. 3d.
+
+  MARKEB, κ _Argus_.
+
+    Situated in the stern of the Ship. It culminates Mar. 25th.
+
+  MARSYM, λ _Herculis_, "the wrist."
+
+    Situated in the left wrist of Hercules. Deep yellow in
+    color.
+
+  MATAR or SAD (Säd), "a lucky star," or more fully,
+    Sad-Mator, η _Pegasi_, "the fortunate rain."
+
+    Situated in the left fore leg of Pegasus.
+
+  MEBUSTA, MEBSUTA (Meb-sö´-ta), or MEBOULA, ε _Geminorum_,
+    "the outstretched."
+
+    A brilliant white star situated in the right knee of Castor.
+
+  MEDIA, or KAUS MEDIA, δ _Sagittarii_, "middle (of the) bow."
+
+    Orange yellow in color. It culminates Aug. 8th.
+
+  MĒ-GRES, or (Mē´-grez), δ _Ursæ Majoris_, "the root of the
+    bear's tail."
+
+    It is a pale yellow star, and culminates May 10th. This star
+    is the faintest of the seven which form the Dipper.
+
+  MEISSA, λ _Orionis_.
+
+    Situated in the face of the Giant Hunter. Pale white in
+    color.
+
+  MEKBUDA (mek-bū´-dā), ζ _Geminorum_, "the contracted (arm)."
+
+    Situated in the left knee of Pollux. Pale topaz in color.
+
+  MENKALINAN (men-ka-lē-nan´ or Men-kal´-i-nan), β _Aurigæ_,
+    "the shoulder of the rein-holder or driver."
+
+    Situated in the right arm of the Charioteer. A lucid yellow
+    star which is receding from the earth at the rate of
+    seventeen miles per second. It culminates Jan. 29th. This
+    star was one of the first discovered and most remarkable
+    "spectroscopic binaries."
+
+  MENKAR (men´kär), α _Oeti_, "the nose, or snout."
+
+    Situated in the nose of Cetus. Bright orange in color. It
+    culminates Dec. 21st. Sometimes written Menkab.
+
+  MENKIB, ξ _Persei_, "the shoulder."
+
+    Situated in the calf of the right leg of Perseus.
+
+  MERAK (mē´rak), β _Ursæ Majoris_, "the loin of the bear."
+
+    A greenish white star which is approaching the earth at the
+    rate of eighteen miles per second. It culminates Apr. 20th.
+    The southern of the two "pointers."
+
+  MESARTIM (mē-sär´tim), γ _Arietis_, the Hebrew word for
+    "minister."
+
+    Situated in the Ram's left horn. Bright white in color.
+
+  MINTAKA (min´ta-kä), δ _Orionis_, "the belt (of the
+    giant)."
+
+    One of the three stars in Orion's belt. A brilliant white
+    star with very little motion. It culminates Jan. 24th.
+
+  MĪ´-RA (mī´ra or mē´ra), ο _Ceti_.
+
+    Situated in the neck of Cetus. A famous variable, flushed
+    yellow in color. It culminates Dec. 15th.
+
+  MĪ´RACH, or MIRAK (mī´rak or mē´rak), β _Andromedæ_, "the
+    girdle," or "the loins."
+
+    A yellow star culminating Nov. 28th.
+
+  MĪZAR (mīzär or mē´zär), ζ _Ursæ Majoris_, "a girdle or
+    apron."
+
+    Situated in the tail of the Great Bear. Brilliant white in
+    color. It is approaching the earth at the rate of nineteen
+    miles per second. It culminates May 28th.
+
+  MULIPHEN, γ _Canis Majoris_.
+
+    Situated in the neck of the Greater Dog. It culminates Feb.
+    26th.
+
+  MUPHRID (mū´-frid), η _Boötis_, "the solitary star of the
+    lancer."
+
+    Situated in the calf of the left leg of the Herdsman. Pale
+    yellow in color. It culminates June 4th.
+
+  MURZIM or MIRZAM (mer-zäm´), β _Canis Majoris_, "the
+    announcer" or "the roarer."
+
+    Situated in the Greater Dog's left fore paw. A white star
+    culminating Feb. 5th.
+
+  MUSCIDA, ο _Ursæ Majoris_, "the muzzle."
+
+    Situated in the nose of the Great Bear.
+
+
+  NEKKAR, or NAKKAR (nak´-kär), β _Boötis_, "the herdsman,"
+    the Arab name for the whole constellation.
+
+    Situated in the head of Boötes. A golden yellow star which
+    culminates June 20th.
+
+  NAOS (nā´-os), ζ _Argus_, "the ship."
+
+    Situated in the stern of the Ship. It culminates Mar. 3d.
+
+  NASHIRA, γ _Capricorni_, "the fortunate one, or the bringer
+    of good tidings."
+
+    Situated in the tail of the Sea-Goat. It culminates Oct. 3d.
+
+  NIHAL, β _Leporis_.
+
+    Situated in the right foot of the Hare. Deep yellow in
+    color. It culminates Jan. 23d.
+
+  NODUS SECUNDUS, δ _Draconis_, "the second of the four knots
+    or convolutions."
+
+    Deep yellow in color. It culminates Aug. 24th.
+
+  NUNKI, σ _Sagittarii_, "the star of the proclamation of the
+    sea," or SADIRA (sad´-ē-ra), "the ostrich returning from the
+    water."
+
+    Situated in the upper part of the Archer's left arm. It
+    culminates Aug. 17th.
+
+
+  PHAD, PHEC´-DA, or PHAED (fā´-ed), γ _Ursæ Majoris_, "the
+    thigh" (of the bear).
+
+    Topaz yellow in color. It is approaching the earth at the
+    rate of sixteen miles per second. It culminates May 4th.
+
+  PHAET or PHACT, α _Columbæ_.
+
+    Situated in the heart of the Dove. It culminates Jan. 26th.
+
+  PHERKAD (fer´-kad), γ _Ursæ Minoris_, "the calf."
+
+    Situated in the right fore leg of the Little Bear.
+
+  PO-LÁ-RIS, α _Ursæ Minoris_, "the pole star."
+
+    Situated in the tip of the Little Bear's tail. Topaz yellow
+    in color. It is receding from the earth at the rate of
+    sixteen miles per second.
+
+  POL´-LUX, β _Geminorum_, Ovid's "Pugil," the pugilist of the
+    two brothers.
+
+    Situated in the head of Pollux. An orange-colored star which
+    is receding from the earth at the rate of one mile per
+    second. It culminates Feb. 26th. The Century Dictionary
+    gives the color of Pollux as very yellow.
+
+  PORRIMA (por´-i-mä), γ _Virginis_, Latin name for "a goddess
+    of prophecy."
+
+    Situated in the Virgin's left arm. It culminates May 17th.
+
+  PRO´-CY-ON, α _Canis Minoris_, "the foremost dog."
+
+    A yellowish-white star. It is approaching the earth at the
+    rate of six miles per second. It culminates Feb. 24th. It is
+    situated in the right side of the Lesser Dog. Dr. Elkin
+    gives its distance as 12.3 light years, and its proper
+    motion as 13.9 miles per second.
+
+  PROPUS (prō´-pus), η _Geminorum_, "the forward foot."
+
+    Situated in the northern foot of Castor.
+
+  RASALAS (ras´-a-las), μ _Leonis_, "the lion's head toward
+    the south."
+
+    Situated in the Sickle, close to the Lion's right eye. An
+    orange-colored star. It culminates Apr. 1st. Alshemali and
+    Borealis are other names for this star.
+
+  RAS ALGETHI (räs-al-ge´-thi), α _Herculis_, "the kneeler's
+    head."
+
+    Orange red in color. It culminates July 23d.
+
+  RAS´-AL-HĀG´-UE, α _Ophiuchi_, "the head of the serpent
+    charmer."
+
+    A sapphire-hued star. It is receding from the earth at the
+    rate of twelve miles per second. It culminates July 28th.
+
+  RASTABAN (räs-ta-bän´), β or γ _Draconis_ "the dragon's
+    head," or "the head of the basilisk."
+
+    A yellow star culminating Aug. 3d. This star also called
+    Alwaid (al-wīd´) "the sucking camel-colts." The three stars
+    near it are included in this appellation.
+
+  REG´-U-LUS, α _Leonis_, diminutive of the earlier Rex.
+
+    Situated in the handle of the Sickle, and the right fore paw
+    of the Lion. It is flushed white in color, and is
+    approaching the earth at the rate of five miles per second.
+    It culminates April 6th. According to Dr. Elkin it is 35.1
+    light years distant, and has a proper motion of 8.5 miles
+    per second.
+
+  RIGEL (ri´-jel), β _Orionis_, "the [left] leg of the Jabbah,
+    or giant."
+
+    A bluish-white star, which is receding from the earth at the
+    rate of ten miles per second. It culminates Jan. 20th. This
+    star is sometimes called Algebar (al´-je-bär).
+
+  ROTANEV (rot´-a-nev), β _Delphini_, from Venator, assistant
+    to Piazzi, his name reversed.
+
+    It culminates Sept. 15th.
+
+  RUCHBA, ω _Cygni_, "the hen's knee."
+
+    A pale red star.
+
+  RUCHBAH, or RUCBAH, δ _Cassiopeiæ_, "the knee."
+
+    Situated in the left knee of Cassiopeia. It culminates Dec.
+    2d.
+
+  RUKBAT, α _Sagittarii_, "the archer's knee."
+
+    Situated in the left fore foot of the Archer. It culminates
+    Aug. 24th.
+
+
+  SABIK, η _Ophiuchi_.
+
+    A pale yellow star in the left leg of the Serpent Bearer. It
+    culminates Aug. 21st.
+
+  SADACHBIA (sād-ak-bē´-yä), γ _Aquarii_, "the luck star of
+    hidden things."
+
+    Greenish in color and situated in the water jar of Aquarius.
+    It culminates Oct. 16th.
+
+  SAD AL BARI, λ and μ _Pegasi_, "the good luck of the
+    excelling one."
+
+    Situated close to the fore legs of Pegasus.
+
+  SADAL MELIK (säd-al-mel´-ik), or RUCBAH, α _Aquarii_, "the
+    lucky star of the king."
+
+    A red star situated in the right shoulder of Aquarius. It
+    culminates Oct. 9th.
+
+  SADALSUND, or SADALSUUD (säd-al-sö-öd), β _Aquarii_, "the
+    luckiest of the lucky."
+
+    Pale yellow in color. Situated in the left shoulder of
+    Aquarius. It culminates Sept. 29th.
+
+  SADATONI (sad-a-tō´-ni), ζ _Aurigæ_.
+
+    One of the three stars known as "the kids." Orange color.
+
+  SADR (sadr), or SADIR (sā´-dēr), γ _Cygni_, "the hen's
+    breast."
+
+    This star is approaching the earth at the rate of four miles
+    per second. It culminates Sept. 11th.
+
+  SAIPH (sā-if´), κ _Orionis_, "the sword of the giant."
+
+    Situated in Orion's right knee. It culminates Jan. 27th.
+
+  SARGAS, θ _Scorpii_.
+
+    A red star situated in the tail of the Scorpion. It
+    culminates July 27th.
+
+  SCHEAT (she´-at), or Menkib, β _Pegasi_, "the upper part of
+    the arm."
+
+    Situated in the left fore-leg of Pegasus. It is deep yellow
+    in color, and is receding from the earth at the rate of four
+    miles per second. It culminates Oct. 25th.
+
+  SCHEMALI, see Deneb al schemali, ι _Ceti_.
+
+  SEGINUS (se-jī´nus), γ _Boötis_, from Ceginus of the
+    constellation, possibly.
+
+    Situated in the left shoulder of Boötes. It culminates June
+    13th.
+
+  SHAULA (shâ´-lä), λ _Scorpii_, "the sting."
+
+    In the tip of the Scorpion's tail.
+
+  SHEDAR, SCHEDIR, or SHEDIR, α _Cassiopeiæ_, "the breast," or
+    from El Seder, "the sedar tree," a name given to this
+    constellation by Ulugh Beigh.
+
+    Pale rose in color. It culminates Nov. 18th.
+
+  SHELIAK, or SHELYAK (shel´-yak), "a tortoise," β _Lyræ_,
+    Arabian name for the constellation.
+
+    A very white star culminating Aug. 17th.
+
+  SHERATAN (sher-a-tan´), β _Arietis_, "a sign," or "the two
+    signs."
+
+    Situated in the Ram's horn. A pearly white star culminating
+    Dec. 7th.
+
+  SIR´-I-US, α _Canis Majoris_, "the sparkling star or
+    scorcher."
+
+    Situated in the mouth of the Great Dog. Brilliant white in
+    color. The brightest of the fixed stars. It culminates Feb.
+    11th.
+
+  SITULA (sit´-ū-lā), κ _Aquarii_, "the water jar or bucket."
+
+    Situated in the rim of the Water Jar.
+
+  SKAT, or SCHEAT, δ _Aquarii_, "a wish," or possibly it means
+    a "shin bone."
+
+    Situated in the right leg of Aquarius.
+
+  SPÏ´CA, α _Virginis_, "the ear of wheat or corn" (held in
+    the Virgin's left hand).
+
+    A brilliant flushed white star, which is approaching the
+    earth at the rate of nine miles a second. It culminates May
+    28th.
+
+  SUALOCIN, or SVALOCIN (sval´-ō-sin), Nicolaus reversed, α
+    _Delphini_.
+
+    A pale yellow star culminating Sept. 15th.
+
+  SULAFAT, or SULAPHAT (sö´-lä-fät), "the tortoise," γ
+    _Lyræ_.
+
+    Arabian title for the whole constellation. It is bright
+    yellow in color, and culminates Aug. 19th.
+
+  SYRMA, ι _Virginis_; this name used by Ptolemy to designate
+    this star in the train of the Virgin's robe.
+
+
+  TALITA (tä´-lē-tä), κ or ι _Ursæ Majoris_, "the third
+    vertebra."
+
+    Situated in the right fore paw of the Great Bear. Topaz
+    yellow in color.
+
+  TANIA BOREALIS, λ _Ursæ Majoris_.
+
+  TANIA AUSTRALIS, μ _Ursæ Majoris_, a red star.
+
+    These stars are situated in the right hind foot of the Great
+    Bear. The former star culminates Apr. 8th.
+
+  TARAZED (tar´-a-zed), γ _Aquilæ_, "the soaring falcon," part
+    of the Persian title for the constellation.
+
+    Situated in the body of the Eagle. A pale orange star,
+    culminating Aug. 31st.
+
+  TEGMENI, ζ _Cancri_, "in the covering."
+
+    A yellow-colored star.
+
+  TE´-JAT, μ _Geminorum_.
+
+  THU´-BAN or (thō-ban´), α _Draconis_, "the dragon," the Arab
+    title for the constellation.
+
+    Situated in one of the Dragon's coils. It is pale yellow in
+    color, and culminates June 7th.
+
+
+  UNUK AL HAY or UNUKALHAI (ū´-nuk-al-hä´-i), α _Serpentis_,
+    "the neck of the snake."
+
+    A pale yellow star which is receding from the earth at the
+    rate of fourteen miles a second. It culminates July 28th.
+
+
+  VË´GA, or WEGA, α _Lyræ_, "falling," _i.e._, the falling
+    bird, "the harp star."
+
+    A beautiful pale star sapphire in color. It is approaching
+    the earth at the rate of nine miles a second. It culminates
+    Aug. 12th.
+
+  VINDEMIATRIX, ε _Virginis_, "the vintager or grape
+    gatherer."
+
+    Situated in the Virgin's right arm. A bright yellow star
+    culminating May 22d.
+
+
+  WASAT (wä´-sat), δ _Geminorum_, "the middle."
+
+    Situated in the body of Pollux. Pale white in color. It
+    culminates Feb. 19th.
+
+  WESEN, δ _Canis Majoris_, "the weight."
+
+    A light yellow star in the right side of the Great Dog. It
+    culminates Feb. 17th.
+
+
+  YED PRIOR (yed), δ _Ophiuchi_, "the hand," "the star behind
+    or following."
+
+    Deep yellow in color. It culminates July 7th. It is in the
+    left hand of the Serpent Bearer.
+
+  YED POSTERIOR, ε _Ophiuchi_, "the hand."
+
+    A red star culminating July 8th.
+
+  YILDUM, δ _Ursæ Minoris_.
+
+    Situated in the tail of the Little Bear. A greenish-hued
+    star culminating Aug. 12th.
+
+
+  ZANIAH, η _Virginis_.
+
+    Situated in the Virgin's left shoulder.
+
+  ZAURAK (zâ´-rak), γ _Eridani_, "the bright star of the
+    boat."
+
+    A yellow star.
+
+  ZAVIJAVA (zav-ija´-va), β _Virginis_, "angle or corner,"
+    "the retreat or kennel of the barking dog."
+
+    Situated on the Virgin's left wing. A pale yellow star
+    culminating May 3d.
+
+  ZOSMA (zōs´-ma), δ _Leonis_, "a girdle."
+
+    Situated at the root of the Lion's tail. A pale yellow star
+    which is approaching the earth at the rate of nine miles a
+    second. It culminates Apr. 24th. This star is also called
+    Duhr, and sometimes Zubra.
+
+  ZUBENAKRAVI (zöben-ak´-ra-vi or -bi), γ _Scorpii_, "the claw
+    of the Scorpion." A red star.
+
+  ZUBEN ELGENUBI (zö-ben-el-jen-ū´-bi), α _Libræ_, "the
+    southern claw" (of the Scorpion).
+
+    A pale yellow star culminating June 17th. This star is also
+    called Kiffa Australis.
+
+  ZUBEN ESCHAMALI (zö-ben-es-she-ma´-li), β _Libræ_, "the
+    northern claw."
+
+    A pale emerald color, a very unusual color for a star. It is
+    approaching the earth at the rate of six miles a second and
+    culminates June 23d. This star is also known as "Kiffa
+    Borealis."
+
+In the compilation of the foregoing list, the author has been greatly
+assisted by Allen's "Star Names and their Meanings."
+
+[Footnote 1: It will be noted that the date of culmination is given in
+almost every case. By culmination is meant the highest point reached by
+a heavenly body in its path, at which point it is said to be on the
+meridian. In this hemisphere this is in each case the highest point
+north.
+
+For example:--the culmination of the sun occurs at noon.
+
+The time when the stars here mentioned culminate on the dates specified
+is in each case nine o'clock P.M.]
+
+
+
+
+TABLE SHOWING THE STARS OF THE FIRST AND SECOND MAGNITUDE RISING IN
+THE EASTERN SKY AT NINE O'CLOCK P.M. ON THE DATES SPECIFIED.
+
+  -------------+-----------------+---------------------------
+       DATE    | NAME OF STAR    |       CONSTELLATION
+  -------------+-----------------+---------------------------
+  January 1    |Regulus, 1st.    |Leo.
+     "    8    |Alphard, 2d.     |Hydra.
+     "    11   |Cor Caroli.      |Canes Venatici.
+  February 20  |Arcturus, 1st.   |Boötes.
+  March   1    |Spica, 1st.      |Virgo.
+     "    5    |Gemma, 2d.       |Corona Borealis.
+  April   1    |Vega, 1st.       |Lyra.
+     "    20   |Ras Alhague, 2d. |Ophiuchus.
+     "    22   |Deneb, 2d.       |Cygnus.
+  May   9      |Antares, 1st.    |Scorpius.
+     "    26   |Altair, 1st.     |Aquila.
+  June  5      |                 |Delphinus.
+  July  17     |Algenib, 2d.     |Perseus.
+  August 6     |Algol.           |Perseus.
+     "   21    |Capella, 1st.    |Auriga.
+     "    "    |Hamal, 2d.       |Aries.
+     "   27    |Fomalhaut, 1st.  |Piscis Australis.
+  September 13 |                 |The Pleiades in Taurus.
+  October 2    |Aldebaran, 1st.  |Taurus.
+     "    26   |Bellatrix, 2d.   |Orion.
+     "    30   |Castor, 2d.      |Gemini.
+     "     "   |Betelgeuze, 1st. |Orion.
+  November 4   |Pollux, 1st.     |Gemini.
+     "     "   |Rigel, 1st.      |Orion.
+     "     27  |Procyon, 1st.    |Canis Minor.
+  December 4   |Sirius, 1st.     |Canis Major.
+     "     8   |Phaet, 2d.       |Columba.
+     "     14  |                 |The Bee Hive in Cancer.
+     "     16  |                 |The head of Hydra.
+  -----------------------------------------------------------
+
+
+
+
+INDEX
+
+
+  NAME      PAGE
+
+  Andromeda,  73
+
+  Antinoüs,  39
+
+  Aquarius,  81
+
+  Aquila,  39
+
+  Argo Navis,  107
+
+  Aries,  85
+
+  Auriga,  11
+
+
+  Boötes,  55
+
+  Brandenburg Sceptre, The,  111
+
+  Bull of Poniatowskio,  45
+
+
+  Camelopardalis,  7
+
+  Cancer,  13
+
+  Canes Venatici,  59
+
+  Canis Major,  105
+
+  Canis Minor,  21
+
+  Capricornus,  83
+
+  Cassiopeia,  67
+
+  Cepheus,  69
+
+  Cerberus,  53
+
+  Cetus,  87
+
+  Columba,  103
+
+  Coma Berenices,  19
+
+  Corona Australis,  43
+
+  Corona Borealis,  51
+
+  Corvus,  23
+
+  Crater,  25
+
+  Cygnus,  37
+
+
+  Delphinus,  41
+
+  Draco,  33
+
+
+  Equüleus,  71
+
+  Eridanus,  111
+
+
+  Gemini,  9
+
+  Gloria Frederica,  73
+
+
+  Hercules,  53
+
+  Herschel's Telescope,  11
+
+  Hydra,  15
+
+
+  Leo,  17
+
+  Leo Minor,  95
+
+  Lepus,  101
+
+  Libra,  49
+
+  Lupus,  47
+
+  Lynx,  95
+
+  Lyra,  35
+
+
+  Monoceros,  109
+
+  Musca,  89
+
+
+  Ophiuchus,  45
+
+  Orion,  99
+
+
+  Pegasus,  71
+
+  Perseus,  75
+
+  Pisces,  77
+
+  Piscis Australis,  81
+
+
+  Sagitta,  37
+
+  Sagittarius,  43
+
+  Scorpius,  47
+
+  Serpens,  45
+
+  Sobieski's Shield,  39
+
+
+  Taurus,  97
+
+  Triangulum,  79
+
+
+  Ursa Major,  5
+
+  Ursa Minor,  7
+
+
+  Virgo,  57
+
+  Vulpecular and Anser,  41
+
+
+
+Popular Books on Astronomy
+
+By William Tyler Olcott
+
+
+_Excellently arranged, and copiously illustrated, these little
+manuals--real field-books--should prove valuable for all who want to
+become familiar with the stars_
+
+
+A Field Book of the Stars
+
+_16mo. With Fifty Diagrams._
+
+    To facilitate the fascinating recreation of star-gazing the
+    author has designed this field-book. All matters of a
+    technical or theoretical nature have been omitted. Only what
+    the reader can observe with the naked eye or with an
+    opera-glass have been included in it. Simplicity and brevity
+    have been aimed at, the main idea being that whatever is
+    bulky or verbose is a hindrance rather than a help when one
+    is engaged in the observation of the heavens.
+
+
+In Starland with a Three-Inch Telescope
+
+A Conveniently Arranged Guide for the Use of the Amateur Astronomer
+
+_16mo. With Forty Diagrams of the Constellations and Eight of the
+Moon._
+
+    The _raison d'etre_ therefore for the book is convenience
+    and arrangement. The author has found by experience that
+    what the student most needs when he is observing with a
+    telescope, is a page to glance at that will serve as a guide
+    to the object he desires to view, and which affords concise
+    data relative to that object. The diagrams therefore direct
+    the student's vision and the subject-matter affords the
+    necessary information in each case.
+
+
+Star Lore of All Ages
+
+A Collection of Myths, Legends, and Facts Concerning the
+Constellations of the Northern Hemisphere
+
+_8vo. Fully Illustrated._
+
+    Will appeal alike to those who are interested in folk-lore
+    and those who are attracted by astronomy. In it the author
+    has gathered together the curious myths and traditions that
+    have attached themselves from the earliest times to
+    different constellations and even to individual stars.
+
+  G.P. PUTNAM'S SONS
+  New York      London
+
+
+The Essence of Astronomy
+
+Things Every One Should Know About the Sun, Moon and Stars
+
+By Edward W. Price
+
+_12mo. Fully Illustrated._
+
+    Here is a volume quite different from the usual "popular
+    book on astronomy."
+
+    It answers in untechnical language the every-day questions
+    of every-day people, the material being so arranged that it
+    is readily available for quick reference use, as well as for
+    interesting consecutive reading.
+
+    An individual chapter is devoted to each member of the Solar
+    System. Special space is given to "Curiosities of the
+    Skies."
+
+    The illustrations are from photographs taken at the great
+    observatories. The drawings of Mars are the most recent
+    published, being made by Professor Lowell in January, 1914.
+
+    The chronological table and annotated bibliography are of
+    real value.
+
+
+Sun Lore of All Ages
+
+A Collection of Myths and Legends Concerning the Sun and its Worship
+
+By William Tyler Olcott
+
+Author of "Star Lore of All Ages," "A Field Book of the Stars," etc.
+
+_8vo. With 30 Illustrations._
+
+    A companion volume to _Star Lore of All Ages_ by the same
+    author. It comprises a compilation of the myths, legends,
+    and facts concerning the sun, of equal interest to the
+    lay-reader or to the student.
+
+    The literature of the subject is teeming with interest,
+    linked as it is with the life story of mankind from the
+    cradle of the race to the present day, for the solar myth
+    lies at the very foundation of all mythology, and as such
+    must forever claim pre-eminence.
+
+
+  G.P. Putnam's Sons
+  New York      London
+
+
+Astronomy in a Nutshell
+
+The Chief Facts and Principles Explained in Popular Language for
+General Readers and for Schools
+
+By Garrett P. Serviss
+
+_Cr. 8vo. With 47 Illustrations._
+
+    Presents the subject of astronomy in a succinct, popular
+    form. No mathematical knowledge beyond the simplest outlines
+    is assumed on the part of the reader. The great underlying
+    facts and principles of astronomy are presented in a shape
+    which any intelligent person can comprehend. The book may be
+    used either for self-instruction or for schools.
+
+
+History of Astronomy
+
+By George Forbes, M.A., F.R.S., M.Inst.C.E.
+
+Formerly Professor of Natural Philosophy, Anderson's College, Glasgow
+
+_16mo. Adequately Illustrated._
+
+_No. 1. A History of the Science Series_
+
+    The author traces the evolution of intellectual thought in
+    the progress of astronomical discovery, recognizing the
+    various points of view of the different ages, giving due
+    credit even to the ancients. It has been necessary to
+    curtail many parts of the history, to lay before the reader
+    in unlimited space enough about each age to illustrate its
+    tone and spirit, the ideals of the workers, the gradual
+    addition of new points of view and of new means of
+    investigation.
+
+
+An Easy Guide to the Constellations
+
+With a Miniature Atlas of the Stars
+
+By James Gall
+
+Author of "The People's Atlas of the Stars," etc.
+
+_New and Enlarged Edition, with 30 Maps 16mo._
+
+    This new edition of _An Easy Guide to the Constellations_
+    has been thoroughly revised: five additional plates have
+    been added, so as to include all the constellations of the
+    Zodiac, and render the book complete for Southern Europe and
+    the United States.
+
+  G.P. Putnam's Sons
+  New York      London
+
+
+The Destinies of the Stars
+
+By
+
+Svante Arrhenius
+
+Author of "Worlds in the Making," etc.
+
+_12mo. 26 Illustrations._
+
+    With keenness, brilliancy, and distinguished learning, Dr.
+    Arrhenius, a Nobel Prize winner, having had occasion
+    repeatedly to treat new questions of a cosmological nature,
+    questions largely arisen from new discoveries and
+    observations within the scope of astronomy, opens to the
+    reader vast new vistas, through the study of the relation of
+    the stars to the "Milky Way" and through observations of our
+    neighbor planets.
+
+  G.P. Putnam's Sons
+  New York      London
+
+
+  Transcriber's notes:
+    Corrections made:
+      Page 12 Au iga corrected to Auriga.
+      Page 118 preceptible corrected to perceptible.
+      Page 148 Oeti corrected to Ceti.
+      Page 163 cometimes corrected to sometimes.
+
+    Inconsistencies retained:
+      Alphecca and Alphacca.
+      Gloria Frederika and Gloria Frederica.
+      Bull of Poniatowskio and Bull of Poniatowski.
+
+
+
+
+
+End of Project Gutenberg's A Field Book of the Stars, by William Tyler Olcott
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK A FIELD BOOK OF THE STARS ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+
