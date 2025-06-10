@@ -50,8 +50,8 @@ services:
 
   swagger-ui:
     build:
-      context: .
-      dockerfile: /swagger/Dockerfile
+      context: ./backend
+      dockerfile: swagger/Dockerfile
     container_name: fluently_swagger_ui
     ports:
       - "80:80"
