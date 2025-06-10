@@ -46,7 +46,8 @@ services:
 
   swagger-ui:
     build:
-      context: ./swagger/Dockerfile
+      context: ./swagger
+      dockerfile: Dockerfile
     container_name: fluently_swagger_ui
     ports:
       - "80:80"
