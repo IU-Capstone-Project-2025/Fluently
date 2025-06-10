@@ -46,7 +46,7 @@ services:
 
   swagger-ui:
     build:
-      context: .
+      context: ./backend
       dockerfile: /swagger/Dockerfile
     container_name: fluently_swagger_ui
     ports:
