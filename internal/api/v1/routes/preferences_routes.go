@@ -6,9 +6,9 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
-func RegisterPreferencesRoutes(r chi.Router) {
-    r.Route("/users/{id}/preferences", func(r chi.Router) {
-        r.Get("/", handler.GetUserPreferences)
-        r.Put("/", handler.UpdateUserPreferences)
-    })
+func RegisterPreferencesRoutes(r chi.Router, h *handler.PreferenceHandler) {
+	r.Route("/users/{id}/preferences", func(r chi.Router) {
+		r.Get("/", h.GetUserPreferences)
+		r.Put("/", h.UpdateUserPreferences)
+	})
 }

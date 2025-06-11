@@ -6,15 +6,12 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
-func RegisterWordRoutes(r chi.Router) {
-    r.Route("/words", func(r chi.Router) {
-        r.Get("/", handler.ListWords)
-        r.Get("/{id}", handler.GetWord)
-        r.Post("/", handler.CreateWord)
-        r.Put("/{id}", handler.UpdateWord)
-        r.Delete("/{id}", handler.DeleteWord)
-
-        r.Get("/{id}/sentences", handler.ListSentences)
-        r.Post("/{id}/sentences", handler.CreateSentence)
-    })
+func RegisterWordRoutes(r chi.Router, h *handler.WordHandler) {
+	r.Route("/words", func(r chi.Router) {
+		r.Get("/", h.ListWords)
+		r.Get("/{id}", h.GetWord)
+		r.Post("/", h.CreateWord)
+		r.Put("/{id}", h.UpdateWord)
+		r.Delete("/{id}", h.DeleteWord)
+	})
 }
