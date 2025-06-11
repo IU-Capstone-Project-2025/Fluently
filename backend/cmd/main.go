@@ -5,6 +5,7 @@ import (
 
 	_ "fluently/go-backend/docs"
 	"fluently/go-backend/internal/config"
+
 	//"fluently/go-backend/internal/router"
 	"fluently/go-backend/pkg/logger"
 
@@ -15,7 +16,7 @@ import (
 
 // @title           Fluently API
 // @version         1.0
-// @description     Backend API for Fluently Telegram bot
+// @description     Backend API for Fluently
 // @termsOfService  http://fluently.com/terms/
 
 // @contact.name   Danila Kochegarov
@@ -25,7 +26,7 @@ import (
 // @license.name  MIT
 // @license.url   https://opensource.org/licenses/MIT
 
-// @host      localhost:8080
+// @host      swagger.fluently-app.ru:8070
 // @BasePath  /api/v1
 func main() {
 	config.Init()
