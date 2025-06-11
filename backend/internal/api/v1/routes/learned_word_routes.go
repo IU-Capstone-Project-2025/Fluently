@@ -1,17 +1,17 @@
 package routes
 
 import (
-	// handler "fluently/go-backend/internal/api/v1/handlers"
+	handler "fluently/go-backend/internal/api/v1/handlers"
 
 	"github.com/go-chi/chi/v5"
 )
 
-func RegisterLearnedWordRoutes(r chi.Router) {
-	r.Route("/learned-words", func(r chi.Router) {
-		//        r.Get("/", handler.GetLearnedWords)                       // ?user_id=
-		//      r.Get("/{word_id}", handler.GetLearnedWord)              // ?user_id=
-		//        r.Post("/", handler.CreateLearnedWord)                   // в теле user_id
-		//        r.Put("/{word_id}", handler.UpdateLearnedWord)           // в теле user_id
-		//        r.Delete("/{word_id}", handler.DeleteLearnedWord)        // ?user_id=
+func RegisterLearnedWordRoutes(r chi.Router, h *handler.LearnedWordHandler) {
+	r.Route("/users/{user_id}/learned-words", func(r chi.Router) {
+		r.Get("/", h.GetLearnedWords)               // ?user_id=
+		r.Get("/{word_id}", h.GetLearnedWord)       // ?user_id=
+		r.Post("/", h.CreateLearnedWord)            // в теле user_id
+		r.Put("/{word_id}", h.UpdateLearnedWord)    // в теле user_id
+		r.Delete("/{word_id}", h.DeleteLearnedWord) // ?user_id=
 	})
 }

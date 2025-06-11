@@ -1,4 +1,4 @@
-package handler
+package handlers
 
 import (
 	"encoding/json"
@@ -16,6 +16,17 @@ type LearnedWordHandler struct {
 	Repo *postgres.LearnedWordRepository
 }
 
+// GetLearnedWords godoc
+// @Summary      Get user's learned words
+// @Description  Returns all learned words for a user
+// @Tags         learned-words
+// @Accept       json
+// @Produce      json
+// @Param        user_id   path      string  true  "User ID"
+// @Success      200  {array}   schemas.LearenedWordResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /users/{user_id}/learned-words/ [get]
 func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Request) {
 	userIDStr := chi.URLParam(r, "user_id")
 	userID, err := uuid.Parse(userIDStr)
@@ -45,6 +56,18 @@ func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Requ
 	json.NewEncoder(w).Encode(resp)
 }
 
+// GetLearnedWord godoc
+// @Summary      Get user's learned word by word ID
+// @Description  Returns a learned word by user ID and word ID
+// @Tags         learned-words
+// @Accept       json
+// @Produce      json
+// @Param        user_id   path      string  true  "User ID"
+// @Param        word_id   path      string  true  "Word ID"
+// @Success      200  {object}  schemas.LearenedWordResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      404  {object}  schemas.ErrorResponse
+// @Router       /users/{user_id}/learned-words/{word_id} [get]
 func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userIDStr := chi.URLParam(r, "user_id")
 	wordIDStr := chi.URLParam(r, "word_id")
@@ -79,6 +102,17 @@ func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Reque
 	json.NewEncoder(w).Encode(resp)
 }
 
+// CreateLearnedWord godoc
+// @Summary      Add a learned word
+// @Description  Adds a new learned word for a user
+// @Tags         learned-words
+// @Accept       json
+// @Produce      json
+// @Param        learned_word  body      schemas.CreateLearnedWordRequest  true  "Learned word data"
+// @Success      201  ""
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /users/{user_id}/learned-words/ [post]
 func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateLearnedWordRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
@@ -103,6 +137,20 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 	w.WriteHeader(http.StatusCreated)
 }
 
+// UpdateLearnedWord godoc
+// @Summary      Update a learned word
+// @Description  Updates a user's learned word by word ID
+// @Tags         learned-words
+// @Accept       json
+// @Produce      json
+// @Param        user_id       path      string                        true  "User ID"
+// @Param        word_id       path      string                        true  "Word ID"
+// @Param        learned_word  body      schemas.CreateLearnedWordRequest true  "Learned word data"
+// @Success      200  ""
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      404  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /users/{user_id}/learned-words/{word_id} [put]
 func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userIDStr := chi.URLParam(r, "user_id")
 	wordIDStr := chi.URLParam(r, "word_id")
@@ -144,6 +192,19 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 	w.WriteHeader(http.StatusOK)
 }
 
+// DeleteLearnedWord godoc
+// @Summary      Delete a learned word
+// @Description  Deletes a user's learned word by word ID
+// @Tags         learned-words
+// @Accept       json
+// @Produce      json
+// @Param        user_id   path      string  true  "User ID"
+// @Param        word_id   path      string  true  "Word ID"
+// @Success      204  ""
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      404  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /users/{user_id}/learned-words/{word_id} [delete]
 func (h *LearnedWordHandler) DeleteLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userIDStr := chi.URLParam(r, "user_id")
 	wordIDStr := chi.URLParam(r, "word_id")

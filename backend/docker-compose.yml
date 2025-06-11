@@ -48,23 +48,22 @@ services:
     networks:
       - fluently_network
 
-  swagger-ui:
+  nginx:
     build:
       context: .
       dockerfile: swagger/Dockerfile
-    container_name: fluently_swagger_ui
+    container_name: nginx
     ports:
       - "80:80"
       - "443:443"
     depends_on:
       - app
     volumes:
-      - ./docs:/usr/share/nginx/html/swagger
       - /etc/letsencrypt:/etc/letsencrypt
       - ./letsencrypt/webroot:/var/www/certbot:ro 
     networks:
       - fluently_network
-  
+
   postgres:
     image: postgres:latest
     container_name: fluently_db
