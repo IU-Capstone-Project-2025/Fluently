@@ -26,8 +26,8 @@ jobs:
             docker compose down
             docker compose up -d --build
 
-            # Should give deploy boost, and be used instead of docker compose up -d --build
-            # But it doesn't work 
-            //TODO
+            # Should speed up the deployment, and be used instead of docker compose up -d --build
+            # But it does not work 
+            # //TODO
             # docker build --build-arg BUILDKIT_INLINE_CACHE=1 -t fluently-app .
             
