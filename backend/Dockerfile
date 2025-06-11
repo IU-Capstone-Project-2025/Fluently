@@ -5,7 +5,10 @@ COPY go.mod go.sum ./
 RUN --mount=type=cache,target=/go/pkg/mod \
     go mod download
 
+# Install swag and generate docs
+RUN go install github.com/swaggo/swag/cmd/swag@latest
 COPY . .
+RUN swag init --generalInfo cmd/main.go --output docs
 
 # Build with separate cache mounts
 RUN --mount=type=cache,target=/go/pkg/mod \
