@@ -59,7 +59,6 @@ services:
     depends_on:
       - app
     volumes:
-      - ./docs:/usr/share/nginx/html/swagger
       - /etc/letsencrypt:/etc/letsencrypt
       - ./letsencrypt/webroot:/var/www/certbot:ro 
     networks:
