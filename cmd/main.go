@@ -5,12 +5,12 @@ import (
 
 	_ "fluently/go-backend/docs"
 	"fluently/go-backend/internal/config"
-	//"fluently/go-backend/internal/router"
+	"fluently/go-backend/internal/router"
 	"fluently/go-backend/pkg/logger"
 
-	"github.com/go-chi/chi/v5"
-	httpSwagger "github.com/swaggo/http-swagger"
 	"go.uber.org/zap"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
 // @title           Fluently API
@@ -32,17 +32,6 @@ func main() {
 	logger.Init(true) // or false for production
 	defer logger.Log.Sync()
 
-	r := chi.NewRouter()
-
-	// db, err := gorm.Open(postgres.Open(config.GetPostgresDSN()), &gorm.Config{})
-	// router.InitRoutes(db)
-
-	r.Get("/swagger/*", httpSwagger.WrapHandler) // Swagger UI
-
-	r.Get("/api/v1/ping", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("pong"))
-	})
-
 	logger.Log.Info("Logger initialization successful!")
 	logger.Log.Info("App starting",
 		zap.String("name", config.GetAppName()),
@@ -50,7 +39,15 @@ func main() {
 		zap.String("dsn", config.GetPostgresDSN()),
 	)
 
-	err := http.ListenAndServe(config.GetAppHost()+":"+config.GetAppPort(), r)
+	db, err := gorm.Open(postgres.Open(config.GetPostgresDSN()), &gorm.Config{})
+
+	if err != nil {
+		logger.Log.Fatal("Failed to connect to database", zap.Error(err))
+	}
+
+	r := router.InitRoutes(db)
+
+	err = http.ListenAndServe(config.GetAppHost()+":"+config.GetAppPort(), r)
 	if err != nil {
 		logger.Log.Fatal("App failed to start", zap.Error(err))
 	}

@@ -1,5 +1,11 @@
 package schemas
 
+// ErrorResponse represents a standard error response
+// swagger:model ErrorResponse
+type ErrorResponse struct {
+	Message string `json:"message" example:"invalid request"`
+}
+
 type CreateWordRequest struct {
 	Word         string  `json:"word" binding:"required"`
 	Translation  *string `json:"translation"`

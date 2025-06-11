@@ -7,8 +7,8 @@ import (
 )
 
 func RegisterLearnedWordRoutes(r chi.Router, h *handler.LearnedWordHandler) {
-	r.Route("users/{user_id}/learned-words", func(r chi.Router) {
-		r.Get("/", h.GetLearnedWord)                // ?user_id=
+	r.Route("/users/{user_id}/learned-words", func(r chi.Router) {
+		r.Get("/", h.GetLearnedWords)               // ?user_id=
 		r.Get("/{word_id}", h.GetLearnedWord)       // ?user_id=
 		r.Post("/", h.CreateLearnedWord)            // в теле user_id
 		r.Put("/{word_id}", h.UpdateLearnedWord)    // в теле user_id
