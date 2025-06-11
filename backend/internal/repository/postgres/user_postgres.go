@@ -2,40 +2,38 @@ package postgres
 
 import (
 	"context"
-	"errors"
 
 	"fluently/go-backend/internal/repository/models"
-	"fluently/go-backend/internal/repository/schemas"
 
+	"github.com/google/uuid"
 	"gorm.io/gorm"
 )
 
-type UserPostgres struct {
+type UserRepository struct {
 	db *gorm.DB
 }
 
-func NewUserPostgres(db *gorm.DB) *UserPostgres {
-	return &UserPostgres{db: db}
+func NewUserRepository(db *gorm.DB) *UserRepository {
+	return &UserRepository{db: db}
 }
 
-func (r *UserPostgres) Create(ctx context.Context, user *models.User) error {
+func (r *UserRepository) Create(ctx context.Context, user *models.User) error {
 	return r.db.WithContext(ctx).Create(user).Error
 }
 
-func (r *UserPostgres) GetByID(ctx context.Context, id uint) (*models.User, error) {
+func (r *UserRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.User, error) {
 	var user models.User
-	err := r.db.WithContext(ctx).First(&user, id).Error
-	if errors.Is(err, gorm.ErrRecordNotFound) {
-		return nil, nil
+	if err := r.db.WithContext(ctx).Preload("Pref").First(&user, "id = ?", id).Error; err != nil {
+		return nil, err
 	}
 
-	return &user, err
+	return &user, nil
 }
 
-func (r *UserPostgres) Update(ctx context.Context, id uint, updates *schemas.UserUpdateRequest) error {
-	return r.db.WithContext(ctx).Model(&models.User{}).Where("user_id = ?", id).Updates(updates).Error
+func (r *UserRepository) Update(ctx context.Context, user *models.User) error {
+	return r.db.WithContext(ctx).Save(user).Error
 }
 
-func (r *UserPostgres) Delete(ctx context.Context, id uint) error {
-	return r.db.WithContext(ctx).Delete(&models.User{}, id).Error
+func (r *UserRepository) Delete(ctx context.Context, id uuid.UUID) error {
+	return r.db.WithContext(ctx).Delete(&models.User{}, "id = ?", id).Error
 }

@@ -1,109 +1,182 @@
-package handler
+package handlers
 
 import (
 	"encoding/json"
 	"net/http"
-	"strconv"
 
+	"fluently/go-backend/internal/repository/models"
+	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
-	"fluently/go-backend/internal/repository/service"
+
+	"github.com/go-chi/chi/v5"
+	"github.com/google/uuid"
 )
 
 type UserHandler struct {
-	service *service.UserService
+	Repo *postgres.UserRepository
 }
 
-func NewUserHandler(service *service.UserService) *UserHandler {
-	return &UserHandler{service: service}
-}
-
+// CreateUser godoc
+// @Summary      Create a user
+// @Description  Registers a new user
+// @Tags         users
+// @Accept       json
+// @Produce      json
+// @Param        user  body      schemas.CreateUserRequest  true  "User data"
+// @Success      201  {object}  schemas.UserResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /users/ [post]
 func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
-	var req schemas.UserCreateRequest
-
+	var req schemas.CreateUserRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "Invalid JSON", http.StatusBadRequest)
+		http.Error(w, "invalid request", http.StatusBadRequest)
 		return
 	}
 
-	if err := validate.Struct(&req); err != nil {
-		http.Error(w, "Validation error: "+err.Error(), http.StatusBadRequest)
+	user := models.User{
+		ID:       uuid.New(),
+		Name:     req.Name,
+		SubLevel: req.SubLevel,
+		PrefID:   req.PrefID,
+	}
+
+	if err := h.Repo.Create(r.Context(), &user); err != nil {
+		http.Error(w, "failed to create user", http.StatusInternalServerError)
 		return
 	}
 
-	user, err := h.service.Create(r.Context(), &req)
-	if err != nil {
-		http.Error(w, "Failled to create user: "+err.Error(), http.StatusInternalServerError)
-		return
+	resp := schemas.UserResponse{
+		ID:       user.ID,
+		Name:     user.Name,
+		SubLevel: user.SubLevel,
+		Pref: &schemas.PreferenceMini{
+			ID:        user.Pref.ID,
+			CEFRLevel: user.Pref.CEFRLevel,
+		},
 	}
 
 	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(user)
+	json.NewEncoder(w).Encode(resp)
 }
 
+// GetUser godoc
+// @Summary      Get user by ID
+// @Description  Returns a user by their unique identifier
+// @Tags         users
+// @Accept       json
+// @Produce      json
+// @Param        id   path      string  true  "User ID"
+// @Success      200  {object}  schemas.UserResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      404  {object}  schemas.ErrorResponse
+// @Router       /users/{id} [get]
 func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
-	idStr := r.URL.Query().Get("id")
-	id, err := strconv.Atoi(idStr)
+	idStr := chi.URLParam(r, "id")
+	id, err := uuid.Parse(idStr)
 	if err != nil {
-		http.Error(w, "Invalid user ID", http.StatusBadRequest)
+		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
 	}
 
-	user, err := h.service.GetByID(r.Context(), uint(id))
+	user, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
-		http.Error(w, "Failed to get user: "+err.Error(), http.StatusInternalServerError)
+		http.Error(w, "user not found", http.StatusNotFound)
 		return
 	}
 
-	if user == nil {
-		http.Error(w, "User not found", http.StatusNotFound)
-		return
+	resp := schemas.UserResponse{
+		ID:       user.ID,
+		Name:     user.Name,
+		SubLevel: user.SubLevel,
+		Pref: &schemas.PreferenceMini{
+			ID:        user.Pref.ID,
+			CEFRLevel: user.Pref.CEFRLevel,
+		},
 	}
 
-	json.NewEncoder(w).Encode(user)
+	json.NewEncoder(w).Encode(resp)
 }
 
+// UpdateUser godoc
+// @Summary      Update a user
+// @Description  Updates user data by ID
+// @Tags         users
+// @Accept       json
+// @Produce      json
+// @Param        id    path      string                   true  "User ID"
+// @Param        user  body      schemas.CreateUserRequest  true  "User data"
+// @Success      200  {object}  schemas.UserResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      404  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /users/{id} [put]
 func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
-	idStr := r.URL.Query().Get("id")
-	id, err := strconv.Atoi(idStr)
-	if err != nil || id <= 0 {
-		http.Error(w, "Invalid user ID", http.StatusBadRequest)
+	idStr := chi.URLParam(r, "id")
+	id, err := uuid.Parse(idStr)
+	if err != nil {
+		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
 	}
 
-	var req schemas.UserUpdateRequest
-
+	var req schemas.CreateUserRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "Invalid JSON", http.StatusBadRequest)
+		http.Error(w, "invalid body", http.StatusBadRequest)
 		return
 	}
 
-	if req.Name == nil {
-		http.Error(w, "At least one field must be updated", http.StatusBadRequest)
+	user, err := h.Repo.GetByID(r.Context(), id)
+	if err != nil {
+		http.Error(w, "user not found", http.StatusNotFound)
 		return
 	}
 
-	if err := h.service.Update(r.Context(), uint(id), &req); err != nil {
-		http.Error(w, "Failed to update user: "+err.Error(), http.StatusInternalServerError)
+	user.Name = req.Name
+	user.SubLevel = req.SubLevel
+	user.PrefID = req.PrefID
+
+	if err := h.Repo.Update(r.Context(), user); err != nil {
+		http.Error(w, "failed to update user", http.StatusInternalServerError)
 		return
 	}
 
-	w.WriteHeader(http.StatusOK)
-	w.Write([]byte("User updated successfully"))
+	resp := schemas.UserResponse{
+		ID:       user.ID,
+		Name:     user.Name,
+		SubLevel: user.SubLevel,
+		Pref: &schemas.PreferenceMini{
+			ID:        user.Pref.ID,
+			CEFRLevel: user.Pref.CEFRLevel,
+		},
+	}
+
+	json.NewEncoder(w).Encode(resp)
 }
 
+// DeleteUser godoc
+// @Summary      Delete a user
+// @Description  Deletes a user by ID
+// @Tags         users
+// @Accept       json
+// @Produce      json
+// @Param        id   path      string  true  "User ID"
+// @Success      204  ""
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      404  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /users/{id} [delete]
 func (h *UserHandler) DeleteUser(w http.ResponseWriter, r *http.Request) {
-	idStr := r.URL.Query().Get("id")
-	id, err := strconv.Atoi(idStr)
-	if err != nil || id <= 0 {
-		http.Error(w, "Invalid user ID", http.StatusBadRequest)
+	idStr := chi.URLParam(r, "id")
+	id, err := uuid.Parse(idStr)
+	if err != nil {
+		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
 	}
 
-	if err := h.service.Delete(r.Context(), uint(id)); err != nil {
-		http.Error(w, "Failed to delete user: "+err.Error(), http.StatusInternalServerError)
+	if err := h.Repo.Delete(r.Context(), id); err != nil {
+		http.Error(w, "failed to delte user", http.StatusInternalServerError)
 		return
 	}
 
-	w.WriteHeader(http.StatusOK)
-	w.Write([]byte("User deleted successfully"))
+	w.WriteHeader(http.StatusNoContent)
 }
