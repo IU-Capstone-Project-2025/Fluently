@@ -2,7 +2,7 @@
 # Fluently - AI-Powered English Learning Platform
 
 ## Overview
-Fluently addresses the gap in effective English learning tools for A2-C2 CEFR level learners by offering:
+Fluently addresses the gap in effective spoken English learning tools for A2-C2 CEFR level learners by offering:
 - 🗣️ Realistic AI conversations
 - 📚 Personalized vocabulary lessons
 - 📈 Progress tracking across devices
@@ -19,9 +19,9 @@ Fluently addresses the gap in effective English learning tools for A2-C2 CEFR le
 
 ## Getting Started
 ### Prerequisites
-- Docker 20.10+
-- Docker Compose 2.20+
-- Git 2.40+
+- Docker
+- Docker Compose
+- Git
 ### Deployment Steps
  - Clone repository:
 ```bash
