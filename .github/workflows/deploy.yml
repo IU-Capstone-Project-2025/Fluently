@@ -24,5 +24,10 @@ jobs:
             cd /home/deploy/Fluently-fork/backend
             git pull origin ${{ github.ref_name }}
             docker compose down
-            docker build --build-arg BUILDKIT_INLINE_CACHE=1 -t fluently-app .
-            # docker compose up -d --build
+            docker compose up -d --build
+
+            # Should give deploy boost, and be used instead of docker compose up -d --build
+            # But it doesn't work 
+            //TODO
+            # docker build --build-arg BUILDKIT_INLINE_CACHE=1 -t fluently-app .
+            
