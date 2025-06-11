@@ -23,11 +23,6 @@ jobs:
           script: |
             cd /home/deploy/Fluently-fork/backend
             git pull origin ${{ github.ref_name }}
-            
-            # Ensuring swagger is installed
-            docker compose run --rm app go install github.com/swaggo/swag/cmd/swag@latest
-            docker compose build --no-cache
-
             docker compose down
             docker compose up -d --build
 
