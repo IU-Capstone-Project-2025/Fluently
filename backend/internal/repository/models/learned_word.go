@@ -7,8 +7,10 @@ import (
 )
 
 type LearnedWords struct {
-	UserID uuid.UUID `gorm:"type:uuid;primaryKey"`
-	WordID uuid.UUID `gorm:"type:uuid;primaryKey"`
+	ID uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
+
+	UserID uuid.UUID `gorm:"type:uuid;not null"`
+	WordID uuid.UUID `gorm:"type:uuid;not null"`
 
 	LearnedAt    time.Time `gorm:"not null"`
 	LastReviewed time.Time
