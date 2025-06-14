@@ -4,14 +4,16 @@ import (
 	"net/http"
 
 	_ "fluently/go-backend/docs"
-	"fluently/go-backend/internal/config"
-
-	//"fluently/go-backend/internal/router"
+	appConfig "fluently/go-backend/internal/config"
+	"fluently/go-backend/internal/repository/models"
+	"fluently/go-backend/internal/router"
 	"fluently/go-backend/pkg/logger"
 
 	"github.com/go-chi/chi/v5"
 	httpSwagger "github.com/swaggo/http-swagger"
 	"go.uber.org/zap"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
 // @title           Fluently API
@@ -29,14 +31,32 @@ import (
 // @host      swagger.fluently-app.ru:8070
 // @BasePath  /api/v1
 func main() {
-	config.Init()
+	appConfig.Init()
 	logger.Init(true) // or false for production
 	defer logger.Log.Sync()
 
+	// Router init
 	r := chi.NewRouter()
 
-	// db, err := gorm.Open(postgres.Open(config.GetPostgresDSN()), &gorm.Config{})
-	// router.InitRoutes(db)
+	// Database init
+	dsn := appConfig.GetPostgresDSN()
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	if err != nil {
+		logger.Log.Fatal("Failed to connect to database", zap.Error(err))
+	}
+
+	err = db.AutoMigrate(
+		&models.LearnedWords{},
+		&models.Preference{},
+		&models.Sentence{},
+		&models.User{},
+		&models.Word{},
+	)
+	if err != nil {
+		logger.Log.Fatal("Failed to auto-migrate", zap.Error(err))
+	}
+
+	router.InitRoutes(db)
 
 	r.Get("/swagger/*", httpSwagger.WrapHandler) // Swagger UI
 
@@ -46,12 +66,12 @@ func main() {
 
 	logger.Log.Info("Logger initialization successful!")
 	logger.Log.Info("App starting",
-		zap.String("name", config.GetAppName()),
-		zap.String("address", config.GetAppHost()+":"+config.GetAppPort()),
-		zap.String("dsn", config.GetPostgresDSN()),
+		zap.String("name", appConfig.GetAppName()),
+		zap.String("address", appConfig.GetAppHost()+":"+appConfig.GetAppPort()),
+		zap.String("dsn", appConfig.GetPostgresDSN()),
 	)
 
-	err := http.ListenAndServe(config.GetAppHost()+":"+config.GetAppPort(), r)
+	err = http.ListenAndServe(appConfig.GetAppHost()+":"+appConfig.GetAppPort(), r)
 	if err != nil {
 		logger.Log.Fatal("App failed to start", zap.Error(err))
 	}
