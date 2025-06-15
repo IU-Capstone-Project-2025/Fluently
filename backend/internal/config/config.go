@@ -22,15 +22,18 @@ func Init() {
 }
 
 // Getter helpers
-func GetBotToken() string     { return viper.GetString("BOT_TOKEN") }
-func GetAppName() string      { return viper.GetString("APP_NAME") }
-func GetAppHost() string      { return viper.GetString("APP_HOST") }
-func GetAppPort() string      { return viper.GetString("APP_PORT") }
-func GetDBUser() string       { return viper.GetString("DB_USER") }
-func GetDBPassword() string   { return viper.GetString("DB_PASSWORD") }
-func GetDBHost() string       { return viper.GetString("DB_HOST") }
-func GetDBPort() string       { return viper.GetString("DB_PORT") }
-func GetDBName() string       { return viper.GetString("DB_NAME") }
+func GetBotToken() string              { return viper.GetString("BOT_TOKEN") }
+func GetAppName() string               { return viper.GetString("APP_NAME") }
+func GetAppHost() string               { return viper.GetString("APP_HOST") }
+func GetAppPort() string               { return viper.GetString("APP_PORT") }
+func GetDBUser() string                { return viper.GetString("DB_USER") }
+func GetDBPassword() string            { return viper.GetString("DB_PASSWORD") }
+func GetDBHost() string                { return viper.GetString("DB_HOST") }
+func GetDBPort() string                { return viper.GetString("DB_PORT") }
+func GetDBName() string                { return viper.GetString("DB_NAME") }
+func GetIosGoogleClientID() string     { return viper.GetString("IOS_GOOGLE_CLIENT_ID") }
+func GetAndroidGoogleClientID() string { return viper.GetString("ANDROID_GOOGLE_CLIENT_ID") }
+func GetWebGoogleClientID() string     { return viper.GetString("WEB_GOOGLE_CLIENT_ID") }
 
 // Optional: Construct DB DSN
 func GetPostgresDSN() string {
