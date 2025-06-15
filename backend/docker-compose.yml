@@ -48,20 +48,10 @@ services:
     networks:
       - fluently_network
 
-  frontend:
-    build: 
-      context: ../frontend-website
-    container_name: fluent_frontend
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-      - ../frontend-website:/usr/share/nginx/html/main-site
   nginx:
     build:
       context: .
-      dockerfile: swagger/Dockerfile
+      dockerfile: nginx-container/Dockerfile
     container_name: nginx
     ports:
       - "80:80"
@@ -71,6 +61,7 @@ services:
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
       - ./letsencrypt/webroot:/var/www/certbot:ro 
+      - ../frontend-website:/usr/share/nginx/html/main-site
     networks:
       - fluently_network
 
