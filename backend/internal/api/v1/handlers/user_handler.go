@@ -8,7 +8,6 @@ import (
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
 
-	"github.com/go-chi/chi/v5"
 	"github.com/google/uuid"
 )
 
@@ -16,12 +15,7 @@ type UserHandler struct {
 	Repo *postgres.UserRepository
 }
 
-// parseUUIDParam parses UUID from URL param
-func parseUUIDParam(r *http.Request, param string) (uuid.UUID, error) {
-	idStr := chi.URLParam(r, param)
-	return uuid.Parse(idStr)
-}
-
+// buildUserResponse returns user response
 func buildUserResponse(user *models.User) schemas.UserResponse {
 	return schemas.UserResponse{
 		ID:        user.ID,
