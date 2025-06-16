@@ -32,10 +32,31 @@ func InitRoutes(db *gorm.DB) http.Handler {
 		w.Write([]byte("ok"))
 	})
 
-	r.Get("/swagger", func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, "/swagger/index.html", http.StatusMovedPermanently)
+	// r.Get("/swagger", func(w http.ResponseWriter, r *http.Request) {
+	// 	http.Redirect(w, r, "/swagger/index.html", http.StatusMovedPermanently)
+	// })
+	// r.Get("/swagger/*", httpSwagger.WrapHandler)
+
+	// Host-based routing
+	r.Group(func(r chi.Router) {
+		// Handle Swagger domain requests
+		r.Group(func(r chi.Router) {
+			r.Use(swaggerDomainOnly)
+			r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+				http.Redirect(w, r, "/index.html", http.StatusMovedPermanently)
+			})
+			r.Get("/*", httpSwagger.WrapHandler)
+		})
+
+		// Non-Swagger routes
+		r.Group(func(r chi.Router) {
+			r.Use(nonSwaggerDomainOnly)
+			r.Get("/swagger", func(w http.ResponseWriter, r *http.Request) {
+				http.Redirect(w, r, "/swagger/index.html", http.StatusMovedPermanently)
+			})
+			r.Get("/swagger/*", httpSwagger.WrapHandler)
+		})
 	})
-	r.Get("/swagger/*", httpSwagger.WrapHandler)
 
 	r.Route("/api/v1", func(r chi.Router) {
 		routes.RegisterUserRoutes(r, &handlers.UserHandler{Repo: postgres.NewUserRepository(db)})
@@ -47,3 +68,23 @@ func InitRoutes(db *gorm.DB) http.Handler {
 
 	return r
 }
+// Host-based routing
+r.Group(func(r chi.Router) {
+	// Handle Swagger domain requests
+	r.Group(func(r chi.Router) {
+		r.Use(swaggerDomainOnly)
+		r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+			http.Redirect(w, r, "/index.html", http.StatusMovedPermanently)
+		})
+		r.Get("/*", httpSwagger.WrapHandler)
+	})
+
+	// Non-Swagger routes
+	r.Group(func(r chi.Router) {
+		r.Use(nonSwaggerDomainOnly)
+		r.Get("/swagger", func(w http.ResponseWriter, r *http.Request) {
+			http.Redirect(w, r, "/swagger/index.html", http.StatusMovedPermanently)
+		})
+		r.Get("/swagger/*", httpSwagger.WrapHandler)
+	})
+})
