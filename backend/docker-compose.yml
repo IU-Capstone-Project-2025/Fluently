@@ -50,8 +50,8 @@ services:
 
   nginx:
     build:
-      context: .
-      dockerfile: swagger/Dockerfile
+      context: ..
+      dockerfile: backend/nginx-container/Dockerfile
     container_name: nginx
     ports:
       - "80:80"
@@ -60,7 +60,8 @@ services:
       - app
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
-      - ./letsencrypt/webroot:/var/www/certbot:ro 
+      - ./letsencrypt/webroot:/var/www/certbot
+      - ../frontend-website:/usr/share/nginx/html/main-site
     networks:
       - fluently_network
 
