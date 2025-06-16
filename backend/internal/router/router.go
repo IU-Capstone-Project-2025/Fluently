@@ -37,28 +37,13 @@ func InitRoutes(db *gorm.DB) http.Handler {
 	})
 	r.Get("/swagger/*", httpSwagger.WrapHandler)
 
-	// Api routes only for api.fluently-app.ru
-	r.Group(func(r chi.Router) {
-		r.Use(apiDomainOnly)
-		r.Route("/api/v1", func(r chi.Router) {
-			routes.RegisterUserRoutes(r, &handlers.UserHandler{Repo: postgres.NewUserRepository(db)})
-			routes.RegisterWordRoutes(r, &handlers.WordHandler{Repo: postgres.NewWordRepository(db)})
-			routes.RegisterSentenceRoutes(r, &handlers.SentenceHandler{Repo: postgres.NewSentenceRepository(db)})
-			routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: postgres.NewLearnedWordRepository(db)})
-			routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: postgres.NewPreferenceRepository(db)})
-		})
+	r.Route("/api/v1", func(r chi.Router) {
+		routes.RegisterUserRoutes(r, &handlers.UserHandler{Repo: postgres.NewUserRepository(db)})
+		routes.RegisterWordRoutes(r, &handlers.WordHandler{Repo: postgres.NewWordRepository(db)})
+		routes.RegisterSentenceRoutes(r, &handlers.SentenceHandler{Repo: postgres.NewSentenceRepository(db)})
+		routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: postgres.NewLearnedWordRepository(db)})
+		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: postgres.NewPreferenceRepository(db)})
 	})
 
 	return r
-}
-
-// Middleware to restrict routes to API domain
-func apiDomainOnly(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if strings.HasSuffix(r.Host, "api.fluently-app.ru") {
-			next.ServeHTTP(w, r)
-		} else {
-			http.NotFound(w, r)
-		}
-	})
 }
