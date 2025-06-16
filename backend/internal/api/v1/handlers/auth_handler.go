@@ -12,6 +12,9 @@ import (
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/pkg/logger"
 
+	"fluently/go-backend/internal/repository/schemas"
+	"fluently/go-backend/internal/utils"
+
 	"github.com/google/uuid"
 	"go.uber.org/zap"
 	"google.golang.org/api/idtoken"
@@ -139,10 +142,133 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// TODO: Generate and return JWT token
+	// Generate JWT token
+	tokenString, err := utils.GenerateJWT(user)
+	if err != nil {
+		logger.Log.Error("Failed to generate JWT", zap.Error(err))
+		http.Error(w, "failed to generate token", http.StatusInternalServerError)
+		return
+	}
+
+	resp := schemas.JwtResponse{
+		AccessToken: tokenString,
+		TokenType:   "Bearer",
+		ExpiresIn:   int64(config.GetConfig().Auth.JWTExpiration.Seconds()),
+	}
+
 	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(map[string]string{
-		"message": "Authentication successful",
-		"user_id": user.ID.String(),
-	})
+	json.NewEncoder(w).Encode(resp)
+}
+
+// LoginHandler godoc
+// @Summary      Login with email & password
+// @Description  Authenticates user and returns JWT
+// @Tags         auth
+// @Accept       json
+// @Produce      json
+// @Param        credentials  body      schemas.LoginRequest  true  "Email & Password"
+// @Success      200  {object}  schemas.JwtResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      401  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /auth/login [post]
+func (h *Handlers) LoginHandler(w http.ResponseWriter, r *http.Request) {
+	var req schemas.LoginRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, "invalid request", http.StatusBadRequest)
+		return
+	}
+
+	user, err := h.UserRepo.GetByEmail(r.Context(), req.Email)
+	if err != nil {
+		logger.Log.Error("User not found", zap.Error(err))
+		http.Error(w, "invalid credentials", http.StatusUnauthorized)
+		return
+	}
+
+	if !utils.CheckPasswordHash(req.Password, user.PasswordHash) {
+		http.Error(w, "invalid credentials", http.StatusUnauthorized)
+		return
+	}
+
+	token, err := utils.GenerateJWT(user)
+	if err != nil {
+		logger.Log.Error("Failed to generate JWT", zap.Error(err))
+		http.Error(w, "failed to generate token", http.StatusInternalServerError)
+		return
+	}
+
+	resp := schemas.JwtResponse{
+		AccessToken: token,
+		TokenType:   "Bearer",
+		ExpiresIn:   int64(config.GetConfig().Auth.JWTExpiration.Seconds()),
+	}
+
+	json.NewEncoder(w).Encode(resp)
+}
+
+// RegisterHandler godoc
+// @Summary      Register with email & password
+// @Description  Creates a user, hashes password, returns JWT
+// @Tags         auth
+// @Accept       json
+// @Produce      json
+// @Param        user  body      schemas.RegisterRequest  true  "Registration data"
+// @Success      201  {object}  schemas.JwtResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      409  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /auth/register [post]
+func (h *Handlers) RegisterHandler(w http.ResponseWriter, r *http.Request) {
+	var req schemas.RegisterRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, "invalid request", http.StatusBadRequest)
+		return
+	}
+
+	// Check if user already exists
+	if _, err := h.UserRepo.GetByEmail(r.Context(), req.Email); err == nil {
+		http.Error(w, "user already exists", http.StatusConflict)
+		return
+	}
+
+	hash, err := utils.HashPassword(req.Password)
+	if err != nil {
+		logger.Log.Error("Failed to hash password", zap.Error(err))
+		http.Error(w, "internal error", http.StatusInternalServerError)
+		return
+	}
+
+	user := &models.User{
+		ID:           uuid.New(),
+		Name:         req.Name,
+		Email:        req.Email,
+		PasswordHash: hash,
+		Provider:     "password",
+		Role:         "user",
+		IsActive:     true,
+		LastLoginAt:  time.Now(),
+	}
+
+	if err := h.UserRepo.Create(r.Context(), user); err != nil {
+		logger.Log.Error("Failed to create user", zap.Error(err))
+		http.Error(w, "failed to create user", http.StatusInternalServerError)
+		return
+	}
+
+	token, err := utils.GenerateJWT(user)
+	if err != nil {
+		logger.Log.Error("Failed to generate JWT", zap.Error(err))
+		http.Error(w, "failed to generate token", http.StatusInternalServerError)
+		return
+	}
+
+	resp := schemas.JwtResponse{
+		AccessToken: token,
+		TokenType:   "Bearer",
+		ExpiresIn:   int64(config.GetConfig().Auth.JWTExpiration.Seconds()),
+	}
+
+	w.WriteHeader(http.StatusCreated)
+	json.NewEncoder(w).Encode(resp)
 }
