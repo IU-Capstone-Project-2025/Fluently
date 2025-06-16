@@ -13,7 +13,7 @@ type CreatePreferenceRequst struct {
 	NotificationAt *time.Time `json:"notification_at"`
 	WordsPerDay    int        `json:"words_per_day"`
 	Goal           string     `json:"goal"`
-	SubLevel       bool       `json:"sub_level"`
+	Subscribed     bool       `json:"subscribed"`
 	AvatarImage    []byte     `json:"avata_image"` // Base64
 }
 
@@ -25,6 +25,6 @@ type PreferenceResponse struct {
 	NotificationAt *time.Time `json:"notification_at,omitempty"`
 	WordsPerDay    int        `json:"words_per_day"`
 	Goal           string     `json:"goal"`
-	SubLevel       bool       `json:"sub_level"`
+	Subscribed     bool       `json:"subscribed"`
 	AvatarImage    []byte     `json:"avatar_image,omitempty"`
 }
