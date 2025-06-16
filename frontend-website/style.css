@@ -15,12 +15,20 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: var(--background);
     color: var(--text-dark);
-    margin: 0;
+    margin: auto;
 }
 
 header {
     background-color: var(--secondary-bg);
     padding: 1rem;
+    margin: auto;
+}
+
+main {
+    justify-content: space-between;
+    align-items: auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 nav {
