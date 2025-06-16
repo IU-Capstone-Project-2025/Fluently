@@ -67,11 +67,20 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Process claims
 	claims := payload.Claims
 	sub := claims["sub"].(string)
 	email := claims["email"].(string)
+	emailVerified := claims["email_verified"].(bool)
 	name := claims["name"].(string)
 	avatar := claims["picture"].(string)
+
+	// Check if email is verified
+	if !emailVerified {
+		logger.Log.Error("Email not verified", zap.String("email", email))
+		http.Error(w, "email not verified", http.StatusBadRequest)
+		return
+	}
 
 	// Check if user exists
 	user, err := h.UserRepo.GetByEmail(r.Context(), email)
