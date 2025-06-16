@@ -33,10 +33,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      cache_from:
-        - builder
-    volumes:
-      - go-mod-cache:/go/pkg/mod
     container_name: fluently_app
     env_file: .env 
     ports:
@@ -74,10 +70,9 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
       PGDATA: /var/lib/postgresql/data/pgdata
-    ports:
-      - "${DB_PORT}:${DB_PORT}" 
     volumes:
       - pgdata:/var/lib/postgresql/data/pgdata
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     command: >
       postgres -c max_connections=1000
                -c shared_buffers=256MB
@@ -94,11 +89,35 @@ services:
     restart: unless-stopped
     tty: true
     stdin_open: true
+    networks:
+        - fluently_network 
+
+  directus:
+    image: directus/directus:latest
+    container_name: fluently_directus
+    restart: unless-stopped
+    ports:
+      - "${DIRECTUS_PORT}:${DIRECTUS_PORT}"
+    env_file: .env
+    environment:
+      KEY: ${DIRECTUS_SECRET_KEY}
+      ADMIN_EMAIL: ${DIRECTUS_ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD}
+      DB_CLIENT: pg
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_DATABASE: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      PORT: ${DIRECTUS_PORT}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - fluently_network
 
 volumes:
   pgdata:
-    driver: local
-  go-mod-cache:
 
 networks:
   fluently_network:
