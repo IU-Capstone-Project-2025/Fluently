@@ -7,13 +7,20 @@ import (
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
-
-	"github.com/go-chi/chi/v5"
-	"github.com/google/uuid"
+	"fluently/go-backend/internal/utils"
 )
 
 type SentenceHandler struct {
 	Repo *postgres.SentenceRepository
+}
+
+func buildSentenceResponse(sentence *models.Sentence) schemas.SentenceResponse {
+	return schemas.SentenceResponse{
+		ID:          sentence.ID,
+		WordID:      sentence.WordID,
+		Sentence:    sentence.Sentence,
+		Translation: sentence.Translation,
+	}
 }
 
 // ListSentences godoc
@@ -28,8 +35,7 @@ type SentenceHandler struct {
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /words/{word_id}/sentences [get]
 func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) {
-	wordIDStr := chi.URLParam(r, "word_id")
-	wordID, err := uuid.Parse(wordIDStr)
+	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
 		http.Error(w, "invalid word_id", http.StatusBadRequest)
 		return
@@ -43,12 +49,7 @@ func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) 
 
 	var resp []schemas.SentenceResponse
 	for _, s := range sentences {
-		resp = append(resp, schemas.SentenceResponse{
-			ID:          s.ID,
-			WordID:      s.WordID,
-			Sentence:    s.Sentence,
-			Translation: s.Translation,
-		})
+		resp = append(resp, buildSentenceResponse(&s))
 	}
 
 	json.NewEncoder(w).Encode(resp)
@@ -100,8 +101,7 @@ func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request)
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /sentences/{id} [put]
 func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request) {
-	idStr := chi.URLParam(r, "id")
-	id, err := uuid.Parse(idStr)
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
@@ -144,8 +144,7 @@ func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request)
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /sentences/{id} [delete]
 func (h *SentenceHandler) DeleteSentence(w http.ResponseWriter, r *http.Request) {
-	idStr := chi.URLParam(r, "id")
-	id, err := uuid.Parse(idStr)
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
