@@ -60,7 +60,7 @@ services:
       - app
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
-      - ./letsencrypt/webroot:/var/www/certbot
+      - letsencrypt/webroot:/var/www/certbot
       - ../frontend-website:/usr/share/nginx/html/main-site
     networks:
       - fluently_network
