@@ -7,6 +7,7 @@ import (
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
+	"fluently/go-backend/internal/utils"
 )
 
 type PreferenceHandler struct {
@@ -40,7 +41,7 @@ func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceRespons
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /users/{id}/preferences/ [post]
 func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http.Request) {
-	id, err := parseUUIDParam(r, "id")
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
@@ -85,7 +86,7 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Router       /users/{id}/preferences/ [get]
 func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Request) {
-	id, err := parseUUIDParam(r, "id")
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
@@ -114,7 +115,7 @@ func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Req
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /users/{id}/preferences/ [put]
 func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http.Request) {
-	id, err := parseUUIDParam(r, "id")
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return

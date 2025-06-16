@@ -7,6 +7,7 @@ import (
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
+	"fluently/go-backend/internal/utils"
 
 	"github.com/google/uuid"
 )
@@ -79,7 +80,7 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Router       /users/{id} [get]
 func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
-	id, err := parseUUIDParam(r, "id")
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
@@ -108,7 +109,7 @@ func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /users/{id} [put]
 func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
-	id, err := parseUUIDParam(r, "id")
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
@@ -156,7 +157,7 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /users/{id} [delete]
 func (h *UserHandler) DeleteUser(w http.ResponseWriter, r *http.Request) {
-	id, err := parseUUIDParam(r, "id")
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
