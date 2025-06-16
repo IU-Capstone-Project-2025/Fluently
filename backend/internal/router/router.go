@@ -68,23 +68,23 @@ func InitRoutes(db *gorm.DB) http.Handler {
 
 	return r
 }
-// Host-based routing
-r.Group(func(r chi.Router) {
-	// Handle Swagger domain requests
-	r.Group(func(r chi.Router) {
-		r.Use(swaggerDomainOnly)
-		r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-			http.Redirect(w, r, "/index.html", http.StatusMovedPermanently)
-		})
-		r.Get("/*", httpSwagger.WrapHandler)
-	})
 
-	// Non-Swagger routes
-	r.Group(func(r chi.Router) {
-		r.Use(nonSwaggerDomainOnly)
-		r.Get("/swagger", func(w http.ResponseWriter, r *http.Request) {
-			http.Redirect(w, r, "/swagger/index.html", http.StatusMovedPermanently)
-		})
-		r.Get("/swagger/*", httpSwagger.WrapHandler)
-	})
-})
+func swaggerDomainOnly(next http.Handler) http.Handler {
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        if strings.HasSuffix(r.Host, "swagger.fluently-app.ru") {
+            next.ServeHTTP(w, r)
+        } else {
+            http.NotFound(w, r)
+        }
+    })
+}
+
+func nonSwaggerDomainOnly(next http.Handler) http.Handler {
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        if !strings.HasSuffix(r.Host, "swagger.fluently-app.ru") {
+            next.ServeHTTP(w, r)
+        } else {
+            http.NotFound(w, r)
+        }
+    })
+}
