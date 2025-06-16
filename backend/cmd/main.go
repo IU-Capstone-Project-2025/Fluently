@@ -66,12 +66,12 @@ func main() {
 
 	logger.Log.Info("Logger initialization successful!")
 	logger.Log.Info("App starting",
-		zap.String("name", appConfig.GetAppName()),
-		zap.String("address", appConfig.GetAppHost()+":"+appConfig.GetAppPort()),
+		zap.String("name", appConfig.GetConfig().API.AppName),
+		zap.String("address", appConfig.GetConfig().API.AppHost+":"+appConfig.GetConfig().API.AppPort),
 		zap.String("dsn", appConfig.GetPostgresDSN()),
 	)
 
-	err = http.ListenAndServe(appConfig.GetAppHost()+":"+appConfig.GetAppPort(), r)
+	err = http.ListenAndServe(appConfig.GetConfig().API.AppHost+":"+appConfig.GetConfig().API.AppPort, r)
 	if err != nil {
 		logger.Log.Fatal("App failed to start", zap.Error(err))
 	}

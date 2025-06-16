@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"time"
 
 	"fluently/go-backend/internal/config"
 	"fluently/go-backend/internal/repository/models"
@@ -51,13 +52,13 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 	googleToken := req.IDToken
 	platform := req.Platform
 
+	cfg := config.GetConfig()
 	var googleClientIDs = map[string]string{
-		"ios":     fmt.Sprintf("%s.apps.googleusercontent.com", config.GetIosGoogleClientID()),
-		"android": fmt.Sprintf("%s.apps.googleusercontent.com", config.GetAndroidGoogleClientID()),
-		"web":     config.GetWebGoogleClientID(),
+		"ios":     fmt.Sprintf("%s.apps.googleusercontent.com", cfg.Google.IosClientID),
+		"android": fmt.Sprintf("%s.apps.googleusercontent.com", cfg.Google.AndroidClientID),
+		"web":     cfg.Google.WebClientID,
 	}
 
-	// В момент логина — клиент передаёт "platform": "ios" | "android" | "web"
 	audience := googleClientIDs[platform]
 
 	payload, err := idtoken.Validate(r.Context(), googleToken, audience)
@@ -117,6 +118,7 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 				Role:         "user",
 				IsActive:     true,
 				PrefID:       &prefID,
+				LastLoginAt:  time.Now(),
 			}
 
 			if err := h.UserRepo.Create(r.Context(), newUser); err != nil {
@@ -129,6 +131,11 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 			logger.Log.Error("Failed to get user", zap.Error(err))
 			http.Error(w, "failed to get user", http.StatusInternalServerError)
 			return
+		}
+	} else {
+		// Update last login time for existing user
+		if err := h.UserRepo.UpdateLastLogin(r.Context(), user.ID); err != nil {
+			logger.Log.Error("Failed to update last login time", zap.Error(err))
 		}
 	}
 
