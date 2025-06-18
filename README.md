@@ -9,9 +9,13 @@ Fluently is a cross-platform, open-source educational system for learning Englis
 
 **Platforms:** Android, iOS, Telegram Bot (soon), Web (Swagger UI for API)
 
-**License:** MIT
+## Links
 
----
+Main project site (still in development)  
+https://fluently-app.ru
+
+Swagger (Fluently API documentation)  
+https://fluently-app.ru/swagger/index.html
 
 ## Tech Stack
 | Component       | Technologies                                                                 |
