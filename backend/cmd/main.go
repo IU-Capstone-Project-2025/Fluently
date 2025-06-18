@@ -19,10 +19,10 @@ import (
 // @title           Fluently API
 // @version         1.0
 // @description     Backend API for Fluently
-// @termsOfService  http://fluently.com/terms/
+// @termsOfService  http://fluently-app.ru/terms/
 
 // @contact.name   Danila Kochegarov
-// @contact.url    http://fluently.com
+// @contact.url    http://fluently-app.ru
 // @contact.email  Woolfer0097@yandex.ru
 
 // @license.name  MIT
