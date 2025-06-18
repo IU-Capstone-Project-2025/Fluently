@@ -97,19 +97,21 @@ services:
     container_name: fluently_directus
     restart: unless-stopped
     ports:
-      - "${DIRECTUS_PORT}:${DIRECTUS_PORT}"
+      - "${DIRECTUS_PORT:-8055}:${DIRECTUS_PORT:-8055}"
     env_file: .env
     environment:
+      SECRET: ${DIRECTUS_SECRET_KEY}
       KEY: ${DIRECTUS_SECRET_KEY}
       ADMIN_EMAIL: ${DIRECTUS_ADMIN_EMAIL}
       ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD}
+      PUBLIC_URL: ${PUBLIC_URL:-https://admin.fluently-app.ru}
       DB_CLIENT: pg
       DB_HOST: ${DB_HOST}
       DB_PORT: ${DB_PORT}
       DB_DATABASE: ${DB_NAME}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
-      PORT: ${DIRECTUS_PORT}
+      PORT: ${DIRECTUS_PORT:-8055}
     depends_on:
       postgres:
         condition: service_healthy
