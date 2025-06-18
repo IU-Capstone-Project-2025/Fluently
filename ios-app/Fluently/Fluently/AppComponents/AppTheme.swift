@@ -9,12 +9,22 @@ import Foundation
 import SwiftUI
 
 struct AppTheme {
-    let primary = Color("greenColor")
-    let secondary = Color("purpleColor")
-    let tertiary = Color("redColor")
-    let complementary1 = Color("blueColor")
-    let complementary2 = Color("yellowColor")
-    let backgroundColor = Color("background")
+//    Default
+    let gray = Color("gray")
+    let black = Color("black")
+    let white = Color("white")
+
+//    Orange
+    let orangePrimary = Color("orange.primary")
+    let orangeSecondary = Color("orange.secondary")
+
+//    Purple
+    let purpleAccent = Color("purple.accent")
+    let purpleSecondary = Color("purple.secondary")
+
+//    Blue
+    let blueAccent = Color("blue.accent")
+    let blueSecondary = Color("blue.secondary")
 }
 
 extension Color {
