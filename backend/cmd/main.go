@@ -28,7 +28,7 @@ import (
 // @license.name  MIT
 // @license.url   https://opensource.org/licenses/MIT
 
-// @host      swagger.fluently-app.ru:8070
+// @host      fluently-app.ru/swagger/index.html
 // @BasePath  /api/v1
 func main() {
 	appConfig.Init()
