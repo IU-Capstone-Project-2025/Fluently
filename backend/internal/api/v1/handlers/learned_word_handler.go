@@ -7,13 +7,22 @@ import (
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
-
-	"github.com/go-chi/chi/v5"
-	"github.com/google/uuid"
+	"fluently/go-backend/internal/utils"
 )
 
 type LearnedWordHandler struct {
 	Repo *postgres.LearnedWordRepository
+}
+
+func buildLearnedWordResponse(word *models.LearnedWords) schemas.LearenedWordResponse {
+	return schemas.LearenedWordResponse{
+		UserID:          word.UserID,
+		WordID:          word.WordID,
+		LearnedAt:       word.LearnedAt,
+		LastReviewed:    word.LastReviewed,
+		CntReviewedAt:   word.CountOfRevisions,
+		ConfidenceScore: word.ConfidenceScore,
+	}
 }
 
 // GetLearnedWords godoc
@@ -28,8 +37,7 @@ type LearnedWordHandler struct {
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /users/{user_id}/learned-words/ [get]
 func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Request) {
-	userIDStr := chi.URLParam(r, "user_id")
-	userID, err := uuid.Parse(userIDStr)
+	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
 		http.Error(w, "invalid user_id", http.StatusBadRequest)
 		return
@@ -43,14 +51,7 @@ func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Requ
 
 	var resp []schemas.LearenedWordResponse
 	for _, w := range words {
-		resp = append(resp, schemas.LearenedWordResponse{
-			UserID:          w.UserID,
-			WordID:          w.WordID,
-			LearnedAt:       w.LearnedAt,
-			LastReviewed:    w.LastReviewed,
-			CntReviewedAt:   w.CountOfRevisions,
-			ConfidenceScore: w.ConfidenceScore,
-		})
+		resp = append(resp, buildLearnedWordResponse(&w))
 	}
 
 	json.NewEncoder(w).Encode(resp)
@@ -69,16 +70,13 @@ func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Requ
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Router       /users/{user_id}/learned-words/{word_id} [get]
 func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Request) {
-	userIDStr := chi.URLParam(r, "user_id")
-	wordIDStr := chi.URLParam(r, "word_id")
-
-	userID, err := uuid.Parse(userIDStr)
+	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
 		http.Error(w, "invelid user_id", http.StatusBadRequest)
 		return
 	}
 
-	wordID, err := uuid.Parse(wordIDStr)
+	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
 		http.Error(w, "invelid word_id", http.StatusBadRequest)
 		return
@@ -90,16 +88,7 @@ func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
-	resp := schemas.LearenedWordResponse{
-		UserID:          word.UserID,
-		WordID:          word.WordID,
-		LearnedAt:       word.LearnedAt,
-		LastReviewed:    word.LastReviewed,
-		CntReviewedAt:   word.CountOfRevisions,
-		ConfidenceScore: word.ConfidenceScore,
-	}
-
-	json.NewEncoder(w).Encode(resp)
+	json.NewEncoder(w).Encode(buildLearnedWordResponse(word))
 }
 
 // CreateLearnedWord godoc
@@ -152,16 +141,13 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /users/{user_id}/learned-words/{word_id} [put]
 func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Request) {
-	userIDStr := chi.URLParam(r, "user_id")
-	wordIDStr := chi.URLParam(r, "word_id")
-
-	userID, err := uuid.Parse(userIDStr)
+	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
 		http.Error(w, "invelid user_id", http.StatusBadRequest)
 		return
 	}
 
-	wordID, err := uuid.Parse(wordIDStr)
+	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
 		http.Error(w, "invelid word_id", http.StatusBadRequest)
 		return
@@ -206,16 +192,13 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /users/{user_id}/learned-words/{word_id} [delete]
 func (h *LearnedWordHandler) DeleteLearnedWord(w http.ResponseWriter, r *http.Request) {
-	userIDStr := chi.URLParam(r, "user_id")
-	wordIDStr := chi.URLParam(r, "word_id")
-
-	userID, err := uuid.Parse(userIDStr)
+	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
 		http.Error(w, "invelid user_id", http.StatusBadRequest)
 		return
 	}
 
-	wordID, err := uuid.Parse(wordIDStr)
+	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
 		http.Error(w, "invelid word_id", http.StatusBadRequest)
 		return
