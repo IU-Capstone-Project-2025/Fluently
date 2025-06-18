@@ -51,6 +51,8 @@ func main() {
 		&models.Sentence{},
 		&models.User{},
 		&models.Word{},
+		&models.PickOption{},
+		&models.Topic{}
 	)
 	if err != nil {
 		logger.Log.Fatal("Failed to auto-migrate", zap.Error(err))
