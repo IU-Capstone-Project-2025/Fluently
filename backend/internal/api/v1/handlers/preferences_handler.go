@@ -23,7 +23,7 @@ func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceRespons
 		NotificationAt: pref.NotificationsAt,
 		WordsPerDay:    pref.WordsPerDay,
 		Goal:           pref.Goal,
-		SubLevel:       pref.SubLevel,
+		Subscribed:     pref.Subscribed,
 		AvatarImage:    pref.AvatarImage,
 	}
 }
@@ -61,7 +61,7 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 		NotificationsAt: req.NotificationAt,
 		WordsPerDay:     req.WordsPerDay,
 		Goal:            req.Goal,
-		SubLevel:        req.SubLevel,
+		Subscribed:      req.Subscribed,
 		AvatarImage:     req.AvatarImage,
 	}
 
@@ -139,7 +139,7 @@ func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http
 	pref.NotificationsAt = req.NotificationAt
 	pref.WordsPerDay = req.WordsPerDay
 	pref.Goal = req.Goal
-	pref.SubLevel = req.SubLevel
+	pref.Subscribed = req.Subscribed
 	pref.AvatarImage = req.AvatarImage
 
 	if err := h.Repo.Update(r.Context(), pref); err != nil {
