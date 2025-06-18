@@ -14,7 +14,7 @@ type Preference struct {
 	NotificationsAt *time.Time
 	WordsPerDay     int    `gorm:"default:10"`
 	Goal            string `gorm:"type:varchar(255)"`
-	SubLevel        bool   `gorm:"default:false"`
+	Subscribed      bool   `gorm:"default:false"`
 	AvatarImage     []byte `gorm:"type:bytea"`
 }
 
