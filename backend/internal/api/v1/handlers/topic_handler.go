@@ -33,6 +33,7 @@ func (h *TopicHandler) GetTopics(w http.ResponseWriter, r *http.Request) {
 		resp = append(resp, buildTopicResponse(&t))
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }
 
@@ -49,6 +50,7 @@ func (h *TopicHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildTopicResponse(topic))
 }
 
@@ -56,7 +58,7 @@ func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateTopicRequest
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "invalid request", http.StatusBadRequest)
+		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
@@ -65,36 +67,38 @@ func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := h.Repo.Create(r.Context(), &topic); err != nil {
-		http.Error(w, "failed to create", http.StatusInternalServerError)
+		http.Error(w, "failed to create topic", http.StatusInternalServerError)
 		return
 	}
 
 	w.WriteHeader(http.StatusCreated)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(buildTopicResponse(&topic))
 }
 
 func (h *TopicHandler) UpdateTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invelid word_id", http.StatusBadRequest)
+		http.Error(w, "invalid uuid", http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.CreateTopicRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "invalid request", http.StatusBadRequest)
+		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	topic, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
-		http.Error(w, "not found", http.StatusNotFound)
+		http.Error(w, "topic not found", http.StatusNotFound)
 		return
 	}
 
 	topic.Title = req.Title
 
 	if err := h.Repo.Update(r.Context(), topic); err != nil {
-		http.Error(w, "failed to update", http.StatusInternalServerError)
+		http.Error(w, "failed to update topic", http.StatusInternalServerError)
 		return
 	}
 
@@ -104,12 +108,12 @@ func (h *TopicHandler) UpdateTopic(w http.ResponseWriter, r *http.Request) {
 func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invelid user_id", http.StatusBadRequest)
+		http.Error(w, "invalid uuid", http.StatusBadRequest)
 		return
 	}
 
 	if err := h.Repo.Delete(r.Context(), id); err != nil {
-		http.Error(w, "failed to delete", http.StatusInternalServerError)
+		http.Error(w, "failed to delete topic", http.StatusInternalServerError)
 		return
 	}
 
