@@ -4,9 +4,15 @@ import (
 	"net/http"
 
 	_ "fluently/go-backend/docs"
+<<<<<<< HEAD
 	appConfig "fluently/go-backend/internal/config"
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/router"
+=======
+	"fluently/go-backend/internal/config"
+
+	//"fluently/go-backend/internal/router"
+>>>>>>> upstream/main
 	"fluently/go-backend/pkg/logger"
 
 	"github.com/go-chi/chi/v5"
@@ -19,7 +25,11 @@ import (
 // @title           Fluently API
 // @version         1.0
 // @description     Backend API for Fluently
+<<<<<<< HEAD
 // @termsOfService  http://fluently-app.ru/terms/
+=======
+// @termsOfService  http://fluently.com/terms/
+>>>>>>> upstream/main
 
 // @contact.name   Danila Kochegarov
 // @contact.url    http://fluently-app.ru
@@ -28,7 +38,11 @@ import (
 // @license.name  MIT
 // @license.url   https://opensource.org/licenses/MIT
 
+<<<<<<< HEAD
 // @host      fluently-app.ru/swagger/index.html
+=======
+// @host      swagger.fluently-app.ru:8070
+>>>>>>> upstream/main
 // @BasePath  /api/v1
 func main() {
 	appConfig.Init()

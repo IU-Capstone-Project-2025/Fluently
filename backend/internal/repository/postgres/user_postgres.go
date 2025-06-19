@@ -40,14 +40,6 @@ func (r *UserRepository) GetByEmail(ctx context.Context, email string) (*models.
 	return &user, nil
 }
 
-func (r *UserRepository) Update(ctx context.Context, user *models.User) error {
-	return r.db.WithContext(ctx).Save(user).Error
-}
-
-func (r *UserRepository) Delete(ctx context.Context, id uuid.UUID) error {
-	return r.db.WithContext(ctx).Delete(&models.User{}, "id = ?", id).Error
-}
-
 // UpdateRefreshToken updates the refresh token for a user
 func (r *UserRepository) UpdateRefreshToken(ctx context.Context, userID uuid.UUID, refreshToken string) error {
 	return r.db.WithContext(ctx).Model(&models.User{}).
@@ -80,4 +72,12 @@ func (r *UserRepository) ClearRefreshToken(ctx context.Context, userID uuid.UUID
 	return r.db.WithContext(ctx).Model(&models.User{}).
 		Where("id = ?", userID).
 		Update("refresh_token", "").Error
+}
+
+func (r *UserRepository) Update(ctx context.Context, user *models.User) error {
+	return r.db.WithContext(ctx).Save(user).Error
+}
+
+func (r *UserRepository) Delete(ctx context.Context, id uuid.UUID) error {
+	return r.db.WithContext(ctx).Delete(&models.User{}, "id = ?", id).Error
 }
