@@ -7,7 +7,6 @@ import (
 	appConfig "fluently/go-backend/internal/config"
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/router"
-
 	"fluently/go-backend/pkg/logger"
 
 	"github.com/go-chi/chi/v5"
@@ -48,6 +47,7 @@ func main() {
 		&models.Preference{},
 		&models.Sentence{},
 		&models.User{},
+		&models.RefreshToken{},
 		&models.Word{},
 		&models.PickOption{},
 		&models.Topic{},
