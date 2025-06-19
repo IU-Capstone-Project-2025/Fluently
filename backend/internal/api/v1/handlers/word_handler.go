@@ -7,13 +7,31 @@ import (
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
+	"fluently/go-backend/internal/utils"
 
-	"github.com/go-chi/chi/v5"
 	"github.com/google/uuid"
 )
 
 type WordHandler struct {
 	Repo *postgres.WordRepository
+}
+
+func buildWordResponse(w *models.Word) schemas.WordResponse {
+	resp := schemas.WordResponse{
+		ID:           w.ID.String(),
+		Word:         w.Word,
+		PartOfSpeech: w.PartOfSpeech,
+	}
+
+	if w.Translation != "" {
+		resp.Translation = &w.Translation
+	}
+
+	if w.Context != "" {
+		resp.Context = &w.Context
+	}
+
+	return resp
 }
 
 // ListWords godoc
@@ -34,21 +52,7 @@ func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
 
 	var resp []schemas.WordResponse
 	for _, w := range words {
-		word := schemas.WordResponse{
-			ID:           w.ID.String(),
-			Word:         w.Word,
-			PartOfSpeech: w.PartOfSpeech,
-		}
-
-		if w.Translation != "" {
-			word.Translation = &w.Translation
-		}
-
-		if w.Context != "" {
-			word.Context = &w.Context
-		}
-
-		resp = append(resp, word)
+		resp = append(resp, buildWordResponse(&w))
 	}
 
 	json.NewEncoder(w).Encode(resp)
@@ -66,8 +70,7 @@ func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Router       /words/{id} [get]
 func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
-	idStr := chi.URLParam(r, "id")
-	id, err := uuid.Parse(idStr)
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
@@ -79,21 +82,7 @@ func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	resp := schemas.WordResponse{
-		ID:           word.ID.String(),
-		Word:         word.Word,
-		PartOfSpeech: word.PartOfSpeech,
-	}
-
-	if word.Translation != "" {
-		resp.Translation = &word.Translation
-	}
-
-	if word.Context != "" {
-		resp.Context = &word.Context
-	}
-
-	json.NewEncoder(w).Encode(resp)
+	json.NewEncoder(w).Encode(buildWordResponse(word))
 }
 
 // CreateWord godoc
@@ -159,8 +148,7 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /words/{id} [put]
 func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
-	idStr := chi.URLParam(r, "id")
-	id, err := uuid.Parse(idStr)
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
@@ -222,8 +210,7 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /words/{id} [delete]
 func (h *WordHandler) DeleteWord(w http.ResponseWriter, r *http.Request) {
-	idStr := chi.URLParam(r, "id")
-	id, err := uuid.Parse(idStr)
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return

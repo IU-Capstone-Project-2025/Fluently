@@ -33,10 +33,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      cache_from:
-        - builder
-    volumes:
-      - go-mod-cache:/go/pkg/mod
     container_name: fluently_app
     env_file: .env 
     ports:
@@ -50,8 +46,13 @@ services:
 
   nginx:
     build:
+<<<<<<< HEAD
+      context: ..
+      dockerfile: backend/nginx-container/Dockerfile
+=======
       context: .
       dockerfile: swagger/Dockerfile
+>>>>>>> upstream/main
     container_name: nginx
     ports:
       - "80:80"
@@ -59,8 +60,14 @@ services:
     depends_on:
       - app
     volumes:
+<<<<<<< HEAD
+      - ./nginx-container/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx-container/nginx-headers.conf:/etc/nginx/nginx-headers.conf:ro
+=======
+>>>>>>> upstream/main
       - /etc/letsencrypt:/etc/letsencrypt
-      - ./letsencrypt/webroot:/var/www/certbot:ro 
+      - ./letsencrypt/webroot:/var/www/certbot
+      - ../frontend-website:/usr/share/nginx/html/main-site
     networks:
       - fluently_network
 
@@ -73,10 +80,9 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
       PGDATA: /var/lib/postgresql/data/pgdata
-    ports:
-      - "${DB_PORT}:${DB_PORT}" 
     volumes:
       - pgdata:/var/lib/postgresql/data/pgdata
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     command: >
       postgres -c max_connections=1000
                -c shared_buffers=256MB
@@ -93,11 +99,37 @@ services:
     restart: unless-stopped
     tty: true
     stdin_open: true
+    networks:
+        - fluently_network 
+
+  directus:
+    image: directus/directus:latest
+    container_name: fluently_directus
+    restart: unless-stopped
+    ports:
+      - "${DIRECTUS_PORT:-8055}:${DIRECTUS_PORT:-8055}"
+    env_file: .env
+    environment:
+      SECRET: ${DIRECTUS_SECRET_KEY}
+      KEY: ${DIRECTUS_SECRET_KEY}
+      ADMIN_EMAIL: ${DIRECTUS_ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD}
+      PUBLIC_URL: ${PUBLIC_URL:-https://admin.fluently-app.ru}
+      DB_CLIENT: pg
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_DATABASE: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      PORT: ${DIRECTUS_PORT:-8055}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - fluently_network
 
 volumes:
   pgdata:
-    driver: local
-  go-mod-cache:
 
 networks:
   fluently_network:

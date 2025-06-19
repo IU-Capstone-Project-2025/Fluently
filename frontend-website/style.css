@@ -1,0 +1,65 @@
+:root {
+    --background: #F6F6F6;
+    --secondary-bg: #EEF2F5;
+    --primary-accent: #A043DB;
+    --secondary-accent: #CC8EF1;
+    --light-accent: #F5E9FD;
+    --cta-blue: #119CE2;
+    --blue-bg: #DFF1FD;
+    --cta-orange: #F08616;
+    --orange-bg: #FFEFE2;
+    --text-dark: #1B1B1B;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background);
+    color: var(--text-dark);
+    margin: auto;
+}
+
+header {
+    background-color: var(--secondary-bg);
+    padding: 1rem;
+    margin: auto;
+}
+
+main {
+    justify-content: space-between;
+    align-items: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 50px;
+    border-radius: 8px;
+}
+
+.cta {
+    background-color: var(--cta-blue);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta:hover {
+    background-color: #0d7ec2;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}

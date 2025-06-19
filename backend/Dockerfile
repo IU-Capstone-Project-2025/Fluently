@@ -1,20 +1,27 @@
-# Build stage
-FROM golang:1.23-alpine AS builder
+# Build stage (cached)
+# FROM golang:1.24-alpine AS builder
+# WORKDIR /app
+
+# COPY go.mod go.sum ./
+# RUN go mod download
+
+# # Install swag and generate docs
+# RUN go install github.com/swaggo/swag/cmd/swag@latest
+# COPY . .
+# RUN swag init --generalInfo cmd/main.go --output docs
+
+# RUN CGO_ENABLED=0 GOOS=linux go build -o /app/fluently-backend ./cmd/main.go
+
+# # Build stage (no-cache)
+FROM golang:1.24-alpine AS builder
 WORKDIR /app
 COPY go.mod go.sum ./
-RUN --mount=type=cache,target=/go/pkg/mod \
-    go mod download
-
+RUN go mod download
 # Install swag and generate docs
 RUN go install github.com/swaggo/swag/cmd/swag@latest
 COPY . .
 RUN swag init --generalInfo cmd/main.go --output docs
-
-# Build with separate cache mounts
-RUN --mount=type=cache,target=/go/pkg/mod \
-    --mount=type=cache,target=/root/.cache/go-build \
-    CGO_ENABLED=0 GOOS=linux go build -o /app/fluently-backend ./cmd/main.go
-
+RUN CGO_ENABLED=0 GOOS=linux go build -o /app/fluently-backend ./cmd/main.go
 
 # Final stage
 FROM alpine:latest

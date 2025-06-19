@@ -12,7 +12,7 @@ struct FluentlyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            
+            HomeScreenView()
         }
     }
 }

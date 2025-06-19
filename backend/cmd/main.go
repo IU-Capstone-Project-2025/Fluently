@@ -4,39 +4,75 @@ import (
 	"net/http"
 
 	_ "fluently/go-backend/docs"
+<<<<<<< HEAD
+	appConfig "fluently/go-backend/internal/config"
+	"fluently/go-backend/internal/repository/models"
+	"fluently/go-backend/internal/router"
+=======
 	"fluently/go-backend/internal/config"
 
 	//"fluently/go-backend/internal/router"
+>>>>>>> upstream/main
 	"fluently/go-backend/pkg/logger"
 
 	"github.com/go-chi/chi/v5"
 	httpSwagger "github.com/swaggo/http-swagger"
 	"go.uber.org/zap"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
 // @title           Fluently API
 // @version         1.0
 // @description     Backend API for Fluently
+<<<<<<< HEAD
+// @termsOfService  http://fluently-app.ru/terms/
+=======
 // @termsOfService  http://fluently.com/terms/
+>>>>>>> upstream/main
 
 // @contact.name   Danila Kochegarov
-// @contact.url    http://fluently.com
+// @contact.url    http://fluently-app.ru
 // @contact.email  Woolfer0097@yandex.ru
 
 // @license.name  MIT
 // @license.url   https://opensource.org/licenses/MIT
 
+<<<<<<< HEAD
+// @host      fluently-app.ru/swagger/index.html
+=======
 // @host      swagger.fluently-app.ru:8070
+>>>>>>> upstream/main
 // @BasePath  /api/v1
 func main() {
-	config.Init()
+	appConfig.Init()
 	logger.Init(true) // or false for production
 	defer logger.Log.Sync()
 
+	// Router init
 	r := chi.NewRouter()
 
-	// db, err := gorm.Open(postgres.Open(config.GetPostgresDSN()), &gorm.Config{})
-	// router.InitRoutes(db)
+	// Database init
+	dsn := appConfig.GetPostgresDSN()
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	if err != nil {
+		logger.Log.Fatal("Failed to connect to database", zap.Error(err))
+	}
+
+	err = db.AutoMigrate(
+		&models.LearnedWords{},
+		&models.Preference{},
+		&models.Sentence{},
+		&models.User{},
+		&models.Word{},
+		&models.PickOption{},
+		&models.Topic{},
+	)
+	if err != nil {
+		logger.Log.Fatal("Failed to auto-migrate", zap.Error(err))
+	}
+
+	router.InitRoutes(db)
 
 	r.Get("/swagger/*", httpSwagger.WrapHandler) // Swagger UI
 
@@ -46,12 +82,12 @@ func main() {
 
 	logger.Log.Info("Logger initialization successful!")
 	logger.Log.Info("App starting",
-		zap.String("name", config.GetAppName()),
-		zap.String("address", config.GetAppHost()+":"+config.GetAppPort()),
-		zap.String("dsn", config.GetPostgresDSN()),
+		zap.String("name", appConfig.GetConfig().API.AppName),
+		zap.String("address", appConfig.GetConfig().API.AppHost+":"+appConfig.GetConfig().API.AppPort),
+		zap.String("dsn", appConfig.GetPostgresDSN()),
 	)
 
-	err := http.ListenAndServe(config.GetAppHost()+":"+config.GetAppPort(), r)
+	err = http.ListenAndServe(appConfig.GetConfig().API.AppHost+":"+appConfig.GetConfig().API.AppPort, r)
 	if err != nil {
 		logger.Log.Fatal("App failed to start", zap.Error(err))
 	}

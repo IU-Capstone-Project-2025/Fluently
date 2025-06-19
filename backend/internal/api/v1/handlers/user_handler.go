@@ -7,13 +7,26 @@ import (
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
+	"fluently/go-backend/internal/utils"
 
-	"github.com/go-chi/chi/v5"
 	"github.com/google/uuid"
 )
 
 type UserHandler struct {
 	Repo *postgres.UserRepository
+}
+
+// buildUserResponse returns user response
+func buildUserResponse(user *models.User) schemas.UserResponse {
+	return schemas.UserResponse{
+		ID:        user.ID,
+		Name:      user.Name,
+		Email:     user.Email,
+		Role:      user.Role,
+		IsActive:  user.IsActive,
+		PrefID:    *user.PrefID,
+		CreatedAt: user.CreatedAt,
+	}
 }
 
 // CreateUser godoc
@@ -35,10 +48,15 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	user := models.User{
-		ID:       uuid.New(),
-		Name:     req.Name,
-		SubLevel: req.SubLevel,
-		PrefID:   req.PrefID,
+		ID:           uuid.New(),
+		Name:         req.Name,
+		Email:        req.Name,
+		PasswordHash: req.PasswordHash,
+		Provider:     req.Provider,
+		GoogleID:     req.GoogleID,
+		Role:         req.Role,
+		IsActive:     req.IsActive,
+		PrefID:       &req.PrefID,
 	}
 
 	if err := h.Repo.Create(r.Context(), &user); err != nil {
@@ -46,18 +64,8 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	resp := schemas.UserResponse{
-		ID:       user.ID,
-		Name:     user.Name,
-		SubLevel: user.SubLevel,
-		Pref: &schemas.PreferenceMini{
-			ID:        user.Pref.ID,
-			CEFRLevel: user.Pref.CEFRLevel,
-		},
-	}
-
 	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(resp)
+	json.NewEncoder(w).Encode(buildUserResponse(&user))
 }
 
 // GetUser godoc
@@ -72,8 +80,7 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Router       /users/{id} [get]
 func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
-	idStr := chi.URLParam(r, "id")
-	id, err := uuid.Parse(idStr)
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
@@ -85,17 +92,7 @@ func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	resp := schemas.UserResponse{
-		ID:       user.ID,
-		Name:     user.Name,
-		SubLevel: user.SubLevel,
-		Pref: &schemas.PreferenceMini{
-			ID:        user.Pref.ID,
-			CEFRLevel: user.Pref.CEFRLevel,
-		},
-	}
-
-	json.NewEncoder(w).Encode(resp)
+	json.NewEncoder(w).Encode(buildUserResponse(user))
 }
 
 // UpdateUser godoc
@@ -112,8 +109,7 @@ func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /users/{id} [put]
 func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
-	idStr := chi.URLParam(r, "id")
-	id, err := uuid.Parse(idStr)
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
@@ -132,25 +128,20 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	user.Name = req.Name
-	user.SubLevel = req.SubLevel
-	user.PrefID = req.PrefID
+	user.Email = req.Email
+	user.Role = req.Role
+	user.IsActive = req.IsActive
+	user.Provider = req.Provider
+	user.GoogleID = req.GoogleID
+	user.PasswordHash = req.PasswordHash
+	user.PrefID = &req.PrefID
 
 	if err := h.Repo.Update(r.Context(), user); err != nil {
 		http.Error(w, "failed to update user", http.StatusInternalServerError)
 		return
 	}
 
-	resp := schemas.UserResponse{
-		ID:       user.ID,
-		Name:     user.Name,
-		SubLevel: user.SubLevel,
-		Pref: &schemas.PreferenceMini{
-			ID:        user.Pref.ID,
-			CEFRLevel: user.Pref.CEFRLevel,
-		},
-	}
-
-	json.NewEncoder(w).Encode(resp)
+	json.NewEncoder(w).Encode(buildUserResponse(user))
 }
 
 // DeleteUser godoc
@@ -166,8 +157,7 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /users/{id} [delete]
 func (h *UserHandler) DeleteUser(w http.ResponseWriter, r *http.Request) {
-	idStr := chi.URLParam(r, "id")
-	id, err := uuid.Parse(idStr)
+	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
 		http.Error(w, "invalid UUID", http.StatusBadRequest)
 		return
