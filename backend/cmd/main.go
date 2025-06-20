@@ -29,7 +29,6 @@ import (
 // @license.url   https://opensource.org/licenses/MIT
 
 // @host      localhost:8080
-// // @host      fluently-app.ru
 // @BasePath  /api/v1
 func main() {
 	appConfig.Init()
