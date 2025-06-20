@@ -15,7 +15,7 @@ type CreateLearnedWordRequest struct {
 	ConfidenceScore int       `json:"confidence_score"`
 }
 
-type LearenedWordResponse struct {
+type LearnedWordResponse struct {
 	UserID          uuid.UUID `json:"user_id"`
 	WordID          uuid.UUID `json:"word_id"`
 	LearnedAt       time.Time `json:"learned_at"`
