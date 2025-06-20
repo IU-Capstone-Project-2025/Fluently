@@ -15,12 +15,9 @@ import (
 	"fluently/go-backend/internal/repository/schemas"
 	"fluently/go-backend/internal/utils"
 
-	"os"
-
 	"github.com/google/uuid"
 	"go.uber.org/zap"
 	"golang.org/x/oauth2"
-	"golang.org/x/oauth2/google"
 	"google.golang.org/api/idtoken"
 	"gorm.io/gorm"
 )
@@ -30,14 +27,6 @@ type Handlers struct {
 	UserRepo         *postgres.UserRepository
 	UserPrefRepo     *postgres.PreferenceRepository
 	RefreshTokenRepo *postgres.RefreshTokenRepository
-}
-
-var googleOauthConfig = &oauth2.Config{
-	RedirectURL:  "https://fluently-app.ru/auth/google/callback",
-	ClientID:     os.Getenv("WEB_GOOGLE_CLIENT_ID"),
-	ClientSecret: os.Getenv("WEB_GOOGLE_CLIENT_SECRET"),
-	Scopes:       []string{"openid", "email", "profile"},
-	Endpoint:     google.Endpoint,
 }
 
 func generateRandomState() (string, error) {
@@ -408,7 +397,8 @@ func (h *Handlers) GoogleAuthRedirectHandler(w http.ResponseWriter, r *http.Requ
 		Path:     "/",
 	})
 
-	url := googleOauthConfig.AuthCodeURL(state, oauth2.AccessTypeOffline)
+	oauthCfg := config.GoogleOAuthConfig()
+	url := oauthCfg.AuthCodeURL(state, oauth2.AccessTypeOffline)
 	http.Redirect(w, r, url, http.StatusTemporaryRedirect)
 }
 
@@ -438,7 +428,8 @@ func (h *Handlers) GoogleCallbackHandler(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
-	token, err := googleOauthConfig.Exchange(r.Context(), code)
+	oauthCfg := config.GoogleOAuthConfig()
+	token, err := oauthCfg.Exchange(r.Context(), code)
 	if err != nil {
 		logger.Log.Error("Code exchange failed", zap.Error(err))
 		http.Error(w, "code exchange failed", http.StatusUnauthorized)
