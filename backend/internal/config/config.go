@@ -2,7 +2,11 @@ package config
 
 import (
 	"log"
+	"os"
 	"time"
+
+	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/google"
 
 	"github.com/joho/godotenv"
 	"github.com/spf13/viper"
@@ -115,4 +119,16 @@ func GetConfig() *Config {
 func GetPostgresDSN() string {
 	return "postgres://" + cfg.Database.User + ":" + cfg.Database.Password +
 		"@" + cfg.Database.Host + ":" + cfg.Database.Port + "/" + cfg.Database.Name
+}
+
+// GoogleOAuthConfig constructs an oauth2.Config based on application settings.
+func GoogleOAuthConfig() *oauth2.Config {
+	cfg := GetConfig()
+	return &oauth2.Config{
+		RedirectURL:  "https://fluently-app.ru/auth/google/callback",
+		ClientID:     cfg.Google.WebClientID,
+		ClientSecret: os.Getenv("WEB_GOOGLE_CLIENT_SECRET"),
+		Scopes:       []string{"openid", "email", "profile"},
+		Endpoint:     google.Endpoint,
+	}
 }
