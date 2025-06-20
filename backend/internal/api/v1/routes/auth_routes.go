@@ -11,6 +11,8 @@ func RegisterAuthRoutes(r chi.Router, h *handlers.Handlers) {
 		r.Post("/login", h.LoginHandler)
 		r.Post("/register", h.RegisterHandler)
 		r.Post("/google", h.GoogleAuthHandler)
+		r.Get("/google", h.GoogleAuthRedirectHandler)
+		r.Get("/google/callback", h.GoogleCallbackHandler)
 		r.Post("/refresh", h.RefreshTokenHandler)
 		// r.Post("/logout", h.LogoutHandler)
 		// r.Post("/forgot-password", h.ForgotPasswordHandler)
