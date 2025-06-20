@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main 
-      - nginx-config
+      - add-custom-pages
 
 jobs:
   deploy:
