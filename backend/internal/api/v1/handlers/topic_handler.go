@@ -112,7 +112,9 @@ func (h *TopicHandler) GetPathToMainTopic(w http.ResponseWriter, r *http.Request
 	}
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(strPath)
+	json.NewEncoder(w).Encode(map[string][]string{
+		"topics": strPath,
+	})
 }
 
 func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
