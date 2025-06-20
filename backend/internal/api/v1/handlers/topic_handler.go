@@ -8,6 +8,8 @@ import (
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
 	"fluently/go-backend/internal/utils"
+
+	"github.com/google/uuid"
 )
 
 type TopicHandler struct {
@@ -52,6 +54,67 @@ func (h *TopicHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildTopicResponse(topic))
+}
+
+func (h *TopicHandler) GetMainTopic(w http.ResponseWriter, r *http.Request) {
+	id, err := utils.ParseUUIDParam(r, "id")
+	if err != nil {
+		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		return
+	}
+
+	topic, err := h.Repo.GetByID(r.Context(), id)
+	if err != nil {
+		http.Error(w, "topic not found", http.StatusNotFound)
+		return
+	}
+
+	for topic.ParentID != nil {
+		topic, err = h.Repo.GetByID(r.Context(), *topic.ParentID)
+		if err != nil {
+			http.Error(w, "failed to fetch parent topic", http.StatusInternalServerError)
+			return
+		}
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(buildTopicResponse(topic))
+}
+
+func (h *TopicHandler) GetPathToMainTopic(w http.ResponseWriter, r *http.Request) {
+	id, err := utils.ParseUUIDParam(r, "id")
+	if err != nil {
+		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		return
+	}
+
+	var path []uuid.UUID
+
+	topic, err := h.Repo.GetByID(r.Context(), id)
+	if err != nil {
+		http.Error(w, "topic not found", http.StatusNotFound)
+		return
+	}
+	path = append(path, topic.ID)
+
+	for topic.ParentID != nil {
+		topic, err = h.Repo.GetByID(r.Context(), *topic.ParentID)
+		if err != nil {
+			http.Error(w, "failed to fetch parent topic", http.StatusInternalServerError)
+			return
+		}
+		path = append(path, topic.ID)
+	}
+
+	strPath := make([]string, len(path))
+	for i, id := range path {
+		strPath[i] = id.String()
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string][]string{
+		"topics": strPath,
+	})
 }
 
 func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
