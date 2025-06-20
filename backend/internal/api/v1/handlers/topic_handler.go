@@ -23,26 +23,10 @@ func buildTopicResponse(topic *models.Topic) schemas.TopicResponse {
 	}
 }
 
-func (h *TopicHandler) GetTopics(w http.ResponseWriter, r *http.Request) {
-	topics, err := h.Repo.ListTopics(r.Context())
-	if err != nil {
-		http.Error(w, "failed to fetch topics", http.StatusBadRequest)
-		return
-	}
-
-	var resp []schemas.TopicResponse
-	for _, t := range topics {
-		resp = append(resp, buildTopicResponse(&t))
-	}
-
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(resp)
-}
-
 func (h *TopicHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -59,7 +43,7 @@ func (h *TopicHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
 func (h *TopicHandler) GetMainTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -84,7 +68,7 @@ func (h *TopicHandler) GetMainTopic(w http.ResponseWriter, r *http.Request) {
 func (h *TopicHandler) GetPathToMainTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -134,15 +118,15 @@ func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.WriteHeader(http.StatusCreated)
 	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(buildTopicResponse(&topic))
 }
 
 func (h *TopicHandler) UpdateTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid uuid", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -166,12 +150,13 @@ func (h *TopicHandler) UpdateTopic(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(buildTopicResponse(topic))
 }
 
 func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid uuid", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 

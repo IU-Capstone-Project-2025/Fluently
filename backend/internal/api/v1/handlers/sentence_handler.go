@@ -16,8 +16,8 @@ type SentenceHandler struct {
 
 func buildSentenceResponse(sentence *models.Sentence) schemas.SentenceResponse {
 	return schemas.SentenceResponse{
-		ID:          sentence.ID,
-		WordID:      sentence.WordID,
+		ID:          sentence.ID.String(),
+		WordID:      sentence.WordID.String(),
 		Sentence:    sentence.Sentence,
 		Translation: sentence.Translation,
 	}
@@ -43,7 +43,7 @@ func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) 
 
 	sentences, err := h.Repo.ListByWord(r.Context(), wordID)
 	if err != nil {
-		http.Error(w, "failed to fetch", http.StatusInternalServerError)
+		http.Error(w, "failed to fetch sentences", http.StatusInternalServerError)
 		return
 	}
 
@@ -52,6 +52,7 @@ func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) 
 		resp = append(resp, buildSentenceResponse(&s))
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }
 
@@ -69,7 +70,7 @@ func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) 
 func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateSentenceRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "invalid body", http.StatusBadRequest)
+		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
@@ -80,11 +81,13 @@ func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request)
 	}
 
 	if err := h.Repo.Create(r.Context(), &s); err != nil {
-		http.Error(w, "failed to fetch", http.StatusInternalServerError)
+		http.Error(w, "failed to create sentence", http.StatusInternalServerError)
 		return
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
+	json.NewEncoder(w).Encode(buildSentenceResponse(&s))
 }
 
 // UpdateSentence godoc
@@ -103,19 +106,19 @@ func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request)
 func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.CreateSentenceRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "invalid body", http.StatusBadRequest)
+		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	sentence, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
-		http.Error(w, "not found", http.StatusNotFound)
+		http.Error(w, "sentence not found", http.StatusNotFound)
 		return
 	}
 
@@ -124,11 +127,13 @@ func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request)
 	sentence.Translation = req.Translation
 
 	if err := h.Repo.Update(r.Context(), sentence); err != nil {
-		http.Error(w, "failed to update", http.StatusInternalServerError)
+		http.Error(w, "failed to update sentence", http.StatusInternalServerError)
 		return
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(buildSentenceResponse(sentence))
 }
 
 // DeleteSentence godoc
@@ -146,12 +151,12 @@ func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request)
 func (h *SentenceHandler) DeleteSentence(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	if err := h.Repo.Delete(r.Context(), id); err != nil {
-		http.Error(w, "failed to delete", http.StatusInternalServerError)
+		http.Error(w, "failed to delete sentence", http.StatusInternalServerError)
 		return
 	}
 

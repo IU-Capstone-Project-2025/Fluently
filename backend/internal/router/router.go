@@ -14,9 +14,7 @@ import (
 	"fluently/go-backend/internal/repository/postgres"
 )
 
-func InitRoutes(db *gorm.DB) http.Handler {
-	r := chi.NewRouter()
-
+func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	r.Use(cors.Handler(cors.Options{
 		AllowedOrigins:   []string{"*"}, // или конкретные
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
@@ -44,6 +42,4 @@ func InitRoutes(db *gorm.DB) http.Handler {
 		routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: postgres.NewLearnedWordRepository(db)})
 		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: postgres.NewPreferenceRepository(db)})
 	})
-
-	return r
 }

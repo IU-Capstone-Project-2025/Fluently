@@ -18,10 +18,15 @@ definitions:
     - user_id
     - word_id
     type: object
-  schemas.CreatePreferenceRequst:
+  schemas.CreatePreferenceRequest:
     properties:
+      avata_image:
+        description: Base64
+        items:
+          type: integer
+        type: array
       cefr_level:
-        type: string
+        type: number
       fact_everyday:
         type: boolean
       goal:
@@ -30,8 +35,8 @@ definitions:
         type: string
       notifications:
         type: boolean
-      points:
-        type: integer
+      subscribed:
+        type: boolean
       words_per_day:
         type: integer
     required:
@@ -51,12 +56,22 @@ definitions:
     type: object
   schemas.CreateUserRequest:
     properties:
+      email:
+        type: string
+      google_id:
+        type: string
+      is_active:
+        type: boolean
       name:
+        type: string
+      password_hash:
         type: string
       pref_id:
         type: string
-      sub_level:
-        type: boolean
+      provider:
+        type: string
+      role:
+        type: string
     required:
     - name
     type: object
@@ -80,7 +95,19 @@ definitions:
         example: invalid request
         type: string
     type: object
-  schemas.LearenedWordResponse:
+  schemas.JwtResponse:
+    properties:
+      access_token:
+        example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        type: string
+      expires_in:
+        example: 86400
+        type: integer
+      token_type:
+        example: Bearer
+        type: string
+    type: object
+  schemas.LearnedWordResponse:
     properties:
       cnt_reviewed:
         type: integer
@@ -95,17 +122,24 @@ definitions:
       word_id:
         type: string
     type: object
-  schemas.PreferenceMini:
+  schemas.LoginRequest:
     properties:
-      ceft_level:
+      email:
         type: string
-      id:
+      password:
         type: string
+    required:
+    - email
+    - password
     type: object
   schemas.PreferenceResponse:
     properties:
+      avatar_image:
+        items:
+          type: integer
+        type: array
       cefr_level:
-        type: string
+        type: number
       fact_everyday:
         type: boolean
       goal:
@@ -116,10 +150,24 @@ definitions:
         type: string
       notifications:
         type: boolean
-      points:
-        type: integer
+      subscribed:
+        type: boolean
       words_per_day:
         type: integer
+    type: object
+  schemas.RegisterRequest:
+    properties:
+      email:
+        type: string
+      name:
+        type: string
+      password:
+        minLength: 8
+        type: string
+    required:
+    - email
+    - name
+    - password
     type: object
   schemas.SentenceResponse:
     properties:
@@ -134,14 +182,20 @@ definitions:
     type: object
   schemas.UserResponse:
     properties:
+      created_at:
+        type: string
+      email:
+        type: string
       id:
         type: string
+      is_active:
+        type: boolean
       name:
         type: string
-      preference:
-        $ref: '#/definitions/schemas.PreferenceMini'
-      sub_level:
-        type: boolean
+      pref_id:
+        type: string
+      role:
+        type: string
     type: object
   schemas.WordResponse:
     properties:
@@ -156,20 +210,121 @@ definitions:
       word:
         type: string
     type: object
-host: localhost:8080
+host: localhost
 info:
   contact:
     email: Woolfer0097@yandex.ru
     name: Danila Kochegarov
-    url: http://fluently.com
-  description: Backend API for Fluently Telegram bot
+    url: http://fluently-app.ru
+  description: Backend API for Fluently
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
-  termsOfService: http://fluently.com/terms/
+  termsOfService: http://fluently-app.ru/terms/
   title: Fluently API
   version: "1.0"
 paths:
+  /auth/google:
+    get:
+      consumes:
+      - application/json
+      description: Authenticates with Google using the authorization code flow
+      parameters:
+      - description: Authorization code
+        in: query
+        name: code
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/schemas.JwtResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+      summary: Authenticates with Google
+      tags:
+      - auth
+  /auth/login:
+    post:
+      consumes:
+      - application/json
+      description: Authenticates user and returns JWT
+      parameters:
+      - description: Email & Password
+        in: body
+        name: credentials
+        required: true
+        schema:
+          $ref: '#/definitions/schemas.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/schemas.JwtResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+      summary: Login with email & password
+      tags:
+      - auth
+  /auth/register:
+    post:
+      consumes:
+      - application/json
+      description: Creates a user, hashes password, returns JWT
+      parameters:
+      - description: Registration data
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/schemas.RegisterRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/schemas.JwtResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+      summary: Register with email & password
+      tags:
+      - auth
   /sentences/:
     post:
       consumes:
@@ -436,7 +591,7 @@ paths:
         name: preference
         required: true
         schema:
-          $ref: '#/definitions/schemas.CreatePreferenceRequst'
+          $ref: '#/definitions/schemas.CreatePreferenceRequest'
       produces:
       - application/json
       responses:
@@ -470,7 +625,7 @@ paths:
         name: preference
         required: true
         schema:
-          $ref: '#/definitions/schemas.CreatePreferenceRequst'
+          $ref: '#/definitions/schemas.CreatePreferenceRequest'
       produces:
       - application/json
       responses:
@@ -511,7 +666,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/schemas.LearenedWordResponse'
+              $ref: '#/definitions/schemas.LearnedWordResponse'
             type: array
         "400":
           description: Bad Request
@@ -608,7 +763,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/schemas.LearenedWordResponse'
+            $ref: '#/definitions/schemas.LearnedWordResponse'
         "400":
           description: Bad Request
           schema:
