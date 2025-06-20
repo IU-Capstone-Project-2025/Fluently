@@ -1,3 +1,5 @@
+[![Deploy](https://github.com/FluentlyOrg/Fluently-fork/actions/workflows/deploy.yml/badge.svg)](https://github.com/FluentlyOrg/Fluently-fork/actions/workflows/deploy.yml)
+
 # Fluently - AI-Powered English Learning Platform
 ![Fluently Log](frontend-website/logo.jpg)
 ## Overview
