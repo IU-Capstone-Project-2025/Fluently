@@ -33,6 +33,11 @@ func (h *PickOptionHandler) CreatePickOption(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
+	if len(req.Options) == 0 {
+		http.Error(w, "option cannot be empty", http.StatusBadRequest)
+		return
+	}
+
 	wordID, err := uuid.Parse(req.WordID)
 	if err != nil {
 		http.Error(w, "invalid word_id", http.StatusBadRequest)
@@ -65,7 +70,7 @@ func (h *PickOptionHandler) CreatePickOption(w http.ResponseWriter, r *http.Requ
 func (h *PickOptionHandler) UpdatePickOption(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid uuid", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -91,10 +96,10 @@ func (h *PickOptionHandler) UpdatePickOption(w http.ResponseWriter, r *http.Requ
 	w.WriteHeader(http.StatusOK)
 }
 
-func (h *PickOptionHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
+func (h *PickOptionHandler) DeletePickOption(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid uuid", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -106,10 +111,10 @@ func (h *PickOptionHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) 
 	w.WriteHeader(http.StatusNoContent)
 }
 
-func (h *PickOptionHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
+func (h *PickOptionHandler) GetPickOption(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -123,8 +128,14 @@ func (h *PickOptionHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(buildPickOptionResponse(option))
 }
 
-func (h *PickOptionHandler) List(w http.ResponseWriter, r *http.Request) {
-	options, err := h.Repo.List(r.Context())
+func (h *PickOptionHandler) ListPickOptions(w http.ResponseWriter, r *http.Request) {
+	userID, err := utils.ParseUUIDParam(r, "word_id")
+	if err != nil {
+		http.Error(w, "invalid word_id", http.StatusBadRequest)
+		return
+	}
+
+	options, err := h.Repo.ListByWordID(r.Context(), userID)
 	if err != nil {
 		http.Error(w, "failed to fetch options", http.StatusBadRequest)
 		return

@@ -43,14 +43,14 @@ func buildUserResponse(user *models.User) schemas.UserResponse {
 func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateUserRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "invalid request", http.StatusBadRequest)
+		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	user := models.User{
 		ID:           uuid.New(),
 		Name:         req.Name,
-		Email:        req.Name,
+		Email:        req.Email,
 		PasswordHash: req.PasswordHash,
 		Provider:     req.Provider,
 		GoogleID:     req.GoogleID,
@@ -65,6 +65,7 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusCreated)
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildUserResponse(&user))
 }
 
@@ -82,7 +83,7 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -92,6 +93,7 @@ func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildUserResponse(user))
 }
 
@@ -111,13 +113,13 @@ func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.CreateUserRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "invalid body", http.StatusBadRequest)
+		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
@@ -141,6 +143,8 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildUserResponse(user))
 }
 
@@ -159,12 +163,12 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 func (h *UserHandler) DeleteUser(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	if err := h.Repo.Delete(r.Context(), id); err != nil {
-		http.Error(w, "failed to delte user", http.StatusInternalServerError)
+		http.Error(w, "failed to delete user", http.StatusInternalServerError)
 		return
 	}
 

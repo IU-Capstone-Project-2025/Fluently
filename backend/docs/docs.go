@@ -9,10 +9,10 @@ const docTemplate = `{
     "info": {
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
-        "termsOfService": "http://fluently.com/terms/",
+        "termsOfService": "http://fluently-app.ru/terms/",
         "contact": {
             "name": "Danila Kochegarov",
-            "url": "http://fluently.com",
+            "url": "http://fluently-app.ru",
             "email": "Woolfer0097@yandex.ru"
         },
         "license": {
@@ -24,6 +24,160 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/auth/google": {
+            "get": {
+                "description": "Authenticates with Google using the authorization code flow",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Authenticates with Google",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization code",
+                        "name": "code",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.JwtResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "description": "Authenticates user and returns JWT",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Login with email \u0026 password",
+                "parameters": [
+                    {
+                        "description": "Email \u0026 Password",
+                        "name": "credentials",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/schemas.LoginRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.JwtResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/register": {
+            "post": {
+                "description": "Creates a user, hashes password, returns JWT",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Register with email \u0026 password",
+                "parameters": [
+                    {
+                        "description": "Registration data",
+                        "name": "user",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/schemas.RegisterRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.JwtResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.ErrorResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/sentences/": {
             "post": {
                 "description": "Adds a new sentence for a word",
@@ -429,7 +583,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/schemas.CreatePreferenceRequst"
+                            "$ref": "#/definitions/schemas.CreatePreferenceRequest"
                         }
                     }
                 ],
@@ -486,7 +640,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/schemas.CreatePreferenceRequst"
+                            "$ref": "#/definitions/schemas.CreatePreferenceRequest"
                         }
                     }
                 ],
@@ -540,7 +694,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/schemas.LearenedWordResponse"
+                                "$ref": "#/definitions/schemas.LearnedWordResponse"
                             }
                         }
                     },
@@ -633,7 +787,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/schemas.LearenedWordResponse"
+                            "$ref": "#/definitions/schemas.LearnedWordResponse"
                         }
                     },
                     "400": {
@@ -1062,14 +1216,21 @@ const docTemplate = `{
                 }
             }
         },
-        "schemas.CreatePreferenceRequst": {
+        "schemas.CreatePreferenceRequest": {
             "type": "object",
             "required": [
                 "cefr_level"
             ],
             "properties": {
+                "avata_image": {
+                    "description": "Base64",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
                 "cefr_level": {
-                    "type": "string"
+                    "type": "number"
                 },
                 "fact_everyday": {
                     "type": "boolean"
@@ -1083,8 +1244,8 @@ const docTemplate = `{
                 "notifications": {
                     "type": "boolean"
                 },
-                "points": {
-                    "type": "integer"
+                "subscribed": {
+                    "type": "boolean"
                 },
                 "words_per_day": {
                     "type": "integer"
@@ -1115,14 +1276,29 @@ const docTemplate = `{
                 "name"
             ],
             "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "google_id": {
+                    "type": "string"
+                },
+                "is_active": {
+                    "type": "boolean"
+                },
                 "name": {
+                    "type": "string"
+                },
+                "password_hash": {
                     "type": "string"
                 },
                 "pref_id": {
                     "type": "string"
                 },
-                "sub_level": {
-                    "type": "boolean"
+                "provider": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
                 }
             }
         },
@@ -1156,7 +1332,24 @@ const docTemplate = `{
                 }
             }
         },
-        "schemas.LearenedWordResponse": {
+        "schemas.JwtResponse": {
+            "type": "object",
+            "properties": {
+                "access_token": {
+                    "type": "string",
+                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                },
+                "expires_in": {
+                    "type": "integer",
+                    "example": 86400
+                },
+                "token_type": {
+                    "type": "string",
+                    "example": "Bearer"
+                }
+            }
+        },
+        "schemas.LearnedWordResponse": {
             "type": "object",
             "properties": {
                 "cnt_reviewed": {
@@ -1179,13 +1372,17 @@ const docTemplate = `{
                 }
             }
         },
-        "schemas.PreferenceMini": {
+        "schemas.LoginRequest": {
             "type": "object",
+            "required": [
+                "email",
+                "password"
+            ],
             "properties": {
-                "ceft_level": {
+                "email": {
                     "type": "string"
                 },
-                "id": {
+                "password": {
                     "type": "string"
                 }
             }
@@ -1193,8 +1390,14 @@ const docTemplate = `{
         "schemas.PreferenceResponse": {
             "type": "object",
             "properties": {
+                "avatar_image": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
                 "cefr_level": {
-                    "type": "string"
+                    "type": "number"
                 },
                 "fact_everyday": {
                     "type": "boolean"
@@ -1211,11 +1414,31 @@ const docTemplate = `{
                 "notifications": {
                     "type": "boolean"
                 },
-                "points": {
-                    "type": "integer"
+                "subscribed": {
+                    "type": "boolean"
                 },
                 "words_per_day": {
                     "type": "integer"
+                }
+            }
+        },
+        "schemas.RegisterRequest": {
+            "type": "object",
+            "required": [
+                "email",
+                "name",
+                "password"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string",
+                    "minLength": 8
                 }
             }
         },
@@ -1239,17 +1462,26 @@ const docTemplate = `{
         "schemas.UserResponse": {
             "type": "object",
             "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
+                },
+                "is_active": {
+                    "type": "boolean"
                 },
                 "name": {
                     "type": "string"
                 },
-                "preference": {
-                    "$ref": "#/definitions/schemas.PreferenceMini"
+                "pref_id": {
+                    "type": "string"
                 },
-                "sub_level": {
-                    "type": "boolean"
+                "role": {
+                    "type": "string"
                 }
             }
         },
@@ -1279,11 +1511,11 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "localhost:8080",
+	Host:             "localhost",
 	BasePath:         "/api/v1",
 	Schemes:          []string{},
 	Title:            "Fluently API",
-	Description:      "Backend API for Fluently Telegram bot",
+	Description:      "Backend API for Fluently",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",
