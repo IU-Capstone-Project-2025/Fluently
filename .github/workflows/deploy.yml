@@ -3,8 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main 
-      - nginx-config
+      - main
   workflow_dispatch:
     inputs:
       branch:
