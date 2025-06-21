@@ -30,3 +30,6 @@ go.work
 # End of https://www.toptal.com/developers/gitignore/api/go,dotenv
 
 /tmp/*
+
+# Ignore generated Swagger docs
+docs/
