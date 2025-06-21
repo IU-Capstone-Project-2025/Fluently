@@ -67,29 +67,9 @@ func (h *Handlers) SwaggerOAuthCallbackHandler(w http.ResponseWriter, r *http.Re
 		return
 	}
 
-	// Build minimal JS page that notifies Swagger UI
-	html := fmt.Sprintf(`<!DOCTYPE html><html><body>
-    <script>
-      'use strict';
-      function receiveMessage(e) {
-        console.log('message', e);
-      }
-      window.opener.postMessage({
-        type: 'authorization_response',
-        response: {
-          access_token: '%s',
-          token_type: 'Bearer',
-          expires_in: %d,
-          state: '%s'
-        }
-      }, '*');
-      window.close();
-    </script>
-    </body></html>`, resp.AccessToken, resp.ExpiresIn, state)
-
-	w.Header().Set("Content-Type", "text/html")
-	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(html))
+	// Redirect to Swagger's static oauth2-redirect.html with token in hash fragment
+	redirectTarget := fmt.Sprintf("/swagger/oauth2-redirect.html#access_token=%s&token_type=Bearer&expires_in=%d&state=%s", resp.AccessToken, resp.ExpiresIn, state)
+	http.Redirect(w, r, redirectTarget, http.StatusTemporaryRedirect)
 }
 
 // processGoogleIDTokenForSwagger processes the Google id_token and returns JwtResponse
