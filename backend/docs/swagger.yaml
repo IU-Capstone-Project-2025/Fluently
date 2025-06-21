@@ -103,6 +103,9 @@ definitions:
       expires_in:
         example: 86400
         type: integer
+      refresh_token:
+        example: xYzAbCdEf...
+        type: string
       token_type:
         example: Bearer
         type: string
@@ -210,7 +213,7 @@ definitions:
       word:
         type: string
     type: object
-host: localhost
+host: localhost:8080
 info:
   contact:
     email: Woolfer0097@yandex.ru
@@ -226,6 +229,22 @@ info:
 paths:
   /auth/google:
     get:
+      description: Initiates Google OAuth 2.0 authorization code flow
+      produces:
+      - application/json
+      responses:
+        "302":
+          description: Redirect
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+      summary: Redirects to Google OAuth consent screen
+      tags:
+      - auth
+    post:
       consumes:
       - application/json
       description: Authenticates with Google using the authorization code flow
@@ -255,6 +274,31 @@ paths:
           schema:
             $ref: '#/definitions/schemas.ErrorResponse'
       summary: Authenticates with Google
+      tags:
+      - auth
+  /auth/google/callback:
+    get:
+      description: Exchanges authorization code for tokens and signs user in
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/schemas.JwtResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+      summary: Handles Google OAuth callback
       tags:
       - auth
   /auth/login:
@@ -289,6 +333,40 @@ paths:
           schema:
             $ref: '#/definitions/schemas.ErrorResponse'
       summary: Login with email & password
+      tags:
+      - auth
+  /auth/refresh:
+    post:
+      consumes:
+      - application/json
+      description: Rotates refresh token and returns new access and refresh tokens
+      parameters:
+      - description: Refresh Token
+        in: body
+        name: refreshToken
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/schemas.JwtResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+      summary: Refresh access token
       tags:
       - auth
   /auth/register:
