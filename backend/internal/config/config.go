@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"strings"
@@ -133,8 +134,21 @@ func GetPostgresDSN() string {
 // GoogleOAuthConfig constructs an oauth2.Config based on application settings.
 func GoogleOAuthConfig() *oauth2.Config {
 	cfg := GetConfig()
+
+	// Build redirect URL for Swagger OAuth2 redirect handler.
+	// Example: http://localhost:8080/swagger/oauth2-redirect.html
+	host := cfg.API.AppHost
+	if host == "" {
+		host = "localhost"
+	}
+	scheme := "http"
+	if strings.HasPrefix(host, "https") {
+		scheme = "https"
+	}
+	redirectURL := fmt.Sprintf("%s://%s:%s/swagger/oauth2-redirect.html", scheme, strings.TrimPrefix(host, "https://"), cfg.API.AppPort)
+
 	return &oauth2.Config{
-		RedirectURL:  "https://fluently-app.ru/auth/google/callback",
+		RedirectURL:  redirectURL,
 		ClientID:     cfg.Google.WebClientID,
 		ClientSecret: os.Getenv("WEB_GOOGLE_CLIENT_SECRET"),
 		Scopes:       []string{"openid", "email", "profile"},

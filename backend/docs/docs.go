@@ -436,6 +436,38 @@ const docTemplate = `{
                 }
             }
         },
+        "/swagger/oauth2-redirect.html": {
+            "get": {
+                "description": "Exchanges authorization code for tokens and redirects to Swagger with token",
+                "produces": [
+                    "text/html"
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Handles Swagger OAuth callback",
+                "responses": {
+                    "302": {
+                        "description": "Redirect to Swagger UI",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/schemas.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/users/": {
             "post": {
                 "description": "Registers a new user",
