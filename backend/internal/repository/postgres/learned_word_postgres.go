@@ -17,7 +17,7 @@ func NewLearnedWordRepository(db *gorm.DB) *LearnedWordRepository {
 	return &LearnedWordRepository{db: db}
 }
 
-func (r *LearnedWordRepository) ListByUser(ctx context.Context, userID uuid.UUID) ([]models.LearnedWords, error) {
+func (r *LearnedWordRepository) ListByUserID(ctx context.Context, userID uuid.UUID) ([]models.LearnedWords, error) {
 	var words []models.LearnedWords
 	err := r.db.WithContext(ctx).
 		Where("user_id = ?", userID).

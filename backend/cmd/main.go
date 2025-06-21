@@ -36,9 +36,6 @@ func main() {
 	logger.Init(true) // or false for production
 	defer logger.Log.Sync()
 
-	// Router init
-	r := chi.NewRouter()
-
 	// Database init
 	dsn := appConfig.GetPostgresDSN()
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
@@ -51,6 +48,7 @@ func main() {
 		&models.Preference{},
 		&models.Sentence{},
 		&models.User{},
+		&models.RefreshToken{},
 		&models.Word{},
 		&models.PickOption{},
 		&models.Topic{},
@@ -59,7 +57,9 @@ func main() {
 		logger.Log.Fatal("Failed to auto-migrate", zap.Error(err))
 	}
 
-	router.InitRoutes(db)
+	//Init Router
+	r := chi.NewRouter()
+	router.InitRoutes(db, r)
 
 	r.Get("/swagger/*", httpSwagger.WrapHandler) // Swagger UI
 

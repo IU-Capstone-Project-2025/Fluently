@@ -30,13 +30,13 @@ func (r *PickOptionRepository) GetByID(ctx context.Context, id uuid.UUID) (*mode
 	return &option, nil
 }
 
-func (r *PickOptionRepository) List(ctx context.Context) ([]models.PickOption, error) {
+func (r *PickOptionRepository) ListByWordID(ctx context.Context, wordID uuid.UUID) ([]models.PickOption, error) {
 	var options []models.PickOption
-	if err := r.db.WithContext(ctx).Find(&options).Error; err != nil {
-		return nil, err
-	}
+	err := r.db.WithContext(ctx).
+		Where("word_id = ?", wordID).
+		Find(&options).Error
 
-	return options, nil
+	return options, err
 }
 
 func (r *PickOptionRepository) Update(ctx context.Context, option *models.PickOption) error {

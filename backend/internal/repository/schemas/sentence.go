@@ -9,8 +9,8 @@ type CreateSentenceRequest struct {
 }
 
 type SentenceResponse struct {
-	ID          uuid.UUID `json:"id"`
-	WordID      uuid.UUID `json:"word_id"`
-	Sentence    string    `json:"sentence"`
-	Translation string    `json:"translation"`
+	ID          string `json:"id"`
+	WordID      string `json:"word_id"`
+	Sentence    string `json:"sentence"`
+	Translation string `json:"translation"`
 }
