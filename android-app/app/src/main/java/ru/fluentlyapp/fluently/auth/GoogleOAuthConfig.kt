@@ -7,7 +7,7 @@ object GoogleOAuthConfig {
     const val TOKEN_URI = "https://oauth2.googleapis.com/token"
     const val REDIRECT_URI = "ru.fluentlyapp.fluently:/"
 
-    const val CLIENT_ID = "543284924233-vvqh7nov7srbubgalq5gpe0ng4cb5i8r.apps.googleusercontent.com"
+    const val CLIENT_ID = "505903512988-shk342hc73omca4dnndv3jc98r38llqq.apps.googleusercontent.com"
     const val SCOPE = "https://www.googleapis.com/auth/userinfo.email"
     const val RESPONSE_TYPE = ResponseTypeValues.CODE
 }

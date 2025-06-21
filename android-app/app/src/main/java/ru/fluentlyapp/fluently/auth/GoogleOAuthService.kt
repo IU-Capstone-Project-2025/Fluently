@@ -10,11 +10,12 @@ import net.openid.appauth.AuthorizationService
 import net.openid.appauth.AuthorizationServiceConfiguration
 import net.openid.appauth.TokenRequest
 import ru.fluentlyapp.fluently.auth.model.OAuthToken
+import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.coroutines.suspendCoroutine
 
 @Singleton
-class GoogleOAuthService(
+class GoogleOAuthService @Inject constructor(
     @ApplicationContext applicationContext: Context
 ) {
     private val authService = AuthorizationService(applicationContext)

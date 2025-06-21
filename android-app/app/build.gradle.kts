@@ -23,7 +23,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -46,6 +46,7 @@ dependencies {
     // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+    implementation(libs.androidx.hilt.navigation.compose) // Support for hiltViewModel()
 
     // Jetpack Compose Navigation
     implementation(libs.androidx.navigation)
