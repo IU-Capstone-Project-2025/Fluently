@@ -21,7 +21,7 @@ import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.delay
 import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.navigation.Destination
-import ru.fluentlyapp.fluently.ui.theme.ThemeColors
+import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import kotlin.time.Duration.Companion.milliseconds
 
 @Composable
@@ -40,7 +40,7 @@ fun LaunchScreenContent(
 ) {
     LaunchedEffect(Unit) {
         delay(1000.milliseconds)
-        navHostController.navigate(Destination.LoginScreen)
+        navHostController.navigate(Destination.HomeScreen)
     }
 
     Box(modifier = modifier.background(color = Color.White)) {
@@ -49,7 +49,7 @@ fun LaunchScreenContent(
             text = stringResource(R.string.fluently),
             fontSize = 64.sp,
             fontWeight = FontWeight.Bold,
-            color = ThemeColors.primary
+            color = FluentlyTheme.colors.primary
         )
     }
 }

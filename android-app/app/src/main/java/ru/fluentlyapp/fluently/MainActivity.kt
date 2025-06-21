@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import dagger.hilt.android.AndroidEntryPoint
 import ru.fluentlyapp.fluently.navigation.FluentlyNavHost
+import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -17,7 +18,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            FluentlyNavHost(modifier = Modifier.fillMaxSize())
+            FluentlyTheme {
+                FluentlyNavHost(modifier = Modifier.fillMaxSize())
+            }
         }
     }
 }

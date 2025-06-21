@@ -8,4 +8,7 @@ object Destination {
 
     @Serializable
     object LoginScreen
+
+    @Serializable
+    object HomeScreen
 }
