@@ -407,7 +407,7 @@ func (h *Handlers) GoogleAuthRedirectHandler(w http.ResponseWriter, r *http.Requ
 			scheme = "http"
 		}
 	}
-	oauthCfg.RedirectURL = fmt.Sprintf("%s://%s/swagger/oauth2-redirect.html", scheme, r.Host)
+	oauthCfg.RedirectURL = fmt.Sprintf("%s://%s/auth/swagger/callback", scheme, r.Host)
 
 	url := oauthCfg.AuthCodeURL(state, oauth2.AccessTypeOffline)
 	http.Redirect(w, r, url, http.StatusTemporaryRedirect)
