@@ -37,9 +37,13 @@ func (h *Handlers) SwaggerOAuthCallbackHandler(w http.ResponseWriter, r *http.Re
 	state := r.URL.Query().Get("state")
 
 	oauthCfg := config.GoogleOAuthConfig()
-	scheme := "http"
-	if r.TLS != nil {
-		scheme = "https"
+	scheme := r.Header.Get("X-Forwarded-Proto")
+	if scheme == "" {
+		if r.TLS != nil {
+			scheme = "https"
+		} else {
+			scheme = "http"
+		}
 	}
 	oauthCfg.RedirectURL = fmt.Sprintf("%s://%s/swagger/oauth2-redirect.html", scheme, r.Host)
 
