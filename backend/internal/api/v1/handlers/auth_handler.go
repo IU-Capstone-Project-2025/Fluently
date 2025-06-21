@@ -381,11 +381,18 @@ func (h *Handlers) RefreshTokenHandler(w http.ResponseWriter, r *http.Request) {
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /auth/google [get]
 func (h *Handlers) GoogleAuthRedirectHandler(w http.ResponseWriter, r *http.Request) {
-	state, err := generateRandomState()
-	if err != nil {
-		logger.Log.Error("Failed to generate state", zap.Error(err))
-		http.Error(w, "internal error", http.StatusInternalServerError)
-		return
+	// Use the client-supplied state if present (e.g. Swagger-UI adds its own),
+	// otherwise generate a new one. This prevents state-mismatch warnings like
+	// "Authorization may be unsafe, passed state was changed in server".
+	state := r.URL.Query().Get("state")
+	if state == "" {
+		var err error
+		state, err = generateRandomState()
+		if err != nil {
+			logger.Log.Error("Failed to generate state", zap.Error(err))
+			http.Error(w, "internal error", http.StatusInternalServerError)
+			return
+		}
 	}
 
 	// Store state in a secure cookie for later verification
