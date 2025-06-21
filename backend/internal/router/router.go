@@ -38,6 +38,9 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		w.Write([]byte("ok"))
 	})
 
+	// Swagger OAuth2 redirect handler
+	r.Get("/swagger/oauth2-redirect.html", authHandlers.SwaggerOAuthCallbackHandler)
+
 	// Swagger documentation (public)
 	r.Get("/swagger", func(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/swagger/index.html", http.StatusMovedPermanently)

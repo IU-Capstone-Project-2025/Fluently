@@ -498,6 +498,28 @@ paths:
       summary: Update a sentence
       tags:
       - sentences
+  /swagger/oauth2-redirect.html:
+    get:
+      description: Exchanges authorization code for tokens and redirects to Swagger
+        with token
+      produces:
+      - text/html
+      responses:
+        "302":
+          description: Redirect to Swagger UI
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/schemas.ErrorResponse'
+      summary: Handles Swagger OAuth callback
+      tags:
+      - auth
   /users/:
     post:
       consumes:
