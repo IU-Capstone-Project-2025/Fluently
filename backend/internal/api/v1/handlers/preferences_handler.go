@@ -34,6 +34,7 @@ func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceRespons
 // @Tags         preferences
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id         path      string                          true  "ID пользователя"
 // @Param        preference body      schemas.CreatePreferenceRequest  true  "Данные предпочтений"
 // @Success      201  {object}  schemas.PreferenceResponse
@@ -81,6 +82,7 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 // @Tags         preferences
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id   path      string  true  "ID пользователя"
 // @Success      200  {object}  schemas.PreferenceResponse
 // @Failure      400  {object}  schemas.ErrorResponse
@@ -109,6 +111,7 @@ func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Req
 // @Tags         preferences
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id         path      string                          true  "ID пользователя"
 // @Param        preference body      schemas.CreatePreferenceRequest  true  "Данные предпочтений"
 // @Success      200  {object}  schemas.PreferenceResponse

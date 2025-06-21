@@ -35,6 +35,7 @@ func buildUserResponse(user *models.User) schemas.UserResponse {
 // @Tags         users
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        user  body      schemas.CreateUserRequest  true  "User data"
 // @Success      201  {object}  schemas.UserResponse
 // @Failure      400  {object}  schemas.ErrorResponse
@@ -75,6 +76,7 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 // @Tags         users
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id   path      string  true  "User ID"
 // @Success      200  {object}  schemas.UserResponse
 // @Failure      400  {object}  schemas.ErrorResponse
@@ -103,6 +105,7 @@ func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 // @Tags         users
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id    path      string                   true  "User ID"
 // @Param        user  body      schemas.CreateUserRequest  true  "User data"
 // @Success      200  {object}  schemas.UserResponse
@@ -154,6 +157,7 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 // @Tags         users
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id   path      string  true  "User ID"
 // @Success      204  ""
 // @Failure      400  {object}  schemas.ErrorResponse
