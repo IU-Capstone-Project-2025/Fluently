@@ -1,6 +1,5 @@
 package ru.fluentlyapp.fluently.ui.screens.lessons.choice
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -15,7 +14,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -30,9 +28,8 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kotlinx.coroutines.selects.select
 import ru.fluentlyapp.fluently.R
-import ru.fluentlyapp.fluently.ui.theme.ThemeColors
+import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 
 @Composable
 fun ChoiceScreenContent(
@@ -42,7 +39,7 @@ fun ChoiceScreenContent(
     onVariantClick: (Int) -> Unit,
 ) {
     Column(
-        modifier = modifier.background(color = Color.White),
+        modifier = modifier.background(color = FluentlyTheme.colors.surface),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -103,7 +100,7 @@ fun ChoiceScreenContent(
                             then itemModifier
                         .clip(shape = RoundedCornerShape(12.dp))
                         .fillMaxWidth(fraction = 0.6f)
-                        .background(color = Color.LightGray)
+                        .background(color = FluentlyTheme.colors.surfaceContainerHigh)
                         .padding(16.dp),
                     text = uiState.variants[index],
                 )
@@ -124,7 +121,7 @@ fun ChoiceScreenContent(
                         .clickable(onClick = onContinueClick)
                         .clip(shape = RoundedCornerShape(12.dp))
                         .fillMaxWidth(.6f)
-                        .background(color = ThemeColors.primary)
+                        .background(color = FluentlyTheme.colors.primary)
                         .padding(16.dp)
                 ) {
                     Text(
@@ -132,7 +129,7 @@ fun ChoiceScreenContent(
                         fontSize = 24.sp,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.align(Alignment.Center),
-                        color = Color.White
+                        color = FluentlyTheme.colors.onPrimary
                     )
                 }
             }
@@ -143,17 +140,19 @@ fun ChoiceScreenContent(
 @Preview(device = Devices.PIXEL_7)
 @Composable
 fun ChoiceScreenPreview() {
-    ChoiceScreenContent(
-        modifier = Modifier.fillMaxSize(),
-        uiState = ChoiceScreenUiState(
-            word = "Influence",
-            variants = listOf(
-                "Влияние", "Благодарнсость", "Двойственность", "Комар"
+    FluentlyTheme {
+        ChoiceScreenContent(
+            modifier = Modifier.fillMaxSize(),
+            uiState = ChoiceScreenUiState(
+                word = "Influence",
+                variants = listOf(
+                    "Влияние", "Благодарность", "Двойственность", "Комар"
+                ),
+                correctVariant = 0,
+                selectedVariant = 2,
             ),
-            correctVariant = 0,
-            selectedVariant = 2,
-        ),
-        onContinueClick = {},
-        onVariantClick = {}
-    )
+            onContinueClick = {},
+            onVariantClick = {}
+        )
+    }
 }
