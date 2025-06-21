@@ -72,6 +72,17 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			return
 		}
 
+		// Check whitelist if configured
+		whitelist := config.GetConfig().Swagger.AllowedEmails
+		if len(whitelist) > 0 {
+			email, _ := claims["email"].(string)
+			if !whitelist[email] {
+				logger.Log.Error("Email not whitelisted", zap.String("email", email))
+				http.Error(w, "forbidden", http.StatusForbidden)
+				return
+			}
+		}
+
 		// Extract user ID from claims
 		userIDStr, ok := claims["sub"].(string)
 		if !ok {
