@@ -11,7 +11,6 @@ import (
 	"fluently/go-backend/pkg/logger"
 
 	"github.com/go-chi/chi/v5"
-	httpSwagger "github.com/swaggo/http-swagger"
 	"go.uber.org/zap"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -29,7 +28,7 @@ import (
 // @license.name  MIT
 // @license.url   https://opensource.org/licenses/MIT
 
-// @host      eicAe28r(*&^uebfib
+// @host fluently-app.ru
 // @BasePath  /api/v1
 func main() {
 	appConfig.Init()
@@ -60,12 +59,6 @@ func main() {
 	//Init Router
 	r := chi.NewRouter()
 	router.InitRoutes(db, r)
-
-	r.Get("/swagger/*", httpSwagger.WrapHandler) // Swagger UI
-
-	r.Get("/api/v1/ping", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("pong"))
-	})
 
 	logger.Log.Info("Logger initialization successful!")
 	logger.Log.Info("App starting",

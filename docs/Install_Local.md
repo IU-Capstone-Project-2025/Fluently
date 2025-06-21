@@ -8,6 +8,7 @@ This guide helps you run Fluently on your local machine for development or gradi
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - [Git](https://git-scm.com/)
+- [Makefile](https://c-cpp-notes.vercel.app/docs/c/makefile)
 
 ---
 
@@ -57,14 +58,14 @@ WEB_GOOGLE_CLIENT_ID=some-web-client-id.apps.googleusercontent.com
 ## 3. Start All Services
 From Fluently/backend:
 ```bash
-docker compose up -d --build
+make dev
 ```
 
 ---
 
 ## 4. Access Services
-- **Backend API:** [http://localhost:8070/api/v1/](http://localhost:8080/api/v1/)
-- **Swagger UI:** [http://localhost:8070/swagger/](http://localhost:8080/swagger/)
+- **Backend API:** [http://localhost:8080/api/v1/](http://localhost:8080/api/v1/)
+- **Swagger UI:** [http://localhost:8080/swagger/](http://localhost:8080/swagger/)
 - **Directus:** [http://localhost:8055/admin](http://localhost:8055/)
 
 ---
@@ -78,7 +79,7 @@ docker compose up -d --build
 ## 6. Stopping Services
 From Fluently/backend:
 ```bash
-docker compose down
+make stop
 ```
 
 ---
