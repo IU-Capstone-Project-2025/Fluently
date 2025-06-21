@@ -42,6 +42,9 @@ import (
 // @scope.profile Grants access to profile information
 // @scope.email   Grants access to email address
 
+// @securitydefinitions.oauth2.implicit GoogleOAuth
+// @authorizationurl /auth/google
+
 func main() {
 	appConfig.Init()
 	logger.Init(true) // or false for production
