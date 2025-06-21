@@ -11,6 +11,7 @@ import (
 
 	"fluently/go-backend/internal/api/v1/handlers"
 	"fluently/go-backend/internal/api/v1/routes"
+	authMiddleware "fluently/go-backend/internal/middleware"
 	"fluently/go-backend/internal/repository/postgres"
 )
 
@@ -26,6 +27,13 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	r.Use(middleware.Logger)
 	r.Use(middleware.Recoverer)
 
+	authHandlers := &handlers.Handlers{
+		UserRepo:         postgres.NewUserRepository(db),
+		UserPrefRepo:     postgres.NewPreferenceRepository(db),
+		RefreshTokenRepo: postgres.NewRefreshTokenRepository(db),
+	}
+	routes.RegisterAuthRoutes(r, authHandlers)
+
 	r.Get("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("ok"))
 	})
@@ -35,14 +43,9 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	})
 	r.Get("/swagger/*", httpSwagger.WrapHandler)
 
-	authHandlers := &handlers.Handlers{
-		UserRepo:         postgres.NewUserRepository(db),
-		UserPrefRepo:     postgres.NewPreferenceRepository(db),
-		RefreshTokenRepo: postgres.NewRefreshTokenRepository(db),
-	}
-	routes.RegisterAuthRoutes(r, authHandlers)
-
 	r.Route("/api/v1", func(r chi.Router) {
+		r.Use(authMiddleware.AuthMiddleware)
+
 		routes.RegisterUserRoutes(r, &handlers.UserHandler{Repo: postgres.NewUserRepository(db)})
 		routes.RegisterWordRoutes(r, &handlers.WordHandler{Repo: postgres.NewWordRepository(db)})
 		routes.RegisterSentenceRoutes(r, &handlers.SentenceHandler{Repo: postgres.NewSentenceRepository(db)})
