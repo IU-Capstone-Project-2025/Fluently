@@ -39,10 +39,10 @@ struct HomeScreenView: View {
             VStack (alignment: .leading) {
                 Text("Goal:")
                     .foregroundStyle(.whiteText)
-                    .font(.appFont.largeTitle)
+                    .font(.appFont.largeTitle.bold())
                 Text(goal)
                     .foregroundStyle(.whiteText)
-                    .font(.appFont.largeTitle)
+                    .font(.appFont.largeTitle.bold())
             }
             Spacer()
             AvatarImage(
@@ -95,7 +95,7 @@ struct HomeScreenView: View {
     var startButton: some View {
         Text("Start")
             .foregroundStyle(.whiteText)
-            .font(.appFont.title2)
+            .font(.appFont.title2.bold())
             .padding(.vertical, 6)
             .frame(maxWidth: .infinity)
             .background(

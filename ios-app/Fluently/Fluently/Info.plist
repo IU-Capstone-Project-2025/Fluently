@@ -5,6 +5,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>SedanSC-Regular.ttf</string>
+		<string>Fraunces.ttf</string>
+		<string>Inter-Regular.otf</string>
 	</array>
 </dict>
 </plist>
