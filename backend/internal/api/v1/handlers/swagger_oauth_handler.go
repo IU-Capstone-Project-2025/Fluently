@@ -26,7 +26,7 @@ import (
 // @Success      302  {string}  string "Redirect to Swagger UI"
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /swagger/oauth2-redirect.html [get]
+// @Router       /auth/swagger/callback [get]
 func (h *Handlers) SwaggerOAuthCallbackHandler(w http.ResponseWriter, r *http.Request) {
 	code := r.URL.Query().Get("code")
 	if code == "" {
@@ -45,7 +45,7 @@ func (h *Handlers) SwaggerOAuthCallbackHandler(w http.ResponseWriter, r *http.Re
 			scheme = "http"
 		}
 	}
-	oauthCfg.RedirectURL = fmt.Sprintf("%s://%s/swagger/oauth2-redirect.html", scheme, r.Host)
+	oauthCfg.RedirectURL = fmt.Sprintf("%s://%s/auth/swagger/callback", scheme, r.Host)
 
 	token, err := oauthCfg.Exchange(r.Context(), code)
 	if err != nil {
