@@ -29,7 +29,7 @@ import (
 // @license.name  MIT
 // @license.url   https://opensource.org/licenses/MIT
 
-// @host      fluently-app.ru
+// @host      eicAe28r(*&^uebfib
 // @BasePath  /api/v1
 func main() {
 	appConfig.Init()
