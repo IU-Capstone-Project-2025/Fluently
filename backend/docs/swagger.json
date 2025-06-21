@@ -15,7 +15,7 @@
         },
         "version": "1.0"
     },
-    "host": "localhost:8080",
+    "host": "fluently-app.ru",
     "basePath": "/api/v1",
     "paths": {
         "/auth/google": {
@@ -1615,6 +1615,24 @@
                 "word": {
                     "type": "string"
                 }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "BearerAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        },
+        "GoogleOAuth": {
+            "type": "oauth2",
+            "flow": "accessCode",
+            "authorizationUrl": "/auth/google",
+            "tokenUrl": "/auth/google/callback",
+            "scopes": {
+                "email": "Grants access to email address",
+                "openid": "Grants OpenID scope",
+                "profile": "Grants access to profile information"
             }
         }
     }

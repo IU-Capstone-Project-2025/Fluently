@@ -3,6 +3,7 @@ package config
 import (
 	"log"
 	"os"
+	"strings"
 	"time"
 
 	"golang.org/x/oauth2"
@@ -18,6 +19,7 @@ type Config struct {
 	Database DatabaseConfig
 	Logger   LoggerConfig
 	Google   GoogleConfig
+	Swagger  SwaggerConfig
 }
 
 type AuthConfig struct {
@@ -52,6 +54,10 @@ type GoogleConfig struct {
 	IosClientID     string
 	AndroidClientID string
 	WebClientID     string
+}
+
+type SwaggerConfig struct {
+	AllowedEmails map[string]bool
 }
 
 var cfg *Config
@@ -104,6 +110,9 @@ func Init() {
 			AndroidClientID: viper.GetString("ANDROID_GOOGLE_CLIENT_ID"),
 			WebClientID:     viper.GetString("WEB_GOOGLE_CLIENT_ID"),
 		},
+		Swagger: SwaggerConfig{
+			AllowedEmails: parseEmailWhitelist(viper.GetString("SWAGGER_ALLOWED_EMAILS")),
+		},
 	}
 }
 
@@ -131,4 +140,16 @@ func GoogleOAuthConfig() *oauth2.Config {
 		Scopes:       []string{"openid", "email", "profile"},
 		Endpoint:     google.Endpoint,
 	}
+}
+
+// parseEmailWhitelist converts a comma-separated list into a map for O(1) lookups.
+func parseEmailWhitelist(env string) map[string]bool {
+	result := make(map[string]bool)
+	for _, e := range strings.Split(env, ",") {
+		e = strings.TrimSpace(e)
+		if e != "" {
+			result[e] = true
+		}
+	}
+	return result
 }

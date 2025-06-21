@@ -1623,13 +1623,31 @@ const docTemplate = `{
                 }
             }
         }
+    },
+    "securityDefinitions": {
+        "BearerAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        },
+        "GoogleOAuth": {
+            "type": "oauth2",
+            "flow": "accessCode",
+            "authorizationUrl": "/auth/google",
+            "tokenUrl": "/auth/google/callback",
+            "scopes": {
+                "email": "Grants access to email address",
+                "openid": "Grants OpenID scope",
+                "profile": "Grants access to profile information"
+            }
+        }
     }
 }`
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "localhost:8080",
+	Host:             "fluently-app.ru",
 	BasePath:         "/api/v1",
 	Schemes:          []string{},
 	Title:            "Fluently API",
