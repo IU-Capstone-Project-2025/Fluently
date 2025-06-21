@@ -398,10 +398,14 @@ func (h *Handlers) GoogleAuthRedirectHandler(w http.ResponseWriter, r *http.Requ
 	})
 
 	oauthCfg := config.GoogleOAuthConfig()
-	// Override redirect URL to align with current host (prod or dev)
-	scheme := "http"
-	if r.TLS != nil {
-		scheme = "https"
+	// Detect original scheme: honor X-Forwarded-Proto if behind proxy
+	scheme := r.Header.Get("X-Forwarded-Proto")
+	if scheme == "" {
+		if r.TLS != nil {
+			scheme = "https"
+		} else {
+			scheme = "http"
+		}
 	}
 	oauthCfg.RedirectURL = fmt.Sprintf("%s://%s/swagger/oauth2-redirect.html", scheme, r.Host)
 
