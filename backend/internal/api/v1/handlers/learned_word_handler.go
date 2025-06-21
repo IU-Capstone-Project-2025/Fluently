@@ -33,6 +33,7 @@ func buildLearnedWordResponse(word *models.LearnedWords) schemas.LearnedWordResp
 // @Tags         learned-words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        user_id   path      string  true  "User ID"
 // @Success      200  {array}   schemas.LearnedWordResponse
 // @Failure      400  {object}  schemas.ErrorResponse
@@ -66,6 +67,7 @@ func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Requ
 // @Tags         learned-words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        user_id   path      string  true  "User ID"
 // @Param        word_id   path      string  true  "Word ID"
 // @Success      200  {object}  schemas.LearnedWordResponse
@@ -101,6 +103,7 @@ func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Reque
 // @Tags         learned-words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        learned_word  body      schemas.CreateLearnedWordRequest  true  "Learned word data"
 // @Success      201  ""
 // @Failure      400  {object}  schemas.ErrorResponse
@@ -148,6 +151,7 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 // @Tags         learned-words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        user_id       path      string                        true  "User ID"
 // @Param        word_id       path      string                        true  "Word ID"
 // @Param        learned_word  body      schemas.CreateLearnedWordRequest true  "Learned word data"
@@ -201,6 +205,7 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 // @Tags         learned-words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        user_id   path      string  true  "User ID"
 // @Param        word_id   path      string  true  "Word ID"
 // @Success      204  ""

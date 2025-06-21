@@ -29,6 +29,7 @@ func buildSentenceResponse(sentence *models.Sentence) schemas.SentenceResponse {
 // @Tags         sentences
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        word_id   path      string  true  "Word ID"
 // @Success      200  {array}   schemas.SentenceResponse
 // @Failure      400  {object}  schemas.ErrorResponse
@@ -62,6 +63,7 @@ func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) 
 // @Tags         sentences
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        sentence  body      schemas.CreateSentenceRequest  true  "Sentence data"
 // @Success      201  ""
 // @Failure      400  {object}  schemas.ErrorResponse
@@ -96,6 +98,7 @@ func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request)
 // @Tags         sentences
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id        path      string                        true  "Sentence ID"
 // @Param        sentence  body      schemas.CreateSentenceRequest true  "Sentence data"
 // @Success      200  ""
@@ -142,6 +145,7 @@ func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request)
 // @Tags         sentences
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id   path      string  true  "Sentence ID"
 // @Success      204  ""
 // @Failure      400  {object}  schemas.ErrorResponse

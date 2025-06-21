@@ -40,6 +40,7 @@ func buildWordResponse(w *models.Word) schemas.WordResponse {
 // @Tags         words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Success      200  {array}   schemas.WordResponse
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /words/ [get]
@@ -65,6 +66,7 @@ func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
 // @Tags         words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id   path      string  true  "Word ID"
 // @Success      200  {object}  schemas.WordResponse
 // @Failure      400  {object}  schemas.ErrorResponse
@@ -93,6 +95,7 @@ func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
 // @Tags         words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        word  body      schemas.CreateWordRequest  true  "Word data"
 // @Success      201  {object}  schemas.WordResponse
 // @Failure      400  {object}  schemas.ErrorResponse
@@ -143,6 +146,7 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 // @Tags         words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id    path      string                   true  "Word ID"
 // @Param        word  body      schemas.CreateWordRequest  true  "Word data"
 // @Success      200  {object}  schemas.WordResponse
@@ -207,6 +211,7 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 // @Tags         words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id   path      string  true  "Word ID"
 // @Success      204  ""
 // @Failure      400  {object}  schemas.ErrorResponse
