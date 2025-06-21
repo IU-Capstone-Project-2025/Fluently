@@ -213,7 +213,7 @@ definitions:
       word:
         type: string
     type: object
-host: localhost:8080
+host: fluently-app.ru
 info:
   contact:
     email: Woolfer0097@yandex.ru
@@ -1072,4 +1072,18 @@ paths:
       summary: Get sentences for a word
       tags:
       - sentences
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+  GoogleOAuth:
+    authorizationUrl: /auth/google
+    flow: accessCode
+    scopes:
+      email: Grants access to email address
+      openid: Grants OpenID scope
+      profile: Grants access to profile information
+    tokenUrl: /auth/google/callback
+    type: oauth2
 swagger: "2.0"

@@ -38,10 +38,15 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		w.Write([]byte("ok"))
 	})
 
-	r.Get("/swagger", func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, "/swagger/index.html", http.StatusMovedPermanently)
+	// Swagger routes with optional whitelist protection
+	r.Group(func(r chi.Router) {
+		r.Use(authMiddleware.SwaggerAuthMiddleware)
+
+		r.Get("/swagger", func(w http.ResponseWriter, r *http.Request) {
+			http.Redirect(w, r, "/swagger/index.html", http.StatusMovedPermanently)
+		})
+		r.Get("/swagger/*", httpSwagger.WrapHandler)
 	})
-	r.Get("/swagger/*", httpSwagger.WrapHandler)
 
 	r.Route("/api/v1", func(r chi.Router) {
 		r.Use(authMiddleware.AuthMiddleware)
