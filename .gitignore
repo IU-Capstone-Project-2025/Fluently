@@ -1,2 +1,3 @@
+/analysis/venv
 *.env
 .env
