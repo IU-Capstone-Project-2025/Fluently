@@ -10,7 +10,7 @@ sealed interface Exercise : LessonComponent {
         val doesUserKnow: Boolean?,
         val examples: List<Pair<String, String>> // Pair(sentence, translation)
     ) : Exercise {
-        override val isAnswered = doesUserKnow == null
+        override val isAnswered = doesUserKnow != null
     }
 
     data class ChooseTranslation(

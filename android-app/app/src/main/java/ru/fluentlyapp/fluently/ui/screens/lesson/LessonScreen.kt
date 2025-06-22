@@ -2,6 +2,7 @@ package ru.fluentlyapp.fluently.ui.screens.lesson
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,6 +28,7 @@ import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.model.Exercise
 import ru.fluentlyapp.fluently.model.LessonComponent
 import ru.fluentlyapp.fluently.ui.components.TopAppBar
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.LoadingLessonComponent
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.Exercise
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 
@@ -40,6 +42,8 @@ fun LessonScreen(
 
     Column(
         modifier = modifier.background(color = FluentlyTheme.colors.surface),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         TopAppBar(
             modifier = Modifier.fillMaxWidth(),
@@ -64,7 +68,7 @@ fun LessonScreenContent(
     onUpdateComponent: (newComponent: LessonComponent) -> Unit,
 ) {
     Column(
-        modifier = modifier.background(color = FluentlyTheme.colors.surface),
+        modifier = modifier.background(color = FluentlyTheme.colors.surface).padding(horizontal = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
@@ -79,13 +83,16 @@ fun LessonScreenContent(
                     exercise = uiState.currentComponent,
                     onUpdateExercise = onUpdateComponent
                 )
+            } else if (uiState.currentComponent is LessonComponent.Loading) {
+                LoadingLessonComponent(modifier = Modifier.fillMaxSize())
             }
         }
 
         if (uiState.showContinueButton) {
             Box(
                 modifier = Modifier
-                    .padding(bottom = 64.dp)
+                    .clickable(onClick = onContinue)
+                    .padding(bottom = 32.dp)
                     .clip(RoundedCornerShape(16.dp))
                     .background(color = FluentlyTheme.colors.primary)
                     .fillMaxWidth(.7f)
@@ -102,7 +109,7 @@ fun LessonScreenContent(
         } else {
             Box(
                 modifier = Modifier
-                    .padding(bottom = 64.dp)
+                    .padding(bottom = 32.dp)
                     .height(80.dp)
                     .fillMaxWidth()
             )
@@ -115,7 +122,7 @@ fun LessonScreenContent(
 fun LessonScreenPreview() {
     FluentlyTheme {
         LessonScreenContent(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.background(color = FluentlyTheme.colors.surface).padding(horizontal = 16.dp),
             uiState = LessonScreenUiState(
                 currentComponent = Exercise.ChooseTranslation(
                     word = "Influence",
@@ -124,6 +131,27 @@ fun LessonScreenPreview() {
                     ),
                     correctVariant = 0,
                     selectedVariant = 2,
+                ),
+                showContinueButton = true
+            ),
+            onContinue = {},
+            onUpdateComponent = {}
+        )
+    }
+}
+
+@Preview(device = PIXEL_7)
+@Composable
+fun LessonScreen2Preview() {
+    FluentlyTheme {
+        LessonScreenContent(
+            uiState = LessonScreenUiState(
+                currentComponent = Exercise.NewWord(
+                    word = "awareness",
+                    translation = "осознание",
+                    phoneticTranscription = "/əˈweə.nəs/",
+                    doesUserKnow = null,
+                    examples = listOf("Environmental awareness is rising" to "Экологическое осознание растет")
                 ),
                 showContinueButton = true
             ),

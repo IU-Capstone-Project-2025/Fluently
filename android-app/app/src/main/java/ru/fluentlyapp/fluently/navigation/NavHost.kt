@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ru.fluentlyapp.fluently.ui.screens.home.HomeScreen
 import ru.fluentlyapp.fluently.ui.screens.launch.LaunchScreen
+import ru.fluentlyapp.fluently.ui.screens.lesson.LessonScreen
 import ru.fluentlyapp.fluently.ui.screens.login.LoginScreen
 
 @Composable
@@ -37,7 +38,18 @@ fun FluentlyNavHost(
         composable<Destination.HomeScreen> {
             HomeScreen(
                 modifier = Modifier.fillMaxSize(),
-                onNavigateToLesson = {}
+                onNavigateToLesson = {
+                    navHostController.navigate(Destination.LessonScreen("lesson_id"))
+                }
+            )
+        }
+
+        composable<Destination.LessonScreen> {
+            LessonScreen(
+                modifier = Modifier.fillMaxSize(),
+                onBackClick = {
+                    navHostController.navigate(Destination.HomeScreen)
+                }
             )
         }
     }

@@ -90,7 +90,7 @@ fun ChooseTranslationExercise(
                 modifier = Modifier
                         then itemModifier
                     .clip(shape = RoundedCornerShape(12.dp))
-                    .fillMaxWidth(fraction = 0.6f)
+                    .fillMaxWidth(fraction = 0.8f)
                     .background(color = FluentlyTheme.colors.surfaceContainerHigh)
                     .padding(16.dp),
                 text = exerciseState.answerVariants[index],
