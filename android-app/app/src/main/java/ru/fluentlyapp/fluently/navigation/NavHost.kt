@@ -9,7 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ru.fluentlyapp.fluently.ui.screens.home.HomeScreen
 import ru.fluentlyapp.fluently.ui.screens.launch.LaunchScreen
-import ru.fluentlyapp.fluently.ui.screens.lesson.LessonScreen
+import ru.fluentlyapp.fluently.ui.screens.lesson.LessonFlowScreen
 import ru.fluentlyapp.fluently.ui.screens.login.LoginScreen
 
 @Composable
@@ -45,7 +45,7 @@ fun FluentlyNavHost(
         }
 
         composable<Destination.LessonScreen> {
-            LessonScreen(
+            LessonFlowScreen(
                 modifier = Modifier.fillMaxSize(),
                 onBackClick = {
                     navHostController.navigate(Destination.HomeScreen)

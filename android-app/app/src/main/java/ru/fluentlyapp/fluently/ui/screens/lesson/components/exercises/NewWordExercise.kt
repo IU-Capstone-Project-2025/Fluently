@@ -32,118 +32,140 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.model.Exercise
+import ru.fluentlyapp.fluently.ui.components.ExerciseContinueButton
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
+
+abstract class NewWordController {
+    abstract fun onUserKnowsWord(doesUserKnowWord: Boolean)
+    abstract fun onCompleteExercise()
+}
 
 @Composable
 fun NewWordExercise(
     modifier: Modifier = Modifier,
     exerciseState: Exercise.NewWord,
-    onLearnWordClick: () -> Unit,
-    onKnowWordClick: () -> Unit
+    newWordController: NewWordController,
+    isCompleted: Boolean
 ) {
     Column(
-        modifier = modifier,
-        verticalArrangement = Arrangement.Center,
+        modifier = modifier.background(FluentlyTheme.colors.surface),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Column(
-            modifier = Modifier
-                .verticalScroll(state = rememberScrollState())
-                .fillMaxWidth()
-                .heightIn(max = 600.dp)
-                .clip(RoundedCornerShape(size = 16.dp))
-                .background(color = FluentlyTheme.colors.surfaceContainerHigh)
-                .padding(16.dp)
+            modifier = Modifier.weight(1f).fillMaxWidth(.8f),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = exerciseState.word,
-                fontSize = 40.sp,
-                color = FluentlyTheme.colors.onSurface
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            Text(
-                text = stringResource(R.string.translation),
-                color = FluentlyTheme.colors.onSurfaceVariant
-            )
-            Text(
-                text = exerciseState.translation
-            )
+            Column(
+                modifier = Modifier
+                    .verticalScroll(state = rememberScrollState())
+                    .fillMaxWidth()
+                    .heightIn(max = 600.dp)
+                    .clip(RoundedCornerShape(size = 16.dp))
+                    .background(color = FluentlyTheme.colors.surfaceContainerHigh)
+                    .padding(16.dp)
+            ) {
+                Text(
+                    text = exerciseState.word,
+                    fontSize = 40.sp,
+                    color = FluentlyTheme.colors.onSurface
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                Text(
+                    text = stringResource(R.string.translation),
+                    color = FluentlyTheme.colors.onSurfaceVariant
+                )
+                Text(
+                    text = exerciseState.translation
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+
+                Text(
+                    text = "Примеры",
+                    color = FluentlyTheme.colors.onSurfaceVariant
+                )
+                repeat(exerciseState.examples.size) { index ->
+                    val (english, translation) = exerciseState.examples[index]
+                    Text(text = english)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(text = translation)
+                    if (index != exerciseState.examples.size - 1) {
+                        Box(
+                            modifier = Modifier
+                                .height(16.dp)
+                                .fillMaxWidth(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Spacer(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(1.dp)
+                                    .border(width = 1.dp, color = FluentlyTheme.colors.onSurfaceVariant)
+                            )
+                        }
+                    }
+                }
+            }
+
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text(
-                text = "Примеры",
-                color = FluentlyTheme.colors.onSurfaceVariant
-            )
-            repeat(exerciseState.examples.size) { index ->
-                val (english, translation) = exerciseState.examples[index]
-                Text(text = english)
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(text = translation)
-                if (index != exerciseState.examples.size - 1) {
-                    Box(
-                        modifier = Modifier
-                            .height(16.dp)
-                            .fillMaxWidth(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Spacer(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(1.dp)
-                                .border(width = 1.dp, color = FluentlyTheme.colors.onSurfaceVariant)
+            Row(modifier = Modifier.fillMaxWidth()) {
+                Box(
+                    modifier = Modifier
+                        .alpha(if (exerciseState.doesUserKnow == false) .3f else 1f)
+                        .clip(RoundedCornerShape(12.dp))
+                        .clickable(
+                            enabled = !isCompleted,
+                            onClick = { newWordController.onUserKnowsWord(true) }
                         )
-                    }
+                        .border(
+                            color = FluentlyTheme.colors.onSurface,
+                            width = 2.dp,
+                            shape = RoundedCornerShape(12.dp)
+                        )
+                        .weight(1f)
+                        .padding(16.dp)
+                ) {
+                    Text(
+                        modifier = Modifier.fillMaxWidth(),
+                        text = "ЗНАЮ",
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                        color = FluentlyTheme.colors.onSurfaceVariant
+                    )
+                }
+
+                Spacer(modifier = Modifier.width(16.dp))
+
+                Box(
+                    modifier = Modifier
+                        .alpha(if (exerciseState.doesUserKnow == true) .3f else 1f)
+                        .clip(RoundedCornerShape(12.dp))
+                        .clickable(
+                            enabled = !isCompleted,
+                            onClick = { newWordController.onUserKnowsWord(false) }
+                        )
+                        .weight(1f)
+                        .background(color = FluentlyTheme.colors.secondary)
+                        .padding(16.dp),
+                ) {
+                    Text(
+                        modifier = Modifier.fillMaxWidth(),
+                        text = "УЧИТЬ",
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                        color = FluentlyTheme.colors.onPrimary
+                    )
                 }
             }
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Row(modifier = Modifier.fillMaxWidth()) {
-            Box(
-                modifier = Modifier
-                    .alpha(if (exerciseState.doesUserKnow == false) .3f else 1f)
-                    .clickable(onClick = onKnowWordClick)
-                    .clip(RoundedCornerShape(12.dp))
-                    .border(
-                        color = FluentlyTheme.colors.onSurface,
-                        width = 2.dp,
-                        shape = RoundedCornerShape(12.dp)
-                    )
-                    .weight(1f)
-                    .padding(16.dp)
-            ) {
-                Text(
-                    modifier = Modifier.fillMaxWidth(),
-                    text = "ЗНАЮ",
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center,
-                    color = FluentlyTheme.colors.onSurfaceVariant
-                )
-            }
-
-            Spacer(modifier = Modifier.width(16.dp))
-
-            Box(
-                modifier = Modifier
-                    .alpha(if (exerciseState.doesUserKnow == true) .3f else 1f)
-                    .clickable(onClick = onLearnWordClick)
-                    .clip(RoundedCornerShape(12.dp))
-                    .weight(1f)
-                    .background(color = FluentlyTheme.colors.secondary)
-                    .padding(16.dp),
-            ) {
-                Text(
-                    modifier = Modifier.fillMaxWidth(),
-                    text = "УЧИТЬ",
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center,
-                    color = FluentlyTheme.colors.onPrimary
-                )
-            }
-        }
+        ExerciseContinueButton(
+            modifier = Modifier.fillMaxWidth(.7f).padding(32.dp).height(80.dp),
+            enabled = isCompleted,
+            onClick = newWordController::onCompleteExercise
+        )
     }
-
 }
 
 @Preview(device = Devices.PIXEL_7)
@@ -157,9 +179,7 @@ fun NewWordExercisePreview() {
             contentAlignment = Alignment.Center
         ) {
             NewWordExercise(
-                modifier = Modifier
-                    .background(color = FluentlyTheme.colors.surface)
-                    .fillMaxWidth(.8f),
+                modifier = Modifier.fillMaxSize(),
                 exerciseState = Exercise.NewWord(
                     word = "Deprecation",
                     phoneticTranscription = "/ˌdep.rəˈkeɪ.ʃən/",
@@ -172,8 +192,11 @@ fun NewWordExercisePreview() {
                                 "Устаревание компонентов - главная причина конфликтов в Андроиде",
                     )
                 ),
-                onLearnWordClick = {},
-                onKnowWordClick = {}
+                newWordController = object : NewWordController() {
+                    override fun onUserKnowsWord(doesUserKnowWord: Boolean) {}
+                    override fun onCompleteExercise() {}
+                },
+                isCompleted = true
             )
         }
     }
