@@ -31,8 +31,11 @@ import (
 // @host fluently-app.ru
 // @BasePath  /api/v1
 
-// @securitydefinitions.oauth2.implicit GoogleOAuth
-// @authorizationurl /auth/google
+// @securityDefinitions.apikey BearerAuth
+// @in header
+// @name Authorization
+// @description Type "Bearer" followed by a space and JWT token.
+
 func main() {
 	appConfig.Init()
 	logger.Init(true) // or false for production
