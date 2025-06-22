@@ -333,16 +333,19 @@ func (h *Handlers) RefreshTokenHandler(w http.ResponseWriter, r *http.Request) {
 
 	rt, err := h.RefreshTokenRepo.GetByToken(r.Context(), req.RefreshToken)
 	if err != nil {
-		if rt.Revoked {
-			logger.Log.Error("Invalid refresh token", zap.Error(err))
-			http.Error(w, "invalid refresh token", http.StatusUnauthorized)
-			return
-		} else if rt.ExpiresAt.Before(time.Now()) {
-			logger.Log.Error("Refresh token expired", zap.Error(err))
-			http.Error(w, "invalid refresh token", http.StatusUnauthorized)
-			return
-		}
-		logger.Log.Error("Invalid refresh token", zap.Error(err))
+		logger.Log.Error("Refresh token not found", zap.Error(err))
+		http.Error(w, "invalid refresh token", http.StatusUnauthorized)
+		return
+	}
+
+	if rt.Revoked {
+		logger.Log.Error("Refresh token revoked", zap.String("token_id", rt.ID.String()))
+		http.Error(w, "invalid refresh token", http.StatusUnauthorized)
+		return
+	}
+
+	if rt.ExpiresAt.Before(time.Now()) {
+		logger.Log.Error("Refresh token expired", zap.String("token_id", rt.ID.String()))
 		http.Error(w, "invalid refresh token", http.StatusUnauthorized)
 		return
 	}

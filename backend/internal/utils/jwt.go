@@ -17,6 +17,9 @@ var TokenAuth *jwtauth.JWTAuth
 // InitJWTAuth initializes the JWT authenticator with the secret from config
 func InitJWTAuth() {
 	cfg := config.GetConfig()
+	if cfg.Auth.JWTSecret == "" {
+		panic("JWT_SECRET environment variable is required but not set")
+	}
 	TokenAuth = jwtauth.New("HS256", []byte(cfg.Auth.JWTSecret), nil)
 }
 

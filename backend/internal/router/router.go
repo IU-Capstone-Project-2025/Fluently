@@ -38,7 +38,7 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		RefreshTokenRepo: postgres.NewRefreshTokenRepository(db),
 	}
 
-	// Public routes
+	// Public routes (NO AUTHENTICATION REQUIRED)
 	routes.RegisterAuthRoutes(r, authHandlers)
 
 	r.Get("/health", func(w http.ResponseWriter, r *http.Request) {
