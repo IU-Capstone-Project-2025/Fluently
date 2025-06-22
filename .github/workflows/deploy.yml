@@ -3,7 +3,14 @@ name: Deploy
 on:
   push:
     branches:
-      - main 
+      - main
+      - develop
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to deploy"
+        required: false
+        default: "main"
 
 jobs:
   deploy:
@@ -20,7 +27,14 @@ jobs:
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.DEPLOY_SSH_KEY }}
           script: |
-            cd /home/deploy/Fluently-fork
-            git pull origin ${{ github.ref_name }}
+            cd /home/deploy/Fluently-fork/backend
+            git checkout ${{ github.event.inputs.branch || github.ref_name }}
+            git pull origin ${{ github.event.inputs.branch || github.ref_name }}
             docker compose down
             docker compose up -d --build
+
+            # Should speed up the proccess, and be used instead of docker compose up -d --build
+            # But it does not work 
+            # //TODO
+            # docker build --build-arg BUILDKIT_INLINE_CACHE=1 -t fluently-app .
+            
