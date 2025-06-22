@@ -1,6 +1,10 @@
 package ru.fluentlyapp.fluently.ui.screens.lesson
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.togetherWith
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import ru.fluentlyapp.fluently.model.Exercise
@@ -18,27 +22,41 @@ fun LessonComponentRenderer(
     chooseTranslationController: ChooseTranslationController,
     newWordController: NewWordController,
 ) {
-    when (component) {
-        is LessonComponent.Loading -> {
-            LoadingLessonComponent(modifier = modifier)
-        }
-
-        is Exercise.ChooseTranslation -> {
-            ChooseTranslationExercise(
-                modifier = modifier,
-                exerciseState = component,
-                chooseTranslationController = chooseTranslationController,
-                isCompleted = component.isAnswered
+    AnimatedContent(
+        targetState = component,
+        transitionSpec = {
+            slideInHorizontally(
+                tween(500),
+                initialOffsetX = { it }
+            ) togetherWith slideOutHorizontally(
+                tween(500),
+                targetOffsetX = { -it }
             )
-        }
+        },
+        contentKey = { it::class.simpleName }
+    ) { targetComponent ->
+        when (targetComponent) {
+            is LessonComponent.Loading -> {
+                LoadingLessonComponent(modifier = modifier)
+            }
 
-        is Exercise.NewWord -> {
-            NewWordExercise(
-                modifier = modifier,
-                exerciseState = component,
-                newWordController = newWordController,
-                isCompleted = component.isAnswered
-            )
+            is Exercise.ChooseTranslation -> {
+                ChooseTranslationExercise(
+                    modifier = modifier,
+                    exerciseState = targetComponent,
+                    chooseTranslationController = chooseTranslationController,
+                    isCompleted = targetComponent.isAnswered
+                )
+            }
+
+            is Exercise.NewWord -> {
+                NewWordExercise(
+                    modifier = modifier,
+                    exerciseState = targetComponent,
+                    newWordController = newWordController,
+                    isCompleted = targetComponent.isAnswered
+                )
+            }
         }
     }
 }
