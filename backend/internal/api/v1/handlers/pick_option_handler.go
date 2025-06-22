@@ -36,7 +36,7 @@ func buildPickOptionResponse(option *models.PickOption) schemas.PickOptionRespon
 // @Success      201  {object}  schemas.PickOptionResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /pick-options/ [post]
+// @Router       /api/v1/pick-options/ [post]
 func (h *PickOptionHandler) CreatePickOption(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreatePickOptionRequest
 
@@ -92,7 +92,7 @@ func (h *PickOptionHandler) CreatePickOption(w http.ResponseWriter, r *http.Requ
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /pick-options/{id} [put]
+// @Router       /api/v1/pick-options/{id} [put]
 func (h *PickOptionHandler) UpdatePickOption(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -133,7 +133,7 @@ func (h *PickOptionHandler) UpdatePickOption(w http.ResponseWriter, r *http.Requ
 // @Success      204  ""
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /pick-options/{id} [delete]
+// @Router       /api/v1/pick-options/{id} [delete]
 func (h *PickOptionHandler) DeletePickOption(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -160,7 +160,7 @@ func (h *PickOptionHandler) DeletePickOption(w http.ResponseWriter, r *http.Requ
 // @Success      200  {object}  schemas.PickOptionResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
-// @Router       /pick-options/{id} [get]
+// @Router       /api/v1/pick-options/{id} [get]
 func (h *PickOptionHandler) GetPickOption(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -189,7 +189,7 @@ func (h *PickOptionHandler) GetPickOption(w http.ResponseWriter, r *http.Request
 // @Success      200  {array}   schemas.PickOptionResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /words/{word_id}/pick-options [get]
+// @Router       /api/v1/words/{word_id}/pick-options [get]
 func (h *PickOptionHandler) ListPickOptions(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {

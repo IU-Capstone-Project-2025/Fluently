@@ -18,7 +18,7 @@ import (
 
 // @title           Fluently API
 // @version         1.0
-// @description     Backend API for Fluently
+// @description     Backend API for Fluently. Note: Auth routes are available at root level (/auth/*), while other API routes are under /api/v1/*
 // @termsOfService  http://fluently-app.ru/terms/
 
 // @contact.name   Danila Kochegarov
@@ -29,7 +29,7 @@ import (
 // @license.url   https://opensource.org/licenses/MIT
 
 // @host fluently-app.ru
-// @BasePath  /api/v1
+// @BasePath  /
 
 // @securityDefinitions.apikey BearerAuth
 // @in header

@@ -34,7 +34,7 @@ func buildTopicResponse(topic *models.Topic) schemas.TopicResponse {
 // @Success      200  {object}  schemas.TopicResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
-// @Router       /topics/{id} [get]
+// @Router       /api/v1/topics/{id} [get]
 func (h *TopicHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -64,7 +64,7 @@ func (h *TopicHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /topics/{id}/main [get]
+// @Router       /api/v1/topics/{id}/main [get]
 func (h *TopicHandler) GetMainTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -102,7 +102,7 @@ func (h *TopicHandler) GetMainTopic(w http.ResponseWriter, r *http.Request) {
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /topics/{id}/path [get]
+// @Router       /api/v1/topics/{id}/path [get]
 func (h *TopicHandler) GetPathToMainTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -150,7 +150,7 @@ func (h *TopicHandler) GetPathToMainTopic(w http.ResponseWriter, r *http.Request
 // @Success      201  {object}  schemas.TopicResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /topics/ [post]
+// @Router       /api/v1/topics/ [post]
 func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateTopicRequest
 
@@ -186,7 +186,7 @@ func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /topics/{id} [put]
+// @Router       /api/v1/topics/{id} [put]
 func (h *TopicHandler) UpdateTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -228,7 +228,7 @@ func (h *TopicHandler) UpdateTopic(w http.ResponseWriter, r *http.Request) {
 // @Success      204  ""
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /topics/{id} [delete]
+// @Router       /api/v1/topics/{id} [delete]
 func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
