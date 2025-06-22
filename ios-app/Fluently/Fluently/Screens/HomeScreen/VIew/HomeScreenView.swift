@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct HomeScreenView: View {
+    @EnvironmentObject var account: AccountData
+    @StateObject private var authViewModel = GoogleAuthViewModel()
 
     // MARK: - Properties
     @State var goal: String = "Traveling"
@@ -63,6 +65,8 @@ struct HomeScreenView: View {
             LessonInfo(minutes: 10, seconds: 20)
             startButton
 
+            logoutButton
+
             Spacer()
         }
         .padding(.top, Const.gridInfoVerticalPadding)
@@ -103,6 +107,17 @@ struct HomeScreenView: View {
                     .fill(.blackFluently)
             )
             .padding(.horizontal, Const.horizontalPadding * 3)
+    }
+
+    var logoutButton: some View {
+        Button {
+            authViewModel.signOut()
+            account.isLoggined = false
+        } label: {
+            Text("sign out")
+                .foregroundStyle(.red)
+                .font(.title)
+        }
     }
 }
 

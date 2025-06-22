@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct AvatarImage: View{
+    @EnvironmentObject var account: AccountData
+
     let size: CGFloat
     @State var icon: Image = Image(systemName: "person")
 
     var body: some View {
         Button {
 //            TODO: open profile
+            print("Name: \(account.name)")
         } label: {
             icon
                 .resizable()
