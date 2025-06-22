@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"net/url"
 	"time"
 
 	"fluently/go-backend/internal/config"
@@ -572,6 +573,23 @@ func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, g
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(resp)
+	// For web OAuth callback, redirect to frontend profile page with user data
+	scheme := r.Header.Get("X-Forwarded-Proto")
+	if scheme == "" {
+		if r.TLS != nil {
+			scheme = "https"
+		} else {
+			scheme = "http"
+		}
+	}
+
+	// Encode user data as URL parameters
+	redirectURL := fmt.Sprintf("%s://%s/profile.html?name=%s&email=%s&picture=%s&access_token=%s",
+		scheme, r.Host,
+		url.QueryEscape(user.Name),
+		url.QueryEscape(user.Email),
+		url.QueryEscape(avatar),
+		url.QueryEscape(resp.AccessToken))
+
+	http.Redirect(w, r, redirectURL, http.StatusTemporaryRedirect)
 }
