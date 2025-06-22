@@ -11,4 +11,7 @@ object Destination {
 
     @Serializable
     object HomeScreen
+
+    @Serializable
+    data class LessonScreen(val lessonId: String)
 }

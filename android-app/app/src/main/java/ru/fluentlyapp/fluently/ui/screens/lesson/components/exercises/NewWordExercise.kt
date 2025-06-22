@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.ui.components.exercises
+package ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

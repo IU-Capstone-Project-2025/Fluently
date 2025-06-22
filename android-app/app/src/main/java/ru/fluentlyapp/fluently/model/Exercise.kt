@@ -1,6 +1,6 @@
 package ru.fluentlyapp.fluently.model
 
-sealed interface Exercise {
+sealed interface Exercise : LessonComponent {
     val isAnswered: Boolean
 
     data class NewWord(

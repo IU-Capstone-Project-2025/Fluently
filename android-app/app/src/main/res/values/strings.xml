@@ -2,6 +2,7 @@
     <string name="app_name">Fluently</string>
     <string name="fluently">Fluently</string>
     <string name="choose_correct_translation">Выберите верный перевод</string>
-    <string name="continue_to_next_exercise">К следующему упражнению</string>
+    <string name="continue_to_next_exercise">ПРОДОЛЖИТЬ</string>
     <string name="translation">Перевод</string>
+    <string name="lesson_is_loading">УРОК ЗАГРУЖАЕТСЯ</string>
 </resources>

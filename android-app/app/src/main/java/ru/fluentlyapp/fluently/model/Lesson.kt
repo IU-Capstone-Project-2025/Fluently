@@ -2,5 +2,6 @@ package ru.fluentlyapp.fluently.model
 
 data class Lesson(
     val lessonId: String,
-    val exercises: List<Exercise>
+    val components: List<LessonComponent>,
+    val currentLessonComponentIndex: Int = 0
 )
