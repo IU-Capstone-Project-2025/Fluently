@@ -28,6 +28,7 @@ jobs:
           key: ${{ secrets.DEPLOY_SSH_KEY }}
           script: |
             cd /home/deploy/Fluently-fork/backend
+            git checkout ${{ github.event.inputs.branch || github.ref_name }}
             git pull origin ${{ github.event.inputs.branch || github.ref_name }}
             docker compose down
             docker compose up -d --build
