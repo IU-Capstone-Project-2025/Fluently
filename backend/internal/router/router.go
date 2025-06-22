@@ -2,6 +2,8 @@ package router
 
 import (
 	"net/http"
+	"os"
+	"path/filepath"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
@@ -45,10 +47,25 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		w.Write([]byte("ok"))
 	})
 
-	// Swagger documentation (public)
+	// Custom authenticated Swagger UI (recommended)
 	r.Get("/swagger", func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, "/swagger/index.html", http.StatusMovedPermanently)
+		http.Redirect(w, r, "/swagger-auth", http.StatusMovedPermanently)
 	})
+
+	// Serve custom Swagger UI with authentication
+	r.Get("/swagger-auth", func(w http.ResponseWriter, r *http.Request) {
+		// Check if file exists
+		filePath := filepath.Join("static", "swagger-auth.html")
+		if _, err := os.Stat(filePath); os.IsNotExist(err) {
+			// Fallback to regular swagger if custom file doesn't exist
+			http.Redirect(w, r, "/swagger/index.html", http.StatusTemporaryRedirect)
+			return
+		}
+		http.ServeFile(w, r, filePath)
+	})
+
+	// Original Swagger documentation (fallback)
+	r.Get("/swagger/index.html", httpSwagger.WrapHandler)
 	r.Get("/swagger/*", httpSwagger.WrapHandler)
 
 	// Protected routes using go-chi/jwtauth
