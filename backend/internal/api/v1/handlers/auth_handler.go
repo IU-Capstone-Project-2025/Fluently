@@ -333,16 +333,19 @@ func (h *Handlers) RefreshTokenHandler(w http.ResponseWriter, r *http.Request) {
 
 	rt, err := h.RefreshTokenRepo.GetByToken(r.Context(), req.RefreshToken)
 	if err != nil {
-		if rt.Revoked {
-			logger.Log.Error("Invalid refresh token", zap.Error(err))
-			http.Error(w, "invalid refresh token", http.StatusUnauthorized)
-			return
-		} else if rt.ExpiresAt.Before(time.Now()) {
-			logger.Log.Error("Refresh token expired", zap.Error(err))
-			http.Error(w, "invalid refresh token", http.StatusUnauthorized)
-			return
-		}
-		logger.Log.Error("Invalid refresh token", zap.Error(err))
+		logger.Log.Error("Refresh token not found", zap.Error(err))
+		http.Error(w, "invalid refresh token", http.StatusUnauthorized)
+		return
+	}
+
+	if rt.Revoked {
+		logger.Log.Error("Refresh token revoked", zap.String("token_id", rt.ID.String()))
+		http.Error(w, "invalid refresh token", http.StatusUnauthorized)
+		return
+	}
+
+	if rt.ExpiresAt.Before(time.Now()) {
+		logger.Log.Error("Refresh token expired", zap.String("token_id", rt.ID.String()))
 		http.Error(w, "invalid refresh token", http.StatusUnauthorized)
 		return
 	}
@@ -374,16 +377,30 @@ func (h *Handlers) RefreshTokenHandler(w http.ResponseWriter, r *http.Request) {
 
 // GoogleAuthRedirectHandler godoc
 // @Summary      Redirects to Google OAuth consent screen
-// @Description  Initiates Google OAuth 2.0 authorization code flow
+// @Description  Initiates Google OAuth 2.0 authorization code flow for mobile apps
 // @Tags         auth
 // @Produce      json
+// @Param        redirect_uri   query     string  false  "Custom redirect URI for mobile apps"
 // @Success      302  {string}  string "Redirect"
+// @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /auth/google [get]
 func (h *Handlers) GoogleAuthRedirectHandler(w http.ResponseWriter, r *http.Request) {
-	// Use the client-supplied state if present (e.g. Swagger-UI adds its own),
-	// otherwise generate a new one. This prevents state-mismatch warnings like
-	// "Authorization may be unsafe, passed state was changed in server".
+	// Get custom redirect URI from query params (for mobile apps)
+	redirectURI := r.URL.Query().Get("redirect_uri")
+	if redirectURI == "" {
+		// Default redirect for web clients
+		scheme := r.Header.Get("X-Forwarded-Proto")
+		if scheme == "" {
+			if r.TLS != nil {
+				scheme = "https"
+			} else {
+				scheme = "http"
+			}
+		}
+		redirectURI = fmt.Sprintf("%s://%s/auth/google/callback", scheme, r.Host)
+	}
+
 	state := r.URL.Query().Get("state")
 	if state == "" {
 		var err error
@@ -405,16 +422,7 @@ func (h *Handlers) GoogleAuthRedirectHandler(w http.ResponseWriter, r *http.Requ
 	})
 
 	oauthCfg := config.GoogleOAuthConfig()
-	// Detect original scheme: honor X-Forwarded-Proto if behind proxy
-	scheme := r.Header.Get("X-Forwarded-Proto")
-	if scheme == "" {
-		if r.TLS != nil {
-			scheme = "https"
-		} else {
-			scheme = "http"
-		}
-	}
-	oauthCfg.RedirectURL = fmt.Sprintf("%s://%s/auth/swagger/callback", scheme, r.Host)
+	oauthCfg.RedirectURL = redirectURI
 
 	url := oauthCfg.AuthCodeURL(state, oauth2.AccessTypeOffline)
 	http.Redirect(w, r, url, http.StatusTemporaryRedirect)

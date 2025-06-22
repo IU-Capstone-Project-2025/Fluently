@@ -2,14 +2,14 @@ package middleware
 
 import (
 	"context"
+	"encoding/json"
 	"net/http"
-	"strings"
 
 	"fluently/go-backend/internal/config"
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/pkg/logger"
 
-	"github.com/golang-jwt/jwt/v4"
+	"github.com/go-chi/jwtauth/v5"
 	"github.com/google/uuid"
 	"go.uber.org/zap"
 )
@@ -20,55 +20,21 @@ const (
 	UserContextKey contextKey = "user"
 )
 
-// AuthMiddleware is a middleware that checks for a valid JWT token
-func AuthMiddleware(next http.Handler) http.Handler {
+// CustomAuthenticator is a custom version of jwtauth.Authenticator that returns JSON errors
+// instead of plain text and adds user information to context
+func CustomAuthenticator(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		// Get the Authorization header
-		authHeader := r.Header.Get("Authorization")
-		if authHeader == "" {
-			logger.Log.Error("No authorization header")
-			http.Error(w, "unauthorized", http.StatusUnauthorized)
-			return
-		}
-
-		// Check if the header has the correct format
-		parts := strings.Split(authHeader, " ")
-		if len(parts) != 2 || parts[0] != "Bearer" {
-			logger.Log.Error("Invalid authorization header format")
-			http.Error(w, "unauthorized", http.StatusUnauthorized)
-			return
-		}
-
-		// Get the token
-		tokenString := parts[1]
-
-		// Parse and validate the token
-		token, err := jwt.Parse(tokenString, func(token *jwt.Token) (any, error) {
-			// Validate the signing method
-			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-				return nil, jwt.ErrSignatureInvalid
-			}
-			return []byte(config.GetConfig().Auth.JWTSecret), nil
-		})
+		token, claims, err := jwtauth.FromContext(r.Context())
 
 		if err != nil {
-			logger.Log.Error("Failed to parse token", zap.Error(err))
-			http.Error(w, "unauthorized", http.StatusUnauthorized)
+			logger.Log.Error("JWT authentication error", zap.Error(err))
+			writeJSONError(w, "unauthorized", http.StatusUnauthorized)
 			return
 		}
 
-		// Check if the token is valid
-		if !token.Valid {
-			logger.Log.Error("Invalid token")
-			http.Error(w, "unauthorized", http.StatusUnauthorized)
-			return
-		}
-
-		// Extract claims
-		claims, ok := token.Claims.(jwt.MapClaims)
-		if !ok {
-			logger.Log.Error("Invalid token claims")
-			http.Error(w, "unauthorized", http.StatusUnauthorized)
+		if token == nil {
+			logger.Log.Error("Invalid JWT token")
+			writeJSONError(w, "unauthorized", http.StatusUnauthorized)
 			return
 		}
 
@@ -78,7 +44,7 @@ func AuthMiddleware(next http.Handler) http.Handler {
 			email, _ := claims["email"].(string)
 			if !whitelist[email] {
 				logger.Log.Error("Email not whitelisted", zap.String("email", email))
-				http.Error(w, "forbidden", http.StatusForbidden)
+				writeJSONError(w, "forbidden", http.StatusForbidden)
 				return
 			}
 		}
@@ -87,7 +53,7 @@ func AuthMiddleware(next http.Handler) http.Handler {
 		userIDStr, ok := claims["sub"].(string)
 		if !ok {
 			logger.Log.Error("Invalid user ID in token")
-			http.Error(w, "unauthorized", http.StatusUnauthorized)
+			writeJSONError(w, "unauthorized", http.StatusUnauthorized)
 			return
 		}
 
@@ -95,13 +61,18 @@ func AuthMiddleware(next http.Handler) http.Handler {
 		userID, err := uuid.Parse(userIDStr)
 		if err != nil {
 			logger.Log.Error("Invalid UUID in token", zap.Error(err))
-			http.Error(w, "unauthorized", http.StatusUnauthorized)
+			writeJSONError(w, "unauthorized", http.StatusUnauthorized)
 			return
 		}
 
-		// Create user context
+		// Create user context with additional info from claims
+		email, _ := claims["email"].(string)
+		role, _ := claims["role"].(string)
+
 		user := &models.User{
-			ID: userID,
+			ID:    userID,
+			Email: email,
+			Role:  role,
 		}
 
 		// Add user to context
@@ -116,4 +87,11 @@ func GetUserFromContext(ctx context.Context) *models.User {
 		return user
 	}
 	return nil
+}
+
+// writeJSONError writes a JSON error response
+func writeJSONError(w http.ResponseWriter, message string, statusCode int) {
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(statusCode)
+	json.NewEncoder(w).Encode(map[string]string{"error": message})
 }

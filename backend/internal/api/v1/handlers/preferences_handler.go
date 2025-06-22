@@ -40,7 +40,7 @@ func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceRespons
 // @Success      201  {object}  schemas.PreferenceResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /users/{id}/preferences/ [post]
+// @Router       /api/v1/users/{id}/preferences/ [post]
 func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -87,7 +87,7 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 // @Success      200  {object}  schemas.PreferenceResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
-// @Router       /users/{id}/preferences/ [get]
+// @Router       /api/v1/users/{id}/preferences/ [get]
 func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -118,7 +118,7 @@ func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Req
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /users/{id}/preferences/ [put]
+// @Router       /api/v1/users/{id}/preferences/ [put]
 func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {

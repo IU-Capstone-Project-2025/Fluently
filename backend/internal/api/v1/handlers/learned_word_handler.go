@@ -38,7 +38,7 @@ func buildLearnedWordResponse(word *models.LearnedWords) schemas.LearnedWordResp
 // @Success      200  {array}   schemas.LearnedWordResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /users/{user_id}/learned-words/ [get]
+// @Router       /api/v1/users/{user_id}/learned-words/ [get]
 func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -73,7 +73,7 @@ func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Requ
 // @Success      200  {object}  schemas.LearnedWordResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
-// @Router       /users/{user_id}/learned-words/{word_id} [get]
+// @Router       /api/v1/users/{user_id}/learned-words/{word_id} [get]
 func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -108,7 +108,7 @@ func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Reque
 // @Success      201  ""
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /users/{user_id}/learned-words/ [post]
+// @Router       /api/v1/users/{user_id}/learned-words/ [post]
 func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -159,7 +159,7 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /users/{user_id}/learned-words/{word_id} [put]
+// @Router       /api/v1/users/{user_id}/learned-words/{word_id} [put]
 func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -212,7 +212,7 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /users/{user_id}/learned-words/{word_id} [delete]
+// @Router       /api/v1/users/{user_id}/learned-words/{word_id} [delete]
 func (h *LearnedWordHandler) DeleteLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {

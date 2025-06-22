@@ -34,7 +34,7 @@ func buildSentenceResponse(sentence *models.Sentence) schemas.SentenceResponse {
 // @Success      200  {array}   schemas.SentenceResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /words/{word_id}/sentences [get]
+// @Router       /api/v1/words/{word_id}/sentences [get]
 func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) {
 	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
@@ -68,7 +68,7 @@ func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) 
 // @Success      201  ""
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /sentences/ [post]
+// @Router       /api/v1/sentences/ [post]
 func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateSentenceRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
@@ -105,7 +105,7 @@ func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request)
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /sentences/{id} [put]
+// @Router       /api/v1/sentences/{id} [put]
 func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -151,7 +151,7 @@ func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request)
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /sentences/{id} [delete]
+// @Router       /api/v1/sentences/{id} [delete]
 func (h *SentenceHandler) DeleteSentence(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
