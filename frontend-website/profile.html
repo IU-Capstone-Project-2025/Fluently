@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Fluently</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./logo.jpg" type="image/jpeg">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="./logo.jpg" alt="Fluently Logo" class="logo">
+            <div class="nav-links">
+                <a href="./index.html">Home</a>
+                <a href="#features">Features</a>
+                <button id="logoutBtn" class="cta logout-btn">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <img id="userAvatar" src="" alt="User Avatar" class="user-avatar">
+                    <div class="user-info">
+                        <h1 id="userName">Loading...</h1>
+                        <p id="userEmail">Loading...</p>
+                        <span class="user-badge">Google Account</span>
+                    </div>
+                </div>
+                
+                <div class="profile-content">
+                    <div class="welcome-message">
+                        <h2>Welcome to Fluently! 🎉</h2>
+                        <p>You've successfully signed in with your Google account. Let's start your English learning journey!</p>
+                    </div>
+                    
+                    <div class="learning-dashboard">
+                        <h3>Your Learning Dashboard</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <h4>Words Learned</h4>
+                                <div class="stat-number">0</div>
+                                <p>Start learning new words today!</p>
+                            </div>
+                            <div class="stat-card">
+                                <h4>Current Level</h4>
+                                <div class="stat-number">A2</div>
+                                <p>Complete assessment to update</p>
+                            </div>
+                            <div class="stat-card">
+                                <h4>Streak</h4>
+                                <div class="stat-number">1</div>
+                                <p>Day learning streak</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn primary">
+                                <span class="icon">📚</span>
+                                Start Learning
+                            </button>
+                            <button class="action-btn secondary">
+                                <span class="icon">⚙️</span>
+                                Preferences
+                            </button>
+                            <button class="action-btn secondary">
+                                <span class="icon">📊</span>
+                                Progress
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Fluently. All rights reserved.</p>
+    </footer>
+
+    <script src="./profile.js"></script>
+</body>
+</html> 
