@@ -40,7 +40,7 @@ services:
     networks:
       - fluently_network
     ports:
-      - "127.0.0.1:8070:8070" 
+      - "10.243.92.227:8070:8070" 
 
   nginx:
     build:
@@ -93,7 +93,7 @@ services:
     networks:
         - fluently_network 
     ports:
-      - "127.0.0.1:5432:5432" 
+      - "10.243.92.227:5432:5432" 
 
   directus:
     image: directus/directus:latest
@@ -119,7 +119,7 @@ services:
     networks:
       - fluently_network
     ports:
-      - "127.0.0.1:8055:8055" 
+      - "10.243.92.227:8055:8055" 
   
 
 volumes:
