@@ -21,7 +21,7 @@ const val DATA_STORE_FILE = "data_store_file"
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class DataStoreModule {
+class DataStoreModule {
     @Provides
     @Singleton
     fun provideDataStore(

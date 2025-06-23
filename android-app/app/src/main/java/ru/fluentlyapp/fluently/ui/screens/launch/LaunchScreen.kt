@@ -40,7 +40,7 @@ fun LaunchScreenContent(
 ) {
     LaunchedEffect(Unit) {
         delay(1000.milliseconds)
-        navHostController.navigate(Destination.HomeScreen)
+        navHostController.navigate(Destination.LoginScreen)
     }
 
     Box(modifier = modifier.background(color = Color.White)) {

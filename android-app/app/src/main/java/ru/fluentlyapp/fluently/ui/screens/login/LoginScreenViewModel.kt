@@ -49,7 +49,7 @@ class LoginScreenViewModel @Inject constructor(
                 viewModelScope.launch {
                     try {
                         val token = googleOAuthService.performTokenRequest(tokenRequest)
-                        Log.i("LoginScreenViewModel", "Fetched the token: $token")
+                        Log.i("LoginScreenViewModel", "Fetched the token: $token; idToken=${token.idToken}")
                         _loginState.update { LoginState.SUCCESS }
                     } catch (ex : Exception) {
                         if (ex is CancellationException) throw ex

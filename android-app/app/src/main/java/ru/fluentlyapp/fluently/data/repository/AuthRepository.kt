@@ -4,8 +4,13 @@ import android.content.Context
 import android.content.Intent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import net.openid.appauth.TokenRequest
+import retrofit2.HttpException
 import ru.fluentlyapp.fluently.data.model.ServerToken
-import ru.fluentlyapp.fluently.network.FluentlyNetworkDataSource
+import ru.fluentlyapp.fluently.datastore.ServerTokenDataStore
+import ru.fluentlyapp.fluently.network.model.GetServerTokenRequestBody
+import ru.fluentlyapp.fluently.network.model.RefreshServerTokenRequest
+import ru.fluentlyapp.fluently.network.services.ServerTokenApiService
+import ru.fluentlyapp.fluently.network.toServerToken
 import ru.fluentlyapp.fluently.oauth.GoogleOAuthService
 import ru.fluentlyapp.fluently.oauth.model.OAuthToken
 import javax.inject.Inject
@@ -55,14 +60,14 @@ interface AuthRepository {
     suspend fun deleteServerToken()
 }
 
-
 class GoogleBasedAuthRepository @Inject constructor(
-    @ApplicationContext private val applicationContext: Context,
     private val googleOAuthService: GoogleOAuthService,
-    private val fluentlyNetworkDataSource: FluentlyNetworkDataSource
+    private val serverTokenService: ServerTokenApiService,
+    private val serverTokenDataStore: ServerTokenDataStore
 ) : AuthRepository {
+
     override suspend fun isUserLogged(): Boolean {
-        TODO("Not yet implemented")
+        return serverTokenDataStore.getServerToken() != null
     }
 
     override fun getAuthPageIntent(): Intent {
@@ -74,19 +79,29 @@ class GoogleBasedAuthRepository @Inject constructor(
     }
 
     override suspend fun getServerToken(oauthToken: OAuthToken): ServerToken {
-        return fluentlyNetworkDataSource.getServerToken(oauthToken.idToken)
+        return serverTokenService.getServerToken(
+            GetServerTokenRequestBody(
+                idToken = oauthToken.idToken,
+                platform = "android"
+            )
+        ).body()?.toServerToken()!!
     }
 
     override suspend fun updateServerToken(serverToken: ServerToken) {
-        TODO("Not yet implemented")
+        serverTokenDataStore.saveServerToken(serverToken)
     }
 
     override suspend fun refreshServerToken(): ServerToken {
-        TODO("Not yet implemented")
+        val serverToken = serverTokenDataStore.getServerToken()
+
+        return serverTokenService.refreshToken(
+            RefreshServerTokenRequest(
+                refreshToken = serverToken!!.refreshToken
+            )
+        ).body()?.toServerToken()!!
     }
 
     override suspend fun deleteServerToken() {
-        TODO("Not yet implemented")
+        serverTokenDataStore.deleteServerToken()
     }
-
 }

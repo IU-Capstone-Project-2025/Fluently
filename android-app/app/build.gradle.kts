@@ -18,7 +18,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "ru.fluentlyapp.fluently.CustomTestRunner"
     }
 
     buildTypes {
@@ -46,6 +46,9 @@ dependencies {
     // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+    // Hilt for AndroidTest
+    androidTestImplementation(libs.hilt.android.testing)
+    kspAndroidTest(libs.hilt.android.compiler)
     implementation(libs.androidx.hilt.navigation.compose) // Support for hiltViewModel()
 
     // Jetpack Compose Navigation
@@ -57,6 +60,7 @@ dependencies {
 
     // OkHttp
     implementation(libs.okhttp)
+    implementation(libs.logging.interceptor) // Logging interceptor
 
     // Kotlin Serialization for Json
     implementation(libs.kotlinx.serialization.json)
