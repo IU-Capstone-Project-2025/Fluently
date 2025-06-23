@@ -39,6 +39,8 @@ services:
     restart: unless-stopped
     networks:
       - fluently_network
+    ports:
+      - "127.0.0.1:8070:8070" 
 
   nginx:
     build:
@@ -90,6 +92,8 @@ services:
     stdin_open: true
     networks:
         - fluently_network 
+    ports:
+      - "127.0.0.1:5432:5432" 
 
   directus:
     image: directus/directus:latest
@@ -101,7 +105,7 @@ services:
       KEY: ${DIRECTUS_SECRET_KEY}
       ADMIN_EMAIL: ${DIRECTUS_ADMIN_EMAIL}
       ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD}
-      PUBLIC_URL: ${PUBLIC_URL:-https://admin.fluently-app.ru}
+      # PUBLIC_URL: ${PUBLIC_URL:-https://admin.fluently-app.ru}
       DB_CLIENT: pg
       DB_HOST: ${DB_HOST}
       DB_PORT: ${DB_PORT}
@@ -114,6 +118,8 @@ services:
         condition: service_healthy
     networks:
       - fluently_network
+    ports:
+      - "127.0.0.1:8055:8055" 
   
 
 volumes:
