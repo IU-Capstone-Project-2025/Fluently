@@ -53,6 +53,16 @@ dependencies {
 
     // Retrofit
     implementation(libs.retrofit)
+    implementation(libs.converter.kotlinx.serialization) // Support for Kotlinx Serialization Converter
+
+    // OkHttp
+    implementation(libs.okhttp)
+
+    // Kotlin Serialization for Json
+    implementation(libs.kotlinx.serialization.json)
+
+    // Support for DataStore
+    implementation(libs.androidx.datastore.preferences)
 
     implementation(libs.appauth)
     implementation(libs.androidx.core.ktx)
