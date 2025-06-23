@@ -5,8 +5,6 @@ services:
     #   env_file: .env
     #   environment:
     #     BOT_TOKEN: ${BOT_TOKEN}
-    #   ports:
-    #     - "${APP_PORT}:${APP_PORT}"
     #   depends_on:
     #     - redis
     #     - postgres
@@ -34,9 +32,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: fluently_app
-    env_file: .env 
-    ports:
-      - "${APP_PORT:-8080}:${APP_PORT:-8080}"
+    env_file: .env
     depends_on:
       postgres:
         condition: service_healthy 
@@ -67,8 +63,6 @@ services:
     image: postgres:latest
     container_name: fluently_db
     env_file: .env
-    # ports:
-    #   - "5432:5432"
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
@@ -101,8 +95,6 @@ services:
     image: directus/directus:latest
     container_name: fluently_directus
     restart: unless-stopped
-    ports:
-      - "${DIRECTUS_PORT:-8055}:${DIRECTUS_PORT:-8055}"
     env_file: .env
     environment:
       SECRET: ${DIRECTUS_SECRET_KEY}
@@ -122,6 +114,7 @@ services:
         condition: service_healthy
     networks:
       - fluently_network
+  
 
 volumes:
   pgdata:
