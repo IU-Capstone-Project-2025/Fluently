@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.di
+package ru.fluentlyapp.fluently.data.di
 
 import dagger.Binds
 import dagger.Module

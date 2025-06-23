@@ -51,6 +51,9 @@ dependencies {
     // Jetpack Compose Navigation
     implementation(libs.androidx.navigation)
 
+    // Retrofit
+    implementation(libs.retrofit)
+
     implementation(libs.appauth)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

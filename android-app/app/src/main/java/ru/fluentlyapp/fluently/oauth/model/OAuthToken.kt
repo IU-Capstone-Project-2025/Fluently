@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.auth.model
+package ru.fluentlyapp.fluently.oauth.model
 
 data class OAuthToken(
     val accessToken: String,

@@ -1,16 +1,12 @@
 package ru.fluentlyapp.fluently.data.repository
 
-import android.util.Log
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.update
 import ru.fluentlyapp.fluently.model.Exercise
 import ru.fluentlyapp.fluently.model.Lesson
 import javax.inject.Inject
-import kotlin.time.Duration.Companion.milliseconds
 
 interface LessonRepository {
     suspend fun getOngoingLessonId(): String

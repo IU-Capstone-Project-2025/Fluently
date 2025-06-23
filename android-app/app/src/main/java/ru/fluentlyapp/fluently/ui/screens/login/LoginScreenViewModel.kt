@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import net.openid.appauth.AuthorizationException
 import net.openid.appauth.AuthorizationResponse
-import ru.fluentlyapp.fluently.auth.GoogleOAuthService
+import ru.fluentlyapp.fluently.oauth.GoogleOAuthService
 import javax.inject.Inject
 
 enum class LoginState {
