@@ -9,49 +9,48 @@ import GoogleSignIn
 import SwiftUI
 
 class GoogleAuthViewModel: ObservableObject {
+    private weak var account: AccountData?
+
     @Published var isSignedIn = false
     @Published var userEmail: String?
     @Published var userName: String?
 
-//    func handleSignInButton(rootViewController: UIViewController?){
-//        if let rootViewController = rootViewController {
-//            GIDSignIn.sharedInstance.signIn(
-//                withPresenting: rootViewController) { signInResult, error in
-//                    guard let result = signInResult else {
-//                        return
-//                    }
-//                }
-//        }
-//    }
+    func handleSignInButton(rootViewController: UIViewController?){
+        if let rootViewController = rootViewController {
+            GIDSignIn.sharedInstance.signIn(
+                withPresenting: rootViewController) { signInResult, error in
+                    guard let result = signInResult else {
+                        if let error {
+                            print("Error while signin: \(error)")
+                            return
+                        }
+                        print("Error while signin: Unknown")
+                        return
+                    }
+                    self.updateAccount(
+                        name: result.user.profile?.name,
+                        familyName: result.user.profile?.familyName,
+                        email: result.user.profile?.email
+                    )
 
-    private weak var account: AccountData?
+                }
+        }
+    }
 
     func setup(account: AccountData) {
         self.account = account
     }
 
-    func handleSignInButton(rootViewController: UIViewController?) {
-        guard let rootViewController = rootViewController else { return }
+    func updateAccount(
+        name: String?,
+        familyName: String?,
+        email: String?
+    ) {
+        self.account?.name = name ?? ""
+        self.account?.familyName = familyName ?? ""
+        self.account?.mail = email ?? ""
 
-        GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController) { [weak self] signInResult, error in
-            DispatchQueue.main.async {
-                guard let result = signInResult else {
-                    print("Error signing in: \(error?.localizedDescription ?? "Unknown error")")
-                    return
-                }
-
-                // Update account data
-                self?.account?.name = result.user.profile?.name
-                self?.account?.familyName = result.user.profile?.familyName
-                self?.account?.mail = result.user.profile?.email
-                self?.account?.isLoggined = true
-
-                // Update local view model state
-                self?.isSignedIn = true
-                self?.userEmail = result.user.profile?.email
-                self?.userName = result.user.profile?.name
-            }
-        }
+        self.isSignedIn = true
     }
 
     func signOut() {

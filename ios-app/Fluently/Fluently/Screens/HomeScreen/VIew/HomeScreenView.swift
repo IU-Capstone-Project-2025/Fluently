@@ -29,6 +29,7 @@ struct HomeScreenView: View {
             topBar
             infoGrid
         }
+        .navigationBarBackButtonHidden()
         .containerRelativeFrame([.horizontal, .vertical])
         .background(.orangePrimary)
     }
@@ -64,8 +65,6 @@ struct HomeScreenView: View {
 
             LessonInfo(minutes: 10, seconds: 20)
             startButton
-
-            logoutButton
 
             Spacer()
         }
@@ -109,6 +108,7 @@ struct HomeScreenView: View {
             .padding(.horizontal, Const.horizontalPadding * 3)
     }
 
+    /// For debug
     var logoutButton: some View {
         Button {
             authViewModel.signOut()

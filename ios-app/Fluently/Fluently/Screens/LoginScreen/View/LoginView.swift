@@ -14,10 +14,11 @@ import GoogleSignIn
 
 
 struct LoginView: View {
+    @EnvironmentObject var router: AppRouter
     @EnvironmentObject var account: AccountData
     @ObservedObject var authViewModel: GoogleAuthViewModel
 
-    @State var showAlertMessage = false
+    @Binding var navigationPath: NavigationPath
 
     // MARK: - Properties
     let name: String = "Fluently"
@@ -38,6 +39,11 @@ struct LoginView: View {
         }
         .containerRelativeFrame([.horizontal, .vertical])
         .background(.orangePrimary)
+        .onReceive(authViewModel.$isSignedIn) { isSignedIn in
+            if isSignedIn {
+                navigationPath.append(AppRoutes.homeScreen)
+            }
+        }
     }
 
     // MARK: - SubViews

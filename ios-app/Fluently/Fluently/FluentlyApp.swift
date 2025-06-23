@@ -12,14 +12,14 @@ import GoogleSignIn
 struct FluentlyApp: App {
     @StateObject private var account = AccountData()
     @StateObject private var authViewModel = GoogleAuthViewModel()
+    @StateObject private var router = AppRouter()
 
-    @State private var navigationPath = NavigationPath()
 
     @State private var showLogin = false
 
     var body: some Scene {
         WindowGroup {
-            NavigationStack(path: $navigationPath) {
+            NavigationStack(path: $router.navigationPath) {
                 Group {
                     if account.isLoggined && !showLogin {
                         HomeScreenView()
@@ -28,7 +28,8 @@ struct FluentlyApp: App {
                             }
                     } else {
                         LoginView(
-                            authViewModel: authViewModel
+                            authViewModel: authViewModel,
+                            navigationPath: $router.navigationPath
                         )
                             .onOpenURL(perform: handleURL)
                             .onAppear() {
@@ -36,11 +37,23 @@ struct FluentlyApp: App {
                             }
                     }
                 }
+                .navigationDestination(for: AppRoutes.self) { route in
+                    switch route {
+                        case .homeScreen:
+                            HomeScreenView()
+                        case .login:
+                            LoginView (
+                                authViewModel: authViewModel,
+                                navigationPath: $router.navigationPath
+                            )
+                    }
+                }
             }
             .onChange(of: account.isLoggined) {
                 print("account is: \(account.isLoggined)")
             }
             .environmentObject(account)
+            .environmentObject(router)
         }
     }
 
@@ -64,4 +77,10 @@ struct FluentlyApp: App {
             }
         }
     }
+}
+
+
+enum AppRoutes: Hashable {
+    case homeScreen
+    case login
 }
