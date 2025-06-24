@@ -1,3 +1,4 @@
 /analysis/venv
 *.env
 .env
+analysis/Data/
