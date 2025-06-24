@@ -9,9 +9,7 @@ import Foundation
 import SwiftUI
 
 struct HomeScreenView: View {
-    @EnvironmentObject var router: AppRouter
-    @EnvironmentObject var account: AccountData
-    @StateObject private var authViewModel = GoogleAuthViewModel()
+    @ObservedObject var presenter: HomeScreenPresenter
 
     // MARK: - Properties
     @State var goal: String = "Traveling"
@@ -51,7 +49,7 @@ struct HomeScreenView: View {
             AvatarImage(
                 size: 100,
                 onTap: {
-                    router.navigationPath.append(AppRoutes.profile)
+                    presenter.navigatoToProfile()
                 }
             )
         }
@@ -88,16 +86,20 @@ struct HomeScreenView: View {
 
     /// button to start lesson
     var startButton: some View {
-        Text("Start")
-            .foregroundStyle(.whiteText)
-            .font(.appFont.title2.bold())
-            .padding(.vertical, 6)
-            .frame(maxWidth: .infinity)
-            .background(
-                RoundedRectangle(cornerRadius: 50)
-                    .fill(.blackFluently)
-            )
-            .padding(.horizontal, Const.horizontalPadding * 3)
+        Button {
+            presenter.navigatoToLesson()
+        } label: {
+            Text("Start")
+                .foregroundStyle(.whiteText)
+                .font(.appFont.title2.bold())
+                .padding(.vertical, 6)
+                .frame(maxWidth: .infinity)
+                .background(
+                    RoundedRectangle(cornerRadius: 50)
+                        .fill(.blackFluently)
+                )
+                .padding(.horizontal, Const.horizontalPadding * 3)
+        }
     }
 }
 

@@ -16,6 +16,7 @@ struct LessonInfo: View {
             learnImage
             VStack(alignment: .leading) {
                 Text("Let's learn how to speak fluently!")
+                    .foregroundStyle(.blackText)
                     .font(.appFont.callout)
                 Text("\(minutes) minutes \(seconds) seconds")
                     .foregroundStyle(.blackText.opacity(0.6))

@@ -22,7 +22,7 @@ struct FluentlyApp: App {
             NavigationStack(path: $router.navigationPath) {
                 Group {
                     if account.isLoggined && !showLogin {
-                        HomeScreenView()
+                        HomeScreenBuilder.build(router: router, acoount: account)
                             .onDisappear {
                                 showLogin = false
                             }
@@ -40,7 +40,7 @@ struct FluentlyApp: App {
                 .navigationDestination(for: AppRoutes.self) { route in
                     switch route {
                         case .homeScreen:
-                            HomeScreenView()
+                            HomeScreenBuilder.build(router: router, acoount: account)
                         case .login:
                             LoginView (
                                 authViewModel: authViewModel,
@@ -50,6 +50,13 @@ struct FluentlyApp: App {
                             ProfileScrennView(
                                 authViewModel: authViewModel,
                                 navigationPath: $router.navigationPath
+                            )
+                        case .lesson:
+                            LessonScreensView(
+                                presenter: LessonsPresenter(
+                                    router: router,
+                                    exercizes: PickOptionsGenerator.generateMockPickOptionsLessons()
+                                )
                             )
                     }
                 }
@@ -90,4 +97,5 @@ enum AppRoutes: Hashable {
     case homeScreen
     case login
     case profile
+    case lesson
 }
