@@ -37,8 +37,8 @@ struct LoginView: View {
             topBar
             infoGrid
         }
-        .containerRelativeFrame([.horizontal, .vertical])
-        .background(.orangePrimary)
+        .navigationBarBackButtonHidden()
+        .modifier(BackgroundViewModifier())
         .onReceive(authViewModel.$isSignedIn) { isSignedIn in
             if isSignedIn {
                 navigationPath.append(AppRoutes.homeScreen)
@@ -68,18 +68,7 @@ struct LoginView: View {
         VStack (alignment: .center) {
             googleSignInButton
         }
-        .padding(.top, Const.gridInfoVerticalPadding)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            UnevenRoundedRectangle(
-                topLeadingRadius: Const.sheetCornerRadius,
-                topTrailingRadius: Const.sheetCornerRadius,
-            )
-            .fill(
-                .whiteBackground
-            )
-            .ignoresSafeArea(.all)
-        )
+        .modifier(SheetViewModifier())
     }
 
     var googleSignInButton: some View {

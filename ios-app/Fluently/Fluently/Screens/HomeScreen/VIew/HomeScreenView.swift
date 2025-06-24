@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct HomeScreenView: View {
+    @EnvironmentObject var router: AppRouter
     @EnvironmentObject var account: AccountData
     @StateObject private var authViewModel = GoogleAuthViewModel()
 
@@ -30,8 +31,7 @@ struct HomeScreenView: View {
             infoGrid
         }
         .navigationBarBackButtonHidden()
-        .containerRelativeFrame([.horizontal, .vertical])
-        .background(.orangePrimary)
+        .modifier(BackgroundViewModifier())
     }
 
     // MARK: - SubViews
@@ -49,7 +49,10 @@ struct HomeScreenView: View {
             }
             Spacer()
             AvatarImage(
-                size: 100
+                size: 100,
+                onTap: {
+                    router.navigationPath.append(AppRoutes.profile)
+                }
             )
         }
         .padding(Const.horizontalPadding)
@@ -68,18 +71,7 @@ struct HomeScreenView: View {
 
             Spacer()
         }
-        .padding(.top, Const.gridInfoVerticalPadding)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            UnevenRoundedRectangle(
-                topLeadingRadius: Const.sheetCornerRadius,
-                topTrailingRadius: Const.sheetCornerRadius,
-            )
-            .fill(
-                .whiteBackground
-            )
-            .ignoresSafeArea(.all)
-        )
+        .modifier(SheetViewModifier())
     }
 
     ///  List of the cards
@@ -107,22 +99,9 @@ struct HomeScreenView: View {
             )
             .padding(.horizontal, Const.horizontalPadding * 3)
     }
-
-    /// For debug
-    var logoutButton: some View {
-        Button {
-            authViewModel.signOut()
-            account.isLoggined = false
-        } label: {
-            Text("sign out")
-                .foregroundStyle(.red)
-                .font(.title)
-        }
-    }
 }
 
 struct NavigationBar: View {
-
     var body: some View {
          Text("bottom bar")
     }
