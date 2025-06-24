@@ -12,6 +12,8 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import net.openid.appauth.AuthorizationException
 import net.openid.appauth.AuthorizationResponse
+import net.openid.appauth.TokenRequest
+import ru.fluentlyapp.fluently.data.repository.AuthRepository
 import ru.fluentlyapp.fluently.oauth.GoogleOAuthService
 import javax.inject.Inject
 
@@ -23,12 +25,12 @@ enum class LoginState {
 
 @HiltViewModel
 class LoginScreenViewModel @Inject constructor(
-    private val googleOAuthService: GoogleOAuthService
+    private val authRepository: AuthRepository
 ) : ViewModel() {
     private val _loginState = MutableStateFlow(LoginState.IDLE)
     val loginState = _loginState.asStateFlow()
 
-    fun getOpenAuthPageIntent() = googleOAuthService.getOpenAuthPageIntent()
+    fun getOpenAuthPageIntent() = authRepository.getAuthPageIntent()
 
     fun handleAuthResponseIntent(dataIntent: Intent?) {
         if (dataIntent == null) {
@@ -47,18 +49,27 @@ class LoginScreenViewModel @Inject constructor(
             tokenRequest != null -> {
                 // Try to fetch the token from the google
                 viewModelScope.launch {
-                    try {
-                        val token = googleOAuthService.performTokenRequest(tokenRequest)
-                        Log.i("LoginScreenViewModel", "Fetched the token: $token; idToken=${token.idToken}")
-                        _loginState.update { LoginState.SUCCESS }
-                    } catch (ex : Exception) {
-                        if (ex is CancellationException) throw ex
-                        Log.e("LoginScreenViewModel", "Error when performing token request: $ex")
-                        _loginState.update { LoginState.ERROR }
-                    }
+                    handleTokenRequest(tokenRequest)
                 }
             }
         }
     }
 
+    private suspend fun handleTokenRequest(tokenRequest: TokenRequest) {
+        try {
+            val token = authRepository.getOAuthToken(tokenRequest)
+            Log.i("LoginScreenViewModel", "Fetched the OAuth token: $token")
+
+            val serverToken = authRepository.getServerToken(token)
+            Log.i("LoginScreenViewModel", "Fetched the server token: $token")
+
+            authRepository.updateServerToken(serverToken)
+            Log.i("LoginScreenViewModel", "Successfully saved the server token")
+            _loginState.update { LoginState.SUCCESS }
+        } catch (ex : Exception) {
+            if (ex is CancellationException) throw ex
+            Log.e("LoginScreenViewModel", "Error when performing token request: $ex")
+            _loginState.update { LoginState.ERROR }
+        }
+    }
 }

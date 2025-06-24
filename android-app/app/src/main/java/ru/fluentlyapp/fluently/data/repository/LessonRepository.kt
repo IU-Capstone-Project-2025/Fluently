@@ -9,8 +9,21 @@ import ru.fluentlyapp.fluently.model.Lesson
 import javax.inject.Inject
 
 interface LessonRepository {
-    suspend fun getOngoingLessonId(): String
-    suspend fun setOngoingLessonId(lessonId: String)
+    /**
+     * Return the id of locally set ongoing lesson.
+     *
+     * Returns null if none of the lessons are ongoing.
+     */
+    suspend fun getLocalOngoingLessonId(): String?
+
+    /**
+     * Locally, set the `lessonId` as the ongoing lesson.
+     */
+    suspend fun setLocalOngoingLessonId(lessonId: String)
+
+    /**
+     * Locally, mark the none of the lessons are ongoing.
+     */
     suspend fun dropOngoingLesson()
 
     suspend fun fetchCurrentLesson(): Lesson
@@ -104,14 +117,14 @@ var testLesson = Lesson(
 
 class StubLessonRepository @Inject constructor() : LessonRepository {
     private val lesson = MutableStateFlow(testLesson)
-
-    override suspend fun getOngoingLessonId(): String {
+    override suspend fun getLocalOngoingLessonId(): String? {
         TODO("Not yet implemented")
     }
 
-    override suspend fun setOngoingLessonId(lessonId: String) {
+    override suspend fun setLocalOngoingLessonId(lessonId: String) {
         TODO("Not yet implemented")
     }
+
 
     override suspend fun dropOngoingLesson() {
         TODO("Not yet implemented")
