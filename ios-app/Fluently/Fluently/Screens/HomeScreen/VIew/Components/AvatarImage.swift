@@ -13,10 +13,11 @@ struct AvatarImage: View{
     let size: CGFloat
     @State var icon: Image = Image(systemName: "person")
 
+    var onTap: (() -> ())?
+
     var body: some View {
         Button {
-//            TODO: open profile
-            print("Name: \(account.name)")
+            onTap?()
         } label: {
             icon
                 .resizable()

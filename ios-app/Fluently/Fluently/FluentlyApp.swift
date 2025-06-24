@@ -46,6 +46,11 @@ struct FluentlyApp: App {
                                 authViewModel: authViewModel,
                                 navigationPath: $router.navigationPath
                             )
+                        case .profile:
+                            ProfileScrennView(
+                                authViewModel: authViewModel,
+                                navigationPath: $router.navigationPath
+                            )
                     }
                 }
             }
@@ -83,4 +88,5 @@ struct FluentlyApp: App {
 enum AppRoutes: Hashable {
     case homeScreen
     case login
+    case profile
 }
