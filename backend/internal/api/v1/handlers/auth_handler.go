@@ -80,11 +80,44 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Process claims
 	claims := payload.Claims
-	sub := claims["sub"].(string)
-	email := claims["email"].(string)
-	emailVerified := claims["email_verified"].(bool)
-	name := claims["name"].(string)
-	avatar := claims["picture"].(string)
+	
+	// Helper function to safely extract string from claims
+	getStringClaim := func(claim string) string {
+		if val, ok := claims[claim]; ok && val != nil {
+			if str, ok := val.(string); ok {
+				return str
+			}
+		}
+		return ""
+	}
+	
+	// Helper function to safely extract bool from claims
+	getBoolClaim := func(claim string) bool {
+		if val, ok := claims[claim]; ok && val != nil {
+			if b, ok := val.(bool); ok {
+				return b
+			}
+		}
+		return false
+	}
+	
+	sub := getStringClaim("sub")
+	email := getStringClaim("email")
+	emailVerified := getBoolClaim("email_verified")
+	name := getStringClaim("name")
+	avatar := getStringClaim("picture")
+	
+	// Validate required claims
+	if sub == "" {
+		logger.Log.Error("Missing required 'sub' claim")
+		http.Error(w, "invalid token: missing sub", http.StatusBadRequest)
+		return
+	}
+	if email == "" {
+		logger.Log.Error("Missing required 'email' claim")
+		http.Error(w, "invalid token: missing email", http.StatusBadRequest)
+		return
+	}
 
 	// Check if email is verified
 	if !emailVerified {
