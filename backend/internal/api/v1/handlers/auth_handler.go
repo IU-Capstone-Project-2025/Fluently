@@ -34,6 +34,34 @@ func generateRandomState() (string, error) {
 	return utils.GenerateRefreshToken() // reuse secure random generator
 }
 
+func getStringClaim(claims map[string]interface{}, key string) (string, error) {
+	value, ok := claims[key]
+	if !ok || value == nil {
+		return "", fmt.Errorf("missing claim: %s", key)
+	}
+
+	strValue, ok := value.(string)
+	if !ok {
+		return "", fmt.Errorf("claim %s is not a string", key)
+	}
+
+	return strValue, nil
+}
+
+func getBoolClaim(claims map[string]interface{}, key string) (bool, error) {
+	value, ok := claims[key]
+	if !ok || value == nil {
+		return false, fmt.Errorf("missing claim: %s", key)
+	}
+
+	boolValue, ok := value.(bool)
+	if !ok {
+		return false, fmt.Errorf("claim %s is not a string", key)
+	}
+
+	return boolValue, nil
+}
+
 // GoogleAuthHandler godoc
 // @Summary      Authenticates with Google
 // @Description  Authenticates with Google using the authorization code flow
@@ -80,44 +108,30 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Process claims
 	claims := payload.Claims
-	
-	// Helper function to safely extract string from claims
-	getStringClaim := func(claim string) string {
-		if val, ok := claims[claim]; ok && val != nil {
-			if str, ok := val.(string); ok {
-				return str
-			}
-		}
-		return ""
-	}
-	
-	// Helper function to safely extract bool from claims
-	getBoolClaim := func(claim string) bool {
-		if val, ok := claims[claim]; ok && val != nil {
-			if b, ok := val.(bool); ok {
-				return b
-			}
-		}
-		return false
-	}
-	
-	sub := getStringClaim("sub")
-	email := getStringClaim("email")
-	emailVerified := getBoolClaim("email_verified")
-	name := getStringClaim("name")
-	avatar := getStringClaim("picture")
-	
-	// Validate required claims
-	if sub == "" {
-		logger.Log.Error("Missing required 'sub' claim")
-		http.Error(w, "invalid token: missing sub", http.StatusBadRequest)
+
+	sub, err := getStringClaim(claims, "sub")
+	if err != nil {
+		logger.Log.Error("Missing or invalid 'sub'", zap.Error(err))
+		http.Error(w, "invalid token claims", http.StatusBadRequest)
 		return
 	}
-	if email == "" {
-		logger.Log.Error("Missing required 'email' claim")
-		http.Error(w, "invalid token: missing email", http.StatusBadRequest)
+
+	email, err := getStringClaim(claims, "email")
+	if err != nil {
+		logger.Log.Error("Missing or invalid 'email'", zap.Error(err))
+		http.Error(w, "invalid token claims", http.StatusBadRequest)
 		return
 	}
+
+	emailVerified, err := getBoolClaim(claims, "email_verified")
+	if err != nil {
+		logger.Log.Error("Missing or invalid 'email_verified'", zap.Error(err))
+		http.Error(w, "invalid token claims", http.StatusBadRequest)
+		return
+	}
+
+	name, _ := getStringClaim(claims, "name")
+	avatar, _ := getStringClaim(claims, "picture")
 
 	// Check if email is verified
 	if !emailVerified {
@@ -495,6 +509,12 @@ func (h *Handlers) GoogleCallbackHandler(w http.ResponseWriter, r *http.Request)
 			zap.String("expected_state", cookie.Value),
 			zap.String("received_state", state))
 		http.Error(w, "invalid state", http.StatusBadRequest)
+		return
+	}
+
+	if errMsg := r.URL.Query().Get("error"); errMsg != "" {
+		logger.Log.Warn("User denided authorization", zap.String("error", errMsg))
+		http.Error(w, "authorization cancelled or denied", http.StatusUnauthorized)
 		return
 	}
 
