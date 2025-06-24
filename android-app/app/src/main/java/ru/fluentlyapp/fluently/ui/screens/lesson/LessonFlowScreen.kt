@@ -25,6 +25,7 @@ fun LessonFlowScreen(
         LessonComponentRenderer(
             modifier = Modifier.fillMaxWidth().weight(1f),
             component = currentComponent,
+            currentLessonComponentIndex = lesson?.currentLessonComponentIndex ?: -1,
             chooseTranslationController = lessonFlowViewModel.chooseTranslationController,
             newWordController = lessonFlowViewModel.newWordController
         )

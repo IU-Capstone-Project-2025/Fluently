@@ -19,6 +19,7 @@ import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordExe
 fun LessonComponentRenderer(
     modifier: Modifier,
     component: LessonComponent,
+    currentLessonComponentIndex: Int,
     chooseTranslationController: ChooseTranslationController,
     newWordController: NewWordController,
 ) {
@@ -33,7 +34,7 @@ fun LessonComponentRenderer(
                 targetOffsetX = { -it }
             )
         },
-        contentKey = { it::class.simpleName }
+        contentKey = { currentLessonComponentIndex }
     ) { targetComponent ->
         when (targetComponent) {
             is LessonComponent.Loading -> {

@@ -1,5 +1,7 @@
 package ru.fluentlyapp.fluently.navigation
 
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -22,20 +24,36 @@ fun FluentlyNavHost(
         navController = navHostController,
         startDestination = Destination.LaunchScreen
     ) {
-        composable<Destination.LaunchScreen> {
+        composable<Destination.LaunchScreen>(
+            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
+            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) }
+        ) {
             LaunchScreen(
                 modifier = Modifier.fillMaxSize(),
-                navHostController
+                onUserLogged = {
+                    navHostController.navigate(Destination.HomeScreen)
+                },
+                onUserNotLogged = {
+                    navHostController.navigate(Destination.LoginScreen)
+                }
             )
         }
 
-        composable<Destination.LoginScreen> {
+        composable<Destination.LoginScreen>(
+            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
+            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) }
+        ) {
             LoginScreen(
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize(),
+                onSuccessfulLogin = {
+                    navHostController.navigate(Destination.HomeScreen)
+                }
             )
         }
 
-        composable<Destination.HomeScreen> {
+        composable<Destination.HomeScreen>(
+            enterTransition = { slideInHorizontally(initialOffsetX = { it }) }
+        ) {
             HomeScreen(
                 modifier = Modifier.fillMaxSize(),
                 onNavigateToLesson = {

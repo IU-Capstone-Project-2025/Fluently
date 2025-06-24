@@ -5,4 +5,8 @@
     <string name="continue_to_next_exercise">ПРОДОЛЖИТЬ</string>
     <string name="translation">Перевод</string>
     <string name="lesson_is_loading">УРОК ЗАГРУЖАЕТСЯ</string>
+    <string name="sign_in_with_google_account">Войти через Google аккаунт</string>
+    <string name="entering_text">Выполняем вход...</string>
+    <string name="welcome_to_fluently">Welcome to Fluently</string>
+    <string name="login_error_text">Something went wrong, please try again</string>
 </resources>

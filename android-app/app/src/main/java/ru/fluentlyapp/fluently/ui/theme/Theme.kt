@@ -23,7 +23,13 @@ data class FluentlyColors(
 
     val onSurface: Color = Color(0xFF1B1B1B),
     val onSurfaceVariant: Color = Color(0xFF707070),
-    val onPrimary: Color = Color(0xFFFFFFFF)
+    val onPrimary: Color = Color(0xFFFFFFFF),
+    val onSecondary: Color = Color(0xFFFFFFFF),
+
+    val error: Color = Color(0xFFb00020),
+
+    // Additional local colors
+    val googleBlue: Color = Color(0xFF4285F4)
 )
 
 val DefaultPalette = FluentlyColors()

@@ -1,10 +1,10 @@
 package ru.fluentlyapp.fluently.data.repository
 
-import android.content.Context
 import android.content.Intent
-import dagger.hilt.android.qualifiers.ApplicationContext
+import android.util.Log
+import net.openid.appauth.AuthorizationException
+import net.openid.appauth.AuthorizationResponse
 import net.openid.appauth.TokenRequest
-import retrofit2.HttpException
 import ru.fluentlyapp.fluently.data.model.ServerToken
 import ru.fluentlyapp.fluently.datastore.ServerTokenDataStore
 import ru.fluentlyapp.fluently.network.model.GetServerTokenRequestBody
@@ -26,6 +26,14 @@ interface AuthRepository {
      * authorization server (usually google api).
      */
     fun getAuthPageIntent(): Intent
+
+    /**
+     * After receiving the ActivityResult from the auth page, pass the `dataIntent` to this method
+     * The method is convenience wrapper for all steps required to obtain and save `ServerToken`
+     *
+     * May throw exception.
+     */
+    suspend fun handleReturnedDataIntent(dataIntent: Intent)
 
     /**
      * Send the `tokenRequest` to the authorization server and fetches the OAuthToken.
@@ -72,6 +80,32 @@ class GoogleBasedAuthRepository @Inject constructor(
 
     override fun getAuthPageIntent(): Intent {
         return googleOAuthService.getOpenAuthPageIntent()
+    }
+
+    override suspend fun handleReturnedDataIntent(dataIntent: Intent) {
+        val tokenRequest = AuthorizationResponse.fromIntent(dataIntent)?.createTokenExchangeRequest()
+        val exception = AuthorizationException.fromIntent(dataIntent)
+
+        when {
+            exception != null -> {
+                throw exception
+            }
+            tokenRequest != null -> {
+                // Try to fetch the token from the google
+                handleTokenRequest(tokenRequest)
+            }
+        }
+    }
+
+    private suspend fun handleTokenRequest(tokenRequest: TokenRequest) {
+        val token = getOAuthToken(tokenRequest)
+        Log.i("GoogleBasedAuthRepository", "Fetched the OAuth token: $token")
+
+        val serverToken = getServerToken(token)
+        Log.i("GoogleBasedAuthRepository", "Fetched the server token: $token")
+
+        updateServerToken(serverToken)
+        Log.i("GoogleBasedAuthRepository", "Successfully saved the server token")
     }
 
     override suspend fun getOAuthToken(tokenRequest: TokenRequest): OAuthToken {
