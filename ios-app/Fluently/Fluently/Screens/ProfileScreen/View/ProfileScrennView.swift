@@ -69,6 +69,7 @@ struct ProfileScrennView: View {
         Button {
             authViewModel.signOut()
             account.isLoggined = false
+            router.popToRoot()
         } label: {
             Text("sign out")
                 .foregroundStyle(.red)

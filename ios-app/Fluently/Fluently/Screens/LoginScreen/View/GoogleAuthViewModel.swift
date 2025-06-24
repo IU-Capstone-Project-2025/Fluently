@@ -30,7 +30,8 @@ class GoogleAuthViewModel: ObservableObject {
                     self.updateAccount(
                         name: result.user.profile?.name,
                         familyName: result.user.profile?.familyName,
-                        email: result.user.profile?.email
+                        email: result.user.profile?.email,
+                        image: result.user.profile?.imageURL(withDimension: 100)?.absoluteString
                     )
 
                 }
@@ -44,11 +45,13 @@ class GoogleAuthViewModel: ObservableObject {
     func updateAccount(
         name: String?,
         familyName: String?,
-        email: String?
+        email: String?,
+        image: String?
     ) {
         self.account?.name = name ?? ""
         self.account?.familyName = familyName ?? ""
         self.account?.mail = email ?? ""
+        self.account?.image = image
 
         self.isSignedIn = true
     }

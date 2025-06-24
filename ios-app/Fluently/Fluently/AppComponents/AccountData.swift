@@ -12,6 +12,7 @@ final class AccountData: ObservableObject {
     @Published var name: String?
     @Published var familyName: String?
     @Published var mail: String?
+    @Published var image: String?
     @Published var isLoggined = false
 
     let defaults = UserDefaults.standard

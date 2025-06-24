@@ -73,6 +73,7 @@ struct FluentlyApp: App {
                     account.name = user.profile?.name
                     account.familyName = user.profile?.familyName
                     account.mail = user.profile?.email
+                    account.image = user.profile?.imageURL(withDimension: 100)?.absoluteString
                     account.isLoggined = true
                     showLogin = false
                 } else {
