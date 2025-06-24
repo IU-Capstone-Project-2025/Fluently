@@ -26,7 +26,10 @@ struct PickOptionsView: View {
             Spacer()
             
             buttonNext
+
+            Spacer()
         }
+        .padding(.horizontal, 100)
     }
 
     var buttonNext: some View {
@@ -55,7 +58,6 @@ struct PickOptionsView: View {
             .grayscale( selectedAnswer == nil ? 1 : 0)
 //            .frame(maxWidth: .infinity)
             .frame(maxHeight: 60)
-            .padding(.horizontal, 100)
         }
     }
 
@@ -111,7 +113,6 @@ struct AnswerButton: View {
             .grayscale( isSelected ? 1 : 0)
 //            .frame(maxWidth: .infinity)
             .frame(maxHeight: 60)
-            .padding(.horizontal, 100)
         }
     }
 }
