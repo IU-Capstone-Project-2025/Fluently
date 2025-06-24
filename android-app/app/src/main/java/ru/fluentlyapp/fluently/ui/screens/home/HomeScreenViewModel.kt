@@ -8,6 +8,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor() : ViewModel() {
-    private val _uiState = MutableStateFlow(HomeScreenUiState(false))
+    private val _uiState = MutableStateFlow(HomeScreenUiState())
     val uiState = _uiState.asStateFlow()
 }

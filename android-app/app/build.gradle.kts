@@ -68,6 +68,10 @@ dependencies {
     // Support for DataStore
     implementation(libs.androidx.datastore.preferences)
 
+    // Coil
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+
     implementation(libs.appauth)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
