@@ -51,6 +51,13 @@ struct FluentlyApp: App {
                                 authViewModel: authViewModel,
                                 navigationPath: $router.navigationPath
                             )
+                        case .lesson:
+                            LessonScreensView(
+                                presenter: LessonsPresenter(
+                                    router: router,
+                                    exercizes: PickOptionsGenerator.generateMockPickOptionsLessons()
+                                )
+                            )
                     }
                 }
             }
@@ -90,4 +97,5 @@ enum AppRoutes: Hashable {
     case homeScreen
     case login
     case profile
+    case lesson
 }

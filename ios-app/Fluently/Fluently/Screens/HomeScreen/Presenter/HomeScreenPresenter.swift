@@ -13,6 +13,7 @@ protocol HomeScreenPresenting: ObservableObject {
 
     // Nacigation
     func navigatoToProfile()
+    func navigatoToLesson()
 }
 
 // MARK: - Presenter implementation
@@ -27,5 +28,9 @@ final class HomeScreenPresenter: HomeScreenPresenting {
 
     func navigatoToProfile() {
         router.navigate(to: AppRoutes.profile)
+    }
+
+    func navigatoToLesson() {
+        router.navigate(to: AppRoutes.lesson)
     }
 }

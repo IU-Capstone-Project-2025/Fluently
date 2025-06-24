@@ -59,7 +59,9 @@ struct WordOfTheDay: View {
     private var addCard: some View {
         HStack(spacing: 3) {
             Image(systemName: "plus.circle")
+                .foregroundStyle(.blackText)
             Text("Add to collection")
+                .foregroundStyle(.blackText)
                 .font(.appFont.secondarySubheadline)
         }
         .padding(.vertical, 4)

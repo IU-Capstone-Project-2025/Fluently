@@ -86,16 +86,20 @@ struct HomeScreenView: View {
 
     /// button to start lesson
     var startButton: some View {
-        Text("Start")
-            .foregroundStyle(.whiteText)
-            .font(.appFont.title2.bold())
-            .padding(.vertical, 6)
-            .frame(maxWidth: .infinity)
-            .background(
-                RoundedRectangle(cornerRadius: 50)
-                    .fill(.blackFluently)
-            )
-            .padding(.horizontal, Const.horizontalPadding * 3)
+        Button {
+            presenter.navigatoToLesson()
+        } label: {
+            Text("Start")
+                .foregroundStyle(.whiteText)
+                .font(.appFont.title2.bold())
+                .padding(.vertical, 6)
+                .frame(maxWidth: .infinity)
+                .background(
+                    RoundedRectangle(cornerRadius: 50)
+                        .fill(.blackFluently)
+                )
+                .padding(.horizontal, Const.horizontalPadding * 3)
+        }
     }
 }
 
