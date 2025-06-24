@@ -19,13 +19,14 @@ type UserHandler struct {
 // buildUserResponse returns user response
 func buildUserResponse(user *models.User) schemas.UserResponse {
 	return schemas.UserResponse{
-		ID:        user.ID,
-		Name:      user.Name,
-		Email:     user.Email,
-		Role:      user.Role,
-		IsActive:  user.IsActive,
-		PrefID:    *user.PrefID,
-		CreatedAt: user.CreatedAt,
+		ID:         user.ID,
+		Name:       user.Name,
+		Email:      user.Email,
+		Role:       user.Role,
+		IsActive:   user.IsActive,
+		TelegramID: user.TelegramID,
+		PrefID:     *user.PrefID,
+		CreatedAt:  user.CreatedAt,
 	}
 }
 

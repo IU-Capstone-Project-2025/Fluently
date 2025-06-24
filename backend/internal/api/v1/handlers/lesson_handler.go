@@ -79,13 +79,6 @@ func buildLessonResponse(lesson *models.Lesson) schemas.LessonResponse {
 // @Produce      json
 // @Security     BearerAuth
 //
-//	@Param        lesson  body      struct {
-//	   UserID         uuid.UUID   `json:"user_id"`
-//	   WordsPerLesson int         `json:"words_per_lesson"`
-//	   TotalWords     int         `json:"total_words"`
-//	   WordIDs        []uuid.UUID `json:"word_ids"`
-//	} true "Lesson data"
-//
 // @Success      201  {object}  schemas.LessonResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
