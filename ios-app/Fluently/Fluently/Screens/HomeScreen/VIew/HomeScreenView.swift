@@ -9,9 +9,7 @@ import Foundation
 import SwiftUI
 
 struct HomeScreenView: View {
-    @EnvironmentObject var router: AppRouter
-    @EnvironmentObject var account: AccountData
-    @StateObject private var authViewModel = GoogleAuthViewModel()
+    @ObservedObject var presenter: HomeScreenPresenter
 
     // MARK: - Properties
     @State var goal: String = "Traveling"
@@ -51,7 +49,7 @@ struct HomeScreenView: View {
             AvatarImage(
                 size: 100,
                 onTap: {
-                    router.navigationPath.append(AppRoutes.profile)
+                    presenter.navigatoToProfile()
                 }
             )
         }

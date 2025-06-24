@@ -33,7 +33,6 @@ class GoogleAuthViewModel: ObservableObject {
                         email: result.user.profile?.email,
                         image: result.user.profile?.imageURL(withDimension: 100)?.absoluteString
                     )
-
                 }
         }
     }
