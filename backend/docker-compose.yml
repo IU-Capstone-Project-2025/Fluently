@@ -279,7 +279,7 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
       - /cgroup:/cgroup:ro
     ports:
-      - "${ZEROTIER_IP:-10.243.92.227}:8080:8080"  # ZeroTier access only
+      - "${ZEROTIER_IP:-10.243.92.227}:8044:8044"  # ZeroTier access only
     networks:
       - fluently_network
 
