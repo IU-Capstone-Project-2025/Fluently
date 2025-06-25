@@ -69,6 +69,12 @@ final class LessonsPresenter: ObservableObject {
                 if let pickoptions = exr as? PickOptionsExs {
                     print(pickoptions.sentence)
                 }
+                if let chooseTranslation = exr as? ChooseTranslationExs {
+                    print("Choose translation: \(chooseTranslation.word) -> \(chooseTranslation.correctAnswer)")
+                }
+                if let typeTranslation = exr as? TypeTranslationExs {
+                    print("Type translation: \(typeTranslation.word) -> \(typeTranslation.correctAnswer)")
+                }
             }
         }
         print("--------------------------------------")

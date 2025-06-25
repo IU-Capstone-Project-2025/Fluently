@@ -1,15 +1,15 @@
 //
-//  PickOptionsView.swift
+//  ChooseTranslationView.swift
 //  Fluently
 //
-//  Created by Савва Пономарев on 24.06.2025.
+//  Created by Савва Пономарев on 25.06.2025.
 //
 
 import Foundation
 import SwiftUI
 
-struct PickOptionsView: View {
-    @State var sentence: String
+struct ChooseTranslationView: View {
+    @State var word: String
     @State var selectedAnswer: String?
     @State var answers: [String]
 
@@ -17,14 +17,15 @@ struct PickOptionsView: View {
 
     var body: some View {
         VStack {
-            sentenceView()
+            Text(word)
                 .foregroundStyle(.blackText)
+                .font(.appFont.title)
                 .padding()
             listOfAnswers
                 .padding(.horizontal, 100)
 
             Spacer()
-            
+
             buttonNext
                 .padding(.horizontal, 100)
 
@@ -59,13 +60,5 @@ struct PickOptionsView: View {
             }
         }
     }
-
-    func sentenceView() -> some View {
-        let parts = sentence.split(separator: "____")
-
-        if let selectedAnswer {
-            return Text("\(parts[0]) _\(selectedAnswer)_ \(parts[1])")
-        }
-        return Text("\(parts[0]) ____ \(parts[1])")
-    }
 }
+

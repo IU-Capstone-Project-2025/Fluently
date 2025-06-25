@@ -116,6 +116,12 @@ struct WordCardGenerator {
         var allOptions = wrongOptions + [word]
         allOptions.shuffle()
 
+        let type = [
+            ExerciseType.pickOptions,
+            ExerciseType.chooseTranslationEngRuss,
+            ExerciseType.typeTranslationRussEng
+        ].randomElement()
+
         return WordCard(
             exerciseId: UUID(),
             wordId: wordId,
@@ -133,13 +139,65 @@ struct WordCardGenerator {
                     translation: sentenceTranslation
                 )
             ],
-            exercise: PickOptionsExs(
-                exerciseId: exerciseId,
-                sentenceId: sentenceId,
-                sentence: template,
-                options: allOptions,
-                correctAnswer: word
-            )
+
+            exercise: {
+                switch type {
+                    case .chooseTranslationEngRuss:
+                        return ChooseTranslationExs (
+                            exerciseId: UUID(),
+                            wordId: wordId,
+                            word: translation,
+                            options: allOptions,
+                            correctAnswer: word
+                        )
+                    case .typeTranslationRussEng:
+                        return TypeTranslationExs(
+                            exerciseId: exerciseId,
+                            wordId: wordId,
+                            word: word,
+                            correctAnswer: translation
+                        )
+                    case .pickOptions:
+                        return PickOptionsExs(
+                            exerciseId: exerciseId,
+                            sentenceId: sentenceId,
+                            sentence: template,
+                            options: allOptions,
+                            correctAnswer: word
+                        )
+                    case .recordPronounce:
+                        return ChooseTranslationExs (
+                            exerciseId: exerciseId,
+                            wordId: wordId,
+                            word: translation,
+                            options: allOptions,
+                            correctAnswer: word
+                        )
+                    case .wordCard:
+                        return PickOptionsExs(
+                            exerciseId: exerciseId,
+                            sentenceId: sentenceId,
+                            sentence: template,
+                            options: allOptions,
+                            correctAnswer: word
+                        )
+                    case .numberOfWords:
+                        return TypeTranslationExs(
+                            exerciseId: exerciseId,
+                            wordId: wordId,
+                            word: word,
+                            correctAnswer: translation
+                        )
+                    case nil:
+                        return PickOptionsExs(
+                            exerciseId: exerciseId,
+                            sentenceId: sentenceId,
+                            sentence: template,
+                            options: allOptions,
+                            correctAnswer: word
+                        )
+                }
+            }()
         )
     }
 }

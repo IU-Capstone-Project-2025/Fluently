@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum ExerciseType: String {
+enum ExerciseType: String, CaseIterable {
     case chooseTranslationEngRuss = "chooseTranslationEngRuss"
-    case chooseTranslationRussEng = "chooseTranslationRussEng"
+    case typeTranslationRussEng = "typeTranslationRussEng"
     case pickOptions = "pickOptions"
     case recordPronounce = "recordPronounce"
     case wordCard = "wordCard"
