@@ -85,7 +85,7 @@ jobs:
         with:
           host: ${{ needs.setup.outputs.host }}
           username: ${{ needs.setup.outputs.username }}
-          key: ${{ needs.setup.outputs.environment == 'production' && secrets.PROD_DEPLOY_SSH_KEY || secrets.STAGING_DEPLOY_SSH_KEY }}
+          key: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_SSH_KEY || secrets.STAGING_DEPLOY_SSH_KEY }}
           script: |
             set -e
             
