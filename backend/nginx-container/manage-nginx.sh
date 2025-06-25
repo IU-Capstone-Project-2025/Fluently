@@ -2,6 +2,7 @@
 
 # Nginx Configuration Manager for Fluently Project
 # This script helps switch between production and staging nginx configurations
+# Supports Cloudflare integration with both "Full" and "Full (Strict)" SSL modes
 
 set -e
 
@@ -9,7 +10,14 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 NGINX_DIR="$SCRIPT_DIR"
 PROD_CONFIG="nginx.conf"
 STAGING_CONFIG="nginx-staging.conf"
+PROD_ORIGIN_CONFIG="nginx-origin-certs.conf"
+STAGING_ORIGIN_CONFIG="nginx-staging-origin-certs.conf"
 ACTIVE_CONFIG="nginx.conf"
+
+# SSL certificate paths
+SSL_DIR="/etc/nginx/ssl"
+ORIGIN_CERT="$SSL_DIR/cloudflare-origin.pem"
+ORIGIN_KEY="$SSL_DIR/cloudflare-origin.key"
 
 # Colors for output
 RED='\033[0;31m'
@@ -37,7 +45,7 @@ print_info() {
 
 # Function to show usage
 show_usage() {
-    echo "Usage: $0 [production|staging|status|backup|restore]"
+    echo "Usage: $0 [production|staging|status|backup|restore] [--origin-certs]"
     echo ""
     echo "Commands:"
     echo "  production  - Switch to production configuration (fluently-app.ru)"
@@ -47,10 +55,27 @@ show_usage() {
     echo "  restore     - Restore from backup"
     echo "  help        - Show this help message"
     echo ""
+    echo "Options:"
+    echo "  --origin-certs    Use Cloudflare Origin Certificates (Full Strict SSL)"
+    echo "                    Default: Use Cloudflare Full SSL (no local certs)"
+    echo ""
+    echo "Cloudflare SSL Modes:"
+    echo "  Full SSL:         Cloudflare <-HTTPS-> Browser, Cloudflare <-HTTP-> Server"
+    echo "  Full (Strict):    Cloudflare <-HTTPS-> Browser, Cloudflare <-HTTPS-> Server"
+    echo ""
     echo "Examples:"
-    echo "  $0 staging                    # Switch to staging config"
-    echo "  $0 production                 # Switch to production config"
-    echo "  $0 status                     # Check current config"
+    echo "  $0 staging                    # Switch to staging (Full SSL)"
+    echo "  $0 production --origin-certs  # Switch to production (Full Strict SSL)"
+    echo "  $0 status                     # Check current config and SSL mode"
+}
+
+# Function to check if Cloudflare Origin certificates exist
+check_origin_certs() {
+    if [ -f "$ORIGIN_CERT" ] && [ -f "$ORIGIN_KEY" ]; then
+        return 0
+    else
+        return 1
+    fi
 }
 
 # Function to backup current configuration
@@ -82,14 +107,23 @@ restore_config() {
 # Function to switch configuration
 switch_config() {
     local target_env="$1"
+    local use_origin_certs="$2"
     local source_config=""
     
     case "$target_env" in
         "production")
-            source_config="$PROD_CONFIG"
+            if [ "$use_origin_certs" = "true" ]; then
+                source_config="$PROD_ORIGIN_CONFIG"
+            else
+                source_config="$PROD_CONFIG"
+            fi
             ;;
         "staging")
-            source_config="$STAGING_CONFIG"
+            if [ "$use_origin_certs" = "true" ]; then
+                source_config="$STAGING_ORIGIN_CONFIG"
+            else
+                source_config="$STAGING_CONFIG"
+            fi
             ;;
         *)
             print_error "Invalid environment: $target_env"
@@ -102,13 +136,34 @@ switch_config() {
         return 1
     fi
     
+    # Check for Origin certificates if needed
+    if [ "$use_origin_certs" = "true" ]; then
+        if ! check_origin_certs; then
+            print_error "Cloudflare Origin Certificates not found!"
+            print_warning "Expected files:"
+            print_warning "  - $ORIGIN_CERT"
+            print_warning "  - $ORIGIN_KEY"
+            print_info "Please install Origin Certificates or use without --origin-certs flag"
+            return 1
+        else
+            print_status "Origin certificates found, using Full (Strict) SSL mode"
+        fi
+    else
+        print_status "Using Cloudflare Full SSL mode (no local certificates)"
+    fi
+    
     # Create backup before switching
     print_info "Creating backup before switching..."
     backup_config
     
     # Copy new configuration
     cp "$NGINX_DIR/$source_config" "$NGINX_DIR/$ACTIVE_CONFIG"
-    print_status "Switched to $target_env configuration"
+    
+    if [ "$use_origin_certs" = "true" ]; then
+        print_status "Switched to $target_env configuration with Origin Certificates"
+    else
+        print_status "Switched to $target_env configuration (Cloudflare Full SSL)"
+    fi
     
     # Test nginx configuration
     print_info "Testing nginx configuration..."
@@ -154,16 +209,55 @@ show_status() {
         print_warning "Staging config: $STAGING_CONFIG (missing)"
     fi
     
+    if [ -f "$NGINX_DIR/$PROD_ORIGIN_CONFIG" ]; then
+        print_status "Production Origin config: $PROD_ORIGIN_CONFIG (exists)"
+    else
+        print_warning "Production Origin config: $PROD_ORIGIN_CONFIG (missing)"
+    fi
+    
+    if [ -f "$NGINX_DIR/$STAGING_ORIGIN_CONFIG" ]; then
+        print_status "Staging Origin config: $STAGING_ORIGIN_CONFIG (exists)"
+    else
+        print_warning "Staging Origin config: $STAGING_ORIGIN_CONFIG (missing)"
+    fi
+    
     echo ""
     
-    # Try to determine current environment by checking domain
+    # Check Cloudflare Origin Certificates
+    if check_origin_certs; then
+        print_status "Cloudflare Origin Certificates: Available"
+    else
+        print_warning "Cloudflare Origin Certificates: Not found"
+        print_info "  Expected at: $ORIGIN_CERT and $ORIGIN_KEY"
+    fi
+    
+    echo ""
+    
+    # Try to determine current environment and SSL mode
     if [ -f "$NGINX_DIR/$ACTIVE_CONFIG" ]; then
         if grep -q "fluently-app\.ru" "$NGINX_DIR/$ACTIVE_CONFIG"; then
-            print_status "Current environment: PRODUCTION (fluently-app.ru)"
+            if grep -q "ssl_certificate.*cloudflare-origin" "$NGINX_DIR/$ACTIVE_CONFIG"; then
+                print_status "Current environment: PRODUCTION (Full Strict SSL with Origin Certs)"
+            else
+                print_status "Current environment: PRODUCTION (Full SSL via Cloudflare)"
+            fi
         elif grep -q "fluently-app\.online" "$NGINX_DIR/$ACTIVE_CONFIG"; then
-            print_status "Current environment: STAGING (fluently-app.online)"
+            if grep -q "ssl_certificate.*cloudflare-origin" "$NGINX_DIR/$ACTIVE_CONFIG"; then
+                print_status "Current environment: STAGING (Full Strict SSL with Origin Certs)"
+            else
+                print_status "Current environment: STAGING (Full SSL via Cloudflare)"
+            fi
         else
             print_warning "Current environment: UNKNOWN (custom configuration)"
+        fi
+        
+        # Check SSL configuration details
+        if grep -q "listen 443 ssl" "$NGINX_DIR/$ACTIVE_CONFIG"; then
+            print_info "SSL Mode: HTTPS with certificates (Full Strict)"
+        elif grep -q "listen 443" "$NGINX_DIR/$ACTIVE_CONFIG"; then
+            print_info "SSL Mode: HTTPS without local certificates (Full)"
+        else
+            print_warning "SSL Mode: HTTP only (not recommended for production)"
         fi
     fi
     
@@ -179,12 +273,16 @@ show_status() {
 }
 
 # Main script logic
+use_origin_certs="false"
+
+# Parse command line arguments
 case "${1:-}" in
-    "production")
-        switch_config "production"
-        ;;
-    "staging")
-        switch_config "staging"
+    "production"|"staging")
+        command="$1"
+        if [ "${2:-}" = "--origin-certs" ]; then
+            use_origin_certs="true"
+        fi
+        switch_config "$command" "$use_origin_certs"
         ;;
     "status")
         show_status
