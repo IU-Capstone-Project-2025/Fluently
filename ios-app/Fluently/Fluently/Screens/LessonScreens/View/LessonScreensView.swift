@@ -107,7 +107,7 @@ struct LessonScreensView: View {
                     WordCardView(
                         word: wordCard,
                         onKnowTapped: {
-                            presenter.nextExercize()
+                            presenter.nextExercise()
                         },
                         onLearnTapped: {
                             presenter.showLesson()

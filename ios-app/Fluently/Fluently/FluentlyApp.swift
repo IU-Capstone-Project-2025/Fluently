@@ -22,7 +22,7 @@ struct FluentlyApp: App {
         WindowGroup {
             NavigationStack(path: $router.navigationPath) {
                 Group {
-                    if account.isLoggined && !showLogin {
+                    if account.isLoggedIn && !showLogin {
                         HomeScreenBuilder.build(router: router, acoount: account)
                             .onDisappear {
                                 showLogin = false
@@ -62,8 +62,8 @@ struct FluentlyApp: App {
                     }
                 }
             }
-            .onChange(of: account.isLoggined) {
-                print("account is: \(account.isLoggined)")
+            .onChange(of: account.isLoggedIn) {
+                print("account is: \(account.isLoggedIn)")
             }
             .environmentObject(account)
             .environmentObject(router)
@@ -82,12 +82,12 @@ struct FluentlyApp: App {
                     account.familyName = user.profile?.familyName
                     account.mail = user.profile?.email
                     account.image = user.profile?.imageURL(withDimension: 100)?.absoluteString
-                    account.isLoggined = true
+                    account.isLoggedIn = true
                     showLogin = false
 
                     print(user.idToken)
                 } else {
-                    account.isLoggined = false
+                    account.isLoggedIn = false
                     showLogin = true
                 }
             }

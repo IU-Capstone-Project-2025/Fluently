@@ -49,11 +49,11 @@ final class LessonsPresenter: ObservableObject {
         } else {
             statistic[.uncorrect]!.append(currentEx)
         }
-        nextExercize()
+        nextExercise()
     }
 
     // MARK: - Lesson navigation
-    func nextExercize() {
+    func nextExercise() {
         guard currentExNumber < words.count - 1 else {
             finishLesson()
             return
