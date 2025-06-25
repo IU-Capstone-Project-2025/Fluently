@@ -8,7 +8,6 @@
 import SwiftUI
 
 final class AccountData: ObservableObject {
-
     @Published var name: String?
     @Published var familyName: String?
     @Published var mail: String?

@@ -83,6 +83,8 @@ struct FluentlyApp: App {
                     account.image = user.profile?.imageURL(withDimension: 100)?.absoluteString
                     account.isLoggined = true
                     showLogin = false
+
+                    print(user.idToken)
                 } else {
                     account.isLoggined = false
                     showLogin = true
