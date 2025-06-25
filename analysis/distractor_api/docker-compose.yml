@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  distractor-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fluently_ml_api
+    ports:
+      - "8001:8001"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+    volumes:
+      # Mount cache directory for model persistence
+      - model_cache:/app/.cache/huggingface
+      # Mount logs (optional)
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+
+volumes:
+  model_cache:
+    driver: local 
