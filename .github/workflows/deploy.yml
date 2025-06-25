@@ -29,9 +29,6 @@ jobs:
     outputs:
       environment: ${{ steps.env.outputs.environment }}
       domain: ${{ steps.env.outputs.domain }}
-      host: ${{ steps.env.outputs.host }}
-      username: ${{ steps.env.outputs.username }}
-      zerotier_ip: ${{ steps.env.outputs.zerotier_ip }}
     steps:
       - name: Determine environment
         id: env
@@ -65,12 +62,8 @@ jobs:
           
           echo "environment=$ENVIRONMENT" >> $GITHUB_OUTPUT
           echo "domain=$DOMAIN" >> $GITHUB_OUTPUT
-          echo "host=$HOST" >> $GITHUB_OUTPUT
-          echo "username=$USERNAME" >> $GITHUB_OUTPUT
-          echo "zerotier_ip=$ZEROTIER_IP" >> $GITHUB_OUTPUT
           
           echo "🚀 Deploying branch '$BRANCH' to $ENVIRONMENT environment ($DOMAIN)"
-          echo "🔧 Debug: HOST=$HOST, USERNAME=$USERNAME, ZEROTIER_IP=$ZEROTIER_IP"
 
   deploy:
     needs: setup
@@ -86,15 +79,12 @@ jobs:
           echo "🔍 Debug Information:"
           echo "Environment: ${{ needs.setup.outputs.environment }}"
           echo "Domain: ${{ needs.setup.outputs.domain }}"
-          echo "Host: ${{ needs.setup.outputs.host }}"
-          echo "Username: ${{ needs.setup.outputs.username }}"
-          echo "ZeroTier IP: ${{ needs.setup.outputs.zerotier_ip }}"
 
       - name: Deploy to ${{ needs.setup.outputs.environment }}
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ needs.setup.outputs.host }}
-          username: ${{ needs.setup.outputs.username }}
+          host: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_HOST || secrets.STAGING_DEPLOY_HOST }}
+          username: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_USERNAME || secrets.STAGING_DEPLOY_USERNAME }}
           key: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_SSH_KEY || secrets.STAGING_DEPLOY_SSH_KEY }}
           script: |
             set -e
