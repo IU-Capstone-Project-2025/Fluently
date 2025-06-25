@@ -20,7 +20,7 @@ import javax.inject.Inject
 class LessonFlowViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val lessonRepository: LessonRepository
-): ViewModel() {
+) : ViewModel() {
     // Get the lessonId of the lesson this flow represents
     private val lessonId = savedStateHandle.toRoute<Destination.LessonScreen>().lessonId
 
@@ -37,7 +37,8 @@ class LessonFlowViewModel @Inject constructor(
             // There is possibility that the lesson with lessonId hasn't been fetched yet
             with(lessonRepository) {
                 if (getSavedLesson(lessonId) == null) { // the lesson hasn't been fetched yet
-                    val fetchedLesson = fetchLesson(lessonId) // the potential exception will silently cancel the coroutine
+                    val fetchedLesson =
+                        fetchLesson(lessonId) // the potential exception will silently cancel the coroutine
                     saveLesson(fetchedLesson)
                 }
             }
@@ -49,11 +50,26 @@ class LessonFlowViewModel @Inject constructor(
     }
 
     fun moveToNextComponent() {
-        val currentComponent = lesson.value?.currentComponent
-        if (currentComponent == null) return
+        // Save the current value of lesson and the component to variables
+        val currentLesson = lesson.value
+        val currentComponent = currentLesson?.currentComponent
+
+        if (currentLesson == null || currentComponent == null)
+            return
+
         if (currentComponent !is Exercise || currentComponent.isAnswered) {
+            // Copy the current lesson and just increase the lesson component index
+            val updatedLesson = currentLesson.copy(
+                // Additional check to not go beyond the list size
+                currentLessonComponentIndex = (currentLesson.currentLessonComponentIndex + 1).coerceIn(
+                    0,
+                    currentLesson.components.size
+                )
+            )
+
+            // Save the updated lesson
             viewModelScope.launch {
-                lessonRepository.moveToNextComponent(lessonId)
+                lessonRepository.saveLesson(updatedLesson)
             }
         }
     }
@@ -61,7 +77,8 @@ class LessonFlowViewModel @Inject constructor(
     // Controller that is responsible for handling "choose translation" exercises
     val chooseTranslationController = object : ChooseTranslationController() {
         override fun onVariantClick(variantIndex: Int) {
-            val currentComponent = checkCurrentComponentOrNull<Exercise.ChooseTranslation>() ?: return
+            val currentComponent =
+                checkCurrentComponentOrNull<Exercise.ChooseTranslation>() ?: return
             val updatedComponent = currentComponent.copy(selectedVariant = variantIndex)
             updateCurrentComponent(updatedComponent)
         }
@@ -81,18 +98,20 @@ class LessonFlowViewModel @Inject constructor(
     }
 
     private fun updateCurrentComponent(newComponent: LessonComponent) {
-        val previousLesson = lesson.value
-        if (previousLesson == null)
+        // Update the component at the currentComponentIndex
+        val currentLesson = lesson.value
+        if (currentLesson == null)
             return
 
-        val newComponents = with(previousLesson) {
+        // Copy the current lesson's prefix and suffix and inject the `newComponent`
+        val newComponents = with(currentLesson) {
             buildList {
                 addAll(components.subList(0, currentLessonComponentIndex))
                 add(newComponent)
                 addAll(components.subList(currentLessonComponentIndex + 1, components.size))
             }
         }
-        val newLesson = previousLesson.copy(components = newComponents)
+        val newLesson = currentLesson.copy(components = newComponents)
 
         viewModelScope.launch {
             lessonRepository.saveLesson(newLesson)

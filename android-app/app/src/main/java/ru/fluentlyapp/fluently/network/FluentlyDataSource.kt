@@ -1,16 +1,20 @@
 package ru.fluentlyapp.fluently.network
 
+import kotlinx.coroutines.delay
 import retrofit2.HttpException
 import ru.fluentlyapp.fluently.model.Lesson
 import ru.fluentlyapp.fluently.network.services.FluentlyApiService
 import javax.inject.Inject
 import javax.inject.Singleton
+import kotlin.time.Duration.Companion.milliseconds
 
 @Singleton
 class FluentlyDataSource @Inject constructor(
     private val fluentlyApiService: FluentlyApiService
 ) {
     suspend fun getCurrentLesson(): Lesson {
+        delay(2000.milliseconds) // Simulate delay
+
         val response = fluentlyApiService.getLesson()
 
         if (!response.isSuccessful) {

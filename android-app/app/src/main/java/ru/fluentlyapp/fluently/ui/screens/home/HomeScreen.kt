@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -45,13 +46,18 @@ import ru.fluentlyapp.fluently.R
 fun HomeScreen(
     modifier: Modifier = Modifier,
     homeScreenViewModel: HomeScreenViewModel = hiltViewModel(),
-    onNavigateToLesson: () -> Unit
+    onNavigateToLesson: (lessonId: String) -> Unit
 ) {
     val uiState by homeScreenViewModel.uiState.collectAsState()
+
     HomeScreenContent(
         modifier = modifier,
         uiState = uiState,
-        onLessonClick = onNavigateToLesson
+        onLessonClick = {
+            homeScreenViewModel.fetchCurrentLessonForUser { lessonId ->
+                onNavigateToLesson(lessonId)
+            }
+        }
     )
 }
 
@@ -219,20 +225,31 @@ fun HomeScreenContent(
                     .weight(1f)
                     .fillMaxWidth()
             ) {
-                Box(
+                Row(
                     modifier = Modifier
                         .clip(RoundedCornerShape(100.dp))
                         .clickable(onClick = onLessonClick)
                         .background(color = FluentlyTheme.colors.surfaceInverse)
                         .padding(12.dp)
+                        .height(40.dp)
                         .widthIn(min = 240.dp)
                         .align(
                             Alignment.Center
-                        )
+                        ),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
+                    if (uiState.ongoingLessonState == OngoingLessonState.LOADING) {
+                        CircularProgressIndicator(color = FluentlyTheme.colors.onSurfaceInverse)
+                        Spacer(modifier = Modifier.width(16.dp))
+                    }
                     Text(
-                        modifier = Modifier.align(Alignment.Center),
-                        text = if (uiState.hasOngoingLesson) "Продолжить урок" else "Начать урок",
+                        text = when (uiState.ongoingLessonState) {
+                            OngoingLessonState.ERROR -> "Ошибка :("
+                            OngoingLessonState.HAS_PAUSED -> "Продолжить урок"
+                            OngoingLessonState.LOADING -> "Загружаем урок..."
+                            OngoingLessonState.NOT_STARTED -> "Начать урок"
+                        },
                         fontSize = 24.sp,
                         color = FluentlyTheme.colors.onSurfaceInverse
                     )
@@ -248,8 +265,8 @@ fun HomeScreenPreview() {
     FluentlyTheme {
         HomeScreenContent(
             modifier = Modifier.fillMaxSize(),
-            uiState = HomeScreenUiState(hasOngoingLesson = false),
-            onLessonClick = {}
+            uiState = HomeScreenUiState(ongoingLessonState = OngoingLessonState.LOADING),
+            onLessonClick = {  }
         )
     }
 }

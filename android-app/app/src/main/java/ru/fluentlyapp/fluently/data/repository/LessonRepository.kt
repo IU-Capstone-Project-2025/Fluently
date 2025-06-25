@@ -2,13 +2,12 @@ package ru.fluentlyapp.fluently.data.repository
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
-import ru.fluentlyapp.fluently.database.dao.LessonDao
 import ru.fluentlyapp.fluently.datastore.LessonPreferencesDataStore
 import ru.fluentlyapp.fluently.model.Exercise
 import ru.fluentlyapp.fluently.model.Lesson
 import ru.fluentlyapp.fluently.network.FluentlyDataSource
+import ru.fluentlyapp.fluently.network.di.mockLessonResponse
 import javax.inject.Inject
 
 interface LessonRepository {
@@ -17,17 +16,17 @@ interface LessonRepository {
      *
      * Returns null if none of the lessons are ongoing.
      */
-    suspend fun getLocalOngoingLessonId(): String?
+    fun getSavedOngoingLessonIdAsFlow(): Flow<String?>
 
     /**
      * Locally, set the `lessonId` as the ongoing lesson.
      */
-    suspend fun setLocalOngoingLessonId(lessonId: String)
+    suspend fun setSavedOngoingLessonId(lessonId: String)
 
     /**
      * Locally, drop the ongoing lesson id.
      */
-    suspend fun dropOngoingLesson()
+    suspend fun dropSavedOngoingLesson()
 
     /**
      * Get the saved lesson as `Flow` by the `lessonId`. The flow may emit null if
@@ -156,17 +155,15 @@ class StubLessonRepository @Inject constructor(
     val fluentlyDataSource: FluentlyDataSource
 ) : LessonRepository {
     val lessons = mutableMapOf<String, MutableStateFlow<Lesson?>>()
-
-
-    override suspend fun getLocalOngoingLessonId(): String? {
-        return lessonPreferencesDataStore.getOngoingLessonId()
+    override fun getSavedOngoingLessonIdAsFlow(): Flow<String?> {
+        return lessonPreferencesDataStore.getOngoingLessonIdAsFlow()
     }
 
-    override suspend fun setLocalOngoingLessonId(lessonId: String) {
+    override suspend fun setSavedOngoingLessonId(lessonId: String) {
         lessonPreferencesDataStore.setOngoingLessonId(lessonId)
     }
 
-    override suspend fun dropOngoingLesson() {
+    override suspend fun dropSavedOngoingLesson() {
         lessonPreferencesDataStore.dropOngoingLessonId()
     }
 
@@ -175,7 +172,11 @@ class StubLessonRepository @Inject constructor(
     }
 
     override suspend fun fetchLesson(lessonId: String): Lesson {
-        TODO("Not yet implemented")
+        if (lessonId == mockLessonResponse.lesson.lesson_id) {
+            return fluentlyDataSource.getCurrentLesson()
+        } else {
+            TODO("Not yet implemented")
+        }
     }
 
     override suspend fun sendLesson(lesson: Lesson) {
