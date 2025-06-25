@@ -6,7 +6,7 @@ import androidx.core.net.toUri
 // TODO: remove hardcoded values from there
 data class HomeScreenUiState(
     val goal: String = "Travelling",
-    val avatarPicture: Uri = "https://previews.dropbox.com/p/thumb/ACqRahHLohfalD3qXFydxawY0bYoXYhM__WdNemYAjP8NlB_sUDVeD5wXkmzJ9rS4WEeRFLu13yfDC4YzSvk-mUCUDC60PPDJ9vjQys2-9J871mwKJRZBtMzgteC1O3cDOiDIVz1uQY4kGZr67ts2DPPR79VuTLNwFZhSxMBnYbDonh7LV4lYwCw8jLQPImHBn97YRW_xkZVLDRefKtgUf2EdqMSG1FAv7MU93cX7Bsg3HjrDhnQAKIhY5wwHP9J1xRPcfziJOfTruMO4OOLvHa43H6MDyjnwVvJDeS3MB6YHyX_kryCaw2rBFirFlCjKk3Y3JwQlAU_z8-f8FM_b0I0/p.jpeg?is_prewarmed=true".toUri(),
+    val avatarPicture: Uri = "https://uc2bc8e6296b05c14f59323964db.previews.dropboxusercontent.com/p/thumb/ACoAPJoylOt475_bn7qs-IsD7p6fL2ZpS-_MNmDNbT7cCZQDjy7bY2bD6V6iPjkkljD4GOQK1zW8BSWS24y9BxOfuPS1VXSxhtCjd_gfx2-RnFAUWNuxt73LXfQs3VkZ_GVKPKqTuSinsGMvJbPa9_uQ9SOZ39SzmK21O7OKxZEF_CgCfwKk5ZeKvsVlzbzyACTGjSvU8kBWj89MSwRzATHsxAxT7vTVQhXt7oqaY7TGyc0REizYU0EjssXCUMqiBh44ffL1wnWLMnVUS46-FcL-Yfj35PoC-P_vR-hgJDFp2iFPvr2VHu5MXUCPsT2aGE9Haq-acYyAWyWoC61Bun1z6aUfUAQj4xFllFTQcJOVfMerU-zxfgBtrn8YQ9WCb7E/p.jpeg?is_prewarmed=true".toUri(),
     val wordOfTheDay: String = "Car",
     val wordOfTheDayTranslation: String = "Машина",
     val notesNumber: Int = 0,

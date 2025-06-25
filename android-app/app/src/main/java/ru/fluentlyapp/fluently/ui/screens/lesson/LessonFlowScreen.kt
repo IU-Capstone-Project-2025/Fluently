@@ -23,9 +23,13 @@ fun LessonFlowScreen(
         TopAppBar(modifier = Modifier.fillMaxWidth(), onBackClick = onBackClick)
 
         LessonComponentRenderer(
-            modifier = Modifier.fillMaxWidth().weight(1f),
-            component = currentComponent,
-            currentLessonComponentIndex = lesson?.currentLessonComponentIndex ?: -1,
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f),
+            component = LessonComponentWithIndex(
+                currentComponent,
+                lesson?.currentLessonComponentIndex ?: -1
+            ),
             chooseTranslationController = lessonFlowViewModel.chooseTranslationController,
             newWordController = lessonFlowViewModel.newWordController
         )

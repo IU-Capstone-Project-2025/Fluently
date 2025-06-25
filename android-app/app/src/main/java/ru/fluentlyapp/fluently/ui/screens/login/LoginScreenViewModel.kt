@@ -33,6 +33,11 @@ class LoginScreenViewModel @Inject constructor(
             return
         }
 
+
+        _uiState.update {
+            it.copy(loginLoadingState = LoginLoadingState.LOADING)
+        }
+
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 authRepository.handleReturnedDataIntent(dataIntent)

@@ -30,10 +30,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.crossfade
 import ru.fluentlyapp.fluently.R
 
 @Composable
@@ -81,7 +86,12 @@ fun HomeScreenContent(
                     fontWeight = FontWeight.Bold
                 )
             }
-            Box(
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(uiState.avatarPicture)
+                    .build(),
+                contentScale = ContentScale.Crop,
+                contentDescription = "Avatar Picture",
                 modifier = Modifier
                     .clip(CircleShape)
                     .border(
@@ -204,9 +214,11 @@ fun HomeScreenContent(
                     Text(text = "Не изучено", fontSize = 14.sp)
                 }
             }
-            Box(modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth()) {
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth()
+            ) {
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(100.dp))

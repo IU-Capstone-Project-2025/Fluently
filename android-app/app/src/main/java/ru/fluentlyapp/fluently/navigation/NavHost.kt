@@ -24,10 +24,7 @@ fun FluentlyNavHost(
         navController = navHostController,
         startDestination = Destination.LaunchScreen
     ) {
-        composable<Destination.LaunchScreen>(
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) }
-        ) {
+        composable<Destination.LaunchScreen> {
             LaunchScreen(
                 modifier = Modifier.fillMaxSize(),
                 onUserLogged = {
@@ -39,10 +36,7 @@ fun FluentlyNavHost(
             )
         }
 
-        composable<Destination.LoginScreen>(
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) }
-        ) {
+        composable<Destination.LoginScreen> {
             LoginScreen(
                 modifier = Modifier.fillMaxSize(),
                 onSuccessfulLogin = {
@@ -51,9 +45,7 @@ fun FluentlyNavHost(
             )
         }
 
-        composable<Destination.HomeScreen>(
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) }
-        ) {
+        composable<Destination.HomeScreen> {
             HomeScreen(
                 modifier = Modifier.fillMaxSize(),
                 onNavigateToLesson = {

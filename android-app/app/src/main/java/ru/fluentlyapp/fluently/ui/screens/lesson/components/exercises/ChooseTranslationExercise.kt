@@ -58,7 +58,7 @@ fun ChooseTranslationExercise(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(exerciseState.word, fontSize = 40.sp)
+            Text(exerciseState.word, fontSize = 32.sp)
 
             Spacer(modifier = Modifier.height(24.dp))
 

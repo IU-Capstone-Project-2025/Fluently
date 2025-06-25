@@ -67,7 +67,7 @@ fun NewWordExercise(
             ) {
                 Text(
                     text = exerciseState.word,
-                    fontSize = 40.sp,
+                    fontSize = 32.sp,
                     color = FluentlyTheme.colors.onSurface
                 )
                 Spacer(modifier = Modifier.height(16.dp))

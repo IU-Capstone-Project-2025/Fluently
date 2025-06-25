@@ -15,11 +15,15 @@ import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTran
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordController
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordExercise
 
+data class LessonComponentWithIndex(
+    val lessonComponent: LessonComponent,
+    val index: Int,
+)
+
 @Composable
 fun LessonComponentRenderer(
     modifier: Modifier,
-    component: LessonComponent,
-    currentLessonComponentIndex: Int,
+    component: LessonComponentWithIndex,
     chooseTranslationController: ChooseTranslationController,
     newWordController: NewWordController,
 ) {
@@ -34,8 +38,8 @@ fun LessonComponentRenderer(
                 targetOffsetX = { -it }
             )
         },
-        contentKey = { currentLessonComponentIndex }
-    ) { targetComponent ->
+        contentKey = { it.index }
+    ) { (targetComponent, index) ->
         when (targetComponent) {
             is LessonComponent.Loading -> {
                 LoadingLessonComponent(modifier = modifier)
