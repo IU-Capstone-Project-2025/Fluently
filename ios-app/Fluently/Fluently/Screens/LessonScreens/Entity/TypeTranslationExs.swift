@@ -7,11 +7,13 @@
 
 import Foundation
 
-
+// exr: type correct translation
 final class TypeTranslationExs: Exercise {
+    // MARK: - Properties
     var wordId: UUID
     var word: String
 
+    // MARK: - Init
     init(
         exerciseId: UUID,
         wordId: UUID,

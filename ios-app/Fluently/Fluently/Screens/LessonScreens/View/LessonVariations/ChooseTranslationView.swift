@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ChooseTranslationView: View {
+    // MARK: - Properties
     @State var word: String
     @State var selectedAnswer: String?
     @State var answers: [String]
@@ -33,6 +34,7 @@ struct ChooseTranslationView: View {
         }
     }
 
+    // MARK: - Subviews
     var buttonNext: some View {
         Button {
             if let selectedAnswer {

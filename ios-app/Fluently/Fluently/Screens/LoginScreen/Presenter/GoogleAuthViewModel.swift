@@ -9,12 +9,14 @@ import GoogleSignIn
 import SwiftUI
 
 class GoogleAuthViewModel: ObservableObject {
+    // MARK: - Properties
     private weak var account: AccountData?
 
     @Published var isSignedIn = false
     @Published var userEmail: String?
     @Published var userName: String?
 
+    // Sign in implementation
     func handleSignInButton(rootViewController: UIViewController?){
         if let rootViewController = rootViewController {
             GIDSignIn.sharedInstance.signIn(
@@ -38,10 +40,11 @@ class GoogleAuthViewModel: ObservableObject {
         }
     }
 
+    // MARK: - Account interactions
     func setup(account: AccountData) {
         self.account = account
     }
-
+    
     func updateAccount(
         name: String?,
         familyName: String?,
@@ -65,6 +68,7 @@ class GoogleAuthViewModel: ObservableObject {
     }
 }
 
+// MARK: - Errors
 enum AuthError: Error, LocalizedError {
     case userCancelled
     case unknown

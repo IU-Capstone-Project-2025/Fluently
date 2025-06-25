@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct PickOptionsView: View {
+    // MARK: - Properties
     @State var sentence: String
     @State var selectedAnswer: String?
     @State var answers: [String]
@@ -31,6 +32,8 @@ struct PickOptionsView: View {
             Spacer()
         }
     }
+
+    // MARK: - Subviews
 
     var buttonNext: some View {
         Button {
@@ -60,6 +63,7 @@ struct PickOptionsView: View {
         }
     }
 
+    // updating sentence view
     func sentenceView() -> some View {
         let parts = sentence.split(separator: "____")
 

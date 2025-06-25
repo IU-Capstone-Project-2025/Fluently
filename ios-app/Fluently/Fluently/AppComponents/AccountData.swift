@@ -8,12 +8,14 @@
 import SwiftUI
 
 final class AccountData: ObservableObject {
+    // MARK: - Properties
     @Published var name: String?
     @Published var familyName: String?
     @Published var mail: String?
     @Published var image: String?
     @Published var isLoggined = false
 
+    // MARK: - Data caching
     let defaults = UserDefaults.standard
 
     func saveData() async {

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct WordCardView: View {
+    // MARK: - Properties
     @State var word: WordCard
 
     var onKnowTapped: () -> Void
@@ -31,6 +32,9 @@ struct WordCardView: View {
         }
     }
 
+    // MARK: - Subviews
+
+    // card word representation
     var wordCard: some View{
         VStack(alignment: .leading, spacing: 10) {
             VStack (alignment: .leading, spacing: 4) {

@@ -10,6 +10,7 @@ import GoogleSignIn
 
 @main
 struct FluentlyApp: App {
+    // MARK: - Key parts
     @StateObject private var account = AccountData()
     @StateObject private var authViewModel = GoogleAuthViewModel()
     @StateObject private var router = AppRouter()
@@ -72,7 +73,7 @@ struct FluentlyApp: App {
     private func handleURL(_ url: URL) {
         GIDSignIn.sharedInstance.handle(url)
     }
-
+    
     private func attemptRestoreLogin() {
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             DispatchQueue.main.async {
@@ -94,7 +95,7 @@ struct FluentlyApp: App {
     }
 }
 
-
+// MARK: - Routes
 enum AppRoutes: Hashable {
     case homeScreen
     case login

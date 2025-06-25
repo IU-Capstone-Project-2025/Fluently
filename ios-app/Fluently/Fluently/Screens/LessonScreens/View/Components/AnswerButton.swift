@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct AnswerButton: View {
+    // MARK: - Properties
     var isSelected: Bool
     var answer: String
 

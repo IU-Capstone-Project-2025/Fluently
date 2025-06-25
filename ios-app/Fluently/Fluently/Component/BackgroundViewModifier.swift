@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// Full orange view modifier
 struct BackgroundViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content

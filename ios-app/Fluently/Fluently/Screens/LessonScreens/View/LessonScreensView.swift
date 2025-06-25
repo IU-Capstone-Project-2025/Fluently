@@ -9,12 +9,14 @@ import Foundation
 import SwiftUI
 
 struct LessonScreensView: View {
+    // MARK: - Key objects
     @EnvironmentObject var router: AppRouter
     @EnvironmentObject var account: AccountData
 
     @State var showExitAlert = false
     @ObservedObject var presenter: LessonsPresenter
 
+    // MARK: - View Constances
     private enum Const {
         // Paddings
         static let horizontalPadding = CGFloat(30)
@@ -74,7 +76,7 @@ struct LessonScreensView: View {
     var infoGrid: some View {
         VStack {
             switch presenter.currentEx.exerciseType {
-                case .chooseTranslationEngRuss:
+                case .chooseTranslationEngRuss: /// Choose correct translation
                     let chooseWordEx = presenter.currentEx as! ChooseTranslationExs
                     ChooseTranslationView(
                         word: chooseWordEx.word,
@@ -83,13 +85,13 @@ struct LessonScreensView: View {
                             presenter.answer(selectedAnswer)
                         }
                         .id(presenter.currentEx.exerciseId)
-                case .typeTranslationRussEng:
+                case .typeTranslationRussEng: /// Type correct translation
                     let typeTranslationEx = presenter.currentEx as! TypeTranslationExs
                     TypeTranslationView (
                         word: typeTranslationEx.word) { typedAnswer in
                             presenter.answer(typedAnswer)
                         }
-                case .pickOptions:
+                case .pickOptions: /// Pick word, mathing by definition
                     let pickOptionEx = presenter.currentEx as! PickOptionsExs
                     PickOptionsView(
                         sentence: pickOptionEx.sentence,
