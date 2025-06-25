@@ -70,6 +70,7 @@ jobs:
           echo "zerotier_ip=$ZEROTIER_IP" >> $GITHUB_OUTPUT
           
           echo "🚀 Deploying branch '$BRANCH' to $ENVIRONMENT environment ($DOMAIN)"
+          echo "🔧 Debug: HOST=$HOST, USERNAME=$USERNAME, ZEROTIER_IP=$ZEROTIER_IP"
 
   deploy:
     needs: setup
@@ -79,6 +80,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Debug deployment values
+        run: |
+          echo "🔍 Debug Information:"
+          echo "Environment: ${{ needs.setup.outputs.environment }}"
+          echo "Domain: ${{ needs.setup.outputs.domain }}"
+          echo "Host: ${{ needs.setup.outputs.host }}"
+          echo "Username: ${{ needs.setup.outputs.username }}"
+          echo "ZeroTier IP: ${{ needs.setup.outputs.zerotier_ip }}"
 
       - name: Deploy to ${{ needs.setup.outputs.environment }}
         uses: appleboy/ssh-action@v1.0.3
