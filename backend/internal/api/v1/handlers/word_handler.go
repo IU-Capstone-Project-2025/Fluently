@@ -20,6 +20,7 @@ func buildWordResponse(w *models.Word) schemas.WordResponse {
 	resp := schemas.WordResponse{
 		ID:           w.ID.String(),
 		Word:         w.Word,
+		CEFRLevel:    w.CEFRLevel,
 		PartOfSpeech: w.PartOfSpeech,
 	}
 
@@ -111,6 +112,7 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 	word := models.Word{
 		ID:           uuid.New(),
 		Word:         req.Word,
+		CEFRLevel:    req.CEFRLevel,
 		PartOfSpeech: req.PartOfSpeech,
 	}
 
@@ -130,6 +132,7 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 	resp := schemas.WordResponse{
 		ID:           word.ID.String(),
 		Word:         word.Word,
+		CEFRLevel:    word.CEFRLevel,
 		PartOfSpeech: word.PartOfSpeech,
 		Translation:  req.Translation,
 		Context:      req.Context,
@@ -174,6 +177,7 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 	}
 
 	word.Word = req.Word
+	word.CEFRLevel = req.CEFRLevel
 	word.PartOfSpeech = req.PartOfSpeech
 
 	if req.Translation != nil {
@@ -196,6 +200,7 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 	resp := schemas.WordResponse{
 		ID:           word.ID.String(),
 		Word:         word.Word,
+		CEFRLevel:    word.CEFRLevel,
 		PartOfSpeech: word.PartOfSpeech,
 		Translation:  req.Translation,
 		Context:      req.Context,

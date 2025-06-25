@@ -81,3 +81,33 @@ func (r *LessonRepository) Delete(ctx context.Context, id uuid.UUID) error {
 		return tx.Delete(&models.Lesson{}, "id = ?", id).Error
 	})
 }
+
+// GetWordsForLesson needs for generate cards in lesson
+func (r *LessonRepository) GetWordsForLesson(
+	ctx context.Context,
+	userID uuid.UUID,
+	topicTitle string,
+	cefrLevel string,
+	limit int,
+) ([]models.Word, error) {
+	var words []models.Word
+
+	subQuery := r.db.
+		Table("learned_words").
+		Select("word_id").
+		Where("user_id = ?", userID)
+
+	err := r.db.WithContext(ctx).
+		Joins("JOIN topics ON topics.id = words.topic_id").
+		Where("topics.title = ?", topicTitle).
+		Where("words.cefr_level = ?", cefrLevel).
+		Where("words.id NOT IN (?)", subQuery).
+		Limit(limit).
+		Find(&words).Error
+
+	if err != nil {
+		return nil, err
+	}
+
+	return words, nil
+}
