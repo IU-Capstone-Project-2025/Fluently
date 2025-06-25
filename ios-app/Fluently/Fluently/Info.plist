@@ -5,6 +5,19 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>SedanSC-Regular.ttf</string>
+		<string>Fraunces.ttf</string>
+		<string>Inter-Regular.otf</string>
+	</array>
+	<key>GIDClientID</key>
+	<string>505903512988-b666v7nf89d6no6fndk0mqsthr0lm7cp.apps.googleusercontent.com</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.505903512988-b666v7nf89d6no6fndk0mqsthr0lm7cp</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

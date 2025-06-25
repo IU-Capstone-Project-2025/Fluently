@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct HomeScreenView: View {
+    @ObservedObject var presenter: HomeScreenPresenter
 
     // MARK: - Properties
     @State var goal: String = "Traveling"
@@ -27,8 +28,8 @@ struct HomeScreenView: View {
             topBar
             infoGrid
         }
-        .containerRelativeFrame([.horizontal, .vertical])
-        .background(.orangePrimary)
+        .navigationBarBackButtonHidden()
+        .modifier(BackgroundViewModifier())
     }
 
     // MARK: - SubViews
@@ -39,14 +40,17 @@ struct HomeScreenView: View {
             VStack (alignment: .leading) {
                 Text("Goal:")
                     .foregroundStyle(.whiteText)
-                    .font(.appFont.largeTitle)
+                    .font(.appFont.largeTitle.bold())
                 Text(goal)
                     .foregroundStyle(.whiteText)
-                    .font(.appFont.largeTitle)
+                    .font(.appFont.largeTitle.bold())
             }
             Spacer()
             AvatarImage(
-                size: 100
+                size: 100,
+                onTap: {
+                    presenter.navigatoToProfile()
+                }
             )
         }
         .padding(Const.horizontalPadding)
@@ -65,18 +69,7 @@ struct HomeScreenView: View {
 
             Spacer()
         }
-        .padding(.top, Const.gridInfoVerticalPadding)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            UnevenRoundedRectangle(
-                topLeadingRadius: Const.sheetCornerRadius,
-                topTrailingRadius: Const.sheetCornerRadius,
-            )
-            .fill(
-                .whiteBackground
-            )
-            .ignoresSafeArea(.all)
-        )
+        .modifier(SheetViewModifier())
     }
 
     ///  List of the cards
@@ -93,21 +86,24 @@ struct HomeScreenView: View {
 
     /// button to start lesson
     var startButton: some View {
-        Text("Start")
-            .foregroundStyle(.whiteText)
-            .font(.appFont.title2)
-            .padding(.vertical, 6)
-            .frame(maxWidth: .infinity)
-            .background(
-                RoundedRectangle(cornerRadius: 50)
-                    .fill(.blackFluently)
-            )
-            .padding(.horizontal, Const.horizontalPadding * 3)
+        Button {
+            presenter.navigatoToLesson()
+        } label: {
+            Text("Start")
+                .foregroundStyle(.whiteText)
+                .font(.appFont.title2.bold())
+                .padding(.vertical, 6)
+                .frame(maxWidth: .infinity)
+                .background(
+                    RoundedRectangle(cornerRadius: 50)
+                        .fill(.blackFluently)
+                )
+                .padding(.horizontal, Const.horizontalPadding * 3)
+        }
     }
 }
 
 struct NavigationBar: View {
-
     var body: some View {
          Text("bottom bar")
     }

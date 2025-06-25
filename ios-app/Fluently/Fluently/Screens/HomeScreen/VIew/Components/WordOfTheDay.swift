@@ -27,7 +27,7 @@ struct WordOfTheDay: View {
     var body: some View {
         VStack(alignment: .center, spacing: 4) {
             Text("Word of the day")
-                .font(.appFont.title3)
+                .font(.appFont.title3.bold())
 
             wordCard
             addCard
@@ -59,8 +59,10 @@ struct WordOfTheDay: View {
     private var addCard: some View {
         HStack(spacing: 3) {
             Image(systemName: "plus.circle")
+                .foregroundStyle(.blackText)
             Text("Add to collection")
-                .font(.appFont.subheadline)
+                .foregroundStyle(.blackText)
+                .font(.appFont.secondarySubheadline)
         }
         .padding(.vertical, 4)
         .padding(.horizontal, 2)
