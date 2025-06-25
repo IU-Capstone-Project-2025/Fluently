@@ -16,8 +16,10 @@ ACTIVE_CONFIG="nginx.conf"
 
 # SSL certificate paths
 SSL_DIR="/etc/nginx/ssl"
-ORIGIN_CERT="$SSL_DIR/cloudflare-origin.pem"
-ORIGIN_KEY="$SSL_DIR/cloudflare-origin.key"
+PROD_CERT="$SSL_DIR/fluently-app-ru.pem"
+PROD_KEY="$SSL_DIR/fluently-app-ru.key"
+STAGING_CERT="$SSL_DIR/fluently-app-online.pem"
+STAGING_KEY="$SSL_DIR/fluently-app-online.key"
 
 # Colors for output
 RED='\033[0;31m'
@@ -71,8 +73,19 @@ show_usage() {
 
 # Function to check if Cloudflare Origin certificates exist
 check_origin_certs() {
-    if [ -f "$ORIGIN_CERT" ] && [ -f "$ORIGIN_KEY" ]; then
-        return 0
+    local env="$1"
+    if [ "$env" = "production" ]; then
+        if [ -f "$PROD_CERT" ] && [ -f "$PROD_KEY" ]; then
+            return 0
+        else
+            return 1
+        fi
+    elif [ "$env" = "staging" ]; then
+        if [ -f "$STAGING_CERT" ] && [ -f "$STAGING_KEY" ]; then
+            return 0
+        else
+            return 1
+        fi
     else
         return 1
     fi
@@ -138,15 +151,21 @@ switch_config() {
     
     # Check for Origin certificates if needed
     if [ "$use_origin_certs" = "true" ]; then
-        if ! check_origin_certs; then
-            print_error "Cloudflare Origin Certificates not found!"
-            print_warning "Expected files:"
-            print_warning "  - $ORIGIN_CERT"
-            print_warning "  - $ORIGIN_KEY"
+        if ! check_origin_certs "$target_env"; then
+            print_error "Cloudflare Origin Certificates not found for $target_env!"
+            if [ "$target_env" = "production" ]; then
+                print_warning "Expected files:"
+                print_warning "  - $PROD_CERT"
+                print_warning "  - $PROD_KEY"
+            else
+                print_warning "Expected files:"
+                print_warning "  - $STAGING_CERT"
+                print_warning "  - $STAGING_KEY"
+            fi
             print_info "Please install Origin Certificates or use without --origin-certs flag"
             return 1
         else
-            print_status "Origin certificates found, using Full (Strict) SSL mode"
+            print_status "Origin certificates found for $target_env, using Full (Strict) SSL mode"
         fi
     else
         print_status "Using Cloudflare Full SSL mode (no local certificates)"
@@ -224,11 +243,18 @@ show_status() {
     echo ""
     
     # Check Cloudflare Origin Certificates
-    if check_origin_certs; then
-        print_status "Cloudflare Origin Certificates: Available"
+    if check_origin_certs "production"; then
+        print_status "Production Origin Certificates: Available"
     else
-        print_warning "Cloudflare Origin Certificates: Not found"
-        print_info "  Expected at: $ORIGIN_CERT and $ORIGIN_KEY"
+        print_warning "Production Origin Certificates: Not found"
+        print_info "  Expected at: $PROD_CERT and $PROD_KEY"
+    fi
+    
+    if check_origin_certs "staging"; then
+        print_status "Staging Origin Certificates: Available"
+    else
+        print_warning "Staging Origin Certificates: Not found"
+        print_info "  Expected at: $STAGING_CERT and $STAGING_KEY"
     fi
     
     echo ""

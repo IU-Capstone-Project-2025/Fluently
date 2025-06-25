@@ -5,10 +5,12 @@
 
 set -e
 
-# Certificate paths
+# Certificate paths for domain-specific certificates
 SSL_DIR="/etc/nginx/ssl"
-CERT_FILE="$SSL_DIR/cloudflare-origin.pem"
-KEY_FILE="$SSL_DIR/cloudflare-origin.key"
+PROD_CERT_FILE="$SSL_DIR/fluently-app-ru.pem"
+PROD_KEY_FILE="$SSL_DIR/fluently-app-ru.key"
+STAGING_CERT_FILE="$SSL_DIR/fluently-app-online.pem"
+STAGING_KEY_FILE="$SSL_DIR/fluently-app-online.key"
 
 # Colors for output
 RED='\033[0;31m'
