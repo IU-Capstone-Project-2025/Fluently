@@ -173,7 +173,7 @@ jobs:
                 exit 1
               else
                 echo "⏳ Attempt $i/6: Waiting for application..."
-                sleep 5
+                sleep 100
               fi
             done
             
