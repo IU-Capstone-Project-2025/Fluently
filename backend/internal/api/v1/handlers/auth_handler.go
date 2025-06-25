@@ -103,7 +103,7 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 			userPreferences := models.Preference{
 				ID:              prefID,
 				Subscribed:      false,
-				CEFRLevel:       0,
+				CEFRLevel:       "A1",
 				FactEveryday:    false,
 				Notifications:   true,
 				NotificationsAt: nil,
@@ -581,7 +581,7 @@ func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, g
 			userPreferences := models.Preference{
 				ID:              prefID,
 				Subscribed:      false,
-				CEFRLevel:       0,
+				CEFRLevel:       "A1",
 				FactEveryday:    false,
 				Notifications:   true,
 				NotificationsAt: nil,
