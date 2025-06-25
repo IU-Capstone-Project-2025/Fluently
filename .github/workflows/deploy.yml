@@ -87,7 +87,6 @@ jobs:
           username: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_USERNAME || secrets.STAGING_DEPLOY_USERNAME }}
           key: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_SSH_KEY || secrets.STAGING_DEPLOY_SSH_KEY }}
           command_timeout: 30m
-          timeout: 35m
           script: |
             set -e
             
