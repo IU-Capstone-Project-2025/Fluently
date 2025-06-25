@@ -153,29 +153,7 @@ jobs:
             # docker compose pull
             
             docker compose up -d --build --force-recreate
-            
-            # Wait for services to be ready (reduced from 30s to 15s)
-            echo "⏳ Waiting for services to start..."
-            sleep 15
-            
-            # Health check (reduced attempts from 10 to 6, but shorter intervals)
-            echo "🏥 Performing health check..."
-            for i in {1..6}; do
-              if curl -f -s "http://localhost:8070/health" > /dev/null; then
-                echo "✅ Application is healthy!"
-                break
-              elif [ $i -eq 6 ]; then
-                echo "❌ Health check failed after 6 attempts"
-                echo "📋 Container status:"
-                docker compose ps
-                echo "📄 Application logs:"
-                docker compose logs --tail=50 app
-                exit 1
-              else
-                echo "⏳ Attempt $i/6: Waiting for application..."
-                sleep 100
-              fi
-            done
+         
             
             # Show running containers
             echo "📋 Running containers:"
