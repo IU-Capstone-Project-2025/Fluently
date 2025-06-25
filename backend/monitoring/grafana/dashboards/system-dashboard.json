@@ -1,0 +1,139 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Fluently System Dashboard",
+    "tags": ["fluently", "system", "monitoring"],
+    "style": "dark",
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "CPU Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
+            "legendFormat": "CPU Usage %"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": 2,
+        "title": "Memory Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100",
+            "legendFormat": "Memory Usage %"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        }
+      },
+      {
+        "id": 3,
+        "title": "Disk Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\"})",
+            "legendFormat": "Disk Usage %"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        }
+      },
+      {
+        "id": 4,
+        "title": "Network I/O",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(node_network_receive_bytes_total[5m])",
+            "legendFormat": "{{ device }} - Received"
+          },
+          {
+            "expr": "rate(node_network_transmit_bytes_total[5m])",
+            "legendFormat": "{{ device }} - Transmitted"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        }
+      },
+      {
+        "id": 5,
+        "title": "Load Average",
+        "type": "singlestat",
+        "targets": [
+          {
+            "expr": "node_load1",
+            "legendFormat": "1m"
+          }
+        ],
+        "gridPos": {
+          "h": 4,
+          "w": 8,
+          "x": 0,
+          "y": 16
+        }
+      },
+      {
+        "id": 6,
+        "title": "Uptime",
+        "type": "singlestat",
+        "targets": [
+          {
+            "expr": "node_time_seconds - node_boot_time_seconds",
+            "legendFormat": "Uptime"
+          }
+        ],
+        "gridPos": {
+          "h": 4,
+          "w": 8,
+          "x": 8,
+          "y": 16
+        }
+      },
+      {
+        "id": 7,
+        "title": "Docker Containers",
+        "type": "singlestat",
+        "targets": [
+          {
+            "expr": "count(container_last_seen{name=~\".+\"})",
+            "legendFormat": "Running Containers"
+          }
+        ],
+        "gridPos": {
+          "h": 4,
+          "w": 8,
+          "x": 16,
+          "y": 16
+        }
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "5s"
+  }
+}
