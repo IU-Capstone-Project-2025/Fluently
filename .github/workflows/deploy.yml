@@ -96,12 +96,17 @@ jobs:
             echo "🔄 Starting deployment of branch '$BRANCH' to $ENVIRONMENT environment"
             echo "🌐 Domain: $DOMAIN"
             
-            # Navigate to project directory
+            # Navigate to project directory and update environment
             if [ "$ENVIRONMENT" = "production" ]; then
               cd /home/deploy/Fluently-fork/backend
+              export ZEROTIER_IP="${{ secrets.ZEROTIER_IP }}"
             else
               cd /home/deploy-staging/Fluently-fork/backend
+              export ZEROTIER_IP="${{ secrets.STAGING_ZEROTIER_IP }}"
             fi
+            
+            # Update .env file with correct ZeroTier IP
+            echo "ZEROTIER_IP=$ZEROTIER_IP" >> .env
             
             # Backup current state (only for production)
             if [ "$ENVIRONMENT" = "production" ]; then
@@ -182,4 +187,4 @@ jobs:
             # Cleanup old images (keep last 3)
             echo "🧹 Cleaning up old Docker images..."
             docker image prune -f || true
-            
+
