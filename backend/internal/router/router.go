@@ -2,6 +2,7 @@ package router
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
@@ -38,8 +39,19 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		RefreshTokenRepo: postgres.NewRefreshTokenRepository(db),
 	}
 
+	// Initialize Telegram handler
+	linkTokenRepo := postgres.NewLinkTokenRepository(db)
+	telegramHandler := &handlers.TelegramHandler{
+		UserRepo:      postgres.NewUserRepository(db),
+		LinkTokenRepo: linkTokenRepo,
+	}
+
+	// Start cleanup task for expired tokens (every hour)
+	utils.StartTokenCleanupTask(linkTokenRepo, time.Hour)
+
 	// Public routes (NO AUTHENTICATION REQUIRED)
 	routes.RegisterAuthRoutes(r, authHandlers)
+	routes.RegisterTelegramRoutes(r, telegramHandler)
 
 	r.Get("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("ok"))

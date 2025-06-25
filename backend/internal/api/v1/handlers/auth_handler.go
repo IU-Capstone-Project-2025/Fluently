@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"net/url"
 	"time"
 
 	"fluently/go-backend/internal/config"
@@ -31,6 +32,34 @@ type Handlers struct {
 
 func generateRandomState() (string, error) {
 	return utils.GenerateRefreshToken() // reuse secure random generator
+}
+
+func getStringClaim(claims map[string]interface{}, key string) (string, error) {
+	value, ok := claims[key]
+	if !ok || value == nil {
+		return "", fmt.Errorf("missing claim: %s", key)
+	}
+
+	strValue, ok := value.(string)
+	if !ok {
+		return "", fmt.Errorf("claim %s is not a string", key)
+	}
+
+	return strValue, nil
+}
+
+func getBoolClaim(claims map[string]interface{}, key string) (bool, error) {
+	value, ok := claims[key]
+	if !ok || value == nil {
+		return false, fmt.Errorf("missing claim: %s", key)
+	}
+
+	boolValue, ok := value.(bool)
+	if !ok {
+		return false, fmt.Errorf("claim %s is not a string", key)
+	}
+
+	return boolValue, nil
 }
 
 // GoogleAuthHandler godoc
@@ -79,11 +108,30 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Process claims
 	claims := payload.Claims
-	sub := claims["sub"].(string)
-	email := claims["email"].(string)
-	emailVerified := claims["email_verified"].(bool)
-	name := claims["name"].(string)
-	avatar := claims["picture"].(string)
+
+	sub, err := getStringClaim(claims, "sub")
+	if err != nil {
+		logger.Log.Error("Missing or invalid 'sub'", zap.Error(err))
+		http.Error(w, "invalid token claims", http.StatusBadRequest)
+		return
+	}
+
+	email, err := getStringClaim(claims, "email")
+	if err != nil {
+		logger.Log.Error("Missing or invalid 'email'", zap.Error(err))
+		http.Error(w, "invalid token claims", http.StatusBadRequest)
+		return
+	}
+
+	emailVerified, err := getBoolClaim(claims, "email_verified")
+	if err != nil {
+		logger.Log.Error("Missing or invalid 'email_verified'", zap.Error(err))
+		http.Error(w, "invalid token claims", http.StatusBadRequest)
+		return
+	}
+
+	name, _ := getStringClaim(claims, "name")
+	avatar, _ := getStringClaim(claims, "picture")
 
 	// Check if email is verified
 	if !emailVerified {
@@ -401,6 +449,12 @@ func (h *Handlers) GoogleAuthRedirectHandler(w http.ResponseWriter, r *http.Requ
 		redirectURI = fmt.Sprintf("%s://%s/auth/google/callback", scheme, r.Host)
 	}
 
+	logger.Log.Info("OAuth redirect initiated",
+		zap.String("redirect_uri", redirectURI),
+		zap.String("host", r.Host),
+		zap.String("scheme", r.Header.Get("X-Forwarded-Proto")),
+		zap.Bool("tls", r.TLS != nil))
+
 	state := r.URL.Query().Get("state")
 	if state == "" {
 		var err error
@@ -424,7 +478,14 @@ func (h *Handlers) GoogleAuthRedirectHandler(w http.ResponseWriter, r *http.Requ
 	oauthCfg := config.GoogleOAuthConfig()
 	oauthCfg.RedirectURL = redirectURI
 
+	logger.Log.Info("Final OAuth config",
+		zap.String("client_id", oauthCfg.ClientID),
+		zap.String("redirect_url", oauthCfg.RedirectURL),
+		zap.Bool("has_client_secret", oauthCfg.ClientSecret != ""))
+
 	url := oauthCfg.AuthCodeURL(state, oauth2.AccessTypeOffline)
+	logger.Log.Info("Redirecting to Google OAuth", zap.String("url", url))
+
 	http.Redirect(w, r, url, http.StatusTemporaryRedirect)
 }
 
@@ -443,24 +504,69 @@ func (h *Handlers) GoogleCallbackHandler(w http.ResponseWriter, r *http.Request)
 	state := r.URL.Query().Get("state")
 	cookie, err := r.Cookie("oauthstate")
 	if err != nil || cookie.Value != state {
-		logger.Log.Error("Invalid OAuth state", zap.Error(err))
+		logger.Log.Error("Invalid OAuth state",
+			zap.Error(err),
+			zap.String("expected_state", cookie.Value),
+			zap.String("received_state", state))
 		http.Error(w, "invalid state", http.StatusBadRequest)
+		return
+	}
+
+	if errMsg := r.URL.Query().Get("error"); errMsg != "" {
+		logger.Log.Warn("User denided authorization", zap.String("error", errMsg))
+		http.Error(w, "authorization cancelled or denied", http.StatusUnauthorized)
 		return
 	}
 
 	code := r.URL.Query().Get("code")
 	if code == "" {
+		logger.Log.Error("Authorization code missing from callback")
 		http.Error(w, "code not found", http.StatusBadRequest)
 		return
 	}
 
+	logger.Log.Info("OAuth callback received",
+		zap.String("code_prefix", code[:min(10, len(code))]),
+		zap.String("state", state))
+
+	// Construct the same redirect URI that was used in the authorization request
+	redirectURI := r.URL.Query().Get("redirect_uri")
+	if redirectURI == "" {
+		// Default redirect for web clients - same logic as in GoogleAuthRedirectHandler
+		scheme := r.Header.Get("X-Forwarded-Proto")
+		if scheme == "" {
+			if r.TLS != nil {
+				scheme = "https"
+			} else {
+				scheme = "http"
+			}
+		}
+		redirectURI = fmt.Sprintf("%s://%s/auth/google/callback", scheme, r.Host)
+	}
+
 	oauthCfg := config.GoogleOAuthConfig()
+	// CRITICAL: Set the same redirect_uri that was used in the authorization request
+	oauthCfg.RedirectURL = redirectURI
+
+	// Log OAuth config for debugging (without secrets)
+	logger.Log.Info("OAuth configuration for token exchange",
+		zap.String("client_id", oauthCfg.ClientID),
+		zap.String("redirect_url", oauthCfg.RedirectURL),
+		zap.Strings("scopes", oauthCfg.Scopes),
+		zap.Bool("has_client_secret", oauthCfg.ClientSecret != ""))
+
 	token, err := oauthCfg.Exchange(r.Context(), code)
 	if err != nil {
-		logger.Log.Error("Code exchange failed", zap.Error(err))
+		logger.Log.Error("Code exchange failed",
+			zap.Error(err),
+			zap.String("client_id", oauthCfg.ClientID),
+			zap.String("redirect_uri", oauthCfg.RedirectURL),
+			zap.Bool("has_client_secret", oauthCfg.ClientSecret != ""))
 		http.Error(w, "code exchange failed", http.StatusUnauthorized)
 		return
 	}
+
+	logger.Log.Info("OAuth token exchange successful")
 
 	// Extract id_token from token response
 	rawIDToken, ok := token.Extra("id_token").(string)
@@ -472,6 +578,14 @@ func (h *Handlers) GoogleCallbackHandler(w http.ResponseWriter, r *http.Request)
 
 	// Reuse existing logic to process id_token
 	processGoogleIDToken(h, w, r, rawIDToken)
+}
+
+// Helper function for min
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }
 
 func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, googleToken string) {
@@ -572,6 +686,23 @@ func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, g
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(resp)
+	// For web OAuth callback, redirect to frontend profile page with user data
+	scheme := r.Header.Get("X-Forwarded-Proto")
+	if scheme == "" {
+		if r.TLS != nil {
+			scheme = "https"
+		} else {
+			scheme = "http"
+		}
+	}
+
+	// Encode user data as URL parameters
+	redirectURL := fmt.Sprintf("%s://%s/profile.html?name=%s&email=%s&picture=%s&access_token=%s",
+		scheme, r.Host,
+		url.QueryEscape(user.Name),
+		url.QueryEscape(user.Email),
+		url.QueryEscape(avatar),
+		url.QueryEscape(resp.AccessToken))
+
+	http.Redirect(w, r, redirectURL, http.StatusTemporaryRedirect)
 }

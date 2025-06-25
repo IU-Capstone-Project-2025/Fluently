@@ -13,6 +13,8 @@ type Word struct {
 
 	TopicID *uuid.UUID `gorm:"type:uuid"` // foreign key to Topic
 	Topic   *Topic     `gorm:"foreignKey:TopicID;constraint:OnUpdate:CASCADE,OnDelete:SET NULL"`
+
+	Sentences []Sentence `gorm:"foreignKey:WordID;constraint:OnDelete:CASCADE"`
 }
 
 func (Word) TableName() string {
