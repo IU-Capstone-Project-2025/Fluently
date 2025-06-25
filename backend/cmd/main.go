@@ -4,13 +4,13 @@ import (
 	"net/http"
 
 	_ "fluently/go-backend/docs"
+
 	appConfig "fluently/go-backend/internal/config"
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/router"
 	"fluently/go-backend/pkg/logger"
 
 	"github.com/go-chi/chi/v5"
-	httpSwagger "github.com/swaggo/http-swagger"
 	"go.uber.org/zap"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -18,25 +18,28 @@ import (
 
 // @title           Fluently API
 // @version         1.0
-// @description     Backend API for Fluently
-// @termsOfService  http://fluently.com/terms/
+// @description     Backend API for Fluently. Note: Auth routes are available at root level (/auth/*), while other API routes are under /api/v1/*
+// @termsOfService  http://fluently-app.ru/terms/
 
 // @contact.name   Danila Kochegarov
-// @contact.url    http://fluently.com
+// @contact.url    http://fluently-app.ru
 // @contact.email  Woolfer0097@yandex.ru
 
 // @license.name  MIT
 // @license.url   https://opensource.org/licenses/MIT
 
-// @host      swagger.fluently-app.ru:8070
-// @BasePath  /api/v1
+// @host fluently-app.ru
+// @BasePath  /
+
+// @securityDefinitions.apikey BearerAuth
+// @in header
+// @name Authorization
+// @description Type "Bearer" followed by a space and JWT token.
+
 func main() {
 	appConfig.Init()
 	logger.Init(true) // or false for production
 	defer logger.Log.Sync()
-
-	// Router init
-	r := chi.NewRouter()
 
 	// Database init
 	dsn := appConfig.GetPostgresDSN()
@@ -50,19 +53,18 @@ func main() {
 		&models.Preference{},
 		&models.Sentence{},
 		&models.User{},
+		&models.RefreshToken{},
 		&models.Word{},
+		&models.PickOption{},
+		&models.Topic{},
 	)
 	if err != nil {
 		logger.Log.Fatal("Failed to auto-migrate", zap.Error(err))
 	}
 
-	router.InitRoutes(db)
-
-	r.Get("/swagger/*", httpSwagger.WrapHandler) // Swagger UI
-
-	r.Get("/api/v1/ping", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("pong"))
-	})
+	//Init Router
+	r := chi.NewRouter()
+	router.InitRoutes(db, r)
 
 	logger.Log.Info("Logger initialization successful!")
 	logger.Log.Info("App starting",

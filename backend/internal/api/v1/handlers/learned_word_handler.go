@@ -8,14 +8,16 @@ import (
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
 	"fluently/go-backend/internal/utils"
+
+	"github.com/google/uuid"
 )
 
 type LearnedWordHandler struct {
 	Repo *postgres.LearnedWordRepository
 }
 
-func buildLearnedWordResponse(word *models.LearnedWords) schemas.LearenedWordResponse {
-	return schemas.LearenedWordResponse{
+func buildLearnedWordResponse(word *models.LearnedWords) schemas.LearnedWordResponse {
+	return schemas.LearnedWordResponse{
 		UserID:          word.UserID,
 		WordID:          word.WordID,
 		LearnedAt:       word.LearnedAt,
@@ -31,11 +33,12 @@ func buildLearnedWordResponse(word *models.LearnedWords) schemas.LearenedWordRes
 // @Tags         learned-words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        user_id   path      string  true  "User ID"
-// @Success      200  {array}   schemas.LearenedWordResponse
+// @Success      200  {array}   schemas.LearnedWordResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /users/{user_id}/learned-words/ [get]
+// @Router       /api/v1/users/{user_id}/learned-words/ [get]
 func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -43,17 +46,18 @@ func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
-	words, err := h.Repo.ListByUser(r.Context(), userID)
+	words, err := h.Repo.ListByUserID(r.Context(), userID)
 	if err != nil {
 		http.Error(w, "failed to fetch learned words", http.StatusInternalServerError)
 		return
 	}
 
-	var resp []schemas.LearenedWordResponse
+	var resp []schemas.LearnedWordResponse
 	for _, w := range words {
 		resp = append(resp, buildLearnedWordResponse(&w))
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }
 
@@ -63,22 +67,23 @@ func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Requ
 // @Tags         learned-words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        user_id   path      string  true  "User ID"
 // @Param        word_id   path      string  true  "Word ID"
-// @Success      200  {object}  schemas.LearenedWordResponse
+// @Success      200  {object}  schemas.LearnedWordResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
-// @Router       /users/{user_id}/learned-words/{word_id} [get]
+// @Router       /api/v1/users/{user_id}/learned-words/{word_id} [get]
 func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
-		http.Error(w, "invelid user_id", http.StatusBadRequest)
+		http.Error(w, "invalid user_id", http.StatusBadRequest)
 		return
 	}
 
 	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
-		http.Error(w, "invelid word_id", http.StatusBadRequest)
+		http.Error(w, "invalid word_id", http.StatusBadRequest)
 		return
 	}
 
@@ -88,6 +93,7 @@ func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildLearnedWordResponse(word))
 }
 
@@ -97,15 +103,27 @@ func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Reque
 // @Tags         learned-words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        learned_word  body      schemas.CreateLearnedWordRequest  true  "Learned word data"
 // @Success      201  ""
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /users/{user_id}/learned-words/ [post]
+// @Router       /api/v1/users/{user_id}/learned-words/ [post]
 func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Request) {
+	userID, err := utils.ParseUUIDParam(r, "user_id")
+	if err != nil {
+		http.Error(w, "invalid user_id", http.StatusBadRequest)
+		return
+	}
+
 	var req schemas.CreateLearnedWordRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "invalid request", http.StatusBadRequest)
+		http.Error(w, "invalid request body", http.StatusBadRequest)
+		return
+	}
+
+	if req.UserID != uuid.Nil && req.UserID != userID {
+		http.Error(w, "user_id mismatch", http.StatusBadRequest)
 		return
 	}
 
@@ -119,10 +137,11 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 	}
 
 	if err := h.Repo.Create(r.Context(), &word); err != nil {
-		http.Error(w, "failed to create", http.StatusInternalServerError)
+		http.Error(w, "failed to create learned word", http.StatusInternalServerError)
 		return
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 }
 
@@ -132,6 +151,7 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 // @Tags         learned-words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        user_id       path      string                        true  "User ID"
 // @Param        word_id       path      string                        true  "Word ID"
 // @Param        learned_word  body      schemas.CreateLearnedWordRequest true  "Learned word data"
@@ -139,29 +159,29 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /users/{user_id}/learned-words/{word_id} [put]
+// @Router       /api/v1/users/{user_id}/learned-words/{word_id} [put]
 func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
-		http.Error(w, "invelid user_id", http.StatusBadRequest)
+		http.Error(w, "invalid user_id", http.StatusBadRequest)
 		return
 	}
 
 	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
-		http.Error(w, "invelid word_id", http.StatusBadRequest)
+		http.Error(w, "invalid word_id", http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.CreateLearnedWordRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "invalid request", http.StatusBadRequest)
+		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	word, err := h.Repo.GetByUserWordID(r.Context(), userID, wordID)
 	if err != nil {
-		http.Error(w, "not found", http.StatusNotFound)
+		http.Error(w, "learned word not found", http.StatusNotFound)
 		return
 	}
 
@@ -175,6 +195,7 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 		return
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
 
@@ -184,28 +205,29 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 // @Tags         learned-words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        user_id   path      string  true  "User ID"
 // @Param        word_id   path      string  true  "Word ID"
 // @Success      204  ""
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /users/{user_id}/learned-words/{word_id} [delete]
+// @Router       /api/v1/users/{user_id}/learned-words/{word_id} [delete]
 func (h *LearnedWordHandler) DeleteLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
-		http.Error(w, "invelid user_id", http.StatusBadRequest)
+		http.Error(w, "invalid user_id", http.StatusBadRequest)
 		return
 	}
 
 	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
-		http.Error(w, "invelid word_id", http.StatusBadRequest)
+		http.Error(w, "invalid word_id", http.StatusBadRequest)
 		return
 	}
 
 	if err := h.Repo.Delete(r.Context(), userID, wordID); err != nil {
-		http.Error(w, "failed to delete", http.StatusInternalServerError)
+		http.Error(w, "failed to delete learned word", http.StatusInternalServerError)
 		return
 	}
 

@@ -3,8 +3,14 @@ name: Deploy
 on:
   push:
     branches:
-      - main 
-      - Dockerized-backend
+      - main
+      - develop
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to deploy"
+        required: false
+        default: "main"
 
 jobs:
   deploy:
@@ -22,7 +28,8 @@ jobs:
           key: ${{ secrets.DEPLOY_SSH_KEY }}
           script: |
             cd /home/deploy/Fluently-fork/backend
-            git pull origin ${{ github.ref_name }}
+            git checkout ${{ github.event.inputs.branch || github.ref_name }}
+            git pull origin ${{ github.event.inputs.branch || github.ref_name }}
             docker compose down
             docker compose up -d --build
 

@@ -16,15 +16,15 @@ type PreferenceHandler struct {
 
 func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceResponse {
 	return schemas.PreferenceResponse{
-		ID:             pref.ID,
-		CEFRLevel:      pref.CEFRLevel,
-		FactEveryday:   pref.FactEveryday,
-		Notifications:  pref.Notifications,
-		NotificationAt: pref.NotificationsAt,
-		WordsPerDay:    pref.WordsPerDay,
-		Goal:           pref.Goal,
-		Subscribed:     pref.Subscribed,
-		AvatarImage:    pref.AvatarImage,
+		ID:              pref.ID,
+		CEFRLevel:       pref.CEFRLevel,
+		FactEveryday:    pref.FactEveryday,
+		Notifications:   pref.Notifications,
+		NotificationsAt: pref.NotificationsAt,
+		WordsPerDay:     pref.WordsPerDay,
+		Goal:            pref.Goal,
+		Subscribed:      pref.Subscribed,
+		AvatarImage:     pref.AvatarImage,
 	}
 }
 
@@ -34,22 +34,23 @@ func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceRespons
 // @Tags         preferences
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id         path      string                          true  "ID пользователя"
-// @Param        preference body      schemas.CreatePreferenceRequst  true  "Данные предпочтений"
+// @Param        preference body      schemas.CreatePreferenceRequest  true  "Данные предпочтений"
 // @Success      201  {object}  schemas.PreferenceResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /users/{id}/preferences/ [post]
+// @Router       /api/v1/users/{id}/preferences/ [post]
 func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
-	var req schemas.CreatePreferenceRequst
+	var req schemas.CreatePreferenceRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "invalid body", http.StatusBadRequest)
+		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
@@ -71,6 +72,7 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 	}
 
 	w.WriteHeader(http.StatusCreated)
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildPreferencesResponse(pref))
 }
 
@@ -80,15 +82,16 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 // @Tags         preferences
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id   path      string  true  "ID пользователя"
 // @Success      200  {object}  schemas.PreferenceResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
-// @Router       /users/{id}/preferences/ [get]
+// @Router       /api/v1/users/{id}/preferences/ [get]
 func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -98,7 +101,8 @@ func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Req
 		return
 	}
 
-	json.NewEncoder(w).Encode(pref)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(buildPreferencesResponse(pref))
 }
 
 // UpdateUserPreferences godoc
@@ -107,23 +111,24 @@ func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Req
 // @Tags         preferences
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id         path      string                          true  "ID пользователя"
-// @Param        preference body      schemas.CreatePreferenceRequst  true  "Данные предпочтений"
+// @Param        preference body      schemas.CreatePreferenceRequest  true  "Данные предпочтений"
 // @Success      200  {object}  schemas.PreferenceResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /users/{id}/preferences/ [put]
+// @Router       /api/v1/users/{id}/preferences/ [put]
 func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
-	var req schemas.CreatePreferenceRequst
+	var req schemas.CreatePreferenceRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "invalid body", http.StatusBadRequest)
+		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
@@ -147,5 +152,6 @@ func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http
 		return
 	}
 
-	json.NewEncoder(w).Encode(pref)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(buildPreferencesResponse(pref))
 }

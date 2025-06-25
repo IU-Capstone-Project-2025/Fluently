@@ -2,7 +2,12 @@ package config
 
 import (
 	"log"
+	"os"
+	"strings"
 	"time"
+
+	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/google"
 
 	"github.com/joho/godotenv"
 	"github.com/spf13/viper"
@@ -14,6 +19,7 @@ type Config struct {
 	Database DatabaseConfig
 	Logger   LoggerConfig
 	Google   GoogleConfig
+	Swagger  SwaggerConfig
 }
 
 type AuthConfig struct {
@@ -48,6 +54,10 @@ type GoogleConfig struct {
 	IosClientID     string
 	AndroidClientID string
 	WebClientID     string
+}
+
+type SwaggerConfig struct {
+	AllowedEmails map[string]bool
 }
 
 var cfg *Config
@@ -100,6 +110,9 @@ func Init() {
 			AndroidClientID: viper.GetString("ANDROID_GOOGLE_CLIENT_ID"),
 			WebClientID:     viper.GetString("WEB_GOOGLE_CLIENT_ID"),
 		},
+		Swagger: SwaggerConfig{
+			AllowedEmails: parseEmailWhitelist(viper.GetString("SWAGGER_ALLOWED_EMAILS")),
+		},
 	}
 }
 
@@ -115,4 +128,30 @@ func GetConfig() *Config {
 func GetPostgresDSN() string {
 	return "postgres://" + cfg.Database.User + ":" + cfg.Database.Password +
 		"@" + cfg.Database.Host + ":" + cfg.Database.Port + "/" + cfg.Database.Name
+}
+
+// GoogleOAuthConfig constructs an oauth2.Config based on application settings.
+// This is used for mobile app OAuth flows, not for Swagger UI.
+func GoogleOAuthConfig() *oauth2.Config {
+	cfg := GetConfig()
+
+	return &oauth2.Config{
+		// RedirectURL will be set dynamically by the handler based on the client type
+		ClientID:     cfg.Google.WebClientID,
+		ClientSecret: os.Getenv("WEB_GOOGLE_CLIENT_SECRET"),
+		Scopes:       []string{"openid", "email", "profile"},
+		Endpoint:     google.Endpoint,
+	}
+}
+
+// parseEmailWhitelist converts a comma-separated list into a map for O(1) lookups.
+func parseEmailWhitelist(env string) map[string]bool {
+	result := make(map[string]bool)
+	for _, e := range strings.Split(env, ",") {
+		e = strings.TrimSpace(e)
+		if e != "" {
+			result[e] = true
+		}
+	}
+	return result
 }
