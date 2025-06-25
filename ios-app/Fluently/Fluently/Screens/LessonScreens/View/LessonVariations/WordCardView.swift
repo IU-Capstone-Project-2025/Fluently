@@ -79,6 +79,7 @@ struct WordCardView: View {
             Text("Learn")
                 .padding()
                 .frame(maxWidth: .infinity)
+                .foregroundStyle(.blueAccent)
                 .modifier(ButtonViewModifier(color: .blue))
                 .frame(maxHeight: 60)
         }
@@ -92,6 +93,7 @@ struct WordCardView: View {
             Text("Know")
                 .padding()
                 .frame(maxWidth: .infinity)
+                .foregroundStyle(.blueAccent)
                 .modifier(ButtonViewModifier(color: .blue))
                 .frame(maxHeight: 60)
         }
