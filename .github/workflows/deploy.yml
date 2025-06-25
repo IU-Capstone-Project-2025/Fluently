@@ -4,37 +4,176 @@ on:
   push:
     branches:
       - main
-      - develop
+      - feature/*
+      - fix/*
   workflow_dispatch:
     inputs:
       branch:
         description: "Branch to deploy"
         required: false
         default: "main"
+      environment:
+        description: "Deployment environment (production/staging)"
+        required: false
+        default: "auto"
+        type: choice
+        options:
+          - auto
+          - production
+          - staging
 
 jobs:
-  deploy:
+  # Determine deployment environment
+  setup:
     runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.env.outputs.environment }}
+      domain: ${{ steps.env.outputs.domain }}
+      host: ${{ steps.env.outputs.host }}
+      username: ${{ steps.env.outputs.username }}
+      ssh_key: ${{ steps.env.outputs.ssh_key }}
+      zerotier_ip: ${{ steps.env.outputs.zerotier_ip }}
+    steps:
+      - name: Determine environment
+        id: env
+        run: |
+          BRANCH="${{ github.event.inputs.branch || github.ref_name }}"
+          ENV_INPUT="${{ github.event.inputs.environment }}"
+          
+          # Auto-determine environment based on branch if not manually specified
+          if [ "$ENV_INPUT" = "auto" ] || [ -z "$ENV_INPUT" ]; then
+            if [ "$BRANCH" = "main" ]; then
+              ENVIRONMENT="production"
+            else
+              ENVIRONMENT="staging"
+            fi
+          else
+            ENVIRONMENT="$ENV_INPUT"
+          fi
+          
+          # Set environment-specific variables
+          if [ "$ENVIRONMENT" = "production" ]; then
+            DOMAIN="fluently-app.ru"
+            HOST="${{ secrets.DEPLOY_HOST }}"
+            USERNAME="${{ secrets.DEPLOY_USERNAME }}"
+            SSH_KEY="${{ secrets.DEPLOY_SSH_KEY }}"
+            ZEROTIER_IP="${{ secrets.ZEROTIER_IP }}"
+          else
+            DOMAIN="fluently-app.online"
+            HOST="${{ secrets.STAGING_DEPLOY_HOST }}"
+            USERNAME="${{ secrets.STAGING_DEPLOY_USERNAME }}"
+            SSH_KEY="${{ secrets.STAGING_DEPLOY_SSH_KEY }}"
+            ZEROTIER_IP="${{ secrets.STAGING_ZEROTIER_IP }}"
+          fi
+          
+          echo "environment=$ENVIRONMENT" >> $GITHUB_OUTPUT
+          echo "domain=$DOMAIN" >> $GITHUB_OUTPUT
+          echo "host=$HOST" >> $GITHUB_OUTPUT
+          echo "username=$USERNAME" >> $GITHUB_OUTPUT
+          echo "ssh_key=$SSH_KEY" >> $GITHUB_OUTPUT
+          echo "zerotier_ip=$ZEROTIER_IP" >> $GITHUB_OUTPUT
+          
+          echo "🚀 Deploying branch '$BRANCH' to $ENVIRONMENT environment ($DOMAIN)"
+
+  deploy:
+    needs: setup
+    runs-on: ubuntu-latest
+    environment: ${{ needs.setup.outputs.environment }}
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Deploy over SSH
+      - name: Deploy to ${{ needs.setup.outputs.environment }}
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          username: ${{ secrets.DEPLOY_USERNAME }}
-          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          host: ${{ needs.setup.outputs.host }}
+          username: ${{ needs.setup.outputs.username }}
+          key: ${{ needs.setup.outputs.ssh_key }}
           script: |
-            cd /home/deploy/Fluently-fork/backend
-            git checkout ${{ github.event.inputs.branch || github.ref_name }}
-            git pull origin ${{ github.event.inputs.branch || github.ref_name }}
-            docker compose down
-            docker compose up -d --build
-
-            # Should speed up the proccess, and be used instead of docker compose up -d --build
-            # But it does not work 
-            # //TODO
-            # docker build --build-arg BUILDKIT_INLINE_CACHE=1 -t fluently-app .
+            set -e
+            
+            BRANCH="${{ github.event.inputs.branch || github.ref_name }}"
+            ENVIRONMENT="${{ needs.setup.outputs.environment }}"
+            DOMAIN="${{ needs.setup.outputs.domain }}"
+            
+            echo "🔄 Starting deployment of branch '$BRANCH' to $ENVIRONMENT environment"
+            echo "🌐 Domain: $DOMAIN"
+            
+            # Navigate to project directory
+            if [ "$ENVIRONMENT" = "production" ]; then
+              cd /home/deploy/Fluently-fork/backend
+            else
+              cd /home/deploy-staging/Fluently-fork/backend
+            fi
+            
+            # Backup current state (only for production)
+            if [ "$ENVIRONMENT" = "production" ]; then
+              echo "📦 Creating backup..."
+              docker compose down --remove-orphans
+              tar -czf "/home/deploy/backups/fluently-backup-$(date +%Y%m%d-%H%M%S).tar.gz" \
+                --exclude=node_modules --exclude=.git . || echo "⚠️ Backup failed but continuing..."
+            fi
+            
+            # Update code
+            echo "📥 Updating code..."
+            git fetch origin
+            git checkout $BRANCH
+            git pull origin $BRANCH
+            
+            # Create environment-specific .env if it doesn't exist
+            if [ ! -f ".env" ]; then
+              echo "📝 Creating .env file from example..."
+              cp .env.example .env
+            fi
+            
+            # Update environment variables based on deployment target
+            echo "⚙️ Updating environment configuration..."
+            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" .env
+            
+            # Update SSL certificate paths in nginx config for staging
+            if [ "$ENVIRONMENT" = "staging" ]; then
+              echo "🔧 Updating nginx config for staging domain..."
+              # This assumes you have separate SSL certificates for staging
+              # You might need to adjust paths based on your setup
+              sed -i "s|fluently-app\.ru|$DOMAIN|g" nginx-container/nginx.conf
+              sed -i "s|admin\.fluently-app\.ru|admin.$DOMAIN|g" nginx-container/nginx.conf
+            fi
+            
+            echo "🐳 Starting Docker containers..."
+            # Use docker compose v2 syntax and handle potential issues
+            docker compose down --remove-orphans || true
+            docker compose pull
+            docker compose up -d --build --force-recreate
+            
+            # Wait for services to be ready
+            echo "⏳ Waiting for services to start..."
+            sleep 30
+            
+            # Health check
+            echo "🏥 Performing health check..."
+            for i in {1..10}; do
+              if curl -f -s "http://localhost:8070/health" > /dev/null; then
+                echo "✅ Application is healthy!"
+                break
+              elif [ $i -eq 10 ]; then
+                echo "❌ Health check failed after 10 attempts"
+                docker compose logs app
+                exit 1
+              else
+                echo "⏳ Attempt $i/10: Waiting for application..."
+                sleep 10
+              fi
+            done
+            
+            # Show running containers
+            echo "📋 Running containers:"
+            docker compose ps
+            
+            echo "🎉 Deployment completed successfully!"
+            echo "🌐 Application available at: https://$DOMAIN"
+            
+            # Cleanup old images (keep last 3)
+            echo "🧹 Cleaning up old Docker images..."
+            docker image prune -f || true
             
