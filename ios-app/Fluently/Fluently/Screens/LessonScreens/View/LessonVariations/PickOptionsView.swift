@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 struct PickOptionsView: View {
     @State var sentence: String
     @State var selectedAnswer: String?
@@ -18,7 +17,7 @@ struct PickOptionsView: View {
 
     var body: some View {
         VStack {
-            sentenve()
+            sentenceView()
                 .foregroundStyle(.blackText)
                 .padding()
             listOfAnswers
@@ -61,7 +60,7 @@ struct PickOptionsView: View {
         }
     }
 
-    func sentenve() -> some View {
+    func sentenceView() -> some View {
         let parts = sentence.split(separator: "____")
 
         if let selectedAnswer {

@@ -55,7 +55,7 @@ struct FluentlyApp: App {
                             LessonScreensView(
                                 presenter: LessonsPresenter(
                                     router: router,
-                                    exercizes: PickOptionsGenerator.generateMockPickOptionsLessons()
+                                    words: WordCardGenerator.generateCards()
                                 )
                             )
                     }
