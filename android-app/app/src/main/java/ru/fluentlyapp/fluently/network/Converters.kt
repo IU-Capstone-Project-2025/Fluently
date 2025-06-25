@@ -43,9 +43,9 @@ fun LessonResponseBody.convertToLesson(): Lesson {
 
             // Second, add the related exercise
             val exerciseData = card.exercise.data
-            when {
-                // Translation and pick option exercise
-                card.exercise.type in listOf(
+            when (card.exercise.type) {
+                // Pick the correct translation of the word exercise
+                in listOf(
                     ExerciseType.TRANSLATE_EN_TO_RU,
                     ExerciseType.TRANSLATE_RU_TO_EN
                 ) -> {
@@ -62,20 +62,35 @@ fun LessonResponseBody.convertToLesson(): Lesson {
                     )
                 }
 
-                // Fill the gaps in sentence exercise
-                card.exercise.type == ExerciseType.PICK_OPTIONS_SENTENCE -> {
-                    val options = exerciseData.pick_options!!.toMutableList()
-                    val correctVariant = options.insertRandomly(exerciseData.correct_answer!!)
-
-                    add(
-                        Exercise.FillTheGap(
-                            sentence = exerciseData.template!!.split("\\s+".toRegex()),
-                            answerVariants = options,
-                            correctVariant = correctVariant,
-                            selectedVariant = null
-                        )
-                    )
-                }
+                // TODO: uncomment these
+//                // Fill the gaps in the sentence exercise
+//                ExerciseType.PICK_OPTIONS_SENTENCE -> {
+//                    val options = exerciseData.pick_options!!.toMutableList()
+//                    val correctVariant = options.insertRandomly(exerciseData.correct_answer!!)
+//
+//                    add(
+//                        Exercise.FillTheGap(
+//                            sentence = exerciseData.template!!.split("_".toRegex()),
+//                            answerVariants = options,
+//                            correctVariant = correctVariant,
+//                            selectedVariant = null
+//                        )
+//                    )
+//                }
+//
+//                // Write the word from translation exercise
+//                ExerciseType.WRITE_WORD_FROM_TRANSLATION -> {
+//                    val translation = exerciseData.translation!!
+//                    val correctAnswer = exerciseData.correct_answer!!
+//
+//                    add(
+//                        Exercise.InputWord(
+//                            translation = translation,
+//                            correctAnswer = correctAnswer,
+//                            inputtedWord = null
+//                        )
+//                    )
+//                }
             }
         }
     }

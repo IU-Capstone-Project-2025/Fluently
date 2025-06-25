@@ -63,7 +63,7 @@ class LessonFlowViewModel @Inject constructor(
                 // Additional check to not go beyond the list size
                 currentLessonComponentIndex = (currentLesson.currentLessonComponentIndex + 1).coerceIn(
                     0,
-                    currentLesson.components.size
+                    currentLesson.components.size - 1
                 )
             )
 

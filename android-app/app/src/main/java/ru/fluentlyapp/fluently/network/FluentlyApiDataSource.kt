@@ -4,14 +4,25 @@ import kotlinx.coroutines.delay
 import retrofit2.HttpException
 import ru.fluentlyapp.fluently.model.Lesson
 import ru.fluentlyapp.fluently.network.services.FluentlyApiService
+import ru.fluentlyapp.fluently.testing.mockLessonResponse
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.time.Duration.Companion.milliseconds
 
 @Singleton
-class FluentlyDataSource @Inject constructor(
+class FluentlyApiDataSource @Inject constructor(
     private val fluentlyApiService: FluentlyApiService
 ) {
+    suspend fun getLesson(lessonId: String): Lesson {
+        if (lessonId == mockLessonResponse.lesson.lesson_id) {
+            return mockLessonResponse.convertToLesson()
+        }
+
+        throw IllegalStateException(
+            "Invalid lessonId; passed: $lessonId; expected: ${mockLessonResponse.lesson.lesson_id}"
+        )
+    }
+
     suspend fun getCurrentLesson(): Lesson {
         delay(2000.milliseconds) // Simulate delay
 

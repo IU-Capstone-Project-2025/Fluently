@@ -49,6 +49,7 @@ data class ExerciseApiModel(
         const val TRANSLATE_RU_TO_EN = "translate_ru_to_en"
         const val TRANSLATE_EN_TO_RU = "translate_en_to_ru"
         const val PICK_OPTIONS_SENTENCE = "pick_option_sentence"
+        const val WRITE_WORD_FROM_TRANSLATION = "write_word_from_translation"
     }
 }
 

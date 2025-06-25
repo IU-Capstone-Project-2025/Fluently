@@ -3,12 +3,6 @@ package ru.fluentlyapp.fluently.ui.screens.home
 import android.net.Uri
 import androidx.core.net.toUri
 
-enum class OngoingLessonState {
-    HAS_PAUSED,
-    NOT_STARTED,
-    ERROR,
-    LOADING
-}
 
 // TODO: remove hardcoded values from there
 data class HomeScreenUiState(
@@ -21,4 +15,11 @@ data class HomeScreenUiState(
     val inProgressWordsNumber: Int = 0,
 
     val ongoingLessonState: OngoingLessonState = OngoingLessonState.NOT_STARTED
-)
+) {
+    enum class OngoingLessonState {
+        HAS_PAUSED,
+        NOT_STARTED,
+        ERROR,
+        LOADING
+    }
+}

@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.network.di
+package ru.fluentlyapp.fluently.testing
 
 import ru.fluentlyapp.fluently.network.model.CardApiModel
 import ru.fluentlyapp.fluently.network.model.ExerciseApiModel

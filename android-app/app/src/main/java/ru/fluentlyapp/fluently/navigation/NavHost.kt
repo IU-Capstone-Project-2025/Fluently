@@ -48,8 +48,8 @@ fun FluentlyNavHost(
         composable<Destination.HomeScreen> {
             HomeScreen(
                 modifier = Modifier.fillMaxSize(),
-                onNavigateToLesson = {
-                    navHostController.navigate(Destination.LessonScreen("lesson_id"))
+                onNavigateToLesson = { lessonId ->
+                    navHostController.navigate(Destination.LessonScreen(lessonId))
                 }
             )
         }

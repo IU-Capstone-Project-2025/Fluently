@@ -6,8 +6,8 @@ import kotlinx.coroutines.flow.update
 import ru.fluentlyapp.fluently.datastore.LessonPreferencesDataStore
 import ru.fluentlyapp.fluently.model.Exercise
 import ru.fluentlyapp.fluently.model.Lesson
-import ru.fluentlyapp.fluently.network.FluentlyDataSource
-import ru.fluentlyapp.fluently.network.di.mockLessonResponse
+import ru.fluentlyapp.fluently.network.FluentlyApiDataSource
+import ru.fluentlyapp.fluently.testing.mockLessonResponse
 import javax.inject.Inject
 
 interface LessonRepository {
@@ -69,90 +69,9 @@ interface LessonRepository {
     suspend fun sendLesson(lesson: Lesson)
 }
 
-var testLesson = Lesson(
-    lessonId = "lesson_test_001",
-    components = listOf(
-        // Word 1: Consciousness
-        Exercise.NewWord(
-            word = "consciousness",
-            translation = "сознание",
-            phoneticTranscription = "/ˈkɑːn.ʃəs.nəs/",
-            doesUserKnow = null,
-            examples = listOf("She lost consciousness" to "Она потеряла сознание")
-        ),
-        Exercise.ChooseTranslation(
-            word = "consciousness",
-            answerVariants = listOf("сознание", "память", "внимание", "мысль"),
-            correctVariant = 0,
-            selectedVariant = null
-        ),
-
-        // Word 2: Awareness
-        Exercise.NewWord(
-            word = "awareness",
-            translation = "осознание",
-            phoneticTranscription = "/əˈweə.nəs/",
-            doesUserKnow = null,
-            examples = listOf("Environmental awareness is rising" to "Экологическое осознание растет")
-        ),
-        Exercise.ChooseTranslation(
-            word = "осознание",
-            answerVariants = listOf("consciousness", "awareness", "focus", "clarity"),
-            correctVariant = 1,
-            selectedVariant = null
-        ),
-
-        // Word 3: Resilience
-        Exercise.NewWord(
-            word = "resilience",
-            translation = "устойчивость",
-            phoneticTranscription = "/rɪˈzɪl.jəns/",
-            doesUserKnow = null,
-            examples = listOf("Resilience is key to recovery" to "Устойчивость — ключ к восстановлению")
-        ),
-        Exercise.ChooseTranslation(
-            word = "resilience",
-            answerVariants = listOf("гибкость", "восстановление", "устойчивость", "усилие"),
-            correctVariant = 2,
-            selectedVariant = null
-        ),
-
-        // Word 4: Determination
-        Exercise.NewWord(
-            word = "determination",
-            translation = "решимость",
-            phoneticTranscription = "/dɪˌtɜː.mɪˈneɪ.ʃən/",
-            doesUserKnow = null,
-            examples = listOf("Her determination inspired others" to "Её решимость вдохновляла других")
-        ),
-        Exercise.ChooseTranslation(
-            word = "решимость",
-            answerVariants = listOf("motivation", "decision", "goal", "determination"),
-            correctVariant = 3,
-            selectedVariant = null
-        ),
-
-        // Word 5: Empathy
-        Exercise.NewWord(
-            word = "empathy",
-            translation = "сочувствие",
-            phoneticTranscription = "/ˈem.pə.θi/",
-            doesUserKnow = null,
-            examples = listOf("Empathy helps build trust" to "Сочувствие помогает строить доверие")
-        ),
-        Exercise.ChooseTranslation(
-            word = "empathy",
-            answerVariants = listOf("sympathy", "compassion", "empathy", "pity"),
-            correctVariant = 2,
-            selectedVariant = null
-        )
-    )
-)
-
-
 class StubLessonRepository @Inject constructor(
     val lessonPreferencesDataStore: LessonPreferencesDataStore,
-    val fluentlyDataSource: FluentlyDataSource
+    val fluentlyApiDataSource: FluentlyApiDataSource
 ) : LessonRepository {
     val lessons = mutableMapOf<String, MutableStateFlow<Lesson?>>()
     override fun getSavedOngoingLessonIdAsFlow(): Flow<String?> {
@@ -168,15 +87,11 @@ class StubLessonRepository @Inject constructor(
     }
 
     override suspend fun fetchCurrentLesson(): Lesson {
-        return fluentlyDataSource.getCurrentLesson()
+        return fluentlyApiDataSource.getCurrentLesson()
     }
 
     override suspend fun fetchLesson(lessonId: String): Lesson {
-        if (lessonId == mockLessonResponse.lesson.lesson_id) {
-            return fluentlyDataSource.getCurrentLesson()
-        } else {
-            TODO("Not yet implemented")
-        }
+        return fluentlyApiDataSource.getLesson(lessonId)
     }
 
     override suspend fun sendLesson(lesson: Lesson) {

@@ -21,6 +21,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
@@ -29,6 +30,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -39,8 +41,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import coil3.request.crossfade
 import ru.fluentlyapp.fluently.R
+import ru.fluentlyapp.fluently.ui.screens.home.HomeScreenUiState.OngoingLessonState
 
 @Composable
 fun HomeScreen(
@@ -49,14 +51,19 @@ fun HomeScreen(
     onNavigateToLesson: (lessonId: String) -> Unit
 ) {
     val uiState by homeScreenViewModel.uiState.collectAsState()
+    val ongoingLessonId by homeScreenViewModel.ongoingLessonId.collectAsState()
+
+    LaunchedEffect(ongoingLessonId) {
+        ongoingLessonId?.let { lessonId ->
+            onNavigateToLesson(lessonId)
+        }
+    }
 
     HomeScreenContent(
         modifier = modifier,
         uiState = uiState,
         onLessonClick = {
-            homeScreenViewModel.fetchCurrentLessonForUser { lessonId ->
-                onNavigateToLesson(lessonId)
-            }
+            homeScreenViewModel.getOngoingLessonId()
         }
     )
 }
@@ -228,14 +235,16 @@ fun HomeScreenContent(
                 Row(
                     modifier = Modifier
                         .clip(RoundedCornerShape(100.dp))
-                        .clickable(onClick = onLessonClick)
+                        .clickable(
+                            onClick = onLessonClick,
+                            enabled = uiState.ongoingLessonState != OngoingLessonState.LOADING
+                        )
+                        .alpha(if (uiState.ongoingLessonState == OngoingLessonState.LOADING) .5f else 1f)
                         .background(color = FluentlyTheme.colors.surfaceInverse)
                         .padding(12.dp)
                         .height(40.dp)
                         .widthIn(min = 240.dp)
-                        .align(
-                            Alignment.Center
-                        ),
+                        .align(Alignment.Center),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
@@ -266,7 +275,7 @@ fun HomeScreenPreview() {
         HomeScreenContent(
             modifier = Modifier.fillMaxSize(),
             uiState = HomeScreenUiState(ongoingLessonState = OngoingLessonState.LOADING),
-            onLessonClick = {  }
+            onLessonClick = { }
         )
     }
 }
