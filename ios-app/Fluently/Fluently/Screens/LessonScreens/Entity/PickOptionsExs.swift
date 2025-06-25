@@ -13,7 +13,14 @@ final class PickOptionsExs: Exercize {
     var sentence: String
     var options: [String]
 
-    init(exercizeID: UUID, exercizeType: String, sentenceID: UUID, sentence: String, options: [String], correctAnswer: String) {
+    init(
+        exercizeID: UUID,
+        exercizeType: String,
+        sentenceID: UUID,
+        sentence: String,
+        options: [String],
+        correctAnswer: String
+    ) {
         self.sentenceID = sentenceID
         self.sentence = sentence
         self.options = options
