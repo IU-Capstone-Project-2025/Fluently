@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TypeTranslationView: View {
+    // MARK: - Properties
     @State var word: String
     @State var typedAnswer: String = ""
 
@@ -31,6 +32,8 @@ struct TypeTranslationView: View {
             Spacer()
         }
     }
+
+    // MARK: - Subviews
 
     var buttonNext: some View {
         Button {

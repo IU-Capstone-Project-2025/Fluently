@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct AvatarImage: View{
+    // MARK: - Key Objects
     @EnvironmentObject var account: AccountData
 
+    // MARK: - Properties
     let size: CGFloat
 
     var onTap: (() -> Void)?
@@ -51,6 +53,7 @@ struct AvatarImage: View{
         .buttonStyle(.plain)
     }
 
+    // image loading error handling
     private func fallbackIcon() -> some View {
         Image(systemName: "person")
             .resizable()

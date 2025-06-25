@@ -8,11 +8,14 @@
 import Foundation
 import SwiftData
 
+// exr to match word with sentence
 final class PickOptionsExs: Exercise {
+    // MARK: - Properties
     var sentenceId: UUID
     var sentence: String
     var options: [String]
 
+    // MARK: - Init
     init(
         exerciseId: UUID,
         sentenceId: UUID,
@@ -32,6 +35,7 @@ final class PickOptionsExs: Exercise {
     }
 }
 
+// MARK: - Pick-options mock generator
 struct PickOptionsGenerator {
     static func generateMockPickOptionsLessons() -> [PickOptionsExs] {
         return [

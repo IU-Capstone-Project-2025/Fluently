@@ -7,11 +7,14 @@
 
 import Foundation
 
+// exr to choose correct translation
 final class ChooseTranslationExs: Exercise {
+    // MARK: - Properties
     var wordId: UUID
     var word: String
     var options: [String]
 
+    // MARK: - Init
     init(
         exerciseId: UUID,
         wordId: UUID,

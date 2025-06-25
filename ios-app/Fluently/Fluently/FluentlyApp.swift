@@ -10,6 +10,7 @@ import GoogleSignIn
 
 @main
 struct FluentlyApp: App {
+    // MARK: - Key parts
     @StateObject private var account = AccountData()
     @StateObject private var authViewModel = GoogleAuthViewModel()
     @StateObject private var router = AppRouter()
@@ -21,7 +22,7 @@ struct FluentlyApp: App {
         WindowGroup {
             NavigationStack(path: $router.navigationPath) {
                 Group {
-                    if account.isLoggined && !showLogin {
+                    if account.isLoggedIn && !showLogin {
                         HomeScreenBuilder.build(router: router, acoount: account)
                             .onDisappear {
                                 showLogin = false
@@ -61,8 +62,8 @@ struct FluentlyApp: App {
                     }
                 }
             }
-            .onChange(of: account.isLoggined) {
-                print("account is: \(account.isLoggined)")
+            .onChange(of: account.isLoggedIn) {
+                print("account is: \(account.isLoggedIn)")
             }
             .environmentObject(account)
             .environmentObject(router)
@@ -72,7 +73,7 @@ struct FluentlyApp: App {
     private func handleURL(_ url: URL) {
         GIDSignIn.sharedInstance.handle(url)
     }
-
+    
     private func attemptRestoreLogin() {
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             DispatchQueue.main.async {
@@ -81,10 +82,12 @@ struct FluentlyApp: App {
                     account.familyName = user.profile?.familyName
                     account.mail = user.profile?.email
                     account.image = user.profile?.imageURL(withDimension: 100)?.absoluteString
-                    account.isLoggined = true
+                    account.isLoggedIn = true
                     showLogin = false
+
+                    print(user.idToken)
                 } else {
-                    account.isLoggined = false
+                    account.isLoggedIn = false
                     showLogin = true
                 }
             }
@@ -92,7 +95,7 @@ struct FluentlyApp: App {
     }
 }
 
-
+// MARK: - Routes
 enum AppRoutes: Hashable {
     case homeScreen
     case login

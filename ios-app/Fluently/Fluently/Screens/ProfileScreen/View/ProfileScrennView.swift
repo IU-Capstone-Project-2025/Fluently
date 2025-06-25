@@ -9,12 +9,15 @@ import Foundation
 import SwiftUI
 
 struct ProfileScrennView: View {
+    // MARK: - Key Objects
     @EnvironmentObject var router: AppRouter
     @EnvironmentObject var account: AccountData
     @ObservedObject var authViewModel: GoogleAuthViewModel
 
+    // MARK: - Properties
     @Binding var navigationPath: NavigationPath
 
+    // MARK: - View Constances
     private enum Const {
         static var avatarSize = CGFloat(120)
     }
@@ -39,6 +42,8 @@ struct ProfileScrennView: View {
             }
         }
     }
+
+    // MARK: - Subviews
 
     var topBar: some View {
         VStack {
@@ -65,10 +70,11 @@ struct ProfileScrennView: View {
         .modifier(SheetViewModifier())
     }
 
+    /// Log out
     var logoutButton: some View {
         Button {
             authViewModel.signOut()
-            account.isLoggined = false
+            account.isLoggedIn = false
             router.popToRoot()
         } label: {
             Text("sign out")

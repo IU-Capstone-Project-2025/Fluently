@@ -12,8 +12,8 @@ import UIKit
 import GoogleSignInSwift
 import GoogleSignIn
 
-
 struct LoginView: View {
+    // MARK: - Key Objects
     @EnvironmentObject var router: AppRouter
     @EnvironmentObject var account: AccountData
     @ObservedObject var authViewModel: GoogleAuthViewModel
@@ -22,6 +22,7 @@ struct LoginView: View {
 
     // MARK: - Properties
     let name: String = "Fluently"
+
     // MARK: - Constants
     private enum Const {
         // Paddings
@@ -48,7 +49,7 @@ struct LoginView: View {
 
     // MARK: - SubViews
 
-    ///  Top Bar
+    /// Top Bar
     var topBar: some View {
         HStack {
             VStack (alignment: .center) {
@@ -71,6 +72,7 @@ struct LoginView: View {
         .modifier(SheetViewModifier())
     }
 
+    // MARK: - Google sign in implementation
     var googleSignInButton: some View {
         GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(
             scheme: .dark,

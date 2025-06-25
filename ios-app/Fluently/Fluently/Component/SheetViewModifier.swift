@@ -7,8 +7,9 @@
 
 import SwiftUI
 
+// Modifier for white sheet view 
 struct SheetViewModifier: ViewModifier {
-
+    // MARK: - View constances
     private enum Const {
         // Paddings
         static let horizontalPadding = CGFloat(30)
@@ -17,7 +18,6 @@ struct SheetViewModifier: ViewModifier {
         static let sheetCornerRadius = CGFloat(20)
         static let gridInfoVerticalPadding = CGFloat(20)
     }
-
 
     func body(content: Content) -> some View {
         content
