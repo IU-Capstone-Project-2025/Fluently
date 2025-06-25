@@ -28,15 +28,17 @@ scrape_configs:
     scrape_interval: 30s
     scrape_timeout: 10s
 
-  # PostgreSQL metrics (if postgres_exporter is added)
-  # - job_name: 'postgres-exporter'
-  #   static_configs:
-  #     - targets: ['postgres-exporter:9187']
+  # PostgreSQL metrics
+  - job_name: 'postgres-exporter'
+    static_configs:
+      - targets: ['postgres-exporter:9187']
+    scrape_interval: 30s
 
-  # Nginx metrics (if nginx-prometheus-exporter is added)
-  # - job_name: 'nginx-exporter'
-  #   static_configs:
-  #     - targets: ['nginx-exporter:9113']
+  # Nginx metrics
+  - job_name: 'nginx-exporter'
+    static_configs:
+      - targets: ['nginx-exporter:9113']
+    scrape_interval: 30s
 
   # Grafana metrics
   - job_name: 'grafana'
@@ -59,7 +61,9 @@ scrape_configs:
     metrics_path: '/api/monitoring/metrics'
     scrape_interval: 60s
 
-  # Docker daemon metrics (requires Docker daemon metrics to be enabled)
-  # - job_name: 'docker'
-  #   static_configs:
-  #     - targets: ['host.docker.internal:9323']
+  # Docker container metrics via cAdvisor
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+    scrape_interval: 30s
+    metrics_path: '/metrics'
