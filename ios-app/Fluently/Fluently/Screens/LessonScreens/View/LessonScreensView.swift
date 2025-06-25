@@ -61,7 +61,7 @@ struct LessonScreensView: View {
                 Text("Lesson:")
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
-                Text(presenter.currentEx.exercizeType.rawValue)
+                Text(presenter.currentEx.exerciseType.rawValue)
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
             }
@@ -73,11 +73,11 @@ struct LessonScreensView: View {
     ///  Grid with main info
     var infoGrid: some View {
         VStack {
-            switch presenter.currentEx.exercizeType {
+            switch presenter.currentEx.exerciseType {
                 case .chooseTranslationEngRuss:
-                    Text(presenter.currentEx.exercizeType.rawValue)
+                    Text(presenter.currentEx.exerciseType.rawValue)
                 case .chooseTranslationRussEng:
-                    Text(presenter.currentEx.exercizeType.rawValue)
+                    Text(presenter.currentEx.exerciseType.rawValue)
                 case .pickOptions:
                     let pickOptionEx = presenter.currentEx as! PickOptionsExs
                     PickOptionsView(
@@ -85,13 +85,23 @@ struct LessonScreensView: View {
                         answers: pickOptionEx.options) { selectedAnswer in
                             presenter.answer(selectedAnswer)
                         }
-                        .id(presenter.currentEx.exercizeID)
+                        .id(presenter.currentEx.exerciseId)
                 case .recordPronounce:
-                    Text(presenter.currentEx.exercizeType.rawValue)
+                    Text(presenter.currentEx.exerciseType.rawValue)
                 case .wordCard:
-                    Text(presenter.currentEx.exercizeType.rawValue)
+                    let wordCard = presenter.currentEx as! WordCard
+                    WordCardView(
+                        word: wordCard,
+                        onKnowTapped: {
+                            presenter.nextExercize()
+                        },
+                        onLearnTapped: {
+                            presenter.showLesson()
+                        }
+                    )
+                    .id(presenter.currentEx.exerciseId)
                 case .numberOfWords:
-                    Text(presenter.currentEx.exercizeType.rawValue)
+                    Text(presenter.currentEx.exerciseType.rawValue)
             }
         }
         .modifier(SheetViewModifier())

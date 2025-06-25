@@ -12,19 +12,19 @@ final class LessonsPresenter: ObservableObject {
 
     private var router: AppRouter
 
-    private var exercizes: [Exercize]
+    private var words: [WordCard]
     @Published private(set) var currentExNumber: Int
-    @Published private(set) var currentEx: Exercize
+    @Published private(set) var currentEx: Exercise
 
-    var statistic: [ExercizeSolution : [Exercize]]
+    var statistic: [ExerciseSolution : [Exercise]]
 
-    init(router: AppRouter, exercizes: [Exercize]) {
+    init(router: AppRouter, words: [WordCard]) {
         self.router = router
 
-        self.exercizes = exercizes
+        self.words = words
 
         self.currentExNumber = 0
-        self.currentEx = exercizes[0]
+        self.currentEx = words[0]
         self.statistic = [:]
 
         statistic[.correct] = []
@@ -35,6 +35,10 @@ final class LessonsPresenter: ObservableObject {
 
     func navigateBack() {
         router.pop()
+    }
+
+    func showLesson() {
+        currentEx = words[currentExNumber].exercise
     }
 
     func answer(_ answer: String) {
@@ -48,13 +52,13 @@ final class LessonsPresenter: ObservableObject {
 
     // MARK: - Lesson navigation
     func nextExercize() {
-        guard currentExNumber < exercizes.count - 1 else {
+        guard currentExNumber < words.count - 1 else {
             finishLesson()
             return
         }
 
         currentExNumber += 1
-        currentEx = exercizes[currentExNumber]
+        currentEx = words[currentExNumber]
     }
 
     func finishLesson() {
