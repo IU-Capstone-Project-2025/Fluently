@@ -145,6 +145,13 @@ jobs:
               sed -i "s|admin\.fluently-app\.ru|admin.$DOMAIN|g" nginx-container/nginx.conf
             fi
             
+            # Set nginx config file based on environment
+            if [ "$ENVIRONMENT" = "staging" ]; then
+              export NGINX_CONFIG_FILE="./nginx-container/nginx-staging.conf"
+            else
+              export NGINX_CONFIG_FILE="./nginx-container/nginx.conf"
+            fi
+            
             echo "🐳 Starting Docker containers..."
             # Use docker compose v2 syntax and handle potential issues
             docker compose down --remove-orphans || true
