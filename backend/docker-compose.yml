@@ -51,6 +51,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    depends_on:
+      - app
     volumes:
       # Use different configs for different environments
       - ${NGINX_CONFIG_FILE:-./nginx-container/nginx.conf}:/etc/nginx/conf.d/default.conf:ro
