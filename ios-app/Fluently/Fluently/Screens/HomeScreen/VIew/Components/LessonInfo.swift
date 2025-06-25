@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LessonInfo: View {
+    // MARK: - Properties
     let minutes: Int
     let seconds: Int
 
@@ -30,6 +31,8 @@ struct LessonInfo: View {
         )
     }
 
+    // MARK: - Subviews
+    
     var learnImage: some View {
         Image(systemName: "graduationcap.fill")
             .foregroundStyle(.blueAccent)

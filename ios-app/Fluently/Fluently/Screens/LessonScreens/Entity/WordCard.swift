@@ -7,8 +7,9 @@
 
 import Foundation
 
-
+// check new word
 final class WordCard: Exercise {
+    // MARK: - Properties
     var wordId: UUID
     var word: String
     var translation: String
@@ -20,6 +21,7 @@ final class WordCard: Exercise {
     var sentences: [Sentence]
     var exercise: Exercise
 
+    // MARK: - Init
     init(
         exerciseId: UUID,
         wordId: UUID,

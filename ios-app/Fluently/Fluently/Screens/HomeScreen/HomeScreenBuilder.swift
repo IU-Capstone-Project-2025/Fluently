@@ -7,13 +7,13 @@
 
 import Foundation
 
+// MARK: - View Builder
 enum HomeScreenBuilder{
     static func build(
         router: AppRouter,
         acoount: AccountData,
     ) -> HomeScreenView {
-
-        var presenter = HomeScreenPresenter(
+        let presenter = HomeScreenPresenter(
             router: router,
             account: acoount
         )

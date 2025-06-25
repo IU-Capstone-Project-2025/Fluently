@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct HomeScreenView: View {
+    // MARK: - Key Objects
     @ObservedObject var presenter: HomeScreenPresenter
 
     // MARK: - Properties

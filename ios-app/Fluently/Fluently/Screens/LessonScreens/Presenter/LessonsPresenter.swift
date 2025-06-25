@@ -9,15 +9,17 @@ import Foundation
 import SwiftUI
 
 final class LessonsPresenter: ObservableObject {
-
+    // MARK: - Key Object
     private var router: AppRouter
 
+    // MARK: - Properties
     private var words: [WordCard]
     @Published private(set) var currentExNumber: Int
     @Published private(set) var currentEx: Exercise
 
     var statistic: [ExerciseSolution : [Exercise]]
 
+    // MARK: - Init
     init(router: AppRouter, words: [WordCard]) {
         self.router = router
 
@@ -47,11 +49,11 @@ final class LessonsPresenter: ObservableObject {
         } else {
             statistic[.uncorrect]!.append(currentEx)
         }
-        nextExercize()
+        nextExercise()
     }
 
     // MARK: - Lesson navigation
-    func nextExercize() {
+    func nextExercise() {
         guard currentExNumber < words.count - 1 else {
             finishLesson()
             return
@@ -61,6 +63,7 @@ final class LessonsPresenter: ObservableObject {
         currentEx = words[currentExNumber]
     }
 
+    // func to represent statistic
     func finishLesson() {
         navigateBack()
         statistic.keys.forEach { solution in

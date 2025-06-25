@@ -7,18 +7,22 @@
 
 import SwiftUI
 
+// Modifiier for 3D Button
 struct ButtonViewModifier: ViewModifier {
+    // MARK: - Color
     enum ButtonColor {
         case blue
         case orange
     }
 
+    // MARK: - Properties
     var color: ButtonColor = .orange
     private var primaryColor: Color
     private var secondaryColor: Color
 
     @State var isPressed = false
 
+    // MARK: - Init
     init(color: ButtonColor) {
         self.color = color
 

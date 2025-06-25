@@ -7,11 +7,14 @@
 
 import Foundation
 
+// sentence class
 final class Sentence {
+    // MARK: - Properties
     var sentenceId: UUID
     var sentence: String
     var translation: String
 
+    // MARK: - Init
     init(
         sentenceId: UUID,
         sentece: String,
