@@ -31,7 +31,6 @@ jobs:
       domain: ${{ steps.env.outputs.domain }}
       host: ${{ steps.env.outputs.host }}
       username: ${{ steps.env.outputs.username }}
-      ssh_key: ${{ steps.env.outputs.ssh_key }}
       zerotier_ip: ${{ steps.env.outputs.zerotier_ip }}
     steps:
       - name: Determine environment
@@ -56,13 +55,11 @@ jobs:
             DOMAIN="fluently-app.ru"
             HOST="${{ secrets.DEPLOY_HOST }}"
             USERNAME="${{ secrets.DEPLOY_USERNAME }}"
-            SSH_KEY="${{ secrets.DEPLOY_SSH_KEY }}"
             ZEROTIER_IP="${{ secrets.ZEROTIER_IP }}"
           else
             DOMAIN="fluently-app.online"
             HOST="${{ secrets.STAGING_DEPLOY_HOST }}"
             USERNAME="${{ secrets.STAGING_DEPLOY_USERNAME }}"
-            SSH_KEY="${{ secrets.STAGING_DEPLOY_SSH_KEY }}"
             ZEROTIER_IP="${{ secrets.STAGING_ZEROTIER_IP }}"
           fi
           
@@ -70,7 +67,6 @@ jobs:
           echo "domain=$DOMAIN" >> $GITHUB_OUTPUT
           echo "host=$HOST" >> $GITHUB_OUTPUT
           echo "username=$USERNAME" >> $GITHUB_OUTPUT
-          echo "ssh_key=$SSH_KEY" >> $GITHUB_OUTPUT
           echo "zerotier_ip=$ZEROTIER_IP" >> $GITHUB_OUTPUT
           
           echo "🚀 Deploying branch '$BRANCH' to $ENVIRONMENT environment ($DOMAIN)"
@@ -89,7 +85,7 @@ jobs:
         with:
           host: ${{ needs.setup.outputs.host }}
           username: ${{ needs.setup.outputs.username }}
-          key: ${{ needs.setup.outputs.ssh_key }}
+          key: ${{ needs.setup.outputs.environment == 'production' && secrets.PROD_DEPLOY_SSH_KEY || secrets.STAGING_DEPLOY_SSH_KEY }}
           script: |
             set -e
             
