@@ -4,9 +4,11 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import ru.fluentlyapp.fluently.database.dao.LessonDao
 import ru.fluentlyapp.fluently.datastore.LessonPreferencesDataStore
 import ru.fluentlyapp.fluently.model.Exercise
 import ru.fluentlyapp.fluently.model.Lesson
+import ru.fluentlyapp.fluently.network.FluentlyDataSource
 import javax.inject.Inject
 
 interface LessonRepository {
@@ -150,9 +152,12 @@ var testLesson = Lesson(
 
 
 class StubLessonRepository @Inject constructor(
-    val lessonPreferencesDataStore: LessonPreferencesDataStore
+    val lessonPreferencesDataStore: LessonPreferencesDataStore,
+    val fluentlyDataSource: FluentlyDataSource
 ) : LessonRepository {
-    private val lesson = MutableStateFlow(testLesson)
+    val lessons = mutableMapOf<String, MutableStateFlow<Lesson?>>()
+
+
     override suspend fun getLocalOngoingLessonId(): String? {
         return lessonPreferencesDataStore.getOngoingLessonId()
     }
@@ -166,24 +171,33 @@ class StubLessonRepository @Inject constructor(
     }
 
     override suspend fun fetchCurrentLesson(): Lesson {
-        TODO("Not yet implemented")
+        return fluentlyDataSource.getCurrentLesson()
     }
 
     override suspend fun fetchLesson(lessonId: String): Lesson {
         TODO("Not yet implemented")
     }
 
-    override suspend fun saveLesson(lesson: Lesson) {
-        this.lesson.update { lesson }
-    }
-
-    override suspend fun getSavedLesson(lessonId: String): Lesson? {
-        return lesson.value
-    }
-
     override suspend fun sendLesson(lesson: Lesson) {
         TODO("Not yet implemented")
     }
 
-    override fun getSavedLessonAsFlow(lessonId: String): Flow<Lesson?> = lesson.asStateFlow()
+    override suspend fun saveLesson(lesson: Lesson) {
+        val stateFlow = lessons.getOrPut(lesson.lessonId) {
+            MutableStateFlow(null)
+        }
+        stateFlow.update { lesson }
+    }
+
+    override suspend fun getSavedLesson(lessonId: String): Lesson? {
+        return lessons[lessonId]?.value
+    }
+
+    override fun getSavedLessonAsFlow(lessonId: String): Flow<Lesson?> {
+        val stateFlow = lessons.getOrPut(lessonId) {
+            MutableStateFlow(null)
+        }
+
+        return stateFlow
+    }
 }

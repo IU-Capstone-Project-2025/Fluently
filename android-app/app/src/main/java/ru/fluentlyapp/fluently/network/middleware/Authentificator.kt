@@ -13,12 +13,14 @@ import ru.fluentlyapp.fluently.network.model.RefreshServerTokenRequest
 import ru.fluentlyapp.fluently.network.services.ServerTokenApiService
 import ru.fluentlyapp.fluently.network.toServerToken
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * If the server returned 401 code, this interceptor will be called
  *
  * The interceptor will try to get the refresh token using the `RefreshServerTokenService`
  */
+@Singleton
 class AuthAuthenticator @Inject constructor(
     private val serverTokenDataStore: ServerTokenDataStore,
     private val refreshServerTokenService: ServerTokenApiService

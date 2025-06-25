@@ -8,11 +8,13 @@ import ru.fluentlyapp.fluently.datastore.ServerTokenDataStore
 import ru.fluentlyapp.fluently.network.HEADER_AUTHORIZATION
 import ru.fluentlyapp.fluently.network.TOKEN_TYPE
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Appends the access token received from the `ServerTokenManager` to the
  * If the access token is not stored it just adds null
  */
+@Singleton
 class AccessTokenInterceptor @Inject constructor(
     private val serverTokenDataStore: ServerTokenDataStore
 ) : Interceptor {
