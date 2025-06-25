@@ -74,7 +74,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Debug deployment values
+      - name: Debug values
         run: |
           echo "🔍 Debug Information:"
           echo "Environment: ${{ needs.setup.outputs.environment }}"
@@ -86,7 +86,6 @@ jobs:
           host: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_HOST || secrets.STAGING_DEPLOY_HOST }}
           username: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_USERNAME || secrets.STAGING_DEPLOY_USERNAME }}
           key: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_SSH_KEY || secrets.STAGING_DEPLOY_SSH_KEY }}
-          command_timeout: 30m
           script: |
             set -e
             
