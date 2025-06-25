@@ -35,7 +35,7 @@ import ru.fluentlyapp.fluently.model.Exercise
 import ru.fluentlyapp.fluently.ui.components.ExerciseContinueButton
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 
-abstract class NewWordController {
+abstract class NewWordObserver {
     abstract fun onUserKnowsWord(doesUserKnowWord: Boolean)
     abstract fun onCompleteExercise()
 }
@@ -44,7 +44,7 @@ abstract class NewWordController {
 fun NewWordExercise(
     modifier: Modifier = Modifier,
     exerciseState: Exercise.NewWord,
-    newWordController: NewWordController,
+    newWordObserver: NewWordObserver,
     isCompleted: Boolean
 ) {
     Column(
@@ -116,7 +116,7 @@ fun NewWordExercise(
                         .clip(RoundedCornerShape(12.dp))
                         .clickable(
                             enabled = !isCompleted,
-                            onClick = { newWordController.onUserKnowsWord(true) }
+                            onClick = { newWordObserver.onUserKnowsWord(true) }
                         )
                         .border(
                             color = FluentlyTheme.colors.onSurface,
@@ -143,7 +143,7 @@ fun NewWordExercise(
                         .clip(RoundedCornerShape(12.dp))
                         .clickable(
                             enabled = !isCompleted,
-                            onClick = { newWordController.onUserKnowsWord(false) }
+                            onClick = { newWordObserver.onUserKnowsWord(false) }
                         )
                         .weight(1f)
                         .background(color = FluentlyTheme.colors.secondary)
@@ -163,7 +163,7 @@ fun NewWordExercise(
         ExerciseContinueButton(
             modifier = Modifier.fillMaxWidth(.7f).padding(32.dp).height(80.dp),
             enabled = isCompleted,
-            onClick = newWordController::onCompleteExercise
+            onClick = newWordObserver::onCompleteExercise
         )
     }
 }
@@ -192,7 +192,7 @@ fun NewWordExercisePreview() {
                                 "Устаревание компонентов - главная причина конфликтов в Андроиде",
                     )
                 ),
-                newWordController = object : NewWordController() {
+                newWordObserver = object : NewWordObserver() {
                     override fun onUserKnowsWord(doesUserKnowWord: Boolean) {}
                     override fun onCompleteExercise() {}
                 },

@@ -12,8 +12,9 @@ import ru.fluentlyapp.fluently.data.repository.LessonRepository
 import ru.fluentlyapp.fluently.model.Exercise
 import ru.fluentlyapp.fluently.model.LessonComponent
 import ru.fluentlyapp.fluently.navigation.Destination
-import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationController
-import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordController
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationObserver
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.FillGapsObserver
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordObserver
 import javax.inject.Inject
 
 @HiltViewModel
@@ -74,8 +75,8 @@ class LessonFlowViewModel @Inject constructor(
         }
     }
 
-    // Controller that is responsible for handling "choose translation" exercises
-    val chooseTranslationController = object : ChooseTranslationController() {
+    // Observer that is responsible for handling "choose translation" exercises
+    val chooseTranslationObserver = object : ChooseTranslationObserver() {
         override fun onVariantClick(variantIndex: Int) {
             val currentComponent =
                 checkCurrentComponentOrNull<Exercise.ChooseTranslation>() ?: return
@@ -86,8 +87,8 @@ class LessonFlowViewModel @Inject constructor(
         override fun onCompleteExercise() = moveToNextComponent()
     }
 
-    // Controller for the "learn new word" exercises
-    val newWordController = object : NewWordController() {
+    // Observer for the "learn new word" exercises
+    val newWordObserver = object : NewWordObserver() {
         override fun onUserKnowsWord(doesUserKnowWord: Boolean) {
             val currentComponent = checkCurrentComponentOrNull<Exercise.NewWord>() ?: return
             val updatedComponent = currentComponent.copy(doesUserKnow = doesUserKnowWord)
@@ -95,6 +96,17 @@ class LessonFlowViewModel @Inject constructor(
         }
 
         override fun onCompleteExercise() = moveToNextComponent()
+    }
+
+    // Observer for fill the gap exercises
+    val fillGapsObserver = object : FillGapsObserver() {
+        override fun onCompleteExercise() = moveToNextComponent()
+
+        override fun onVariantClick(variantIndex: Int) {
+            val currentComponent = checkCurrentComponentOrNull<Exercise.FillTheGap>() ?: return
+            val updatedComponent = currentComponent.copy(selectedVariant = variantIndex)
+            updateCurrentComponent(updatedComponent)
+        }
     }
 
     private fun updateCurrentComponent(newComponent: LessonComponent) {

@@ -10,9 +10,11 @@ import androidx.compose.ui.Modifier
 import ru.fluentlyapp.fluently.model.Exercise
 import ru.fluentlyapp.fluently.model.LessonComponent
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.other.LoadingLessonComponent
-import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationController
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationExercise
-import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordController
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.FillGapsExercise
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.FillGapsObserver
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordExercise
 
 data class LessonComponentWithIndex(
@@ -24,8 +26,9 @@ data class LessonComponentWithIndex(
 fun LessonComponentRenderer(
     modifier: Modifier,
     component: LessonComponentWithIndex,
-    chooseTranslationController: ChooseTranslationController,
-    newWordController: NewWordController,
+    chooseTranslationObserver: ChooseTranslationObserver,
+    newWordObserver: NewWordObserver,
+    fillGapsObserver: FillGapsObserver
 ) {
     AnimatedContent(
         targetState = component,
@@ -49,7 +52,7 @@ fun LessonComponentRenderer(
                 ChooseTranslationExercise(
                     modifier = modifier,
                     exerciseState = targetComponent,
-                    chooseTranslationController = chooseTranslationController,
+                    chooseTranslationObserver = chooseTranslationObserver,
                     isCompleted = targetComponent.isAnswered
                 )
             }
@@ -58,7 +61,16 @@ fun LessonComponentRenderer(
                 NewWordExercise(
                     modifier = modifier,
                     exerciseState = targetComponent,
-                    newWordController = newWordController,
+                    newWordObserver = newWordObserver,
+                    isCompleted = targetComponent.isAnswered
+                )
+            }
+
+            is Exercise.FillTheGap -> {
+                FillGapsExercise(
+                    modifier = modifier,
+                    exerciseState = targetComponent,
+                    fillGapsObserver = fillGapsObserver,
                     isCompleted = targetComponent.isAnswered
                 )
             }

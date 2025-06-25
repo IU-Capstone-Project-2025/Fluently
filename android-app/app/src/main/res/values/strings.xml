@@ -9,4 +9,5 @@
     <string name="entering_text">Выполняем вход...</string>
     <string name="welcome_to_fluently">Welcome to Fluently</string>
     <string name="login_error_text">Something went wrong, please try again</string>
+    <string name="choose_missing_word">Выберите пропущенное слово</string>
 </resources>

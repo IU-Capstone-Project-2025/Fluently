@@ -31,7 +31,7 @@ import ru.fluentlyapp.fluently.model.Exercise
 import ru.fluentlyapp.fluently.ui.components.ExerciseContinueButton
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 
-abstract class ChooseTranslationController {
+abstract class ChooseTranslationObserver {
     abstract fun onVariantClick(variantIndex: Int)
     abstract fun onCompleteExercise()
 }
@@ -40,7 +40,7 @@ abstract class ChooseTranslationController {
 fun ChooseTranslationExercise(
     modifier: Modifier = Modifier,
     exerciseState: Exercise.ChooseTranslation,
-    chooseTranslationController: ChooseTranslationController,
+    chooseTranslationObserver: ChooseTranslationObserver,
     isCompleted: Boolean
 ) {
     Column(
@@ -92,7 +92,7 @@ fun ChooseTranslationExercise(
             repeat(times = exerciseState.answerVariants.size) { index ->
                 val itemModifier = when {
                     exerciseState.selectedVariant == null -> Modifier.clickable(
-                        onClick = { chooseTranslationController.onVariantClick(index) },
+                        onClick = { chooseTranslationObserver.onVariantClick(index) },
                     )
 
                     exerciseState.correctVariant == index -> correctAnswerModifier
@@ -118,7 +118,7 @@ fun ChooseTranslationExercise(
         ExerciseContinueButton(
             modifier = Modifier.fillMaxWidth(.7f).padding(32.dp).height(80.dp),
             enabled = isCompleted,
-            onClick = chooseTranslationController::onCompleteExercise
+            onClick = chooseTranslationObserver::onCompleteExercise
         )
     }
 }
@@ -139,7 +139,7 @@ fun ChooseTranslationExercisePreview() {
                 correctVariant = 0,
                 selectedVariant = 2,
             ),
-            chooseTranslationController = object : ChooseTranslationController() {
+            chooseTranslationObserver = object : ChooseTranslationObserver() {
                 override fun onVariantClick(variantIndex: Int) { }
                 override fun onCompleteExercise() { }
             },

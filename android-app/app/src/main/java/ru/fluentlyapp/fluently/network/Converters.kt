@@ -62,22 +62,22 @@ fun LessonResponseBody.convertToLesson(): Lesson {
                     )
                 }
 
-                // TODO: uncomment these
-//                // Fill the gaps in the sentence exercise
-//                ExerciseType.PICK_OPTIONS_SENTENCE -> {
-//                    val options = exerciseData.pick_options!!.toMutableList()
-//                    val correctVariant = options.insertRandomly(exerciseData.correct_answer!!)
-//
-//                    add(
-//                        Exercise.FillTheGap(
-//                            sentence = exerciseData.template!!.split("_".toRegex()),
-//                            answerVariants = options,
-//                            correctVariant = correctVariant,
-//                            selectedVariant = null
-//                        )
-//                    )
-//                }
-//
+                // Fill the gaps in the sentence exercise
+                ExerciseType.PICK_OPTIONS_SENTENCE -> {
+                    val options = exerciseData.pick_options!!.toMutableList()
+                    val correctVariant = options.insertRandomly(exerciseData.correct_answer!!)
+
+                    add(
+                        Exercise.FillTheGap(
+                            sentence = exerciseData.template!!.split("_".toRegex()),
+                            answerVariants = options,
+                            correctVariant = correctVariant,
+                            selectedVariant = null
+                        )
+                    )
+                }
+
+                //TODO: uncomment these
 //                // Write the word from translation exercise
 //                ExerciseType.WRITE_WORD_FROM_TRANSLATION -> {
 //                    val translation = exerciseData.translation!!

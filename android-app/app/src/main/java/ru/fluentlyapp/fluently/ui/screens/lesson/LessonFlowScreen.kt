@@ -30,8 +30,9 @@ fun LessonFlowScreen(
                 currentComponent,
                 lesson?.currentLessonComponentIndex ?: -1
             ),
-            chooseTranslationController = lessonFlowViewModel.chooseTranslationController,
-            newWordController = lessonFlowViewModel.newWordController
+            chooseTranslationObserver = lessonFlowViewModel.chooseTranslationObserver,
+            newWordObserver = lessonFlowViewModel.newWordObserver,
+            fillGapsObserver = lessonFlowViewModel.fillGapsObserver
         )
     }
 }
