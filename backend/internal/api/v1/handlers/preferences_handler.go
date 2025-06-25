@@ -17,6 +17,7 @@ type PreferenceHandler struct {
 func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceResponse {
 	return schemas.PreferenceResponse{
 		ID:              pref.ID,
+		UserID:          pref.UserID,
 		CEFRLevel:       pref.CEFRLevel,
 		FactEveryday:    pref.FactEveryday,
 		Notifications:   pref.Notifications,
@@ -56,6 +57,7 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 
 	pref := &models.Preference{
 		ID:              id,
+		UserID:          req.UserID,
 		CEFRLevel:       req.CEFRLevel,
 		FactEveryday:    req.FactEveryday,
 		Notifications:   req.Notifications,
