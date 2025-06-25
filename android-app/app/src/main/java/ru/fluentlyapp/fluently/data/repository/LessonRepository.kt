@@ -4,6 +4,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import ru.fluentlyapp.fluently.datastore.LessonPreferencesDataStore
 import ru.fluentlyapp.fluently.model.Exercise
 import ru.fluentlyapp.fluently.model.Lesson
 import javax.inject.Inject
@@ -22,16 +23,49 @@ interface LessonRepository {
     suspend fun setLocalOngoingLessonId(lessonId: String)
 
     /**
-     * Locally, mark the none of the lessons are ongoing.
+     * Locally, drop the ongoing lesson id.
      */
     suspend fun dropOngoingLesson()
 
-    suspend fun fetchCurrentLesson(): Lesson
-    suspend fun fetchLesson(lessonId: String): Lesson
-    suspend fun saveLesson(lesson: Lesson)
-    suspend fun getSavedLesson(lessonId: String): Lesson?
-    suspend fun moveToNextComponent(lessonId: String)
+    /**
+     * Get the saved lesson as `Flow` by the `lessonId`. The flow may emit null if
+     * none of the lessons are stored under `lessonId`.
+     */
     fun getSavedLessonAsFlow(lessonId: String): Flow<Lesson?>
+
+    /**
+     * At any moment, any user has the current ongoing lesson. This method fetches
+     * the currently assigned lesson for this user.
+     *
+     * May throw exception.
+     */
+    suspend fun fetchCurrentLesson(): Lesson
+
+    /**
+     * Fetch the lesson by the `lessonId` from the server
+     *
+     * May throw exception.
+     */
+    suspend fun fetchLesson(lessonId: String): Lesson
+
+    /**
+     * Update the `lesson` locally.
+     */
+    suspend fun saveLesson(lesson: Lesson)
+
+    /**
+     * Get the saved lesson by the `lessonId`.
+     *
+     * Returns null if no lessons are saved under `lessonId`.
+     */
+    suspend fun getSavedLesson(lessonId: String): Lesson?
+
+    /**
+     * Send the lesson to the server so that it stores it.
+     *
+     * May throw exception.
+     */
+    suspend fun sendLesson(lesson: Lesson)
 }
 
 var testLesson = Lesson(
@@ -115,19 +149,20 @@ var testLesson = Lesson(
 )
 
 
-class StubLessonRepository @Inject constructor() : LessonRepository {
+class StubLessonRepository @Inject constructor(
+    val lessonPreferencesDataStore: LessonPreferencesDataStore
+) : LessonRepository {
     private val lesson = MutableStateFlow(testLesson)
     override suspend fun getLocalOngoingLessonId(): String? {
-        TODO("Not yet implemented")
+        return lessonPreferencesDataStore.getOngoingLessonId()
     }
 
     override suspend fun setLocalOngoingLessonId(lessonId: String) {
-        TODO("Not yet implemented")
+        lessonPreferencesDataStore.setOngoingLessonId(lessonId)
     }
 
-
     override suspend fun dropOngoingLesson() {
-        TODO("Not yet implemented")
+        lessonPreferencesDataStore.dropOngoingLessonId()
     }
 
     override suspend fun fetchCurrentLesson(): Lesson {
@@ -146,11 +181,8 @@ class StubLessonRepository @Inject constructor() : LessonRepository {
         return lesson.value
     }
 
-    override suspend fun moveToNextComponent(lessonId: String) {
-        val newComponentIndex = with(lesson.value) {
-            (currentLessonComponentIndex + 1).coerceIn(0, components.size - 1)
-        }
-        lesson.update { it.copy(currentLessonComponentIndex = newComponentIndex) }
+    override suspend fun sendLesson(lesson: Lesson) {
+        TODO("Not yet implemented")
     }
 
     override fun getSavedLessonAsFlow(lessonId: String): Flow<Lesson?> = lesson.asStateFlow()
