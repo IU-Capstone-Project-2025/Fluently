@@ -1,109 +1,202 @@
 {
-  "dashboard": {
-    "id": null,
-    "title": "Fluently API Dashboard",
-    "tags": ["fluently", "api", "monitoring"],
-    "style": "dark",
-    "timezone": "browser",
-    "panels": [
-      {
-        "id": 1,
-        "title": "API Response Times",
-        "type": "graph",
-        "targets": [
-          {
-            "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{job=\"fluently-app\"}[5m])) by (le))",
-            "legendFormat": "95th percentile"
-          },
-          {
-            "expr": "histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket{job=\"fluently-app\"}[5m])) by (le))",
-            "legendFormat": "50th percentile"
-          }
-        ],
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 0,
-          "y": 0
+  "id": null,
+  "uid": "fluently-api-dashboard",
+  "title": "Fluently API Dashboard",
+  "tags": ["fluently", "api", "monitoring"],
+  "style": "dark",
+  "timezone": "browser",
+  "schemaVersion": 30,
+  "version": 1,
+  "panels": [
+    {
+      "id": 1,
+      "title": "API Response Times",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(nginx_http_request_duration_seconds_bucket{job=\"nginx-exporter\"}[5m])) by (le))",
+          "legendFormat": "95th percentile",
+          "refId": "A"
+        },
+        {
+          "expr": "histogram_quantile(0.50, sum(rate(nginx_http_request_duration_seconds_bucket{job=\"nginx-exporter\"}[5m])) by (le))",
+          "legendFormat": "50th percentile",
+          "refId": "B"
         }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
       },
-      {
-        "id": 2,
-        "title": "Request Rate",
-        "type": "graph",
-        "targets": [
-          {
-            "expr": "sum(rate(http_requests_total{job=\"fluently-app\"}[5m]))",
-            "legendFormat": "Requests per second"
-          }
-        ],
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 0
-        }
-      },
-      {
-        "id": 3,
-        "title": "Error Rate",
-        "type": "graph",
-        "targets": [
-          {
-            "expr": "sum(rate(http_requests_total{job=\"fluently-app\",status=~\"5.*\"}[5m])) / sum(rate(http_requests_total{job=\"fluently-app\"}[5m]))",
-            "legendFormat": "5xx Error Rate"
-          },
-          {
-            "expr": "sum(rate(http_requests_total{job=\"fluently-app\",status=~\"4.*\"}[5m])) / sum(rate(http_requests_total{job=\"fluently-app\"}[5m]))",
-            "legendFormat": "4xx Error Rate"
-          }
-        ],
-        "gridPos": {
-          "h": 8,
-          "w": 24,
-          "x": 0,
-          "y": 8
-        }
-      },
-      {
-        "id": 4,
-        "title": "Active Connections",
-        "type": "singlestat",
-        "targets": [
-          {
-            "expr": "http_active_connections{job=\"fluently-app\"}",
-            "legendFormat": "Active"
-          }
-        ],
-        "gridPos": {
-          "h": 4,
-          "w": 6,
-          "x": 0,
-          "y": 16
-        }
-      },
-      {
-        "id": 5,
-        "title": "Database Connections",
-        "type": "singlestat",
-        "targets": [
-          {
-            "expr": "db_connections_active{job=\"fluently-app\"}",
-            "legendFormat": "DB Connections"
-          }
-        ],
-        "gridPos": {
-          "h": 4,
-          "w": 6,
-          "x": 6,
-          "y": 16
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "min": 0
         }
       }
-    ],
-    "time": {
-      "from": "now-1h",
-      "to": "now"
     },
-    "refresh": "5s"
-  }
+    {
+      "id": 2,
+      "title": "Request Rate",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum(rate(nginx_http_requests_total{job=\"nginx-exporter\"}[5m]))",
+          "legendFormat": "Requests per second",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "reqps",
+          "min": 0
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "HTTP Status Codes",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum(rate(nginx_http_requests_total{job=\"nginx-exporter\",status=~\"5.*\"}[5m]))",
+          "legendFormat": "5xx Errors",
+          "refId": "A"
+        },
+        {
+          "expr": "sum(rate(nginx_http_requests_total{job=\"nginx-exporter\",status=~\"4.*\"}[5m]))",
+          "legendFormat": "4xx Errors",
+          "refId": "B"
+        },
+        {
+          "expr": "sum(rate(nginx_http_requests_total{job=\"nginx-exporter\",status=~\"2.*\"}[5m]))",
+          "legendFormat": "2xx Success",
+          "refId": "C"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "reqps",
+          "min": 0
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Active Connections",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "nginx_connections_active{job=\"nginx-exporter\"}",
+          "legendFormat": "Active Connections",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 16
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Database Connections",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "pg_stat_database_numbackends{job=\"postgres-exporter\"}",
+          "legendFormat": "DB Connections",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 6,
+        "y": 16
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Memory Usage",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "(1 - (node_memory_MemAvailable_bytes{job=\"node-exporter\"} / node_memory_MemTotal_bytes{job=\"node-exporter\"})) * 100",
+          "legendFormat": "Memory Usage %",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 12,
+        "y": 16
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "min": 0,
+          "max": 100
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "CPU Usage",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node-exporter\",mode=\"idle\"}[5m])) * 100)",
+          "legendFormat": "CPU Usage %",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 18,
+        "y": 16
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "min": 0,
+          "max": 100
+        }
+      }
+    }
+  ],
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "refresh": "5s"
 }
