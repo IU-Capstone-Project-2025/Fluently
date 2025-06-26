@@ -20,13 +20,13 @@ scrape_configs:
       - targets: ['node-exporter:9100']
     scrape_interval: 15s
 
-  # # Application metrics
-  # - job_name: 'fluently-app'
-  #   static_configs:
-  #     - targets: ['fluently_app:8070']
-  #   metrics_path: '/metrics'
-  #   scrape_interval: 30s
-  #   scrape_timeout: 10s
+  # Application metrics
+  - job_name: 'fluently-app'
+    static_configs:
+      - targets: ['fluently_app:8070']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+    scrape_timeout: 10s
 
   # PostgreSQL metrics
   - job_name: 'postgres-exporter'
