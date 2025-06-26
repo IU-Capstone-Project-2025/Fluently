@@ -47,8 +47,11 @@ server {
     ssl_stapling off;
     ssl_stapling_verify off;
     
-    # Security headers
-    include /etc/nginx/nginx-headers.conf;
+    # Security headers only (SSL configuration moved to main nginx configs)
+    add_header Strict-Transport-Security 'max-age=31536000; includeSubDomains; preload';
+    add_header X-Frame-Options DENY;
+    add_header X-Content-Type-Options nosniff;
+    add_header X-XSS-Protection "1; mode=block";
 
     # Debug header
     add_header X-Server-Block "main-site" always;

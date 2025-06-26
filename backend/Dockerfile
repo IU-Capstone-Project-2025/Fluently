@@ -1,17 +1,32 @@
-# Build stage (cached)
+# Build stage (optimized with caching)
 
 FROM golang:1.24-alpine AS builder
 WORKDIR /app
 
-COPY go.mod go.sum ./
-RUN go mod download
+# Install git (required for some Go modules)
+RUN apk add --no-cache git
 
-# Install swag and generate docs
-RUN go install github.com/swaggo/swag/cmd/swag@latest
+# Copy dependency files first for better caching
+COPY go.mod go.sum ./
+
+# Download dependencies with cache mount
+RUN --mount=type=cache,target=/go/pkg/mod \
+    go mod download
+
+# Install swag with cache mount
+RUN --mount=type=cache,target=/go/pkg/mod \
+    go install github.com/swaggo/swag/cmd/swag@latest
+
+# Copy source code (this layer will be rebuilt when code changes)
 COPY . .
+
+# Generate docs
 RUN swag init --generalInfo cmd/main.go --output docs
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o /app/fluently-backend ./cmd/main.go
+# Build the application with build cache
+RUN --mount=type=cache,target=/go/pkg/mod \
+    --mount=type=cache,target=/root/.cache/go-build \
+    CGO_ENABLED=0 GOOS=linux go build -o /app/fluently-backend ./cmd/main.go
 
 
 # Build stage (no-cache)
