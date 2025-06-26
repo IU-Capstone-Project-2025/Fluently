@@ -5,8 +5,6 @@ services:
     #   env_file: .env
     #   environment:
     #     BOT_TOKEN: ${BOT_TOKEN}
-    #   ports:
-    #     - "${APP_PORT}:${APP_PORT}"
     #   depends_on:
     #     - redis
     #     - postgres
@@ -34,15 +32,16 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: fluently_app
-    env_file: .env 
-    ports:
-      - "${APP_PORT:-8080}:${APP_PORT:-8080}"
+    env_file: .env
     depends_on:
       postgres:
         condition: service_healthy 
     restart: unless-stopped
     networks:
       - fluently_network
+    ports:
+      - "127.0.0.1:8070:8070"  # Local access for nginx
+      - "${ZEROTIER_IP:-10.243.92.227}:8070:8070"  # ZeroTier access 
 
   nginx:
     build:
@@ -55,11 +54,16 @@ services:
     depends_on:
       - app
     volumes:
-      - ./nginx-container/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      # Use different configs for different environments
+      - ${NGINX_CONFIG_FILE:-./nginx-container/nginx.conf}:/etc/nginx/conf.d/default.conf:ro
       - ./nginx-container/nginx-headers.conf:/etc/nginx/nginx-headers.conf:ro
+      # Cloudflare Origin Certificates (optional - only if using Full Strict SSL)
+      - /etc/nginx/ssl:/etc/nginx/ssl:ro
+      # Let's Encrypt configuration (redudant used as a fallback)
       - /etc/letsencrypt:/etc/letsencrypt
       - ./letsencrypt/webroot:/var/www/certbot
-      - ../frontend-website:/usr/share/nginx/html/main-site
+      # Website content
+      - ../frontend-website:/usr/share/nginx/html/main-site:ro
     networks:
       - fluently_network
 
@@ -67,8 +71,6 @@ services:
     image: postgres:latest
     container_name: fluently_db
     env_file: .env
-    ports:
-      - "5432:5432"
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
@@ -96,20 +98,21 @@ services:
     stdin_open: true
     networks:
         - fluently_network 
+    ports:
+      - "127.0.0.1:5432:5432"  # Local access for docker services
+      - "${ZEROTIER_IP:-10.243.92.227}:5432:5432"  # ZeroTier access 
 
   directus:
     image: directus/directus:latest
     container_name: fluently_directus
     restart: unless-stopped
-    ports:
-      - "${DIRECTUS_PORT:-8055}:${DIRECTUS_PORT:-8055}"
     env_file: .env
     environment:
       SECRET: ${DIRECTUS_SECRET_KEY}
       KEY: ${DIRECTUS_SECRET_KEY}
       ADMIN_EMAIL: ${DIRECTUS_ADMIN_EMAIL}
       ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD}
-      PUBLIC_URL: ${PUBLIC_URL:-https://admin.fluently-app.ru}
+      # PUBLIC_URL: ${PUBLIC_URL:-https://admin.fluently-app.ru}
       DB_CLIENT: pg
       DB_HOST: ${DB_HOST}
       DB_PORT: ${DB_PORT}
@@ -122,9 +125,172 @@ services:
         condition: service_healthy
     networks:
       - fluently_network
+    ports:
+      - "127.0.0.1:8055:8055"  # Local access for nginx
+      - "${ZEROTIER_IP:-10.243.92.227}:8055:8055"  # ZeroTier access 
+
+  # Monitoring Stack
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./monitoring/prometheus/alert_rules.yml:/etc/prometheus/alert_rules.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "${ZEROTIER_IP:-10.243.92.227}:9090:9090"  # ZeroTier access only
+    networks:
+      - fluently_network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-admin123}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./monitoring/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards
+    ports:
+      - "${ZEROTIER_IP:-10.243.92.227}:3000:3000"  # ZeroTier access only
+    depends_on:
+      - prometheus
+    networks:
+      - fluently_network
+
+  loki:
+    image: grafana/loki:latest
+    container_name: loki
+    restart: unless-stopped
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./monitoring/loki/loki-config.yml:/etc/loki/local-config.yaml
+      - loki_data:/loki
+    ports:
+      - "${ZEROTIER_IP:-10.243.92.227}:3100:3100"  # ZeroTier access only
+    networks:
+      - fluently_network
+
+  promtail:
+    image: grafana/promtail:latest
+    container_name: promtail
+    restart: unless-stopped
+    volumes:
+      - ./monitoring/promtail/promtail-config.yml:/etc/promtail/config.yml
+      - /var/log:/var/log:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+    command: -config.file=/etc/promtail/config.yml
+    depends_on:
+      - loki
+    networks:
+      - fluently_network
+
+  sonarqube:
+    image: sonarqube:community
+    container_name: sonarqube
+    restart: unless-stopped
+    environment:
+      - SONAR_JDBC_URL=jdbc:postgresql://postgres:5432/${DB_NAME}
+      - SONAR_JDBC_USERNAME=${DB_USER}
+      - SONAR_JDBC_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+      - ./sonarqube/sonar.properties:/opt/sonarqube/conf/sonar.properties
+    ports:
+      - "${ZEROTIER_IP:-10.243.92.227}:9000:9000"  # ZeroTier access only
+    depends_on:
+      - postgres
+    networks:
+      - fluently_network
+
+  # Node Exporter for system metrics
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    ports:
+      - "${ZEROTIER_IP:-10.243.92.227}:9100:9100"  # ZeroTier access only
+    networks:
+      - fluently_network
+
+  # PostgreSQL Exporter for database metrics
+  postgres-exporter:
+    image: prometheuscommunity/postgres-exporter:latest
+    container_name: postgres-exporter
+    restart: unless-stopped
+    environment:
+      DATA_SOURCE_NAME: "postgresql://${DB_USER}:${DB_PASSWORD}@postgres:5432/${DB_NAME}?sslmode=disable"
+    ports:
+      - "${ZEROTIER_IP:-10.243.92.227}:9187:9187"  # ZeroTier access only
+    depends_on:
+      - postgres
+    networks:
+      - fluently_network
+
+  # Nginx Exporter for web server metrics
+  nginx-exporter:
+    image: nginx/nginx-prometheus-exporter:latest
+    container_name: nginx-exporter
+    restart: unless-stopped
+    command:
+      - '-nginx.scrape-uri=http://nginx:80/nginx_status'
+    ports:
+      - "${ZEROTIER_IP:-10.243.92.227}:9113:9113"  # ZeroTier access only
+    depends_on:
+      - nginx
+    networks:
+      - fluently_network
+
+  # cAdvisor for Docker container metrics
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    restart: unless-stopped
+    privileged: true
+    devices:
+      - /dev/kmsg:/dev/kmsg
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /cgroup:/cgroup:ro
+    ports:
+      - "${ZEROTIER_IP:-10.243.92.227}:8044:8044"  # ZeroTier access only
+    networks:
+      - fluently_network
 
 volumes:
   pgdata:
+  prometheus_data:
+  grafana_data:
+  loki_data:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
 
 networks:
   fluently_network:
