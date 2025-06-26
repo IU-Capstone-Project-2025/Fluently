@@ -2,6 +2,11 @@ import asyncio
 import random
 from typing import List, Optional
 import logging
+import sys
+from pathlib import Path
+
+# Add parent directory to path to import bert module
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from bert.distractor_generator import DistractorGenerator
 

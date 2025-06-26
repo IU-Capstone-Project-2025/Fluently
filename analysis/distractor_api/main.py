@@ -4,9 +4,9 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from distractor_api.models.schemas import DistractorRequest, DistractorResponse
-from distractor_api.services.distractor_service import DistractorService
-from distractor_api.api.routes import router
+from models.schemas import DistractorRequest, DistractorResponse
+from services.distractor_service import DistractorService
+from api.routes import router
 
 
 # Global service instance for optimal latency
@@ -50,8 +50,12 @@ def get_distractor_service() -> DistractorService:
     return distractor_service
 
 
+# Override the dependency in routes
+from api.routes import get_distractor_service as routes_get_service
+app.dependency_overrides[routes_get_service] = get_distractor_service
+
 # Include API routes
-app.include_router(router, dependencies=[Depends(get_distractor_service)])
+app.include_router(router)
 
 
 @app.get("/health")

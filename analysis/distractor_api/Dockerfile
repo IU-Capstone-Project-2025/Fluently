@@ -1,48 +1,16 @@
-# Multi-stage Dockerfile for FastAPI Distractor API
-# Based on Poetry configuration from pyproject.toml
-
-# Build stage
-FROM python:3.11-slim as builder
-
-# Set environment variables
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1
-
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install Poetry
-RUN pip install poetry==1.7.1
-
-# Configure Poetry
-ENV POETRY_NO_INTERACTION=1 \
-    POETRY_VENV_IN_PROJECT=1 \
-    POETRY_CACHE_DIR=/tmp/poetry_cache
-
-WORKDIR /app
-
-# Copy Poetry configuration files
-COPY pyproject.toml poetry.lock* ./
-
-# Install dependencies
-RUN poetry install --only=main && rm -rf $POETRY_CACHE_DIR
-
-# Production stage
-FROM python:3.11-slim as production
+# Dockerfile for FastAPI Distractor API
+FROM python:3.11-slim
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONPATH=/app \
-    PATH="/app/.venv/bin:$PATH"
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
 
-# Install runtime dependencies
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Create non-root user for security
@@ -50,17 +18,25 @@ RUN useradd --create-home --shell /bin/bash app
 
 WORKDIR /app
 
-# Copy virtual environment from builder stage
-COPY --from=builder --chown=app:app /app/.venv /app/.venv
+# Copy requirements and install dependencies
+COPY distractor_api/pyproject.toml ./
 
-# Copy application code
-COPY --chown=app:app . .
+# Install Poetry and export requirements
+RUN pip install poetry==1.7.1 && \
+    poetry export -f requirements.txt --output requirements.txt --without-hashes && \
+    pip install -r requirements.txt && \
+    pip uninstall poetry -y
+
+# Copy application code and bert module
+COPY --chown=app:app distractor_api/ .
+COPY --chown=app:app bert/ ./bert
+
+# Create cache directory for models and set permissions
+RUN mkdir -p /app/.cache/huggingface && \
+    chown -R app:app /app/.cache
 
 # Switch to non-root user
 USER app
-
-# Create cache directory for models
-RUN mkdir -p /app/.cache/huggingface
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5m --retries=3 \
@@ -70,4 +46,4 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5m --retries=3 \
 EXPOSE 8001
 
 # Run the application
-CMD ["python", "-m", "uvicorn", "distractor_api.main:app", "--host", "0.0.0.0", "--port", "8001", "--workers", "1"] 
+CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001", "--workers", "1"] 
