@@ -54,12 +54,12 @@ scrape_configs:
     metrics_path: '/metrics'
     scrape_interval: 30s
 
-  # SonarQube metrics (if metrics are exposed)
-  - job_name: 'sonarqube'
-    static_configs:
-      - targets: ['sonarqube:9000']
-    metrics_path: '/api/monitoring/metrics'
-    scrape_interval: 60s
+  # # SonarQube metrics (if metrics are exposed)
+  # - job_name: 'sonarqube'
+  #   static_configs:
+  #     - targets: ['sonarqube:9000']
+  #   metrics_path: '/api/monitoring/metrics'
+  #   scrape_interval: 60s
 
   # Docker daemon metrics (requires Docker daemon metrics to be enabled)
   # - job_name: 'docker'
