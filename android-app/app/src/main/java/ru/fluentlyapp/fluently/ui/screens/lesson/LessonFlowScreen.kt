@@ -7,7 +7,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import ru.fluentlyapp.fluently.model.LessonComponent
+import ru.fluentlyapp.fluently.common.model.LessonComponent
 import ru.fluentlyapp.fluently.ui.components.TopAppBar
 
 @Composable

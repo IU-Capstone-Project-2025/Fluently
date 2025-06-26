@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently
+package ru.fluentlyapp.fluently.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,12 +9,10 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.ui.Modifier
-import androidx.navigation.compose.NavHost
 import dagger.hilt.android.AndroidEntryPoint
-import ru.fluentlyapp.fluently.navigation.FluentlyNavHost
+import ru.fluentlyapp.fluently.app.navigation.FluentlyNavHost
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 
 @AndroidEntryPoint

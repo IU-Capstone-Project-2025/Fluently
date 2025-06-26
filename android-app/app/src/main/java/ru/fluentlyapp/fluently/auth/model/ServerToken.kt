@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.data.model
+package ru.fluentlyapp.fluently.auth.model
 
 data class ServerToken(
     val accessToken: String,

@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.datastore.di
+package ru.fluentlyapp.fluently.common.di
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -17,14 +17,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import javax.inject.Singleton
 
-const val DATA_STORE_FILE = "data_store_file"
+const val PREFERENCES_DATA_STORE_FILE = "preferences_data_store"
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DataStoreModule {
+class PreferencesDataStoreModule {
     @Provides
     @Singleton
-    fun provideDataStore(
+    fun providePreferencesDataStore(
         @ApplicationContext appContext: Context
     ): DataStore<Preferences> {
         return PreferenceDataStoreFactory.create(
@@ -32,7 +32,7 @@ class DataStoreModule {
                 emptyPreferences()
             },
             scope = CoroutineScope(Dispatchers.IO + SupervisorJob()),
-            produceFile = { appContext.preferencesDataStoreFile(DATA_STORE_FILE) }
+            produceFile = { appContext.preferencesDataStoreFile(PREFERENCES_DATA_STORE_FILE) }
         )
     }
 }

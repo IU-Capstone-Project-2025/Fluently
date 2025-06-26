@@ -4,10 +4,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import ru.fluentlyapp.fluently.datastore.LessonPreferencesDataStore
-import ru.fluentlyapp.fluently.model.Exercise
-import ru.fluentlyapp.fluently.model.Lesson
+import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.network.FluentlyApiDataSource
-import ru.fluentlyapp.fluently.testing.mockLessonResponse
 import javax.inject.Inject
 
 interface LessonRepository {

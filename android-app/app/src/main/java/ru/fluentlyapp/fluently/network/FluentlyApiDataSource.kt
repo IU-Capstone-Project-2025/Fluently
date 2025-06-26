@@ -2,7 +2,7 @@ package ru.fluentlyapp.fluently.network
 
 import kotlinx.coroutines.delay
 import retrofit2.HttpException
-import ru.fluentlyapp.fluently.model.Lesson
+import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.network.services.FluentlyApiService
 import ru.fluentlyapp.fluently.testing.mockLessonResponse
 import javax.inject.Inject

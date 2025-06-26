@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.oauth
+package ru.fluentlyapp.fluently.auth.oauth
 
 import android.content.Context
 import android.content.Intent
@@ -9,7 +9,7 @@ import net.openid.appauth.AuthorizationRequest
 import net.openid.appauth.AuthorizationService
 import net.openid.appauth.AuthorizationServiceConfiguration
 import net.openid.appauth.TokenRequest
-import ru.fluentlyapp.fluently.oauth.model.OAuthToken
+import ru.fluentlyapp.fluently.auth.model.OAuthToken
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.coroutines.suspendCoroutine

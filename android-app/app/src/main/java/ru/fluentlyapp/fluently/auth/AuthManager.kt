@@ -1,21 +1,21 @@
-package ru.fluentlyapp.fluently.data.repository
+package ru.fluentlyapp.fluently.auth
 
 import android.content.Intent
 import android.util.Log
 import net.openid.appauth.AuthorizationException
 import net.openid.appauth.AuthorizationResponse
 import net.openid.appauth.TokenRequest
-import ru.fluentlyapp.fluently.data.model.ServerToken
-import ru.fluentlyapp.fluently.datastore.ServerTokenDataStore
-import ru.fluentlyapp.fluently.network.model.GetServerTokenRequestBody
-import ru.fluentlyapp.fluently.network.model.RefreshServerTokenRequest
-import ru.fluentlyapp.fluently.network.services.ServerTokenApiService
-import ru.fluentlyapp.fluently.network.toServerToken
-import ru.fluentlyapp.fluently.oauth.GoogleOAuthService
-import ru.fluentlyapp.fluently.oauth.model.OAuthToken
+import ru.fluentlyapp.fluently.auth.model.ServerToken
+import ru.fluentlyapp.fluently.auth.datastore.ServerTokenDataStore
+import ru.fluentlyapp.fluently.auth.api.GetServerTokenRequestBody
+import ru.fluentlyapp.fluently.auth.api.RefreshServerTokenRequest
+import ru.fluentlyapp.fluently.auth.api.ServerTokenApiService
+import ru.fluentlyapp.fluently.auth.api.toServerToken
+import ru.fluentlyapp.fluently.auth.oauth.GoogleOAuthService
+import ru.fluentlyapp.fluently.auth.model.OAuthToken
 import javax.inject.Inject
 
-interface AuthRepository {
+interface AuthManager {
     /**
      * Returns `true` if the app have saved credentials `false` otherwise
      */
@@ -50,17 +50,24 @@ interface AuthRepository {
     suspend fun getServerToken(oauthToken: OAuthToken): ServerToken
 
     /**
+     * Return the saved `ServerToken`.
+     *
+     * Returns null is the `ServerToken` is not stored.
+     */
+    suspend fun getSavedServerToken(): ServerToken?
+
+    /**
      * Replace the currently saved `ServerToken` with the passed one.
      */
     suspend fun updateServerToken(serverToken: ServerToken)
 
     /**
-     * Try to refresh the token using the currently saved `ServerToken`.
-     * The methods DOES NOT save the fetched `ServerToken`.
+     * Send the field `refreshToken` of the stored `ServerToken` to exchange it for a new
+     * `ServerToken`.
      *
      * In case of `ServerToken` isn't stored, throws exception. May throw other exceptions.
      */
-    suspend fun refreshServerToken(): ServerToken
+    suspend fun sendRefreshToken(): ServerToken
 
     /**
      * Delete (if saved) the `ServerToken` locally
@@ -68,11 +75,11 @@ interface AuthRepository {
     suspend fun deleteServerToken()
 }
 
-class GoogleBasedAuthRepository @Inject constructor(
+class GoogleBasedOAuthManager @Inject constructor(
     private val googleOAuthService: GoogleOAuthService,
-    private val serverTokenService: ServerTokenApiService,
+    private val serverTokenApiService: ServerTokenApiService,
     private val serverTokenDataStore: ServerTokenDataStore
-) : AuthRepository {
+) : AuthManager {
 
     override suspend fun isUserLogged(): Boolean {
         return serverTokenDataStore.getServerToken() != null
@@ -113,7 +120,7 @@ class GoogleBasedAuthRepository @Inject constructor(
     }
 
     override suspend fun getServerToken(oauthToken: OAuthToken): ServerToken {
-        return serverTokenService.getServerToken(
+        return serverTokenApiService.getServerToken(
             GetServerTokenRequestBody(
                 idToken = oauthToken.idToken,
                 platform = "android"
@@ -125,10 +132,14 @@ class GoogleBasedAuthRepository @Inject constructor(
         serverTokenDataStore.saveServerToken(serverToken)
     }
 
-    override suspend fun refreshServerToken(): ServerToken {
+    override suspend fun getSavedServerToken(): ServerToken? {
+        return serverTokenDataStore.getServerToken()
+    }
+
+    override suspend fun sendRefreshToken(): ServerToken {
         val serverToken = serverTokenDataStore.getServerToken()
 
-        return serverTokenService.refreshToken(
+        return serverTokenApiService.refreshToken(
             RefreshServerTokenRequest(
                 refreshToken = serverToken!!.refreshToken
             )

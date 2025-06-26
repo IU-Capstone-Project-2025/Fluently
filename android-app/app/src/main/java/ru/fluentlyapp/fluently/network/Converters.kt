@@ -1,21 +1,13 @@
 package ru.fluentlyapp.fluently.network
 
-import ru.fluentlyapp.fluently.data.model.ServerToken
-import ru.fluentlyapp.fluently.model.Exercise
-import ru.fluentlyapp.fluently.model.Lesson
-import ru.fluentlyapp.fluently.model.LessonComponent
+import ru.fluentlyapp.fluently.common.model.Exercise
+import ru.fluentlyapp.fluently.common.model.Lesson
+import ru.fluentlyapp.fluently.common.model.LessonComponent
 import ru.fluentlyapp.fluently.network.model.ExerciseApiModel.ExerciseType
 import ru.fluentlyapp.fluently.network.model.LessonResponseBody
-import ru.fluentlyapp.fluently.network.model.ServerTokenResponseBody
 import kotlin.random.Random
 import kotlin.random.nextInt
 
-fun ServerTokenResponseBody.toServerToken() = ServerToken(
-    accessToken = accessToken,
-    refreshToken = refreshToken,
-    tokenType = tokenType,
-    expiresInSeconds = expiresInSeconds
-)
 
 private fun <T> MutableList<T>.insertRandomly(item: T): Int {
     val insertPosition = Random.nextInt(0..size)

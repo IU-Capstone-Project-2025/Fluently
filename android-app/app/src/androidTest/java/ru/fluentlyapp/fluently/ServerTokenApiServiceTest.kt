@@ -1,16 +1,14 @@
 package ru.fluentlyapp.fluently
 
-import android.util.Log
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.junit.Assert.*
-import ru.fluentlyapp.fluently.network.model.GetServerTokenRequestBody
-import ru.fluentlyapp.fluently.network.services.ServerTokenApiService
-import ru.fluentlyapp.fluently.oauth.model.OAuthToken
+import ru.fluentlyapp.fluently.auth.api.GetServerTokenRequestBody
+import ru.fluentlyapp.fluently.auth.api.ServerTokenApiService
+import ru.fluentlyapp.fluently.auth.model.OAuthToken
 import javax.inject.Inject
 
 // The only hope is idToken can be persisted across tests

@@ -1,11 +1,8 @@
-package ru.fluentlyapp.fluently.network.services
+package ru.fluentlyapp.fluently.auth.api
 
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
-import ru.fluentlyapp.fluently.network.model.GetServerTokenRequestBody
-import ru.fluentlyapp.fluently.network.model.RefreshServerTokenRequest
-import ru.fluentlyapp.fluently.network.model.ServerTokenResponseBody
 
 interface ServerTokenApiService {
     @POST("/auth/refresh")

@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.datastore
+package ru.fluentlyapp.fluently.auth.datastore
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -7,8 +7,7 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.json.Json
-import ru.fluentlyapp.fluently.data.model.ServerToken
-import ru.fluentlyapp.fluently.datastore.model.ServerTokenPreference
+import ru.fluentlyapp.fluently.auth.model.ServerToken
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -20,16 +19,16 @@ class ServerTokenDataStore @Inject constructor(
 ) {
     suspend fun saveServerToken(serverToken: ServerToken) {
         preferencesDataStore.edit {
-            it[SERVER_TOKEN_KEY] = Json.encodeToString(serverToken.toServerTokenPreference())
+            it[SERVER_TOKEN_KEY] = Json.encodeToString(serverToken)
         }
     }
 
     suspend fun getServerToken(): ServerToken? {
         return preferencesDataStore.data.map {
             it[SERVER_TOKEN_KEY]?.let { serverTokenJson ->
-                Json.decodeFromString<ServerTokenPreference>(
+                Json.decodeFromString<ServerToken>(
                     serverTokenJson
-                ).toServerToken()
+                )
             }
         }.first()
     }

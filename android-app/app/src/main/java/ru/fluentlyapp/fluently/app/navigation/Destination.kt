@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.navigation
+package ru.fluentlyapp.fluently.app.navigation
 
 import kotlinx.serialization.Serializable
 

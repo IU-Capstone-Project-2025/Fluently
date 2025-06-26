@@ -10,13 +10,13 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import ru.fluentlyapp.fluently.data.repository.AuthRepository
+import ru.fluentlyapp.fluently.auth.AuthManager
 import javax.inject.Inject
 
 
 @HiltViewModel
 class LoginScreenViewModel @Inject constructor(
-    private val authRepository: AuthRepository
+    private val authManager: AuthManager
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(
         LoginScreenUiState(
@@ -25,7 +25,7 @@ class LoginScreenViewModel @Inject constructor(
     )
     val uiState = _uiState.asStateFlow()
 
-    fun getOpenAuthPageIntent() = authRepository.getAuthPageIntent()
+    fun getOpenAuthPageIntent() = authManager.getAuthPageIntent()
 
     fun handleAuthResponseIntent(dataIntent: Intent?) {
         if (dataIntent == null) {
@@ -40,7 +40,7 @@ class LoginScreenViewModel @Inject constructor(
 
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                authRepository.handleReturnedDataIntent(dataIntent)
+                authManager.handleReturnedDataIntent(dataIntent)
                 _uiState.update { it.copy(loginLoadingState = LoginLoadingState.SUCCESS) }
             } catch (ex: Exception) {
                 Log.e("LoginScreenViewModel", "Exception while handing dataIntent: $ex")

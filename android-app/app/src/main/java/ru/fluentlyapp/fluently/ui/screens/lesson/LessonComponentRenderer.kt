@@ -7,8 +7,8 @@ import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import ru.fluentlyapp.fluently.model.Exercise
-import ru.fluentlyapp.fluently.model.LessonComponent
+import ru.fluentlyapp.fluently.common.model.Exercise
+import ru.fluentlyapp.fluently.common.model.LessonComponent
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.other.LoadingLessonComponent
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationExercise

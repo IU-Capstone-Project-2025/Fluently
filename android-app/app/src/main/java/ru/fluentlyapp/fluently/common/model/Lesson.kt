@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.model
+package ru.fluentlyapp.fluently.common.model
 
 data class Lesson(
     val lessonId: String,

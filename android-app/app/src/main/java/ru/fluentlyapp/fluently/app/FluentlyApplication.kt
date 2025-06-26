@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently
+package ru.fluentlyapp.fluently.app
 
 import android.app.Application
 import coil3.ImageLoader

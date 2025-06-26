@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.network.model
+package ru.fluentlyapp.fluently.auth.api
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

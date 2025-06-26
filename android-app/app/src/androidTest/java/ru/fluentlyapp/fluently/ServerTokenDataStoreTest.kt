@@ -12,8 +12,8 @@ import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import ru.fluentlyapp.fluently.data.model.ServerToken
-import ru.fluentlyapp.fluently.datastore.ServerTokenDataStore
+import ru.fluentlyapp.fluently.auth.model.ServerToken
+import ru.fluentlyapp.fluently.auth.datastore.ServerTokenDataStore
 
 // Code here was partially generated using AI tools
 @RunWith(AndroidJUnit4::class)

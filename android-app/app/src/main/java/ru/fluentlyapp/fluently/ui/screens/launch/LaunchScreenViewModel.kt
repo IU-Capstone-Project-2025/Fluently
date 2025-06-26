@@ -7,18 +7,18 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import ru.fluentlyapp.fluently.data.repository.AuthRepository
+import ru.fluentlyapp.fluently.auth.AuthManager
 import javax.inject.Inject
 
 @HiltViewModel
 class LaunchScreenViewModel @Inject constructor(
-    val authRepository: AuthRepository
+    val authManager: AuthManager
 ) : ViewModel() {
     val isUserLogged = MutableStateFlow<Boolean?>(null)
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            isUserLogged.update { authRepository.isUserLogged() }
+            isUserLogged.update { authManager.isUserLogged() }
         }
     }
 }

@@ -3,8 +3,9 @@ package ru.fluentlyapp.fluently.network.middleware
 import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor
 import okhttp3.Response
-import ru.fluentlyapp.fluently.data.model.ServerToken
-import ru.fluentlyapp.fluently.datastore.ServerTokenDataStore
+import ru.fluentlyapp.fluently.auth.AuthManager
+import ru.fluentlyapp.fluently.auth.model.ServerToken
+import ru.fluentlyapp.fluently.auth.datastore.ServerTokenDataStore
 import ru.fluentlyapp.fluently.network.HEADER_AUTHORIZATION
 import ru.fluentlyapp.fluently.network.TOKEN_TYPE
 import javax.inject.Inject
@@ -16,11 +17,11 @@ import javax.inject.Singleton
  */
 @Singleton
 class AccessTokenInterceptor @Inject constructor(
-    private val serverTokenDataStore: ServerTokenDataStore
+    private val authManager: AuthManager
 ) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val token: ServerToken? = runBlocking {
-            serverTokenDataStore.getServerToken()
+            authManager.getSavedServerToken()
         }
 
         val updatedRequest = chain

@@ -1,7 +1,5 @@
-package ru.fluentlyapp.fluently.navigation
+package ru.fluentlyapp.fluently.app.navigation
 
-import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

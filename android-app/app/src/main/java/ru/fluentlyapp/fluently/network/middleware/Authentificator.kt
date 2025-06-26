@@ -1,17 +1,17 @@
 package ru.fluentlyapp.fluently.network.middleware
 
+import android.util.Log
 import kotlinx.coroutines.runBlocking
 import okhttp3.Authenticator
 import okhttp3.Request
 import okhttp3.Response
 import okhttp3.Route
-import ru.fluentlyapp.fluently.data.model.ServerToken
-import ru.fluentlyapp.fluently.datastore.ServerTokenDataStore
+import ru.fluentlyapp.fluently.auth.AuthManager
+import ru.fluentlyapp.fluently.auth.model.ServerToken
+import ru.fluentlyapp.fluently.auth.datastore.ServerTokenDataStore
 import ru.fluentlyapp.fluently.network.HEADER_AUTHORIZATION
 import ru.fluentlyapp.fluently.network.TOKEN_TYPE
-import ru.fluentlyapp.fluently.network.model.RefreshServerTokenRequest
-import ru.fluentlyapp.fluently.network.services.ServerTokenApiService
-import ru.fluentlyapp.fluently.network.toServerToken
+import ru.fluentlyapp.fluently.auth.api.ServerTokenApiService
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -23,15 +23,16 @@ import javax.inject.Singleton
 @Singleton
 class AuthAuthenticator @Inject constructor(
     private val serverTokenDataStore: ServerTokenDataStore,
-    private val refreshServerTokenService: ServerTokenApiService
+    private val refreshServerTokenService: ServerTokenApiService,
+    private val authManager: AuthManager
 ) : Authenticator {
     override fun authenticate(route: Route?, response: Response): Request? {
         val token = runBlocking {
-            serverTokenDataStore.getServerToken()
+            authManager.getSavedServerToken()
         }
         synchronized(this) {
             val updatedToken = runBlocking {
-                serverTokenDataStore.getServerToken()
+                authManager.getSavedServerToken()
             }
             val accessToken: String? = if (updatedToken != token) {
                 // While the thread was blocked on the synchronize block, some other thread
@@ -39,37 +40,25 @@ class AuthAuthenticator @Inject constructor(
                 updatedToken?.accessToken
             } else {
                 // Otherwise, fetch and store the refresh token
-                val currentServerToken: ServerToken? = runBlocking {
-                    serverTokenDataStore.getServerToken()
+                val newServerToken: ServerToken? = runBlocking {
+                    try {
+                        authManager.sendRefreshToken()
+                    } catch (ex: Exception) {
+                        Log.e("Authentificator", "Couldn't fetch the server token in refresh send: $ex")
+                        null
+                    }
                 }
 
-                if (currentServerToken == null) {
-                    // The server token isn't stored
-                    return null
+                if (newServerToken != null) {
+                    // Save the received server token
+                    runBlocking {
+                        serverTokenDataStore.saveServerToken(newServerToken)
+                    }
+
+                    newServerToken.accessToken
+                } else {
+                    null
                 }
-
-                // Using the current `ServerToken` and the stored refresh token, fetch the new `ServerToken`
-                val refreshServiceResponse = runBlocking {
-                    refreshServerTokenService.refreshToken(
-                        RefreshServerTokenRequest(refreshToken = currentServerToken.refreshToken)
-                    )
-                }
-
-                val refreshServiceResponseBody = refreshServiceResponse.body()
-
-                if (!refreshServiceResponse.isSuccessful || refreshServiceResponseBody == null) {
-                    // For some reason, the service has failed
-                    return null
-                }
-
-                val newServerToken: ServerToken = refreshServiceResponseBody.toServerToken()
-
-                // Save the new server token
-                runBlocking {
-                    serverTokenDataStore.saveServerToken(newServerToken)
-                }
-
-                newServerToken.accessToken
             }
 
             return if (accessToken != null) {

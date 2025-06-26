@@ -9,9 +9,9 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import ru.fluentlyapp.fluently.data.repository.LessonRepository
-import ru.fluentlyapp.fluently.model.Exercise
-import ru.fluentlyapp.fluently.model.LessonComponent
-import ru.fluentlyapp.fluently.navigation.Destination
+import ru.fluentlyapp.fluently.common.model.Exercise
+import ru.fluentlyapp.fluently.common.model.LessonComponent
+import ru.fluentlyapp.fluently.app.navigation.Destination
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.FillGapsObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordObserver

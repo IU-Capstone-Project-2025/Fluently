@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.oauth
+package ru.fluentlyapp.fluently.auth.oauth
 
 import net.openid.appauth.ResponseTypeValues
 
