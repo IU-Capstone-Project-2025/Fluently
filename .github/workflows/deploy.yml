@@ -146,21 +146,18 @@ jobs:
             # Update PUBLIC_URL
             sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" .env
 
-            # Set correct nginx configuration using the management script
-            echo "🔧 Setting up nginx configuration..."
-            if [ "$ENVIRONMENT" = "staging" ]; then
-              echo "🔧 Updating nginx config for staging domain..."
-              # This assumes you have separate SSL certificates for staging
-              # You might need to adjust paths based on your setup
-              sed -i "s|fluently-app\.ru|$DOMAIN|g" nginx-container/nginx.conf
+            # Generate nginx config from template
+            echo "🔧 Generating nginx configuration from template..."
+            if [ "$ENVIRONMENT" = "production" ]; then
+              export CERT_NAME="fluently-app-ru"
+            else
+              export CERT_NAME="fluently-app-online"
             fi
             
-            # Set nginx config file based on environment
-            if [ "$ENVIRONMENT" = "staging" ]; then
-              export NGINX_CONFIG_FILE="./nginx-container/nginx-staging-origin-certs.conf"
-            else
-              export NGINX_CONFIG_FILE="./nginx-container/nginx-origin-certs.conf"
-            fi
+            export DOMAIN
+            envsubst < nginx-container/nginx.conf.template > nginx-container/default.conf
+            
+            echo "Generated nginx config for $DOMAIN with cert $CERT_NAME"
 
             echo "🐳 Starting Docker containers..."
             # Use docker compose v2 syntax and handle potential issues

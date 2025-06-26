@@ -54,14 +54,11 @@ services:
     depends_on:
       - app
     volumes:
-      # Use different configs for different environments
-      - ${NGINX_CONFIG_FILE:-./nginx-container/nginx.conf}:/etc/nginx/conf.d/default.conf:ro
+      # Generated config from template
+      - ./nginx-container/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx-container/nginx-headers.conf:/etc/nginx/nginx-headers.conf:ro
-      # Cloudflare Origin Certificates (optional - only if using Full Strict SSL)
+      # Cloudflare Origin Certificates
       - /etc/nginx/ssl:/etc/nginx/ssl:ro
-      # Let's Encrypt configuration (redudant used as a fallback)
-      - /etc/letsencrypt:/etc/letsencrypt
-      - ./letsencrypt/webroot:/var/www/certbot
       # Website content
       - ../frontend-website:/usr/share/nginx/html/main-site:ro
     networks:
