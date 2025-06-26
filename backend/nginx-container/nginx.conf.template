@@ -1,26 +1,26 @@
-# Cloudflare Origin Certificate Configuration - Staging
+# Cloudflare Origin Certificate Configuration
 # This configuration uses Cloudflare Origin Certificates for "Full (Strict)" SSL mode
 # Provides end-to-end encryption between Cloudflare and your server
 
 # Redirect HTTP to HTTPS
 server {
     listen 80;
-    server_name fluently-app.online www.fluently-app.online;
+    server_name ${DOMAIN} www.${DOMAIN};
     return 301 https://$server_name$request_uri;
 }
 
-# Main website (fluently-app.online and www.fluently-app.online)
+# Main website (${DOMAIN} and www.${DOMAIN})
 # Using Cloudflare Origin Certificates for Full (Strict) SSL mode
 server {
     listen 443 ssl;
     http2 on;
-    server_name fluently-app.online www.fluently-app.online;
+    server_name ${DOMAIN} www.${DOMAIN};
 
     server_tokens off;
     
-    # Cloudflare Origin Certificate paths for Staging (fluently-app.online)
-    ssl_certificate /etc/nginx/ssl/fluently-app-online.pem;
-    ssl_certificate_key /etc/nginx/ssl/fluently-app-online.key;
+    # Cloudflare Origin Certificate paths
+    ssl_certificate /etc/nginx/ssl/${CERT_NAME}.pem;
+    ssl_certificate_key /etc/nginx/ssl/${CERT_NAME}.key;
     
     # SSL Configuration optimized for Cloudflare
     ssl_protocols TLSv1.2 TLSv1.3;
@@ -34,12 +34,14 @@ server {
     ssl_stapling off;
     ssl_stapling_verify off;
     
-    # Security headers
-    include /etc/nginx/nginx-headers.conf;
+    # Security headers only (SSL configuration moved to main nginx configs)
+    add_header Strict-Transport-Security 'max-age=31536000; includeSubDomains; preload';
+    add_header X-Frame-Options DENY;
+    add_header X-Content-Type-Options nosniff;
+    add_header X-XSS-Protection "1; mode=block";
 
-    # Debug header for staging
-    add_header X-Server-Block "staging-main-site" always;
-    add_header X-Environment "staging" always;
+    # Debug header
+    add_header X-Server-Block "main-site" always;
     
     # Cloudflare real IP restoration
     set_real_ip_from 103.21.244.0/22;
@@ -76,30 +78,30 @@ server {
         internal;
     }
 
-    # Terms of Service
+    # Terms of Service - fix the location
     location = /terms {
         try_files /terms.html =404;
         add_header Content-Type text/html;
     }
 
-    # Assets directory for static files
+    # Assets directory for static files (including 404 music)
     location /assets/ {
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
 
-    # Health check endpoint
+    # Health check endpoint (proxied to backend)
     location = /health {
-        proxy_pass http://app:8070/health;
+        proxy_pass http://fluently_app:8070/health;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 
-    # Auth routes (proxied to backend)
+    # Auth routes (proxied to backend) - MUST come before catch-all
     location /auth/ {
-        proxy_pass http://app:8070/auth/;
+        proxy_pass http://fluently_app:8070/auth/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -111,14 +113,12 @@ server {
         proxy_set_header Cookie $http_cookie;
         
         # Handle redirects properly for OAuth flows
-        proxy_redirect http://app:8070/ https://$host/;
-        proxy_redirect https://app:8070/ https://$host/;
+        proxy_redirect http://fluently_app:8070/ https://$host/;
+        proxy_redirect https://fluently_app:8070/ https://$host/;
     }
-                         
-    
     # API calls (proxied to backend)
     location /api/ {
-        proxy_pass http://app:8070/api/;
+        proxy_pass http://fluently_app:8070/api/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

@@ -4,6 +4,10 @@ server:
   http_listen_port: 3100
   grpc_listen_port: 9096
 
+# Limits configuration to disable structured metadata for compatibility
+limits_config:
+  allow_structured_metadata: false
+
 common:
   path_prefix: /loki
   storage:

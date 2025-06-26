@@ -3,8 +3,8 @@ from fastapi.responses import JSONResponse
 import time
 import logging
 
-from distractor_api.models.schemas import DistractorRequest, DistractorResponse, ErrorResponse
-from distractor_api.services.distractor_service import DistractorService
+from models.schemas import DistractorRequest, DistractorResponse, ErrorResponse
+from services.distractor_service import DistractorService
 
 logger = logging.getLogger(__name__)
 
