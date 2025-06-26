@@ -105,10 +105,9 @@ jobs:
               cd /home/deploy-staging/Fluently-fork/backend
               export ZEROTIER_IP="${{ secrets.STAGING_ZEROTIER_IP }}"
             fi
-            
-            # Update .env file with correct ZeroTier IP
-            echo "ZEROTIER_IP=$ZEROTIER_IP" >> .env
-            
+
+            echo "🌐 Using ZeroTier IP: $ZEROTIER_IP"
+
             # Backup current state (only for production)
             if [ "$ENVIRONMENT" = "production" ]; then
               echo "📦 Creating backup..."
@@ -117,59 +116,62 @@ jobs:
                 --exclude=node_modules --exclude=.git . || echo "⚠️ Backup failed but continuing..."
             fi
             
-            # Update code
+            # Update code - FIRST restore any local changes to avoid conflicts
             echo "📥 Updating code..."
-            
-            # Fix Git ownership issue (security feature in newer Git versions)
+
+            # Fix Git ownership issue
             git config --global --add safe.directory $(pwd)
-            
+
+            # Restore any local changes before pulling
+            git restore .
+            git clean -fd
+
             git fetch origin
             git checkout $BRANCH
             git pull origin $BRANCH
-            
+
             # Create environment-specific .env if it doesn't exist
             if [ ! -f ".env" ]; then
               echo "📝 Creating .env file from example..."
               cp .env.example .env
             fi
-            
+
             # Update environment variables based on deployment target
             echo "⚙️ Updating environment configuration..."
-            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" .env
-            
-            # Update SSL certificate paths in nginx config for staging
-            if [ "$ENVIRONMENT" = "staging" ]; then
-              echo "🔧 Updating nginx config for staging domain..."
-              # This assumes you have separate SSL certificates for staging
-              # You might need to adjust paths based on your setup
-              sed -i "s|fluently-app\.ru|$DOMAIN|g" nginx-container/nginx.conf
-              sed -i "s|admin\.fluently-app\.ru|admin.$DOMAIN|g" nginx-container/nginx.conf
-            fi
-            
-            # Set nginx config file based on environment
-            if [ "$ENVIRONMENT" = "staging" ]; then
-              export NGINX_CONFIG_FILE="./nginx-container/nginx-staging.conf"
+
+            # Update ZeroTier IP (replace, don't append)
+            if grep -q "ZEROTIER_IP=" .env; then
+              sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" .env
             else
-              export NGINX_CONFIG_FILE="./nginx-container/nginx.conf"
+              echo "ZEROTIER_IP=$ZEROTIER_IP" >> .env
             fi
-            
+
+            # Update PUBLIC_URL
+            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" .env
+
+            # Set correct nginx configuration using the management script
+            echo "🔧 Setting up nginx configuration..."
+            if [ "$ENVIRONMENT" = "staging" ]; then
+              echo "Setting up staging nginx with Origin Certificates..."
+              ./nginx-container/manage-nginx.sh staging --origin-certs
+            else
+              echo "Setting up production nginx with Origin Certificates..."
+              ./nginx-container/manage-nginx.sh production --origin-certs
+            fi
+
             echo "🐳 Starting Docker containers..."
             # Use docker compose v2 syntax and handle potential issues
             docker compose down --remove-orphans || true
-            
-            # Don't pull if we're building locally - saves time
-            # docker compose pull
-            
+
             docker compose up -d --build --force-recreate
-         
-            
+
             # Show running containers
             echo "📋 Running containers:"
             docker compose ps
-            
+
             echo "🎉 Deployment completed successfully!"
             echo "🌐 Application available at: https://$DOMAIN"
-            
+
             # Cleanup old images (keep last 3)
             echo "🧹 Cleaning up old Docker images..."
             docker image prune -f || true

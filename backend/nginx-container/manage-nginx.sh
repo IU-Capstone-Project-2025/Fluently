@@ -298,6 +298,17 @@ show_status() {
     fi
 }
 
+# Add this function to manage-nginx.sh to ensure container names are correct
+fix_container_names() {
+    print_status "Fixing container names in nginx configurations..."
+    
+    # Fix all nginx config files
+    find "$NGINX_DIR" -name "*.conf" -exec sed -i 's/http:\/\/app:8070/http:\/\/fluently_app:8070/g' {} \;
+    find "$NGINX_DIR" -name "*.conf" -exec sed -i 's/https:\/\/app:8070/https:\/\/fluently_app:8070/g' {} \;
+    
+    print_status "Container names fixed in all nginx configurations"
+}
+
 # Main script logic
 use_origin_certs="false"
 
@@ -329,3 +340,6 @@ case "${1:-}" in
         exit 1
         ;;
 esac
+
+# Call this function at the beginning of main script execution
+fix_container_names
