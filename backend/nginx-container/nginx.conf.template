@@ -25,7 +25,8 @@ server {
 # Main website (${DOMAIN} and www.${DOMAIN})
 # Using Cloudflare Origin Certificates for Full (Strict) SSL mode
 server {
-    listen 443 ssl http2;
+    listen 443 ssl;
+    http2 on;
     server_name ${DOMAIN} www.${DOMAIN};
 
     server_tokens off;

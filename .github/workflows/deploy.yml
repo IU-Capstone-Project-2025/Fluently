@@ -153,10 +153,11 @@ jobs:
             else
               export CERT_NAME="fluently-app-online"
             fi
-            
+
             export DOMAIN
-            envsubst < nginx-container/nginx.conf.template > nginx-container/default.conf
-            
+            # Specify which variables to substitute, leaving nginx variables untouched
+            envsubst '${DOMAIN} ${CERT_NAME}' < nginx-container/nginx.conf.template > nginx-container/default.conf
+
             echo "Generated nginx config for $DOMAIN with cert $CERT_NAME"
 
             echo "🐳 Starting Docker containers..."
