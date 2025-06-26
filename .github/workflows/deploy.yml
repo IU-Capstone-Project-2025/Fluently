@@ -105,9 +105,7 @@ jobs:
               cd /home/deploy-staging/Fluently-fork/backend
               export ZEROTIER_IP="${{ secrets.STAGING_ZEROTIER_IP }}"
             fi
-
-            echo "🌐 Using ZeroTier IP: $ZEROTIER_IP"
-
+            
             # Backup current state (only for production)
             if [ "$ENVIRONMENT" = "production" ]; then
               echo "📦 Creating backup..."
@@ -124,7 +122,6 @@ jobs:
 
             # Restore any local changes before pulling
             git restore .
-            git clean -fd
 
             git fetch origin
             git checkout $BRANCH
@@ -152,11 +149,17 @@ jobs:
             # Set correct nginx configuration using the management script
             echo "🔧 Setting up nginx configuration..."
             if [ "$ENVIRONMENT" = "staging" ]; then
-              echo "Setting up staging nginx with Origin Certificates..."
-              ./nginx-container/manage-nginx.sh staging --origin-certs
+              echo "🔧 Updating nginx config for staging domain..."
+              # This assumes you have separate SSL certificates for staging
+              # You might need to adjust paths based on your setup
+              sed -i "s|fluently-app\.ru|$DOMAIN|g" nginx-container/nginx.conf
+            fi
+            
+            # Set nginx config file based on environment
+            if [ "$ENVIRONMENT" = "staging" ]; then
+              export NGINX_CONFIG_FILE="./nginx-container/nginx-staging-origin-certs.conf"
             else
-              echo "Setting up production nginx with Origin Certificates..."
-              ./nginx-container/manage-nginx.sh production --origin-certs
+              export NGINX_CONFIG_FILE="./nginx-container/nginx-origin-certs.conf"
             fi
 
             echo "🐳 Starting Docker containers..."
