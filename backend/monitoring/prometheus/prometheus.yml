@@ -61,9 +61,7 @@ scrape_configs:
     metrics_path: '/api/monitoring/metrics'
     scrape_interval: 60s
 
-  # Docker container metrics via cAdvisor
-  - job_name: 'cadvisor'
-    static_configs:
-      - targets: ['cadvisor:8044']
-    scrape_interval: 30s
-    metrics_path: '/metrics'
+  # Docker daemon metrics (requires Docker daemon metrics to be enabled)
+  # - job_name: 'docker'
+  #   static_configs:
+  #     - targets: ['host.docker.internal:9323']
