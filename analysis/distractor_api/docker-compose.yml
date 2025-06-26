@@ -3,8 +3,8 @@ version: '3.8'
 services:
   distractor-api:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ../
+      dockerfile: distractor_api/Dockerfile
     container_name: fluently_ml_api
     ports:
       - "8001:8001"
