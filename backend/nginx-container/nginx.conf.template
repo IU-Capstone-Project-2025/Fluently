@@ -3,19 +3,6 @@
 # Provides end-to-end encryption between Cloudflare and your server
 
 # Redirect HTTP to HTTPS
-
-server {
-    listen 80;
-    server_name localhost;
-
-    location = /nginx_status {
-        stub_status;
-        access_log off;
-        allow 172.25.0.0/16;  # IP-сеть Docker
-        deny all;
-    }
-}
-
 server {
     listen 80;
     server_name ${DOMAIN} www.${DOMAIN};
