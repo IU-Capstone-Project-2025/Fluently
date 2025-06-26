@@ -11,6 +11,7 @@ import (
 	"fluently/go-backend/pkg/logger"
 
 	"github.com/go-chi/chi/v5"
+	"github.com/prometheus/client_golang/prometheus/promhttp" // Add this import
 	"go.uber.org/zap"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -66,6 +67,9 @@ func main() {
 	//Init Router
 	r := chi.NewRouter()
 	router.InitRoutes(db, r)
+
+	// Add Prometheus metrics endpoint
+	r.Handle("/metrics", promhttp.Handler())
 
 	logger.Log.Info("Logger initialization successful!")
 	logger.Log.Info("App starting",
