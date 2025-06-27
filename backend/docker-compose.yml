@@ -31,6 +31,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        SWAGGER_HOST: ${SWAGGER_HOST:-${ZEROTIER_IP:-10.243.92.227}:8070}
     container_name: fluently_app
     env_file: .env
     depends_on:

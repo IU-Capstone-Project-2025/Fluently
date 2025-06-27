@@ -148,10 +148,13 @@ jobs:
 
             # Set Swagger host for the environment
             if [ "$ENVIRONMENT" = "production" ]; then
-              SWAGGER_HOST="${{ secrets.ZEROTIER_IP }}:8070"
+              export SWAGGER_HOST="${{ secrets.ZEROTIER_IP }}:8070"
             else
-              SWAGGER_HOST="${{ secrets.STAGING_ZEROTIER_IP }}:8070"
+              export SWAGGER_HOST="${{ secrets.STAGING_ZEROTIER_IP }}:8070"
             fi
+            
+            echo "🔧 Setting up environment variables..."
+            echo "SWAGGER_HOST=$SWAGGER_HOST"
             
 
             # Generate nginx config from template
