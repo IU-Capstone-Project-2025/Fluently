@@ -45,3 +45,13 @@ func (r *SentenceRepository) GetByID(ctx context.Context, id uuid.UUID) (*models
 
 	return &s, nil
 }
+
+func (r *SentenceRepository) GetByWordID(ctx context.Context, wordID uuid.UUID) (*models.Sentence, error) {
+	var s models.Sentence
+	err := r.db.WithContext(ctx).First(&s, "word_id = ?", wordID).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return &s, nil
+}

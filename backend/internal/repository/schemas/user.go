@@ -18,11 +18,12 @@ type CreateUserRequest struct {
 }
 
 type UserResponse struct {
-	ID        uuid.UUID `json:"id"`
-	Name      string    `json:"name"`
-	Email     string    `json:"email"`
-	Role      string    `json:"role"`
-	IsActive  bool      `json:"is_active"`
-	PrefID    uuid.UUID `json:"pref_id,omitempty"`
-	CreatedAt time.Time `json:"created_at"`
+	ID         uuid.UUID `json:"id"`
+	Name       string    `json:"name"`
+	Email      string    `json:"email"`
+	Role       string    `json:"role"`
+	IsActive   bool      `json:"is_active"`
+	TelegramID *int64    `json:"telegram_id,omitempty"`
+	PrefID     uuid.UUID `json:"pref_id,omitempty"`
+	CreatedAt  time.Time `json:"created_at"`
 }

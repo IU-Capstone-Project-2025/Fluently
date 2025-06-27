@@ -1,0 +1,117 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+  # Docker container logs
+  - job_name: docker
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: docker
+          __path__: /var/lib/docker/containers/*/*log
+    pipeline_stages:
+      - json:
+          expressions:
+            output: log
+            stream: stream
+            attrs:
+      - json:
+          expressions:
+            tag:
+          source: attrs
+      - regex:
+          expression: (?P<container_name>(?:[^|]*))\|(?P<image_name>(?:[^|]*))\|(?P<image_id>(?:[^|]*))\|(?P<container_id>(?:[^|]*))
+          source: tag
+      - timestamp:
+          format: RFC3339Nano
+          source: time
+      - labels:
+          stream:
+          container_name:
+          image_name:
+          image_id:
+          container_id:
+      - output:
+          source: output
+
+  # System logs
+  - job_name: syslog
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: syslog
+          __path__: /var/log/syslog
+    pipeline_stages:
+      - regex:
+          expression: '(?P<timestamp>\S+\s+\d+\s+\d+:\d+:\d+)\s+(?P<hostname>\S+)\s+(?P<service>\S+?):\s+(?P<message>.*)'
+      - timestamp:
+          format: 'Jan 2 15:04:05'
+          source: timestamp
+      - labels:
+          hostname:
+          service:
+
+  # Nginx access logs
+  - job_name: nginx-access
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: nginx-access
+          __path__: /var/log/nginx/access.log
+    pipeline_stages:
+      - regex:
+          expression: '(?P<remote_addr>\S+)\s+-\s+(?P<remote_user>\S+)\s+\[(?P<time_local>[^\]]+)\]\s+"(?P<method>\S+)\s+(?P<path>[^"]*)\s+(?P<protocol>[^"]*)"\s+(?P<status>\d+)\s+(?P<body_bytes_sent>\d+)\s+"(?P<http_referer>[^"]*)"\s+"(?P<http_user_agent>[^"]*)"'
+      - timestamp:
+          format: '02/Jan/2006:15:04:05 -0700'
+          source: time_local
+      - labels:
+          method:
+          status:
+          remote_addr:
+
+  # Nginx error logs
+  - job_name: nginx-error
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: nginx-error
+          __path__: /var/log/nginx/error.log
+    pipeline_stages:
+      - regex:
+          expression: '(?P<timestamp>\d{4}/\d{2}/\d{2}\s+\d{2}:\d{2}:\d{2})\s+\[(?P<level>\w+)\]\s+(?P<message>.*)'
+      - timestamp:
+          format: '2006/01/02 15:04:05'
+          source: timestamp
+      - labels:
+          level:
+
+  # Application logs (if your Go app writes to specific log files)
+  - job_name: fluently-app
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: fluently-app
+          __path__: /var/log/fluently/*.log
+    pipeline_stages:
+      - json:
+          expressions:
+            level: level
+            message: msg
+            timestamp: time
+      - timestamp:
+          format: RFC3339
+          source: timestamp
+      - labels:
+          level:

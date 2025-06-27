@@ -25,11 +25,28 @@ func buildPickOptionResponse(option *models.PickOption) schemas.PickOptionRespon
 	}
 }
 
+// CreatePickOption godoc
+// @Summary      Create a pick option
+// @Description  Creates a new pick option for a word and sentence
+// @Tags         pick-options
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        option  body      schemas.CreatePickOptionRequest  true  "Pick option data"
+// @Success      201  {object}  schemas.PickOptionResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /api/v1/pick-options/ [post]
 func (h *PickOptionHandler) CreatePickOption(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreatePickOptionRequest
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, "invalid request body", http.StatusBadRequest)
+		return
+	}
+
+	if len(req.Options) == 0 {
+		http.Error(w, "option cannot be empty", http.StatusBadRequest)
 		return
 	}
 
@@ -62,10 +79,24 @@ func (h *PickOptionHandler) CreatePickOption(w http.ResponseWriter, r *http.Requ
 	json.NewEncoder(w).Encode(buildPickOptionResponse(&option))
 }
 
+// UpdatePickOption godoc
+// @Summary      Update a pick option
+// @Description  Updates an existing pick option by ID
+// @Tags         pick-options
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        id      path      string                          true  "Pick option ID"
+// @Param        option  body      schemas.CreatePickOptionRequest true  "Pick option data"
+// @Success      200  ""
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      404  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /api/v1/pick-options/{id} [put]
 func (h *PickOptionHandler) UpdatePickOption(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid uuid", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -91,10 +122,22 @@ func (h *PickOptionHandler) UpdatePickOption(w http.ResponseWriter, r *http.Requ
 	w.WriteHeader(http.StatusOK)
 }
 
-func (h *PickOptionHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
+// DeletePickOption godoc
+// @Summary      Delete a pick option
+// @Description  Deletes a pick option by ID
+// @Tags         pick-options
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        id   path      string  true  "Pick option ID"
+// @Success      204  ""
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /api/v1/pick-options/{id} [delete]
+func (h *PickOptionHandler) DeletePickOption(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid uuid", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -106,10 +149,22 @@ func (h *PickOptionHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) 
 	w.WriteHeader(http.StatusNoContent)
 }
 
-func (h *PickOptionHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
+// GetPickOption godoc
+// @Summary      Get pick option by ID
+// @Description  Returns a pick option by its unique identifier
+// @Tags         pick-options
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        id   path      string  true  "Pick option ID"
+// @Success      200  {object}  schemas.PickOptionResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      404  {object}  schemas.ErrorResponse
+// @Router       /api/v1/pick-options/{id} [get]
+func (h *PickOptionHandler) GetPickOption(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -123,8 +178,26 @@ func (h *PickOptionHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(buildPickOptionResponse(option))
 }
 
-func (h *PickOptionHandler) List(w http.ResponseWriter, r *http.Request) {
-	options, err := h.Repo.List(r.Context())
+// ListPickOptions godoc
+// @Summary      Get pick options for a word
+// @Description  Returns all pick options for the specified word
+// @Tags         pick-options
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        word_id   path      string  true  "Word ID"
+// @Success      200  {array}   schemas.PickOptionResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /api/v1/words/{word_id}/pick-options [get]
+func (h *PickOptionHandler) ListPickOptions(w http.ResponseWriter, r *http.Request) {
+	userID, err := utils.ParseUUIDParam(r, "word_id")
+	if err != nil {
+		http.Error(w, "invalid word_id", http.StatusBadRequest)
+		return
+	}
+
+	options, err := h.Repo.ListByWordID(r.Context(), userID)
 	if err != nil {
 		http.Error(w, "failed to fetch options", http.StatusBadRequest)
 		return

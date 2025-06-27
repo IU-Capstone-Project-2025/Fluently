@@ -17,15 +17,6 @@ func NewTopicRepository(db *gorm.DB) *TopicRepository {
 	return &TopicRepository{db: db}
 }
 
-func (r *TopicRepository) ListTopics(ctx context.Context) ([]models.Topic, error) {
-	var topics []models.Topic
-	if err := r.db.WithContext(ctx).Find(&topics).Error; err != nil {
-		return nil, err
-	}
-
-	return topics, nil
-}
-
 func (r *TopicRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.Topic, error) {
 	var topic models.Topic
 	if err := r.db.WithContext(ctx).First(&topic, "id = ?", id).Error; err != nil {

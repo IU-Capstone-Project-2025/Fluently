@@ -4,19 +4,14 @@ import (
 	"net/http"
 
 	_ "fluently/go-backend/docs"
-<<<<<<< HEAD
+
 	appConfig "fluently/go-backend/internal/config"
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/router"
-=======
-	"fluently/go-backend/internal/config"
-
-	//"fluently/go-backend/internal/router"
->>>>>>> upstream/main
 	"fluently/go-backend/pkg/logger"
 
 	"github.com/go-chi/chi/v5"
-	httpSwagger "github.com/swaggo/http-swagger"
+	"github.com/prometheus/client_golang/prometheus/promhttp" // Add this import
 	"go.uber.org/zap"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -24,12 +19,8 @@ import (
 
 // @title           Fluently API
 // @version         1.0
-// @description     Backend API for Fluently
-<<<<<<< HEAD
+// @description     Backend API for Fluently. Note: Auth routes are available at root level (/auth/*), while other API routes are under /api/v1/*
 // @termsOfService  http://fluently-app.ru/terms/
-=======
-// @termsOfService  http://fluently.com/terms/
->>>>>>> upstream/main
 
 // @contact.name   Danila Kochegarov
 // @contact.url    http://fluently-app.ru
@@ -38,19 +29,18 @@ import (
 // @license.name  MIT
 // @license.url   https://opensource.org/licenses/MIT
 
-<<<<<<< HEAD
-// @host      fluently-app.ru/swagger/index.html
-=======
-// @host      swagger.fluently-app.ru:8070
->>>>>>> upstream/main
-// @BasePath  /api/v1
+// @host fluently-app.ru
+// @BasePath  /
+
+// @securityDefinitions.apikey BearerAuth
+// @in header
+// @name Authorization
+// @description Type "Bearer" followed by a space and JWT token.
+
 func main() {
 	appConfig.Init()
 	logger.Init(true) // or false for production
 	defer logger.Log.Sync()
-
-	// Router init
-	r := chi.NewRouter()
 
 	// Database init
 	dsn := appConfig.GetPostgresDSN()
@@ -64,21 +54,22 @@ func main() {
 		&models.Preference{},
 		&models.Sentence{},
 		&models.User{},
+		&models.RefreshToken{},
 		&models.Word{},
 		&models.PickOption{},
 		&models.Topic{},
+		&models.LinkToken{},
 	)
 	if err != nil {
 		logger.Log.Fatal("Failed to auto-migrate", zap.Error(err))
 	}
 
-	router.InitRoutes(db)
+	//Init Router
+	r := chi.NewRouter()
+	router.InitRoutes(db, r)
 
-	r.Get("/swagger/*", httpSwagger.WrapHandler) // Swagger UI
-
-	r.Get("/api/v1/ping", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("pong"))
-	})
+	// Add Prometheus metrics endpoint
+	r.Handle("/metrics", promhttp.Handler())
 
 	logger.Log.Info("Logger initialization successful!")
 	logger.Log.Info("App starting",

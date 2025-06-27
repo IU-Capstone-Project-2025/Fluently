@@ -20,6 +20,7 @@ func buildWordResponse(w *models.Word) schemas.WordResponse {
 	resp := schemas.WordResponse{
 		ID:           w.ID.String(),
 		Word:         w.Word,
+		CEFRLevel:    w.CEFRLevel,
 		PartOfSpeech: w.PartOfSpeech,
 	}
 
@@ -40,21 +41,23 @@ func buildWordResponse(w *models.Word) schemas.WordResponse {
 // @Tags         words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Success      200  {array}   schemas.WordResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /words/ [get]
+// @Router       /api/v1/words/ [get]
 func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
 	words, err := h.Repo.ListWords(r.Context())
 	if err != nil {
-		http.Error(w, "failed to list words", http.StatusInternalServerError)
+		http.Error(w, "failed to fetch words", http.StatusInternalServerError)
 		return
 	}
 
 	var resp []schemas.WordResponse
-	for _, w := range words {
-		resp = append(resp, buildWordResponse(&w))
+	for _, word := range words {
+		resp = append(resp, buildWordResponse(&word))
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }
 
@@ -64,15 +67,16 @@ func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
 // @Tags         words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id   path      string  true  "Word ID"
 // @Success      200  {object}  schemas.WordResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
-// @Router       /words/{id} [get]
+// @Router       /api/v1/words/{id} [get]
 func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
@@ -82,6 +86,7 @@ func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildWordResponse(word))
 }
 
@@ -91,21 +96,23 @@ func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
 // @Tags         words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        word  body      schemas.CreateWordRequest  true  "Word data"
 // @Success      201  {object}  schemas.WordResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /words/ [post]
+// @Router       /api/v1/words/ [post]
 func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateWordRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "invalid body", http.StatusBadRequest)
+		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	word := models.Word{
 		ID:           uuid.New(),
 		Word:         req.Word,
+		CEFRLevel:    req.CEFRLevel,
 		PartOfSpeech: req.PartOfSpeech,
 	}
 
@@ -125,11 +132,13 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 	resp := schemas.WordResponse{
 		ID:           word.ID.String(),
 		Word:         word.Word,
+		CEFRLevel:    word.CEFRLevel,
 		PartOfSpeech: word.PartOfSpeech,
 		Translation:  req.Translation,
 		Context:      req.Context,
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(resp)
 }
@@ -140,23 +149,24 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 // @Tags         words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id    path      string                   true  "Word ID"
 // @Param        word  body      schemas.CreateWordRequest  true  "Word data"
 // @Success      200  {object}  schemas.WordResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /words/{id} [put]
+// @Router       /api/v1/words/{id} [put]
 func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.CreateWordRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, "invalid body", http.StatusBadRequest)
+		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
@@ -167,6 +177,7 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 	}
 
 	word.Word = req.Word
+	word.CEFRLevel = req.CEFRLevel
 	word.PartOfSpeech = req.PartOfSpeech
 
 	if req.Translation != nil {
@@ -189,11 +200,13 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 	resp := schemas.WordResponse{
 		ID:           word.ID.String(),
 		Word:         word.Word,
+		CEFRLevel:    word.CEFRLevel,
 		PartOfSpeech: word.PartOfSpeech,
 		Translation:  req.Translation,
 		Context:      req.Context,
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }
 
@@ -203,16 +216,17 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 // @Tags         words
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        id   path      string  true  "Word ID"
 // @Success      204  ""
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      404  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /words/{id} [delete]
+// @Router       /api/v1/words/{id} [delete]
 func (h *WordHandler) DeleteWord(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
-		http.Error(w, "invalid UUID", http.StatusBadRequest)
+		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 

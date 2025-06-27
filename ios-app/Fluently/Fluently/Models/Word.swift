@@ -10,6 +10,7 @@ import SwiftData
 
 @Model
 class Word {
+    // MARK: - Properties
     var id: UUID
     var word: String
     var translation: String
@@ -18,6 +19,7 @@ class Word {
     var transcription: String
     var topic_id: UUID
 
+    // MARK: - Init
     init(id: UUID, word: String, translation: String, wordClass: String, context: String, transcription: String, topic_id: UUID) {
         self.id = id
         self.word = word
@@ -28,6 +30,7 @@ class Word {
         self.topic_id = topic_id
     }
 
+    // generator mock word
     static func mockWord() -> Word {
         return Word(
             id: UUID(),

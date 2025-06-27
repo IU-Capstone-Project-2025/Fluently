@@ -8,7 +8,8 @@ import (
 
 type Preference struct {
 	ID              uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
-	CEFRLevel       float64   `gorm:"type:double precision;not null"`
+	UserID          uuid.UUID `gorm:"type:uuid"`
+	CEFRLevel       string    `gorm:"type:varchar(2);not null"`
 	FactEveryday    bool      `gorm:"default:false"`
 	Notifications   bool      `gorm:"default:true"`
 	NotificationsAt *time.Time

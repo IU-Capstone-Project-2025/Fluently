@@ -6,35 +6,43 @@ import (
 	"fluently/go-backend/internal/config"
 	"fluently/go-backend/internal/repository/models"
 
-	"github.com/golang-jwt/jwt/v4"
+	"crypto/rand"
+	"encoding/base64"
+
+	"github.com/go-chi/jwtauth/v5"
 )
 
-// JwtCustomClaims represents the custom claims used in the access token.
-// It embeds jwt.RegisteredClaims to get exp, iat, etc. encoded following RFC 7519.
-type JwtCustomClaims struct {
-	UserID string `json:"sub"`
-	Email  string `json:"email"`
-	Role   string `json:"role"`
-	jwt.RegisteredClaims
+var TokenAuth *jwtauth.JWTAuth
+
+// InitJWTAuth initializes the JWT authenticator with the secret from config
+func InitJWTAuth() {
+	cfg := config.GetConfig()
+	if cfg.Auth.JWTSecret == "" {
+		panic("JWT_SECRET environment variable is required but not set")
+	}
+	TokenAuth = jwtauth.New("HS256", []byte(cfg.Auth.JWTSecret), nil)
 }
 
-// GenerateJWT creates a signed JWT string for the provided user using the
-// HS256 signing method and the secret configured in the application config.
+// GenerateJWT creates a signed JWT string for the provided user using go-chi/jwtauth
 func GenerateJWT(user *models.User) (string, error) {
 	cfg := config.GetConfig()
 
-	expiresAt := time.Now().Add(cfg.Auth.JWTExpiration)
-
-	claims := JwtCustomClaims{
-		UserID: user.ID.String(),
-		Email:  user.Email,
-		Role:   user.Role,
-		RegisteredClaims: jwt.RegisteredClaims{
-			ExpiresAt: jwt.NewNumericDate(expiresAt),
-			IssuedAt:  jwt.NewNumericDate(time.Now()),
-		},
+	claims := map[string]interface{}{
+		"sub":   user.ID.String(),
+		"email": user.Email,
+		"role":  user.Role,
+		"exp":   time.Now().Add(cfg.Auth.JWTExpiration).Unix(),
+		"iat":   time.Now().Unix(),
 	}
 
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-	return token.SignedString([]byte(cfg.Auth.JWTSecret))
+	_, tokenString, err := TokenAuth.Encode(claims)
+	return tokenString, err
+}
+
+func GenerateRefreshToken() (string, error) {
+	b := make([]byte, 32)
+	if _, err := rand.Read(b); err != nil {
+		return "", err
+	}
+	return base64.URLEncoding.EncodeToString(b), nil
 }
