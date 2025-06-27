@@ -3,8 +3,8 @@
 FROM golang:1.24-alpine AS builder
 WORKDIR /app
 
-# Install git (required for some Go modules)
-RUN apk add --no-cache git
+# Install git and envsubst (required for some Go modules and env substitution)
+RUN apk add --no-cache git gettext
 
 # Copy dependency files first for better caching
 COPY go.mod go.sum ./
@@ -20,7 +20,9 @@ RUN --mount=type=cache,target=/go/pkg/mod \
 # Copy source code (this layer will be rebuilt when code changes)
 COPY . .
 
-# Generate docs
+# Substitute environment variables in main.go and generate docs
+ARG SWAGGER_HOST
+RUN envsubst '${SWAGGER_HOST}' < cmd/main.go > cmd/main.go.tmp && mv cmd/main.go.tmp cmd/main.go
 RUN swag init --generalInfo cmd/main.go --output docs
 
 # Build the application with build cache
