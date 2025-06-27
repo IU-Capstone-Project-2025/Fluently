@@ -29,3 +29,7 @@ func (r *PreferenceRepository) GetByID(ctx context.Context, id uuid.UUID) (*mode
 func (r *PreferenceRepository) Update(ctx context.Context, pref *models.Preference) error {
 	return r.db.WithContext(ctx).Save(pref).Error
 }
+
+func (r *PreferenceRepository) Create(ctx context.Context, pref *models.Preference) error {
+	return r.db.WithContext(ctx).Create(pref).Error
+}
