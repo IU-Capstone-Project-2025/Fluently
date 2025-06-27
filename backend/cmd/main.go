@@ -29,7 +29,7 @@ import (
 // @license.name  MIT
 // @license.url   https://opensource.org/licenses/MIT
 
-// @host fluently-app.ru
+// @host ${SWAGGER_HOST}
 // @BasePath  /
 
 // @securityDefinitions.apikey BearerAuth

@@ -58,6 +58,7 @@ type GoogleConfig struct {
 
 type SwaggerConfig struct {
 	AllowedEmails map[string]bool
+	Host          string
 }
 
 var cfg *Config
@@ -113,6 +114,7 @@ func Init() {
 		},
 		Swagger: SwaggerConfig{
 			AllowedEmails: parseEmailWhitelist(viper.GetString("SWAGGER_ALLOWED_EMAILS")),
+			Host:          viper.GetString("SWAGGER_HOST"),
 		},
 	}
 }
