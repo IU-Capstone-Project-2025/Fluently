@@ -38,6 +38,7 @@ struct ButtonViewModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
+            .foregroundStyle(primaryColor)
             .offset(y: isPressed ? 6 : 2)
             .background(
                 ZStack(alignment: .center) {
