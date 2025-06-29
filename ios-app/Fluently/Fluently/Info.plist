@@ -2,14 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>SedanSC-Regular.ttf</string>
-		<string>Fraunces.ttf</string>
-		<string>Inter-Regular.otf</string>
-	</array>
-	<key>GIDClientID</key>
-	<string>505903512988-eq1vcr36sp1ugei1kdobfm0qotnjempf.apps.googleusercontent.com</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -19,5 +11,21 @@
 			</array>
 		</dict>
 	</array>
+	<key>GIDClientID</key>
+	<string>505903512988-eq1vcr36sp1ugei1kdobfm0qotnjempf.apps.googleusercontent.com</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SedanSC-Regular.ttf</string>
+		<string>Fraunces.ttf</string>
+		<string>Inter-Regular.otf</string>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UILaunchScreen</key>
+		<dict>
+			<key>LaunchScreenView</key>
+			<string></string>
+		</dict>
+	</dict>
 </dict>
 </plist>

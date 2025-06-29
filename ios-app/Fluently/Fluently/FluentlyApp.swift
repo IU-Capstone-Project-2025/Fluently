@@ -15,27 +15,32 @@ struct FluentlyApp: App {
     @StateObject private var authViewModel = GoogleAuthViewModel()
     @StateObject private var router = AppRouter()
 
-
     @State private var showLogin = false
+
+    @State private var showLaunchScreen = true
 
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navigationPath) {
                 Group {
-                    if account.isLoggedIn && !showLogin {
-                        HomeScreenBuilder.build(router: router, acoount: account)
-                            .onDisappear {
-                                showLogin = false
-                            }
+                    if showLaunchScreen {
+                        LaunchScreenView(isActive: $showLaunchScreen)
                     } else {
-                        LoginView(
-                            authViewModel: authViewModel,
-                            navigationPath: $router.navigationPath
-                        )
-                            .onOpenURL(perform: handleURL)
-                            .onAppear() {
-                                attemptRestoreLogin()
-                            }
+                        if account.isLoggedIn && !showLogin {
+                            HomeScreenBuilder.build(router: router, acoount: account)
+                                .onDisappear {
+                                    showLogin = false
+                                }
+                        } else {
+                            LoginView(
+                                authViewModel: authViewModel,
+                                navigationPath: $router.navigationPath
+                            )
+                                .onOpenURL(perform: handleURL)
+                                .onAppear() {
+                                    attemptRestoreLogin()
+                                }
+                        }
                     }
                 }
                 .navigationDestination(for: AppRoutes.self) { route in
