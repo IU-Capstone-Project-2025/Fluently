@@ -1,32 +1,4 @@
 services:
-  # app:
-    #   build: .
-    #   container_name: fluently_bot
-    #   env_file: .env
-    #   environment:
-    #     BOT_TOKEN: ${BOT_TOKEN}
-    #   depends_on:
-    #     - redis
-    #     - postgres
-    #   restart: unless-stopped
-
-    # worker:
-    #   build: .
-    #   container_name: fluently_worker
-    #   command: poetry run celery -A telegram.celery_app worker --loglevel=info
-    #   env_file: .env
-    #   depends_on:
-    #     - redis
-    #     - postgres
-    #   restart: unless-stopped
-
-    # redis:
-    #   image: redis:7
-    #   # container_name: fluently_redis
-    #   ports:
-    #     - "6380:6379"
-    #   restart: unless-stopped
-
   app:
     build:
       context: .
