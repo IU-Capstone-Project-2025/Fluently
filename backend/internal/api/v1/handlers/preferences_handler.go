@@ -157,3 +157,18 @@ func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildPreferencesResponse(pref))
 }
+
+func (h *PreferenceHandler) DeletePreference(w http.ResponseWriter, r *http.Request) {
+	id, err := utils.ParseUUIDParam(r, "id")
+	if err != nil {
+		http.Error(w, "invalid id", http.StatusBadRequest)
+		return
+	}
+
+	if err := h.Repo.Delete(r.Context(), id); err != nil {
+		http.Error(w, "failed to delete preference", http.StatusInternalServerError)
+		return
+	}
+
+	w.WriteHeader(http.StatusNoContent)
+}
