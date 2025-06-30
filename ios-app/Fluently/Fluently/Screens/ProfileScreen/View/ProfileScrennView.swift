@@ -75,7 +75,10 @@ struct ProfileScrennView: View {
         Button {
             authViewModel.signOut()
             account.isLoggedIn = false
+            
+            // TODO: - Think more abour this implementation
             router.popToRoot()
+            router.navigate(to: AppRoutes.login)
         } label: {
             Text("sign out")
                 .foregroundStyle(.red)

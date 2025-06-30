@@ -57,6 +57,7 @@ struct WordCardView: View {
                 ForEach(word.sentences, id: \.sentenceId) { sentence in
                     VStack(alignment: .leading) {
                         Text("- \(sentence.sentence)")
+                            .foregroundColor(.blackText)
                         Text("- \(sentence.translation)")
                             .font(.appFont.caption)
                             .foregroundColor(.blackText.opacity(0.6))

@@ -15,27 +15,35 @@ struct FluentlyApp: App {
     @StateObject private var authViewModel = GoogleAuthViewModel()
     @StateObject private var router = AppRouter()
 
-
+    #if targetEnvironment(simulator)
     @State private var showLogin = false
+    #else
+    @State private var showLogin = true
+    #endif
+
+    @State private var showLaunchScreen = true
+
+
 
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navigationPath) {
                 Group {
-                    if account.isLoggedIn && !showLogin {
-                        HomeScreenBuilder.build(router: router, acoount: account)
-                            .onDisappear {
-                                showLogin = false
-                            }
-                    } else {
-                        LoginView(
-                            authViewModel: authViewModel,
-                            navigationPath: $router.navigationPath
-                        )
-                            .onOpenURL(perform: handleURL)
+                    if showLaunchScreen {
+                        LaunchScreenView(isActive: $showLaunchScreen)
                             .onAppear() {
                                 attemptRestoreLogin()
                             }
+                    } else {
+                        if !showLogin {
+                            HomeScreenBuilder.build(router: router, acoount: account)
+                        } else {
+                            LoginView(
+                                authViewModel: authViewModel,
+                                navigationPath: $router.navigationPath
+                            )
+                                .onOpenURL(perform: handleURL)
+                        }
                     }
                 }
                 .navigationDestination(for: AppRoutes.self) { route in
@@ -62,9 +70,6 @@ struct FluentlyApp: App {
                     }
                 }
             }
-            .onChange(of: account.isLoggedIn) {
-                print("account is: \(account.isLoggedIn)")
-            }
             .environmentObject(account)
             .environmentObject(router)
         }
@@ -73,7 +78,7 @@ struct FluentlyApp: App {
     private func handleURL(_ url: URL) {
         GIDSignIn.sharedInstance.handle(url)
     }
-    
+
     private func attemptRestoreLogin() {
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             DispatchQueue.main.async {
