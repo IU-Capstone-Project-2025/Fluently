@@ -17,13 +17,13 @@ struct FluentlyApp: App {
 
     #if targetEnvironment(simulator)
     @State private var showLogin = false
+    @State private var showLaunchScreen = false
     #else
     @State private var showLogin = true
+    @State private var showLaunchScreen = true
     #endif
 
-    @State private var showLaunchScreen = true
-
-
+//    @State private var showLaunchScreen = true
 
     var body: some Scene {
         WindowGroup {
