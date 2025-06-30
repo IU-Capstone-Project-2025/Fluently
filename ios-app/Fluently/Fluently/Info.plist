@@ -21,11 +21,10 @@
 	</array>
 	<key>UILaunchScreen</key>
 	<dict>
-		<key>UILaunchScreen</key>
-		<dict>
-			<key>LaunchScreenView</key>
-			<string></string>
-		</dict>
+		<key>UIColorName</key>
+		<string>whiteBackground</string>
+		<key>UIImageName</key>
+		<string>LaunchScreenIcon</string>
 	</dict>
 </dict>
 </plist>

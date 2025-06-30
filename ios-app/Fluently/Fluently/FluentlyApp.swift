@@ -15,9 +15,15 @@ struct FluentlyApp: App {
     @StateObject private var authViewModel = GoogleAuthViewModel()
     @StateObject private var router = AppRouter()
 
+    #if targetEnvironment(simulator)
     @State private var showLogin = false
+    #else
+    @State private var showLogin = true
+    #endif
 
     @State private var showLaunchScreen = true
+
+
 
     var body: some Scene {
         WindowGroup {
@@ -26,10 +32,10 @@ struct FluentlyApp: App {
                     if showLaunchScreen {
                         LaunchScreenView(isActive: $showLaunchScreen)
                     } else {
-                        if account.isLoggedIn && !showLogin {
+                        if !showLogin {
                             HomeScreenBuilder.build(router: router, acoount: account)
                                 .onDisappear {
-                                    showLogin = false
+                                    showLogin = true
                                 }
                         } else {
                             LoginView(
@@ -67,9 +73,6 @@ struct FluentlyApp: App {
                     }
                 }
             }
-            .onChange(of: account.isLoggedIn) {
-                print("account is: \(account.isLoggedIn)")
-            }
             .environmentObject(account)
             .environmentObject(router)
         }
@@ -89,7 +92,6 @@ struct FluentlyApp: App {
                     account.image = user.profile?.imageURL(withDimension: 100)?.absoluteString
                     account.isLoggedIn = true
                     showLogin = false
-
                     print(user.idToken)
                 } else {
                     account.isLoggedIn = false

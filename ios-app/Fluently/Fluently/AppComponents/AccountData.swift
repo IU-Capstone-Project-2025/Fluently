@@ -13,7 +13,13 @@ final class AccountData: ObservableObject {
     @Published var familyName: String?
     @Published var mail: String?
     @Published var image: String?
+//    @Published var isLoggedIn = false
+
+    #if targetEnvironment(simulator)
+    @Published var isLoggedIn = true
+    #else
     @Published var isLoggedIn = false
+    #endif
 
     // MARK: - Data caching
     let defaults = UserDefaults.standard
