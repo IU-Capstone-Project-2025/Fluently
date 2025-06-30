@@ -31,21 +31,18 @@ struct FluentlyApp: App {
                 Group {
                     if showLaunchScreen {
                         LaunchScreenView(isActive: $showLaunchScreen)
+                            .onAppear() {
+                                attemptRestoreLogin()
+                            }
                     } else {
                         if !showLogin {
                             HomeScreenBuilder.build(router: router, acoount: account)
-                                .onDisappear {
-                                    showLogin = true
-                                }
                         } else {
                             LoginView(
                                 authViewModel: authViewModel,
                                 navigationPath: $router.navigationPath
                             )
                                 .onOpenURL(perform: handleURL)
-                                .onAppear() {
-                                    attemptRestoreLogin()
-                                }
                         }
                     }
                 }
@@ -81,7 +78,7 @@ struct FluentlyApp: App {
     private func handleURL(_ url: URL) {
         GIDSignIn.sharedInstance.handle(url)
     }
-    
+
     private func attemptRestoreLogin() {
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             DispatchQueue.main.async {
@@ -92,6 +89,7 @@ struct FluentlyApp: App {
                     account.image = user.profile?.imageURL(withDimension: 100)?.absoluteString
                     account.isLoggedIn = true
                     showLogin = false
+
                     print(user.idToken)
                 } else {
                     account.isLoggedIn = false
