@@ -313,8 +313,8 @@ jobs:
             
             # Build ML API separately first (it takes the longest)
             echo "🤖 Building ML API (this may take several minutes)..."
-            timeout 15m docker compose build ml-api || {
-              echo "❌ ML API build timed out after 15 minutes"
+            timeout 30m docker compose build ml-api || {
+              echo "❌ ML API build timed out after 30 minutes"
               exit 1
             }
             
