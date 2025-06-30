@@ -6,6 +6,7 @@ type CreateSentenceRequest struct {
 	WordID      uuid.UUID `json:"word_id" binding:"required"`
 	Sentence    string    `json:"sentence" binding:"required"`
 	Translation string    `json:"translation"`
+	AudioURL    string    `json:"audio_url"`
 }
 
 type SentenceResponse struct {
@@ -13,4 +14,5 @@ type SentenceResponse struct {
 	WordID      string `json:"word_id"`
 	Sentence    string `json:"sentence"`
 	Translation string `json:"translation"`
+	AudioURL    string `json:"audio_url,omitempty"`
 }

@@ -20,6 +20,7 @@ func buildSentenceResponse(sentence *models.Sentence) schemas.SentenceResponse {
 		WordID:      sentence.WordID.String(),
 		Sentence:    sentence.Sentence,
 		Translation: sentence.Translation,
+		AudioURL:    sentence.AudioURL,
 	}
 }
 
@@ -80,6 +81,7 @@ func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request)
 		WordID:      req.WordID,
 		Sentence:    req.Sentence,
 		Translation: req.Translation,
+		AudioURL:    req.AudioURL,
 	}
 
 	if err := h.Repo.Create(r.Context(), &s); err != nil {
@@ -128,6 +130,10 @@ func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request)
 	sentence.WordID = req.WordID
 	sentence.Sentence = req.Sentence
 	sentence.Translation = req.Translation
+
+	if req.AudioURL != "" {
+		sentence.AudioURL = req.AudioURL
+	}
 
 	if err := h.Repo.Update(r.Context(), sentence); err != nil {
 		http.Error(w, "failed to update sentence", http.StatusInternalServerError)

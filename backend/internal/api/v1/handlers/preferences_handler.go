@@ -25,7 +25,7 @@ func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceRespons
 		WordsPerDay:     pref.WordsPerDay,
 		Goal:            pref.Goal,
 		Subscribed:      pref.Subscribed,
-		AvatarImage:     pref.AvatarImage,
+		AvatarImageURL:  pref.AvatarImageURL,
 	}
 }
 
@@ -65,7 +65,7 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 		WordsPerDay:     req.WordsPerDay,
 		Goal:            req.Goal,
 		Subscribed:      req.Subscribed,
-		AvatarImage:     req.AvatarImage,
+		AvatarImageURL:  req.AvatarImageURL,
 	}
 
 	if err := h.Repo.Create(r.Context(), pref); err != nil {
@@ -147,7 +147,7 @@ func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http
 	pref.WordsPerDay = req.WordsPerDay
 	pref.Goal = req.Goal
 	pref.Subscribed = req.Subscribed
-	pref.AvatarImage = req.AvatarImage
+	pref.AvatarImageURL = req.AvatarImageURL
 
 	if err := h.Repo.Update(r.Context(), pref); err != nil {
 		http.Error(w, "failed to update preference", http.StatusInternalServerError)

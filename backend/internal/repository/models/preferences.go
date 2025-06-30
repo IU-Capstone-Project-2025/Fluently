@@ -16,7 +16,7 @@ type Preference struct {
 	WordsPerDay     int    `gorm:"default:10"`
 	Goal            string `gorm:"type:varchar(255)"`
 	Subscribed      bool   `gorm:"default:false"`
-	AvatarImage     []byte `gorm:"type:bytea"`
+	AvatarImageURL  string `gorm:"type:text"`
 }
 
 func (Preference) TableName() string {
