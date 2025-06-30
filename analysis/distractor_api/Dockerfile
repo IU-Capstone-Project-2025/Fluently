@@ -25,8 +25,8 @@ COPY distractor_api/pyproject.toml ./
 RUN pip install poetry==1.7.1 && \
     poetry export -f requirements.txt --output requirements.txt --without-hashes
 
-# Install CPU-only PyTorch first to avoid CUDA dependencies
-RUN pip install torch==2.1.0+cpu torchvision==0.16.0+cpu torchaudio==0.16.0+cpu \
+# Install CPU-only PyTorch first to avoid CUDA dependencies  
+RUN pip install torch==2.1.0+cpu torchvision==0.16.0+cpu torchaudio==2.1.0+cpu \
     --index-url https://download.pytorch.org/whl/cpu
 
 # Install remaining dependencies (excluding torch since we already installed CPU version)
