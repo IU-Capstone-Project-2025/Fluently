@@ -32,7 +32,8 @@ fun LessonFlowScreen(
             ),
             chooseTranslationObserver = lessonFlowViewModel.chooseTranslationObserver,
             newWordObserver = lessonFlowViewModel.newWordObserver,
-            fillGapsObserver = lessonFlowViewModel.fillGapsObserver
+            fillGapsObserver = lessonFlowViewModel.fillGapsObserver,
+            inputWordObserver = lessonFlowViewModel.inputWordObserver
         )
     }
 }

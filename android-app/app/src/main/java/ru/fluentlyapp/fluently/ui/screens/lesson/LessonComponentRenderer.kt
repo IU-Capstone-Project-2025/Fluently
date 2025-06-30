@@ -14,6 +14,8 @@ import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTran
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationExercise
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.FillGapsExercise
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.FillGapsObserver
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.InputWordExercise
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.InputWordObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordExercise
 
@@ -28,7 +30,8 @@ fun LessonComponentRenderer(
     component: LessonComponentWithIndex,
     chooseTranslationObserver: ChooseTranslationObserver,
     newWordObserver: NewWordObserver,
-    fillGapsObserver: FillGapsObserver
+    fillGapsObserver: FillGapsObserver,
+    inputWordObserver: InputWordObserver
 ) {
     AnimatedContent(
         targetState = component,
@@ -71,6 +74,15 @@ fun LessonComponentRenderer(
                     modifier = modifier,
                     exerciseState = targetComponent,
                     fillGapsObserver = fillGapsObserver,
+                    isCompleted = targetComponent.isAnswered
+                )
+            }
+
+            is Exercise.InputWord -> {
+                InputWordExercise(
+                    modifier = modifier,
+                    exerciseState = targetComponent,
+                    observer = inputWordObserver,
                     isCompleted = targetComponent.isAnswered
                 )
             }

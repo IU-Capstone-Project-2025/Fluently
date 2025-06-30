@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,7 +30,9 @@ import androidx.compose.ui.unit.sp
 import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.ui.components.ExerciseContinueButton
+import ru.fluentlyapp.fluently.ui.theme.FluentlyColors
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
+import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
 
 abstract class ChooseTranslationObserver {
     abstract fun onVariantClick(variantIndex: Int)
@@ -44,17 +47,15 @@ fun ChooseTranslationExercise(
     isCompleted: Boolean
 ) {
     Column(
-        modifier = modifier,
+        modifier = modifier.background(FluentlyTheme.colors.surface),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Column(
             modifier = Modifier
-                .background(color = FluentlyTheme.colors.surface)
                 .weight(1f)
                 .fillMaxWidth()
-                .verticalScroll(
-                    state = rememberScrollState()
-                ),
+                .verticalScroll(state = rememberScrollState())
+                .padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -69,18 +70,20 @@ fun ChooseTranslationExercise(
 
             Spacer(modifier = Modifier.height(8.dp))
 
+            val correctColor = FluentlyTheme.colors.correct
             val correctAnswerModifier = remember {
                 Modifier.border(
                     width = 2.dp,
-                    color = Color.Green,
+                    color = correctColor,
                     shape = RoundedCornerShape(12.dp)
                 )
             }
 
+            val wrongColor = FluentlyTheme.colors.wrong
             val wrongAnswerModifier = remember {
                 Modifier.border(
                     width = 2.dp,
-                    color = Color.Red,
+                    color = wrongColor,
                     shape = RoundedCornerShape(12.dp)
                 )
             }
@@ -101,8 +104,7 @@ fun ChooseTranslationExercise(
                 }
 
                 Text(
-                    modifier = Modifier
-                            then itemModifier
+                    modifier = Modifier then itemModifier
                         .clip(shape = RoundedCornerShape(12.dp))
                         .fillMaxWidth(fraction = 0.8f)
                         .background(color = FluentlyTheme.colors.surfaceContainerHigh)
@@ -115,26 +117,34 @@ fun ChooseTranslationExercise(
             }
         }
 
-        ExerciseContinueButton(
-            modifier = Modifier.fillMaxWidth(.7f).padding(32.dp).height(80.dp),
-            enabled = isCompleted,
-            onClick = chooseTranslationObserver::onCompleteExercise
-        )
+
+        Box(
+            modifier = Modifier.fillMaxWidth().height(160.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            if (isCompleted) {
+                ExerciseContinueButton(
+                    onClick = { chooseTranslationObserver.onCompleteExercise() }
+                )
+            }
+        }
     }
 }
 
-@Preview(device = Devices.PIXEL_7)
+@DevicePreviews
 @Composable
 fun ChooseTranslationExercisePreview() {
     FluentlyTheme {
         ChooseTranslationExercise(
             modifier = Modifier
-                .fillMaxSize()
-                .background(FluentlyTheme.colors.surface),
+                .fillMaxSize(),
             exerciseState = Exercise.ChooseTranslation(
-                word = "Influence",
+                word = "Pretty long word aba aba wow this is very long",
                 answerVariants = listOf(
-                    "Влияние", "Благодарность", "Двойственность", "Комар"
+                    "Влияние",
+                    "Очень длинный вариант ответа капец он реально очень длинный господи ну почему он такой длинный",
+                    "Двойственность",
+                    "Комар"
                 ),
                 correctVariant = 0,
                 selectedVariant = 2,

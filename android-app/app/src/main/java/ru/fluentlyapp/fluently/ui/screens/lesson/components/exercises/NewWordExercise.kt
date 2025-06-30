@@ -34,6 +34,7 @@ import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.ui.components.ExerciseContinueButton
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
+import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
 
 abstract class NewWordObserver {
     abstract fun onUserKnowsWord(doesUserKnowWord: Boolean)
@@ -160,15 +161,20 @@ fun NewWordExercise(
             }
         }
 
-        ExerciseContinueButton(
-            modifier = Modifier.fillMaxWidth(.7f).padding(32.dp).height(80.dp),
-            enabled = isCompleted,
-            onClick = newWordObserver::onCompleteExercise
-        )
+        Box(
+            modifier = Modifier.fillMaxWidth().height(120.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            if (isCompleted) {
+                ExerciseContinueButton(
+                    onClick = { newWordObserver.onCompleteExercise() }
+                )
+            }
+        }
     }
 }
 
-@Preview(device = Devices.PIXEL_7)
+@DevicePreviews
 @Composable
 fun NewWordExercisePreview() {
     FluentlyTheme {
@@ -188,7 +194,7 @@ fun NewWordExercisePreview() {
                     examples = listOf(
                         "This function is deprecated since lirbary version 1.2" to
                                 "Эта функция устарела, начиная с  версии билиотеки 1.2",
-                        "Components Deprecation is a main source of conflicts in androidandroid" to
+                        "Components Deprecation is a main source of conflicts in android" to
                                 "Устаревание компонентов - главная причина конфликтов в Андроиде",
                     )
                 ),

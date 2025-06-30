@@ -33,7 +33,9 @@ data class FluentlyColors(
     val onSurfaceVariantInverse: Color = Color(0xFF8f8f8f),
 
     // Additional local colors
-    val googleBlue: Color = Color(0xFF4285F4)
+    val googleBlue: Color = Color(0xFF4285F4),
+    val correct: Color = Color(0xFF0CB20C),
+    val wrong: Color = Color(0xFFCC1C1C)
 )
 
 val DefaultPalette = FluentlyColors()

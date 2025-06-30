@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -22,7 +21,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -36,6 +34,7 @@ import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.ui.components.ExerciseContinueButton
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
+import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
 
 abstract class FillGapsObserver {
     abstract fun onVariantClick(variantIndex: Int)
@@ -50,23 +49,22 @@ fun FillGapsExercise(
     isCompleted: Boolean
 ) {
     Column(
-        modifier = modifier,
+        modifier = modifier.background(FluentlyTheme.colors.surface),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Column(
             modifier = Modifier
-                .background(color = FluentlyTheme.colors.surface)
                 .weight(1f)
                 .fillMaxWidth()
                 .verticalScroll(
                     state = rememberScrollState()
-                ),
+                )
+                .padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             if (exerciseState.selectedVariant == null) {
                 Text(
-                    modifier = Modifier.padding(16.dp),
                     text = exerciseState.sentence.joinToString(" ____ "),
                     fontSize = 20.sp
                 )
@@ -100,18 +98,20 @@ fun FillGapsExercise(
 
             Spacer(modifier = Modifier.height(8.dp))
 
+            val correctColor = FluentlyTheme.colors.correct
             val correctAnswerModifier = remember {
                 Modifier.border(
                     width = 2.dp,
-                    color = Color.Green,
+                    color = correctColor,
                     shape = RoundedCornerShape(12.dp)
                 )
             }
 
+            val wrongColor = FluentlyTheme.colors.wrong
             val wrongAnswerModifier = remember {
                 Modifier.border(
                     width = 2.dp,
-                    color = Color.Red,
+                    color = wrongColor,
                     shape = RoundedCornerShape(12.dp)
                 )
             }
@@ -146,18 +146,21 @@ fun FillGapsExercise(
             }
         }
 
-        ExerciseContinueButton(
-            modifier = Modifier
-                .widthIn(min = 300.dp)
-                .padding(32.dp)
-                .height(80.dp),
-            enabled = isCompleted,
-            onClick = fillGapsObserver::onCompleteExercise
-        )
+        Box(
+            modifier = Modifier.fillMaxWidth().height(160.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            if (isCompleted) {
+                ExerciseContinueButton(
+                    onClick = { fillGapsObserver.onCompleteExercise() }
+                )
+            }
+        }
     }
 }
 
 @Preview(device = PIXEL_7)
+@DevicePreviews
 @Composable
 fun FillGapsExercisePreview() {
     FluentlyTheme {

@@ -20,7 +20,7 @@ fun FluentlyNavHost(
     NavHost(
         modifier = modifier,
         navController = navHostController,
-        startDestination = Destination.LaunchScreen
+        startDestination = Destination.HomeScreen
     ) {
         composable<Destination.LaunchScreen> {
             LaunchScreen(

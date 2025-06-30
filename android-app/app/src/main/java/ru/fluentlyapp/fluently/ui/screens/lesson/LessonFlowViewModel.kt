@@ -14,6 +14,7 @@ import ru.fluentlyapp.fluently.common.model.LessonComponent
 import ru.fluentlyapp.fluently.app.navigation.Destination
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.FillGapsObserver
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.InputWordObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordObserver
 import javax.inject.Inject
 
@@ -105,6 +106,17 @@ class LessonFlowViewModel @Inject constructor(
         override fun onVariantClick(variantIndex: Int) {
             val currentComponent = checkCurrentComponentOrNull<Exercise.FillTheGap>() ?: return
             val updatedComponent = currentComponent.copy(selectedVariant = variantIndex)
+            updateCurrentComponent(updatedComponent)
+        }
+    }
+
+    // Observer for input word exercise
+    val inputWordObserver = object : InputWordObserver {
+        override fun onCompleteExercise() = moveToNextComponent()
+
+        override fun onConfirmInput(input: String) {
+            val currentComponent = checkCurrentComponentOrNull<Exercise.InputWord>() ?: return
+            val updatedComponent = currentComponent.copy(inputtedWord = input)
             updateCurrentComponent(updatedComponent)
         }
     }

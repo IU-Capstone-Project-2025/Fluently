@@ -69,20 +69,19 @@ fun LessonResponseBody.convertToLesson(): Lesson {
                     )
                 }
 
-                //TODO: uncomment these
-//                // Write the word from translation exercise
-//                ExerciseType.WRITE_WORD_FROM_TRANSLATION -> {
-//                    val translation = exerciseData.translation!!
-//                    val correctAnswer = exerciseData.correct_answer!!
-//
-//                    add(
-//                        Exercise.InputWord(
-//                            translation = translation,
-//                            correctAnswer = correctAnswer,
-//                            inputtedWord = null
-//                        )
-//                    )
-//                }
+                // Write the word from translation exercise
+                ExerciseType.WRITE_WORD_FROM_TRANSLATION -> {
+                    val translation = exerciseData.translation!!
+                    val correctAnswer = exerciseData.correct_answer!!
+
+                    add(
+                        Exercise.InputWord(
+                            translation = translation,
+                            correctAnswer = correctAnswer,
+                            inputtedWord = null
+                        )
+                    )
+                }
             }
         }
     }

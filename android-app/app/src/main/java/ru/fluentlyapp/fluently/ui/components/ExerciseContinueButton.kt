@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.fluentlyapp.fluently.R
@@ -21,8 +22,8 @@ import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 
 @Composable
 fun ExerciseContinueButton(
-    modifier: Modifier,
-    enabled: Boolean,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
     onClick: () -> Unit
 ) {
     if (enabled) {
@@ -31,11 +32,12 @@ fun ExerciseContinueButton(
                 .clip(RoundedCornerShape(16.dp))
                 .clickable(onClick = onClick, enabled = enabled)
                 .background(color = FluentlyTheme.colors.primary)
+                .padding(20.dp)
         ) {
             Text(
                 modifier = Modifier.align(Alignment.Center),
                 text = stringResource(R.string.continue_to_next_exercise),
-                fontSize = 24.sp,
+                fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 color = FluentlyTheme.colors.onPrimary
             )
@@ -46,6 +48,17 @@ fun ExerciseContinueButton(
             modifier = modifier
                 .padding(bottom = 32.dp)
                 .fillMaxWidth()
+        )
+    }
+}
+
+@Composable
+@Preview
+fun ExerciseContinueButtonPreview() {
+    FluentlyTheme {
+        ExerciseContinueButton(
+            enabled = true,
+            onClick = {}
         )
     }
 }
