@@ -23,6 +23,7 @@ services:
     ports:
       - "127.0.0.1:8070:8070"  # Local access for nginx
       - "${ZEROTIER_IP:-10.243.92.227}:8070:8070"  # ZeroTier access
+      - "0.0.0.0:8070:8070"  # External access for mobile apps
 
   # Nginx Reverse Proxy
   nginx:
