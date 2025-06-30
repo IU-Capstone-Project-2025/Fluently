@@ -32,6 +32,10 @@ func buildWordResponse(w *models.Word) schemas.WordResponse {
 		resp.Context = &w.Context
 	}
 
+	if w.AudioURL != "" {
+		resp.AudioURL = &w.AudioURL
+	}
+
 	return resp
 }
 
@@ -124,6 +128,10 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 		word.Context = *req.Context
 	}
 
+	if req.AudioURL != nil {
+		word.AudioURL = *req.AudioURL
+	}
+
 	if err := h.Repo.Create(r.Context(), &word); err != nil {
 		http.Error(w, "failed to create word", http.StatusInternalServerError)
 		return
@@ -136,6 +144,7 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 		PartOfSpeech: word.PartOfSpeech,
 		Translation:  req.Translation,
 		Context:      req.Context,
+		AudioURL:     req.AudioURL,
 	}
 
 	w.Header().Set("Content-Type", "application/json")
@@ -192,6 +201,12 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 		word.Context = ""
 	}
 
+	if req.AudioURL != nil {
+		word.AudioURL = *req.AudioURL
+	} else {
+		word.AudioURL = ""
+	}
+
 	if err := h.Repo.Update(r.Context(), word); err != nil {
 		http.Error(w, "failed to update word", http.StatusInternalServerError)
 		return
@@ -204,6 +219,7 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 		PartOfSpeech: word.PartOfSpeech,
 		Translation:  req.Translation,
 		Context:      req.Context,
+		AudioURL:     req.AudioURL,
 	}
 
 	w.Header().Set("Content-Type", "application/json")

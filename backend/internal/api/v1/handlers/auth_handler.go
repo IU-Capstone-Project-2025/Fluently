@@ -156,7 +156,7 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 				NotificationsAt: nil,
 				WordsPerDay:     10,
 				Goal:            "Learn new words",
-				AvatarImage:     []byte(avatar),
+				AvatarImageURL:  avatar,
 			}
 			if err := h.UserPrefRepo.Create(r.Context(), &userPreferences); err != nil {
 				logger.Log.Error("Failed to create user preferences", zap.Error(err))
@@ -640,7 +640,7 @@ func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, g
 				NotificationsAt: nil,
 				WordsPerDay:     10,
 				Goal:            "Learn new words",
-				AvatarImage:     []byte(avatar),
+				AvatarImageURL:  avatar,
 			}
 			if err := h.UserPrefRepo.Create(r.Context(), &userPreferences); err != nil {
 				logger.Log.Error("Failed to create user preferences", zap.Error(err))
