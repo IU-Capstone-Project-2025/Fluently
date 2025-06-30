@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"encoding/json"
 	"math/rand"
 	"net/http"
 	"time"
@@ -135,10 +136,18 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		default:
 		}
 
+		card.Exercise = exercise
 		cards = append(cards, card)
 	}
 
 	var lesson schemas.LessonResponse
 	lesson.Lesson = lessonInfo
 	lesson.Cards = cards
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	if err := json.NewEncoder(w).Encode(lesson); err != nil {
+		http.Error(w, "failed to encode response", http.StatusInternalServerError)
+		return
+	}
 }
