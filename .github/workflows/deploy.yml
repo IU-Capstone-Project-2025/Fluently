@@ -98,6 +98,8 @@ jobs:
           host: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_HOST || secrets.STAGING_DEPLOY_HOST }}
           username: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_USERNAME || secrets.STAGING_DEPLOY_USERNAME }}
           key: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_SSH_KEY || secrets.STAGING_DEPLOY_SSH_KEY }}
+          timeout: 20m
+          command_timeout: 20m
           script: |
             set -e
             
@@ -304,8 +306,24 @@ jobs:
             # Stop services first
             docker compose down --remove-orphans || true
 
-            # Start services with build and force recreate
-            docker compose up -d --build --force-recreate
+            # Build with progress output and timeout handling
+            echo "🔨 Building Docker images..."
+            export DOCKER_BUILDKIT=1
+            export COMPOSE_DOCKER_CLI_BUILD=1
+            
+            # Build ML API separately first (it takes the longest)
+            echo "🤖 Building ML API (this may take several minutes)..."
+            timeout 15m docker compose build ml-api || {
+              echo "❌ ML API build timed out after 15 minutes"
+              exit 1
+            }
+            
+            # Build remaining services
+            echo "🔨 Building remaining services..."
+            docker compose build
+
+            # Start services with force recreate
+            docker compose up -d --force-recreate
 
             # Perform health checks
             if check_health; then
