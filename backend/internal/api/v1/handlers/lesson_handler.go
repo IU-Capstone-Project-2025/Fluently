@@ -109,20 +109,20 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		exercise.Type = exerciseTypes[option]
 
 		switch option {
-		case 0: //translate_ru_to_en
+		case 0: // translate_ru_to_en
 			var translateRuToEn schemas.ExerciseTranslateRuToEn
 
 			translateRuToEn.Text = word.Translation
 			translateRuToEn.CorrectAnswer = word.Word
-			translateRuToEn.PickOptions = []string{"biba", "boba", "bimba"}
+			translateRuToEn.PickOptions, _ = utils.GeneratePickOptionsWithDefaults(r.Context(), sentence.Sentence, word.Word)
 			exercise.Data = translateRuToEn
-		case 1: //write_word_from_translation
+		case 1: // write_word_from_translation
 			var writeWordFromTranslation schemas.ExerciseWriteWordFromTranslation
 
 			writeWordFromTranslation.Translation = word.Translation
 			writeWordFromTranslation.CorrectAnswer = word.Word
 			exercise.Data = writeWordFromTranslation
-		case 2: //pick_option_sentence
+		case 2: // pick_option_sentence
 			var pickOptionSentence schemas.ExercisePickOptionSentence
 
 			pickOptionSentence.Template = replaceWordWithUnderscores(
@@ -130,7 +130,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 				word.Word,
 			)
 			pickOptionSentence.CorrectAnswer = word.Word
-			pickOptionSentence.PickOptions = []string{"biba", "boba", "bimba"}
+			pickOptionSentence.PickOptions, _ = utils.GeneratePickOptionsWithDefaults(r.Context(), sentence.Sentence, word.Word)
 			exercise.Data = pickOptionSentence
 		default:
 		}

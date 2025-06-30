@@ -64,7 +64,7 @@ func main() {
 		logger.Log.Fatal("Failed to auto-migrate", zap.Error(err))
 	}
 
-	//Init Router
+	// Init Router
 	r := chi.NewRouter()
 	router.InitRoutes(db, r)
 
