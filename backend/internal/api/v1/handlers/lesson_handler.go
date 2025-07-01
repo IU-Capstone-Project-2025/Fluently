@@ -31,6 +31,18 @@ func replaceWordWithUnderscores(text, word string) string {
 	return strings.ReplaceAll(text, word, replacement)
 }
 
+// GenerateLesson godoc
+// @Summary Generate a new lesson for the user
+// @Description Creates a personalized lesson based on user preferences, including words, exercises, and topics
+// @Tags lessons
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Success 200 {object} schemas.LessonResponse "Successfully generated lesson"
+// @Failure 400 {string} string "Bad request - invalid user or preferences"
+// @Failure 401 {string} string "Unauthorized - invalid or missing token"
+// @Failure 500 {string} string "Internal server error"
+// @Router /lesson [get]
 func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
