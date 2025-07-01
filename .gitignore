@@ -4,3 +4,10 @@
 *.env
 /backend/import-tool
 /telegram-bot/main
+
+# Analysis data files - should not be tracked
+/analysis/data.csv
+/analysis/expanded_dataset.csv
+/analysis/oxford_vocabulary.csv
+/analysis/translated_vocabulary.csv
+/analysis/words_dictionary.json
