@@ -354,6 +354,8 @@ services:
 volumes:
   # Backend-specific volumes (kept separate)
   fluently_pgdata:
+    external: true
+    name: fluently_pgdata_safe
   
   # Shared cache volumes
   fluently_model_cache:
