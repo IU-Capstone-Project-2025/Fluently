@@ -77,3 +77,7 @@ extension ScreenCard {
         }
     }
 }
+
+extension ScreenCard.CardType: Identifiable {
+    var id: Self { self }
+}

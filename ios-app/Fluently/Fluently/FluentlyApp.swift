@@ -7,6 +7,7 @@
 
 import SwiftUI
 import GoogleSignIn
+import SwiftData
 
 @main
 struct FluentlyApp: App {
@@ -15,65 +16,76 @@ struct FluentlyApp: App {
     @StateObject private var authViewModel = GoogleAuthViewModel()
     @StateObject private var router = AppRouter()
 
+#if targetEnvironment(simulator)
 
     @State private var showLogin = false
+    @State private var showLaunchScreen = false
+
+#else
+
+    @State private var showLogin = true
+    @State private var showLaunchScreen = true
+
+#endif
 
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navigationPath) {
                 Group {
-                    if account.isLoggedIn && !showLogin {
-                        HomeScreenBuilder.build(router: router, acoount: account)
-                            .onDisappear {
-                                showLogin = false
-                            }
-                    } else {
-                        LoginView(
-                            authViewModel: authViewModel,
-                            navigationPath: $router.navigationPath
-                        )
-                            .onOpenURL(perform: handleURL)
+                    if showLaunchScreen {
+                        LaunchScreenView(isActive: $showLaunchScreen)
                             .onAppear() {
                                 attemptRestoreLogin()
                             }
+                    } else {
+                        if !showLogin {
+                            HomeScreenBuilder.build(router: router, acoount: account)
+                        } else {
+                            LoginScreenBuilder.build(
+                                router: router,
+                                acount: account,
+                                authViewModel: authViewModel
+                            )
+                                .onOpenURL(perform: handleURL)
+                        }
                     }
                 }
                 .navigationDestination(for: AppRoutes.self) { route in
                     switch route {
                         case .homeScreen:
-                            HomeScreenBuilder.build(router: router, acoount: account)
+                            HomeScreenBuilder.build(
+                                router: router,
+                                acoount: account
+                            )
                         case .login:
-                            LoginView (
-                                authViewModel: authViewModel,
-                                navigationPath: $router.navigationPath
+                            LoginScreenBuilder.build(
+                                router: router,
+                                acount: account,
+                                authViewModel: authViewModel
                             )
                         case .profile:
-                            ProfileScrennView(
-                                authViewModel: authViewModel,
-                                navigationPath: $router.navigationPath
+                            ProfileScreenBuilder.build(
+                                router: router,
+                                account: account,
+                                authViewModel: authViewModel
                             )
                         case .lesson:
-                            LessonScreensView(
-                                presenter: LessonsPresenter(
-                                    router: router,
-                                    words: WordCardGenerator.generateCards()
-                                )
+                            LessonScreenBuilder.build(
+                                router: router
                             )
                     }
                 }
             }
-            .onChange(of: account.isLoggedIn) {
-                print("account is: \(account.isLoggedIn)")
-            }
             .environmentObject(account)
             .environmentObject(router)
+            .modelContainer(for: Word.self)
         }
     }
 
     private func handleURL(_ url: URL) {
         GIDSignIn.sharedInstance.handle(url)
     }
-    
+
     private func attemptRestoreLogin() {
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             DispatchQueue.main.async {

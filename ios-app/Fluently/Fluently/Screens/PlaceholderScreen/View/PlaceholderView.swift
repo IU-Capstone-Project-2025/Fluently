@@ -9,10 +9,23 @@ import Foundation
 import SwiftUI
 
 struct PlaceholderView: View {
+    @Environment(\.dismiss) var dismiss
     var name: String?
 
     var body: some View {
-        Text(name ?? "Placeholder")
-            .font(.title)
+        NavigationStack{
+            VStack(alignment: .center) {
+                Text(name ?? "Placeholder")
+                    .font(.title)
+            }
+            .toolbar{
+                ToolbarItem(placement: .topBarLeading) {
+                    Image(systemName: "chevron.left")
+                        .onTapGesture {
+                            dismiss.callAsFunction()
+                        }
+                }
+            }
+        }
     }
 }

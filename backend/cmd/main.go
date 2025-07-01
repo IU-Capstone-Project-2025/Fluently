@@ -11,7 +11,6 @@ import (
 	"fluently/go-backend/pkg/logger"
 
 	"github.com/go-chi/chi/v5"
-	"github.com/prometheus/client_golang/prometheus/promhttp" // Add this import
 	"go.uber.org/zap"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -29,7 +28,7 @@ import (
 // @license.name  MIT
 // @license.url   https://opensource.org/licenses/MIT
 
-// @host ${SWAGGER_HOST}
+// @host fluently-app.ru
 // @BasePath  /
 
 // @securityDefinitions.apikey BearerAuth
@@ -58,18 +57,14 @@ func main() {
 		&models.Word{},
 		&models.PickOption{},
 		&models.Topic{},
-		&models.LinkToken{},
 	)
 	if err != nil {
 		logger.Log.Fatal("Failed to auto-migrate", zap.Error(err))
 	}
 
-	// Init Router
+	//Init Router
 	r := chi.NewRouter()
 	router.InitRoutes(db, r)
-
-	// Add Prometheus metrics endpoint
-	r.Handle("/metrics", promhttp.Handler())
 
 	logger.Log.Info("Logger initialization successful!")
 	logger.Log.Info("App starting",
