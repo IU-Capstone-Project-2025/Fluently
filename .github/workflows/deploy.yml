@@ -116,10 +116,12 @@ jobs:
               cd /home/deploy/Fluently-fork
               export ZEROTIER_IP="${{ secrets.ZEROTIER_IP }}"
               BACKUP_DIR="/home/deploy/backups"
+              PROJECT_DIR="/home/deploy/Fluently-fork"
             else
               cd /home/deploy-staging/Fluently-fork
               export ZEROTIER_IP="${{ secrets.STAGING_ZEROTIER_IP }}"
               BACKUP_DIR="/home/deploy-staging/backups"
+              PROJECT_DIR="/home/deploy-staging/Fluently-fork"
             fi
             
             # Create backup directory if it doesn't exist
@@ -311,6 +313,34 @@ jobs:
             envsubst '${DOMAIN} ${CERT_NAME}' < backend/nginx-container/nginx.conf.template > backend/nginx-container/default.conf
 
             echo "Generated nginx config for $DOMAIN with cert $CERT_NAME"
+
+            # Generate environment-specific backup scripts
+            echo "🔧 Generating environment-specific backup scripts..."
+            export BACKUP_DIR
+            export ENVIRONMENT
+            export PROJECT_DIR
+            
+            # Generate backup script
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/backup_volumes.sh.template > scripts/backup_volumes.sh
+            chmod +x scripts/backup_volumes.sh
+            
+            # Generate restore script  
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/restore_volumes.sh.template > scripts/restore_volumes.sh
+            chmod +x scripts/restore_volumes.sh
+            
+            # Generate migration script
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/migrate_to_external_volumes.sh.template > scripts/migrate_to_external_volumes.sh
+            chmod +x scripts/migrate_to_external_volumes.sh
+            
+            # Generate cron setup script
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT} ${PROJECT_DIR}' < scripts/setup_cron.sh.template > scripts/setup_cron.sh
+            chmod +x scripts/setup_cron.sh
+            
+            # Generate backup operations script
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/backup_ops.sh.template > scripts/backup_ops.sh
+            chmod +x scripts/backup_ops.sh
+            
+            echo "✅ Generated environment-specific scripts for $ENVIRONMENT"
 
             echo "🐳 Starting Docker containers..."
             # Stop services first

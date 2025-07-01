@@ -1,0 +1,33 @@
+#!/bin/bash
+# Environment-specific cron setup script template
+# Generated from setup_cron.sh.template
+
+ENVIRONMENT="${ENVIRONMENT}"
+PROJECT_DIR="${PROJECT_DIR}"
+BACKUP_DIR="${BACKUP_DIR}"
+
+echo "🕐 Setting up automated backups for $ENVIRONMENT environment"
+
+# Create log directory
+sudo mkdir -p /var/log/fluently
+sudo touch /var/log/fluently_backup.log
+sudo chmod 666 /var/log/fluently_backup.log
+
+# Create cron job content
+CRON_CONTENT="# Fluently $ENVIRONMENT automated backups
+# Daily backup at 2 AM
+0 2 * * * cd $PROJECT_DIR && ./scripts/backup_volumes.sh >> /var/log/fluently_backup.log 2>&1
+
+# Weekly cleanup of old Docker images (Sunday at 3 AM)
+0 3 * * 0 cd $PROJECT_DIR && docker image prune -f >> /var/log/fluently_backup.log 2>&1
+"
+
+# Install cron job
+echo "$CRON_CONTENT" | crontab -
+
+echo "✅ Cron jobs installed for $ENVIRONMENT:"
+echo "  - Daily backups at 2 AM"
+echo "  - Weekly Docker cleanup on Sundays at 3 AM"
+echo "  - Logs written to /var/log/fluently_backup.log"
+
+crontab -l
