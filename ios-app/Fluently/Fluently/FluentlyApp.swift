@@ -7,6 +7,7 @@
 
 import SwiftUI
 import GoogleSignIn
+import SwiftData
 
 @main
 struct FluentlyApp: App {
@@ -77,6 +78,7 @@ struct FluentlyApp: App {
             }
             .environmentObject(account)
             .environmentObject(router)
+            .modelContainer(for: Word.self)
         }
     }
 
