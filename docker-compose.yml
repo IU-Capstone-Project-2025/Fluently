@@ -21,8 +21,8 @@ services:
     networks:
       - fluently_network
     ports:
-      - "0.0.0.0:8071:8070"  # External access for mobile apps and all interfaces (temporary port change)
-
+      - "127.0.0.1:8070:8070"  # Local access for docker services
+      - "${ZEROTIER_IP:-10.243.92.227}:8070:8070"  # ZeroTier access
   # Nginx Reverse Proxy
   nginx:
     build:
@@ -144,7 +144,9 @@ services:
           memory: 2G
     networks:
       - fluently_network
-    # No external ports - backend access only via internal network
+    ports:
+      - "127.0.0.1:8001:8001"  # Local access for debugging
+      - "${ZEROTIER_IP:-10.243.92.227}:8001:8001"  # ZeroTier access
 
   # ===========================================
   # ADMIN & MANAGEMENT
@@ -380,4 +382,4 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.25.0.0/16 
+        - subnet: 172.30.0.0/16 
