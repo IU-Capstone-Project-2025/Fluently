@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct DictionaryView: View {
-    @EnvironmentObject var router: AppRouter
-
+    @ObservedObject var presenter: DictionaryScreenPresenter
     @Environment(\.dismiss) var dismiss
+
+    @State var prefix: String = ""
 
     // MARK: - Constants
     private enum Const {
@@ -21,23 +22,26 @@ struct DictionaryView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                topBar
-                infoGrid
-            }
-            .navigationBarBackButtonHidden()
-            .modifier(BackgroundViewModifier())
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        dismiss.callAsFunction()
-                    } label: {
-                        Image(systemName: "chevron.left")
-                        .foregroundStyle(.whiteText)
+            GeometryReader { _ in
+                VStack {
+                    topBar
+                    infoGrid
+                }
+                .navigationBarBackButtonHidden()
+                .modifier(BackgroundViewModifier())
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            dismiss.callAsFunction()
+                        } label: {
+                            Image(systemName: "chevron.left")
+                            .foregroundStyle(.whiteText)
+                        }
                     }
                 }
             }
         }
+        .ignoresSafeArea(.keyboard)
     }
 
     // MARK: - SubViews
@@ -49,15 +53,29 @@ struct DictionaryView: View {
                 .foregroundStyle(.whiteText)
                 .font(.appFont.largeTitle.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(Const.horizontalPadding)
+                .padding(.horizontal, Const.horizontalPadding)
         }
     }
 
     ///  Grid with main info
     var infoGrid: some View {
-        VStack (alignment: .center) {
-            
+        VStack {
+            SearchBar(text: $prefix)
+                .padding(.bottom, 12)
+            ScrollView {
+                VStack (alignment: .center, spacing: 12) {
+                    ForEach(presenter.filteredWords, id: \.id) { word in
+                        WordCardRow(word: word)
+                    }
+                }
+                .padding()
+            }
+            .scrollDismissesKeyboard(.immediately)
         }
+        .onChange(of: prefix) {
+            presenter.filter(prefix: prefix)
+        }
+        .padding(.horizontal, Const.horizontalPadding)
         .modifier(SheetViewModifier())
     }
 }
@@ -69,10 +87,12 @@ struct DictionaryPreview: PreviewProvider {
     }
 
     struct DictionaryPreviewWrapper: View {
-        @State private var path = NavigationPath()
+        @StateObject var presenter = DictionaryScreenPresenter()
 
         var body: some View {
-            DictionaryView()
+            DictionaryView(
+                presenter: presenter
+            )
         }
     }
 }

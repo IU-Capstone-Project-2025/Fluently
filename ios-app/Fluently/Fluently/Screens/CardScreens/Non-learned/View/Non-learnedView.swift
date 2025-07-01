@@ -49,7 +49,7 @@ struct NonLearnedView: View {
                 .foregroundStyle(.whiteText)
                 .font(.appFont.largeTitle.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(Const.horizontalPadding)
+                .padding(.horizontal, Const.horizontalPadding)
         }
     }
 

@@ -38,9 +38,9 @@ struct HomeScreenView: View {
         .fullScreenCover(item: $openedScreen) { screenType in
             switch screenType {
                 case .notes:
-                    NotesView()
+                    presenter.buildNotesScreen()
                 case .learned:
-                    DictionaryView()
+                    presenter.buildDictionaryScreen()
                 case .nonLearned:
                     NonLearnedView()
             }

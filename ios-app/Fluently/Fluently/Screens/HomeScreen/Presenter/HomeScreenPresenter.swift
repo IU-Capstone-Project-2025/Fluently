@@ -30,6 +30,17 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         self.account = account
     }
 
+    // Builders 
+    func buildNotesScreen() -> NotesView{
+        return NotesScreenBuilder.build(router: router.router)
+    }
+
+    func buildDictionaryScreen() -> DictionaryView{
+        return DictionaryScreenBuilder.build()
+    }
+
+    // Navigation
+
     func navigatoToProfile() {
         router.navigatoToProfile()
     }

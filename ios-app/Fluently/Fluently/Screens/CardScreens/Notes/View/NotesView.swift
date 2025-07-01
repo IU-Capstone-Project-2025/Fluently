@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct NotesView: View {
-    @EnvironmentObject var router: AppRouter
+    @ObservedObject var presenter: NotesScreenPresenter
 
     @Environment(\.dismiss) var dismiss
 
@@ -17,6 +17,9 @@ struct NotesView: View {
     private enum Const {
         // Paddings
         static let horizontalPadding = CGFloat(30)
+
+        // Sizes
+        static let recordButtonSize = CGFloat(75)
     }
 
     var body: some View {
@@ -33,7 +36,7 @@ struct NotesView: View {
                         dismiss.callAsFunction()
                     } label: {
                         Image(systemName: "chevron.left")
-                        .foregroundStyle(.whiteText)
+                            .foregroundStyle(.whiteText)
                     }
                 }
             }
@@ -49,18 +52,47 @@ struct NotesView: View {
                 .foregroundStyle(.whiteText)
                 .font(.appFont.largeTitle.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(Const.horizontalPadding)
+                .padding(.horizontal, Const.horizontalPadding)
+        }
+    }
+
+    var recordingButton: some View {
+        Button {
+            withAnimation() {
+                presenter.toggleRecording()
+            }
+        } label: {
+            ZStack {
+                RoundedRectangle(cornerRadius: presenter.isRecording ? 12 : 40)
+                    .fill(.orangePrimary)
+                    .padding(presenter.isRecording ? 15 : 4)
+                Circle()
+                    .fill(.clear)
+                    .stroke(
+                        .grayFluently,
+                        lineWidth: 4
+                    )
+            }
         }
     }
 
     ///  Grid with main info
     var infoGrid: some View {
         VStack (alignment: .center) {
-            
+
+            Spacer()
+
+            recordingButton
+                .frame(
+                    maxWidth: Const.recordButtonSize,
+                    maxHeight: Const.recordButtonSize,
+                    alignment: .bottom
+                )
         }
         .modifier(SheetViewModifier())
     }
 }
+
 
 struct NotesPreview: PreviewProvider {
 
@@ -69,10 +101,22 @@ struct NotesPreview: PreviewProvider {
     }
 
     struct NotesPreviewWrapper: View {
-        @State private var path = NavigationPath()
+        let router: NotesScreenRouter
+        let presenter: NotesScreenPresenter
+
+        init() {
+            self.router = NotesScreenRouter(
+                router: AppRouter()
+            )
+            self.presenter = NotesScreenPresenter(
+                router: router
+            )
+        }
 
         var body: some View {
-            NotesView()
+            NotesView(
+                presenter: presenter
+            )
         }
     }
 }
