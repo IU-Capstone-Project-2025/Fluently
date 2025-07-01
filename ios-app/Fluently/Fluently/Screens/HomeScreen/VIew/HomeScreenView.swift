@@ -45,7 +45,7 @@ struct HomeScreenView: View {
                 case .learned:
                     DictionaryView()
                 case .nonLearned:
-                    PlaceholderView(name: "non learned")
+                    NonLearnedView()
             }
         }
     }

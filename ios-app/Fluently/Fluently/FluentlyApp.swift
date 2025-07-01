@@ -15,15 +15,17 @@ struct FluentlyApp: App {
     @StateObject private var authViewModel = GoogleAuthViewModel()
     @StateObject private var router = AppRouter()
 
-    #if targetEnvironment(simulator)
+#if targetEnvironment(simulator)
+
     @State private var showLogin = false
     @State private var showLaunchScreen = false
-    #else
+
+#else
+
     @State private var showLogin = true
     @State private var showLaunchScreen = true
-    #endif
 
-//    @State private var showLaunchScreen = true
+#endif
 
     var body: some Scene {
         WindowGroup {
