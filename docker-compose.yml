@@ -21,7 +21,7 @@ services:
     networks:
       - fluently_network
     ports:
-      - "0.0.0.0:8070:8070"  # External access for mobile apps and all interfaces
+      - "0.0.0.0:8071:8070"  # External access for mobile apps and all interfaces (temporary port change)
 
   # Nginx Reverse Proxy
   nginx:
