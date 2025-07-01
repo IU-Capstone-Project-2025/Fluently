@@ -264,7 +264,7 @@ services:
     container_name: fluently_sonarqube
     restart: unless-stopped
     environment:
-      - SONAR_JDBC_URL=jdbc:postgresql://postgres:5432/${DB_NAME}
+      - SONAR_JDBC_URL=jdbc:postgresql://postgres:5432/sonarqube
       - SONAR_JDBC_USERNAME=${DB_USER}
       - SONAR_JDBC_PASSWORD=${DB_PASSWORD}
     volumes:
@@ -382,4 +382,4 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.30.0.0/16 
+        - subnet: 172.30.0.0/16
