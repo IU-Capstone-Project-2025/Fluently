@@ -1,2 +1,6 @@
 /analysis/venv
 /analysis/.venv
+.env
+*.env
+/backend/import-tool
+/telegram-bot/main
