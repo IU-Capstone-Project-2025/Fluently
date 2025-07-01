@@ -6,7 +6,6 @@ import (
 
 type Word struct {
 	ID           uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
-	CEFRLevel    string    `gorm:"varchar(2)"`
 	Word         string    `gorm:"type:varchar(30);not null"`
 	Translation  string    `gorm:"type:varchar(30)"`
 	PartOfSpeech string    `gorm:"type:varchar(30);not null"`
