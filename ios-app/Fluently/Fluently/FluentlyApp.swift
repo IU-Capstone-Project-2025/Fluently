@@ -110,15 +110,20 @@ struct FluentlyApp: App {
     }
 
     private func requestAccessTokens(token: String?) {
+        guard let token = token else {
+            fatalError("The token is empty")
+        }
+
         Task {
             do {
-                let response = try await apiService.authGoogle(token!)
-                print(response.accessToken)
-                print(response.refreshToken)
-                print(response.expiresIn)
-                print(response.tokenType)
+                let response = try await apiService.authGoogle(token)
+                do {
+                    try KeyChainManager.shared.saveToken(response)
+                } catch {
+                    print("token saving error: \(error)")
+                }
             } catch {
-                print("error: \(error)")
+                print("response receiving error: \(error)")
             }
         }
     }

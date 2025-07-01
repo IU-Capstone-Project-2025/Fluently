@@ -49,6 +49,17 @@ final class APIService{
     }
 }
 
+extension APIService {
+    // MARK: - Error
+    enum ApiError: Error {
+        case invalidURL
+        case encodingFailed
+        case invalidResponse
+        case networkError(String)
+    }
+}
+
+
 extension URLRequest {
     func printRequest() {
         print("=== HTTP Request ===")
