@@ -69,8 +69,6 @@ struct NonLearnedPreview: PreviewProvider {
     }
 
     struct NonLearnedPreviewWrapper: View {
-        @State private var path = NavigationPath()
-
         var body: some View {
             NonLearnedView()
         }
