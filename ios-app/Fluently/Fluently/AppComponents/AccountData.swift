@@ -14,7 +14,7 @@ final class AccountData: ObservableObject {
     @Published var mail: String?
     @Published var image: String?
     @Published var isLoggedIn = false
-
+    
     // MARK: - Data caching
     let defaults = UserDefaults.standard
 

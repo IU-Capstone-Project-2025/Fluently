@@ -13,6 +13,7 @@ enum HomeScreenBuilder{
         router: AppRouter,
         acoount: AccountData,
     ) -> HomeScreenView {
+        let router = HomeScreenRouter(router: router)
         let presenter = HomeScreenPresenter(
             router: router,
             account: acoount
