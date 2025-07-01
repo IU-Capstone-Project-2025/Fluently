@@ -35,7 +35,7 @@ struct DictionaryView: View {
                             dismiss.callAsFunction()
                         } label: {
                             Image(systemName: "chevron.left")
-                            .foregroundStyle(.whiteText)
+                                .foregroundStyle(.whiteText)
                         }
                     }
                 }
@@ -96,3 +96,4 @@ struct DictionaryPreview: PreviewProvider {
         }
     }
 }
+

@@ -80,7 +80,7 @@ struct WordCardView: View {
             Text("Learn")
                 .padding()
                 .frame(maxWidth: .infinity)
-                .modifier(ButtonViewModifier(color: .blue))
+                .massiveButton(color: .blue)
                 .frame(maxHeight: 60)
         }
         .buttonStyle(PlainButtonStyle())
@@ -93,7 +93,7 @@ struct WordCardView: View {
             Text("Know")
                 .padding()
                 .frame(maxWidth: .infinity)
-                .modifier(ButtonViewModifier(color: .blue))
+                .massiveButton(color: .blue)
                 .frame(maxHeight: 60)
         }
         .buttonStyle(PlainButtonStyle())

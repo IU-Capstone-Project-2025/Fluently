@@ -67,3 +67,9 @@ struct ButtonViewModifier: ViewModifier {
             )
     }
 }
+
+extension View {
+    func massiveButton(color: ButtonViewModifier.ButtonColor) -> some View {
+        modifier(ButtonViewModifier(color: color))
+    }
+}
