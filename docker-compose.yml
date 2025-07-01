@@ -363,11 +363,7 @@ volumes:
     external: true
     name: fluently_sonarqube_data_external
   fluently_sonarqube_extensions:
-    external: true
-    name: fluently_sonarqube_extensions_external
   fluently_sonarqube_logs:
-    external: true
-    name: fluently_sonarqube_logs_external
 
 # ===========================================
 # NETWORKS
