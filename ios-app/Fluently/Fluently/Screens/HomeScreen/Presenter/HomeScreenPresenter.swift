@@ -18,19 +18,23 @@ protocol HomeScreenPresenting: ObservableObject {
 
 // MARK: - Presenter implementation
 final class HomeScreenPresenter: HomeScreenPresenting {
-    @ObservedObject var router: AppRouter
+    let router: HomeScreenRouter
+
     @ObservedObject var account: AccountData
 
-    init(router: AppRouter, account: AccountData) {
+    init(
+        router: HomeScreenRouter,
+        account: AccountData
+    ) {
         self.router = router
         self.account = account
     }
 
     func navigatoToProfile() {
-        router.navigate(to: AppRoutes.profile)
+        router.navigatoToProfile()
     }
 
     func navigatoToLesson() {
-        router.navigate(to: AppRoutes.lesson)
+        router.navigatoToLesson()
     }
 }

@@ -14,10 +14,7 @@ struct HomeScreenView: View {
 
     // MARK: - Properties
     @State var goal: String = "Traveling"
-
-    @State var isNotesOpen = false
-    @State var isDictionaryOpen = false
-    @State var isPracticumOpen = false
+    
     @State var openedScreen: ScreenCard.CardType?
 
     // MARK: - Constants
