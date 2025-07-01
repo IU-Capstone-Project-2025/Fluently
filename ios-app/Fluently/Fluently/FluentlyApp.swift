@@ -52,7 +52,10 @@ struct FluentlyApp: App {
                 .navigationDestination(for: AppRoutes.self) { route in
                     switch route {
                         case .homeScreen:
-                            HomeScreenBuilder.build(router: router, acoount: account)
+                            HomeScreenBuilder.build(
+                                router: router,
+                                acoount: account
+                            )
                         case .login:
                             LoginScreenBuilder.build(
                                 router: router,
@@ -60,16 +63,14 @@ struct FluentlyApp: App {
                                 authViewModel: authViewModel
                             )
                         case .profile:
-                            ProfileScrennView(
-                                authViewModel: authViewModel,
-                                navigationPath: $router.navigationPath
+                            ProfileScreenBuilder.build(
+                                router: router,
+                                account: account,
+                                authViewModel: authViewModel
                             )
                         case .lesson:
-                            LessonScreensView(
-                                presenter: LessonsPresenter(
-                                    router: router,
-                                    words: WordCardGenerator.generateCards()
-                                )
+                            LessonScreenBuilder.build(
+                                router: router
                             )
                     }
                 }
