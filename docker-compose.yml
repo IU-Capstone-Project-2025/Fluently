@@ -131,9 +131,9 @@ services:
       - ./analysis/distractor_api/logs:/app/logs
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
-      interval: 60s
+      interval: 15s
       timeout: 10s
-      retries: 10
+      retries: 25
       start_period: 60s
     restart: unless-stopped
     deploy:
