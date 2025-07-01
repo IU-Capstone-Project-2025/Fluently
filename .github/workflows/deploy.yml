@@ -171,6 +171,24 @@ jobs:
                 return 1
               fi
               
+              # Check if nginx is responding
+              echo "Checking nginx health..."
+              for i in {1..5}; do
+                if curl -f -s "http://localhost" >/dev/null 2>&1 || curl -f -s "http://127.0.0.1" >/dev/null 2>&1; then
+                  echo "✅ Nginx is healthy"
+                  break
+                elif [ $i -eq 5 ]; then
+                  echo "❌ Nginx health check failed after 5 attempts"
+                  # Try to get more info about what's wrong
+                  echo "🔍 Debugging nginx status:"
+                  docker compose ps nginx || true
+                  docker compose logs --tail=20 nginx || true
+                  return 1
+                else
+                  echo "⏳ Waiting for nginx... (attempt $i/5)"
+                  sleep 5
+                fi
+              done
               
               echo "🎉 All health checks passed!"
               return 0
