@@ -306,6 +306,18 @@ jobs:
             # Stop services first
             docker compose down --remove-orphans || true
 
+            # Clean up Docker networks to prevent conflicts
+            echo "🧹 Cleaning up Docker networks..."
+            
+            # Remove project-specific networks if they exist
+            docker network rm fluently-fork_fluently_network 2>/dev/null || true
+            docker network rm fluently_network 2>/dev/null || true
+            
+            # Prune unused networks
+            docker network prune -f || true
+            
+            echo "✅ Network cleanup completed"
+
             # Build with progress output and timeout handling
             echo "🔨 Building Docker images..."
             export DOCKER_BUILDKIT=1
