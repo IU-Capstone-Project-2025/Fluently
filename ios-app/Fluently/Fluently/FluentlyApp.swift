@@ -7,6 +7,7 @@
 
 import SwiftUI
 import GoogleSignIn
+import SwiftData
 
 @main
 struct FluentlyApp: App {
@@ -15,15 +16,17 @@ struct FluentlyApp: App {
     @StateObject private var authViewModel = GoogleAuthViewModel()
     @StateObject private var router = AppRouter()
 
-    #if targetEnvironment(simulator)
-    @State private var showLogin = false
-    #else
-    @State private var showLogin = true
-    #endif
+#if targetEnvironment(simulator)
 
+    @State private var showLogin = false
+    @State private var showLaunchScreen = false
+
+#else
+
+    @State private var showLogin = true
     @State private var showLaunchScreen = true
 
-
+#endif
 
     var body: some Scene {
         WindowGroup {
@@ -38,9 +41,10 @@ struct FluentlyApp: App {
                         if !showLogin {
                             HomeScreenBuilder.build(router: router, acoount: account)
                         } else {
-                            LoginView(
-                                authViewModel: authViewModel,
-                                navigationPath: $router.navigationPath
+                            LoginScreenBuilder.build(
+                                router: router,
+                                acount: account,
+                                authViewModel: authViewModel
                             )
                                 .onOpenURL(perform: handleURL)
                         }
@@ -49,29 +53,32 @@ struct FluentlyApp: App {
                 .navigationDestination(for: AppRoutes.self) { route in
                     switch route {
                         case .homeScreen:
-                            HomeScreenBuilder.build(router: router, acoount: account)
+                            HomeScreenBuilder.build(
+                                router: router,
+                                acoount: account
+                            )
                         case .login:
-                            LoginView (
-                                authViewModel: authViewModel,
-                                navigationPath: $router.navigationPath
+                            LoginScreenBuilder.build(
+                                router: router,
+                                acount: account,
+                                authViewModel: authViewModel
                             )
                         case .profile:
-                            ProfileScrennView(
-                                authViewModel: authViewModel,
-                                navigationPath: $router.navigationPath
+                            ProfileScreenBuilder.build(
+                                router: router,
+                                account: account,
+                                authViewModel: authViewModel
                             )
                         case .lesson:
-                            LessonScreensView(
-                                presenter: LessonsPresenter(
-                                    router: router,
-                                    words: WordCardGenerator.generateCards()
-                                )
+                            LessonScreenBuilder.build(
+                                router: router
                             )
                     }
                 }
             }
             .environmentObject(account)
             .environmentObject(router)
+            .modelContainer(for: Word.self)
         }
     }
 

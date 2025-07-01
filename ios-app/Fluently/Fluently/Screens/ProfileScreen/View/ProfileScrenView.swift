@@ -1,5 +1,5 @@
 //
-//  ProfileScrennView.swift
+//  ProfileScrenView.swift
 //  Fluently
 //
 //  Created by Савва Пономарев on 24.06.2025.
@@ -8,14 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct ProfileScrennView: View {
-    // MARK: - Key Objects
-    @EnvironmentObject var router: AppRouter
-    @EnvironmentObject var account: AccountData
-    @ObservedObject var authViewModel: GoogleAuthViewModel
-
-    // MARK: - Properties
-    @Binding var navigationPath: NavigationPath
+struct ProfileScrenView: View {
+    @ObservedObject var presenter: ProfileScreenPresenter
 
     // MARK: - View Constances
     private enum Const {
@@ -34,7 +28,7 @@ struct ProfileScrennView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    router.pop()
+                    presenter.navigateBack()
                 } label: {
                     Image(systemName: "chevron.left")
                         .foregroundStyle(.whiteText)
@@ -49,14 +43,14 @@ struct ProfileScrennView: View {
         VStack {
             AvatarImage(size: Const.avatarSize)
             HStack {
-                Text(account.name ??  "")
+                Text(presenter.account.name ??  "")
                     .foregroundStyle(.orangeSecondary)
                     .font(.appFont.secondaryCaption)
 //                Text(account.familyName ??  "")
 //                    .foregroundStyle(.orangeSecondary)
 //                    .font(.appFont.secondaryCaption)
             }
-            Text(account.mail ?? "")
+            Text(presenter.account.mail ?? "")
                 .foregroundStyle(.orangeSecondary)
                 .font(.appFont.secondaryCaption)
         }
@@ -65,20 +59,15 @@ struct ProfileScrennView: View {
     ///  Grid with main info
     var infoGrid: some View {
         VStack (alignment: .center) {
-            logoutButton
+            signOutButton
         }
         .modifier(SheetViewModifier())
     }
 
-    /// Log out
-    var logoutButton: some View {
+    /// Sign out
+    var signOutButton: some View {
         Button {
-            authViewModel.signOut()
-            account.isLoggedIn = false
-            
-            // TODO: - Think more abour this implementation
-            router.popToRoot()
-            router.navigate(to: AppRoutes.login)
+            presenter.signOut()
         } label: {
             Text("sign out")
                 .foregroundStyle(.red)
