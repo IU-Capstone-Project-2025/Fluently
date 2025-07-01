@@ -1,0 +1,71 @@
+#!/bin/bash
+# Manual backup operations script template
+# Generated from backup_ops.sh.template
+
+BACKUP_DIR="${BACKUP_DIR}"
+ENVIRONMENT="${ENVIRONMENT}"
+
+show_help() {
+    echo "Fluently $ENVIRONMENT Backup Operations"
+    echo ""
+    echo "Usage: $0 [command]"
+    echo ""
+    echo "Commands:"
+    echo "  backup          - Create a manual backup"
+    echo "  list            - List available backups"
+    echo "  restore [name]  - Restore from backup"
+    echo "  cleanup         - Remove backups older than 30 days"
+    echo "  migrate         - Migrate to external volumes"
+    echo "  setup-cron      - Setup automated backups"
+    echo "  status          - Show backup status"
+    echo ""
+    echo "Environment: $ENVIRONMENT"
+    echo "Backup directory: $BACKUP_DIR"
+}
+
+case "$1" in
+    backup)
+        echo "🚀 Starting manual backup for $ENVIRONMENT..."
+        ./scripts/backup_volumes.sh
+        ;;
+    list)
+        echo "📋 Available backups in $ENVIRONMENT:"
+        ls -la "$BACKUP_DIR" | grep fluently_backup_ | tail -20
+        ;;
+    restore)
+        if [ -z "$2" ]; then
+            echo "Usage: $0 restore <backup_name>"
+            echo "Available backups:"
+            ls -la "$BACKUP_DIR" | grep fluently_backup_ | tail -10
+            exit 1
+        fi
+        ./scripts/restore_volumes.sh "$2"
+        ;;
+    cleanup)
+        echo "🧹 Cleaning up old backups (keeping last 30 days)..."
+        find "$BACKUP_DIR" -name "fluently_backup_*" -type d -mtime +30 -exec rm -rf {} \;
+        echo "✅ Cleanup completed"
+        ;;
+    migrate)
+        echo "🔄 Starting migration to external volumes..."
+        ./scripts/migrate_to_external_volumes.sh
+        ;;
+    setup-cron)
+        echo "🕐 Setting up automated backups..."
+        ./scripts/setup_cron.sh
+        ;;
+    status)
+        echo "📊 Backup Status for $ENVIRONMENT"
+        echo "=================================="
+        echo "Backup directory: $BACKUP_DIR"
+        echo "Total backups: $(ls -1 "$BACKUP_DIR"/fluently_backup_* 2>/dev/null | wc -l)"
+        echo "Latest backup: $(ls -t "$BACKUP_DIR"/fluently_backup_* 2>/dev/null | head -1 | xargs basename)"
+        echo "Disk usage: $(du -sh "$BACKUP_DIR" 2>/dev/null | cut -f1)"
+        echo ""
+        echo "External volumes:"
+        docker volume ls | grep -E "(fluently_pgdata_safe|fluently_grafana_data_external|fluently_prometheus_data_external|fluently_sonarqube_data_external)"
+        ;;
+    *)
+        show_help
+        ;;
+esac

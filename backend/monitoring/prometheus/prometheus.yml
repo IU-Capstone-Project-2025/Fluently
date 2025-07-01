@@ -21,12 +21,19 @@ scrape_configs:
     scrape_interval: 15s
 
   # Application metrics
-  - job_name: 'fluently-app'
+  - job_name: 'fluently-backend'
     static_configs:
-      - targets: ['fluently_app:8070']
+      - targets: ['backend:8070']
     metrics_path: '/metrics'
     scrape_interval: 30s
     scrape_timeout: 10s
+
+  # # ML API metrics
+  # - job_name: 'ml-api'
+  #   static_configs:
+  #     - targets: ['ml-api:8001']
+  #   metrics_path: '/metrics'
+  #   scrape_interval: 30s
 
   # PostgreSQL metrics
   - job_name: 'postgres-exporter'
@@ -39,6 +46,13 @@ scrape_configs:
     static_configs:
       - targets: ['nginx-exporter:9113']
     scrape_interval: 30s
+
+  # Docker container metrics
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8044']
+    scrape_interval: 15s
+    metrics_path: '/metrics'
 
   # Grafana metrics
   - job_name: 'grafana'
@@ -53,15 +67,3 @@ scrape_configs:
       - targets: ['loki:3100']
     metrics_path: '/metrics'
     scrape_interval: 30s
-
-  # # SonarQube metrics (if metrics are exposed)
-  # - job_name: 'sonarqube'
-  #   static_configs:
-  #     - targets: ['sonarqube:9000']
-  #   metrics_path: '/api/monitoring/metrics'
-  #   scrape_interval: 60s
-
-  # Docker daemon metrics (requires Docker daemon metrics to be enabled)
-  # - job_name: 'docker'
-  #   static_configs:
-  #     - targets: ['host.docker.internal:9323']

@@ -1,0 +1,65 @@
+#!/bin/bash
+# Environment-specific migration script template
+# Generated from migrate_to_external_volumes.sh.template
+
+BACKUP_DIR="${BACKUP_DIR}"
+ENVIRONMENT="${ENVIRONMENT}"
+
+echo "🔄 Migrating $ENVIRONMENT to external volumes for data safety..."
+
+# Stop services but keep volumes
+docker compose down
+
+# Create external volumes
+echo "📦 Creating external volumes for $ENVIRONMENT..."
+docker volume create fluently_pgdata_safe
+docker volume create fluently_grafana_data_external
+docker volume create fluently_prometheus_data_external
+docker volume create fluently_sonarqube_data_external
+
+# Copy data from existing volumes to external volumes
+echo "📋 Copying PostgreSQL data..."
+docker run --rm \
+  -v fluently-fork_fluently_pgdata:/from \
+  -v fluently_pgdata_safe:/to \
+  alpine cp -av /from/. /to/
+
+echo "📋 Copying Grafana data..."
+docker run --rm \
+  -v fluently-fork_fluently_grafana_data:/from \
+  -v fluently_grafana_data_external:/to \
+  alpine cp -av /from/. /to/
+
+echo "📋 Copying Prometheus data..."
+docker run --rm \
+  -v fluently-fork_fluently_prometheus_data:/from \
+  -v fluently_prometheus_data_external:/to \
+  alpine cp -av /from/. /to/
+
+echo "📋 Copying SonarQube data..."
+docker run --rm \
+  -v fluently-fork_fluently_sonarqube_data:/from \
+  -v fluently_sonarqube_data_external:/to \
+  alpine cp -av /from/. /to/
+
+# Create initial backup after migration
+echo "💾 Creating initial backup after migration..."
+mkdir -p "$BACKUP_DIR"
+INITIAL_BACKUP="$BACKUP_DIR/fluently_initial_migration_backup_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$INITIAL_BACKUP"
+
+docker run --rm \
+  -v fluently_pgdata_safe:/data \
+  -v "$INITIAL_BACKUP":/backup \
+  alpine tar czvf /backup/postgres_data.tar.gz /data
+
+echo "✅ Migration complete for $ENVIRONMENT! Your data is now safe from 'docker compose down -v'"
+echo "📦 Initial backup created at: $INITIAL_BACKUP"
+
+# Show commands to remove old volumes after testing
+echo ""
+echo "⚠️  To remove old volumes after testing, run:"
+echo "docker volume rm fluently-fork_fluently_pgdata"
+echo "docker volume rm fluently-fork_fluently_grafana_data"
+echo "docker volume rm fluently-fork_fluently_prometheus_data"
+echo "docker volume rm fluently-fork_fluently_sonarqube_data"
