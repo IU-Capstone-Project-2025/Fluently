@@ -11,7 +11,7 @@ import SwiftUI
 // MARK: - Protocol for presenter
 protocol HomeScreenPresenting: ObservableObject {
 
-    // Nacigation
+    // Navigation
     func navigatoToProfile()
     func navigatoToLesson()
 }

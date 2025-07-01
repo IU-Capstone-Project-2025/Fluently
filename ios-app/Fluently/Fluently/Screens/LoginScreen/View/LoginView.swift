@@ -13,12 +13,7 @@ import GoogleSignInSwift
 import GoogleSignIn
 
 struct LoginView: View {
-    // MARK: - Key Objects
-    @EnvironmentObject var router: AppRouter
-    @EnvironmentObject var account: AccountData
-    @ObservedObject var authViewModel: GoogleAuthViewModel
-
-    @Binding var navigationPath: NavigationPath
+    @ObservedObject var presenter: LoginPresenter
 
     // MARK: - Properties
     let name: String = "Fluently"
@@ -40,9 +35,9 @@ struct LoginView: View {
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
-        .onReceive(authViewModel.$isSignedIn) { isSignedIn in
+        .onReceive(presenter.authViewModel.$isSignedIn) { isSignedIn in
             if isSignedIn {
-                navigationPath.append(AppRoutes.homeScreen)
+                presenter.navigateToHome()
             }
         }
     }
@@ -79,10 +74,8 @@ struct LoginView: View {
             style: .wide,
             state: .normal
         )) {
-            authViewModel.setup(account: account)
-            
-            authViewModel.handleSignInButton(
-                rootViewController: getRootViewController()
+            presenter.authViaGoogle(
+                rootVC: getRootViewController()
             )
         }
         .padding(.horizontal, Const.horizontalPadding)

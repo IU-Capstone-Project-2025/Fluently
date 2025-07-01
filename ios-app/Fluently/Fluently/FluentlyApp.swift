@@ -40,9 +40,10 @@ struct FluentlyApp: App {
                         if !showLogin {
                             HomeScreenBuilder.build(router: router, acoount: account)
                         } else {
-                            LoginView(
-                                authViewModel: authViewModel,
-                                navigationPath: $router.navigationPath
+                            LoginScreenBuilder.build(
+                                router: router,
+                                acount: account,
+                                authViewModel: authViewModel
                             )
                                 .onOpenURL(perform: handleURL)
                         }
@@ -53,9 +54,10 @@ struct FluentlyApp: App {
                         case .homeScreen:
                             HomeScreenBuilder.build(router: router, acoount: account)
                         case .login:
-                            LoginView (
-                                authViewModel: authViewModel,
-                                navigationPath: $router.navigationPath
+                            LoginScreenBuilder.build(
+                                router: router,
+                                acount: account,
+                                authViewModel: authViewModel
                             )
                         case .profile:
                             ProfileScrennView(

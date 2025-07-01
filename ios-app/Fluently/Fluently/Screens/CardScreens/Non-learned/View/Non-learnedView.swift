@@ -56,7 +56,7 @@ struct NonLearnedView: View {
     ///  Grid with main info
     var infoGrid: some View {
         VStack (alignment: .center) {
-
+            
         }
         .modifier(SheetViewModifier())
     }
