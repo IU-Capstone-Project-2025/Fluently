@@ -16,6 +16,8 @@ struct FluentlyApp: App {
     @StateObject private var authViewModel = GoogleAuthViewModel()
     @StateObject private var router = AppRouter()
 
+    private var apiService = APIService()
+
 #if targetEnvironment(simulator)
 
     @State private var showLogin = false
@@ -97,11 +99,26 @@ struct FluentlyApp: App {
                     account.isLoggedIn = true
                     showLogin = false
 
-                    print(user.idToken)
+                    /// Api token request
+                    requestAccessTokens(token: user.idToken?.tokenString)
                 } else {
                     account.isLoggedIn = false
                     showLogin = true
                 }
+            }
+        }
+    }
+
+    private func requestAccessTokens(token: String?) {
+        Task {
+            do {
+                let response = try await apiService.authGoogle(token!)
+                print(response.accessToken)
+                print(response.refreshToken)
+                print(response.expiresIn)
+                print(response.tokenType)
+            } catch {
+                print("error: \(error)")
             }
         }
     }
