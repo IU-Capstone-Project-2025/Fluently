@@ -5,36 +5,377 @@ on:
     branches:
       - main
       - develop
+      - feature/*
+      - fix/*
   workflow_dispatch:
     inputs:
       branch:
         description: "Branch to deploy"
         required: false
         default: "main"
+      environment:
+        description: "Deployment environment (production/staging)"
+        required: false
+        default: "auto"
+        type: choice
+        options:
+          - auto
+          - production
+          - staging
+      rollback:
+        description: "Rollback to previous version"
+        required: false
+        default: false
+        type: boolean
 
 jobs:
-  deploy:
+  # Determine deployment environment
+  setup:
     runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.env.outputs.environment }}
+      domain: ${{ steps.env.outputs.domain }}
+      is_rollback: ${{ github.event.inputs.rollback || 'false' }}
+    steps:
+      - name: Determine environment
+        id: env
+        run: |
+          BRANCH="${{ github.event.inputs.branch || github.ref_name }}"
+          ENV_INPUT="${{ github.event.inputs.environment }}"
+          
+          # Auto-determine environment based on branch if not manually specified
+          if [ "$ENV_INPUT" = "auto" ] || [ -z "$ENV_INPUT" ]; then
+            if [ "$BRANCH" = "main" ]; then
+              ENVIRONMENT="production"
+            else
+              ENVIRONMENT="staging"
+            fi
+          else
+            ENVIRONMENT="$ENV_INPUT"
+          fi
+          
+          # Set environment-specific variables
+          if [ "$ENVIRONMENT" = "production" ]; then
+            DOMAIN="fluently-app.ru"
+            HOST="${{ secrets.DEPLOY_HOST }}"
+            USERNAME="${{ secrets.DEPLOY_USERNAME }}"
+            ZEROTIER_IP="${{ secrets.ZEROTIER_IP }}"
+          else
+            DOMAIN="fluently-app.online"
+            HOST="${{ secrets.STAGING_DEPLOY_HOST }}"
+            USERNAME="${{ secrets.STAGING_DEPLOY_USERNAME }}"
+            ZEROTIER_IP="${{ secrets.STAGING_ZEROTIER_IP }}"
+          fi
+          
+          echo "environment=$ENVIRONMENT" >> $GITHUB_OUTPUT
+          echo "domain=$DOMAIN" >> $GITHUB_OUTPUT
+          
+          if [ "${{ github.event.inputs.rollback }}" = "true" ]; then
+            echo "🔄 Rollback requested for $ENVIRONMENT environment"
+          else
+            echo "🚀 Deploying branch '$BRANCH' to $ENVIRONMENT environment ($DOMAIN)"
+          fi
+
+  deploy:
+    needs: setup
+    runs-on: ubuntu-latest
+    environment: ${{ needs.setup.outputs.environment }}
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Deploy over SSH
+      - name: Debug values
+        run: |
+          echo "🔍 Debug Information:"
+          echo "Environment: ${{ needs.setup.outputs.environment }}"
+          echo "Domain: ${{ needs.setup.outputs.domain }}"
+          echo "Is Rollback: ${{ needs.setup.outputs.is_rollback }}"
+
+      - name: Deploy to ${{ needs.setup.outputs.environment }}
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          username: ${{ secrets.DEPLOY_USERNAME }}
-          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          host: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_HOST || secrets.STAGING_DEPLOY_HOST }}
+          username: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_USERNAME || secrets.STAGING_DEPLOY_USERNAME }}
+          key: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_SSH_KEY || secrets.STAGING_DEPLOY_SSH_KEY }}
+          timeout: 20m
+          command_timeout: 20m
           script: |
-            cd /home/deploy/Fluently-fork/backend
-            git checkout ${{ github.event.inputs.branch || github.ref_name }}
-            git pull origin ${{ github.event.inputs.branch || github.ref_name }}
-            docker compose down
-            docker compose up -d --build
-
-            # Should speed up the proccess, and be used instead of docker compose up -d --build
-            # But it does not work 
-            # //TODO
-            # docker build --build-arg BUILDKIT_INLINE_CACHE=1 -t fluently-app .
+            set -e
             
+            BRANCH="${{ github.event.inputs.branch || github.ref_name }}"
+            ENVIRONMENT="${{ needs.setup.outputs.environment }}"
+            DOMAIN="${{ needs.setup.outputs.domain }}"
+            IS_ROLLBACK="${{ needs.setup.outputs.is_rollback }}"
+            
+            echo "🔄 Starting deployment process for $ENVIRONMENT environment"
+            echo "🌐 Domain: $DOMAIN"
+            
+            # Navigate to project directory and set environment variables
+            if [ "$ENVIRONMENT" = "production" ]; then
+              cd /home/deploy/Fluently-fork
+              export ZEROTIER_IP="${{ secrets.ZEROTIER_IP }}"
+              BACKUP_DIR="/home/deploy/backups"
+            else
+              cd /home/deploy-staging/Fluently-fork
+              export ZEROTIER_IP="${{ secrets.STAGING_ZEROTIER_IP }}"
+              BACKUP_DIR="/home/deploy-staging/backups"
+            fi
+            
+            # Create backup directory if it doesn't exist
+            mkdir -p "$BACKUP_DIR"
+            
+            # Function to perform health checks
+            check_health() {
+              echo "🏥 Performing health checks..."
+              
+              # Wait for services to start
+              sleep 10
+              
+              # Check if backend is healthy
+              echo "Checking backend health..."
+              for i in {1..10}; do
+                if curl -f "http://localhost:8070/health" >/dev/null 2>&1; then
+                  echo "✅ Backend is healthy"
+                  break
+                elif [ $i -eq 10 ]; then
+                  echo "❌ Backend health check failed after 10 attempts"
+                  return 1
+                else
+                  echo "⏳ Waiting for backend... (attempt $i/10)"
+                  sleep 10
+                fi
+              done
+              
+              # Check if ML API is healthy (takes 2-3 minutes to initialize)
+              echo "Checking ML API health..."
+              for i in {1..20}; do
+                if docker compose exec -T ml-api curl -f "http://localhost:8001/health" >/dev/null 2>&1; then
+                  echo "✅ ML API is healthy"
+                  break
+                elif [ $i -eq 20 ]; then
+                  echo "❌ ML API health check failed after 20 attempts"
+                  return 1
+                else
+                  echo "⏳ Waiting for ML API... (attempt $i/20)"
+                  sleep 15
+                fi
+              done
+              
+              # Check if PostgreSQL is healthy
+              echo "Checking PostgreSQL health..."
+              if docker compose exec -T postgres pg_isready -U ${DB_USER:-postgres} >/dev/null 2>&1; then
+                echo "✅ PostgreSQL is healthy"
+              else
+                echo "❌ PostgreSQL health check failed"
+                return 1
+              fi
+              
+              # Check if nginx is responding
+              echo "Checking nginx health..."
+              for i in {1..5}; do
+                if curl -f -s "http://localhost" >/dev/null 2>&1 || curl -f -s "http://127.0.0.1" >/dev/null 2>&1; then
+                  echo "✅ Nginx is healthy"
+                  break
+                elif [ $i -eq 5 ]; then
+                  echo "❌ Nginx health check failed after 5 attempts"
+                  # Try to get more info about what's wrong
+                  echo "🔍 Debugging nginx status:"
+                  docker compose ps nginx || true
+                  docker compose logs --tail=20 nginx || true
+                  return 1
+                else
+                  echo "⏳ Waiting for nginx... (attempt $i/5)"
+                  sleep 5
+                fi
+              done
+              
+              echo "🎉 All health checks passed!"
+              return 0
+            }
+            
+            # Function to rollback
+            rollback() {
+              echo "🔄 Rolling back to previous version..."
+              
+              # Find the latest backup
+              LATEST_BACKUP=$(ls -t "$BACKUP_DIR"/fluently-backup-*.tar.gz 2>/dev/null | head -1)
+              
+              if [ -z "$LATEST_BACKUP" ]; then
+                echo "❌ No backup found for rollback!"
+                return 1
+              fi
+              
+              echo "📦 Found backup: $LATEST_BACKUP"
+              
+              # Stop current services
+              docker compose down --remove-orphans || true
+              
+              # Create rollback backup of current state
+              ROLLBACK_BACKUP="$BACKUP_DIR/fluently-rollback-backup-$(date +%Y%m%d-%H%M%S).tar.gz"
+              tar -czf "$ROLLBACK_BACKUP" --exclude=node_modules --exclude=.git . || echo "⚠️ Rollback backup failed"
+              
+              # Restore from backup
+              tar -xzf "$LATEST_BACKUP" --exclude=node_modules --exclude=.git .
+              
+              # Start services
+              docker compose up -d --force-recreate
+              
+              # Verify rollback
+              if check_health; then
+                echo "✅ Rollback completed successfully!"
+                return 0
+              else
+                echo "❌ Rollback failed health checks!"
+                return 1
+              fi
+            }
+            
+            # Handle rollback request
+            if [ "$IS_ROLLBACK" = "true" ]; then
+              rollback
+              exit $?
+            fi
+            
+            # Backup current state (only for production)
+            if [ "$ENVIRONMENT" = "production" ]; then
+              echo "📦 Creating backup..."
+              BACKUP_FILE="$BACKUP_DIR/fluently-backup-$(date +%Y%m%d-%H%M%S).tar.gz"
+              tar -czf "$BACKUP_FILE" --exclude=node_modules --exclude=.git . || echo "⚠️ Backup failed but continuing..."
+              
+              # Keep only last 5 backups
+              ls -t "$BACKUP_DIR"/fluently-backup-*.tar.gz 2>/dev/null | tail -n +6 | xargs rm -f 2>/dev/null || true
+            fi
+            
+            # Store current state for potential rollback
+            CURRENT_STATE_BACKUP="$BACKUP_DIR/fluently-current-state-$(date +%Y%m%d-%H%M%S).tar.gz"
+            tar -czf "$CURRENT_STATE_BACKUP" --exclude=node_modules --exclude=.git . || echo "⚠️ Current state backup failed"
+            
+            # Update code
+            echo "📥 Updating code..."
+
+            # Fix Git ownership issue
+            git config --global --add safe.directory $(pwd)
+
+            # Restore any local changes before pulling
+            git restore .
+
+            git fetch origin
+            git checkout $BRANCH
+            git pull origin $BRANCH
+
+            # Create environment-specific .env for backend if it doesn't exist
+            if [ ! -f "backend/.env" ]; then
+              echo "📝 Creating backend/.env file from example..."
+              cp backend/.env.example backend/.env
+            fi
+
+            # Update environment variables based on deployment target
+            echo "⚙️ Updating environment configuration..."
+
+            # Update ZeroTier IP in backend/.env
+            if grep -q "ZEROTIER_IP=" backend/.env; then
+              sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" backend/.env
+            else
+              echo "ZEROTIER_IP=$ZEROTIER_IP" >> backend/.env
+            fi
+
+            # Update PUBLIC_URL in backend/.env
+            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" backend/.env
+
+            # Copy .env from backend to root for docker-compose to use
+            echo "📋 Copying .env file to root directory for docker-compose..."
+            cp backend/.env .env
+
+            # Set Swagger host for the environment
+            if [ "$ENVIRONMENT" = "production" ]; then
+              export SWAGGER_HOST="${{ secrets.ZEROTIER_IP }}:8070"
+            else
+              export SWAGGER_HOST="${{ secrets.STAGING_ZEROTIER_IP }}:8070"
+            fi
+            
+            echo "🔧 Setting up environment variables..."
+            echo "SWAGGER_HOST=$SWAGGER_HOST"
+            
+
+            # Generate nginx config from template
+            echo "🔧 Generating nginx configuration from template..."
+            if [ "$ENVIRONMENT" = "production" ]; then
+              export CERT_NAME="fluently-app-ru"
+            else
+              export CERT_NAME="fluently-app-online"
+            fi
+
+            export DOMAIN
+            # Specify which variables to substitute, leaving nginx variables untouched
+            envsubst '${DOMAIN} ${CERT_NAME}' < backend/nginx-container/nginx.conf.template > backend/nginx-container/default.conf
+
+            echo "Generated nginx config for $DOMAIN with cert $CERT_NAME"
+
+            echo "🐳 Starting Docker containers..."
+            # Stop services first
+            docker compose down --remove-orphans || true
+
+            # Clean up Docker networks to prevent conflicts
+            echo "🧹 Cleaning up Docker networks..."
+            
+            # Remove project-specific networks if they exist
+            docker network rm fluently-fork_fluently_network 2>/dev/null || true
+            docker network rm fluently_network 2>/dev/null || true
+            
+            # Prune unused networks
+            docker network prune -f || true
+            
+            echo "✅ Network cleanup completed"
+
+            # Build with progress output and timeout handling
+            echo "🔨 Building Docker images..."
+            export DOCKER_BUILDKIT=1
+            export COMPOSE_DOCKER_CLI_BUILD=1
+            
+            # Build ML API separately first (it takes the longest)
+            echo "🤖 Building ML API (this may take several minutes)..."
+            timeout 30m docker compose build ml-api || {
+              echo "❌ ML API build timed out after 30 minutes"
+              exit 1
+            }
+            
+            # Build remaining services
+            echo "🔨 Building remaining services..."
+            docker compose build
+
+            # Start services with force recreate
+            docker compose up -d --force-recreate
+
+            # Perform health checks
+            if check_health; then
+              echo "🎉 Deployment completed successfully!"
+              echo "🌐 Application available at: https://$DOMAIN"
+              
+              # Show running containers
+              echo "📋 Running containers:"
+              docker compose ps
+              
+              # Cleanup old images (keep last 3)
+              echo "🧹 Cleaning up old Docker images..."
+              docker image prune -f || true
+              
+              # Remove current state backup since deployment was successful
+              rm -f "$CURRENT_STATE_BACKUP" || true
+              
+            else
+              echo "❌ Deployment failed health checks! Starting rollback..."
+              
+              # Restore from current state backup
+              echo "🔄 Restoring previous state..."
+              docker compose down --remove-orphans || true
+              tar -xzf "$CURRENT_STATE_BACKUP" --exclude=node_modules --exclude=.git . || echo "⚠️ Restore failed"
+              docker compose up -d --force-recreate
+              
+              # Cleanup failed backup
+              rm -f "$CURRENT_STATE_BACKUP" || true
+              
+              echo "❌ Deployment failed and rollback attempted"
+              exit 1
+            fi
+

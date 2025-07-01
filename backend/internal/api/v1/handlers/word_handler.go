@@ -20,6 +20,7 @@ func buildWordResponse(w *models.Word) schemas.WordResponse {
 	resp := schemas.WordResponse{
 		ID:           w.ID.String(),
 		Word:         w.Word,
+		CEFRLevel:    w.CEFRLevel,
 		PartOfSpeech: w.PartOfSpeech,
 	}
 
@@ -29,6 +30,10 @@ func buildWordResponse(w *models.Word) schemas.WordResponse {
 
 	if w.Context != "" {
 		resp.Context = &w.Context
+	}
+
+	if w.AudioURL != "" {
+		resp.AudioURL = &w.AudioURL
 	}
 
 	return resp
@@ -111,6 +116,7 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 	word := models.Word{
 		ID:           uuid.New(),
 		Word:         req.Word,
+		CEFRLevel:    req.CEFRLevel,
 		PartOfSpeech: req.PartOfSpeech,
 	}
 
@@ -122,6 +128,10 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 		word.Context = *req.Context
 	}
 
+	if req.AudioURL != nil {
+		word.AudioURL = *req.AudioURL
+	}
+
 	if err := h.Repo.Create(r.Context(), &word); err != nil {
 		http.Error(w, "failed to create word", http.StatusInternalServerError)
 		return
@@ -130,9 +140,11 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 	resp := schemas.WordResponse{
 		ID:           word.ID.String(),
 		Word:         word.Word,
+		CEFRLevel:    word.CEFRLevel,
 		PartOfSpeech: word.PartOfSpeech,
 		Translation:  req.Translation,
 		Context:      req.Context,
+		AudioURL:     req.AudioURL,
 	}
 
 	w.Header().Set("Content-Type", "application/json")
@@ -174,6 +186,7 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 	}
 
 	word.Word = req.Word
+	word.CEFRLevel = req.CEFRLevel
 	word.PartOfSpeech = req.PartOfSpeech
 
 	if req.Translation != nil {
@@ -188,6 +201,12 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 		word.Context = ""
 	}
 
+	if req.AudioURL != nil {
+		word.AudioURL = *req.AudioURL
+	} else {
+		word.AudioURL = ""
+	}
+
 	if err := h.Repo.Update(r.Context(), word); err != nil {
 		http.Error(w, "failed to update word", http.StatusInternalServerError)
 		return
@@ -196,9 +215,11 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 	resp := schemas.WordResponse{
 		ID:           word.ID.String(),
 		Word:         word.Word,
+		CEFRLevel:    word.CEFRLevel,
 		PartOfSpeech: word.PartOfSpeech,
 		Translation:  req.Translation,
 		Context:      req.Context,
+		AudioURL:     req.AudioURL,
 	}
 
 	w.Header().Set("Content-Type", "application/json")

@@ -58,6 +58,7 @@ type GoogleConfig struct {
 
 type SwaggerConfig struct {
 	AllowedEmails map[string]bool
+	Host          string
 }
 
 var cfg *Config
@@ -73,7 +74,8 @@ func Init() {
 	viper.AutomaticEnv()
 
 	// Set default values
-	viper.SetDefault("APP_PORT", "3000")
+	viper.SetDefault("APP_PORT", "8070")
+	viper.SetDefault("APP_HOST", "0.0.0.0")
 	viper.SetDefault("JWT_EXPIRATION", "24h")
 	viper.SetDefault("REFRESH_EXPIRATION", "720h") // 30 days
 	viper.SetDefault("PASSWORD_MIN_LENGTH", 8)
@@ -112,6 +114,7 @@ func Init() {
 		},
 		Swagger: SwaggerConfig{
 			AllowedEmails: parseEmailWhitelist(viper.GetString("SWAGGER_ALLOWED_EMAILS")),
+			Host:          viper.GetString("SWAGGER_HOST"),
 		},
 	}
 }

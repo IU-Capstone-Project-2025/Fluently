@@ -26,10 +26,23 @@ func (r *PreferenceRepository) GetByID(ctx context.Context, id uuid.UUID) (*mode
 	return &pref, nil
 }
 
+func (r *PreferenceRepository) GetByUserID(ctx context.Context, userID uuid.UUID) (*models.Preference, error) {
+	var pref models.Preference
+	if err := r.db.WithContext(ctx).First(&pref, "user_id = ?", userID).Error; err != nil {
+		return nil, err
+	}
+
+	return &pref, nil
+}
+
 func (r *PreferenceRepository) Update(ctx context.Context, pref *models.Preference) error {
 	return r.db.WithContext(ctx).Save(pref).Error
 }
 
 func (r *PreferenceRepository) Create(ctx context.Context, pref *models.Preference) error {
 	return r.db.WithContext(ctx).Create(pref).Error
+}
+
+func (r *PreferenceRepository) Delete(ctx context.Context, id uuid.UUID) error {
+	return r.db.WithContext(ctx).Delete(&models.Preference{}, "id = ?", id).Error
 }

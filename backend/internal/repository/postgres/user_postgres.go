@@ -81,3 +81,27 @@ func (r *UserRepository) Update(ctx context.Context, user *models.User) error {
 func (r *UserRepository) Delete(ctx context.Context, id uuid.UUID) error {
 	return r.db.WithContext(ctx).Delete(&models.User{}, "id = ?", id).Error
 }
+
+// GetByTelegramID finds user by Telegram ID
+func (r *UserRepository) GetByTelegramID(ctx context.Context, telegramID int64) (*models.User, error) {
+	var user models.User
+	if err := r.db.WithContext(ctx).Preload("Pref").
+		First(&user, "telegram_id = ?", telegramID).Error; err != nil {
+		return nil, err
+	}
+	return &user, nil
+}
+
+// LinkTelegramID links Telegram ID to existing user
+func (r *UserRepository) LinkTelegramID(ctx context.Context, userID uuid.UUID, telegramID int64) error {
+	return r.db.WithContext(ctx).Model(&models.User{}).
+		Where("id = ?", userID).
+		Update("telegram_id", telegramID).Error
+}
+
+// UnlinkTelegramID removes Telegram ID from user
+func (r *UserRepository) UnlinkTelegramID(ctx context.Context, userID uuid.UUID) error {
+	return r.db.WithContext(ctx).Model(&models.User{}).
+		Where("id = ?", userID).
+		Update("telegram_id", nil).Error
+}

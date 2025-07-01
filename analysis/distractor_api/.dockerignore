@@ -1,0 +1,59 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache
+.coverage
+.mypy_cache
+.ruff_cache
+
+# Virtual environments
+.venv
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode
+.idea
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# Data and models (if they should be downloaded at runtime)
+Data/
+*.model
+*.bin
+
+# Logs
+*.log
+logs/
+
+# Documentation
+README.md
+docs/
+
+# Development files
+.pre-commit-config.yaml
+poetry.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Temporary files
+*.tmp
+*.temp 

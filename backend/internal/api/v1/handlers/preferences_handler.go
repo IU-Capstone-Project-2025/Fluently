@@ -17,6 +17,7 @@ type PreferenceHandler struct {
 func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceResponse {
 	return schemas.PreferenceResponse{
 		ID:              pref.ID,
+		UserID:          pref.UserID,
 		CEFRLevel:       pref.CEFRLevel,
 		FactEveryday:    pref.FactEveryday,
 		Notifications:   pref.Notifications,
@@ -24,7 +25,7 @@ func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceRespons
 		WordsPerDay:     pref.WordsPerDay,
 		Goal:            pref.Goal,
 		Subscribed:      pref.Subscribed,
-		AvatarImage:     pref.AvatarImage,
+		AvatarImageURL:  pref.AvatarImageURL,
 	}
 }
 
@@ -56,6 +57,7 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 
 	pref := &models.Preference{
 		ID:              id,
+		UserID:          req.UserID,
 		CEFRLevel:       req.CEFRLevel,
 		FactEveryday:    req.FactEveryday,
 		Notifications:   req.Notifications,
@@ -63,7 +65,7 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 		WordsPerDay:     req.WordsPerDay,
 		Goal:            req.Goal,
 		Subscribed:      req.Subscribed,
-		AvatarImage:     req.AvatarImage,
+		AvatarImageURL:  req.AvatarImageURL,
 	}
 
 	if err := h.Repo.Create(r.Context(), pref); err != nil {
@@ -145,7 +147,7 @@ func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http
 	pref.WordsPerDay = req.WordsPerDay
 	pref.Goal = req.Goal
 	pref.Subscribed = req.Subscribed
-	pref.AvatarImage = req.AvatarImage
+	pref.AvatarImageURL = req.AvatarImageURL
 
 	if err := h.Repo.Update(r.Context(), pref); err != nil {
 		http.Error(w, "failed to update preference", http.StatusInternalServerError)
@@ -154,4 +156,19 @@ func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildPreferencesResponse(pref))
+}
+
+func (h *PreferenceHandler) DeletePreference(w http.ResponseWriter, r *http.Request) {
+	id, err := utils.ParseUUIDParam(r, "id")
+	if err != nil {
+		http.Error(w, "invalid id", http.StatusBadRequest)
+		return
+	}
+
+	if err := h.Repo.Delete(r.Context(), id); err != nil {
+		http.Error(w, "failed to delete preference", http.StatusInternalServerError)
+		return
+	}
+
+	w.WriteHeader(http.StatusNoContent)
 }

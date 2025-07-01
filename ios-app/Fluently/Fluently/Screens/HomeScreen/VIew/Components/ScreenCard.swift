@@ -35,10 +35,12 @@ struct ScreenCard: View {
                 .foregroundStyle(type.color.primary)
 
             Text(count)
+                .foregroundStyle(.blackText)
                 .font(.appFont.title)
                 .padding(.top, 6)
 
             Text(type.rawValue)
+                .foregroundStyle(.blackText)
                 .font(.appFont.caption2)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -74,4 +76,8 @@ extension ScreenCard {
             }
         }
     }
+}
+
+extension ScreenCard.CardType: Identifiable {
+    var id: Self { self }
 }

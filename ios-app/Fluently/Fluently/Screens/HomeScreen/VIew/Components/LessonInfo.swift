@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LessonInfo: View {
+    // MARK: - Properties
     let minutes: Int
     let seconds: Int
 
@@ -16,6 +17,7 @@ struct LessonInfo: View {
             learnImage
             VStack(alignment: .leading) {
                 Text("Let's learn how to speak fluently!")
+                    .foregroundStyle(.blackText)
                     .font(.appFont.callout)
                 Text("\(minutes) minutes \(seconds) seconds")
                     .foregroundStyle(.blackText.opacity(0.6))
@@ -29,6 +31,8 @@ struct LessonInfo: View {
         )
     }
 
+    // MARK: - Subviews
+    
     var learnImage: some View {
         Image(systemName: "graduationcap.fill")
             .foregroundStyle(.blueAccent)

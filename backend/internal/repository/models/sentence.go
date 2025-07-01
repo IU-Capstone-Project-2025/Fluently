@@ -9,6 +9,7 @@ type Sentence struct {
 	WordID      uuid.UUID `gorm:"type:uuid;not null"`
 	Sentence    string    `gorm:"type:text;not null"`
 	Translation string    `gorm:"type:text"`
+	AudioURL    string    `gorm:"type:text"`
 
 	Word Word `gorm:"foreignKey:WordID;constraint:OnDelete:CASCADE"`
 }
