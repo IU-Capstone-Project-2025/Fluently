@@ -23,7 +23,7 @@ struct AnswerButton: View {
                 .foregroundStyle(.orangePrimary)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .modifier(ButtonViewModifier(color: .orange))
+                .massiveButton(color: .orange)
                 .grayscale( isSelected ? 1 : 0)
                 .frame(maxHeight: 60)
         }

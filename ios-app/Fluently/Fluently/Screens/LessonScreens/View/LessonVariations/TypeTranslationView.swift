@@ -44,8 +44,7 @@ struct TypeTranslationView: View {
             Text("Next")
                 .padding()
                 .frame(maxWidth: .infinity)
-                .foregroundStyle(.blueAccent)
-                .modifier(ButtonViewModifier(color: .blue))
+                .massiveButton(color: .blue)
                 .grayscale( typedAnswer.isEmpty ? 1 : 0)
                 .frame(maxHeight: 60)
         }
@@ -58,7 +57,7 @@ struct TypeTranslationView: View {
                 .lineLimit(1)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .modifier(ButtonViewModifier(color: .orange))
+                .massiveButton(color: .orange)
                 .frame(maxHeight: 60)
         }
     }

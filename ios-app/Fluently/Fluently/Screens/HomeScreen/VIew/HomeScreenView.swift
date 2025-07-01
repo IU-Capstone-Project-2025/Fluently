@@ -14,6 +14,9 @@ struct HomeScreenView: View {
 
     // MARK: - Properties
     @State var goal: String = "Traveling"
+    
+    @State var openedScreen: ScreenCard.CardType?
+
     // MARK: - Constants
     private enum Const {
         // Paddings
@@ -31,6 +34,17 @@ struct HomeScreenView: View {
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
+
+        .fullScreenCover(item: $openedScreen) { screenType in
+            switch screenType {
+                case .notes:
+                    presenter.buildNotesScreen()
+                case .learned:
+                    presenter.buildDictionaryScreen()
+                case .nonLearned:
+                    NonLearnedView()
+            }
+        }
     }
 
     // MARK: - SubViews
@@ -78,8 +92,9 @@ struct HomeScreenView: View {
         HStack(spacing: 12) {
             ForEach(ScreenCard.CardType.allCases, id: \.self) { type in
                 ScreenCard(type: type) {
-                    print(type.rawValue)
+                    openedScreen = type
                 }
+                .animation(.easeInOut, value: openedScreen)
             }
         }
         .padding(.horizontal, Const.horizontalPadding)
