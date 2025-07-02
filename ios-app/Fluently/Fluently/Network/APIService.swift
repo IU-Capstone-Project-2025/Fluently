@@ -102,7 +102,7 @@ final class APIService: APIServiceProtocol{
 // MARK: - Lessons
 extension APIService {
     func getLessons() async throws {
-
+        
     }
 }
 
