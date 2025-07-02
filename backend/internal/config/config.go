@@ -133,6 +133,12 @@ func GetPostgresDSN() string {
 		"@" + cfg.Database.Host + ":" + cfg.Database.Port + "/" + cfg.Database.Name
 }
 
+// GetPostgresDSNForImport returns the PostgreSQL connection string for import tool
+func GetPostgresDSNForImport() string {
+	return "postgres://" + cfg.Database.User + ":" + cfg.Database.Password +
+		"@" + "localhost" + ":" + cfg.Database.Port + "/" + cfg.Database.Name + "?sslmode=disable"
+}
+
 // GoogleOAuthConfig constructs an oauth2.Config based on application settings.
 // This is used for mobile app OAuth flows, not for Swagger UI.
 func GoogleOAuthConfig() *oauth2.Config {

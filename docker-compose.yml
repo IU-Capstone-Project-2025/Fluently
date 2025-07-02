@@ -302,20 +302,6 @@ services:
     networks:
       - fluently_network
 
-  # PostgreSQL Exporter for database metrics
-  postgres-exporter:
-    image: prometheuscommunity/postgres-exporter:latest
-    container_name: fluently_postgres_exporter
-    restart: unless-stopped
-    environment:
-      DATA_SOURCE_NAME: "postgresql://${DB_USER}:${DB_PASSWORD}@postgres:5432/${DB_NAME}?sslmode=disable"
-    ports:
-      - "${ZEROTIER_IP:-10.243.92.227}:9187:9187"  # ZeroTier access only
-    depends_on:
-      - postgres
-    networks:
-      - fluently_network
-
   # Nginx Exporter for web server metrics
   nginx-exporter:
     image: nginx/nginx-prometheus-exporter:latest
