@@ -7,8 +7,11 @@
 
 import Foundation
 
+protocol APIServiceProtocol {
+    func authGoogle(_ gid: String) async throws -> AuthResponse
+}
 
-final class APIService{
+final class APIService: APIServiceProtocol{
     private let link = "https://fluently-app.ru"
 
     func authGoogle(_ gid: String) async throws -> AuthResponse {
@@ -51,7 +54,7 @@ final class APIService{
 
 extension APIService {
     // MARK: - Error
-    enum ApiError: Error {
+    enum ApiError: Error, Equatable {
         case invalidURL
         case encodingFailed
         case invalidResponse
