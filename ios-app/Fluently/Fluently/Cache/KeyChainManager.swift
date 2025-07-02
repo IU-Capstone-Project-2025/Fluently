@@ -113,12 +113,17 @@ extension KeyChainManager {
         case noTokenFound
         case unhandledError(status: OSStatus)
 
+        case emptyRefreshToken
+        case saveTokens
+
         var localizedDescription: String {
             switch self {
                 case .encodingError: return "Failed to encode token"
                 case .noTokenFound: return "Token not found in Keychain"
                 case .unhandledError(let status):
                     return "Keychain error: \(status)"
+                case .emptyRefreshToken: return "The Refresh token in empty"
+                case .saveTokens: return "Failed save tokens"
             }
         }
     }
