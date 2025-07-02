@@ -58,8 +58,11 @@ generate_nginx_config() {
         exit 1
     fi
     
+    # Export the webhook secret in lowercase for NGINX template
+    export webhook_secret="${WEBHOOK_SECRET}"
+    
     # Use envsubst to substitute environment variables
-    envsubst '${DOMAIN} ${CERT_NAME} ${WEBHOOK_SECRET}' < "$template_file" > "$output_file"
+    envsubst '${DOMAIN} ${CERT_NAME} ${webhook_secret}' < "$template_file" > "$output_file"
     
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}✅ NGINX configuration generated: $output_file${NC}"
