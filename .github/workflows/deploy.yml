@@ -76,8 +76,45 @@ jobs:
             echo "🚀 Deploying branch '$BRANCH' to $ENVIRONMENT environment ($DOMAIN)"
           fi
 
+  # Code quality analysis
+  quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for better analysis
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21'
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Generate Go coverage
+        run: |
+          cd backend
+          go test -coverprofile=coverage.out ./... || true
+          go tool cover -func=coverage.out || true
+
+      - name: Generate Python coverage
+        run: |
+          cd analysis/distractor_api
+          pip install pytest pytest-cov
+          python -m pytest --cov=. --cov-report=xml || true
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
   deploy:
-    needs: setup
+    needs: [setup, quality-check]  # Add quality-check as dependency
     runs-on: ubuntu-latest
     environment: ${{ needs.setup.outputs.environment }}
 
