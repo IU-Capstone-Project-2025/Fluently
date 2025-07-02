@@ -64,7 +64,7 @@ struct DictionaryView: View {
                 .padding(.bottom, 12)
             ScrollView {
                 VStack (alignment: .center, spacing: 12) {
-                    ForEach(presenter.filteredWords, id: \.id) { word in
+                    ForEach(presenter.filteredWords, id: \.wordId) { word in
                         WordCardRow(word: word)
                     }
                 }

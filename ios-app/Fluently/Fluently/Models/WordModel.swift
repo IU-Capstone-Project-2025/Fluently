@@ -57,8 +57,33 @@ final class WordModel: Codable{
     }
 }
 
+extension WordModel {
+    static func mockWord() -> WordModel {
+        return WordModel(
+            cefrLevel: "A1",
+            exercise: ExerciseModel(
+                data: "",
+                type: ""
+            ),
+            isLearned: false,
+            sentences: [],
+            subTopic: "Car",
+            topic: "Vechile",
+            transcription: "ka:r",
+            translation: "Машина",
+            word: "Car",
+            wordId: UUID().uuidString
+        )
+    }
+
+    static func generateMockWords() -> [WordModel] {
+        return []
+    }
+}
+
 
 final class SentenceModel: Codable{
+    var id: UUID
     var text: String
     var translation: String
 
@@ -66,8 +91,19 @@ final class SentenceModel: Codable{
         text: String,
         translation: String
     ) {
+        self.id = UUID()
         self.text = text
         self.translation = translation
+    }
+}
+
+extension SentenceModel: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func == (lhs: SentenceModel, rhs: SentenceModel) -> Bool {
+        return lhs.text.compare(rhs.text).rawValue == 0
     }
 }
 

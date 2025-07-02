@@ -80,7 +80,7 @@ struct FluentlyApp: App {
             }
             .environmentObject(account)
             .environmentObject(router)
-            .modelContainer(for: Word.self)
+//            .modelContainer(for: WordModel.self)
         }
     }
 

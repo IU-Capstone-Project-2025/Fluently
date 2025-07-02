@@ -74,7 +74,7 @@ struct HomeScreenView: View {
     ///  Grid with main info
     var infoGrid: some View {
         VStack {
-            WordOfTheDay(word: Word.mockWord())
+            WordOfTheDay(word: WordModel.mockWord())
             cards
 
             Spacer()

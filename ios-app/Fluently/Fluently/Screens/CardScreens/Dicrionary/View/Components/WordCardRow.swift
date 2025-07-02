@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WordCardRow: View {
-    let word: Word
+    let word: WordModel
     @State var isHidden = true
 
     var body: some View {
