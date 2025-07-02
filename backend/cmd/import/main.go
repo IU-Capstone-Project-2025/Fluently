@@ -374,19 +374,19 @@ func processWordGroup(tx *gorm.DB, ctx context.Context, group []CSVRecord, stats
 	}
 	mergedTranslation := strings.Join(translationList, ",")
 
-	// Truncate translation if too long (varchar(30) limit)
-	if len(mergedTranslation) > 30 {
-		mergedTranslation = mergedTranslation[:27] + "..."
+	// Truncate translation if too long (varchar(255) limit)
+	if len(mergedTranslation) > 255 {
+		mergedTranslation = mergedTranslation[:255]
 		logger.Log.Warn("Translation truncated due to length limit",
 			zap.String("word", baseRecord.Word),
 			zap.String("original_translation", strings.Join(translationList, ",")),
 			zap.String("truncated_translation", mergedTranslation))
 	}
 
-	// Check word length (varchar(30) limit)
+	// Check word length (varchar(255) limit)
 	wordText := baseRecord.Word
-	if len(wordText) > 30 {
-		wordText = wordText[:30]
+	if len(wordText) > 255 {
+		wordText = wordText[:255]
 		logger.Log.Warn("Word truncated due to length limit",
 			zap.String("original_word", baseRecord.Word),
 			zap.String("truncated_word", wordText))
