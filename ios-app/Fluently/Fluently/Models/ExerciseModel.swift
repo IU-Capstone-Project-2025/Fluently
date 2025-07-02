@@ -7,9 +7,11 @@
 
 import Foundation
 
-final class ExerciseModel: Codable{
+class ExerciseModel: Codable{
     var data: String
     var type: String
+
+    var correctAnswer: String?
 
     init(
         data: String,

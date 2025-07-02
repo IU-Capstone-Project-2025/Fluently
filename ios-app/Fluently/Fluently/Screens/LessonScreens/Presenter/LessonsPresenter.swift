@@ -13,20 +13,20 @@ final class LessonsPresenter: ObservableObject {
     private var router: AppRouter
 
     // MARK: - Properties
-    private var words: [WordCard]
+    private var words: [WordModel]
     @Published private(set) var currentExNumber: Int
-    @Published private(set) var currentEx: Exercise
+    @Published private(set) var currentEx: ExerciseModel
 
-    var statistic: [ExerciseSolution : [Exercise]]
+    var statistic: [ExerciseSolution : [ExerciseModel]]
 
     // MARK: - Init
-    init(router: AppRouter, words: [WordCard]) {
+    init(router: AppRouter, words: [WordModel]) {
         self.router = router
 
         self.words = words
 
         self.currentExNumber = 0
-        self.currentEx = words[0]
+        self.currentEx = words[0].exercise
         self.statistic = [:]
 
         statistic[.correct] = []
@@ -60,7 +60,7 @@ final class LessonsPresenter: ObservableObject {
         }
 
         currentExNumber += 1
-        currentEx = words[currentExNumber]
+        currentEx = words[currentExNumber].exercise
     }
 
     // func to represent statistic
