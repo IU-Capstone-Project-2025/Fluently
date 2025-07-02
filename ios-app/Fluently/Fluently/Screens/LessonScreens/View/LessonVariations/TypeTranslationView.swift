@@ -21,7 +21,7 @@ struct TypeTranslationView: View {
                 .foregroundStyle(.blackText)
                 .font(.appFont.title)
                 .padding()
-            listOfAnswers
+            answerField
                 .padding(.horizontal, 100)
 
             Spacer()
@@ -51,7 +51,7 @@ struct TypeTranslationView: View {
         .buttonStyle(PlainButtonStyle())
     }
 
-    var listOfAnswers: some View {
+    var answerField: some View {
         VStack (alignment: .center, spacing: 10) {
             TextField("Type translation", text: $typedAnswer)
                 .lineLimit(1)

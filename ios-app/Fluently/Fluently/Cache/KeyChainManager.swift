@@ -114,6 +114,7 @@ extension KeyChainManager {
         case unhandledError(status: OSStatus)
 
         case emptyRefreshToken
+        case emptyAccessToken
         case saveTokens
 
         var localizedDescription: String {
@@ -123,6 +124,7 @@ extension KeyChainManager {
                 case .unhandledError(let status):
                     return "Keychain error: \(status)"
                 case .emptyRefreshToken: return "The Refresh token in empty"
+                case .emptyAccessToken: return "The Access token is empty"
                 case .saveTokens: return "Failed save tokens"
             }
         }

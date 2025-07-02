@@ -65,7 +65,7 @@ final class APIService: APIServiceProtocol{
         // Form request
         let refreshURL = url.appendingPathComponent("/auth/refresh")
 
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: refreshURL)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
 
@@ -102,7 +102,47 @@ final class APIService: APIServiceProtocol{
 // MARK: - Lessons
 extension APIService {
     func getLessons() async throws {
-        
+        // Validate url
+        guard let url = URL(string: link) else {
+            throw ApiError.invalidURL
+        }
+
+        // Validate Refresh Token
+        if !KeyChainManager.shared.isTokenValid() {
+            try await updateAccessToken()
+        }
+
+        guard let accessToken = KeyChainManager.shared.getAccessToken() else {
+            throw KeyChainManager.KeychainError.emptyAccessToken
+        }
+
+        // Form request
+        let lessonURL = url.appendingPathComponent("/lesson")
+
+        var request = URLRequest(url: lessonURL)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "GET"
+
+        let requestHttpBody = ["access_token" : accessToken]
+        do {
+            request.httpBody = try JSONEncoder().encode(requestHttpBody)
+        } catch {
+            throw ApiError.encodingFailed
+        }
+
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200...299).contains(httpResponse.statusCode) else {
+                throw ApiError.invalidResponse
+            }
+
+            let decoder = JSONDecoder()
+            let decodedData = try decoder.decode(, from: data)
+        } catch {
+            throw ApiError.networkError(error.localizedDescription)
+        }
     }
 }
 
