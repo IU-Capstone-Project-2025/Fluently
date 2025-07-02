@@ -90,7 +90,93 @@ server {
         add_header Cache-Control "public, immutable";
     }
 
-    # Health check endpoint (proxied to backend)
+    # ===========================================
+    # TELEGRAM BOT WEBHOOK CONFIGURATION
+    # ===========================================
+    
+    # Telegram Bot Webhook - CRITICAL for bot functionality
+    location /webhook {
+        # Proxy to Go webhook server running on localhost:8080
+        proxy_pass http://127.0.0.1:8080/webhook;
+        proxy_http_version 1.1;
+        
+        # Headers for proper proxying
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # CRITICAL: Pass the secret token from Telegram
+        # This must match the WEBHOOK_SECRET in your bot's .env file
+        proxy_set_header X-Telegram-Bot-Api-Secret-Token "${WEBHOOK_SECRET}";
+        
+        # Timeouts optimized for Telegram webhooks
+        proxy_connect_timeout 30s;
+        proxy_send_timeout 30s;
+        proxy_read_timeout 30s;
+        
+        # Request size limit for Telegram updates (1MB should be enough)
+        client_max_body_size 1M;
+        
+        # Disable buffering for real-time processing
+        proxy_buffering off;
+        proxy_request_buffering off;
+        
+        # Security: Only allow POST requests from Telegram
+        limit_except POST {
+            deny all;
+        }
+        
+        # Rate limiting for webhook
+        limit_req zone=webhook_zone burst=10 nodelay;
+    }
+
+    # Bot Health Check Endpoints
+    location /bot/health {
+        proxy_pass http://127.0.0.1:8080/health;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # Allow public access for monitoring
+        access_log off;
+    }
+
+    location /bot/ready {
+        proxy_pass http://127.0.0.1:8080/ready;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # Allow public access for monitoring
+        access_log off;
+    }
+
+    # Bot Metrics endpoint (optional, can be restricted)
+    location /bot/metrics {
+        proxy_pass http://127.0.0.1:8080/metrics;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # Optional: Restrict access to internal networks
+        # allow 10.0.0.0/8;
+        # allow 172.16.0.0/12;
+        # allow 192.168.0.0/16;
+        # deny all;
+    }
+
+    # ===========================================
+    # BACKEND API CONFIGURATION
+    # ===========================================
+
+    # Backend Health check endpoint (proxied to backend)
     location = /health {
         proxy_pass http://fluently_backend:8070/health;
         proxy_set_header Host $host;
@@ -116,6 +202,7 @@ server {
         proxy_redirect http://fluently_backend:8070/ https://$host/;
         proxy_redirect https://fluently_backend:8070/ https://$host/;
     }
+
     # API calls (proxied to backend)
     location /api/ {
         proxy_pass http://fluently_backend:8070/api/;
@@ -126,6 +213,19 @@ server {
         proxy_set_header X-Forwarded-Host $host;
         
         # Forward cookies for API authentication
+        proxy_set_header Cookie $http_cookie;
+    }
+
+    # Telegram public routes (for account linking) - proxied to backend
+    location /telegram/ {
+        proxy_pass http://fluently_backend:8070/telegram/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        
+        # Forward cookies for authentication
         proxy_set_header Cookie $http_cookie;
     }
 

@@ -360,27 +360,16 @@ func processWordGroup(tx *gorm.DB, ctx context.Context, group []CSVRecord, stats
 			zap.String("word", baseRecord.Word))
 	}
 
-	// Merge translations with deduplication
-	translations := make(map[string]bool)
-	for _, record := range group {
-		if record.Translation != "" {
-			translations[record.Translation] = true
-		}
-	}
-
-	var translationList []string
-	for translation := range translations {
-		translationList = append(translationList, translation)
-	}
-	mergedTranslation := strings.Join(translationList, ",")
+	// Use only the first translation (no merging)
+	translation := baseRecord.Translation
 
 	// Truncate translation if too long (varchar(255) limit)
-	if len(mergedTranslation) > 255 {
-		mergedTranslation = mergedTranslation[:255]
+	if len(translation) > 255 {
+		translation = translation[:255]
 		logger.Log.Warn("Translation truncated due to length limit",
 			zap.String("word", baseRecord.Word),
-			zap.String("original_translation", strings.Join(translationList, ",")),
-			zap.String("truncated_translation", mergedTranslation))
+			zap.String("original_translation", baseRecord.Translation),
+			zap.String("truncated_translation", translation))
 	}
 
 	// Check word length (varchar(255) limit)
@@ -401,7 +390,7 @@ func processWordGroup(tx *gorm.DB, ctx context.Context, group []CSVRecord, stats
 		// Create new word
 		newWord := models.Word{
 			Word:         wordText,
-			Translation:  mergedTranslation,
+			Translation:  translation,
 			PartOfSpeech: "unknown",
 			Context:      "",
 			CEFRLevel:    baseRecord.CEFRLevel,
@@ -410,7 +399,7 @@ func processWordGroup(tx *gorm.DB, ctx context.Context, group []CSVRecord, stats
 
 		logger.Log.Debug("Creating new word",
 			zap.String("word", wordText),
-			zap.String("translation", mergedTranslation),
+			zap.String("translation", translation),
 			zap.String("cefr_level", baseRecord.CEFRLevel))
 
 		if err := tx.WithContext(ctx).Create(&newWord).Error; err != nil {
@@ -421,7 +410,7 @@ func processWordGroup(tx *gorm.DB, ctx context.Context, group []CSVRecord, stats
 			logger.Log.Error("Failed to create word",
 				zap.Error(err),
 				zap.String("word", wordText),
-				zap.String("translation", mergedTranslation),
+				zap.String("translation", translation),
 				zap.String("topic_id", topicIDStr))
 			return fmt.Errorf("failed to create word: %v", err)
 		}
@@ -434,25 +423,10 @@ func processWordGroup(tx *gorm.DB, ctx context.Context, group []CSVRecord, stats
 	} else if result.Error != nil {
 		return fmt.Errorf("failed to check existing word: %v", result.Error)
 	} else {
-		// Update existing word with merged translations
-		existingTranslations := make(map[string]bool)
-		if existingWord.Translation != "" {
-			for _, t := range strings.Split(existingWord.Translation, ",") {
-				existingTranslations[strings.TrimSpace(t)] = true
-			}
+		// Update existing word with new translation and CEFR level if provided
+		if translation != "" {
+			existingWord.Translation = translation
 		}
-
-		// Add new translations
-		for translation := range translations {
-			existingTranslations[translation] = true
-		}
-
-		var updatedTranslationList []string
-		for translation := range existingTranslations {
-			updatedTranslationList = append(updatedTranslationList, translation)
-		}
-
-		existingWord.Translation = strings.Join(updatedTranslationList, ",")
 		if baseRecord.CEFRLevel != "" {
 			existingWord.CEFRLevel = baseRecord.CEFRLevel
 		}
