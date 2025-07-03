@@ -272,6 +272,29 @@ jobs:
               cp backend/.env.example backend/.env
             fi
 
+            # Create environment-specific .env for telegram-bot if it doesn't exist
+            if [ ! -f "telegram-bot/.env" ]; then
+              echo "📝 Creating telegram-bot/.env file from example..."
+              cp telegram-bot/.env.example telegram-bot/.env
+              
+              # Set telegram bot environment variables
+              if [ "$ENVIRONMENT" = "production" ]; then
+                sed -i "s|WEBHOOK_URL=.*|WEBHOOK_URL=https://$DOMAIN/webhook|g" telegram-bot/.env
+                sed -i "s|BOT_TOKEN=.*|BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}|g" telegram-bot/.env
+                sed -i "s|WEBHOOK_SECRET=.*|WEBHOOK_SECRET=${{ secrets.WEBHOOK_SECRET }}|g" telegram-bot/.env
+              else
+                sed -i "s|WEBHOOK_URL=.*|WEBHOOK_URL=https://$DOMAIN/webhook|g" telegram-bot/.env
+                sed -i "s|BOT_TOKEN=.*|BOT_TOKEN=${{ secrets.STAGING_TELEGRAM_BOT_TOKEN }}|g" telegram-bot/.env
+                sed -i "s|WEBHOOK_SECRET=.*|WEBHOOK_SECRET=${{ secrets.STAGING_WEBHOOK_SECRET }}|g" telegram-bot/.env
+              fi
+              
+              # Set domain configuration
+              sed -i "s|DOMAIN=.*|DOMAIN=$DOMAIN|g" telegram-bot/.env
+              
+              # Set Redis configuration (internal Docker network)
+              sed -i "s|REDIS_ADDR=.*|REDIS_ADDR=redis:6379|g" telegram-bot/.env
+            fi
+
             # Update environment variables based on deployment target
             echo "⚙️ Updating environment configuration..."
 
@@ -359,20 +382,31 @@ jobs:
             echo "✅ Network cleanup completed"
 
             # Build with progress output and timeout handling
-            echo "🔨 Building Docker images..."
+            echo "🔨 Building Docker images with optimized caching..."
             export DOCKER_BUILDKIT=1
             export COMPOSE_DOCKER_CLI_BUILD=1
             
-            # Build ML API separately first (it takes the longest)
+            # Pre-warm Go module cache for faster builds
+            echo "🚀 Pre-warming Go build cache..."
+            docker build --target builder \
+              --build-arg BUILDKIT_INLINE_CACHE=1 \
+              --cache-from fluently-fork-backend:cache \
+              --cache-from fluently-fork-telegram-bot:cache \
+              -t temp-go-cache backend/ || echo "⚠️ Cache warm-up failed, continuing..."
+            
+            # Build ML API separately first (it takes the longest) with timeout
             echo "🤖 Building ML API (this may take several minutes)..."
-            timeout 30m docker compose build ml-api || {
-              echo "❌ ML API build timed out after 30 minutes"
+            timeout 20m docker compose build --parallel ml-api || {
+              echo "❌ ML API build timed out after 20 minutes"
               exit 1
             }
             
-            # Build remaining services
-            echo "🔨 Building remaining services..."
-            docker compose build
+            # Build remaining services in parallel with reduced timeout
+            echo "🔨 Building remaining services in parallel..."
+            timeout 10m docker compose build --parallel || {
+              echo "❌ Services build timed out after 10 minutes"
+              exit 1
+            }
 
             # Start services with force recreate
             docker compose up -d --force-recreate

@@ -81,6 +81,26 @@ test-db-shell:
 	docker compose -f docker-compose.test.yml exec test-db psql -U test_user -d test_fluently_db
 
 # ===========================================
+# FAST BUILD COMMANDS
+# ===========================================
+
+# Build services with optimized caching
+build-fast:
+	export DOCKER_BUILDKIT=1 && export COMPOSE_DOCKER_CLI_BUILD=1 && docker compose build --parallel
+
+# Build specific service with caching
+build-service:
+	export DOCKER_BUILDKIT=1 && export COMPOSE_DOCKER_CLI_BUILD=1 && docker compose build $(SERVICE)
+
+# Build ML API with optimized settings (for local development)
+build-ml-api-fast:
+	export DOCKER_BUILDKIT=1 && export COMPOSE_DOCKER_CLI_BUILD=1 && docker compose build ml-api
+
+# Build backend and telegram bot with Go caching
+build-go-services:
+	export DOCKER_BUILDKIT=1 && export COMPOSE_DOCKER_CLI_BUILD=1 && docker compose build --parallel backend telegram-bot
+
+# ===========================================
 # HELP
 # ===========================================
 
@@ -109,3 +129,9 @@ help:
 	@echo "  Database:"
 	@echo "    db-shell       - Access main database"
 	@echo "    test-db-shell  - Access test database"
+	@echo ""
+	@echo "  Fast Build:"
+	@echo "    build-fast     - Build services with optimized caching"
+	@echo "    build-service  - Build specific service with caching"
+	@echo "    build-ml-api-fast - Build ML API with optimized settings"
+	@echo "    build-go-services - Build backend and telegram bot with Go caching"
