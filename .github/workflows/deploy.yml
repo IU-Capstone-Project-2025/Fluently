@@ -122,12 +122,22 @@ jobs:
           echo "🔍 Checking for main.go:"
           test -f cmd/main.go && echo "✅ cmd/main.go exists" || echo "❌ cmd/main.go missing"
           
+          # Check if this is a valid Go module
+          echo "🔍 Go module info:"
+          go list -m || echo "❌ Not a valid Go module"
+          
+          # Check if cmd package is valid
+          echo "🔍 Checking cmd package:"
+          go list ./cmd || echo "❌ cmd package has issues"
+          
           # Verify swag is available
           echo "🔍 Checking swag installation:"
           if command -v swag >/dev/null 2>&1; then
             echo "✅ swag found in PATH: $(which swag)"
+            SWAG_CMD="swag"
           elif [ -f "$HOME/go/bin/swag" ]; then
             echo "✅ swag found at: $HOME/go/bin/swag"
+            SWAG_CMD="$HOME/go/bin/swag"
           else
             echo "❌ swag not found"
             exit 1
@@ -136,17 +146,34 @@ jobs:
           # Create docs directory if it doesn't exist
           mkdir -p docs
           
-          # Generate Swagger documentation with proper directory specification
+          # Generate Swagger documentation with improved error handling
           echo "📚 Generating API documentation..."
           echo "Current directory: $(pwd)"
           echo "Contents of current directory:"
           ls -la
           echo "Contents of cmd directory:"
           ls -la cmd/
-          if command -v swag >/dev/null 2>&1; then
-            swag init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal
-          else
-            $HOME/go/bin/swag init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal
+          
+          # Try to generate docs with better error reporting
+          echo "🔧 Running: $SWAG_CMD init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal"
+          if ! $SWAG_CMD init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal; then
+            echo "❌ Swag generation failed, trying alternative approach..."
+            
+            # Try without --parseInternal flag
+            echo "🔧 Trying without --parseInternal flag..."
+            if ! $SWAG_CMD init -g ./cmd/main.go -o ./docs --parseDependency; then
+              echo "❌ Swag generation failed again, trying basic generation..."
+              
+              # Try basic generation
+              if ! $SWAG_CMD init -g ./cmd/main.go -o ./docs; then
+                echo "❌ All swag generation attempts failed"
+                echo "🔍 Swag version:"
+                $SWAG_CMD --version || echo "Cannot get swag version"
+                echo "🔍 Go environment:"
+                go env
+                exit 1
+              fi
+            fi
           fi
           
           # Verify docs were generated
@@ -194,10 +221,10 @@ jobs:
           go tool cover -func=coverage.out
         
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@v3.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         
       - name: Stop test database & wipe volume
         if: always()

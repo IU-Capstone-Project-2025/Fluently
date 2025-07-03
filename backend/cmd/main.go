@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	// Import docs only if they exist (conditional import for swag generation)
 	_ "fluently/go-backend/docs"
 
 	appConfig "fluently/go-backend/internal/config"
