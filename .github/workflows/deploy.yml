@@ -128,7 +128,7 @@ jobs:
           python -m pytest --cov=. --cov-report=xml || true
 
       - name: SonarCloud Scan
-        uses: sonarqube-scan-action@master
+        uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
