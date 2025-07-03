@@ -36,11 +36,11 @@ class LessonFlowViewModel @Inject constructor(
     private inline fun <reified T : LessonComponent> safeApplyAndUpdate(
         produceNewComponent: (oldComponent: T) -> T
     ) {
-        (currentComponent as? T)?.let { oldComponent ->
-            produceNewComponent(oldComponent).run {
+        (currentComponent.value as? T)?.let { oldComponent ->
+            produceNewComponent(oldComponent).also { newComponent ->
                 try {
                     viewModelScope.launch {
-                        lessonRepository.updateCurrentComponent(oldComponent)
+                        lessonRepository.updateCurrentComponent(newComponent)
                     }
                 } catch (ex: Exception) {
                     Timber.e(ex)

@@ -47,18 +47,18 @@ class HomeScreenViewModel @Inject constructor(
             it.copy(ongoingLessonState = OngoingLessonState.LOADING)
         }
 
-        try {
-            viewModelScope.launch {
+        viewModelScope.launch {
+            try {
                 if (lessonRepository.hasSavedLesson()) {
                     _ongoingLessonIsReady.value = true
                     return@launch
                 }
                 lessonRepository.fetchAndSaveOngoingLesson()
                 _ongoingLessonIsReady.value = true
+            } catch (ex: Exception) {
+                Timber.e(ex)
+                _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.ERROR) }
             }
-        } catch (ex: Exception) {
-            Timber.e(ex)
-            _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.ERROR) }
         }
     }
 }
