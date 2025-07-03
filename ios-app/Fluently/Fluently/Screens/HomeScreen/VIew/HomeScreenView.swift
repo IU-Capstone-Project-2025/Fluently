@@ -34,6 +34,9 @@ struct HomeScreenView: View {
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
+        .onAppear {
+            presenter.getLesson()
+        }
 
         .fullScreenCover(item: $openedScreen) { screenType in
             switch screenType {

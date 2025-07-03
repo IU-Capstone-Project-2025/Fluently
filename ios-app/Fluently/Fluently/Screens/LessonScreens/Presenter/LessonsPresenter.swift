@@ -74,7 +74,7 @@ final class LessonsPresenter: ObservableObject {
             print("------------ \(solution.rawValue) ------------")
             statistic[solution]?.forEach { exr in
                 if let pickoptions = exr.data as? PickOptionSentence {
-                    print(pickoptions.template)
+                    print("Pick option sentence: \(pickoptions.template) -> \(pickoptions.correctAnswer)")
                 }
                 if let chooseTranslation = exr.data as? ChooseTranslationEngRuss {
                     print("Choose translation: \(chooseTranslation.text) -> \(chooseTranslation.correctAnswer)")

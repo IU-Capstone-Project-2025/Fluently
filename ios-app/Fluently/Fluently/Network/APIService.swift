@@ -8,7 +8,9 @@
 import Foundation
 
 protocol APIServiceProtocol {
+    // Tokens
     func authGoogle(_ gid: String) async throws -> AuthResponse
+    func updateAccessToken() async throws
 }
 
 final class APIService: APIServiceProtocol{
@@ -78,6 +80,9 @@ final class APIService: APIServiceProtocol{
 
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("Raw JSON Response:\n\(jsonString)")
+            }
 
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
@@ -117,21 +122,22 @@ extension APIService {
         }
 
         // Form request
-        let lessonURL = url.appendingPathComponent("/lesson")
+        let lessonURL = url.appendingPathComponent("/api/v1/lesson")
 
         var request = URLRequest(url: lessonURL)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
 
-        let requestHttpBody = ["access_token" : accessToken]
-        do {
-            request.httpBody = try JSONEncoder().encode(requestHttpBody)
-        } catch {
-            throw ApiError.encodingFailed
-        }
+        request.printRequest()
 
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
+
+            print(lessonURL)
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("Raw JSON Response:\n\(jsonString)")
+            }
 
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
@@ -141,6 +147,7 @@ extension APIService {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             let decodedData = try decoder.decode(CardsModel.self, from: data)
+
             print(decodedData)
         } catch {
             throw ApiError.networkError(error.localizedDescription)
