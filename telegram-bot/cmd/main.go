@@ -151,31 +151,29 @@ func createTelegramBot(cfg *config.Config) (*tele.Bot, error) {
 
 // setupWebhook configures webhook with Telegram
 func setupWebhook(bot *tele.Bot, cfg *config.Config) error {
-	webhookConfig := &tele.SetWebhook{
-		URL: cfg.Bot.WebhookURL,
+	// Build the Webhook configuration expected by telebot.v3
+	wh := &tele.Webhook{
+		Endpoint: &tele.WebhookEndpoint{
+			PublicURL: cfg.Bot.WebhookURL,
+		},
+		MaxConnections: 40, // default value, Telegram allows up to 100
+		AllowedUpdates: []string{"message", "callback_query", "inline_query"},
 	}
 
-	// Set webhook secret if configured
+	// Add the secret token if it is configured
 	if cfg.Webhook.Secret != "" {
-		webhookConfig.SecretToken = cfg.Webhook.Secret
+		wh.SecretToken = cfg.Webhook.Secret
 	}
 
-	// Set max connections (default 40, max 100)
-	webhookConfig.MaxConnections = 40
-
-	// Set allowed updates (optional - leave empty to get all updates)
-	webhookConfig.AllowedUpdates = []string{"message", "callback_query", "inline_query"}
-
-	// Actually set the webhook with Telegram
-	err := bot.SetWebhook(webhookConfig)
-	if err != nil {
+	// Register the webhook with Telegram
+	if err := bot.SetWebhook(wh); err != nil {
 		return fmt.Errorf("failed to set webhook: %w", err)
 	}
 
 	logger.Log.Info("Webhook set successfully with Telegram",
 		zap.String("url", cfg.Bot.WebhookURL),
 		zap.String("secret_token", "[REDACTED]"),
-		zap.Int("max_connections", webhookConfig.MaxConnections))
+		zap.Int("max_connections", wh.MaxConnections))
 
 	return nil
 }

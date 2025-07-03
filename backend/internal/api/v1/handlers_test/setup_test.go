@@ -6,6 +6,7 @@ import (
 
 	"fluently/go-backend/internal/api/v1/handlers"
 	"fluently/go-backend/internal/api/v1/routes"
+	"fluently/go-backend/internal/config"
 	"fluently/go-backend/internal/repository/models"
 	pg "fluently/go-backend/internal/repository/postgres"
 
@@ -28,7 +29,7 @@ var (
 )
 
 func setupTest(t *testing.T) {
-	dsn := "host=localhost port=5433 user=test_user password=test_pass dbname=test_db sslmode=disable"
+	dsn := config.GetPostgresDSNForTest()
 	var err error
 
 	db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})

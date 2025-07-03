@@ -38,11 +38,16 @@ type ApiConfig struct {
 }
 
 type DatabaseConfig struct {
-	User     string
-	Password string
-	Host     string
-	Port     string
-	Name     string
+	User         string
+	Password     string
+	Host         string
+	Port         string
+	Name         string
+	TestName     string
+	TestUser     string
+	TestPassword string
+	TestHost     string
+	TestPort     string
 }
 
 type LoggerConfig struct {
@@ -97,11 +102,16 @@ func Init() {
 			AppPort: viper.GetString("APP_PORT"),
 		},
 		Database: DatabaseConfig{
-			User:     viper.GetString("DB_USER"),
-			Password: viper.GetString("DB_PASSWORD"),
-			Host:     viper.GetString("DB_HOST"),
-			Port:     viper.GetString("DB_PORT"),
-			Name:     viper.GetString("DB_NAME"),
+			User:         viper.GetString("DB_USER"),
+			Password:     viper.GetString("DB_PASSWORD"),
+			Host:         viper.GetString("DB_HOST"),
+			Port:         viper.GetString("DB_PORT"),
+			Name:         viper.GetString("DB_NAME"),
+			TestName:     viper.GetString("DB_TEST_NAME"),
+			TestUser:     viper.GetString("DB_TEST_USER"),
+			TestPassword: viper.GetString("DB_TEST_PASSWORD"),
+			TestHost:     viper.GetString("DB_TEST_HOST"),
+			TestPort:     viper.GetString("DB_TEST_PORT"),
 		},
 		Logger: LoggerConfig{
 			Level: viper.GetString("LOG_LEVEL"),
@@ -137,6 +147,11 @@ func GetPostgresDSN() string {
 func GetPostgresDSNForImport() string {
 	return "postgres://" + cfg.Database.User + ":" + cfg.Database.Password +
 		"@" + "localhost" + ":" + cfg.Database.Port + "/" + cfg.Database.Name + "?sslmode=disable"
+}
+
+func GetPostgresDSNForTest() string {
+	return "postgres://" + cfg.Database.TestUser + ":" + cfg.Database.TestPassword +
+		"@" + cfg.Database.TestHost + ":" + cfg.Database.TestPort + "/" + cfg.Database.TestName + "?sslmode=disable"
 }
 
 // GoogleOAuthConfig constructs an oauth2.Config based on application settings.
