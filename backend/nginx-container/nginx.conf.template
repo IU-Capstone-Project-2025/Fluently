@@ -6,11 +6,6 @@
 limit_req_zone $binary_remote_addr zone=webhook_zone:10m rate=10r/m;
 limit_req_zone $binary_remote_addr zone=api_zone:10m rate=100r/m;
 
-# Custom log format (this is also safe to define here)
-log_format main '$remote_addr - $remote_user [$time_local] "$request" '
-            '$status $body_bytes_sent "$http_referer" '
-            '"$http_user_agent" "$http_x_forwarded_for"';
-
 # Redirect HTTP to HTTPS
 server {
     listen 80;
