@@ -192,9 +192,9 @@ jobs:
           # Set test environment variables
           export DB_HOST=localhost
           export DB_PORT=5433
-          export DB_USER=test_user
-          export DB_NAME=test_db
-          export DB_PASSWORD=test_password
+          export DB_USER=postgres
+          export DB_NAME=postgres_test
+          export DB_PASSWORD=postgres
           
           # Run tests with coverage, excluding problematic packages
           echo "🧪 Running Go tests with coverage..."
