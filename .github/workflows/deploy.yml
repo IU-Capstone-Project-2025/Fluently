@@ -223,11 +223,37 @@ jobs:
             echo '<?xml version="1.0" ?><coverage version="1.0" timestamp="1234567890" lines-valid="0" lines-covered="0" line-rate="0.0" branches-covered="0" branches-valid="0" branch-rate="0.0" complexity="0.0"></coverage>' > coverage.xml
           fi
 
+      - name: Start test database
+        run: docker compose -f docker-compose.test.yml up -d test_db
+        
+      - name: Wait for DB to become healthy
+        run: |
+          for i in {1..20}; do
+            docker inspect -f '{{json .State.Health.Status}}' fluently_test_db | grep -q healthy && break
+            sleep 3
+          done
+        
+      - name: Go tests with coverage
+        working-directory: ./backend
+        env:
+          DB_HOST:     localhost
+          DB_PORT:     5433
+          DB_USER:     test_user
+          DB_PASSWORD: test_pass
+          DB_NAME:     test_db
+        run: |
+          go test ./... -coverprofile=coverage.out -covermode=atomic
+          go tool cover -func=coverage.out
+        
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN }}
+        
+      - name: Stop test database & wipe volume
+        if: always()
+        run: docker compose -f docker-compose.test.yml down --volumes
 
   deploy:
     needs: [setup]  # Re-enable quality-check dependency
