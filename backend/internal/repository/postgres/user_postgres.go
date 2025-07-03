@@ -24,7 +24,7 @@ func (r *UserRepository) Create(ctx context.Context, user *models.User) error {
 
 func (r *UserRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.User, error) {
 	var user models.User
-	if err := r.db.WithContext(ctx).Preload("Pref").First(&user, "id = ?", id).Error; err != nil {
+	if err := r.db.WithContext(ctx).First(&user, "id = ?", id).Error; err != nil {
 		return nil, err
 	}
 
@@ -33,7 +33,7 @@ func (r *UserRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.Use
 
 func (r *UserRepository) GetByEmail(ctx context.Context, email string) (*models.User, error) {
 	var user models.User
-	if err := r.db.WithContext(ctx).Preload("Pref").First(&user, "email = ?", email).Error; err != nil {
+	if err := r.db.WithContext(ctx).First(&user, "email = ?", email).Error; err != nil {
 		return nil, err
 	}
 
@@ -53,8 +53,7 @@ func (r *UserRepository) UpdateRefreshToken(ctx context.Context, userID uuid.UUI
 // GetByRefreshToken retrieves a user by their refresh token
 func (r *UserRepository) GetByRefreshToken(ctx context.Context, refreshToken string) (*models.User, error) {
 	var user models.User
-	if err := r.db.WithContext(ctx).Preload("Pref").
-		First(&user, "refresh_token = ?", refreshToken).Error; err != nil {
+	if err := r.db.WithContext(ctx).First(&user, "refresh_token = ?", refreshToken).Error; err != nil {
 		return nil, err
 	}
 	return &user, nil
@@ -85,8 +84,7 @@ func (r *UserRepository) Delete(ctx context.Context, id uuid.UUID) error {
 // GetByTelegramID finds user by Telegram ID
 func (r *UserRepository) GetByTelegramID(ctx context.Context, telegramID int64) (*models.User, error) {
 	var user models.User
-	if err := r.db.WithContext(ctx).Preload("Pref").
-		First(&user, "telegram_id = ?", telegramID).Error; err != nil {
+	if err := r.db.WithContext(ctx).First(&user, "telegram_id = ?", telegramID).Error; err != nil {
 		return nil, err
 	}
 	return &user, nil

@@ -49,14 +49,14 @@ func main() {
 	}
 
 	err = db.AutoMigrate(
-		&models.LearnedWords{},
-		&models.Preference{},
-		&models.Sentence{},
 		&models.User{},
-		&models.RefreshToken{},
-		&models.Word{},
-		&models.PickOption{},
+		&models.Preference{},
 		&models.Topic{},
+		&models.Word{},
+		&models.Sentence{},
+		&models.PickOption{},
+		&models.RefreshToken{},
+		&models.LearnedWords{},
 	)
 	if err != nil {
 		logger.Log.Fatal("Failed to auto-migrate", zap.Error(err))

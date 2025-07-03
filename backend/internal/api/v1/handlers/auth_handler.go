@@ -146,9 +146,8 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			// Firstly creating user preferences
 			userID := uuid.New()
-			prefID := uuid.New()
 			userPreferences := models.Preference{
-				ID:              prefID,
+				UserID:          userID,
 				Subscribed:      false,
 				CEFRLevel:       "A1",
 				FactEveryday:    false,
@@ -629,9 +628,8 @@ func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, g
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			// Create new user and preferences
 			userID := uuid.New()
-			prefID := uuid.New()
 			userPreferences := models.Preference{
-				ID:              prefID,
+				UserID:          userID,
 				Subscribed:      false,
 				CEFRLevel:       "A1",
 				FactEveryday:    false,
