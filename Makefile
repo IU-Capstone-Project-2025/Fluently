@@ -109,7 +109,7 @@ build-ml-api-fast:
 
 # Generate Swagger docs and run backend with supporting services
 run-backend:
-	cd backend && swag init --generalInfo cmd/main.go --output docs
+	cd backend && swag init --generalInfo cmd/main.go --output docs --parseDependency --parseInternal
 	docker compose up -d postgres ml-api directus
 	cd backend && air
 
@@ -120,6 +120,29 @@ run-telegram-bot:
 # Run the ML API service
 run-ml-api:
 	docker compose up --build -d ml-api
+
+# Generate API documentation
+generate-docs:
+	@echo "📚 Generating API documentation..."
+	@if ! command -v swag >/dev/null 2>&1; then \
+		echo "Installing swag..."; \
+		cd backend && go install github.com/swaggo/swag/cmd/swag@latest; \
+	fi
+	@cd backend && $(HOME)/go/bin/swag init --generalInfo cmd/main.go --output docs --parseDependency --parseInternal
+	@echo "✅ Documentation generated in backend/docs/"
+
+# Run tests with proper test database
+test-backend:
+	@echo "🧪 Running backend tests..."
+	@cd backend && \
+	export DB_HOST=localhost && \
+	export DB_PORT=5433 && \
+	export DB_USER=test_user && \
+	export DB_NAME=test_db && \
+	export DB_PASSWORD=test_password && \
+	go test -v -coverprofile=coverage.out ./...
+	@cd backend && go tool cover -html=coverage.out -o coverage.html
+	@echo "📊 Coverage report generated: backend/coverage.html"
 
 # ===========================================
 # PRODUCTION COMMANDS (Use external volumes)
@@ -259,6 +282,8 @@ help:
 	@echo "    sudo systemctl stop postgresql"
 	@echo ""
 	@echo "  🔧 Development:"
+	@echo "    generate-docs       - Generate API documentation with Swagger"
+	@echo "    test-backend        - Run backend tests with coverage"
 	@echo "    run-backend         - Start backend with dependencies and air for hot reload"
 	@echo "    run-telegram-bot    - Start telegram bot"
 	@echo "    run-ml-api          - Start ML API service"
