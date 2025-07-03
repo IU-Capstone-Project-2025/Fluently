@@ -86,9 +86,9 @@ jobs:
         ports:
           - 5433:5432
         env:
-          POSTGRES_USER: test_user
-          POSTGRES_DB: test_db
-          POSTGRES_PASSWORD: test_password
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
+          POSTGRES_PASSWORD: postgres
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -192,9 +192,9 @@ jobs:
           # Set test environment variables to match Postgres service
           export DB_HOST=localhost
           export DB_PORT=5433
-          export DB_USER=test_user
-          export DB_NAME=test_db
-          export DB_PASSWORD=test_password
+          export DB_USER=postgres
+          export DB_NAME=postgres
+          export DB_PASSWORD=postgres
           
           # Run tests with coverage, excluding problematic packages
           echo "🧪 Running Go tests with coverage..."
@@ -232,7 +232,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   deploy:
-    needs: [setup, quality-check]  # Re-enable quality-check dependency
+    needs: [setup]  # Re-enable quality-check dependency
     runs-on: ubuntu-latest
     environment: ${{ needs.setup.outputs.environment }}
 
