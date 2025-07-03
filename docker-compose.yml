@@ -29,18 +29,20 @@ services:
       context: .
       dockerfile: backend/nginx-container/Dockerfile
     container_name: fluently_nginx
+    environment:
+      - DOMAIN=${DOMAIN:-localhost}
+      - CERT_NAME=${CERT_NAME:-localhost}
+      - WEBHOOK_SECRET=${WEBHOOK_SECRET:-}
     ports:
       - "80:80"
       - "443:443"
     depends_on:
       - backend
     volumes:
-      # Generated config from template
-      - ./backend/nginx-container/default.conf:/etc/nginx/conf.d/default.conf:ro
       # Cloudflare Origin Certificates
       - /etc/nginx/ssl:/etc/nginx/ssl:ro
-      # Website content
-      - ./frontend-website:/usr/share/nginx/html/main-site:ro
+      # Website content is now copied during build
+      # - ./frontend-website:/usr/share/nginx/html/main-site:ro
     networks:
       - fluently_network
 
@@ -83,15 +85,15 @@ services:
       - "${ZEROTIER_IP}:5432:5432"  # ZeroTier access
 
   # Redis for Telegram Bot
-  # redis:
-  #   image: redis:7-alpine
-  #   container_name: fluently_redis
-  #   restart: unless-stopped
-  #   volumes:
-  #     - fluently_redis_data:/data
-  #   networks:
-  #     - fluently_network
-  #   command: redis-server --appendonly yes
+  redis:
+    image: redis:7-alpine
+    container_name: fluently_redis
+    restart: unless-stopped
+    volumes:
+      - fluently_redis_data:/data
+    networks:
+      - fluently_network
+    command: redis-server --appendonly yes
     # No external ports - internal communication only
 
   # ===========================================
@@ -99,21 +101,27 @@ services:
   # ===========================================
   
   # Telegram Bot
-  # telegram-bot:
-  #   build:
-  #     context: ./telegram-bot
-  #     dockerfile: Dockerfile
-  #   container_name: fluently_telegram_bot
-  #   restart: unless-stopped
-  #   env_file: ./telegram-bot/.env
-  #   depends_on:
-  #     - redis
-  #     - backend
-  #   networks:
-  #     - fluently_network
-  #   # External access for webhook if needed
-  #   ports:
-  #     - "${ZEROTIER_IP}:8080:8080"  # ZeroTier access for webhooks
+  telegram-bot:
+    build:
+      context: ./telegram-bot
+      dockerfile: Dockerfile
+    container_name: fluently_telegram_bot
+    restart: unless-stopped
+    env_file: .env  # Use root .env file instead of telegram-bot/.env
+    environment:
+      # Override Redis connection for Docker network
+      - REDIS_ADDR=redis:6379
+      - WEBHOOK_HOST=0.0.0.0
+      - WEBHOOK_PORT=8080
+      - WEBHOOK_PATH=/webhook
+    depends_on:
+      - redis
+      - backend
+    networks:
+      - fluently_network
+    # Bot webhook endpoint for NGINX to proxy to
+    ports:
+      - "127.0.0.1:8080:8080"  # Local access for NGINX proxy
 
   # ML Distractor API (Internal only)
   ml-api:
@@ -253,6 +261,31 @@ services:
       - loki
     networks:
       - fluently_network
+
+  # ===========================================
+  # CODE QUALITY & ANALYSIS
+  # ===========================================
+  
+  # SonarQube
+  # sonarqube:
+  #   image: sonarqube:community
+  #   container_name: fluently_sonarqube
+  #   restart: unless-stopped
+  #   environment:
+  #     - SONAR_JDBC_URL=jdbc:postgresql://postgres:5432/sonarqube
+  #     - SONAR_JDBC_USERNAME=${DB_USER}
+  #     - SONAR_JDBC_PASSWORD=${DB_PASSWORD}
+  #   volumes:
+  #     - fluently_sonarqube_data:/opt/sonarqube/data
+  #     - fluently_sonarqube_extensions:/opt/sonarqube/extensions
+  #     - fluently_sonarqube_logs:/opt/sonarqube/logs
+  #     - ./backend/sonarqube/sonar.properties:/opt/sonarqube/conf/sonar.properties
+  #   ports:
+  #     - "${ZEROTIER_IP}:9000:9000"  # ZeroTier access only
+  #   depends_on:
+  #     - postgres
+  #   networks:
+  #     - fluently_network
 
   # ===========================================
   # METRICS EXPORTERS

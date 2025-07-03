@@ -347,6 +347,33 @@ jobs:
                 fi
               done
               
+              # Check if telegram bot is healthy
+              echo "Checking telegram bot health..."
+              for i in {1..3}; do
+                if docker compose ps telegram-bot | grep -q "Up"; then
+                  echo "✅ Telegram bot is running"
+                  # Check if bot can connect to Telegram API
+                  if docker compose logs telegram-bot | grep -q "Successfully connected to Redis"; then
+                    echo "✅ Telegram bot connected to Redis"
+                  fi
+                  if docker compose logs telegram-bot | grep -q "telegram: Not Found (404)"; then
+                    echo "❌ Telegram bot has invalid token (404 error)"
+                    echo "🔍 Bot logs:"
+                    docker compose logs --tail=10 telegram-bot || true
+                    return 1
+                  fi
+                  break
+                elif [ $i -eq 3 ]; then
+                  echo "❌ Telegram bot health check failed"
+                  echo "🔍 Bot logs:"
+                  docker compose logs --tail=10 telegram-bot || true
+                  return 1
+                else
+                  echo "⏳ Waiting for telegram bot... (attempt $i/3)"
+                  sleep 5
+                fi
+              done
+              
               echo "🎉 All health checks passed!"
               return 0
             }
@@ -421,28 +448,121 @@ jobs:
             git checkout $BRANCH
             git pull origin $BRANCH
 
-            # Create environment-specific .env for backend if it doesn't exist
+            # Create main .env file from root .env.example if it doesn't exist
+            if [ ! -f ".env" ]; then
+              echo "📝 Creating main .env file from root .env.example..."
+              cp .env.example .env
+            fi
+
+            # Create backend/.env for backward compatibility if it doesn't exist
             if [ ! -f "backend/.env" ]; then
-              echo "📝 Creating backend/.env file from example..."
-              cp backend/.env.example backend/.env
+              echo "📝 Creating backend/.env file (copy of root .env)..."
+              cp .env backend/.env
             fi
 
             # Update environment variables based on deployment target
             echo "⚙️ Updating environment configuration..."
 
-            # Update ZeroTier IP in backend/.env
+            # Update ZeroTier IP in both .env files
+            if grep -q "ZEROTIER_IP=" .env; then
+              sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" .env
+            else
+              echo "ZEROTIER_IP=$ZEROTIER_IP" >> .env
+            fi
+            
+            # Also update backend/.env for backward compatibility
             if grep -q "ZEROTIER_IP=" backend/.env; then
               sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" backend/.env
             else
               echo "ZEROTIER_IP=$ZEROTIER_IP" >> backend/.env
             fi
 
-            # Update PUBLIC_URL in backend/.env
+            # Update PUBLIC_URL in both .env files
+            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" .env
             sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" backend/.env
 
-            # Copy .env from backend to root for docker-compose to use
-            echo "📋 Copying .env file to root directory for docker-compose..."
-            cp backend/.env .env
+            # Add telegram bot environment variables if they don't exist
+            echo "🔧 Setting up Telegram bot configuration..."
+            if [ "$ENVIRONMENT" = "production" ]; then
+              BOT_TOKEN="${{ secrets.TELEGRAM_BOT_TOKEN }}"
+              WEBHOOK_SECRET="${{ secrets.WEBHOOK_SECRET }}"
+              echo "📝 Using production bot credentials"
+            else
+              BOT_TOKEN="${{ secrets.STAGING_TELEGRAM_BOT_TOKEN }}"
+              WEBHOOK_SECRET="${{ secrets.STAGING_WEBHOOK_SECRET }}"
+              echo "📝 Using staging bot credentials"
+            fi
+            
+            # Debug: Check if secrets are provided (without printing actual values)
+            if [ -z "$BOT_TOKEN" ]; then
+              echo "⚠️ WARNING: BOT_TOKEN is empty for $ENVIRONMENT environment!"
+              echo "Please set the following GitHub secret:"
+              if [ "$ENVIRONMENT" = "production" ]; then
+                echo "   TELEGRAM_BOT_TOKEN"
+              else
+                echo "   STAGING_TELEGRAM_BOT_TOKEN"
+              fi
+            else
+              echo "✅ BOT_TOKEN is provided (length: ${#BOT_TOKEN} characters)"
+            fi
+            
+            if [ -z "$WEBHOOK_SECRET" ]; then
+              echo "⚠️ WARNING: WEBHOOK_SECRET is empty for $ENVIRONMENT environment!"
+              echo "Please set the following GitHub secret:"
+              if [ "$ENVIRONMENT" = "production" ]; then
+                echo "   WEBHOOK_SECRET"
+              else
+                echo "   STAGING_WEBHOOK_SECRET"
+              fi
+            else
+              echo "✅ WEBHOOK_SECRET is provided"
+            fi
+            
+            # Set telegram bot configuration in root .env
+            if [ ! -z "$BOT_TOKEN" ]; then
+              if grep -q "BOT_TOKEN=" .env; then
+                sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=$BOT_TOKEN/" .env
+              else
+                echo "BOT_TOKEN=$BOT_TOKEN" >> .env
+              fi
+              echo "✅ BOT_TOKEN set in .env file"
+            else
+              echo "❌ Skipping BOT_TOKEN setup (empty value)"
+            fi
+            
+            if [ ! -z "$WEBHOOK_SECRET" ]; then
+              if grep -q "WEBHOOK_SECRET=" .env; then
+                sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=$WEBHOOK_SECRET/" .env
+              else
+                echo "WEBHOOK_SECRET=$WEBHOOK_SECRET" >> .env
+              fi
+              echo "✅ WEBHOOK_SECRET set in .env file"
+            else
+              echo "❌ Skipping WEBHOOK_SECRET setup (empty value)"
+            fi
+            
+            # Set webhook URL
+            if grep -q "WEBHOOK_URL=" .env; then
+              sed -i "s|WEBHOOK_URL=.*|WEBHOOK_URL=https://$DOMAIN/webhook|g" .env
+            else
+              echo "WEBHOOK_URL=https://$DOMAIN/webhook" >> .env
+            fi
+            
+            # Set Redis configuration for Docker network
+            if grep -q "REDIS_ADDR=" .env; then
+              sed -i "s|REDIS_ADDR=.*|REDIS_ADDR=redis:6379|g" .env
+            else
+              echo "REDIS_ADDR=redis:6379" >> .env
+            fi
+
+            echo "📋 Main .env file ready for docker-compose..."
+            
+            # Debug: Show telegram bot configuration (without sensitive values)
+            echo "🔍 Telegram bot configuration in .env:"
+            echo "BOT_TOKEN: $(grep "BOT_TOKEN=" .env | sed 's/BOT_TOKEN=.*/BOT_TOKEN=[HIDDEN]/' || echo 'Not set')"
+            echo "WEBHOOK_SECRET: $(grep "WEBHOOK_SECRET=" .env | sed 's/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=[HIDDEN]/' || echo 'Not set')"
+            echo "WEBHOOK_URL: $(grep "WEBHOOK_URL=" .env || echo 'Not set')"
+            echo "REDIS_ADDR: $(grep "REDIS_ADDR=" .env || echo 'Not set')"
 
             # Set Swagger host for the environment
             if [ "$ENVIRONMENT" = "production" ]; then
@@ -514,20 +634,31 @@ jobs:
             echo "✅ Network cleanup completed"
 
             # Build with progress output and timeout handling
-            echo "🔨 Building Docker images..."
+            echo "🔨 Building Docker images with optimized caching..."
             export DOCKER_BUILDKIT=1
             export COMPOSE_DOCKER_CLI_BUILD=1
             
-            # Build ML API separately first (it takes the longest)
+            # Pre-warm Go module cache for faster builds
+            echo "🚀 Pre-warming Go build cache..."
+            docker build --target builder \
+              --build-arg BUILDKIT_INLINE_CACHE=1 \
+              --cache-from fluently-fork-backend:cache \
+              --cache-from fluently-fork-telegram-bot:cache \
+              -t temp-go-cache backend/ || echo "⚠️ Cache warm-up failed, continuing..."
+            
+            # Build ML API separately first (it takes the longest) with timeout
             echo "🤖 Building ML API (this may take several minutes)..."
-            timeout 30m docker compose build ml-api || {
-              echo "❌ ML API build timed out after 30 minutes"
+            timeout 20m docker compose build --parallel ml-api || {
+              echo "❌ ML API build timed out after 20 minutes"
               exit 1
             }
             
-            # Build remaining services
-            echo "🔨 Building remaining services..."
-            docker compose build
+            # Build remaining services in parallel with reduced timeout
+            echo "🔨 Building remaining services in parallel..."
+            timeout 10m docker compose build --parallel || {
+              echo "❌ Services build timed out after 10 minutes"
+              exit 1
+            }
 
             # Start services with force recreate
             docker compose up -d --force-recreate
@@ -540,6 +671,19 @@ jobs:
               # Show running containers
               echo "📋 Running containers:"
               docker compose ps
+              
+              # Show telegram bot setup instructions
+              echo ""
+              echo "🤖 Telegram Bot Setup Instructions:"
+              echo "If the bot token is set correctly, run this command to set up the webhook:"
+              echo ""
+              echo "curl -X POST \"https://api.telegram.org/bot\$BOT_TOKEN/setWebhook\" \\"
+              echo "     -H \"Content-Type: application/json\" \\"
+              echo "     -d '{\"url\": \"https://$DOMAIN/webhook\"}'"
+              echo ""
+              echo "Replace \$BOT_TOKEN with your actual bot token from the GitHub secrets."
+              echo "You can test the webhook by sending a message to your bot."
+              echo ""
               
               # Cleanup old images (keep last 3)
               echo "🧹 Cleaning up old Docker images..."
@@ -562,5 +706,31 @@ jobs:
               
               echo "❌ Deployment failed and rollback attempted"
               exit 1
+            fi
+
+            # Final verification: Ensure bot token is set before building
+            if ! grep -q "BOT_TOKEN=.*[^[:space:]]" .env; then
+              echo ""
+              echo "❌ CRITICAL ERROR: BOT_TOKEN is not properly set in .env file!"
+              echo ""
+              echo "🔧 To fix this issue:"
+              echo "1. Go to GitHub repository Settings > Secrets and variables > Actions"
+              echo "2. Add the following secrets:"
+              if [ "$ENVIRONMENT" = "production" ]; then
+                echo "   - TELEGRAM_BOT_TOKEN (get from @BotFather on Telegram)"
+                echo "   - WEBHOOK_SECRET (random secure string)"
+              else
+                echo "   - STAGING_TELEGRAM_BOT_TOKEN (get from @BotFather on Telegram)"
+                echo "   - STAGING_WEBHOOK_SECRET (random secure string)"
+              fi
+              echo ""
+              echo "3. To create a bot token:"
+              echo "   - Message @BotFather on Telegram"
+              echo "   - Use /newbot command"
+              echo "   - Follow instructions to create your bot"
+              echo "   - Copy the token (format: 123456789:ABCdefGHIjklMNOpqrsTUVwxyz)"
+              echo ""
+              echo "🚫 Deployment will continue but telegram bot will not work!"
+              echo ""
             fi
 
