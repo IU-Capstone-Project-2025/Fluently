@@ -2,6 +2,8 @@ package config
 
 import (
 	"log"
+	"os"
+	"path/filepath"
 
 	"github.com/joho/godotenv"
 	"github.com/spf13/viper"
@@ -59,8 +61,28 @@ type AsynqConfig struct {
 var cfg *Config
 
 func Init() {
-	err := godotenv.Load("../../.env")
-	if err != nil {
+	// Try to find .env file in multiple locations
+	envPaths := []string{
+		".env",          // Current directory
+		"../.env",       // Parent directory (if running from telegram-bot/)
+		"../../.env",    // Two levels up (if running from telegram-bot/cmd/)
+		"../../../.env", // Three levels up (if running from telegram-bot/config/)
+	}
+
+	var envLoaded bool
+	for _, envPath := range envPaths {
+		if absPath, err := filepath.Abs(envPath); err == nil {
+			if _, err := os.Stat(absPath); err == nil {
+				if err := godotenv.Load(envPath); err == nil {
+					log.Printf("Loaded .env file from: %s", absPath)
+					envLoaded = true
+					break
+				}
+			}
+		}
+	}
+
+	if !envLoaded {
 		log.Println("No .env file found, reading environment variables")
 	}
 
