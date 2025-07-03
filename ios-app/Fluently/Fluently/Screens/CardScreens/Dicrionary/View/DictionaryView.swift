@@ -77,7 +77,6 @@ struct DictionaryView: View {
         .onChange(of: prefix) {
             presenter.filter(prefix: prefix)
         }
-//        .padding(.horizontal, Const.horizontalPadding)
         .modifier(SheetViewModifier())
     }
 }

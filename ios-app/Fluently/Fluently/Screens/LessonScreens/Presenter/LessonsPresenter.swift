@@ -47,7 +47,7 @@ final class LessonsPresenter: ObservableObject {
     }
 
     func answer(_ answer: String) {
-        if currentEx.data.correctAnswer == answer {
+        if currentEx.data.correctAnswer.lowercased() == answer.lowercased() {
             statistic[.correct]!.append(currentEx)
         } else {
             statistic[.uncorrect]!.append(currentEx)
