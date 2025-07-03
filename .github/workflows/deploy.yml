@@ -78,39 +78,13 @@ jobs:
   quality-check:
     runs-on: ubuntu-latest
     
-    services:
-      postgres:
-        image: postgres:15
-        ports:
-          - 5433:5432
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_DB: postgres
-          POSTGRES_PASSWORD: postgres
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for better analysis
-
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
           go-version: '1.21'
           cache: true  # Enable Go module caching
           cache-dependency-path: backend/go.sum
-          
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-          cache: 'pip'  # Enable pip caching
 
       - name: Cache Go dependencies
         uses: actions/cache@v3
@@ -183,45 +157,6 @@ jobs:
           echo "✅ Documentation generated successfully"
           echo "📁 Generated files:"
           ls -la docs/
-
-      - name: Generate Go coverage
-        working-directory: ./backend
-        run: |
-          # Set test environment variables to match Postgres service
-          export DB_HOST=localhost
-          export DB_PORT=5433
-          export DB_USER=postgres
-          export DB_NAME=postgres
-          export DB_PASSWORD=postgres
-          
-          # Run tests with coverage, excluding problematic packages
-          echo "🧪 Running Go tests with coverage..."
-          go test -v -coverprofile=coverage.out $(go list ./... | grep -v /docs) || true
-          
-          if [ -f coverage.out ]; then
-            go tool cover -func=coverage.out || true
-            echo "✅ Go coverage generated"
-          else
-            echo "⚠️ No coverage file generated"
-          fi
-
-      - name: Generate Python coverage
-        working-directory: ./analysis/distractor_api
-        run: |
-          echo "🐍 Setting up Python environment..."
-          
-          # Install test dependencies
-          pip install pytest pytest-cov
-          
-          # Run tests with coverage if tests exist
-          if [ -d "tests" ] || find . -name "test_*.py" -o -name "*_test.py" | grep -q .; then
-            echo "🧪 Running Python tests with coverage..."
-            python -m pytest --cov=. --cov-report=xml --cov-report=term || true
-          else
-            echo "⚠️ No Python tests found, creating minimal coverage report..."
-            # Create a minimal coverage.xml for SonarCloud
-            echo '<?xml version="1.0" ?><coverage version="1.0" timestamp="1234567890" lines-valid="0" lines-covered="0" line-rate="0.0" branches-covered="0" branches-valid="0" branch-rate="0.0" complexity="0.0"></coverage>' > coverage.xml
-          fi
 
       - name: Start test database
         run: |
