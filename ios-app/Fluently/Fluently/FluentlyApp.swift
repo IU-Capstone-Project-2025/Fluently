@@ -16,6 +16,8 @@ struct FluentlyApp: App {
     @StateObject private var authViewModel = GoogleAuthViewModel()
     @StateObject private var router = AppRouter()
 
+    private var apiService = APIService()
+
 #if targetEnvironment(simulator)
 
     @State private var showLogin = false
@@ -78,7 +80,7 @@ struct FluentlyApp: App {
             }
             .environmentObject(account)
             .environmentObject(router)
-            .modelContainer(for: Word.self)
+//            .modelContainer(for: WordModel.self)
         }
     }
 
@@ -97,11 +99,31 @@ struct FluentlyApp: App {
                     account.isLoggedIn = true
                     showLogin = false
 
-                    print(user.idToken)
+                    /// Api token request
+                    requestAccessTokens(token: user.idToken?.tokenString)
                 } else {
                     account.isLoggedIn = false
                     showLogin = true
                 }
+            }
+        }
+    }
+
+    private func requestAccessTokens(token: String?) {
+        guard let token = token else {
+            fatalError("The token is empty")
+        }
+
+        Task {
+            do {
+                let response = try await apiService.authGoogle(token)
+                do {
+                    try KeyChainManager.shared.saveToken(response)
+                } catch {
+                    print("token saving error: \(error)")
+                }
+            } catch {
+                print("response receiving error: \(error)")
             }
         }
     }

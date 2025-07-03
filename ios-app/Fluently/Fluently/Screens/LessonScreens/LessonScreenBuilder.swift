@@ -14,7 +14,7 @@ enum LessonScreenBuilder {
     ) -> LessonScreensView {
         let presenter = LessonsPresenter (
             router: router,
-            words: WordCardGenerator.generateCards()
+            words: WordModel.generateMockWords(count: 5)
         )
         
         return LessonScreensView (
