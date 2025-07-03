@@ -421,10 +421,16 @@ jobs:
             git checkout $BRANCH
             git pull origin $BRANCH
 
-            # Create environment-specific .env for backend if it doesn't exist
+            # Create main .env file from root .env.example if it doesn't exist
+            if [ ! -f ".env" ]; then
+              echo "📝 Creating main .env file from root .env.example..."
+              cp .env.example .env
+            fi
+
+            # Create backend/.env for backward compatibility if it doesn't exist
             if [ ! -f "backend/.env" ]; then
-              echo "📝 Creating backend/.env file from example..."
-              cp backend/.env.example backend/.env
+              echo "📝 Creating backend/.env file (copy of root .env)..."
+              cp .env backend/.env
             fi
 
             # Create environment-specific .env for telegram-bot if it doesn't exist
@@ -453,19 +459,42 @@ jobs:
             # Update environment variables based on deployment target
             echo "⚙️ Updating environment configuration..."
 
-            # Update ZeroTier IP in backend/.env
+            # Update ZeroTier IP in both .env files
+            if grep -q "ZEROTIER_IP=" .env; then
+              sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" .env
+            else
+              echo "ZEROTIER_IP=$ZEROTIER_IP" >> .env
+            fi
+            
+            # Also update backend/.env for backward compatibility
             if grep -q "ZEROTIER_IP=" backend/.env; then
               sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" backend/.env
             else
               echo "ZEROTIER_IP=$ZEROTIER_IP" >> backend/.env
             fi
 
-            # Update PUBLIC_URL in backend/.env
+            # Update PUBLIC_URL in both .env files
+            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" .env
             sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" backend/.env
 
-            # Copy .env from backend to root for docker-compose to use
-            echo "📋 Copying .env file to root directory for docker-compose..."
-            cp backend/.env .env
+            # Add telegram bot environment variables if they don't exist
+            if [ ! -z "${{ secrets.BOT_TOKEN }}" ]; then
+              if grep -q "BOT_TOKEN=" .env; then
+                sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=${{ secrets.BOT_TOKEN }}/" .env
+              else
+                echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" >> .env
+              fi
+            fi
+            
+            if [ ! -z "${{ secrets.WEBHOOK_SECRET }}" ]; then
+              if grep -q "WEBHOOK_SECRET=" .env; then
+                sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=${{ secrets.WEBHOOK_SECRET }}/" .env
+              else
+                echo "WEBHOOK_SECRET=${{ secrets.WEBHOOK_SECRET }}" >> .env
+              fi
+            fi
+
+            echo "📋 Main .env file ready for docker-compose..."
 
             # Set Swagger host for the environment
             if [ "$ENVIRONMENT" = "production" ]; then
