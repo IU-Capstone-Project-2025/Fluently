@@ -12,7 +12,14 @@ extension WordModel {
         return WordModel(
             cefrLevel: "A1",
             exercise: ExerciseModel(
-                data: "",
+                data: PickOptionSentence(
+                    template: "Bob is driving a car",
+                    options: [
+                        "plane",
+                        "dog",
+                        "cat",
+                    ],
+                    correctAnswer: "car"),
                 type: ""
             ),
             isLearned: false,
@@ -31,8 +38,17 @@ extension WordModel {
             WordModel(
                 cefrLevel: "A1",
                 exercise: ExerciseModel(
-                    data: "Fill in the blank: I ___ apples",
-                    type: "fill_in"
+                    data: PickOptionSentence(
+                        template: "The ____ is red",
+                        options: [
+                            "banana",
+                            "watermelon",
+                            "orange",
+                            "apple"
+                        ],
+                        correctAnswer: "apple"
+                    ),
+                    type: "pick_option_sentence"
                 ),
                 isLearned: false,
                 sentences: [
@@ -51,8 +67,17 @@ extension WordModel {
             WordModel(
                 cefrLevel: "A2",
                 exercise: ExerciseModel(
-                    data: "Match words with pictures",
-                    type: "matching"
+                    data: ChooseTranslationEngRuss(
+                        text: "Книга",
+                        options: [
+                            "magazine",
+                            "newspaper",
+                            "notebook",
+                            "book"
+                        ],
+                        correctAnswer: "book"
+                    ),
+                    type: "translate_ru_to_en"
                 ),
                 isLearned: true,
                 sentences: [
@@ -75,8 +100,11 @@ extension WordModel {
             WordModel(
                 cefrLevel: "B1",
                 exercise: ExerciseModel(
-                    data: "Conjugate this verb",
-                    type: "conjugation"
+                    data: WriteFromTranslation(
+                        translation: "Бегать",
+                        correctAnswer: "Run"
+                    ),
+                    type: "write_word_from_translation"
                 ),
                 isLearned: false,
                 sentences: [
@@ -95,8 +123,11 @@ extension WordModel {
             WordModel(
                 cefrLevel: "B2",
                 exercise: ExerciseModel(
-                    data: "Use in a sentence",
-                    type: "sentence_formation"
+                    data: WriteFromTranslation(
+                        translation: "Красивый",
+                        correctAnswer: "Beautiful"
+                    ),
+                    type: "write_word_from_translation"
                 ),
                 isLearned: true,
                 sentences: [

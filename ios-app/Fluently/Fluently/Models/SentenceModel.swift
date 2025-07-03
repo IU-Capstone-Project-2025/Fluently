@@ -8,6 +8,7 @@
 import Foundation
 
 final class SentenceModel: Codable{
+    var id = UUID() 
     var text: String
     var translation: String
 

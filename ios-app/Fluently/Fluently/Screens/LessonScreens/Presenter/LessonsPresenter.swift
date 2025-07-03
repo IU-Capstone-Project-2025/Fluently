@@ -13,7 +13,7 @@ final class LessonsPresenter: ObservableObject {
     private var router: AppRouter
 
     // MARK: - Properties
-    private var words: [WordModel]
+    private(set) var words: [WordModel]
     @Published private(set) var currentExNumber: Int
     @Published private(set) var currentEx: ExerciseModel
     @Published private(set) var currentExType: ExerciseModelType
@@ -43,11 +43,11 @@ final class LessonsPresenter: ObservableObject {
 
     func showLesson() {
         currentEx = words[currentExNumber].exercise
-        currentExType = ExerciseModelType(rawValue: currentEx.type) ?? .wordCard
+        currentExType = currentEx.type
     }
 
     func answer(_ answer: String) {
-        if currentEx.correctAnswer == answer {
+        if currentEx.data.correctAnswer == answer {
             statistic[.correct]!.append(currentEx)
         } else {
             statistic[.uncorrect]!.append(currentEx)
@@ -64,6 +64,7 @@ final class LessonsPresenter: ObservableObject {
 
         currentExNumber += 1
         currentEx = words[currentExNumber].exercise
+        currentExType = .wordCard
     }
 
     // func to represent statistic
@@ -73,13 +74,13 @@ final class LessonsPresenter: ObservableObject {
             print("------------ \(solution.rawValue) ------------")
             statistic[solution]?.forEach { exr in
                 if let pickoptions = exr as? PickOptionSentence {
-                    print(pickoptions.sentence)
+                    print(pickoptions.template)
                 }
-                if let chooseTranslation = exr as? chooseTranslationEngRuss {
-                    print("Choose translation: \(chooseTranslation.word) -> \(chooseTranslation.correctAnswer)")
+                if let chooseTranslation = exr as? ChooseTranslationEngRuss {
+                    print("Choose translation: \(chooseTranslation.text) -> \(chooseTranslation.correctAnswer)")
                 }
                 if let typeTranslation = exr as? WriteFromTranslation {
-                    print("Type translation: \(typeTranslation.word) -> \(typeTranslation.correctAnswer)")
+                    print("Type translation: \(typeTranslation.translation) -> \(typeTranslation.correctAnswer)")
                 }
             }
         }

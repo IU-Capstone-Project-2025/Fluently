@@ -8,7 +8,7 @@
 import Foundation
 
 // exr to choose correct translation
-final class chooseTranslationEngRuss: ExerciseData {
+final class ChooseTranslationEngRuss: ExerciseData {
     // MARK: - Properties
     var text: String
     var options: [String]
