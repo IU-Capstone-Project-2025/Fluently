@@ -2,48 +2,44 @@
 # This configuration uses Cloudflare Origin Certificates for "Full (Strict)" SSL mode
 # Provides end-to-end encryption between Cloudflare and your server
 
-# Main HTTP block
-http {
-    include       /etc/nginx/mime.types;
-    default_type  application/octet-stream;
+# Global HTTP-level directives (these go in the http block)
+# Basic settings
+sendfile        on;
+tcp_nopush      on;
+tcp_nodelay     on;
+keepalive_timeout  65;
+types_hash_max_size 2048;
 
-    # Basic settings
-    sendfile        on;
-    tcp_nopush      on;
-    tcp_nodelay     on;
-    keepalive_timeout  65;
-    types_hash_max_size 2048;
+# Hide nginx version
+server_tokens off;
 
-    # Hide nginx version
-    server_tokens off;
+# Rate limiting zones
+limit_req_zone $binary_remote_addr zone=webhook_zone:10m rate=10r/m;
+limit_req_zone $binary_remote_addr zone=api_zone:10m rate=100r/m;
 
-    # Rate limiting zones
-    limit_req_zone $binary_remote_addr zone=webhook_zone:10m rate=10r/m;
-    limit_req_zone $binary_remote_addr zone=api_zone:10m rate=100r/m;
+# Logging format
+log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+                '$status $body_bytes_sent "$http_referer" '
+                '"$http_user_agent" "$http_x_forwarded_for"';
 
-    # Logging format
-    log_format main '$remote_addr - $remote_user [$time_local] "$request" '
-                    '$status $body_bytes_sent "$http_referer" '
-                    '"$http_user_agent" "$http_x_forwarded_for"';
+access_log /var/log/nginx/access.log main;
+error_log /var/log/nginx/error.log warn;
 
-    access_log /var/log/nginx/access.log main;
-    error_log /var/log/nginx/error.log warn;
-
-    # Gzip Settings
-    gzip on;
-    gzip_vary on;
-    gzip_proxied any;
-    gzip_comp_level 6;
-    gzip_types
-        text/plain
-        text/css
-        text/xml
-        text/javascript
-        application/json
-        application/javascript
-        application/xml+rss
-        application/atom+xml
-        image/svg+xml;
+# Gzip Settings
+gzip on;
+gzip_vary on;
+gzip_proxied any;
+gzip_comp_level 6;
+gzip_types
+    text/plain
+    text/css
+    text/xml
+    text/javascript
+    application/json
+    application/javascript
+    application/xml+rss
+    application/atom+xml
+    image/svg+xml;
 
     # Redirect HTTP to HTTPS
     server {
@@ -280,4 +276,3 @@ http {
             try_files $uri $uri/ /index.html;
         }
     }
-}
