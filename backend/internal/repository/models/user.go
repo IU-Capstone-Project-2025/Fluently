@@ -20,7 +20,7 @@ type User struct {
 	IsActive     bool      `gorm:"default:true"`
 	CreatedAt    time.Time `gorm:"autoCreateTime"`
 
-	Pref Preference `gorm:"foreignKey:UserID;constraint:OnDelete:CASCADE"`
+	Pref *Preference `gorm:"foreignKey:UserID;constraint:OnUpdate:CASCADE,OnDelete: SET NULL"`
 }
 
 func (User) TableName() string {

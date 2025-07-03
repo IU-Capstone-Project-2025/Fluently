@@ -17,8 +17,6 @@ type Preference struct {
 	Goal            string `gorm:"type:varchar(255)"`
 	Subscribed      bool   `gorm:"default:false"`
 	AvatarImageURL  string `gorm:"type:text"`
-
-	User User `gorm:"foreignKey:UserID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE"`
 }
 
 func (Preference) TableName() string {
