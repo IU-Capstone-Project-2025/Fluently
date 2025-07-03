@@ -73,13 +73,13 @@ final class LessonsPresenter: ObservableObject {
         statistic.keys.forEach { solution in
             print("------------ \(solution.rawValue) ------------")
             statistic[solution]?.forEach { exr in
-                if let pickoptions = exr as? PickOptionSentence {
+                if let pickoptions = exr.data as? PickOptionSentence {
                     print(pickoptions.template)
                 }
-                if let chooseTranslation = exr as? ChooseTranslationEngRuss {
+                if let chooseTranslation = exr.data as? ChooseTranslationEngRuss {
                     print("Choose translation: \(chooseTranslation.text) -> \(chooseTranslation.correctAnswer)")
                 }
-                if let typeTranslation = exr as? WriteFromTranslation {
+                if let typeTranslation = exr.data as? WriteFromTranslation {
                     print("Type translation: \(typeTranslation.translation) -> \(typeTranslation.correctAnswer)")
                 }
             }
