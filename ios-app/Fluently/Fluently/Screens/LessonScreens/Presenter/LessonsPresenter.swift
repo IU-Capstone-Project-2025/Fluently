@@ -13,20 +13,22 @@ final class LessonsPresenter: ObservableObject {
     private var router: AppRouter
 
     // MARK: - Properties
-    private var words: [WordCard]
+    private(set) var words: [WordModel]
     @Published private(set) var currentExNumber: Int
-    @Published private(set) var currentEx: Exercise
+    @Published private(set) var currentEx: ExerciseModel
+    @Published private(set) var currentExType: ExerciseModelType
 
-    var statistic: [ExerciseSolution : [Exercise]]
+    var statistic: [ExerciseSolution : [ExerciseModel]]
 
     // MARK: - Init
-    init(router: AppRouter, words: [WordCard]) {
+    init(router: AppRouter, words: [WordModel]) {
         self.router = router
 
         self.words = words
 
         self.currentExNumber = 0
-        self.currentEx = words[0]
+        self.currentEx = words[0].exercise
+        self.currentExType = .wordCard
         self.statistic = [:]
 
         statistic[.correct] = []
@@ -41,10 +43,11 @@ final class LessonsPresenter: ObservableObject {
 
     func showLesson() {
         currentEx = words[currentExNumber].exercise
+        currentExType = currentEx.type
     }
 
     func answer(_ answer: String) {
-        if currentEx.correctAnswer == answer {
+        if currentEx.data.correctAnswer.lowercased() == answer.lowercased() {
             statistic[.correct]!.append(currentEx)
         } else {
             statistic[.uncorrect]!.append(currentEx)
@@ -60,7 +63,8 @@ final class LessonsPresenter: ObservableObject {
         }
 
         currentExNumber += 1
-        currentEx = words[currentExNumber]
+        currentEx = words[currentExNumber].exercise
+        currentExType = .wordCard
     }
 
     // func to represent statistic
@@ -69,14 +73,14 @@ final class LessonsPresenter: ObservableObject {
         statistic.keys.forEach { solution in
             print("------------ \(solution.rawValue) ------------")
             statistic[solution]?.forEach { exr in
-                if let pickoptions = exr as? PickOptionsExs {
-                    print(pickoptions.sentence)
+                if let pickoptions = exr.data as? PickOptionSentence {
+                    print(pickoptions.template)
                 }
-                if let chooseTranslation = exr as? ChooseTranslationExs {
-                    print("Choose translation: \(chooseTranslation.word) -> \(chooseTranslation.correctAnswer)")
+                if let chooseTranslation = exr.data as? ChooseTranslationEngRuss {
+                    print("Choose translation: \(chooseTranslation.text) -> \(chooseTranslation.correctAnswer)")
                 }
-                if let typeTranslation = exr as? TypeTranslationExs {
-                    print("Type translation: \(typeTranslation.word) -> \(typeTranslation.correctAnswer)")
+                if let typeTranslation = exr.data as? WriteFromTranslation {
+                    print("Type translation: \(typeTranslation.translation) -> \(typeTranslation.correctAnswer)")
                 }
             }
         }

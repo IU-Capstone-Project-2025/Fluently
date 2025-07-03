@@ -16,12 +16,14 @@ struct TypeTranslationView: View {
     var onAnswerSelected: (String) -> Void
 
     var body: some View {
-        VStack {
+        ScrollView{
             Text(word)
                 .foregroundStyle(.blackText)
                 .font(.appFont.title)
                 .padding()
+
             answerField
+                .padding(.vertical)
                 .padding(.horizontal, 100)
 
             Spacer()
@@ -31,6 +33,9 @@ struct TypeTranslationView: View {
 
             Spacer()
         }
+        .scrollIndicators(.hidden)
+        .scrollDismissesKeyboard(.interactively)
+        .ignoresSafeArea(.keyboard)
     }
 
     // MARK: - Subviews

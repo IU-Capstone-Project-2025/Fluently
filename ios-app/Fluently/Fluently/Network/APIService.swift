@@ -139,7 +139,9 @@ extension APIService {
             }
 
             let decoder = JSONDecoder()
-            let decodedData = try decoder.decode(, from: data)
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let decodedData = try decoder.decode(CardsModel.self, from: data)
+            print(decodedData)
         } catch {
             throw ApiError.networkError(error.localizedDescription)
         }

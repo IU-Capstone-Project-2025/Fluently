@@ -63,7 +63,7 @@ struct LessonScreensView: View {
                 Text("Lesson:")
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
-                Text(presenter.currentEx.exerciseType.rawValue)
+                Text(presenter.currentEx.type.rawValue)
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
             }
@@ -75,35 +75,34 @@ struct LessonScreensView: View {
     ///  Grid with main info
     var infoGrid: some View {
         VStack {
-            switch presenter.currentEx.exerciseType {
+            switch presenter.currentExType {
                 case .chooseTranslationEngRuss: /// Choose correct translation
-                    let chooseWordEx = presenter.currentEx as! ChooseTranslationExs
+                    let chooseWordEx = presenter.currentEx.data as! ChooseTranslationEngRuss
                     ChooseTranslationView(
-                        word: chooseWordEx.word,
+                        word: chooseWordEx.text,
                         answers: chooseWordEx.options
                     ) { selectedAnswer in
                             presenter.answer(selectedAnswer)
                         }
-                        .id(presenter.currentEx.exerciseId)
+                    .id(presenter.currentExNumber)
                 case .typeTranslationRussEng: /// Type correct translation
-                    let typeTranslationEx = presenter.currentEx as! TypeTranslationExs
-                    TypeTranslationView (
-                        word: typeTranslationEx.word) { typedAnswer in
+                    let typeTranslationEx = presenter.currentEx.data as! WriteFromTranslation
+                    TypeTranslationView (word: typeTranslationEx.translation) { typedAnswer in
                             presenter.answer(typedAnswer)
                         }
-                case .pickOptions: /// Pick word, mathing by definition
-                    let pickOptionEx = presenter.currentEx as! PickOptionsExs
+                case .pickOptionSentence: /// Pick word, mathing by definition
+                    let pickOptionEx = presenter.currentEx.data as! PickOptionSentence
                     PickOptionsView(
-                        sentence: pickOptionEx.sentence,
+                        sentence: pickOptionEx.template,
                         answers: pickOptionEx.options
                     ) { selectedAnswer in
                             presenter.answer(selectedAnswer)
                         }
-                        .id(presenter.currentEx.exerciseId)
+                    .id(presenter.currentExNumber)
                 case .recordPronounce:
-                    Text(presenter.currentEx.exerciseType.rawValue)
+                    Text(presenter.currentEx.type.rawValue)
                 case .wordCard:
-                    let wordCard = presenter.currentEx as! WordCard
+                    let wordCard = presenter.words[presenter.currentExNumber]
                     WordCardView(
                         word: wordCard,
                         onKnowTapped: {
@@ -113,9 +112,9 @@ struct LessonScreensView: View {
                             presenter.showLesson()
                         }
                     )
-                    .id(presenter.currentEx.exerciseId)
+                    .id(presenter.currentExNumber)
                 case .numberOfWords:
-                    Text(presenter.currentEx.exerciseType.rawValue)
+                    Text(presenter.currentEx.type.rawValue)
             }
         }
         .modifier(SheetViewModifier())

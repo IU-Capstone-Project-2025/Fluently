@@ -62,6 +62,7 @@ struct DictionaryView: View {
         VStack {
             SearchBar(text: $prefix)
                 .padding(.bottom, 12)
+                .padding(.horizontal)
             ScrollView {
                 VStack (alignment: .center, spacing: 12) {
                     ForEach(presenter.filteredWords, id: \.wordId) { word in
@@ -70,12 +71,12 @@ struct DictionaryView: View {
                 }
                 .padding()
             }
+            .scrollIndicators(.hidden)
             .scrollDismissesKeyboard(.immediately)
         }
         .onChange(of: prefix) {
             presenter.filter(prefix: prefix)
         }
-        .padding(.horizontal, Const.horizontalPadding)
         .modifier(SheetViewModifier())
     }
 }
