@@ -10,6 +10,7 @@ import SwiftUI
 
 // MARK: - Protocol for presenter
 protocol HomeScreenPresenting: ObservableObject {
+    func getLesson()
 
     // Navigation
     func navigatoToProfile()
@@ -19,15 +20,22 @@ protocol HomeScreenPresenting: ObservableObject {
 // MARK: - Presenter implementation
 final class HomeScreenPresenter: HomeScreenPresenting {
     let router: HomeScreenRouter
+    let interactor: HomeScreenInteractor
 
     @ObservedObject var account: AccountData
 
     init(
         router: HomeScreenRouter,
+        interactor: HomeScreenInteractor,
         account: AccountData
     ) {
         self.router = router
+        self.interactor = interactor
         self.account = account
+    }
+
+    func getLesson() {
+        interactor.getLesson()
     }
 
     // Builders 

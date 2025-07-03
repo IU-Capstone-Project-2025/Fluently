@@ -8,9 +8,10 @@
 import Foundation
 import SwiftUI
 
+// TODO: specifi the min width and min height 
 struct WordCardView: View {
     // MARK: - Properties
-    @State var word: WordCard
+    @State var word: WordModel
 
     var onKnowTapped: () -> Void
     var onLearnTapped: () -> Void
@@ -54,9 +55,9 @@ struct WordCardView: View {
                 .font(.appFont.caption)
 
             VStack(alignment: .leading, spacing: 4) {
-                ForEach(word.sentences, id: \.sentenceId) { sentence in
+                ForEach(word.sentences, id: \.self) { sentence in
                     VStack(alignment: .leading) {
-                        Text("- \(sentence.sentence)")
+                        Text("- \(sentence.text)")
                             .foregroundColor(.blackText)
                         Text("- \(sentence.translation)")
                             .font(.appFont.caption)

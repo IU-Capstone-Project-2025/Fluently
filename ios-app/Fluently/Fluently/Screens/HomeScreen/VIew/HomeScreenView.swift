@@ -34,6 +34,9 @@ struct HomeScreenView: View {
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
+        .onAppear {
+            presenter.getLesson()
+        }
 
         .fullScreenCover(item: $openedScreen) { screenType in
             switch screenType {
@@ -74,7 +77,7 @@ struct HomeScreenView: View {
     ///  Grid with main info
     var infoGrid: some View {
         VStack {
-            WordOfTheDay(word: Word.mockWord())
+            WordOfTheDay(word: WordModel.mockWord())
             cards
 
             Spacer()

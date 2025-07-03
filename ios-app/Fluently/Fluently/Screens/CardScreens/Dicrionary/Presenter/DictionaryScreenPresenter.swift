@@ -17,11 +17,12 @@ protocol DictionaryScreenPresenting: ObservableObject {
 final class DictionaryScreenPresenter: DictionaryScreenPresenting {
 
 #if targetEnvironment(simulator)
-    @Published var words: [Word] = Word.generateMockWords()
+    @Published var words: [WordModel] = WordModel.generateMockWords()
 #else
-    @Query var words: [Word]
+//    @Query var words: [WordModel]
+    @Published var words: [WordModel] = WordModel.generateMockWords()
 #endif
-    @Published var filteredWords: [Word] = []
+    @Published var filteredWords: [WordModel] = []
 
     init() {
         self.filteredWords = words
