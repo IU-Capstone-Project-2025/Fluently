@@ -67,7 +67,6 @@ struct BackgroundViewModifier: ViewModifier {
 }
 
 struct BackgroundPreview: PreviewProvider {
-
     static var previews: some View {
         Text("preview")
             .modifier(BackgroundViewModifier(colorful: true))
