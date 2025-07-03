@@ -344,6 +344,29 @@ services:
     networks:
       - fluently_network
 
+  # ===========================================
+  # TESTING SERVICES
+  # ===========================================
+
+  # Test Database
+  test_db:
+    image: postgres:15
+    container_name: fluently_test_db
+    environment:
+      POSTGRES_DB:       test_db
+      POSTGRES_USER:     test_user
+      POSTGRES_PASSWORD: test_pass
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U test_user -d test_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - test_network
+
 # ===========================================
 # VOLUMES
 # ===========================================
@@ -366,6 +389,7 @@ volumes:
   fluently_model_cache:  # Can be re-downloaded
   fluently_redis_data:   # Session data, not critical
   fluently_loki_data:    # Logs, not critical for recovery
+  test_pgdata:           # Test database data
 
 # ===========================================
 # NETWORKS
@@ -377,3 +401,5 @@ networks:
     ipam:
       config:
         - subnet: 172.30.0.0/16
+  test_network:
+    driver: bridge

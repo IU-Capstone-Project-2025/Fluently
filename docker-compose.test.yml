@@ -5,7 +5,7 @@
 # Usage: docker compose -f docker-compose.test.yml up -d
 
 services:
-  test-db:
+  test_db:
     image: postgres:15
     container_name: fluently_test_db
     environment:

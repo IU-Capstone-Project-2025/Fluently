@@ -4,6 +4,7 @@ import (
 	"os"
 	"testing"
 
+	"fluently/go-backend/internal/config"
 	"fluently/go-backend/internal/repository/models"
 
 	pgDriver "gorm.io/driver/postgres"
@@ -23,8 +24,10 @@ var (
 )
 
 func TestMain(m *testing.M) {
-	dsn := "host=localhost port=5433 user=test_user password=test_pass dbname=test_db sslmode=disable"
-	db, err := gorm.Open(pgDriver.Open(dsn), &gorm.Config{})
+	dsn := config.GetPostgresDSNForTest()
+
+	var err error
+	db, err = gorm.Open(pgDriver.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect to test database: " + err.Error())
 	}

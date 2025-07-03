@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"strings"
@@ -139,19 +140,42 @@ func GetConfig() *Config {
 
 // GetPostgresDSN returns the PostgreSQL connection string
 func GetPostgresDSN() string {
-	return "postgres://" + cfg.Database.User + ":" + cfg.Database.Password +
-		"@" + cfg.Database.Host + ":" + cfg.Database.Port + "/" + cfg.Database.Name
+	c := GetConfig()
+	return fmt.Sprintf("postgres://%s:%s@%s:%s/%s", c.Database.User, c.Database.Password, c.Database.Host, c.Database.Port, c.Database.Name)
 }
 
-// GetPostgresDSNForImport returns the PostgreSQL connection string for import tool
+// GetPostgresDSNForImport returns the PostgreSQL connection string for the import tool.
+// It forces the host to localhost (useful when the import tool runs inside the same
+// machine as the database container) and always disables SSL.
 func GetPostgresDSNForImport() string {
-	return "postgres://" + cfg.Database.User + ":" + cfg.Database.Password +
-		"@" + "localhost" + ":" + cfg.Database.Port + "/" + cfg.Database.Name + "?sslmode=disable"
+	c := GetConfig()
+	return fmt.Sprintf("postgres://%s:%s@localhost:%s/%s?sslmode=disable", c.Database.User, c.Database.Password, c.Database.Port, c.Database.Name)
 }
 
+// GetPostgresDSNForTest returns the PostgreSQL DSN to be used by unit/integration
+// tests. If specific *test* variables are not provided, it gracefully falls back to
+// the normal database variables so that tests still work with the generic DB_*
+// environment used in CI.
 func GetPostgresDSNForTest() string {
-	return "postgres://" + cfg.Database.TestUser + ":" + cfg.Database.TestPassword +
-		"@" + cfg.Database.TestHost + ":" + cfg.Database.TestPort + "/" + cfg.Database.TestName + "?sslmode=disable"
+	c := GetConfig()
+
+	host := firstNotEmpty(c.Database.TestHost, c.Database.Host, "localhost")
+	port := firstNotEmpty(c.Database.TestPort, c.Database.Port, "5432")
+	user := firstNotEmpty(c.Database.TestUser, c.Database.User, "postgres")
+	password := firstNotEmpty(c.Database.TestPassword, c.Database.Password, "")
+	name := firstNotEmpty(c.Database.TestName, c.Database.Name, "test_db")
+
+	return fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable", user, password, host, port, name)
+}
+
+// firstNotEmpty returns the first non-empty string from the provided list.
+func firstNotEmpty(values ...string) string {
+	for _, v := range values {
+		if v != "" {
+			return v
+		}
+	}
+	return ""
 }
 
 // GoogleOAuthConfig constructs an oauth2.Config based on application settings.

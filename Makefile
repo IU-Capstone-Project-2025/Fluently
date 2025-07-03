@@ -2,6 +2,12 @@
 # LOCAL DEVELOPMENT SETUP
 # ===========================================
 
+run-test-db:              ## start DB in detached mode
+	docker compose -f docker-compose.test.yml up -d test_db
+
+stop-test-db:             ## stop DB and drop its volume
+	docker compose -f docker-compose.test.yml down --volumes
+
 # Complete local setup - creates .env and volumes
 setup-local: setup-env setup-volumes
 	@echo "✅ Local development environment i	@echo "    make run-local"-local"NT: Stop local PostgreSQL to avoid port conflicts:"
