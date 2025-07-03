@@ -1,0 +1,176 @@
+ # ===========================================
+# LOCAL DEVELOPMENT COMMANDS
+# ===========================================
+
+# Start all services for local development (no external volumes)
+run-local:
+	docker compose -f docker-compose.yml -f docker-compose.local.yml up -d
+
+# Start core services for local development
+run-local-core:
+	docker compose -f docker-compose.yml -f docker-compose.local.yml up -d postgres backend ml-api nginx
+
+# Build ML API with optimized settings for local development
+build-ml-api-local:
+	docker compose -f docker-compose.yml -f docker-compose.local.yml build ml-api
+
+# Create local volumes (run once before first local start)
+setup-local:
+	docker volume create fluently_pgdata || true
+	docker volume create fluently_grafana_data || true
+	docker volume create fluently_prometheus_data || true
+	docker volume create fluently_sonarqube_data || true
+	@echo "✅ Local volumes created. You can now run 'make run-local'"
+
+# ===========================================
+# DEVELOPMENT COMMANDS
+# ===========================================
+
+# Generate Swagger docs and run backend with supporting services
+run-backend:
+	cd backend && swag init --generalInfo cmd/main.go --output docs
+	docker compose -f docker-compose.yml -f docker-compose.local.yml up -d postgres ml-api directus
+	cd backend && air
+
+# Run only the telegram bot service
+run-telegram-bot:
+	docker compose up --build -d telegram-bot redis
+
+# Run the ML API service
+run-ml-api:
+	docker compose up --build -d ml-api
+
+# ===========================================
+# PRODUCTION COMMANDS (Use external volumes)
+# ===========================================
+
+# Start all production services (requires external volumes)
+run-production:
+	docker compose up -d
+
+# Start core services (backend, database, ML API) - production
+run-core:
+	docker compose up -d postgres backend ml-api nginx
+
+# Start monitoring stack
+run-monitoring:
+	docker compose up -d prometheus grafana loki promtail node-exporter nginx-exporter cadvisor
+
+# ===========================================
+# TESTING COMMANDS
+# ===========================================
+
+# Start test database for GitHub Actions
+run-test-db:
+	docker compose -f docker-compose.test.yml up -d
+
+# Stop test database
+stop-test-db:
+	docker compose -f docker-compose.test.yml down
+
+# ===========================================
+# MAINTENANCE COMMANDS
+# ===========================================
+
+# Stop all services
+stop:
+	docker compose down
+	docker compose -f docker-compose.test.yml down
+
+# Stop local development services
+stop-local:
+	docker compose -f docker-compose.yml -f docker-compose.local.yml down
+
+# Clean up all volumes and orphaned containers
+clean:
+	docker compose down --volumes --remove-orphans
+	docker compose -f docker-compose.test.yml down --volumes --remove-orphans
+	rm -rf backend/tmp/* || true
+	rm -rf telegram-bot/tmp/* || true
+
+# Clean up local development environment
+clean-local:
+	docker compose -f docker-compose.yml -f docker-compose.local.yml down --volumes --remove-orphans
+	docker volume rm fluently_pgdata fluently_grafana_data fluently_prometheus_data fluently_sonarqube_data 2>/dev/null || true
+	rm -rf backend/tmp/* || true
+	rm -rf analysis/distractor_api/logs/* || true
+
+# View logs for specific service
+logs:
+	docker compose logs -f $(SERVICE)
+
+# View logs for local development
+logs-local:
+	docker compose -f docker-compose.yml -f docker-compose.local.yml logs -f $(SERVICE)
+
+# Restart specific service
+restart:
+	docker compose restart $(SERVICE)
+
+# Restart local service
+restart-local:
+	docker compose -f docker-compose.yml -f docker-compose.local.yml restart $(SERVICE)
+
+# ===========================================
+# DATABASE COMMANDS
+# ===========================================
+
+# Access main database
+db-shell:
+	docker compose exec postgres psql -U $(shell grep DB_USER backend/.env | cut -d '=' -f2) -d $(shell grep DB_NAME backend/.env | cut -d '=' -f2)
+
+# Access local database
+db-shell-local:
+	docker compose -f docker-compose.yml -f docker-compose.local.yml exec postgres psql -U $(shell grep DB_USER backend/.env | cut -d '=' -f2) -d $(shell grep DB_NAME backend/.env | cut -d '=' -f2)
+
+# Access test database
+test-db-shell:
+	docker compose -f docker-compose.test.yml exec test-db psql -U test_user -d test_fluently_db
+
+# ===========================================
+# HELP
+# ===========================================
+
+help:
+	@echo "Available commands:"
+	@echo ""
+	@echo "  🏠 Local Development (Recommended for new users):"
+	@echo "    setup-local     - Create local volumes (run once)"
+	@echo "    run-local       - Start all services locally (no external volumes)"
+	@echo "    run-local-core  - Start core services locally"
+	@echo "    stop-local      - Stop local services"
+	@echo "    clean-local     - Clean up local environment"
+	@echo "    logs-local      - View logs for local services"
+	@echo "    restart-local   - Restart local service"
+	@echo "    db-shell-local  - Access local database"
+	@echo ""
+	@echo "  🔧 Development:"
+	@echo "    run-backend     - Start backend with dependencies and air for hot reload"
+	@echo "    run-telegram-bot - Start telegram bot"
+	@echo "    run-ml-api      - Start ML API service"
+	@echo ""
+	@echo "  🚀 Production (Requires external volumes):"
+	@echo "    run-production  - Start all services (production mode)"
+	@echo "    run-core        - Start core services (backend, db, ml-api, nginx)"
+	@echo "    run-monitoring  - Start monitoring stack"
+	@echo ""
+	@echo "  🧪 Testing:"
+	@echo "    run-test-db     - Start test database"
+	@echo "    stop-test-db    - Stop test database"
+	@echo ""
+	@echo "  🛠️ Maintenance:"
+	@echo "    stop           - Stop all services"
+	@echo "    clean          - Clean up volumes and containers"
+	@echo "    logs SERVICE=<n> - View logs for service"
+	@echo "    restart SERVICE=<n> - Restart service"
+	@echo ""
+	@echo "  🗄️ Database:"
+	@echo "    db-shell       - Access main database"
+	@echo "    test-db-shell  - Access test database"
+	@echo ""
+	@echo "  💡 Quick Start for Local Development:"
+	@echo "    make setup-local && make run-local"
+	@echo ""
+	@echo "  ⚠️  Note: Use 'run-local' commands for development to avoid external volume issues"
+
+.PHONY: help setup-local run-local run-local-core stop-local clean-local logs-local restart-local db-shell-local run-backend run-telegram-bot run-ml-api run-production run-core run-monitoring run-test-db stop-test-db stop clean logs restart db-shell test-db-shell

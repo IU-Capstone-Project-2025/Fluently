@@ -359,13 +359,6 @@ volumes:
   fluently_model_cache:  # Can be re-downloaded
   fluently_redis_data:   # Session data, not critical
   fluently_loki_data:    # Logs, not critical for recovery
-  
-  # SonarQube volumes (moderate importance)
-  fluently_sonarqube_data:
-    external: true
-    name: fluently_sonarqube_data_external
-  fluently_sonarqube_extensions:
-  fluently_sonarqube_logs:
 
 # ===========================================
 # NETWORKS
