@@ -30,7 +30,11 @@ struct AvatarImage: View{
                                 .resizable()
                                 .scaledToFill()
                         case .failure(_):
-                            fallbackIcon()
+                            if let image = emptyImage(url: imageUrlString) {
+                                image
+                            } else {
+                                fallbackIcon()
+                            }
                         case .empty:
                             if let image = emptyImage(url: imageUrlString) {
                                 image
