@@ -1,33 +1,127 @@
-# CSV Import Tool
+# Import CLI Tool
 
-A comprehensive CLI tool for importing vocabulary data from CSV files into the Fluently backend database.
+A command-line tool for managing data in the Fluently backend database.
 
-The tool expects a CSV file with the following columns:
+## Features
 
-```csv
-,Total,word,topic,subtopic,subsubtopic,CEFR_level,translation,sentences
-0,462.0,adder,Animals,Animals,amphibians_and_reptiles,c2,гадюка,"[['English sentence', 'Russian translation'], ...]"
+- **CSV Import**: Import words, topics, and sentences from CSV files
+- **Database Clear**: Safely clear all learning data from the database
+
+## Setup
+
+1. Make sure you have the database running
+2. Create a `.env` file with the required environment variables:
+
+```env
+# Database connection
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=fluently
+
+# Required for clear command (set a strong password)
+CLEAR_PASSWORD=your_secure_clear_password
 ```
 
-### Column Details:
-- **Column 1**: Index (ignored)
-- **Total**: Frequency count (parsed but not stored)
-- **word**: The English word (required)
-- **topic**: Main topic category
-- **subtopic**: Sub-category under topic
-- **subsubtopic**: Most specific category
-- **CEFR_level**: Language proficiency level (e.g., "c1", "c2")
-- **translation**: Translation of the word
-- **sentences**: JSON array of sentence pairs `[["English", "Translation"], ...]`
+## Commands
 
-### Basic Usage
+### CSV Import
+
+Import words, topics, and sentences from a CSV file:
 
 ```bash
-# Build the tool
-go build -o import-tool cmd/import/main.go
+go run main.go csv --file path/to/your/file.csv
+```
 
-# Import CSV file
-./import-tool csv --file /path/to/your/data.csv
+**CSV Format:**
+The CSV should have the following columns:
+- Index (empty or number)
+- Total (empty or number)
+- word (required)
+- topic
+- subtopic  
+- subsubtopic
+- CEFR_level
+- translation
+- sentences (JSON format: [["English sentence", "Russian translation"], ...])
+
+### Database Clear
+
+**⚠️ WARNING: This permanently deletes ALL learning data!**
+
+Clear all words, sentences, topics, and learned words from the database:
+
+```bash
+go run main.go clear
+```
+
+This command will:
+1. Prompt for the password set in `CLEAR_PASSWORD` environment variable
+2. Delete data in the correct order to maintain referential integrity:
+   - learned_words (user progress)
+   - sentences 
+   - words
+   - topics (in hierarchy order)
+3. Show statistics of deleted records
+
+**What gets deleted:**
+- ✅ learned_words table (user learning progress)
+- ✅ sentences table 
+- ✅ words table
+- ✅ topics table
+
+**What is preserved:**
+- ❌ users table
+- ❌ refresh_tokens table  
+- ❌ link_tokens table
+- ❌ preferences table
+
+## Safety Features
+
+- **Password Protection**: Clear command requires environment variable `CLEAR_PASSWORD`
+- **Transaction Safety**: All operations run in database transactions
+- **Confirmation Prompt**: Interactive password confirmation
+- **Detailed Logging**: Full audit trail of operations
+- **Statistics**: Detailed reports of imported/deleted records
+
+## Examples
+
+### Import CSV data:
+```bash
+# Set environment variables
+export DB_USER=fluently_user
+export DB_PASSWORD=your_password
+export DB_HOST=localhost
+export DB_PORT=5432
+export DB_NAME=fluently_dev
+
+# Import data
+go run main.go csv --file words_data.csv
+```
+
+### Clear database:
+```bash
+# Set clear password
+export CLEAR_PASSWORD=super_secret_clear_password
+
+# Clear all data
+go run main.go clear
+# Enter password when prompted: super_secret_clear_password
+```
+
+## Build
+
+To build the executable:
+
+```bash
+go build -o import-tool main.go
+```
+
+Then use:
+```bash
+./import-tool csv --file data.csv
+./import-tool clear
 ```
 
 ## How It Works
