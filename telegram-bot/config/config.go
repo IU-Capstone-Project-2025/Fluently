@@ -59,7 +59,7 @@ type AsynqConfig struct {
 var cfg *Config
 
 func Init() {
-	err := godotenv.Load()
+	err := godotenv.Load("../../.env")
 	if err != nil {
 		log.Println("No .env file found, reading environment variables")
 	}
