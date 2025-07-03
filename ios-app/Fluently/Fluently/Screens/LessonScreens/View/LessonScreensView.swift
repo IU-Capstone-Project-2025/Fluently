@@ -63,7 +63,7 @@ struct LessonScreensView: View {
                 Text("Lesson:")
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
-                Text(presenter.currentEx.exerciseType.rawValue)
+                Text(presenter.currentEx.type)
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
             }
@@ -75,7 +75,7 @@ struct LessonScreensView: View {
     ///  Grid with main info
     var infoGrid: some View {
         VStack {
-            switch presenter.currentEx.exerciseType {
+            switch presenter.currentExType {
                 case .chooseTranslationEngRuss: /// Choose correct translation
                     let chooseWordEx = presenter.currentEx as! ChooseTranslationExs
                     ChooseTranslationView(
@@ -84,14 +84,14 @@ struct LessonScreensView: View {
                     ) { selectedAnswer in
                             presenter.answer(selectedAnswer)
                         }
-                        .id(presenter.currentEx.exerciseId)
+                    .id(presenter.currentExNumber)
                 case .typeTranslationRussEng: /// Type correct translation
                     let typeTranslationEx = presenter.currentEx as! TypeTranslationExs
                     TypeTranslationView (
                         word: typeTranslationEx.word) { typedAnswer in
                             presenter.answer(typedAnswer)
                         }
-                case .pickOptions: /// Pick word, mathing by definition
+                case .pickOptionSentence: /// Pick word, mathing by definition
                     let pickOptionEx = presenter.currentEx as! PickOptionsExs
                     PickOptionsView(
                         sentence: pickOptionEx.sentence,
@@ -99,9 +99,9 @@ struct LessonScreensView: View {
                     ) { selectedAnswer in
                             presenter.answer(selectedAnswer)
                         }
-                        .id(presenter.currentEx.exerciseId)
+                    .id(presenter.currentExNumber)
                 case .recordPronounce:
-                    Text(presenter.currentEx.exerciseType.rawValue)
+                    Text(presenter.currentEx.type)
                 case .wordCard:
                     let wordCard = presenter.currentEx as! WordCard
                     WordCardView(
@@ -113,9 +113,9 @@ struct LessonScreensView: View {
                             presenter.showLesson()
                         }
                     )
-                    .id(presenter.currentEx.exerciseId)
+                    .id(presenter.currentExNumber)
                 case .numberOfWords:
-                    Text(presenter.currentEx.exerciseType.rawValue)
+                    Text(presenter.currentEx.type)
             }
         }
         .modifier(SheetViewModifier())

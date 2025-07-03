@@ -22,3 +22,13 @@ class ExerciseModel: Codable{
     }
 }
 
+// MARK: - Exrs Types
+enum ExerciseModelType: String, CaseIterable {
+    case chooseTranslationEngRuss = "translate_ru_to_en"
+    case typeTranslationRussEng = "write_word_from_translation"
+    case pickOptionSentence = "pick_option_sentence"
+    case recordPronounce = "recordPronounce"
+
+    case wordCard = "word_card"
+    case numberOfWords = "numberOfWords"
+}

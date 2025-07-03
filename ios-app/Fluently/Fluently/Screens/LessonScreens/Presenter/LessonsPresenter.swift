@@ -16,6 +16,7 @@ final class LessonsPresenter: ObservableObject {
     private var words: [WordModel]
     @Published private(set) var currentExNumber: Int
     @Published private(set) var currentEx: ExerciseModel
+    @Published private(set) var currentExType: ExerciseModelType
 
     var statistic: [ExerciseSolution : [ExerciseModel]]
 
@@ -27,6 +28,7 @@ final class LessonsPresenter: ObservableObject {
 
         self.currentExNumber = 0
         self.currentEx = words[0].exercise
+        self.currentExType = .wordCard
         self.statistic = [:]
 
         statistic[.correct] = []
@@ -41,6 +43,7 @@ final class LessonsPresenter: ObservableObject {
 
     func showLesson() {
         currentEx = words[currentExNumber].exercise
+        currentExType = ExerciseModelType(rawValue: currentEx.type) ?? .wordCard
     }
 
     func answer(_ answer: String) {
