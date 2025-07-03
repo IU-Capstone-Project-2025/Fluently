@@ -433,29 +433,6 @@ jobs:
               cp .env backend/.env
             fi
 
-            # Create environment-specific .env for telegram-bot if it doesn't exist
-            if [ ! -f "telegram-bot/.env" ]; then
-              echo "📝 Creating telegram-bot/.env file from example..."
-              cp telegram-bot/.env.example telegram-bot/.env
-              
-              # Set telegram bot environment variables
-              if [ "$ENVIRONMENT" = "production" ]; then
-                sed -i "s|WEBHOOK_URL=.*|WEBHOOK_URL=https://$DOMAIN/webhook|g" telegram-bot/.env
-                sed -i "s|BOT_TOKEN=.*|BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}|g" telegram-bot/.env
-                sed -i "s|WEBHOOK_SECRET=.*|WEBHOOK_SECRET=${{ secrets.WEBHOOK_SECRET }}|g" telegram-bot/.env
-              else
-                sed -i "s|WEBHOOK_URL=.*|WEBHOOK_URL=https://$DOMAIN/webhook|g" telegram-bot/.env
-                sed -i "s|BOT_TOKEN=.*|BOT_TOKEN=${{ secrets.STAGING_TELEGRAM_BOT_TOKEN }}|g" telegram-bot/.env
-                sed -i "s|WEBHOOK_SECRET=.*|WEBHOOK_SECRET=${{ secrets.STAGING_WEBHOOK_SECRET }}|g" telegram-bot/.env
-              fi
-              
-              # Set domain configuration
-              sed -i "s|DOMAIN=.*|DOMAIN=$DOMAIN|g" telegram-bot/.env
-              
-              # Set Redis configuration (internal Docker network)
-              sed -i "s|REDIS_ADDR=.*|REDIS_ADDR=redis:6379|g" telegram-bot/.env
-            fi
-
             # Update environment variables based on deployment target
             echo "⚙️ Updating environment configuration..."
 
@@ -478,20 +455,43 @@ jobs:
             sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" backend/.env
 
             # Add telegram bot environment variables if they don't exist
-            if [ ! -z "${{ secrets.BOT_TOKEN }}" ]; then
+            if [ "$ENVIRONMENT" = "production" ]; then
+              BOT_TOKEN="${{ secrets.TELEGRAM_BOT_TOKEN }}"
+              WEBHOOK_SECRET="${{ secrets.WEBHOOK_SECRET }}"
+            else
+              BOT_TOKEN="${{ secrets.STAGING_TELEGRAM_BOT_TOKEN }}"
+              WEBHOOK_SECRET="${{ secrets.STAGING_WEBHOOK_SECRET }}"
+            fi
+            
+            # Set telegram bot configuration in root .env
+            if [ ! -z "$BOT_TOKEN" ]; then
               if grep -q "BOT_TOKEN=" .env; then
-                sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=${{ secrets.BOT_TOKEN }}/" .env
+                sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=$BOT_TOKEN/" .env
               else
-                echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" >> .env
+                echo "BOT_TOKEN=$BOT_TOKEN" >> .env
               fi
             fi
             
-            if [ ! -z "${{ secrets.WEBHOOK_SECRET }}" ]; then
+            if [ ! -z "$WEBHOOK_SECRET" ]; then
               if grep -q "WEBHOOK_SECRET=" .env; then
-                sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=${{ secrets.WEBHOOK_SECRET }}/" .env
+                sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=$WEBHOOK_SECRET/" .env
               else
-                echo "WEBHOOK_SECRET=${{ secrets.WEBHOOK_SECRET }}" >> .env
+                echo "WEBHOOK_SECRET=$WEBHOOK_SECRET" >> .env
               fi
+            fi
+            
+            # Set webhook URL
+            if grep -q "WEBHOOK_URL=" .env; then
+              sed -i "s|WEBHOOK_URL=.*|WEBHOOK_URL=https://$DOMAIN/webhook|g" .env
+            else
+              echo "WEBHOOK_URL=https://$DOMAIN/webhook" >> .env
+            fi
+            
+            # Set Redis configuration for Docker network
+            if grep -q "REDIS_ADDR=" .env; then
+              sed -i "s|REDIS_ADDR=.*|REDIS_ADDR=redis:6379|g" .env
+            else
+              echo "REDIS_ADDR=redis:6379" >> .env
             fi
 
             echo "📋 Main .env file ready for docker-compose..."
