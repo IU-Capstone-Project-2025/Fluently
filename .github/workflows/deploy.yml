@@ -176,11 +176,19 @@ jobs:
       - name: Go tests with coverage
         working-directory: ./backend
         env:
-          DB_HOST:     fluently_test_db
-          DB_PORT:     5433
-          DB_USER:     test_user
-          DB_PASSWORD: test_pass
-          DB_NAME:     test_db
+          # Generic DB variables (used by code that doesn't look at *_TEST_*)
+          DB_HOST:         localhost
+          DB_PORT:         5433
+          DB_USER:         test_user
+          DB_PASSWORD:     test_password
+          DB_NAME:         test_fluently_db
+
+          # Explicit *_TEST_* variables (preferred by new config helpers)
+          DB_TEST_HOST:     localhost
+          DB_TEST_PORT:     5433
+          DB_TEST_USER:     test_user
+          DB_TEST_PASSWORD: test_password
+          DB_TEST_NAME:     test_fluently_db
         run: |
           go test ./... -coverprofile=coverage.out -covermode=atomic
           go tool cover -func=coverage.out
