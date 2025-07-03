@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.json.Json
 import ru.fluentlyapp.fluently.auth.model.ServerToken
+import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -20,6 +21,7 @@ class ServerTokenDataStore @Inject constructor(
     suspend fun saveServerToken(serverToken: ServerToken) {
         preferencesDataStore.edit {
             it[SERVER_TOKEN_KEY] = Json.encodeToString(serverToken)
+            Timber.d("Save server token: %s", serverToken.toString())
         }
     }
 
@@ -36,6 +38,7 @@ class ServerTokenDataStore @Inject constructor(
     suspend fun deleteServerToken() {
         preferencesDataStore.edit {
             it.remove(SERVER_TOKEN_KEY)
+            Timber.d("Delete server token")
         }
     }
 }

@@ -7,6 +7,7 @@ import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import ru.fluentlyapp.fluently.common.model.Decoration
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.LessonComponent
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.other.LoadingLessonComponent
@@ -47,7 +48,7 @@ fun LessonComponentRenderer(
         contentKey = { it.index }
     ) { (targetComponent, index) ->
         when (targetComponent) {
-            is LessonComponent.Loading -> {
+            is Decoration.Loading -> {
                 LoadingLessonComponent(modifier = modifier)
             }
 

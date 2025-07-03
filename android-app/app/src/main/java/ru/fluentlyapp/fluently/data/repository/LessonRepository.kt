@@ -1,117 +1,137 @@
 package ru.fluentlyapp.fluently.data.repository
 
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.update
-import ru.fluentlyapp.fluently.datastore.LessonPreferencesDataStore
-import ru.fluentlyapp.fluently.common.model.Lesson
+import kotlinx.coroutines.flow.conflate
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
+import ru.fluentlyapp.fluently.common.model.Exercise
+import ru.fluentlyapp.fluently.common.model.LessonComponent
+import ru.fluentlyapp.fluently.datastore.OngoingLessonDataStore
 import ru.fluentlyapp.fluently.network.FluentlyApiDataSource
+import timber.log.Timber
 import javax.inject.Inject
 
 interface LessonRepository {
     /**
-     * Return the id of locally set ongoing lesson.
-     *
-     * Returns null if none of the lessons are ongoing.
+     * Helper method to quickly determine if there is a saved ongoing lesson.
      */
-    fun getSavedOngoingLessonIdAsFlow(): Flow<String?>
+    suspend fun hasSavedLesson(): Boolean
 
     /**
-     * Locally, set the `lessonId` as the ongoing lesson.
-     */
-    suspend fun setSavedOngoingLessonId(lessonId: String)
-
-    /**
-     * Locally, drop the ongoing lesson id.
-     */
-    suspend fun dropSavedOngoingLesson()
-
-    /**
-     * Get the saved lesson as `Flow` by the `lessonId`. The flow may emit null if
-     * none of the lessons are stored under `lessonId`.
-     */
-    fun getSavedLessonAsFlow(lessonId: String): Flow<Lesson?>
-
-    /**
-     * At any moment, any user has the current ongoing lesson. This method fetches
-     * the currently assigned lesson for this user.
+     * Ask the server to generate new lesson for the user, then fetch it and store it locally.
      *
      * May throw exception.
      */
-    suspend fun fetchCurrentLesson(): Lesson
+    suspend fun fetchAndSaveOngoingLesson()
 
     /**
-     * Fetch the lesson by the `lessonId` from the server
+     * Clear the ongoing lesson content.
      *
      * May throw exception.
      */
-    suspend fun fetchLesson(lessonId: String): Lesson
+    suspend fun dropOngoingLesson()
 
     /**
-     * Update the `lesson` locally.
-     */
-    suspend fun saveLesson(lesson: Lesson)
-
-    /**
-     * Get the saved lesson by the `lessonId`.
+     * Try to update the current lesson component.
      *
-     * Returns null if no lessons are saved under `lessonId`.
+     * If the update cannot happen (the type of `updatedComponent` is not the same as
+     * the type the ongoing lesson is on, or the value of updatedComponent cannot be applied for
+     * some other reason), the method will have no effect.
+     *
+     * The method may throw exception.
      */
-    suspend fun getSavedLesson(lessonId: String): Lesson?
+    suspend fun updateCurrentComponent(updatedComponent: LessonComponent)
 
     /**
-     * Send the lesson to the server so that it stores it.
+     * Get the current `LessonComponent` as the `Flow`. If there is no saved `ongoingLesson`, the
+     * flow may emit null.
      *
-     * May throw exception.
+     * During the collection, the returned `Flow` may throw exceptions.
      */
-    suspend fun sendLesson(lesson: Lesson)
+    fun currentComponent(): Flow<LessonComponent?>
+
+    /**
+     * If it is possible (e.g. the exercise is completed), moves to the next lesson component.
+     * If the end is reached, the method have no effect.
+     */
+    suspend fun moveToNextComponent()
 }
 
-class StubLessonRepository @Inject constructor(
-    val lessonPreferencesDataStore: LessonPreferencesDataStore,
-    val fluentlyApiDataSource: FluentlyApiDataSource
+class DefaultLessonRepository @Inject constructor(
+    val fluentlyApiDataSource: FluentlyApiDataSource,
+    val ongoingLessonDataStore: OngoingLessonDataStore
 ) : LessonRepository {
-    val lessons = mutableMapOf<String, MutableStateFlow<Lesson?>>()
-    override fun getSavedOngoingLessonIdAsFlow(): Flow<String?> {
-        return lessonPreferencesDataStore.getOngoingLessonIdAsFlow()
-    }
-
-    override suspend fun setSavedOngoingLessonId(lessonId: String) {
-        lessonPreferencesDataStore.setOngoingLessonId(lessonId)
-    }
-
-    override suspend fun dropSavedOngoingLesson() {
-        lessonPreferencesDataStore.dropOngoingLessonId()
-    }
-
-    override suspend fun fetchCurrentLesson(): Lesson {
-        return fluentlyApiDataSource.getCurrentLesson()
-    }
-
-    override suspend fun fetchLesson(lessonId: String): Lesson {
-        return fluentlyApiDataSource.getLesson(lessonId)
-    }
-
-    override suspend fun sendLesson(lesson: Lesson) {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun saveLesson(lesson: Lesson) {
-        val stateFlow = lessons.getOrPut(lesson.lessonId) {
-            MutableStateFlow(null)
+    override suspend fun hasSavedLesson(): Boolean {
+        return try {
+            ongoingLessonDataStore.getOngoingLesson().first() != null
+        } catch (ex: Exception) {
+            Timber.e(ex)
+            false
         }
-        stateFlow.update { lesson }
     }
 
-    override suspend fun getSavedLesson(lessonId: String): Lesson? {
-        return lessons[lessonId]?.value
+    override suspend fun fetchAndSaveOngoingLesson() {
+        val lesson = fluentlyApiDataSource.getLesson()
+        Timber.d("Received lesson: $lesson")
+        ongoingLessonDataStore.setOngoingLesson(lesson)
+        Timber.d("Store the received lesson")
     }
 
-    override fun getSavedLessonAsFlow(lessonId: String): Flow<Lesson?> {
-        val stateFlow = lessons.getOrPut(lessonId) {
-            MutableStateFlow(null)
+    override suspend fun dropOngoingLesson() {
+        ongoingLessonDataStore.dropOngoingLesson()
+        Timber.d("Drop the ongoing lesson")
+    }
+
+    override suspend fun updateCurrentComponent(updatedComponent: LessonComponent) {
+        ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
+            if (
+                updatedComponent::class == lesson.currentComponent::class &&
+                updatedComponent is Exercise &&
+                (lesson.currentComponent as? Exercise)?.isAnswered == false &&
+                updatedComponent.isAnswered
+            ) {
+                Timber.d("The `updatedComponent`=$updatedComponent is valid for update")
+                val updatedComponents = lesson.components.toMutableList().apply {
+                    this[lesson.currentLessonComponentIndex] = updatedComponent
+                }
+                val updatedLesson = lesson.copy(
+                    components = updatedComponents
+                )
+                ongoingLessonDataStore.setOngoingLesson(updatedLesson)
+                Timber.d("Save the updated lesson: $lesson")
+            }
+            Timber.d("The `updatedComponent`=$updatedComponent is NOT valid for update - ignore")
         }
+    }
 
-        return stateFlow
+    override suspend fun moveToNextComponent() {
+        try {
+            ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
+                if (
+                    lesson.currentLessonComponentIndex + 1 < lesson.components.size && // End not reached
+                    (lesson.currentComponent as? Exercise)?.isAnswered != false // i.e. null (currentComponent is not exercise) or true
+                ) {
+                    ongoingLessonDataStore.setOngoingLesson(
+                        lesson.copy(
+                            currentLessonComponentIndex = lesson.currentLessonComponentIndex + 1
+                        )
+                    )
+                }
+            }
+        } catch (ex: Exception) {
+            Timber.e(ex)
+        }
+    }
+
+    override fun currentComponent(): Flow<LessonComponent?> {
+        return ongoingLessonDataStore
+            .getOngoingLesson()
+            .distinctUntilChanged()
+            .map { lesson ->
+                val component = lesson?.currentComponent
+                Timber.v("Emit lessonComponent: $component")
+                component
+            }
     }
 }

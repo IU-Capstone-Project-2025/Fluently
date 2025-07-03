@@ -51,11 +51,11 @@ fun HomeScreen(
     onNavigateToLesson: (lessonId: String) -> Unit
 ) {
     val uiState by homeScreenViewModel.uiState.collectAsState()
-    val ongoingLessonId by homeScreenViewModel.ongoingLessonId.collectAsState()
+    val ongoingLessonIsReady by homeScreenViewModel.ongoingLessonIsReady.collectAsState()
 
-    LaunchedEffect(ongoingLessonId) {
-        ongoingLessonId?.let { lessonId ->
-            onNavigateToLesson(lessonId)
+    LaunchedEffect(ongoingLessonIsReady) {
+        if (ongoingLessonIsReady) {
+            onNavigateToLesson("")
         }
     }
 
@@ -63,7 +63,7 @@ fun HomeScreen(
         modifier = modifier,
         uiState = uiState,
         onLessonClick = {
-            homeScreenViewModel.getOngoingLessonId()
+            homeScreenViewModel.ensureOngoingLesson()
         }
     )
 }

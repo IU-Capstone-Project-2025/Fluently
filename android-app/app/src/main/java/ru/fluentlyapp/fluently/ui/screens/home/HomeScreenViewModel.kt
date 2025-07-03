@@ -13,6 +13,7 @@ import ru.fluentlyapp.fluently.data.repository.LessonRepository
 import javax.inject.Inject
 import kotlinx.coroutines.flow.first
 import ru.fluentlyapp.fluently.ui.screens.home.HomeScreenUiState.OngoingLessonState
+import timber.log.Timber
 
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor(
@@ -22,56 +23,42 @@ class HomeScreenViewModel @Inject constructor(
     val uiState = _uiState.asStateFlow()
 
     /**
-     * When the user presses on the new lesson, the received current lesson id will be emitted
-     * into this flow.
+     * When the user presses on the new lesson, this flag will indicate whether the ongoing lesson
+     * is prepared.
      */
-    private val _ongoingLessonId = MutableStateFlow<String?>(null)
-    val ongoingLessonId = _ongoingLessonId.asStateFlow()
+    private val _ongoingLessonIsReady = MutableStateFlow<Boolean>(false)
+    val ongoingLessonIsReady = _ongoingLessonIsReady.asStateFlow()
 
     init {
         viewModelScope.launch {
-            // On each update of the saved lesson id, update the ui state correspondingly
-            lessonRepository.getSavedOngoingLessonIdAsFlow().collect { id ->
-                if (id == null) {
-                    // No saved id -> mark the absence of any saved ongoing lesson
-                    _uiState.update {
-                        it.copy(ongoingLessonState = OngoingLessonState.NOT_STARTED)
-                    }
-                } else {
-                    _uiState.update {
-                        it.copy(ongoingLessonState = OngoingLessonState.HAS_PAUSED)
-                    }
-                }
+            val currentComponent = lessonRepository.currentComponent().first()
+            if (currentComponent != null) {
+                _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.HAS_PAUSED) }
             }
         }
     }
 
-    fun getOngoingLessonId() {
+    /**
+     * If the ongoing lesson is not loaded, load it from the server. If the loading is
+     * successful or the lesson is already stored, emit true into the `_ongoingLessonIsReady` flow.
+     */
+    fun ensureOngoingLesson() {
         _uiState.update {
             it.copy(ongoingLessonState = OngoingLessonState.LOADING)
         }
 
-        viewModelScope.launch(Dispatchers.IO) {
-            val lessonId = lessonRepository.getSavedOngoingLessonIdAsFlow().first()
-
-            if (lessonId != null) {
-                _ongoingLessonId.value = lessonId
-                _uiState.update {
-                    it.copy(ongoingLessonState = OngoingLessonState.HAS_PAUSED)
+        try {
+            viewModelScope.launch {
+                if (lessonRepository.hasSavedLesson()) {
+                    _ongoingLessonIsReady.value = true
+                    return@launch
                 }
-                return@launch
+                lessonRepository.fetchAndSaveOngoingLesson()
+                _ongoingLessonIsReady.value = true
             }
-
-            try {
-                val ongoingLesson = lessonRepository.fetchCurrentLesson()
-                lessonRepository.setSavedOngoingLessonId(ongoingLesson.lessonId)
-                _ongoingLessonId.value = ongoingLesson.lessonId
-            } catch (ex: Exception) {
-                Log.e("HomeScreenViewModel", "Failed to catch lesson: $ex")
-                _uiState.update {
-                    it.copy(ongoingLessonState = OngoingLessonState.ERROR)
-                }
-            }
+        } catch (ex: Exception) {
+            Timber.e(ex)
+            _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.ERROR) }
         }
     }
 }

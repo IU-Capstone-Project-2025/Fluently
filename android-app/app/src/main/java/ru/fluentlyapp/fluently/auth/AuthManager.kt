@@ -13,6 +13,7 @@ import ru.fluentlyapp.fluently.auth.api.ServerTokenApiService
 import ru.fluentlyapp.fluently.auth.api.toServerToken
 import ru.fluentlyapp.fluently.auth.oauth.GoogleOAuthService
 import ru.fluentlyapp.fluently.auth.model.OAuthToken
+import timber.log.Timber
 import javax.inject.Inject
 
 interface AuthManager {
@@ -106,13 +107,13 @@ class GoogleBasedOAuthManager @Inject constructor(
 
     private suspend fun handleTokenRequest(tokenRequest: TokenRequest) {
         val token = getOAuthToken(tokenRequest)
-        Log.i("GoogleBasedAuthRepository", "Fetched the OAuth token: $token")
+        Timber.d("Fetch the OAuth Token: $token")
 
         val serverToken = getServerToken(token)
-        Log.i("GoogleBasedAuthRepository", "Fetched the server token: $token")
+        Timber.d("Fetch the server token from the OAuth token: $serverToken")
 
         updateServerToken(serverToken)
-        Log.i("GoogleBasedAuthRepository", "Successfully saved the server token")
+        Timber.d("Successfully save the server token")
     }
 
     override suspend fun getOAuthToken(tokenRequest: TokenRequest): OAuthToken {

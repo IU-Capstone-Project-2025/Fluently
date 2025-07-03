@@ -6,6 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import ru.fluentlyapp.fluently.BuildConfig
 import javax.inject.Qualifier
 import javax.inject.Singleton
 
@@ -21,7 +22,11 @@ class NetworkModule {
     @Singleton
     fun provideBaseOkHttpClient(): OkHttpClient {
         val loggingInterceptor = HttpLoggingInterceptor()
-        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        loggingInterceptor.level = if (BuildConfig.DEBUG) {
+            HttpLoggingInterceptor.Level.BODY
+        } else {
+            HttpLoggingInterceptor.Level.NONE
+        }
         return OkHttpClient
             .Builder()
             .addInterceptor(loggingInterceptor)
