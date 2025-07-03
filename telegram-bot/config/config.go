@@ -130,7 +130,7 @@ func Init() {
 		cfg.Webhook.Host = "0.0.0.0"
 	}
 	if cfg.Webhook.Port == "" {
-		cfg.Webhook.Port = "8080"
+		cfg.Webhook.Port = "8060"
 	}
 	if cfg.Webhook.Path == "" {
 		cfg.Webhook.Path = "/webhook"
