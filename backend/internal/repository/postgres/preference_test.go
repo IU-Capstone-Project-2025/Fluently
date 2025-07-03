@@ -1,4 +1,4 @@
-package postgres_test
+package postgres
 
 import (
 	"context"
@@ -14,11 +14,20 @@ import (
 func TestCreateAndGetPreference(t *testing.T) {
 	ctx := context.Background()
 
-	userID := uuid.New()
-	now := time.Now()
+	user := &models.User{
+		ID:       uuid.New(),
+		Name:     "Pref User",
+		Email:    "pref@example.com",
+		Role:     "user",
+		IsActive: true,
+	}
 
+	err := userRepo.Create(ctx, user)
+	assert.NoError(t, err)
+
+	now := time.Now()
 	pref := &models.Preference{
-		UserID:          userID,
+		UserID:          user.ID,
 		CEFRLevel:       "A2",
 		FactEveryday:    true,
 		Notifications:   true,
@@ -29,7 +38,7 @@ func TestCreateAndGetPreference(t *testing.T) {
 		AvatarImageURL:  "http://banan.png",
 	}
 
-	err := preferenceRepo.Create(ctx, pref)
+	err = preferenceRepo.Create(ctx, pref)
 	assert.NoError(t, err)
 
 	found, err := preferenceRepo.GetByID(ctx, pref.ID)
@@ -43,16 +52,27 @@ func TestCreateAndGetPreference(t *testing.T) {
 func TestUpdatePreference(t *testing.T) {
 	ctx := context.Background()
 
-	userId := uuid.New()
+	user := &models.User{
+		ID:       uuid.New(),
+		Name:     "UpdatePref User",
+		Email:    "updatepref@example.com",
+		Role:     "user",
+		IsActive: true,
+	}
+
+	err := userRepo.Create(ctx, user)
+	assert.NoError(t, err)
+
 	pref := &models.Preference{
-		UserID:      userId,
+		UserID:      user.ID,
 		CEFRLevel:   "B1",
 		WordsPerDay: 10,
 		Goal:        "Some User Topic",
 	}
 
-	err := preferenceRepo.Create(ctx, pref)
+	err = preferenceRepo.Create(ctx, pref)
 	assert.NoError(t, err)
+	assert.NotEqual(t, uuid.Nil, pref.ID)
 
 	pref.Goal = "Updated User Topic"
 	pref.WordsPerDay = 20
@@ -68,38 +88,58 @@ func TestUpdatePreference(t *testing.T) {
 func TestGetByUserID(t *testing.T) {
 	ctx := context.Background()
 
-	userID := uuid.New()
+	user := &models.User{
+		ID:       uuid.New(),
+		Name:     "GetPrefByUser User",
+		Email:    "GetPrefByUser@example.com",
+		Role:     "user",
+		IsActive: true,
+	}
+
+	err := userRepo.Create(ctx, user)
+	assert.NoError(t, err)
+
 	pref := &models.Preference{
-		UserID:      userID,
+		UserID:      user.ID,
 		CEFRLevel:   "C1",
 		WordsPerDay: 7,
 	}
 
-	err := preferenceRepo.Create(ctx, pref)
+	err = preferenceRepo.Create(ctx, pref)
 	assert.NoError(t, err)
 
-	found, err := preferenceRepo.GetByUserID(ctx, userID)
+	found, err := preferenceRepo.GetByUserID(ctx, user.ID)
 	assert.NoError(t, err)
 	assert.Equal(t, pref.ID, found.ID)
-	assert.Equal(t, userID, found.UserID)
+	assert.Equal(t, user.ID, found.UserID)
 }
 
 func TestDeletePreference(t *testing.T) {
 	ctx := context.Background()
 
-	userID := uuid.New()
+	user := &models.User{
+		ID:       uuid.New(),
+		Name:     "DeletePref User",
+		Email:    "DeletePref@example.com",
+		Role:     "user",
+		IsActive: true,
+	}
+
+	err := userRepo.Create(ctx, user)
+	assert.NoError(t, err)
+
 	pref := &models.Preference{
-		UserID:      userID,
+		UserID:      user.ID,
 		CEFRLevel:   "C1",
 		WordsPerDay: 7,
 	}
 
-	err := preferenceRepo.Create(ctx, pref)
+	err = preferenceRepo.Create(ctx, pref)
 	assert.NoError(t, err)
 
-	err = sentenceRepo.Delete(ctx, pref.ID)
+	err = preferenceRepo.Delete(ctx, pref.ID)
 	assert.NoError(t, err)
 
-	_, err = sentenceRepo.GetByID(ctx, pref.ID)
+	_, err = preferenceRepo.GetByID(ctx, pref.ID)
 	assert.Error(t, err) // "record not found"
 }

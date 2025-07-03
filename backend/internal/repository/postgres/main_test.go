@@ -1,11 +1,10 @@
-package postgres_test
+package postgres
 
 import (
 	"os"
 	"testing"
 
 	"fluently/go-backend/internal/repository/models"
-	"fluently/go-backend/internal/repository/postgres"
 
 	pgDriver "gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -14,13 +13,13 @@ import (
 var (
 	db *gorm.DB
 
-	userRepo        *postgres.UserRepository
-	wordRepo        *postgres.WordRepository
-	topicRepo       *postgres.TopicRepository
-	sentenceRepo    *postgres.SentenceRepository
-	preferenceRepo  *postgres.PreferenceRepository
-	pickOptionRepo  *postgres.PickOptionRepository
-	learnedWordRepo *postgres.LearnedWordRepository
+	userRepo        *UserRepository
+	wordRepo        *WordRepository
+	topicRepo       *TopicRepository
+	sentenceRepo    *SentenceRepository
+	preferenceRepo  *PreferenceRepository
+	pickOptionRepo  *PickOptionRepository
+	learnedWordRepo *LearnedWordRepository
 )
 
 func TestMain(m *testing.M) {
@@ -45,13 +44,13 @@ func TestMain(m *testing.M) {
 		panic("failed to migrate test database")
 	}
 
-	userRepo = postgres.NewUserRepository(db)
-	wordRepo = postgres.NewWordRepository(db)
-	topicRepo = postgres.NewTopicRepository(db)
-	sentenceRepo = postgres.NewSentenceRepository(db)
-	preferenceRepo = postgres.NewPreferenceRepository(db)
-	pickOptionRepo = postgres.NewPickOptionRepository(db)
-	learnedWordRepo = postgres.NewLearnedWordRepository(db)
+	userRepo = NewUserRepository(db)
+	wordRepo = NewWordRepository(db)
+	topicRepo = NewTopicRepository(db)
+	sentenceRepo = NewSentenceRepository(db)
+	preferenceRepo = NewPreferenceRepository(db)
+	pickOptionRepo = NewPickOptionRepository(db)
+	learnedWordRepo = NewLearnedWordRepository(db)
 
 	// Clear all tables before test
 	db.Exec("TRUNCATE TABLE users RESTART IDENTITY CASCADE")
