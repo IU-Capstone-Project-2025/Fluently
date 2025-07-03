@@ -62,6 +62,8 @@ func main() {
 		log.Fatalf("Failed to create Telegram bot: %v", err)
 	}
 
+	bot.Start()
+
 	// Initialize handler service
 	handlerService := handlers.NewHandlerService(cfg, redisClient, apiClient, scheduler, bot)
 
@@ -138,7 +140,6 @@ func main() {
 func createTelegramBot(cfg *config.Config) (*tele.Bot, error) {
 	settings := tele.Settings{
 		Token: cfg.Bot.Token,
-		// Don't set Poller - we're using webhooks
 	}
 
 	bot, err := tele.NewBot(settings)
