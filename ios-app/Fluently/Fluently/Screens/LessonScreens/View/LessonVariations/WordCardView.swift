@@ -66,6 +66,10 @@ struct WordCardView: View {
                 }
             }
         }
+        .frame(
+            minWidth: 120,
+            minHeight: 120
+        )
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 12)
@@ -98,5 +102,23 @@ struct WordCardView: View {
                 .frame(maxHeight: 60)
         }
         .buttonStyle(PlainButtonStyle())
+    }
+}
+
+// MARK: Preview Provider
+struct WordModelPreview: PreviewProvider {
+    static var previews: some View {
+        PreviewWrapper()
+    }
+
+    struct PreviewWrapper: View {
+        let word = WordModel.mockWord()
+        var body: some View {
+            WordCardView(
+                word: word,
+                onKnowTapped: {},
+                onLearnTapped: {}
+            )
+        }
     }
 }
