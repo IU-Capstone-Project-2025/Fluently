@@ -176,7 +176,7 @@ jobs:
       - name: Go tests with coverage
         working-directory: ./backend
         env:
-          DB_HOST:     localhost
+          DB_HOST:     fluently_test_db
           DB_PORT:     5433
           DB_USER:     test_user
           DB_PASSWORD: test_pass
