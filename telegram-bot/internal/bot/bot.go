@@ -3,7 +3,6 @@ package bot
 import (
 	"fluently/telegram-bot/config"
 	"log"
-	"time"
 
 	"github.com/redis/go-redis/v9"
 	tele "gopkg.in/telebot.v3"
@@ -16,8 +15,7 @@ func Start(cfg *config.Config, redisClient *redis.Client) {
 	RedisClient = redisClient
 
 	pref := tele.Settings{
-		Token:  cfg.Bot.Token,
-		Poller: &tele.LongPoller{Timeout: 10 * time.Second},
+		Token: cfg.Bot.Token,
 	}
 
 	bot, err := tele.NewBot(pref)

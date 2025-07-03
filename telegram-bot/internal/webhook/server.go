@@ -146,6 +146,13 @@ func (s *Server) limitRequestSizeMiddleware(next http.Handler) http.Handler {
 
 // webhookHandler handles incoming Telegram updates
 func (s *Server) webhookHandler(w http.ResponseWriter, r *http.Request) {
+	// Log incoming request for debugging
+	logger.Log.Debug("Received webhook request",
+		zap.String("method", r.Method),
+		zap.String("remote_addr", r.RemoteAddr),
+		zap.String("user_agent", r.UserAgent()),
+		zap.String("content_type", r.Header.Get("Content-Type")))
+
 	// Read request body
 	body, err := io.ReadAll(r.Body)
 	if err != nil {
@@ -154,17 +161,27 @@ func (s *Server) webhookHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Log body size for debugging
+	logger.Log.Debug("Request body received", zap.Int("size", len(body)))
+
 	// Parse Telegram update
 	var update TelegramUpdate
 	if err := json.Unmarshal(body, &update); err != nil {
-		logger.Log.Error("Failed to parse update", zap.Error(err), zap.String("body", string(body)))
+		logger.Log.Error("Failed to parse update",
+			zap.Error(err),
+			zap.String("body", string(body)),
+			zap.Int("body_length", len(body)))
 		http.Error(w, "Bad request", http.StatusBadRequest)
 		return
 	}
 
+	// Log successful parsing
+	logger.Log.Debug("Successfully parsed update", zap.Int("update_id", update.UpdateID))
+
 	// Immediately return 200 OK to Telegram
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte("OK"))
+	w.Write([]byte(`{"ok": true}`))
 
 	// Process update asynchronously
 	go s.processUpdate(r.Context(), &update)
@@ -194,6 +211,8 @@ func (s *Server) processUpdate(ctx context.Context, update *TelegramUpdate) {
 
 // healthHandler handles health check requests
 func (s *Server) healthHandler(w http.ResponseWriter, r *http.Request) {
+	logger.Log.Debug("Health check requested", zap.String("remote_addr", r.RemoteAddr))
+
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 
@@ -201,9 +220,12 @@ func (s *Server) healthHandler(w http.ResponseWriter, r *http.Request) {
 		"status":    "healthy",
 		"timestamp": time.Now().Unix(),
 		"version":   "1.0.0",
+		"service":   "telegram-bot-webhook",
 	}
 
-	json.NewEncoder(w).Encode(response)
+	if err := json.NewEncoder(w).Encode(response); err != nil {
+		logger.Log.Error("Failed to encode health response", zap.Error(err))
+	}
 }
 
 // readinessHandler handles readiness check requests

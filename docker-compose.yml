@@ -122,6 +122,7 @@ services:
     # Bot webhook endpoint for NGINX to proxy to
     ports:
       - "127.0.0.1:8060:8060"  # Local access for NGINX proxy
+      - "${ZEROTIER_IP}:8060:8060"  # ZeroTier access
 
   # ML Distractor API (Internal only)
   ml-api:

@@ -8,7 +8,7 @@ import (
 
 type Preference struct {
 	ID              uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
-	UserID          uuid.UUID `gorm:"type:uuid"`
+	UserID          uuid.UUID `gorm:"type:uuid;not null"`
 	CEFRLevel       string    `gorm:"type:varchar(2);not null"`
 	FactEveryday    bool      `gorm:"default:false"`
 	Notifications   bool      `gorm:"default:false"`

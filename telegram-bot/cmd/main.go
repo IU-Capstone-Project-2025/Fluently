@@ -3,6 +3,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"os"
 	"os/signal"
@@ -138,7 +139,6 @@ func main() {
 func createTelegramBot(cfg *config.Config) (*tele.Bot, error) {
 	settings := tele.Settings{
 		Token: cfg.Bot.Token,
-		// Don't set Poller - we're using webhooks
 	}
 
 	bot, err := tele.NewBot(settings)
@@ -151,31 +151,29 @@ func createTelegramBot(cfg *config.Config) (*tele.Bot, error) {
 
 // setupWebhook configures webhook with Telegram
 func setupWebhook(bot *tele.Bot, cfg *config.Config) error {
-	webhookConfig := &tele.Webhook{
-		Listen: cfg.Webhook.Host + ":" + cfg.Webhook.Port,
+	// Build the Webhook configuration expected by telebot.v3
+	wh := &tele.Webhook{
 		Endpoint: &tele.WebhookEndpoint{
 			PublicURL: cfg.Bot.WebhookURL,
 		},
+		MaxConnections: 40, // default value, Telegram allows up to 100
+		AllowedUpdates: []string{"message", "callback_query", "inline_query"},
 	}
 
-	// Set webhook secret if configured
+	// Add the secret token if it is configured
 	if cfg.Webhook.Secret != "" {
-		webhookConfig.SecretToken = cfg.Webhook.Secret
+		wh.SecretToken = cfg.Webhook.Secret
 	}
 
-	// Set TLS config if certificates are provided
-	if cfg.Webhook.CertFile != "" && cfg.Webhook.KeyFile != "" {
-		webhookConfig.TLS = &tele.WebhookTLS{
-			Key:  cfg.Webhook.KeyFile,
-			Cert: cfg.Webhook.CertFile,
-		}
+	// Register the webhook with Telegram
+	if err := bot.SetWebhook(wh); err != nil {
+		return fmt.Errorf("failed to set webhook: %w", err)
 	}
 
-	// Note: We're not calling bot.Start() with webhook because we're handling
-	// webhook processing manually in our webhook server
-	logger.Log.Info("Webhook configured",
+	logger.Log.Info("Webhook set successfully with Telegram",
 		zap.String("url", cfg.Bot.WebhookURL),
-		zap.String("listen", webhookConfig.Listen))
+		zap.String("secret_token", "[REDACTED]"),
+		zap.Int("max_connections", wh.MaxConnections))
 
 	return nil
 }
