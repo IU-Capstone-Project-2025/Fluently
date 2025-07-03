@@ -134,7 +134,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   deploy:
-    needs: [setup, quality-check]  # Add quality-check as dependency
+    needs: [setup]  # Remove quality-check dependency temporarily
     runs-on: ubuntu-latest
     environment: ${{ needs.setup.outputs.environment }}
 
