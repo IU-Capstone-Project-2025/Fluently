@@ -22,6 +22,7 @@ var (
 	userRepo     *pg.UserRepository
 	topicRepo    *pg.TopicRepository
 	sentenceRepo *pg.SentenceRepository
+	prefRepo     *pg.PreferenceRepository
 )
 
 func setupTest(t *testing.T) {
@@ -35,7 +36,15 @@ func setupTest(t *testing.T) {
 
 	db.Exec(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`)
 
-	err = db.AutoMigrate(&models.Word{})
+	err = db.AutoMigrate(
+		&models.User{},
+		&models.Word{},
+		&models.Topic{},
+		&models.Sentence{},
+		&models.Preference{},
+		&models.PickOption{},
+		&models.LearnedWords{},
+	)
 	if err != nil {
 		t.Fatalf("failed to migrate DB: %v", err)
 	}
@@ -44,22 +53,26 @@ func setupTest(t *testing.T) {
 	userRepo = pg.NewUserRepository(db)
 	topicRepo = pg.NewTopicRepository(db)
 	sentenceRepo = pg.NewSentenceRepository(db)
+	prefRepo = pg.NewPreferenceRepository(db)
 
 	db.Exec("TRUNCATE TABLE words RESTART IDENTITY CASCADE")
 	db.Exec("TRUNCATE TABLE users RESTART IDENTITY CASCADE")
 	db.Exec("TRUNCATE TABLE topics RESTART IDENTITY CASCADE")
 	db.Exec("TRUNCATE TABLE sentences RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE user_preferences RESTART IDENTITY CASCADE")
 
 	wordHandler := &handlers.WordHandler{Repo: pg.NewWordRepository(db)}
 	userHandler := &handlers.UserHandler{Repo: pg.NewUserRepository(db)}
 	topicHandler := &handlers.TopicHandler{Repo: pg.NewTopicRepository(db)}
 	sentenceHandler := &handlers.SentenceHandler{Repo: pg.NewSentenceRepository(db)}
+	prefHandler := &handlers.PreferenceHandler{Repo: pg.NewPreferenceRepository(db)}
 
 	r := chi.NewRouter()
 	routes.RegisterWordRoutes(r, wordHandler)
 	routes.RegisterUserRoutes(r, userHandler)
 	routes.RegisterTopicRoutes(r, topicHandler)
 	routes.RegisterSentenceRoutes(r, sentenceHandler)
+	routes.RegisterPreferencesRoutes(r, prefHandler)
 
 	testServer = httptest.NewServer(r)
 }

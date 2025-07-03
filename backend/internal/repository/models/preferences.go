@@ -11,7 +11,7 @@ type Preference struct {
 	UserID          uuid.UUID `gorm:"type:uuid"`
 	CEFRLevel       string    `gorm:"type:varchar(2);not null"`
 	FactEveryday    bool      `gorm:"default:false"`
-	Notifications   bool      `gorm:"default:true"`
+	Notifications   bool      `gorm:"default:false"`
 	NotificationsAt *time.Time
 	WordsPerDay     int    `gorm:"default:10"`
 	Goal            string `gorm:"type:varchar(255)"`
