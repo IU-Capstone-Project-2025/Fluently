@@ -224,7 +224,9 @@ jobs:
           fi
 
       - name: Start test database
-        run: docker compose -f docker-compose.test.yml up -d test_db
+        run: |
+          docker compose -f docker-compose.test.yml down --volumes
+          docker compose -f docker-compose.test.yml up -d test_db
         
       - name: Wait for DB to become healthy
         run: |
