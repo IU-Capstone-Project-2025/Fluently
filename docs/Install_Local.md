@@ -1,79 +1,155 @@
 # Local Installation Guide (Development/Testing)
 
-This guide helps you run Fluently on your local machine for development or grading. No domain or SSL required. All services run on `localhost` using Docker Compose.
+This guide helps you run Fluently on your local machine for development or grading using pre-built Docker images. **No building required** - all images are pulled from Docker Hub!
 
 ## Prerequisites
 - [Docker](https://docs.docker.com/get-docker/) & [Docker Compose](https://docs.docker.com/compose/install/)
 - [Git](https://git-scm.com/)
-- [Make](https://www.gnu.org/software/make/) (Linux/macOS) or [Make for Windows](https://gnuwin32.sourceforge.net/packadocker compose -f docker-compose.yml -f docker-compose.local.yml up -dges/make.htm)
+- Internet connection to download pre-built images
 
 ## 🚀 Quick Start for Teaching Assistants
 
-Simple step-by-step process:
+**Super fast setup** using pre-built images (no compilation needed!):
 
 ```bash
-# 1. Clone and setup
+# 1. Clone repository
 git clone https://github.com/FluentlyOrg/Fluently-fork.git
 cd Fluently-fork
-make setup-local
 
-# 2. Check for port conflicts
-make check-ports
+# 2. Copy environment configuration
+cp .env.example .env
 
-# 3. Stop conflicting services (if needed from step 2)
-sudo systemctl stop postgresql  # Always needed
-sudo systemctl stop apache2     # If you have Apache
-sudo systemctl stop nginx       # If you have Nginx  
-sudo systemctl stop grafana-server  # If you have Grafana
+# 3. Create Docker volumes
+docker volume create fluently_postgres_data
+docker volume create fluently_redis_data
 
-# 4. Build ML API with optimizations (reduces build time)
-make build-ml-api-fast
+# 4. Check for port conflicts (optional but recommended)
+echo "Checking for port conflicts..."
+netstat -tulpn | grep -E ":(80|443|5432|6379|8070|8001)" || echo "No conflicts found"
 
-# 5. Start all services
-make run-local
+# 5. Start services with pre-built images (fast!)
+docker compose -f docker-compose.production.yml up -d
 
-# 6. Wait 8-10 minutes for optimized build, then access services:
-# - Backend API: http://localhost:8070/health
+# 6. Wait 2-3 minutes for services to start, then access:
+# - Backend API: http://localhost:8070/health  
 # - Swagger UI: http://localhost:8070/swagger/
 # - Frontend: http://localhost:80/
-# - Database: localhost:5432 (standard port)
-# - Grafana: http://localhost:3000/
-
-# 7. When finished, restart your services
-sudo systemctl start postgresql
-sudo systemctl start apache2     # If you stopped it
-sudo systemctl start nginx       # If you stopped it
-sudo systemctl start grafana-server  # If you stopped it
+# - ML API: http://localhost:8001/health
 ```
 
-> **Note**: 
-> - The optimized ML API build takes 8-10 minutes instead of 15+ minutes
+> **✨ Benefits of pre-built images:**
+> - **Super fast**: 2-3 minutes instead of 15+ minutes
+> - **No compilation**: No Go, Python, or Node.js build process
+> - **Consistent**: Same images used in production
+> - **Reliable**: Pre-tested and quality-checked images
+
+## 🔄 Alternative: Development Build (For Contributors)
+
+If you need to modify code and build locally:
+
+```bash
+# Use the original build process
+docker compose -f docker-compose.yml up -d --build
+```
+
+This takes 15+ minutes but allows code modifications.
 > - We temporarily stop conflicting services - simpler than port remapping!
 
 ---
 
 
-##  Access Services
+## 🌐 Access Services
+
+### Core Application
 - **Backend API:** [http://localhost:8070/api/v1/](http://localhost:8070/api/v1/)
+- **Backend Health:** [http://localhost:8070/health](http://localhost:8070/health)
 - **Swagger UI:** [http://localhost:8070/swagger/](http://localhost:8070/swagger/)
 - **Frontend Website:** [http://localhost:80/](http://localhost:80/)
-- **Database:** localhost:5432 (standard PostgreSQL port)
-- **Directus CMS:** [http://localhost:8055/admin](http://localhost:8055/)
-- **ML API (Internal):** [http://localhost:8001/health](http://localhost:8001/health)
+- **ML API:** [http://localhost:8001/health](http://localhost:8001/health)
 
-### Monitoring Services (Optional)
-- **Grafana:** [http://localhost:3000](http://localhost:3000) (admin/admin123)
-- **Prometheus:** [http://localhost:9090](http://localhost:9090)
+### Database Access
+- **PostgreSQL:** localhost:5432 (credentials in .env file)
+- **Redis:** localhost:6379
 
-### Code Quality Analysis
-- **SonarScanner CLI:** Use `make install-sonar-scanner` and `make quality-scan`
-- **Local Coverage:** Generated in `backend/coverage.html` and `analysis/distractor_api/htmlcov/`
+## 🛠️ Management Commands
 
----
+```bash
+# View running services
+docker compose -f docker-compose.production.yml ps
 
+# View logs
+docker compose -f docker-compose.production.yml logs -f
 
-## Mobile Apps (Optional)
-- **Android:** See [android-app/README.md](../android-app/README.md) for setup instructions
-- **iOS:** Open `ios-app/Fluently/Fluently.xcodeproj` in Xcode
-  - Set API base URL to `http://localhost:8070/` for local development
-  - Or use staging: `https://fluently-app.online/api/v1/`
+# Stop services
+docker compose -f docker-compose.production.yml down
+
+# Update to latest images
+docker compose -f docker-compose.production.yml pull
+docker compose -f docker-compose.production.yml up -d
+
+# Clean up everything
+docker compose -f docker-compose.production.yml down --volumes
+docker system prune -a  # WARNING: Removes all unused Docker data
+```
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Port conflicts:**
+```bash
+# Check what's using the ports
+sudo netstat -tulpn | grep -E ":(80|443|5432|6379|8070|8001)"
+
+# Stop conflicting services
+sudo systemctl stop postgresql apache2 nginx
+```
+
+**Services not starting:**
+```bash
+# Check service logs
+docker compose -f docker-compose.production.yml logs [service-name]
+
+# Restart specific service
+docker compose -f docker-compose.production.yml restart [service-name]
+```
+
+**Database connection issues:**
+```bash
+# Check if PostgreSQL is healthy
+docker compose -f docker-compose.production.yml exec postgres pg_isready
+
+# Reset database (WARNING: Deletes all data)
+docker compose -f docker-compose.production.yml down -v
+docker volume rm fluently_postgres_data fluently_redis_data
+# Then restart setup process
+```
+
+## 📱 Mobile Apps Integration
+
+### Android App
+- See [android-app/README.md](../android-app/README.md) for setup
+- Set API base URL to `http://localhost:8070/api/v1/` in app settings
+
+### iOS App  
+- Open `ios-app/Fluently/Fluently.xcodeproj` in Xcode
+- Update API base URL to `http://localhost:8070/api/v1/` for local development
+
+## 🏗️ For Developers
+
+If you need to modify code and test changes:
+
+1. **Fork the repository** and create your branch
+2. **Make your changes** to the code
+3. **Push to your fork** - this will trigger the CI/CD pipeline
+4. **Wait for images to build** in GitHub Actions
+5. **Update image tags** in `docker-compose.production.yml` to use your branch
+6. **Test locally** with your custom images
+
+```bash
+# Example: Using images from your fork
+# Edit docker-compose.production.yml and change:
+# image: docker.io/fluentlyorg/fluently-backend:latest-develop
+# To:
+# image: docker.io/yourusername/fluently-backend:your-branch-latest
+```

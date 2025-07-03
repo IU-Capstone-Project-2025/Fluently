@@ -1,18 +1,18 @@
-name: Deploy
+name: CI/CD Pipeline
 
 on:
   push:
     branches:
       - main
       - develop
+  pull_request:
+    branches:
+      - main
+      - develop
   workflow_dispatch:
     inputs:
-      branch:
-        description: "Branch to deploy"
-        required: false
-        default: "main"
       environment:
-        description: "Deployment environment (production/staging)"
+        description: "Deployment environment"
         required: false
         default: "auto"
         type: choice
@@ -26,78 +26,170 @@ on:
         default: false
         type: boolean
 
+env:
+  REGISTRY: docker.io
+  IMAGE_TAG: ${{ github.sha }}
+  
 jobs:
-  # Determine deployment environment
-  setup:
+  # ===========================================
+  # BUILD STAGE - Build all Docker images
+  # ===========================================
+  build:
+    name: Build Docker Images
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop' || github.event_name == 'pull_request'
     outputs:
-      environment: ${{ steps.env.outputs.environment }}
-      domain: ${{ steps.env.outputs.domain }}
-      is_rollback: ${{ github.event.inputs.rollback || 'false' }}
-    steps:
-      - name: Determine environment
-        id: env
-        run: |
-          BRANCH="${{ github.event.inputs.branch || github.ref_name }}"
-          ENV_INPUT="${{ github.event.inputs.environment }}"
-          
-          # Auto-determine environment based on branch if not manually specified
-          if [ "$ENV_INPUT" = "auto" ] || [ -z "$ENV_INPUT" ]; then
-            if [ "$BRANCH" = "main" ]; then
-              ENVIRONMENT="production"
-            else
-              ENVIRONMENT="staging"
-            fi
-          else
-            ENVIRONMENT="$ENV_INPUT"
-          fi
-          
-          # Set environment-specific variables
-          if [ "$ENVIRONMENT" = "production" ]; then
-            DOMAIN="fluently-app.ru"
-            HOST="${{ secrets.DEPLOY_HOST }}"
-            USERNAME="${{ secrets.DEPLOY_USERNAME }}"
-            ZEROTIER_IP="${{ secrets.ZEROTIER_IP }}"
-          else
-            DOMAIN="fluently-app.online"
-            HOST="${{ secrets.STAGING_DEPLOY_HOST }}"
-            USERNAME="${{ secrets.STAGING_DEPLOY_USERNAME }}"
-            ZEROTIER_IP="${{ secrets.STAGING_ZEROTIER_IP }}"
-          fi
-          
-          echo "environment=$ENVIRONMENT" >> $GITHUB_OUTPUT
-          echo "domain=$DOMAIN" >> $GITHUB_OUTPUT
-          
-          if [ "${{ github.event.inputs.rollback }}" = "true" ]; then
-            echo "🔄 Rollback requested for $ENVIRONMENT environment"
-          else
-            echo "🚀 Deploying branch '$BRANCH' to $ENVIRONMENT environment ($DOMAIN)"
-          fi
-
-  # Code quality analysis
-  quality-check:
-    runs-on: ubuntu-latest
+      image-tag: ${{ env.IMAGE_TAG }}
     
     steps:
-      - name: Checkout
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Extract metadata for backend
+        id: meta-backend
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/fluentlyorg/fluently-backend
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Extract metadata for telegram-bot
+        id: meta-telegram
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/fluentlyorg/fluently-telegram-bot
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Extract metadata for ml-api
+        id: meta-ml-api
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/fluentlyorg/fluently-ml-api
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Extract metadata for nginx
+        id: meta-nginx
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/fluentlyorg/fluently-nginx
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push backend image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend
+          file: ./backend/Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-backend.outputs.tags }}
+          labels: ${{ steps.meta-backend.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          build-args: |
+            SWAGGER_HOST=localhost:8070
+
+      - name: Build and push telegram-bot image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./telegram-bot
+          file: ./telegram-bot/Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-telegram.outputs.tags }}
+          labels: ${{ steps.meta-telegram.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build and push ML API image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./analysis/distractor_api
+          file: ./analysis/distractor_api/Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-ml-api.outputs.tags }}
+          labels: ${{ steps.meta-ml-api.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build and push nginx image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./backend/nginx-container/Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta-nginx.outputs.tags }}
+          labels: ${{ steps.meta-nginx.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ===========================================
+  # TEST STAGE - Run tests and quality checks
+  # ===========================================
+  test:
+    name: Test & Quality Checks
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/develop' || github.event_name == 'pull_request'
+    
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_USER: test_user
+          POSTGRES_PASSWORD: test_password
+          POSTGRES_DB: test_fluently_db
+        ports:
+          - 5433:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
           go-version: '1.21'
-          cache: true  # Enable Go module caching
+          cache: true
           cache-dependency-path: backend/go.sum
-
-      - name: Cache Go dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.cache/go-build
-            ~/go/pkg/mod
-          key: ${{ runner.os }}-go-${{ hashFiles('backend/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-go-
 
       - name: Install swag for Go docs generation
         run: |
@@ -105,631 +197,498 @@ jobs:
           go install github.com/swaggo/swag/cmd/swag@latest
           echo "✅ Swag installed to: $(which swag || echo '$HOME/go/bin/swag')"
 
-      - name: Initialize Go module and generate docs
+      - name: Generate Go API documentation
         working-directory: ./backend
         run: |
-          # Add Go bin to PATH
           export PATH=$PATH:$HOME/go/bin
           
-          # Ensure Go modules are properly initialized
           echo "📦 Ensuring Go dependencies are available..."
           go mod download
           go mod tidy
           
-          # Debug: Verify we're in the right place and files exist
-          echo "🔍 Current working directory: $(pwd)"
-          echo "🔍 Go version: $(go version)"
           echo "🔍 Checking for main.go:"
           test -f cmd/main.go && echo "✅ cmd/main.go exists" || echo "❌ cmd/main.go missing"
           
-          # Check if this is a valid Go module
-          echo "🔍 Go module info:"
-          go list -m || echo "❌ Not a valid Go module"
+          # Create docs directory
+          mkdir -p docs
           
-          # Check if cmd package is valid
-          echo "🔍 Checking cmd package:"
-          go list ./cmd || echo "❌ cmd package has issues"
-          
-          # Verify swag is available
-          echo "🔍 Checking swag installation:"
+          # Generate Swagger documentation
+          echo "📚 Generating API documentation..."
           if command -v swag >/dev/null 2>&1; then
-            echo "✅ swag found in PATH: $(which swag)"
             SWAG_CMD="swag"
           elif [ -f "$HOME/go/bin/swag" ]; then
-            echo "✅ swag found at: $HOME/go/bin/swag"
             SWAG_CMD="$HOME/go/bin/swag"
           else
             echo "❌ swag not found"
             exit 1
           fi
           
-          # Create docs directory if it doesn't exist
-          mkdir -p docs
-          
-          # Generate Swagger documentation with improved error handling
-          echo "📚 Generating API documentation..."
-          echo "Current directory: $(pwd)"
-          echo "Contents of current directory:"
-          ls -la
-          echo "Contents of cmd directory:"
-          ls -la cmd/
-          
-          # Try to generate docs with better error reporting
-          echo "🔧 Running: $SWAG_CMD init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal"
-          if ! $SWAG_CMD init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal; then
-            echo "❌ Swag generation failed, trying alternative approach..."
-            
-            # Try without --parseInternal flag
-            echo "🔧 Trying without --parseInternal flag..."
-            if ! $SWAG_CMD init -g ./cmd/main.go -o ./docs --parseDependency; then
-              echo "❌ Swag generation failed again, trying basic generation..."
-              
-              # Try basic generation
-              if ! $SWAG_CMD init -g ./cmd/main.go -o ./docs; then
-                echo "❌ All swag generation attempts failed"
-                echo "🔍 Swag version:"
-                $SWAG_CMD --version || echo "Cannot get swag version"
-                echo "🔍 Go environment:"
-                go env
-                exit 1
-              fi
-            fi
-          fi
-          
-          # Verify docs were generated
-          if [ ! -d "docs" ] || [ ! -f "docs/swagger.json" ]; then
-            echo "❌ Failed to generate docs properly"
-            echo "🔍 Contents of docs directory:"
-            ls -la docs/ || echo "docs directory not found"
-            exit 1
-          fi
+          $SWAG_CMD init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal || \
+          $SWAG_CMD init -g ./cmd/main.go -o ./docs --parseDependency || \
+          $SWAG_CMD init -g ./cmd/main.go -o ./docs
           
           echo "✅ Documentation generated successfully"
-          echo "📁 Generated files:"
-          ls -la docs/
 
-      - name: Start test database
-        run: |
-          docker compose -f docker-compose.test.yml down --volumes
-          docker compose -f docker-compose.test.yml up -d test_db
-        
-      - name: Wait for DB to become healthy
-        run: |
-          for i in {1..20}; do
-            docker inspect -f '{{json .State.Health.Status}}' fluently_test_db | grep -q healthy && break
-            sleep 3
-          done
-        
-      - name: Go tests with coverage
+      - name: Run Go tests with coverage
         working-directory: ./backend
         env:
-          # Generic DB variables (used by code that doesn't look at *_TEST_*)
-          DB_HOST:         localhost
-          DB_PORT:         5433
-          DB_USER:         test_user
-          DB_PASSWORD:     test_password
-          DB_NAME:         test_fluently_db
-
-          # Explicit *_TEST_* variables (preferred by new config helpers)
-          DB_TEST_HOST:     localhost
-          DB_TEST_PORT:     5433
-          DB_TEST_USER:     test_user
+          DB_HOST: localhost
+          DB_PORT: 5433
+          DB_USER: test_user
+          DB_PASSWORD: test_password
+          DB_NAME: test_fluently_db
+          DB_TEST_HOST: localhost
+          DB_TEST_PORT: 5433
+          DB_TEST_USER: test_user
           DB_TEST_PASSWORD: test_password
-          DB_TEST_NAME:     test_fluently_db
+          DB_TEST_NAME: test_fluently_db
+          REDIS_ADDR: localhost:6379
         run: |
+          echo "🧪 Running Go tests with coverage..."
           go test ./... -coverprofile=coverage.out -covermode=atomic
           go tool cover -func=coverage.out
-        
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v3.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        
-      - name: Stop test database & wipe volume
-        if: always()
-        run: docker compose -f docker-compose.test.yml down --volumes
 
-  deploy:
-    needs: [setup]  # Re-enable quality-check dependency
+      - name: Login to Docker Hub for testing
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Test Docker containers integration
+        if: github.event_name != 'pull_request'
+        run: |
+          echo "🐳 Testing Docker containers integration..."
+          
+          # Create test docker-compose file with built images
+          cat > docker-compose.test-integration.yml << EOF
+          services:
+            postgres:
+              image: postgres:15-alpine
+              environment:
+                POSTGRES_USER: test_user
+                POSTGRES_PASSWORD: test_password
+                POSTGRES_DB: test_fluently_db
+              ports:
+                - "5434:5432"
+              healthcheck:
+                test: ["CMD-SHELL", "pg_isready -U test_user"]
+                interval: 10s
+                timeout: 5s
+                retries: 5
+            
+            redis:
+              image: redis:7-alpine
+              ports:
+                - "6380:6379"
+              healthcheck:
+                test: ["CMD", "redis-cli", "ping"]
+                interval: 10s
+                timeout: 5s
+                retries: 5
+            
+            backend:
+              image: ${{ env.REGISTRY }}/fluentlyorg/fluently-backend:develop-${{ github.sha }}
+              environment:
+                DB_HOST: postgres
+                DB_PORT: 5432
+                DB_USER: test_user
+                DB_PASSWORD: test_password
+                DB_NAME: test_fluently_db
+                REDIS_ADDR: redis:6379
+                PUBLIC_URL: http://localhost:8070
+              ports:
+                - "8071:8070"
+              depends_on:
+                postgres:
+                  condition: service_healthy
+                redis:
+                  condition: service_healthy
+              healthcheck:
+                test: ["CMD", "curl", "-f", "http://localhost:8070/health"]
+                interval: 30s
+                timeout: 10s
+                retries: 3
+          EOF
+          
+          # Start services
+          docker compose -f docker-compose.test-integration.yml up -d
+          
+          # Wait for backend to be healthy
+          echo "⏳ Waiting for backend to be healthy..."
+          for i in {1..10}; do
+            if curl -f http://localhost:8071/health >/dev/null 2>&1; then
+              echo "✅ Backend is healthy"
+              break
+            elif [ $i -eq 10 ]; then
+              echo "❌ Backend health check failed"
+              docker compose -f docker-compose.test-integration.yml logs
+              exit 1
+            else
+              echo "⏳ Waiting for backend... (attempt $i/10)"
+              sleep 15
+            fi
+          done
+          
+          # Cleanup
+          docker compose -f docker-compose.test-integration.yml down --volumes
+
+  # ===========================================
+  # PUBLISH STAGE - Push images to registry
+  # ===========================================
+  publish:
+    name: Publish Images
     runs-on: ubuntu-latest
-    environment: ${{ needs.setup.outputs.environment }}
-
+    needs: [build, test]
+    if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+    
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Debug values
-        run: |
-          echo "🔍 Debug Information:"
-          echo "Environment: ${{ needs.setup.outputs.environment }}"
-          echo "Domain: ${{ needs.setup.outputs.domain }}"
-          echo "Is Rollback: ${{ needs.setup.outputs.is_rollback }}"
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Deploy to ${{ needs.setup.outputs.environment }}
+      - name: Tag and push stable images
+        run: |
+          echo "🏷️ Tagging and pushing stable images..."
+          
+          # Pull the SHA-tagged images and re-tag as stable
+          IMAGES=(
+            "fluentlyorg/fluently-backend"
+            "fluentlyorg/fluently-telegram-bot" 
+            "fluentlyorg/fluently-ml-api"
+            "fluentlyorg/fluently-nginx"
+          )
+          
+          for image in "${IMAGES[@]}"; do
+            echo "Processing $image..."
+            
+            # Pull the develop-SHA tagged image
+            docker pull ${{ env.REGISTRY }}/$image:develop-${{ github.sha }}
+            
+            # Tag as latest-develop for stable development builds
+            docker tag ${{ env.REGISTRY }}/$image:develop-${{ github.sha }} ${{ env.REGISTRY }}/$image:latest-develop
+            
+            # Push the stable tag
+            docker push ${{ env.REGISTRY }}/$image:latest-develop
+          done
+          
+          echo "✅ All images published successfully!"
+
+  # ===========================================
+  # DEPLOY STAGE - Deploy to production
+  # ===========================================
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment: production
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to production server
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_HOST || secrets.STAGING_DEPLOY_HOST }}
-          username: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_USERNAME || secrets.STAGING_DEPLOY_USERNAME }}
-          key: ${{ needs.setup.outputs.environment == 'production' && secrets.DEPLOY_SSH_KEY || secrets.STAGING_DEPLOY_SSH_KEY }}
-          timeout: 20m
-          command_timeout: 20m
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USERNAME }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          timeout: 30m
+          command_timeout: 30m
           script: |
             set -e
             
-            BRANCH="${{ github.event.inputs.branch || github.ref_name }}"
-            ENVIRONMENT="${{ needs.setup.outputs.environment }}"
-            DOMAIN="${{ needs.setup.outputs.domain }}"
-            IS_ROLLBACK="${{ needs.setup.outputs.is_rollback }}"
+            echo "🚀 Starting production deployment..."
+            cd /home/deploy/Fluently-fork
             
-            echo "🔄 Starting deployment process for $ENVIRONMENT environment"
-            echo "🌐 Domain: $DOMAIN"
-            
-            # Navigate to project directory and set environment variables
-            if [ "$ENVIRONMENT" = "production" ]; then
-              cd /home/deploy/Fluently-fork
-              export ZEROTIER_IP="${{ secrets.ZEROTIER_IP }}"
-              BACKUP_DIR="/home/deploy/backups"
-              PROJECT_DIR="/home/deploy/Fluently-fork"
-            else
-              cd /home/deploy-staging/Fluently-fork
-              export ZEROTIER_IP="${{ secrets.STAGING_ZEROTIER_IP }}"
-              BACKUP_DIR="/home/deploy-staging/backups"
-              PROJECT_DIR="/home/deploy-staging/Fluently-fork"
-            fi
-            
-            # Create backup directory if it doesn't exist
+            # Create backup
+            echo "📦 Creating backup..."
+            BACKUP_DIR="/home/deploy/backups"
             mkdir -p "$BACKUP_DIR"
+            BACKUP_FILE="$BACKUP_DIR/fluently-backup-$(date +%Y%m%d-%H%M%S).tar.gz"
+            tar -czf "$BACKUP_FILE" --exclude=node_modules --exclude=.git . || echo "⚠️ Backup failed"
             
-            # Function to perform health checks
-            check_health() {
-              echo "🏥 Performing health checks..."
-              
-              # Wait for services to start
-              sleep 10
-              
-              # Check if backend is healthy
-              echo "Checking backend health..."
-              for i in {1..10}; do
-                if curl -f "http://localhost:8070/health" >/dev/null 2>&1; then
-                  echo "✅ Backend is healthy"
-                  break
-                elif [ $i -eq 10 ]; then
-                  echo "❌ Backend health check failed after 10 attempts"
-                  return 1
-                else
-                  echo "⏳ Waiting for backend... (attempt $i/10)"
-                  sleep 10
-                fi
-              done
-              
-              # Check if ML API is healthy (takes 2-3 minutes to initialize)
-              echo "Checking ML API health..."
-              for i in {1..20}; do
-                if docker compose exec -T ml-api curl -f "http://localhost:8001/health" >/dev/null 2>&1; then
-                  echo "✅ ML API is healthy"
-                  break
-                elif [ $i -eq 20 ]; then
-                  echo "❌ ML API health check failed after 20 attempts"
-                  return 1
-                else
-                  echo "⏳ Waiting for ML API... (attempt $i/20)"
-                  sleep 15
-                fi
-              done
-              
-              # Check if PostgreSQL is healthy
-              echo "Checking PostgreSQL health..."
-              if docker compose exec -T postgres pg_isready -U ${DB_USER:-postgres} >/dev/null 2>&1; then
-                echo "✅ PostgreSQL is healthy"
-              else
-                echo "❌ PostgreSQL health check failed"
-                return 1
-              fi
-              
-              # Check if nginx is responding
-              echo "Checking nginx health..."
-              for i in {1..5}; do
-                if curl -f -s "http://localhost" >/dev/null 2>&1 || curl -f -s "http://127.0.0.1" >/dev/null 2>&1; then
-                  echo "✅ Nginx is healthy"
-                  break
-                elif [ $i -eq 5 ]; then
-                  echo "❌ Nginx health check failed after 5 attempts"
-                  # Try to get more info about what's wrong
-                  echo "🔍 Debugging nginx status:"
-                  docker compose ps nginx || true
-                  docker compose logs --tail=20 nginx || true
-                  return 1
-                else
-                  echo "⏳ Waiting for nginx... (attempt $i/5)"
-                  sleep 5
-                fi
-              done
-              
-              # Check if telegram bot is healthy
-              echo "Checking telegram bot health..."
-              for i in {1..3}; do
-                if docker compose ps telegram-bot | grep -q "Up"; then
-                  echo "✅ Telegram bot is running"
-                  # Check if bot can connect to Telegram API
-                  if docker compose logs telegram-bot | grep -q "Successfully connected to Redis"; then
-                    echo "✅ Telegram bot connected to Redis"
-                  fi
-                  if docker compose logs telegram-bot | grep -q "telegram: Not Found (404)"; then
-                    echo "❌ Telegram bot has invalid token (404 error)"
-                    echo "🔍 Bot logs:"
-                    docker compose logs --tail=10 telegram-bot || true
-                    return 1
-                  fi
-                  break
-                elif [ $i -eq 3 ]; then
-                  echo "❌ Telegram bot health check failed"
-                  echo "🔍 Bot logs:"
-                  docker compose logs --tail=10 telegram-bot || true
-                  return 1
-                else
-                  echo "⏳ Waiting for telegram bot... (attempt $i/3)"
-                  sleep 5
-                fi
-              done
-              
-              echo "🎉 All health checks passed!"
-              return 0
-            }
-            
-            # Function to rollback
-            rollback() {
-              echo "🔄 Rolling back to previous version..."
-              
-              # Find the latest backup
-              LATEST_BACKUP=$(ls -t "$BACKUP_DIR"/fluently-backup-*.tar.gz 2>/dev/null | head -1)
-              
-              if [ -z "$LATEST_BACKUP" ]; then
-                echo "❌ No backup found for rollback!"
-                return 1
-              fi
-              
-              echo "📦 Found backup: $LATEST_BACKUP"
-              
-              # Stop current services
-              docker compose down --remove-orphans || true
-              
-              # Create rollback backup of current state
-              ROLLBACK_BACKUP="$BACKUP_DIR/fluently-rollback-backup-$(date +%Y%m%d-%H%M%S).tar.gz"
-              tar -czf "$ROLLBACK_BACKUP" --exclude=node_modules --exclude=.git . || echo "⚠️ Rollback backup failed"
-              
-              # Restore from backup
-              tar -xzf "$LATEST_BACKUP" --exclude=node_modules --exclude=.git .
-              
-              # Start services
-              docker compose up -d --force-recreate
-              
-              # Verify rollback
-              if check_health; then
-                echo "✅ Rollback completed successfully!"
-                return 0
-              else
-                echo "❌ Rollback failed health checks!"
-                return 1
-              fi
-            }
-            
-            # Handle rollback request
-            if [ "$IS_ROLLBACK" = "true" ]; then
-              rollback
-              exit $?
-            fi
-            
-            # Backup current state (only for production)
-            if [ "$ENVIRONMENT" = "production" ]; then
-              echo "📦 Creating backup..."
-              BACKUP_FILE="$BACKUP_DIR/fluently-backup-$(date +%Y%m%d-%H%M%S).tar.gz"
-              tar -czf "$BACKUP_FILE" --exclude=node_modules --exclude=.git . || echo "⚠️ Backup failed but continuing..."
-              
-              # Keep only last 5 backups
-              ls -t "$BACKUP_DIR"/fluently-backup-*.tar.gz 2>/dev/null | tail -n +6 | xargs rm -f 2>/dev/null || true
-            fi
-            
-            # Store current state for potential rollback
-            CURRENT_STATE_BACKUP="$BACKUP_DIR/fluently-current-state-$(date +%Y%m%d-%H%M%S).tar.gz"
-            tar -czf "$CURRENT_STATE_BACKUP" --exclude=node_modules --exclude=.git . || echo "⚠️ Current state backup failed"
+            # Keep only last 5 backups
+            ls -t "$BACKUP_DIR"/fluently-backup-*.tar.gz 2>/dev/null | tail -n +6 | xargs rm -f 2>/dev/null || true
             
             # Update code
             echo "📥 Updating code..."
-
-            # Fix Git ownership issue
             git config --global --add safe.directory $(pwd)
-
-            # Restore any local changes before pulling
-            git restore .
-
             git fetch origin
-            git checkout $BRANCH
-            git pull origin $BRANCH
-
-            # Create main .env file from root .env.example if it doesn't exist
+            git checkout main
+            git pull origin main
+            
+            # Create production docker-compose file with pre-built images
+            echo "🐳 Creating production docker-compose configuration..."
+            cat > docker-compose.production.yml << 'EOF'
+            services:
+              backend:
+                image: docker.io/fluentlyorg/fluently-backend:latest-develop
+                container_name: fluently_backend
+                environment:
+                  DB_HOST: postgres
+                  DB_PORT: 5432
+                  DB_USER: ${DB_USER:-postgres}
+                  DB_PASSWORD: ${DB_PASSWORD}
+                  DB_NAME: ${DB_NAME:-fluently_db}
+                  REDIS_ADDR: redis:6379
+                  PUBLIC_URL: https://${DOMAIN}
+                  ZEROTIER_IP: ${ZEROTIER_IP}
+                depends_on:
+                  postgres:
+                    condition: service_healthy
+                  redis:
+                    condition: service_healthy
+                restart: unless-stopped
+                networks:
+                  - fluently_network
+                ports:
+                  - "127.0.0.1:8070:8070"
+                  - "${ZEROTIER_IP}:8070:8070"
+                healthcheck:
+                  test: ["CMD", "curl", "-f", "http://localhost:8070/health"]
+                  interval: 30s
+                  timeout: 10s
+                  retries: 3
+              
+              telegram-bot:
+                image: docker.io/fluentlyorg/fluently-telegram-bot:latest-develop
+                container_name: fluently_telegram_bot
+                environment:
+                  BOT_TOKEN: ${BOT_TOKEN}
+                  WEBHOOK_SECRET: ${WEBHOOK_SECRET}
+                  WEBHOOK_URL: https://${DOMAIN}/webhook
+                  REDIS_ADDR: redis:6379
+                  BACKEND_URL: http://backend:8070
+                depends_on:
+                  redis:
+                    condition: service_healthy
+                  backend:
+                    condition: service_healthy
+                restart: unless-stopped
+                networks:
+                  - fluently_network
+              
+              ml-api:
+                image: docker.io/fluentlyorg/fluently-ml-api:latest-develop
+                container_name: fluently_ml_api
+                restart: unless-stopped
+                networks:
+                  - fluently_network
+                ports:
+                  - "127.0.0.1:8001:8001"
+                healthcheck:
+                  test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+                  interval: 60s
+                  timeout: 30s
+                  retries: 3
+                  start_period: 180s
+              
+              nginx:
+                image: docker.io/fluentlyorg/fluently-nginx:latest-develop
+                container_name: fluently_nginx
+                environment:
+                  DOMAIN: ${DOMAIN}
+                  CERT_NAME: ${CERT_NAME}
+                  WEBHOOK_SECRET: ${WEBHOOK_SECRET}
+                ports:
+                  - "80:80"
+                  - "443:443"
+                depends_on:
+                  - backend
+                volumes:
+                  - /etc/nginx/ssl:/etc/nginx/ssl:ro
+                networks:
+                  - fluently_network
+              
+              postgres:
+                image: postgres:15-alpine
+                container_name: fluently_postgres
+                environment:
+                  POSTGRES_USER: ${DB_USER:-postgres}
+                  POSTGRES_PASSWORD: ${DB_PASSWORD}
+                  POSTGRES_DB: ${DB_NAME:-fluently_db}
+                volumes:
+                  - fluently_postgres_data:/var/lib/postgresql/data
+                  - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+                restart: unless-stopped
+                networks:
+                  - fluently_network
+                healthcheck:
+                  test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
+                  interval: 10s
+                  timeout: 5s
+                  retries: 5
+              
+              redis:
+                image: redis:7-alpine
+                container_name: fluently_redis
+                restart: unless-stopped
+                networks:
+                  - fluently_network
+                volumes:
+                  - fluently_redis_data:/data
+                healthcheck:
+                  test: ["CMD", "redis-cli", "ping"]
+                  interval: 10s
+                  timeout: 5s
+                  retries: 5
+            
+            volumes:
+              fluently_postgres_data:
+                external: true
+              fluently_redis_data:
+                external: true
+            
+            networks:
+              fluently_network:
+                driver: bridge
+            EOF
+            
+            # Setup environment variables
+            echo "⚙️ Setting up environment variables..."
             if [ ! -f ".env" ]; then
-              echo "📝 Creating main .env file from root .env.example..."
               cp .env.example .env
             fi
-
-            # Create backend/.env for backward compatibility if it doesn't exist
-            if [ ! -f "backend/.env" ]; then
-              echo "📝 Creating backend/.env file (copy of root .env)..."
-              cp .env backend/.env
+            
+            # Update environment variables
+            sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=${{ secrets.ZEROTIER_IP }}/" .env
+            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://fluently-app.ru|g" .env
+            sed -i "s/DOMAIN=.*/DOMAIN=fluently-app.ru/" .env
+            sed -i "s/CERT_NAME=.*/CERT_NAME=fluently-app-ru/" .env
+            
+            # Set telegram bot configuration
+            if [ ! -z "${{ secrets.TELEGRAM_BOT_TOKEN }}" ]; then
+              sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}/" .env
             fi
-
-            # Update environment variables based on deployment target
-            echo "⚙️ Updating environment configuration..."
-
-            # Update ZeroTier IP in both .env files
-            if grep -q "ZEROTIER_IP=" .env; then
-              sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" .env
-            else
-              echo "ZEROTIER_IP=$ZEROTIER_IP" >> .env
+            if [ ! -z "${{ secrets.WEBHOOK_SECRET }}" ]; then
+              sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=${{ secrets.WEBHOOK_SECRET }}/" .env
             fi
             
-            # Also update backend/.env for backward compatibility
-            if grep -q "ZEROTIER_IP=" backend/.env; then
-              sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" backend/.env
-            else
-              echo "ZEROTIER_IP=$ZEROTIER_IP" >> backend/.env
-            fi
-
-            # Update PUBLIC_URL in both .env files
-            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" .env
-            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" backend/.env
-
-            # Add telegram bot environment variables if they don't exist
-            echo "🔧 Setting up Telegram bot configuration..."
-            if [ "$ENVIRONMENT" = "production" ]; then
-              BOT_TOKEN="${{ secrets.TELEGRAM_BOT_TOKEN }}"
-              WEBHOOK_SECRET="${{ secrets.WEBHOOK_SECRET }}"
-              echo "📝 Using production bot credentials"
-            else
-              BOT_TOKEN="${{ secrets.STAGING_TELEGRAM_BOT_TOKEN }}"
-              WEBHOOK_SECRET="${{ secrets.STAGING_WEBHOOK_SECRET }}"
-              echo "📝 Using staging bot credentials"
-            fi
+            # Pull latest images
+            echo "📥 Pulling latest production images..."
+            docker compose -f docker-compose.production.yml pull
             
-            # Debug: Check if secrets are provided (without printing actual values)
-            if [ -z "$BOT_TOKEN" ]; then
-              echo "⚠️ WARNING: BOT_TOKEN is empty for $ENVIRONMENT environment!"
-              echo "Please set the following GitHub secret:"
-              if [ "$ENVIRONMENT" = "production" ]; then
-                echo "   TELEGRAM_BOT_TOKEN"
-              else
-                echo "   STAGING_TELEGRAM_BOT_TOKEN"
-              fi
-            else
-              echo "✅ BOT_TOKEN is provided (length: ${#BOT_TOKEN} characters)"
-            fi
-            
-            if [ -z "$WEBHOOK_SECRET" ]; then
-              echo "⚠️ WARNING: WEBHOOK_SECRET is empty for $ENVIRONMENT environment!"
-              echo "Please set the following GitHub secret:"
-              if [ "$ENVIRONMENT" = "production" ]; then
-                echo "   WEBHOOK_SECRET"
-              else
-                echo "   STAGING_WEBHOOK_SECRET"
-              fi
-            else
-              echo "✅ WEBHOOK_SECRET is provided"
-            fi
-            
-            # Set telegram bot configuration in root .env
-            if [ ! -z "$BOT_TOKEN" ]; then
-              if grep -q "BOT_TOKEN=" .env; then
-                sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=$BOT_TOKEN/" .env
-              else
-                echo "BOT_TOKEN=$BOT_TOKEN" >> .env
-              fi
-              echo "✅ BOT_TOKEN set in .env file"
-            else
-              echo "❌ Skipping BOT_TOKEN setup (empty value)"
-            fi
-            
-            if [ ! -z "$WEBHOOK_SECRET" ]; then
-              if grep -q "WEBHOOK_SECRET=" .env; then
-                sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=$WEBHOOK_SECRET/" .env
-              else
-                echo "WEBHOOK_SECRET=$WEBHOOK_SECRET" >> .env
-              fi
-              echo "✅ WEBHOOK_SECRET set in .env file"
-            else
-              echo "❌ Skipping WEBHOOK_SECRET setup (empty value)"
-            fi
-            
-            # Set webhook URL
-            if grep -q "WEBHOOK_URL=" .env; then
-              sed -i "s|WEBHOOK_URL=.*|WEBHOOK_URL=https://$DOMAIN/webhook|g" .env
-            else
-              echo "WEBHOOK_URL=https://$DOMAIN/webhook" >> .env
-            fi
-            
-            # Set Redis configuration for Docker network
-            if grep -q "REDIS_ADDR=" .env; then
-              sed -i "s|REDIS_ADDR=.*|REDIS_ADDR=redis:6379|g" .env
-            else
-              echo "REDIS_ADDR=redis:6379" >> .env
-            fi
-
-            echo "📋 Main .env file ready for docker-compose..."
-            
-            # Debug: Show telegram bot configuration (without sensitive values)
-            echo "🔍 Telegram bot configuration in .env:"
-            echo "BOT_TOKEN: $(grep "BOT_TOKEN=" .env | sed 's/BOT_TOKEN=.*/BOT_TOKEN=[HIDDEN]/' || echo 'Not set')"
-            echo "WEBHOOK_SECRET: $(grep "WEBHOOK_SECRET=" .env | sed 's/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=[HIDDEN]/' || echo 'Not set')"
-            echo "WEBHOOK_URL: $(grep "WEBHOOK_URL=" .env || echo 'Not set')"
-            echo "REDIS_ADDR: $(grep "REDIS_ADDR=" .env || echo 'Not set')"
-
-            # Set Swagger host for the environment
-            if [ "$ENVIRONMENT" = "production" ]; then
-              export SWAGGER_HOST="${{ secrets.ZEROTIER_IP }}:8070"
-            else
-              export SWAGGER_HOST="${{ secrets.STAGING_ZEROTIER_IP }}:8070"
-            fi
-            
-            echo "🔧 Setting up environment variables..."
-            echo "SWAGGER_HOST=$SWAGGER_HOST"
-            
-
-            # Generate nginx config from template
-            echo "🔧 Generating nginx configuration from template..."
-            if [ "$ENVIRONMENT" = "production" ]; then
-              export CERT_NAME="fluently-app-ru"
-            else
-              export CERT_NAME="fluently-app-online"
-            fi
-
-            export DOMAIN
-            # Specify which variables to substitute, leaving nginx variables untouched
-            envsubst '${DOMAIN} ${CERT_NAME}' < backend/nginx-container/nginx.conf.template > backend/nginx-container/default.conf
-
-            echo "Generated nginx config for $DOMAIN with cert $CERT_NAME"
-
-            # Generate environment-specific backup scripts
-            echo "🔧 Generating environment-specific backup scripts..."
-            export BACKUP_DIR
-            export ENVIRONMENT
-            export PROJECT_DIR
-            
-            # Generate backup script
-            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/backup_volumes.sh.template > scripts/backup_volumes.sh
-            chmod +x scripts/backup_volumes.sh
-            
-            # Generate restore script  
-            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/restore_volumes.sh.template > scripts/restore_volumes.sh
-            chmod +x scripts/restore_volumes.sh
-            
-            # Generate migration script
-            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/migrate_to_external_volumes.sh.template > scripts/migrate_to_external_volumes.sh
-            chmod +x scripts/migrate_to_external_volumes.sh
-            
-            # Generate cron setup script
-            envsubst '${BACKUP_DIR} ${ENVIRONMENT} ${PROJECT_DIR}' < scripts/setup_cron.sh.template > scripts/setup_cron.sh
-            chmod +x scripts/setup_cron.sh
-            
-            # Generate backup operations script
-            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/backup_ops.sh.template > scripts/backup_ops.sh
-            chmod +x scripts/backup_ops.sh
-            
-            echo "✅ Generated environment-specific scripts for $ENVIRONMENT"
-
-            echo "🐳 Starting Docker containers..."
-            # Stop services first
+            # Stop current services
+            echo "🛑 Stopping current services..."
             docker compose down --remove-orphans || true
-
-            # Clean up Docker networks to prevent conflicts
-            echo "🧹 Cleaning up Docker networks..."
             
-            # Remove project-specific networks if they exist
-            docker network rm fluently-fork_fluently_network 2>/dev/null || true
-            docker network rm fluently_network 2>/dev/null || true
+            # Start new services
+            echo "🚀 Starting production services..."
+            docker compose -f docker-compose.production.yml up -d
             
-            # Prune unused networks
-            docker network prune -f || true
+            # Health checks
+            echo "🏥 Performing health checks..."
+            sleep 30
             
-            echo "✅ Network cleanup completed"
-
-            # Build with progress output and timeout handling
-            echo "🔨 Building Docker images with optimized caching..."
-            export DOCKER_BUILDKIT=1
-            export COMPOSE_DOCKER_CLI_BUILD=1
-            
-            # Pre-warm Go module cache for faster builds
-            echo "🚀 Pre-warming Go build cache..."
-            docker build --target builder \
-              --build-arg BUILDKIT_INLINE_CACHE=1 \
-              --cache-from fluently-fork-backend:cache \
-              --cache-from fluently-fork-telegram-bot:cache \
-              -t temp-go-cache backend/ || echo "⚠️ Cache warm-up failed, continuing..."
-            
-            # Build ML API separately first (it takes the longest) with timeout
-            echo "🤖 Building ML API (this may take several minutes)..."
-            timeout 20m docker compose build --parallel ml-api || {
-              echo "❌ ML API build timed out after 20 minutes"
-              exit 1
-            }
-            
-            # Build remaining services in parallel with reduced timeout
-            echo "🔨 Building remaining services in parallel..."
-            timeout 10m docker compose build --parallel || {
-              echo "❌ Services build timed out after 10 minutes"
-              exit 1
-            }
-
-            # Start services with force recreate
-            docker compose up -d --force-recreate
-
-            # Perform health checks
-            if check_health; then
-              echo "🎉 Deployment completed successfully!"
-              echo "🌐 Application available at: https://$DOMAIN"
-              
-              # Show running containers
-              echo "📋 Running containers:"
-              docker compose ps
-              
-              # Show telegram bot setup instructions
-              echo ""
-              echo "🤖 Telegram Bot Setup Instructions:"
-              echo "If the bot token is set correctly, run this command to set up the webhook:"
-              echo ""
-              echo "curl -X POST \"https://api.telegram.org/bot\$BOT_TOKEN/setWebhook\" \\"
-              echo "     -H \"Content-Type: application/json\" \\"
-              echo "     -d '{\"url\": \"https://$DOMAIN/webhook\"}'"
-              echo ""
-              echo "Replace \$BOT_TOKEN with your actual bot token from the GitHub secrets."
-              echo "You can test the webhook by sending a message to your bot."
-              echo ""
-              
-              # Cleanup old images (keep last 3)
-              echo "🧹 Cleaning up old Docker images..."
-              docker image prune -f || true
-              
-              # Remove current state backup since deployment was successful
-              rm -f "$CURRENT_STATE_BACKUP" || true
-              
-            else
-              echo "❌ Deployment failed health checks! Starting rollback..."
-              
-              # Restore from current state backup
-              echo "🔄 Restoring previous state..."
-              docker compose down --remove-orphans || true
-              tar -xzf "$CURRENT_STATE_BACKUP" --exclude=node_modules --exclude=.git . || echo "⚠️ Restore failed"
-              docker compose up -d --force-recreate
-              
-              # Cleanup failed backup
-              rm -f "$CURRENT_STATE_BACKUP" || true
-              
-              echo "❌ Deployment failed and rollback attempted"
-              exit 1
-            fi
-
-            # Final verification: Ensure bot token is set before building
-            if ! grep -q "BOT_TOKEN=.*[^[:space:]]" .env; then
-              echo ""
-              echo "❌ CRITICAL ERROR: BOT_TOKEN is not properly set in .env file!"
-              echo ""
-              echo "🔧 To fix this issue:"
-              echo "1. Go to GitHub repository Settings > Secrets and variables > Actions"
-              echo "2. Add the following secrets:"
-              if [ "$ENVIRONMENT" = "production" ]; then
-                echo "   - TELEGRAM_BOT_TOKEN (get from @BotFather on Telegram)"
-                echo "   - WEBHOOK_SECRET (random secure string)"
+            # Check backend health
+            for i in {1..10}; do
+              if curl -f "http://localhost:8070/health" >/dev/null 2>&1; then
+                echo "✅ Backend is healthy"
+                break
+              elif [ $i -eq 10 ]; then
+                echo "❌ Backend health check failed"
+                exit 1
               else
-                echo "   - STAGING_TELEGRAM_BOT_TOKEN (get from @BotFather on Telegram)"
-                echo "   - STAGING_WEBHOOK_SECRET (random secure string)"
+                echo "⏳ Waiting for backend... (attempt $i/10)"
+                sleep 15
               fi
-              echo ""
-              echo "3. To create a bot token:"
-              echo "   - Message @BotFather on Telegram"
-              echo "   - Use /newbot command"
-              echo "   - Follow instructions to create your bot"
-              echo "   - Copy the token (format: 123456789:ABCdefGHIjklMNOpqrsTUVwxyz)"
-              echo ""
-              echo "🚫 Deployment will continue but telegram bot will not work!"
-              echo ""
-            fi
+            done
+            
+            # Check nginx
+            for i in {1..5}; do
+              if curl -f -s "http://localhost" >/dev/null 2>&1; then
+                echo "✅ Nginx is healthy"
+                break
+              elif [ $i -eq 5 ]; then
+                echo "❌ Nginx health check failed"
+                docker compose -f docker-compose.production.yml logs nginx
+                exit 1
+              else
+                echo "⏳ Waiting for nginx... (attempt $i/5)"
+                sleep 10
+              fi
+            done
+            
+            echo "🎉 Production deployment completed successfully!"
+            echo "🌐 Application available at: https://fluently-app.ru"
+            
+            # Show running containers
+            docker compose -f docker-compose.production.yml ps
 
+  # ===========================================
+  # STAGING DEPLOY - Deploy to staging
+  # ===========================================
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+    needs: [build, test, publish]
+    environment: staging
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to staging server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.STAGING_DEPLOY_HOST }}
+          username: ${{ secrets.STAGING_DEPLOY_USERNAME }}
+          key: ${{ secrets.STAGING_DEPLOY_SSH_KEY }}
+          timeout: 30m
+          command_timeout: 30m
+          script: |
+            set -e
+            
+            echo "🚀 Starting staging deployment..."
+            cd /home/deploy-staging/Fluently-fork
+            
+            # Update code
+            echo "📥 Updating code..."
+            git config --global --add safe.directory $(pwd)
+            git fetch origin
+            git checkout develop
+            git pull origin develop
+            
+            # Use the same production docker-compose but with staging config
+            cp docker-compose.production.yml docker-compose.staging.yml
+            
+            # Setup staging environment
+            echo "⚙️ Setting up staging environment..."
+            if [ ! -f ".env" ]; then
+              cp .env.example .env
+            fi
+            
+            sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=${{ secrets.STAGING_ZEROTIER_IP }}/" .env
+            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://fluently-app.online|g" .env
+            sed -i "s/DOMAIN=.*/DOMAIN=fluently-app.online/" .env
+            sed -i "s/CERT_NAME=.*/CERT_NAME=fluently-app-online/" .env
+            
+            if [ ! -z "${{ secrets.STAGING_TELEGRAM_BOT_TOKEN }}" ]; then
+              sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=${{ secrets.STAGING_TELEGRAM_BOT_TOKEN }}/" .env
+            fi
+            if [ ! -z "${{ secrets.STAGING_WEBHOOK_SECRET }}" ]; then
+              sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=${{ secrets.STAGING_WEBHOOK_SECRET }}/" .env
+            fi
+            
+            # Pull and deploy
+            docker compose -f docker-compose.staging.yml pull
+            docker compose down --remove-orphans || true
+            docker compose -f docker-compose.staging.yml up -d
+            
+            echo "🎉 Staging deployment completed!"
+            echo "🌐 Staging available at: https://fluently-app.online"
