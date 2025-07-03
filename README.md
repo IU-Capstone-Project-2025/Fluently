@@ -25,7 +25,7 @@ https://fluently-app.ru/swagger/index.html
 | Backend         | Go 1.24, Chi Router, GORM, PostgreSQL, Redis, Zap Logging, Swagger           |
 | Mobile          | iOS (Swift), Android (Kotlin)                                                |
 | Telegram Bot    | Go, Redis                                                                     |
-| Infrastructure  | Docker, Docker Compose, Nginx, Let's Encrypt                                  |
+| Infrastructure  | Docker, Docker Compose, Nginx, Prometheus, Grafana, Loki, PostgreSQL, Redis, Cloudflare |
 
 ---
 
