@@ -100,8 +100,8 @@ server {
     
     # Telegram Bot Webhook - CRITICAL for bot functionality
     location /webhook {
-        # Proxy to Go webhook server running on localhost:8060
-        proxy_pass http://127.0.0.1:8060/webhook;
+        # Proxy to Go webhook server running on telegram-bot container
+        proxy_pass http://telegram-bot:8060/webhook;
         proxy_http_version 1.1;
         
         # Headers for proper proxying
@@ -137,7 +137,7 @@ server {
 
     # Bot Health Check Endpoints
     location /bot/health {
-        proxy_pass http://127.0.0.1:8060/health;
+        proxy_pass http://telegram-bot:8060/health;
         proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -149,7 +149,7 @@ server {
     }
 
     location /bot/ready {
-        proxy_pass http://127.0.0.1:8060/ready;
+        proxy_pass http://telegram-bot:8060/ready;
         proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -162,7 +162,7 @@ server {
 
     # Bot Metrics endpoint (optional, can be restricted)
     location /bot/metrics {
-        proxy_pass http://127.0.0.1:8060/metrics;
+        proxy_pass http://telegram-bot:8060/metrics;
         proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
