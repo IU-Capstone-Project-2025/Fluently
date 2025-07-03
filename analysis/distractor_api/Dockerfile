@@ -18,22 +18,12 @@ RUN useradd --create-home --shell /bin/bash app
 
 WORKDIR /app
 
-# Copy requirements and install dependencies
+# Copy requirements and pyproject files
+COPY distractor_api/requirements.txt ./
 COPY distractor_api/pyproject.toml ./
 
-# Install Poetry and export requirements
-RUN pip install poetry==1.7.1 && \
-    poetry export -f requirements.txt --output requirements.txt --without-hashes
-
-# Install CPU-only PyTorch first to avoid CUDA dependencies  
-RUN pip install torch==2.1.0+cpu torchvision==0.16.0+cpu torchaudio==2.1.0+cpu \
-    --index-url https://download.pytorch.org/whl/cpu
-
-# Install remaining dependencies (excluding torch since we already installed CPU version)
-RUN pip install -r requirements.txt --no-deps && \
-    pip install transformers tokenizers numpy pandas nltk scikit-learn \
-    fastapi uvicorn[standard] pydantic python-multipart requests && \
-    pip uninstall poetry -y
+# Install dependencies directly from requirements.txt (much faster than Poetry export)
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code and bert module
 COPY --chown=app:app distractor_api/ .

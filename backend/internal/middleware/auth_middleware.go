@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"fluently/go-backend/internal/config"
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/pkg/logger"
 
@@ -36,17 +35,6 @@ func CustomAuthenticator(next http.Handler) http.Handler {
 			logger.Log.Error("Invalid JWT token")
 			writeJSONError(w, "unauthorized", http.StatusUnauthorized)
 			return
-		}
-
-		// Check whitelist if configured
-		whitelist := config.GetConfig().Swagger.AllowedEmails
-		if len(whitelist) > 0 {
-			email, _ := claims["email"].(string)
-			if !whitelist[email] {
-				logger.Log.Error("Email not whitelisted", zap.String("email", email))
-				writeJSONError(w, "forbidden", http.StatusForbidden)
-				return
-			}
 		}
 
 		// Extract user ID from claims

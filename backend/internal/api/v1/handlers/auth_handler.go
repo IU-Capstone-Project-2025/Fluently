@@ -174,7 +174,6 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 				GoogleID:     sub,
 				Role:         "user",
 				IsActive:     true,
-				PrefID:       &prefID,
 				LastLoginAt:  time.Now(),
 			}
 
@@ -657,7 +656,6 @@ func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, g
 				GoogleID:     sub,
 				Role:         "user",
 				IsActive:     true,
-				PrefID:       &prefID,
 				LastLoginAt:  time.Now(),
 			}
 
