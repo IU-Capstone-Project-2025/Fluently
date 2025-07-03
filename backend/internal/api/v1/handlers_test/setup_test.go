@@ -18,11 +18,13 @@ var (
 	db         *gorm.DB
 	testServer *httptest.Server
 
-	wordRepo     *pg.WordRepository
-	userRepo     *pg.UserRepository
-	topicRepo    *pg.TopicRepository
-	sentenceRepo *pg.SentenceRepository
-	prefRepo     *pg.PreferenceRepository
+	wordRepo        *pg.WordRepository
+	userRepo        *pg.UserRepository
+	topicRepo       *pg.TopicRepository
+	sentenceRepo    *pg.SentenceRepository
+	prefRepo        *pg.PreferenceRepository
+	pickOptionRepo  *pg.PickOptionRepository
+	learnedWordRepo *pg.LearnedWordRepository
 )
 
 func setupTest(t *testing.T) {
@@ -54,18 +56,24 @@ func setupTest(t *testing.T) {
 	topicRepo = pg.NewTopicRepository(db)
 	sentenceRepo = pg.NewSentenceRepository(db)
 	prefRepo = pg.NewPreferenceRepository(db)
+	pickOptionRepo = pg.NewPickOptionRepository(db)
+	learnedWordRepo = pg.NewLearnedWordRepository(db)
 
 	db.Exec("TRUNCATE TABLE words RESTART IDENTITY CASCADE")
 	db.Exec("TRUNCATE TABLE users RESTART IDENTITY CASCADE")
 	db.Exec("TRUNCATE TABLE topics RESTART IDENTITY CASCADE")
 	db.Exec("TRUNCATE TABLE sentences RESTART IDENTITY CASCADE")
 	db.Exec("TRUNCATE TABLE user_preferences RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE pick_options RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE learned_words RESTART IDENTITY CASCADE")
 
 	wordHandler := &handlers.WordHandler{Repo: pg.NewWordRepository(db)}
 	userHandler := &handlers.UserHandler{Repo: pg.NewUserRepository(db)}
 	topicHandler := &handlers.TopicHandler{Repo: pg.NewTopicRepository(db)}
 	sentenceHandler := &handlers.SentenceHandler{Repo: pg.NewSentenceRepository(db)}
 	prefHandler := &handlers.PreferenceHandler{Repo: pg.NewPreferenceRepository(db)}
+	pickOptionHandler := &handlers.PickOptionHandler{Repo: pg.NewPickOptionRepository(db)}
+	learnedWordHandler := &handlers.LearnedWordHandler{Repo: learnedWordRepo}
 
 	r := chi.NewRouter()
 	routes.RegisterWordRoutes(r, wordHandler)
@@ -73,6 +81,8 @@ func setupTest(t *testing.T) {
 	routes.RegisterTopicRoutes(r, topicHandler)
 	routes.RegisterSentenceRoutes(r, sentenceHandler)
 	routes.RegisterPreferencesRoutes(r, prefHandler)
+	routes.RegisterPickOptionRoutes(r, pickOptionHandler)
+	routes.RegisterLearnedWordRoutes(r, learnedWordHandler)
 
 	testServer = httptest.NewServer(r)
 }
