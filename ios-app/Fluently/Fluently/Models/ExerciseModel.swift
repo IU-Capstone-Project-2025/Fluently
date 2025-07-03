@@ -8,22 +8,20 @@
 import Foundation
 
 class ExerciseModel: Codable{
-    var data: String
-    var type: String
-
-    var correctAnswer: String?
+    var data: ExerciseData
+    var type: ExerciseModelType
 
     init(
-        data: String,
+        data: ExerciseData,
         type: String
     ) {
         self.data = data
-        self.type = type
+        self.type = ExerciseModelType(rawValue: type) ?? .wordCard
     }
 }
 
 // MARK: - Exrs Types
-enum ExerciseModelType: String, CaseIterable {
+enum ExerciseModelType: String, CaseIterable{
     case chooseTranslationEngRuss = "translate_ru_to_en"
     case typeTranslationRussEng = "write_word_from_translation"
     case pickOptionSentence = "pick_option_sentence"
@@ -32,3 +30,5 @@ enum ExerciseModelType: String, CaseIterable {
     case wordCard = "word_card"
     case numberOfWords = "numberOfWords"
 }
+
+extension ExerciseModelType: Codable{}

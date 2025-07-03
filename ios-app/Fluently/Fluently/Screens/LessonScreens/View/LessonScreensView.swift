@@ -77,7 +77,7 @@ struct LessonScreensView: View {
         VStack {
             switch presenter.currentExType {
                 case .chooseTranslationEngRuss: /// Choose correct translation
-                    let chooseWordEx = presenter.currentEx as! ChooseTranslationExs
+                    let chooseWordEx = presenter.currentEx as! chooseTranslationEngRuss
                     ChooseTranslationView(
                         word: chooseWordEx.word,
                         answers: chooseWordEx.options
@@ -86,13 +86,13 @@ struct LessonScreensView: View {
                         }
                     .id(presenter.currentExNumber)
                 case .typeTranslationRussEng: /// Type correct translation
-                    let typeTranslationEx = presenter.currentEx as! TypeTranslationExs
+                    let typeTranslationEx = presenter.currentEx as! WriteFromTranslation
                     TypeTranslationView (
                         word: typeTranslationEx.word) { typedAnswer in
                             presenter.answer(typedAnswer)
                         }
                 case .pickOptionSentence: /// Pick word, mathing by definition
-                    let pickOptionEx = presenter.currentEx as! PickOptionsExs
+                    let pickOptionEx = presenter.currentEx as! PickOptionSentence
                     PickOptionsView(
                         sentence: pickOptionEx.sentence,
                         answers: pickOptionEx.options
