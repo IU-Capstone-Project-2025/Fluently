@@ -125,30 +125,64 @@ jobs:
             ${{ runner.os }}-go-
 
       - name: Install swag for Go docs generation
-        run: go install github.com/swaggo/swag/cmd/swag@latest
+        run: |
+          echo "📦 Installing swag..."
+          go install github.com/swaggo/swag/cmd/swag@latest
+          echo "✅ Swag installed to: $(which swag || echo '$HOME/go/bin/swag')"
 
       - name: Initialize Go module and generate docs
+        working-directory: ./backend
         run: |
-          cd backend
+          # Add Go bin to PATH
+          export PATH=$PATH:$HOME/go/bin
+          
           if [ ! -f go.sum ]; then
             echo "📦 Initializing Go dependencies..."
             go mod download
             go mod tidy
           fi
           
+          # Debug: Verify we're in the right place and files exist
+          echo "🔍 Current working directory: $(pwd)"
+          echo "🔍 Backend directory contents:"
+          ls -la
+          echo "🔍 CMD directory contents:"
+          ls -la cmd/
+          echo "🔍 Checking for main.go:"
+          test -f cmd/main.go && echo "✅ cmd/main.go exists" || echo "❌ cmd/main.go missing"
+          
+          # Verify swag is available
+          echo "🔍 Checking swag installation:"
+          if command -v swag >/dev/null 2>&1; then
+            echo "✅ swag found in PATH: $(which swag)"
+          elif [ -f "$HOME/go/bin/swag" ]; then
+            echo "✅ swag found at: $HOME/go/bin/swag"
+          else
+            echo "❌ swag not found"
+            exit 1
+          fi
+          
           # Generate Swagger documentation
           echo "📚 Generating API documentation..."
-          swag init --generalInfo cmd/main.go --output docs --parseDependency --parseInternal
+          if command -v swag >/dev/null 2>&1; then
+            swag init --generalInfo cmd/main.go --output docs --parseDependency --parseInternal
+          else
+            $HOME/go/bin/swag init --generalInfo cmd/main.go --output docs --parseDependency --parseInternal
+          fi
           
           # Verify docs were generated
           if [ ! -d "docs" ]; then
             echo "❌ Failed to generate docs directory"
             exit 1
           fi
+          
+          echo "✅ Documentation generated successfully"
+          echo "📁 Generated files:"
+          ls -la docs/
 
       - name: Generate Go coverage
+        working-directory: ./backend
         run: |
-          cd backend
           # Set test environment variables
           export DB_HOST=localhost
           export DB_PORT=5433
@@ -168,8 +202,8 @@ jobs:
           fi
 
       - name: Generate Python coverage
+        working-directory: ./analysis/distractor_api
         run: |
-          cd analysis/distractor_api
           echo "🐍 Setting up Python environment..."
           
           # Install test dependencies
