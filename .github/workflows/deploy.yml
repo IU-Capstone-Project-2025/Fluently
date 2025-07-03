@@ -127,7 +127,7 @@ jobs:
       - name: Build and push ML API image
         uses: docker/build-push-action@v5
         with:
-          context: ./analysis/distractor_api
+          context: ./analysis
           file: ./analysis/distractor_api/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-ml-api.outputs.tags }}
