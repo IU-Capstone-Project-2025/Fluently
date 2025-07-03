@@ -9,8 +9,7 @@ import (
 	"net/http"
 	"time"
 
-	"fluently/telegram-bot/internal/domain"
-	"fluently/telegram-bot/pkg/logger"
+	"telegram-bot/internal/domain"
 
 	"github.com/google/uuid"
 	"go.uber.org/zap"
@@ -180,17 +179,17 @@ func (c *Client) CreateLinkToken(ctx context.Context, telegramID int64) (*Create
 
 	resp, err := c.doRequest(ctx, "POST", "/telegram/create-link", req)
 	if err != nil {
-		logger.Log.Error("Failed to create link token", zap.Error(err), zap.Int64("telegram_id", telegramID))
+		zap.L().With(zap.Int64("telegram_id", telegramID), zap.Error(err)).Error("Failed to create link token")
 		return nil, err
 	}
 
 	var result CreateLinkTokenResponse
 	if err := c.parseResponse(resp, &result); err != nil {
-		logger.Log.Error("Failed to parse create link token response", zap.Error(err))
+		zap.L().With(zap.Error(err)).Error("Failed to parse create link token response")
 		return nil, err
 	}
 
-	logger.Log.Info("Successfully created link token", zap.Int64("telegram_id", telegramID))
+	zap.L().With(zap.Int64("telegram_id", telegramID)).Info("Successfully created link token")
 	return &result, nil
 }
 
@@ -200,17 +199,17 @@ func (c *Client) CheckLinkStatus(ctx context.Context, telegramID int64) (*CheckL
 
 	resp, err := c.doRequest(ctx, "POST", "/telegram/check-status", req)
 	if err != nil {
-		logger.Log.Error("Failed to check link status", zap.Error(err), zap.Int64("telegram_id", telegramID))
+		zap.L().With(zap.Int64("telegram_id", telegramID), zap.Error(err)).Error("Failed to check link status")
 		return nil, err
 	}
 
 	var result CheckLinkStatusResponse
 	if err := c.parseResponse(resp, &result); err != nil {
-		logger.Log.Error("Failed to parse check link status response", zap.Error(err))
+		zap.L().With(zap.Error(err)).Error("Failed to parse check link status response")
 		return nil, err
 	}
 
-	logger.Log.Debug("Checked link status", zap.Int64("telegram_id", telegramID), zap.Bool("is_linked", result.IsLinked))
+	zap.L().With(zap.Int64("telegram_id", telegramID), zap.Bool("is_linked", result.IsLinked)).Debug("Checked link status")
 	return &result, nil
 }
 
@@ -224,20 +223,21 @@ func (c *Client) GenerateLesson(ctx context.Context, userID, cefrLevel string, w
 
 	resp, err := c.doRequest(ctx, "POST", "/api/v1/lessons/generate", req)
 	if err != nil {
-		logger.Log.Error("Failed to generate lesson", zap.Error(err), zap.String("user_id", userID))
+		zap.L().With(zap.String("user_id", userID), zap.Error(err)).Error("Failed to generate lesson")
 		return nil, err
 	}
 
 	var result domain.LessonResponse
 	if err := c.parseResponse(resp, &result); err != nil {
-		logger.Log.Error("Failed to parse generate lesson response", zap.Error(err))
+		zap.L().With(zap.Error(err)).Error("Failed to parse generate lesson response")
 		return nil, err
 	}
 
-	logger.Log.Info("Successfully generated lesson",
+	zap.L().With(
 		zap.String("user_id", userID),
 		zap.String("lesson_id", result.Lesson.LessonID.String()),
-		zap.Int("word_count", len(result.Cards)))
+		zap.Int("word_count", len(result.Cards)),
+	).Info("Successfully generated lesson")
 	return &result, nil
 }
 
@@ -252,19 +252,20 @@ func (c *Client) UpdateWordProgress(ctx context.Context, userID string, wordID u
 
 	resp, err := c.doRequest(ctx, "POST", "/api/v1/words/progress", req)
 	if err != nil {
-		logger.Log.Error("Failed to update word progress", zap.Error(err), zap.String("user_id", userID), zap.String("word_id", wordID.String()))
+		zap.L().With(zap.String("user_id", userID), zap.String("word_id", wordID.String()), zap.Error(err)).Error("Failed to update word progress")
 		return err
 	}
 
 	if err := c.parseResponse(resp, nil); err != nil {
-		logger.Log.Error("Failed to parse update word progress response", zap.Error(err))
+		zap.L().With(zap.Error(err)).Error("Failed to parse update word progress response")
 		return err
 	}
 
-	logger.Log.Debug("Successfully updated word progress",
+	zap.L().With(
 		zap.String("user_id", userID),
 		zap.String("word_id", wordID.String()),
-		zap.Bool("correct", correct))
+		zap.Bool("correct", correct),
+	).Debug("Successfully updated word progress")
 	return nil
 }
 
@@ -272,19 +273,20 @@ func (c *Client) UpdateWordProgress(ctx context.Context, userID string, wordID u
 func (c *Client) UpdateProgress(ctx context.Context, req ProgressUpdateRequest) error {
 	resp, err := c.doRequest(ctx, "POST", "/api/v1/progress/update", req)
 	if err != nil {
-		logger.Log.Error("Failed to update progress", zap.Error(err), zap.String("user_id", req.UserID))
+		zap.L().With(zap.String("user_id", req.UserID), zap.Error(err)).Error("Failed to update progress")
 		return err
 	}
 
 	if err := c.parseResponse(resp, nil); err != nil {
-		logger.Log.Error("Failed to parse update progress response", zap.Error(err))
+		zap.L().With(zap.Error(err)).Error("Failed to parse update progress response")
 		return err
 	}
 
-	logger.Log.Info("Successfully updated progress",
+	zap.L().With(
 		zap.String("user_id", req.UserID),
 		zap.String("lesson_id", req.LessonID.String()),
-		zap.Int("exercises_completed", req.ExercisesCompleted))
+		zap.Int("exercises_completed", req.ExercisesCompleted),
+	).Info("Successfully updated progress")
 	return nil
 }
 
@@ -292,16 +294,16 @@ func (c *Client) UpdateProgress(ctx context.Context, req ProgressUpdateRequest) 
 func (c *Client) GetUserStats(ctx context.Context, userID string) (map[string]interface{}, error) {
 	resp, err := c.doRequest(ctx, "GET", "/api/v1/users/"+userID+"/stats", nil)
 	if err != nil {
-		logger.Log.Error("Failed to get user stats", zap.Error(err), zap.String("user_id", userID))
+		zap.L().With(zap.String("user_id", userID), zap.Error(err)).Error("Failed to get user stats")
 		return nil, err
 	}
 
 	var result map[string]interface{}
 	if err := c.parseResponse(resp, &result); err != nil {
-		logger.Log.Error("Failed to parse get user stats response", zap.Error(err))
+		zap.L().With(zap.Error(err)).Error("Failed to parse get user stats response")
 		return nil, err
 	}
 
-	logger.Log.Debug("Successfully retrieved user stats", zap.String("user_id", userID))
+	zap.L().With(zap.String("user_id", userID)).Debug("Successfully retrieved user stats")
 	return result, nil
 }

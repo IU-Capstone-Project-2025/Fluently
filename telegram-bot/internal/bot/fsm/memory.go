@@ -2,11 +2,15 @@
 package fsm
 
 import (
+	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
+	"strconv"
 	"time"
 
 	"github.com/google/uuid"
+	"github.com/redis/go-redis/v9"
 )
 
 // UserProgress represents the user's learning progress
@@ -17,6 +21,12 @@ type UserProgress struct {
 	State        UserState `json:"state"`
 	CreatedAt    time.Time `json:"created_at"`
 	LastActivity time.Time `json:"last_activity"`
+
+	// Learning preferences
+	WordsPerDay    int    `json:"words_per_day"`   // Number of words to learn per day
+	CEFRLevel      string `json:"cefr_level"`      // User's determined CEFR level (A1-C2)
+	Notifications  bool   `json:"notifications"`   // Whether notifications are enabled
+	NotificationAt string `json:"notification_at"` // Time for daily notifications (HH:MM)
 
 	// Onboarding data
 	OnboardingComplete bool `json:"onboarding_complete"`
@@ -141,6 +151,70 @@ type SessionData struct {
 	ExpiresAt     time.Time              `json:"expires_at"`
 }
 
+// UserStateManager handles FSM state for users
+type UserStateManager struct {
+	redisClient *redis.Client
+}
+
+// Temporary data types
+type TempDataType string
+
+const (
+	// Temp data types for different flows
+	TempDataCEFRTest   TempDataType = "cefr_test"
+	TempDataLesson     TempDataType = "lesson"
+	TempDataSettings   TempDataType = "settings"
+	TempDataExercise   TempDataType = "exercise"
+	TempDataOnboarding TempDataType = "onboarding"
+)
+
+// CEFRTestData holds temporary data for CEFR test flow
+type CEFRTestData struct {
+	Questions      []map[string]interface{} `json:"questions"`
+	CurrentGroup   int                      `json:"current_group"`
+	Answers        map[string]string        `json:"answers"`
+	CorrectAnswers int                      `json:"correct_answers"`
+	StartTime      time.Time                `json:"start_time"`
+	EndTime        time.Time                `json:"end_time"`
+}
+
+// LessonData holds temporary data for a lesson flow
+type LessonData struct {
+	Words              []map[string]interface{} `json:"words"`
+	CurrentWordIndex   int                      `json:"current_word_index"`
+	CurrentBlockIndex  int                      `json:"current_block_index"`
+	CompletedExercises int                      `json:"completed_exercises"`
+	Progress           float64                  `json:"progress"`
+	StartTime          time.Time                `json:"start_time"`
+}
+
+// SettingsData holds temporary data for settings flow
+type SettingsData struct {
+	SettingType   string      `json:"setting_type"`   // which setting is being modified
+	CurrentValue  interface{} `json:"current_value"`  // current value being edited
+	ProposedValue interface{} `json:"proposed_value"` // new value being considered
+	TimeFormat    string      `json:"time_format"`    // for time settings
+}
+
+// ExerciseData holds temporary data for exercise flow
+type ExerciseData struct {
+	ExerciseType  string                   `json:"exercise_type"`
+	Word          map[string]interface{}   `json:"word"`
+	Options       []map[string]interface{} `json:"options"`
+	CorrectAnswer string                   `json:"correct_answer"`
+	UserAnswer    string                   `json:"user_answer"`
+	IsCorrect     bool                     `json:"is_correct"`
+	Attempts      int                      `json:"attempts"`
+}
+
+// OnboardingData holds temporary data for onboarding flow
+type OnboardingData struct {
+	Goal       string `json:"goal"`
+	Confidence string `json:"confidence"`
+	Serials    string `json:"serials"`
+	Experience string `json:"experience"`
+}
+
 // CreateNewUserProgress creates a new user progress instance
 func CreateNewUserProgress(telegramID int64) *UserProgress {
 	now := time.Now()
@@ -150,6 +224,10 @@ func CreateNewUserProgress(telegramID int64) *UserProgress {
 		State:              StateStart,
 		CreatedAt:          now,
 		LastActivity:       now,
+		WordsPerDay:        10,      // Default: 10 words per day
+		CEFRLevel:          "A1",    // Default: A1 level
+		Notifications:      false,   // Default: notifications disabled
+		NotificationAt:     "10:00", // Default: 10:00 AM notification
 		OnboardingComplete: false,
 		VocabularyTest: VocabTestData{
 			CurrentGroup: 1,
@@ -343,4 +421,296 @@ func (sd *SessionData) IsExpired() bool {
 // ExtendExpiration extends the session expiration time
 func (sd *SessionData) ExtendExpiration(duration time.Duration) {
 	sd.ExpiresAt = time.Now().Add(duration)
+}
+
+// NewUserStateManager creates a new state manager with Redis
+func NewUserStateManager(redisClient *redis.Client) *UserStateManager {
+	return &UserStateManager{
+		redisClient: redisClient,
+	}
+}
+
+// key generation helpers
+func userStateKey(userID int64) string {
+	return fmt.Sprintf("user:%d:state", userID)
+}
+
+func userTempDataKey(userID int64, dataType TempDataType) string {
+	return fmt.Sprintf("user:%d:temp:%s", userID, dataType)
+}
+
+// GetState retrieves the current state for a user
+func (m *UserStateManager) GetState(ctx context.Context, userID int64) (UserState, error) {
+	state, err := m.redisClient.Get(ctx, userStateKey(userID)).Result()
+	if err == redis.Nil {
+		// No state found, use initial state
+		return GetInitialState(), nil
+	} else if err != nil {
+		return "", fmt.Errorf("failed to get state: %w", err)
+	}
+
+	return UserState(state), nil
+}
+
+// SetState sets the current state for a user
+func (m *UserStateManager) SetState(ctx context.Context, userID int64, state UserState) error {
+	currentState, err := m.GetState(ctx, userID)
+	if err != nil {
+		return err
+	}
+
+	// Validate the state transition
+	if !IsValidTransition(currentState, state) {
+		return fmt.Errorf("invalid state transition from %s to %s", currentState, state)
+	}
+
+	// Set the new state with an expiration time (30 days)
+	err = m.redisClient.Set(ctx, userStateKey(userID), string(state), 30*24*time.Hour).Err()
+	if err != nil {
+		return fmt.Errorf("failed to set state: %w", err)
+	}
+
+	return nil
+}
+
+// ForceState sets the state without transition validation (for error recovery)
+func (m *UserStateManager) ForceState(ctx context.Context, userID int64, state UserState) error {
+	err := m.redisClient.Set(ctx, userStateKey(userID), string(state), 30*24*time.Hour).Err()
+	if err != nil {
+		return fmt.Errorf("failed to force state: %w", err)
+	}
+
+	return nil
+}
+
+// ClearState removes state information for a user
+func (m *UserStateManager) ClearState(ctx context.Context, userID int64) error {
+	err := m.redisClient.Del(ctx, userStateKey(userID)).Err()
+	if err != nil {
+		return fmt.Errorf("failed to clear state: %w", err)
+	}
+
+	return nil
+}
+
+// ResetUserToInitial resets user to initial state and clears all temp data
+func (m *UserStateManager) ResetUserToInitial(ctx context.Context, userID int64) error {
+	// Set initial state
+	err := m.ForceState(ctx, userID, GetInitialState())
+	if err != nil {
+		return err
+	}
+
+	// Clear all temp data
+	dataTypes := []TempDataType{
+		TempDataCEFRTest,
+		TempDataLesson,
+		TempDataSettings,
+		TempDataExercise,
+		TempDataOnboarding,
+	}
+
+	for _, dt := range dataTypes {
+		key := userTempDataKey(userID, dt)
+		m.redisClient.Del(ctx, key)
+	}
+
+	return nil
+}
+
+// StoreTempData stores temporary data for a specific flow
+func (m *UserStateManager) StoreTempData(ctx context.Context, userID int64, dataType TempDataType, data interface{}) error {
+	jsonData, err := json.Marshal(data)
+	if err != nil {
+		return fmt.Errorf("failed to marshal temp data: %w", err)
+	}
+
+	// Store with 24-hour expiration
+	err = m.redisClient.Set(ctx, userTempDataKey(userID, dataType), jsonData, 24*time.Hour).Err()
+	if err != nil {
+		return fmt.Errorf("failed to store temp data: %w", err)
+	}
+
+	return nil
+}
+
+// GetCEFRTestData retrieves CEFR test data
+func (m *UserStateManager) GetCEFRTestData(ctx context.Context, userID int64) (*CEFRTestData, error) {
+	data := &CEFRTestData{}
+	jsonData, err := m.redisClient.Get(ctx, userTempDataKey(userID, TempDataCEFRTest)).Result()
+	if err == redis.Nil {
+		return data, nil // Return empty struct if no data found
+	} else if err != nil {
+		return nil, fmt.Errorf("failed to get CEFR test data: %w", err)
+	}
+
+	err = json.Unmarshal([]byte(jsonData), data)
+	if err != nil {
+		return nil, fmt.Errorf("failed to unmarshal CEFR test data: %w", err)
+	}
+
+	return data, nil
+}
+
+// GetLessonData retrieves lesson data
+func (m *UserStateManager) GetLessonData(ctx context.Context, userID int64) (*LessonData, error) {
+	data := &LessonData{}
+	jsonData, err := m.redisClient.Get(ctx, userTempDataKey(userID, TempDataLesson)).Result()
+	if err == redis.Nil {
+		return data, nil // Return empty struct if no data found
+	} else if err != nil {
+		return nil, fmt.Errorf("failed to get lesson data: %w", err)
+	}
+
+	err = json.Unmarshal([]byte(jsonData), data)
+	if err != nil {
+		return nil, fmt.Errorf("failed to unmarshal lesson data: %w", err)
+	}
+
+	return data, nil
+}
+
+// GetSettingsData retrieves settings data
+func (m *UserStateManager) GetSettingsData(ctx context.Context, userID int64) (*SettingsData, error) {
+	data := &SettingsData{}
+	jsonData, err := m.redisClient.Get(ctx, userTempDataKey(userID, TempDataSettings)).Result()
+	if err == redis.Nil {
+		return data, nil // Return empty struct if no data found
+	} else if err != nil {
+		return nil, fmt.Errorf("failed to get settings data: %w", err)
+	}
+
+	err = json.Unmarshal([]byte(jsonData), data)
+	if err != nil {
+		return nil, fmt.Errorf("failed to unmarshal settings data: %w", err)
+	}
+
+	return data, nil
+}
+
+// GetExerciseData retrieves exercise data
+func (m *UserStateManager) GetExerciseData(ctx context.Context, userID int64) (*ExerciseData, error) {
+	data := &ExerciseData{}
+	jsonData, err := m.redisClient.Get(ctx, userTempDataKey(userID, TempDataExercise)).Result()
+	if err == redis.Nil {
+		return data, nil // Return empty struct if no data found
+	} else if err != nil {
+		return nil, fmt.Errorf("failed to get exercise data: %w", err)
+	}
+
+	err = json.Unmarshal([]byte(jsonData), data)
+	if err != nil {
+		return nil, fmt.Errorf("failed to unmarshal exercise data: %w", err)
+	}
+
+	return data, nil
+}
+
+// GetOnboardingData retrieves onboarding data
+func (m *UserStateManager) GetOnboardingData(ctx context.Context, userID int64) (*OnboardingData, error) {
+	data := &OnboardingData{}
+	jsonData, err := m.redisClient.Get(ctx, userTempDataKey(userID, TempDataOnboarding)).Result()
+	if err == redis.Nil {
+		return data, nil // Return empty struct if no data found
+	} else if err != nil {
+		return nil, fmt.Errorf("failed to get onboarding data: %w", err)
+	}
+
+	err = json.Unmarshal([]byte(jsonData), data)
+	if err != nil {
+		return nil, fmt.Errorf("failed to unmarshal onboarding data: %w", err)
+	}
+
+	return data, nil
+}
+
+// ClearTempData removes temporary data for a specific flow
+func (m *UserStateManager) ClearTempData(ctx context.Context, userID int64, dataType TempDataType) error {
+	err := m.redisClient.Del(ctx, userTempDataKey(userID, dataType)).Err()
+	if err != nil {
+		return fmt.Errorf("failed to clear temp data: %w", err)
+	}
+
+	return nil
+}
+
+// IsInState checks if the user is in a specific state
+func (m *UserStateManager) IsInState(ctx context.Context, userID int64, state UserState) (bool, error) {
+	currentState, err := m.GetState(ctx, userID)
+	if err != nil {
+		return false, err
+	}
+
+	return currentState == state, nil
+}
+
+// IsInStateGroup checks if the user is in any of the specified states
+func (m *UserStateManager) IsInStateGroup(ctx context.Context, userID int64, stateGroup func(UserState) bool) (bool, error) {
+	currentState, err := m.GetState(ctx, userID)
+	if err != nil {
+		return false, err
+	}
+
+	return stateGroup(currentState), nil
+}
+
+// IsInLessonState checks if the user is in a lesson state
+func (m *UserStateManager) IsInLessonState(ctx context.Context, userID int64) (bool, error) {
+	return m.IsInStateGroup(ctx, userID, IsLessonState)
+}
+
+// IsInExerciseState checks if the user is in an exercise state
+func (m *UserStateManager) IsInExerciseState(ctx context.Context, userID int64) (bool, error) {
+	return m.IsInStateGroup(ctx, userID, IsExerciseState)
+}
+
+// IsInSettingsState checks if the user is in a settings state
+func (m *UserStateManager) IsInSettingsState(ctx context.Context, userID int64) (bool, error) {
+	return m.IsInStateGroup(ctx, userID, IsSettingsState)
+}
+
+// IsInCEFRTestState checks if the user is in a CEFR test state
+func (m *UserStateManager) IsInCEFRTestState(ctx context.Context, userID int64) (bool, error) {
+	return m.IsInStateGroup(ctx, userID, IsCEFRTestState)
+}
+
+// GetUserChatID extracts the chat ID from a user ID for Telegram
+// In most cases, chat ID = user ID for private chats
+func GetUserChatID(userID int64) int64 {
+	return userID
+}
+
+// GetUserIDFromChatID extracts the user ID from a chat ID
+// For group chats, this would be different, but for now we're focusing on private chats
+func GetUserIDFromChatID(chatID int64) (int64, error) {
+	return chatID, nil
+}
+
+// GetUserIDFromString converts a string user ID to int64
+func GetUserIDFromString(userIDStr string) (int64, error) {
+	return strconv.ParseInt(userIDStr, 10, 64)
+}
+
+// WrongStateError is returned when a handler is called with the wrong state
+type WrongStateError struct {
+	Expected UserState
+	Actual   UserState
+}
+
+func (e *WrongStateError) Error() string {
+	return fmt.Sprintf("wrong state: expected %s, got %s", e.Expected, e.Actual)
+}
+
+// NewWrongStateError creates a new WrongStateError
+func NewWrongStateError(expected, actual UserState) *WrongStateError {
+	return &WrongStateError{
+		Expected: expected,
+		Actual:   actual,
+	}
+}
+
+// IsWrongStateError checks if an error is a WrongStateError
+func IsWrongStateError(err error) bool {
+	var wse *WrongStateError
+	return errors.As(err, &wse)
 }
