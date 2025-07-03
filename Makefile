@@ -128,7 +128,7 @@ generate-docs:
 		echo "Installing swag..."; \
 		cd backend && go install github.com/swaggo/swag/cmd/swag@latest; \
 	fi
-	@cd backend && $(HOME)/go/bin/swag init --generalInfo cmd/main.go --output docs --parseDependency --parseInternal
+	@cd backend && $(HOME)/go/bin/swag init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal
 	@echo "✅ Documentation generated in backend/docs/"
 
 # Run tests with proper test database
