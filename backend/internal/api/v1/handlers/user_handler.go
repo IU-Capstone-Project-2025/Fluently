@@ -25,7 +25,6 @@ func buildUserResponse(user *models.User) schemas.UserResponse {
 		Role:       user.Role,
 		IsActive:   user.IsActive,
 		TelegramID: user.TelegramID,
-		PrefID:     *user.PrefID,
 		CreatedAt:  user.CreatedAt,
 	}
 }
@@ -58,7 +57,6 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 		GoogleID:     req.GoogleID,
 		Role:         req.Role,
 		IsActive:     req.IsActive,
-		PrefID:       &req.PrefID,
 	}
 
 	if err := h.Repo.Create(r.Context(), &user); err != nil {
@@ -66,8 +64,9 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.WriteHeader(http.StatusCreated)
 	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusCreated)
+
 	json.NewEncoder(w).Encode(buildUserResponse(&user))
 }
 
@@ -140,15 +139,14 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 	user.Provider = req.Provider
 	user.GoogleID = req.GoogleID
 	user.PasswordHash = req.PasswordHash
-	user.PrefID = &req.PrefID
 
 	if err := h.Repo.Update(r.Context(), user); err != nil {
 		http.Error(w, "failed to update user", http.StatusInternalServerError)
 		return
 	}
 
-	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(buildUserResponse(user))
 }
 

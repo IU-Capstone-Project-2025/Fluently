@@ -7,14 +7,13 @@ import (
 )
 
 type CreateUserRequest struct {
-	Name         string    `json:"name" binding:"required"`
-	Email        string    `json:"email"`
-	Provider     string    `json:"provider"`
-	GoogleID     string    `json:"google_id"`
-	PasswordHash string    `json:"password_hash"`
-	Role         string    `json:"role"`
-	IsActive     bool      `json:"is_active"`
-	PrefID       uuid.UUID `json:"pref_id"`
+	Name         string `json:"name" binding:"required"`
+	Email        string `json:"email"`
+	Provider     string `json:"provider"`
+	GoogleID     string `json:"google_id"`
+	PasswordHash string `json:"password_hash"`
+	Role         string `json:"role"`
+	IsActive     bool   `json:"is_active"`
 }
 
 type UserResponse struct {
@@ -24,6 +23,5 @@ type UserResponse struct {
 	Role       string    `json:"role"`
 	IsActive   bool      `json:"is_active"`
 	TelegramID *int64    `json:"telegram_id,omitempty"`
-	PrefID     uuid.UUID `json:"pref_id,omitempty"`
 	CreatedAt  time.Time `json:"created_at"`
 }

@@ -18,7 +18,10 @@ var (
 	db         *gorm.DB
 	testServer *httptest.Server
 
-	wordRepo *pg.WordRepository
+	wordRepo     *pg.WordRepository
+	userRepo     *pg.UserRepository
+	topicRepo    *pg.TopicRepository
+	sentenceRepo *pg.SentenceRepository
 )
 
 func setupTest(t *testing.T) {
@@ -38,17 +41,25 @@ func setupTest(t *testing.T) {
 	}
 
 	wordRepo = pg.NewWordRepository(db)
+	userRepo = pg.NewUserRepository(db)
+	topicRepo = pg.NewTopicRepository(db)
+	sentenceRepo = pg.NewSentenceRepository(db)
 
-	err = db.Exec("TRUNCATE TABLE words RESTART IDENTITY CASCADE").Error
-	if err != nil {
-		t.Fatalf("failed to truncate table: %v", err)
-	}
+	db.Exec("TRUNCATE TABLE words RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE users RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE topics RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE sentences RESTART IDENTITY CASCADE")
 
-	repo := pg.NewWordRepository(db)
-	handler := &handlers.WordHandler{Repo: repo}
+	wordHandler := &handlers.WordHandler{Repo: pg.NewWordRepository(db)}
+	userHandler := &handlers.UserHandler{Repo: pg.NewUserRepository(db)}
+	topicHandler := &handlers.TopicHandler{Repo: pg.NewTopicRepository(db)}
+	sentenceHandler := &handlers.SentenceHandler{Repo: pg.NewSentenceRepository(db)}
 
 	r := chi.NewRouter()
-	routes.RegisterWordRoutes(r, handler)
+	routes.RegisterWordRoutes(r, wordHandler)
+	routes.RegisterUserRoutes(r, userHandler)
+	routes.RegisterTopicRoutes(r, topicHandler)
+	routes.RegisterSentenceRoutes(r, sentenceHandler)
 
 	testServer = httptest.NewServer(r)
 }
