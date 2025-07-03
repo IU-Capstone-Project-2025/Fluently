@@ -2,277 +2,247 @@
 # This configuration uses Cloudflare Origin Certificates for "Full (Strict)" SSL mode
 # Provides end-to-end encryption between Cloudflare and your server
 
-# Global HTTP-level directives (these go in the http block)
-# Basic settings
-sendfile        on;
-tcp_nopush      on;
-tcp_nodelay     on;
-keepalive_timeout  65;
-types_hash_max_size 2048;
-
-# Hide nginx version
-server_tokens off;
-
-# Rate limiting zones
+# Rate limiting zones (these are safe to define here)
 limit_req_zone $binary_remote_addr zone=webhook_zone:10m rate=10r/m;
 limit_req_zone $binary_remote_addr zone=api_zone:10m rate=100r/m;
 
-# Logging format
+# Custom log format (this is also safe to define here)
 log_format main '$remote_addr - $remote_user [$time_local] "$request" '
-                '$status $body_bytes_sent "$http_referer" '
-                '"$http_user_agent" "$http_x_forwarded_for"';
+            '$status $body_bytes_sent "$http_referer" '
+            '"$http_user_agent" "$http_x_forwarded_for"';
 
-access_log /var/log/nginx/access.log main;
-error_log /var/log/nginx/error.log warn;
+# Redirect HTTP to HTTPS
+server {
+    listen 80;
+    server_name ${DOMAIN} www.${DOMAIN};
+    return 301 https://$server_name$request_uri;
+}
 
-# Gzip Settings
-gzip on;
-gzip_vary on;
-gzip_proxied any;
-gzip_comp_level 6;
-gzip_types
-    text/plain
-    text/css
-    text/xml
-    text/javascript
-    application/json
-    application/javascript
-    application/xml+rss
-    application/atom+xml
-    image/svg+xml;
+# Main website (${DOMAIN} and www.${DOMAIN})
+# Using Cloudflare Origin Certificates for Full (Strict) SSL mode
+server {
+    listen 443 ssl;
+    http2 on;
+    server_name ${DOMAIN} www.${DOMAIN};
 
-    # Redirect HTTP to HTTPS
-    server {
-        listen 80;
-        server_name ${DOMAIN} www.${DOMAIN};
-        return 301 https://$server_name$request_uri;
+    server_tokens off;
+    
+    # Cloudflare Origin Certificate paths
+    ssl_certificate /etc/nginx/ssl/${CERT_NAME}.pem;
+    ssl_certificate_key /etc/nginx/ssl/${CERT_NAME}.key;
+    
+    # SSL Configuration optimized for Cloudflare
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384;
+    ssl_prefer_server_ciphers off;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 1d;
+    ssl_session_tickets off;
+    
+    # OCSP stapling is not needed with Cloudflare Origin Certs
+    ssl_stapling off;
+    ssl_stapling_verify off;
+    
+    # Security headers only (SSL configuration moved to main nginx configs)
+    add_header Strict-Transport-Security 'max-age=31536000; includeSubDomains; preload';
+    add_header X-Frame-Options DENY;
+    add_header X-Content-Type-Options nosniff;
+    add_header X-XSS-Protection "1; mode=block";
+
+    # Debug header
+    add_header X-Server-Block "main-site" always;
+    
+    # Cloudflare real IP restoration
+    set_real_ip_from 103.21.244.0/22;
+    set_real_ip_from 103.22.200.0/22;
+    set_real_ip_from 103.31.4.0/22;
+    set_real_ip_from 104.16.0.0/13;
+    set_real_ip_from 104.24.0.0/14;
+    set_real_ip_from 108.162.192.0/18;
+    set_real_ip_from 131.0.72.0/22;
+    set_real_ip_from 141.101.64.0/18;
+    set_real_ip_from 162.158.0.0/15;
+    set_real_ip_from 172.64.0.0/13;
+    set_real_ip_from 173.245.48.0/20;
+    set_real_ip_from 188.114.96.0/20;
+    set_real_ip_from 190.93.240.0/20;
+    set_real_ip_from 197.234.240.0/22;
+    set_real_ip_from 198.41.128.0/17;
+    set_real_ip_from 2400:cb00::/32;
+    set_real_ip_from 2606:4700::/32;
+    set_real_ip_from 2803:f800::/32;
+    set_real_ip_from 2405:b500::/32;
+    set_real_ip_from 2405:8100::/32;
+    set_real_ip_from 2c0f:f248::/32;
+    set_real_ip_from 2a06:98c0::/29;
+    real_ip_header CF-Connecting-IP;
+
+    # Main site static files
+    root /usr/share/nginx/html/main-site;
+    index index.html;
+
+    # Custom 404 page
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
     }
 
-    # Main website (${DOMAIN} and www.${DOMAIN})
-    # Using Cloudflare Origin Certificates for Full (Strict) SSL mode
-    server {
-        listen 443 ssl;
-        http2 on;
-        server_name ${DOMAIN} www.${DOMAIN};
+    # Terms of Service - fix the location
+    location = /terms {
+        try_files /terms.html =404;
+        add_header Content-Type text/html;
+    }
 
-        server_tokens off;
+    # Assets directory for static files (including 404 music)
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # ===========================================
+    # TELEGRAM BOT WEBHOOK CONFIGURATION
+    # ===========================================
+    
+    # Telegram Bot Webhook - CRITICAL for bot functionality
+    location /webhook {
+        # Proxy to Go webhook server running on localhost:8080
+        proxy_pass http://127.0.0.1:8080/webhook;
+        proxy_http_version 1.1;
         
-        # Cloudflare Origin Certificate paths
-        ssl_certificate /etc/nginx/ssl/${CERT_NAME}.pem;
-        ssl_certificate_key /etc/nginx/ssl/${CERT_NAME}.key;
+        # Headers for proper proxying
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
         
-        # SSL Configuration optimized for Cloudflare
-        ssl_protocols TLSv1.2 TLSv1.3;
-        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384;
-        ssl_prefer_server_ciphers off;
-        ssl_session_cache shared:SSL:10m;
-        ssl_session_timeout 1d;
-        ssl_session_tickets off;
+        # Pass the webhook secret token from environment variable
+        # This will be set during container startup via envsubst
+        proxy_set_header X-Telegram-Bot-Api-Secret-Token "$webhook_secret";
         
-        # OCSP stapling is not needed with Cloudflare Origin Certs
-        ssl_stapling off;
-        ssl_stapling_verify off;
+        # Timeouts optimized for Telegram webhooks
+        proxy_connect_timeout 30s;
+        proxy_send_timeout 30s;
+        proxy_read_timeout 30s;
         
-        # Security headers only (SSL configuration moved to main nginx configs)
-        add_header Strict-Transport-Security 'max-age=31536000; includeSubDomains; preload';
-        add_header X-Frame-Options DENY;
-        add_header X-Content-Type-Options nosniff;
-        add_header X-XSS-Protection "1; mode=block";
-
-        # Debug header
-        add_header X-Server-Block "main-site" always;
+        # Request size limit for Telegram updates (1MB should be enough)
+        client_max_body_size 1M;
         
-        # Cloudflare real IP restoration
-        set_real_ip_from 103.21.244.0/22;
-        set_real_ip_from 103.22.200.0/22;
-        set_real_ip_from 103.31.4.0/22;
-        set_real_ip_from 104.16.0.0/13;
-        set_real_ip_from 104.24.0.0/14;
-        set_real_ip_from 108.162.192.0/18;
-        set_real_ip_from 131.0.72.0/22;
-        set_real_ip_from 141.101.64.0/18;
-        set_real_ip_from 162.158.0.0/15;
-        set_real_ip_from 172.64.0.0/13;
-        set_real_ip_from 173.245.48.0/20;
-        set_real_ip_from 188.114.96.0/20;
-        set_real_ip_from 190.93.240.0/20;
-        set_real_ip_from 197.234.240.0/22;
-        set_real_ip_from 198.41.128.0/17;
-        set_real_ip_from 2400:cb00::/32;
-        set_real_ip_from 2606:4700::/32;
-        set_real_ip_from 2803:f800::/32;
-        set_real_ip_from 2405:b500::/32;
-        set_real_ip_from 2405:8100::/32;
-        set_real_ip_from 2c0f:f248::/32;
-        set_real_ip_from 2a06:98c0::/29;
-        real_ip_header CF-Connecting-IP;
-
-        # Main site static files
-        root /usr/share/nginx/html/main-site;
-        index index.html;
-
-        # Custom 404 page
-        error_page 404 /404.html;
-        location = /404.html {
-            internal;
-        }
-
-        # Terms of Service - fix the location
-        location = /terms {
-            try_files /terms.html =404;
-            add_header Content-Type text/html;
-        }
-
-        # Assets directory for static files (including 404 music)
-        location /assets/ {
-            expires 1y;
-            add_header Cache-Control "public, immutable";
-        }
-
-        # ===========================================
-        # TELEGRAM BOT WEBHOOK CONFIGURATION
-        # ===========================================
+        # Disable buffering for real-time processing
+        proxy_buffering off;
+        proxy_request_buffering off;
         
-        # Telegram Bot Webhook - CRITICAL for bot functionality
-        location /webhook {
-            # Proxy to Go webhook server running on localhost:8080
-            proxy_pass http://127.0.0.1:8080/webhook;
-            proxy_http_version 1.1;
-            
-            # Headers for proper proxying
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            
-            # Pass the webhook secret token from environment variable
-            # This will be set during container startup via envsubst
-            proxy_set_header X-Telegram-Bot-Api-Secret-Token "$webhook_secret";
-            
-            # Timeouts optimized for Telegram webhooks
-            proxy_connect_timeout 30s;
-            proxy_send_timeout 30s;
-            proxy_read_timeout 30s;
-            
-            # Request size limit for Telegram updates (1MB should be enough)
-            client_max_body_size 1M;
-            
-            # Disable buffering for real-time processing
-            proxy_buffering off;
-            proxy_request_buffering off;
-            
-            # Security: Only allow POST requests from Telegram
-            limit_except POST {
-                deny all;
-            }
-            
-            # Rate limiting for webhook
-            limit_req zone=webhook_zone burst=10 nodelay;
+        # Security: Only allow POST requests from Telegram
+        limit_except POST {
+            deny all;
         }
+        
+        # Rate limiting for webhook
+        limit_req zone=webhook_zone burst=10 nodelay;
+    }
 
-        # Bot Health Check Endpoints
-        location /bot/health {
-            proxy_pass http://127.0.0.1:8080/health;
-            proxy_http_version 1.1;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            
-            # Allow public access for monitoring
-            access_log off;
-        }
+    # Bot Health Check Endpoints
+    location /bot/health {
+        proxy_pass http://127.0.0.1:8080/health;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # Allow public access for monitoring
+        access_log off;
+    }
 
-        location /bot/ready {
-            proxy_pass http://127.0.0.1:8080/ready;
-            proxy_http_version 1.1;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            
-            # Allow public access for monitoring
-            access_log off;
-        }
+    location /bot/ready {
+        proxy_pass http://127.0.0.1:8080/ready;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # Allow public access for monitoring
+        access_log off;
+    }
 
-        # Bot Metrics endpoint (optional, can be restricted)
-        location /bot/metrics {
-            proxy_pass http://127.0.0.1:8080/metrics;
-            proxy_http_version 1.1;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            
-            # Optional: Restrict access to internal networks
-            # allow 10.0.0.0/8;
-            # allow 172.16.0.0/12;
-            # allow 192.168.0.0/16;
-            # deny all;
-        }
+    # Bot Metrics endpoint (optional, can be restricted)
+    location /bot/metrics {
+        proxy_pass http://127.0.0.1:8080/metrics;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # Optional: Restrict access to internal networks
+        # allow 10.0.0.0/8;
+        # allow 172.16.0.0/12;
+        # allow 192.168.0.0/16;
+        # deny all;
+    }
 
-        # ===========================================
-        # BACKEND API CONFIGURATION
-        # ===========================================
+    # ===========================================
+    # BACKEND API CONFIGURATION
+    # ===========================================
 
-        # Backend Health check endpoint (proxied to backend)
-        location = /health {
-            proxy_pass http://fluently_backend:8070/health;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-        }
+    # Backend Health check endpoint (proxied to backend)
+    location = /health {
+        proxy_pass http://fluently_backend:8070/health;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
 
-        # Auth routes (proxied to backend) - MUST come before catch-all
-        location /auth/ {
-            proxy_pass http://fluently_backend:8070/auth/;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header X-Forwarded-Host $host;
-            proxy_set_header X-Forwarded-Port $server_port;
-            
-            # Forward cookies for authentication
-            proxy_set_header Cookie $http_cookie;
-            
-            # Handle redirects properly for OAuth flows
-            proxy_redirect http://fluently_backend:8070/ https://$host/;
-            proxy_redirect https://fluently_backend:8070/ https://$host/;
-        }
+    # Auth routes (proxied to backend) - MUST come before catch-all
+    location /auth/ {
+        proxy_pass http://fluently_backend:8070/auth/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        
+        # Forward cookies for authentication
+        proxy_set_header Cookie $http_cookie;
+        
+        # Handle redirects properly for OAuth flows
+        proxy_redirect http://fluently_backend:8070/ https://$host/;
+        proxy_redirect https://fluently_backend:8070/ https://$host/;
+    }
 
-        # API calls (proxied to backend)
-        location /api/ {
-            proxy_pass http://fluently_backend:8070/api/;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header X-Forwarded-Host $host;
-            
-            # Forward cookies for API authentication
-            proxy_set_header Cookie $http_cookie;
-            
-            # Rate limiting for API
-            limit_req zone=api_zone burst=50 nodelay;
-        }
+    # API calls (proxied to backend)
+    location /api/ {
+        proxy_pass http://fluently_backend:8070/api/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        
+        # Forward cookies for API authentication
+        proxy_set_header Cookie $http_cookie;
+        
+        # Rate limiting for API
+        limit_req zone=api_zone burst=50 nodelay;
+    }
 
-        # Telegram public routes (for account linking) - proxied to backend
-        location /telegram/ {
-            proxy_pass http://fluently_backend:8070/telegram/;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header X-Forwarded-Host $host;
-            
-            # Forward cookies for authentication
-            proxy_set_header Cookie $http_cookie;
-        }
+    # Telegram public routes (for account linking) - proxied to backend
+    location /telegram/ {
+        proxy_pass http://fluently_backend:8070/telegram/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        
+        # Forward cookies for authentication
+        proxy_set_header Cookie $http_cookie;
+    }
 
-        # Catch-all for static files
-        location / {
-            try_files $uri $uri/ /index.html;
-        }
+    # Catch-all for static files
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
     }
