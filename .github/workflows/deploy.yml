@@ -236,51 +236,20 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # Image reuse for unchanged components
-      - name: Reuse existing images for unchanged components
-        if: github.event_name != 'pull_request'
-        run: |
-          echo "� Reusing existing images for unchanged components..."
-          
-          # Function to reuse existing image
-          reuse_image() {
-            local component=$1
-            local image_name=$2
-            local changed=$3
-            
-            if [ "$changed" != "true" ]; then
-              echo "⏩ $component unchanged, reusing existing image..."
-              if docker pull docker.io/$image_name:latest-develop 2>/dev/null; then
-                docker tag docker.io/$image_name:latest-develop docker.io/$image_name:develop-${{ github.sha }}
-                docker push docker.io/$image_name:develop-${{ github.sha }}
-                echo "✅ Reused $component image successfully"
-              else
-                echo "⚠️ No existing $component image found, will be built later if needed"
-              fi
-            else
-              echo "🔨 $component was rebuilt in this workflow"
-            fi
-          }
-          
-          # Reuse images for unchanged components
-          reuse_image "Backend" "fluentlyorg/fluently-backend" "${{ needs.detect-changes.outputs.backend-changed }}"
-          reuse_image "Telegram Bot" "fluentlyorg/fluently-telegram-bot" "${{ needs.detect-changes.outputs.telegram-changed }}"
-          reuse_image "ML API" "fluentlyorg/fluently-ml-api" "${{ needs.detect-changes.outputs.ml-api-changed }}"
-          reuse_image "Nginx" "fluentlyorg/fluently-nginx" "${{ needs.detect-changes.outputs.nginx-changed }}"
-          
-          echo "✅ Image reuse completed"
-
   # ===========================================
   # EMERGENCY BUILD - Build all if no existing images
   # ===========================================
   emergency-build:
-    name: Emergency Build (No Existing Images)
+    name: Emergency Build (Missing Images)
     runs-on: ubuntu-latest
-    needs: [detect-changes, build]
+    needs: [detect-changes, build, image-reuse]
     if: |
       always() && 
       (github.ref == 'refs/heads/develop' || github.event_name == 'pull_request') && 
-      (needs.detect-changes.outputs.any-changed == 'false' || needs.build.result == 'skipped')
+      (
+        (needs.detect-changes.outputs.any-changed == 'true' && (needs.build.result == 'failure' || needs.build.result == 'cancelled')) ||
+        (needs.detect-changes.outputs.any-changed == 'false' && needs.image-reuse.outputs.reuse-completed == 'false')
+      )
     outputs:
       emergency-completed: ${{ steps.emergency-build.outputs.completed }}
     
@@ -303,6 +272,7 @@ jobs:
         id: check-emergency
         run: |
           echo "🚨 Checking if emergency build is needed..."
+          echo "Reason: Either build failed or no existing images found for reuse"
           
           # Check if all required images exist in registry
           MISSING_IMAGES=()
@@ -540,11 +510,12 @@ jobs:
   publish:
     name: Publish Docker Images
     runs-on: ubuntu-latest
-    needs: [detect-changes, build, emergency-build]
+    needs: [detect-changes, build, image-reuse, emergency-build]
     if: |
       always() && 
       github.ref == 'refs/heads/develop' && 
       (needs.build.result == 'success' || 
+       needs.image-reuse.result == 'success' ||
        needs.emergency-build.result == 'success' ||
        needs.build.result == 'skipped')
     
@@ -1015,3 +986,68 @@ jobs:
             
             echo "🎉 Staging deployment completed!"
             echo "🌐 Staging available at: https://fluently-app.online"
+
+  # ===========================================
+  # IMAGE REUSE - Handle unchanged components
+  # ===========================================
+  image-reuse:
+    name: Reuse Existing Images
+    runs-on: ubuntu-latest
+    needs: [detect-changes]
+    if: |
+      (github.ref == 'refs/heads/develop' || github.event_name == 'pull_request') && 
+      needs.detect-changes.outputs.any-changed == 'false'
+    outputs:
+      reuse-completed: ${{ steps.reuse-images.outputs.completed }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Reuse all existing images (no changes detected)
+        id: reuse-images
+        if: github.event_name != 'pull_request'
+        run: |
+          echo "⏩ No component changes detected - reusing all existing images..."
+          
+          # Images to reuse
+          IMAGES=(
+            "fluentlyorg/fluently-backend"
+            "fluentlyorg/fluently-telegram-bot" 
+            "fluentlyorg/fluently-ml-api"
+            "fluentlyorg/fluently-nginx"
+          )
+          
+          SUCCESS_COUNT=0
+          
+          for image in "${IMAGES[@]}"; do
+            echo "🔄 Reusing $image..."
+            if docker pull docker.io/$image:latest-develop 2>/dev/null; then
+              # Tag with current SHA for consistency
+              docker tag docker.io/$image:latest-develop docker.io/$image:develop-${{ github.sha }}
+              docker push docker.io/$image:develop-${{ github.sha }}
+              echo "✅ Reused $image successfully"
+              ((SUCCESS_COUNT++))
+            else
+              echo "⚠️ No existing image found for $image"
+              echo "This might be the first run - emergency build may be needed"
+            fi
+          done
+          
+          echo "📊 Successfully reused $SUCCESS_COUNT/${#IMAGES[@]} images"
+          
+          if [ $SUCCESS_COUNT -eq ${#IMAGES[@]} ]; then
+            echo "completed=true" >> $GITHUB_OUTPUT
+            echo "✅ All images reused successfully"
+          else
+            echo "completed=false" >> $GITHUB_OUTPUT
+            echo "⚠️ Some images missing - may need emergency build"
+          fi
