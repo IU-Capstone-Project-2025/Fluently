@@ -81,6 +81,8 @@ struct LessonScreensView: View {
     ///  Grid with main info
     var infoGrid: some View {
         VStack {
+            Spacer()
+                .frame(height: 80) // Hard code :(
             switch presenter.currentExType {
                 case .chooseTranslationEngRuss: /// Choose correct translation
                     let chooseWordEx = presenter.currentEx.data as! ChooseTranslationEngRuss

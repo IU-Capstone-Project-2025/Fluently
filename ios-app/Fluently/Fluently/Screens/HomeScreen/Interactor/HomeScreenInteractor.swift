@@ -17,7 +17,7 @@ final class HomeScreenInteractor {
             do {
                 try await api.getLessons()
             } catch {
-                print("Error: \(error)")
+                print("Error: \(error.localizedDescription)")
             }
         }
     }
