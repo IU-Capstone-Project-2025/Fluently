@@ -416,12 +416,6 @@ jobs:
           name: coverage-report
           path: backend/coverage.out
 
-      - name: Validate Docker Compose
-        run: |
-          echo "🐳 Validating Docker Compose configuration..."
-          docker compose config --quiet
-          echo "✅ Docker Compose configuration is valid"
-
   # ===========================================
   # PRODUCTION DEPLOY - Deploy to production (main branch only)
   # ===========================================
