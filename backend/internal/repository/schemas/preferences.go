@@ -15,7 +15,7 @@ type CreatePreferenceRequest struct {
 	WordsPerDay    int        `json:"words_per_day"`
 	Goal           string     `json:"goal"`
 	Subscribed     bool       `json:"subscribed"`
-	AvatarImage    []byte     `json:"avatar_image"` // Base64
+	AvatarImageURL string     `json:"avatar_image_url"`
 }
 
 type PreferenceResponse struct {
@@ -28,5 +28,5 @@ type PreferenceResponse struct {
 	WordsPerDay     int        `json:"words_per_day"`
 	Goal            string     `json:"goal"`
 	Subscribed      bool       `json:"subscribed"`
-	AvatarImage     []byte     `json:"avatar_image,omitempty"`
+	AvatarImageURL  string     `json:"avatar_image_url"`
 }

@@ -42,3 +42,7 @@ func (r *PreferenceRepository) Update(ctx context.Context, pref *models.Preferen
 func (r *PreferenceRepository) Create(ctx context.Context, pref *models.Preference) error {
 	return r.db.WithContext(ctx).Create(pref).Error
 }
+
+func (r *PreferenceRepository) Delete(ctx context.Context, id uuid.UUID) error {
+	return r.db.WithContext(ctx).Delete(&models.Preference{}, "id = ?", id).Error
+}

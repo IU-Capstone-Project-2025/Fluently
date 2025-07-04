@@ -44,7 +44,7 @@ struct PickOptionsView: View {
             Text("Next")
                 .padding()
                 .frame(maxWidth: .infinity)
-                .modifier(ButtonViewModifier(color: .blue))
+                .massiveButton(color: .blue)
                 .grayscale( selectedAnswer == nil ? 1 : 0)
                 .frame(maxHeight: 60)
         }

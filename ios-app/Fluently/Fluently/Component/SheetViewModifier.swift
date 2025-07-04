@@ -31,7 +31,7 @@ struct SheetViewModifier: ViewModifier {
                 .fill(
                     .whiteBackground
                 )
-                .ignoresSafeArea(.all)
             )
+            .ignoresSafeArea(.all)
     }
 }

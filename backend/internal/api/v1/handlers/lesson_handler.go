@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"encoding/json"
 	"math/rand"
 	"net/http"
 	"time"
@@ -30,6 +31,18 @@ func replaceWordWithUnderscores(text, word string) string {
 	return strings.ReplaceAll(text, word, replacement)
 }
 
+// GenerateLesson godoc
+// @Summary Generate a new lesson for the user
+// @Description Creates a personalized lesson based on user preferences, including words, exercises, and topics
+// @Tags lessons
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Success 200 {object} schemas.LessonResponse "Successfully generated lesson"
+// @Failure 400 {string} string "Bad request - invalid user or preferences"
+// @Failure 401 {string} string "Unauthorized - invalid or missing token"
+// @Failure 500 {string} string "Internal server error"
+// @Router /lesson [get]
 func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
@@ -109,20 +122,20 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		exercise.Type = exerciseTypes[option]
 
 		switch option {
-		case 0: //translate_ru_to_en
+		case 0: // translate_ru_to_en
 			var translateRuToEn schemas.ExerciseTranslateRuToEn
 
 			translateRuToEn.Text = word.Translation
 			translateRuToEn.CorrectAnswer = word.Word
-			translateRuToEn.PickOptions = []string{"biba", "boba", "bimba"}
+			translateRuToEn.PickOptions, _ = utils.GeneratePickOptionsWithDefaults(r.Context(), sentence.Sentence, word.Word)
 			exercise.Data = translateRuToEn
-		case 1: //write_word_from_translation
+		case 1: // write_word_from_translation
 			var writeWordFromTranslation schemas.ExerciseWriteWordFromTranslation
 
 			writeWordFromTranslation.Translation = word.Translation
 			writeWordFromTranslation.CorrectAnswer = word.Word
 			exercise.Data = writeWordFromTranslation
-		case 2: //pick_option_sentence
+		case 2: // pick_option_sentence
 			var pickOptionSentence schemas.ExercisePickOptionSentence
 
 			pickOptionSentence.Template = replaceWordWithUnderscores(
@@ -130,15 +143,23 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 				word.Word,
 			)
 			pickOptionSentence.CorrectAnswer = word.Word
-			pickOptionSentence.PickOptions = []string{"biba", "boba", "bimba"}
+			pickOptionSentence.PickOptions, _ = utils.GeneratePickOptionsWithDefaults(r.Context(), sentence.Sentence, word.Word)
 			exercise.Data = pickOptionSentence
 		default:
 		}
 
+		card.Exercise = exercise
 		cards = append(cards, card)
 	}
 
 	var lesson schemas.LessonResponse
 	lesson.Lesson = lessonInfo
 	lesson.Cards = cards
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	if err := json.NewEncoder(w).Encode(lesson); err != nil {
+		http.Error(w, "failed to encode response", http.StatusInternalServerError)
+		return
+	}
 }

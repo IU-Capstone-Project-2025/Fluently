@@ -1,1 +1,3 @@
 Data/
+.venv/
+word_dataset.csv

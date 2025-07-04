@@ -10,27 +10,50 @@ import SwiftUI
 
 // MARK: - Protocol for presenter
 protocol HomeScreenPresenting: ObservableObject {
+    func getLesson()
 
-    // Nacigation
+    // Navigation
     func navigatoToProfile()
     func navigatoToLesson()
 }
 
 // MARK: - Presenter implementation
 final class HomeScreenPresenter: HomeScreenPresenting {
-    @ObservedObject var router: AppRouter
+    let router: HomeScreenRouter
+    let interactor: HomeScreenInteractor
+
     @ObservedObject var account: AccountData
 
-    init(router: AppRouter, account: AccountData) {
+    init(
+        router: HomeScreenRouter,
+        interactor: HomeScreenInteractor,
+        account: AccountData
+    ) {
         self.router = router
+        self.interactor = interactor
         self.account = account
     }
 
+    func getLesson() {
+        interactor.getLesson()
+    }
+
+    // Builders 
+    func buildNotesScreen() -> NotesView{
+        return NotesScreenBuilder.build(router: router.router)
+    }
+
+    func buildDictionaryScreen() -> DictionaryView{
+        return DictionaryScreenBuilder.build()
+    }
+
+    // Navigation
+
     func navigatoToProfile() {
-        router.navigate(to: AppRoutes.profile)
+        router.navigatoToProfile()
     }
 
     func navigatoToLesson() {
-        router.navigate(to: AppRoutes.lesson)
+        router.navigatoToLesson()
     }
 }

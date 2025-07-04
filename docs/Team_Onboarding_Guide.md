@@ -79,6 +79,86 @@ ssh deploy@fluently-app.ru
 ssh deploy-staging@fluently-app.online
 ```
 
+## 🌐 Service Access Methods
+
+### Method 1: ZeroTier VPN (Recommended)
+After ZeroTier setup, access services directly:
+- **Staging Services**: `http://10.243.191.108:PORT`
+- **Production Services**: `http://10.243.92.227:PORT`
+
+### Method 2: SSH Port Forwarding
+For team members without ZeroTier access:
+
+#### Forward All Staging Services
+```bash
+ssh -L 3000:localhost:3000 \
+    -L 8055:localhost:8055 \
+    -L 9000:localhost:9000 \
+    -L 9090:localhost:9090 \
+    -L 5432:localhost:5432 \
+    -L 8070:localhost:8070 \
+    -L 8001:localhost:8001 \
+    -L 9100:localhost:9100 \
+    -L 9113:localhost:9113 \
+    -L 8044:localhost:8044 \
+    -L 3100:localhost:3100 \
+    deploy-staging@fluently-app.online
+```
+
+#### Forward All Production Services
+```bash
+ssh -L 3000:localhost:3000 \
+    -L 8055:localhost:8055 \
+    -L 9000:localhost:9000 \
+    -L 9090:localhost:9090 \
+    -L 5432:localhost:5432 \
+    -L 8070:localhost:8070 \
+    -L 8001:localhost:8001 \
+    -L 9100:localhost:9100 \
+    -L 9113:localhost:9113 \
+    -L 8044:localhost:8044 \
+    -L 3100:localhost:3100 \
+    deploy@fluently-app.ru
+```
+
+#### Port Reference
+- **3000**: Grafana (admin/admin123)
+- **8055**: Directus CMS
+- **9000**: SonarQube
+- **9090**: Prometheus
+- **5432**: PostgreSQL Database
+- **8070**: Backend API
+- **8001**: ML API
+- **9100**: Node Exporter (system metrics)
+- **9113**: Nginx Exporter
+- **8044**: cAdvisor (container metrics)
+- **3100**: Loki (logs)
+
+#### After Port Forwarding Setup
+Access services on localhost:
+- **Grafana**: http://localhost:3000
+- **Directus**: http://localhost:8055
+- **SonarQube**: http://localhost:9000
+- **Prometheus**: http://localhost:9090
+- **Backend API**: http://localhost:8070
+- **ML API**: http://localhost:8001
+
+### Method 3: Local Development
+For local testing without remote services:
+```bash
+# Clone and setup
+git clone https://github.com/FluentlyOrg/Fluently-fork.git
+cd Fluently-fork
+
+# Start all services locally
+make run-production
+
+# Access local services
+# Backend: http://localhost:8070
+# Directus: http://localhost:8055
+# Grafana: http://localhost:3000
+```
+
 ## 🌐 Service Access Guide
 
 ### Main Application URLs

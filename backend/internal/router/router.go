@@ -2,6 +2,7 @@ package router
 
 import (
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/go-chi/chi/v5"
@@ -16,7 +17,55 @@ import (
 	authMiddleware "fluently/go-backend/internal/middleware"
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/utils"
+	"fluently/go-backend/pkg/logger"
+
+	"go.uber.org/zap"
 )
+
+// FlexibleJWTVerifier is a custom JWT verifier that supports both "Bearer token" and just "token" formats
+func flexibleJWTVerifier(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// Get token from Authorization header
+		authHeader := r.Header.Get("Authorization")
+		if authHeader == "" {
+			logger.Log.Error("No Authorization header found")
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusUnauthorized)
+			w.Write([]byte(`{"error": "unauthorized"}`))
+			return
+		}
+
+		// Extract token (support both "Bearer token" and just "token")
+		var tokenString string
+		if strings.HasPrefix(authHeader, "Bearer ") {
+			tokenString = strings.TrimPrefix(authHeader, "Bearer ")
+		} else {
+			tokenString = authHeader
+		}
+
+		// Verify and parse the token
+		token, err := utils.TokenAuth.Decode(tokenString)
+		if err != nil {
+			logger.Log.Error("JWT decode error", zap.Error(err))
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusUnauthorized)
+			w.Write([]byte(`{"error": "unauthorized"}`))
+			return
+		}
+
+		if token == nil {
+			logger.Log.Error("Invalid JWT token")
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusUnauthorized)
+			w.Write([]byte(`{"error": "unauthorized"}`))
+			return
+		}
+
+		// Add token and claims to context
+		ctx := jwtauth.NewContext(r.Context(), token, nil)
+		next.ServeHTTP(w, r.WithContext(ctx))
+	})
+}
 
 func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	// Initialize JWT auth
@@ -63,10 +112,10 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	})
 	r.Get("/swagger/*", httpSwagger.WrapHandler)
 
-	// Protected routes using go-chi/jwtauth
+	// Protected routes using flexible JWT authentication
 	r.Route("/api/v1", func(r chi.Router) {
-		// JWT authentication middleware
-		r.Use(jwtauth.Verifier(utils.TokenAuth))
+		// JWT authentication middleware (supports both "Bearer token" and "token" formats)
+		r.Use(flexibleJWTVerifier)
 		r.Use(authMiddleware.CustomAuthenticator)
 
 		// Protected API routes
@@ -75,5 +124,11 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		routes.RegisterSentenceRoutes(r, &handlers.SentenceHandler{Repo: postgres.NewSentenceRepository(db)})
 		routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: postgres.NewLearnedWordRepository(db)})
 		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: postgres.NewPreferenceRepository(db)})
+		routes.RegisterLessonRoutes(r, &handlers.LessonHandler{
+			PreferenceRepo: postgres.NewPreferenceRepository(db),
+			TopicRepo:      postgres.NewTopicRepository(db),
+			SentenceRepo:   postgres.NewSentenceRepository(db),
+			Repo:           postgres.NewLessonRepository(db),
+		})
 	})
 }

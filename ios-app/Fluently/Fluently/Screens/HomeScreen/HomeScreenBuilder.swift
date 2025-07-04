@@ -13,8 +13,11 @@ enum HomeScreenBuilder{
         router: AppRouter,
         acoount: AccountData,
     ) -> HomeScreenView {
+        let router = HomeScreenRouter(router: router)
+        let interactor = HomeScreenInteractor()
         let presenter = HomeScreenPresenter(
             router: router,
+            interactor: interactor,
             account: acoount
         )
 

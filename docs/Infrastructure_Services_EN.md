@@ -67,11 +67,6 @@ This document describes all available services in the Fluently project infrastru
 - **Staging**: `http://10.243.191.108:9100`
 - **Purpose**: Exports system-level metrics like CPU, memory, disk usage, and network statistics.
 
-### PostgreSQL Exporter
-- **Production**: `http://10.243.92.227:9187`
-- **Staging**: `http://10.243.191.108:9187`
-- **Purpose**: Exports PostgreSQL database metrics for monitoring database performance and health.
-
 ### Nginx Exporter
 - **Production**: `http://10.243.92.227:9113`
 - **Staging**: `http://10.243.191.108:9113`
@@ -137,10 +132,11 @@ http://10.243.92.227:9090  # Prometheus
 http://10.243.92.227:9000  # SonarQube
 http://10.243.92.227:8055  # Directus
 http://10.243.92.227:9100  # Node Exporter
-http://10.243.92.227:9187  # PostgreSQL Exporter
 http://10.243.92.227:9113  # Nginx Exporter
 http://10.243.92.227:8044  # cAdvisor
 http://10.243.92.227:3100  # Loki
+http://10.243.92.227:8070  # Backend API
+http://10.243.92.227:8001  # ML API
 
 # Staging Monitoring Stack
 http://10.243.191.108:3000  # Grafana
@@ -151,20 +147,61 @@ http://10.243.191.108:9100  # Node Exporter
 http://10.243.191.108:9187  # PostgreSQL Exporter
 http://10.243.191.108:9113  # Nginx Exporter
 http://10.243.191.108:8044  # cAdvisor
+http://10.243.191.108:9113  # Nginx Exporter
+http://10.243.191.108:8044  # cAdvisor
 http://10.243.191.108:3100  # Loki
+http://10.243.191.108:8070  # Backend API
+http://10.243.191.108:8001  # ML API
+```
+
+## 🔄 SSH Port Forwarding Setup
+
+### Forward All Staging Services
+```bash
+ssh -L 3000:localhost:3000 \
+    -L 8055:localhost:8055 \
+    -L 9000:localhost:9000 \
+    -L 9090:localhost:9090 \
+    -L 5432:localhost:5432 \
+    -L 8070:localhost:8070 \
+    -L 8001:localhost:8001 \
+    -L 9100:localhost:9100 \
+    -L 9113:localhost:9113 \
+    -L 8044:localhost:8044 \
+    -L 3100:localhost:3100 \
+    deploy-staging@fluently-app.online
+```
+
+### Forward All Production Services
+```bash
+ssh -L 3000:localhost:3000 \
+    -L 8055:localhost:8055 \
+    -L 9000:localhost:9000 \
+    -L 9090:localhost:9090 \
+    -L 5432:localhost:5432 \
+    -L 8070:localhost:8070 \
+    -L 8001:localhost:8001 \
+    -L 9100:localhost:9100 \
+    -L 9113:localhost:9113 \
+    -L 8044:localhost:8044 \
+    -L 3100:localhost:3100 \
+    deploy@fluently-app.ru
 ```
 
 ## 🆘 Support & Troubleshooting
 
 ### Health Checks
-1. **Application**: Check `/health` endpoint
-2. **Database**: Verify PostgreSQL exporter metrics
-3. **Services**: Use `docker compose ps` to check container status
+1. **Backend API**: `curl http://localhost:8070/health` or `https://fluently-app.ru/health`
+2. **ML API**: `curl http://localhost:8001/health`
+3. **Database**: `docker compose exec postgres pg_isready -U postgres`
+4. **Services**: Use `docker compose ps` to check container status
 
 ### Log Access
-- **Application logs**: `docker compose logs app`
+- **Backend logs**: `docker compose logs -f backend`
+- **ML API logs**: `docker compose logs -f ml-api`
 - **System logs**: Available in Grafana via Loki
-- **Nginx logs**: `docker compose logs nginx`
+- **Nginx logs**: `docker compose logs -f nginx`
+- **Database logs**: `docker compose logs -f postgres`
 
 ### Emergency Contacts
 - **DevOps Admin**: Timofey (Lead Infrastructure) - [Add contact]

@@ -71,6 +71,3 @@ coverage.html
 
 # Delve debugger
 __debug_bin*
-
-# Go modules download cache
-go.sum

@@ -8,9 +8,10 @@
 import Foundation
 import SwiftUI
 
+// TODO: specifi the min width and min height 
 struct WordCardView: View {
     // MARK: - Properties
-    @State var word: WordCard
+    @State var word: WordModel
 
     var onKnowTapped: () -> Void
     var onLearnTapped: () -> Void
@@ -54,9 +55,10 @@ struct WordCardView: View {
                 .font(.appFont.caption)
 
             VStack(alignment: .leading, spacing: 4) {
-                ForEach(word.sentences, id: \.sentenceId) { sentence in
+                ForEach(word.sentences, id: \.self) { sentence in
                     VStack(alignment: .leading) {
-                        Text("- \(sentence.sentence)")
+                        Text("- \(sentence.text)")
+                            .foregroundColor(.blackText)
                         Text("- \(sentence.translation)")
                             .font(.appFont.caption)
                             .foregroundColor(.blackText.opacity(0.6))
@@ -64,6 +66,10 @@ struct WordCardView: View {
                 }
             }
         }
+        .frame(
+            minWidth: 120,
+            minHeight: 120
+        )
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 12)
@@ -79,7 +85,7 @@ struct WordCardView: View {
             Text("Learn")
                 .padding()
                 .frame(maxWidth: .infinity)
-                .modifier(ButtonViewModifier(color: .blue))
+                .massiveButton(color: .blue)
                 .frame(maxHeight: 60)
         }
         .buttonStyle(PlainButtonStyle())
@@ -92,9 +98,27 @@ struct WordCardView: View {
             Text("Know")
                 .padding()
                 .frame(maxWidth: .infinity)
-                .modifier(ButtonViewModifier(color: .blue))
+                .massiveButton(color: .blue)
                 .frame(maxHeight: 60)
         }
         .buttonStyle(PlainButtonStyle())
+    }
+}
+
+// MARK: Preview Provider
+struct WordModelPreview: PreviewProvider {
+    static var previews: some View {
+        PreviewWrapper()
+    }
+
+    struct PreviewWrapper: View {
+        let word = WordModel.mockWord()
+        var body: some View {
+            WordCardView(
+                word: word,
+                onKnowTapped: {},
+                onLearnTapped: {}
+            )
+        }
     }
 }
