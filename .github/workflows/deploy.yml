@@ -401,9 +401,79 @@ jobs:
               echo "⚠️ Created .env from example - please configure production settings"
             fi
             
+            # Set environment-specific variables for production
+            echo "🔧 Configuring production environment variables..."
+            sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=${{ secrets.ZEROTIER_IP }}/" .env
+            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://fluently-app.ru|g" .env
+            sed -i "s/DOMAIN=.*/DOMAIN=fluently-app.ru/" .env
+            sed -i "s/CERT_NAME=.*/CERT_NAME=fluently-app-ru/" .env
+            
+            # Set production telegram bot configuration
+            if [ ! -z "${{ secrets.TELEGRAM_BOT_TOKEN }}" ]; then
+              sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}/" .env
+            fi
+            if [ ! -z "${{ secrets.WEBHOOK_SECRET }}" ]; then
+              sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=${{ secrets.WEBHOOK_SECRET }}/" .env
+            fi
+            
+            # Set webhook URL
+            sed -i "s|WEBHOOK_URL=.*|WEBHOOK_URL=https://fluently-app.ru/webhook|g" .env
+            
+            # Set Redis configuration for Docker network
+            sed -i "s|REDIS_ADDR=.*|REDIS_ADDR=redis:6379|g" .env
+            
+            # Generate nginx config from template with environment variable substitution
+            echo "🔧 Generating nginx configuration from template..."
+            export DOMAIN="fluently-app.ru"
+            export CERT_NAME="fluently-app-ru"
+            export WEBHOOK_SECRET="${{ secrets.WEBHOOK_SECRET }}"
+            
+            # Generate nginx config with proper variable substitution
+            envsubst '${DOMAIN} ${CERT_NAME}' < backend/nginx-container/nginx.conf.template > backend/nginx-container/default.conf
+            # Also substitute webhook_secret in the generated config
+            sed -i "s/\$webhook_secret/$WEBHOOK_SECRET/g" backend/nginx-container/default.conf
+            
+            echo "✅ Generated nginx config for $DOMAIN with cert $CERT_NAME"
+            
+            # Generate environment-specific backup scripts
+            echo "🔧 Generating environment-specific backup scripts..."
+            export BACKUP_DIR="/home/deploy/backups"
+            export ENVIRONMENT="production"
+            export PROJECT_DIR="/home/deploy/Fluently-fork"
+            
+            # Generate backup script
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/backup_volumes.sh.template > scripts/backup_volumes.sh
+            chmod +x scripts/backup_volumes.sh
+            
+            # Generate restore script  
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/restore_volumes.sh.template > scripts/restore_volumes.sh
+            chmod +x scripts/restore_volumes.sh
+            
+            # Generate migration script
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/migrate_to_external_volumes.sh.template > scripts/migrate_to_external_volumes.sh
+            chmod +x scripts/migrate_to_external_volumes.sh
+            
+            # Generate cron setup script
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT} ${PROJECT_DIR}' < scripts/setup_cron.sh.template > scripts/setup_cron.sh
+            chmod +x scripts/setup_cron.sh
+            
+            # Generate backup operations script
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/backup_ops.sh.template > scripts/backup_ops.sh
+            chmod +x scripts/backup_ops.sh
+            
+            echo "✅ Generated environment-specific scripts for production"
+            
             # Pull latest images and deploy using the main docker-compose.yml
             echo "🐳 Pulling latest images..."
             docker compose pull
+            
+            echo "🧹 Cleaning up Docker networks..."
+            # Remove project-specific networks if they exist
+            docker network rm fluently-fork_fluently_network 2>/dev/null || true
+            docker network rm fluently_network 2>/dev/null || true
+            # Prune unused networks
+            docker network prune -f || true
+            echo "✅ Network cleanup completed"
             
             echo "🔄 Restarting services..."
             docker compose down --remove-orphans || true
@@ -431,6 +501,57 @@ jobs:
               fi
             done
             
+            # Check PostgreSQL
+            echo "Checking PostgreSQL health..."
+            if docker compose exec -T postgres pg_isready -U ${DB_USER:-postgres} >/dev/null 2>&1; then
+              echo "✅ PostgreSQL is healthy"
+            else
+              echo "❌ PostgreSQL health check failed"
+              docker compose logs postgres
+              exit 1
+            fi
+            
+            # Check ML API (takes 2-3 minutes to initialize)
+            echo "Checking ML API health..."
+            for i in {1..20}; do
+              if docker compose exec -T ml-api curl -f "http://localhost:8001/health" >/dev/null 2>&1; then
+                echo "✅ ML API is healthy"
+                break
+              elif [ $i -eq 20 ]; then
+                echo "❌ ML API health check failed after 20 attempts"
+                docker compose logs ml-api
+                exit 1
+              else
+                echo "⏳ Waiting for ML API... (attempt $i/20)"
+                sleep 15
+              fi
+            done
+            
+            # Check telegram bot
+            echo "Checking telegram bot health..."
+            for i in {1..3}; do
+              if docker compose ps telegram-bot | grep -q "Up"; then
+                echo "✅ Telegram bot is running"
+                # Check if bot can connect to Redis
+                if docker compose logs telegram-bot | grep -q "Successfully connected to Redis"; then
+                  echo "✅ Telegram bot connected to Redis"
+                fi
+                if docker compose logs telegram-bot | grep -q "telegram: Not Found (404)"; then
+                  echo "❌ Telegram bot has invalid token (404 error)"
+                  docker compose logs --tail=10 telegram-bot || true
+                  exit 1
+                fi
+                break
+              elif [ $i -eq 3 ]; then
+                echo "❌ Telegram bot health check failed"
+                docker compose logs --tail=10 telegram-bot || true
+                exit 1
+              else
+                echo "⏳ Waiting for telegram bot... (attempt $i/3)"
+                sleep 5
+              fi
+            done
+            
             # Check nginx
             for i in {1..5}; do
               if curl -f -s "http://localhost" >/dev/null 2>&1; then
@@ -451,6 +572,23 @@ jobs:
             
             # Show running containers
             docker compose ps
+            
+            # Show telegram bot setup instructions
+            echo ""
+            echo "🤖 Telegram Bot Setup Instructions:"
+            echo "If the bot token is set correctly, run this command to set up the webhook:"
+            echo ""
+            echo "curl -X POST \"https://api.telegram.org/bot\$BOT_TOKEN/setWebhook\" \\"
+            echo "     -H \"Content-Type: application/json\" \\"
+            echo "     -d '{\"url\": \"https://fluently-app.ru/webhook\"}'"
+            echo ""
+            echo "Replace \$BOT_TOKEN with your actual bot token from the GitHub secrets."
+            echo "You can test the webhook by sending a message to your bot."
+            echo ""
+            
+            # Cleanup old images
+            echo "🧹 Cleaning up old Docker images..."
+            docker image prune -f || true
 
   # ===========================================
   # STAGING DEPLOY - Deploy to staging (develop branch)
@@ -518,16 +656,64 @@ jobs:
               sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=${{ secrets.STAGING_WEBHOOK_SECRET }}/" .env
             fi
             
-            # Set staging database configuration
-            sed -i "s/DB_NAME=.*/DB_NAME=fluently_staging_db/" .env
-            sed -i "s/DB_USER=.*/DB_USER=staging_user/" .env
-            if [ ! -z "${{ secrets.STAGING_DB_PASSWORD }}" ]; then
-              sed -i "s/DB_PASSWORD=.*/DB_PASSWORD=${{ secrets.STAGING_DB_PASSWORD }}/" .env
-            fi
+            # Set webhook URL
+            sed -i "s|WEBHOOK_URL=.*|WEBHOOK_URL=https://fluently-app.online/webhook|g" .env
+            
+            # Set Redis configuration for Docker network
+            sed -i "s|REDIS_ADDR=.*|REDIS_ADDR=redis:6379|g" .env
+            
+            # Generate nginx config from template with environment variable substitution
+            echo "🔧 Generating nginx configuration from template..."
+            export DOMAIN="fluently-app.online"
+            export CERT_NAME="fluently-app-online"
+            export WEBHOOK_SECRET="${{ secrets.STAGING_WEBHOOK_SECRET }}"
+            
+            # Generate nginx config with proper variable substitution
+            envsubst '${DOMAIN} ${CERT_NAME}' < backend/nginx-container/nginx.conf.template > backend/nginx-container/default.conf
+            # Also substitute webhook_secret in the generated config
+            sed -i "s/\$webhook_secret/$WEBHOOK_SECRET/g" backend/nginx-container/default.conf
+            
+            echo "✅ Generated nginx config for $DOMAIN with cert $CERT_NAME"
+            
+            # Generate environment-specific backup scripts
+            echo "🔧 Generating environment-specific backup scripts..."
+            export BACKUP_DIR="/home/deploy-staging/backups"
+            export ENVIRONMENT="staging"
+            export PROJECT_DIR="/home/deploy-staging/Fluently-fork"
+            
+            # Generate backup script
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/backup_volumes.sh.template > scripts/backup_volumes.sh
+            chmod +x scripts/backup_volumes.sh
+            
+            # Generate restore script  
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/restore_volumes.sh.template > scripts/restore_volumes.sh
+            chmod +x scripts/restore_volumes.sh
+            
+            # Generate migration script
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/migrate_to_external_volumes.sh.template > scripts/migrate_to_external_volumes.sh
+            chmod +x scripts/migrate_to_external_volumes.sh
+            
+            # Generate cron setup script
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT} ${PROJECT_DIR}' < scripts/setup_cron.sh.template > scripts/setup_cron.sh
+            chmod +x scripts/setup_cron.sh
+            
+            # Generate backup operations script
+            envsubst '${BACKUP_DIR} ${ENVIRONMENT}' < scripts/backup_ops.sh.template > scripts/backup_ops.sh
+            chmod +x scripts/backup_ops.sh
+            
+            echo "✅ Generated environment-specific scripts for staging"
             
             # Pull latest images and deploy using the same docker-compose.yml
             echo "🐳 Pulling latest staging images..."
             docker compose pull
+            
+            echo "🧹 Cleaning up Docker networks..."
+            # Remove project-specific networks if they exist
+            docker network rm fluently-fork_fluently_network 2>/dev/null || true
+            docker network rm fluently_network 2>/dev/null || true
+            # Prune unused networks
+            docker network prune -f || true
+            echo "✅ Network cleanup completed"
             
             echo "🔄 Restarting staging services..."
             docker compose down --remove-orphans || true
@@ -555,6 +741,57 @@ jobs:
               fi
             done
             
+            # Check PostgreSQL
+            echo "Checking staging PostgreSQL health..."
+            if docker compose exec -T postgres pg_isready -U ${DB_USER:-postgres} >/dev/null 2>&1; then
+              echo "✅ Staging PostgreSQL is healthy"
+            else
+              echo "❌ Staging PostgreSQL health check failed"
+              docker compose logs postgres
+              exit 1
+            fi
+            
+            # Check ML API (takes 2-3 minutes to initialize)
+            echo "Checking staging ML API health..."
+            for i in {1..20}; do
+              if docker compose exec -T ml-api curl -f "http://localhost:8001/health" >/dev/null 2>&1; then
+                echo "✅ Staging ML API is healthy"
+                break
+              elif [ $i -eq 20 ]; then
+                echo "❌ Staging ML API health check failed after 20 attempts"
+                docker compose logs ml-api
+                exit 1
+              else
+                echo "⏳ Waiting for staging ML API... (attempt $i/20)"
+                sleep 15
+              fi
+            done
+            
+            # Check telegram bot
+            echo "Checking staging telegram bot health..."
+            for i in {1..3}; do
+              if docker compose ps telegram-bot | grep -q "Up"; then
+                echo "✅ Staging telegram bot is running"
+                # Check if bot can connect to Redis
+                if docker compose logs telegram-bot | grep -q "Successfully connected to Redis"; then
+                  echo "✅ Staging telegram bot connected to Redis"
+                fi
+                if docker compose logs telegram-bot | grep -q "telegram: Not Found (404)"; then
+                  echo "❌ Staging telegram bot has invalid token (404 error)"
+                  docker compose logs --tail=10 telegram-bot || true
+                  exit 1
+                fi
+                break
+              elif [ $i -eq 3 ]; then
+                echo "❌ Staging telegram bot health check failed"
+                docker compose logs --tail=10 telegram-bot || true
+                exit 1
+              else
+                echo "⏳ Waiting for staging telegram bot... (attempt $i/3)"
+                sleep 5
+              fi
+            done
+            
             # Check nginx
             for i in {1..5}; do
               if curl -f -s "http://localhost" >/dev/null 2>&1; then
@@ -575,3 +812,20 @@ jobs:
             
             # Show running containers
             docker compose ps
+            
+            # Show telegram bot setup instructions for staging
+            echo ""
+            echo "🤖 Staging Telegram Bot Setup Instructions:"
+            echo "If the staging bot token is set correctly, run this command to set up the webhook:"
+            echo ""
+            echo "curl -X POST \"https://api.telegram.org/bot\$BOT_TOKEN/setWebhook\" \\"
+            echo "     -H \"Content-Type: application/json\" \\"
+            echo "     -d '{\"url\": \"https://fluently-app.online/webhook\"}'"
+            echo ""
+            echo "Replace \$BOT_TOKEN with your actual staging bot token from the GitHub secrets."
+            echo "You can test the webhook by sending a message to your staging bot."
+            echo ""
+            
+            # Cleanup old images
+            echo "🧹 Cleaning up old Docker images..."
+            docker image prune -f || true

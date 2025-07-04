@@ -154,3 +154,4 @@ docs/CI_CD_Pipeline_Logic.md
 docs/GitHub_Secrets_Configuration.md
 .github/workflows/deploy-old.yml
 .github/workflows/deploy-new.yml
+.github/workflows/deploy-old-from-main.yml
