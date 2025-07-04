@@ -20,24 +20,24 @@ func (s *HandlerService) HandleLearningStart(ctx context.Context, c tele.Context
 			"id":          int64(1),
 			"word":        "hello",
 			"translation": "привет",
-			"definition":  "used as a greeting",
-			"examples":    []string{"Hello, how are you?", "She said hello to everyone."},
+			"definition":  "используется как приветствие",
+			"examples":    []string{"Hello, how are you? — Привет, как дела?", "She said hello to everyone. — Она поприветствовала всех."},
 			"cefr_level":  "A1",
 		},
 		{
 			"id":          int64(2),
 			"word":        "world",
 			"translation": "мир",
-			"definition":  "the earth and all the people, places, and things on it",
-			"examples":    []string{"The world is beautiful.", "People from around the world came to visit."},
+			"definition":  "земля и все люди, места и вещи на ней",
+			"examples":    []string{"The world is beautiful. — Мир прекрасен.", "People from around the world came to visit. — Люди со всего мира приехали в гости."},
 			"cefr_level":  "A1",
 		},
 		{
 			"id":          int64(3),
 			"word":        "beautiful",
 			"translation": "красивый",
-			"definition":  "having beauty; pleasing to the senses",
-			"examples":    []string{"She is beautiful.", "What a beautiful day!"},
+			"definition":  "обладающий красотой; приятный для чувств",
+			"examples":    []string{"She is beautiful. — Она красивая.", "What a beautiful day! — Какой прекрасный день!"},
 			"cefr_level":  "A2",
 		},
 	}
@@ -80,11 +80,11 @@ func (s *HandlerService) sendCurrentWord(ctx context.Context, c tele.Context, us
 
 	// Create word presentation
 	wordMessage := fmt.Sprintf(
-		"📚 *Word %d of %d*\n\n"+
+		"📚 *Слово %d из %d*\n\n"+
 			"🔤 **%s**\n"+
 			"🔊 /%s/\n"+
 			"📝 %s\n\n"+
-			"💭 Examples:\n%s",
+			"💭 Примеры:\n%s",
 		lessonData.CurrentWordIndex+1,
 		len(lessonData.Words),
 		wordText,
@@ -98,11 +98,11 @@ func (s *HandlerService) sendCurrentWord(ctx context.Context, c tele.Context, us
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
 			{
-				{Text: "Show Translation", Data: fmt.Sprintf("word:translation:%d", wordID)},
-				{Text: "I Know This", Data: fmt.Sprintf("word:know:%d", wordID)},
+				{Text: "Показать перевод", Data: fmt.Sprintf("word:translation:%d", wordID)},
+				{Text: "Я знаю это", Data: fmt.Sprintf("word:know:%d", wordID)},
 			},
 			{
-				{Text: "Next Word", Data: fmt.Sprintf("word:next:%d", wordID)},
+				{Text: "Следующее слово", Data: fmt.Sprintf("word:next:%d", wordID)},
 			},
 		},
 	}
@@ -117,11 +117,11 @@ func (s *HandlerService) completeLearningSession(ctx context.Context, c tele.Con
 
 	// Create completion message
 	completionText := fmt.Sprintf(
-		"🎉 *Lesson Complete!*\n\n"+
-			"📊 **Session Summary:**\n"+
-			"✅ Words reviewed: %d\n"+
-			"🎯 Progress: %d/%d\n\n"+
-			"Great job! Keep up the good work!",
+		"🎉 *Урок завершен!*\n\n"+
+			"📊 **Сводка урока:**\n"+
+			"✅ Слов изучено: %d\n"+
+			"🎯 Прогресс: %d/%d\n\n"+
+			"Отличная работа! Продолжайте в том же духе!",
 		completedWords,
 		completedWords,
 		len(lessonData.Words),
@@ -131,11 +131,11 @@ func (s *HandlerService) completeLearningSession(ctx context.Context, c tele.Con
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
 			{
-				{Text: "Review Again", Data: "lesson:review"},
-				{Text: "New Lesson", Data: "lesson:new"},
+				{Text: "Повторить урок", Data: "lesson:review"},
+				{Text: "Новый урок", Data: "lesson:new"},
 			},
 			{
-				{Text: "Main Menu", Data: "menu:main"},
+				{Text: "Главное меню", Data: "menu:main"},
 			},
 		},
 	}
@@ -187,8 +187,8 @@ func (s *HandlerService) showWordTranslation(ctx context.Context, c tele.Context
 
 	translationText := fmt.Sprintf(
 		"🔤 **%s**\n"+
-			"🌐 Translation: **%s**\n\n"+
-			"Did this help you understand the word?",
+			"🌐 Перевод: **%s**\n\n"+
+			"Помогло ли это понять слово?",
 		wordText,
 		translation,
 	)
@@ -197,8 +197,8 @@ func (s *HandlerService) showWordTranslation(ctx context.Context, c tele.Context
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
 			{
-				{Text: "Yes, I understand", Data: fmt.Sprintf("word:understand:%d", wordID)},
-				{Text: "Still confused", Data: fmt.Sprintf("word:confused:%d", wordID)},
+				{Text: "Да, я понимаю", Data: fmt.Sprintf("word:understand:%d", wordID)},
+				{Text: "Все еще не понятно", Data: fmt.Sprintf("word:confused:%d", wordID)},
 			},
 		},
 	}

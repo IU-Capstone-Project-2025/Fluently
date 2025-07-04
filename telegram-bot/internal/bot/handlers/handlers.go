@@ -28,15 +28,15 @@ func (s *HandlerService) HandleStartCommand(ctx context.Context, c tele.Context,
 
 	// Send welcome message
 	welcomeText := fmt.Sprintf(
-		"👋 Hello, %s!\n\n"+
-			"Welcome to Fluently, your personal English language learning assistant.\n\n"+
-			"I'll help you become fluent in English through personalized lessons, spaced repetition, and interactive exercises.",
+		"👋 Привет, %s!\n\n"+
+			"Добро пожаловать в Fluently — ваш персональный помощник для изучения английского языка.\n\n"+
+			"Я помогу вам стать свободно говорящим на английском через персонализированные уроки, интервальные повторения и интерактивные упражнения.",
 		c.Sender().FirstName,
 	)
 
 	// Add "Get Started" button
 	getStartedButton := &tele.InlineButton{
-		Text: "Get Started",
+		Text: "Начать",
 		Data: "onboarding:start",
 	}
 	keyboard := &tele.ReplyMarkup{
@@ -50,16 +50,16 @@ func (s *HandlerService) HandleStartCommand(ctx context.Context, c tele.Context,
 
 // HandleHelpCommand handles the /help command
 func (s *HandlerService) HandleHelpCommand(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	helpText := "🌟 *Fluently Bot Help* 🌟\n\n" +
-		"Here are the commands you can use:\n\n" +
-		"*/start* - Begin your language learning journey\n" +
-		"*/learn* - Start today's lesson\n" +
-		"*/settings* - Configure your learning preferences\n" +
-		"*/test* - Take a vocabulary test to determine your level\n" +
-		"*/stats* - View your learning statistics\n" +
-		"*/help* - Show this help message\n" +
-		"*/cancel* - Cancel the current action\n\n" +
-		"Need more help? Type your question and I'll try to assist you."
+	helpText := "🌟 *Справка по Fluently Bot* 🌟\n\n" +
+		"Вот команды, которые вы можете использовать:\n\n" +
+		"*/start* - Начать ваше путешествие в изучении языка\n" +
+		"*/learn* - Начать сегодняшний урок\n" +
+		"*/settings* - Настроить предпочтения обучения\n" +
+		"*/test* - Пройти тест на определение уровня словарного запаса\n" +
+		"*/stats* - Посмотреть статистику обучения\n" +
+		"*/help* - Показать это сообщение справки\n" +
+		"*/cancel* - Отменить текущее действие\n\n" +
+		"Нужна дополнительная помощь? Напишите свой вопрос, и я постараюсь помочь."
 
 	return c.Send(helpText, &tele.SendOptions{ParseMode: tele.ModeMarkdown})
 }
@@ -80,19 +80,19 @@ func (s *HandlerService) HandleSettingsCommand(ctx context.Context, c tele.Conte
 	}
 
 	// Create settings message
-	settingsText := "⚙️ *Settings*\n\n" +
-		fmt.Sprintf("🔤 CEFR Level: *%s*\n", userProgress.CEFRLevel) +
-		fmt.Sprintf("📚 Words per day: *%d*\n", userProgress.WordsPerDay) +
-		fmt.Sprintf("🔔 Notifications: *%s*\n", formatNotificationTime(userProgress.NotificationTime)) +
-		"\nSelect a setting to change:"
+	settingsText := "⚙️ *Настройки*\n\n" +
+		fmt.Sprintf("🔤 Уровень CEFR: *%s*\n", userProgress.CEFRLevel) +
+		fmt.Sprintf("📚 Слов в день: *%d*\n", userProgress.WordsPerDay) +
+		fmt.Sprintf("🔔 Уведомления: *%s*\n", formatNotificationTime(userProgress.NotificationTime)) +
+		"\nВыберите настройку для изменения:"
 
 	// Create settings keyboard
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
-			{{Text: "🔤 CEFR Level", Data: "settings:cefr_level"}},
-			{{Text: "📚 Words per day", Data: "settings:words_per_day"}},
-			{{Text: "🔔 Notifications", Data: "settings:notifications"}},
-			{{Text: "Back to Main Menu", Data: "menu:main"}},
+			{{Text: "🔤 Уровень CEFR", Data: "settings:cefr_level"}},
+			{{Text: "📚 Слов в день", Data: "settings:words_per_day"}},
+			{{Text: "🔔 Уведомления", Data: "settings:notifications"}},
+			{{Text: "Назад в главное меню", Data: "menu:main"}},
 		},
 	}
 
@@ -111,7 +111,7 @@ func (s *HandlerService) HandleLearnCommand(ctx context.Context, c tele.Context,
 	// If user hasn't completed onboarding, prompt them to start
 	if userProgress.CEFRLevel == "" {
 		startButton := &tele.InlineButton{
-			Text: "Start Setup",
+			Text: "Начать настройку",
 			Data: "onboarding:start",
 		}
 		keyboard := &tele.ReplyMarkup{
@@ -120,8 +120,8 @@ func (s *HandlerService) HandleLearnCommand(ctx context.Context, c tele.Context,
 			},
 		}
 
-		return c.Send("It looks like you haven't completed the initial setup yet. "+
-			"Let's determine your English level first.", keyboard)
+		return c.Send("Похоже, вы еще не завершили первоначальную настройку. "+
+			"Давайте сначала определим ваш уровень английского.", keyboard)
 	}
 
 	// Set user state to lesson start
@@ -143,9 +143,9 @@ func (s *HandlerService) HandleLearnCommand(ctx context.Context, c tele.Context,
 
 	// Send lesson start message
 	lessonText := fmt.Sprintf(
-		"📚 *Today's Lesson*\n\n"+
-			"Let's practice %d new words today.\n\n"+
-			"Ready to start your daily lesson?",
+		"📚 *Сегодняшний урок*\n\n"+
+			"Давайте изучим %d новых слов сегодня.\n\n"+
+			"Готовы начать ваш ежедневный урок?",
 		userProgress.WordsPerDay,
 	)
 
@@ -153,8 +153,8 @@ func (s *HandlerService) HandleLearnCommand(ctx context.Context, c tele.Context,
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
 			{
-				{Text: "Start Learning", Data: "lesson:start"},
-				{Text: "Later", Data: "lesson:later"},
+				{Text: "Начать изучение", Data: "lesson:start"},
+				{Text: "Позже", Data: "lesson:later"},
 			},
 		},
 	}
@@ -171,17 +171,17 @@ func (s *HandlerService) HandleTestCommand(ctx context.Context, c tele.Context, 
 	}
 
 	// Send test introduction message
-	testText := "🧠 *CEFR Level Test*\n\n" +
-		"This test will help determine your English proficiency level according to the CEFR scale.\n\n" +
-		"You'll see a series of words. For each word, indicate if you know it well.\n\n" +
-		"The test has 5 parts and takes about 5-10 minutes. Ready to begin?"
+	testText := "🧠 *Тест уровня CEFR*\n\n" +
+		"Этот тест поможет определить ваш уровень владения английским языком согласно шкале CEFR.\n\n" +
+		"Вы увидите серию слов. Для каждого слова укажите, хорошо ли вы его знаете.\n\n" +
+		"Тест состоит из 5 частей и займет около 5-10 минут. Готовы начать?"
 
 	// Create test keyboard
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
 			{
-				{Text: "Start Test", Data: "test:start"},
-				{Text: "Later", Data: "menu:main"},
+				{Text: "Начать тест", Data: "test:start"},
+				{Text: "Позже", Data: "menu:main"},
 			},
 		},
 	}
@@ -200,13 +200,13 @@ func (s *HandlerService) HandleStatsCommand(ctx context.Context, c tele.Context,
 
 	// Create stats message
 	statsText := fmt.Sprintf(
-		"📊 *Your Learning Statistics*\n\n"+
-			"🔤 Current Level: *%s*\n"+
-			"📚 Words per day: *%d*\n"+
-			"🔥 Current streak: *%d days*\n"+
-			"📖 Total words learned: *%d*\n"+
-			"🎯 Lessons completed: *%d*\n"+
-			"⏱ Total time spent: *%d minutes*\n",
+		"📊 *Ваша статистика обучения*\n\n"+
+			"🔤 Текущий уровень: *%s*\n"+
+			"📚 Слов в день: *%d*\n"+
+			"🔥 Текущая серия: *%d дней*\n"+
+			"📖 Всего слов изучено: *%d*\n"+
+			"🎯 Уроков завершено: *%d*\n"+
+			"⏱ Общее время обучения: *%d минут*\n",
 		userProgress.CEFRLevel,
 		userProgress.WordsPerDay,
 		0, // streak days - placeholder
@@ -218,7 +218,7 @@ func (s *HandlerService) HandleStatsCommand(ctx context.Context, c tele.Context,
 	// Create back button
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
-			{{Text: "Back to Main Menu", Data: "menu:main"}},
+			{{Text: "Назад в главное меню", Data: "menu:main"}},
 		},
 	}
 
@@ -234,117 +234,117 @@ func (s *HandlerService) HandleCancelCommand(ctx context.Context, c tele.Context
 	}
 
 	// Send cancellation message
-	cancelText := "❌ Action cancelled. You've been returned to the main menu.\n\n" +
-		"Use /start to begin again or /help to see available commands."
+	cancelText := "❌ Действие отменено. Вы возвращены в главное меню.\n\n" +
+		"Используйте /start чтобы начать заново или /help чтобы увидеть доступные команды."
 
 	return c.Send(cancelText)
 }
 
 // Placeholder handler functions - these need to be implemented
 func (s *HandlerService) HandleWelcomeMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Welcome! Please use the buttons or commands to navigate.")
+	return c.Send("Добро пожаловать! Пожалуйста, используйте кнопки или команды для навигации.")
 }
 
 func (s *HandlerService) HandleMethodExplanationMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Method explanation. Please continue with the setup.")
+	return c.Send("Объяснение методики. Пожалуйста, продолжите настройку.")
 }
 
 func (s *HandlerService) HandleQuestionGoalMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Please answer the goal question.")
+	return c.Send("Пожалуйста, ответьте на вопрос о цели.")
 }
 
 func (s *HandlerService) HandleQuestionConfidenceMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Please answer the confidence question.")
+	return c.Send("Пожалуйста, ответьте на вопрос об уверенности.")
 }
 
 func (s *HandlerService) HandleQuestionSerialsMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Please answer the serials question.")
+	return c.Send("Пожалуйста, ответьте на вопрос о сериалах.")
 }
 
 func (s *HandlerService) HandleQuestionExperienceMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Please answer the experience question.")
+	return c.Send("Пожалуйста, ответьте на вопрос об опыте.")
 }
 
 func (s *HandlerService) HandleSettingsWordsPerDayInputMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Please enter the number of words per day.")
+	return c.Send("Пожалуйста, введите количество слов в день.")
 }
 
 func (s *HandlerService) HandleSettingsTimeInputMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Please enter the notification time.")
+	return c.Send("Пожалуйста, введите время уведомлений.")
 }
 
 func (s *HandlerService) HandleWaitingForTranslationMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Please provide the translation.")
+	return c.Send("Пожалуйста, предоставьте перевод.")
 }
 
 func (s *HandlerService) HandleWaitingForAudioMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Please provide the audio response.")
+	return c.Send("Пожалуйста, предоставьте аудио ответ.")
 }
 
 func (s *HandlerService) HandleUnknownStateMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("I'm not sure what to do in this state. Use /help for available commands.")
+	return c.Send("Я не знаю, что делать в этом состоянии. Используйте /help для просмотра доступных команд.")
 }
 
 // Callback handlers - placeholder implementations
 func (s *HandlerService) HandleOnboardingStartCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Starting onboarding...")
+	return c.Send("Начинаем знакомство...")
 }
 
 func (s *HandlerService) HandleOnboardingMethodCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Method callback received.")
+	return c.Send("Получен callback методики.")
 }
 
 func (s *HandlerService) HandleTestStartCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Starting test...")
+	return c.Send("Начинаем тест...")
 }
 
 func (s *HandlerService) HandleLessonStartCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Starting lesson...")
+	return c.Send("Начинаем урок...")
 }
 
 func (s *HandlerService) HandleLessonLaterCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Lesson postponed.")
+	return c.Send("Урок отложен.")
 }
 
 func (s *HandlerService) HandleSettingsWordsPerDayCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Words per day setting...")
+	return c.Send("Настройка слов в день...")
 }
 
 func (s *HandlerService) HandleSettingsNotificationsCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Notifications setting...")
+	return c.Send("Настройка уведомлений...")
 }
 
 func (s *HandlerService) HandleSettingsCEFRLevelCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("CEFR level setting...")
+	return c.Send("Настройка уровня CEFR...")
 }
 
 func (s *HandlerService) HandleMainMenuCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Main menu...")
+	return c.Send("Главное меню...")
 }
 
 func (s *HandlerService) HandleSettingsMenuCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Settings menu...")
+	return c.Send("Меню настроек...")
 }
 
 func (s *HandlerService) HandleLearnMenuCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Learn menu...")
+	return c.Send("Меню обучения...")
 }
 
 func (s *HandlerService) HandleHelpMenuCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Help menu...")
+	return c.Send("Меню помощи...")
 }
 
 func (s *HandlerService) HandleUnknownCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Unknown callback received.")
+	return c.Send("Получен неизвестный callback.")
 }
 
 func (s *HandlerService) HandleAudioExerciseResponse(ctx context.Context, c tele.Context, userID int64, voice interface{}) error {
-	return c.Send("Audio exercise response received.")
+	return c.Send("Получен ответ на аудио упражнение.")
 }
 
 func formatNotificationTime(timeStr string) string {
 	if timeStr == "" {
-		return "Disabled"
+		return "Отключены"
 	}
 	return timeStr
 }

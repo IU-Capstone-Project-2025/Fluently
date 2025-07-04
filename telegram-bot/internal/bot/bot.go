@@ -104,7 +104,7 @@ func (tb *TelegramBot) errorMiddleware(next tele.HandlerFunc) tele.HandlerFunc {
 			tb.logger.Error("Handler error occurred", zap.Error(err))
 
 			// Try to send error message to user
-			if sendErr := c.Send("⚠️ Something went wrong. Please try again or use /cancel to reset."); sendErr != nil {
+			if sendErr := c.Send("⚠️ Что-то пошло не так. Пожалуйста, попробуйте еще раз или используйте /cancel для сброса."); sendErr != nil {
 				tb.logger.Error("Failed to send error message to user", zap.Error(sendErr))
 			}
 		}

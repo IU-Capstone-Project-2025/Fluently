@@ -167,7 +167,7 @@ func (s *HandlerService) HandleVoiceMessage(ctx context.Context, c tele.Context,
 	}
 
 	// For other states, provide guidance
-	return c.Send("Voice messages are supported during audio exercises. Use /learn to start a lesson.")
+	return c.Send("Голосовые сообщения поддерживаются во время аудио упражнений. Используйте /learn чтобы начать урок.")
 }
 
 // HandleAudioMessage handles audio messages
@@ -184,7 +184,7 @@ func (s *HandlerService) HandleAudioMessage(ctx context.Context, c tele.Context,
 		return s.HandleAudioExerciseResponse(ctx, c, userID, audio)
 	}
 
-	return c.Send("Audio messages are supported during audio exercises. Use /learn to start a lesson.")
+	return c.Send("Аудио сообщения поддерживаются во время аудио упражнений. Используйте /learn чтобы начать урок.")
 }
 
 // HandlePhotoMessage handles photo messages
@@ -197,5 +197,5 @@ func (s *HandlerService) HandlePhotoMessage(ctx context.Context, c tele.Context,
 	s.logger.With(zap.Int64("user_id", userID), zap.String("state", string(currentState))).Debug("Processing photo message")
 
 	// For now, photos aren't part of the learning flow
-	return c.Send("Photo messages are not supported yet. Use /help to see available commands.")
+	return c.Send("Фото сообщения пока не поддерживаются. Используйте /help чтобы увидеть доступные команды.")
 }
