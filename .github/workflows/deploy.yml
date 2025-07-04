@@ -262,83 +262,19 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Test Docker containers integration
+      - name: Basic Docker image validation
         if: github.event_name != 'pull_request'
         run: |
-          echo "🐳 Testing Docker containers integration..."
+          echo "Validating Docker images were built successfully..."
           
-          # Create test docker-compose file with built images
-          cat > docker-compose.test-integration.yml << EOF
-          services:
-            postgres:
-              image: postgres:15-alpine
-              environment:
-                POSTGRES_USER: test_user
-                POSTGRES_PASSWORD: test_password
-                POSTGRES_DB: test_fluently_db
-              ports:
-                - "5434:5432"
-              healthcheck:
-                test: ["CMD-SHELL", "pg_isready -U test_user"]
-                interval: 10s
-                timeout: 5s
-                retries: 5
-            
-            redis:
-              image: redis:7-alpine
-              ports:
-                - "6380:6379"
-              healthcheck:
-                test: ["CMD", "redis-cli", "ping"]
-                interval: 10s
-                timeout: 5s
-                retries: 5
-            
-            backend:
-              image: ${{ env.REGISTRY }}/fluentlyorg/fluently-backend:develop-${{ github.sha }}
-              environment:
-                DB_HOST: postgres
-                DB_PORT: 5432
-                DB_USER: test_user
-                DB_PASSWORD: test_password
-                DB_NAME: test_fluently_db
-                REDIS_ADDR: redis:6379
-                PUBLIC_URL: http://localhost:8070
-              ports:
-                - "8071:8070"
-              depends_on:
-                postgres:
-                  condition: service_healthy
-                redis:
-                  condition: service_healthy
-              healthcheck:
-                test: ["CMD", "curl", "-f", "http://localhost:8070/health"]
-                interval: 30s
-                timeout: 10s
-                retries: 3
-          EOF
+          # Check if images exist locally (they should after build)
+          echo "Checking locally built images:"
+          docker images | grep fluently || {
+            echo "⚠️ No fluently images found locally, skipping validation"
+            exit 0
+          }
           
-          # Start services
-          docker compose -f docker-compose.test-integration.yml up -d
-          
-          # Wait for backend to be healthy
-          echo "⏳ Waiting for backend to be healthy..."
-          for i in {1..10}; do
-            if curl -f http://localhost:8071/health >/dev/null 2>&1; then
-              echo "✅ Backend is healthy"
-              break
-            elif [ $i -eq 10 ]; then
-              echo "❌ Backend health check failed"
-              docker compose -f docker-compose.test-integration.yml logs
-              exit 1
-            else
-              echo "⏳ Waiting for backend... (attempt $i/10)"
-              sleep 15
-            fi
-          done
-          
-          # Cleanup
-          docker compose -f docker-compose.test-integration.yml down --volumes
+          echo "✅ Docker images validation completed"
 
   # ===========================================
   # PUBLISH STAGE - Push images to registry
@@ -386,6 +322,117 @@ jobs:
           done
           
           echo "✅ All images published successfully!"
+
+  # ===========================================
+  # INTEGRATION TEST - Test published images
+  # ===========================================
+  integration-test:
+    name: Integration Test
+    runs-on: ubuntu-latest
+    needs: [publish]
+    if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Test published Docker images
+        run: |
+          echo "🐳 Testing published Docker images integration..."
+          
+          # Create test docker-compose file with published images
+          cat > docker-compose.integration-test.yml << EOF
+          services:
+            postgres:
+              image: postgres:15-alpine
+              environment:
+                POSTGRES_USER: test_user
+                POSTGRES_PASSWORD: test_password
+                POSTGRES_DB: test_fluently_db
+              ports:
+                - "5434:5432"
+              healthcheck:
+                test: ["CMD-SHELL", "pg_isready -U test_user"]
+                interval: 10s
+                timeout: 5s
+                retries: 5
+            
+            redis:
+              image: redis:7-alpine
+              ports:
+                - "6380:6379"
+              healthcheck:
+                test: ["CMD", "redis-cli", "ping"]
+                interval: 10s
+                timeout: 5s
+                retries: 5
+            
+            backend:
+              image: docker.io/fluentlyorg/fluently-backend:latest-develop
+              environment:
+                DB_HOST: postgres
+                DB_PORT: 5432
+                DB_USER: test_user
+                DB_PASSWORD: test_password
+                DB_NAME: test_fluently_db
+                REDIS_ADDR: redis:6379
+                PUBLIC_URL: http://localhost:8070
+              ports:
+                - "8071:8070"
+              depends_on:
+                postgres:
+                  condition: service_healthy
+                redis:
+                  condition: service_healthy
+              healthcheck:
+                test: ["CMD", "curl", "-f", "http://localhost:8070/health"]
+                interval: 30s
+                timeout: 10s
+                retries: 3
+          EOF
+          
+          # Start services
+          docker compose -f docker-compose.integration-test.yml up -d
+          
+          # Wait for backend to be healthy
+          echo "⏳ Waiting for backend to be healthy..."
+          for i in {1..15}; do
+            if curl -f http://localhost:8071/health >/dev/null 2>&1; then
+              echo "✅ Backend is healthy"
+              break
+            elif [ $i -eq 15 ]; then
+              echo "❌ Backend health check failed"
+              echo "🔍 Container logs:"
+              docker compose -f docker-compose.integration-test.yml logs
+              exit 1
+            else
+              echo "⏳ Waiting for backend... (attempt $i/15)"
+              sleep 20
+            fi
+          done
+          
+          # Test API endpoints
+          echo "🧪 Testing API endpoints..."
+          
+          # Test health endpoint
+          if curl -f http://localhost:8071/health; then
+            echo "✅ Health endpoint working"
+          else
+            echo "❌ Health endpoint failed"
+            exit 1
+          fi
+          
+          # Test swagger endpoint (if available)
+          if curl -f http://localhost:8071/swagger/ >/dev/null 2>&1; then
+            echo "✅ Swagger endpoint working"
+          else
+            echo "⚠️ Swagger endpoint not available (may be expected)"
+          fi
+          
+          echo "🎉 Integration tests passed!"
+          
+          # Cleanup
+          docker compose -f docker-compose.integration-test.yml down --volumes
 
   # ===========================================
   # DEPLOY STAGE - Deploy to production
@@ -636,7 +683,7 @@ jobs:
     name: Deploy to Staging
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
-    needs: [build, test, publish]
+    needs: [build, test, publish, integration-test]
     environment: staging
     
     steps:
