@@ -281,24 +281,9 @@ jobs:
   test:
     name: Test & Quality Checks
     runs-on: ubuntu-latest
-    needs: build
-    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/develop'
+    needs: [detect-changes]
+    if: github.event_name == 'pull_request' || (github.ref == 'refs/heads/develop' && github.event_name == 'push')
     
-    services:
-      postgres:
-        image: postgres:15-alpine
-        env:
-          POSTGRES_USER: test_user
-          POSTGRES_PASSWORD: test_password
-          POSTGRES_DB: test_fluently_db
-        ports:
-          - 5433:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -307,41 +292,129 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: '1.21'
+          cache: true  # Enable Go module caching
+          cache-dependency-path: backend/go.sum
 
-      - name: Cache Go modules
+      - name: Cache Go dependencies
         uses: actions/cache@v3
         with:
           path: |
             ~/.cache/go-build
             ~/go/pkg/mod
-          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          key: ${{ runner.os }}-go-${{ hashFiles('backend/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-go-
 
-      - name: Install dependencies
+      - name: Install swag for Go docs generation
         run: |
-          cd backend
-          go mod download
+          echo "📦 Installing swag..."
+          go install github.com/swaggo/swag/cmd/swag@latest
+          echo "✅ Swag installed to: $(which swag || echo '$HOME/go/bin/swag')"
 
-      - name: Run backend tests
-        env:
-          DB_HOST: localhost
-          DB_PORT: 5433
-          DB_USER: test_user
-          DB_PASSWORD: test_password
-          DB_NAME: test_fluently_db
-          REDIS_ADDR: localhost:6379
+      - name: Initialize Go module and generate docs
+        working-directory: ./backend
         run: |
-          cd backend
-          go test -v -race -coverprofile=coverage.out ./...
-          go tool cover -html=coverage.out -o coverage.html
+          # Add Go bin to PATH
+          export PATH=$PATH:$HOME/go/bin
+          
+          # Ensure Go modules are properly initialized
+          echo "📦 Ensuring Go dependencies are available..."
+          go mod download
+          go mod tidy
+          
+          # Debug: Verify we're in the right place and files exist
+          echo "🔍 Current working directory: $(pwd)"
+          echo "🔍 Go version: $(go version)"
+          echo "🔍 Checking for main.go:"
+          test -f cmd/main.go && echo "✅ cmd/main.go exists" || echo "❌ cmd/main.go missing"
+          
+          # Verify swag is available
+          echo "🔍 Checking swag installation:"
+          if command -v swag >/dev/null 2>&1; then
+            echo "✅ swag found in PATH: $(which swag)"
+          elif [ -f "$HOME/go/bin/swag" ]; then
+            echo "✅ swag found at: $HOME/go/bin/swag"
+          else
+            echo "❌ swag not found"
+            exit 1
+          fi
+          
+          # Create docs directory if it doesn't exist
+          mkdir -p docs
+          
+          # Generate Swagger documentation with proper directory specification
+          echo "📚 Generating API documentation..."
+          echo "Current directory: $(pwd)"
+          echo "Contents of current directory:"
+          ls -la
+          echo "Contents of cmd directory:"
+          ls -la cmd/
+          if command -v swag >/dev/null 2>&1; then
+            swag init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal
+          else
+            $HOME/go/bin/swag init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal
+          fi
+          
+          # Verify docs were generated
+          if [ ! -d "docs" ] || [ ! -f "docs/swagger.json" ]; then
+            echo "❌ Failed to generate docs properly"
+            echo "🔍 Contents of docs directory:"
+            ls -la docs/ || echo "docs directory not found"
+            exit 1
+          fi
+          
+          echo "✅ Documentation generated successfully"
+          echo "📁 Generated files:"
+          ls -la docs/
+
+      - name: Start test database
+        run: |
+          docker compose -f docker-compose.test.yml down --volumes
+          docker compose -f docker-compose.test.yml up -d test_db
+        
+      - name: Wait for DB to become healthy
+        run: |
+          for i in {1..20}; do
+            docker inspect -f '{{json .State.Health.Status}}' fluently_test_db | grep -q healthy && break
+            sleep 3
+          done
+        
+      - name: Go tests with coverage
+        working-directory: ./backend
+        env:
+          # Generic DB variables (used by code that doesn't look at *_TEST_*)
+          DB_HOST:         localhost
+          DB_PORT:         5433
+          DB_USER:         test_user
+          DB_PASSWORD:     test_password
+          DB_NAME:         test_fluently_db
+
+          # Explicit *_TEST_* variables (preferred by new config helpers)
+          DB_TEST_HOST:     localhost
+          DB_TEST_PORT:     5433
+          DB_TEST_USER:     test_user
+          DB_TEST_PASSWORD: test_password
+          DB_TEST_NAME:     test_fluently_db
+        run: |
+          go test ./... -coverprofile=coverage.out -covermode=atomic
+          go tool cover -func=coverage.out
+        
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN }}
+        
+      - name: Stop test database & wipe volume
+        if: always()
+        run: docker compose -f docker-compose.test.yml down --volumes
 
       - name: Upload coverage reports
         if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-report
-          path: backend/coverage.html
+          path: backend/coverage.out
 
       - name: Validate Docker Compose
         run: |
@@ -356,7 +429,7 @@ jobs:
     name: Deploy to Production
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    needs: [build, test]
+    needs: [build]
     environment: production
     
     steps:
@@ -597,8 +670,8 @@ jobs:
     name: Deploy to Staging
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
-    needs: [detect-changes]
-    # Note: staging deploys even if no changes (uses existing images)
+    needs: [detect-changes, test]
+    # Note: staging deploys after tests pass (test stage runs on develop pushes)
     environment: staging
     
     steps:
