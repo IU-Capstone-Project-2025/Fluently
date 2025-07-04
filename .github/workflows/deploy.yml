@@ -1016,6 +1016,7 @@ jobs:
         id: reuse-images
         if: github.event_name != 'pull_request'
         run: |
+          set +e  # Don't exit on errors - we want to handle them gracefully
           echo "⏩ No component changes detected - reusing all existing images..."
           
           # Images to reuse
@@ -1027,18 +1028,24 @@ jobs:
           )
           
           SUCCESS_COUNT=0
+          FAILED_IMAGES=()
           
           for image in "${IMAGES[@]}"; do
             echo "🔄 Reusing $image..."
-            if docker pull docker.io/$image:latest-develop 2>/dev/null; then
+            if docker pull docker.io/$image:latest-develop >/dev/null 2>&1; then
               # Tag with current SHA for consistency
-              docker tag docker.io/$image:latest-develop docker.io/$image:develop-${{ github.sha }}
-              docker push docker.io/$image:develop-${{ github.sha }}
-              echo "✅ Reused $image successfully"
-              ((SUCCESS_COUNT++))
+              if docker tag docker.io/$image:latest-develop docker.io/$image:develop-${{ github.sha }} && \
+                 docker push docker.io/$image:develop-${{ github.sha }} >/dev/null 2>&1; then
+                echo "✅ Reused $image successfully"
+                ((SUCCESS_COUNT++))
+              else
+                echo "❌ Failed to tag/push $image"
+                FAILED_IMAGES+=("$image")
+              fi
             else
               echo "⚠️ No existing image found for $image"
               echo "This might be the first run - emergency build may be needed"
+              FAILED_IMAGES+=("$image")
             fi
           done
           
@@ -1047,7 +1054,10 @@ jobs:
           if [ $SUCCESS_COUNT -eq ${#IMAGES[@]} ]; then
             echo "completed=true" >> $GITHUB_OUTPUT
             echo "✅ All images reused successfully"
+            exit 0
           else
             echo "completed=false" >> $GITHUB_OUTPUT
-            echo "⚠️ Some images missing - may need emergency build"
+            echo "⚠️ Some images missing/failed: ${FAILED_IMAGES[*]}"
+            echo "Emergency build will be triggered to build missing images"
+            exit 0  # Don't fail the job - let emergency build handle it
           fi
