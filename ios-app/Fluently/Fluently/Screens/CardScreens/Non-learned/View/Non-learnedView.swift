@@ -65,10 +65,10 @@ struct NonLearnedView: View {
 struct NonLearnedPreview: PreviewProvider {
 
     static var previews: some View {
-        NonLearnedPreviewWrapper()
+        PreviewWrapper()
     }
 
-    struct NonLearnedPreviewWrapper: View {
+    struct PreviewWrapper: View {
         var body: some View {
             NonLearnedView()
         }
