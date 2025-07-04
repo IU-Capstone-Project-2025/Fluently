@@ -151,3 +151,6 @@ analysis/Data/
 scripts/monitor-pipeline-performance.sh
 docs/CI_CD_Optimization_Guide.md
 docs/CI_CD_Pipeline_Logic.md
+docs/GitHub_Secrets_Configuration.md
+.github/workflows/deploy-old.yml
+.github/workflows/deploy-new.yml

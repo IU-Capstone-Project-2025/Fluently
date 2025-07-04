@@ -8,20 +8,10 @@ on:
   pull_request:
     branches:
       - main
-      - develop
   workflow_dispatch:
     inputs:
-      environment:
-        description: "Deployment environment"
-        required: false
-        default: "auto"
-        type: choice
-        options:
-          - auto
-          - production
-          - staging
-      rollback:
-        description: "Rollback to previous version"
+      force_rebuild:
+        description: "Force rebuild all images"
         required: false
         default: false
         type: boolean
@@ -37,13 +27,13 @@ jobs:
   detect-changes:
     name: Detect Changes
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/develop' || github.event_name == 'pull_request'
     outputs:
-      backend-changed: ${{ steps.changes.outputs.backend }}
-      telegram-changed: ${{ steps.changes.outputs.telegram }}
-      ml-api-changed: ${{ steps.changes.outputs.mlapi }}
-      nginx-changed: ${{ steps.changes.outputs.nginx }}
+      backend-changed: ${{ steps.changes.outputs.backend || 'false' }}
+      telegram-changed: ${{ steps.changes.outputs.telegram || 'false' }}
+      ml-api-changed: ${{ steps.changes.outputs.mlapi || 'false' }}
+      nginx-changed: ${{ steps.changes.outputs.nginx || 'false' }}
       any-changed: ${{ steps.any-changed.outputs.any-changed }}
+      should-build: ${{ steps.should-build.outputs.result }}
     
     steps:
       - name: Checkout code
@@ -51,8 +41,26 @@ jobs:
         with:
           fetch-depth: 0  # Fetch full history for change detection
 
+      - name: Determine if build is needed
+        id: should-build
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.force_rebuild }}" = "true" ]; then
+            echo "result=true" >> $GITHUB_OUTPUT
+            echo "🔨 Force rebuild requested via workflow dispatch"
+          elif [ "${{ github.event_name }}" = "pull_request" ] && [ "${{ github.event.pull_request.base.ref }}" = "main" ]; then
+            echo "result=true" >> $GITHUB_OUTPUT
+            echo "🔨 Pull request to main branch - building images"
+          elif [ "${{ github.ref }}" = "refs/heads/develop" ]; then
+            echo "result=true" >> $GITHUB_OUTPUT
+            echo "🔨 Push to develop branch - checking for changes"
+          else
+            echo "result=false" >> $GITHUB_OUTPUT
+            echo "⏩ No build needed for this event"
+          fi
+
       - name: Get base commit for comparison
         id: get-base
+        if: steps.should-build.outputs.result == 'true'
         run: |
           if [ "${{ github.event_name }}" = "push" ]; then
             # For push events: use previous commit
@@ -73,6 +81,7 @@ jobs:
       - name: Detect file changes
         uses: dorny/paths-filter@v2
         id: changes
+        if: steps.should-build.outputs.result == 'true'
         with:
           base: ${{ steps.get-base.outputs.base-sha }}
           filters: |
@@ -89,8 +98,12 @@ jobs:
 
       - name: Check if any component changed
         id: any-changed
+        if: steps.should-build.outputs.result == 'true'
         run: |
-          if [[ "${{ steps.changes.outputs.backend }}" == "true" || \
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.force_rebuild }}" = "true" ]; then
+            echo "any-changed=true" >> $GITHUB_OUTPUT
+            echo "🔨 Force rebuild - all components will be built"
+          elif [[ "${{ steps.changes.outputs.backend }}" == "true" || \
                 "${{ steps.changes.outputs.telegram }}" == "true" || \
                 "${{ steps.changes.outputs.mlapi }}" == "true" || \
                 "${{ steps.changes.outputs.nginx }}" == "true" ]]; then
@@ -102,15 +115,16 @@ jobs:
           fi
 
   # ===========================================
-  # BUILD STAGE - Build only changed Docker images
+  # BUILD STAGE - Build only changed Docker images or all on PR to main
   # ===========================================
   build:
     name: Build Docker Images
     runs-on: ubuntu-latest
     needs: detect-changes
-    if: (github.ref == 'refs/heads/develop' || github.event_name == 'pull_request') && needs.detect-changes.outputs.any-changed == 'true'
+    if: needs.detect-changes.outputs.should-build == 'true' && (needs.detect-changes.outputs.any-changed == 'true' || github.event_name == 'workflow_dispatch')
     outputs:
       image-tag: ${{ env.IMAGE_TAG }}
+      build-completed: ${{ steps.build-summary.outputs.completed }}
     
     steps:
       - name: Checkout code
@@ -127,21 +141,35 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Determine what to build
+        id: build-strategy
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ] && [ "${{ github.event.pull_request.base.ref }}" = "main" ]; then
+            echo "🔨 PR to main: Building all components"
+            echo "build-all=true" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.force_rebuild }}" = "true" ]; then
+            echo "🔨 Force rebuild: Building all components"
+            echo "build-all=true" >> $GITHUB_OUTPUT
+          else
+            echo "🔨 Selective build based on changes"
+            echo "build-all=false" >> $GITHUB_OUTPUT
+          fi
+
       # Backend Build
       - name: Extract metadata for backend
-        if: needs.detect-changes.outputs.backend-changed == 'true'
+        if: steps.build-strategy.outputs.build-all == 'true' || needs.detect-changes.outputs.backend-changed == 'true'
         id: meta-backend
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/fluentlyorg/fluently-backend
           tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=sha,prefix={{branch}}-
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=branch,suffix=-{{sha}}
+            type=ref,event=pr,suffix=-{{sha}}
+            type=raw,value=latest-develop,enable={{is_default_branch}}
+            type=raw,value=latest-main,enable=${{ github.ref == 'refs/heads/main' }}
 
       - name: Build and push backend image
-        if: needs.detect-changes.outputs.backend-changed == 'true'
+        if: steps.build-strategy.outputs.build-all == 'true' || needs.detect-changes.outputs.backend-changed == 'true'
         uses: docker/build-push-action@v5
         with:
           context: ./backend
@@ -156,19 +184,19 @@ jobs:
 
       # Telegram Bot Build  
       - name: Extract metadata for telegram-bot
-        if: needs.detect-changes.outputs.telegram-changed == 'true'
+        if: steps.build-strategy.outputs.build-all == 'true' || needs.detect-changes.outputs.telegram-changed == 'true'
         id: meta-telegram
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/fluentlyorg/fluently-telegram-bot
           tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=sha,prefix={{branch}}-
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=branch,suffix=-{{sha}}
+            type=ref,event=pr,suffix=-{{sha}}
+            type=raw,value=latest-develop,enable={{is_default_branch}}
+            type=raw,value=latest-main,enable=${{ github.ref == 'refs/heads/main' }}
 
       - name: Build and push telegram-bot image
-        if: needs.detect-changes.outputs.telegram-changed == 'true'
+        if: steps.build-strategy.outputs.build-all == 'true' || needs.detect-changes.outputs.telegram-changed == 'true'
         uses: docker/build-push-action@v5
         with:
           context: ./telegram-bot
@@ -181,19 +209,19 @@ jobs:
 
       # ML API Build (Most expensive - 15 minutes)
       - name: Extract metadata for ml-api
-        if: needs.detect-changes.outputs.ml-api-changed == 'true'
+        if: steps.build-strategy.outputs.build-all == 'true' || needs.detect-changes.outputs.ml-api-changed == 'true'
         id: meta-ml-api
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/fluentlyorg/fluently-ml-api
           tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=sha,prefix={{branch}}-
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=branch,suffix=-{{sha}}
+            type=ref,event=pr,suffix=-{{sha}}
+            type=raw,value=latest-develop,enable={{is_default_branch}}
+            type=raw,value=latest-main,enable=${{ github.ref == 'refs/heads/main' }}
 
       - name: Build and push ML API image
-        if: needs.detect-changes.outputs.ml-api-changed == 'true'
+        if: steps.build-strategy.outputs.build-all == 'true' || needs.detect-changes.outputs.ml-api-changed == 'true'
         uses: docker/build-push-action@v5
         with:
           context: ./analysis
@@ -213,19 +241,19 @@ jobs:
 
       # Nginx Build
       - name: Extract metadata for nginx
-        if: needs.detect-changes.outputs.nginx-changed == 'true'
+        if: steps.build-strategy.outputs.build-all == 'true' || needs.detect-changes.outputs.nginx-changed == 'true'
         id: meta-nginx
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/fluentlyorg/fluently-nginx
           tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=sha,prefix={{branch}}-
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=branch,suffix=-{{sha}}
+            type=ref,event=pr,suffix=-{{sha}}
+            type=raw,value=latest-develop,enable={{is_default_branch}}
+            type=raw,value=latest-main,enable=${{ github.ref == 'refs/heads/main' }}
 
       - name: Build and push nginx image
-        if: needs.detect-changes.outputs.nginx-changed == 'true'
+        if: steps.build-strategy.outputs.build-all == 'true' || needs.detect-changes.outputs.nginx-changed == 'true'
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -236,143 +264,16 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  # ===========================================
-  # EMERGENCY BUILD - Build all if no existing images
-  # ===========================================
-  emergency-build:
-    name: Emergency Build (Missing Images)
-    runs-on: ubuntu-latest
-    needs: [detect-changes, build, image-reuse]
-    if: |
-      always() && 
-      (github.ref == 'refs/heads/develop' || github.event_name == 'pull_request') && 
-      (
-        (needs.detect-changes.outputs.any-changed == 'true' && (needs.build.result == 'failure' || needs.build.result == 'cancelled')) ||
-        (needs.detect-changes.outputs.any-changed == 'false' && needs.image-reuse.outputs.reuse-completed == 'false')
-      )
-    outputs:
-      emergency-completed: ${{ steps.emergency-build.outputs.completed }}
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Login to Docker Hub
-        if: github.event_name != 'pull_request'
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Check if emergency build is needed
-        id: check-emergency
+      - name: Build summary
+        id: build-summary
         run: |
-          echo "🚨 Checking if emergency build is needed..."
-          echo "Reason: Either build failed or no existing images found for reuse"
-          
-          # Check if all required images exist in registry
-          MISSING_IMAGES=()
-          
-          if ! docker manifest inspect docker.io/fluentlyorg/fluently-backend:latest-develop >/dev/null 2>&1; then
-            MISSING_IMAGES+=("backend")
-          fi
-          if ! docker manifest inspect docker.io/fluentlyorg/fluently-telegram-bot:latest-develop >/dev/null 2>&1; then
-            MISSING_IMAGES+=("telegram-bot")
-          fi
-          if ! docker manifest inspect docker.io/fluentlyorg/fluently-ml-api:latest-develop >/dev/null 2>&1; then
-            MISSING_IMAGES+=("ml-api")
-          fi
-          if ! docker manifest inspect docker.io/fluentlyorg/fluently-nginx:latest-develop >/dev/null 2>&1; then
-            MISSING_IMAGES+=("nginx")
-          fi
-          
-          if [ ${#MISSING_IMAGES[@]} -gt 0 ]; then
-            echo "emergency-needed=true" >> $GITHUB_OUTPUT
-            echo "🚨 Emergency build needed for: ${MISSING_IMAGES[*]}"
-            echo "missing-images=${MISSING_IMAGES[*]}" >> $GITHUB_OUTPUT
-          else
-            echo "emergency-needed=false" >> $GITHUB_OUTPUT
-            echo "✅ All images exist, no emergency build needed"
-          fi
-
-      # Build Backend (Emergency)
-      - name: Emergency build backend
-        if: steps.check-emergency.outputs.emergency-needed == 'true' && contains(steps.check-emergency.outputs.missing-images, 'backend')
-        uses: docker/build-push-action@v5
-        with:
-          context: ./backend
-          file: ./backend/Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: |
-            ${{ env.REGISTRY }}/fluentlyorg/fluently-backend:latest-develop
-            ${{ env.REGISTRY }}/fluentlyorg/fluently-backend:develop-${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-          build-args: |
-            SWAGGER_HOST=localhost:8070
-
-      # Build Telegram Bot (Emergency)
-      - name: Emergency build telegram-bot
-        if: steps.check-emergency.outputs.emergency-needed == 'true' && contains(steps.check-emergency.outputs.missing-images, 'telegram-bot')
-        uses: docker/build-push-action@v5
-        with:
-          context: ./telegram-bot
-          file: ./telegram-bot/Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: |
-            ${{ env.REGISTRY }}/fluentlyorg/fluently-telegram-bot:latest-develop
-            ${{ env.REGISTRY }}/fluentlyorg/fluently-telegram-bot:develop-${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-
-      # Build ML API (Emergency)
-      - name: Emergency build ml-api
-        if: steps.check-emergency.outputs.emergency-needed == 'true' && contains(steps.check-emergency.outputs.missing-images, 'ml-api')
-        uses: docker/build-push-action@v5
-        with:
-          context: ./analysis
-          file: ./analysis/distractor_api/Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: |
-            ${{ env.REGISTRY }}/fluentlyorg/fluently-ml-api:latest-develop
-            ${{ env.REGISTRY }}/fluentlyorg/fluently-ml-api:develop-${{ github.sha }}
-          cache-from: |
-            type=gha
-            type=registry,ref=docker.io/fluentlyorg/fluently-ml-api:buildcache
-          cache-to: |
-            type=gha,mode=max
-            type=registry,ref=docker.io/fluentlyorg/fluently-ml-api:buildcache,mode=max
-          platforms: linux/amd64
-          build-args: |
-            BUILDKIT_INLINE_CACHE=1
-
-      # Build Nginx (Emergency)
-      - name: Emergency build nginx
-        if: steps.check-emergency.outputs.emergency-needed == 'true' && contains(steps.check-emergency.outputs.missing-images, 'nginx')
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./backend/nginx-container/Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: |
-            ${{ env.REGISTRY }}/fluentlyorg/fluently-nginx:latest-develop
-            ${{ env.REGISTRY }}/fluentlyorg/fluently-nginx:develop-${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-
-      - name: Emergency build completed
-        id: emergency-build
-        if: steps.check-emergency.outputs.emergency-needed == 'true'
-        run: |
-          echo "🚨 EMERGENCY BUILD COMPLETED"
-          echo "Built missing images: ${{ steps.check-emergency.outputs.missing-images }}"
-          echo "This was likely the first run or after registry cleanup."
-          echo "Future runs will be much faster with selective building!"
           echo "completed=true" >> $GITHUB_OUTPUT
+          echo "✅ Build stage completed successfully"
+          if [ "${{ steps.build-strategy.outputs.build-all }}" = "true" ]; then
+            echo "🔨 Built all components (PR to main or force rebuild)"
+          else
+            echo "🔨 Built only changed components"
+          fi
 
   # ===========================================
   # TEST STAGE - Run tests and quality checks
@@ -381,7 +282,7 @@ jobs:
     name: Test & Quality Checks
     runs-on: ubuntu-latest
     needs: build
-    if: github.ref == 'refs/heads/develop' || github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/develop'
     
     services:
       postgres:
@@ -398,16 +299,6 @@ jobs:
           --health-timeout 5s
           --health-retries 5
 
-      redis:
-        image: redis:7-alpine
-        ports:
-          - 6379:6379
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -416,278 +307,56 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: '1.21'
-          cache: true
-          cache-dependency-path: backend/go.sum
 
-      - name: Install swag for Go docs generation
-        run: |
-          echo "📦 Installing swag..."
-          go install github.com/swaggo/swag/cmd/swag@latest
-          echo "✅ Swag installed to: $(which swag || echo '$HOME/go/bin/swag')"
+      - name: Cache Go modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
 
-      - name: Generate Go API documentation
-        working-directory: ./backend
+      - name: Install dependencies
         run: |
-          export PATH=$PATH:$HOME/go/bin
-          
-          echo "📦 Ensuring Go dependencies are available..."
+          cd backend
           go mod download
-          go mod tidy
-          
-          echo "🔍 Checking for main.go:"
-          test -f cmd/main.go && echo "✅ cmd/main.go exists" || echo "❌ cmd/main.go missing"
-          
-          # Create docs directory
-          mkdir -p docs
-          
-          # Generate Swagger documentation
-          echo "📚 Generating API documentation..."
-          if command -v swag >/dev/null 2>&1; then
-            SWAG_CMD="swag"
-          elif [ -f "$HOME/go/bin/swag" ]; then
-            SWAG_CMD="$HOME/go/bin/swag"
-          else
-            echo "❌ swag not found"
-            exit 1
-          fi
-          
-          $SWAG_CMD init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal || \
-          $SWAG_CMD init -g ./cmd/main.go -o ./docs --parseDependency || \
-          $SWAG_CMD init -g ./cmd/main.go -o ./docs
-          
-          echo "✅ Documentation generated successfully"
 
-      - name: Run Go tests with coverage
-        working-directory: ./backend
+      - name: Run backend tests
         env:
           DB_HOST: localhost
           DB_PORT: 5433
           DB_USER: test_user
           DB_PASSWORD: test_password
           DB_NAME: test_fluently_db
-          DB_TEST_HOST: localhost
-          DB_TEST_PORT: 5433
-          DB_TEST_USER: test_user
-          DB_TEST_PASSWORD: test_password
-          DB_TEST_NAME: test_fluently_db
           REDIS_ADDR: localhost:6379
         run: |
-          echo "🧪 Running Go tests with coverage..."
-          go test ./... -coverprofile=coverage.out -covermode=atomic
-          go tool cover -func=coverage.out
+          cd backend
+          go test -v -race -coverprofile=coverage.out ./...
+          go tool cover -html=coverage.out -o coverage.html
 
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@v3.1.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-      - name: Login to Docker Hub for testing
-        if: github.event_name != 'pull_request'
-        uses: docker/login-action@v3
+      - name: Upload coverage reports
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v3
         with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          name: coverage-report
+          path: backend/coverage.html
 
-      - name: Basic Docker image validation
-        if: github.event_name != 'pull_request'
+      - name: Validate Docker Compose
         run: |
-          echo "Validating Docker images were built successfully..."
-          
-          # Check if images exist locally (they should after build)
-          echo "Checking locally built images:"
-          docker images | grep fluently || {
-            echo "⚠️ No fluently images found locally, skipping validation"
-            exit 0
-          }
-          
-          echo "✅ Docker images validation completed"
+          echo "🐳 Validating Docker Compose configuration..."
+          docker compose config --quiet
+          echo "✅ Docker Compose configuration is valid"
 
   # ===========================================
-  # PUBLISH STAGE - Push images to registry
+  # PRODUCTION DEPLOY - Deploy to production (main branch only)
   # ===========================================
-  publish:
-    name: Publish Docker Images
-    runs-on: ubuntu-latest
-    needs: [detect-changes, build, image-reuse, emergency-build]
-    if: |
-      always() && 
-      github.ref == 'refs/heads/develop' && 
-      (needs.build.result == 'success' || 
-       needs.image-reuse.result == 'success' ||
-       needs.emergency-build.result == 'success' ||
-       needs.build.result == 'skipped')
-    
-    strategy:
-      matrix:
-        image: [backend, telegram-bot, ml-api, nginx]
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Publish ${{ matrix.image }} with intelligent fallback
-        run: |
-          IMAGE_NAME="fluentlyorg/fluently-${{ matrix.image }}"
-          SHA_TAG="develop-${{ github.sha }}"
-          LATEST_TAG="latest-develop"
-          
-          echo "🚀 Publishing $IMAGE_NAME..."
-          
-          # Strategy 1: Try to pull and push SHA-tagged image (from current build)
-          if docker pull ${{ env.REGISTRY }}/$IMAGE_NAME:$SHA_TAG 2>/dev/null; then
-            echo "✅ Found SHA-tagged image from current build"
-            docker tag ${{ env.REGISTRY }}/$IMAGE_NAME:$SHA_TAG ${{ env.REGISTRY }}/$IMAGE_NAME:latest-develop
-            docker push ${{ env.REGISTRY }}/$IMAGE_NAME:latest-develop
-            echo "✅ Published $IMAGE_NAME:latest-develop (from current build)"
-            
-          # Strategy 2: Try to pull and push latest-develop image (from reuse or emergency)
-          elif docker pull ${{ env.REGISTRY }}/$IMAGE_NAME:$LATEST_TAG 2>/dev/null; then
-            echo "✅ Found latest-develop image (reused or emergency build)"
-            # Re-push to ensure it's fresh
-            docker push ${{ env.REGISTRY }}/$IMAGE_NAME:latest-develop
-            echo "✅ Published $IMAGE_NAME:latest-develop (from existing image)"
-            
-          # Strategy 3: Last resort - check if latest-develop already exists
-          elif docker manifest inspect ${{ env.REGISTRY }}/$IMAGE_NAME:latest-develop >/dev/null 2>&1; then
-            echo "⚠️  Neither SHA nor local latest-develop found, but remote exists"
-            echo "✅ Using existing $IMAGE_NAME:latest-develop in registry"
-            
-          else
-            echo "❌ No images found for $IMAGE_NAME"
-            echo "This shouldn't happen if emergency build worked correctly"
-            echo "Available tags in registry:"
-            # Try to list available tags (this might fail but helps debugging)
-            docker search fluentlyorg/fluently-${{ matrix.image }} --limit 5 || true
-            exit 1
-          fi
-
-  # ===========================================
-  # INTEGRATION TEST - Test published images
-  # ===========================================
-  integration-test:
-    name: Integration Test
-    runs-on: ubuntu-latest
-    needs: [publish]
-    if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Test published Docker images
-        run: |
-          echo "🐳 Testing published Docker images integration..."
-          
-          # Create test docker-compose file with published images
-          cat > docker-compose.integration-test.yml << EOF
-          services:
-            postgres:
-              image: postgres:15-alpine
-              environment:
-                POSTGRES_USER: test_user
-                POSTGRES_PASSWORD: test_password
-                POSTGRES_DB: test_fluently_db
-              ports:
-                - "5434:5432"
-              healthcheck:
-                test: ["CMD-SHELL", "pg_isready -U test_user"]
-                interval: 10s
-                timeout: 5s
-                retries: 5
-            
-            redis:
-              image: redis:7-alpine
-              ports:
-                - "6380:6379"
-              healthcheck:
-                test: ["CMD", "redis-cli", "ping"]
-                interval: 10s
-                timeout: 5s
-                retries: 5
-            
-            backend:
-              image: docker.io/fluentlyorg/fluently-backend:latest-develop
-              environment:
-                DB_HOST: postgres
-                DB_PORT: 5432
-                DB_USER: test_user
-                DB_PASSWORD: test_password
-                DB_NAME: test_fluently_db
-                REDIS_ADDR: redis:6379
-                PUBLIC_URL: http://localhost:8070
-              ports:
-                - "8071:8070"
-              depends_on:
-                postgres:
-                  condition: service_healthy
-                redis:
-                  condition: service_healthy
-              healthcheck:
-                test: ["CMD", "curl", "-f", "http://localhost:8070/health"]
-                interval: 30s
-                timeout: 10s
-                retries: 3
-          EOF
-          
-          # Start services
-          docker compose -f docker-compose.integration-test.yml up -d
-          
-          # Wait for backend to be healthy
-          echo "⏳ Waiting for backend to be healthy..."
-          for i in {1..15}; do
-            if curl -f http://localhost:8071/health >/dev/null 2>&1; then
-              echo "✅ Backend is healthy"
-              break
-            elif [ $i -eq 15 ]; then
-              echo "❌ Backend health check failed"
-              echo "🔍 Container logs:"
-              docker compose -f docker-compose.integration-test.yml logs
-              exit 1
-            else
-              echo "⏳ Waiting for backend... (attempt $i/15)"
-              sleep 20
-            fi
-          done
-          
-          # Test API endpoints
-          echo "🧪 Testing API endpoints..."
-          
-          # Test health endpoint
-          if curl -f http://localhost:8071/health; then
-            echo "✅ Health endpoint working"
-          else
-            echo "❌ Health endpoint failed"
-            exit 1
-          fi
-          
-          # Test swagger endpoint (if available)
-          if curl -f http://localhost:8071/swagger/ >/dev/null 2>&1; then
-            echo "✅ Swagger endpoint working"
-          else
-            echo "⚠️ Swagger endpoint not available (may be expected)"
-          fi
-          
-          echo "🎉 Integration tests passed!"
-          
-          # Cleanup
-          docker compose -f docker-compose.integration-test.yml down --volumes
-
-  # ===========================================
-  # DEPLOY STAGE - Deploy to production
-  # ===========================================
-  deploy:
+  deploy-production:
     name: Deploy to Production
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: [build, test]
     environment: production
     
     steps:
@@ -725,176 +394,36 @@ jobs:
             git checkout main
             git pull origin main
             
-            # Create production docker-compose file with pre-built images
-            echo "🐳 Creating production docker-compose configuration..."
-            cat > docker-compose.production.yml << 'EOF'
-            services:
-              backend:
-                image: docker.io/fluentlyorg/fluently-backend:latest-develop
-                container_name: fluently_backend
-                environment:
-                  DB_HOST: postgres
-                  DB_PORT: 5432
-                  DB_USER: ${DB_USER:-postgres}
-                  DB_PASSWORD: ${DB_PASSWORD}
-                  DB_NAME: ${DB_NAME:-fluently_db}
-                  REDIS_ADDR: redis:6379
-                  PUBLIC_URL: https://${DOMAIN}
-                  ZEROTIER_IP: ${ZEROTIER_IP}
-                depends_on:
-                  postgres:
-                    condition: service_healthy
-                  redis:
-                    condition: service_healthy
-                restart: unless-stopped
-                networks:
-                  - fluently_network
-                ports:
-                  - "127.0.0.1:8070:8070"
-                  - "${ZEROTIER_IP}:8070:8070"
-                healthcheck:
-                  test: ["CMD", "curl", "-f", "http://localhost:8070/health"]
-                  interval: 30s
-                  timeout: 10s
-                  retries: 3
-              
-              telegram-bot:
-                image: docker.io/fluentlyorg/fluently-telegram-bot:latest-develop
-                container_name: fluently_telegram_bot
-                environment:
-                  BOT_TOKEN: ${BOT_TOKEN}
-                  WEBHOOK_SECRET: ${WEBHOOK_SECRET}
-                  WEBHOOK_URL: https://${DOMAIN}/webhook
-                  REDIS_ADDR: redis:6379
-                  BACKEND_URL: http://backend:8070
-                depends_on:
-                  redis:
-                    condition: service_healthy
-                  backend:
-                    condition: service_healthy
-                restart: unless-stopped
-                networks:
-                  - fluently_network
-              
-              ml-api:
-                image: docker.io/fluentlyorg/fluently-ml-api:latest-develop
-                container_name: fluently_ml_api
-                restart: unless-stopped
-                networks:
-                  - fluently_network
-                ports:
-                  - "127.0.0.1:8001:8001"
-                healthcheck:
-                  test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
-                  interval: 60s
-                  timeout: 30s
-                  retries: 3
-                  start_period: 180s
-              
-              nginx:
-                image: docker.io/fluentlyorg/fluently-nginx:latest-develop
-                container_name: fluently_nginx
-                environment:
-                  DOMAIN: ${DOMAIN}
-                  CERT_NAME: ${CERT_NAME}
-                  WEBHOOK_SECRET: ${WEBHOOK_SECRET}
-                ports:
-                  - "80:80"
-                  - "443:443"
-                depends_on:
-                  - backend
-                volumes:
-                  - /etc/nginx/ssl:/etc/nginx/ssl:ro
-                networks:
-                  - fluently_network
-              
-              postgres:
-                image: postgres:15-alpine
-                container_name: fluently_postgres
-                environment:
-                  POSTGRES_USER: ${DB_USER:-postgres}
-                  POSTGRES_PASSWORD: ${DB_PASSWORD}
-                  POSTGRES_DB: ${DB_NAME:-fluently_db}
-                volumes:
-                  - fluently_postgres_data:/var/lib/postgresql/data
-                  - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
-                restart: unless-stopped
-                networks:
-                  - fluently_network
-                healthcheck:
-                  test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
-                  interval: 10s
-                  timeout: 5s
-                  retries: 5
-              
-              redis:
-                image: redis:7-alpine
-                container_name: fluently_redis
-                restart: unless-stopped
-                networks:
-                  - fluently_network
-                volumes:
-                  - fluently_redis_data:/data
-                healthcheck:
-                  test: ["CMD", "redis-cli", "ping"]
-                  interval: 10s
-                  timeout: 5s
-                  retries: 5
-            
-            volumes:
-              fluently_postgres_data:
-                external: true
-              fluently_redis_data:
-                external: true
-            
-            networks:
-              fluently_network:
-                driver: bridge
-            EOF
-            
-            # Setup environment variables
-            echo "⚙️ Setting up environment variables..."
+            # Update environment
+            echo "⚙️ Setting up environment..."
             if [ ! -f ".env" ]; then
               cp .env.example .env
+              echo "⚠️ Created .env from example - please configure production settings"
             fi
             
-            # Update environment variables
-            sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=${{ secrets.ZEROTIER_IP }}/" .env
-            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://fluently-app.ru|g" .env
-            sed -i "s/DOMAIN=.*/DOMAIN=fluently-app.ru/" .env
-            sed -i "s/CERT_NAME=.*/CERT_NAME=fluently-app-ru/" .env
+            # Pull latest images and deploy using the main docker-compose.yml
+            echo "🐳 Pulling latest images..."
+            docker compose pull
             
-            # Set telegram bot configuration
-            if [ ! -z "${{ secrets.TELEGRAM_BOT_TOKEN }}" ]; then
-              sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}/" .env
-            fi
-            if [ ! -z "${{ secrets.WEBHOOK_SECRET }}" ]; then
-              sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=${{ secrets.WEBHOOK_SECRET }}/" .env
-            fi
-            
-            # Pull latest images
-            echo "📥 Pulling latest production images..."
-            docker compose -f docker-compose.production.yml pull
-            
-            # Stop current services
-            echo "🛑 Stopping current services..."
+            echo "🔄 Restarting services..."
             docker compose down --remove-orphans || true
+            docker compose up -d
             
-            # Start new services
-            echo "🚀 Starting production services..."
-            docker compose -f docker-compose.production.yml up -d
-            
-            # Health checks
-            echo "🏥 Performing health checks..."
+            # Wait for services to be healthy
+            echo "⏳ Waiting for services to be healthy..."
             sleep 30
             
-            # Check backend health
+            # Health check
+            echo "🏥 Checking service health..."
+            
+            # Check backend
             for i in {1..10}; do
-              if curl -f "http://localhost:8070/health" >/dev/null 2>&1; then
+              if curl -f -s "http://localhost:8070/health" >/dev/null 2>&1; then
                 echo "✅ Backend is healthy"
                 break
               elif [ $i -eq 10 ]; then
                 echo "❌ Backend health check failed"
+                docker compose logs backend
                 exit 1
               else
                 echo "⏳ Waiting for backend... (attempt $i/10)"
@@ -909,7 +438,7 @@ jobs:
                 break
               elif [ $i -eq 5 ]; then
                 echo "❌ Nginx health check failed"
-                docker compose -f docker-compose.production.yml logs nginx
+                docker compose logs nginx
                 exit 1
               else
                 echo "⏳ Waiting for nginx... (attempt $i/5)"
@@ -921,16 +450,17 @@ jobs:
             echo "🌐 Application available at: https://fluently-app.ru"
             
             # Show running containers
-            docker compose -f docker-compose.production.yml ps
+            docker compose ps
 
   # ===========================================
-  # STAGING DEPLOY - Deploy to staging
+  # STAGING DEPLOY - Deploy to staging (develop branch)
   # ===========================================
   deploy-staging:
     name: Deploy to Staging
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
-    needs: [build, test, publish, integration-test]
+    needs: [detect-changes]
+    # Note: staging deploys even if no changes (uses existing images)
     environment: staging
     
     steps:
@@ -951,6 +481,16 @@ jobs:
             echo "🚀 Starting staging deployment..."
             cd /home/deploy-staging/Fluently-fork
             
+            # Create backup
+            echo "📦 Creating staging backup..."
+            BACKUP_DIR="/home/deploy-staging/backups"
+            mkdir -p "$BACKUP_DIR"
+            BACKUP_FILE="$BACKUP_DIR/fluently-staging-backup-$(date +%Y%m%d-%H%M%S).tar.gz"
+            tar -czf "$BACKUP_FILE" --exclude=node_modules --exclude=.git . || echo "⚠️ Backup failed"
+            
+            # Keep only last 3 staging backups
+            ls -t "$BACKUP_DIR"/fluently-staging-backup-*.tar.gz 2>/dev/null | tail -n +4 | xargs rm -f 2>/dev/null || true
+            
             # Update code
             echo "📥 Updating code..."
             git config --global --add safe.directory $(pwd)
@@ -958,20 +498,19 @@ jobs:
             git checkout develop
             git pull origin develop
             
-            # Use the same production docker-compose but with staging config
-            cp docker-compose.production.yml docker-compose.staging.yml
-            
             # Setup staging environment
             echo "⚙️ Setting up staging environment..."
             if [ ! -f ".env" ]; then
               cp .env.example .env
             fi
             
+            # Configure staging-specific environment variables
             sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=${{ secrets.STAGING_ZEROTIER_IP }}/" .env
             sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://fluently-app.online|g" .env
             sed -i "s/DOMAIN=.*/DOMAIN=fluently-app.online/" .env
             sed -i "s/CERT_NAME=.*/CERT_NAME=fluently-app-online/" .env
             
+            # Set staging telegram bot configuration
             if [ ! -z "${{ secrets.STAGING_TELEGRAM_BOT_TOKEN }}" ]; then
               sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=${{ secrets.STAGING_TELEGRAM_BOT_TOKEN }}/" .env
             fi
@@ -979,85 +518,60 @@ jobs:
               sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=${{ secrets.STAGING_WEBHOOK_SECRET }}/" .env
             fi
             
-            # Pull and deploy
-            docker compose -f docker-compose.staging.yml pull
-            docker compose down --remove-orphans || true
-            docker compose -f docker-compose.staging.yml up -d
-            
-            echo "🎉 Staging deployment completed!"
-            echo "🌐 Staging available at: https://fluently-app.online"
-
-  # ===========================================
-  # IMAGE REUSE - Handle unchanged components
-  # ===========================================
-  image-reuse:
-    name: Reuse Existing Images
-    runs-on: ubuntu-latest
-    needs: [detect-changes]
-    if: |
-      (github.ref == 'refs/heads/develop' || github.event_name == 'pull_request') && 
-      needs.detect-changes.outputs.any-changed == 'false'
-    outputs:
-      reuse-completed: ${{ steps.reuse-images.outputs.completed }}
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Login to Docker Hub
-        if: github.event_name != 'pull_request'
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Reuse all existing images (no changes detected)
-        id: reuse-images
-        if: github.event_name != 'pull_request'
-        run: |
-          set +e  # Don't exit on errors - we want to handle them gracefully
-          echo "⏩ No component changes detected - reusing all existing images..."
-          
-          # Images to reuse
-          IMAGES=(
-            "fluentlyorg/fluently-backend"
-            "fluentlyorg/fluently-telegram-bot" 
-            "fluentlyorg/fluently-ml-api"
-            "fluentlyorg/fluently-nginx"
-          )
-          
-          SUCCESS_COUNT=0
-          FAILED_IMAGES=()
-          
-          for image in "${IMAGES[@]}"; do
-            echo "🔄 Reusing $image..."
-            if docker pull docker.io/$image:latest-develop >/dev/null 2>&1; then
-              # Tag with current SHA for consistency
-              if docker tag docker.io/$image:latest-develop docker.io/$image:develop-${{ github.sha }} && \
-                 docker push docker.io/$image:develop-${{ github.sha }} >/dev/null 2>&1; then
-                echo "✅ Reused $image successfully"
-                ((SUCCESS_COUNT++))
-              else
-                echo "❌ Failed to tag/push $image"
-                FAILED_IMAGES+=("$image")
-              fi
-            else
-              echo "⚠️ No existing image found for $image"
-              echo "This might be the first run - emergency build may be needed"
-              FAILED_IMAGES+=("$image")
+            # Set staging database configuration
+            sed -i "s/DB_NAME=.*/DB_NAME=fluently_staging_db/" .env
+            sed -i "s/DB_USER=.*/DB_USER=staging_user/" .env
+            if [ ! -z "${{ secrets.STAGING_DB_PASSWORD }}" ]; then
+              sed -i "s/DB_PASSWORD=.*/DB_PASSWORD=${{ secrets.STAGING_DB_PASSWORD }}/" .env
             fi
-          done
-          
-          echo "📊 Successfully reused $SUCCESS_COUNT/${#IMAGES[@]} images"
-          
-          if [ $SUCCESS_COUNT -eq ${#IMAGES[@]} ]; then
-            echo "completed=true" >> $GITHUB_OUTPUT
-            echo "✅ All images reused successfully"
-            exit 0
-          else
-            echo "completed=false" >> $GITHUB_OUTPUT
-            echo "⚠️ Some images missing/failed: ${FAILED_IMAGES[*]}"
-            echo "Emergency build will be triggered to build missing images"
-            exit 0  # Don't fail the job - let emergency build handle it
-          fi
+            
+            # Pull latest images and deploy using the same docker-compose.yml
+            echo "🐳 Pulling latest staging images..."
+            docker compose pull
+            
+            echo "🔄 Restarting staging services..."
+            docker compose down --remove-orphans || true
+            docker compose up -d
+            
+            # Wait for services to be healthy
+            echo "⏳ Waiting for staging services to be healthy..."
+            sleep 30
+            
+            # Health check
+            echo "🏥 Checking staging service health..."
+            
+            # Check backend
+            for i in {1..10}; do
+              if curl -f -s "http://localhost:8070/health" >/dev/null 2>&1; then
+                echo "✅ Staging backend is healthy"
+                break
+              elif [ $i -eq 10 ]; then
+                echo "❌ Staging backend health check failed"
+                docker compose logs backend
+                exit 1
+              else
+                echo "⏳ Waiting for staging backend... (attempt $i/10)"
+                sleep 15
+              fi
+            done
+            
+            # Check nginx
+            for i in {1..5}; do
+              if curl -f -s "http://localhost" >/dev/null 2>&1; then
+                echo "✅ Staging nginx is healthy"
+                break
+              elif [ $i -eq 5 ]; then
+                echo "❌ Staging nginx health check failed"
+                docker compose logs nginx
+                exit 1
+              else
+                echo "⏳ Waiting for staging nginx... (attempt $i/5)"
+                sleep 10
+              fi
+            done
+            
+            echo "🎉 Staging deployment completed successfully!"
+            echo "🌐 Staging available at: https://fluently-app.online"
+            
+            # Show running containers
+            docker compose ps
