@@ -1,155 +1,104 @@
-# Local Installation Guide (Development/Testing)
+# Fluently - Local Installation Guide
 
-This guide helps you run Fluently on your local machine for development or grading using pre-built Docker images. **No building required** - all images are pulled from Docker Hub!
+This guide helps you set up Fluently for local development using **pre-built Docker images** from Docker Hub. This approach is much faster than building images locally, especially for the ML API component.
 
 ## Prerequisites
-- [Docker](https://docs.docker.com/get-docker/) & [Docker Compose](https://docs.docker.com/compose/install/)
-- [Git](https://git-scm.com/)
-- Internet connection to download pre-built images
 
-## 🚀 Quick Start for Teaching Assistants
+- **Docker & Docker Compose**: [Install Docker](https://docs.docker.com/get-docker/)
+- **Make**: Usually pre-installed on Linux/macOS
+- **Git**: [Install Git](https://git-scm.com/downloads)
+- **Minimum 8GB RAM** (16GB recommended for full monitoring stack)
 
-**Super fast setup** using pre-built images (no compilation needed!):
+## Quick Start (Recommended for TAs)
 
 ```bash
-# 1. Clone repository
+# 1. Clone and setup
 git clone https://github.com/FluentlyOrg/Fluently-fork.git
 cd Fluently-fork
+make setup-local
 
-# 2. Copy environment configuration
-cp .env.example .env
+# 2. Check for port conflicts
+make check-ports
 
-# 3. Create Docker volumes
-docker volume create fluently_postgres_data
-docker volume create fluently_redis_data
+# 3. Stop conflicting services (if needed from step 2)
+sudo systemctl stop postgresql  # Always needed
+sudo systemctl stop apache2     # If you have Apache
+sudo systemctl stop nginx       # If you have Nginx  
+sudo systemctl stop grafana-server  # If you have Grafana
 
-# 4. Check for port conflicts (optional but recommended)
-echo "Checking for port conflicts..."
-netstat -tulpn | grep -E ":(80|443|5432|6379|8070|8001)" || echo "No conflicts found"
+# 4. Start all services (uses pre-built images - much faster!)
+make run-local
 
-# 5. Start services with pre-built images (fast!)
-docker compose -f docker-compose.production.yml up -d
-
-# 6. Wait 2-3 minutes for services to start, then access:
-# - Backend API: http://localhost:8070/health  
+# 5. Access services (ready in ~2-3 minutes):
+# - Backend API: http://localhost:8070/health
 # - Swagger UI: http://localhost:8070/swagger/
-# - Frontend: http://localhost:80/
-# - ML API: http://localhost:8001/health
+# - Ml api end point: http://localhost:8001/docs
+# - Database: localhost:5432 (standard port)
+# - Grafana: http://localhost:3000/ (admin/admin123)
+
+# 6. When finished, restart your services
+sudo systemctl start postgresql
+sudo systemctl start apache2     # If you stopped it
+sudo systemctl start nginx       # If you stopped it
+sudo systemctl start grafana-server  # If you stopped it
 ```
 
-> **✨ Benefits of pre-built images:**
-> - **Super fast**: 2-3 minutes instead of 15+ minutes
-> - **No compilation**: No Go, Python, or Node.js build process
-> - **Consistent**: Same images used in production
-> - **Reliable**: Pre-tested and quality-checked images
-
-## 🔄 Alternative: Development Build (For Contributors)
-
-If you need to modify code and build locally:
+## Available Commands
 
 ```bash
-# Use the original build process
-docker compose -f docker-compose.yml up -d --build
+# Setup & Management
+make setup-local          # Initial setup (env files + volumes)
+make check-ports          # Check for port conflicts
+make run-local            # Start all services
+make stop-local           # Stop all services
+make restart              # Restart with latest images
+
+# Monitoring & Debugging
+make logs                 # Show all logs
+make logs-backend         # Show backend logs only
+make logs-ml-api          # Show ML API logs only
+make status               # Show service status
+make health               # Check health of all services
+
+# Updates
+make pull-images          # Pull latest images from Docker Hub
+make update               # Update to latest version
+
+# Testing
+make test-backend         # Run backend tests
+make run-test-db          # Start test database
+make stop-test-db         # Stop test database
+
+# Cleanup
+make clean                # Remove all data (DESTRUCTIVE!)
+make clean-images         # Remove Docker images
+
+# Utilities
+make help                 # Show all commands
+make generate-docs        # Generate API documentation
 ```
 
-This takes 15+ minutes but allows code modifications.
-> - We temporarily stop conflicting services - simpler than port remapping!
+### Core Services
+- **Backend API** (Go) - Main REST API
+- **ML API** (Python) - Distractor generation service  
+- **Telegram Bot** (Go) - Bot service
+- **Nginx** - Reverse proxy and frontend
+- **PostgreSQL** - Main database
+- **Redis** - Session storage
 
----
+### Monitoring Stack  
+- **Grafana** - Dashboards
+- **Prometheus** - Metrics collection
+- **Loki** - Log aggregation
+- **Node Exporter** - System metrics
 
+### Admin Tools
+- **Directus** - CMS interface
+- **cAdvisor** - Container metrics
 
-## 🌐 Access Services
-
-### Core Application
-- **Backend API:** [http://localhost:8070/api/v1/](http://localhost:8070/api/v1/)
-- **Backend Health:** [http://localhost:8070/health](http://localhost:8070/health)
-- **Swagger UI:** [http://localhost:8070/swagger/](http://localhost:8070/swagger/)
-- **Frontend Website:** [http://localhost:80/](http://localhost:80/)
-- **ML API:** [http://localhost:8001/health](http://localhost:8001/health)
-
-### Database Access
-- **PostgreSQL:** localhost:5432 (credentials in .env file)
-- **Redis:** localhost:6379
-
-## 🛠️ Management Commands
-
-```bash
-# View running services
-docker compose -f docker-compose.production.yml ps
-
-# View logs
-docker compose -f docker-compose.production.yml logs -f
-
-# Stop services
-docker compose -f docker-compose.production.yml down
-
-# Update to latest images
-docker compose -f docker-compose.production.yml pull
-docker compose -f docker-compose.production.yml up -d
-
-# Clean up everything
-docker compose -f docker-compose.production.yml down --volumes
-docker system prune -a  # WARNING: Removes all unused Docker data
-```
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**Port conflicts:**
-```bash
-# Check what's using the ports
-sudo netstat -tulpn | grep -E ":(80|443|5432|6379|8070|8001)"
-
-# Stop conflicting services
-sudo systemctl stop postgresql apache2 nginx
-```
-
-**Services not starting:**
-```bash
-# Check service logs
-docker compose -f docker-compose.production.yml logs [service-name]
-
-# Restart specific service
-docker compose -f docker-compose.production.yml restart [service-name]
-```
-
-**Database connection issues:**
-```bash
-# Check if PostgreSQL is healthy
-docker compose -f docker-compose.production.yml exec postgres pg_isready
-
-# Reset database (WARNING: Deletes all data)
-docker compose -f docker-compose.production.yml down -v
-docker volume rm fluently_postgres_data fluently_redis_data
-# Then restart setup process
-```
-
-## 📱 Mobile Apps Integration
-
-### Android App
-- See [android-app/README.md](../android-app/README.md) for setup
-- Set API base URL to `http://localhost:8070/api/v1/` in app settings
-
-### iOS App  
-- Open `ios-app/Fluently/Fluently.xcodeproj` in Xcode
-- Update API base URL to `http://localhost:8070/api/v1/` for local development
-
-## 🏗️ For Developers
-
-If you need to modify code and test changes:
-
-1. **Fork the repository** and create your branch
-2. **Make your changes** to the code
-3. **Push to your fork** - this will trigger the CI/CD pipeline
-4. **Wait for images to build** in GitHub Actions
-5. **Update image tags** in `docker-compose.production.yml` to use your branch
-6. **Test locally** with your custom images
-
-```bash
-# Example: Using images from your fork
-# Edit docker-compose.production.yml and change:
-# image: docker.io/fluentlyorg/fluently-backend:latest-develop
-# To:
-# image: docker.io/yourusername/fluently-backend:your-branch-latest
-```
+### Customization
+Edit environment files to customize:
+- Database credentials
+- API keys
+- Service ports
+- Domain settings

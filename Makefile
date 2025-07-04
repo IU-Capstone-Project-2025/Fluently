@@ -1,144 +1,163 @@
 # ===========================================
-# LOCAL DEVELOPMENT SETUP
+# FLUENTLY LOCAL DEVELOPMENT SETUP
+# Using Pre-built Docker Images from Docker Hub
 # ===========================================
 
-run-test-db:              ## start DB in detached mode
-	docker compose -f docker-compose.test.yml up -d test_db
+.PHONY: help setup-local check-ports run-local stop-local clean restart pull-images test-backend logs
 
-stop-test-db:             ## stop DB and drop its volume
-	docker compose -f docker-compose.test.yml down --volumes
-
-# Complete local setup - creates .env and volumes
-setup-local: setup-env setup-volumes
-	@echo "✅ Local development environment i	@echo "    make run-local"-local"NT: Stop local PostgreSQL to avoid port conflicts:"
-	@echo "   sudo systemctl stop postgresql"
+help:                     ## Show this help message
+	@echo "Fluently Local Development Setup"
+	@echo "Using pre-built Docker images for fast setup"
 	@echo ""
-	@echo "Then run: make run-local"
+	@echo "Quick Start:"
+	@echo "  1. make setup-local    # Setup environment and volumes"
+	@echo "  2. make check-ports    # Check for port conflicts"
+	@echo "  3. make run-local      # Start all services"
+	@echo ""
+	@echo "Available commands:"
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-18s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-# Copy .env.example to .env if it doesn't exist
-setup-env:
-	@echo "📄 Setting up environment file..."
+# ===========================================
+# SETUP COMMANDS
+# ===========================================
+
+setup-local: setup-env setup-volumes   ## Complete local setup (environment + volumes)
+	@echo "✅ Local development environment setup complete!"
+	@echo ""
+	@echo "Next steps:"
+	@echo "  1. make check-ports    # Check for port conflicts"
+	@echo "  2. make run-local      # Start all services"
+	@echo ""
+	@echo "⚠️  IMPORTANT: Stop local PostgreSQL to avoid port conflicts:"
+	@echo "   sudo systemctl stop postgresql"
+
+setup-env:                ## Setup environment files
+	@echo "📄 Setting up environment files..."
 	@if [ ! -f backend/.env ]; then \
 		cp backend/.env.example backend/.env; \
-		echo "✅ Created backend/.env from backend/.env.example"; \
-		echo "📝 Please edit backend/.env with your local settings if needed"; \
+		echo "✅ Created backend/.env from example"; \
 	else \
 		echo "✅ backend/.env already exists"; \
 	fi
+	@if [ ! -f .env ]; then \
+		cp .env.example .env; \
+		echo "✅ Created .env from example"; \
+	else \
+		echo "✅ .env already exists"; \
+	fi
+	@echo "📝 Environment files ready. Edit if needed for local settings."
 
-# Create all required local Docker volumes
-setup-volumes:
-	@echo "📦 Creating local Docker volumes..."
-	@docker volume create fluently_pgdata_local || true
-	@docker volume create fluently_grafana_data_local || true
-	@docker volume create fluently_prometheus_data_local || true
-	@docker volume create fluently_sonarqube_data_local || true
-	@docker volume create fluently_model_cache_local || true
-	@echo "✅ All local volumes created"
+setup-volumes:            ## Create required Docker volumes
+	@echo "📦 Creating Docker volumes..."
+	@docker volume create fluently_pgdata_safe || true
+	@docker volume create fluently_grafana_data_external || true
+	@docker volume create fluently_prometheus_data_external || true
+	@echo "✅ All volumes created"
 
 # ===========================================
-# LOCAL DEVELOPMENT COMMANDS
+# MAIN COMMANDS
 # ===========================================
 
-# Start all services for local development
-run-local:
-	@echo "🚀 Starting all services for local development..."
-	@if [ ! -f backend/.env ]; then \
-		echo "❌ backend/.env not found!"; \
-		echo "Please run 'make setup-local' first"; \
-		exit 1; \
-	fi
-	@echo "🔍 Checking if port 5432 is free..."
-	@if netstat -tlnp 2>/dev/null | grep :5432 > /dev/null; then \
-		echo "❌ Port 5432 is in use (likely local PostgreSQL)"; \
-		echo "Please stop local PostgreSQL first:"; \
-		echo "   sudo systemctl stop postgresql"; \
-		echo "Then run this command again."; \
-		exit 1; \
-	fi
-	docker compose -f docker-compose.yml -f docker-compose.local.yml up -d
+run-local: check-env pull-images       ## Start all services with pre-built images
+	@echo "🚀 Starting Fluently with pre-built images..."
+	@echo "This is much faster than building locally!"
+	docker compose up -d
+	@echo ""
+	@echo "✅ All services started!"
+	@echo ""
+	@echo "🌐 Access your services:"
+	@echo "  - Backend API: http://localhost:8070/health"
+	@echo "  - Swagger UI:  http://localhost:8070/swagger/"
+	@echo "  - Frontend:    http://localhost/"
+	@echo "  - Grafana:     http://localhost:3000/ (admin/admin123)"
+	@echo ""
+	@echo "📊 Monitor with: make logs"
 
-# Start core services for local development (faster)
-run-local-core:
-	@echo "🚀 Starting core services for local development..."
-	@if [ ! -f backend/.env ]; then \
-		echo "❌ backend/.env not found!"; \
-		echo "Please run 'make setup-local' first"; \
-		exit 1; \
-	fi
-	@echo "🔍 Checking if port 5432 is free..."
-	@if netstat -tlnp 2>/dev/null | grep :5432 > /dev/null; then \
-		echo "❌ Port 5432 is in use (likely local PostgreSQL)"; \
-		echo "Please stop local PostgreSQL first:"; \
-		echo "   sudo systemctl stop postgresql"; \
-		echo "Then run this command again."; \
-		exit 1; \
-	fi
-	docker compose -f docker-compose.yml -f docker-compose.local.yml up -d postgres backend ml-api nginx
+pull-images:              ## Pull latest pre-built images from Docker Hub
+	@echo "� Pulling latest pre-built images..."
+	@docker pull docker.io/fluentlyorg/fluently-backend:latest-develop
+	@docker pull docker.io/fluentlyorg/fluently-telegram-bot:latest-develop
+	@docker pull docker.io/fluentlyorg/fluently-ml-api:latest-develop
+	@docker pull docker.io/fluentlyorg/fluently-nginx:latest-develop
+	@echo "✅ All images updated!"
 
-# Check for common port conflicts before starting
-check-ports:
+check-ports:              ## Check for common port conflicts
 	@echo "🔍 Checking for port conflicts..."
+	@echo ""
 	@if netstat -tlnp 2>/dev/null | grep :5432 > /dev/null; then \
 		echo "❌ Port 5432 (PostgreSQL) is in use"; \
-		echo "   Run: sudo systemctl stop postgresql"; \
+		echo "   Fix: sudo systemctl stop postgresql"; \
+		echo ""; \
 	else \
 		echo "✅ Port 5432 (PostgreSQL) is free"; \
 	fi
 	@if netstat -tlnp 2>/dev/null | grep :80 > /dev/null; then \
 		echo "❌ Port 80 (Web server) is in use"; \
-		echo "   Check: sudo systemctl stop apache2 nginx"; \
+		echo "   Fix: sudo systemctl stop apache2 nginx"; \
+		echo ""; \
 	else \
 		echo "✅ Port 80 (Web server) is free"; \
 	fi
 	@if netstat -tlnp 2>/dev/null | grep :3000 > /dev/null; then \
 		echo "❌ Port 3000 (Grafana) is in use"; \
-		echo "   Check: sudo systemctl stop grafana-server"; \
+		echo "   Fix: sudo systemctl stop grafana-server"; \
+		echo ""; \
 	else \
 		echo "✅ Port 3000 (Grafana) is free"; \
 	fi
 	@if netstat -tlnp 2>/dev/null | grep :8070 > /dev/null; then \
-		echo "❌ Port 8070 (Backend) is in use"; \
+		echo "❌ Port 8070 (Backend API) is in use"; \
+		echo ""; \
 	else \
-		echo "✅ Port 8070 (Backend) is free"; \
+		echo "✅ Port 8070 (Backend API) is free"; \
 	fi
+	@echo "If any ports are in use, stop the conflicting services before running 'make run-local'"
 
+stop-local:               ## Stop all services
+	@echo "🛑 Stopping all services..."
+	docker compose down
+	@echo "✅ All services stopped"
 
-# Build ML API with optimized settings
-build-ml-api-fast:
-	@echo "🏗️ Building ML API with optimized settings..."
-	docker compose build --parallel ml-api
+restart:                  ## Restart all services (with fresh images)
+	@echo "🔄 Restarting with latest images..."
+	make stop-local
+	make pull-images
+	make run-local
 
 # ===========================================
-# DEVELOPMENT COMMANDS
+# MONITORING & DEBUGGING
 # ===========================================
 
-# Generate Swagger docs and run backend with supporting services
-run-backend:
-	cd backend && swag init --generalInfo cmd/main.go --output docs --parseDependency --parseInternal
-	docker compose up -d postgres ml-api directus
-	cd backend && air
+logs:                     ## Show logs from all services
+	docker compose logs -f
 
-# Run only the telegram bot service
-run-telegram-bot:
-	docker compose up --build -d telegram-bot redis
+logs-backend:             ## Show backend logs only
+	docker compose logs -f backend
 
-# Run the ML API service
-run-ml-api:
-	docker compose up --build -d ml-api
+logs-ml-api:              ## Show ML API logs only
+	docker compose logs -f ml-api
 
-# Generate API documentation
-generate-docs:
-	@echo "📚 Generating API documentation..."
-	@if ! command -v swag >/dev/null 2>&1; then \
-		echo "Installing swag..."; \
-		cd backend && go install github.com/swaggo/swag/cmd/swag@latest; \
-	fi
-	@cd backend && $(HOME)/go/bin/swag init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal
-	@echo "✅ Documentation generated in backend/docs/"
+status:                   ## Show status of all services
+	@echo "📊 Service Status:"
+	@docker compose ps
 
-# Run tests with proper test database
-test-backend:
+health:                   ## Check health of all services
+	@echo "🏥 Health Checks:"
+	@echo ""
+	@echo "Backend API:"
+	@curl -s http://localhost:8070/health || echo "❌ Backend not responding"
+	@echo ""
+	@echo "ML API:"
+	@curl -s http://localhost:8001/health || echo "❌ ML API not responding"
+	@echo ""
+	@echo "Frontend:"
+	@curl -s -o /dev/null -w "%%{http_code}" http://localhost/ | grep -q "200" && echo "✅ Frontend OK" || echo "❌ Frontend not responding"
+
+# ===========================================
+# TESTING
+# ===========================================
+
+test-backend: run-test-db ## Run backend tests with test database
 	@echo "🧪 Running backend tests..."
 	@cd backend && \
 	export DB_HOST=localhost && \
@@ -148,129 +167,85 @@ test-backend:
 	export DB_PASSWORD=test_password && \
 	go test -v -coverprofile=coverage.out ./...
 	@cd backend && go tool cover -html=coverage.out -o coverage.html
-	@echo "📊 Coverage report generated: backend/coverage.html"
+	@echo "✅ Tests complete. Coverage report: backend/coverage.html"
+
+run-test-db:              ## Start test database
+	docker compose -f docker-compose.test.yml up -d test_db
+
+stop-test-db:             ## Stop test database
+	docker compose -f docker-compose.test.yml down --volumes
 
 # ===========================================
-# PRODUCTION COMMANDS (Use external volumes)
+# CLEANUP
 # ===========================================
 
-# Start all production services (requires external volumes)
-run-production:
-	docker compose up -d
-
-# Start core services (backend, database, ML API) - production
-run-core:
-	docker compose up -d postgres backend ml-api nginx
-
-# Start monitoring stack
-run-monitoring:
-	docker compose up -d prometheus grafana loki promtail node-exporter postgres-exporter nginx-exporter cadvisor
-
-# ===========================================
-# TESTING COMMANDS
-# ===========================================
-
-# Start test database for GitHub Actions
-run-test-db:
-	docker compose -f docker-compose.test.yml up -d
-
-# Stop test database
-stop-test-db:
-	docker compose -f docker-compose.test.yml down
-
-# ===========================================
-# MAINTENANCE COMMANDS
-# ===========================================
-
-# Stop all services
-stop:
-	docker compose down
-	docker compose -f docker-compose.test.yml down
-
-# Stop local development services
-stop-local:
-	docker compose -f docker-compose.yml -f docker-compose.local.yml down
-
-# Clean up all volumes and orphaned containers
-clean:
-	docker compose down --volumes --remove-orphans
-	docker compose -f docker-compose.test.yml down --volumes --remove-orphans
-	rm -rf backend/tmp/* || true
-	rm -rf telegram-bot/tmp/* || true
-
-# Clean up local development environment
-clean-local:
-	docker compose -f docker-compose.yml -f docker-compose.local.yml down --volumes --remove-orphans
-	docker volume rm fluently_pgdata fluently_grafana_data fluently_prometheus_data fluently_sonarqube_data 2>/dev/null || true
-	rm -rf backend/tmp/* || true
-	rm -rf analysis/distractor_api/logs/* || true
-
-# View logs for specific service
-logs:
-	docker compose logs -f $(SERVICE)
-
-# Restart specific service
-restart:
-	docker compose restart $(SERVICE)
-
-# ===========================================
-# DATABASE COMMANDS
-# ===========================================
-
-# Access main database
-db-shell:
-	docker compose exec postgres psql -U $(shell grep DB_USER backend/.env | cut -d '=' -f2) -d $(shell grep DB_NAME backend/.env | cut -d '=' -f2)
-
-# Access test database
-test-db-shell:
-	docker compose -f docker-compose.test.yml exec test-db psql -U test_user -d test_fluently_db
-
-# ===========================================
-# FAST BUILD COMMANDS
-# ===========================================
-
-# Build services with optimized caching
-build-fast:
-	export DOCKER_BUILDKIT=1 && export COMPOSE_DOCKER_CLI_BUILD=1 && docker compose build --parallel
-
-# Build specific service with caching
-build-service:
-	export DOCKER_BUILDKIT=1 && export COMPOSE_DOCKER_CLI_BUILD=1 && docker compose build $(SERVICE)
-
-# Build ML API with optimized settings (for local development)
-build-ml-api-fast:
-	export DOCKER_BUILDKIT=1 && export COMPOSE_DOCKER_CLI_BUILD=1 && docker compose build ml-api
-
-# Build backend and telegram bot with Go caching
-build-go-services:
-	export DOCKER_BUILDKIT=1 && export COMPOSE_DOCKER_CLI_BUILD=1 && docker compose build --parallel backend telegram-bot
-=======
-# CODE QUALITY COMMANDS
-# ===========================================
-
-# Install SonarScanner CLI
-install-sonar-scanner:
-	@echo "📦 Installing SonarScanner CLI..."
-	@if ! command -v sonar-scanner >/dev/null 2>&1; then \
-		echo "Installing SonarScanner CLI..."; \
-		wget -q https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip; \
-		unzip -q sonar-scanner-cli-5.0.1.3006-linux.zip; \
-		sudo mv sonar-scanner-5.0.1.3006-linux /opt/sonar-scanner; \
-		sudo ln -sf /opt/sonar-scanner/bin/sonar-scanner /usr/local/bin/sonar-scanner; \
-		rm sonar-scanner-cli-5.0.1.3006-linux.zip; \
-		echo "✅ SonarScanner CLI installed"; \
+clean:                    ## Stop services and remove volumes (DESTRUCTIVE!)
+	@echo "⚠️  This will remove all data including databases!"
+	@read -p "Are you sure? (y/N): " confirm && \
+	if [ "$$confirm" = "y" ] || [ "$$confirm" = "Y" ]; then \
+		docker compose down --volumes; \
+		docker volume rm fluently_pgdata_safe fluently_grafana_data_external fluently_prometheus_data_external 2>/dev/null || true; \
+		echo "✅ Cleanup complete"; \
 	else \
-		echo "✅ SonarScanner CLI already installed"; \
+		echo "❌ Cleanup cancelled"; \
 	fi
 
-# Run code quality analysis (local)
-code-quality:
-	@echo "🔍 Running code quality analysis..."
-	@echo "📊 Generating Go coverage..."
-	@cd backend && go test -coverprofile=coverage.out ./... || true
-	@echo "🐍 Generating Python coverage..."
-	@cd analysis/distractor_api && python3 -m pytest --cov=. --cov-report=xml || true
-	@echo "✅ Coverage reports generated"
+clean-images:             ## Remove all Fluently Docker images
+	@echo "🗑️ Removing all Fluently Docker images..."
+	@docker images | grep fluently | awk '{print $$3}' | xargs docker rmi -f 2>/dev/null || true
+	@echo "✅ Images cleaned"
+
+# ===========================================
+# DEVELOPMENT UTILITIES
+# ===========================================
+
+generate-docs:            ## Generate API documentation
+	@echo "📚 Generating API documentation..."
+	@if ! command -v swag >/dev/null 2>&1; then \
+		echo "Installing swag..."; \
+		cd backend && go install github.com/swaggo/swag/cmd/swag@latest; \
+	fi
+	@cd backend && $(HOME)/go/bin/swag init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal
+	@echo "✅ Documentation generated in backend/docs/"
+
+update:                   ## Update to latest images and restart
+	@echo "🔄 Updating to latest version..."
+	make stop-local
+	make pull-images
+	make run-local
+	@echo "✅ Updated to latest version!"
+
+# ===========================================
+# HELPER FUNCTIONS
+# ===========================================
+
+check-env:
+	@if [ ! -f backend/.env ]; then \
+		echo "❌ backend/.env not found!"; \
+		echo "Please run 'make setup-local' first"; \
+		exit 1; \
+	fi
+
+# ===========================================
+# SYSTEM SERVICES MANAGEMENT
+# ===========================================
+
+stop-conflicting-services: ## Stop common conflicting system services
+	@echo "🛑 Stopping conflicting system services..."
+	@sudo systemctl stop postgresql 2>/dev/null || echo "PostgreSQL not running"
+	@sudo systemctl stop apache2 2>/dev/null || echo "Apache2 not running"
+	@sudo systemctl stop nginx 2>/dev/null || echo "Nginx not running"
+	@sudo systemctl stop grafana-server 2>/dev/null || echo "Grafana not running"
+	@echo "✅ Conflicting services stopped"
+
+start-system-services:    ## Restart system services after development
+	@echo "🔄 Starting system services..."
+	@sudo systemctl start postgresql 2>/dev/null || echo "PostgreSQL not installed"
+	@sudo systemctl start apache2 2>/dev/null || echo "Apache2 not installed"
+	@sudo systemctl start nginx 2>/dev/null || echo "Nginx not installed"
+	@sudo systemctl start grafana-server 2>/dev/null || echo "Grafana not installed"
+	@echo "✅ System services restarted"
+
 
 # Run SonarScanner (requires SONAR_TOKEN environment variable)
 sonar-scan:
