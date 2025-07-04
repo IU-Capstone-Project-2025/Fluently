@@ -127,3 +127,22 @@ struct NavigationBar: View {
          Text("bottom bar")
     }
 }
+
+struct HomeScreenPreview: PreviewProvider {
+    static var previews: some View {
+        PreviewWrapper()
+    }
+
+    struct PreviewWrapper: View {
+        @StateObject var router = AppRouter()
+        @StateObject var account = AccountData()
+
+        var body: some View {
+            HomeScreenBuilder.build(
+                router: router,
+                acoount: account
+            )
+            .environmentObject(account)
+        }
+    }
+}
