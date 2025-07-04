@@ -31,4 +31,16 @@ class DistractorResponse(BaseModel):
 class ErrorResponse(BaseModel):
     """Error response schema"""
     detail: str = Field(..., description="Error message")
-    error_code: str = Field(None, description="Error code for client handling") 
+    error_code: str = Field(None, description="Error code for client handling")
+
+
+class TTSRequest(BaseModel):
+    """Request schema for text-to-speech generation"""
+    text: str = Field(..., min_length=1, max_length=200, description="The text to convert to speech")
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "text": "Hello world"
+            }
+        } 

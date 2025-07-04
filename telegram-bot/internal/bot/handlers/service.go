@@ -1,532 +1,201 @@
+// service.go
 package handlers
 
 import (
 	"context"
 	"fmt"
-	"strings"
-	"time"
 
-	"fluently/telegram-bot/config"
-	"fluently/telegram-bot/internal/api"
-	"fluently/telegram-bot/internal/bot/fsm"
-	"fluently/telegram-bot/internal/tasks"
-	"fluently/telegram-bot/pkg/logger"
-
-	"github.com/hibiken/asynq"
 	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
 	tele "gopkg.in/telebot.v3"
+
+	"telegram-bot/config"
+	"telegram-bot/internal/api"
+	"telegram-bot/internal/bot/fsm"
+	"telegram-bot/internal/domain"
+	"telegram-bot/internal/tasks"
 )
 
-// HandlerService manages all bot handlers and state
+// HandlerService provides common functionality for message handlers
 type HandlerService struct {
-	config      *config.Config
-	redisClient *redis.Client
-	apiClient   *api.Client
-	scheduler   *tasks.Scheduler
-	bot         *tele.Bot
+	config       *config.Config
+	redisClient  *redis.Client
+	apiClient    *api.Client
+	scheduler    *tasks.Scheduler
+	bot          *tele.Bot
+	stateManager *fsm.UserStateManager
+	logger       *zap.Logger
 }
 
 // NewHandlerService creates a new handler service
-func NewHandlerService(cfg *config.Config, redisClient *redis.Client, apiClient *api.Client, scheduler *tasks.Scheduler, bot *tele.Bot) *HandlerService {
+func NewHandlerService(
+	cfg *config.Config,
+	redisClient *redis.Client,
+	apiClient *api.Client,
+	scheduler *tasks.Scheduler,
+	bot *tele.Bot,
+	stateManager *fsm.UserStateManager,
+	logger *zap.Logger,
+) *HandlerService {
 	return &HandlerService{
-		config:      cfg,
-		redisClient: redisClient,
-		apiClient:   apiClient,
-		scheduler:   scheduler,
-		bot:         bot,
+		config:       cfg,
+		redisClient:  redisClient,
+		apiClient:    apiClient,
+		scheduler:    scheduler,
+		bot:          bot,
+		stateManager: stateManager,
+		logger:       logger,
 	}
 }
 
-// ProcessMessage processes incoming messages based on user state
-func (h *HandlerService) ProcessMessage(ctx context.Context, message *tele.Message) {
-	if message.Sender == nil {
-		logger.Log.Warn("Received message without sender")
-		return
-	}
+// TransitionState is a convenience method for transitioning user state
+func (s *HandlerService) TransitionState(ctx context.Context, userID int64, newState fsm.UserState) error {
+	s.logger.With(zap.Int64("user_id", userID), zap.String("new_state", string(newState))).Debug("Transitioning state")
 
-	userID := message.Sender.ID
-	logger.Log.Debug("Processing message",
-		zap.Int64("user_id", userID),
-		zap.String("text", message.Text))
+	return s.stateManager.SetState(ctx, userID, newState)
+}
 
-	// Get or create user progress
-	progress, err := h.getUserProgress(ctx, userID)
-	if err != nil {
-		logger.Log.Error("Failed to get user progress", zap.Error(err), zap.Int64("user_id", userID))
-		h.sendErrorMessage(message.Chat, "Произошла ошибка. Попробуйте снова.")
-		return
-	}
+// Get user progress from API
+func (s *HandlerService) GetUserProgress(ctx context.Context, userID int64) (*domain.UserProgress, error) {
+	// For now, return a default user progress
+	// This should be implemented to call the actual API
+	return &domain.UserProgress{
+		UserID:           userID,
+		CEFRLevel:        "A1",
+		WordsPerDay:      10,
+		NotificationTime: "10:00",
+	}, nil
+}
 
-	// Update last activity
-	progress.LastActivity = time.Now()
+// Update user progress through API
+func (s *HandlerService) UpdateUserProgress(ctx context.Context, userID int64, progress *domain.UserProgress) error {
+	// For now, this is a placeholder
+	// This should be implemented to call the actual API
+	return nil
+}
 
-	// Handle commands
-	if message.Text != "" && strings.HasPrefix(message.Text, "/") {
-		h.handleCommand(ctx, message, progress)
-		return
-	}
+// HandleTextMessage handles text messages based on state
+func (s *HandlerService) HandleTextMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	text := c.Text()
 
-	// Handle message based on current state
-	switch progress.State {
-	case fsm.StateStart:
-		h.handleStart(ctx, message, progress)
+	s.logger.With(zap.Int64("user_id", userID), zap.String("state", string(currentState)), zap.String("text", text)).Debug("Processing text message")
+
+	// Route based on current state
+	switch currentState {
 	case fsm.StateWelcome:
-		h.handleWelcome(ctx, message, progress)
+		return s.HandleWelcomeMessage(ctx, c, userID, currentState)
 	case fsm.StateMethodExplanation:
-		h.handleMethodExplanation(ctx, message, progress)
-	case fsm.StateSpacedRepetition:
-		h.handleSpacedRepetition(ctx, message, progress)
-	case fsm.StateQuestionnaire:
-		h.handleQuestionnaire(ctx, message, progress)
+		return s.HandleMethodExplanationMessage(ctx, c, userID, currentState)
 	case fsm.StateQuestionGoal:
-		h.handleQuestionGoal(ctx, message, progress)
+		return s.HandleQuestionGoalMessage(ctx, c, userID, currentState)
 	case fsm.StateQuestionConfidence:
-		h.handleQuestionConfidence(ctx, message, progress)
+		return s.HandleQuestionConfidenceMessage(ctx, c, userID, currentState)
 	case fsm.StateQuestionSerials:
-		h.handleQuestionSerials(ctx, message, progress)
+		return s.HandleQuestionSerialsMessage(ctx, c, userID, currentState)
 	case fsm.StateQuestionExperience:
-		h.handleQuestionExperience(ctx, message, progress)
-	case fsm.StateVocabularyTest:
-		h.handleVocabularyTest(ctx, message, progress)
-	case fsm.StateTestGroup1, fsm.StateTestGroup2, fsm.StateTestGroup3, fsm.StateTestGroup4, fsm.StateTestGroup5:
-		h.handleVocabularyTestGroup(ctx, message, progress)
-	case fsm.StateLevelDetermination:
-		h.handleLevelDetermination(ctx, message, progress)
-	case fsm.StatePlanCreation:
-		h.handlePlanCreation(ctx, message, progress)
-	case fsm.StateLessonStart:
-		h.handleLessonStart(ctx, message, progress)
-	case fsm.StateShowingFirstBlock:
-		h.handleShowingFirstBlock(ctx, message, progress)
-	case fsm.StateExerciseAfterBlock:
-		h.handleExerciseAfterBlock(ctx, message, progress)
-	case fsm.StateShowingIndividualWord:
-		h.handleShowingIndividualWord(ctx, message, progress)
-	case fsm.StateExerciseReview:
-		h.handleExerciseReview(ctx, message, progress)
-	case fsm.StateAudioDictation:
-		h.handleAudioDictation(ctx, message, progress)
-	case fsm.StateTranslationCheck:
-		h.handleTranslationCheck(ctx, message, progress)
-	case fsm.StateWaitingForAudio:
-		h.handleWaitingForAudio(ctx, message, progress)
+		return s.HandleQuestionExperienceMessage(ctx, c, userID, currentState)
+	case fsm.StateSettingsWordsPerDayInput:
+		return s.HandleSettingsWordsPerDayInputMessage(ctx, c, userID, currentState)
+	case fsm.StateSettingsTimeInput:
+		return s.HandleSettingsTimeInputMessage(ctx, c, userID, currentState)
 	case fsm.StateWaitingForTranslation:
-		h.handleWaitingForTranslation(ctx, message, progress)
-	case fsm.StateLessonComplete:
-		h.handleLessonComplete(ctx, message, progress)
-	case fsm.StateAccountLinking:
-		h.handleAccountLinking(ctx, message, progress)
-	case fsm.StateWaitingForLink:
-		h.handleWaitingForLink(ctx, message, progress)
-	case fsm.StateSettings:
-		h.handleSettings(ctx, message, progress)
+		return s.HandleWaitingForTranslationMessage(ctx, c, userID, currentState)
+	case fsm.StateWaitingForAudio:
+		return s.HandleWaitingForAudioMessage(ctx, c, userID, currentState)
 	default:
-		logger.Log.Warn("Unhandled state", zap.String("state", string(progress.State)), zap.Int64("user_id", userID))
-		h.sendMessage(message.Chat, "Извините, произошла ошибка. Введите /start для начала.")
-	}
-
-	// Save updated progress
-	if err := h.saveUserProgress(ctx, progress); err != nil {
-		logger.Log.Error("Failed to save user progress", zap.Error(err), zap.Int64("user_id", userID))
+		return s.HandleUnknownStateMessage(ctx, c, userID, currentState)
 	}
 }
 
-// ProcessCallback processes callback queries
-func (h *HandlerService) ProcessCallback(ctx context.Context, callback *tele.Callback) {
-	if callback.Sender == nil {
-		logger.Log.Warn("Received callback without sender")
-		return
+// HandleCallback handles callback queries based on state
+func (s *HandlerService) HandleCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	callback := c.Callback()
+	if callback == nil {
+		return fmt.Errorf("no callback data")
 	}
 
-	userID := callback.Sender.ID
-	logger.Log.Debug("Processing callback",
-		zap.Int64("user_id", userID),
-		zap.String("data", callback.Data))
+	data := callback.Data
 
-	// Get user progress
-	progress, err := h.getUserProgress(ctx, userID)
-	if err != nil {
-		logger.Log.Error("Failed to get user progress", zap.Error(err), zap.Int64("user_id", userID))
-		h.bot.Respond(callback, &tele.CallbackResponse{Text: "Произошла ошибка"})
-		return
-	}
+	s.logger.With(zap.Int64("user_id", userID), zap.String("state", string(currentState)), zap.String("data", data)).Debug("Processing callback")
 
-	// Handle callback based on data
+	// Always respond to callback to remove loading state
+	defer c.Respond()
+
+	// Route based on callback data prefix and current state
 	switch {
-	case strings.HasPrefix(callback.Data, "start_lesson"):
-		h.handleStartLessonCallback(ctx, callback, progress)
-	case strings.HasPrefix(callback.Data, "vocab_test_"):
-		h.handleVocabTestCallback(ctx, callback, progress)
-	case strings.HasPrefix(callback.Data, "exercise_"):
-		h.handleExerciseCallback(ctx, callback, progress)
-	case strings.HasPrefix(callback.Data, "link_account"):
-		h.handleLinkAccountCallback(ctx, callback, progress)
-	case strings.HasPrefix(callback.Data, "settings_"):
-		h.handleSettingsCallback(ctx, callback, progress)
+	case data == "onboarding:start":
+		return s.HandleOnboardingStartCallback(ctx, c, userID, currentState)
+	case data == "onboarding:method":
+		return s.HandleOnboardingMethodCallback(ctx, c, userID, currentState)
+	case data == "test:start":
+		return s.HandleTestStartCallback(ctx, c, userID, currentState)
+	case data == "lesson:start":
+		return s.HandleLessonStartCallback(ctx, c, userID, currentState)
+	case data == "lesson:later":
+		return s.HandleLessonLaterCallback(ctx, c, userID, currentState)
+	case data == "settings:words_per_day":
+		return s.HandleSettingsWordsPerDayCallback(ctx, c, userID, currentState)
+	case data == "settings:notifications":
+		return s.HandleSettingsNotificationsCallback(ctx, c, userID, currentState)
+	case data == "settings:cefr_level":
+		return s.HandleSettingsCEFRLevelCallback(ctx, c, userID, currentState)
+	case data == "menu:main":
+		return s.HandleMainMenuCallback(ctx, c, userID, currentState)
+	case data == "menu:settings":
+		return s.HandleSettingsMenuCallback(ctx, c, userID, currentState)
+	case data == "menu:learn":
+		return s.HandleLearnMenuCallback(ctx, c, userID, currentState)
+	case data == "menu:help":
+		return s.HandleHelpMenuCallback(ctx, c, userID, currentState)
 	default:
-		logger.Log.Warn("Unhandled callback", zap.String("data", callback.Data))
-		h.bot.Respond(callback, &tele.CallbackResponse{Text: "Неизвестная команда"})
-	}
-
-	// Save updated progress
-	if err := h.saveUserProgress(ctx, progress); err != nil {
-		logger.Log.Error("Failed to save user progress", zap.Error(err), zap.Int64("user_id", userID))
+		return s.HandleUnknownCallback(ctx, c, userID, currentState)
 	}
 }
 
-// ProcessInlineQuery processes inline queries
-func (h *HandlerService) ProcessInlineQuery(ctx context.Context, query *tele.Query) {
-	// Handle inline queries if needed
-	logger.Log.Debug("Processing inline query", zap.String("query", query.Text))
-}
-
-// handleCommand handles bot commands
-func (h *HandlerService) handleCommand(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	command := strings.ToLower(strings.TrimPrefix(message.Text, "/"))
-
-	switch command {
-	case "start":
-		h.handleStart(ctx, message, progress)
-	case "help":
-		h.handleHelp(ctx, message, progress)
-	case "stats":
-		h.handleStats(ctx, message, progress)
-	case "settings":
-		h.handleSettingsCommand(ctx, message, progress)
-	case "lesson":
-		h.handleLessonCommand(ctx, message, progress)
-	case "cancel":
-		h.handleCancel(ctx, message, progress)
-	default:
-		h.sendMessage(message.Chat, "Неизвестная команда. Введите /help для получения справки.")
-	}
-}
-
-// State handlers
-func (h *HandlerService) handleStart(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	if progress.State != fsm.StateStart {
-		progress.UpdateState(fsm.StateStart)
+// HandleVoiceMessage handles voice messages
+func (s *HandlerService) HandleVoiceMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	voice := c.Message().Voice
+	if voice == nil {
+		return fmt.Errorf("no voice message")
 	}
 
-	// Check if user is already linked
-	linkStatus, err := h.apiClient.CheckLinkStatus(ctx, progress.TelegramID)
-	if err == nil && linkStatus.IsLinked {
-		progress.GoogleLinked = true
-		h.sendWelcomeMessage(ctx, message, progress)
-		return
+	s.logger.With(zap.Int64("user_id", userID), zap.String("state", string(currentState)), zap.Int("duration", voice.Duration)).Debug("Processing voice message")
+
+	// Handle voice based on state
+	if currentState == fsm.StateWaitingForAudio {
+		return s.HandleAudioExerciseResponse(ctx, c, userID, voice)
 	}
 
-	// Send welcome message with link option
-	text := `🙂 Привет! Это Fluently!
-
-Я помогу тебе улучшить словарный запас английского языка всего за 10 минут в день.
-
-🎯 Что делает этот бот особенным:
-• Фокус на самых важных словах (80-90% речи)
-• Особая техника запоминания
-• Всего 10 слов в день
-• Научно обоснованный метод
-
-Для полного доступа к функциям рекомендую связать аккаунт с Google.`
-
-	keyboard := &tele.ReplyMarkup{}
-	linkBtn := keyboard.Data("🔗 Связать с Google", "link_account")
-	continueBtn := keyboard.Data("▶️ Продолжить без связывания", "continue_without_link")
-	keyboard.Inline(
-		keyboard.Row(linkBtn),
-		keyboard.Row(continueBtn),
-	)
-
-	h.sendMessageWithKeyboard(message.Chat, text, keyboard)
-	progress.UpdateState(fsm.StateAccountLinking)
+	// For other states, provide guidance
+	return c.Send("Голосовые сообщения поддерживаются во время аудио упражнений. Используйте /learn чтобы начать урок.")
 }
 
-func (h *HandlerService) handleWelcome(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	h.sendWelcomeMessage(ctx, message, progress)
-}
-
-func (h *HandlerService) sendWelcomeMessage(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	text := `✨ Добро пожаловать в Fluently!
-
-🎯 Наша цель: увеличить твой словарный запас на 1000+ слов за 3 месяца.
-
-Как это работает:
-• Не нужно учить весь словарь
-• Фокус на самых частых словах
-• Особая техника запоминания
-• 10 минут в день = результат
-
-Слова взяты из авторитетных словарей Oxford, Macmillan, Longman с профессиональным переводом.`
-
-	keyboard := &tele.ReplyMarkup{}
-	nextBtn := keyboard.Data("Далее ➡️", "method_explanation")
-	keyboard.Inline(keyboard.Row(nextBtn))
-
-	h.sendMessageWithKeyboard(message.Chat, text, keyboard)
-	progress.UpdateState(fsm.StateMethodExplanation)
-}
-
-// Helper methods
-func (h *HandlerService) getUserProgress(ctx context.Context, userID int64) (*fsm.UserProgress, error) {
-	key := fmt.Sprintf("user_progress:%d", userID)
-
-	data, err := h.redisClient.Get(ctx, key).Result()
-	if err == redis.Nil {
-		// Create new user progress
-		progress := fsm.CreateNewUserProgress(userID)
-		return progress, nil
-	} else if err != nil {
-		return nil, err
+// HandleAudioMessage handles audio messages
+func (s *HandlerService) HandleAudioMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	audio := c.Message().Audio
+	if audio == nil {
+		return fmt.Errorf("no audio message")
 	}
 
-	// Parse existing progress
-	progress, err := fsm.FromJSON([]byte(data))
-	if err != nil {
-		// If parsing fails, create new progress
-		logger.Log.Warn("Failed to parse user progress, creating new", zap.Error(err), zap.Int64("user_id", userID))
-		progress = fsm.CreateNewUserProgress(userID)
+	s.logger.With(zap.Int64("user_id", userID), zap.String("state", string(currentState)), zap.Int("duration", audio.Duration)).Debug("Processing audio message")
+
+	// Similar to voice handling
+	if currentState == fsm.StateWaitingForAudio {
+		return s.HandleAudioExerciseResponse(ctx, c, userID, audio)
 	}
 
-	return progress, nil
+	return c.Send("Аудио сообщения поддерживаются во время аудио упражнений. Используйте /learn чтобы начать урок.")
 }
 
-func (h *HandlerService) saveUserProgress(ctx context.Context, progress *fsm.UserProgress) error {
-	key := fmt.Sprintf("user_progress:%d", progress.TelegramID)
-
-	data, err := progress.ToJSON()
-	if err != nil {
-		return err
+// HandlePhotoMessage handles photo messages
+func (s *HandlerService) HandlePhotoMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	photo := c.Message().Photo
+	if photo == nil {
+		return fmt.Errorf("no photo message")
 	}
 
-	return h.redisClient.Set(ctx, key, data, 24*time.Hour).Err()
-}
+	s.logger.With(zap.Int64("user_id", userID), zap.String("state", string(currentState))).Debug("Processing photo message")
 
-func (h *HandlerService) sendMessage(chat *tele.Chat, text string) {
-	if _, err := h.bot.Send(chat, text, &tele.SendOptions{ParseMode: tele.ModeHTML}); err != nil {
-		logger.Log.Error("Failed to send message", zap.Error(err))
-	}
-}
-
-func (h *HandlerService) sendMessageWithKeyboard(chat *tele.Chat, text string, keyboard *tele.ReplyMarkup) {
-	if _, err := h.bot.Send(chat, text, &tele.SendOptions{
-		ParseMode:   tele.ModeHTML,
-		ReplyMarkup: keyboard,
-	}); err != nil {
-		logger.Log.Error("Failed to send message with keyboard", zap.Error(err))
-	}
-}
-
-func (h *HandlerService) sendErrorMessage(chat *tele.Chat, text string) {
-	h.sendMessage(chat, "❌ "+text)
-}
-
-// Health check methods
-func (h *HandlerService) CheckRedisHealth() bool {
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-	defer cancel()
-
-	return h.redisClient.Ping(ctx).Err() == nil
-}
-
-func (h *HandlerService) CheckAPIHealth() bool {
-	// Implement API health check
-	return true
-}
-
-// Placeholder handlers for other states (to be implemented)
-func (h *HandlerService) handleMethodExplanation(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for method explanation
-}
-
-func (h *HandlerService) handleSpacedRepetition(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for spaced repetition explanation
-}
-
-func (h *HandlerService) handleQuestionnaire(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for questionnaire
-}
-
-func (h *HandlerService) handleQuestionGoal(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for goal question
-}
-
-func (h *HandlerService) handleQuestionConfidence(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for confidence question
-}
-
-func (h *HandlerService) handleQuestionSerials(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for serials question
-}
-
-func (h *HandlerService) handleQuestionExperience(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for experience question
-}
-
-func (h *HandlerService) handleVocabularyTest(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for vocabulary test
-}
-
-func (h *HandlerService) handleVocabularyTestGroup(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for vocabulary test groups
-}
-
-func (h *HandlerService) handleLevelDetermination(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for level determination
-}
-
-func (h *HandlerService) handlePlanCreation(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for plan creation
-}
-
-func (h *HandlerService) handleLessonStart(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for lesson start
-}
-
-func (h *HandlerService) handleShowingFirstBlock(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for showing first block
-}
-
-func (h *HandlerService) handleExerciseAfterBlock(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for exercise after block
-}
-
-func (h *HandlerService) handleShowingIndividualWord(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for showing individual word
-}
-
-func (h *HandlerService) handleExerciseReview(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for exercise review
-}
-
-func (h *HandlerService) handleAudioDictation(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for audio dictation
-}
-
-func (h *HandlerService) handleTranslationCheck(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for translation check
-}
-
-func (h *HandlerService) handleWaitingForAudio(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for waiting for audio
-}
-
-func (h *HandlerService) handleWaitingForTranslation(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for waiting for translation
-}
-
-func (h *HandlerService) handleLessonComplete(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for lesson complete
-}
-
-func (h *HandlerService) handleAccountLinking(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for account linking
-}
-
-func (h *HandlerService) handleWaitingForLink(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for waiting for link
-}
-
-func (h *HandlerService) handleSettings(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for settings
-}
-
-func (h *HandlerService) handleHelp(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for help
-}
-
-func (h *HandlerService) handleStats(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for stats
-}
-
-func (h *HandlerService) handleSettingsCommand(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for settings command
-}
-
-func (h *HandlerService) handleLessonCommand(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for lesson command
-}
-
-func (h *HandlerService) handleCancel(ctx context.Context, message *tele.Message, progress *fsm.UserProgress) {
-	// Implementation for cancel
-}
-
-// Callback handlers
-func (h *HandlerService) handleStartLessonCallback(ctx context.Context, callback *tele.Callback, progress *fsm.UserProgress) {
-	// Implementation for start lesson callback
-}
-
-func (h *HandlerService) handleVocabTestCallback(ctx context.Context, callback *tele.Callback, progress *fsm.UserProgress) {
-	// Implementation for vocab test callback
-}
-
-func (h *HandlerService) handleExerciseCallback(ctx context.Context, callback *tele.Callback, progress *fsm.UserProgress) {
-	// Implementation for exercise callback
-}
-
-func (h *HandlerService) handleLinkAccountCallback(ctx context.Context, callback *tele.Callback, progress *fsm.UserProgress) {
-	// Create link token
-	linkTokenResp, err := h.apiClient.CreateLinkToken(ctx, progress.TelegramID)
-	if err != nil {
-		logger.Log.Error("Failed to create link token", zap.Error(err))
-		h.bot.Respond(callback, &tele.CallbackResponse{Text: "Ошибка создания ссылки"})
-		return
-	}
-
-	text := fmt.Sprintf(`🔗 Для связывания аккаунтов перейдите по ссылке:
-
-%s
-
-Ссылка действительна 15 минут.`, linkTokenResp.LinkURL)
-
-	h.bot.Edit(callback.Message, text)
-	h.bot.Respond(callback, &tele.CallbackResponse{Text: "Ссылка создана"})
-}
-
-func (h *HandlerService) handleSettingsCallback(ctx context.Context, callback *tele.Callback, progress *fsm.UserProgress) {
-	// TODO: Implement settings callback handling
-	logger.Log.Info("Settings callback", zap.String("data", callback.Data))
-	h.bot.Respond(callback, &tele.CallbackResponse{Text: "Настройки будут доступны в следующих версиях"})
-}
-
-// Task Handlers for Asynq
-
-// HandleLessonReminderTask handles lesson reminder tasks
-func (h *HandlerService) HandleLessonReminderTask(ctx context.Context, task *asynq.Task) error {
-	payload := task.Payload()
-	logger.Log.Info("Handling lesson reminder task", zap.ByteString("payload", payload))
-	// TODO: Implement lesson reminder logic
-	return nil
-}
-
-// HandleDailyNotificationTask handles daily notification tasks
-func (h *HandlerService) HandleDailyNotificationTask(ctx context.Context, task *asynq.Task) error {
-	payload := task.Payload()
-	logger.Log.Info("Handling daily notification task", zap.ByteString("payload", payload))
-	// TODO: Implement daily notification logic
-	return nil
-}
-
-// HandleGenerateLessonTask handles lesson generation tasks
-func (h *HandlerService) HandleGenerateLessonTask(ctx context.Context, task *asynq.Task) error {
-	payload := task.Payload()
-	logger.Log.Info("Handling generate lesson task", zap.ByteString("payload", payload))
-	// TODO: Implement lesson generation logic
-	return nil
-}
-
-// HandleSyncProgressTask handles progress synchronization tasks
-func (h *HandlerService) HandleSyncProgressTask(ctx context.Context, task *asynq.Task) error {
-	payload := task.Payload()
-	logger.Log.Info("Handling sync progress task", zap.ByteString("payload", payload))
-	// TODO: Implement progress sync logic
-	return nil
-}
-
-// HandleCleanupSessionsTask handles session cleanup tasks
-func (h *HandlerService) HandleCleanupSessionsTask(ctx context.Context, task *asynq.Task) error {
-	payload := task.Payload()
-	logger.Log.Info("Handling cleanup sessions task", zap.ByteString("payload", payload))
-	// TODO: Implement session cleanup logic
-	return nil
+	// For now, photos aren't part of the learning flow
+	return c.Send("Фото сообщения пока не поддерживаются. Используйте /help чтобы увидеть доступные команды.")
 }
