@@ -22,6 +22,9 @@ selenium==4.15.0
 undetected-chromedriver==3.5.0
 requests==2.31.0
 
+# TTS dependency
+gtts==2.5.4
+
 # Additional dependencies
 charset-normalizer
 certifi

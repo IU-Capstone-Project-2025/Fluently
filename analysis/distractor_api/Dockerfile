@@ -1,16 +1,16 @@
 # Dockerfile for FastAPI Distractor API (CPU-Only Optimized)
-FROM python:3.11-slim
+FROM python:3.11-slim as base
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONPATH=/app \
-    PIP_NO_CACHE_DIR=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     curl \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 # Create non-root user for security
@@ -18,16 +18,29 @@ RUN useradd --create-home --shell /bin/bash app
 
 WORKDIR /app
 
-# Copy requirements and pyproject files
+# ============== Dependency Layer (Cached) ==============
+FROM base as dependencies
+
+# Create cache directory for pip 
+RUN mkdir -p /root/.cache/pip && chmod 777 /root/.cache/pip
+
+# Copy only requirements first (for better layer caching)
 COPY distractor_api/requirements.txt ./
+
+# Install dependencies with caching enabled (removed PIP_NO_CACHE_DIR)
+# This layer will be cached as long as requirements.txt doesn't change
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install --find-links https://download.pytorch.org/whl/cpu -r requirements.txt
+
+# ============== Application Layer ==============
+FROM dependencies as final
+
+# Copy pyproject.toml (separate layer for metadata)
 COPY distractor_api/pyproject.toml ./
 
-# Install dependencies directly from requirements.txt (much faster than Poetry export)
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy application code and bert module
-COPY --chown=app:app distractor_api/ .
+# Copy application code and bert module (separate layers for better caching)
 COPY --chown=app:app bert/ ./bert
+COPY --chown=app:app distractor_api/ .
 
 # Create cache directory for models and set permissions
 RUN mkdir -p /app/.cache/huggingface && \
@@ -35,6 +48,10 @@ RUN mkdir -p /app/.cache/huggingface && \
 
 # Switch to non-root user
 USER app
+
+# Download models at build time to cache them in the image
+# This prevents download time during first API call
+RUN python -c "from transformers import pipeline; pipeline('text-generation', model='distilbert-base-uncased', device='cpu')" || echo "Model download optional - will download at runtime if needed"
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5m --retries=3 \

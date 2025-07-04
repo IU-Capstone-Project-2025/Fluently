@@ -3,8 +3,7 @@ package tasks
 import (
 	"context"
 	"encoding/json"
-
-	"fluently/telegram-bot/pkg/logger"
+	"telegram-bot/pkg/logger"
 
 	"github.com/hibiken/asynq"
 	"go.uber.org/zap"

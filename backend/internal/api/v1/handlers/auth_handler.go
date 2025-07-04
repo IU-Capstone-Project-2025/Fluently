@@ -145,25 +145,9 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			// Firstly creating user preferences
-			userID := uuid.New()
-			userPreferences := models.Preference{
-				UserID:          userID,
-				Subscribed:      false,
-				CEFRLevel:       "A1",
-				FactEveryday:    false,
-				Notifications:   true,
-				NotificationsAt: nil,
-				WordsPerDay:     10,
-				Goal:            "Learn new words",
-				AvatarImageURL:  avatar,
-			}
-			if err := h.UserPrefRepo.Create(r.Context(), &userPreferences); err != nil {
-				logger.Log.Error("Failed to create user preferences", zap.Error(err))
-				http.Error(w, "failed to create user preferences", http.StatusInternalServerError)
-				return
-			}
-
 			logger.Log.Info("Creating new user with email: ", zap.String("email", email))
+
+			userID := uuid.New()
 			newUser := &models.User{
 				ID:           userID,
 				Name:         name,
@@ -181,6 +165,25 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 				http.Error(w, "failed to create user", http.StatusInternalServerError)
 				return
 			}
+
+			userPreferences := models.Preference{
+				UserID:          userID,
+				Subscribed:      false,
+				CEFRLevel:       "A1",
+				FactEveryday:    false,
+				Notifications:   true,
+				NotificationsAt: nil,
+				WordsPerDay:     10,
+				Goal:            "Learn new words",
+				AvatarImageURL:  avatar,
+			}
+
+			if err := h.UserPrefRepo.Create(r.Context(), &userPreferences); err != nil {
+				logger.Log.Error("Failed to create user preferences", zap.Error(err))
+				http.Error(w, "failed to create user preferences", http.StatusInternalServerError)
+				return
+			}
+
 			user = newUser
 		} else {
 			logger.Log.Error("Failed to get user", zap.Error(err))
@@ -628,23 +631,6 @@ func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, g
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			// Create new user and preferences
 			userID := uuid.New()
-			userPreferences := models.Preference{
-				UserID:          userID,
-				Subscribed:      false,
-				CEFRLevel:       "A1",
-				FactEveryday:    false,
-				Notifications:   true,
-				NotificationsAt: nil,
-				WordsPerDay:     10,
-				Goal:            "Learn new words",
-				AvatarImageURL:  avatar,
-			}
-			if err := h.UserPrefRepo.Create(r.Context(), &userPreferences); err != nil {
-				logger.Log.Error("Failed to create user preferences", zap.Error(err))
-				http.Error(w, "failed to create user preferences", http.StatusInternalServerError)
-				return
-			}
-
 			newUser := &models.User{
 				ID:           userID,
 				Name:         name,
@@ -662,6 +648,25 @@ func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, g
 				http.Error(w, "failed to create user", http.StatusInternalServerError)
 				return
 			}
+
+			userPreferences := models.Preference{
+				UserID:          userID,
+				Subscribed:      false,
+				CEFRLevel:       "A1",
+				FactEveryday:    false,
+				Notifications:   true,
+				NotificationsAt: nil,
+				WordsPerDay:     10,
+				Goal:            "Learn new words",
+				AvatarImageURL:  avatar,
+			}
+
+			if err := h.UserPrefRepo.Create(r.Context(), &userPreferences); err != nil {
+				logger.Log.Error("Failed to create user preferences", zap.Error(err))
+				http.Error(w, "failed to create user preferences", http.StatusInternalServerError)
+				return
+			}
+
 			user = newUser
 		} else {
 			logger.Log.Error("Failed to get user", zap.Error(err))

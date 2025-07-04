@@ -1,6 +1,103 @@
 # Fluently Telegram Bot
 
-A comprehensive English learning Telegram bot based on spaced repetition and FSM (Finite State Machine) design.
+This is the Telegram bot component of the Fluently language learning app.
+
+## Features
+
+- FSM (Finite State Machine) based conversation flows
+- Redis-backed state persistence
+- Support for multiple learning flows:
+  - CEFR Level assessment
+  - Vocabulary learning with spaced repetition
+  - Exercise flows for practice
+- Settings management:
+  - Words per day
+  - Notification preferences
+  - CEFR level selection
+- Structured error handling with recovery paths
+
+## Architecture
+
+The bot is built with a state-based architecture that allows for complex conversation flows:
+
+- **FSM**: Manages user states and transitions
+- **Router**: Routes updates to appropriate handlers
+- **Handlers**: Process commands and messages
+- **TempData**: Stores temporary conversation data
+- **API Client**: Communicates with the backend API
+
+### State Management
+
+The bot uses Redis to persist user states and temporary data across interactions. The FSM implementation supports:
+
+- Structured state transitions
+- State validation
+- Error recovery
+- Temporary data storage
+- Sub-state tracking for complex flows
+
+## Key Components
+
+### FSM
+
+- `states.go`: Defines all possible states and valid transitions
+- `memory.go`: Implements Redis-based state persistence and temporary data storage
+
+### Handlers
+
+- `service.go`: Provides handler service with state-based routing
+- `handlers.go`: Implements command and message handlers
+
+### Router
+
+- `router.go`: Routes Telegram updates to appropriate handlers based on type and state
+
+### Bot
+
+- `bot.go`: Main bot implementation with FSM integration
+
+## State Flows
+
+### Onboarding Flow
+1. Start → Welcome → Method Explanation → Spaced Repetition → Questionnaire
+2. Questionnaire → Various Question States → CEFR Test
+
+### CEFR Test Flow
+1. Vocabulary Test → Test Groups (1-5) → Processing → Results → Level Determination
+
+### Learning Flow
+1. Lesson Start → Lesson In Progress → Show Words → Exercises → Lesson Complete
+
+### Settings Flow
+1. Settings → Various Setting States (Words Per Day, Notifications, CEFR Level)
+
+## Running the Bot
+
+```bash
+# Development
+go run cmd/main.go -debug -config=./config/config.dev.yaml
+
+# Production
+go run cmd/main.go -config=./config/config.prod.yaml
+```
+
+## Configuration
+
+The bot requires the following configuration:
+
+```yaml
+bot:
+  token: "your-telegram-bot-token"
+  debug: false
+
+api:
+  base_url: "https://api.example.com/v1"
+
+redis:
+  address: "localhost:6379"
+  db: 0
+  password: ""
+```
 
 ## 🚀 Features
 

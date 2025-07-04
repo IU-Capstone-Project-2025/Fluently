@@ -1,15 +1,15 @@
-# Local Installation Guide (Development/Testing)
+# Fluently - Local Installation Guide
 
-This guide helps you run Fluently on your local machine for development or grading. No domain or SSL required. All services run on `localhost` using Docker Compose.
+This guide helps you set up Fluently for local development using **pre-built Docker images** from Docker Hub. This approach is much faster than building images locally, especially for the ML API component.
 
 ## Prerequisites
-- [Docker](https://docs.docker.com/get-docker/) & [Docker Compose](https://docs.docker.com/compose/install/)
-- [Git](https://git-scm.com/)
-- [Make](https://www.gnu.org/software/make/) (Linux/macOS) or [Make for Windows](https://gnuwin32.sourceforge.net/packadocker compose -f docker-compose.yml -f docker-compose.local.yml up -dges/make.htm)
 
-## 🚀 Quick Start for Teaching Assistants
+- **Docker & Docker Compose**: [Install Docker](https://docs.docker.com/get-docker/)
+- **Make**: Usually pre-installed on Linux/macOS
+- **Git**: [Install Git](https://git-scm.com/downloads)
+- **Minimum 8GB RAM** (16GB recommended for full monitoring stack)
 
-Simple step-by-step process:
+## Quick Start (Recommended for TAs)
 
 ```bash
 # 1. Clone and setup
@@ -26,54 +26,79 @@ sudo systemctl stop apache2     # If you have Apache
 sudo systemctl stop nginx       # If you have Nginx  
 sudo systemctl stop grafana-server  # If you have Grafana
 
-# 4. Build ML API with optimizations (reduces build time)
-make build-ml-api-fast
-
-# 5. Start all services
+# 4. Start all services (uses pre-built images - much faster!)
 make run-local
 
-# 6. Wait 8-10 minutes for optimized build, then access services:
+# 5. Access services (ready in ~2-3 minutes):
 # - Backend API: http://localhost:8070/health
 # - Swagger UI: http://localhost:8070/swagger/
-# - Frontend: http://localhost:80/
+# - Ml api end point: http://localhost:8001/docs
 # - Database: localhost:5432 (standard port)
-# - Grafana: http://localhost:3000/
+# - Grafana: http://localhost:3000/ (admin/admin123)
 
-# 7. When finished, restart your services
+# 6. When finished, restart your services
 sudo systemctl start postgresql
 sudo systemctl start apache2     # If you stopped it
 sudo systemctl start nginx       # If you stopped it
 sudo systemctl start grafana-server  # If you stopped it
 ```
 
-> **Note**: 
-> - The optimized ML API build takes 8-10 minutes instead of 15+ minutes
-> - We temporarily stop conflicting services - simpler than port remapping!
+## Available Commands
 
----
+```bash
+# Setup & Management
+make setup-local          # Initial setup (env files + volumes)
+make check-ports          # Check for port conflicts
+make run-local            # Start all services
+make stop-local           # Stop all services
+make restart              # Restart with latest images
 
+# Monitoring & Debugging
+make logs                 # Show all logs
+make logs-backend         # Show backend logs only
+make logs-ml-api          # Show ML API logs only
+make status               # Show service status
+make health               # Check health of all services
 
-##  Access Services
-- **Backend API:** [http://localhost:8070/api/v1/](http://localhost:8070/api/v1/)
-- **Swagger UI:** [http://localhost:8070/swagger/](http://localhost:8070/swagger/)
-- **Frontend Website:** [http://localhost:80/](http://localhost:80/)
-- **Database:** localhost:5432 (standard PostgreSQL port)
-- **Directus CMS:** [http://localhost:8055/admin](http://localhost:8055/)
-- **ML API (Internal):** [http://localhost:8001/health](http://localhost:8001/health)
+# Updates
+make pull-images          # Pull latest images from Docker Hub
+make update               # Update to latest version
 
-### Monitoring Services (Optional)
-- **Grafana:** [http://localhost:3000](http://localhost:3000) (admin/admin123)
-- **Prometheus:** [http://localhost:9090](http://localhost:9090)
+# Testing
+make test-backend         # Run backend tests
+make run-test-db          # Start test database
+make stop-test-db         # Stop test database
 
-### Code Quality Analysis
-- **SonarScanner CLI:** Use `make install-sonar-scanner` and `make quality-scan`
-- **Local Coverage:** Generated in `backend/coverage.html` and `analysis/distractor_api/htmlcov/`
+# Cleanup
+make clean                # Remove all data (DESTRUCTIVE!)
+make clean-images         # Remove Docker images
 
----
+# Utilities
+make help                 # Show all commands
+make generate-docs        # Generate API documentation
+```
 
+### Core Services
+- **Backend API** (Go) - Main REST API
+- **ML API** (Python) - Distractor generation service  
+- **Telegram Bot** (Go) - Bot service
+- **Nginx** - Reverse proxy and frontend
+- **PostgreSQL** - Main database
+- **Redis** - Session storage
 
-## Mobile Apps (Optional)
-- **Android:** See [android-app/README.md](../android-app/README.md) for setup instructions
-- **iOS:** Open `ios-app/Fluently/Fluently.xcodeproj` in Xcode
-  - Set API base URL to `http://localhost:8070/` for local development
-  - Or use staging: `https://fluently-app.online/api/v1/`
+### Monitoring Stack  
+- **Grafana** - Dashboards
+- **Prometheus** - Metrics collection
+- **Loki** - Log aggregation
+- **Node Exporter** - System metrics
+
+### Admin Tools
+- **Directus** - CMS interface
+- **cAdvisor** - Container metrics
+
+### Customization
+Edit environment files to customize:
+- Database credentials
+- API keys
+- Service ports
+- Domain settings
