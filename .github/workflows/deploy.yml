@@ -379,6 +379,11 @@ jobs:
             sleep 3
           done
         
+      - name: Seed test database
+        run: |
+          docker exec fluently_test_db psql -U test_user -d test_fluently_db -c "INSERT INTO words (id, ...) VALUES ('cbd3d643-556d-4ecd-8b23-83990266ca1f', ...);"
+          docker exec fluently_test_db psql -U test_user -d test_fluently_db -c "INSERT INTO users (id, ...) VALUES ('94884b0e-f819-4bfc-85f0-438bcdeefd30', ...);"
+
       - name: Go tests with coverage
         working-directory: ./backend
         env:
