@@ -377,31 +377,35 @@ jobs:
           for i in {1..20}; do
             docker inspect -f '{{json .State.Health.Status}}' fluently_test_db | grep -q healthy && break
             sleep 3
-          done        - name: Go tests with coverage
-          working-directory: ./backend
-          env:
-            # Generic DB variables (used by code that doesn't look at *_TEST_*)
-            DB_HOST:         localhost
-            DB_PORT:         5433
-            DB_USER:         test_user
-            DB_PASSWORD:     test_password
-            DB_NAME:         test_fluently_db
+          done
+        
+      - name: Go tests with coverage
+        working-directory: ./backend
+        env:
+          # Generic DB variables (used by code that doesn't look at *_TEST_*)
+          DB_HOST:         localhost
+          DB_PORT:         5433
+          DB_USER:         test_user
+          DB_PASSWORD:     test_password
+          DB_NAME:         test_fluently_db
 
-            # Explicit *_TEST_* variables (preferred by new config helpers)
-            DB_TEST_HOST:     localhost
-            DB_TEST_PORT:     5433
-            DB_TEST_USER:     test_user
-            DB_TEST_PASSWORD: test_password
-            DB_TEST_NAME:     test_fluently_db
-          run: |
-            go test ./... -coverprofile=coverage.out -covermode=atomic || echo "⚠️ Tests failed but continuing deployment"
-            go tool cover -func=coverage.out || echo "⚠️ Coverage report failed"
-          continue-on-error: true        - name: SonarCloud Scan
-          uses: SonarSource/sonarcloud-github-action@master
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN }}
-          continue-on-error: true
+          # Explicit *_TEST_* variables (preferred by new config helpers)
+          DB_TEST_HOST:     localhost
+          DB_TEST_PORT:     5433
+          DB_TEST_USER:     test_user
+          DB_TEST_PASSWORD: test_password
+          DB_TEST_NAME:     test_fluently_db
+        run: |
+          go test ./... -coverprofile=coverage.out -covermode=atomic || echo "⚠️ Tests failed but continuing deployment"
+          go tool cover -func=coverage.out || echo "⚠️ Coverage report failed"
+        continue-on-error: true
+        
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN }}
+        continue-on-error: true
         
       - name: Stop test database & wipe volume
         if: always()
