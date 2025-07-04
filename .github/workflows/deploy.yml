@@ -32,12 +32,64 @@ env:
   
 jobs:
   # ===========================================
-  # BUILD STAGE - Build all Docker images
+  # CHANGE DETECTION - Detect what needs to be rebuilt
+  # ===========================================
+  detect-changes:
+    name: Detect Changes
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop' || github.event_name == 'pull_request'
+    outputs:
+      backend-changed: ${{ steps.changes.outputs.backend }}
+      telegram-changed: ${{ steps.changes.outputs.telegram }}
+      ml-api-changed: ${{ steps.changes.outputs.ml-api }}
+      nginx-changed: ${{ steps.changes.outputs.nginx }}
+      any-changed: ${{ steps.any-changed.outputs.any-changed }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history for change detection
+
+      - name: Detect file changes
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            backend:
+              - 'backend/**'
+              - 'backend/.env*'
+            telegram:
+              - 'telegram-bot/**'
+            ml-api:
+              - 'analysis/distractor_api/**'
+              - 'analysis/bert/**'
+            nginx:
+              - 'frontend-website/**'
+              - 'backend/nginx-container/**'
+
+      - name: Check if any component changed
+        id: any-changed
+        run: |
+          if [[ "${{ steps.changes.outputs.backend }}" == "true" || \
+                "${{ steps.changes.outputs.telegram }}" == "true" || \
+                "${{ steps.changes.outputs.ml-api }}" == "true" || \
+                "${{ steps.changes.outputs.nginx }}" == "true" ]]; then
+            echo "any-changed=true" >> $GITHUB_OUTPUT
+            echo "🔍 Changes detected in: backend=${{ steps.changes.outputs.backend }}, telegram=${{ steps.changes.outputs.telegram }}, ml-api=${{ steps.changes.outputs.ml-api }}, nginx=${{ steps.changes.outputs.nginx }}"
+          else
+            echo "any-changed=false" >> $GITHUB_OUTPUT
+            echo "🔍 No component changes detected"
+          fi
+
+  # ===========================================
+  # BUILD STAGE - Build only changed Docker images
   # ===========================================
   build:
     name: Build Docker Images
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/develop' || github.event_name == 'pull_request'
+    needs: detect-changes
+    if: (github.ref == 'refs/heads/develop' || github.event_name == 'pull_request') && needs.detect-changes.outputs.any-changed == 'true'
     outputs:
       image-tag: ${{ env.IMAGE_TAG }}
     
@@ -56,7 +108,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      # Backend Build
       - name: Extract metadata for backend
+        if: needs.detect-changes.outputs.backend-changed == 'true'
         id: meta-backend
         uses: docker/metadata-action@v5
         with:
@@ -67,40 +121,8 @@ jobs:
             type=sha,prefix={{branch}}-
             type=raw,value=latest,enable={{is_default_branch}}
 
-      - name: Extract metadata for telegram-bot
-        id: meta-telegram
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY }}/fluentlyorg/fluently-telegram-bot
-          tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=sha,prefix={{branch}}-
-            type=raw,value=latest,enable={{is_default_branch}}
-
-      - name: Extract metadata for ml-api
-        id: meta-ml-api
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY }}/fluentlyorg/fluently-ml-api
-          tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=sha,prefix={{branch}}-
-            type=raw,value=latest,enable={{is_default_branch}}
-
-      - name: Extract metadata for nginx
-        id: meta-nginx
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY }}/fluentlyorg/fluently-nginx
-          tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=sha,prefix={{branch}}-
-            type=raw,value=latest,enable={{is_default_branch}}
-
       - name: Build and push backend image
+        if: needs.detect-changes.outputs.backend-changed == 'true'
         uses: docker/build-push-action@v5
         with:
           context: ./backend
@@ -113,7 +135,21 @@ jobs:
           build-args: |
             SWAGGER_HOST=localhost:8070
 
+      # Telegram Bot Build  
+      - name: Extract metadata for telegram-bot
+        if: needs.detect-changes.outputs.telegram-changed == 'true'
+        id: meta-telegram
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/fluentlyorg/fluently-telegram-bot
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
       - name: Build and push telegram-bot image
+        if: needs.detect-changes.outputs.telegram-changed == 'true'
         uses: docker/build-push-action@v5
         with:
           context: ./telegram-bot
@@ -124,7 +160,21 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      # ML API Build (Most expensive - 15 minutes)
+      - name: Extract metadata for ml-api
+        if: needs.detect-changes.outputs.ml-api-changed == 'true'
+        id: meta-ml-api
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/fluentlyorg/fluently-ml-api
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
       - name: Build and push ML API image
+        if: needs.detect-changes.outputs.ml-api-changed == 'true'
         uses: docker/build-push-action@v5
         with:
           context: ./analysis
@@ -132,10 +182,31 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-ml-api.outputs.tags }}
           labels: ${{ steps.meta-ml-api.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: |
+            type=gha
+            type=registry,ref=docker.io/fluentlyorg/fluently-ml-api:buildcache
+          cache-to: |
+            type=gha,mode=max
+            type=registry,ref=docker.io/fluentlyorg/fluently-ml-api:buildcache,mode=max
+          platforms: linux/amd64  # Single platform for faster builds
+          build-args: |
+            BUILDKIT_INLINE_CACHE=1
+
+      # Nginx Build
+      - name: Extract metadata for nginx
+        if: needs.detect-changes.outputs.nginx-changed == 'true'
+        id: meta-nginx
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/fluentlyorg/fluently-nginx
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Build and push nginx image
+        if: needs.detect-changes.outputs.nginx-changed == 'true'
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -145,6 +216,94 @@ jobs:
           labels: ${{ steps.meta-nginx.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      # Image reuse for unchanged components
+      - name: Reuse existing images for unchanged components
+        if: github.event_name != 'pull_request'
+        run: |
+          echo "� Reusing existing images for unchanged components..."
+          
+          # Function to reuse existing image
+          reuse_image() {
+            local component=$1
+            local image_name=$2
+            local changed=$3
+            
+            if [ "$changed" != "true" ]; then
+              echo "⏩ $component unchanged, reusing existing image..."
+              if docker pull docker.io/$image_name:latest-develop 2>/dev/null; then
+                docker tag docker.io/$image_name:latest-develop docker.io/$image_name:develop-${{ github.sha }}
+                docker push docker.io/$image_name:develop-${{ github.sha }}
+                echo "✅ Reused $component image successfully"
+              else
+                echo "⚠️ No existing $component image found, will be built later if needed"
+              fi
+            else
+              echo "🔨 $component was rebuilt in this workflow"
+            fi
+          }
+          
+          # Reuse images for unchanged components
+          reuse_image "Backend" "fluentlyorg/fluently-backend" "${{ needs.detect-changes.outputs.backend-changed }}"
+          reuse_image "Telegram Bot" "fluentlyorg/fluently-telegram-bot" "${{ needs.detect-changes.outputs.telegram-changed }}"
+          reuse_image "ML API" "fluentlyorg/fluently-ml-api" "${{ needs.detect-changes.outputs.ml-api-changed }}"
+          reuse_image "Nginx" "fluentlyorg/fluently-nginx" "${{ needs.detect-changes.outputs.nginx-changed }}"
+          
+          echo "✅ Image reuse completed"
+
+  # ===========================================
+  # EMERGENCY BUILD - Build all if no existing images
+  # ===========================================
+  emergency-build:
+    name: Emergency Build (No Existing Images)
+    runs-on: ubuntu-latest
+    needs: [detect-changes, build]
+    if: |
+      always() && 
+      (github.ref == 'refs/heads/develop' || github.event_name == 'pull_request') && 
+      (needs.detect-changes.outputs.any-changed == 'false' || needs.build.result == 'skipped')
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check if emergency build is needed
+        id: check-emergency
+        run: |
+          echo "🚨 Checking if emergency build is needed..."
+          
+          # Check if all required images exist in registry
+          MISSING_IMAGES=()
+          
+          if ! docker manifest inspect docker.io/fluentlyorg/fluently-backend:latest-develop >/dev/null 2>&1; then
+            MISSING_IMAGES+=("backend")
+          fi
+          if ! docker manifest inspect docker.io/fluentlyorg/fluently-telegram-bot:latest-develop >/dev/null 2>&1; then
+            MISSING_IMAGES+=("telegram-bot")
+          fi
+          if ! docker manifest inspect docker.io/fluentlyorg/fluently-ml-api:latest-develop >/dev/null 2>&1; then
+            MISSING_IMAGES+=("ml-api")
+          fi
+          if ! docker manifest inspect docker.io/fluentlyorg/fluently-nginx:latest-develop >/dev/null 2>&1; then
+            MISSING_IMAGES+=("nginx")
+          fi
+          
+          if [ ${#MISSING_IMAGES[@]} -gt 0 ]; then
+            echo "emergency-needed=true" >> $GITHUB_OUTPUT
+            echo "🚨 Emergency build needed for: ${MISSING_IMAGES[*]}"
+            echo "missing-images=${MISSING_IMAGES[*]}" >> $GITHUB_OUTPUT
+          else
+            echo "emergency-needed=false" >> $GITHUB_OUTPUT
+            echo "✅ All images exist, no emergency build needed"
+          fi
+
+      - name: Emergency build all images
+        if: steps.check-emergency.outputs.emergency-needed == 'true'
+        run: |
+          echo "🚨 EMERGENCY BUILD: Building missing images..."
+          echo "Missing: ${{ steps.check-emergency.outputs.missing-images }}"
+          echo "This typically happens on the first run or after registry cleanup."
+          echo "Future runs will be much faster with selective building!"
 
   # ===========================================
   # TEST STAGE - Run tests and quality checks
@@ -300,7 +459,7 @@ jobs:
         run: |
           echo "🏷️ Tagging and pushing stable images..."
           
-          # Pull the SHA-tagged images and re-tag as stable
+          # Images to process
           IMAGES=(
             "fluentlyorg/fluently-backend"
             "fluentlyorg/fluently-telegram-bot" 
@@ -311,17 +470,31 @@ jobs:
           for image in "${IMAGES[@]}"; do
             echo "Processing $image..."
             
-            # Pull the develop-SHA tagged image
-            docker pull ${{ env.REGISTRY }}/$image:develop-${{ github.sha }}
+            # Try to pull the SHA-tagged image first (if it was built in this run)
+            if docker pull ${{ env.REGISTRY }}/$image:develop-${{ github.sha }} 2>/dev/null; then
+              echo "✅ Found SHA-tagged image for $image"
+              # Tag as latest-develop
+              docker tag ${{ env.REGISTRY }}/$image:develop-${{ github.sha }} ${{ env.REGISTRY }}/$image:latest-develop
+            else
+              echo "⏩ No SHA-tagged image found for $image, checking for existing latest-develop..."
+              # Try to pull existing latest-develop image
+              if docker pull ${{ env.REGISTRY }}/$image:latest-develop 2>/dev/null; then
+                echo "✅ Using existing latest-develop image for $image"
+              else
+                echo "❌ No image found for $image - this should not happen!"
+                echo "🔍 Available tags for $image:"
+                # List available tags (this will help debug)
+                docker search $image --limit 5 || echo "Could not search for image"
+                exit 1
+              fi
+            fi
             
-            # Tag as latest-develop for stable development builds
-            docker tag ${{ env.REGISTRY }}/$image:develop-${{ github.sha }} ${{ env.REGISTRY }}/$image:latest-develop
-            
-            # Push the stable tag
+            # Push the latest-develop tag (either newly tagged or re-pushed existing)
             docker push ${{ env.REGISTRY }}/$image:latest-develop
+            echo "✅ Published $image:latest-develop"
           done
           
-          echo "✅ All images published successfully!"
+          echo "🎉 All images published successfully!"
 
   # ===========================================
   # INTEGRATION TEST - Test published images

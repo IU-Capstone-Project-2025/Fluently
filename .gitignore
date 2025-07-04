@@ -148,3 +148,5 @@ iOSInjectionProject/
 /analysis/translated_vocabulary.csv
 /analysis/words_dictionary.json
 analysis/Data/
+scripts/monitor-pipeline-performance.sh
+docs/CI_CD_Optimization_Guide.md
