@@ -51,27 +51,30 @@ jobs:
         with:
           fetch-depth: 0  # Fetch full history for change detection
 
-      - name: Debug change detection strategy
+      - name: Get base commit for comparison
+        id: get-base
         run: |
-          echo "🔍 Change detection strategy:"
-          echo "Event: ${{ github.event_name }}"
           if [ "${{ github.event_name }}" = "push" ]; then
-            echo "📋 Push event - comparing with previous commit (HEAD~1)"
+            # For push events: use previous commit
+            BASE_SHA=$(git rev-parse HEAD~1)
+            echo "base-sha=$BASE_SHA" >> $GITHUB_OUTPUT
+            echo "📋 Push event - comparing with previous commit"
             echo "Current commit: ${{ github.sha }}"
-            echo "Previous commit: $(git rev-parse HEAD~1)"
+            echo "Previous commit: $BASE_SHA"
           else
+            # For pull requests: use target branch base
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+            echo "base-sha=$BASE_SHA" >> $GITHUB_OUTPUT
             echo "📋 Pull request - comparing with target branch"
             echo "Current commit: ${{ github.sha }}"
-            echo "Target base: ${{ github.event.pull_request.base.sha }}"
+            echo "Target base: $BASE_SHA"
           fi
 
       - name: Detect file changes
         uses: dorny/paths-filter@v2
         id: changes
         with:
-          # For push events: compare with previous commit on same branch
-          # For pull requests: compare with target branch (default behavior)
-          base: ${{ github.event_name == 'push' && 'HEAD~1' || github.event.pull_request.base.sha }}
+          base: ${{ steps.get-base.outputs.base-sha }}
           filters: |
             backend:
               - 'backend/**'
