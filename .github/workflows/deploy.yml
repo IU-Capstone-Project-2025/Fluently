@@ -307,10 +307,10 @@ jobs:
         run: |
           echo "✅ Build stage completed"
           echo "🔨 Built images:"
-          [ "${{ steps.build-flags.outputs.backend-built }}" = "true" ] && echo "  - Backend"
-          [ "${{ steps.build-flags.outputs.telegram-built }}" = "true" ] && echo "  - Telegram Bot"
-          [ "${{ steps.build-flags.outputs.ml-api-built }}" = "true" ] && echo "  - ML API"
-          [ "${{ steps.build-flags.outputs.nginx-built }}" = "true" ] && echo "  - Nginx"
+          [ "${{ steps.build-flags.outputs.backend-built }}" = "true" ] && echo "  - Backend" || true
+          [ "${{ steps.build-flags.outputs.telegram-built }}" = "true" ] && echo "  - Telegram Bot" || true
+          [ "${{ steps.build-flags.outputs.ml-api-built }}" = "true" ] && echo "  - ML API" || true
+          [ "${{ steps.build-flags.outputs.nginx-built }}" = "true" ] && echo "  - Nginx" || true
 
   deploy:
     needs: [setup, build]
