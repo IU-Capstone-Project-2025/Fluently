@@ -60,21 +60,29 @@ struct LessonScreensView: View {
     var topBar: some View {
         HStack {
             VStack (alignment: .leading) {
-                Text("Lesson:")
+#if targetEnvironment(simulator)
+                Text("Exercise:")
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
                 Text(presenter.currentEx.type.rawValue)
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
+#else
+                Text("Exercise: \(presenter.currentExNumber + 1)/\(presenter.words.count)")
+                    .foregroundStyle(.whiteText)
+                    .font(.appFont.largeTitle.bold())
+#endif
             }
             Spacer()
         }
-        .padding(Const.horizontalPadding)
+        .padding(.horizontal, Const.horizontalPadding)
     }
 
     ///  Grid with main info
     var infoGrid: some View {
         VStack {
+            Spacer()
+                .frame(height: 80) // Hard code :(
             switch presenter.currentExType {
                 case .chooseTranslationEngRuss: /// Choose correct translation
                     let chooseWordEx = presenter.currentEx.data as! ChooseTranslationEngRuss

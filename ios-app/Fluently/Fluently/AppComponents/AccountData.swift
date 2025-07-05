@@ -29,10 +29,8 @@ final class AccountData: ObservableObject {
         if let savedData = defaults.object(forKey: "isLoggedIn") as? Data {
             let decoder = JSONDecoder()
             do {
-                let isLoggedIn = try? decoder.decode(Bool.self, from: savedData)
-            } catch {
-                throw AccountError.decodingError
-            }
+                _ = try? decoder.decode(Bool.self, from: savedData)
+            } 
         }
     }
 }

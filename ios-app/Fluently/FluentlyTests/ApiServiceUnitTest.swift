@@ -51,7 +51,20 @@ struct ApiServiceUnitTest {
     }
 }
 
-class MockAPIService: APIServiceProtocol{
+final class MockAPIService: AuthAPIProtocol{
+    func updateAccessToken() async throws {
+        if shouldSucceed {
+            _ = AuthResponse(
+                accessToken: "mock_access_token",
+                refreshToken: "mock_refresh_token",
+                tokenType: "Bearer",
+                expiresIn: 3600
+            )
+        } else {
+            throw APIService.ApiError.invalidResponse
+        }
+    }
+    
     var shouldSucceed = true
 
     func authGoogle(_ gid: String) async throws -> AuthResponse {
