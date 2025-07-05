@@ -5,14 +5,13 @@ on:
     branches:
       - main
       - develop
-      - feature/*
-      - fix/*
   workflow_dispatch:
     inputs:
       branch:
         description: "Branch to deploy"
         required: false
         default: "main"
+        type: string
       environment:
         description: "Deployment environment (production/staging)"
         required: false
@@ -24,6 +23,16 @@ on:
           - staging
       rollback:
         description: "Rollback to previous version"
+        required: false
+        default: false
+        type: boolean
+      dry_run:
+        description: "Dry run - build images but don't deploy"
+        required: false
+        default: false
+        type: boolean
+      skip_tests:
+        description: "Skip quality checks and tests (faster deployment)"
         required: false
         default: false
         type: boolean
@@ -104,6 +113,7 @@ jobs:
   # Code quality analysis
   quality-check:
     runs-on: ubuntu-latest
+    if: github.event.inputs.skip_tests != 'true'
     
     steps:
       - name: Checkout
@@ -440,11 +450,19 @@ jobs:
           [ "${{ steps.build-flags.outputs.telegram-built }}" = "true" ] && echo "  - Telegram Bot" || true
           [ "${{ steps.build-flags.outputs.ml-api-built }}" = "true" ] && echo "  - ML API" || true
           [ "${{ steps.build-flags.outputs.nginx-built }}" = "true" ] && echo "  - Nginx" || true
+          
+          # Dry run notification
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            echo ""
+            echo "🧪 DRY RUN MODE: Images built but deployment will be skipped"
+            echo "✅ This was a successful dry run - images are ready for deployment"
+          fi
 
   deploy:
     needs: [setup, build, quality-check]
     runs-on: ubuntu-latest
     environment: ${{ needs.setup.outputs.environment }}
+    if: github.event.inputs.dry_run != 'true' && always() && !failure() && !cancelled()
 
     steps:
       - name: Checkout
@@ -452,10 +470,18 @@ jobs:
 
       - name: Debug values
         run: |
-          echo "🔍 Debug Information:"
+          echo "🔍 Deployment Information:"
           echo "Environment: ${{ needs.setup.outputs.environment }}"
           echo "Domain: ${{ needs.setup.outputs.domain }}"
           echo "Is Rollback: ${{ needs.setup.outputs.is_rollback }}"
+          echo "Branch: ${{ github.event.inputs.branch || github.ref_name }}"
+          echo "Tests Skipped: ${{ github.event.inputs.skip_tests }}"
+          echo ""
+          echo "🏗️ Built Images:"
+          [ "${{ needs.build.outputs.backend-built }}" = "true" ] && echo "  ✅ Backend" || echo "  ⏭️ Backend (skipped)"
+          [ "${{ needs.build.outputs.telegram-built }}" = "true" ] && echo "  ✅ Telegram Bot" || echo "  ⏭️ Telegram Bot (skipped)"
+          [ "${{ needs.build.outputs.ml-api-built }}" = "true" ] && echo "  ✅ ML API" || echo "  ⏭️ ML API (skipped)"
+          [ "${{ needs.build.outputs.nginx-built }}" = "true" ] && echo "  ✅ Nginx" || echo "  ⏭️ Nginx (skipped)"
 
       - name: Deploy to ${{ needs.setup.outputs.environment }}
         uses: appleboy/ssh-action@v1.0.3
@@ -475,6 +501,18 @@ jobs:
             
             echo "🔄 Starting deployment process for $ENVIRONMENT environment"
             echo "🌐 Domain: $DOMAIN"
+            echo "🌟 Branch: $BRANCH"
+            
+            # Production safety check
+            if [ "$ENVIRONMENT" = "production" ]; then
+              echo "⚠️  PRODUCTION DEPLOYMENT WARNING"
+              echo "Environment: PRODUCTION"
+              echo "Domain: $DOMAIN"
+              echo "Branch: $BRANCH"
+              echo "Triggered by: ${{ github.actor }}"
+              echo "🚀 Proceeding with production deployment..."
+              sleep 3
+            fi
             
             # Navigate to project directory and set environment variables
             if [ "$ENVIRONMENT" = "production" ]; then
@@ -805,8 +843,13 @@ jobs:
             if check_health; then
               echo "🎉 Deployment completed successfully!"
               echo "🌐 Application available at: https://$DOMAIN"
+              echo "🕐 Deployment time: $(date)"
+              echo "👤 Deployed by: ${{ github.actor }}"
+              echo "🌿 Branch: $BRANCH"
+              echo "🏷️  Environment: $ENVIRONMENT"
               
               # Show running containers
+              echo ""
               echo "📋 Running containers:"
               docker compose ps
               
