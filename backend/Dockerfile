@@ -48,6 +48,6 @@ FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/fluently-backend .
 COPY --from=builder /app/docs ./docs
-COPY .env .
+
 EXPOSE ${APP_PORT}
 CMD ["./fluently-backend"]

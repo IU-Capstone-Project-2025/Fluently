@@ -35,17 +35,20 @@ func NewTelegramBot(cfg *config.Config, redisClient *redis.Client, apiClient *ap
 		Poller: &tele.LongPoller{Timeout: 10 * time.Second},
 	}
 
+	// webhookURL := cfg.Bot.WebhookURL
+	// webhookURL := ""
+
 	// Configure webhook if URL is provided
-	if cfg.Bot.WebhookURL != "" {
-		webhook := &tele.Webhook{
-			Listen:   fmt.Sprintf(":%s", cfg.Bot.WebhookPort),
-			Endpoint: &tele.WebhookEndpoint{PublicURL: cfg.Bot.WebhookURL},
-		}
-		settings.Poller = webhook
-		logger.Info("Using webhook", zap.String("url", cfg.Bot.WebhookURL))
-	} else {
-		logger.Info("Using long polling")
-	}
+	// if webhookURL != "" {
+	// 	webhook := &tele.Webhook{
+	// 		Listen:   fmt.Sprintf(":%s", cfg.Bot.WebhookPort),
+	// 		Endpoint: &tele.WebhookEndpoint{PublicURL: cfg.Bot.WebhookURL},
+	// 	}
+	// 	settings.Poller = webhook
+	// 	logger.Info("Using webhook", zap.String("url", cfg.Bot.WebhookURL))
+	// } else {
+	// 	logger.Info("Using long polling")
+	// }
 
 	// Create bot instance
 	bot, err := tele.NewBot(settings)

@@ -1,5 +1,6 @@
-// states.go
 package fsm
+
+import "slices"
 
 // UserState represents the current state of the user in the learning flow
 type UserState string
@@ -248,12 +249,7 @@ func IsLessonState(state UserState) bool {
 		StateLessonComplete,
 	}
 
-	for _, ls := range lessonStates {
-		if state == ls {
-			return true
-		}
-	}
-	return false
+	return slices.Contains(lessonStates, state)
 }
 
 // IsExerciseState checks if the state is an exercise state
@@ -268,12 +264,7 @@ func IsExerciseState(state UserState) bool {
 		StateExerciseReview,
 	}
 
-	for _, es := range exerciseStates {
-		if state == es {
-			return true
-		}
-	}
-	return false
+	return slices.Contains(exerciseStates, state)
 }
 
 // IsSettingsState checks if the state is part of the settings flow
@@ -289,12 +280,7 @@ func IsSettingsState(state UserState) bool {
 		StateSettingsLanguage,
 	}
 
-	for _, ss := range settingsStates {
-		if state == ss {
-			return true
-		}
-	}
-	return false
+	return slices.Contains(settingsStates, state)
 }
 
 // IsCEFRTestState checks if the state is part of the CEFR test flow
@@ -311,10 +297,5 @@ func IsCEFRTestState(state UserState) bool {
 		StateLevelDetermination,
 	}
 
-	for _, ts := range testStates {
-		if state == ts {
-			return true
-		}
-	}
-	return false
+	return slices.Contains(testStates, state)
 }
