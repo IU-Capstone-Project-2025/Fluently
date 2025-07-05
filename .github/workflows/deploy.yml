@@ -133,55 +133,52 @@ jobs:
       - name: Determine what to build
         id: build-flags
         run: |
+          # Initialize change flags
+          BACKEND_CHANGED="false"
+          TELEGRAM_CHANGED="false"
+          ML_API_CHANGED="false"
+          NGINX_CHANGED="false"
+          
           # Check for file changes if this is a push event
           if [ "${{ github.event_name }}" = "push" ]; then
             # Get the previous commit for comparison
             if [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
               BASE_SHA="${{ github.event.before }}"
+              echo "🔍 Checking for changes since $BASE_SHA"
+              
+              # Check for backend changes
+              if git diff --name-only $BASE_SHA HEAD | grep -q "^backend/"; then
+                BACKEND_CHANGED="true"
+                echo "🔨 Backend files changed"
+              fi
+              
+              # Check for telegram bot changes
+              if git diff --name-only $BASE_SHA HEAD | grep -q "^telegram-bot/"; then
+                TELEGRAM_CHANGED="true"
+                echo "🔨 Telegram bot files changed"
+              fi
+              
+              # Check for ML API changes
+              if git diff --name-only $BASE_SHA HEAD | grep -q "^analysis/"; then
+                ML_API_CHANGED="true"
+                echo "🔨 ML API files changed"
+              fi
+              
+              # Check for nginx changes
+              if git diff --name-only $BASE_SHA HEAD | grep -q -E "^(frontend-website/|backend/nginx-container/)"; then
+                NGINX_CHANGED="true"
+                echo "🔨 Nginx files changed"
+              fi
             else
-              # First commit, build everything
-              BASE_SHA="HEAD~1"
-            fi
-            
-            echo "🔍 Checking for changes since $BASE_SHA"
-            
-            # Check for backend changes
-            if git diff --name-only $BASE_SHA HEAD | grep -q "^backend/"; then
-              echo "backend-changed=true" >> $GITHUB_OUTPUT
-              echo "🔨 Backend files changed"
-            else
-              echo "backend-changed=false" >> $GITHUB_OUTPUT
-            fi
-            
-            # Check for telegram bot changes
-            if git diff --name-only $BASE_SHA HEAD | grep -q "^telegram-bot/"; then
-              echo "telegram-changed=true" >> $GITHUB_OUTPUT
-              echo "🔨 Telegram bot files changed"
-            else
-              echo "telegram-changed=false" >> $GITHUB_OUTPUT
-            fi
-            
-            # Check for ML API changes
-            if git diff --name-only $BASE_SHA HEAD | grep -q "^analysis/"; then
-              echo "ml-api-changed=true" >> $GITHUB_OUTPUT
-              echo "🔨 ML API files changed"
-            else
-              echo "ml-api-changed=false" >> $GITHUB_OUTPUT
-            fi
-            
-            # Check for nginx changes
-            if git diff --name-only $BASE_SHA HEAD | grep -q -E "^(frontend-website/|backend/nginx-container/)"; then
-              echo "nginx-changed=true" >> $GITHUB_OUTPUT
-              echo "🔨 Nginx files changed"
-            else
-              echo "nginx-changed=false" >> $GITHUB_OUTPUT
+              # First commit or force push - build everything
+              echo "🔨 First commit or force push detected - building all images"
+              BACKEND_CHANGED="true"
+              TELEGRAM_CHANGED="true"
+              ML_API_CHANGED="true"
+              NGINX_CHANGED="true"
             fi
           else
-            # For workflow_dispatch, no automatic change detection
-            echo "backend-changed=false" >> $GITHUB_OUTPUT
-            echo "telegram-changed=false" >> $GITHUB_OUTPUT
-            echo "ml-api-changed=false" >> $GITHUB_OUTPUT
-            echo "nginx-changed=false" >> $GITHUB_OUTPUT
+            echo "📝 Manual workflow dispatch - using force build flags only"
           fi
           
           # Determine final build decisions based on changes + force flags
@@ -199,31 +196,55 @@ jobs:
             echo "🔨 Force building all images"
           else
             # Individual force flags or changes
-            if [ "${{ github.event.inputs.force_build_backend }}" = "true" ] || [ "$(echo $GITHUB_OUTPUT | grep backend-changed=true)" ]; then
+            if [ "${{ github.event.inputs.force_build_backend }}" = "true" ] || [ "$BACKEND_CHANGED" = "true" ]; then
               BUILD_BACKEND="true"
-              echo "🔨 Building backend"
+              if [ "${{ github.event.inputs.force_build_backend }}" = "true" ]; then
+                echo "🔨 Force building backend"
+              else
+                echo "🔨 Building backend (changed)"
+              fi
             fi
             
-            if [ "${{ github.event.inputs.force_build_telegram }}" = "true" ] || [ "$(echo $GITHUB_OUTPUT | grep telegram-changed=true)" ]; then
+            if [ "${{ github.event.inputs.force_build_telegram }}" = "true" ] || [ "$TELEGRAM_CHANGED" = "true" ]; then
               BUILD_TELEGRAM="true"
-              echo "🔨 Building telegram bot"
+              if [ "${{ github.event.inputs.force_build_telegram }}" = "true" ]; then
+                echo "🔨 Force building telegram bot"
+              else
+                echo "🔨 Building telegram bot (changed)"
+              fi
             fi
             
-            if [ "${{ github.event.inputs.force_build_ml_api }}" = "true" ] || [ "$(echo $GITHUB_OUTPUT | grep ml-api-changed=true)" ]; then
+            if [ "${{ github.event.inputs.force_build_ml_api }}" = "true" ] || [ "$ML_API_CHANGED" = "true" ]; then
               BUILD_ML_API="true"
-              echo "🔨 Building ML API"
+              if [ "${{ github.event.inputs.force_build_ml_api }}" = "true" ]; then
+                echo "🔨 Force building ML API"
+              else
+                echo "🔨 Building ML API (changed)"
+              fi
             fi
             
-            if [ "${{ github.event.inputs.force_build_nginx }}" = "true" ] || [ "$(echo $GITHUB_OUTPUT | grep nginx-changed=true)" ]; then
+            if [ "${{ github.event.inputs.force_build_nginx }}" = "true" ] || [ "$NGINX_CHANGED" = "true" ]; then
               BUILD_NGINX="true"
-              echo "🔨 Building nginx"
+              if [ "${{ github.event.inputs.force_build_nginx }}" = "true" ]; then
+                echo "🔨 Force building nginx"
+              else
+                echo "🔨 Building nginx (changed)"
+              fi
             fi
           fi
           
+          # Output build decisions
           echo "backend-built=$BUILD_BACKEND" >> $GITHUB_OUTPUT
           echo "telegram-built=$BUILD_TELEGRAM" >> $GITHUB_OUTPUT
           echo "ml-api-built=$BUILD_ML_API" >> $GITHUB_OUTPUT
           echo "nginx-built=$BUILD_NGINX" >> $GITHUB_OUTPUT
+          
+          # Summary
+          echo "📋 Build Summary:"
+          echo "  Backend: $BUILD_BACKEND"
+          echo "  Telegram Bot: $BUILD_TELEGRAM"  
+          echo "  ML API: $BUILD_ML_API"
+          echo "  Nginx: $BUILD_NGINX"
 
       # Backend Build
       - name: Build and push backend image
