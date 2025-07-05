@@ -101,6 +101,135 @@ jobs:
             echo "🚀 Deploying branch '$BRANCH' to $ENVIRONMENT environment ($DOMAIN)"
           fi
 
+  # Code quality analysis
+  quality-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21'
+          cache: true  # Enable Go module caching
+          cache-dependency-path: backend/go.sum
+
+      - name: Cache Go dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('backend/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - name: Install swag for Go docs generation
+        run: |
+          echo "📦 Installing swag..."
+          go install github.com/swaggo/swag/cmd/swag@latest
+          echo "✅ Swag installed to: $(which swag || echo '$HOME/go/bin/swag')"
+
+      - name: Initialize Go module and generate docs
+        working-directory: ./backend
+        run: |
+          # Add Go bin to PATH
+          export PATH=$PATH:$HOME/go/bin
+          
+          # Ensure Go modules are properly initialized
+          echo "📦 Ensuring Go dependencies are available..."
+          go mod download
+          go mod tidy
+          
+          # Debug: Verify we're in the right place and files exist
+          echo "🔍 Current working directory: $(pwd)"
+          echo "🔍 Go version: $(go version)"
+          echo "🔍 Checking for main.go:"
+          test -f cmd/main.go && echo "✅ cmd/main.go exists" || echo "❌ cmd/main.go missing"
+          
+          # Verify swag is available
+          echo "🔍 Checking swag installation:"
+          if command -v swag >/dev/null 2>&1; then
+            echo "✅ swag found in PATH: $(which swag)"
+          elif [ -f "$HOME/go/bin/swag" ]; then
+            echo "✅ swag found at: $HOME/go/bin/swag"
+          else
+            echo "❌ swag not found"
+            exit 1
+          fi
+          
+          # Create docs directory if it doesn't exist
+          mkdir -p docs
+          
+          # Generate Swagger documentation with proper directory specification
+          echo "📚 Generating API documentation..."
+          echo "Current directory: $(pwd)"
+          echo "Contents of current directory:"
+          ls -la
+          echo "Contents of cmd directory:"
+          ls -la cmd/
+          if command -v swag >/dev/null 2>&1; then
+            swag init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal
+          else
+            $HOME/go/bin/swag init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal
+          fi
+          
+          # Verify docs were generated
+          if [ ! -d "docs" ] || [ ! -f "docs/swagger.json" ]; then
+            echo "❌ Failed to generate docs properly"
+            echo "🔍 Contents of docs directory:"
+            ls -la docs/ || echo "docs directory not found"
+            exit 1
+          fi
+          
+          echo "✅ Documentation generated successfully"
+          echo "📁 Generated files:"
+          ls -la docs/
+
+      - name: Start test database
+        run: |
+          docker compose -f docker-compose.test.yml down --volumes
+          docker compose -f docker-compose.test.yml up -d test_db
+        
+      - name: Wait for DB to become healthy
+        run: |
+          for i in {1..20}; do
+            docker inspect -f '{{json .State.Health.Status}}' fluently_test_db | grep -q healthy && break
+            sleep 3
+          done
+        
+      - name: Go tests with coverage
+        working-directory: ./backend
+        env:
+          # Generic DB variables (used by code that doesn't look at *_TEST_*)
+          DB_HOST:         localhost
+          DB_PORT:         5433
+          DB_USER:         test_user
+          DB_PASSWORD:     test_password
+          DB_NAME:         test_fluently_db
+
+          # Explicit *_TEST_* variables (preferred by new config helpers)
+          DB_TEST_HOST:     localhost
+          DB_TEST_PORT:     5433
+          DB_TEST_USER:     test_user
+          DB_TEST_PASSWORD: test_password
+          DB_TEST_NAME:     test_fluently_db
+        run: |
+          go test ./... -coverprofile=coverage.out -covermode=atomic
+          go tool cover -func=coverage.out
+        
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN }}
+        
+      - name: Stop test database & wipe volume
+        if: always()
+        run: docker compose -f docker-compose.test.yml down --volumes
+
   # ===========================================
   # BUILD STAGE - Build Docker images based on changes or force flags
   # ===========================================
@@ -313,7 +442,7 @@ jobs:
           [ "${{ steps.build-flags.outputs.nginx-built }}" = "true" ] && echo "  - Nginx" || true
 
   deploy:
-    needs: [setup, build]
+    needs: [setup, build, quality-check]
     runs-on: ubuntu-latest
     environment: ${{ needs.setup.outputs.environment }}
 
@@ -383,18 +512,18 @@ jobs:
                 fi
               done
               
-              # Check if ML API is healthy
+              # Check if ML API is healthy (takes 2-3 minutes to initialize)
               echo "Checking ML API health..."
-              for i in {1..10}; do
+              for i in {1..20}; do
                 if docker compose exec -T ml-api curl -f "http://localhost:8001/health" >/dev/null 2>&1; then
                   echo "✅ ML API is healthy"
                   break
-                elif [ $i -eq 10 ]; then
-                  echo "❌ ML API health check failed after 10 attempts"
+                elif [ $i -eq 20 ]; then
+                  echo "❌ ML API health check failed after 20 attempts"
                   return 1
                 else
-                  echo "⏳ Waiting for ML API... (attempt $i/10)"
-                  sleep 10
+                  echo "⏳ Waiting for ML API... (attempt $i/20)"
+                  sleep 15
                 fi
               done
               
@@ -415,6 +544,33 @@ jobs:
                 echo "❌ Nginx health check failed"
                 return 1
               fi
+              
+              # Check if telegram bot is healthy
+              echo "Checking telegram bot health..."
+              for i in {1..3}; do
+                if docker compose ps telegram-bot | grep -q "Up"; then
+                  echo "✅ Telegram bot is running"
+                  # Check if bot can connect to Telegram API
+                  if docker compose logs telegram-bot | grep -q "Successfully connected to Redis"; then
+                    echo "✅ Telegram bot connected to Redis"
+                  fi
+                  if docker compose logs telegram-bot | grep -q "telegram: Not Found (404)"; then
+                    echo "❌ Telegram bot has invalid token (404 error)"
+                    echo "🔍 Bot logs:"
+                    docker compose logs --tail=10 telegram-bot || true
+                    return 1
+                  fi
+                  break
+                elif [ $i -eq 3 ]; then
+                  echo "❌ Telegram bot health check failed"
+                  echo "🔍 Bot logs:"
+                  docker compose logs --tail=10 telegram-bot || true
+                  return 1
+                else
+                  echo "⏳ Waiting for telegram bot... (attempt $i/3)"
+                  sleep 5
+                fi
+              done
               
               echo "🎉 All health checks passed!"
               return 0
@@ -523,6 +679,89 @@ jobs:
             echo "🔧 Setting up environment variables..."
             echo "SWAGGER_HOST=$SWAGGER_HOST"
             
+            # Add telegram bot environment variables if they don't exist
+            echo "🔧 Setting up Telegram bot configuration..."
+            if [ "$ENVIRONMENT" = "production" ]; then
+              BOT_TOKEN="${{ secrets.TELEGRAM_BOT_TOKEN }}"
+              WEBHOOK_SECRET="${{ secrets.WEBHOOK_SECRET }}"
+              echo "📝 Using production bot credentials"
+            else
+              BOT_TOKEN="${{ secrets.STAGING_TELEGRAM_BOT_TOKEN }}"
+              WEBHOOK_SECRET="${{ secrets.STAGING_WEBHOOK_SECRET }}"
+              echo "📝 Using staging bot credentials"
+            fi
+            
+            # Debug: Check if secrets are provided (without printing actual values)
+            if [ -z "$BOT_TOKEN" ]; then
+              echo "⚠️ WARNING: BOT_TOKEN is empty for $ENVIRONMENT environment!"
+              echo "Please set the following GitHub secret:"
+              if [ "$ENVIRONMENT" = "production" ]; then
+                echo "   TELEGRAM_BOT_TOKEN"
+              else
+                echo "   STAGING_TELEGRAM_BOT_TOKEN"
+              fi
+            else
+              echo "✅ BOT_TOKEN is provided (length: ${#BOT_TOKEN} characters)"
+            fi
+            
+            if [ -z "$WEBHOOK_SECRET" ]; then
+              echo "⚠️ WARNING: WEBHOOK_SECRET is empty for $ENVIRONMENT environment!"
+              echo "Please set the following GitHub secret:"
+              if [ "$ENVIRONMENT" = "production" ]; then
+                echo "   WEBHOOK_SECRET"
+              else
+                echo "   STAGING_WEBHOOK_SECRET"
+              fi
+            else
+              echo "✅ WEBHOOK_SECRET is provided"
+            fi
+            
+            # Set telegram bot configuration in root .env
+            if [ ! -z "$BOT_TOKEN" ]; then
+              if grep -q "BOT_TOKEN=" .env; then
+                sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=$BOT_TOKEN/" .env
+              else
+                echo "BOT_TOKEN=$BOT_TOKEN" >> .env
+              fi
+              echo "✅ BOT_TOKEN set in .env file"
+            else
+              echo "❌ Skipping BOT_TOKEN setup (empty value)"
+            fi
+            
+            if [ ! -z "$WEBHOOK_SECRET" ]; then
+              if grep -q "WEBHOOK_SECRET=" .env; then
+                sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=$WEBHOOK_SECRET/" .env
+              else
+                echo "WEBHOOK_SECRET=$WEBHOOK_SECRET" >> .env
+              fi
+              echo "✅ WEBHOOK_SECRET set in .env file"
+            else
+              echo "❌ Skipping WEBHOOK_SECRET setup (empty value)"
+            fi
+            
+            # Set webhook URL
+            if grep -q "WEBHOOK_URL=" .env; then
+              sed -i "s|WEBHOOK_URL=.*|WEBHOOK_URL=https://$DOMAIN/webhook|g" .env
+            else
+              echo "WEBHOOK_URL=https://$DOMAIN/webhook" >> .env
+            fi
+            
+            # Set Redis configuration for Docker network
+            if grep -q "REDIS_ADDR=" .env; then
+              sed -i "s|REDIS_ADDR=.*|REDIS_ADDR=redis:6379|g" .env
+            else
+              echo "REDIS_ADDR=redis:6379" >> .env
+            fi
+
+            echo "📋 Main .env file ready for docker-compose..."
+            
+            # Debug: Show telegram bot configuration (without sensitive values)
+            echo "🔍 Telegram bot configuration in .env:"
+            echo "BOT_TOKEN: $(grep "BOT_TOKEN=" .env | sed 's/BOT_TOKEN=.*/BOT_TOKEN=[HIDDEN]/' || echo 'Not set')"
+            echo "WEBHOOK_SECRET: $(grep "WEBHOOK_SECRET=" .env | sed 's/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=[HIDDEN]/' || echo 'Not set')"
+            echo "WEBHOOK_URL: $(grep "WEBHOOK_URL=" .env || echo 'Not set')"
+            echo "REDIS_ADDR: $(grep "REDIS_ADDR=" .env || echo 'Not set')"
+            
 
             # Generate nginx config from template
             echo "🔧 Generating nginx configuration from template..."
@@ -570,6 +809,19 @@ jobs:
               # Show running containers
               echo "📋 Running containers:"
               docker compose ps
+              
+              # Show telegram bot setup instructions
+              echo ""
+              echo "🤖 Telegram Bot Setup Instructions:"
+              echo "If the bot token is set correctly, run this command to set up the webhook:"
+              echo ""
+              echo "curl -X POST \"https://api.telegram.org/bot\$BOT_TOKEN/setWebhook\" \\"
+              echo "     -H \"Content-Type: application/json\" \\"
+              echo "     -d '{\"url\": \"https://$DOMAIN/webhook\"}'"
+              echo ""
+              echo "Replace \$BOT_TOKEN with your actual bot token from the GitHub secrets."
+              echo "You can test the webhook by sending a message to your bot."
+              echo ""
               
               # Cleanup old images (keep last 3)
               echo "🧹 Cleaning up old Docker images..."
