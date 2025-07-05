@@ -23,7 +23,7 @@ class GoogleAuthViewModel: ObservableObject {
                 withPresenting: rootViewController) { signInResult, error in
                     guard let result = signInResult else {
                         if let error {
-                            print("Error while signin: \(error)")
+                            print("Error while signin: \(error.localizedDescription)")
                             return
                         }
                         print("Error while signin: Unknown")
@@ -35,7 +35,8 @@ class GoogleAuthViewModel: ObservableObject {
                         email: result.user.profile?.email,
                         image: result.user.profile?.imageURL(withDimension: 100)?.absoluteString
                     )
-                    print(result.user.idToken)
+
+                    print(result.user.idToken as Any)
                 }
         }
     }

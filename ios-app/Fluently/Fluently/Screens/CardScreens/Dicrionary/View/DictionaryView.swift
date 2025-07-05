@@ -84,10 +84,10 @@ struct DictionaryView: View {
 struct DictionaryPreview: PreviewProvider {
 
     static var previews: some View {
-        DictionaryPreviewWrapper()
+        PreviewWrapper()
     }
 
-    struct DictionaryPreviewWrapper: View {
+    struct PreviewWrapper: View {
         @StateObject var presenter = DictionaryScreenPresenter()
 
         var body: some View {

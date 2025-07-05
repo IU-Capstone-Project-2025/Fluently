@@ -9,8 +9,11 @@ import (
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
 	"fluently/go-backend/internal/utils"
+	"fluently/go-backend/pkg/logger"
 	"strings"
 	"unicode/utf8"
+
+	"go.uber.org/zap"
 )
 
 var exerciseTypes = []string{
@@ -76,6 +79,12 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		userPref.CEFRLevel,
 		lessonInfo.TotalWords,
 	)
+
+	if err != nil {
+		logger.Log.Error("Failed to get words for lesson", zap.Error(err))
+		http.Error(w, "failed to get words for lesson", http.StatusBadRequest)
+		return
+	}
 
 	for _, word := range words {
 		var card schemas.Card
