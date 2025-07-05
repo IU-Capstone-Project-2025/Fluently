@@ -126,16 +126,6 @@ jobs:
           cache: true  # Enable Go module caching
           cache-dependency-path: backend/go.sum
 
-      - name: Cache Go dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.cache/go-build
-            ~/go/pkg/mod
-          key: ${{ runner.os }}-go-${{ hashFiles('backend/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-go-
-
       - name: Install swag for Go docs generation
         run: |
           echo "📦 Installing swag..."
