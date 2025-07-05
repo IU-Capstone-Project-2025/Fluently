@@ -15,7 +15,7 @@ final class HomeScreenInteractor {
     func getLesson() {
         Task {
             do {
-                try await api.getLessons()
+                try await api.getLesson()
             } catch {
                 print("Error: \(error)")
             }

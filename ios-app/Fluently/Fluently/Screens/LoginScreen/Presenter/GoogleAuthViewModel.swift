@@ -35,7 +35,7 @@ class GoogleAuthViewModel: ObservableObject {
                         email: result.user.profile?.email,
                         image: result.user.profile?.imageURL(withDimension: 100)?.absoluteString
                     )
-                    print(result.user.idToken)
+                    print(result.user.idToken as Any)
                 }
         }
     }
