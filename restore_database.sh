@@ -28,7 +28,7 @@ if [ ! -f "$BACKUP_FILE" ]; then
 fi
 
 echo -e "${YELLOW}Step 1: Stopping all services...${NC}"
-docker-compose down
+docker compose -f docker-compose-local.yml down
 
 echo -e "${YELLOW}Step 2: Removing existing database data...${NC}"
 # Remove postgres data volume if it exists
@@ -39,14 +39,14 @@ docker volume rm fluently_postgres_data 2>/dev/null || true
 docker rm -f $CONTAINER_NAME 2>/dev/null || true
 
 echo -e "${YELLOW}Step 3: Starting database service only...${NC}"
-docker-compose up -d postgres
+docker compose -f docker-compose-local.yml up -d postgres
 
 echo -e "${YELLOW}Step 4: Waiting for database to be ready...${NC}"
 sleep 10
 
 # Wait for database to be healthy
 echo "Waiting for database health check..."
-while ! docker-compose exec postgres pg_isready -U $DB_USER -d $DB_NAME >/dev/null 2>&1; do
+while !docker exec -i $CONTAINER_NAME pg_isready -U $DB_USER -d $DB_NAME >/dev/null 2>&1; do
     echo "Database not ready yet, waiting..."
     sleep 5
 done
@@ -67,7 +67,7 @@ else
 fi
 
 echo -e "${YELLOW}Step 6: Starting all services...${NC}"
-docker compose up backend -d && docker compose up directus -d
+docker compose -f docker-compose-local.yml up backend -d && docker compose -f docker-compose-local.yml up directus -d
 
 echo -e "${YELLOW}Step 7: Waiting for all services to be ready...${NC}"
 sleep 15
@@ -76,7 +76,7 @@ echo -e "${GREEN}=== Restore Complete! ===${NC}"
 echo ""
 echo "Your database has been successfully restored."
 echo "Services are starting up. You can check their status with:"
-echo "  docker-compose ps"
+echo "  docker compose -f docker-compose-local.yml ps"
 echo ""
 echo "To view logs:"
-echo "  docker-compose logs -f" 
+echo "  docker compose -f docker-compose-local.yml logs -f" 
