@@ -4,14 +4,13 @@ import (
 	"encoding/json"
 	"math/rand"
 	"net/http"
+	"strings"
 	"time"
 
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
 	"fluently/go-backend/internal/utils"
 	"fluently/go-backend/pkg/logger"
-	"strings"
-	"unicode/utf8"
 
 	"go.uber.org/zap"
 )
@@ -30,8 +29,12 @@ type LessonHandler struct {
 }
 
 func replaceWordWithUnderscores(text, word string) string {
-	replacement := strings.Repeat("_", utf8.RuneCountInString(word))
-	return strings.ReplaceAll(text, word, replacement)
+	wordIndex := strings.Index(text, word)
+	if wordIndex == -1 {
+		return text
+	}
+
+	return text[:wordIndex] + strings.Repeat("_", len(word)) + text[wordIndex+len(word):]
 }
 
 // GenerateLesson godoc
@@ -75,8 +78,8 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 	words, err := h.Repo.GetWordsForLesson(
 		r.Context(),
 		userID,
-		userPref.Goal,
 		userPref.CEFRLevel,
+		userPref.Goal,
 		lessonInfo.TotalWords,
 	)
 
@@ -113,16 +116,18 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		card.Topic = topic.Title
 
 		// Sentence process
-		sentence, err := h.SentenceRepo.GetByWordID(r.Context(), word.ID)
+		sentences, err := h.SentenceRepo.GetByWordID(r.Context(), word.ID)
 		if err != nil {
 			http.Error(w, "failed to get sentence", http.StatusBadRequest)
 			return
 		}
 
-		card.Sentences = append(card.Sentences, schemas.Sentence{
-			Text:        sentence.Sentence,
-			Translation: "Violets are Blue", //TODO: Remove moke in future
-		})
+		for _, sentence := range sentences {
+			card.Sentences = append(card.Sentences, schemas.Sentence{
+				Text:        sentence.Sentence,
+				Translation: sentence.Translation,
+			})
+		}
 
 		// Exercise process
 		option := rand.Intn(3)
@@ -136,7 +141,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 
 			translateRuToEn.Text = word.Translation
 			translateRuToEn.CorrectAnswer = word.Word
-			translateRuToEn.PickOptions, _ = utils.GeneratePickOptionsWithDefaults(r.Context(), sentence.Sentence, word.Word)
+			translateRuToEn.PickOptions, _ = utils.GeneratePickOptionsWithDefaults(r.Context(), sentences[0].Sentence, word.Word)
 			exercise.Data = translateRuToEn
 		case 1: // write_word_from_translation
 			var writeWordFromTranslation schemas.ExerciseWriteWordFromTranslation
@@ -148,22 +153,24 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 			var pickOptionSentence schemas.ExercisePickOptionSentence
 
 			pickOptionSentence.Template = replaceWordWithUnderscores(
-				sentence.Sentence,
+				sentences[0].Sentence,
 				word.Word,
 			)
 			pickOptionSentence.CorrectAnswer = word.Word
-			pickOptionSentence.PickOptions, _ = utils.GeneratePickOptionsWithDefaults(r.Context(), sentence.Sentence, word.Word)
+			pickOptionSentence.PickOptions, _ = utils.GeneratePickOptionsWithDefaults(r.Context(), sentences[0].Sentence, word.Word)
 			exercise.Data = pickOptionSentence
 		default:
 		}
 
 		card.Exercise = exercise
 		cards = append(cards, card)
+		logger.Log.Info("Card generated", zap.Any("card", card))
 	}
 
 	var lesson schemas.LessonResponse
 	lesson.Lesson = lessonInfo
 	lesson.Cards = cards
+	logger.Log.Info("Lesson generated", zap.Any("lesson", lesson))
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
