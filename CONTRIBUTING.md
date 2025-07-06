@@ -14,10 +14,10 @@ ssh deploy@45.156.22.159 "docker exec -i fluently_postgres pg_dump -U postgres -
 
 Этой команды будет достаточно для разработки backend:
 ```shell
-docker compose -f docker-compose-local.yml down && docker compose  -f docker-compose-local.yml up backend --build -d && docker compose -f docker-compose-local.yml up directus -d
+docker compose -f docker-compose-local.yml down && docker compose  -f docker-compose-local.yml up backend --build -d && docker compose -f docker-compose-local.yml up directus -d && ./restore_database.sh
 ```
 
 Можно убрать билд, если не нужно пересобирать бэк
 ```shell
-docker compose -f docker-compose-local.yml down && docker compose  -f docker-compose-local.yml up backend -d && docker compose -f docker-compose-local.yml up directus -d
+docker compose -f docker-compose-local.yml down && docker compose  -f docker-compose-local.yml up backend -d && docker compose -f docker-compose-local.yml up directus -d && ./restore_database.sh
 ```

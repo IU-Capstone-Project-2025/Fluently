@@ -13,8 +13,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-      ml-api:
-        condition: service_healthy
+      # ml-api:
+      #   condition: service_healthy
     restart: unless-stopped
     networks:
       - fluently_network

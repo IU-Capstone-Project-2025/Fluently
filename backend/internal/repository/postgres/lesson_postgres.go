@@ -2,8 +2,8 @@ package postgres
 
 import (
 	"context"
-
 	"fluently/go-backend/internal/repository/models"
+	"strings"
 
 	"github.com/google/uuid"
 	"gorm.io/gorm"
@@ -87,18 +87,23 @@ func (r *LessonRepository) GetWordsForLesson(
 	ctx context.Context,
 	userID uuid.UUID,
 	cefrLevel string,
+	topicTitle string,
 	limit int,
 ) ([]models.Word, error) {
 	var words []models.Word
 
-	subQuery := r.db.
-		Table("learned_words").
-		Select("word_id").
-		Where("user_id = ?", userID)
+	cefrLevel = strings.ToLower(cefrLevel)
+
+	// subQuery := r.db.
+	// 	Table("learned_words").
+	// 	Select("word_id").
+	// 	Where("user_id = ?", userID)
 
 	err := r.db.WithContext(ctx).
+		// Joins("JOIN topics ON topics.id = words.topic_id").
+		// Where("topics.title = ?", topicTitle).
 		Where("words.cefr_level = ?", cefrLevel).
-		Where("words.id NOT IN (?)", subQuery).
+		// Where("words.id NOT IN (?)", subQuery).
 		Limit(limit).
 		Find(&words).Error
 
