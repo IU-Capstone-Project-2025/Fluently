@@ -410,15 +410,9 @@ jobs:
           file: ./analysis/distractor_api/Dockerfile
           push: true
           tags: docker.io/fluentlyorg/fluently-ml-api:latest-develop
-          cache-from: |
-            type=gha
-            type=registry,ref=docker.io/fluentlyorg/fluently-ml-api:buildcache
-          cache-to: |
-            type=gha,mode=max
-            type=registry,ref=docker.io/fluentlyorg/fluently-ml-api:buildcache,mode=max
+          cache-from: type=gha
+          cache-to: type=gha,mode=min
           platforms: linux/amd64  # Single platform for faster builds
-          build-args: |
-            BUILDKIT_INLINE_CACHE=1
 
       # Nginx Build
       - name: Build and push nginx image
