@@ -21,13 +21,10 @@ WORKDIR /app
 # ============== Dependency Layer (Cached) ==============
 FROM base as dependencies
 
-# Create cache directory for pip 
-RUN mkdir -p /root/.cache/pip && chmod 777 /root/.cache/pip
-
 # Copy only requirements first (for better layer caching)
 COPY distractor_api/requirements.txt ./
 
-# Install dependencies with caching enabled (removed PIP_NO_CACHE_DIR)
+# Install dependencies with caching enabled
 # This layer will be cached as long as requirements.txt doesn't change
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install --find-links https://download.pytorch.org/whl/cpu -r requirements.txt
