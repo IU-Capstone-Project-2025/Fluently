@@ -295,26 +295,20 @@ func processCSVFile(db *gorm.DB, filepath string, bar *progressbar.ProgressBar, 
 func processBatch(db *gorm.DB, batch []CSVRecord, stats *ImportStats) error {
 	ctx := context.Background()
 
-	// Group records by word for merging translations
-	wordGroups := make(map[string][]CSVRecord)
+	// Process each record individually instead of grouping by word
 	for _, record := range batch {
-		key := fmt.Sprintf("%s|%s|%s|%s|%s", record.Word, record.Topic, record.Subtopic, record.Subsubtopic, record.CEFRLevel)
-		wordGroups[key] = append(wordGroups[key], record)
-	}
-
-	// Process each word group in separate transaction to avoid rollback cascade
-	for _, group := range wordGroups {
 		err := db.Transaction(func(tx *gorm.DB) error {
-			return processWordGroup(tx, ctx, group, stats)
+			return processWordRecord(tx, ctx, record, stats)
 		})
 
 		if err != nil {
-			logger.Log.Error("Failed to process word group",
+			logger.Log.Error("Failed to process word record",
 				zap.Error(err),
-				zap.String("word", group[0].Word),
-				zap.String("topic", group[0].Topic),
-				zap.String("subtopic", group[0].Subtopic),
-				zap.String("subsubtopic", group[0].Subsubtopic))
+				zap.String("word", record.Word),
+				zap.String("translation", record.Translation),
+				zap.String("topic", record.Topic),
+				zap.String("subtopic", record.Subtopic),
+				zap.String("subsubtopic", record.Subsubtopic))
 			stats.ErrorsEncountered++
 			continue
 		}
@@ -323,84 +317,88 @@ func processBatch(db *gorm.DB, batch []CSVRecord, stats *ImportStats) error {
 	return nil
 }
 
-func processWordGroup(tx *gorm.DB, ctx context.Context, group []CSVRecord, stats *ImportStats) error {
-	if len(group) == 0 {
-		return nil
-	}
-
-	baseRecord := group[0]
-
+func processWordRecord(tx *gorm.DB, ctx context.Context, record CSVRecord, stats *ImportStats) error {
 	// Log detailed information about what we're processing
-	logger.Log.Debug("Processing word group",
-		zap.String("word", baseRecord.Word),
-		zap.String("topic", baseRecord.Topic),
-		zap.String("subtopic", baseRecord.Subtopic),
-		zap.String("subsubtopic", baseRecord.Subsubtopic),
-		zap.String("cefr_level", baseRecord.CEFRLevel),
-		zap.Int("group_size", len(group)))
+	logger.Log.Debug("Processing word record",
+		zap.String("word", record.Word),
+		zap.String("translation", record.Translation),
+		zap.String("topic", record.Topic),
+		zap.String("subtopic", record.Subtopic),
+		zap.String("subsubtopic", record.Subsubtopic),
+		zap.String("cefr_level", record.CEFRLevel))
 
 	// Create topic hierarchy
-	topicID, err := createTopicHierarchy(tx, ctx, baseRecord.Topic, baseRecord.Subtopic, baseRecord.Subsubtopic, stats)
+	topicID, err := createTopicHierarchy(tx, ctx, record.Topic, record.Subtopic, record.Subsubtopic, stats)
 	if err != nil {
 		logger.Log.Error("Failed to create topic hierarchy",
 			zap.Error(err),
-			zap.String("word", baseRecord.Word),
-			zap.String("topic", baseRecord.Topic),
-			zap.String("subtopic", baseRecord.Subtopic),
-			zap.String("subsubtopic", baseRecord.Subsubtopic))
+			zap.String("word", record.Word),
+			zap.String("translation", record.Translation),
+			zap.String("topic", record.Topic),
+			zap.String("subtopic", record.Subtopic),
+			zap.String("subsubtopic", record.Subsubtopic))
 		return fmt.Errorf("failed to create topic hierarchy: %v", err)
 	}
 
 	if topicID != nil {
 		logger.Log.Debug("Topic hierarchy created",
 			zap.String("topicID", topicID.String()),
-			zap.String("word", baseRecord.Word))
+			zap.String("word", record.Word),
+			zap.String("translation", record.Translation))
 	} else {
 		logger.Log.Debug("No topic hierarchy created (all empty)",
-			zap.String("word", baseRecord.Word))
+			zap.String("word", record.Word),
+			zap.String("translation", record.Translation))
 	}
 
-	// Use only the first translation (no merging)
-	translation := baseRecord.Translation
+	// Use the translation from this specific record
+	translation := record.Translation
 
 	// Truncate translation if too long (varchar(255) limit)
 	if len(translation) > 255 {
 		translation = translation[:255]
 		logger.Log.Warn("Translation truncated due to length limit",
-			zap.String("word", baseRecord.Word),
-			zap.String("original_translation", baseRecord.Translation),
+			zap.String("word", record.Word),
+			zap.String("original_translation", record.Translation),
 			zap.String("truncated_translation", translation))
 	}
 
 	// Check word length (varchar(255) limit)
-	wordText := baseRecord.Word
+	wordText := record.Word
 	if len(wordText) > 255 {
 		wordText = wordText[:255]
 		logger.Log.Warn("Word truncated due to length limit",
-			zap.String("original_word", baseRecord.Word),
+			zap.String("original_word", record.Word),
 			zap.String("truncated_word", wordText))
 	}
 
-	// Check if word already exists
+	// Check if word with this translation already exists
+	// Uniqueness is now based on (word, translation, topic_id) combination
 	var existingWord models.Word
-	result := tx.WithContext(ctx).Where("word = ? AND topic_id = ?", wordText, topicID).First(&existingWord)
+	query := tx.WithContext(ctx).Where("word = ? AND translation = ?", wordText, translation)
+	if topicID != nil {
+		query = query.Where("topic_id = ?", *topicID)
+	} else {
+		query = query.Where("topic_id IS NULL")
+	}
+	result := query.First(&existingWord)
 
 	var wordID uuid.UUID
 	if result.Error == gorm.ErrRecordNotFound {
-		// Create new word
+		// Create new word - each (word, translation) pair gets its own entity
 		newWord := models.Word{
 			Word:         wordText,
 			Translation:  translation,
 			PartOfSpeech: "unknown",
 			Context:      "",
-			CEFRLevel:    baseRecord.CEFRLevel,
+			CEFRLevel:    record.CEFRLevel,
 			TopicID:      topicID,
 		}
 
 		logger.Log.Debug("Creating new word",
 			zap.String("word", wordText),
 			zap.String("translation", translation),
-			zap.String("cefr_level", baseRecord.CEFRLevel))
+			zap.String("cefr_level", record.CEFRLevel))
 
 		if err := tx.WithContext(ctx).Create(&newWord).Error; err != nil {
 			topicIDStr := "NULL"
@@ -419,35 +417,36 @@ func processWordGroup(tx *gorm.DB, ctx context.Context, group []CSVRecord, stats
 
 		logger.Log.Debug("Successfully created word",
 			zap.String("id", newWord.ID.String()),
-			zap.String("word", wordText))
+			zap.String("word", wordText),
+			zap.String("translation", translation))
 	} else if result.Error != nil {
 		return fmt.Errorf("failed to check existing word: %v", result.Error)
 	} else {
-		// Update existing word with new translation and CEFR level if provided
-		if translation != "" {
-			existingWord.Translation = translation
-		}
-		if baseRecord.CEFRLevel != "" {
-			existingWord.CEFRLevel = baseRecord.CEFRLevel
+		// Update existing word with CEFR level if provided
+		if record.CEFRLevel != "" {
+			existingWord.CEFRLevel = record.CEFRLevel
 		}
 
 		if err := tx.WithContext(ctx).Save(&existingWord).Error; err != nil {
 			return fmt.Errorf("failed to update word: %v", err)
 		}
 		wordID = existingWord.ID
-		logger.Log.Info("Updated existing word", zap.String("word", baseRecord.Word))
+		logger.Log.Info("Updated existing word",
+			zap.String("word", record.Word),
+			zap.String("translation", record.Translation))
 	}
 
-	// Process sentences for all records in group
-	for _, record := range group {
-		if record.Sentences != "" {
-			sentencesAdded, err := processSentences(tx, ctx, wordID, record.Sentences)
-			if err != nil {
-				logger.Log.Error("Failed to process sentences", zap.Error(err), zap.String("word", record.Word))
-				continue
-			}
-			stats.SentencesAdded += sentencesAdded
+	// Process sentences for this record
+	if record.Sentences != "" {
+		sentencesAdded, err := processSentences(tx, ctx, wordID, record.Sentences)
+		if err != nil {
+			logger.Log.Error("Failed to process sentences",
+				zap.Error(err),
+				zap.String("word", record.Word),
+				zap.String("translation", record.Translation))
+			return err
 		}
+		stats.SentencesAdded += sentencesAdded
 	}
 
 	return nil
