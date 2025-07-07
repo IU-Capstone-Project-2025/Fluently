@@ -19,6 +19,11 @@ final class SentenceModel: Codable{
         self.text = text
         self.translation = translation
     }
+
+    enum CodingKeys: String, CodingKey {
+        case text
+        case translation
+    }
 }
 
 extension SentenceModel: Hashable {

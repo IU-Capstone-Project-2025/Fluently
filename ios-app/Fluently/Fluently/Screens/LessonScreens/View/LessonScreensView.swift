@@ -61,10 +61,7 @@ struct LessonScreensView: View {
         HStack {
             VStack (alignment: .leading) {
 #if targetEnvironment(simulator)
-                Text("Exercise:")
-                    .foregroundStyle(.whiteText)
-                    .font(.appFont.largeTitle.bold())
-                Text(presenter.currentEx.type.rawValue)
+                Text("Exercise: \(presenter.currentExNumber + 1)/\(presenter.words.count)")
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
 #else

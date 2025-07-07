@@ -65,11 +65,11 @@ struct PickOptionsView: View {
 
     // updating sentence view
     func sentenceView() -> some View {
-        let parts = sentence.split(separator: "____")
+        let parts = sentence.split(separator: "__________")
 
         if let selectedAnswer {
             return Text("\(parts[0]) _\(selectedAnswer)_ \(parts[1])")
         }
-        return Text("\(parts[0]) ____ \(parts[1])")
+        return Text("\(parts[0]) __________ \(parts[1])")
     }
 }

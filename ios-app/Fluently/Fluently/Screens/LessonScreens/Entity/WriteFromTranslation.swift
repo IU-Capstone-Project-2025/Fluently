@@ -25,7 +25,8 @@ final class WriteFromTranslation: ExerciseData {
     
     // MARK: - Codable
     private enum CodingKeys: String, CodingKey {
-        case translation, correctAnswer
+        case translation
+        case correctAnswer = "correct_answer"
     }
 
     required init(from decoder: Decoder) throws {

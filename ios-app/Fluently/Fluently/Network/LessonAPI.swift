@@ -8,12 +8,12 @@
 import Foundation
 
 protocol LessonAPI {
-    func getLesson() async throws
+    func getLesson() async throws -> CardsModel
 }
 
 // MARK: - Lessons
 extension APIService: LessonAPI {
-    func getLesson() async throws {
+    func getLesson() async throws -> CardsModel {
         // Validate Refresh Token
         try await validateToken()
 
@@ -22,7 +22,7 @@ extension APIService: LessonAPI {
             method: "GET"
         )
 
-        print(try await fetchAndDecode(request: request) as CardsModel)
+        return try await fetchAndDecode(request: request) as CardsModel
     }
 
     // MARK: - Private Helpers
@@ -50,8 +50,7 @@ extension APIService: LessonAPI {
         )
 
         request.setValue(
-            "Bearer \(accessToken)",
-            forHTTPHeaderField: "Authorization"
+            "Bearer \(accessToken)", forHTTPHeaderField: "Authorization"
         )
 
         return request
@@ -62,11 +61,24 @@ extension APIService: LessonAPI {
         decoder: JSONDecoder = JSONDecoder()
     ) async throws -> T {
         let data = try await sendRequest(request)
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
 
         do {
             return try decoder.decode(T.self, from: data)
+
         } catch let error as DecodingError {
+            print("JSON Decoding Error: \(error.localizedDescription)")
+            switch error {
+                case .typeMismatch(let type, let context):
+                    print("Type mismatch for \(type): \(context.debugDescription)")
+                case .valueNotFound(let type, let context):
+                    print("Value not found for \(type): \(context.debugDescription)")
+                case .keyNotFound(let key, let context):
+                    print("Key '\(key.stringValue)' not found: \(context.debugDescription)")
+                case .dataCorrupted(let context):
+                    print("Data corrupted: \(context.debugDescription)")
+                @unknown default:
+                    print("Unknown error: \(error)")
+            }
             throw ApiError.decodingFailed(error.localizedDescription)
         }
     }

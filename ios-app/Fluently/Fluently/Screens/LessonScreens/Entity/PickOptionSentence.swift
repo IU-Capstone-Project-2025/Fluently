@@ -28,7 +28,9 @@ final class PickOptionSentence: ExerciseData {
     
     // MARK: - Codable
     private enum CodingKeys: String, CodingKey {
-        case template, options, correctAnswer
+        case template
+        case options = "pick_options"
+        case correctAnswer = "correct_answer"
     }
 
     required init(from decoder: Decoder) throws {

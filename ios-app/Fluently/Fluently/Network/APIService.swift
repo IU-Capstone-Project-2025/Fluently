@@ -15,8 +15,10 @@ final class APIService {
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
 
+            request.printRequest()
+
             if let jsonString = String(data: data, encoding: .utf8) {
-                print("Request: \(String(describing: request.url))")
+                print("Request: \(request.url?.absoluteString ?? "")")
                 print("Raw JSON Response:\n\(jsonString)")
             }
 
@@ -70,6 +72,19 @@ final class APIService {
         do {
             return try JSONDecoder().decode(T.self, from: data)
         } catch let error as DecodingError {
+            print("JSON Decoding Error: \(error.localizedDescription)")
+            switch error {
+                case .typeMismatch(let type, let context):
+                    print("Type mismatch for \(type): \(context.debugDescription)")
+                case .valueNotFound(let type, let context):
+                    print("Value not found for \(type): \(context.debugDescription)")
+                case .keyNotFound(let key, let context):
+                    print("Key '\(key.stringValue)' not found: \(context.debugDescription)")
+                case .dataCorrupted(let context):
+                    print("Data corrupted: \(context.debugDescription)")
+                @unknown default:
+                    print("Unknown error: \(error)")
+            }
             throw ApiError.decodingFailed(error.localizedDescription)
         }
     }

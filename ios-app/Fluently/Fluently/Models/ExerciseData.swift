@@ -17,7 +17,7 @@ class ExerciseData: Codable{
 
     // MARK: - Codable
     private enum CodingKeys: String, CodingKey {
-        case correctAnswer
+        case correctAnswer = "correct_answer"
     }
 
     required init(from decoder: Decoder) throws {

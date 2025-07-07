@@ -23,7 +23,9 @@ final class ChooseTranslationEngRuss: ExerciseData {
     
     // MARK: - Codable
     private enum CodingKeys: String, CodingKey {
-        case text, options, correctAnswer
+        case text
+        case options = "pick_options"
+        case correctAnswer = "correct_answer"
     }
 
     required init(from decoder: Decoder) throws {
