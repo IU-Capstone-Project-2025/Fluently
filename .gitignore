@@ -155,3 +155,6 @@ docs/GitHub_Secrets_Configuration.md
 .github/workflows/deploy-old.yml
 .github/workflows/deploy-new.yml
 .github/workflows/deploy-old-from-main.yml
+
+local_backup.sql
+*/local_backup.dump
