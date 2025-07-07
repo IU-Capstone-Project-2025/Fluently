@@ -38,6 +38,12 @@ struct HomeScreenView: View {
             presenter.getLesson()
         }
 
+        .toolbar{
+            ToolbarItem(placement: .bottomBar) {
+                bottomBar
+            }
+        }
+
         .fullScreenCover(item: $openedScreen) { screenType in
             switch screenType {
                 case .notes:
@@ -72,6 +78,10 @@ struct HomeScreenView: View {
             )
         }
         .padding(Const.horizontalPadding)
+    }
+
+    var bottomBar: some View {
+        NavigationBar()
     }
 
     ///  Grid with main info
@@ -122,11 +132,6 @@ struct HomeScreenView: View {
     }
 }
 
-struct NavigationBar: View {
-    var body: some View {
-         Text("bottom bar")
-    }
-}
 
 struct HomeScreenPreview: PreviewProvider {
     static var previews: some View {
