@@ -14,6 +14,7 @@ import (
 
 	"fluently/go-backend/internal/config"
 	"fluently/go-backend/internal/repository/models"
+	"fluently/go-backend/internal/utils"
 	"fluently/go-backend/pkg/logger"
 
 	"github.com/google/uuid"
@@ -83,12 +84,41 @@ var clearCmd = &cobra.Command{
 	RunE:  runClearData,
 }
 
+var enrichCmd = &cobra.Command{
+	Use:   "enrich",
+	Short: "Enrich existing words with dictionary data",
+	Long:  `Enrich existing words in the database with phonetic transcription, audio URLs, and part of speech from the dictionary API.`,
+	RunE:  runEnrichWords,
+}
+
+var enrichSentencesCmd = &cobra.Command{
+	Use:   "enrich-sentences",
+	Short: "Enrich existing sentences with distractor options",
+	Long:  `Enrich existing sentences in the database with distractor options using the ML distractor service.`,
+	RunE:  runEnrichSentences,
+}
+
+var (
+	enrichLimit   int
+	enrichDelay   int
+	sentenceLimit int
+	sentenceDelay int
+)
+
 func init() {
 	csvCmd.Flags().StringVarP(&csvFilePath, "file", "f", "", "Path to CSV file (required)")
 	csvCmd.MarkFlagRequired("file")
 
+	enrichCmd.Flags().IntVarP(&enrichLimit, "limit", "l", 100, "Maximum number of words to enrich in one run")
+	enrichCmd.Flags().IntVarP(&enrichDelay, "delay", "d", 500, "Delay between API calls in milliseconds")
+
+	enrichSentencesCmd.Flags().IntVarP(&sentenceLimit, "limit", "l", 100, "Maximum number of sentences to enrich in one run")
+	enrichSentencesCmd.Flags().IntVarP(&sentenceDelay, "delay", "d", 1000, "Delay between API calls in milliseconds")
+
 	rootCmd.AddCommand(csvCmd)
 	rootCmd.AddCommand(clearCmd)
+	rootCmd.AddCommand(enrichCmd)
+	rootCmd.AddCommand(enrichSentencesCmd)
 }
 
 func main() {
@@ -862,4 +892,94 @@ func printClearStats(stats *ClearStats) {
 	} else {
 		fmt.Println("⚠️  Database cleanup completed with errors!")
 	}
+}
+
+func runEnrichWords(cmd *cobra.Command, args []string) error {
+	// Initialize config and logger
+	config.Init()
+	logger.Init(true) // Enable debug logging
+	defer logger.Log.Sync()
+
+	// Connect to database
+	db, err := connectToDatabase()
+	if err != nil {
+		return fmt.Errorf("failed to connect to database: %v", err)
+	}
+
+	logger.Log.Info("Starting word enrichment",
+		zap.Int("limit", enrichLimit),
+		zap.Int("delay_ms", enrichDelay))
+
+	// Create enrichment service
+	enrichmentService := utils.NewWordEnrichmentService(db)
+
+	// Convert delay from milliseconds to duration
+	delayDuration := time.Duration(enrichDelay) * time.Millisecond
+
+	ctx := context.Background()
+
+	// Run enrichment
+	startTime := time.Now()
+	err = enrichmentService.EnrichWordsInDatabase(ctx, enrichLimit, delayDuration)
+	if err != nil {
+		return fmt.Errorf("failed to enrich words: %v", err)
+	}
+
+	duration := time.Since(startTime)
+
+	fmt.Println("\n" + strings.Repeat("=", 50))
+	fmt.Println("🔍 WORD ENRICHMENT STATISTICS")
+	fmt.Println(strings.Repeat("=", 50))
+	fmt.Printf("⏱️  Duration: %v\n", duration.Round(time.Second))
+	fmt.Printf("📝 Words processed: up to %d\n", enrichLimit)
+	fmt.Printf("⏲️  Rate limit delay: %v\n", delayDuration)
+	fmt.Println(strings.Repeat("=", 50))
+	fmt.Println("✅ Word enrichment completed successfully!")
+
+	return nil
+}
+
+func runEnrichSentences(cmd *cobra.Command, args []string) error {
+	// Initialize config and logger
+	config.Init()
+	logger.Init(true) // Enable debug logging
+	defer logger.Log.Sync()
+
+	// Connect to database
+	db, err := connectToDatabase()
+	if err != nil {
+		return fmt.Errorf("failed to connect to database: %v", err)
+	}
+
+	logger.Log.Info("Starting sentence enrichment",
+		zap.Int("limit", sentenceLimit),
+		zap.Int("delay_ms", sentenceDelay))
+
+	// Create enrichment service
+	enrichmentService := utils.NewWordEnrichmentService(db)
+
+	// Convert delay from milliseconds to duration
+	delayDuration := time.Duration(sentenceDelay) * time.Millisecond
+
+	ctx := context.Background()
+
+	// Run sentence enrichment
+	startTime := time.Now()
+	err = enrichmentService.EnrichSentencesInDatabase(ctx, sentenceLimit, delayDuration)
+	if err != nil {
+		return fmt.Errorf("failed to enrich sentences: %v", err)
+	}
+
+	duration := time.Since(startTime)
+
+	fmt.Println("\n" + strings.Repeat("=", 50))
+	fmt.Println("🎯 SENTENCE ENRICHMENT STATISTICS")
+	fmt.Println(strings.Repeat("=", 50))
+	fmt.Printf("⏱️  Duration: %v\n", duration.Round(time.Second))
+	fmt.Printf("💬 Sentences processed: up to %d\n", sentenceLimit)
+	fmt.Printf("⏲️  Rate limit delay: %v\n", delayDuration)
+	fmt.Println(strings.Repeat("=", 50))
+	fmt.Println("✅ Sentence enrichment completed successfully!")
+
+	return nil
 }
