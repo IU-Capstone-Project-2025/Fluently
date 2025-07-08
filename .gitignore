@@ -164,3 +164,26 @@ docs/GitHub_Secrets_Configuration.md
 
 local_backup.sql
 */local_backup.dump
+*/bin
+/bin
+/backend/bin
+/backend/bin/*
+/backend/bin/local_backup.dump
+/backend/bin/local_backup.sql
+/backend/bin/local_backup.sql.gz
+/backend/bin/local_backup.sql.gz.tar
+*.csv
+*.json
+*.pdf
+*.docx
+*.doc
+*.pyc
+analysis/bert/__pycache__/
+analysis/venv/
+analysis/.venv/
+analysis/venv/*
+analysis/.venv/*
+analysis/venv/bin/
+analysis/.venv/bin/
+analysis/venv/bin/activate
+analysis/.venv/bin/activate

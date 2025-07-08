@@ -48,7 +48,7 @@ USER app
 
 # Download models at build time to cache them in the image
 # This prevents download time during first API call
-RUN python -c "from transformers import pipeline; pipeline('text-generation', model='distilbert-base-uncased', device='cpu')" || echo "Model download optional - will download at runtime if needed"
+RUN python -c "from transformers import BertTokenizerFast, BertForMaskedLM; BertTokenizerFast.from_pretrained('bert-base-uncased'); BertForMaskedLM.from_pretrained('bert-base-uncased')" || echo "Model download optional - will download at runtime if needed"
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5m --retries=3 \
