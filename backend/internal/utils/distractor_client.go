@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -50,9 +51,14 @@ type DistractorClientConfig struct {
 // NewDistractorClient creates a new distractor client with the given configuration
 func NewDistractorClient(config DistractorClientConfig) *DistractorClient {
 	if config.BaseURL == "" {
-		// Use Docker service name when running in containerized environment
-		// Falls back to localhost for local development
-		config.BaseURL = "http://ml-api:8001"
+		// Check environment variable first
+		if envURL := os.Getenv("ML_API_URL"); envURL != "" {
+			config.BaseURL = envURL
+		} else {
+			// Use Docker service name when running in containerized environment
+			// Falls back to localhost for local development
+			config.BaseURL = "http://localhost:8001"
+		}
 	}
 	if config.Timeout == 0 {
 		config.Timeout = 30 * time.Second

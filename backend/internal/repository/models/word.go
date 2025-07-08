@@ -12,6 +12,7 @@ type Word struct {
 	Context      string    `gorm:"type:varchar(100)"`
 	CEFRLevel    string    `gorm:"type:varchar(2)"`
 	AudioURL     string    `gorm:"type:text"`
+	Phonetic     string    `gorm:"type:varchar(100)"` // phonetic transcription
 
 	TopicID *uuid.UUID `gorm:"type:uuid"` // foreign key to Topic
 	Topic   *Topic     `gorm:"foreignKey:TopicID;constraint:OnUpdate:CASCADE,OnDelete:SET NULL"`

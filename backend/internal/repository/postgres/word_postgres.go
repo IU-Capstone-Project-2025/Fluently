@@ -35,6 +35,15 @@ func (r *WordRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.Wor
 	return &word, nil
 }
 
+func (r *WordRepository) GetByValue(ctx context.Context, value string) (*models.Word, error) {
+	var word models.Word
+	if err := r.db.WithContext(ctx).First(&word, "value = ?", value).Error; err != nil {
+		return nil, err
+	}
+
+	return &word, nil
+}
+
 func (r *WordRepository) Create(ctx context.Context, word *models.Word) error {
 	return r.db.WithContext(ctx).Create(word).Error
 }

@@ -71,7 +71,6 @@ class DistractorService:
                 self.generator.generate_distractors,
                 sentence,
                 target_word,
-                num_distractors,
             )
 
             # Always include the original word and shuffle for randomness
