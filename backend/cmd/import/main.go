@@ -98,6 +98,13 @@ var enrichSentencesCmd = &cobra.Command{
 	RunE:  runEnrichSentences,
 }
 
+var resetEnrichmentCmd = &cobra.Command{
+	Use:   "reset-enrichment",
+	Short: "Reset failed word enrichments to allow retry",
+	Long:  `Reset words marked as "unknown_processed" back to "unknown" to allow them to be retried for enrichment.`,
+	RunE:  runResetEnrichment,
+}
+
 var (
 	enrichLimit   int
 	enrichDelay   int
@@ -109,16 +116,17 @@ func init() {
 	csvCmd.Flags().StringVarP(&csvFilePath, "file", "f", "", "Path to CSV file (required)")
 	csvCmd.MarkFlagRequired("file")
 
-	enrichCmd.Flags().IntVarP(&enrichLimit, "limit", "l", 100, "Maximum number of words to enrich in one run")
+	enrichCmd.Flags().IntVarP(&enrichLimit, "limit", "l", 100000, "Maximum number of words to enrich in one run")
 	enrichCmd.Flags().IntVarP(&enrichDelay, "delay", "d", 500, "Delay between API calls in milliseconds")
 
-	enrichSentencesCmd.Flags().IntVarP(&sentenceLimit, "limit", "l", 100, "Maximum number of sentences to enrich in one run")
-	enrichSentencesCmd.Flags().IntVarP(&sentenceDelay, "delay", "d", 1000, "Delay between API calls in milliseconds")
+	enrichSentencesCmd.Flags().IntVarP(&sentenceLimit, "limit", "l", 1000000, "Maximum number of sentences to enrich in one run")
+	enrichSentencesCmd.Flags().IntVarP(&sentenceDelay, "delay", "d", 10, "Delay between API calls in milliseconds")
 
 	rootCmd.AddCommand(csvCmd)
 	rootCmd.AddCommand(clearCmd)
 	rootCmd.AddCommand(enrichCmd)
 	rootCmd.AddCommand(enrichSentencesCmd)
+	rootCmd.AddCommand(resetEnrichmentCmd)
 }
 
 func main() {
@@ -980,6 +988,45 @@ func runEnrichSentences(cmd *cobra.Command, args []string) error {
 	fmt.Printf("⏲️  Rate limit delay: %v\n", delayDuration)
 	fmt.Println(strings.Repeat("=", 50))
 	fmt.Println("✅ Sentence enrichment completed successfully!")
+
+	return nil
+}
+
+func runResetEnrichment(cmd *cobra.Command, args []string) error {
+	// Initialize config and logger
+	config.Init()
+	logger.Init(true) // Enable debug logging
+	defer logger.Log.Sync()
+
+	// Connect to database
+	db, err := connectToDatabase()
+	if err != nil {
+		return fmt.Errorf("failed to connect to database: %v", err)
+	}
+
+	logger.Log.Info("Starting reset enrichment")
+
+	// Create enrichment service
+	enrichmentService := utils.NewWordEnrichmentService(db)
+
+	ctx := context.Background()
+
+	// Run reset enrichment
+	startTime := time.Now()
+	count, err := enrichmentService.ResetFailedEnrichments(ctx)
+	if err != nil {
+		return fmt.Errorf("failed to reset enrichment: %v", err)
+	}
+
+	duration := time.Since(startTime)
+
+	fmt.Println("\n" + strings.Repeat("=", 50))
+	fmt.Println("🔄 RESET ENRICHMENT STATISTICS")
+	fmt.Println(strings.Repeat("=", 50))
+	fmt.Printf("⏱️  Duration: %v\n", duration.Round(time.Second))
+	fmt.Printf("🔄 Words reset: %d\n", count)
+	fmt.Println(strings.Repeat("=", 50))
+	fmt.Println("✅ Reset enrichment completed successfully!")
 
 	return nil
 }

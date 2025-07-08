@@ -134,7 +134,7 @@ func (s *WordEnrichmentService) BatchEnrichWords(ctx context.Context, words []*m
 	var errors []error
 
 	for i, word := range words {
-		// Add rate limiting to avoid overwhelming the API
+		// Add rate limiting to prevent API overwhelming
 		if i > 0 && rateLimitDelay > 0 {
 			select {
 			case <-ctx.Done():
@@ -145,11 +145,51 @@ func (s *WordEnrichmentService) BatchEnrichWords(ctx context.Context, words []*m
 			}
 		}
 
-		if err := s.EnrichWordWithDictionary(ctx, word); err != nil {
-			errors = append(errors, fmt.Errorf("failed to enrich word '%s': %w", word.Word, err))
+		logger.Log.Debug("Processing word for enrichment",
+			zap.String("word", word.Word),
+			zap.String("word_id", word.ID.String()),
+			zap.Int("progress", i+1),
+			zap.Int("total", len(words)))
+
+		// Track if word was originally empty to know if we should save
+		originallyEmpty := word.PartOfSpeech == "" || word.PartOfSpeech == "unknown" ||
+			word.Phonetic == "" || word.AudioURL == "" || word.Context == ""
+
+		// Try to enrich with dictionary data
+		enrichmentError := s.EnrichWordWithDictionary(ctx, word)
+		if enrichmentError != nil {
+			errors = append(errors, fmt.Errorf("failed to enrich word '%s': %w", word.Word, enrichmentError))
 			logger.Log.Error("Failed to enrich word in batch",
 				zap.String("word", word.Word),
-				zap.Error(err))
+				zap.Error(enrichmentError))
+
+			// Mark word as processed even if enrichment failed
+			// This prevents it from being selected again
+			if originallyEmpty && word.PartOfSpeech == "unknown" {
+				word.PartOfSpeech = "unknown_processed"
+			}
+		}
+
+		// Always save the word to database for real-time updates
+		// Even if enrichment failed, we want to mark it as processed
+		saveErr := s.db.WithContext(ctx).Save(word).Error
+		if saveErr != nil {
+			errors = append(errors, fmt.Errorf("failed to save word '%s': %w", word.Word, saveErr))
+			logger.Log.Error("Failed to save enriched word",
+				zap.String("word", word.Word),
+				zap.Error(saveErr))
+		} else {
+			// Log successful save for real-time feedback
+			status := "failed_enrichment"
+			if enrichmentError == nil {
+				status = "enriched"
+			}
+			logger.Log.Info("Word processed and saved",
+				zap.String("word", word.Word),
+				zap.String("status", status),
+				zap.String("part_of_speech", word.PartOfSpeech),
+				zap.Bool("has_phonetic", word.Phonetic != ""),
+				zap.Bool("has_audio", word.AudioURL != ""))
 		}
 	}
 
@@ -159,9 +199,11 @@ func (s *WordEnrichmentService) BatchEnrichWords(ctx context.Context, words []*m
 // EnrichWordsInDatabase finds words that need enrichment and processes them
 func (s *WordEnrichmentService) EnrichWordsInDatabase(ctx context.Context, limit int, rateLimitDelay time.Duration) error {
 	// Find words that need enrichment (missing phonetic, audio, or have "unknown" part of speech)
+	// Exclude words already marked as "unknown_processed" to avoid reprocessing failed enrichments
 	var words []models.Word
 	err := s.db.WithContext(ctx).
-		Where("phonetic = ? OR audio_url = ? OR part_of_speech = ?", "", "", "unknown").
+		Where("(phonetic = ? OR audio_url = ? OR part_of_speech = ?) AND part_of_speech != ?",
+			"", "", "unknown", "unknown_processed").
 		Limit(limit).
 		Find(&words).Error
 
@@ -184,22 +226,8 @@ func (s *WordEnrichmentService) EnrichWordsInDatabase(ctx context.Context, limit
 		wordPtrs[i] = &words[i]
 	}
 
-	// Enrich words
+	// Enrich words with proper rate limiting for real-time updates
 	errors := s.BatchEnrichWords(ctx, wordPtrs, rateLimitDelay)
-
-	// Save all enriched words in a transaction
-	err = s.db.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
-		for _, word := range words {
-			if err := tx.Save(word).Error; err != nil {
-				return fmt.Errorf("failed to save word %s: %w", word.Word, err)
-			}
-		}
-		return nil
-	})
-
-	if err != nil {
-		return fmt.Errorf("failed to save enriched words: %w", err)
-	}
 
 	logger.Log.Info("Word enrichment process completed",
 		zap.Int("total_words", len(words)),
@@ -237,6 +265,25 @@ func (s *WordEnrichmentService) GetSuggestedPartOfSpeech(ctx context.Context, wo
 	}
 
 	return wordInfo.PartOfSpeech, nil
+}
+
+// ResetFailedEnrichments resets words marked as "unknown_processed" back to "unknown"
+// This allows them to be retried for enrichment
+func (s *WordEnrichmentService) ResetFailedEnrichments(ctx context.Context) (int, error) {
+	result := s.db.WithContext(ctx).
+		Model(&models.Word{}).
+		Where("part_of_speech = ?", "unknown_processed").
+		Update("part_of_speech", "unknown")
+
+	if result.Error != nil {
+		return 0, fmt.Errorf("failed to reset failed enrichments: %w", result.Error)
+	}
+
+	count := int(result.RowsAffected)
+	logger.Log.Info("Reset failed word enrichments",
+		zap.Int("count", count))
+
+	return count, nil
 }
 
 // EnrichSentenceWithDistractors generates distractor options for a sentence using the distractor API

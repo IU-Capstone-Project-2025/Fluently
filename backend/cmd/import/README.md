@@ -77,6 +77,51 @@ This command will:
 - ❌ link_tokens table
 - ❌ preferences table
 
+### Word Enrichment
+
+Enrich existing words in the database with phonetic transcription, audio URLs, and part of speech from the dictionary API:
+
+```bash
+go run main.go enrich --limit 1000 --delay 500
+```
+
+**Options:**
+- `--limit` (default: 100000): Maximum number of words to process
+- `--delay` (default: 500): Delay between API calls in milliseconds
+
+**Features:**
+- ✅ Real-time database updates (each word saved immediately)
+- ✅ Rate limiting to prevent API failures
+- ✅ Comprehensive progress logging
+- ✅ Handles API failures gracefully
+- ✅ Marks failed enrichments to avoid reprocessing
+
+### Sentence Enrichment
+
+Enrich existing sentences with distractor options using the ML distractor service:
+
+```bash
+go run main.go enrich-sentences --limit 1000 --delay 10
+```
+
+**Options:**
+- `--limit` (default: 1000000): Maximum number of sentences to process
+- `--delay` (default: 10): Delay between API calls in milliseconds
+
+### Reset Failed Enrichments
+
+Reset words that failed enrichment back to "unknown" status to allow retry:
+
+```bash
+go run main.go reset-enrichment
+```
+
+This command:
+- Finds words marked as "unknown_processed" (failed enrichments)
+- Resets them back to "unknown" status
+- Allows them to be retried in future enrichment runs
+- Shows count of reset words
+
 ## Safety Features
 
 - **Password Protection**: Clear command requires environment variable `CLEAR_PASSWORD`
