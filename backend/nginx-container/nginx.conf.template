@@ -135,46 +135,51 @@ server {
         limit_req zone=webhook_zone burst=10 nodelay;
     }
 
-    # Bot Health Check Endpoints
-    location /bot/health {
-        proxy_pass http://fluently_telegram_bot:8060/health;
-        proxy_http_version 1.1;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        
-        # Allow public access for monitoring
-        access_log off;
-    }
+    # ===========================================
+    # TELEGRAM BOT HEALTH AND METRICS ENDPOINTS (DISABLED)
+    # ===========================================
+    # The following endpoints are commented out to disable direct access to the Telegram bot's health and metrics.
 
-    location /bot/ready {
-        proxy_pass http://fluently_telegram_bot:8060/ready;
-        proxy_http_version 1.1;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        
-        # Allow public access for monitoring
-        access_log off;
-    }
+    # # Bot Health Check Endpoints
+    # location /bot/health {
+    #     proxy_pass http://fluently_telegram_bot:8060/health;
+    #     proxy_http_version 1.1;
+    #     proxy_set_header Host $host;
+    #     proxy_set_header X-Real-IP $remote_addr;
+    #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    #     proxy_set_header X-Forwarded-Proto $scheme;
+    #     
+    #     # Allow public access for monitoring
+    #     access_log off;
+    # }
 
-    # Bot Metrics endpoint (optional, can be restricted)
-    location /bot/metrics {
-        proxy_pass http://fluently_telegram_bot:8060/metrics;
-        proxy_http_version 1.1;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        
-        # Optional: Restrict access to internal networks
-        # allow 10.0.0.0/8;
-        # allow 172.16.0.0/12;
-        # allow 192.168.0.0/16;
-        # deny all;
-    }
+    # location /bot/ready {
+    #     proxy_pass http://fluently_telegram_bot:8060/ready;
+    #     proxy_http_version 1.1;
+    #     proxy_set_header Host $host;
+    #     proxy_set_header X-Real-IP $remote_addr;
+    #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    #     proxy_set_header X-Forwarded-Proto $scheme;
+    #     
+    #     # Allow public access for monitoring
+    #     access_log off;
+    # }
+
+    # # Bot Metrics endpoint (optional, can be restricted)
+    # location /bot/metrics {
+    #     proxy_pass http://fluently_telegram_bot:8060/metrics;
+    #     proxy_http_version 1.1;
+    #     proxy_set_header Host $host;
+    #     proxy_set_header X-Real-IP $remote_addr;
+    #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    #     proxy_set_header X-Forwarded-Proto $scheme;
+    #     
+    #     # Optional: Restrict access to internal networks
+    #     # allow 10.0.0.0/8;
+    #     # allow 172.16.0.0/12;
+    #     # allow 192.168.0.0/16;
+    #     # deny all;
+    # }
 
     # ===========================================
     # BACKEND API CONFIGURATION
