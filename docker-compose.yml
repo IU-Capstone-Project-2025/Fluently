@@ -79,44 +79,52 @@ services:
       - "${ZEROTIER_IP}:5432:5432"  # ZeroTier access
 
   # Redis for Telegram Bot
-  # redis:
-  #   image: redis:7-alpine
-  #   container_name: fluently_redis
-  #   restart: unless-stopped
-  #   volumes:
-  #     - fluently_redis_data:/data
-  #   networks:
-  #     - fluently_network
-  #   command: redis-server --appendonly yes
-  #   ports:
-  #     - "127.0.0.1:6379:6379"  # Local access for debugging
-  #     - "${ZEROTIER_IP}:6379:6379"  # ZeroTier access
+  redis:
+    image: redis:7-alpine
+    container_name: fluently_redis
+    restart: unless-stopped
+    volumes:
+      - fluently_redis_data:/data
+    networks:
+      - fluently_network
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    ports:
+      - "127.0.0.1:6379:6379"  # Local access for debugging
+      - "${ZEROTIER_IP}:6379:6379"  # ZeroTier access
 
   # ===========================================
   # APPLICATION SERVICES
   # ===========================================
   
   # Telegram Bot
-  # telegram-bot:
-  #   image: docker.io/fluentlyorg/fluently-telegram-bot:latest-develop
-  #   container_name: fluently_telegram_bot
-  #   restart: unless-stopped
-  #   env_file: .env  # Use root .env file instead of telegram-bot/.env
-  #   environment:
-  #     # Override Redis connection for Docker network
-  #     - REDIS_ADDR=redis:6379
-  #     - WEBHOOK_HOST=0.0.0.0
-  #     - WEBHOOK_PORT=8060
-  #     - WEBHOOK_PATH=/webhook
-  #   depends_on:
-  #     - redis
-  #     - backend
-  #   networks:
-  #     - fluently_network
-  #   # Bot webhook endpoint for NGINX to proxy to
-  #   ports:
-  #     - "127.0.0.1:8060:8060"  # Local access for NGINX proxy
-  #     - "${ZEROTIER_IP}:8060:8060"  # ZeroTier access
+  telegram-bot:
+    image: docker.io/fluentlyorg/fluently-telegram-bot:latest-develop
+    container_name: fluently_telegram_bot
+    restart: unless-stopped
+    env_file: .env  # Use root .env file instead of telegram-bot/.env
+    environment:
+      # Override Redis connection for Docker network
+      - REDIS_ADDR=redis:6379
+      - WEBHOOK_HOST=0.0.0.0
+      - WEBHOOK_PORT=8060
+      - WEBHOOK_PATH=/webhook
+    depends_on:
+      redis:
+        condition: service_healthy
+      backend:
+        condition: service_started
+    networks:
+      - fluently_network
+    # Bot webhook endpoint for NGINX to proxy to
+    ports:
+      - "127.0.0.1:8060:8060"  # Local access for NGINX proxy
+      - "${ZEROTIER_IP}:8060:8060"  # ZeroTier access
 
   # ML Distractor API (Internal only)
   ml-api:
@@ -201,8 +209,13 @@ services:
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       PORT: 8055
+      # Redis configuration for Docker network
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
     depends_on:
       postgres:
+        condition: service_healthy
+      redis:
         condition: service_healthy
     networks:
       - fluently_network
