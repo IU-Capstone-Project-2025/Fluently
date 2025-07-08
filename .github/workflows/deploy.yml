@@ -288,7 +288,7 @@ jobs:
               fi
               
               # Check for ML API changes
-              if git diff --name-only $BASE_SHA HEAD | grep -q "^analysis/"; then
+              if git diff --name-only $BASE_SHA HEAD | grep -q "^analysis/distractor_api/"; then
                 ML_API_CHANGED="true"
                 echo "🔨 ML API files changed"
               fi
@@ -371,7 +371,7 @@ jobs:
           # Summary
           echo "📋 Build Summary:"
           echo "  Backend: $BUILD_BACKEND"
-          echo "  Telegram Bot: $BUILD_TELEGRAM"  
+          echo "  Telegram Bot: $BUILD_TELEGRAM"
           echo "  ML API: $BUILD_ML_API"
           echo "  Nginx: $BUILD_NGINX"
 
@@ -386,8 +386,6 @@ jobs:
           tags: docker.io/fluentlyorg/fluently-backend:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          build-args: |
-            SWAGGER_HOST=localhost:8070
 
       # Telegram Bot Build  
       - name: Build and push telegram-bot image
@@ -701,6 +699,9 @@ jobs:
             echo "🔧 Setting up environment variables..."
             echo "SWAGGER_HOST=$SWAGGER_HOST"
             
+            # Add SWAGGER_HOST to .env file
+            echo "SWAGGER_HOST=$SWAGGER_HOST" >> .env
+            
             # Add telegram bot environment variables if they don't exist
             echo "🔧 Setting up Telegram bot configuration..."
             if [ "$ENVIRONMENT" = "production" ]; then
@@ -803,33 +804,6 @@ jobs:
             echo "📊 Disk space before deployment:"
             df -h | grep -E "(overlay|docker|/$)"
             
-            # Warn if disk space is low
-            DISK_USAGE=$(df / | tail -1 | awk '{print $5}' | sed 's/%//')
-            if [ "$DISK_USAGE" -gt 80 ]; then
-              echo "⚠️ WARNING: Disk usage is ${DISK_USAGE}% - cleanup recommended"
-              echo "🧹 Performing emergency cleanup due to high disk usage..."
-              
-              # Emergency cleanup - but preserve database volumes
-              echo "🔒 Protecting database volumes before cleanup..."
-              PROTECTED_VOLUMES="fluently_pgdata_safe fluently_grafana_data_external"
-              for vol in $PROTECTED_VOLUMES; do
-                if docker volume ls | grep -q "$vol"; then
-                  echo "✅ Protected volume found: $vol"
-                else
-                  echo "⚠️ Protected volume not found: $vol"
-                fi
-              done
-              
-              # Aggressive cleanup but avoid volumes with running containers
-              docker container prune -f || true
-              docker image prune -a -f || true
-              docker network prune -f || true
-              docker builder prune -a -f || true
-              
-              echo "📊 Disk space after emergency cleanup:"
-              df -h | grep -E "(overlay|docker|/$)"
-            fi
-
             echo "🐳 Pulling latest images and starting containers..."
             # Stop services first
             docker compose down --remove-orphans || true
