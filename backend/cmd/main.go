@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	// Import docs only if they exist (conditional import for swag generation)
-	_ "fluently/go-backend/docs"
+	"fluently/go-backend/docs"
 
 	appConfig "fluently/go-backend/internal/config"
 	"fluently/go-backend/internal/repository/models"
@@ -29,7 +29,7 @@ import (
 // @license.name  MIT
 // @license.url   https://opensource.org/licenses/MIT
 
-// @host ${SWAGGER_HOST}
+// @host localhost:8070
 // @BasePath  /
 
 // @securityDefinitions.apikey BearerAuth
@@ -41,6 +41,12 @@ func main() {
 	appConfig.Init()
 	logger.Init(true) // or false for production
 	defer logger.Log.Sync()
+
+	// Update Swagger host from configuration
+	if swaggerHost := appConfig.GetConfig().Swagger.Host; swaggerHost != "" {
+		docs.SwaggerInfo.Host = swaggerHost
+		logger.Log.Info("Swagger host set from config", zap.String("host", swaggerHost))
+	}
 
 	// Database init
 	dsn := appConfig.GetPostgresDSN()

@@ -147,9 +147,11 @@ services:
       - "127.0.0.1:8001:8001"  # Local access for debugging
       - "${ZEROTIER_IP}:8001:8001"  # ZeroTier access
 
-  # Thesaurus API for vocabulary recommendations
+  # Thesaurus API for vocabulary recommendations (Local Build)
   thesaurus-api:
-    image: docker.io/fluentlyorg/fluently-thesaurus:latest-develop
+    build:
+      context: ./analysis/thesaurus
+      dockerfile: Dockerfile
     container_name: fluently_thesaurus
     environment:
       - PYTHONUNBUFFERED=1

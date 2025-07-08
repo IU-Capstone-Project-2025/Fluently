@@ -20,9 +20,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
 # Copy source code (this layer will be rebuilt when code changes)
 COPY . .
 
-# Substitute environment variables in main.go and generate docs
-ARG SWAGGER_HOST
-RUN envsubst '${SWAGGER_HOST}' < cmd/main.go > cmd/main.go.tmp && mv cmd/main.go.tmp cmd/main.go
+# Generate Swagger docs
 RUN swag init --generalInfo cmd/main.go --output docs
 
 # Build the application with build cache
