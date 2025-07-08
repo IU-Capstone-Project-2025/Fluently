@@ -148,3 +148,9 @@ iOSInjectionProject/
 /analysis/translated_vocabulary.csv
 /analysis/words_dictionary.json
 analysis/Data/
+analysis/words/data.csv
+analysis/words/words_dictionary.json
+analysis/words/translated_vocabulary.csv
+analysis/words/parser.py
+analysis/words/oxford_vocabulary.csv
+analysis/words/expanded_dataset.csv
