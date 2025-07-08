@@ -804,33 +804,6 @@ jobs:
             echo "📊 Disk space before deployment:"
             df -h | grep -E "(overlay|docker|/$)"
             
-            # Warn if disk space is low
-            DISK_USAGE=$(df / | tail -1 | awk '{print $5}' | sed 's/%//')
-            if [ "$DISK_USAGE" -gt 80 ]; then
-              echo "⚠️ WARNING: Disk usage is ${DISK_USAGE}% - cleanup recommended"
-              echo "🧹 Performing emergency cleanup due to high disk usage..."
-              
-              # Emergency cleanup - but preserve database volumes
-              echo "🔒 Protecting database volumes before cleanup..."
-              PROTECTED_VOLUMES="fluently_pgdata_safe fluently_grafana_data_external"
-              for vol in $PROTECTED_VOLUMES; do
-                if docker volume ls | grep -q "$vol"; then
-                  echo "✅ Protected volume found: $vol"
-                else
-                  echo "⚠️ Protected volume not found: $vol"
-                fi
-              done
-              
-              # Aggressive cleanup but avoid volumes with running containers
-              docker container prune -f || true
-              docker image prune -a -f || true
-              docker network prune -f || true
-              docker builder prune -a -f || true
-              
-              echo "📊 Disk space after emergency cleanup:"
-              df -h | grep -E "(overlay|docker|/$)"
-            fi
-
             echo "🐳 Pulling latest images and starting containers..."
             # Stop services first
             docker compose down --remove-orphans || true
