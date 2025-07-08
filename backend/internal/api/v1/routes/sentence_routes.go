@@ -7,6 +7,10 @@ import (
 )
 
 func RegisterSentenceRoutes(r chi.Router, h *handler.SentenceHandler) {
+	r.Get("/words/{word_id}/sentences", h.ListSentences)
+
+	r.Post("/sentences", h.CreateSentence)
+
 	r.Put("/sentences/{id}", h.UpdateSentence)
 	r.Delete("/sentences/{id}", h.DeleteSentence)
 }

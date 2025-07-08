@@ -45,9 +45,23 @@ RUN --mount=type=cache,target=/go/pkg/mod \
 
 # Final stage
 FROM alpine:latest
+
+# Install curl for health checks
+RUN apk add --no-cache curl
+
 WORKDIR /app
 COPY --from=builder /app/fluently-backend .
 COPY --from=builder /app/docs ./docs
-COPY .env .
-EXPOSE ${APP_PORT}
-CMD ["./fluently-backend"]
+
+# Create a simple startup script that handles environment setup
+RUN echo '#!/bin/sh' > /app/start.sh && \
+    echo 'echo "🚀 Starting Fluently Backend..."' >> /app/start.sh && \
+    echo 'echo "📍 Working directory: $(pwd)"' >> /app/start.sh && \
+    echo 'echo "📋 Environment variables loaded"' >> /app/start.sh && \
+    echo 'exec ./fluently-backend "$@"' >> /app/start.sh && \
+    chmod +x /app/start.sh
+
+# Set default port
+EXPOSE 8070
+
+CMD ["/app/start.sh"]

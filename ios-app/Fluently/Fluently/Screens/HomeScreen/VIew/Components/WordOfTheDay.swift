@@ -10,7 +10,7 @@ import SwiftUI
 
 struct WordOfTheDay: View {
     // MARK: - Properties
-    @State var word: Word
+    @State var word: WordModel
 
     // MARK: - Constants
     private enum Const {

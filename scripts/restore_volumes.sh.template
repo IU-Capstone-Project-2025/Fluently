@@ -1,0 +1,83 @@
+#!/bin/bash
+# Environment-specific restore script template
+# Generated from restore_volumes.sh.template
+
+BACKUP_DIR="${BACKUP_DIR}"
+ENVIRONMENT="${ENVIRONMENT}"
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 <backup_name>"
+  echo "Example: $0 fluently_backup_20250701_140000"
+  echo ""
+  echo "Available backups in $ENVIRONMENT:"
+  ls -la "$BACKUP_DIR" | grep fluently_backup_ | tail -10
+  exit 1
+fi
+
+BACKUP_NAME="$1"
+BACKUP_PATH="$BACKUP_DIR/$BACKUP_NAME"
+
+if [ ! -d "$BACKUP_PATH" ]; then
+  echo "❌ Backup not found: $BACKUP_PATH"
+  echo "Available backups:"
+  ls -la "$BACKUP_DIR" | grep fluently_backup_
+  exit 1
+fi
+
+echo "🔄 Restoring $ENVIRONMENT from backup: $BACKUP_PATH"
+
+# Confirm restore
+echo "⚠️  This will restore data and restart services. Continue? (y/N)"
+read -r response
+if [[ ! "$response" =~ ^[Yy]$ ]]; then
+  echo "Restore cancelled"
+  exit 0
+fi
+
+# Stop services
+echo "🛑 Stopping services..."
+docker compose down
+
+# Create backup of current state before restore
+CURRENT_BACKUP="$BACKUP_DIR/pre-restore-backup-$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$CURRENT_BACKUP"
+
+echo "💾 Creating backup of current state before restore..."
+docker run --rm \
+  -v fluently_pgdata_safe:/data \
+  -v "$CURRENT_BACKUP":/backup \
+  alpine tar czvf /backup/postgres_data_pre_restore.tar.gz /data
+
+# Restore PostgreSQL data
+echo "📊 Restoring PostgreSQL data..."
+docker run --rm \
+  -v fluently_pgdata_safe:/data \
+  -v "$BACKUP_PATH":/backup \
+  alpine sh -c "rm -rf /data/* && tar xzf /backup/postgres_data.tar.gz -C /"
+
+# Restore Grafana data
+echo "📈 Restoring Grafana data..."
+docker run --rm \
+  -v fluently_grafana_data_external:/data \
+  -v "$BACKUP_PATH":/backup \
+  alpine sh -c "rm -rf /data/* && tar xzf /backup/grafana_data.tar.gz -C /"
+
+# Restore Prometheus data
+echo "📊 Restoring Prometheus data..."
+docker run --rm \
+  -v fluently_prometheus_data_external:/data \
+  -v "$BACKUP_PATH":/backup \
+  alpine sh -c "rm -rf /data/* && tar xzf /backup/prometheus_data.tar.gz -C /"
+
+# Restore SonarQube data
+echo "🔍 Restoring SonarQube data..."
+docker run --rm \
+  -v fluently_sonarqube_data_external:/data \
+  -v "$BACKUP_PATH":/backup \
+  alpine sh -c "rm -rf /data/* && tar xzf /backup/sonarqube_data.tar.gz -C /"
+
+echo "✅ $ENVIRONMENT restore completed. Starting services..."
+docker compose up -d
+
+echo "🎉 Restore completed for $ENVIRONMENT environment!"
+echo "📋 Pre-restore backup saved at: $CURRENT_BACKUP"

@@ -1,93 +1,458 @@
-# telegram-bot
+# Fluently Telegram Bot
 
+This is the Telegram bot component of the Fluently language learning app.
 
+## Features
 
-## Getting started
+- FSM (Finite State Machine) based conversation flows
+- Redis-backed state persistence
+- Support for multiple learning flows:
+  - CEFR Level assessment
+  - Vocabulary learning with spaced repetition
+  - Exercise flows for practice
+- Settings management:
+  - Words per day
+  - Notification preferences
+  - CEFR level selection
+- Structured error handling with recovery paths
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Architecture
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+The bot is built with a state-based architecture that allows for complex conversation flows:
 
-## Add your files
+- **FSM**: Manages user states and transitions
+- **Router**: Routes updates to appropriate handlers
+- **Handlers**: Process commands and messages
+- **TempData**: Stores temporary conversation data
+- **API Client**: Communicates with the backend API
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+### State Management
+
+The bot uses Redis to persist user states and temporary data across interactions. The FSM implementation supports:
+
+- Structured state transitions
+- State validation
+- Error recovery
+- Temporary data storage
+- Sub-state tracking for complex flows
+
+## Key Components
+
+### FSM
+
+- `states.go`: Defines all possible states and valid transitions
+- `memory.go`: Implements Redis-based state persistence and temporary data storage
+
+### Handlers
+
+- `service.go`: Provides handler service with state-based routing
+- `handlers.go`: Implements command and message handlers
+
+### Router
+
+- `router.go`: Routes Telegram updates to appropriate handlers based on type and state
+
+### Bot
+
+- `bot.go`: Main bot implementation with FSM integration
+
+## State Flows
+
+### Onboarding Flow
+1. Start → Welcome → Method Explanation → Spaced Repetition → Questionnaire
+2. Questionnaire → Various Question States → CEFR Test
+
+### CEFR Test Flow
+1. Vocabulary Test → Test Groups (1-5) → Processing → Results → Level Determination
+
+### Learning Flow
+1. Lesson Start → Lesson In Progress → Show Words → Exercises → Lesson Complete
+
+### Settings Flow
+1. Settings → Various Setting States (Words Per Day, Notifications, CEFR Level)
+
+## Running the Bot
+
+```bash
+# Development
+go run cmd/main.go -debug -config=./config/config.dev.yaml
+
+# Production
+go run cmd/main.go -config=./config/config.prod.yaml
+```
+
+## Configuration
+
+The bot requires the following configuration:
+
+```yaml
+bot:
+  token: "your-telegram-bot-token"
+  debug: false
+
+api:
+  base_url: "https://api.example.com/v1"
+
+redis:
+  address: "localhost:6379"
+  db: 0
+  password: ""
+```
+
+## 🚀 Features
+
+- **Comprehensive Learning Flow**: 5-stage learning process from onboarding to lesson completion
+- **Spaced Repetition System**: Scientific approach to vocabulary memorization  
+- **Webhook-based**: High-performance webhook processing with async handling
+- **Redis State Management**: Fast user progress and session storage
+- **Background Tasks**: Asynq for scheduling lessons and notifications
+- **API Integration**: Seamless connection with backend learning platform
+- **Rate Limiting**: Protection against abuse and overload
+- **Health Monitoring**: Built-in health checks and metrics
+
+## 📋 Learning Flow
+
+### Stage 1: Onboarding
+- Welcome message and motivation
+- Method explanation (spaced repetition)
+- Scientific backing (Ebbinghaus forgetting curve)
+
+### Stage 2: Personalization  
+- User questionnaire (goals, confidence, habits)
+- Vocabulary level assessment (5 groups of words)
+- CEFR level determination
+- Personalized learning plan creation
+
+### Stage 3: Lesson Flow
+- 10 words per lesson
+- First block of 3 words with examples
+- Individual word presentation with integrated repetition
+- Audio and translation exercises
+
+### Stage 4: Exercises
+- Audio dictation (speech recognition)
+- Translation checks (active recall)
+- Immediate feedback and correction
+- Progress tracking
+
+### Stage 5: Progress Management
+- Daily statistics and streaks
+- Lesson completion rewards
+- Scheduled reminders and notifications
+
+## 🏗️ Architecture
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/fluently/telegram-bot.git
-git branch -M main
-git push -uf origin main
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Telegram API  │───▶│  Webhook Server │───▶│ Handler Service │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                              │                        │
+                              ▼                        ▼
+                       ┌─────────────────┐    ┌─────────────────┐
+                       │ Rate Limiter    │    │ FSM State Mgmt  │
+                       │ Middleware      │    │ (Redis)         │
+                       └─────────────────┘    └─────────────────┘
+                                                       │
+                                                       ▼
+                              ┌─────────────────┐    ┌─────────────────┐
+                              │ Background      │    │ Backend API     │
+                              │ Tasks (Asynq)   │    │ Client          │
+                              └─────────────────┘    └─────────────────┘
 ```
 
-## Integrate with your tools
+## 🛠️ Setup
 
-- [ ] [Set up project integrations](https://gitlab.com/fluently/telegram-bot/-/settings/integrations)
+### Prerequisites
 
-## Collaborate with your team
+- Go 1.21+
+- Redis 6.0+
+- Backend API running (Fluently backend)
+- Telegram Bot Token
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+### Installation
 
-## Test and Deploy
+1. **Clone the repository**
+```bash
+git clone <repository-url>
+cd telegram-bot
+```
 
-Use the built-in continuous integration in GitLab.
+2. **Install dependencies**
+```bash
+go mod tidy
+```
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+3. **Configure environment**
+```bash
+cp .env.example .env
+# Edit .env with your configuration
+```
 
-***
+4. **Set up Redis** 
+```bash
+# Using Docker
+docker run -d --name redis -p 6379:6379 redis:7-alpine
 
-# Editing this README
+# Or install locally
+# Ubuntu/Debian
+sudo apt-get install redis-server
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+# macOS
+brew install redis
+```
 
-## Suggestions for a good README
+5. **Configure Telegram Bot**
+   - Create bot with [@BotFather](https://t.me/BotFather)
+   - Get bot token and add to `.env`
+   - Set webhook URL (must be HTTPS in production)
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+### Configuration
 
-## Name
-Choose a self-explaining name for your project.
+Key environment variables in `.env`:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+```bash
+# Required
+BOT_TOKEN=your_telegram_bot_token
+WEBHOOK_URL=https://yourdomain.com/webhook
+API_BASE_URL=https://your-backend-api.com
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+# Optional but recommended
+WEBHOOK_SECRET=random_secret_string
+REDIS_ADDR=localhost:6379
+```
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+## 🚦 Running
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+### Development
+```bash
+go run cmd/main.go
+```
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+### Production with Docker
+```bash
+docker-compose up -d
+```
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+### Setting Webhook
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+The bot automatically configures webhooks, but you can also set manually:
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+```bash
+curl -F "url=https://yourdomain.com/webhook" \
+     -F "secret_token=your_webhook_secret" \
+     https://api.telegram.org/bot<TOKEN>/setWebhook
+```
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+## 📝 Project Structure
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+```
+telegram-bot/
+├── cmd/
+│   └── main.go                 # Application entry point
+├── config/
+│   └── config.go              # Configuration management
+├── internal/
+│   ├── api/
+│   │   └── client.go          # Backend API client
+│   ├── bot/
+│   │   ├── fsm/
+│   │   │   ├── states.go      # FSM state definitions
+│   │   │   └── memory.go      # User progress tracking
+│   │   └── handlers/
+│   │       └── service.go     # Message handlers
+│   ├── tasks/
+│   │   ├── scheduler.go       # Asynq task scheduling
+│   │   └── handlers.go        # Background task handlers
+│   └── webhook/
+│       └── server.go          # Webhook HTTP server
+├── pkg/
+│   └── logger/
+│       └── logger.go          # Structured logging
+├── docker-compose.yml         # Docker setup
+├── Dockerfile                # Container image
+└── .env.example              # Configuration template
+```
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+## 🔄 FSM States
 
-## License
-For open source projects, say how it is licensed.
+The bot uses a comprehensive FSM to manage user learning progress:
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+### Onboarding States
+- `StateStart` - Initial state
+- `StateWelcome` - Welcome message
+- `StateMethodExplanation` - Learning method explanation
+- `StateSpacedRepetition` - Spaced repetition explanation
+
+### Assessment States  
+- `StateQuestionnaire` - User questionnaire
+- `StateVocabularyTest` - Vocabulary level test
+- `StateLevelDetermination` - CEFR level determination
+
+### Learning States
+- `StateLessonStart` - Lesson beginning
+- `StateShowingWords` - Word presentation
+- `StateExerciseReview` - Exercise phase
+- `StateLessonComplete` - Lesson completion
+
+### Exercise States
+- `StateAudioDictation` - Audio exercises
+- `StateTranslationCheck` - Translation exercises
+- `StateWaitingForAudio` - Awaiting audio response
+- `StateWaitingForTranslation` - Awaiting translation
+
+## 🔧 API Integration
+
+The bot integrates with the Fluently backend API for:
+
+- **User Authentication**: Telegram ↔ Google account linking
+- **Lesson Generation**: Dynamic lesson creation based on user level
+- **Progress Tracking**: Real-time progress synchronization
+- **Content Delivery**: Words, sentences, audio, exercises
+
+### Account Linking
+
+Users can link Telegram accounts with Google accounts:
+
+1. Bot calls `/api/v1/telegram/create-link`
+2. User clicks magic link → Google OAuth
+3. Backend links accounts
+4. Bot gets confirmation via `/api/v1/telegram/check-status`
+
+## ⚡ Performance Features
+
+### Webhook Processing
+- **Async Processing**: Immediate 200 OK response to Telegram
+- **Goroutine Workers**: Parallel message processing
+- **Rate Limiting**: 100 req/sec with 200 burst
+- **Request Size Limits**: 1MB max body size
+
+### Redis Optimization
+- **Connection Pooling**: Efficient Redis connections
+- **TTL Management**: Automatic data expiration
+- **Compressed Storage**: JSON compression for large data
+- **Session Cleanup**: Hourly cleanup of expired data
+
+### Background Tasks
+- **Lesson Reminders**: Scheduled daily reminders
+- **Progress Sync**: Periodic API synchronization  
+- **Notifications**: Daily facts and motivation
+- **Cleanup Tasks**: Data maintenance and optimization
+
+## 📊 Monitoring
+
+### Health Checks
+- `GET /health` - Basic health status
+- `GET /ready` - Service readiness (Redis, API connectivity)
+- `GET /metrics` - Basic metrics (requests, errors, uptime)
+
+### Logging
+- **Structured Logging**: JSON format with Zap
+- **Log Levels**: Debug, Info, Warn, Error
+- **Context Tracking**: Request IDs and user tracking
+- **Error Reporting**: Detailed error context
+
+## 🐳 Docker Deployment
+
+### Docker Compose
+```bash
+# Start all services
+docker-compose up -d
+
+# View logs
+docker-compose logs -f bot
+
+# Stop services
+docker-compose down
+```
+
+### Production Deployment
+1. Set up reverse proxy (nginx/Caddy) for HTTPS
+2. Configure SSL certificates
+3. Set production environment variables
+4. Enable log rotation
+5. Set up monitoring (Prometheus/Grafana)
+
+## 🔐 Security
+
+### Webhook Security
+- **Secret Token Validation**: Telegram webhook secret
+- **HMAC Signature Verification**: Request signature validation
+- **Rate Limiting**: Protection against flooding
+- **Request Size Limits**: Prevent large payload attacks
+
+### Data Protection
+- **Redis Authentication**: Password-protected Redis
+- **API Key Management**: Secure API key storage
+- **Session Expiration**: Automatic cleanup of user sessions
+- **Input Validation**: Sanitization of user inputs
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Bot not responding to messages:**
+```bash
+# Check webhook status
+curl https://api.telegram.org/bot<TOKEN>/getWebhookInfo
+
+# Check logs
+docker-compose logs bot
+```
+
+**Redis connection issues:**
+```bash
+# Test Redis connectivity
+redis-cli ping
+
+# Check Redis logs
+docker-compose logs redis
+```
+
+**API integration problems:**
+```bash
+# Test API connectivity
+curl -H "X-API-Key: your_key" https://your-api.com/health
+
+# Check API client logs
+grep "API error" logs/bot.log
+```
+
+### Debug Mode
+
+Enable debug logging:
+```bash
+LOG_LEVEL=debug go run cmd/main.go
+```
+
+## 📈 Scaling
+
+### Horizontal Scaling
+- **Multiple Bot Instances**: Load balancing with shared Redis
+- **Worker Separation**: Dedicated Asynq workers
+- **Database Sharding**: User-based Redis sharding
+
+### Performance Optimization
+- **Connection Pooling**: Redis and HTTP connection pools
+- **Caching**: Frequent data caching in Redis
+- **Batch Processing**: Bulk API operations
+- **Async Operations**: Non-blocking task processing
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Telebot v3](https://gopkg.in/telebot.v3) - Telegram Bot framework
+- [Asynq](https://github.com/hibiken/asynq) - Background task processing
+- [Chi](https://github.com/go-chi/chi) - HTTP router
+- [Redis](https://redis.io/) - In-memory data structure store
+- [Zap](https://github.com/uber-go/zap) - Structured logging

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WordCardRow: View {
-    let word: Word
+    let word: WordModel
     @State var isHidden = true
 
     var body: some View {
@@ -32,6 +32,7 @@ struct WordCardRow: View {
                     .transition(.move(edge: .top).combined(with: .opacity))
                 }
             }
+            Spacer()
         }
         .padding(.horizontal)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -74,9 +75,14 @@ struct WordCardRow: View {
     var sentences: some View {
         VStack(alignment: .leading, spacing: 6) {
             ForEach(word.sentences, id: \.self) { sentence in
-                Text("- \(sentence)")
+                Text("- \(sentence.text)")
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.appFont.headline)
                     .foregroundStyle(.blackText)
+                Text("  - \(sentence.translation)")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.appFont.subheadline)
+                    .foregroundStyle(.grayFluently)
             }
         }
     }

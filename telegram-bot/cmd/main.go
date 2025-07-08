@@ -3,38 +3,98 @@ package main
 
 import (
 	"context"
-	"log"
-
-	"fluently/telegram-bot/config"
-	"fluently/telegram-bot/internal/bot"
-	"fluently/telegram-bot/pkg/logger"
+	"flag"
+	"os"
+	"os/signal"
+	"syscall"
+	"time"
 
 	"github.com/redis/go-redis/v9"
+	"go.uber.org/zap"
+
+	"telegram-bot/config"
+	"telegram-bot/internal/api"
+	"telegram-bot/internal/bot"
+	"telegram-bot/internal/tasks"
 )
 
 func main() {
+	// Parse command line flags
+	debug := flag.Bool("debug", false, "Enable debug mode")
+	flag.Parse()
+
 	// Initialize configuration
 	config.Init()
 	cfg := config.GetConfig()
 
 	// Initialize logger
-	logger.Init(true) // true for development mode
+	var logger *zap.Logger
+	var err error
+	if *debug || cfg.Logger.Level == "debug" {
+		logger, err = zap.NewDevelopment()
+	} else {
+		logger, err = zap.NewProduction()
+	}
+	if err != nil {
+		panic(err)
+	}
+	defer logger.Sync()
+
+	logger.Info("Starting Fluently Telegram Bot")
 
 	// Initialize Redis client
-	redisClient := redis.NewClient(&redis.Options{
-		Addr:     cfg.Redis.Addr,
-		Password: cfg.Redis.Password,
-		DB:       cfg.Redis.DB,
-	})
+	redisOpts := &redis.Options{
+		Addr:         cfg.Redis.Addr,
+		Password:     cfg.Redis.Password,
+		DB:           cfg.Redis.DB,
+		DialTimeout:  5 * time.Second,
+		ReadTimeout:  3 * time.Second,
+		WriteTimeout: 3 * time.Second,
+	}
+	redisClient := redis.NewClient(redisOpts)
 
 	// Test Redis connection
-	ctx := context.Background()
-	_, err := redisClient.Ping(ctx).Result()
-	if err != nil {
-		log.Fatalf("Failed to connect to Redis: %v", err)
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	if err := redisClient.Ping(ctx).Err(); err != nil {
+		logger.Fatal("Failed to connect to Redis", zap.Error(err))
 	}
-	log.Println("Successfully connected to Redis")
+	logger.Info("Redis connection established")
 
-	// Start the bot
-	bot.Start(cfg, redisClient)
+	// Initialize API client
+	apiClient := api.NewClient(cfg.API.BaseURL)
+
+	// Initialize task scheduler
+	scheduler := tasks.NewScheduler(cfg.Redis.Addr, cfg.Redis.Password, cfg.Redis.DB)
+
+	// Create bot
+	telegramBot, err := bot.NewTelegramBot(cfg, redisClient, apiClient, scheduler, logger)
+	if err != nil {
+		logger.Fatal("Failed to create telegram bot", zap.Error(err))
+	}
+
+	// Create a cancellable context
+	ctx, cancel = context.WithCancel(context.Background())
+	defer cancel()
+
+	// Handle graceful shutdown
+	sigChan := make(chan os.Signal, 1)
+	signal.Notify(sigChan, syscall.SIGINT, syscall.SIGTERM)
+
+	// Start the bot in a goroutine
+	go func() {
+		if err := telegramBot.Start(); err != nil {
+			logger.Error("Bot stopped with error", zap.Error(err))
+			cancel()
+		}
+	}()
+
+	// Wait for termination signal
+	sig := <-sigChan
+	logger.Info("Received shutdown signal", zap.String("signal", sig.String()))
+	cancel()
+
+	// Stop the bot
+	telegramBot.Stop()
+	logger.Info("Bot stopped gracefully")
 }

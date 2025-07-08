@@ -5,14 +5,13 @@ on:
     branches:
       - main
       - develop
-      - feature/*
-      - fix/*
   workflow_dispatch:
     inputs:
       branch:
         description: "Branch to deploy"
         required: false
         default: "main"
+        type: string
       environment:
         description: "Deployment environment (production/staging)"
         required: false
@@ -24,6 +23,41 @@ on:
           - staging
       rollback:
         description: "Rollback to previous version"
+        required: false
+        default: false
+        type: boolean
+      dry_run:
+        description: "Dry run - build images but don't deploy"
+        required: false
+        default: false
+        type: boolean
+      skip_tests:
+        description: "Skip quality checks and tests (faster deployment)"
+        required: false
+        default: false
+        type: boolean
+      force_build_backend:
+        description: "Force rebuild backend image"
+        required: false
+        default: false
+        type: boolean
+      force_build_telegram:
+        description: "Force rebuild telegram-bot image"
+        required: false
+        default: false
+        type: boolean
+      force_build_ml_api:
+        description: "Force rebuild ML API image"
+        required: false
+        default: false
+        type: boolean
+      force_build_nginx:
+        description: "Force rebuild nginx image"
+        required: false
+        default: false
+        type: boolean
+      force_build_all:
+        description: "Force rebuild all images"
         required: false
         default: false
         type: boolean
@@ -76,10 +110,343 @@ jobs:
             echo "🚀 Deploying branch '$BRANCH' to $ENVIRONMENT environment ($DOMAIN)"
           fi
 
+  # Code quality analysis
+  quality-check:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.skip_tests != 'true'
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21'
+          cache: true  # Enable Go module caching
+          cache-dependency-path: backend/go.sum
+
+      - name: Install swag for Go docs generation
+        run: |
+          echo "📦 Installing swag..."
+          go install github.com/swaggo/swag/cmd/swag@latest
+          echo "✅ Swag installed to: $(which swag || echo '$HOME/go/bin/swag')"
+
+      - name: Initialize Go module and generate docs
+        working-directory: ./backend
+        run: |
+          # Add Go bin to PATH
+          export PATH=$PATH:$HOME/go/bin
+          
+          # Ensure Go modules are properly initialized
+          echo "📦 Ensuring Go dependencies are available..."
+          go mod download
+          go mod tidy
+          
+          # Debug: Verify we're in the right place and files exist
+          echo "🔍 Current working directory: $(pwd)"
+          echo "🔍 Go version: $(go version)"
+          echo "🔍 Checking for main.go:"
+          test -f cmd/main.go && echo "✅ cmd/main.go exists" || echo "❌ cmd/main.go missing"
+          
+          # Verify swag is available
+          echo "🔍 Checking swag installation:"
+          if command -v swag >/dev/null 2>&1; then
+            echo "✅ swag found in PATH: $(which swag)"
+          elif [ -f "$HOME/go/bin/swag" ]; then
+            echo "✅ swag found at: $HOME/go/bin/swag"
+          else
+            echo "❌ swag not found"
+            exit 1
+          fi
+          
+          # Create docs directory if it doesn't exist
+          mkdir -p docs
+          
+          # Generate Swagger documentation with proper directory specification
+          echo "📚 Generating API documentation..."
+          echo "Current directory: $(pwd)"
+          echo "Contents of current directory:"
+          ls -la
+          echo "Contents of cmd directory:"
+          ls -la cmd/
+          if command -v swag >/dev/null 2>&1; then
+            swag init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal
+          else
+            $HOME/go/bin/swag init -g ./cmd/main.go -o ./docs --parseDependency --parseInternal
+          fi
+          
+          # Verify docs were generated
+          if [ ! -d "docs" ] || [ ! -f "docs/swagger.json" ]; then
+            echo "❌ Failed to generate docs properly"
+            echo "🔍 Contents of docs directory:"
+            ls -la docs/ || echo "docs directory not found"
+            exit 1
+          fi
+          
+          echo "✅ Documentation generated successfully"
+          echo "📁 Generated files:"
+          ls -la docs/
+
+      - name: Start test database
+        run: |
+          docker compose -f docker-compose.test.yml down --volumes
+          docker compose -f docker-compose.test.yml up -d test_db
+        
+      - name: Wait for DB to become healthy
+        run: |
+          for i in {1..20}; do
+            docker inspect -f '{{json .State.Health.Status}}' fluently_test_db | grep -q healthy && break
+            sleep 3
+          done
+        
+      - name: Go tests with coverage
+        working-directory: ./backend
+        env:
+          # Generic DB variables (used by code that doesn't look at *_TEST_*)
+          DB_HOST:         localhost
+          DB_PORT:         5433
+          DB_USER:         test_user
+          DB_PASSWORD:     test_password
+          DB_NAME:         test_fluently_db
+
+          # Explicit *_TEST_* variables (preferred by new config helpers)
+          DB_TEST_HOST:     localhost
+          DB_TEST_PORT:     5433
+          DB_TEST_USER:     test_user
+          DB_TEST_PASSWORD: test_password
+          DB_TEST_NAME:     test_fluently_db
+        run: |
+          go test ./... -coverprofile=coverage.out -covermode=atomic
+          go tool cover -func=coverage.out
+        
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v5.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN }}
+        
+      - name: Stop test database & wipe volume
+        if: always()
+        run: docker compose -f docker-compose.test.yml down --volumes
+
+  # ===========================================
+  # BUILD STAGE - Build Docker images based on changes or force flags
+  # ===========================================
+  build:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    outputs:
+      backend-built: ${{ steps.build-flags.outputs.backend-built }}
+      telegram-built: ${{ steps.build-flags.outputs.telegram-built }}
+      ml-api-built: ${{ steps.build-flags.outputs.ml-api-built }}
+      nginx-built: ${{ steps.build-flags.outputs.nginx-built }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history for change detection
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Determine what to build
+        id: build-flags
+        run: |
+          # Initialize change flags
+          BACKEND_CHANGED="false"
+          TELEGRAM_CHANGED="false"
+          ML_API_CHANGED="false"
+          NGINX_CHANGED="false"
+          
+          # Check for file changes if this is a push event
+          if [ "${{ github.event_name }}" = "push" ]; then
+            # Get the previous commit for comparison
+            if [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+              BASE_SHA="${{ github.event.before }}"
+              echo "🔍 Checking for changes since $BASE_SHA"
+              
+              # Check for backend changes
+              if git diff --name-only $BASE_SHA HEAD | grep -q "^backend/"; then
+                BACKEND_CHANGED="true"
+                echo "🔨 Backend files changed"
+              fi
+              
+              # Check for telegram bot changes
+              if git diff --name-only $BASE_SHA HEAD | grep -q "^telegram-bot/"; then
+                TELEGRAM_CHANGED="true"
+                echo "🔨 Telegram bot files changed"
+              fi
+              
+              # Check for ML API changes
+              if git diff --name-only $BASE_SHA HEAD | grep -q "^analysis/"; then
+                ML_API_CHANGED="true"
+                echo "🔨 ML API files changed"
+              fi
+              
+              # Check for nginx changes
+              if git diff --name-only $BASE_SHA HEAD | grep -q -E "^(frontend-website/|backend/nginx-container/)"; then
+                NGINX_CHANGED="true"
+                echo "🔨 Nginx files changed"
+              fi
+            else
+              # First commit or force push - build everything
+              echo "🔨 First commit or force push detected - building all images"
+              BACKEND_CHANGED="true"
+              TELEGRAM_CHANGED="true"
+              ML_API_CHANGED="true"
+              NGINX_CHANGED="true"
+            fi
+          else
+            echo "📝 Manual workflow dispatch - using force build flags only"
+          fi
+          
+          # Determine final build decisions based on changes + force flags
+          BUILD_BACKEND="false"
+          BUILD_TELEGRAM="false"
+          BUILD_ML_API="false"
+          BUILD_NGINX="false"
+          
+          # Force build all images
+          if [ "${{ github.event.inputs.force_build_all }}" = "true" ]; then
+            BUILD_BACKEND="true"
+            BUILD_TELEGRAM="true"
+            BUILD_ML_API="true"
+            BUILD_NGINX="true"
+            echo "🔨 Force building all images"
+          else
+            # Individual force flags or changes
+            if [ "${{ github.event.inputs.force_build_backend }}" = "true" ] || [ "$BACKEND_CHANGED" = "true" ]; then
+              BUILD_BACKEND="true"
+              if [ "${{ github.event.inputs.force_build_backend }}" = "true" ]; then
+                echo "🔨 Force building backend"
+              else
+                echo "🔨 Building backend (changed)"
+              fi
+            fi
+            
+            if [ "${{ github.event.inputs.force_build_telegram }}" = "true" ] || [ "$TELEGRAM_CHANGED" = "true" ]; then
+              BUILD_TELEGRAM="true"
+              if [ "${{ github.event.inputs.force_build_telegram }}" = "true" ]; then
+                echo "🔨 Force building telegram bot"
+              else
+                echo "🔨 Building telegram bot (changed)"
+              fi
+            fi
+            
+            if [ "${{ github.event.inputs.force_build_ml_api }}" = "true" ] || [ "$ML_API_CHANGED" = "true" ]; then
+              BUILD_ML_API="true"
+              if [ "${{ github.event.inputs.force_build_ml_api }}" = "true" ]; then
+                echo "🔨 Force building ML API"
+              else
+                echo "🔨 Building ML API (changed)"
+              fi
+            fi
+            
+            if [ "${{ github.event.inputs.force_build_nginx }}" = "true" ] || [ "$NGINX_CHANGED" = "true" ]; then
+              BUILD_NGINX="true"
+              if [ "${{ github.event.inputs.force_build_nginx }}" = "true" ]; then
+                echo "🔨 Force building nginx"
+              else
+                echo "🔨 Building nginx (changed)"
+              fi
+            fi
+          fi
+          
+          # Output build decisions
+          echo "backend-built=$BUILD_BACKEND" >> $GITHUB_OUTPUT
+          echo "telegram-built=$BUILD_TELEGRAM" >> $GITHUB_OUTPUT
+          echo "ml-api-built=$BUILD_ML_API" >> $GITHUB_OUTPUT
+          echo "nginx-built=$BUILD_NGINX" >> $GITHUB_OUTPUT
+          
+          # Summary
+          echo "📋 Build Summary:"
+          echo "  Backend: $BUILD_BACKEND"
+          echo "  Telegram Bot: $BUILD_TELEGRAM"  
+          echo "  ML API: $BUILD_ML_API"
+          echo "  Nginx: $BUILD_NGINX"
+
+      # Backend Build
+      - name: Build and push backend image
+        if: steps.build-flags.outputs.backend-built == 'true'
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend
+          file: ./backend/Dockerfile
+          push: true
+          tags: docker.io/fluentlyorg/fluently-backend:latest-develop
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          build-args: |
+            SWAGGER_HOST=localhost:8070
+
+      # Telegram Bot Build  
+      - name: Build and push telegram-bot image
+        if: steps.build-flags.outputs.telegram-built == 'true'
+        uses: docker/build-push-action@v5
+        with:
+          context: ./telegram-bot
+          file: ./telegram-bot/Dockerfile
+          push: true
+          tags: docker.io/fluentlyorg/fluently-telegram-bot:latest-develop
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # ML API Build (Most expensive - 15 minutes)
+      - name: Build and push ML API image
+        if: steps.build-flags.outputs.ml-api-built == 'true'
+        uses: docker/build-push-action@v5
+        with:
+          context: ./analysis
+          file: ./analysis/distractor_api/Dockerfile
+          push: true
+          tags: docker.io/fluentlyorg/fluently-ml-api:latest-develop
+          cache-from: type=gha
+          cache-to: type=gha,mode=min
+          platforms: linux/amd64  # Single platform for faster builds
+
+      # Nginx Build
+      - name: Build and push nginx image
+        if: steps.build-flags.outputs.nginx-built == 'true'
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./backend/nginx-container/Dockerfile
+          push: true
+          tags: docker.io/fluentlyorg/fluently-nginx:latest-develop
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build summary
+        run: |
+          echo "✅ Build stage completed"
+          echo "🔨 Built images:"
+          [ "${{ steps.build-flags.outputs.backend-built }}" = "true" ] && echo "  - Backend" || true
+          [ "${{ steps.build-flags.outputs.telegram-built }}" = "true" ] && echo "  - Telegram Bot" || true
+          [ "${{ steps.build-flags.outputs.ml-api-built }}" = "true" ] && echo "  - ML API" || true
+          [ "${{ steps.build-flags.outputs.nginx-built }}" = "true" ] && echo "  - Nginx" || true
+          
+          # Dry run notification
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            echo ""
+            echo "🧪 DRY RUN MODE: Images built but deployment will be skipped"
+            echo "✅ This was a successful dry run - images are ready for deployment"
+          fi
+
   deploy:
-    needs: setup
+    needs: [setup, build, quality-check]
     runs-on: ubuntu-latest
     environment: ${{ needs.setup.outputs.environment }}
+    if: github.event.inputs.dry_run != 'true' && always() && !failure() && !cancelled()
 
     steps:
       - name: Checkout
@@ -87,10 +454,18 @@ jobs:
 
       - name: Debug values
         run: |
-          echo "🔍 Debug Information:"
+          echo "🔍 Deployment Information:"
           echo "Environment: ${{ needs.setup.outputs.environment }}"
           echo "Domain: ${{ needs.setup.outputs.domain }}"
           echo "Is Rollback: ${{ needs.setup.outputs.is_rollback }}"
+          echo "Branch: ${{ github.event.inputs.branch || github.ref_name }}"
+          echo "Tests Skipped: ${{ github.event.inputs.skip_tests }}"
+          echo ""
+          echo "🏗️ Built Images:"
+          [ "${{ needs.build.outputs.backend-built }}" = "true" ] && echo "  ✅ Backend" || echo "  ⏭️ Backend (skipped)"
+          [ "${{ needs.build.outputs.telegram-built }}" = "true" ] && echo "  ✅ Telegram Bot" || echo "  ⏭️ Telegram Bot (skipped)"
+          [ "${{ needs.build.outputs.ml-api-built }}" = "true" ] && echo "  ✅ ML API" || echo "  ⏭️ ML API (skipped)"
+          [ "${{ needs.build.outputs.nginx-built }}" = "true" ] && echo "  ✅ Nginx" || echo "  ⏭️ Nginx (skipped)"
 
       - name: Deploy to ${{ needs.setup.outputs.environment }}
         uses: appleboy/ssh-action@v1.0.3
@@ -110,6 +485,18 @@ jobs:
             
             echo "🔄 Starting deployment process for $ENVIRONMENT environment"
             echo "🌐 Domain: $DOMAIN"
+            echo "🌟 Branch: $BRANCH"
+            
+            # Production safety check
+            if [ "$ENVIRONMENT" = "production" ]; then
+              echo "⚠️  PRODUCTION DEPLOYMENT WARNING"
+              echo "Environment: PRODUCTION"
+              echo "Domain: $DOMAIN"
+              echo "Branch: $BRANCH"
+              echo "Triggered by: ${{ github.actor }}"
+              echo "🚀 Proceeding with production deployment..."
+              sleep 3
+            fi
             
             # Navigate to project directory and set environment variables
             if [ "$ENVIRONMENT" = "production" ]; then
@@ -173,19 +560,36 @@ jobs:
               
               # Check if nginx is responding
               echo "Checking nginx health..."
-              for i in {1..5}; do
-                if curl -f -s "http://localhost" >/dev/null 2>&1 || curl -f -s "http://127.0.0.1" >/dev/null 2>&1; then
-                  echo "✅ Nginx is healthy"
+              if curl -f "http://localhost" >/dev/null 2>&1; then
+                echo "✅ Nginx is healthy"
+              else
+                echo "❌ Nginx health check failed"
+                return 1
+              fi
+              
+              # Check if telegram bot is healthy
+              echo "Checking telegram bot health..."
+              for i in {1..3}; do
+                if docker compose ps telegram-bot | grep -q "Up"; then
+                  echo "✅ Telegram bot is running"
+                  # Check if bot can connect to Telegram API
+                  if docker compose logs telegram-bot | grep -q "Successfully connected to Redis"; then
+                    echo "✅ Telegram bot connected to Redis"
+                  fi
+                  if docker compose logs telegram-bot | grep -q "telegram: Not Found (404)"; then
+                    echo "❌ Telegram bot has invalid token (404 error)"
+                    echo "🔍 Bot logs:"
+                    docker compose logs --tail=10 telegram-bot || true
+                    return 1
+                  fi
                   break
-                elif [ $i -eq 5 ]; then
-                  echo "❌ Nginx health check failed after 5 attempts"
-                  # Try to get more info about what's wrong
-                  echo "🔍 Debugging nginx status:"
-                  docker compose ps nginx || true
-                  docker compose logs --tail=20 nginx || true
+                elif [ $i -eq 3 ]; then
+                  echo "❌ Telegram bot health check failed"
+                  echo "🔍 Bot logs:"
+                  docker compose logs --tail=10 telegram-bot || true
                   return 1
                 else
-                  echo "⏳ Waiting for nginx... (attempt $i/5)"
+                  echo "⏳ Waiting for telegram bot... (attempt $i/3)"
                   sleep 5
                 fi
               done
@@ -297,6 +701,89 @@ jobs:
             echo "🔧 Setting up environment variables..."
             echo "SWAGGER_HOST=$SWAGGER_HOST"
             
+            # Add telegram bot environment variables if they don't exist
+            echo "🔧 Setting up Telegram bot configuration..."
+            if [ "$ENVIRONMENT" = "production" ]; then
+              BOT_TOKEN="${{ secrets.TELEGRAM_BOT_TOKEN }}"
+              WEBHOOK_SECRET="${{ secrets.WEBHOOK_SECRET }}"
+              echo "📝 Using production bot credentials"
+            else
+              BOT_TOKEN="${{ secrets.STAGING_TELEGRAM_BOT_TOKEN }}"
+              WEBHOOK_SECRET="${{ secrets.STAGING_WEBHOOK_SECRET }}"
+              echo "📝 Using staging bot credentials"
+            fi
+            
+            # Debug: Check if secrets are provided (without printing actual values)
+            if [ -z "$BOT_TOKEN" ]; then
+              echo "⚠️ WARNING: BOT_TOKEN is empty for $ENVIRONMENT environment!"
+              echo "Please set the following GitHub secret:"
+              if [ "$ENVIRONMENT" = "production" ]; then
+                echo "   TELEGRAM_BOT_TOKEN"
+              else
+                echo "   STAGING_TELEGRAM_BOT_TOKEN"
+              fi
+            else
+              echo "✅ BOT_TOKEN is provided (length: ${#BOT_TOKEN} characters)"
+            fi
+            
+            if [ -z "$WEBHOOK_SECRET" ]; then
+              echo "⚠️ WARNING: WEBHOOK_SECRET is empty for $ENVIRONMENT environment!"
+              echo "Please set the following GitHub secret:"
+              if [ "$ENVIRONMENT" = "production" ]; then
+                echo "   WEBHOOK_SECRET"
+              else
+                echo "   STAGING_WEBHOOK_SECRET"
+              fi
+            else
+              echo "✅ WEBHOOK_SECRET is provided"
+            fi
+            
+            # Set telegram bot configuration in root .env
+            if [ ! -z "$BOT_TOKEN" ]; then
+              if grep -q "BOT_TOKEN=" .env; then
+                sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=$BOT_TOKEN/" .env
+              else
+                echo "BOT_TOKEN=$BOT_TOKEN" >> .env
+              fi
+              echo "✅ BOT_TOKEN set in .env file"
+            else
+              echo "❌ Skipping BOT_TOKEN setup (empty value)"
+            fi
+            
+            if [ ! -z "$WEBHOOK_SECRET" ]; then
+              if grep -q "WEBHOOK_SECRET=" .env; then
+                sed -i "s/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=$WEBHOOK_SECRET/" .env
+              else
+                echo "WEBHOOK_SECRET=$WEBHOOK_SECRET" >> .env
+              fi
+              echo "✅ WEBHOOK_SECRET set in .env file"
+            else
+              echo "❌ Skipping WEBHOOK_SECRET setup (empty value)"
+            fi
+            
+            # Set webhook URL
+            if grep -q "WEBHOOK_URL=" .env; then
+              sed -i "s|WEBHOOK_URL=.*|WEBHOOK_URL=https://$DOMAIN/webhook|g" .env
+            else
+              echo "WEBHOOK_URL=https://$DOMAIN/webhook" >> .env
+            fi
+            
+            # Set Redis configuration for Docker network
+            if grep -q "REDIS_ADDR=" .env; then
+              sed -i "s|REDIS_ADDR=.*|REDIS_ADDR=redis:6379|g" .env
+            else
+              echo "REDIS_ADDR=redis:6379" >> .env
+            fi
+
+            echo "📋 Main .env file ready for docker-compose..."
+            
+            # Debug: Show telegram bot configuration (without sensitive values)
+            echo "🔍 Telegram bot configuration in .env:"
+            echo "BOT_TOKEN: $(grep "BOT_TOKEN=" .env | sed 's/BOT_TOKEN=.*/BOT_TOKEN=[HIDDEN]/' || echo 'Not set')"
+            echo "WEBHOOK_SECRET: $(grep "WEBHOOK_SECRET=" .env | sed 's/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=[HIDDEN]/' || echo 'Not set')"
+            echo "WEBHOOK_URL: $(grep "WEBHOOK_URL=" .env || echo 'Not set')"
+            echo "REDIS_ADDR: $(grep "REDIS_ADDR=" .env || echo 'Not set')"
+            
 
             # Generate nginx config from template
             echo "🔧 Generating nginx configuration from template..."
@@ -312,7 +799,38 @@ jobs:
 
             echo "Generated nginx config for $DOMAIN with cert $CERT_NAME"
 
-            echo "🐳 Starting Docker containers..."
+            # Check disk space before deployment
+            echo "📊 Disk space before deployment:"
+            df -h | grep -E "(overlay|docker|/$)"
+            
+            # Warn if disk space is low
+            DISK_USAGE=$(df / | tail -1 | awk '{print $5}' | sed 's/%//')
+            if [ "$DISK_USAGE" -gt 80 ]; then
+              echo "⚠️ WARNING: Disk usage is ${DISK_USAGE}% - cleanup recommended"
+              echo "🧹 Performing emergency cleanup due to high disk usage..."
+              
+              # Emergency cleanup - but preserve database volumes
+              echo "🔒 Protecting database volumes before cleanup..."
+              PROTECTED_VOLUMES="fluently_pgdata_safe fluently_grafana_data_external"
+              for vol in $PROTECTED_VOLUMES; do
+                if docker volume ls | grep -q "$vol"; then
+                  echo "✅ Protected volume found: $vol"
+                else
+                  echo "⚠️ Protected volume not found: $vol"
+                fi
+              done
+              
+              # Aggressive cleanup but avoid volumes with running containers
+              docker container prune -f || true
+              docker image prune -a -f || true
+              docker network prune -f || true
+              docker builder prune -a -f || true
+              
+              echo "📊 Disk space after emergency cleanup:"
+              df -h | grep -E "(overlay|docker|/$)"
+            fi
+
+            echo "🐳 Pulling latest images and starting containers..."
             # Stop services first
             docker compose down --remove-orphans || true
 
@@ -328,37 +846,95 @@ jobs:
             
             echo "✅ Network cleanup completed"
 
-            # Build with progress output and timeout handling
-            echo "🔨 Building Docker images..."
-            export DOCKER_BUILDKIT=1
-            export COMPOSE_DOCKER_CLI_BUILD=1
+            # Pull latest images instead of building
+            echo "📥 Pulling latest Docker images..."
+            docker compose pull
             
-            # Build ML API separately first (it takes the longest)
-            echo "🤖 Building ML API (this may take several minutes)..."
-            timeout 30m docker compose build ml-api || {
-              echo "❌ ML API build timed out after 30 minutes"
-              exit 1
-            }
-            
-            # Build remaining services
-            echo "🔨 Building remaining services..."
-            docker compose build
-
             # Start services with force recreate
+            echo "🚀 Starting services..."
             docker compose up -d --force-recreate
 
             # Perform health checks
             if check_health; then
               echo "🎉 Deployment completed successfully!"
               echo "🌐 Application available at: https://$DOMAIN"
+              echo "🕐 Deployment time: $(date)"
+              echo "👤 Deployed by: ${{ github.actor }}"
+              echo "🌿 Branch: $BRANCH"
+              echo "🏷️  Environment: $ENVIRONMENT"
               
               # Show running containers
+              echo ""
               echo "📋 Running containers:"
               docker compose ps
               
-              # Cleanup old images (keep last 3)
-              echo "🧹 Cleaning up old Docker images..."
+              # Show telegram bot setup instructions
+              echo ""
+              echo "🤖 Telegram Bot Setup Instructions:"
+              echo "If the bot token is set correctly, run this command to set up the webhook:"
+              echo ""
+              echo "curl -X POST \"https://api.telegram.org/bot\$BOT_TOKEN/setWebhook\" \\"
+              echo "     -H \"Content-Type: application/json\" \\"
+              echo "     -d '{\"url\": \"https://$DOMAIN/webhook\"}'"
+              echo ""
+              echo "Replace \$BOT_TOKEN with your actual bot token from the GitHub secrets."
+              echo "You can test the webhook by sending a message to your bot."
+              echo ""
+              
+              # Enhanced cleanup old images and free up space
+              echo "🧹 Performing comprehensive Docker cleanup..."
+              
+              # Protect critical volumes first
+              echo "🔒 Verifying critical volumes are protected..."
+              CRITICAL_VOLUMES="fluently_pgdata_safe fluently_grafana_data_external"
+              for vol in $CRITICAL_VOLUMES; do
+                if docker volume ls | grep -q "$vol"; then
+                  echo "✅ Critical volume protected: $vol"
+                else
+                  echo "⚠️ Warning: Critical volume not found: $vol"
+                fi
+              done
+              
+              # Remove old image versions (keep last 3 versions of each fluently image)
+              echo "🗑️ Cleaning up old fluently images (keeping last 3 versions)..."
+              docker images --format "{{.Repository}}:{{.Tag}} {{.ID}} {{.CreatedAt}}" | \
+                grep "fluentlyorg/fluently-" | \
+                sort -k3 -r | \
+                tail -n +4 | \
+                awk '{print $2}' | \
+                xargs -r docker rmi -f 2>/dev/null || true
+              
+              # Clean up dangling and old unused images
+              echo "🗑️ Cleaning up dangling images..."
               docker image prune -f || true
+              
+              echo "🗑️ Cleaning up images older than 72 hours (not in use)..."
+              docker image prune -a --filter "until=72h" -f || true
+              
+              # Clean up build cache to free space
+              echo "🗑️ Cleaning up Docker build cache..."
+              docker builder prune -f || true
+              
+              # Clean up unused networks (safe - only removes unattached networks)
+              echo "🗑️ Cleaning up unused networks..."
+              docker network prune -f || true
+              
+              # Clean up stopped containers (safe - only removes stopped containers)
+              echo "🗑️ Cleaning up stopped containers..."
+              docker container prune -f || true
+              
+              # INTENTIONALLY SKIP volume prune to protect data
+              echo "🔒 Skipping volume cleanup to protect database data"
+              
+              # Show cleanup results
+              echo "📊 Disk space after cleanup:"
+              df -h | grep -E "(overlay|docker|/$)" || true
+              
+              echo "📦 Remaining Docker images:"
+              docker images --format "table {{.Repository}}:{{.Tag}}\t{{.Size}}\t{{.CreatedAt}}"
+              
+              # Cleanup old images (keep last 3)
+              echo "✅ Docker cleanup completed safely"
               
               # Remove current state backup since deployment was successful
               rm -f "$CURRENT_STATE_BACKUP" || true

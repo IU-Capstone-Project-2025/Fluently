@@ -124,6 +124,7 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		routes.RegisterSentenceRoutes(r, &handlers.SentenceHandler{Repo: postgres.NewSentenceRepository(db)})
 		routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: postgres.NewLearnedWordRepository(db)})
 		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: postgres.NewPreferenceRepository(db)})
+		routes.RegisterPickOptionRoutes(r, &handlers.PickOptionHandler{Repo: postgres.NewPickOptionRepository(db)})
 		routes.RegisterLessonRoutes(r, &handlers.LessonHandler{
 			PreferenceRepo: postgres.NewPreferenceRepository(db),
 			TopicRepo:      postgres.NewTopicRepository(db),

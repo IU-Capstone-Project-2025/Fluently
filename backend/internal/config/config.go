@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"strings"
@@ -38,11 +39,16 @@ type ApiConfig struct {
 }
 
 type DatabaseConfig struct {
-	User     string
-	Password string
-	Host     string
-	Port     string
-	Name     string
+	User         string
+	Password     string
+	Host         string
+	Port         string
+	Name         string
+	TestName     string
+	TestUser     string
+	TestPassword string
+	TestHost     string
+	TestPort     string
 }
 
 type LoggerConfig struct {
@@ -97,11 +103,16 @@ func Init() {
 			AppPort: viper.GetString("APP_PORT"),
 		},
 		Database: DatabaseConfig{
-			User:     viper.GetString("DB_USER"),
-			Password: viper.GetString("DB_PASSWORD"),
-			Host:     viper.GetString("DB_HOST"),
-			Port:     viper.GetString("DB_PORT"),
-			Name:     viper.GetString("DB_NAME"),
+			User:         viper.GetString("DB_USER"),
+			Password:     viper.GetString("DB_PASSWORD"),
+			Host:         viper.GetString("DB_HOST"),
+			Port:         viper.GetString("DB_PORT"),
+			Name:         viper.GetString("DB_NAME"),
+			TestName:     viper.GetString("DB_TEST_NAME"),
+			TestUser:     viper.GetString("DB_TEST_USER"),
+			TestPassword: viper.GetString("DB_TEST_PASSWORD"),
+			TestHost:     viper.GetString("DB_TEST_HOST"),
+			TestPort:     viper.GetString("DB_TEST_PORT"),
 		},
 		Logger: LoggerConfig{
 			Level: viper.GetString("LOG_LEVEL"),
@@ -129,8 +140,42 @@ func GetConfig() *Config {
 
 // GetPostgresDSN returns the PostgreSQL connection string
 func GetPostgresDSN() string {
-	return "postgres://" + cfg.Database.User + ":" + cfg.Database.Password +
-		"@" + cfg.Database.Host + ":" + cfg.Database.Port + "/" + cfg.Database.Name
+	c := GetConfig()
+	return fmt.Sprintf("postgres://%s:%s@%s:%s/%s", c.Database.User, c.Database.Password, c.Database.Host, c.Database.Port, c.Database.Name)
+}
+
+// GetPostgresDSNForImport returns the PostgreSQL connection string for the import tool.
+// It forces the host to localhost (useful when the import tool runs inside the same
+// machine as the database container) and always disables SSL.
+func GetPostgresDSNForImport() string {
+	c := GetConfig()
+	return fmt.Sprintf("postgres://%s:%s@localhost:%s/%s?sslmode=disable", c.Database.User, c.Database.Password, c.Database.Port, c.Database.Name)
+}
+
+// GetPostgresDSNForTest returns the PostgreSQL DSN to be used by unit/integration
+// tests. If specific *test* variables are not provided, it gracefully falls back to
+// the normal database variables so that tests still work with the generic DB_*
+// environment used in CI.
+func GetPostgresDSNForTest() string {
+	c := GetConfig()
+
+	host := firstNotEmpty(c.Database.TestHost, c.Database.Host, "localhost")
+	port := firstNotEmpty(c.Database.TestPort, c.Database.Port, "5433")
+	user := firstNotEmpty(c.Database.TestUser, c.Database.User, "test_user")
+	password := firstNotEmpty(c.Database.TestPassword, c.Database.Password, "test_password")
+	name := firstNotEmpty(c.Database.TestName, c.Database.Name, "test_fluently_db")
+
+	return fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable", user, password, host, port, name)
+}
+
+// firstNotEmpty returns the first non-empty string from the provided list.
+func firstNotEmpty(values ...string) string {
+	for _, v := range values {
+		if v != "" {
+			return v
+		}
+	}
+	return ""
 }
 
 // GoogleOAuthConfig constructs an oauth2.Config based on application settings.
