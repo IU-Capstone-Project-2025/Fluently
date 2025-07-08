@@ -799,6 +799,37 @@ jobs:
 
             echo "Generated nginx config for $DOMAIN with cert $CERT_NAME"
 
+            # Check disk space before deployment
+            echo "📊 Disk space before deployment:"
+            df -h | grep -E "(overlay|docker|/$)"
+            
+            # Warn if disk space is low
+            DISK_USAGE=$(df / | tail -1 | awk '{print $5}' | sed 's/%//')
+            if [ "$DISK_USAGE" -gt 80 ]; then
+              echo "⚠️ WARNING: Disk usage is ${DISK_USAGE}% - cleanup recommended"
+              echo "🧹 Performing emergency cleanup due to high disk usage..."
+              
+              # Emergency cleanup - but preserve database volumes
+              echo "🔒 Protecting database volumes before cleanup..."
+              PROTECTED_VOLUMES="fluently_pgdata_safe fluently_grafana_data_external"
+              for vol in $PROTECTED_VOLUMES; do
+                if docker volume ls | grep -q "$vol"; then
+                  echo "✅ Protected volume found: $vol"
+                else
+                  echo "⚠️ Protected volume not found: $vol"
+                fi
+              done
+              
+              # Aggressive cleanup but avoid volumes with running containers
+              docker container prune -f || true
+              docker image prune -a -f || true
+              docker network prune -f || true
+              docker builder prune -a -f || true
+              
+              echo "📊 Disk space after emergency cleanup:"
+              df -h | grep -E "(overlay|docker|/$)"
+            fi
+
             echo "🐳 Pulling latest images and starting containers..."
             # Stop services first
             docker compose down --remove-orphans || true
@@ -850,9 +881,60 @@ jobs:
               echo "You can test the webhook by sending a message to your bot."
               echo ""
               
-              # Cleanup old images (keep last 3)
-              echo "🧹 Cleaning up old Docker images..."
+              # Enhanced cleanup old images and free up space
+              echo "🧹 Performing comprehensive Docker cleanup..."
+              
+              # Protect critical volumes first
+              echo "🔒 Verifying critical volumes are protected..."
+              CRITICAL_VOLUMES="fluently_pgdata_safe fluently_grafana_data_external"
+              for vol in $CRITICAL_VOLUMES; do
+                if docker volume ls | grep -q "$vol"; then
+                  echo "✅ Critical volume protected: $vol"
+                else
+                  echo "⚠️ Warning: Critical volume not found: $vol"
+                fi
+              done
+              
+              # Remove old image versions (keep last 3 versions of each fluently image)
+              echo "🗑️ Cleaning up old fluently images (keeping last 3 versions)..."
+              docker images --format "{{.Repository}}:{{.Tag}} {{.ID}} {{.CreatedAt}}" | \
+                grep "fluentlyorg/fluently-" | \
+                sort -k3 -r | \
+                tail -n +4 | \
+                awk '{print $2}' | \
+                xargs -r docker rmi -f 2>/dev/null || true
+              
+              # Clean up dangling and old unused images
+              echo "🗑️ Cleaning up dangling images..."
               docker image prune -f || true
+              
+              echo "🗑️ Cleaning up images older than 72 hours (not in use)..."
+              docker image prune -a --filter "until=72h" -f || true
+              
+              # Clean up build cache to free space
+              echo "🗑️ Cleaning up Docker build cache..."
+              docker builder prune -f || true
+              
+              # Clean up unused networks (safe - only removes unattached networks)
+              echo "🗑️ Cleaning up unused networks..."
+              docker network prune -f || true
+              
+              # Clean up stopped containers (safe - only removes stopped containers)
+              echo "🗑️ Cleaning up stopped containers..."
+              docker container prune -f || true
+              
+              # INTENTIONALLY SKIP volume prune to protect data
+              echo "🔒 Skipping volume cleanup to protect database data"
+              
+              # Show cleanup results
+              echo "📊 Disk space after cleanup:"
+              df -h | grep -E "(overlay|docker|/$)" || true
+              
+              echo "📦 Remaining Docker images:"
+              docker images --format "table {{.Repository}}:{{.Tag}}\t{{.Size}}\t{{.CreatedAt}}"
+              
+              # Cleanup old images (keep last 3)
+              echo "✅ Docker cleanup completed safely"
               
               # Remove current state backup since deployment was successful
               rm -f "$CURRENT_STATE_BACKUP" || true
