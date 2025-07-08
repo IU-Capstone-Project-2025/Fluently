@@ -565,32 +565,32 @@ jobs:
                 return 1
               fi
               
-              # # Check if telegram bot is healthy
-              # echo "Checking telegram bot health..."
-              # for i in {1..3}; do
-              #   if docker compose ps telegram-bot | grep -q "Up"; then
-              #     echo "✅ Telegram bot is running"
-              #     # Check if bot can connect to Telegram API
-              #     if docker compose logs telegram-bot | grep -q "Successfully connected to Redis"; then
-              #       echo "✅ Telegram bot connected to Redis"
-              #     fi
-              #     if docker compose logs telegram-bot | grep -q "telegram: Not Found (404)"; then
-              #       echo "❌ Telegram bot has invalid token (404 error)"
-              #       echo "🔍 Bot logs:"
-              #       docker compose logs --tail=10 telegram-bot || true
-              #       return 1
-              #     fi
-              #     break
-              #   elif [ $i -eq 3 ]; then
-              #     echo "❌ Telegram bot health check failed"
-              #     echo "🔍 Bot logs:"
-              #     docker compose logs --tail=10 telegram-bot || true
-              #     return 1
-              #   else
-              #     echo "⏳ Waiting for telegram bot... (attempt $i/3)"
-              #     sleep 5
-              #   fi
-              # done
+              # Check if telegram bot is healthy
+              echo "Checking telegram bot health..."
+              for i in {1..3}; do
+                if docker compose ps telegram-bot | grep -q "Up"; then
+                  echo "✅ Telegram bot is running"
+                  # Check if bot can connect to Telegram API
+                  if docker compose logs telegram-bot | grep -q "Successfully connected to Redis"; then
+                    echo "✅ Telegram bot connected to Redis"
+                  fi
+                  if docker compose logs telegram-bot | grep -q "telegram: Not Found (404)"; then
+                    echo "❌ Telegram bot has invalid token (404 error)"
+                    echo "🔍 Bot logs:"
+                    docker compose logs --tail=10 telegram-bot || true
+                    return 1
+                  fi
+                  break
+                elif [ $i -eq 3 ]; then
+                  echo "❌ Telegram bot health check failed"
+                  echo "🔍 Bot logs:"
+                  docker compose logs --tail=10 telegram-bot || true
+                  return 1
+                else
+                  echo "⏳ Waiting for telegram bot... (attempt $i/3)"
+                  sleep 5
+                fi
+              done
               
               echo "🎉 All health checks passed!"
               return 0
