@@ -12,15 +12,10 @@ final class HomeScreenInteractor {
 
     let api: APIService = APIService()
 
-    func getLesson() {
-        Task {
-            do {
-                let cards = try await api.getLesson()
-                printCards(cards)
-            } catch {
-                print("Error: \(error)")
-            }
-        }
+    func getLesson() async throws -> CardsModel{
+        let cards = try await api.getLesson()
+        printCards(cards)
+        return cards
     }
 
     func printCards(_ cards: CardsModel) {

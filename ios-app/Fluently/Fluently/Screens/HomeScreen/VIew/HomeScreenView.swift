@@ -34,8 +34,12 @@ struct HomeScreenView: View {
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
-        .onAppear {
-//            presenter.getLesson()
+        .task {
+            do {
+                try await presenter.getLesson()
+            } catch {
+                print(error)
+            }
         }
 
         .fullScreenCover(item: $openedScreen) { screenType in

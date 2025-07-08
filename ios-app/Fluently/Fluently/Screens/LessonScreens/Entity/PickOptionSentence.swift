@@ -36,7 +36,10 @@ final class PickOptionSentence: ExerciseData {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         template = try container.decode(String.self, forKey: .template)
-        options = try container.decode([String].self, forKey: .options)
+        let temp = try container.decode(String.self, forKey: .correctAnswer)
+
+//        options = try container.decode([String].self, forKey: .options)
+        options = [temp]
         try super.init(from: container.superDecoder())
     }
 

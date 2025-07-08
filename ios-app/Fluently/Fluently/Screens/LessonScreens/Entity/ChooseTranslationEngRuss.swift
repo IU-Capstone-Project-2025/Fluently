@@ -31,7 +31,10 @@ final class ChooseTranslationEngRuss: ExerciseData {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         text = try container.decode(String.self, forKey: .text)
-        options = try container.decode([String].self, forKey: .options)
+        let temp = try container.decode(String.self, forKey: .correctAnswer)
+
+//        options = try container.decode([String].self, forKey: .options)
+        options = [temp]
         try super.init(from: container.superDecoder())
     }
 

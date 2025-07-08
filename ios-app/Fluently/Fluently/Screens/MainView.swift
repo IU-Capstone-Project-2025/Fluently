@@ -14,12 +14,20 @@ struct MainView: View {
 
     @State var currentScreen: NavigationBar.Screen = .home
 
+    @State private var calendarView = CalendarScreenView()
+    @State private var homeView: HomeScreenView?
+    @State private var statisticView = StatisticScreenView()
+
+    func setupScreens() {
+        homeView = HomeScreenBuilder.build(router: router, acoount: accountData)
+    }
+
     var body: some View {
         ZStack {
             Group {
                 switch currentScreen {
                     case .calendar:
-                        CalendarScreenView()
+                        calendarView
                             .transition(
                                 .asymmetric(
                                     insertion: .move(edge: .leading),
@@ -27,10 +35,10 @@ struct MainView: View {
                                 )
                             )
                     case .home:
-                        HomeScreenBuilder.build(router: router, acoount: accountData)
+                        homeView
                             .transition(.opacity)
                     case .statistic:
-                        StatisticScreenView()
+                        statisticView
                             .transition(
                                 .asymmetric(
                                     insertion: .move(edge: .trailing),
@@ -40,6 +48,9 @@ struct MainView: View {
                 }
             }
             .animation(.easeInOut(duration: 0.3), value: currentScreen)
+        }
+        .onAppear {
+            setupScreens()
         }
         .toolbar {
             ToolbarItem(placement: .bottomBar) {
