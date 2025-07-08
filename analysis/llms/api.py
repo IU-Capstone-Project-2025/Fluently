@@ -24,10 +24,16 @@ class AIService:
 
     def _init_providers(self):
         """Инициализация провайдеров и их API-ключей"""
+        # Helper function to safely split API keys
+        def get_api_keys(env_var):
+            keys_str = os.getenv(env_var, "").strip()
+            if not keys_str:
+                return []
+            return [key.strip() for key in keys_str.split(",") if key.strip()]
+        
         return {
             "groq": {
-                "keys": os.getenv("GROQ_API_KEYS", "").split(","),
-                # "keys": [""],
+                "keys": get_api_keys("GROQ_API_KEYS"),
                 "models": {
                     "fast": "llama-3-8b-8192",
                     "balanced": "llama-3.3-70b-versatile"
@@ -35,8 +41,7 @@ class AIService:
                 "client": None
             },
             "gemini": {
-                "keys": os.getenv("GEMINI_API_KEYS", "").split(","),
-                # "keys": [""],
+                "keys": get_api_keys("GEMINI_API_KEYS"),
                 "models": {
                     "fast": "gemini-2.0-flash",
                     "balanced": "gemini-2.5-flash"
@@ -51,11 +56,21 @@ class AIService:
 
     def _sync_initialize(self):
         """Синхронная инициализация клиентов"""
-        if any(self.providers["groq"]["keys"]):
-            self.providers["groq"]["client"] = Groq(api_key = os.getenv("GROQ_API_KEYS", "").split(",")[0])
-            # self.providers["groq"]["client"] = Groq(api_key = "")
-        if any(self.providers["gemini"]["keys"]):
-            genai.configure()
+        # Initialize Groq client with first available key
+        groq_keys = self.providers["groq"]["keys"]
+        if groq_keys:
+            self.providers["groq"]["client"] = Groq(api_key=groq_keys[0])
+            logger.info(f"Groq client initialized with {len(groq_keys)} key(s)")
+        else:
+            logger.warning("No Groq API keys found in environment")
+            
+        # Initialize Gemini with first available key
+        gemini_keys = self.providers["gemini"]["keys"]
+        if gemini_keys:
+            genai.configure(api_key=gemini_keys[0])
+            logger.info(f"Gemini client initialized with {len(gemini_keys)} key(s)")
+        else:
+            logger.warning("No Gemini API keys found in environment")
 
     def _get_next_key(self, provider):
         """Получение следующего API-ключа с ротацией"""
