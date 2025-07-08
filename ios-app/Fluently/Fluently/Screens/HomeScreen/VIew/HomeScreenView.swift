@@ -35,13 +35,7 @@ struct HomeScreenView: View {
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
         .onAppear {
-            presenter.getLesson()
-        }
-
-        .toolbar{
-            ToolbarItem(placement: .bottomBar) {
-                bottomBar
-            }
+//            presenter.getLesson()
         }
 
         .fullScreenCover(item: $openedScreen) { screenType in
@@ -78,10 +72,6 @@ struct HomeScreenView: View {
             )
         }
         .padding(Const.horizontalPadding)
-    }
-
-    var bottomBar: some View {
-        NavigationBar()
     }
 
     ///  Grid with main info

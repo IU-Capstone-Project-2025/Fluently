@@ -23,7 +23,7 @@ struct NavigationBar: View {
         }
     }
 
-    @State var currentScreen: Screen = .home
+    @Binding var currentScreen: Screen
 
     var body: some View {
         HStack {
@@ -64,7 +64,7 @@ struct MenuButton: View {
                 .interpolatingSpring(
                     mass: 1.0,
                     stiffness: 150,
-                    damping: 12,
+                    damping: 16.5,
                     initialVelocity: 0
                 )
             ) {
@@ -90,6 +90,13 @@ struct MenuButton: View {
 
 struct NavigationPreview: PreviewProvider {
     static var previews: some View {
-        NavigationBar(currentScreen: .calendar)
+        PreviewWrapper()
+    }
+
+    struct PreviewWrapper: View {
+        @State var screen = NavigationBar.Screen.home
+        var body: some View {
+            NavigationBar(currentScreen: $screen)
+        }
     }
 }

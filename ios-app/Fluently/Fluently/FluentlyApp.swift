@@ -41,7 +41,8 @@ struct FluentlyApp: App {
                             }
                     } else {
                         if !showLogin {
-                            HomeScreenBuilder.build(router: router, acoount: account)
+//                            HomeScreenBuilder.build(router: router, acoount: account)
+                            MainView()
                         } else {
                             LoginScreenBuilder.build(
                                 router: router,
@@ -55,10 +56,11 @@ struct FluentlyApp: App {
                 .navigationDestination(for: AppRoutes.self) { route in
                     switch route {
                         case .homeScreen:
-                            HomeScreenBuilder.build(
-                                router: router,
-                                acoount: account
-                            )
+//                            HomeScreenBuilder.build(
+//                                router: router,
+//                                acoount: account
+//                            )
+                            MainView()
                         case .login:
                             LoginScreenBuilder.build(
                                 router: router,
