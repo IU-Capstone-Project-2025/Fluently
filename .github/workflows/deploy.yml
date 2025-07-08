@@ -56,11 +56,6 @@ on:
         required: false
         default: false
         type: boolean
-      force_build_thesaurus:
-        description: "Force rebuild thesaurus-api image"
-        required: false
-        default: false
-        type: boolean
       force_build_all:
         description: "Force rebuild all images"
         required: false
@@ -377,13 +372,9 @@ jobs:
               fi
             fi
             
-            if [ "${{ github.event.inputs.force_build_thesaurus }}" = "true" ] || [ "$THESAURUS_CHANGED" = "true" ]; then
+            if [ "$THESAURUS_CHANGED" = "true" ]; then
               BUILD_THESAURUS="true"
-              if [ "${{ github.event.inputs.force_build_thesaurus }}" = "true" ]; then
-                echo "🔨 Force building thesaurus"
-              else
-                echo "🔨 Building thesaurus (changed)"
-              fi
+              echo "🔨 Building thesaurus (changed)"
             fi
           fi
           
