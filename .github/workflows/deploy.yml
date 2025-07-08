@@ -56,6 +56,11 @@ on:
         required: false
         default: false
         type: boolean
+      force_build_thesaurus:
+        description: "Force rebuild thesaurus-api image"
+        required: false
+        default: false
+        type: boolean
       force_build_all:
         description: "Force rebuild all images"
         required: false
@@ -242,6 +247,7 @@ jobs:
       telegram-built: ${{ steps.build-flags.outputs.telegram-built }}
       ml-api-built: ${{ steps.build-flags.outputs.ml-api-built }}
       nginx-built: ${{ steps.build-flags.outputs.nginx-built }}
+      thesaurus-built: ${{ steps.build-flags.outputs.thesaurus-built }}
     
     steps:
       - name: Checkout code
@@ -267,6 +273,7 @@ jobs:
           TELEGRAM_CHANGED="false"
           ML_API_CHANGED="false"
           NGINX_CHANGED="false"
+          THESAURUS_CHANGED="false"
           
           # Check for file changes if this is a push event
           if [ "${{ github.event_name }}" = "push" ]; then
@@ -288,9 +295,15 @@ jobs:
               fi
               
               # Check for ML API changes
-              if git diff --name-only $BASE_SHA HEAD | grep -q "^analysis/"; then
+              if git diff --name-only $BASE_SHA HEAD | grep -q "^analysis/distractor_api/"; then
                 ML_API_CHANGED="true"
                 echo "🔨 ML API files changed"
+              fi
+              
+              # Check for Thesaurus API changes
+              if git diff --name-only $BASE_SHA HEAD | grep -q "^analysis/thesaurus/"; then
+                THESAURUS_CHANGED="true"
+                echo "🔨 Thesaurus API files changed"
               fi
               
               # Check for nginx changes
@@ -305,6 +318,7 @@ jobs:
               TELEGRAM_CHANGED="true"
               ML_API_CHANGED="true"
               NGINX_CHANGED="true"
+              THESAURUS_CHANGED="true"
             fi
           else
             echo "📝 Manual workflow dispatch - using force build flags only"
@@ -315,6 +329,7 @@ jobs:
           BUILD_TELEGRAM="false"
           BUILD_ML_API="false"
           BUILD_NGINX="false"
+          BUILD_THESAURUS="false"
           
           # Force build all images
           if [ "${{ github.event.inputs.force_build_all }}" = "true" ]; then
@@ -322,6 +337,7 @@ jobs:
             BUILD_TELEGRAM="true"
             BUILD_ML_API="true"
             BUILD_NGINX="true"
+            BUILD_THESAURUS="true"
             echo "🔨 Force building all images"
           else
             # Individual force flags or changes
@@ -360,6 +376,15 @@ jobs:
                 echo "🔨 Building nginx (changed)"
               fi
             fi
+            
+            if [ "${{ github.event.inputs.force_build_thesaurus }}" = "true" ] || [ "$THESAURUS_CHANGED" = "true" ]; then
+              BUILD_THESAURUS="true"
+              if [ "${{ github.event.inputs.force_build_thesaurus }}" = "true" ]; then
+                echo "🔨 Force building thesaurus"
+              else
+                echo "🔨 Building thesaurus (changed)"
+              fi
+            fi
           fi
           
           # Output build decisions
@@ -367,6 +392,7 @@ jobs:
           echo "telegram-built=$BUILD_TELEGRAM" >> $GITHUB_OUTPUT
           echo "ml-api-built=$BUILD_ML_API" >> $GITHUB_OUTPUT
           echo "nginx-built=$BUILD_NGINX" >> $GITHUB_OUTPUT
+          echo "thesaurus-built=$BUILD_THESAURUS" >> $GITHUB_OUTPUT
           
           # Summary
           echo "📋 Build Summary:"
@@ -374,6 +400,7 @@ jobs:
           echo "  Telegram Bot: $BUILD_TELEGRAM"  
           echo "  ML API: $BUILD_ML_API"
           echo "  Nginx: $BUILD_NGINX"
+          echo "  Thesaurus: $BUILD_THESAURUS"
 
       # Backend Build
       - name: Build and push backend image
@@ -426,6 +453,18 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      # Thesaurus API Build
+      - name: Build and push thesaurus-api image
+        if: steps.build-flags.outputs.thesaurus-built == 'true'
+        uses: docker/build-push-action@v5
+        with:
+          context: ./analysis/thesaurus
+          file: ./analysis/thesaurus/Dockerfile
+          push: true
+          tags: docker.io/fluentlyorg/fluently-thesaurus:latest-develop
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
       - name: Build summary
         run: |
           echo "✅ Build stage completed"
@@ -434,6 +473,7 @@ jobs:
           [ "${{ steps.build-flags.outputs.telegram-built }}" = "true" ] && echo "  - Telegram Bot" || true
           [ "${{ steps.build-flags.outputs.ml-api-built }}" = "true" ] && echo "  - ML API" || true
           [ "${{ steps.build-flags.outputs.nginx-built }}" = "true" ] && echo "  - Nginx" || true
+          [ "${{ steps.build-flags.outputs.thesaurus-built }}" = "true" ] && echo "  - Thesaurus API" || true
           
           # Dry run notification
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
@@ -466,6 +506,7 @@ jobs:
           [ "${{ needs.build.outputs.telegram-built }}" = "true" ] && echo "  ✅ Telegram Bot" || echo "  ⏭️ Telegram Bot (skipped)"
           [ "${{ needs.build.outputs.ml-api-built }}" = "true" ] && echo "  ✅ ML API" || echo "  ⏭️ ML API (skipped)"
           [ "${{ needs.build.outputs.nginx-built }}" = "true" ] && echo "  ✅ Nginx" || echo "  ⏭️ Nginx (skipped)"
+          [ "${{ needs.build.outputs.thesaurus-built }}" = "true" ] && echo "  ✅ Thesaurus API" || echo "  ⏭️ Thesaurus API (skipped)"
 
       - name: Deploy to ${{ needs.setup.outputs.environment }}
         uses: appleboy/ssh-action@v1.0.3

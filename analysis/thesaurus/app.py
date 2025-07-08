@@ -1,6 +1,8 @@
-# backend/app.py
+# thesaurus/app.py
 
+import os
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pandas as pd
 from collections import Counter
@@ -83,10 +85,30 @@ class VocabularyRecommender:
 # ——————————————————————————————————————————
 
 # Инициализация
-df = pd.read_csv('result.csv')
+# Load CSV file from the data directory  
+csv_path = os.path.join(os.path.dirname(__file__), 'result.csv')
+if not os.path.exists(csv_path):
+    raise FileNotFoundError(f"Dataset file not found: {csv_path}")
+
+df = pd.read_csv(csv_path)
 recommender = VocabularyRecommender(df)
 
-app = FastAPI(title="Thesaurus API")
+app = FastAPI(
+    title="Thesaurus API",
+    description="Vocabulary recommendation service for Fluently",
+    version="1.0.0"
+)
+
+# Configure CORS with environment variables
+allowed_origins = os.getenv("THESAURUS_ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:8070").split(",")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=allowed_origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # — модели запросов
 class RecommendRequest(BaseModel):
@@ -110,13 +132,3 @@ async def recommend(req: RecommendRequest):
     #     results.extend(recs)
     results = recommender.get_recommendations(req.words)
     return results
-
-from fastapi.middleware.cors import CORSMiddleware
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # frontend origin
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)

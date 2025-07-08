@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 - Запустите сервис:
 ```bash
-uvicorn backend.app:app --reload --port 8000
+uvicorn thesaurus.app:app --reload --port 8000
 ```
 
 Сервис будет доступен по адресу: `http://localhost:8000`
@@ -82,29 +82,25 @@ Content-Type: application/json
 ## Конфигурация
 
 ### Переменные окружения
-Создайте файл `.env` в корне проекта:
+Thesaurus API использует переменные окружения из корневого файла `.env` проекта:
+
 ```ini
-# Настройки CORS (разделять запятыми)
-ALLOWED_ORIGINS=http://localhost:3000,https://your-frontend.com
+# Настройки CORS для Thesaurus API (разделять запятыми)
+THESAURUS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:8070,https://fluently-app.ru
 
-# Параметры рекомендаций по умолчанию
-DEFAULT_RECOMMENDATIONS=15
-DEFAULT_MAX_SUBTOPIC=3
+# Другие переменные из основного проекта...
 ```
 
-### Настройка CORS
-Измените разрешённые домены в `backend/app.py`:
-```python
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(","),
-    ...
-)
-```
+### Docker окружение
+API автоматически настраивается для работы в Docker-контейнере:
+- Порт: 8002
+- Автоматическая загрузка данных из `result.csv`
+- CORS настраивается через переменную `THESAURUS_ALLOWED_ORIGINS`
+- Интегрируется с основной сетью проекта `fluently_network`
 
 ## Структура проекта
 ```
-├── backend/
+├── thesaurus/
 │   ├── app.py              # Основной код сервиса
 │   └── requirements.txt    # Зависимости
 ├── data/
@@ -116,6 +112,7 @@ app.add_middleware(
 
 ## Разработка
 
+### Локальная разработка
 1. Активируйте виртуальное окружение:
 ```bash
 python -m venv venv
@@ -124,18 +121,45 @@ source venv/bin/activate
 
 2. Установите зависимости для разработки:
 ```bash
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
 3. Запустите сервис в режиме разработки:
 ```bash
-uvicorn backend.app:app --reload --port 8000
+uvicorn app:app --reload --port 8002
 ```
+
+### Docker разработка
+Для разработки в составе всего проекта используйте:
+
+```bash
+# Локальная разработка со сборкой
+docker compose -f docker-compose-local.yml up thesaurus-api
+
+# Продакшн версия с готовым образом
+docker compose up thesaurus-api
+```
+
+API будет доступен по адресу: `http://localhost:8002`
 
 ## Тестирование
 Пример запроса с помощью cURL:
 ```bash
-curl -X POST http://localhost:8000/api/recommend \
+# Health check
+curl -X POST http://localhost:8002/health \
+  -H "Content-Type: application/json" \
+  -d '{"ping": "test"}'
+
+# Получение рекомендаций
+curl -X POST http://localhost:8002/api/recommend \
   -H "Content-Type: application/json" \
   -d '{"words": ["computer", "software", "data"]}'
 ```
+
+## Интеграция
+
+Thesaurus API интегрируется с основным проектом Fluently:
+- **Backend**: Может вызывать API для получения рекомендаций слов
+- **Frontend**: Прямые запросы к API через настроенный CORS
+- **Docker**: Автоматически развертывается как часть общего стека
+- **CI/CD**: Автоматическая сборка и развертывание через GitHub Actions
