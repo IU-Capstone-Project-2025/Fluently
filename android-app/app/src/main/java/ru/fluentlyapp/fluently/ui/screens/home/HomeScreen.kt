@@ -1,5 +1,6 @@
 package ru.fluentlyapp.fluently.ui.screens.home
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -41,8 +42,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.withContext
+import okhttp3.Dispatcher
 import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.ui.screens.home.HomeScreenUiState.OngoingLessonState
+import timber.log.Timber
 
 @Composable
 fun HomeScreen(
@@ -51,11 +57,12 @@ fun HomeScreen(
     onNavigateToLesson: (lessonId: String) -> Unit
 ) {
     val uiState by homeScreenViewModel.uiState.collectAsState()
-    val ongoingLessonIsReady by homeScreenViewModel.ongoingLessonIsReady.collectAsState()
 
-    LaunchedEffect(ongoingLessonIsReady) {
-        if (ongoingLessonIsReady) {
-            onNavigateToLesson("")
+    LaunchedEffect(onNavigateToLesson) {
+        homeScreenViewModel.commandsChannel.collect {
+            withContext(Dispatchers.Main.immediate) {
+                onNavigateToLesson("")
+            }
         }
     }
 

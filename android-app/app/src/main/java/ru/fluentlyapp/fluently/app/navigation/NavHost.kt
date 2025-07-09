@@ -26,10 +26,18 @@ fun FluentlyNavHost(
             LaunchScreen(
                 modifier = Modifier.fillMaxSize(),
                 onUserLogged = {
-                    navHostController.navigate(Destination.HomeScreen)
+                    navHostController.navigate(Destination.HomeScreen) {
+                        popUpTo<Destination.LaunchScreen> {
+                            inclusive = true
+                        }
+                    }
                 },
                 onUserNotLogged = {
-                    navHostController.navigate(Destination.LoginScreen)
+                    navHostController.navigate(Destination.LoginScreen) {
+                        popUpTo<Destination.LaunchScreen> {
+                            inclusive = true
+                        }
+                    }
                 }
             )
         }
@@ -38,7 +46,11 @@ fun FluentlyNavHost(
             LoginScreen(
                 modifier = Modifier.fillMaxSize(),
                 onSuccessfulLogin = {
-                    navHostController.navigate(Destination.HomeScreen)
+                    navHostController.navigate(Destination.HomeScreen) {
+                        popUpTo<Destination.LoginScreen>() {
+                            inclusive = true
+                        }
+                    }
                 }
             )
         }
@@ -56,7 +68,10 @@ fun FluentlyNavHost(
             LessonFlowScreen(
                 modifier = Modifier.fillMaxSize(),
                 onBackClick = {
-                    navHostController.navigate(Destination.HomeScreen)
+                    navHostController.navigate(Destination.HomeScreen) {
+                        popUpTo<Destination.HomeScreen>()
+                        launchSingleTop = true
+                    }
                 }
             )
         }
