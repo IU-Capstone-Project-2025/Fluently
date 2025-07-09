@@ -2,17 +2,20 @@ package handlers
 
 import (
 	"encoding/json"
+	"errors"
 	"math/rand"
 	"net/http"
 	"strings"
 	"time"
 
+	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
 	"fluently/go-backend/internal/utils"
 	"fluently/go-backend/pkg/logger"
 
 	"go.uber.org/zap"
+	"gorm.io/gorm"
 )
 
 var exerciseTypes = []string{
@@ -25,6 +28,8 @@ type LessonHandler struct {
 	PreferenceRepo *postgres.PreferenceRepository
 	TopicRepo      *postgres.TopicRepository
 	SentenceRepo   *postgres.SentenceRepository
+	PickOptionRepo *postgres.PickOptionRepository
+	WordRepo       *postgres.WordRepository
 	Repo           *postgres.LessonRepository
 }
 
@@ -82,7 +87,6 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		userPref.Goal,
 		lessonInfo.TotalWords,
 	)
-
 	if err != nil {
 		logger.Log.Error("Failed to get words for lesson", zap.Error(err))
 		http.Error(w, "failed to get words for lesson", http.StatusBadRequest)
@@ -130,39 +134,86 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		}
 
 		// Exercise process
-		option := rand.Intn(3)
+		var exercises []schemas.Exercise
 
-		var exercise schemas.Exercise
-		exercise.Type = exerciseTypes[option]
+		// translate_ru_to_en
+		var translateRuToEn schemas.ExerciseTranslateRuToEn
 
-		switch option {
-		case 0: // translate_ru_to_en
-			var translateRuToEn schemas.ExerciseTranslateRuToEn
+		translateRuToEn.Text = word.Translation
+		translateRuToEn.CorrectAnswer = word.Word
 
-			translateRuToEn.Text = word.Translation
-			translateRuToEn.CorrectAnswer = word.Word
-			translateRuToEn.PickOptions, _ = utils.GeneratePickOptionsWithDefaults(r.Context(), sentences[0].Sentence, word.Word)
-			exercise.Data = translateRuToEn
-		case 1: // write_word_from_translation
-			var writeWordFromTranslation schemas.ExerciseWriteWordFromTranslation
-
-			writeWordFromTranslation.Translation = word.Translation
-			writeWordFromTranslation.CorrectAnswer = word.Word
-			exercise.Data = writeWordFromTranslation
-		case 2: // pick_option_sentence
-			var pickOptionSentence schemas.ExercisePickOptionSentence
-
-			pickOptionSentence.Template = replaceWordWithUnderscores(
-				sentences[0].Sentence,
-				word.Word,
-			)
-			pickOptionSentence.CorrectAnswer = word.Word
-			pickOptionSentence.PickOptions, _ = utils.GeneratePickOptionsWithDefaults(r.Context(), sentences[0].Sentence, word.Word)
-			exercise.Data = pickOptionSentence
-		default:
+		pickOptionTranslate, err := h.PickOptionRepo.GetOptionByWordID(r.Context(), word.ID)
+		logger.Log.Debug("pickOptionTranslate", zap.Any("pickOptionTranslate", pickOptionTranslate))
+		logger.Log.Debug("err", zap.Any("err", err))
+		if err != nil {
+			if errors.Is(err, gorm.ErrRecordNotFound) {
+				pickOptionTranslate = &models.PickOption{
+					WordID: word.ID,
+					Option: []string{word.Word},
+				}
+			} else {
+				http.Error(w, "failed to get pick option", http.StatusInternalServerError)
+				return
+			}
 		}
 
-		card.Exercise = exercise
+		if len(pickOptionTranslate.Option) == 1 {
+			const optionToAdd = 3
+
+			randomWords, err := h.WordRepo.GetRandomWordsByCEFRLevel(r.Context(), userPref.CEFRLevel, optionToAdd)
+			if err != nil {
+				http.Error(w, "failed to get random words", http.StatusBadRequest)
+				return
+			}
+
+			for _, word := range randomWords {
+				pickOptionTranslate.Option = append(pickOptionTranslate.Option, word.Word)
+			}
+		}
+
+		rand.Shuffle(len(pickOptionTranslate.Option), func(i, j int) {
+			pickOptionTranslate.Option[i], pickOptionTranslate.Option[j] = pickOptionTranslate.Option[j], pickOptionTranslate.Option[i]
+		})
+
+		translateRuToEn.PickOptions = pickOptionTranslate.Option
+
+		exercises = append(exercises, schemas.Exercise{
+			Type: "translate_ru_to_en",
+			Data: translateRuToEn,
+		})
+
+		// write_word_from_translation
+		var writeWordFromTranslation schemas.ExerciseWriteWordFromTranslation
+
+		writeWordFromTranslation.Translation = word.Translation
+		writeWordFromTranslation.CorrectAnswer = word.Word
+		exercises = append(exercises, schemas.Exercise{
+			Type: "write_word_from_translation",
+			Data: writeWordFromTranslation,
+		})
+
+		// pick_option_sentence
+		var pickOptionSentence schemas.ExercisePickOptionSentence
+
+		rand.Shuffle(len(pickOptionTranslate.Option), func(i, j int) {
+			pickOptionTranslate.Option[i], pickOptionTranslate.Option[j] = pickOptionTranslate.Option[j], pickOptionTranslate.Option[i]
+		})
+
+		pickOptionSentence.Template = replaceWordWithUnderscores(
+			sentences[0].Sentence,
+			word.Word,
+		)
+		pickOptionSentence.CorrectAnswer = word.Word
+		pickOptionSentence.PickOptions = pickOptionTranslate.Option
+
+		exercises = append(exercises, schemas.Exercise{
+			Type: "pick_option_sentence",
+			Data: pickOptionSentence,
+		})
+
+		randomExercise := exercises[rand.Intn(len(exercises))]
+
+		card.Exercise = randomExercise
 		cards = append(cards, card)
 		logger.Log.Info("Card generated", zap.Any("card", card))
 	}

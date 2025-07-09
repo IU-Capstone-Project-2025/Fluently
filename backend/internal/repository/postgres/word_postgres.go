@@ -44,6 +44,21 @@ func (r *WordRepository) GetByValue(ctx context.Context, value string) (*models.
 	return &word, nil
 }
 
+func (r *WordRepository) GetRandomWordsByCEFRLevel(ctx context.Context, cefrLevel string, limit int) ([]models.Word, error) {
+	var words []models.Word
+	err := r.db.WithContext(ctx).
+		Where("cefr_level = ?", cefrLevel).
+		Order("RANDOM()").
+		Limit(limit).
+		Find(&words).Error
+
+	if err != nil {
+		return nil, err
+	}
+	
+	return words, nil
+}
+
 func (r *WordRepository) Create(ctx context.Context, word *models.Word) error {
 	return r.db.WithContext(ctx).Create(word).Error
 }

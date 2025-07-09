@@ -129,6 +129,8 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 			PreferenceRepo: postgres.NewPreferenceRepository(db),
 			TopicRepo:      postgres.NewTopicRepository(db),
 			SentenceRepo:   postgres.NewSentenceRepository(db),
+			PickOptionRepo: postgres.NewPickOptionRepository(db),
+			WordRepo:       postgres.NewWordRepository(db),
 			Repo:           postgres.NewLessonRepository(db),
 		})
 	})
