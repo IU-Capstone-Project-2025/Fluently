@@ -1,6 +1,8 @@
 # Fluently – Language Learning iOS App
 
-![App Icon](<https://github.com/FluentlyOrg/Fluently-fork/blob/main/ios-app/Fluently/Fluently/Assets.xcassets/AppIcon.appiconset/best%20(1).png?raw=true>)
+<!-- ![App Icon](<https://github.com/FluentlyOrg/Fluently-fork/blob/main/ios-app/Fluently/Fluently/Assets.xcassets/AppIcon.appiconset/best%20(1).png?raw=true>) -->
+
+<img src="https://github.com/FluentlyOrg/Fluently-fork/blob/main/ios-app/Fluently/Fluently/Assets.xcassets/AppIcon.appiconset/best%20(1).png?raw=true" alt="icon" width=200>
 
 A modern language-learning app built with **Swift** and **VIPER architecture**, designed to help users master new languages through interactive exercises, flashcards, and personalized lessons.
 
