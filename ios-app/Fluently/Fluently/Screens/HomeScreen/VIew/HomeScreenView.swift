@@ -112,7 +112,7 @@ struct HomeScreenView: View {
         Button {
             presenter.navigatoToLesson()
         } label: {
-            Text("Start")
+            Text(presenter.lesson == nil ? "loading" : "Start")
                 .foregroundStyle(.whiteText)
                 .font(.appFont.title2.bold())
                 .padding(.vertical, 6)
@@ -123,6 +123,7 @@ struct HomeScreenView: View {
                 )
                 .padding(.horizontal, Const.horizontalPadding * 3)
         }
+        .disabled(presenter.lesson == nil)
     }
 }
 

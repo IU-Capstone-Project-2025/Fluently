@@ -32,7 +32,9 @@ final class WriteFromTranslation: ExerciseData {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         translation = try container.decode(String.self, forKey: .translation)
-        try super.init(from: container.superDecoder())
+        let answer = try container.decode(String.self, forKey: .correctAnswer)
+//        try super.init(from: container.superDecoder())
+        super.init(correctAnswer: answer)
     }
 
     override func encode(to encoder: Encoder) throws {

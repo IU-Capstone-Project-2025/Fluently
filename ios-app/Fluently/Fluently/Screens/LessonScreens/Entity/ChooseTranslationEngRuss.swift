@@ -31,11 +31,19 @@ final class ChooseTranslationEngRuss: ExerciseData {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         text = try container.decode(String.self, forKey: .text)
-        let temp = try container.decode(String.self, forKey: .correctAnswer)
+//        options = try container.decodeIfPresent([String].self, forKey: .options) ?? []
+//        try super.init(from: container.superDecoder())
 
-//        options = try container.decode([String].self, forKey: .options)
-        options = [temp]
-        try super.init(from: container.superDecoder())
+        options = []
+
+        let answer = try container.decode(String.self, forKey: .correctAnswer)
+        super.init(correctAnswer: answer)
+
+        if let options = try container.decodeIfPresent([String].self, forKey: .options) {
+            self.options = options.isEmpty ? [correctAnswer] : options
+        } else {
+            self.options = [correctAnswer]
+        }
     }
 
     override func encode(to encoder: Encoder) throws {

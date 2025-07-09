@@ -60,6 +60,6 @@ final class HomeScreenPresenter: HomeScreenPresenting {
     }
 
     func navigatoToLesson() {
-        router.navigatoToLesson()
+        router.navigatoToLesson(lesson!)
     }
 }
