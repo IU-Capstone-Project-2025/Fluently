@@ -13,8 +13,7 @@ protocol CalendarScreenPresenting: ObservableObject {
 }
 
 final class CalendarScreenPresenter: CalendarScreenPresenting {
-
-    @Published var selectedDate: Date?
+    @Published var selectedDate: Date
 
     init() {
         self.selectedDate = Date.now
