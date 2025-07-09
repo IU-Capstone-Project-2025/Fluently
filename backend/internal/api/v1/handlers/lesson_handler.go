@@ -48,7 +48,7 @@ func replaceWordWithUnderscores(text, word string) string {
 // @Failure 400 {string} string "Bad request - invalid user or preferences"
 // @Failure 401 {string} string "Unauthorized - invalid or missing token"
 // @Failure 500 {string} string "Internal server error"
-// @Router /lesson [get]
+// @Router /api/v1/lesson [get]
 func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
