@@ -5,7 +5,9 @@ import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import ru.fluentlyapp.fluently.common.model.Decoration
 import ru.fluentlyapp.fluently.common.model.Exercise
+import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.common.model.LessonComponent
 import ru.fluentlyapp.fluently.datastore.OngoingLessonDataStore
 import ru.fluentlyapp.fluently.network.FluentlyApiDataSource
@@ -56,6 +58,11 @@ interface LessonRepository {
      * If the end is reached, the method have no effect.
      */
     suspend fun moveToNextComponent()
+
+    /**
+     * Once the user finishes the lesson, send the progress to the api.
+     */
+    suspend fun sendLesson()
 }
 
 class DefaultLessonRepository @Inject constructor(
@@ -71,10 +78,36 @@ class DefaultLessonRepository @Inject constructor(
         }
     }
 
+    private fun generateOnboardingComponent(components: List<LessonComponent>): Decoration.Onboarding {
+        var wordsCount = 0
+        var exercisesCount = 0
+        for (component in components) {
+            if (component is Exercise.NewWord) {
+                wordsCount++
+            } else if (component is Exercise) {
+                wordsCount++
+            }
+        }
+        return Decoration.Onboarding(wordsCount, exercisesCount)
+    }
+
+    private fun List<LessonComponent>.withIdSetToIndex(): List<LessonComponent> {
+        for (index in indices) {
+            this[index].id = index
+        }
+        return this
+    }
+
     override suspend fun fetchAndSaveOngoingLesson() {
         val lesson = fluentlyApiDataSource.getLesson()
-        Timber.d("Received lesson: $lesson")
-        ongoingLessonDataStore.setOngoingLesson(lesson)
+
+        val updatedLessonComponents: List<LessonComponent> = buildList {
+            add(generateOnboardingComponent(lesson.components))
+            addAll(lesson.components)
+            add(Decoration.Finish())
+        }.withIdSetToIndex()
+
+        ongoingLessonDataStore.setOngoingLesson(lesson.copy(components = updatedLessonComponents))
         Timber.d("Store the received lesson")
     }
 
@@ -133,5 +166,9 @@ class DefaultLessonRepository @Inject constructor(
                 Timber.v("Emit lessonComponent: $component")
                 component
             }
+    }
+
+    override suspend fun sendLesson() {
+        // Do nothing lol
     }
 }

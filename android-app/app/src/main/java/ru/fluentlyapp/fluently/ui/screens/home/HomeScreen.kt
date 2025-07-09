@@ -54,14 +54,16 @@ import timber.log.Timber
 fun HomeScreen(
     modifier: Modifier = Modifier,
     homeScreenViewModel: HomeScreenViewModel = hiltViewModel(),
-    onNavigateToLesson: (lessonId: String) -> Unit
+    onNavigateToLesson: () -> Unit
 ) {
     val uiState by homeScreenViewModel.uiState.collectAsState()
 
     LaunchedEffect(onNavigateToLesson) {
-        homeScreenViewModel.commandsChannel.collect {
-            withContext(Dispatchers.Main.immediate) {
-                onNavigateToLesson("")
+        withContext(Dispatchers.Main.immediate) {
+            homeScreenViewModel.commandsChannel.collect { command ->
+                if (command is HomeCommands.NavigateToLesson) {
+                    onNavigateToLesson()
+                }
             }
         }
     }

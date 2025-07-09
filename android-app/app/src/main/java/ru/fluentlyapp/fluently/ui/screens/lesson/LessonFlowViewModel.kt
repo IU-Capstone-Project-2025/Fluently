@@ -3,13 +3,17 @@ package ru.fluentlyapp.fluently.ui.screens.lesson
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import ru.fluentlyapp.fluently.data.repository.LessonRepository
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.LessonComponent
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.FinishDecorationObserver
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.OnboardingDecorationObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.FillGapsObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.InputWordObserver
@@ -28,6 +32,9 @@ class LessonFlowViewModel @Inject constructor(
             SharingStarted.Eagerly,
             initialValue = null
         )
+
+    private val _commandsChannel = Channel<LessonFlowCommand>()
+    val commandsChannel = _commandsChannel.receiveAsFlow()
 
     /**
      * Check if the current component is an instance of type `T`, and if it is, then try
@@ -106,6 +113,28 @@ class LessonFlowViewModel @Inject constructor(
         override fun onCompleteExercise() {
             viewModelScope.launch {
                 lessonRepository.moveToNextComponent()
+            }
+        }
+    }
+
+    val onboardingDecorationObserver = object : OnboardingDecorationObserver() {
+        override fun onContinue() {
+            viewModelScope.launch {
+                lessonRepository.moveToNextComponent()
+            }
+        }
+    }
+
+    val finishDecorationObserver = object : FinishDecorationObserver() {
+        override fun onFinish() {
+            viewModelScope.launch {
+                try {
+                    lessonRepository.sendLesson()
+                    lessonRepository.dropOngoingLesson()
+                    _commandsChannel.send(LessonFlowCommand.UserFinishesLesson)
+                } catch (ex: Exception) {
+                    Timber.e(ex)
+                }
             }
         }
     }

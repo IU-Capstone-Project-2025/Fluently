@@ -13,5 +13,5 @@ object Destination {
     object HomeScreen
 
     @Serializable
-    data class LessonScreen(val lessonId: String)
+    object LessonScreen
 }

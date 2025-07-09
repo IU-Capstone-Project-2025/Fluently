@@ -2,43 +2,44 @@ package ru.fluentlyapp.fluently.common.model
 
 import kotlinx.serialization.Serializable
 
-@Serializable
-sealed class LessonComponent {
-    var id: Int = -1
+sealed interface LessonComponent {
+    var id: Int
 }
 
-@Serializable
-sealed class Exercise : LessonComponent() {
-    abstract val isAnswered: Boolean
+sealed interface Exercise : LessonComponent {
+    val isAnswered: Boolean
 
     @Serializable
     data class NewWord(
+        override var id: Int = -1,
         val word: String,
         val translation: String,
-        val phoneticTranscription: String, // like /ˈkɑːn.ʃəs.nəs/
+        val phoneticTranscription: String,
         val doesUserKnow: Boolean?,
-        val examples: List<Pair<String, String>> // Pair(sentence, translation)
-    ) : Exercise() {
+        val examples: List<Pair<String, String>>
+    ) : Exercise {
         override val isAnswered = doesUserKnow != null
     }
 
     @Serializable
     data class ChooseTranslation(
+        override var id: Int = -1,
         val word: String,
         val answerVariants: List<String>,
         val correctVariant: Int,
         val selectedVariant: Int?
-    ) : Exercise() {
+    ) : Exercise {
         override val isAnswered = selectedVariant != null
     }
 
     @Serializable
     data class FillTheGap(
+        override var id: Int = -1,
         val sentence: List<String>,
         val answerVariants: List<String>,
         val correctVariant: Int,
         val selectedVariant: Int?
-    ) : Exercise() {
+    ) : Exercise {
         override val isAnswered = selectedVariant != null
     }
 
@@ -46,14 +47,25 @@ sealed class Exercise : LessonComponent() {
     data class InputWord(
         val translation: String,
         val correctAnswer: String,
-        val inputtedWord: String?
-    ) : Exercise() {
+        val inputtedWord: String?,
+        override var id: Int = -1,
+    ) : Exercise {
         override val isAnswered = inputtedWord != null
     }
 }
 
 @Serializable
-sealed class Decoration : LessonComponent() {
+sealed interface Decoration : LessonComponent {
     @Serializable
-    object Loading : Decoration()
+    class Loading(override var id: Int = -1) : Decoration
+
+    @Serializable
+    data class Onboarding(
+        val wordsToBeLearned: Int,
+        val featuredExercises: Int,
+        override var id: Int = -1,
+    ) : Decoration
+
+    @Serializable
+    class Finish(override var id: Int = -1): Decoration
 }

@@ -28,6 +28,8 @@ private val lessonModule = SerializersModule {
         subclass(Exercise.ChooseTranslation::class)
 
         subclass(Decoration.Loading::class)
+        subclass(Decoration.Finish::class)
+        subclass(Decoration.Onboarding::class)
     }
 }
 
@@ -47,9 +49,9 @@ class OngoingLessonDataStore @Inject constructor(
     fun getOngoingLesson(): Flow<Lesson?> {
         return dataStore.data.map {
             it[ONGOING_LESSON_JSON_KEY]?.let { lessonJson ->
-                val result: Lesson? = lessonJsonFormat.decodeFromString(lessonJson)
-                Timber.d("Decode from saved json: $result")
-                result
+                val decodedLesson: Lesson? = lessonJsonFormat.decodeFromString(lessonJson)
+                Timber.d("Decode from saved json: $decodedLesson")
+                decodedLesson
             }
         }
     }
@@ -61,8 +63,9 @@ class OngoingLessonDataStore @Inject constructor(
      */
     suspend fun setOngoingLesson(lesson: Lesson) {
         dataStore.edit {
-            it[ONGOING_LESSON_JSON_KEY] = lessonJsonFormat.encodeToString(lesson)
-            Timber.d("Save ongoing lesson: $lesson")
+            val encodedLesson = lessonJsonFormat.encodeToString(lesson)
+            it[ONGOING_LESSON_JSON_KEY] = encodedLesson
+            Timber.d("Save ongoing lesson: $encodedLesson")
         }
     }
 

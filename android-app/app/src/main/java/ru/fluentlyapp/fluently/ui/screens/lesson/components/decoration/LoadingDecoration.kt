@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.ui.screens.lesson.components.other
+package ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -21,8 +21,8 @@ import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 
 @Composable
-fun LoadingLessonComponent(
-    modifier: Modifier
+fun LoadingDecoration(
+    modifier: Modifier = Modifier
 ) {
     Column(
         modifier = modifier.background(color = FluentlyTheme.colors.surface),
@@ -33,19 +33,19 @@ fun LoadingLessonComponent(
             text = stringResource(R.string.lesson_is_loading),
             fontWeight = FontWeight.Bold,
             fontSize = 24.sp,
-            color = FluentlyTheme.colors.secondary
+            color = FluentlyTheme.colors.primary
         )
         Spacer(modifier = Modifier.height(16.dp))
         CircularProgressIndicator(
-            color = FluentlyTheme.colors.primary
+            color = FluentlyTheme.colors.secondary
         )
     }
 }
 
 @Preview(device = PIXEL_7)
 @Composable
-fun LoadingLessonComponentPreview() {
+fun LoadingDecorationPreview() {
     FluentlyTheme {
-        LoadingLessonComponent(modifier = Modifier.fillMaxSize())
+        LoadingDecoration(modifier = Modifier.fillMaxSize())
     }
 }
