@@ -25,10 +25,8 @@ type Word struct {
 	ID             int64     `json:"id"`
 	Word           string    `json:"word"`
 	Translation    string    `json:"translation"`
-	Definition     string    `json:"definition"`
 	Examples       []string  `json:"examples"`
 	AudioURL       string    `json:"audio_url"`
-	ImageURL       string    `json:"image_url"`
 	CEFRLevel      string    `json:"cefr_level"`      // A1, A2, B1, B2, C1, C2
 	NextReview     time.Time `json:"next_review"`     // When to review next
 	ReviewCount    int       `json:"review_count"`    // How many times reviewed

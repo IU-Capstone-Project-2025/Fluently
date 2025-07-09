@@ -22,5 +22,5 @@ func Init(isDev bool) {
 	if err != nil {
 		panic("cannot initialize zap logger: " + err.Error())
 	}
-	zap.ReplaceGlobals(Log) // Optional: make zap.L() use this logger
+	zap.ReplaceGlobals(Log)
 }
