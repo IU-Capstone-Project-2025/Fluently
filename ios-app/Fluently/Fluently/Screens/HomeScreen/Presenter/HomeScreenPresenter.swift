@@ -23,8 +23,20 @@ final class HomeScreenPresenter: HomeScreenPresenting {
     let interactor: HomeScreenInteractor
 
     @ObservedObject var account: AccountData
+#if targetEnvironment(simulator)
+    @Published var lesson: CardsModel? = CardsModel(
+        cards: WordModel.generateMockWords(count: 5),
+        lesson: LessonModel(
+            startedAt: "",
+            totalWords: 10,
+            wordsPerLesson: 5,
+            cefrLevel: "A1"
+        )
+    )
 
+#else
     @Published var lesson: CardsModel?
+#endif
 
     init(
         router: HomeScreenRouter,

@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct CalendarScreenView: View {
+    @ObservedObject var presenter: CalendarScreenPresenter
+
     private enum Const {
         // Paddings
         static let horizontalPadding = CGFloat(30)
@@ -45,4 +47,23 @@ struct CalendarScreenView: View {
         }
         .modifier(SheetViewModifier())
     }
+}
+
+struct DaysHeader: View {
+
+    @Binding var currentDate: Date
+
+    var weekDayName: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E"
+        return dateFormatter.string(from: currentDate)
+    }
+
+    var body: some View {
+        HStack() {
+
+        }
+    }
+
+
 }
