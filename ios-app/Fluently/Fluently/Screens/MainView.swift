@@ -16,11 +16,12 @@ struct MainView: View {
 
     @State private var calendarView: CalendarScreenView?
     @State private var homeView: HomeScreenView?
-    @State private var statisticView = StatisticScreenView()
+    @State private var statisticView:StatisticScreenView?
 
     func setupScreens() {
         calendarView = CalendarScreenBuilder.build()
         homeView = HomeScreenBuilder.build(router: router, acoount: accountData)
+        statisticView = StatisticScreenBuilder.build()
     }
 
     var body: some View {

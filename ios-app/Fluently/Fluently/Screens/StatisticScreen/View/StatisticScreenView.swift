@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 struct StatisticScreenView: View {
+
+    @ObservedObject var presenter: StatisticScreenPresenter
+
     private enum Const {
         // Paddings
         static let horizontalPadding = CGFloat(30)
@@ -18,7 +21,10 @@ struct StatisticScreenView: View {
         NavigationStack {
             VStack {
                 topBar
-                infoGrid
+                ZStack {
+                    infoGrid
+                    infoLayer
+                }
             }
             .navigationBarBackButtonHidden()
             .modifier(BackgroundViewModifier())
@@ -40,9 +46,28 @@ struct StatisticScreenView: View {
 
     ///  Grid with main info
     var infoGrid: some View {
-        VStack (alignment: .center) {
-
-        }
+        VStack (alignment: .center) {}
         .modifier(SheetViewModifier())
+    }
+
+    var infoLayer: some View {
+        VStack {
+            RangeHeader(selectedRange: $presenter.selectedRange)
+            StatisticInfo(range: presenter.selectedRange)
+        }
+    }
+}
+
+
+struct StatisticScreenPreview: PreviewProvider {
+
+    static var previews: some View {
+        PreviewWrapper()
+    }
+
+    struct PreviewWrapper: View {
+        var body: some View {
+            StatisticScreenBuilder.build()
+        }
     }
 }
