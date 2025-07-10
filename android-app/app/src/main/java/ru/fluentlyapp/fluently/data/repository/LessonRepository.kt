@@ -9,6 +9,8 @@ import ru.fluentlyapp.fluently.common.model.Decoration
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.common.model.LessonComponent
+import ru.fluentlyapp.fluently.datastore.LessonsStatistic
+import ru.fluentlyapp.fluently.datastore.LessonsStatisticDataStore
 import ru.fluentlyapp.fluently.datastore.OngoingLessonDataStore
 import ru.fluentlyapp.fluently.network.FluentlyApiDataSource
 import timber.log.Timber
@@ -63,11 +65,14 @@ interface LessonRepository {
      * Once the user finishes the lesson, send the progress to the api.
      */
     suspend fun sendLesson()
+
+    suspend fun getLessonsStatistic(): Flow<LessonsStatistic?>
 }
 
 class DefaultLessonRepository @Inject constructor(
     val fluentlyApiDataSource: FluentlyApiDataSource,
-    val ongoingLessonDataStore: OngoingLessonDataStore
+    val ongoingLessonDataStore: OngoingLessonDataStore,
+    val lessonsStatisticDataStore: LessonsStatisticDataStore
 ) : LessonRepository {
     override suspend fun hasSavedLesson(): Boolean {
         return try {
@@ -85,7 +90,7 @@ class DefaultLessonRepository @Inject constructor(
             if (component is Exercise.NewWord) {
                 wordsCount++
             } else if (component is Exercise) {
-                wordsCount++
+                exercisesCount++
             }
         }
         return Decoration.Onboarding(wordsCount, exercisesCount)
@@ -168,7 +173,26 @@ class DefaultLessonRepository @Inject constructor(
             }
     }
 
+    override suspend fun getLessonsStatistic(): Flow<LessonsStatistic?> {
+        return lessonsStatisticDataStore.getLessonsStatistic()
+    }
+
     override suspend fun sendLesson() {
-        // Do nothing lol
+        ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
+            var knownWordsCount = 0
+            var newWordsCount = 0
+            for (component in lesson.components) {
+                if (component is Exercise.NewWord) {
+                    knownWordsCount += (component.doesUserKnow == true).compareTo(false)
+                    newWordsCount += (component.doesUserKnow == false).compareTo(false)
+                }
+            }
+            val initialLessonStatistic = lessonsStatisticDataStore.getLessonsStatistic().first() ?: LessonsStatistic(0, 0)
+            val updatedLessonStatistic = LessonsStatistic(
+                knownWords = initialLessonStatistic.knownWords + knownWordsCount,
+                wordsInProgress = initialLessonStatistic.wordsInProgress + newWordsCount
+            )
+            lessonsStatisticDataStore.setLessonsStatistic(updatedLessonStatistic)
+        }
     }
 }

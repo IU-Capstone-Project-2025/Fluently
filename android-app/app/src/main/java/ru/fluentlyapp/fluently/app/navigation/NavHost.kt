@@ -60,7 +60,8 @@ fun FluentlyNavHost(
                 modifier = Modifier.fillMaxSize(),
                 onNavigateToLesson = {
                     navHostController.navigate(Destination.LessonScreen)
-                }
+                },
+                onNavigateToCalendar = {}
             )
         }
 

@@ -22,7 +22,7 @@ import timber.log.Timber
 
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor(
-    private val lessonRepository: LessonRepository
+    private val lessonRepository: LessonRepository,
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(HomeScreenUiState())
     val uiState = _uiState.asStateFlow()
@@ -32,9 +32,30 @@ class HomeScreenViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            val currentComponent = lessonRepository.currentComponent().first()
-            if (currentComponent != null) {
-                _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.HAS_PAUSED) }
+            lessonRepository.currentComponent().collect { currentComponent ->
+                if (
+                    uiState.value.ongoingLessonState in setOf(
+                        OngoingLessonState.LOADING,
+                        OngoingLessonState.ERROR
+                    )
+                ) {
+                    return@collect
+                }
+
+                if (currentComponent == null) {
+                    _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.NOT_STARTED) }
+                }
+            }
+        }
+
+        viewModelScope.launch {
+            lessonRepository.getLessonsStatistic().collect { statistic ->
+                _uiState.update {
+                    it.copy(
+                        learnedWordsNumber = statistic?.knownWords ?: 0,
+                        inProgressWordsNumber = statistic?.wordsInProgress ?: 0
+                    )
+                }
             }
         }
     }

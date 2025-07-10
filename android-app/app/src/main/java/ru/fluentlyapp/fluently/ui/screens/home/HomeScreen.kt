@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -25,8 +26,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Devices
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import androidx.compose.runtime.getValue
@@ -37,24 +36,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.Hyphens
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.withContext
-import okhttp3.Dispatcher
 import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.ui.screens.home.HomeScreenUiState.OngoingLessonState
-import timber.log.Timber
+import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
 
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
     homeScreenViewModel: HomeScreenViewModel = hiltViewModel(),
-    onNavigateToLesson: () -> Unit
+    onNavigateToLesson: () -> Unit,
+    onNavigateToCalendar: () -> Unit
 ) {
     val uiState by homeScreenViewModel.uiState.collectAsState()
 
@@ -73,7 +73,8 @@ fun HomeScreen(
         uiState = uiState,
         onLessonClick = {
             homeScreenViewModel.ensureOngoingLesson()
-        }
+        },
+        onCalendarClick = onNavigateToCalendar
     )
 }
 
@@ -81,7 +82,8 @@ fun HomeScreen(
 fun HomeScreenContent(
     modifier: Modifier = Modifier,
     uiState: HomeScreenUiState,
-    onLessonClick: () -> Unit
+    onLessonClick: () -> Unit,
+    onCalendarClick: () -> Unit
 ) {
     Column(
         modifier = modifier.background(color = FluentlyTheme.colors.primary)
@@ -132,76 +134,42 @@ fun HomeScreenContent(
                 .weight(1f)
                 .background(color = FluentlyTheme.colors.surface)
                 .padding(vertical = 32.dp, horizontal = 20.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceEvenly
         ) {
-            Text(
-                text = "Word of the day",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold
-            )
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Column(
-                modifier = Modifier
-                    .clip(shape = RoundedCornerShape(16.dp))
-                    .background(color = FluentlyTheme.colors.surfaceInverse)
-                    .padding(vertical = 20.dp, horizontal = 32.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = uiState.wordOfTheDay,
-                    fontSize = 32.sp,
-                    color = FluentlyTheme.colors.onSurfaceInverse
-                )
-                Text(
-                    text = uiState.wordOfTheDayTranslation,
-                    color = FluentlyTheme.colors.onSurfaceVariantInverse
-                )
-            }
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            Row(
-                modifier = Modifier
-                    .clip(RoundedCornerShape(100.dp))
-                    .background(color = FluentlyTheme.colors.surfaceContainerHigh)
-                    .padding(4.dp),
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Icon(
-                    modifier = Modifier.size(20.dp),
-                    painter = painterResource(R.drawable.ic_plus_circle),
-                    contentDescription = null,
-                    tint = FluentlyTheme.colors.onSurface
-                )
-                Spacer(modifier = Modifier.width(4.dp))
-                Text(text = "Добавить в коллекцию")
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
 
             Row(modifier = Modifier.fillMaxWidth()) {
                 Column(
                     modifier = Modifier
+                        .heightIn(min = 130.dp)
                         .clip(RoundedCornerShape(16.dp))
                         .background(color = FluentlyTheme.colors.primaryVariant)
+                        .clickable(onClick = onCalendarClick)
                         .padding(16.dp)
-                        .weight(1f)
+                        .weight(1f),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.SpaceEvenly
                 ) {
                     Icon(
-                        modifier = Modifier.size(24.dp),
-                        painter = painterResource(R.drawable.ic_book),
+                        modifier = Modifier.size(60.dp),
+                        painter = painterResource(R.drawable.ic_calendar),
                         contentDescription = null,
                         tint = FluentlyTheme.colors.primary
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = uiState.notesNumber.toString(), fontSize = 32.sp)
-                    Text(text = "Заметок", fontSize = 14.sp)
+                    Text(
+                        text = "Календарь",
+                        fontSize = 12.sp,
+                        softWrap = true,
+                        style = TextStyle(
+                            hyphens = Hyphens.Unspecified
+                        )
+                    )
                 }
                 Spacer(modifier = Modifier.width(12.dp))
                 Column(
                     modifier = Modifier
+                        .heightIn(min = 130.dp)
                         .clip(RoundedCornerShape(16.dp))
                         .background(color = FluentlyTheme.colors.secondaryVariant)
                         .padding(16.dp)
@@ -209,17 +177,18 @@ fun HomeScreenContent(
                 ) {
                     Icon(
                         modifier = Modifier.size(24.dp),
-                        painter = painterResource(R.drawable.ic_bachelor_hat),
+                        painter = painterResource(R.drawable.ic_person_learned_words),
                         contentDescription = null,
                         tint = FluentlyTheme.colors.secondary
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(text = uiState.learnedWordsNumber.toString(), fontSize = 32.sp)
-                    Text(text = "Изучено", fontSize = 14.sp)
+                    Text(text = "Изучено", fontSize = 12.sp)
                 }
                 Spacer(modifier = Modifier.width(12.dp))
                 Column(
                     modifier = Modifier
+                        .heightIn(min = 120.dp)
                         .clip(RoundedCornerShape(16.dp))
                         .background(color = FluentlyTheme.colors.tertiaryVariant1)
                         .padding(16.dp)
@@ -227,18 +196,17 @@ fun HomeScreenContent(
                 ) {
                     Icon(
                         modifier = Modifier.size(24.dp),
-                        painter = painterResource(R.drawable.ic_bachelor_hat),
+                        painter = painterResource(R.drawable.ic_progress),
                         contentDescription = null,
                         tint = FluentlyTheme.colors.tertiary
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = uiState.notesNumber.toString(), fontSize = 32.sp)
-                    Text(text = "Не изучено", fontSize = 14.sp)
+                    Text(text = uiState.inProgressWordsNumber.toString(), fontSize = 32.sp)
+                    Text(text = "Изучаются", fontSize = 12.sp)
                 }
             }
             Box(
                 modifier = Modifier
-                    .weight(1f)
                     .fillMaxWidth()
             ) {
                 Row(
@@ -277,14 +245,15 @@ fun HomeScreenContent(
     }
 }
 
-@Preview(device = Devices.PIXEL_7)
+@DevicePreviews
 @Composable
 fun HomeScreenPreview() {
     FluentlyTheme {
         HomeScreenContent(
             modifier = Modifier.fillMaxSize(),
             uiState = HomeScreenUiState(ongoingLessonState = OngoingLessonState.LOADING),
-            onLessonClick = { }
+            onLessonClick = { },
+            onCalendarClick = { }
         )
     }
 }
