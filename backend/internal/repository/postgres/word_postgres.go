@@ -2,6 +2,7 @@ package postgres
 
 import (
 	"context"
+	"strings"
 
 	"github.com/google/uuid"
 	"gorm.io/gorm"
@@ -46,6 +47,9 @@ func (r *WordRepository) GetByValue(ctx context.Context, value string) (*models.
 
 func (r *WordRepository) GetRandomWordsByCEFRLevel(ctx context.Context, cefrLevel string, limit int) ([]models.Word, error) {
 	var words []models.Word
+
+	cefrLevel = strings.ToLower(cefrLevel)
+
 	err := r.db.WithContext(ctx).
 		Where("cefr_level = ?", cefrLevel).
 		Order("RANDOM()").

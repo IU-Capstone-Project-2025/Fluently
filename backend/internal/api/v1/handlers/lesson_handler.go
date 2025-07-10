@@ -93,6 +93,10 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	rand.Shuffle(len(words), func(i, j int) {
+		words[i], words[j] = words[j], words[i]
+	})
+
 	for _, word := range words {
 		var card schemas.Card
 
@@ -143,8 +147,6 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		translateRuToEn.CorrectAnswer = word.Word
 
 		pickOptionTranslate, err := h.PickOptionRepo.GetOptionByWordID(r.Context(), word.ID)
-		logger.Log.Debug("pickOptionTranslate", zap.Any("pickOptionTranslate", pickOptionTranslate))
-		logger.Log.Debug("err", zap.Any("err", err))
 		if err != nil {
 			if errors.Is(err, gorm.ErrRecordNotFound) {
 				pickOptionTranslate = &models.PickOption{
