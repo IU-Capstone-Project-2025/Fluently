@@ -86,6 +86,7 @@ struct StatisticInfo: View {
                 rangeGrid
                 rangeFooter
             }
+            .padding(8)
         }
         .frame(
             maxWidth: .infinity,

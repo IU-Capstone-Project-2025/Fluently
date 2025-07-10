@@ -36,6 +36,7 @@ struct HomeScreenView: View {
         .modifier(BackgroundViewModifier())
         .task {
             do {
+                // TODO: fix this logic
                 try await presenter.getLesson()
             } catch {
                 print(error)
