@@ -76,13 +76,6 @@ type UserInfo struct {
 	Email string `json:"email"`
 }
 
-// LessonRequest represents lesson generation request
-type LessonRequest struct {
-	UserID         string `json:"user_id"`
-	CEFRLevel      string `json:"cefr_level"`
-	WordsPerLesson int    `json:"words_per_lesson"`
-}
-
 // WordProgressRequest represents word progress update request
 type WordProgressRequest struct {
 	UserID    string    `json:"user_id"`
@@ -138,6 +131,26 @@ func (c *Client) doRequest(ctx context.Context, method, endpoint string, body in
 
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("User-Agent", "fluently-telegram-bot/1.0")
+
+	resp, err := c.httpClient.Do(req)
+	if err != nil {
+		return nil, fmt.Errorf("failed to execute request: %w", err)
+	}
+
+	return resp, nil
+}
+
+// doRequest performs GET HTTP request with proper headers
+func (c *Client) doGETRequest(ctx context.Context, method, endpoint string) (*http.Response, error) {
+	url := c.baseURL + endpoint
+	req, err := http.NewRequestWithContext(ctx, method, url, nil)
+	if err != nil {
+		return nil, fmt.Errorf("failed to create request: %w", err)
+	}
+
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("User-Agent", "fluently-telegram-bot/1.0")
+	req.Header.Set("Authorization", "Bearer "+ctx.Value("token").(string))
 
 	resp, err := c.httpClient.Do(req)
 	if err != nil {
@@ -215,13 +228,7 @@ func (c *Client) CheckLinkStatus(ctx context.Context, telegramID int64) (*CheckL
 
 // GenerateLesson generates a new lesson for the user
 func (c *Client) GenerateLesson(ctx context.Context, userID, cefrLevel string, wordsPerLesson int) (*domain.LessonResponse, error) {
-	req := LessonRequest{
-		UserID:         userID,
-		CEFRLevel:      cefrLevel,
-		WordsPerLesson: wordsPerLesson,
-	}
-
-	resp, err := c.doRequest(ctx, "POST", "/api/v1/lessons/generate", req)
+	resp, err := c.doGETRequest(ctx, "GET", "/api/v1/lesson")
 	if err != nil {
 		zap.L().With(zap.String("user_id", userID), zap.Error(err)).Error("Failed to generate lesson")
 		return nil, err
