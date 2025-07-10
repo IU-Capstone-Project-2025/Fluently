@@ -1,53 +1,85 @@
 //
-//  LessonAPIProtocol.swift
+//  LessonAPI.swift
 //  Fluently
 //
-//  Created by Савва Пономарев on 04.07.2025.
+//  Created by Савва Пономарев on 05.07.2025.
 //
 
 import Foundation
 
-protocol LessonAPIProtocol {
-    func getLessons() async throws
+protocol LessonAPI {
+    func getLesson() async throws -> CardsModel
 }
 
 // MARK: - Lessons
-extension APIService: LessonAPIProtocol{
-    func getLessons() async throws {
-        // Validate url
-        guard let url = URL(string: getURL()) else {
-            throw ApiError.invalidURL
-        }
-
+extension APIService: LessonAPI {
+    func getLesson() async throws -> CardsModel {
         // Validate Refresh Token
+        try await validateToken()
+
+        let request = try makeAuthorizedRequest(
+            path: "/api/v1/lesson",
+            method: "GET"
+        )
+
+        return try await fetchAndDecode(request: request) as CardsModel
+    }
+
+    // MARK: - Private Helpers
+
+    private func validateToken() async throws {
         if !KeyChainManager.shared.isTokenValid() {
             try await updateAccessToken()
         }
+    }
 
+    private func makeAuthorizedRequest(
+        path: String,
+        method: String,
+        headers: [String: String] = [:]
+    ) throws -> URLRequest {
         guard let accessToken = KeyChainManager.shared.getAccessToken() else {
             throw KeyChainManager.KeychainError.emptyAccessToken
         }
 
-        // Form request
-        let lessonURL = url.appendingPathComponent("/api/v1/lesson")
+        var request = try makeRequest(
+            path: path,
+            method: method,
+            body: Optional<String>.none,
+            headers: headers
+        )
 
-        var request = URLRequest(url: lessonURL)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        request.httpMethod = "GET"
+        request.setValue(
+            "Bearer \(accessToken)", forHTTPHeaderField: "Authorization"
+        )
 
-        request.printRequest()
+        return request
+    }
+
+    private func fetchAndDecode<T: Decodable>(
+        request: URLRequest,
+        decoder: JSONDecoder = JSONDecoder()
+    ) async throws -> T {
+        let data = try await sendRequest(request)
 
         do {
-            let data = try await sendRequest(request: request)
+            return try decoder.decode(T.self, from: data)
 
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let decodedData = try decoder.decode(CardsModel.self, from: data)
-
-            print(decodedData)
-        } catch {
-            throw ApiError.networkError(error.localizedDescription)
+        } catch let error as DecodingError {
+            print("JSON Decoding Error: \(error.localizedDescription)")
+            switch error {
+                case .typeMismatch(let type, let context):
+                    print("Type mismatch for \(type): \(context.debugDescription)")
+                case .valueNotFound(let type, let context):
+                    print("Value not found for \(type): \(context.debugDescription)")
+                case .keyNotFound(let key, let context):
+                    print("Key '\(key.stringValue)' not found: \(context.debugDescription)")
+                case .dataCorrupted(let context):
+                    print("Data corrupted: \(context.debugDescription)")
+                @unknown default:
+                    print("Unknown error: \(error)")
+            }
+            throw ApiError.decodingFailed(error.localizedDescription)
         }
     }
 }

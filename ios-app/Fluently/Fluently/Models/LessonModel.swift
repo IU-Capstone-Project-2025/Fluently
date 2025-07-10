@@ -8,27 +8,27 @@
 import Foundation
 
 final class LessonModel: Codable {
-    var cefrLevel: String
     var startedAt: String
-    var totalWords: Int
     var wordsPerLesson: Int
+    var totalWords: Int
+    var cefrLevel: String
 
     init(
-        cefrLevel: String,
         startedAt: String,
         totalWords: Int,
-        wordsPerLesson: Int
+        wordsPerLesson: Int,
+        cefrLevel: String
     ) {
-        self.cefrLevel = cefrLevel
         self.startedAt = startedAt
         self.totalWords = totalWords
         self.wordsPerLesson = wordsPerLesson
+        self.cefrLevel = cefrLevel
     }
 
-    enum CodingKeys: CodingKey {
-        case cefrLevel
-        case startedAt
-        case totalWords
-        case wordsPerLesson
+    enum CodingKeys: String, CodingKey {
+        case startedAt = "started_at"
+        case totalWords = "total_words"
+        case wordsPerLesson = "words_per_lesson"
+        case cefrLevel = "cefr_level"
     }
 }

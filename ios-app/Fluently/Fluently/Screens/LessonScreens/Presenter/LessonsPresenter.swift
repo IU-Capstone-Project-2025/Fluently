@@ -18,6 +18,9 @@ final class LessonsPresenter: ObservableObject {
     @Published private(set) var currentEx: ExerciseModel
     @Published private(set) var currentExType: ExerciseModelType
 
+    @Published private(set) var learned = 0
+    private(set) var wordsPerLesson = 10
+
     var statistic: [ExerciseSolution : [ExerciseModel]]
 
     // MARK: - Init
@@ -53,6 +56,7 @@ final class LessonsPresenter: ObservableObject {
             statistic[.uncorrect]!.append(currentEx)
         }
         nextExercise()
+        learned += 1
     }
 
     // MARK: - Lesson navigation
@@ -62,6 +66,9 @@ final class LessonsPresenter: ObservableObject {
             return
         }
 
+        if learned == 9 {
+            finishLesson()
+        }
         currentExNumber += 1
         currentEx = words[currentExNumber].exercise
         currentExType = .wordCard

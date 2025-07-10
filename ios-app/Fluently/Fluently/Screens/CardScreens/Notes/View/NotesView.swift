@@ -88,7 +88,7 @@ struct NotesView: View {
                     maxHeight: Const.recordButtonSize,
                     alignment: .bottom
                 )
-            Spacer()
+                .padding(.bottom, 30)
         }
         .modifier(SheetViewModifier())
     }
