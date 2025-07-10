@@ -71,7 +71,8 @@ struct StatisticInfo: View {
         switch range {
             case .week:
                 Text(
-                    "\(dayNumberFormatter.string(from: weekStart!)) – \(dayNumberFormatter.string(from: weekStart!.endOfWeek!)) \(monthFormatter.string(from: weekStart!).lowercased()) \(yearFormatter.string(from: weekStart!).lowercased())")
+                    "\(dayNumberFormatter.string(from: weekStart!)) – \(dayNumberFormatter.string(from: weekStart!.endOfWeek!))")
+                Text("\(monthFormatter.string(from: weekStart!).lowercased()) \(yearFormatter.string(from: weekStart!).lowercased())")
             case .month:
                 Text("\(monthFormatter.string(from: weekStart!).lowercased()) \(yearFormatter.string(from: weekStart!).lowercased())")
             case .year:
@@ -81,7 +82,7 @@ struct StatisticInfo: View {
 
     var infoGrid: some View {
         ZStack {
-            VStack {
+            VStack{
                 rangeGrid
                 rangeFooter
             }
@@ -105,7 +106,7 @@ struct StatisticInfo: View {
 
     @ViewBuilder
     var rangeFooter: some View {
-        HStack {
+        HStack (alignment: .center) {
             switch range {
                 case .week:
                     ForEach(0..<7) { dayOffset in
@@ -115,13 +116,19 @@ struct StatisticInfo: View {
                         }
                     }
                 case .month:
-                    ForEach(0..<30) { dayOffset in
-                        if dayOffset % 7 == 0 && 1 + dayOffset < weekStart!.getLastDayOfMonth() {
-                            Text("\(1 + dayOffset)")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.trailing)
+                    GeometryReader { geometry in
+                        let daysInMonth = weekStart!.getLastDayOfMonth()
+                        let cellWidth = geometry.size.width / 30
+
+                        ForEach(0..<30) { dayOffset in
+                            if dayOffset % 7 == 0 && 1 + dayOffset < weekStart!.getLastDayOfMonth() {
+                                Text("\(1 + dayOffset)")
+                                    .frame(alignment: .leading)
+                                    .offset(x: CGFloat(dayOffset % 30) * cellWidth)
+                            }
                         }
                     }
+                    .frame(height: 20)
                 case .year:
                     ForEach(0..<12) { monthOffset in
                         Text(Calendar.current.monthSymbols[monthOffset].prefix(1))
@@ -164,6 +171,7 @@ struct StatisticInfo: View {
                         .background(index % 7 == 0 ? Color.orangePrimary.opacity(0.3) : Color.clear)
                         .cornerRadius(4)
                     }
+                    
 
                 case .year:
                     ForEach(0..<12, id: \.self) { index in
@@ -181,6 +189,7 @@ struct StatisticInfo: View {
         }
     }
 }
+
 
 extension Date {
     func getLastDayOfMonth() -> Int {
