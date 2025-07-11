@@ -21,7 +21,7 @@ help:                     ## Show this help message
 # SETUP COMMANDS
 # ===========================================
 
-setup-local: setup-env setup-volumes   ## Complete local setup (environment + volumes)
+setup-local: setup-env setup-volumes setup-thesaurus  ## Complete local setup (environment + volumes + thesaurus)
 	@echo "✅ Local development environment setup complete!"
 	@echo ""
 	@echo "Next steps:"
@@ -33,17 +33,17 @@ setup-local: setup-env setup-volumes   ## Complete local setup (environment + vo
 
 setup-env:                ## Setup environment files
 	@echo "📄 Setting up environment files..."
+	@if [ ! -f .env ]; then \
+		cp .env.example .env; \
+		echo "✅ Created root .env from example"; \
+	else \
+		echo "✅ Root .env already exists"; \
+	fi
 	@if [ ! -f backend/.env ]; then \
 		cp backend/.env.example backend/.env; \
 		echo "✅ Created backend/.env from example"; \
 	else \
 		echo "✅ backend/.env already exists"; \
-	fi
-	@if [ ! -f .env ]; then \
-		cp .env.example .env; \
-		echo "✅ Created .env from example"; \
-	else \
-		echo "✅ .env already exists"; \
 	fi
 	@echo "📝 Environment files ready. Edit if needed for local settings."
 
@@ -54,6 +54,20 @@ setup-volumes:            ## Create required Docker volumes
 	@docker volume create fluently_prometheus_data_external || true
 	@echo "✅ All volumes created"
 
+setup-thesaurus:          ## Copy thesaurus data from deploy server
+	@echo "📂 Setting up thesaurus..."
+	@if [ ! -f analysis/thesaurus/result.csv ]; then \
+		echo "📄 Copying thesaurus data (result.csv) from deploy server..."; \
+		if scp deploy@45.156.22.159:/home/deploy/Fluently-fork/analysis/thesaurus/result.csv analysis/thesaurus/; then \
+			echo "✅ Thesaurus data copied successfully."; \
+		else \
+			echo "❌ Failed to copy thesaurus data. Please check your SSH connection and permissions."; \
+			echo "   Command: scp deploy@45.156.22.159:/home/deploy/Fluently-fork/analysis/thesaurus/result.csv analysis/thesaurus/"; \
+		fi; \
+	else \
+		echo "✅ Thesaurus data (result.csv) already exists."; \
+	fi
+
 # ===========================================
 # MAIN COMMANDS
 # ===========================================
@@ -61,15 +75,15 @@ setup-volumes:            ## Create required Docker volumes
 run-local: check-env pull-images       ## Start all services with pre-built images
 	@echo "🚀 Starting Fluently with pre-built images..."
 	@echo "This is much faster than building locally!"
-	docker compose up -d
+	docker compose -f docker-compose-local.yml up -d
 	@echo ""
 	@echo "✅ All services started!"
 	@echo ""
 	@echo "🌐 Access your services:"
-	@echo "  - Backend API: http://localhost:8070/health"
 	@echo "  - Swagger UI:  http://localhost:8070/swagger/"
-	@echo "  - Frontend:    http://localhost/"
-	@echo "  - Grafana:     http://localhost:3000/ (admin/admin123)"
+	@echo "  - Directus admin panel:     http://localhost:8055/
+	@echo "  - Distractor API:     http://localhost:8001/docs
+	@echo "  - Thesaurus API:     http://localhost:8002/docs
 	@echo ""
 	@echo "📊 Monitor with: make logs"
 
@@ -220,10 +234,12 @@ update:                   ## Update to latest images and restart
 # ===========================================
 
 check-env:
-	@if [ ! -f backend/.env ]; then \
-		echo "❌ backend/.env not found!"; \
-		echo "Please run 'make setup-local' first"; \
+	@if [ ! -f .env ] || [ ! -f backend/.env ]; then \
+		echo "❌ Environment files (.env or backend/.env) not found!"; \
+		echo "   Please run 'make setup-local' first."; \
 		exit 1; \
+	else \
+		echo "✅ Environment files found."; \
 	fi
 
 # ===========================================
