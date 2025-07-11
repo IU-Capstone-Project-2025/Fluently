@@ -20,7 +20,7 @@ extension WordModel {
                         "cat",
                     ],
                     correctAnswer: "car"),
-                type: ""
+                type: .pickOptionSentence
             ),
             isLearned: false,
             sentences: [],
@@ -48,7 +48,7 @@ extension WordModel {
                         ],
                         correctAnswer: "apple"
                     ),
-                    type: "pick_option_sentence"
+                    type: .pickOptionSentence
                 ),
                 isLearned: false,
                 sentences: [
@@ -77,7 +77,7 @@ extension WordModel {
                         ],
                         correctAnswer: "book"
                     ),
-                    type: "translate_ru_to_en"
+                    type: .typeTranslationRussEng
                 ),
                 isLearned: true,
                 sentences: [
@@ -104,7 +104,7 @@ extension WordModel {
                         translation: "Бегать",
                         correctAnswer: "Run"
                     ),
-                    type: "write_word_from_translation"
+                    type: .typeTranslationRussEng
                 ),
                 isLearned: false,
                 sentences: [
@@ -127,7 +127,7 @@ extension WordModel {
                         translation: "Красивый",
                         correctAnswer: "Beautiful"
                     ),
-                    type: "write_word_from_translation"
+                    type: .typeTranslationRussEng
                 ),
                 isLearned: true,
                 sentences: [

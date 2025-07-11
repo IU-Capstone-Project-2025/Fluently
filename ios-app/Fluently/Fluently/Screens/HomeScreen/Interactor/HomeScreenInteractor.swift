@@ -22,7 +22,7 @@ final class HomeScreenInteractor {
         cards.cards.forEach { card in
             print(card.word)
             print(card.exercise.type)
-            print(type(of: card.exercise.data))
+            print(type(of: card.exercise.exerciseData))
         }
     }
 }

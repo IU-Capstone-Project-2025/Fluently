@@ -14,7 +14,7 @@ enum DictionaryScreenBuilder {
         let presenter = DictionaryScreenPresenter()
 
         return DictionaryView(
-            presenter: presenter
+//            presenter: presenter
         )
     }
 }

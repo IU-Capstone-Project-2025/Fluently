@@ -6,19 +6,21 @@
 //
 
 import Foundation
+import SwiftData
 
+@Model
 // exr to choose correct translation
 final class ChooseTranslationEngRuss: ExerciseData {
     // MARK: - Properties
     var text: String
     var options: [String]
+    var correctAnswer: String
 
     // MARK: - Init
     init(text: String, options: [String], correctAnswer: String) {
         self.text = text
         self.options = options
-
-        super.init(correctAnswer: correctAnswer)
+        self.correctAnswer = correctAnswer
     }
     
     // MARK: - Codable
@@ -36,8 +38,8 @@ final class ChooseTranslationEngRuss: ExerciseData {
 
         options = []
 
-        let answer = try container.decode(String.self, forKey: .correctAnswer)
-        super.init(correctAnswer: answer)
+        correctAnswer = try container.decode(String.self, forKey: .correctAnswer)
+
 
         if let options = try container.decodeIfPresent([String].self, forKey: .options) {
             self.options = options.isEmpty ? [correctAnswer] : options
@@ -45,11 +47,11 @@ final class ChooseTranslationEngRuss: ExerciseData {
             self.options = [correctAnswer]
         }
     }
-
-    override func encode(to encoder: Encoder) throws {
+    
+    func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(text, forKey: .text)
         try container.encode(options, forKey: .options)
-        try super.encode(to: encoder)
+        try container.encode(correctAnswer, forKey: .correctAnswer)
     }
 }
