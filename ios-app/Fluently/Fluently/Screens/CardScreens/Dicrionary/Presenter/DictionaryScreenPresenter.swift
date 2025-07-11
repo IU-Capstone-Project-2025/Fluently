@@ -19,8 +19,7 @@ final class DictionaryScreenPresenter: DictionaryScreenPresenting {
 #if targetEnvironment(simulator)
     @Published var words: [WordModel] = WordModel.generateMockWords()
 #else
-//    @Query var words: [WordModel]
-    @Published var words: [WordModel] = WordModel.generateMockWords()
+    @Query(filter: #Predicate<WordModel> { $0.isLearned == true }) var words: [WordModel]
 #endif
     @Published var filteredWords: [WordModel] = []
 

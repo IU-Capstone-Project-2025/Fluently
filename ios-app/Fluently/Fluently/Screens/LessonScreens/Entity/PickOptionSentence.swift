@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 
+@Model
 // exr to match word with sentence
 final class PickOptionSentence: ExerciseData {
     // MARK: - Properties

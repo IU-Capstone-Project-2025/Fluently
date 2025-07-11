@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import SwiftData
 
+@Model
 // exr: type correct translation
 final class WriteFromTranslation: ExerciseData {
     // MARK: - Properties

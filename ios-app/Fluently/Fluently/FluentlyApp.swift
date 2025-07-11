@@ -56,10 +56,6 @@ struct FluentlyApp: App {
                 .navigationDestination(for: AppRoutes.self) { route in
                     switch route {
                         case .homeScreen:
-//                            HomeScreenBuilder.build(
-//                                router: router,
-//                                acoount: account
-//                            )
                             MainView()
                         case .login:
                             LoginScreenBuilder.build(
@@ -83,7 +79,12 @@ struct FluentlyApp: App {
             }
             .environmentObject(account)
             .environmentObject(router)
-//            .modelContainer(for: WordModel.self)
+            .modelContainer(
+                for: [
+                    CardsModel.self,
+                    WordModel.self
+                ]
+            )
         }
     }
 

@@ -7,10 +7,13 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 final class LessonsPresenter: ObservableObject {
     // MARK: - Key Object
     private var router: AppRouter
+
+    @Environment(\.modelContext) var modelContext
 
     // MARK: - Properties
     private(set) var words: [WordModel]
@@ -51,8 +54,10 @@ final class LessonsPresenter: ObservableObject {
 
     func answer(_ answer: String) {
         if currentEx.data.correctAnswer.lowercased() == answer.lowercased() {
+            words[currentExNumber].isLearned = true
             statistic[.correct]!.append(currentEx)
         } else {
+            words[currentExNumber].isLearned = false
             statistic[.uncorrect]!.append(currentEx)
         }
         nextExercise()
@@ -76,6 +81,9 @@ final class LessonsPresenter: ObservableObject {
 
     // func to represent statistic
     func finishLesson() {
+        words.forEach { word in
+            modelContext.insert(word)
+        }
         navigateBack()
         statistic.keys.forEach { solution in
             print("------------ \(solution.rawValue) ------------")
