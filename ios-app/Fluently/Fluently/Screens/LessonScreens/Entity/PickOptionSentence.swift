@@ -8,11 +8,13 @@
 import Foundation
 import SwiftData
 
+@Model
 // exr to match word with sentence
 final class PickOptionSentence: ExerciseData {
     // MARK: - Properties
     var template: String
     var options: [String]
+    var correctAnswer: String
 
     // MARK: - Init
     init(
@@ -23,25 +25,34 @@ final class PickOptionSentence: ExerciseData {
         self.template = template
         self.options = options
 
-        super.init(correctAnswer: correctAnswer)
+        self.correctAnswer = correctAnswer
     }
     
     // MARK: - Codable
     private enum CodingKeys: String, CodingKey {
-        case template, options, correctAnswer
+        case template
+        case options = "pick_options"
+        case correctAnswer = "correct_answer"
     }
 
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         template = try container.decode(String.self, forKey: .template)
-        options = try container.decode([String].self, forKey: .options)
-        try super.init(from: container.superDecoder())
+        options = []
+
+        correctAnswer = try container.decode(String.self, forKey: .correctAnswer)
+
+        if let options = try container.decodeIfPresent([String].self, forKey: .options) {
+            self.options = options.isEmpty ? [correctAnswer] : options
+        } else {
+            self.options = [correctAnswer]
+        }
     }
 
-    override func encode(to encoder: Encoder) throws {
+    func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(template, forKey: .template)
         try container.encode(options, forKey: .options)
-        try super.encode(to: encoder)
+        try container.encode(correctAnswer, forKey: .correctAnswer)
     }
 }

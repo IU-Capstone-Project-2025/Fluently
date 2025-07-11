@@ -7,16 +7,22 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 final class LessonsPresenter: ObservableObject {
     // MARK: - Key Object
     private var router: AppRouter
+
+    var modelContext: ModelContext?
 
     // MARK: - Properties
     private(set) var words: [WordModel]
     @Published private(set) var currentExNumber: Int
     @Published private(set) var currentEx: ExerciseModel
     @Published private(set) var currentExType: ExerciseModelType
+
+    @Published private(set) var learned = 0
+    private(set) var wordsPerLesson = 10
 
     var statistic: [ExerciseSolution : [ExerciseModel]]
 
@@ -47,12 +53,15 @@ final class LessonsPresenter: ObservableObject {
     }
 
     func answer(_ answer: String) {
-        if currentEx.data.correctAnswer.lowercased() == answer.lowercased() {
+        if currentEx.exerciseData.correctAnswer.lowercased() == answer.lowercased() {
+            words[currentExNumber].isLearned = true
             statistic[.correct]!.append(currentEx)
         } else {
+            words[currentExNumber].isLearned = false
             statistic[.uncorrect]!.append(currentEx)
         }
         nextExercise()
+        learned += 1
     }
 
     // MARK: - Lesson navigation
@@ -62,6 +71,9 @@ final class LessonsPresenter: ObservableObject {
             return
         }
 
+        if learned == 9 {
+            finishLesson()
+        }
         currentExNumber += 1
         currentEx = words[currentExNumber].exercise
         currentExType = .wordCard
@@ -69,17 +81,21 @@ final class LessonsPresenter: ObservableObject {
 
     // func to represent statistic
     func finishLesson() {
+        words.forEach { word in
+            modelContext?.insert(word)
+        }
+        try? modelContext?.save()
         navigateBack()
         statistic.keys.forEach { solution in
             print("------------ \(solution.rawValue) ------------")
             statistic[solution]?.forEach { exr in
-                if let pickoptions = exr.data as? PickOptionSentence {
+                if let pickoptions = exr.exerciseData as? PickOptionSentence {
                     print("Pick option sentence: \(pickoptions.template) -> \(pickoptions.correctAnswer)")
                 }
-                if let chooseTranslation = exr.data as? ChooseTranslationEngRuss {
+                if let chooseTranslation = exr.exerciseData as? ChooseTranslationEngRuss {
                     print("Choose translation: \(chooseTranslation.text) -> \(chooseTranslation.correctAnswer)")
                 }
-                if let typeTranslation = exr.data as? WriteFromTranslation {
+                if let typeTranslation = exr.exerciseData as? WriteFromTranslation {
                     print("Type translation: \(typeTranslation.translation) -> \(typeTranslation.correctAnswer)")
                 }
             }

@@ -2,58 +2,44 @@
 //  AuthAPI.swift
 //  Fluently
 //
-//  Created by Савва Пономарев on 04.07.2025.
+//  Created by Савва Пономарев on 05.07.2025.
 //
 
 import Foundation
 
-protocol AuthAPIProtocol {
+protocol AuthAPI {
+    // Tokens
     func authGoogle(_ gid: String) async throws -> AuthResponse
     func updateAccessToken() async throws
 }
 
-// MARK: - Auth
-extension APIService: AuthAPIProtocol {
+extension APIService: AuthAPI {
     func authGoogle(_ gid: String) async throws -> AuthResponse {
-        // Validate url
-        guard let url = URL(string: getURL()) else {
-            throw ApiError.invalidURL
-        }
-        // Updating url
-        let authGoogleUrl = url.appendingPathComponent("/auth/google")
-
-        // Formating request
-        var request = URLRequest(url: authGoogleUrl)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-
-        // Add Data
-        let requestBody = AuthRequest(idToken: gid)
-        do {
-            request.httpBody = try JSONEncoder().encode(requestBody)
-        } catch {
-            throw ApiError.encodingFailed
-        }
-
-        // Sending request
-        do {
-            let data = try await sendRequest(request: request)
-
-            let decoder = JSONDecoder()
-            return try decoder.decode(AuthResponse.self, from: data)
-        } catch {
-            throw ApiError.networkError(error.localizedDescription)
-        }
+        let request = try makeRequest(
+            path: "/auth/google",
+            method: "POST",
+            body: AuthRequest(idToken: gid)
+        )
+        return try await decodeResponse(from: request)
     }
 
     func updateAccessToken() async throws {
-        let tokens = try await getTokens()
+        let tokens = try await refreshTokens()
+        try KeyChainManager.shared.saveToken(tokens)
+    }
+}
 
-        // Try to upd keychain data
-        do {
-            try KeyChainManager.shared.saveToken(tokens)
-        } catch {
-            throw KeyChainManager.KeychainError.saveTokens
+private extension APIService {
+    func refreshTokens() async throws -> AuthResponse {
+        guard let refreshToken = KeyChainManager.shared.getRefreshToken() else {
+            throw KeyChainManager.KeychainError.emptyRefreshToken
         }
+
+        let request = try makeRequest(
+            path: "/auth/refresh",
+            method: "POST",
+            body: ["refresh_token": refreshToken]
+        )
+        return try await decodeResponse(from: request)
     }
 }

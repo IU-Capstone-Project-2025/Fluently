@@ -20,6 +20,7 @@ struct WordCardView: View {
         VStack {
 
             wordCard
+                .padding(20)
 
             Spacer()
 
@@ -55,7 +56,7 @@ struct WordCardView: View {
                 .font(.appFont.caption)
 
             VStack(alignment: .leading, spacing: 4) {
-                ForEach(word.sentences, id: \.self) { sentence in
+                ForEach(word.sentences.prefix(3), id: \.self) { sentence in
                     VStack(alignment: .leading) {
                         Text("- \(sentence.text)")
                             .foregroundColor(.blackText)
