@@ -5,12 +5,21 @@
 //  Created by Савва Пономарев on 30.06.2025.
 //
 
-
 import SwiftUI
+import SwiftData
 
 struct DictionaryView: View {
-    @ObservedObject var presenter: DictionaryScreenPresenter
+//    @ObservedObject var presenter: DictionaryScreenPresenter
     @Environment(\.dismiss) var dismiss
+
+    @Environment(\.modelContext) var modelContext
+
+    @StateObject private var presenter: DictionaryScreenPresenter
+
+    init() {
+        _presenter = StateObject(wrappedValue: DictionaryScreenPresenter())
+
+    }
 
     @State var prefix: String = ""
 
@@ -39,6 +48,10 @@ struct DictionaryView: View {
                         }
                     }
                 }
+            }
+            .onAppear{
+                presenter.setModelContext(modelContext)
+                presenter.filter(prefix: "")
             }
         }
         .ignoresSafeArea(.keyboard)
@@ -92,7 +105,7 @@ struct DictionaryPreview: PreviewProvider {
 
         var body: some View {
             DictionaryView(
-                presenter: presenter
+//                presenter: presenter
             )
         }
     }
