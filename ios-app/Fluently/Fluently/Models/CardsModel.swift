@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class CardsModel: Codable {
+final class CardsModel: Codable, Sendable {
     var cards: [WordModel]
     var lesson: LessonModel
 

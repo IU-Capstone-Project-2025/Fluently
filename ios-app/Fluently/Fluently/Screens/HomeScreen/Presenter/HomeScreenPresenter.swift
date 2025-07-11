@@ -47,7 +47,8 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         self.interactor = interactor
         self.account = account
     }
-
+    
+    @MainActor
     func getLesson() async throws {
         guard lesson == nil else {
             return
@@ -61,8 +62,10 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         return NotesScreenBuilder.build(router: router.router)
     }
 
-    func buildDictionaryScreen() -> DictionaryView{
-        return DictionaryScreenBuilder.build()
+    func buildDictionaryScreen(isLearned: Bool) -> DictionaryView{
+        return DictionaryScreenBuilder.build(
+            isLearned: isLearned
+        )
     }
 
     // Navigation
@@ -73,5 +76,6 @@ final class HomeScreenPresenter: HomeScreenPresenting {
 
     func navigatoToLesson() {
         router.navigatoToLesson(lesson!)
+        lesson = nil
     }
 }

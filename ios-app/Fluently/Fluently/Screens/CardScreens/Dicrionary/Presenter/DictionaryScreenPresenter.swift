@@ -16,6 +16,7 @@ protocol DictionaryScreenPresenting: ObservableObject {
 
 final class DictionaryScreenPresenter: DictionaryScreenPresenting {
 
+    var isLearned = false
 #if targetEnvironment(simulator)
     @Published var words: [WordModel] = WordModel.generateMockWords()
 #else
@@ -23,7 +24,7 @@ final class DictionaryScreenPresenter: DictionaryScreenPresenting {
     var words: [WordModel] {
         guard let modelContext else { return [] }
         let descriptor = FetchDescriptor<WordModel>(
-            predicate: #Predicate { $0.isLearned == true }
+            predicate: #Predicate { $0.isLearned == isLearned }
         )
         return (try? modelContext.fetch(descriptor)) ?? []
     }
@@ -32,7 +33,8 @@ final class DictionaryScreenPresenter: DictionaryScreenPresenting {
 
     var modelContext: ModelContext?
 
-    init(modelContext: ModelContext? = nil) {
+    init(modelContext: ModelContext? = nil, isLearned: Bool) {
+        self.isLearned = isLearned
         self.modelContext = modelContext
         self.filteredWords = words
     }

@@ -7,10 +7,13 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct HomeScreenView: View {
     // MARK: - Key Objects
-    @ObservedObject var presenter: HomeScreenPresenter
+    @StateObject var presenter: HomeScreenPresenter
+
+    @Query var words: [WordModel]
 
     // MARK: - Properties
     @State var goal: String = "Traveling"
@@ -36,7 +39,6 @@ struct HomeScreenView: View {
         .modifier(BackgroundViewModifier())
         .task {
             do {
-                // TODO: fix this logic
                 try await presenter.getLesson()
             } catch {
                 print(error)
@@ -48,9 +50,10 @@ struct HomeScreenView: View {
                 case .notes:
                     presenter.buildNotesScreen()
                 case .learned:
-                    presenter.buildDictionaryScreen()
+                    presenter.buildDictionaryScreen(isLearned: true)
                 case .nonLearned:
-                    NonLearnedView()
+//                    NonLearnedView()
+                    presenter.buildDictionaryScreen(isLearned: false)
             }
         }
     }
@@ -98,11 +101,14 @@ struct HomeScreenView: View {
     ///  List of the cards
     var cards: some View {
         HStack(spacing: 12) {
-            ForEach(ScreenCard.CardType.allCases, id: \.self) { type in
-                ScreenCard(type: type) {
-                    openedScreen = type
-                }
-                .animation(.easeInOut, value: openedScreen)
+            ScreenCard(type: .notes) {
+                openedScreen = .notes
+            }
+            ScreenCard(type: .learned, count: "\(words.filter { $0.isLearned == true }.count)") {
+                openedScreen = .learned
+            }
+            ScreenCard(type: .nonLearned, count: "\(words.filter { $0.isLearned == false }.count)") {
+                openedScreen = .nonLearned
             }
         }
         .padding(.horizontal, Const.horizontalPadding)
