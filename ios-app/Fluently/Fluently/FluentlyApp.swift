@@ -41,7 +41,8 @@ struct FluentlyApp: App {
                             }
                     } else {
                         if !showLogin {
-                            HomeScreenBuilder.build(router: router, acoount: account)
+//                            HomeScreenBuilder.build(router: router, acoount: account)
+                            MainView()
                         } else {
                             LoginScreenBuilder.build(
                                 router: router,
@@ -55,10 +56,7 @@ struct FluentlyApp: App {
                 .navigationDestination(for: AppRoutes.self) { route in
                     switch route {
                         case .homeScreen:
-                            HomeScreenBuilder.build(
-                                router: router,
-                                acoount: account
-                            )
+                            MainView()
                         case .login:
                             LoginScreenBuilder.build(
                                 router: router,
@@ -71,16 +69,22 @@ struct FluentlyApp: App {
                                 account: account,
                                 authViewModel: authViewModel
                             )
-                        case .lesson:
+                        case .lesson(let cards):
                             LessonScreenBuilder.build(
-                                router: router
+                                router: router,
+                                lesson: cards.cards
                             )
                     }
                 }
             }
             .environmentObject(account)
             .environmentObject(router)
-//            .modelContainer(for: WordModel.self)
+            .modelContainer(
+                for: [
+                    CardsModel.self,
+                    WordModel.self
+                ]
+            )
         }
     }
 
@@ -131,8 +135,16 @@ struct FluentlyApp: App {
 
 // MARK: - Routes
 enum AppRoutes: Hashable {
+    static func == (lhs: AppRoutes, rhs: AppRoutes) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine("AppRoutes")
+    }
+
     case homeScreen
     case login
     case profile
-    case lesson
+    case lesson(CardsModel)
 }

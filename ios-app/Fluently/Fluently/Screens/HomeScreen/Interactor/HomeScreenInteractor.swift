@@ -12,13 +12,17 @@ final class HomeScreenInteractor {
 
     let api: APIService = APIService()
 
-    func getLesson() {
-        Task {
-            do {
-                try await api.getLessons()
-            } catch {
-                print("Error: \(error.localizedDescription)")
-            }
+    func getLesson() async throws -> CardsModel{
+        let cards = try await api.getLesson()
+        printCards(cards)
+        return cards
+    }
+
+    func printCards(_ cards: CardsModel) {
+        cards.cards.forEach { card in
+            print(card.word)
+            print(card.exercise.type)
+            print(type(of: card.exercise.exerciseData))
         }
     }
 }

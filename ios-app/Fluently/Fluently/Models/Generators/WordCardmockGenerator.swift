@@ -10,7 +10,7 @@ import Foundation
 extension WordModel {
     static func mockWord() -> WordModel {
         return WordModel(
-            cefrLevel: "A1",
+//            cefrLevel: "A1",
             exercise: ExerciseModel(
                 data: PickOptionSentence(
                     template: "Bob is driving a car",
@@ -20,13 +20,13 @@ extension WordModel {
                         "cat",
                     ],
                     correctAnswer: "car"),
-                type: ""
+                type: .pickOptionSentence
             ),
             isLearned: false,
             sentences: [],
             subtopic: "Car",
             topic: "Vechile",
-            transcription: "ka:r",
+//            transcription: "ka:r",
             translation: "Машина",
             word: "Car",
             wordId: UUID().uuidString
@@ -36,10 +36,10 @@ extension WordModel {
     static func generateMockWords(count: Int = 5) -> [WordModel] {
         let mockWords = [
             WordModel(
-                cefrLevel: "A1",
+//                cefrLevel: "A1",
                 exercise: ExerciseModel(
                     data: PickOptionSentence(
-                        template: "The ____ is red",
+                        template: "The __________ is red",
                         options: [
                             "banana",
                             "watermelon",
@@ -48,7 +48,7 @@ extension WordModel {
                         ],
                         correctAnswer: "apple"
                     ),
-                    type: "pick_option_sentence"
+                    type: .pickOptionSentence
                 ),
                 isLearned: false,
                 sentences: [
@@ -59,13 +59,13 @@ extension WordModel {
                 ],
                 subtopic: "Food",
                 topic: "Fruits",
-                transcription: "ˈæp.əl",
+//                transcription: "ˈæp.əl",
                 translation: "Яблоко",
                 word: "Apple",
                 wordId: UUID().uuidString
             ),
             WordModel(
-                cefrLevel: "A2",
+//                cefrLevel: "A2",
                 exercise: ExerciseModel(
                     data: ChooseTranslationEngRuss(
                         text: "Книга",
@@ -77,7 +77,7 @@ extension WordModel {
                         ],
                         correctAnswer: "book"
                     ),
-                    type: "translate_ru_to_en"
+                    type: .typeTranslationRussEng
                 ),
                 isLearned: true,
                 sentences: [
@@ -92,19 +92,19 @@ extension WordModel {
                 ],
                 subtopic: "Education",
                 topic: "Objects",
-                transcription: "bʊk",
+//                transcription: "bʊk",
                 translation: "Книга",
                 word: "Book",
                 wordId: UUID().uuidString
             ),
             WordModel(
-                cefrLevel: "B1",
+//                cefrLevel: "B1",
                 exercise: ExerciseModel(
                     data: WriteFromTranslation(
                         translation: "Бегать",
                         correctAnswer: "Run"
                     ),
-                    type: "write_word_from_translation"
+                    type: .typeTranslationRussEng
                 ),
                 isLearned: false,
                 sentences: [
@@ -115,19 +115,19 @@ extension WordModel {
                 ],
                 subtopic: "Activities",
                 topic: "Sports",
-                transcription: "rʌn",
+//                transcription: "rʌn",
                 translation: "Бегать",
                 word: "Run",
                 wordId: UUID().uuidString
             ),
             WordModel(
-                cefrLevel: "B2",
+//                cefrLevel: "B2",
                 exercise: ExerciseModel(
                     data: WriteFromTranslation(
                         translation: "Красивый",
                         correctAnswer: "Beautiful"
                     ),
-                    type: "write_word_from_translation"
+                    type: .typeTranslationRussEng
                 ),
                 isLearned: true,
                 sentences: [
@@ -138,7 +138,7 @@ extension WordModel {
                 ],
                 subtopic: "Art",
                 topic: "Adjectives",
-                transcription: "ˈbjuː.tɪ.fəl",
+//                transcription: "ˈbjuː.tɪ.fəl",
                 translation: "Красивый",
                 word: "Beautiful",
                 wordId: UUID().uuidString

@@ -19,13 +19,26 @@ final class DictionaryScreenPresenter: DictionaryScreenPresenting {
 #if targetEnvironment(simulator)
     @Published var words: [WordModel] = WordModel.generateMockWords()
 #else
-//    @Query var words: [WordModel]
-    @Published var words: [WordModel] = WordModel.generateMockWords()
+//    @Query(filter: #Predicate<WordModel> { $0.isLearned == true }) var words: [WordModel]
+    var words: [WordModel] {
+        guard let modelContext else { return [] }
+        let descriptor = FetchDescriptor<WordModel>(
+            predicate: #Predicate { $0.isLearned == true }
+        )
+        return (try? modelContext.fetch(descriptor)) ?? []
+    }
 #endif
     @Published var filteredWords: [WordModel] = []
 
-    init() {
+    var modelContext: ModelContext?
+
+    init(modelContext: ModelContext? = nil) {
+        self.modelContext = modelContext
         self.filteredWords = words
+    }
+
+    func setModelContext(_ context: ModelContext) {
+        self.modelContext = context
     }
 
     func filter(prefix: String) {

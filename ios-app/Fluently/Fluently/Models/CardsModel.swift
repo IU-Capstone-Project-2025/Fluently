@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import SwiftData
 
+@Model
 final class CardsModel: Codable {
     var cards: [WordModel]
     var lesson: LessonModel
@@ -17,5 +19,24 @@ final class CardsModel: Codable {
     ) {
         self.cards = cards
         self.lesson = lesson
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case cards
+        case lesson
+    }
+
+    required init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        cards = try container.decode([WordModel].self, forKey: .cards)
+        lesson = try container.decode(LessonModel.self, forKey: .lesson)
+    }
+
+    func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        try container.encode(cards, forKey: .cards)
+        try container.encode(lesson, forKey: .lesson)
     }
 }
