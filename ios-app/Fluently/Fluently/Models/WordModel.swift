@@ -20,6 +20,8 @@ final class WordModel: Codable{
     var word: String
     var wordId: String
 
+    var wordDate: Date
+
     init(
         exercise: ExerciseModel,
         isLearned: Bool,
@@ -39,6 +41,8 @@ final class WordModel: Codable{
         self.translation = translation
         self.word = word
         self.wordId = wordId
+
+        self.wordDate = Date.now
     }
 
     enum CodingKeys: String, CodingKey {
@@ -65,6 +69,8 @@ final class WordModel: Codable{
         translation = try container.decode(String.self, forKey: .translation)
         word = try container.decode(String.self, forKey: .word)
         wordId = try container.decode(String.self, forKey: .wordId)
+
+        wordDate = Date.now
     }
 
     func encode(to encoder: any Encoder) throws {

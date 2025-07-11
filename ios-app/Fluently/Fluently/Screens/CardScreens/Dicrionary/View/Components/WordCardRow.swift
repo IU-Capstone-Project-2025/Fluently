@@ -74,7 +74,7 @@ struct WordCardRow: View {
 
     var sentences: some View {
         VStack(alignment: .leading, spacing: 6) {
-            ForEach(word.sentences, id: \.self) { sentence in
+            ForEach(word.sentences.prefix(3), id: \.self) { sentence in
                 Text("- \(sentence.text)")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.appFont.headline)
