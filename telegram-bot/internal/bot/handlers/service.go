@@ -1,4 +1,3 @@
-// service.go
 package handlers
 
 import (
@@ -55,7 +54,7 @@ func (s *HandlerService) TransitionState(ctx context.Context, userID int64, newS
 	return s.stateManager.SetState(ctx, userID, newState)
 }
 
-// Get user progress from API
+// GetUserProgress (from API) for now - mock
 func (s *HandlerService) GetUserProgress(ctx context.Context, userID int64) (*domain.UserProgress, error) {
 	// For now, return a default user progress
 	// This should be implemented to call the actual API
@@ -67,7 +66,7 @@ func (s *HandlerService) GetUserProgress(ctx context.Context, userID int64) (*do
 	}, nil
 }
 
-// Update user progress through API
+// UpdateUserProgress update user progress through API
 func (s *HandlerService) UpdateUserProgress(ctx context.Context, userID int64, progress *domain.UserProgress) error {
 	// For now, this is a placeholder
 	// This should be implemented to call the actual API
@@ -119,34 +118,42 @@ func (s *HandlerService) HandleCallback(ctx context.Context, c tele.Context, use
 	s.logger.With(zap.Int64("user_id", userID), zap.String("state", string(currentState)), zap.String("data", data)).Debug("Processing callback")
 
 	// Always respond to callback to remove loading state
-	defer c.Respond()
+	defer func() {
+		if err := c.Respond(); err != nil {
+			s.logger.Error("Failed to respond to callback", zap.Error(err))
+		}
+	}()
 
 	// Route based on callback data prefix and current state
-	switch {
-	case data == "onboarding:start":
+	switch data {
+	case "onboarding:start":
 		return s.HandleOnboardingStartCallback(ctx, c, userID, currentState)
-	case data == "onboarding:method":
+	case "onboarding:method":
 		return s.HandleOnboardingMethodCallback(ctx, c, userID, currentState)
-	case data == "test:start":
+	case "onboarding:questionnaire":
+		return s.HandleOnboardingQuestionnaireCallback(ctx, c, userID, currentState)
+	case "test:start":
 		return s.HandleTestStartCallback(ctx, c, userID, currentState)
-	case data == "lesson:start":
+	case "lesson:start":
 		return s.HandleLessonStartCallback(ctx, c, userID, currentState)
-	case data == "lesson:later":
+	case "lesson:later":
 		return s.HandleLessonLaterCallback(ctx, c, userID, currentState)
-	case data == "settings:words_per_day":
+	case "settings:words_per_day":
 		return s.HandleSettingsWordsPerDayCallback(ctx, c, userID, currentState)
-	case data == "settings:notifications":
+	case "settings:notifications":
 		return s.HandleSettingsNotificationsCallback(ctx, c, userID, currentState)
-	case data == "settings:cefr_level":
+	case "settings:cefr_level":
 		return s.HandleSettingsCEFRLevelCallback(ctx, c, userID, currentState)
-	case data == "menu:main":
+	case "menu:main":
 		return s.HandleMainMenuCallback(ctx, c, userID, currentState)
-	case data == "menu:settings":
+	case "menu:settings":
 		return s.HandleSettingsMenuCallback(ctx, c, userID, currentState)
-	case data == "menu:learn":
+	case "menu:learn":
 		return s.HandleLearnMenuCallback(ctx, c, userID, currentState)
-	case data == "menu:help":
+	case "menu:help":
 		return s.HandleHelpMenuCallback(ctx, c, userID, currentState)
+	case "account:link":
+		return s.HandleAccountLinkCallback(ctx, c, userID, currentState)
 	default:
 		return s.HandleUnknownCallback(ctx, c, userID, currentState)
 	}
@@ -197,5 +204,5 @@ func (s *HandlerService) HandlePhotoMessage(ctx context.Context, c tele.Context,
 	s.logger.With(zap.Int64("user_id", userID), zap.String("state", string(currentState))).Debug("Processing photo message")
 
 	// For now, photos aren't part of the learning flow
-	return c.Send("Фото сообщения пока не поддерживаются. Используйте /help чтобы увидеть доступные команды.")
+	return c.Send("Используйте /help чтобы увидеть доступные команды.")
 }

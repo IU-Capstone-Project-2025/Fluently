@@ -2,6 +2,7 @@ package postgres
 
 import (
 	"context"
+	"strings"
 
 	"github.com/google/uuid"
 	"gorm.io/gorm"
@@ -33,6 +34,33 @@ func (r *WordRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.Wor
 	}
 
 	return &word, nil
+}
+
+func (r *WordRepository) GetByValue(ctx context.Context, value string) (*models.Word, error) {
+	var word models.Word
+	if err := r.db.WithContext(ctx).First(&word, "value = ?", value).Error; err != nil {
+		return nil, err
+	}
+
+	return &word, nil
+}
+
+func (r *WordRepository) GetRandomWordsByCEFRLevel(ctx context.Context, cefrLevel string, limit int) ([]models.Word, error) {
+	var words []models.Word
+
+	cefrLevel = strings.ToLower(cefrLevel)
+
+	err := r.db.WithContext(ctx).
+		Where("cefr_level = ?", cefrLevel).
+		Order("RANDOM()").
+		Limit(limit).
+		Find(&words).Error
+
+	if err != nil {
+		return nil, err
+	}
+	
+	return words, nil
 }
 
 func (r *WordRepository) Create(ctx context.Context, word *models.Word) error {

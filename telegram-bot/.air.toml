@@ -1,2 +1,12 @@
 # .air.toml
-# TODO: Add configuration for Air live reloading 
+
+[build]
+    cmd = "go build -o tmp/main ./cmd/main.go"
+    delay = 1000
+
+[log]
+    level = "debug"
+
+[env]
+    go_version = "1.24.4"
+    go_mod = "auto"

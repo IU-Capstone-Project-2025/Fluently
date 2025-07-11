@@ -2,15 +2,20 @@ package handlers
 
 import (
 	"encoding/json"
+	"errors"
 	"math/rand"
 	"net/http"
+	"strings"
 	"time"
 
+	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
 	"fluently/go-backend/internal/utils"
-	"strings"
-	"unicode/utf8"
+	"fluently/go-backend/pkg/logger"
+
+	"go.uber.org/zap"
+	"gorm.io/gorm"
 )
 
 var exerciseTypes = []string{
@@ -23,12 +28,18 @@ type LessonHandler struct {
 	PreferenceRepo *postgres.PreferenceRepository
 	TopicRepo      *postgres.TopicRepository
 	SentenceRepo   *postgres.SentenceRepository
+	PickOptionRepo *postgres.PickOptionRepository
+	WordRepo       *postgres.WordRepository
 	Repo           *postgres.LessonRepository
 }
 
 func replaceWordWithUnderscores(text, word string) string {
-	replacement := strings.Repeat("_", utf8.RuneCountInString(word))
-	return strings.ReplaceAll(text, word, replacement)
+	wordIndex := strings.Index(text, word)
+	if wordIndex == -1 {
+		return text
+	}
+
+	return text[:wordIndex] + strings.Repeat("_", len(word)) + text[wordIndex+len(word):]
 }
 
 // GenerateLesson godoc
@@ -42,7 +53,7 @@ func replaceWordWithUnderscores(text, word string) string {
 // @Failure 400 {string} string "Bad request - invalid user or preferences"
 // @Failure 401 {string} string "Unauthorized - invalid or missing token"
 // @Failure 500 {string} string "Internal server error"
-// @Router /lesson [get]
+// @Router /api/v1/lesson [get]
 func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
@@ -72,10 +83,19 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 	words, err := h.Repo.GetWordsForLesson(
 		r.Context(),
 		userID,
-		userPref.Goal,
 		userPref.CEFRLevel,
+		userPref.Goal,
 		lessonInfo.TotalWords,
 	)
+	if err != nil {
+		logger.Log.Error("Failed to get words for lesson", zap.Error(err))
+		http.Error(w, "failed to get words for lesson", http.StatusBadRequest)
+		return
+	}
+
+	rand.Shuffle(len(words), func(i, j int) {
+		words[i], words[j] = words[j], words[i]
+	})
 
 	for _, word := range words {
 		var card schemas.Card
@@ -104,57 +124,106 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		card.Topic = topic.Title
 
 		// Sentence process
-		sentence, err := h.SentenceRepo.GetByWordID(r.Context(), word.ID)
+		sentences, err := h.SentenceRepo.GetByWordID(r.Context(), word.ID)
 		if err != nil {
 			http.Error(w, "failed to get sentence", http.StatusBadRequest)
 			return
 		}
 
-		card.Sentences = append(card.Sentences, schemas.Sentence{
-			Text:        sentence.Sentence,
-			Translation: "Violets are Blue", //TODO: Remove moke in future
-		})
-
-		// Exercise process
-		option := rand.Intn(3)
-
-		var exercise schemas.Exercise
-		exercise.Type = exerciseTypes[option]
-
-		switch option {
-		case 0: // translate_ru_to_en
-			var translateRuToEn schemas.ExerciseTranslateRuToEn
-
-			translateRuToEn.Text = word.Translation
-			translateRuToEn.CorrectAnswer = word.Word
-			translateRuToEn.PickOptions, _ = utils.GeneratePickOptionsWithDefaults(r.Context(), sentence.Sentence, word.Word)
-			exercise.Data = translateRuToEn
-		case 1: // write_word_from_translation
-			var writeWordFromTranslation schemas.ExerciseWriteWordFromTranslation
-
-			writeWordFromTranslation.Translation = word.Translation
-			writeWordFromTranslation.CorrectAnswer = word.Word
-			exercise.Data = writeWordFromTranslation
-		case 2: // pick_option_sentence
-			var pickOptionSentence schemas.ExercisePickOptionSentence
-
-			pickOptionSentence.Template = replaceWordWithUnderscores(
-				sentence.Sentence,
-				word.Word,
-			)
-			pickOptionSentence.CorrectAnswer = word.Word
-			pickOptionSentence.PickOptions, _ = utils.GeneratePickOptionsWithDefaults(r.Context(), sentence.Sentence, word.Word)
-			exercise.Data = pickOptionSentence
-		default:
+		for _, sentence := range sentences {
+			card.Sentences = append(card.Sentences, schemas.Sentence{
+				Text:        sentence.Sentence,
+				Translation: sentence.Translation,
+			})
 		}
 
-		card.Exercise = exercise
+		// Exercise process
+		var exercises []schemas.Exercise
+
+		// translate_ru_to_en
+		var translateRuToEn schemas.ExerciseTranslateRuToEn
+
+		translateRuToEn.Text = word.Translation
+		translateRuToEn.CorrectAnswer = word.Word
+
+		pickOptionTranslate, err := h.PickOptionRepo.GetOptionByWordID(r.Context(), word.ID)
+		if err != nil {
+			if errors.Is(err, gorm.ErrRecordNotFound) {
+				pickOptionTranslate = &models.PickOption{
+					WordID: word.ID,
+					Option: []string{word.Word},
+				}
+			} else {
+				http.Error(w, "failed to get pick option", http.StatusInternalServerError)
+				return
+			}
+		}
+
+		if len(pickOptionTranslate.Option) == 1 {
+			const optionToAdd = 3
+
+			randomWords, err := h.WordRepo.GetRandomWordsByCEFRLevel(r.Context(), userPref.CEFRLevel, optionToAdd)
+			if err != nil {
+				http.Error(w, "failed to get random words", http.StatusBadRequest)
+				return
+			}
+
+			for _, word := range randomWords {
+				pickOptionTranslate.Option = append(pickOptionTranslate.Option, word.Word)
+			}
+		}
+
+		rand.Shuffle(len(pickOptionTranslate.Option), func(i, j int) {
+			pickOptionTranslate.Option[i], pickOptionTranslate.Option[j] = pickOptionTranslate.Option[j], pickOptionTranslate.Option[i]
+		})
+
+		translateRuToEn.PickOptions = pickOptionTranslate.Option
+
+		exercises = append(exercises, schemas.Exercise{
+			Type: "translate_ru_to_en",
+			Data: translateRuToEn,
+		})
+
+		// write_word_from_translation
+		var writeWordFromTranslation schemas.ExerciseWriteWordFromTranslation
+
+		writeWordFromTranslation.Translation = word.Translation
+		writeWordFromTranslation.CorrectAnswer = word.Word
+		exercises = append(exercises, schemas.Exercise{
+			Type: "write_word_from_translation",
+			Data: writeWordFromTranslation,
+		})
+
+		// pick_option_sentence
+		var pickOptionSentence schemas.ExercisePickOptionSentence
+
+		rand.Shuffle(len(pickOptionTranslate.Option), func(i, j int) {
+			pickOptionTranslate.Option[i], pickOptionTranslate.Option[j] = pickOptionTranslate.Option[j], pickOptionTranslate.Option[i]
+		})
+
+		pickOptionSentence.Template = replaceWordWithUnderscores(
+			sentences[0].Sentence,
+			word.Word,
+		)
+		pickOptionSentence.CorrectAnswer = word.Word
+		pickOptionSentence.PickOptions = pickOptionTranslate.Option
+
+		exercises = append(exercises, schemas.Exercise{
+			Type: "pick_option_sentence",
+			Data: pickOptionSentence,
+		})
+
+		randomExercise := exercises[rand.Intn(len(exercises))]
+
+		card.Exercise = randomExercise
 		cards = append(cards, card)
+		logger.Log.Info("Card generated", zap.Any("card", card))
 	}
 
 	var lesson schemas.LessonResponse
 	lesson.Lesson = lessonInfo
 	lesson.Cards = cards
+	logger.Log.Info("Lesson generated", zap.Any("lesson", lesson))
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)

@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import SwiftData
 
+@Model
 final class SentenceModel: Codable{
     var id = UUID() 
     var text: String
@@ -18,6 +20,25 @@ final class SentenceModel: Codable{
     ) {
         self.text = text
         self.translation = translation
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case text
+        case translation
+    }
+
+    required init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        text = try container.decode(String.self, forKey: .text)
+        translation = try container.decode(String.self, forKey: .translation)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        try container.encode(text, forKey: .text)
+        try container.encode(translation, forKey: .translation)
     }
 }
 

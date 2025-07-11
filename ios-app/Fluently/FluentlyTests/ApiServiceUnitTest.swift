@@ -30,7 +30,7 @@ struct ApiServiceUnitTest {
         mockAPIService.shouldSucceed = false
 
         // Then
-        await #expect(throws: APIService.ApiError.invalidResponse) {
+        await #expect(throws: APIService.ApiError.invalidResponse(statusCode: -1)) {
             _ = try await mockAPIService.authGoogle("123")
         }
     }
@@ -51,8 +51,21 @@ struct ApiServiceUnitTest {
     }
 }
 
-class MockAPIService: APIServiceProtocol{
+class MockAPIService: AuthAPI{
     var shouldSucceed = true
+
+    func updateAccessToken() async throws {
+        if shouldSucceed {
+            _ = AuthResponse(
+                accessToken: "mock_access_token",
+                refreshToken: "mock_refresh_token",
+                tokenType: "Bearer",
+                expiresIn: 3600
+            )
+        } else {
+            throw APIService.ApiError.invalidResponse(statusCode: -1)
+        }
+    }
 
     func authGoogle(_ gid: String) async throws -> AuthResponse {
         guard gid.isEmpty == false else {
@@ -67,7 +80,7 @@ class MockAPIService: APIServiceProtocol{
                 expiresIn: 3600
             )
         } else {
-            throw APIService.ApiError.invalidResponse
+            throw APIService.ApiError.invalidResponse(statusCode: -1)
         }
     }
 }

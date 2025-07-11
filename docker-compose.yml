@@ -88,7 +88,15 @@ services:
     networks:
       - fluently_network
     command: redis-server --appendonly yes
-    # No external ports - internal communication only
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    ports:
+      - "127.0.0.1:6379:6379"  # Local access for debugging
+      - "${ZEROTIER_IP}:6379:6379"  # ZeroTier access
 
   # ===========================================
   # APPLICATION SERVICES
@@ -107,8 +115,10 @@ services:
       - WEBHOOK_PORT=8060
       - WEBHOOK_PATH=/webhook
     depends_on:
-      - redis
-      - backend
+      redis:
+        condition: service_healthy
+      backend:
+        condition: service_started
     networks:
       - fluently_network
     # Bot webhook endpoint for NGINX to proxy to
@@ -147,6 +157,36 @@ services:
       - "127.0.0.1:8001:8001"  # Local access for debugging
       - "${ZEROTIER_IP}:8001:8001"  # ZeroTier access
 
+  # Thesaurus API for vocabulary recommendations (Local Build)
+  thesaurus-api:
+    build:
+      context: ./analysis/thesaurus
+      dockerfile: Dockerfile
+    container_name: fluently_thesaurus
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+      - THESAURUS_ALLOWED_ORIGINS=${THESAURUS_ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:8070}
+    env_file: .env  # Use root .env file
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health", "-d", '{"ping":"test"}', "-H", "Content-Type: application/json"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    networks:
+      - fluently_network
+    ports:
+      - "127.0.0.1:8002:8002"  # Local access for debugging
+      - "${ZEROTIER_IP}:8002:8002"  # ZeroTier access
+
   # ===========================================
   # ADMIN & MANAGEMENT
   # ===========================================
@@ -156,7 +196,7 @@ services:
     image: directus/directus:latest
     container_name: fluently_directus
     restart: unless-stopped
-    env_file: ./backend/.env
+    env_file: .env
     environment:
       SECRET: ${DIRECTUS_SECRET_KEY}
       KEY: ${DIRECTUS_SECRET_KEY}
@@ -169,8 +209,13 @@ services:
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       PORT: 8055
+      # Redis configuration for Docker network
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
     depends_on:
       postgres:
+        condition: service_healthy
+      redis:
         condition: service_healthy
     networks:
       - fluently_network
@@ -234,6 +279,7 @@ services:
       - ./backend/monitoring/loki/loki-config.yml:/etc/loki/local-config.yaml
       - fluently_loki_data:/loki
     ports:
+      - "127.0.0.1:3100:3100" 
       - "${ZEROTIER_IP}:3100:3100"  # ZeroTier access only
     networks:
       - fluently_network
@@ -254,31 +300,6 @@ services:
       - fluently_network
 
   # ===========================================
-  # CODE QUALITY & ANALYSIS
-  # ===========================================
-  
-  # SonarQube
-  # sonarqube:
-  #   image: sonarqube:community
-  #   container_name: fluently_sonarqube
-  #   restart: unless-stopped
-  #   environment:
-  #     - SONAR_JDBC_URL=jdbc:postgresql://postgres:5432/sonarqube
-  #     - SONAR_JDBC_USERNAME=${DB_USER}
-  #     - SONAR_JDBC_PASSWORD=${DB_PASSWORD}
-  #   volumes:
-  #     - fluently_sonarqube_data:/opt/sonarqube/data
-  #     - fluently_sonarqube_extensions:/opt/sonarqube/extensions
-  #     - fluently_sonarqube_logs:/opt/sonarqube/logs
-  #     - ./backend/sonarqube/sonar.properties:/opt/sonarqube/conf/sonar.properties
-  #   ports:
-  #     - "${ZEROTIER_IP}:9000:9000"  # ZeroTier access only
-  #   depends_on:
-  #     - postgres
-  #   networks:
-  #     - fluently_network
-
-  # ===========================================
   # METRICS EXPORTERS
   # ===========================================
   
@@ -297,6 +318,7 @@ services:
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
     ports:
+      - "127.0.0.1:9100:9100"
       - "${ZEROTIER_IP}:9100:9100"  # ZeroTier access only
     networks:
       - fluently_network
@@ -309,6 +331,7 @@ services:
     command:
       - '-nginx.scrape-uri=http://nginx:80/nginx_status'
     ports:
+      - "127.0.0.1:9113:9113"  # Local access for Prometheus
       - "${ZEROTIER_IP}:9113:9113"  # ZeroTier access only
     depends_on:
       - nginx
@@ -330,6 +353,7 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
       - /cgroup:/cgroup:ro
     ports:
+      - "127.0.0.1:8044:8044"  # Local access for Prometheus
       - "${ZEROTIER_IP}:8044:8044"  # ZeroTier access only
     networks:
       - fluently_network

@@ -71,8 +71,14 @@ class DistractorService:
                 self.generator.generate_distractors,
                 sentence,
                 target_word,
-                num_distractors,
+                num_distractors  # Now properly passing the num_distractors parameter
             )
+
+            # Handle empty results from generator
+            if not distractors:
+                logger.warning(f"No distractors generated for word '{target_word}' in sentence: {sentence}")
+                # Return just the original word if no distractors were generated
+                return [target_word]
 
             # Always include the original word and shuffle for randomness
             all_options = [target_word] + distractors
@@ -81,5 +87,6 @@ class DistractorService:
             return all_options
 
         except Exception as e:
-            logger.error(f"Error generating distractors: {e}")
-            return [target_word]  # Fallback to original word
+            logger.error(f"Error generating distractors for word '{target_word}': {e}")
+            # Fallback to original word only
+            return [target_word]

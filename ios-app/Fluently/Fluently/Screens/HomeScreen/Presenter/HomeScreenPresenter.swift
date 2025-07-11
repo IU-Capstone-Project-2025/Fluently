@@ -10,7 +10,7 @@ import SwiftUI
 
 // MARK: - Protocol for presenter
 protocol HomeScreenPresenting: ObservableObject {
-    func getLesson()
+    func getLesson() async throws
 
     // Navigation
     func navigatoToProfile()
@@ -23,6 +23,20 @@ final class HomeScreenPresenter: HomeScreenPresenting {
     let interactor: HomeScreenInteractor
 
     @ObservedObject var account: AccountData
+#if targetEnvironment(simulator)
+    @Published var lesson: CardsModel? = CardsModel(
+        cards: WordModel.generateMockWords(count: 5),
+        lesson: LessonModel(
+            startedAt: "",
+            totalWords: 10,
+            wordsPerLesson: 5,
+            cefrLevel: "A1"
+        )
+    )
+
+#else
+    @Published var lesson: CardsModel?
+#endif
 
     init(
         router: HomeScreenRouter,
@@ -34,8 +48,12 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         self.account = account
     }
 
-    func getLesson() {
-        interactor.getLesson()
+    func getLesson() async throws {
+        guard lesson == nil else {
+            return
+        }
+
+        lesson = try await interactor.getLesson()
     }
 
     // Builders 
@@ -54,6 +72,6 @@ final class HomeScreenPresenter: HomeScreenPresenting {
     }
 
     func navigatoToLesson() {
-        router.navigatoToLesson()
+        router.navigatoToLesson(lesson!)
     }
 }

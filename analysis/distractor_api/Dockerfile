@@ -21,13 +21,10 @@ WORKDIR /app
 # ============== Dependency Layer (Cached) ==============
 FROM base as dependencies
 
-# Create cache directory for pip 
-RUN mkdir -p /root/.cache/pip && chmod 777 /root/.cache/pip
-
 # Copy only requirements first (for better layer caching)
 COPY distractor_api/requirements.txt ./
 
-# Install dependencies with caching enabled (removed PIP_NO_CACHE_DIR)
+# Install dependencies with caching enabled
 # This layer will be cached as long as requirements.txt doesn't change
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install --find-links https://download.pytorch.org/whl/cpu -r requirements.txt
@@ -51,7 +48,7 @@ USER app
 
 # Download models at build time to cache them in the image
 # This prevents download time during first API call
-RUN python -c "from transformers import pipeline; pipeline('text-generation', model='distilbert-base-uncased', device='cpu')" || echo "Model download optional - will download at runtime if needed"
+RUN python -c "from transformers import BertTokenizerFast, BertForMaskedLM; BertTokenizerFast.from_pretrained('bert-base-uncased'); BertForMaskedLM.from_pretrained('bert-base-uncased')" || echo "Model download optional - will download at runtime if needed"
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5m --retries=3 \
@@ -61,4 +58,4 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5m --retries=3 \
 EXPOSE 8001
 
 # Run the application
-CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001", "--workers", "1"] 
+CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001", "--workers", "1"]

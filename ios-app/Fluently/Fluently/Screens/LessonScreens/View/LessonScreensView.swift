@@ -13,6 +13,8 @@ struct LessonScreensView: View {
     @EnvironmentObject var router: AppRouter
     @EnvironmentObject var account: AccountData
 
+    @Environment(\.modelContext) var modelContext
+
     @State var showExitAlert = false
     @ObservedObject var presenter: LessonsPresenter
 
@@ -50,6 +52,9 @@ struct LessonScreensView: View {
                 router.pop()
             }
         }
+        .onAppear {
+            presenter.modelContext = modelContext
+        }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
     }
@@ -60,24 +65,29 @@ struct LessonScreensView: View {
     var topBar: some View {
         HStack {
             VStack (alignment: .leading) {
-                Text("Lesson:")
+#if targetEnvironment(simulator)
+                Text("Exercise: \(presenter.learned + 1)/\(presenter.wordsPerLesson)")
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
-                Text(presenter.currentEx.type.rawValue)
+#else
+                Text("Exercise: \(presenter.learned + 1)/\(presenter.wordsPerLesson)")
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
+#endif
             }
             Spacer()
         }
-        .padding(Const.horizontalPadding)
+        .padding(.horizontal, Const.horizontalPadding)
     }
 
     ///  Grid with main info
     var infoGrid: some View {
         VStack {
+            Spacer()
+                .frame(height: 80) // Hard code :(
             switch presenter.currentExType {
                 case .chooseTranslationEngRuss: /// Choose correct translation
-                    let chooseWordEx = presenter.currentEx.data as! ChooseTranslationEngRuss
+                    let chooseWordEx = presenter.currentEx.exerciseData as! ChooseTranslationEngRuss
                     ChooseTranslationView(
                         word: chooseWordEx.text,
                         answers: chooseWordEx.options
@@ -86,12 +96,12 @@ struct LessonScreensView: View {
                         }
                     .id(presenter.currentExNumber)
                 case .typeTranslationRussEng: /// Type correct translation
-                    let typeTranslationEx = presenter.currentEx.data as! WriteFromTranslation
+                    let typeTranslationEx = presenter.currentEx.exerciseData as! WriteFromTranslation
                     TypeTranslationView (word: typeTranslationEx.translation) { typedAnswer in
                             presenter.answer(typedAnswer)
                         }
                 case .pickOptionSentence: /// Pick word, mathing by definition
-                    let pickOptionEx = presenter.currentEx.data as! PickOptionSentence
+                    let pickOptionEx = presenter.currentEx.exerciseData as! PickOptionSentence
                     PickOptionsView(
                         sentence: pickOptionEx.template,
                         answers: pickOptionEx.options

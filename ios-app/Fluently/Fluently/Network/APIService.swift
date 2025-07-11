@@ -7,160 +7,97 @@
 
 import Foundation
 
-protocol APIServiceProtocol {
-    // Tokens
-    func authGoogle(_ gid: String) async throws -> AuthResponse
-    func updateAccessToken() async throws
-}
 
-final class APIService: APIServiceProtocol{
-    private let link = "https://fluently-app.ru"
+final class APIService {
+    let baseUrl = "https://fluently-app.ru"
 
-    func authGoogle(_ gid: String) async throws -> AuthResponse {
-        // Validate url
-        guard let url = URL(string: link) else {
-            throw ApiError.invalidURL
-        }
-        // Updating url
-        let authGoogleUrl = url.appendingPathComponent("/auth/google")
-
-        // Formating request
-        var request = URLRequest(url: authGoogleUrl)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-
-        // Add Data
-        let requestBody = AuthRequest(idToken: gid)
-        do {
-            request.httpBody = try JSONEncoder().encode(requestBody)
-        } catch {
-            throw ApiError.encodingFailed
-        }
-
-        // Sending request
+    func sendRequest(_ request: URLRequest) async throws -> Data {
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
 
-            guard let httpResponse = response as? HTTPURLResponse,
-                  (200...299).contains(httpResponse.statusCode) else {
-                throw ApiError.invalidResponse
-            }
+            request.printRequest()
 
-            let decoder = JSONDecoder()
-            return try decoder.decode(AuthResponse.self, from: data)
-        } catch {
-            throw ApiError.networkError(error.localizedDescription)
-        }
-    }
-
-    func updateAccessToken() async throws {
-        // Validate url
-        guard let url = URL(string: link) else {
-            throw ApiError.invalidURL
-        }
-
-        // Validate Refresh Token
-        guard let refreshToken = KeyChainManager.shared.getRefreshToken() else {
-            throw KeyChainManager.KeychainError.emptyRefreshToken
-        }
-
-        // Form request
-        let refreshURL = url.appendingPathComponent("/auth/refresh")
-
-        var request = URLRequest(url: refreshURL)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-
-        let requestHttpBody = ["refresh_token" : refreshToken]
-        do {
-            request.httpBody = try JSONEncoder().encode(requestHttpBody)
-        } catch {
-            throw ApiError.encodingFailed
-        }
-
-        do {
-            let (data, response) = try await URLSession.shared.data(for: request)
             if let jsonString = String(data: data, encoding: .utf8) {
+                print("Request: \(request.url?.absoluteString ?? "")")
                 print("Raw JSON Response:\n\(jsonString)")
             }
 
-            guard let httpResponse = response as? HTTPURLResponse,
-                  (200...299).contains(httpResponse.statusCode) else {
-                throw ApiError.invalidResponse
+            guard let httpResponse = response as? HTTPURLResponse else {
+                throw ApiError.invalidResponse(statusCode: nil)
             }
 
-            let decoder = JSONDecoder()
-            let tokens = try decoder.decode(AuthResponse.self, from: data)
-
-            // Try to upd keychain data
-            do {
-                try KeyChainManager.shared.saveToken(tokens)
-            } catch {
-                throw KeyChainManager.KeychainError.saveTokens
+            guard (200...299).contains(httpResponse.statusCode) else {
+                throw ApiError.invalidResponse(statusCode: httpResponse.statusCode)
             }
+
+            return data
+        } catch let error as URLError {
+            throw ApiError.networkError(
+                code: error.errorCode,
+                message: error.localizedDescription
+            )
         } catch {
-            throw ApiError.networkError(error.localizedDescription)
+            throw ApiError.networkError(
+                code: -1,
+                message: error.localizedDescription
+            )
         }
     }
-}
 
-// MARK: - Lessons
-extension APIService {
-    func getLessons() async throws {
-        // Validate url
-        guard let url = URL(string: link) else {
+    func makeRequest<T: Encodable>(
+        path: String,
+        method: String,
+        body: T? = nil,
+        headers: [String: String] = [:]
+    ) throws -> URLRequest {
+        guard let url = URL(string: baseUrl)?.appendingPathComponent(path) else {
             throw ApiError.invalidURL
         }
 
-        // Validate Refresh Token
-        if !KeyChainManager.shared.isTokenValid() {
-            try await updateAccessToken()
-        }
-
-        guard let accessToken = KeyChainManager.shared.getAccessToken() else {
-            throw KeyChainManager.KeychainError.emptyAccessToken
-        }
-
-        // Form request
-        let lessonURL = url.appendingPathComponent("/api/v1/lesson")
-
-        var request = URLRequest(url: lessonURL)
+        var request = URLRequest(url: url)
+        request.httpMethod = method
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        request.httpMethod = "GET"
 
-        request.printRequest()
+        headers.forEach { request.setValue($1, forHTTPHeaderField: $0) }
 
+        if let body = body {
+            request.httpBody = try JSONEncoder().encode(body)
+        }
+
+        return request
+    }
+
+    func decodeResponse<T: Decodable>(from request: URLRequest) async throws -> T {
+        let data = try await sendRequest(request)
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
-
-            print(lessonURL)
-            if let jsonString = String(data: data, encoding: .utf8) {
-                print("Raw JSON Response:\n\(jsonString)")
+            return try JSONDecoder().decode(T.self, from: data)
+        } catch let error as DecodingError {
+            print("JSON Decoding Error: \(error.localizedDescription)")
+            switch error {
+                case .typeMismatch(let type, let context):
+                    print("Type mismatch for \(type): \(context.debugDescription)")
+                case .valueNotFound(let type, let context):
+                    print("Value not found for \(type): \(context.debugDescription)")
+                case .keyNotFound(let key, let context):
+                    print("Key '\(key.stringValue)' not found: \(context.debugDescription)")
+                case .dataCorrupted(let context):
+                    print("Data corrupted: \(context.debugDescription)")
+                @unknown default:
+                    print("Unknown error: \(error)")
             }
-
-            guard let httpResponse = response as? HTTPURLResponse,
-                  (200...299).contains(httpResponse.statusCode) else {
-                throw ApiError.invalidResponse
-            }
-
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let decodedData = try decoder.decode(CardsModel.self, from: data)
-
-            print(decodedData)
-        } catch {
-            throw ApiError.networkError(error.localizedDescription)
+            throw ApiError.decodingFailed(error.localizedDescription)
         }
     }
 }
+
 
 extension APIService {
     // MARK: - Error
     enum ApiError: Error, Equatable {
         case invalidURL
-        case encodingFailed
-        case invalidResponse
-        case networkError(String)
+        case encodingFailed (String)
+        case decodingFailed (String)
+        case invalidResponse (statusCode: Int?)
+        case networkError (code: Int, message: String)
     }
 }

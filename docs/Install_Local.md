@@ -1,5 +1,7 @@
 # Fluently - Local Installation Guide
 
+# You can use guide from CONTRIBUTING.md
+
 This guide helps you set up Fluently for local development using **pre-built Docker images** from Docker Hub. This approach is much faster than building images locally, especially for the ML API component.
 
 ## Prerequisites
@@ -30,14 +32,15 @@ sudo systemctl stop grafana-server  # If you have Grafana
 make run-local
 
 # 5. Access services (ready in ~2-3 minutes):
-# - Backend API: http://localhost:8070/health
-# - Swagger UI: http://localhost:8070/swagger/
-# - Ml api end point: http://localhost:8001/docs
-# - Database: localhost:5432 (standard port)
-# - Grafana: http://localhost:3000/ (admin/admin123)
+Swagger UI:  http://localhost:8070/swagger/
+Directus admin panel:     http://localhost:8055/
+Distractor API:     http://localhost:8001/docs
+Thesaurus API:     http://localhost:8002/docs
 
-# 6. When finished, restart your services
-sudo systemctl start postgresql
+# 6. When finished, stop the local build and restart your services
+
+make stop-local           # Stop all services
+sudo systemctl start postgresql  # If you stopped it
 sudo systemctl start apache2     # If you stopped it
 sudo systemctl start nginx       # If you stopped it
 sudo systemctl start grafana-server  # If you stopped it

@@ -45,7 +45,7 @@ func generateLinkToken() (string, error) {
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      409  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/telegram/create-link [post]
+// @Router       /telegram/create-link [post]
 func (h *TelegramHandler) CreateLinkToken(w http.ResponseWriter, r *http.Request) {
 	var req schemas.TelegramLinkRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
@@ -114,7 +114,7 @@ func (h *TelegramHandler) CreateLinkToken(w http.ResponseWriter, r *http.Request
 // @Success      200  {object}  schemas.TelegramLinkStatusResponse
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/telegram/check-status [post]
+// @Router       /telegram/check-status [post]
 func (h *TelegramHandler) CheckLinkStatus(w http.ResponseWriter, r *http.Request) {
 	var req schemas.TelegramLinkStatusRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {

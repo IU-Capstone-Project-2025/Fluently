@@ -10,11 +10,12 @@ import Foundation
 enum LessonScreenBuilder {
 
     static func build (
-        router: AppRouter
+        router: AppRouter,
+        lesson: [WordModel]
     ) -> LessonScreensView {
         let presenter = LessonsPresenter (
             router: router,
-            words: WordModel.generateMockWords(count: 5)
+            words: lesson
         )
         
         return LessonScreensView (

@@ -30,6 +30,15 @@ func (r *PickOptionRepository) GetByID(ctx context.Context, id uuid.UUID) (*mode
 	return &option, nil
 }
 
+func (r *PickOptionRepository) GetOptionByWordID(ctx context.Context, wordID uuid.UUID) (*models.PickOption, error) {
+	var option models.PickOption
+	if err := r.db.WithContext(ctx).First(&option, "word_id = ?", wordID).Error; err != nil {
+		return nil, err
+	}
+
+	return &option, nil
+}
+
 func (r *PickOptionRepository) ListByWordID(ctx context.Context, wordID uuid.UUID) ([]models.PickOption, error) {
 	var options []models.PickOption
 	err := r.db.WithContext(ctx).

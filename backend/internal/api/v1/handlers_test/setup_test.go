@@ -75,6 +75,7 @@ func setupTest(t *testing.T) {
 	prefHandler := &handlers.PreferenceHandler{Repo: pg.NewPreferenceRepository(db)}
 	pickOptionHandler := &handlers.PickOptionHandler{Repo: pg.NewPickOptionRepository(db)}
 	learnedWordHandler := &handlers.LearnedWordHandler{Repo: learnedWordRepo}
+	progressHandler := &handlers.ProgressHandler{WordRepo: wordRepo, LearnedWordRepo: learnedWordRepo}
 
 	r := chi.NewRouter()
 	routes.RegisterWordRoutes(r, wordHandler)
@@ -84,6 +85,7 @@ func setupTest(t *testing.T) {
 	routes.RegisterPreferencesRoutes(r, prefHandler)
 	routes.RegisterPickOptionRoutes(r, pickOptionHandler)
 	routes.RegisterLearnedWordRoutes(r, learnedWordHandler)
+	routes.RegisterProgressRoutes(r, progressHandler)
 
 	testServer = httptest.NewServer(r)
 }
