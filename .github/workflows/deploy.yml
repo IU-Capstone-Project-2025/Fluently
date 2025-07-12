@@ -236,6 +236,7 @@ jobs:
   build:
     name: Build Docker Images
     runs-on: ubuntu-latest
+    needs: setup
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     outputs:
       backend-built: ${{ steps.build-flags.outputs.backend-built }}
@@ -386,6 +387,7 @@ jobs:
           tags: docker.io/fluentlyorg/fluently-backend:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          platforms: ${{ needs.setup.outputs.environment == 'production' && 'linux/amd64,linux/arm64' || 'linux/amd64' }}
 
       # Telegram Bot Build  
       - name: Build and push telegram-bot image
@@ -398,6 +400,7 @@ jobs:
           tags: docker.io/fluentlyorg/fluently-telegram-bot:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          platforms: ${{ needs.setup.outputs.environment == 'production' && 'linux/amd64,linux/arm64' || 'linux/amd64' }}
 
       # ML API Build (Most expensive - 15 minutes)
       - name: Build and push ML API image
@@ -410,7 +413,7 @@ jobs:
           tags: docker.io/fluentlyorg/fluently-ml-api:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=min
-          platforms: linux/amd64  # Single platform for faster builds
+          platforms: ${{ needs.setup.outputs.environment == 'production' && 'linux/amd64,linux/arm64' || 'linux/amd64' }}
 
       # Nginx Build
       - name: Build and push nginx image
@@ -423,6 +426,7 @@ jobs:
           tags: docker.io/fluentlyorg/fluently-nginx:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          platforms: ${{ needs.setup.outputs.environment == 'production' && 'linux/amd64,linux/arm64' || 'linux/amd64' }}
 
       - name: Build summary
         run: |
@@ -928,4 +932,120 @@ jobs:
               echo "❌ Deployment failed and rollback attempted"
               exit 1
             fi
+
+  # ===========================================
+  # CLEANUP STAGE - Clean up old Docker Hub images
+  # ===========================================
+  cleanup:
+    name: Clean Up Docker Hub Images
+    runs-on: ubuntu-latest
+    needs: [setup, deploy]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub for cleanup
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Clean up old Docker Hub images
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          # Function to get Docker Hub token
+          get_docker_token() {
+            local username=$1
+            local password=$2
+            local repo=$3
+            
+            curl -s -H "Content-Type: application/json" \
+              -X POST \
+              -d "{\"username\": \"$username\", \"password\": \"$password\"}" \
+              https://hub.docker.com/v2/users/login/ | jq -r .token
+          }
+          
+          # Function to delete old images from a repository
+          cleanup_repo() {
+            local repo=$1
+            local keep_count=${2:-5}
+            
+            echo "🧹 Cleaning up repository: $repo"
+            
+            # Get auth token
+            TOKEN=$(get_docker_token "$DOCKERHUB_USERNAME" "$DOCKERHUB_TOKEN" "$repo")
+            
+            if [ "$TOKEN" = "null" ] || [ -z "$TOKEN" ]; then
+              echo "❌ Failed to get Docker Hub token for $repo"
+              return 1
+            fi
+            
+            # Get list of tags (we'll focus on latest-develop and older manifests)
+            TAGS=$(curl -s -H "Authorization: JWT $TOKEN" \
+              "https://hub.docker.com/v2/repositories/$repo/tags/?page_size=100" | \
+              jq -r '.results[] | select(.name == "latest-develop") | .digest' | head -1)
+            
+            if [ -z "$TAGS" ]; then
+              echo "ℹ️ No latest-develop tag found in $repo, skipping cleanup"
+              return 0
+            fi
+            
+            # Get all manifests for the repository
+            MANIFESTS=$(curl -s -H "Authorization: JWT $TOKEN" \
+              "https://hub.docker.com/v2/repositories/$repo/tags/?page_size=100" | \
+              jq -r '.results[] | .digest' | sort | uniq)
+            
+            # Count total manifests
+            TOTAL_COUNT=$(echo "$MANIFESTS" | wc -l)
+            echo "📊 Found $TOTAL_COUNT total manifests in $repo"
+            
+            if [ "$TOTAL_COUNT" -le "$keep_count" ]; then
+              echo "✅ Repository $repo has $TOTAL_COUNT manifests (≤ $keep_count), no cleanup needed"
+              return 0
+            fi
+            
+            # Get manifests to delete (all except the most recent ones)
+            MANIFESTS_TO_DELETE=$(echo "$MANIFESTS" | head -n -$keep_count)
+            DELETE_COUNT=$(echo "$MANIFESTS_TO_DELETE" | wc -l)
+            
+            echo "🗑️ Will delete $DELETE_COUNT old manifests from $repo, keeping the $keep_count most recent"
+            
+            # Delete old manifests
+            DELETED=0
+            for digest in $MANIFESTS_TO_DELETE; do
+              if [ -n "$digest" ] && [ "$digest" != "null" ]; then
+                echo "🗑️ Deleting manifest: $digest"
+                RESPONSE=$(curl -s -X DELETE \
+                  -H "Authorization: JWT $TOKEN" \
+                  "https://hub.docker.com/v2/repositories/$repo/tags/$digest/")
+                
+                if [ $? -eq 0 ]; then
+                  DELETED=$((DELETED + 1))
+                  echo "✅ Deleted manifest $digest"
+                else
+                  echo "❌ Failed to delete manifest $digest"
+                fi
+                
+                # Rate limiting - be nice to Docker Hub
+                sleep 1
+              fi
+            done
+            
+            echo "✅ Cleanup completed for $repo: deleted $DELETED manifests"
+          }
+          
+          # Install jq for JSON parsing
+          sudo apt-get update && sudo apt-get install -y jq
+          
+          # Clean up each repository
+          echo "🚀 Starting Docker Hub cleanup process..."
+          
+          cleanup_repo "fluentlyorg/fluently-backend" 2
+          cleanup_repo "fluentlyorg/fluently-telegram-bot" 2 
+          cleanup_repo "fluentlyorg/fluently-ml-api" 2
+          cleanup_repo "fluentlyorg/fluently-nginx" 2
+          
+          echo "✅ Docker Hub cleanup process completed!"
 

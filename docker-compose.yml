@@ -187,6 +187,35 @@ services:
       - "127.0.0.1:8002:8002"  # Local access for debugging
       - "${ZEROTIER_IP}:8002:8002"  # ZeroTier access
 
+  # LLM API for AI-powered conversations (Local Build)
+  llm-api:
+    build:
+      context: ./analysis/llms
+      dockerfile: Dockerfile
+    container_name: fluently_llm_api
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+    env_file: .env  # Use root .env file
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    networks:
+      - fluently_network
+    ports:
+      - "127.0.0.1:8003:8003"  # Local access for debugging
+      - "${ZEROTIER_IP}:8003:8003"  # ZeroTier access
+
   # ===========================================
   # ADMIN & MANAGEMENT
   # ===========================================
@@ -353,8 +382,8 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
       - /cgroup:/cgroup:ro
     ports:
-      - "127.0.0.1:8044:8044"  # Local access for Prometheus
-      - "${ZEROTIER_IP}:8044:8044"  # ZeroTier access only
+      - "127.0.0.1:8044:8080"  # Map external 8044 to internal 8080
+      - "${ZEROTIER_IP}:8044:8080"  # ZeroTier access only
     networks:
       - fluently_network
 
