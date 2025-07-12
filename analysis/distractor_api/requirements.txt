@@ -4,8 +4,12 @@ uvicorn[standard]==0.24.0
 pydantic==2.5.0
 python-multipart==0.0.6
 
+# Monitoring
+prometheus-client==0.20.0
+starlette-prometheus
+
 # ML and NLP dependencies
-transformers==4.36.0
+transformers==4.35.2
 torch==2.1.0 --find-links https://download.pytorch.org/whl/cpu
 torchvision==0.16.0 --find-links https://download.pytorch.org/whl/cpu
 torchaudio==2.1.0 --find-links https://download.pytorch.org/whl/cpu

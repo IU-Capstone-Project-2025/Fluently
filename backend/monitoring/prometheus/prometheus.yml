@@ -28,14 +28,31 @@ scrape_configs:
     scrape_interval: 30s
     scrape_timeout: 10s
 
-  # # ML API metrics
-  # - job_name: 'ml-api'
-  #   static_configs:
-  #     - targets: ['ml-api:8001']
-  #   metrics_path: '/metrics'
-  #   scrape_interval: 30s
+  # ML API metrics
+  - job_name: 'ml-api'
+    static_configs:
+      - targets: ['ml-api:8001']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+    scrape_timeout: 10s
 
-  # # PostgreSQL metrics
+  # Thesaurus API metrics
+  - job_name: 'thesaurus-api'
+    static_configs:
+      - targets: ['thesaurus-api:8002']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+    scrape_timeout: 10s
+
+  # LLM API metrics
+  - job_name: 'llm-api'
+    static_configs:
+      - targets: ['llm-api:8003']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+    scrape_timeout: 10s
+
+  # # PostgreSQL metrics (commented out - no exporter configured)
   # - job_name: 'postgres-exporter'
   #   static_configs:
   #     - targets: ['postgres-exporter:9187']
@@ -47,10 +64,10 @@ scrape_configs:
       - targets: ['nginx-exporter:9113']
     scrape_interval: 30s
 
-  # Docker container metrics
+  # Docker container metrics (cAdvisor uses port 8080 internally)
   - job_name: 'cadvisor'
     static_configs:
-      - targets: ['cadvisor:8044']
+      - targets: ['cadvisor:8080']
     scrape_interval: 15s
     metrics_path: '/metrics'
 
