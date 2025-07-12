@@ -1,6 +1,7 @@
 package router
 
 import (
+	"fmt"
 	"net/http"
 	"strings"
 	"time"
@@ -44,10 +45,73 @@ func flexibleJWTVerifier(next http.Handler) http.Handler {
 			tokenString = authHeader
 		}
 
+		// Trim any whitespace that might cause issues
+		tokenString = strings.TrimSpace(tokenString)
+
+		// Log token details for debugging (first 20 chars only for security)
+		tokenPrefix := tokenString
+		if len(tokenString) > 20 {
+			tokenPrefix = tokenString[:20] + "..."
+		}
+		logger.Log.Debug("JWT token received",
+			zap.String("token_prefix", tokenPrefix),
+			zap.Int("token_length", len(tokenString)),
+			zap.String("authorization_header", authHeader[:min(50, len(authHeader))]),
+		)
+
+		// Check if token looks like a valid JWT (should have 3 parts separated by dots)
+		parts := strings.Split(tokenString, ".")
+		if len(parts) != 3 {
+			logger.Log.Error("Invalid JWT format - should have 3 parts separated by dots",
+				zap.Int("parts_count", len(parts)),
+				zap.String("token_prefix", tokenPrefix),
+			)
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusUnauthorized)
+			w.Write([]byte(`{"error": "invalid token format"}`))
+			return
+		}
+
+		// Verify each part contains valid base64
+		for i, part := range parts {
+			if len(part) == 0 {
+				logger.Log.Error("JWT part is empty",
+					zap.Int("part_index", i),
+					zap.String("token_prefix", tokenPrefix),
+				)
+				w.Header().Set("Content-Type", "application/json")
+				w.WriteHeader(http.StatusUnauthorized)
+				w.Write([]byte(`{"error": "invalid token format"}`))
+				return
+			}
+
+			// Check for invalid characters in base64
+			for j, char := range part {
+				if !isValidBase64Char(char) {
+					logger.Log.Error("Invalid character found in JWT part",
+						zap.Int("part_index", i),
+						zap.Int("char_position", j),
+						zap.String("invalid_char", string(char)),
+						zap.Int("char_code", int(char)),
+						zap.String("token_prefix", tokenPrefix),
+					)
+					w.Header().Set("Content-Type", "application/json")
+					w.WriteHeader(http.StatusUnauthorized)
+					w.Write([]byte(`{"error": "invalid token encoding"}`))
+					return
+				}
+			}
+		}
+
 		// Verify and parse the token
 		token, err := utils.TokenAuth.Decode(tokenString)
 		if err != nil {
-			logger.Log.Error("JWT decode error", zap.Error(err))
+			logger.Log.Error("JWT decode error",
+				zap.Error(err),
+				zap.String("token_prefix", tokenPrefix),
+				zap.Int("token_length", len(tokenString)),
+				zap.Strings("token_parts_lengths", getPartsLengths(parts)),
+			)
 			w.Header().Set("Content-Type", "application/json")
 			w.WriteHeader(http.StatusUnauthorized)
 			w.Write([]byte(`{"error": "unauthorized"}`))
@@ -55,7 +119,9 @@ func flexibleJWTVerifier(next http.Handler) http.Handler {
 		}
 
 		if token == nil {
-			logger.Log.Error("Invalid JWT token")
+			logger.Log.Error("Invalid JWT token - token is nil",
+				zap.String("token_prefix", tokenPrefix),
+			)
 			w.Header().Set("Content-Type", "application/json")
 			w.WriteHeader(http.StatusUnauthorized)
 			w.Write([]byte(`{"error": "unauthorized"}`))
@@ -66,6 +132,31 @@ func flexibleJWTVerifier(next http.Handler) http.Handler {
 		ctx := jwtauth.NewContext(r.Context(), token, nil)
 		next.ServeHTTP(w, r.WithContext(ctx))
 	})
+}
+
+// Helper function to check if a character is valid in base64
+func isValidBase64Char(char rune) bool {
+	return (char >= 'A' && char <= 'Z') ||
+		(char >= 'a' && char <= 'z') ||
+		(char >= '0' && char <= '9') ||
+		char == '+' || char == '/' || char == '-' || char == '_' || char == '='
+}
+
+// Helper function to get lengths of JWT parts
+func getPartsLengths(parts []string) []string {
+	lengths := make([]string, len(parts))
+	for i, part := range parts {
+		lengths[i] = fmt.Sprintf("%d", len(part))
+	}
+	return lengths
+}
+
+// Helper function for min
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }
 
 func InitRoutes(db *gorm.DB, r *chi.Mux) {
