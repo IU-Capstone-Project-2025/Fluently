@@ -81,7 +81,7 @@ func Init() {
 
 	// Set default values
 	viper.SetDefault("APP_PORT", "8070")
-	viper.SetDefault("APP_HOST", "fluently-app.ru")
+	viper.SetDefault("APP_HOST", "0.0.0.0")
 	viper.SetDefault("JWT_EXPIRATION", "24h")
 	viper.SetDefault("REFRESH_EXPIRATION", "720h") // 30 days
 	viper.SetDefault("PASSWORD_MIN_LENGTH", 8)
