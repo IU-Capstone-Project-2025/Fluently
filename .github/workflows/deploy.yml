@@ -1042,10 +1042,10 @@ jobs:
           # Clean up each repository
           echo "🚀 Starting Docker Hub cleanup process..."
           
-          cleanup_repo "fluentlyorg/fluently-backend" 5
-          cleanup_repo "fluentlyorg/fluently-telegram-bot" 5  
-          cleanup_repo "fluentlyorg/fluently-ml-api" 3  # Keep fewer due to large size
-          cleanup_repo "fluentlyorg/fluently-nginx" 5
+          cleanup_repo "fluentlyorg/fluently-backend" 2
+          cleanup_repo "fluentlyorg/fluently-telegram-bot" 2 
+          cleanup_repo "fluentlyorg/fluently-ml-api" 2
+          cleanup_repo "fluentlyorg/fluently-nginx" 2
           
           echo "✅ Docker Hub cleanup process completed!"
 
