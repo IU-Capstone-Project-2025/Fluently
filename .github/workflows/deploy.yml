@@ -940,8 +940,6 @@ jobs:
     name: Clean Up Docker Hub Images
     runs-on: ubuntu-latest
     needs: [setup, deploy]
-    if: success() && needs.setup.outputs.environment == 'production'
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
