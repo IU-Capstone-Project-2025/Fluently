@@ -97,10 +97,8 @@ extension APIService: LessonAPI {
 
         let progressItems = words.map { word in
             ProgressDTO(
-//                cnt_reviewed: 1,
-//                confidence_score: 100,
-//                learned_at: Date.now.ISO8601Format(),
-                word: word.word
+                word: word.word,
+                translation: word.translation
             )
         }
 
@@ -109,7 +107,7 @@ extension APIService: LessonAPI {
         var request = try makeRequest(
             path: path,
             method: method,
-            body: body,
+            body: body
         )
 
         if let jsonString = String(data: body, encoding: .utf8) {
