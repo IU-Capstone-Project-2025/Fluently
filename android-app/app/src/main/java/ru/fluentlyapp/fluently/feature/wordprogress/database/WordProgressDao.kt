@@ -1,0 +1,26 @@
+package ru.fluentlyapp.fluently.feature.wordprogress.database
+
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
+import java.time.Instant
+
+@Dao
+interface WordProgressDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(wordProgress: WordProgressEntity)
+
+    @Delete
+    suspend fun delete(wordProgress: WordProgressEntity)
+
+    @Query(
+        "SELECT * FROM word_progresses WHERE timestamp BETWEEN :begin AND :end"
+    )
+    fun getProgressesBetweenDates(
+        begin: Instant,
+        end: Instant
+    ): Flow<List<WordProgressEntity>>
+}

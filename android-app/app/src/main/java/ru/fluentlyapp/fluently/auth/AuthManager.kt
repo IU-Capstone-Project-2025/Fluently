@@ -1,10 +1,16 @@
 package ru.fluentlyapp.fluently.auth
 
 import android.content.Intent
-import android.util.Log
+import android.net.Uri
+import androidx.core.net.toUri
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.supervisorScope
+import kotlinx.coroutines.withContext
 import net.openid.appauth.AuthorizationException
 import net.openid.appauth.AuthorizationResponse
 import net.openid.appauth.TokenRequest
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import ru.fluentlyapp.fluently.auth.model.ServerToken
 import ru.fluentlyapp.fluently.auth.datastore.ServerTokenDataStore
 import ru.fluentlyapp.fluently.auth.api.GetServerTokenRequestBody
@@ -13,6 +19,8 @@ import ru.fluentlyapp.fluently.auth.api.ServerTokenApiService
 import ru.fluentlyapp.fluently.auth.api.toServerToken
 import ru.fluentlyapp.fluently.auth.oauth.GoogleOAuthService
 import ru.fluentlyapp.fluently.auth.model.OAuthToken
+import ru.fluentlyapp.fluently.common.di.BaseOkHttpClient
+import ru.fluentlyapp.fluently.datastore.UserPreferencesDataStore
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -77,9 +85,11 @@ interface AuthManager {
 }
 
 class GoogleBasedOAuthManager @Inject constructor(
+    @BaseOkHttpClient private val baseOkHttpClient: OkHttpClient,
+    private val userPreferencesDataStore: UserPreferencesDataStore,
     private val googleOAuthService: GoogleOAuthService,
     private val serverTokenApiService: ServerTokenApiService,
-    private val serverTokenDataStore: ServerTokenDataStore
+    private val serverTokenDataStore: ServerTokenDataStore,
 ) : AuthManager {
 
     override suspend fun isUserLogged(): Boolean {
