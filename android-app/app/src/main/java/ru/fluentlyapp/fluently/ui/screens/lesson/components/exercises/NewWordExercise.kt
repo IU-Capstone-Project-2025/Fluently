@@ -33,8 +33,11 @@ import androidx.compose.ui.unit.sp
 import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.ui.components.ExerciseContinueButton
+import ru.fluentlyapp.fluently.ui.components.NewWordCard
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
+import ru.fluentlyapp.fluently.ui.utils.MediumPhonePreview
+import ru.fluentlyapp.fluently.ui.utils.SmallPhonePreview
 
 abstract class NewWordObserver {
     abstract fun onUserKnowsWord(doesUserKnowWord: Boolean)
@@ -49,120 +52,75 @@ fun NewWordExercise(
     isCompleted: Boolean
 ) {
     Column(
-        modifier = modifier.background(FluentlyTheme.colors.surface),
+        modifier = modifier
+            .background(FluentlyTheme.colors.surface)
+            .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Column(
-            modifier = Modifier.weight(1f).fillMaxWidth(.8f),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Column(
+        Box(modifier = Modifier.weight(1f), contentAlignment = Alignment.Center) {
+            NewWordCard(
+                modifier = Modifier.fillMaxWidth(.8f),
+                word = exerciseState.word,
+                translation = exerciseState.translation,
+                examples = exerciseState.examples
+            )
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Row(modifier = Modifier.fillMaxWidth()) {
+            Box(
                 modifier = Modifier
-                    .verticalScroll(state = rememberScrollState())
-                    .fillMaxWidth()
-                    .heightIn(max = 600.dp)
-                    .clip(RoundedCornerShape(size = 16.dp))
-                    .background(color = FluentlyTheme.colors.surfaceContainerHigh)
+                    .alpha(if (exerciseState.doesUserKnow == false) .3f else 1f)
+                    .clip(RoundedCornerShape(12.dp))
+                    .clickable(
+                        enabled = !isCompleted,
+                        onClick = { newWordObserver.onUserKnowsWord(true) }
+                    )
+                    .border(
+                        color = FluentlyTheme.colors.onSurface,
+                        width = 2.dp,
+                        shape = RoundedCornerShape(12.dp)
+                    )
+                    .weight(1f)
                     .padding(16.dp)
             ) {
                 Text(
-                    text = exerciseState.word,
-                    fontSize = 32.sp,
-                    color = FluentlyTheme.colors.onSurface
-                )
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(
-                    text = stringResource(R.string.translation),
+                    modifier = Modifier.fillMaxWidth(),
+                    text = "ЗНАЮ",
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
                     color = FluentlyTheme.colors.onSurfaceVariant
                 )
-                Text(
-                    text = exerciseState.translation
-                )
-                Spacer(modifier = Modifier.height(16.dp))
-
-                Text(
-                    text = "Примеры",
-                    color = FluentlyTheme.colors.onSurfaceVariant
-                )
-                repeat(exerciseState.examples.size) { index ->
-                    val (english, translation) = exerciseState.examples[index]
-                    Text(text = english)
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = translation)
-                    if (index != exerciseState.examples.size - 1) {
-                        Box(
-                            modifier = Modifier
-                                .height(16.dp)
-                                .fillMaxWidth(),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Spacer(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .height(1.dp)
-                                    .border(width = 1.dp, color = FluentlyTheme.colors.onSurfaceVariant)
-                            )
-                        }
-                    }
-                }
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.width(16.dp))
 
-            Row(modifier = Modifier.fillMaxWidth()) {
-                Box(
-                    modifier = Modifier
-                        .alpha(if (exerciseState.doesUserKnow == false) .3f else 1f)
-                        .clip(RoundedCornerShape(12.dp))
-                        .clickable(
-                            enabled = !isCompleted,
-                            onClick = { newWordObserver.onUserKnowsWord(true) }
-                        )
-                        .border(
-                            color = FluentlyTheme.colors.onSurface,
-                            width = 2.dp,
-                            shape = RoundedCornerShape(12.dp)
-                        )
-                        .weight(1f)
-                        .padding(16.dp)
-                ) {
-                    Text(
-                        modifier = Modifier.fillMaxWidth(),
-                        text = "ЗНАЮ",
-                        fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center,
-                        color = FluentlyTheme.colors.onSurfaceVariant
+            Box(
+                modifier = Modifier
+                    .alpha(if (exerciseState.doesUserKnow == true) .3f else 1f)
+                    .clip(RoundedCornerShape(12.dp))
+                    .clickable(
+                        enabled = !isCompleted,
+                        onClick = { newWordObserver.onUserKnowsWord(false) }
                     )
-                }
-
-                Spacer(modifier = Modifier.width(16.dp))
-
-                Box(
-                    modifier = Modifier
-                        .alpha(if (exerciseState.doesUserKnow == true) .3f else 1f)
-                        .clip(RoundedCornerShape(12.dp))
-                        .clickable(
-                            enabled = !isCompleted,
-                            onClick = { newWordObserver.onUserKnowsWord(false) }
-                        )
-                        .weight(1f)
-                        .background(color = FluentlyTheme.colors.secondary)
-                        .padding(16.dp),
-                ) {
-                    Text(
-                        modifier = Modifier.fillMaxWidth(),
-                        text = "УЧИТЬ",
-                        fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center,
-                        color = FluentlyTheme.colors.onPrimary
-                    )
-                }
+                    .weight(1f)
+                    .background(color = FluentlyTheme.colors.secondary)
+                    .padding(16.dp),
+            ) {
+                Text(
+                    modifier = Modifier.fillMaxWidth(),
+                    text = "УЧИТЬ",
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    color = FluentlyTheme.colors.onPrimary
+                )
             }
         }
-
         Box(
-            modifier = Modifier.fillMaxWidth().height(120.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(120.dp),
             contentAlignment = Alignment.Center
         ) {
             if (isCompleted) {
@@ -172,9 +130,11 @@ fun NewWordExercise(
             }
         }
     }
+
 }
 
-@DevicePreviews
+@SmallPhonePreview
+@MediumPhonePreview
 @Composable
 fun NewWordExercisePreview() {
     FluentlyTheme {
@@ -194,6 +154,53 @@ fun NewWordExercisePreview() {
                     examples = listOf(
                         "This function is deprecated since lirbary version 1.2" to
                                 "Эта функция устарела, начиная с  версии билиотеки 1.2",
+                        "Components Deprecation is a main source of conflicts in android" to
+                                "Устаревание компонентов - главная причина конфликтов в Андроиде",
+                    )
+                ),
+                newWordObserver = object : NewWordObserver() {
+                    override fun onUserKnowsWord(doesUserKnowWord: Boolean) {}
+                    override fun onCompleteExercise() {}
+                },
+                isCompleted = true
+            )
+        }
+    }
+}
+
+@SmallPhonePreview
+@MediumPhonePreview
+@Composable
+fun NewWordExerciseScrollPreview() {
+    FluentlyTheme {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(color = FluentlyTheme.colors.surface),
+            contentAlignment = Alignment.Center
+        ) {
+            NewWordExercise(
+                modifier = Modifier.fillMaxSize(),
+                exerciseState = Exercise.NewWord(
+                    word = "Deprecation",
+                    phoneticTranscription = "/ˌdep.rəˈkeɪ.ʃən/",
+                    doesUserKnow = true,
+                    translation = "Устеревание",
+                    examples = listOf(
+                        "This function is deprecated since lirbary version 1.2" to
+                                "Эта функция устарела, начиная с  версии билиотеки 1.2",
+                        "Components Deprecation is a main source of conflicts in android" to
+                                "Устаревание компонентов - главная причина конфликтов в Андроиде",
+                        "Components Deprecation is a main source of conflicts in android" to
+                                "Устаревание компонентов - главная причина конфликтов в Андроиде",
+                        "Components Deprecation is a main source of conflicts in android" to
+                                "Устаревание компонентов - главная причина конфликтов в Андроиде",
+                        "Components Deprecation is a main source of conflicts in android" to
+                                "Устаревание компонентов - главная причина конфликтов в Андроиде",
+                        "Components Deprecation is a main source of conflicts in android" to
+                                "Устаревание компонентов - главная причина конфликтов в Андроиде",
+                        "Components Deprecation is a main source of conflicts in android" to
+                                "Устаревание компонентов - главная причина конфликтов в Андроиде",
                         "Components Deprecation is a main source of conflicts in android" to
                                 "Устаревание компонентов - главная причина конфликтов в Андроиде",
                     )

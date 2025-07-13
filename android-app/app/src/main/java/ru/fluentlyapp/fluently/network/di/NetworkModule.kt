@@ -15,7 +15,6 @@ import ru.fluentlyapp.fluently.network.FLUENTLY_BASE_URL
 import ru.fluentlyapp.fluently.network.services.FluentlyApiService
 import ru.fluentlyapp.fluently.network.FluentlyApiDataSource
 import ru.fluentlyapp.fluently.network.FluentlyApiDefaultDataSource
-import ru.fluentlyapp.fluently.network.FluentlyApiMockDataSource
 import ru.fluentlyapp.fluently.network.middleware.AccessTokenInterceptor
 import ru.fluentlyapp.fluently.network.middleware.AuthAuthenticator
 import javax.inject.Singleton
@@ -48,15 +47,9 @@ abstract class NetworkModule {
         }
     }
 
-//    @Binds
-//    @Singleton
-//    abstract fun bindFluentlyApiDataSource(
-//        fluentlyApiDefaultDataSource: FluentlyApiDefaultDataSource
-//    ): FluentlyApiDataSource
-
     @Binds
     @Singleton
-    abstract fun bindFluentlyApiMockDataSource(
-        fluentlyApiMockDataSource: FluentlyApiMockDataSource
+    abstract fun bindFluentlyApiDataSource(
+        fluentlyApiDefaultDataSource: FluentlyApiDefaultDataSource
     ): FluentlyApiDataSource
 }

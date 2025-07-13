@@ -66,10 +66,15 @@ class AuthAuthenticator @Inject constructor(
             Timber.d("Finally, get fresh accessToken: %s", accessToken)
 
             return if (accessToken != null) {
-                response.request
+                val updatedRequest = response.request
                     .newBuilder()
+                    .removeHeader(HEADER_AUTHORIZATION)
                     .addHeader(HEADER_AUTHORIZATION, "$TOKEN_TYPE $accessToken")
                     .build()
+                updatedRequest.headers.forEach { header ->
+                    Timber.d("Header: ${header.first} = ${header.second}")
+                }
+                updatedRequest
             } else {
                 null
             }

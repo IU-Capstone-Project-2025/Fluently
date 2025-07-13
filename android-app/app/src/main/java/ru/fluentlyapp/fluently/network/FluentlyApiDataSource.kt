@@ -5,7 +5,6 @@ import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.network.services.FluentlyApiService
-import ru.fluentlyapp.fluently.testing.MockLessons
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -39,12 +38,5 @@ class FluentlyApiDefaultDataSource @Inject constructor(
 
             responseBody.convertToLesson()
         }
-    }
-}
-
-class FluentlyApiMockDataSource @Inject constructor() : FluentlyApiDataSource {
-    override suspend fun getLesson(): Lesson {
-        MockLessons.lessonIndex = (MockLessons.lessonIndex + 1) % MockLessons.lessons.size
-        return MockLessons.lessons[MockLessons.lessonIndex]
     }
 }
