@@ -26,6 +26,8 @@ final class APIService {
                 throw ApiError.invalidResponse(statusCode: nil)
             }
 
+            print(httpResponse.statusCode)
+
             guard (200...299).contains(httpResponse.statusCode) else {
                 throw ApiError.invalidResponse(statusCode: httpResponse.statusCode)
             }

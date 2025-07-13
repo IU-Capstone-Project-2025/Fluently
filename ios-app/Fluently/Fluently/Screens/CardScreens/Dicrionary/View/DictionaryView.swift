@@ -80,7 +80,7 @@ struct DictionaryView: View {
                 .padding(.bottom, 12)
                 .padding(.horizontal)
             ScrollView {
-                VStack (alignment: .center, spacing: 12) {
+                LazyVStack (alignment: .center, spacing: 12) {
                     ForEach(presenter.filteredWords, id: \.wordId) { word in
                         WordCardRow(word: word)
                     }

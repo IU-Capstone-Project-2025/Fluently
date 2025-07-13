@@ -30,6 +30,10 @@ struct FluentlyApp: App {
 
 #endif
 
+    init () {
+        UIView.appearance().overrideUserInterfaceStyle = .light
+    }
+
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navigationPath) {

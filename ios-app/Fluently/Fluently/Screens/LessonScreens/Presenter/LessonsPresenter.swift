@@ -25,6 +25,7 @@ final class LessonsPresenter: ObservableObject {
     private(set) var wordsPerLesson = 10
 
     var statistic: [ExerciseSolution : [ExerciseModel]]
+    var wordsProgress: [ExerciseSolution: [WordModel]] = [:]
 
     // MARK: - Init
     init(router: AppRouter, words: [WordModel]) {
@@ -39,6 +40,9 @@ final class LessonsPresenter: ObservableObject {
 
         statistic[.correct] = []
         statistic[.uncorrect] = []
+
+        wordsProgress[.correct] = []
+        wordsProgress[.uncorrect] = []
     }
 
     // MARK: - Navigation
@@ -56,9 +60,11 @@ final class LessonsPresenter: ObservableObject {
         if currentEx.exerciseData.correctAnswer.lowercased() == answer.lowercased() {
             words[currentExNumber].isLearned = true
             statistic[.correct]!.append(currentEx)
+            wordsProgress[.correct]!.append(words[currentExNumber])
         } else {
             words[currentExNumber].isLearned = false
             statistic[.uncorrect]!.append(currentEx)
+            wordsProgress[.uncorrect]!.append(words[currentExNumber])
         }
         nextExercise()
         learned += 1
@@ -85,6 +91,13 @@ final class LessonsPresenter: ObservableObject {
             modelContext?.insert(word)
         }
         try? modelContext?.save()
+
+        let api = APIService()
+        
+        Task {
+            try? await api.sendProgress(words: wordsProgress[.correct]!)
+        }
+
         navigateBack()
         statistic.keys.forEach { solution in
             print("------------ \(solution.rawValue) ------------")

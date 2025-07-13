@@ -82,4 +82,45 @@ extension APIService: LessonAPI {
             throw ApiError.decodingFailed(error.localizedDescription)
         }
     }
+
+    func sendProgress(words: [WordModel]) async throws {
+        print("Sending words")
+
+        try await validateToken()
+
+        guard let accessToken = KeyChainManager.shared.getAccessToken() else {
+            throw KeyChainManager.KeychainError.emptyAccessToken
+        }
+
+        let path = "/api/v1/progress"
+        let method = "POST"
+
+        let progressItems = words.map { word in
+            ProgressDTO(
+//                cnt_reviewed: 1,
+//                confidence_score: 100,
+//                learned_at: Date.now.ISO8601Format(),
+                word: word.word
+            )
+        }
+
+        let body = try JSONEncoder().encode(progressItems)
+
+        var request = try makeRequest(
+            path: path,
+            method: method,
+            body: body,
+        )
+
+        if let jsonString = String(data: body, encoding: .utf8) {
+            print("Sending JSON:", jsonString)
+        }
+
+        request.setValue(
+            "Bearer \(accessToken)", forHTTPHeaderField: "Authorization"
+        )
+
+        let data = try await sendRequest(request)
+        print(String(data: data, encoding: .utf8) ?? "No data")
+    }
 }

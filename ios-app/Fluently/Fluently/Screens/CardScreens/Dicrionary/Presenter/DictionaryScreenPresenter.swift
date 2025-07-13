@@ -49,6 +49,6 @@ final class DictionaryScreenPresenter: DictionaryScreenPresenting {
             return
         }
 
-        filteredWords = words.filter { $0.word.contains(prefix) || $0.translation.contains(prefix)}
+        filteredWords = words.filter { $0.word.contains(prefix.lowercased()) || $0.translation.contains(prefix.lowercased())}
     }
 }
