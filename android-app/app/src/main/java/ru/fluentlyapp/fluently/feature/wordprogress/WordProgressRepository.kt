@@ -2,7 +2,7 @@ package ru.fluentlyapp.fluently.feature.wordprogress
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import ru.fluentlyapp.fluently.feature.wordprogress.database.WordProgressDatabase
+import ru.fluentlyapp.fluently.database.app.wordprogress.WordProgressDao
 import java.time.Instant
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -15,10 +15,8 @@ interface WordProgressRepository {
 
 @Singleton
 class WordProgressRepositoryImpl @Inject constructor(
-    wordProgressDatabase: WordProgressDatabase
+    private val wordProgressDao: WordProgressDao
 ) : WordProgressRepository {
-    private val wordProgressDao = wordProgressDatabase.wordProgressDao()
-
     override suspend fun addProgress(wordProgress: WordProgress) {
         wordProgressDao.insert(wordProgress.toWordProgressEntity())
     }

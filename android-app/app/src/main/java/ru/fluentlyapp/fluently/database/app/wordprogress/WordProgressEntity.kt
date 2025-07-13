@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.feature.wordprogress.database
+package ru.fluentlyapp.fluently.database.app.wordprogress
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

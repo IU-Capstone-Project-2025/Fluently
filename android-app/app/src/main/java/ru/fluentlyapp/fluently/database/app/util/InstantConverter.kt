@@ -1,11 +1,11 @@
-package ru.fluentlyapp.fluently.feature.wordprogress.database
+package ru.fluentlyapp.fluently.database.app.util
 
 import androidx.room.TypeConverter
 import java.time.Instant
 
-class TimestampConverter {
+class InstantConverter {
     @TypeConverter
-    fun instantToLong(instant: Instant): Long {
+    fun instantToEpochMilli(instant: Instant): Long {
         return instant.toEpochMilli()
     }
 

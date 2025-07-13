@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.feature.wordprogress.database
+package ru.fluentlyapp.fluently.database.app.wordprogress
 
 import androidx.room.Dao
 import androidx.room.Delete

@@ -5,5 +5,5 @@ import java.time.Instant
 data class WordProgress(
     val wordId: String,
     val isLearning: Boolean,
-    val timestamp: Instant
+    val instant: Instant
 )

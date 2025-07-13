@@ -9,25 +9,23 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
 import org.junit.Assert.*
+import ru.fluentlyapp.fluently.database.app.AppDatabase
 import ru.fluentlyapp.fluently.feature.wordprogress.WordProgress
 import ru.fluentlyapp.fluently.feature.wordprogress.WordProgressRepositoryImpl
-import ru.fluentlyapp.fluently.feature.wordprogress.database.WordProgressDatabase
 import java.time.OffsetDateTime
-import kotlin.math.exp
 
 class WordProgressRepositoryTest {
-    lateinit var targetContext: Context
     lateinit var wordProgressRepository: WordProgressRepositoryImpl
 
     @Before
     fun setup() {
-        targetContext = InstrumentationRegistry.getInstrumentation().targetContext
-        val wordProgressDatabase = Room.inMemoryDatabaseBuilder(
+        val targetContext = InstrumentationRegistry.getInstrumentation().targetContext
+        val appDatabase = Room.inMemoryDatabaseBuilder(
             targetContext,
-            WordProgressDatabase::class.java
+            AppDatabase::class.java
         ).build()
         wordProgressRepository = WordProgressRepositoryImpl(
-            wordProgressDatabase
+            appDatabase.wordProgressDao()
         )
     }
 
@@ -37,7 +35,7 @@ class WordProgressRepositoryTest {
             WordProgress(
                 it.toString(),
                 isLearning = it % 2 == 0,
-                timestamp = OffsetDateTime.now().plusYears(it.toLong()).toInstant()
+                instant = OffsetDateTime.now().plusYears(it.toLong()).toInstant()
             )
         }
 
@@ -48,8 +46,8 @@ class WordProgressRepositoryTest {
         var expectedProgresses = wordProgresses.slice(1..3).toSet()
         var actualProgresses = runBlocking {
             wordProgressRepository.getProgresses(
-                wordProgresses[1].timestamp,
-                wordProgresses[3].timestamp
+                wordProgresses[1].instant,
+                wordProgresses[3].instant
             ).first().toSet()
         }
         Log.i("Test", "${expectedProgresses.joinToString()} ${actualProgresses.joinToString()}")
@@ -62,8 +60,8 @@ class WordProgressRepositoryTest {
         expectedProgresses = wordProgresses.slice(2..3).toSet()
         actualProgresses = runBlocking {
             wordProgressRepository.getProgresses(
-                wordProgresses[1].timestamp,
-                wordProgresses[3].timestamp
+                wordProgresses[1].instant,
+                wordProgresses[3].instant
             ).first().toSet()
         }
         Log.i("Test", "${expectedProgresses.joinToString()} ${actualProgresses.joinToString()}")
