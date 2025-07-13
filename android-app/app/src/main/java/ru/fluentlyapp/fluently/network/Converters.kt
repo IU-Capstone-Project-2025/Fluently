@@ -38,13 +38,12 @@ fun LessonResponseBody.convertToLesson(): Lesson {
                     ExerciseType.TRANSLATE_RU_TO_EN
                 ) -> {
                     val options = exerciseData.pick_options!!.toMutableList()
-                    val correctVariant = options.insertRandomly(exerciseData.correct_answer!!)
 
                     add(
                         Exercise.ChooseTranslation(
                             word = exerciseData.text!!,
                             answerVariants = options,
-                            correctVariant = correctVariant,
+                            correctVariant = options.indexOf(exerciseData.correct_answer),
                             selectedVariant = null
                         )
                     )

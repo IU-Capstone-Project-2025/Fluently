@@ -23,6 +23,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -33,6 +34,8 @@ import ru.fluentlyapp.fluently.ui.components.ExerciseContinueButton
 import ru.fluentlyapp.fluently.ui.theme.FluentlyColors
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
+import ru.fluentlyapp.fluently.ui.utils.MediumPhonePreview
+import ru.fluentlyapp.fluently.ui.utils.SmallPhonePreview
 
 abstract class ChooseTranslationObserver {
     abstract fun onVariantClick(variantIndex: Int)
@@ -59,7 +62,7 @@ fun ChooseTranslationExercise(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(exerciseState.word, fontSize = 32.sp)
+            Text(exerciseState.word, fontSize = 32.sp, textAlign = TextAlign.Center)
 
             Spacer(modifier = Modifier.height(24.dp))
 
@@ -131,7 +134,8 @@ fun ChooseTranslationExercise(
     }
 }
 
-@DevicePreviews
+@SmallPhonePreview
+@MediumPhonePreview
 @Composable
 fun ChooseTranslationExercisePreview() {
     FluentlyTheme {
