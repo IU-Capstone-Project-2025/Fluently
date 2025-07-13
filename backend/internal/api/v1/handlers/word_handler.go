@@ -39,16 +39,6 @@ func buildWordResponse(w *models.Word) schemas.WordResponse {
 	return resp
 }
 
-// ListWords godoc
-// @Summary      Get list of words
-// @Description  Returns all words
-// @Tags         words
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Success      200  {array}   schemas.WordResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/words/ [get]
 func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
 	words, err := h.Repo.ListWords(r.Context())
 	if err != nil {
@@ -65,18 +55,6 @@ func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(resp)
 }
 
-// GetWord godoc
-// @Summary      Get word by ID
-// @Description  Returns a word by its unique identifier
-// @Tags         words
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id   path      string  true  "Word ID"
-// @Success      200  {object}  schemas.WordResponse
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      404  {object}  schemas.ErrorResponse
-// @Router       /api/v1/words/{id} [get]
 func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -94,18 +72,6 @@ func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(buildWordResponse(word))
 }
 
-// CreateWord godoc
-// @Summary      Create a new word
-// @Description  Adds a new word
-// @Tags         words
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        word  body      schemas.CreateWordRequest  true  "Word data"
-// @Success      201  {object}  schemas.WordResponse
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/words/ [post]
 func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateWordRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
@@ -152,20 +118,6 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(resp)
 }
 
-// UpdateWord godoc
-// @Summary      Update a word
-// @Description  Updates an existing word by ID
-// @Tags         words
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id    path      string                   true  "Word ID"
-// @Param        word  body      schemas.CreateWordRequest  true  "Word data"
-// @Success      200  {object}  schemas.WordResponse
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      404  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/words/{id} [put]
 func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -226,19 +178,6 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(resp)
 }
 
-// DeleteWord godoc
-// @Summary      Delete a word
-// @Description  Deletes a word by ID
-// @Tags         words
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id   path      string  true  "Word ID"
-// @Success      204  ""
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      404  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/words/{id} [delete]
 func (h *WordHandler) DeleteWord(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {

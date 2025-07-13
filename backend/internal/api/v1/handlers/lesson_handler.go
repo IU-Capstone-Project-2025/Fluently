@@ -34,7 +34,10 @@ type LessonHandler struct {
 }
 
 func replaceWordWithUnderscores(text, word string) string {
-	wordIndex := strings.Index(text, word)
+	lowerText := strings.ToLower(text)
+	lowerWord := strings.ToLower(word)
+
+	wordIndex := strings.Index(lowerText, lowerWord)
 	if wordIndex == -1 {
 		return text
 	}
@@ -46,7 +49,6 @@ func replaceWordWithUnderscores(text, word string) string {
 // @Summary Generate a new lesson for the user
 // @Description Creates a personalized lesson based on user preferences, including words, exercises, and topics
 // @Tags lessons
-// @Accept json
 // @Produce json
 // @Security BearerAuth
 // @Success 200 {object} schemas.LessonResponse "Successfully generated lesson"
