@@ -24,18 +24,6 @@ func buildSentenceResponse(sentence *models.Sentence) schemas.SentenceResponse {
 	}
 }
 
-// ListSentences godoc
-// @Summary      Get sentences for a word
-// @Description  Returns all sentences for the specified word
-// @Tags         sentences
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        word_id   path      string  true  "Word ID"
-// @Success      200  {array}   schemas.SentenceResponse
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/words/{word_id}/sentences [get]
 func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) {
 	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
@@ -58,18 +46,6 @@ func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) 
 	json.NewEncoder(w).Encode(resp)
 }
 
-// CreateSentence godoc
-// @Summary      Create a sentence
-// @Description  Adds a new sentence for a word
-// @Tags         sentences
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        sentence  body      schemas.CreateSentenceRequest  true  "Sentence data"
-// @Success      201  ""
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/sentences/ [post]
 func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateSentenceRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
@@ -94,20 +70,6 @@ func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request)
 	json.NewEncoder(w).Encode(buildSentenceResponse(&s))
 }
 
-// UpdateSentence godoc
-// @Summary      Update a sentence
-// @Description  Updates an existing sentence by ID
-// @Tags         sentences
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id        path      string                        true  "Sentence ID"
-// @Param        sentence  body      schemas.CreateSentenceRequest true  "Sentence data"
-// @Success      200  ""
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      404  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/sentences/{id} [put]
 func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -145,19 +107,6 @@ func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request)
 	json.NewEncoder(w).Encode(buildSentenceResponse(sentence))
 }
 
-// DeleteSentence godoc
-// @Summary      Delete a sentence
-// @Description  Deletes a sentence by ID
-// @Tags         sentences
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id   path      string  true  "Sentence ID"
-// @Success      204  ""
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      404  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/sentences/{id} [delete]
 func (h *SentenceHandler) DeleteSentence(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
