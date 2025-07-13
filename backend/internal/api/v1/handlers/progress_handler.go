@@ -22,18 +22,21 @@ type ProgressHandler struct {
 [
   {
     "word": "hello",
+    "translation": "привет",
     "learned_at": "2024-01-15T10:30:00Z",
     "confidence_score": 85,
     "cnt_reviewed": 3
   },
   {
     "word": "world",
+    "translation": "мир",
     "learned_at": "2024-01-15T11:45:00Z",
     "confidence_score": 92,
     "cnt_reviewed": 1
   },
   {
     "word": "beautiful",
+    "translation": "красивый",
     "learned_at": "2024-01-16T09:15:00Z",
     "confidence_score": 78,
     "cnt_reviewed": 5
@@ -43,6 +46,7 @@ type ProgressHandler struct {
 
 type ProgressRequest struct {
 	Word            string    `json:"word"`
+	Translation     string    `json:"translation"`
 	LearnedAt       time.Time `json:"learned_at"`
 	ConfidenceScore int       `json:"confidence_score"`
 	CntReviewed     int       `json:"cnt_reviewed"`
@@ -50,12 +54,12 @@ type ProgressRequest struct {
 
 // UpdateUserProgress godoc
 // @Summary      Update user progress
-// @Description  Updates the user's learned words progress. Accepts an array of word progress objects.
+// @Description  Updates the user's learned words progress. Accepts an array of word progress objects with word-translation pairs.
 // @Tags         progress
 // @Accept       json
 // @Produce      json
 // @Security     BearerAuth
-// @Param        progress body []ProgressRequest true "List of progress updates"
+// @Param        progress body []ProgressRequest true "List of progress updates with word-translation pairs"
 // @Success      200  {string}  string  "ok"
 // @Router       /api/v1/progress [post]
 func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Request) {
@@ -75,9 +79,9 @@ func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Requ
 	}
 
 	for _, p := range progress {
-		word, err := h.WordRepo.GetByValue(r.Context(), p.Word)
+		word, err := h.WordRepo.GetByWordTranslationPair(r.Context(), p.Word, p.Translation)
 		if err != nil {
-			http.Error(w, "word not found: "+p.Word, http.StatusNotFound)
+			http.Error(w, "word not found: "+p.Word+" ("+p.Translation+")", http.StatusNotFound)
 			return
 		}
 
