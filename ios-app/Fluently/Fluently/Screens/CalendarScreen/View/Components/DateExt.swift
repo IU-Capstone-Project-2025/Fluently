@@ -49,6 +49,20 @@ extension Date {
         components.second = -1
         return Calendar.current.date(byAdding: components, to: startOfDay) ?? self
     }
+
+    var startOfYear: Date {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year], from: self)
+        return calendar.date(from: components)!
+    }
+
+    var endOfYear: Date {
+        let calendar = Calendar.current
+        var components = DateComponents()
+        components.year = 1
+        components.second = -1
+        return calendar.date(byAdding: components, to: startOfYear)!
+    }
 }
 
 enum Weekday: Int {

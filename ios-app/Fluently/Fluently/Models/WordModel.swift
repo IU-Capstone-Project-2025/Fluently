@@ -81,7 +81,6 @@ final class WordModel: Codable{
         try container.encode(sentences, forKey: .sentences)
         try container.encode(subtopic, forKey: .subtopic)
         try container.encode(topic, forKey: .topic)
-//        transcription: String,
         try container.encode(translation, forKey: .translation)
         try container.encode(word, forKey: .word)
         try container.encode(wordId, forKey: .wordId)

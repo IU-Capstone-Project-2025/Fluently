@@ -35,20 +35,40 @@ struct DayInfo: View {
     /// Main layer with info
     var infoGrid: some View {
         VStack(alignment: .center) {
-            Text(dateLabel)
-                .foregroundStyle(.blackText)
-                .font(.appFont.largeTitle)
-                .frame(
-                    maxWidth: .infinity,
-                    alignment: .leading
-                )
-            Text(yearFormatter)
-                .foregroundStyle(.blackText)
-                .font(.appFont.largeTitle)
-                .frame(
-                    maxWidth: .infinity,
-                    alignment: .leading
-                )
+            HStack {
+                VStack {
+                    Text(dateLabel)
+                        .foregroundStyle(.blackText)
+                        .font(.appFont.largeTitle)
+                        .frame(
+                            maxWidth: .infinity,
+                            alignment: .leading
+                        )
+                    Text(yearFormatter)
+                        .foregroundStyle(.blackText)
+                        .font(.appFont.largeTitle)
+                        .frame(
+                            maxWidth: .infinity,
+                            alignment: .leading
+                        )
+                }
+                VStack {
+                    Text("You've Learned")
+                        .foregroundStyle(.blackText)
+                        .font(.appFont.title2)
+                        .frame(
+                            maxWidth: .infinity,
+                            alignment: .leading
+                        )
+                    Text("\(words.filter({ $0.isLearned == true}).count) words")
+                        .foregroundStyle(.blackText)
+                        .font(.appFont.title2)
+                        .frame(
+                            maxWidth: .infinity,
+                            alignment: .leading
+                        )
+                }
+            }
             Picker("Filter Words", selection: $isLearned) {
                 Text("Learned").tag(true)
                     .foregroundStyle(.blackText)
@@ -71,9 +91,6 @@ struct DayInfo: View {
 
     var learnedNonLearnedWords: some View {
         ScrollView {
-//            Text( isLearned ? "Learned" : "Non-Learned")
-//                .font(.appFont.title)
-//                .foregroundStyle(.blackText)
             VStack(spacing: 10) {
                 ForEach(words.filter({ $0.isLearned == isLearned}) , id: \.wordId) { word in
                     WordCardRow(word: word)
