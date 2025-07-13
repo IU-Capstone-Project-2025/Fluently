@@ -84,8 +84,6 @@ extension APIService: LessonAPI {
     }
 
     func sendProgress(words: [WordModel]) async throws {
-        print("Sending words")
-
         try await validateToken()
 
         guard let accessToken = KeyChainManager.shared.getAccessToken() else {
@@ -102,23 +100,16 @@ extension APIService: LessonAPI {
             )
         }
 
-        let body = try JSONEncoder().encode(progressItems)
-
         var request = try makeRequest(
             path: path,
             method: method,
-            body: body
+            body: progressItems
         )
-
-        if let jsonString = String(data: body, encoding: .utf8) {
-            print("Sending JSON:", jsonString)
-        }
 
         request.setValue(
             "Bearer \(accessToken)", forHTTPHeaderField: "Authorization"
         )
 
-        let data = try await sendRequest(request)
-        print(String(data: data, encoding: .utf8) ?? "No data")
+        _ = try await sendRequest(request)
     }
 }

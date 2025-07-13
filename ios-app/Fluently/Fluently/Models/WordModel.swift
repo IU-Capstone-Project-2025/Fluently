@@ -18,7 +18,7 @@ final class WordModel: Codable{
     var transcription: String = "kar"
     var translation: String
     var word: String
-    var wordId: String
+    @Attribute(.unique) var wordId: String
 
     var wordDate: Date
 
@@ -28,7 +28,7 @@ final class WordModel: Codable{
         sentences: [SentenceModel],
         subtopic: String,
         topic: String,
-//        transcription: String,
+        transcription: String,
         translation: String,
         word: String,
         wordId: String
@@ -37,7 +37,7 @@ final class WordModel: Codable{
         self.sentences = sentences
         self.subtopic = subtopic
         self.topic = topic
-//        self.transcription = transcription
+        self.transcription = transcription
         self.translation = translation
         self.word = word
         self.wordId = wordId
@@ -51,7 +51,7 @@ final class WordModel: Codable{
         case sentences
         case subtopic
         case topic
-//        case transcription
+        case transcription
         case translation
         case word
         case wordId = "word_id"
@@ -65,7 +65,7 @@ final class WordModel: Codable{
         sentences = try container.decode([SentenceModel].self, forKey: .sentences)
         subtopic = try container.decode(String.self, forKey: .subtopic)
         topic = try container.decode(String.self, forKey: .topic)
-//        transcription: String,
+        transcription = try container.decodeIfPresent(String.self, forKey: .translation) ?? ""
         translation = try container.decode(String.self, forKey: .translation)
         word = try container.decode(String.self, forKey: .word)
         wordId = try container.decode(String.self, forKey: .wordId)
@@ -85,5 +85,15 @@ final class WordModel: Codable{
         try container.encode(translation, forKey: .translation)
         try container.encode(word, forKey: .word)
         try container.encode(wordId, forKey: .wordId)
+    }
+}
+
+extension WordModel: Hashable {
+    static func == (lhs: WordModel, rhs: WordModel) -> Bool {
+        lhs.wordId == rhs.wordId
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(wordId)
     }
 }

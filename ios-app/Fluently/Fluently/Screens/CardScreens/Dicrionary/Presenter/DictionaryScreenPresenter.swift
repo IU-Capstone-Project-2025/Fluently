@@ -21,15 +21,16 @@ final class DictionaryScreenPresenter: DictionaryScreenPresenting {
     @Published var words: [WordModel] = WordModel.generateMockWords()
 #else
 //    @Query(filter: #Predicate<WordModel> { $0.isLearned == true }) var words: [WordModel]
-    var words: [WordModel] {
+    var words: Set<WordModel> {
         guard let modelContext else { return [] }
         let descriptor = FetchDescriptor<WordModel>(
-            predicate: #Predicate { $0.isLearned == isLearned }
+            predicate: #Predicate { $0.isLearned == isLearned },
+            sortBy: [SortDescriptor(\.wordDate, order: .reverse)]
         )
-        return (try? modelContext.fetch(descriptor)) ?? []
+        return Set((try? modelContext.fetch(descriptor)) ?? [])
     }
 #endif
-    @Published var filteredWords: [WordModel] = []
+    @Published var filteredWords: Set<WordModel> = Set()
 
     var modelContext: ModelContext?
 

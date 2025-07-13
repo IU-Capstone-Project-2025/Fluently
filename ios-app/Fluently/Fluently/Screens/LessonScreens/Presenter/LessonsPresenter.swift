@@ -57,9 +57,14 @@ final class LessonsPresenter: ObservableObject {
     }
 
     func alreadyKnow() {
-        currentExNumber += 1
-        currentEx = words[currentExNumber].exercise
         wordsProgress[.correct]!.append(words[currentExNumber])
+        currentExNumber += 1
+
+        guard currentExNumber < words.count - 1 else {
+            finishLesson()
+            return
+        }
+        currentEx = words[currentExNumber].exercise
         currentExType = .wordCard
     }
 
@@ -95,6 +100,15 @@ final class LessonsPresenter: ObservableObject {
     // func to represent statistic
     func finishLesson() {
         words.forEach { word in
+//            let existingWord = try? modelContext?.fetch(
+//                FetchDescriptor<WordModel>(
+//                    predicate: #Predicate { $0.wordId == word.wordId }
+//                )
+//            ).first
+//
+//            if existingWord == nil {
+//                modelContext?.insert(word)
+//            }
             modelContext?.insert(word)
         }
         try? modelContext?.save()
