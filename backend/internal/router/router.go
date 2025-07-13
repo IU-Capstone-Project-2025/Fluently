@@ -48,6 +48,40 @@ func flexibleJWTVerifier(next http.Handler) http.Handler {
 		// Trim any whitespace that might cause issues
 		tokenString = strings.TrimSpace(tokenString)
 
+		// WORKAROUND: Handle malformed client tokens like "ServerToken(accessToken=eyJ...)"
+		if strings.HasPrefix(tokenString, "ServerToken(accessToken=") {
+			logger.Log.Warn("Client sending malformed token format - applying workaround",
+				zap.String("malformed_prefix", tokenString[:min(30, len(tokenString))]),
+			)
+
+			// Extract the actual JWT token from ServerToken(accessToken=TOKEN)
+			start := strings.Index(tokenString, "accessToken=")
+			if start != -1 {
+				start += len("accessToken=")
+				end := strings.LastIndex(tokenString, ")")
+				if end != -1 && end > start {
+					extractedToken := tokenString[start:end]
+					logger.Log.Info("Extracted JWT token from malformed format",
+						zap.String("extracted_prefix", extractedToken[:min(20, len(extractedToken))]),
+						zap.Int("extracted_length", len(extractedToken)),
+					)
+					tokenString = extractedToken
+				} else {
+					logger.Log.Error("Failed to extract token from malformed format - missing closing parenthesis")
+					w.Header().Set("Content-Type", "application/json")
+					w.WriteHeader(http.StatusUnauthorized)
+					w.Write([]byte(`{"error": "malformed token format"}`))
+					return
+				}
+			} else {
+				logger.Log.Error("Failed to extract token from malformed format - missing accessToken=")
+				w.Header().Set("Content-Type", "application/json")
+				w.WriteHeader(http.StatusUnauthorized)
+				w.Write([]byte(`{"error": "malformed token format"}`))
+				return
+			}
+		}
+
 		// Log token details for debugging (first 20 chars only for security)
 		tokenPrefix := tokenString
 		if len(tokenString) > 20 {
@@ -220,6 +254,10 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: postgres.NewLearnedWordRepository(db)})
 		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: postgres.NewPreferenceRepository(db)})
 		routes.RegisterPickOptionRoutes(r, &handlers.PickOptionHandler{Repo: postgres.NewPickOptionRepository(db)})
+		routes.RegisterProgressRoutes(r, &handlers.ProgressHandler{
+			WordRepo:        postgres.NewWordRepository(db),
+			LearnedWordRepo: postgres.NewLearnedWordRepository(db),
+		})
 		routes.RegisterLessonRoutes(r, &handlers.LessonHandler{
 			PreferenceRepo: postgres.NewPreferenceRepository(db),
 			TopicRepo:      postgres.NewTopicRepository(db),
