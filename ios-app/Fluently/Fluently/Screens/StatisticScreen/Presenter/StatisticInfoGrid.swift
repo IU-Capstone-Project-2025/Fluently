@@ -24,7 +24,7 @@ final class StatisticInfoGrid: ObservableObject {
 
     func loadWeekStatistics(weekStart: Date) {
         guard let context = modelContext else { return }
-
+        
         guard let weekEnd = calendar.date(byAdding: .day, value: 6, to: weekStart) else { return }
         let endOfWeek = calendar.date(bySettingHour: 23, minute: 59, second: 59, of: weekEnd)!
 

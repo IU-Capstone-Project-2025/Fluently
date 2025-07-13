@@ -10,15 +10,17 @@ import Foundation
 // MARK: - Date extension
 extension Date {
     var startOfWeek: Date? {
-        let gregorian = Calendar(identifier: .gregorian)
-        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
-        return gregorian.date(byAdding: .day, value: 1, to: sunday)
+        let calendar = Calendar.current
+        guard let day = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+//        return calendar.date(byAdding: .day, value: 1, to: sunday)
+        return day
     }
 
     var endOfWeek: Date? {
-        let gregorian = Calendar(identifier: .gregorian)
-        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
-        return gregorian.date(byAdding: .day, value: 7, to: sunday)
+        let calendar = Calendar.current
+        guard let day = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+//        return calendar.date(byAdding: .day, value: 7, to: day)
+        return day
     }
 
     func addingWeeks(_ weeks: Int) -> Date {

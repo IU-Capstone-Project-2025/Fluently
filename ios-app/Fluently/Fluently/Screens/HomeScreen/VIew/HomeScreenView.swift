@@ -52,7 +52,6 @@ struct HomeScreenView: View {
                 case .learned:
                     presenter.buildDictionaryScreen(isLearned: true)
                 case .nonLearned:
-//                    NonLearnedView()
                     presenter.buildDictionaryScreen(isLearned: false)
             }
         }
@@ -64,12 +63,12 @@ struct HomeScreenView: View {
     var topBar: some View {
         HStack {
             VStack (alignment: .leading) {
-                Text("Goal:")
+                Text("Home")
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
-                Text(goal)
-                    .foregroundStyle(.whiteText)
-                    .font(.appFont.largeTitle.bold())
+//                Text(goal)
+//                    .foregroundStyle(.whiteText)
+//                    .font(.appFont.largeTitle.bold())
             }
             Spacer()
             AvatarImage(

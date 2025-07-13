@@ -56,6 +56,13 @@ final class LessonsPresenter: ObservableObject {
         currentExType = currentEx.type
     }
 
+    func alreadyKnow() {
+        currentExNumber += 1
+        currentEx = words[currentExNumber].exercise
+        wordsProgress[.correct]!.append(words[currentExNumber])
+        currentExType = .wordCard
+    }
+
     func answer(_ answer: String) {
         if currentEx.exerciseData.correctAnswer.lowercased() == answer.lowercased() {
             words[currentExNumber].isLearned = true
@@ -93,7 +100,7 @@ final class LessonsPresenter: ObservableObject {
         try? modelContext?.save()
 
         let api = APIService()
-        
+
         Task {
             try? await api.sendProgress(words: wordsProgress[.correct]!)
         }
