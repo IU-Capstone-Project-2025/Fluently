@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"fluently/go-backend/internal/repository/models"
+
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 )
@@ -38,6 +39,7 @@ func TestCreateGetUpdateDeleteLearnedWord(t *testing.T) {
 
 	// CREATE
 	learned := &models.LearnedWords{
+		ID:               uuid.New(),
 		UserID:           user.ID,
 		WordID:           word.ID,
 		LearnedAt:        time.Now().Add(-24 * time.Hour),
