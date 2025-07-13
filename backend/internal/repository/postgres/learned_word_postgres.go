@@ -2,6 +2,7 @@ package postgres
 
 import (
 	"context"
+	"errors"
 
 	"fluently/go-backend/internal/repository/models"
 
@@ -35,6 +36,18 @@ func (r *LearnedWordRepository) GetByUserWordID(ctx context.Context, userID, wor
 	}
 
 	return &lw, nil
+}
+
+func (r *LearnedWordRepository) IsLearned(ctx context.Context, userID, wordID uuid.UUID) (bool, error) {
+	var lw models.LearnedWords
+	err := r.db.WithContext(ctx).First(&lw, "user_id = ? AND word_id = ?", userID, wordID).Error
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		return false, nil
+	}
+	if err != nil {
+		return false, err
+	}
+	return true, nil
 }
 
 func (r *LearnedWordRepository) Create(ctx context.Context, lw *models.LearnedWords) error {
