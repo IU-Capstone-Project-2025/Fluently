@@ -60,13 +60,14 @@ func setupTest(t *testing.T) {
 	pickOptionRepo = pg.NewPickOptionRepository(db)
 	learnedWordRepo = pg.NewLearnedWordRepository(db)
 
-	db.Exec("TRUNCATE TABLE words RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE users RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE topics RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE sentences RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE user_preferences RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE pick_options RESTART IDENTITY CASCADE")
+	// Clear all tables in proper dependency order (dependent tables first)
 	db.Exec("TRUNCATE TABLE learned_words RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE pick_options RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE user_preferences RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE sentences RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE words RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE topics RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE users RESTART IDENTITY CASCADE")
 
 	wordHandler := &handlers.WordHandler{Repo: pg.NewWordRepository(db)}
 	userHandler := &handlers.UserHandler{Repo: pg.NewUserRepository(db)}

@@ -38,7 +38,7 @@ func (r *LearnedWordRepository) GetByUserWordID(ctx context.Context, userID, wor
 }
 
 func (r *LearnedWordRepository) Create(ctx context.Context, lw *models.LearnedWords) error {
-	return r.db.Create(lw).Error
+	return r.db.WithContext(ctx).Create(lw).Error
 }
 
 func (r *LearnedWordRepository) Update(ctx context.Context, lw *models.LearnedWords) error {

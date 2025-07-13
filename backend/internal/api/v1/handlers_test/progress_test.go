@@ -1,87 +1,71 @@
 package handlers_test
 
-// import (
-// 	"fmt"
-// 	"net/http"
-// 	"testing"
+// TODO: Fix authentication for this test
+/*
+func TestUpdateUserProgress(t *testing.T) {
+	setupTest(t)
 
-// 	"github.com/gavv/httpexpect/v2"
-// )
+	e := httpexpect.Default(t, testServer.URL)
 
-// func TestUpdateUserProgress(t *testing.T) {
-// 	setupTest(t)
+	// Create a user for testing
+	user := models.User{
+		ID:       uuid.New(),
+		Email:    "progress@test.com",
+		Provider: "local",
+		Name:     "Progress User",
+		Role:     "user",
+		IsActive: true,
+	}
+	err := userRepo.Create(context.Background(), &user)
+	assert.NoError(t, err)
 
-// 	e := httpexpect.WithConfig(httpexpect.Config{
-// 		BaseURL:  testServer.URL,
-// 		Client:   testServer.Client(),
-// 		Reporter: httpexpect.NewAssertReporter(t),
-// 	})
+	// Create words for testing
+	words := []models.Word{
+		{
+			ID:           uuid.New(),
+			Word:         "apple",
+			CEFRLevel:    "a1",
+			PartOfSpeech: "noun",
+			Translation:  "яблоко",
+			Context:      "I ate an apple",
+			AudioURL:     "http://example.com/audio1.mp3",
+		},
+		{
+			ID:           uuid.New(),
+			Word:         "banana",
+			CEFRLevel:    "a2",
+			PartOfSpeech: "noun",
+			Translation:  "банан",
+			Context:      "He peeled a banana",
+			AudioURL:     "http://example.com/audio2.mp3",
+		},
+	}
 
-// 	req := map[string]interface{}{
-// 		"name":          "Prog user",
-// 		"email":         "progress@test.com",
-// 		"provider":      "local",
-// 		"google_id":     "",
-// 		"password_hash": "some_hash",
-// 		"role":          "user",
-// 		"is_active":     true,
-// 	}
+	for _, w := range words {
+		err := wordRepo.Create(context.Background(), &w)
+		assert.NoError(t, err)
+	}
 
-// 	userResp := e.POST("/users").
-// 		WithJSON(req).
-// 		Expect().
-// 		Status(http.StatusCreated).
-// 		JSON().Object()
+	progress := []map[string]interface{}{
+		{
+			"word":             "apple",
+			"translation":      "яблоко",
+			"learned_at":       "2024-01-15T10:30:00Z",
+			"confidence_score": 80,
+			"cnt_reviewed":     2,
+		},
+		{
+			"word":             "banana",
+			"translation":      "банан",
+			"learned_at":       "2024-01-16T11:00:00Z",
+			"confidence_score": 90,
+			"cnt_reviewed":     1,
+		},
+	}
 
-// 	createdUserID := userResp.Value("id").String().Raw()
-
-// 	authHeader := fmt.Sprintf("Bearer %s", createdUserID)
-
-// 	words := []map[string]interface{}{
-// 		{
-// 			"word":           "apple",
-// 			"cefr_level":     "A1",
-// 			"part_of_speech": "noun",
-// 			"translation":    "яблоко",
-// 			"context":        "I ate an apple",
-// 			"audio_url":      "http://example.com/audio1.mp3",
-// 		},
-// 		{
-// 			"word":           "banana",
-// 			"cefr_level":     "A2",
-// 			"part_of_speech": "noun",
-// 			"translation":    "банан",
-// 			"context":        "He peeled a banana",
-// 			"audio_url":      "http://example.com/audio2.mp3",
-// 		},
-// 	}
-
-// 	for _, w := range words {
-// 		e.POST("/words").
-// 			WithHeader("Authorization", authHeader).
-// 			WithJSON(w).
-// 			Expect().
-// 			Status(http.StatusCreated)
-// 	}
-
-// 	progress := []map[string]interface{}{
-// 		{
-// 			"word":             "apple",
-// 			"learned_at":       "2024-01-15T10:30:00Z",
-// 			"confidence_score": 80,
-// 			"cnt_reviewed":     2,
-// 		},
-// 		{
-// 			"word":             "banana",
-// 			"learned_at":       "2024-01-16T11:00:00Z",
-// 			"confidence_score": 90,
-// 			"cnt_reviewed":     1,
-// 		},
-// 	}
-
-// 	e.POST("/progress").
-// 		WithHeader("Authorization", authHeader).
-// 		WithJSON(progress).
-// 		Expect().
-// 		Status(http.StatusOK)
-// }
+	e.POST("/progress").
+		WithJSON(progress).
+		Expect().
+		Status(http.StatusOK)
+}
+*/
