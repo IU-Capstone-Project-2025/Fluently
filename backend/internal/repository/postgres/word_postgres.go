@@ -2,6 +2,7 @@ package postgres
 
 import (
 	"context"
+	"strings"
 
 	"github.com/google/uuid"
 	"gorm.io/gorm"
@@ -51,6 +52,24 @@ func (r *WordRepository) GetByWordTranslationPair(ctx context.Context, word, tra
 	}
 
 	return &wordModel, nil
+}
+
+func (r *WordRepository) GetRandomWordsByCEFRLevel(ctx context.Context, cefrLevel string, limit int) ([]models.Word, error) {
+	var words []models.Word
+
+	cefrLevel = strings.ToLower(cefrLevel)
+
+	err := r.db.WithContext(ctx).
+		Where("cefr_level = ?", cefrLevel).
+		Order("RANDOM()").
+		Limit(limit).
+		Find(&words).Error
+
+	if err != nil {
+		return nil, err
+	}
+	
+	return words, nil
 }
 
 func (r *WordRepository) Create(ctx context.Context, word *models.Word) error {

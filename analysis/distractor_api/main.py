@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+from starlette_prometheus import PrometheusMiddleware, metrics
 
 from models.schemas import DistractorRequest, DistractorResponse
 from services.distractor_service import DistractorService
@@ -11,7 +12,6 @@ from api.routes import router
 
 # Global service instance for optimal latency
 distractor_service: DistractorService = None
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -32,6 +32,10 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan
 )
+
+# Add Prometheus middleware
+app.add_middleware(PrometheusMiddleware)
+app.add_route("/metrics", metrics)
 
 # Add CORS middleware for frontend integration
 app.add_middleware(
@@ -58,8 +62,24 @@ app.dependency_overrides[routes_get_service] = get_distractor_service
 app.include_router(router)
 
 
+@app.post("/generate_distractors", response_model=DistractorResponse)
+async def generate_distractors_endpoint(request: DistractorRequest):
+    """
+    Generates distractors for a given question and correct answer.
+    """
+    try:
+        distractors = distractor_service.generate_distractors(
+            request.question,
+            request.correct_answer,
+            num_distractors=request.num_distractors
+        )
+        
+        return DistractorResponse(distractors=distractors)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.get("/health")
-async def health_check():
+def health_check():
     """Health check endpoint"""
     return {"status": "healthy", "model_loaded": distractor_service is not None}
 

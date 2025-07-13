@@ -30,7 +30,7 @@ final class AccountData: ObservableObject {
             let decoder = JSONDecoder()
             do {
                 _ = try? decoder.decode(Bool.self, from: savedData)
-            } 
+            }
         }
     }
 }

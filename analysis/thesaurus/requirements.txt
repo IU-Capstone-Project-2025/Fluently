@@ -2,3 +2,5 @@ fastapi
 uvicorn[standard]
 pandas
 pydantic
+prometheus-client
+starlette-prometheus

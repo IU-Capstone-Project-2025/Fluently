@@ -7,81 +7,97 @@
 
 import Foundation
 
-final class APIService{
-    private let baseUrl = "https://fluently-app.ru"
 
-    func getURL() -> String {
-        return baseUrl
-    }
+final class APIService {
+    let baseUrl = "https://fluently-app.ru"
 
-    func sendRequest(request: URLRequest) async throws -> Data  {
+    func sendRequest(_ request: URLRequest) async throws -> Data {
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
 
-            guard let httpResponse = response as? HTTPURLResponse,
-                  (200...299).contains(httpResponse.statusCode) else {
-                throw ApiError.invalidResponse
+            request.printRequest()
+
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("Request: \(request.url?.absoluteString ?? "")")
+                print("Raw JSON Response:\n\(jsonString)")
+            }
+
+            guard let httpResponse = response as? HTTPURLResponse else {
+                throw ApiError.invalidResponse(statusCode: nil)
+            }
+
+            guard (200...299).contains(httpResponse.statusCode) else {
+                throw ApiError.invalidResponse(statusCode: httpResponse.statusCode)
             }
 
             return data
+        } catch let error as URLError {
+            throw ApiError.networkError(
+                code: error.errorCode,
+                message: error.localizedDescription
+            )
         } catch {
-            throw ApiError.networkError(error.localizedDescription)
+            throw ApiError.networkError(
+                code: -1,
+                message: error.localizedDescription
+            )
         }
     }
 
-    func getTokens() async throws -> AuthResponse {
-        // Validate url
-        guard let url = URL(string: baseUrl) else {
+    func makeRequest<T: Encodable>(
+        path: String,
+        method: String,
+        body: T? = nil,
+        headers: [String: String] = [:]
+    ) throws -> URLRequest {
+        guard let url = URL(string: baseUrl)?.appendingPathComponent(path) else {
             throw ApiError.invalidURL
         }
 
-        // Validate Refresh Token
-        guard let refreshToken = KeyChainManager.shared.getRefreshToken() else {
-            throw KeyChainManager.KeychainError.emptyRefreshToken
-        }
-
-        // Form request
-        let refreshURL = url.appendingPathComponent("/auth/refresh")
-
-        var request = URLRequest(url: refreshURL)
+        var request = URLRequest(url: url)
+        request.httpMethod = method
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
 
-        let requestHttpBody = ["refresh_token" : refreshToken]
-        do {
-            request.httpBody = try JSONEncoder().encode(requestHttpBody)
-        } catch {
-            throw ApiError.encodingFailed
+        headers.forEach { request.setValue($1, forHTTPHeaderField: $0) }
+
+        if let body = body {
+            request.httpBody = try JSONEncoder().encode(body)
         }
 
-        do {
-            let data = try await sendRequest(request: request)
+        return request
+    }
 
-            let decoder = JSONDecoder()
-            let tokens = try decoder.decode(AuthResponse.self, from: data)
-            return tokens
-        } catch {
-            throw ApiError.networkError(error.localizedDescription)
+    func decodeResponse<T: Decodable>(from request: URLRequest) async throws -> T {
+        let data = try await sendRequest(request)
+        do {
+            return try JSONDecoder().decode(T.self, from: data)
+        } catch let error as DecodingError {
+            print("JSON Decoding Error: \(error.localizedDescription)")
+            switch error {
+                case .typeMismatch(let type, let context):
+                    print("Type mismatch for \(type): \(context.debugDescription)")
+                case .valueNotFound(let type, let context):
+                    print("Value not found for \(type): \(context.debugDescription)")
+                case .keyNotFound(let key, let context):
+                    print("Key '\(key.stringValue)' not found: \(context.debugDescription)")
+                case .dataCorrupted(let context):
+                    print("Data corrupted: \(context.debugDescription)")
+                @unknown default:
+                    print("Unknown error: \(error)")
+            }
+            throw ApiError.decodingFailed(error.localizedDescription)
         }
     }
 }
 
 
-// MARK: - Error
 extension APIService {
+    // MARK: - Error
     enum ApiError: Error, Equatable {
         case invalidURL
-        case encodingFailed
-        case invalidResponse
-        case networkError(String)
-
-        var localizedDescription: String {
-            switch self {
-               case .invalidURL: return "Invalid URL"
-               case .encodingFailed: return "Failed to encode request data"
-               case .invalidResponse: return "Received invalid response from server"
-               case .networkError(let error): return "Network error: \(error)"
-            }
-        }
+        case encodingFailed (String)
+        case decodingFailed (String)
+        case invalidResponse (statusCode: Int?)
+        case networkError (code: Int, message: String)
     }
 }

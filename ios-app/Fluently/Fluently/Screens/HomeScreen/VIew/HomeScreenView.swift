@@ -34,8 +34,13 @@ struct HomeScreenView: View {
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
-        .onAppear {
-            presenter.getLesson()
+        .task {
+            do {
+                // TODO: fix this logic
+                try await presenter.getLesson()
+            } catch {
+                print(error)
+            }
         }
 
         .fullScreenCover(item: $openedScreen) { screenType in
@@ -108,7 +113,7 @@ struct HomeScreenView: View {
         Button {
             presenter.navigatoToLesson()
         } label: {
-            Text("Start")
+            Text(presenter.lesson == nil ? "loading" : "Start")
                 .foregroundStyle(.whiteText)
                 .font(.appFont.title2.bold())
                 .padding(.vertical, 6)
@@ -119,14 +124,10 @@ struct HomeScreenView: View {
                 )
                 .padding(.horizontal, Const.horizontalPadding * 3)
         }
+        .disabled(presenter.lesson == nil)
     }
 }
 
-struct NavigationBar: View {
-    var body: some View {
-         Text("bottom bar")
-    }
-}
 
 struct HomeScreenPreview: PreviewProvider {
     static var previews: some View {

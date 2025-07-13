@@ -10,6 +10,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
 	"github.com/go-chi/jwtauth/v5"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	httpSwagger "github.com/swaggo/http-swagger"
 	"gorm.io/gorm"
 
@@ -227,6 +228,9 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	routes.RegisterAuthRoutes(r, authHandlers)
 	routes.RegisterTelegramRoutes(r, telegramHandler)
 
+	// Prometheus metrics endpoint
+	r.Handle("/metrics", promhttp.Handler())
+
 	r.Get("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("ok"))
 	})
@@ -258,6 +262,8 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 			PreferenceRepo: postgres.NewPreferenceRepository(db),
 			TopicRepo:      postgres.NewTopicRepository(db),
 			SentenceRepo:   postgres.NewSentenceRepository(db),
+			PickOptionRepo: postgres.NewPickOptionRepository(db),
+			WordRepo:       postgres.NewWordRepository(db),
 			Repo:           postgres.NewLessonRepository(db),
 		})
 	})
