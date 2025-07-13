@@ -258,6 +258,10 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 			WordRepo:        postgres.NewWordRepository(db),
 			LearnedWordRepo: postgres.NewLearnedWordRepository(db),
 		})
+		routes.RegisterDayWordRoutes(r, &handlers.DayWordHandler{
+			WordRepo:       postgres.NewWordRepository(db),
+			PreferenceRepo: postgres.NewPreferenceRepository(db),
+		})
 		routes.RegisterLessonRoutes(r, &handlers.LessonHandler{
 			PreferenceRepo: postgres.NewPreferenceRepository(db),
 			TopicRepo:      postgres.NewTopicRepository(db),

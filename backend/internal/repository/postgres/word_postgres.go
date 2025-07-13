@@ -72,6 +72,23 @@ func (r *WordRepository) GetRandomWordsByCEFRLevel(ctx context.Context, cefrLeve
 	return words, nil
 }
 
+func (r *WordRepository) GetDayWord(ctx context.Context, cefrLevel string, userID uuid.UUID) (*models.Word, error) {
+	var word models.Word
+
+	cefrLevel = strings.ToLower(cefrLevel)
+
+	err := r.db.WithContext(ctx).
+		Where("cefr_level = ?", cefrLevel).
+		Order("RANDOM()").
+		First(&word).Error
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &word, nil
+}
+
 func (r *WordRepository) Create(ctx context.Context, word *models.Word) error {
 	return r.db.WithContext(ctx).Create(word).Error
 }
