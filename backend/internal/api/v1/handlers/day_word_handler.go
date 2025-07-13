@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"net/http"
 
-	_ "fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/utils"
 )
