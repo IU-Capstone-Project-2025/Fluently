@@ -356,6 +356,62 @@ jobs:
           } catch {
             Write-Host "Docker info not available"
           }
+          
+          # Ensure Docker Desktop is using Linux containers (required for our Linux-only images)
+          Write-Host "Configuring Docker Desktop to use Linux containers..."
+          try {
+            # Check current container mode
+            $dockerInfo = docker info 2>$null | Out-String
+            if ($dockerInfo -match "OSType:\s*linux") {
+              Write-Host "Docker Desktop is already using Linux containers"
+            } else {
+              Write-Host "Docker Desktop is using Windows containers, switching to Linux containers..."
+              
+              # Switch to Linux containers using Docker Desktop CLI
+              $dockerCliPath = "C:\Program Files\Docker\Docker\DockerCli.exe"
+              if (Test-Path $dockerCliPath) {
+                & $dockerCliPath -SwitchLinuxEngine
+                Start-Sleep -Seconds 30
+              } else {
+                Write-Host "Docker CLI not found, trying alternative method..."
+                # Alternative method: restart Docker Desktop with Linux containers
+                $registryPath = "HKCU:\Software\Docker Inc.\Docker Desktop"
+                if (Test-Path $registryPath) {
+                  Set-ItemProperty -Path $registryPath -Name "EngineType" -Value "linux"
+                  Write-Host "Set Docker Desktop to use Linux containers in registry"
+                }
+              }
+              
+              # Wait for Docker to restart with Linux containers
+              Write-Host "Waiting for Docker to restart with Linux containers..."
+              $timeout = 120
+              $elapsed = 0
+              do {
+                Start-Sleep -Seconds 5
+                $elapsed += 5
+                try {
+                  $dockerInfo = docker info 2>$null | Out-String
+                  if ($dockerInfo -match "OSType:\s*linux") {
+                    Write-Host "Docker Desktop is now using Linux containers"
+                    break
+                  }
+                } catch {
+                  Write-Host "Waiting for Docker to restart... ($elapsed/$timeout seconds)"
+                }
+              } while ($elapsed -lt $timeout)
+            }
+            
+            # Verify final state
+            $dockerInfo = docker info 2>$null | Out-String
+            if ($dockerInfo -match "OSType:\s*linux") {
+              Write-Host "✅ Docker Desktop is configured for Linux containers"
+            } else {
+              Write-Host "⚠️ Warning: Docker Desktop may not be using Linux containers"
+              Write-Host "This is required for Fluently project as all images are built for Linux"
+            }
+          } catch {
+            Write-Host "Warning: Could not verify Docker container mode"
+          }
         shell: powershell
 
       - name: Test Windows installation

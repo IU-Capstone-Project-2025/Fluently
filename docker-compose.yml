@@ -5,7 +5,7 @@ services:
   
   # Main Backend API
   backend:
-    image: docker.io/fluentlyorg/fluently-backend:latest-develop
+    image: docker.io/fluentlyorg/fluently-backend:${BACKEND_TAG:-latest-develop}
     container_name: fluently_backend
     env_file: ./backend/.env
     depends_on:
@@ -21,7 +21,7 @@ services:
       - "${ZEROTIER_IP}:8070:8070"  # ZeroTier access
   # Nginx Reverse Proxy
   nginx:
-    image: docker.io/fluentlyorg/fluently-nginx:latest-develop
+    image: docker.io/fluentlyorg/fluently-nginx:${NGINX_TAG:-latest-develop}
     container_name: fluently_nginx
     environment:
       - DOMAIN=${DOMAIN:-localhost}
@@ -104,7 +104,7 @@ services:
   
   # Telegram Bot
   telegram-bot:
-    image: docker.io/fluentlyorg/fluently-telegram-bot:latest-develop
+    image: docker.io/fluentlyorg/fluently-telegram-bot:${TELEGRAM_TAG:-latest-develop}
     container_name: fluently_telegram_bot
     restart: unless-stopped
     env_file: .env  # Use root .env file instead of telegram-bot/.env
@@ -128,7 +128,7 @@ services:
 
   # ML Distractor API (Internal only)
   ml-api:
-    image: docker.io/fluentlyorg/fluently-ml-api:latest-develop
+    image: docker.io/fluentlyorg/fluently-ml-api:${ML_API_TAG:-latest-develop}
     container_name: fluently_ml_api
     environment:
       - PYTHONUNBUFFERED=1
