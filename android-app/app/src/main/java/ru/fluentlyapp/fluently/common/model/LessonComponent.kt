@@ -8,6 +8,7 @@ sealed interface LessonComponent {
 
 sealed interface Exercise : LessonComponent {
     val isAnswered: Boolean
+    val isCorrect: Boolean?
 
     @Serializable
     data class NewWord(
@@ -20,6 +21,8 @@ sealed interface Exercise : LessonComponent {
         val examples: List<Pair<String, String>>
     ) : Exercise {
         override val isAnswered = doesUserKnow != null
+        override val isCorrect: Boolean?
+            get() = true
     }
 
     @Serializable
@@ -32,6 +35,8 @@ sealed interface Exercise : LessonComponent {
         val selectedVariant: Int?
     ) : Exercise {
         override val isAnswered = selectedVariant != null
+        override val isCorrect: Boolean?
+            get() = if (isAnswered) selectedVariant == correctVariant else null
     }
 
     @Serializable
@@ -44,6 +49,8 @@ sealed interface Exercise : LessonComponent {
         val selectedVariant: Int?
     ) : Exercise {
         override val isAnswered = selectedVariant != null
+        override val isCorrect: Boolean?
+            get() = if (isAnswered) selectedVariant == correctVariant else null
     }
 
     @Serializable
@@ -55,6 +62,8 @@ sealed interface Exercise : LessonComponent {
         override var id: Int = -1,
     ) : Exercise {
         override val isAnswered = inputtedWord != null
+        override val isCorrect: Boolean?
+            get() = if (isAnswered) inputtedWord?.trim() == correctAnswer.trim() else null
     }
 }
 

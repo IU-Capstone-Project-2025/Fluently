@@ -51,6 +51,8 @@ class WordsInProgressViewModel @Inject constructor(
                 .first()
                 .filter { it.isLearning == wordProgressRoute.isLearning }
                 .map { it.toWordUiState() }
+
+            _uiState.update { it.copy(words = allSuitableWords) }
         }
 
         viewModelScope.launch {

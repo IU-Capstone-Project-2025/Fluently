@@ -2,6 +2,7 @@ package ru.fluentlyapp.fluently.feature.wordprogress
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import ru.fluentlyapp.fluently.database.app.AppDatabase
 import ru.fluentlyapp.fluently.database.app.wordprogress.WordProgressDao
 import timber.log.Timber
 import java.time.Instant
@@ -15,8 +16,10 @@ interface WordProgressRepository {
 
 @Singleton
 class WordProgressRepositoryImpl @Inject constructor(
-    private val wordProgressDao: WordProgressDao
+    appDatabase: AppDatabase
 ) : WordProgressRepository {
+    private val wordProgressDao = appDatabase.wordProgressDao()
+
     override suspend fun addProgress(wordProgress: WordProgress) {
         Timber.d("addProgress $wordProgress")
         wordProgressDao.insert(wordProgress.toWordProgressEntity())

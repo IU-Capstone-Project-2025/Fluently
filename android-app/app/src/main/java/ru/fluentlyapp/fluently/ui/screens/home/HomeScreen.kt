@@ -54,7 +54,9 @@ fun HomeScreen(
     modifier: Modifier = Modifier,
     homeScreenViewModel: HomeScreenViewModel = hiltViewModel(),
     onNavigateToLesson: () -> Unit,
-    onNavigateToCalendar: () -> Unit
+    onNavigateToCalendar: () -> Unit,
+    onLearnedWordsClick: () -> Unit,
+    onInProgressWordsClick: () -> Unit,
 ) {
     val uiState by homeScreenViewModel.uiState.collectAsState()
 
@@ -74,7 +76,9 @@ fun HomeScreen(
         onLessonClick = {
             homeScreenViewModel.ensureOngoingLesson()
         },
-        onCalendarClick = onNavigateToCalendar
+        onCalendarClick = onNavigateToCalendar,
+        onLearnedWordsClick = onLearnedWordsClick,
+        onInProgressWordsClick = onInProgressWordsClick
     )
 }
 
@@ -83,7 +87,9 @@ fun HomeScreenContent(
     modifier: Modifier = Modifier,
     uiState: HomeScreenUiState,
     onLessonClick: () -> Unit,
-    onCalendarClick: () -> Unit
+    onCalendarClick: () -> Unit,
+    onLearnedWordsClick: () -> Unit,
+    onInProgressWordsClick: () -> Unit,
 ) {
     Column(
         modifier = modifier.background(color = FluentlyTheme.colors.primary)
@@ -98,13 +104,8 @@ fun HomeScreenContent(
         ) {
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = "Цель:",
-                    fontSize = 32.sp,
-                    color = FluentlyTheme.colors.onPrimary,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = uiState.goal,
+                    text = "Домашний экран",
+                    lineHeight = 40.sp,
                     fontSize = 32.sp,
                     color = FluentlyTheme.colors.onPrimary,
                     fontWeight = FontWeight.Bold
@@ -171,6 +172,7 @@ fun HomeScreenContent(
                     modifier = Modifier
                         .heightIn(min = 130.dp)
                         .clip(RoundedCornerShape(16.dp))
+                        .clickable(onClick = onLearnedWordsClick)
                         .background(color = FluentlyTheme.colors.secondaryVariant)
                         .padding(16.dp)
                         .weight(1f)
@@ -190,6 +192,7 @@ fun HomeScreenContent(
                     modifier = Modifier
                         .heightIn(min = 120.dp)
                         .clip(RoundedCornerShape(16.dp))
+                        .clickable(onClick = onInProgressWordsClick)
                         .background(color = FluentlyTheme.colors.tertiaryVariant1)
                         .padding(16.dp)
                         .weight(1f)
@@ -253,7 +256,9 @@ fun HomeScreenPreview() {
             modifier = Modifier.fillMaxSize(),
             uiState = HomeScreenUiState(ongoingLessonState = OngoingLessonState.LOADING),
             onLessonClick = { },
-            onCalendarClick = { }
+            onCalendarClick = { },
+            onLearnedWordsClick = {},
+            onInProgressWordsClick = {}
         )
     }
 }

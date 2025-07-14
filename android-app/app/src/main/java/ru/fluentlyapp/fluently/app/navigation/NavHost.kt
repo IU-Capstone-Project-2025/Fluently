@@ -11,6 +11,7 @@ import ru.fluentlyapp.fluently.ui.screens.home.HomeScreen
 import ru.fluentlyapp.fluently.ui.screens.launch.LaunchScreen
 import ru.fluentlyapp.fluently.ui.screens.lesson.LessonFlowScreen
 import ru.fluentlyapp.fluently.ui.screens.login.LoginScreen
+import ru.fluentlyapp.fluently.ui.screens.wordsprogress.WordsProgressScreen
 
 @Composable
 fun FluentlyNavHost(
@@ -61,13 +62,35 @@ fun FluentlyNavHost(
                 onNavigateToLesson = {
                     navHostController.navigate(Destination.LessonScreen)
                 },
-                onNavigateToCalendar = {}
+                onNavigateToCalendar = {},
+                onLearnedWordsClick = {
+                    navHostController.navigate(
+                        Destination.WordsProgress(isLearning = true)
+                    )
+                },
+                onInProgressWordsClick = {
+                    navHostController.navigate(
+                        Destination.WordsProgress(isLearning = false)
+                    )
+                }
             )
         }
 
         composable<Destination.LessonScreen> {
             LessonFlowScreen(
                 modifier = Modifier.fillMaxSize(),
+                onBackClick = {
+                    navHostController.navigate(Destination.HomeScreen) {
+                        popUpTo<Destination.HomeScreen>()
+                        launchSingleTop = true
+                    }
+                }
+            )
+        }
+
+        composable<Destination.WordsProgress> {
+            WordsProgressScreen(
+                modifier = modifier.fillMaxSize(),
                 onBackClick = {
                     navHostController.navigate(Destination.HomeScreen) {
                         popUpTo<Destination.HomeScreen>()

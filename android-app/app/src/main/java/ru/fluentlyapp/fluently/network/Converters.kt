@@ -3,8 +3,10 @@ package ru.fluentlyapp.fluently.network
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.common.model.LessonComponent
+import ru.fluentlyapp.fluently.network.model.Progress
 import ru.fluentlyapp.fluently.network.model.internal.ExerciseApiModel.ExerciseType
 import ru.fluentlyapp.fluently.network.model.internal.LessonResponseBody
+import ru.fluentlyapp.fluently.network.model.internal.WordProgressApiModel
 import kotlin.random.Random
 import kotlin.random.nextInt
 
@@ -52,19 +54,18 @@ fun LessonResponseBody.convertToLesson(): Lesson {
                 }
 
                 // Fill the gaps in the sentence exercise
-//                ExerciseType.PICK_OPTION_SENTENCE -> {
-//                    val options = exerciseData.pick_options!!.toMutableList()
-//                    val correctVariant = options.insertRandomly(exerciseData.correct_answer!!)
-//
-//                    add(
-//                        Exercise.FillTheGap(
-//                            sentence = exerciseData.template!!.split("_".toRegex()),
-//                            answerVariants = options,
-//                            correctVariant = correctVariant,
-//                            selectedVariant = null
-//                        )
-//                    )
-//                }
+                ExerciseType.PICK_OPTION_SENTENCE -> {
+                    val options = exerciseData.pick_options!!.toMutableList()
+                    val expandedTemplate = " " + exerciseData.template + " "
+                    add(
+                        Exercise.FillTheGap(
+                            sentence = expandedTemplate.split("_+".toRegex()),
+                            answerVariants = options,
+                            correctVariant = options.indexOf(exerciseData.correct_answer),
+                            selectedVariant = null
+                        )
+                    )
+                }
 
                 // Write the word from translation exercise
                 ExerciseType.WRITE_WORD_FROM_TRANSLATION -> {
@@ -89,3 +90,13 @@ fun LessonResponseBody.convertToLesson(): Lesson {
         currentLessonComponentIndex = 0
     )
 }
+
+fun Progress.toProgressRequestBody() =
+    progresses.map {
+        WordProgressApiModel(
+            cnt_reviewed = it.cntReviewed,
+            confidence_score = it.confidenceScore,
+            learned_at = it.learnedAt.toString(),
+            word_id = it.wordId
+        )
+    }

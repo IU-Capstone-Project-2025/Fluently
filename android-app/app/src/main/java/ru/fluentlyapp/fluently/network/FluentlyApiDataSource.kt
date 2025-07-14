@@ -1,9 +1,11 @@
 package ru.fluentlyapp.fluently.network
 
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.supervisorScope
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import ru.fluentlyapp.fluently.common.model.Lesson
+import ru.fluentlyapp.fluently.network.model.Progress
 import ru.fluentlyapp.fluently.network.services.FluentlyApiService
 import timber.log.Timber
 import javax.inject.Inject
@@ -15,6 +17,8 @@ interface FluentlyApiDataSource {
      * May throw exception.
      */
     suspend fun getLesson(): Lesson
+
+    suspend fun sendProgress(progress: Progress): Unit
 }
 
 class FluentlyApiDefaultDataSource @Inject constructor(
@@ -40,5 +44,11 @@ class FluentlyApiDefaultDataSource @Inject constructor(
         }
     }
 
+    override suspend fun sendProgress(progress: Progress) {
+        withContext(Dispatchers.IO) {
+            Timber.d("Performing request sendProgress: $progress")
 
+            fluentlyApiService.sendProgress(progress.toProgressRequestBody())
+        }
+    }
 }

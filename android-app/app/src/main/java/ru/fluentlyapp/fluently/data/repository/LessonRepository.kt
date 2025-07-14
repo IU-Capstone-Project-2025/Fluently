@@ -10,8 +10,13 @@ import ru.fluentlyapp.fluently.common.model.LessonComponent
 import ru.fluentlyapp.fluently.datastore.OngoingLessonDataStore
 import ru.fluentlyapp.fluently.feature.wordcache.WordCache
 import ru.fluentlyapp.fluently.feature.wordcache.WordCacheRepository
+import ru.fluentlyapp.fluently.feature.wordprogress.WordProgress
+import ru.fluentlyapp.fluently.feature.wordprogress.WordProgressRepository
 import ru.fluentlyapp.fluently.network.FluentlyApiDataSource
+import ru.fluentlyapp.fluently.network.model.Progress
+import ru.fluentlyapp.fluently.network.model.SentWordProgress
 import timber.log.Timber
+import java.time.Instant
 import javax.inject.Inject
 
 interface LessonRepository {
@@ -68,7 +73,8 @@ interface LessonRepository {
 class DefaultLessonRepository @Inject constructor(
     val fluentlyApiDataSource: FluentlyApiDataSource,
     val ongoingLessonDataStore: OngoingLessonDataStore,
-    val wordCacheRepository: WordCacheRepository
+    val wordCacheRepository: WordCacheRepository,
+    val wordProgressRepository: WordProgressRepository
 ) : LessonRepository {
     override suspend fun hasSavedLesson(): Boolean {
         return try {
@@ -182,9 +188,63 @@ class DefaultLessonRepository @Inject constructor(
             }
     }
 
-    override suspend fun sendLesson() {
-        ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
+    private fun isExerciseCorrect(word: Exercise.NewWord, exercise: Exercise): Boolean? {
+        return if (
+            (exercise is Exercise.FillTheGap && exercise.wordId == word.wordId) ||
+            (exercise is Exercise.FillTheGap && exercise.wordId == word.wordId) ||
+            (exercise is Exercise.ChooseTranslation && exercise.wordId == word.wordId)
+        )
+            exercise.isCorrect
+        else
+            null
 
+    }
+
+    override suspend fun sendLesson() {
+        val progressMap = mutableMapOf<String, SentWordProgress>() // (word_id; progress)
+        ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
+            for (component in lesson.components) {
+                if (component is Exercise.NewWord) {
+                    var correctExercises = 0
+                    var incorrectExercises = 0
+                    for (possibleRelatedComponent in lesson.components) {
+                        if (
+                            possibleRelatedComponent is Exercise
+                        ) {
+                            val result = isExerciseCorrect(component, possibleRelatedComponent)
+                            correctExercises += (result == true).compareTo(false)
+                            incorrectExercises += (result == false).compareTo(false)
+                        }
+                    }
+                    val overallExerciseCount = correctExercises + incorrectExercises + 1
+                    val correctnessRate: Float = correctExercises / overallExerciseCount.toFloat()
+                    val progress = SentWordProgress(
+                        wordId = component.wordId,
+                        cntReviewed = overallExerciseCount,
+                        confidenceScore = (correctnessRate * 100).toInt().coerceIn(0, 100),
+                        learnedAt = Instant.now()
+                    )
+                    progressMap[component.wordId] = progress
+                }
+            }
         }
+        Timber.v("Compose the progress map: ${progressMap.values.joinToString(", ")}")
+        for (value in progressMap.values) {
+            wordProgressRepository.addProgress(
+                WordProgress(
+                    wordId = value.wordId,
+                    isLearning = value.confidenceScore < 90,
+                    instant = value.learnedAt
+                )
+            )
+        }
+        Timber.v("Save to the progress map")
+
+        fluentlyApiDataSource.sendProgress(
+            Progress(
+                progresses = progressMap.values.toList()
+            )
+        )
+        Timber.v("Send to the fluently api data source")
     }
 }
