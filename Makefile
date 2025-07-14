@@ -1,6 +1,14 @@
 # ===========================================
 # FLUENTLY LOCAL DEVELOPMENT SETUP
-# Using Pre-built Docker Images from Docker Hub
+# Using Ppull-images:              ## Pull latest pre-built images from Docker Hub
+	@echo "📦 Pulling latest pre-built images..."
+	@docker pull docker.io/fluentlyorg/fluently-backend:latest-develop
+	@docker pull docker.io/fluentlyorg/fluently-telegram-bot:latest-develop
+	@docker pull docker.io/fluentlyorg/fluently-ml-api:latest-develop
+	@docker pull docker.io/fluentlyorg/fluently-thesaurus-api:latest-develop
+	@docker pull docker.io/fluentlyorg/fluently-llm-api:latest-develop
+	@docker pull docker.io/fluentlyorg/fluently-nginx:latest-develop
+	@echo "✅ All images updated!"t Docker Images from Docker Hub
 # ===========================================
 
 .PHONY: help setup-local check-ports run-local stop-local clean restart pull-images test-backend logs
@@ -84,6 +92,7 @@ run-local: check-env pull-images       ## Start all services with pre-built imag
 	@echo "  - Directus admin panel:     http://localhost:8055/"
 	@echo "  - Distractor API:     http://localhost:8001/docs"
 	@echo "  - Thesaurus API:     http://localhost:8002/docs"
+	@echo "  - LLM API:     http://localhost:8003/docs"
 	@echo ""
 	@echo "📊 Monitor with: make logs"
 
