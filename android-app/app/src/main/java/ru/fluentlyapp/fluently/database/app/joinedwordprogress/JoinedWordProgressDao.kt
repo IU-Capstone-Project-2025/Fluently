@@ -23,4 +23,17 @@ interface JoinedWordProgressDao {
         begin: Instant,
         end: Instant
     ): Flow<List<JoinedWordProgressData>>
+
+    @Query("""
+        SELECT 
+        wc.id AS id,
+        wp.is_learning AS is_learning,
+        wp.timestamp AS timestamp,
+        wc.word_json AS word_json
+        FROM
+        word_caches AS wc
+        INNER JOIN word_progresses AS wp 
+        ON wc.id = wp.id
+    """)
+    fun getAllJoinedWordProgress(): Flow<List<JoinedWordProgressData>>
 }

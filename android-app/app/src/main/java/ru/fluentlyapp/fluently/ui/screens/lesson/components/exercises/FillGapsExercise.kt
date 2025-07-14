@@ -32,7 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.common.model.Exercise
-import ru.fluentlyapp.fluently.ui.components.ExerciseContinueButton
+import ru.fluentlyapp.fluently.ui.theme.components.ExerciseContinueButton
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
 

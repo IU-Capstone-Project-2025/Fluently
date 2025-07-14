@@ -1,4 +1,4 @@
-package ru.fluentlyapp.fluently.ui.components
+package ru.fluentlyapp.fluently.ui.theme.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -25,7 +24,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
+import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
 import ru.fluentlyapp.fluently.ui.utils.SmallPhonePreview
+
+data class WordUiState(
+    val word: String,
+    val translation: String,
+    val examples: List<Pair<String, String>>
+)
 
 @Composable
 fun NewWordCard(
@@ -91,7 +97,7 @@ fun NewWordCard(
 }
 
 @Composable
-@SmallPhonePreview
+@DevicePreviews
 fun NewWordCardPreview() {
     FluentlyTheme {
         Box(
@@ -118,7 +124,7 @@ fun NewWordCardPreview() {
 }
 
 @Composable
-@SmallPhonePreview
+@DevicePreviews
 fun NewWordCardScrollPreview() {
     FluentlyTheme {
         Box(

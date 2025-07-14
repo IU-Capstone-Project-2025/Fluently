@@ -9,28 +9,34 @@ import java.time.Instant
 import javax.inject.Inject
 import javax.inject.Singleton
 
+interface JoinedWordProgressRepository {
+    fun getJoinedWordProgresses(
+        begin: Instant,
+        end: Instant
+    ): Flow<List<JoinedWordProgress>>
+
+    fun getAllJoinedWordProgresses(): Flow<List<JoinedWordProgress>>
+}
+
+
 @Singleton
-class JoinedWordProgressRepository @Inject constructor(
+class JoinedWordProgressRepositoryImpl @Inject constructor(
     appDatabase: AppDatabase
-) {
+) : JoinedWordProgressRepository {
     private val joinedWordProgressDao = appDatabase.joinedWordProgressDao()
 
-    fun getJoinedWordProgresses(
+    override fun getJoinedWordProgresses(
         begin: Instant,
         end: Instant
     ): Flow<List<JoinedWordProgress>> {
         return joinedWordProgressDao.getJoinedWordProgress(begin, end).map { list ->
-            list.map {
-                val wordCacheEntity = Json.decodeFromString<WordCache>(it.wordJson)
-                JoinedWordProgress(
-                    id = it.id,
-                    word = wordCacheEntity.word,
-                    translation = wordCacheEntity.translation,
-                    examples = wordCacheEntity.examples,
-                    isLearning = it.isLearning,
-                    instant = it.timestamp
-                )
-            }
+            list.map { it.toJoinedWordProgress() }
+        }
+    }
+
+    override fun getAllJoinedWordProgresses(): Flow<List<JoinedWordProgress>> {
+        return joinedWordProgressDao.getAllJoinedWordProgress().map { list ->
+            list.map { it.toJoinedWordProgress() }
         }
     }
 }

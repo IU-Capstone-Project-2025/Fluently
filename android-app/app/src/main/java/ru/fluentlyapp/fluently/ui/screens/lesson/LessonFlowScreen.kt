@@ -11,7 +11,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import ru.fluentlyapp.fluently.common.model.Decoration
-import ru.fluentlyapp.fluently.ui.components.TopAppBar
+import ru.fluentlyapp.fluently.ui.theme.components.TopAppBar
 
 @Composable
 fun LessonFlowScreen(

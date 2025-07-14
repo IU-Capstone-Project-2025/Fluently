@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -37,7 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.common.model.Exercise
-import ru.fluentlyapp.fluently.ui.components.ExerciseContinueButton
+import ru.fluentlyapp.fluently.ui.theme.components.ExerciseContinueButton
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
 
