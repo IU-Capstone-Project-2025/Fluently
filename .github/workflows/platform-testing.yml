@@ -595,8 +595,11 @@ jobs:
             
             # Double-check container mode before proceeding
             $dockerInfo = docker info 2>$null | Out-String
+            $linuxMode = $false  # Initialize the variable
+            
             if ($dockerInfo -match "OSType:\s*linux") {
               Write-Host "SUCCESS: Confirmed: Docker is in Linux container mode"
+              $linuxMode = $true
             } else {
               Write-Host "ERROR: Docker is still in Windows container mode"
               Write-Host "This will cause failures as our images are Linux-only"
@@ -749,6 +752,22 @@ jobs:
               } catch {
                 Write-Host "Emergency Docker container mode switch failed: $($_.Exception.Message)"
               }
+              
+              # Check if the emergency switch worked
+              try {
+                $dockerInfo = docker info 2>$null | Out-String
+                if ($dockerInfo -match "OSType:\s*linux") {
+                  Write-Host "SUCCESS: Emergency switch worked - Docker is now in Linux container mode"
+                  $linuxMode = $true
+                } else {
+                  Write-Host "FAILED: Emergency switch did not work - Docker is still in Windows container mode"
+                  $linuxMode = $false
+                }
+              } catch {
+                Write-Host "FAILED: Cannot determine Docker container mode after emergency switch"
+                $linuxMode = $false
+              }
+            }
             
             if (-not $linuxMode) {
               Write-Host "CRITICAL: Failed to switch to Linux containers after all attempts"
