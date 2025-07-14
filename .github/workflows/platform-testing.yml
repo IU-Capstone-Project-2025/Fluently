@@ -370,40 +370,62 @@ jobs:
             } else {
               Write-Host "⚠️ Docker Desktop is using Windows containers, switching to Linux containers..."
               
-              # Method 1: Try using Docker Desktop CLI
-              $dockerCliPath = "C:\Program Files\Docker\Docker\DockerCli.exe"
-              if (Test-Path $dockerCliPath) {
-                Write-Host "Using DockerCli.exe to switch to Linux containers..."
-                & $dockerCliPath -SwitchLinuxEngine
-                Start-Sleep -Seconds 60
-              } else {
-                Write-Host "DockerCli.exe not found, trying alternative methods..."
-              }
+              # Stop Docker Desktop first to ensure clean state
+              Write-Host "Stopping Docker Desktop for clean container mode switch..."
+              Stop-Process -Name "Docker Desktop" -Force -ErrorAction SilentlyContinue
+              Stop-Process -Name "dockerd" -Force -ErrorAction SilentlyContinue
+              Stop-Process -Name "com.docker.backend" -Force -ErrorAction SilentlyContinue
+              Start-Sleep -Seconds 15
               
-              # Method 2: Try registry setting
+              # Method 1: Registry setting (most reliable)
               try {
                 $registryPath = "HKCU:\Software\Docker Inc.\Docker Desktop"
                 if (Test-Path $registryPath) {
                   Write-Host "Setting Docker Desktop to use Linux containers via registry..."
                   Set-ItemProperty -Path $registryPath -Name "EngineType" -Value "linux" -Force
                   Write-Host "Registry updated to use Linux containers"
+                } else {
+                  Write-Host "Creating Docker Desktop registry path..."
+                  New-Item -Path $registryPath -Force | Out-Null
+                  Set-ItemProperty -Path $registryPath -Name "EngineType" -Value "linux" -Force
+                  Write-Host "Registry created and set to Linux containers"
                 }
               } catch {
                 Write-Host "Registry method failed: $($_.Exception.Message)"
               }
               
-              # Method 3: Restart Docker Desktop with environment variable
-              Write-Host "Restarting Docker Desktop to apply Linux container mode..."
-              Stop-Process -Name "Docker Desktop" -Force -ErrorAction SilentlyContinue
-              Stop-Process -Name "dockerd" -Force -ErrorAction SilentlyContinue
-              Start-Sleep -Seconds 10
+              # Method 2: Docker Desktop settings file
+              try {
+                $settingsPath = "$env:APPDATA\Docker\settings.json"
+                if (Test-Path $settingsPath) {
+                  Write-Host "Updating Docker Desktop settings file..."
+                  $settings = Get-Content $settingsPath | ConvertFrom-Json
+                  $settings.dockerContainerType = "linux"
+                  $settings | ConvertTo-Json -Depth 10 | Set-Content $settingsPath
+                  Write-Host "Settings file updated to use Linux containers"
+                }
+              } catch {
+                Write-Host "Settings file method failed: $($_.Exception.Message)"
+              }
               
               # Set environment variable for Linux containers
               $env:DOCKER_DEFAULT_PLATFORM = "linux/amd64"
+              $env:DOCKER_CLI_EXPERIMENTAL = "enabled"
               
-              # Start Docker Desktop again
+              # Start Docker Desktop again with explicit Linux mode
+              Write-Host "Starting Docker Desktop with Linux container mode..."
               $dockerPath = "C:\Program Files\Docker\Docker\Docker Desktop.exe"
-              Start-Process $dockerPath -WindowStyle Hidden
+              if (Test-Path $dockerPath) {
+                # Try to start with Linux containers explicitly
+                Start-Process $dockerPath -ArgumentList "--experimental --switch-linux-engine" -WindowStyle Hidden -ErrorAction SilentlyContinue
+                Start-Sleep -Seconds 30
+                
+                # If that doesn't work, try normal start
+                if (-not (Get-Process "Docker Desktop" -ErrorAction SilentlyContinue)) {
+                  Start-Process $dockerPath -WindowStyle Hidden
+                  Start-Sleep -Seconds 30
+                }
+              }
               
               # Wait for Docker to restart with Linux containers
               Write-Host "Waiting for Docker to restart with Linux containers..."
@@ -425,6 +447,32 @@ jobs:
                     break
                   } else {
                     Write-Host "Still in Windows container mode, waiting..."
+                    
+                    # Try additional switching methods if still not working
+                    if ($elapsed -eq 60) {
+                      Write-Host "Trying additional switching methods..."
+                      
+                      # Method 3: DockerCli.exe if available
+                      $dockerCliPath = "C:\Program Files\Docker\Docker\DockerCli.exe"
+                      if (Test-Path $dockerCliPath) {
+                        Write-Host "Using DockerCli.exe to switch to Linux containers..."
+                        try {
+                          & $dockerCliPath -SwitchLinuxEngine
+                          Start-Sleep -Seconds 30
+                        } catch {
+                          Write-Host "DockerCli.exe switch failed: $($_.Exception.Message)"
+                        }
+                      }
+                      
+                      # Method 4: Try Docker context
+                      try {
+                        Write-Host "Trying Docker context switch..."
+                        docker context use default
+                        Start-Sleep -Seconds 10
+                      } catch {
+                        Write-Host "Docker context switch failed"
+                      }
+                    }
                   }
                 } catch {
                   Write-Host "Docker not ready yet, waiting... ($elapsed/$timeout seconds)"
@@ -434,14 +482,36 @@ jobs:
               if (-not $linuxMode) {
                 Write-Host "❌ Failed to switch to Linux containers after $timeout seconds"
                 Write-Host "This will cause build failures - our images are Linux-only"
+                Write-Host "Attempting one final comprehensive restart..."
                 
-                # Try one final method - command line switch
+                # Final attempt: Complete Docker restart with all methods
+                Stop-Process -Name "Docker Desktop" -Force -ErrorAction SilentlyContinue
+                Stop-Process -Name "dockerd" -Force -ErrorAction SilentlyContinue
+                Stop-Process -Name "com.docker.backend" -Force -ErrorAction SilentlyContinue
+                Start-Sleep -Seconds 20
+                
+                # Clear any Docker state
+                Remove-Item "$env:ProgramData\Docker" -Recurse -Force -ErrorAction SilentlyContinue
+                
+                # Restart with environment set
+                $env:DOCKER_DEFAULT_PLATFORM = "linux/amd64"
+                Start-Process $dockerPath -WindowStyle Hidden
+                Start-Sleep -Seconds 120
+                
+                # Final check
                 try {
-                  Write-Host "Final attempt: Using docker context switch..."
-                  docker context use default
-                  Start-Sleep -Seconds 5
+                  $finalInfo = docker info 2>$null | Out-String
+                  if ($finalInfo -match "OSType:\s*linux") {
+                    Write-Host "✅ Final attempt successful - Docker is now in Linux mode"
+                  } else {
+                    Write-Host "❌ All switching attempts failed"
+                    Write-Host "Current Docker state:"
+                    docker info | Select-String -Pattern "OSType|Operating System" -ErrorAction SilentlyContinue
+                    exit 1
+                  }
                 } catch {
-                  Write-Host "Docker context switch failed"
+                  Write-Host "❌ Docker is not responding after final restart attempt"
+                  exit 1
                 }
               }
             }
@@ -890,6 +960,10 @@ jobs:
             export HOMEBREW_NO_AUTO_UPDATE=1
             export HOMEBREW_NO_INSTALL_CLEANUP=1
             
+            # Install coreutils for gtimeout command
+            echo "Installing coreutils for timeout functionality..."
+            brew install coreutils || true
+            
             # Try to install Docker tools only (no Desktop GUI)
             brew install docker docker-compose || true
             
@@ -918,10 +992,40 @@ jobs:
           
           # Quick Docker Desktop install with timeout
           echo "Installing Docker Desktop with 5-minute timeout..."
-          timeout 300 brew install --cask docker || {
-            echo "Docker Desktop installation timed out, skipping macOS test"
-            exit 0
-          }
+          # Use gtimeout if available (from coreutils), otherwise skip timeout
+          if command -v gtimeout &> /dev/null; then
+            gtimeout 300 brew install --cask docker || {
+              echo "Docker Desktop installation timed out, skipping macOS test"
+              exit 0
+            }
+          elif command -v timeout &> /dev/null; then
+            timeout 300 brew install --cask docker || {
+              echo "Docker Desktop installation timed out, skipping macOS test"
+              exit 0
+            }
+          else
+            echo "No timeout command available, installing Docker Desktop without timeout..."
+            # Install with background process and manual timeout
+            brew install --cask docker &
+            DOCKER_INSTALL_PID=$!
+            
+            # Wait up to 5 minutes
+            for i in {1..60}; do
+              if ! kill -0 $DOCKER_INSTALL_PID 2>/dev/null; then
+                echo "Docker Desktop installation completed"
+                wait $DOCKER_INSTALL_PID
+                break
+              elif [ $i -eq 60 ]; then
+                echo "Docker Desktop installation taking too long, killing process..."
+                kill $DOCKER_INSTALL_PID 2>/dev/null || true
+                echo "Skipping macOS test due to installation timeout"
+                exit 0
+              else
+                echo "Waiting for Docker Desktop installation... ($i/60)"
+                sleep 5
+              fi
+            done
+          fi
           
           # Start Docker Desktop
           echo "Starting Docker Desktop..."
