@@ -445,7 +445,7 @@ jobs:
           fi
 
   deploy:
-    needs: [setup, quality-check]
+    needs: [setup, quality-check, build]
     runs-on: ubuntu-latest
     environment: ${{ needs.setup.outputs.environment }}
     if: github.event.inputs.dry_run != 'true' && always() && !failure() && !cancelled()
