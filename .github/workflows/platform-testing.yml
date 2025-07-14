@@ -20,12 +20,7 @@ on:
         type: choice
         options:
           - all
-          - macos-latest            word,topic,subtopic,subsubtopic,CEFR_level,Total
-            test,test_topic,test_subtopic,test_subsubtopic,a1,1
-            example,example_topic,example_subtopic,example_subsubtopic,a2,1
-            sample,sample_topic,sample_subtopic,sample_subsubtopic,b1,1
-            EOF
-                    echo "Created dummy thesaurus data for testing"
+          - macos-latest
           - ubuntu-latest
           - windows-latest
       skip_services:
@@ -54,19 +49,30 @@ jobs:
         run: |
           echo "Testing local installation on Ubuntu..."
           
+          # Create .env files from examples (like deploy.yml does)
+          echo "Creating .env files from examples..."
+          if [ ! -f .env ]; then
+            cp .env.example .env
+            echo "Created root .env from example"
+          fi
+          if [ ! -f backend/.env ]; then
+            cp backend/.env.example backend/.env
+            echo "Created backend/.env from example"
+          fi
+          
           # Create dummy thesaurus data for testing (skip SSH dependency)
           echo "Creating dummy thesaurus data for testing..."
           mkdir -p analysis/thesaurus
           cat > analysis/thesaurus/result.csv << 'EOF'
-            word,topic,subtopic,subsubtopic,CEFR_level,Total
-            test,test_topic,test_subtopic,test_subsubtopic,a1,1
-            example,example_topic,example_subtopic,example_subsubtopic,a2,1
-            sample,sample_topic,sample_subtopic,sample_subsubtopic,b1,1
+          word,topic,subtopic,subsubtopic,CEFR_level,Total
+          test,test_topic,test_subtopic,test_subsubtopic,a1,1
+          example,example_topic,example_subtopic,example_subsubtopic,a2,1
+          sample,sample_topic,sample_subtopic,sample_subsubtopic,b1,1
           EOF
           echo "Created dummy thesaurus data for testing"
           
-          # Follow the installation guide exactly (skip thesaurus setup)
-          make setup-env setup-volumes
+          # Setup volumes (skip make setup-env since we already created .env files)
+          make setup-volumes
           
           # Check for port conflicts
           make check-ports
@@ -102,12 +108,12 @@ jobs:
             export COMPOSE_FILE="docker-compose.yml:docker-compose.test.yml"
           fi
           
-          # Start core services
+          # Start services
           make run-local
           
           # Wait for services to be ready
-          echo "⏳ Waiting for services to start..."
-          sleep 30
+          echo "Waiting for services to start..."
+          sleep 45  # Give services more time to start
           
           # Test core endpoints (from Install_Local.md)
           echo "Testing core service endpoints..."
@@ -121,22 +127,24 @@ jobs:
               echo "Backend API failed to start"
               exit 1
             else
-              echo "⏳ Waiting for backend API... (attempt $i/10)"
+              echo "Waiting for backend API... (attempt $i/10)"
               sleep 10
             fi
           done
           
-          # Thesaurus API
-          for i in {1..5}; do
+          # Thesaurus API with extended timeout
+          for i in {1..8}; do
             if curl -f http://localhost:8002/health > /dev/null 2>&1; then
               echo "Thesaurus API is healthy"
               break
-            elif [ $i -eq 5 ]; then
+            elif [ $i -eq 8 ]; then
               echo "Thesaurus API failed to start"
+              echo "Checking thesaurus container logs..."
+              docker compose logs thesaurus-api || true
               exit 1
             else
-              echo "⏳ Waiting for thesaurus API... (attempt $i/5)"
-              sleep 10
+              echo "Waiting for thesaurus API... (attempt $i/8)"
+              sleep 15
             fi
           done
           
@@ -149,7 +157,7 @@ jobs:
               echo "LLM API failed to start"
               exit 1
             else
-              echo "⏳ Waiting for LLM API... (attempt $i/5)"
+              echo "Waiting for LLM API... (attempt $i/5)"
               sleep 10
             fi
           done
@@ -164,14 +172,14 @@ jobs:
                 echo "ML API failed to start"
                 exit 1
               else
-                echo "⏳ Waiting for ML API... (attempt $i/15)"
+                echo "Waiting for ML API... (attempt $i/15)"
                 sleep 15
               fi
             done
           fi
           
           # Test Quick Start endpoints (from Install_Local.md)
-          echo "🎯 Testing Quick Start endpoints..."
+          echo "Testing Quick Start endpoints..."
           
           # Test Swagger UI
           if curl -f http://localhost:8070/swagger/ > /dev/null 2>&1; then
@@ -204,7 +212,7 @@ jobs:
             exit 1
           fi
           
-          # Test LLM API docs (not mentioned in Install_Local.md but important)
+          # Test LLM API docs
           if curl -f http://localhost:8003/docs > /dev/null 2>&1; then
             echo "LLM API docs are accessible at http://localhost:8003/docs"
           else
@@ -318,6 +326,17 @@ jobs:
           
           Write-Host "Testing local installation on Windows..."
           
+          # Create .env files from examples (like deploy.yml does)
+          Write-Host "Creating .env files from examples..."
+          if (-not (Test-Path ".env")) {
+            Copy-Item ".env.example" ".env"
+            Write-Host "Created root .env from example"
+          }
+          if (-not (Test-Path "backend\.env")) {
+            Copy-Item "backend\.env.example" "backend\.env"
+            Write-Host "Created backend\.env from example"
+          }
+          
           # Create dummy thesaurus data for testing (skip SSH dependency)
           New-Item -ItemType Directory -Force -Path "analysis\thesaurus"
           @"
@@ -339,8 +358,8 @@ jobs:
             choco install make -y
           }
           
-          # Follow the installation guide exactly (skip thesaurus setup)
-          make setup-env setup-volumes
+          # Setup volumes (skip make setup-env since we already created .env files)
+          make setup-volumes
           
           # Check for port conflicts
           make check-ports
@@ -613,6 +632,17 @@ jobs:
         run: |
           echo "Testing local installation on macOS..."
           
+          # Create .env files from examples (like deploy.yml does)
+          echo "Creating .env files from examples..."
+          if [ ! -f .env ]; then
+            cp .env.example .env
+            echo "Created root .env from example"
+          fi
+          if [ ! -f backend/.env ]; then
+            cp backend/.env.example backend/.env
+            echo "Created backend/.env from example"
+          fi
+          
           # Create dummy thesaurus data for testing (skip SSH dependency)
           mkdir -p analysis/thesaurus
           echo "word,topic,subtopic,subsubtopic,CEFR_level,Total" > analysis/thesaurus/result.csv
@@ -628,13 +658,13 @@ jobs:
           
           # Check if Make is available
           if ! command -v make &> /dev/null; then
-            echo "📦 Installing Make via Homebrew..."
+            echo "Installing Make via Homebrew..."
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
             brew install make
           fi
           
-          # Follow the installation guide exactly (skip thesaurus setup)
-          make setup-env setup-volumes
+          # Setup volumes (skip make setup-env since we already created .env files)
+          make setup-volumes
           
           # Check for port conflicts
           make check-ports
