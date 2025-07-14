@@ -366,9 +366,9 @@ jobs:
             Write-Host $dockerInfo
             
             if ($dockerInfo -match "OSType:\s*linux") {
-              Write-Host "✅ Docker Desktop is already using Linux containers"
+              Write-Host "SUCCESS: Docker Desktop is already using Linux containers"
             } else {
-              Write-Host "⚠️ Docker Desktop is using Windows containers, switching to Linux containers..."
+              Write-Host "WARNING: Docker Desktop is using Windows containers, switching to Linux containers..."
               
               # Stop Docker Desktop first to ensure clean state
               Write-Host "Stopping Docker Desktop for clean container mode switch..."
@@ -442,7 +442,7 @@ jobs:
                   Write-Host ($dockerInfo | Select-String -Pattern "OSType|Operating System" | Out-String)
                   
                   if ($dockerInfo -match "OSType:\s*linux") {
-                    Write-Host "✅ Docker Desktop is now using Linux containers"
+                    Write-Host "SUCCESS: Docker Desktop is now using Linux containers"
                     $linuxMode = $true
                     break
                   } else {
@@ -480,7 +480,7 @@ jobs:
               } while ($elapsed -lt $timeout)
               
               if (-not $linuxMode) {
-                Write-Host "❌ Failed to switch to Linux containers after $timeout seconds"
+                Write-Host "FAILED: Failed to switch to Linux containers after $timeout seconds"
                 Write-Host "This will cause build failures - our images are Linux-only"
                 Write-Host "Attempting one final comprehensive restart..."
                 
@@ -502,15 +502,15 @@ jobs:
                 try {
                   $finalInfo = docker info 2>$null | Out-String
                   if ($finalInfo -match "OSType:\s*linux") {
-                    Write-Host "✅ Final attempt successful - Docker is now in Linux mode"
+                    Write-Host "SUCCESS: Final attempt successful - Docker is now in Linux mode"
                   } else {
-                    Write-Host "❌ All switching attempts failed"
+                    Write-Host "FAILED: All switching attempts failed"
                     Write-Host "Current Docker state:"
                     docker info | Select-String -Pattern "OSType|Operating System" -ErrorAction SilentlyContinue
                     exit 1
                   }
                 } catch {
-                  Write-Host "❌ Docker is not responding after final restart attempt"
+                  Write-Host "FAILED: Docker is not responding after final restart attempt"
                   exit 1
                 }
               }
@@ -527,10 +527,10 @@ jobs:
               Write-Host "Operating System: $operatingSystem"
               
               if ($osType -eq "linux") {
-                Write-Host "✅ SUCCESS: Docker Desktop is configured for Linux containers"
+                Write-Host "SUCCESS: Docker Desktop is configured for Linux containers"
                 Write-Host "Our Linux-only images should now work properly"
               } else {
-                Write-Host "❌ WARNING: Docker Desktop is still using Windows containers"
+                Write-Host "WARNING: Docker Desktop is still using Windows containers"
                 Write-Host "This WILL cause build failures as our images are Linux-only"
                 Write-Host "Please ensure Docker Desktop is set to Linux container mode"
                 
@@ -540,12 +540,12 @@ jobs:
                 exit 1
               }
             } catch {
-              Write-Host "❌ Could not verify Docker configuration"
+              Write-Host "FAILED: Could not verify Docker configuration"
               Write-Host "Error: $($_.Exception.Message)"
               exit 1
             }
           } catch {
-            Write-Host "❌ Failed to configure Docker Desktop"
+            Write-Host "FAILED: Failed to configure Docker Desktop"
             Write-Host "Error: $($_.Exception.Message)"
             exit 1
           }
@@ -574,46 +574,143 @@ jobs:
             # Double-check container mode before proceeding
             $dockerInfo = docker info 2>$null | Out-String
             if ($dockerInfo -match "OSType:\s*linux") {
-              Write-Host "✅ Confirmed: Docker is in Linux container mode"
+              Write-Host "SUCCESS: Confirmed: Docker is in Linux container mode"
             } else {
-              Write-Host "❌ ERROR: Docker is still in Windows container mode"
+              Write-Host "ERROR: Docker is still in Windows container mode"
               Write-Host "This will cause failures as our images are Linux-only"
               Write-Host "Attempting emergency switch to Linux containers..."
               
               # Emergency switch using all available methods
               try {
-                # Method 1: DockerCli
-                $dockerCliPath = "C:\Program Files\Docker\Docker\DockerCli.exe"
-                if (Test-Path $dockerCliPath) {
-                  & $dockerCliPath -SwitchLinuxEngine
-                  Start-Sleep -Seconds 60
-                }
+                Write-Host "Attempting comprehensive Docker container mode switch..."
                 
-                # Method 2: Registry
-                $registryPath = "HKCU:\Software\Docker Inc.\Docker Desktop"
-                if (Test-Path $registryPath) {
-                  Set-ItemProperty -Path $registryPath -Name "EngineType" -Value "linux" -Force
-                }
-                
-                # Method 3: Restart Docker
+                # Stop all Docker processes first
+                Write-Host "Stopping all Docker processes..."
                 Stop-Process -Name "Docker Desktop" -Force -ErrorAction SilentlyContinue
-                Start-Sleep -Seconds 10
-                $dockerPath = "C:\Program Files\Docker\Docker\Docker Desktop.exe"
-                Start-Process $dockerPath -WindowStyle Hidden
-                Start-Sleep -Seconds 120
+                Stop-Process -Name "dockerd" -Force -ErrorAction SilentlyContinue
+                Stop-Process -Name "com.docker.backend" -Force -ErrorAction SilentlyContinue
+                Stop-Process -Name "com.docker.proxy" -Force -ErrorAction SilentlyContinue
+                Start-Sleep -Seconds 20
                 
-                # Final check
-                $dockerInfo = docker info 2>$null | Out-String
-                if ($dockerInfo -match "OSType:\s*linux") {
-                  Write-Host "✅ Emergency switch successful - now in Linux mode"
+                # Method 1: Registry setting (primary method)
+                Write-Host "Setting registry to force Linux containers..."
+                try {
+                  $registryPath = "HKCU:\Software\Docker Inc.\Docker Desktop"
+                  if (-not (Test-Path $registryPath)) {
+                    New-Item -Path $registryPath -Force | Out-Null
+                  }
+                  Set-ItemProperty -Path $registryPath -Name "EngineType" -Value "linux" -Force
+                  Write-Host "Registry set to Linux containers"
+                } catch {
+                  Write-Host "Registry method failed: $($_.Exception.Message)"
+                }
+                
+                # Method 2: Settings file
+                Write-Host "Updating Docker Desktop settings file..."
+                try {
+                  $settingsPath = "$env:APPDATA\Docker\settings.json"
+                  $settingsDir = Split-Path $settingsPath
+                  if (-not (Test-Path $settingsDir)) {
+                    New-Item -ItemType Directory -Path $settingsDir -Force | Out-Null
+                  }
+                  
+                  if (Test-Path $settingsPath) {
+                    $settings = Get-Content $settingsPath | ConvertFrom-Json
+                  } else {
+                    $settings = @{}
+                  }
+                  
+                  $settings.dockerContainerType = "linux"
+                  $settings.engineType = "linux"
+                  $settings | ConvertTo-Json -Depth 10 | Set-Content $settingsPath -Encoding UTF8
+                  Write-Host "Settings file updated for Linux containers"
+                } catch {
+                  Write-Host "Settings file method failed: $($_.Exception.Message)"
+                }
+                
+                # Method 3: Environment variables
+                Write-Host "Setting environment variables for Linux containers..."
+                $env:DOCKER_DEFAULT_PLATFORM = "linux/amd64"
+                $env:DOCKER_CLI_EXPERIMENTAL = "enabled"
+                [Environment]::SetEnvironmentVariable("DOCKER_DEFAULT_PLATFORM", "linux/amd64", "User")
+                
+                # Method 4: Try alternative DockerCli paths
+                $dockerCliPaths = @(
+                  "C:\Program Files\Docker\Docker\DockerCli.exe",
+                  "C:\Program Files\Docker\Docker\resources\bin\DockerCli.exe",
+                  "C:\ProgramData\DockerDesktop\version-bin\DockerCli.exe"
+                )
+                
+                foreach ($dockerCliPath in $dockerCliPaths) {
+                  if (Test-Path $dockerCliPath) {
+                    Write-Host "Found DockerCli at: $dockerCliPath"
+                    try {
+                      & $dockerCliPath -SwitchLinuxEngine
+                      Write-Host "DockerCli switch command executed"
+                      break
+                    } catch {
+                      Write-Host "DockerCli switch failed: $($_.Exception.Message)"
+                    }
+                  }
+                }
+                
+                # Restart Docker Desktop
+                Write-Host "Restarting Docker Desktop with Linux container configuration..."
+                $dockerPath = "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+                if (Test-Path $dockerPath) {
+                  Start-Process $dockerPath -WindowStyle Hidden
+                  Start-Sleep -Seconds 90
                 } else {
-                  Write-Host "❌ Emergency switch failed - platform test will fail"
-                  Write-Host "Current Docker info:"
-                  docker info
+                  Write-Host "Docker Desktop executable not found"
                   exit 1
                 }
+                
+                # Wait for Docker to be ready and verify container mode
+                Write-Host "Waiting for Docker to restart in Linux mode..."
+                $maxAttempts = 20
+                $attempt = 0
+                $linuxMode = $false
+                
+                do {
+                  $attempt++
+                  Start-Sleep -Seconds 15
+                  
+                  try {
+                    $dockerInfo = docker info 2>$null | Out-String
+                    if ($dockerInfo -match "OSType:\s*linux") {
+                      Write-Host "SUCCESS: Docker is now in Linux container mode"
+                      $linuxMode = $true
+                      break
+                    } else {
+                      Write-Host "Attempt $attempt/$maxAttempts: Still in Windows container mode..."
+                      if ($dockerInfo -match "OSType:\s*(\w+)") {
+                        Write-Host "Current OSType: $($matches[1])"
+                      }
+                    }
+                  } catch {
+                    Write-Host "Attempt $attempt/$maxAttempts: Docker not ready yet..."
+                  }
+                } while ($attempt -lt $maxAttempts)
+                
+                if (-not $linuxMode) {
+                  Write-Host "CRITICAL: Failed to switch to Linux containers after all attempts"
+                  Write-Host "This indicates a fundamental Docker Desktop configuration issue"
+                  Write-Host "The test will fail because our images require Linux containers"
+                  
+                  # Show final Docker state for debugging
+                  Write-Host "Final Docker state:"
+                  try {
+                    docker info | Select-String -Pattern "OSType|Operating System|Server Version" -ErrorAction SilentlyContinue
+                  } catch {
+                    Write-Host "Docker info not available"
+                  }
+                  exit 1
+                } else {
+                  Write-Host "Docker successfully configured for Linux containers"
+                }
               } catch {
-                Write-Host "❌ Emergency switch failed: $($_.Exception.Message)"
+                Write-Host "Emergency container mode switch failed: $($_.Exception.Message)"
+                Write-Host "Stack trace: $($_.ScriptStackTrace)"
                 exit 1
               }
             }
@@ -664,9 +761,9 @@ jobs:
           Write-Host "Testing Linux image pull capability..."
           try {
             docker pull hello-world:linux
-            Write-Host "✅ Successfully pulled Linux test image"
+            Write-Host "SUCCESS: Successfully pulled Linux test image"
           } catch {
-            Write-Host "❌ Failed to pull Linux test image - this confirms Windows container mode issue"
+            Write-Host "FAILED: Failed to pull Linux test image - this confirms Windows container mode issue"
             Write-Host "Error: $($_.Exception.Message)"
             exit 1
           }
@@ -801,7 +898,7 @@ jobs:
           }
           
           # Test Quick Start endpoints (from Install_Local.md)
-          Write-Host "🎯 Testing Quick Start endpoints..."
+          Write-Host "Testing Quick Start endpoints..."
           
           # Test Swagger UI
           try {
@@ -864,17 +961,17 @@ jobs:
           Write-Host "Service Status:"
           make status
           
-          Write-Host "📋 Docker Compose Services:"
+          Write-Host "Docker Compose Services:"
           docker compose ps
           
-          Write-Host "💾 Disk Usage:"
+          Write-Host "Disk Usage:"
           Get-PSDrive C | Select-Object Used,Free,@{Name="Size";Expression={$_.Used+$_.Free}}
         shell: powershell
 
       - name: Show logs on failure
         if: failure()
         run: |
-          Write-Host "🔍 Diagnostic Information:"
+          Write-Host "Diagnostic Information:"
           Write-Host "========================="
           
           # Show Docker configuration
@@ -882,22 +979,22 @@ jobs:
           docker info | Select-String -Pattern "(OSType|Operating System|Architecture|Server Version)"
           
           # Show Docker version
-          Write-Host "`nDocker Version:"
+          Write-Host "Docker Version:"
           docker version --format "Client: {{.Client.Version}} | Server: {{.Server.Version}}"
           
           # Show environment variables
-          Write-Host "`nEnvironment Variables:"
+          Write-Host "Environment Variables:"
           Write-Host "DOCKER_DEFAULT_PLATFORM: $env:DOCKER_DEFAULT_PLATFORM"
           Write-Host "DOCKER_CLI_EXPERIMENTAL: $env:DOCKER_CLI_EXPERIMENTAL"
           
           # Show what images are being requested
-          Write-Host "`nDocker Compose Configuration:"
+          Write-Host "Docker Compose Configuration:"
           docker compose config --services
           
-          Write-Host "`nService Logs:"
+          Write-Host "Service Logs:"
           docker compose logs --tail=50
           
-          Write-Host "`nAvailable Docker Images:"
+          Write-Host "Available Docker Images:"
           docker images | Select-Object -First 10
         shell: powershell
 
@@ -964,16 +1061,40 @@ jobs:
             echo "Installing coreutils for timeout functionality..."
             brew install coreutils || true
             
+            # Add GNU coreutils to PATH for gtimeout
+            export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+            
             # Try to install Docker tools only (no Desktop GUI)
+            echo "Installing Docker CLI and Docker Compose..."
             brew install docker docker-compose || true
+            
+            # Configure Docker Compose plugin path
+            echo "Configuring Docker Compose plugin..."
+            mkdir -p ~/.docker
+            if [ ! -f ~/.docker/config.json ]; then
+              echo '{"cliPluginsExtraDirs": ["/opt/homebrew/lib/docker/cli-plugins"]}' > ~/.docker/config.json
+            else
+              # Update existing config
+              if ! grep -q "cliPluginsExtraDirs" ~/.docker/config.json; then
+                cp ~/.docker/config.json ~/.docker/config.json.bak
+                jq '. + {"cliPluginsExtraDirs": ["/opt/homebrew/lib/docker/cli-plugins"]}' ~/.docker/config.json.bak > ~/.docker/config.json || {
+                  echo '{"cliPluginsExtraDirs": ["/opt/homebrew/lib/docker/cli-plugins"]}' > ~/.docker/config.json
+                }
+              fi
+            fi
             
             # Check if this worked
             if command -v docker &> /dev/null; then
-              echo "Docker CLI installed, checking for daemon..."
+              echo "Docker CLI installed successfully"
+              echo "Checking for Docker daemon..."
               if docker info > /dev/null 2>&1; then
-                echo "✅ Docker is working!"
+                echo "SUCCESS: Docker is working with CLI-only installation!"
                 exit 0
+              else
+                echo "Docker CLI installed but no daemon available - will need Docker Desktop"
               fi
+            else
+              echo "Docker CLI installation failed"
             fi
           fi
           
@@ -992,39 +1113,60 @@ jobs:
           
           # Quick Docker Desktop install with timeout
           echo "Installing Docker Desktop with 5-minute timeout..."
-          # Use gtimeout if available (from coreutils), otherwise skip timeout
-          if command -v gtimeout &> /dev/null; then
-            gtimeout 300 brew install --cask docker || {
-              echo "Docker Desktop installation timed out, skipping macOS test"
+          
+          # Clean up any existing bash completions to avoid conflicts
+          echo "Cleaning up potential Docker completion conflicts..."
+          rm -f /opt/homebrew/etc/bash_completion.d/docker* 2>/dev/null || true
+          # Also clean up any docker-related symlinks in completions
+          find /opt/homebrew/etc/bash_completion.d/ -name "*docker*" -type l -delete 2>/dev/null || true
+          
+          # Use timeout if available (from coreutils), otherwise skip timeout
+          if command -v timeout &> /dev/null; then
+            echo "Using timeout for installation timeout..."
+            timeout 300 brew install --cask docker-desktop --force || {
+              echo "Docker Desktop installation timed out or failed, skipping macOS test"
               exit 0
             }
-          elif command -v timeout &> /dev/null; then
-            timeout 300 brew install --cask docker || {
-              echo "Docker Desktop installation timed out, skipping macOS test"
+          elif command -v gtimeout &> /dev/null; then
+            echo "Using gtimeout for installation timeout..."
+            gtimeout 300 brew install --cask docker-desktop --force || {
+              echo "Docker Desktop installation timed out or failed, skipping macOS test"
               exit 0
             }
           else
-            echo "No timeout command available, installing Docker Desktop without timeout..."
+            echo "No timeout command available, installing Docker Desktop with manual timeout..."
             # Install with background process and manual timeout
-            brew install --cask docker &
+            (brew install --cask docker-desktop --force) &
             DOCKER_INSTALL_PID=$!
             
             # Wait up to 5 minutes
+            timeout_reached=false
             for i in {1..60}; do
               if ! kill -0 $DOCKER_INSTALL_PID 2>/dev/null; then
                 echo "Docker Desktop installation completed"
                 wait $DOCKER_INSTALL_PID
+                INSTALL_RESULT=$?
+                if [ $INSTALL_RESULT -ne 0 ]; then
+                  echo "Docker Desktop installation failed with exit code $INSTALL_RESULT"
+                  echo "Skipping macOS test due to installation failure"
+                  exit 0
+                fi
                 break
               elif [ $i -eq 60 ]; then
                 echo "Docker Desktop installation taking too long, killing process..."
                 kill $DOCKER_INSTALL_PID 2>/dev/null || true
-                echo "Skipping macOS test due to installation timeout"
-                exit 0
+                timeout_reached=true
+                break
               else
                 echo "Waiting for Docker Desktop installation... ($i/60)"
                 sleep 5
               fi
             done
+            
+            if [ "$timeout_reached" = "true" ]; then
+              echo "Skipping macOS test due to installation timeout"
+              exit 0
+            fi
           fi
           
           # Start Docker Desktop
@@ -1265,19 +1407,19 @@ jobs:
       - name: Show service status
         if: always()
         run: |
-          echo "📊 Service Status:"
+          echo "Service Status:"
           make status || true
           
-          echo "📋 Docker Compose Services:"
+          echo "Docker Compose Services:"
           docker compose ps || true
           
-          echo "💾 Disk Usage:"
+          echo "Disk Usage:"
           df -h | head -5
 
       - name: Show logs on failure
         if: failure()
         run: |
-          echo "🔍 Service Logs:"
+          echo "Service Logs:"
           docker compose logs --tail=50 || true
 
       - name: Cleanup
