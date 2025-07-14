@@ -77,6 +77,10 @@ jobs:
           # Check for port conflicts
           make check-ports
           
+          # Pre-build local images that need to be built from Dockerfiles
+          echo "Pre-building local images for faster startup..."
+          docker compose -f docker-compose-local.yml build thesaurus-api llm-api
+          
           # Create minimal docker-compose override for testing
           if [ "${{ github.event.inputs.skip_services }}" = "true" ]; then
             cat > docker-compose.test.yml << 'EOF'
@@ -132,19 +136,19 @@ jobs:
             fi
           done
           
-          # Thesaurus API with extended timeout
-          for i in {1..8}; do
+          # Thesaurus API with extended timeout (built from Dockerfile)
+          for i in {1..10}; do
             if curl -f http://localhost:8002/health > /dev/null 2>&1; then
               echo "Thesaurus API is healthy"
               break
-            elif [ $i -eq 8 ]; then
+            elif [ $i -eq 10 ]; then
               echo "Thesaurus API failed to start"
               echo "Checking thesaurus container logs..."
               docker compose logs thesaurus-api || true
               exit 1
             else
-              echo "Waiting for thesaurus API... (attempt $i/8)"
-              sleep 15
+              echo "Waiting for thesaurus API... (attempt $i/10)"
+              sleep 20
             fi
           done
           
@@ -363,6 +367,10 @@ jobs:
           
           # Check for port conflicts
           make check-ports
+          
+          # Pre-build local images that need to be built from Dockerfiles
+          Write-Host "Pre-building local images for faster startup..."
+          docker compose -f docker-compose-local.yml build thesaurus-api llm-api
           
           # Create minimal docker-compose override for testing
           if ("${{ github.event.inputs.skip_services }}" -eq "true") {
@@ -668,6 +676,10 @@ jobs:
           
           # Check for port conflicts
           make check-ports
+          
+          # Pre-build local images that need to be built from Dockerfiles
+          echo "Pre-building local images for faster startup..."
+          docker compose -f docker-compose-local.yml build thesaurus-api llm-api
           
           # Create minimal docker-compose override for testing
           if [ "${{ github.event.inputs.skip_services }}" = "true" ]; then

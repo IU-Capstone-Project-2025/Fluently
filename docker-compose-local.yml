@@ -5,9 +5,7 @@ services:
   
   # Main Backend API
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: docker.io/fluentlyorg/fluently-backend:latest-develop
     container_name: fluently_backend
     env_file: ./backend/.env
     depends_on:
@@ -131,9 +129,11 @@ services:
     ports:
       - "127.0.0.1:8001:8001"  # Local access for debugging
 
-  # Thesaurus API for vocabulary recommendations (Pre-built Image)
+  # Thesaurus API for vocabulary recommendations (Built from Dockerfile)
   thesaurus-api:
-    image: docker.io/fluentlyorg/fluently-thesaurus-api:latest-develop
+    build:
+      context: ./analysis/thesaurus
+      dockerfile: Dockerfile
     container_name: fluently_thesaurus
     environment:
       - PYTHONUNBUFFERED=1
@@ -161,9 +161,11 @@ services:
     ports:
       - "127.0.0.1:8002:8002"  # Local access for debugging
 
-  # LLM API for AI-powered conversations (Pre-built Image)
+  # LLM API for AI-powered conversations (Built from Dockerfile)
   llm-api:
-    image: docker.io/fluentlyorg/fluently-llm-api:latest-develop
+    build:
+      context: ./analysis/llms
+      dockerfile: Dockerfile
     container_name: fluently_llm_api
     environment:
       - PYTHONUNBUFFERED=1
