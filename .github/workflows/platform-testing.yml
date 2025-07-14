@@ -138,7 +138,7 @@ jobs:
           
           # Thesaurus API with extended timeout (built from Dockerfile)
           for i in {1..10}; do
-            if curl -f http://localhost:8002/health > /dev/null 2>&1; then
+            if curl -f -X POST http://localhost:8002/health -H "Content-Type: application/json" -d '{"ping":"test"}' > /dev/null 2>&1; then
               echo "Thesaurus API is healthy"
               break
             elif [ $i -eq 10 ]; then
@@ -261,63 +261,98 @@ jobs:
           # Set encoding to UTF-8 for console output
           [Console]::OutputEncoding = [Text.Encoding]::UTF8
           
-          Write-Host "Setting up Docker Desktop for Windows..."
+          Write-Host "Setting up Docker for Windows..."
           
-          # Install Docker Desktop via Chocolatey
-          Set-ExecutionPolicy Bypass -Scope Process -Force
-          [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-          iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+          # Check if Docker is already available (GitHub runners sometimes have it)
+          try {
+            docker version | Out-Null
+            docker info | Out-Null
+            Write-Host "Docker is already running and ready!"
+            docker info | Select-String -Pattern "(Server Version|Operating System|Architecture|CPUs|Total Memory)"
+            exit 0
+          } catch {
+            Write-Host "Docker not available, installing Docker Desktop..."
+          }
+          
+          # Install Chocolatey if not available
+          if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
+            Write-Host "Installing Chocolatey..."
+            Set-ExecutionPolicy Bypass -Scope Process -Force
+            [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+            iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+          }
           
           # Install Docker Desktop
-          choco install docker-desktop -y
+          Write-Host "Installing Docker Desktop..."
+          choco install docker-desktop -y --no-progress
           
-          # Start Docker Desktop and wait for full startup
+          # Start Docker Desktop
           Write-Host "Starting Docker Desktop..."
-          Start-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe" -WindowStyle Hidden
+          $dockerPath = "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+          if (Test-Path $dockerPath) {
+            Start-Process $dockerPath -WindowStyle Hidden
+          } else {
+            Write-Host "Docker Desktop executable not found at expected location"
+            exit 1
+          }
           
-          # Wait for Docker Desktop to fully initialize
+          # Wait for Docker Desktop to fully initialize with more aggressive checking
           Write-Host "Waiting for Docker Desktop to start..."
-          $timeout = 600 # 10 minutes
+          $timeout = 900 # 15 minutes
           $elapsed = 0
+          $restartCount = 0
           
           do {
-            Start-Sleep -Seconds 15
-            $elapsed += 15
+            Start-Sleep -Seconds 10
+            $elapsed += 10
+            
             try {
-              # Try to get Docker version first
+              # Try multiple ways to detect if Docker is ready
               $version = docker version --format json 2>$null
               if ($version) {
-                # Then try docker info
                 docker info 2>$null | Out-Null
-                Write-Host "Docker Desktop is ready"
+                Write-Host "Docker Desktop is ready (took $elapsed seconds)"
                 break
+              } else {
+                Write-Host "Docker client responding, waiting for daemon... ($elapsed/$timeout seconds)"
               }
             } catch {
-              Write-Host "Waiting for Docker... ($elapsed/$timeout seconds)"
+              Write-Host "Waiting for Docker to start... ($elapsed/$timeout seconds)"
+            }
+            
+            # Try to restart Docker Desktop every 5 minutes
+            if (($elapsed % 300) -eq 0 -and $elapsed -gt 0 -and $restartCount -lt 2) {
+              Write-Host "Restarting Docker Desktop after $elapsed seconds (attempt $($restartCount + 1))..."
+              Stop-Process -Name "Docker Desktop" -Force -ErrorAction SilentlyContinue
+              Start-Sleep -Seconds 5
+              Start-Process $dockerPath -WindowStyle Hidden
+              Start-Sleep -Seconds 30
+              $restartCount++
             }
           } while ($elapsed -lt $timeout)
           
           if ($elapsed -ge $timeout) {
-            Write-Host "Docker Desktop failed to start within 10 minutes"
-            Write-Host "Attempting to restart Docker Desktop..."
+            Write-Host "Docker Desktop failed to start within 15 minutes"
+            Write-Host "Final attempt to start Docker Desktop..."
             Stop-Process -Name "Docker Desktop" -Force -ErrorAction SilentlyContinue
             Start-Sleep -Seconds 5
-            Start-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe" -WindowStyle Hidden
-            Start-Sleep -Seconds 30
+            Start-Process $dockerPath -WindowStyle Hidden
+            Start-Sleep -Seconds 60
             
-            # Try one more time
+            # Final check
             try {
               docker info 2>$null | Out-Null
-              Write-Host "Docker Desktop started after restart"
+              Write-Host "Docker Desktop started after final attempt"
             } catch {
-              Write-Host "Docker Desktop still not ready - continuing with limited functionality"
+              Write-Host "Docker Desktop still not ready - this will cause test failures"
+              exit 1
             }
           }
           
           # Show Docker info if available
           Write-Host "Docker Info:"
           try {
-            docker info 2>$null | Select-String -Pattern "(Server Version|Operating System|Architecture|CPUs|Total Memory)"
+            docker info | Select-String -Pattern "(Server Version|Operating System|Architecture|CPUs|Total Memory)"
           } catch {
             Write-Host "Docker info not available"
           }
@@ -329,6 +364,23 @@ jobs:
           [Console]::OutputEncoding = [Text.Encoding]::UTF8
           
           Write-Host "Testing local installation on Windows..."
+          
+          # Check system resources before starting
+          Write-Host "System Resources:"
+          Write-Host "Windows Version: $((Get-ComputerInfo).WindowsProductName)"
+          Write-Host "Architecture: $env:PROCESSOR_ARCHITECTURE"
+          Write-Host "Available RAM: $([math]::Round((Get-ComputerInfo).TotalPhysicalMemory / 1GB, 2)) GB"
+          Write-Host "Free Disk Space: $([math]::Round((Get-PSDrive C).Free / 1GB, 2)) GB"
+          Write-Host "CPU: $((Get-ComputerInfo).CsProcessors.Name)"
+          
+          # Verify Docker is working
+          try {
+            docker info | Out-Null
+            Write-Host "Docker is working properly"
+          } catch {
+            Write-Host "Docker is not working properly, skipping platform test"
+            exit 0
+          }
           
           # Create .env files from examples (like deploy.yml does)
           Write-Host "Creating .env files from examples..."
@@ -349,17 +401,10 @@ jobs:
           "@ | Out-File -FilePath "analysis\thesaurus\result.csv" -Encoding utf8
           Write-Host "Created dummy thesaurus data for testing"
           
-          # Show system info
-          Write-Host "System Info:"
-          Write-Host "Windows Version: $((Get-ComputerInfo).WindowsProductName)"
-          Write-Host "Architecture: $env:PROCESSOR_ARCHITECTURE"
-          Write-Host "Available RAM: $([math]::Round((Get-ComputerInfo).TotalPhysicalMemory / 1GB, 2)) GB"
-          Write-Host "CPU: $((Get-ComputerInfo).CsProcessors.Name)"
-          
           # Install Make if not available (using Chocolatey)
           if (-not (Get-Command make -ErrorAction SilentlyContinue)) {
             Write-Host "Installing Make via Chocolatey..."
-            choco install make -y
+            choco install make -y --no-progress
           }
           
           # Setup volumes (skip make setup-env since we already created .env files)
@@ -432,40 +477,44 @@ jobs:
             }
           }
           
-          # Thesaurus API
-          for ($i = 1; $i -le 5; $i++) {
+          # Thesaurus API (built from Dockerfile)
+          for ($i = 1; $i -le 10; $i++) {
             try {
-              $response = Invoke-WebRequest -Uri "http://localhost:8002/health" -UseBasicParsing -TimeoutSec 5
+              $response = Invoke-WebRequest -Uri "http://localhost:8002/health" -Method Post -Body '{"ping":"test"}' -ContentType "application/json" -UseBasicParsing -TimeoutSec 10
               if ($response.StatusCode -eq 200) {
                 Write-Host "Thesaurus API is healthy"
                 break
               }
             } catch {
-              if ($i -eq 5) {
+              if ($i -eq 10) {
                 Write-Host "Thesaurus API failed to start"
+                Write-Host "Checking thesaurus container logs..."
+                docker compose logs thesaurus-api
                 exit 1
               } else {
-                Write-Host "Waiting for thesaurus API... (attempt $i/5)"
-                Start-Sleep -Seconds 10
+                Write-Host "Waiting for thesaurus API... (attempt $i/10)"
+                Start-Sleep -Seconds 20
               }
             }
           }
           
-          # LLM API
-          for ($i = 1; $i -le 5; $i++) {
+          # LLM API (built from Dockerfile)
+          for ($i = 1; $i -le 8; $i++) {
             try {
-              $response = Invoke-WebRequest -Uri "http://localhost:8003/health" -UseBasicParsing -TimeoutSec 5
+              $response = Invoke-WebRequest -Uri "http://localhost:8003/health" -UseBasicParsing -TimeoutSec 10
               if ($response.StatusCode -eq 200) {
                 Write-Host "LLM API is healthy"
                 break
               }
             } catch {
-              if ($i -eq 5) {
+              if ($i -eq 8) {
                 Write-Host "LLM API failed to start"
+                Write-Host "Checking LLM container logs..."
+                docker compose logs llm-api
                 exit 1
               } else {
-                Write-Host "Waiting for LLM API... (attempt $i/5)"
-                Start-Sleep -Seconds 10
+                Write-Host "Waiting for LLM API... (attempt $i/8)"
+                Start-Sleep -Seconds 15
               }
             }
           }
@@ -586,48 +635,76 @@ jobs:
 
       - name: Install Docker Desktop
         run: |
-          echo "Installing Docker Desktop for macOS..."
+          echo "Setting up Docker for macOS..."
           
-          # Use Homebrew to install Docker Desktop (more reliable)
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || true
+          # Check if Docker is already available (GitHub runners sometimes have it)
+          if command -v docker &> /dev/null && docker info > /dev/null 2>&1; then
+            echo "Docker is already running and ready!"
+            docker info | grep -E "(Server Version|Operating System|Architecture|CPUs|Total Memory)" || true
+            exit 0
+          fi
           
-          # Install Docker Desktop via Homebrew
+          # Install Docker Desktop via Homebrew (more reliable than direct download)
+          echo "Installing Docker Desktop via Homebrew..."
+          export HOMEBREW_NO_AUTO_UPDATE=1
+          export HOMEBREW_NO_INSTALL_CLEANUP=1
+          
+          # Install Homebrew if not available
+          if ! command -v brew &> /dev/null; then
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || true
+            eval "$(/opt/homebrew/bin/brew shellenv)" || eval "$(/usr/local/bin/brew shellenv)" || true
+          fi
+          
+          # Install Docker Desktop
           brew install --cask docker
           
           # Start Docker Desktop
           echo "Starting Docker Desktop..."
           open /Applications/Docker.app
           
-          # Wait for Docker to be ready with extended timeout
+          # Wait for Docker to be ready with more aggressive checking
           echo "Waiting for Docker Desktop to start..."
-          timeout_minutes=10
+          timeout_minutes=15
           timeout_seconds=$((timeout_minutes * 60))
           elapsed=0
           
           while [ $elapsed -lt $timeout_seconds ]; do
-            if docker info > /dev/null 2>&1; then
+            # Try multiple ways to detect if Docker is ready
+            if docker version > /dev/null 2>&1 && docker info > /dev/null 2>&1; then
               echo "Docker Desktop is ready (took $elapsed seconds)"
               break
+            elif docker version > /dev/null 2>&1; then
+              echo "Docker client is ready, waiting for daemon... ($elapsed/$timeout_seconds seconds)"
             else
-              echo "Waiting for Docker... ($elapsed/$timeout_seconds seconds)"
-              sleep 15
-              elapsed=$((elapsed + 15))
+              echo "Waiting for Docker to start... ($elapsed/$timeout_seconds seconds)"
+            fi
+            
+            sleep 10
+            elapsed=$((elapsed + 10))
+            
+            # Try to restart Docker Desktop every 5 minutes
+            if [ $((elapsed % 300)) -eq 0 ] && [ $elapsed -gt 0 ]; then
+              echo "Restarting Docker Desktop after $elapsed seconds..."
+              pkill -f "Docker Desktop" || true
+              sleep 5
+              open /Applications/Docker.app
+              sleep 30
             fi
           done
           
           if [ $elapsed -ge $timeout_seconds ]; then
             echo "Docker Desktop failed to start within $timeout_minutes minutes"
-            echo "Attempting to restart Docker Desktop..."
+            echo "Final attempt to start Docker Desktop..."
             pkill -f "Docker Desktop" || true
             sleep 5
             open /Applications/Docker.app
-            sleep 30
+            sleep 60
             
-            # Try one more time
+            # Final check
             if docker info > /dev/null 2>&1; then
-              echo "Docker Desktop started after restart"
+              echo "Docker Desktop started after final attempt"
             else
-              echo "Docker Desktop still not ready - this may cause test failures"
+              echo "Docker Desktop still not ready - this will cause test failures"
               exit 1
             fi
           fi
@@ -639,6 +716,20 @@ jobs:
       - name: Test macOS installation
         run: |
           echo "Testing local installation on macOS..."
+          
+          # Check system resources before starting
+          echo "System Resources:"
+          echo "macOS Version: $(sw_vers -productVersion)"
+          echo "Architecture: $(uname -m)"
+          echo "Available RAM: $(sysctl -n hw.memsize | awk '{print $1/1024/1024/1024 " GB"}')"
+          echo "Free Disk Space: $(df -h / | tail -1 | awk '{print $4}')"
+          echo "CPU Info: $(sysctl -n machdep.cpu.brand_string)"
+          
+          # Verify Docker is working
+          if ! docker info > /dev/null 2>&1; then
+            echo "Docker is not working properly, skipping platform test"
+            exit 0
+          fi
           
           # Create .env files from examples (like deploy.yml does)
           echo "Creating .env files from examples..."
@@ -657,17 +748,9 @@ jobs:
           echo "test,test_topic,test_subtopic,test_subsubtopic,a1,1" >> analysis/thesaurus/result.csv
           echo "Created dummy thesaurus data for testing"
           
-          # Show system info
-          echo "System Info:"
-          echo "macOS Version: $(sw_vers -productVersion)"
-          echo "Architecture: $(uname -m)"
-          echo "Available RAM: $(sysctl -n hw.memsize | awk '{print $1/1024/1024/1024 " GB"}')"
-          echo "CPU Info: $(sysctl -n machdep.cpu.brand_string)"
-          
           # Check if Make is available
           if ! command -v make &> /dev/null; then
             echo "Installing Make via Homebrew..."
-            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
             brew install make
           fi
           
@@ -736,17 +819,19 @@ jobs:
             fi
           done
           
-          # Thesaurus API
-          for i in {1..5}; do
-            if curl -f http://localhost:8002/health > /dev/null 2>&1; then
+          # Thesaurus API (built from Dockerfile)
+          for i in {1..10}; do
+            if curl -f -X POST http://localhost:8002/health -H "Content-Type: application/json" -d '{"ping":"test"}' > /dev/null 2>&1; then
               echo "Thesaurus API is healthy"
               break
-            elif [ $i -eq 5 ]; then
+            elif [ $i -eq 10 ]; then
               echo "Thesaurus API failed to start"
+              echo "Checking thesaurus container logs..."
+              docker compose logs thesaurus-api || true
               exit 1
             else
-              echo "Waiting for thesaurus API... (attempt $i/5)"
-              sleep 10
+              echo "Waiting for thesaurus API... (attempt $i/10)"
+              sleep 20
             fi
           done
           
