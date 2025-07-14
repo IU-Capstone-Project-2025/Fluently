@@ -91,8 +91,8 @@ func (h *TelegramHandler) CreateLinkToken(w http.ResponseWriter, r *http.Request
 	}
 
 	// Формируем ответ
-	cfg := config.GetConfig()
-	linkURL := fmt.Sprintf("https://%s/link-google?token=%s", cfg.API.AppHost, token)
+	ExternalHostName := "fluently-app.ru"
+	linkURL := fmt.Sprintf("https://%s/link-google?token=%s", ExternalHostName, token)
 
 	resp := schemas.TelegramLinkResponse{
 		Token:     token,
@@ -147,6 +147,8 @@ func (h *TelegramHandler) CheckLinkStatus(w http.ResponseWriter, r *http.Request
 			Message: "Telegram account successfully linked",
 		}
 	}
+
+	logger.Log.Info("CheckLinkStatus: ", zap.Any("resp", resp))
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)

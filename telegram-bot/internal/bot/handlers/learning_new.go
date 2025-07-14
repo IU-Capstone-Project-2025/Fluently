@@ -73,21 +73,14 @@ func (s *HandlerService) HandleNewLearningStart(ctx context.Context, c tele.Cont
 
 // startNewLesson starts a new lesson with introduction
 func (s *HandlerService) startNewLesson(ctx context.Context, c tele.Context, userID int64, progress *domain.LessonProgress) error {
-	totalWords := len(progress.LessonData.Cards)
 	wordsPerLesson := progress.LessonData.Lesson.WordsPerLesson
 
 	introText := fmt.Sprintf(
-		"📚 *Новый урок начинается!*\n\n"+
+		"📚 *Персональный урок сгенерирован!*\n\n"+
 			"🎯 Цель: выучить %d новых слов\n"+
-			"📖 Доступно слов: %d\n"+
 			"📊 Уровень: %s\n\n"+
-			"*Как это работает:*\n"+
-			"• Показываю 3 слова с примерами\n"+
-			"• Проверяю, как вы их усвоили\n"+
-			"• Повторяем до достижения цели\n\n"+
-			"Готовы начать?",
+			"Готовы начать урок?",
 		wordsPerLesson,
-		totalWords,
 		progress.LessonData.Lesson.CEFRLevel,
 	)
 

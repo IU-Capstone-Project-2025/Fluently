@@ -213,6 +213,8 @@ func (c *Client) CreateLinkToken(ctx context.Context, telegramID int64) (*Create
 		return nil, err
 	}
 
+	fmt.Println(result.LinkURL)
+
 	zap.L().With(zap.Int64("telegram_id", telegramID)).Info("Successfully created link token")
 	return &result, nil
 }
