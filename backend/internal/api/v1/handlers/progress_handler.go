@@ -45,8 +45,7 @@ type ProgressHandler struct {
 */
 
 type ProgressRequest struct {
-	Word            string    `json:"word"`
-	Translation     string    `json:"translation"`
+	WordID          uuid.UUID `json:"word_id"`
 	LearnedAt       time.Time `json:"learned_at"`
 	ConfidenceScore int       `json:"confidence_score"`
 	CntReviewed     int       `json:"cnt_reviewed"`
@@ -79,9 +78,9 @@ func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Requ
 	}
 
 	for _, p := range progress {
-		word, err := h.WordRepo.GetByWordTranslationPair(r.Context(), p.Word, p.Translation)
+		word, err := h.WordRepo.GetByID(r.Context(), p.WordID)
 		if err != nil {
-			http.Error(w, "word not found: "+p.Word+" ("+p.Translation+")", http.StatusNotFound)
+			http.Error(w, "word not found: "+err.Error(), http.StatusNotFound)
 			return
 		}
 
