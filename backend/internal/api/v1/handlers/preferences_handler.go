@@ -65,14 +65,26 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 	json.NewEncoder(w).Encode(buildPreferencesResponse(pref))
 }
 
+// GetUserPreferences godoc
+// @Summary Get user preferences
+// @Description Retrieves user preferences
+// @Tags preferences
+// @Produce json
+// @Security BearerAuth
+// @Success 200 {object} schemas.PreferenceResponse "Successfully retrieved preferences"
+// @Failure 400 {string} string "Bad request - invalid user or preferences"
+// @Failure 401 {string} string "Unauthorized - invalid or missing token"
+// @Failure 404 {string} string "Not found - user or preferences not found"
+// @Failure 500 {string} string "Internal server error"
+// @Router /api/v1/preferences [get]
 func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Request) {
-	userId, err := utils.ParseUUIDParam(r, "user_id")
+	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
-		http.Error(w, "invalid user_id", http.StatusBadRequest)
+		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	pref, err := h.Repo.GetByID(r.Context(), userId)
+	pref, err := h.Repo.GetByUserID(r.Context(), user.ID)
 	if err != nil {
 		http.Error(w, "preference not found", http.StatusNotFound)
 		return
