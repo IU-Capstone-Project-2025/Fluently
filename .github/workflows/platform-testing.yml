@@ -311,36 +311,96 @@ jobs:
           
           # Try using colima (lightweight Docker alternative for macOS)
           if command -v brew &> /dev/null; then
-            echo "Installing colima (lightweight Docker alternative)..."
-            brew install colima docker docker-compose || true
+            echo "Installing colima and dependencies (lightweight Docker alternative)..."
             
-            # Start colima with minimal resources
+            # Check system info first
+            echo "System Info:"
+            echo "macOS Version: $(sw_vers -productVersion)"
+            echo "Architecture: $(uname -m)"
+            echo "Hardware: $(sysctl -n machdep.cpu.brand_string 2>/dev/null || echo 'Unknown')"
+            
+            # Install all dependencies in one go to avoid conflicts
+            brew install colima docker docker-compose qemu || true
+            
+            # Start colima with minimal resources - try different VM types
             echo "Starting colima..."
-            colima start --cpu 2 --memory 4 --disk 20 --arch aarch64 --vm-type=vz || {
-              echo "Failed to start colima with vz, trying with qemu..."
-              colima start --cpu 2 --memory 4 --disk 20 --arch aarch64 --vm-type=qemu || {
-                echo "Failed to start colima with both vz and qemu"
-                echo "docker_ready=false" >> $GITHUB_OUTPUT
-                exit 0
-              }
-            }
             
-            # Wait a bit for colima to fully initialize
+            # Determine architecture for colima
+            ARCH=$(uname -m)
+            if [ "$ARCH" = "arm64" ]; then
+              COLIMA_ARCH="aarch64"
+            else
+              COLIMA_ARCH="x86_64"
+            fi
+            
+            echo "Using architecture: $COLIMA_ARCH"
+            
+            # Try VZ first (fastest on Apple Silicon with macOS 13+)
+            echo "Attempting VZ virtualization..."
+            if colima start --cpu 2 --memory 4 --disk 20 --arch "$COLIMA_ARCH" --vm-type=vz 2>&1; then
+              echo "✅ Colima started successfully with VZ virtualization"
+            else
+              echo "VZ failed, trying QEMU virtualization..."
+              # Clean up any partial VZ setup
+              colima delete --force 2>/dev/null || true
+              
+              # Try QEMU (more compatible but slower)
+              echo "Attempting QEMU virtualization..."
+              if colima start --cpu 2 --memory 4 --disk 20 --arch "$COLIMA_ARCH" --vm-type=qemu 2>&1; then
+                echo "✅ Colima started successfully with QEMU virtualization"
+              else
+                echo "QEMU failed, trying default virtualization..."
+                # Clean up QEMU attempt
+                colima delete --force 2>/dev/null || true
+                
+                # Try without specifying VM type (let colima choose)
+                echo "Attempting default virtualization..."
+                if colima start --cpu 2 --memory 4 --disk 20 --arch "$COLIMA_ARCH" 2>&1; then
+                  echo "✅ Colima started successfully with default virtualization"
+                else
+                  echo "All colima VM types failed"
+                  echo "docker_ready=false" >> $GITHUB_OUTPUT
+                  exit 0
+                fi
+              fi
+            fi
+            
+            # Wait for colima to fully initialize
             echo "Waiting for colima to initialize..."
-            sleep 15
+            sleep 20
             
-            # Check if Docker works with colima
-            for i in {1..6}; do
+            # Check if Docker works with colima (extended retry with better error handling)
+            for i in {1..8}; do
               if docker info > /dev/null 2>&1; then
                 echo "SUCCESS: Docker running via colima!"
                 docker info | grep -E "(Server Version|Operating System|Architecture)" || true
+                docker version --format "Client: {{.Client.Version}} | Server: {{.Server.Version}}" || true
                 echo "docker_ready=true" >> $GITHUB_OUTPUT
                 exit 0
               else
-                echo "Waiting for colima Docker daemon... (attempt $i/6)"
-                sleep 10
+                echo "Waiting for colima Docker daemon... (attempt $i/8)"
+                if [ $i -eq 4 ]; then
+                  echo "Checking colima status..."
+                  colima status || true
+                fi
+                sleep 12
               fi
             done
+            
+            echo "Colima setup completed but Docker daemon not responding"
+            echo "Checking final colima status..."
+            colima status || true
+            echo "Attempting to restart colima..."
+            colima restart || true
+            sleep 10
+            
+            # Final check after restart
+            if docker info > /dev/null 2>&1; then
+              echo "SUCCESS: Docker working after colima restart!"
+              docker info | grep -E "(Server Version|Operating System|Architecture)" || true
+              echo "docker_ready=true" >> $GITHUB_OUTPUT
+              exit 0
+            fi
           fi
           
           echo "Could not set up Docker with colima, will try Docker Desktop"
@@ -684,8 +744,16 @@ jobs:
       - name: Cleanup
         if: always()
         run: |
+          echo "Cleaning up macOS test environment..."
           make stop-local || true
           docker system prune -f || true
+          
+          # Clean up colima if it was used
+          if command -v colima &> /dev/null; then
+            echo "Stopping and cleaning up colima..."
+            colima stop || true
+            colima delete --force || true
+          fi
 
   # Summary job that depends on all platform tests
   platform-test-summary:
