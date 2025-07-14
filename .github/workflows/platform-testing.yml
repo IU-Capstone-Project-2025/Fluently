@@ -1,0 +1,787 @@
+name: Platform Testing
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'docker-compose*.yml'
+      - 'Makefile'
+      - 'docs/Install_Local.md'
+      - 'backend/**'
+      - 'telegram-bot/**'
+      - 'analysis/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
+    inputs:
+      test_platform:
+        description: "Platform to test"
+        required: false
+        default: "all"
+        type: choice
+        options:
+          - all
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
+      skip_services:
+        description: "Skip heavy services (ML API, monitoring) for faster testing"
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  test-ubuntu:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.test_platform == 'ubuntu-latest' || github.event.inputs.test_platform == 'all' || github.event.inputs.test_platform == ''
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Test Ubuntu installation
+        run: |
+          echo "🐧 Testing local installation on Ubuntu..."
+          
+          # Follow the installation guide exactly
+          make setup-local
+          
+          # Check for port conflicts
+          make check-ports
+          
+          # Create minimal docker-compose override for testing
+          if [ "${{ github.event.inputs.skip_services }}" = "true" ]; then
+            cat > docker-compose.test.yml << 'EOF'
+          version: '3.8'
+          services:
+            # Disable resource-intensive services for faster testing
+            ml-api:
+              deploy:
+                replicas: 0
+            prometheus:
+              deploy:
+                replicas: 0
+            grafana:
+              deploy:
+                replicas: 0
+            loki:
+              deploy:
+                replicas: 0
+            promtail:
+              deploy:
+                replicas: 0
+            cadvisor:
+              deploy:
+                replicas: 0
+            node-exporter:
+              deploy:
+                replicas: 0
+          EOF
+            export COMPOSE_FILE="docker-compose.yml:docker-compose.test.yml"
+          fi
+          
+          # Start core services
+          make run-local
+          
+          # Wait for services to be ready
+          echo "⏳ Waiting for services to start..."
+          sleep 30
+          
+          # Test core endpoints (from Install_Local.md)
+          echo "🔍 Testing core service endpoints..."
+          
+          # Backend API
+          for i in {1..10}; do
+            if curl -f http://localhost:8070/health > /dev/null 2>&1; then
+              echo "✅ Backend API is healthy"
+              break
+            elif [ $i -eq 10 ]; then
+              echo "❌ Backend API failed to start"
+              exit 1
+            else
+              echo "⏳ Waiting for backend API... (attempt $i/10)"
+              sleep 10
+            fi
+          done
+          
+          # Thesaurus API
+          for i in {1..5}; do
+            if curl -f http://localhost:8002/health > /dev/null 2>&1; then
+              echo "✅ Thesaurus API is healthy"
+              break
+            elif [ $i -eq 5 ]; then
+              echo "❌ Thesaurus API failed to start"
+              exit 1
+            else
+              echo "⏳ Waiting for thesaurus API... (attempt $i/5)"
+              sleep 10
+            fi
+          done
+          
+          # LLM API
+          for i in {1..5}; do
+            if curl -f http://localhost:8003/health > /dev/null 2>&1; then
+              echo "✅ LLM API is healthy"
+              break
+            elif [ $i -eq 5 ]; then
+              echo "❌ LLM API failed to start"
+              exit 1
+            else
+              echo "⏳ Waiting for LLM API... (attempt $i/5)"
+              sleep 10
+            fi
+          done
+          
+          # Test ML API only if not skipped
+          if [ "${{ github.event.inputs.skip_services }}" != "true" ]; then
+            for i in {1..15}; do
+              if curl -f http://localhost:8001/health > /dev/null 2>&1; then
+                echo "✅ ML API is healthy"
+                break
+              elif [ $i -eq 15 ]; then
+                echo "❌ ML API failed to start"
+                exit 1
+              else
+                echo "⏳ Waiting for ML API... (attempt $i/15)"
+                sleep 15
+              fi
+            done
+          fi
+          
+          # Test Quick Start endpoints (from Install_Local.md)
+          echo "🎯 Testing Quick Start endpoints..."
+          
+          # Test Swagger UI
+          if curl -f http://localhost:8070/swagger/ > /dev/null 2>&1; then
+            echo "✅ Swagger UI is accessible at http://localhost:8070/swagger/"
+          else
+            echo "❌ Swagger UI is not accessible"
+            exit 1
+          fi
+          
+          # Test Directus admin panel
+          if curl -f http://localhost:8055 > /dev/null 2>&1; then
+            echo "✅ Directus admin panel is accessible at http://localhost:8055/"
+          else
+            echo "❌ Directus admin panel is not accessible"
+            exit 1
+          fi
+          
+          # Test Distractor API docs
+          if curl -f http://localhost:8001/docs > /dev/null 2>&1; then
+            echo "✅ Distractor API docs are accessible at http://localhost:8001/docs"
+          else
+            echo "⚠️ Distractor API docs are not accessible (may be disabled in test)"
+          fi
+          
+          # Test Thesaurus API docs
+          if curl -f http://localhost:8002/docs > /dev/null 2>&1; then
+            echo "✅ Thesaurus API docs are accessible at http://localhost:8002/docs"
+          else
+            echo "❌ Thesaurus API docs are not accessible"
+            exit 1
+          fi
+          
+          # Test LLM API docs (not mentioned in Install_Local.md but important)
+          if curl -f http://localhost:8003/docs > /dev/null 2>&1; then
+            echo "✅ LLM API docs are accessible at http://localhost:8003/docs"
+          else
+            echo "❌ LLM API docs are not accessible"
+            exit 1
+          fi
+
+      - name: Show service status
+        if: always()
+        run: |
+          echo "📊 Service Status:"
+          make status || true
+          
+          echo "📋 Docker Compose Services:"
+          docker compose ps || true
+          
+          echo "💾 Disk Usage:"
+          df -h | head -5
+
+      - name: Show logs on failure
+        if: failure()
+        run: |
+          echo "🔍 Service Logs:"
+          docker compose logs --tail=50 || true
+
+      - name: Cleanup
+        if: always()
+        run: |
+          make stop-local || true
+          docker system prune -f || true
+
+  test-windows:
+    runs-on: windows-latest
+    if: github.event.inputs.test_platform == 'windows-latest' || github.event.inputs.test_platform == 'all' || github.event.inputs.test_platform == ''
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Desktop
+        run: |
+          Write-Host "🪟 Setting up Docker Desktop for Windows..."
+          
+          # Install Docker Desktop via Chocolatey
+          Set-ExecutionPolicy Bypass -Scope Process -Force
+          [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+          iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+          
+          # Install Docker Desktop
+          choco install docker-desktop -y
+          
+          # Start Docker Desktop
+          Start-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe" -WindowStyle Hidden
+          
+          # Wait for Docker to be ready
+          Write-Host "⏳ Waiting for Docker Desktop to start..."
+          $timeout = 300 # 5 minutes
+          $elapsed = 0
+          do {
+            Start-Sleep -Seconds 10
+            $elapsed += 10
+            try {
+              docker info | Out-Null
+              Write-Host "✅ Docker Desktop is ready"
+              break
+            } catch {
+              Write-Host "⏳ Waiting for Docker... ($elapsed/$timeout seconds)"
+            }
+          } while ($elapsed -lt $timeout)
+          
+          if ($elapsed -ge $timeout) {
+            Write-Host "❌ Docker Desktop failed to start within 5 minutes"
+            exit 1
+          }
+          
+          # Show Docker info
+          Write-Host "📊 Docker Info:"
+          docker info | Select-String -Pattern "(Server Version|Operating System|Architecture|CPUs|Total Memory)"
+        shell: powershell
+
+      - name: Test Windows installation
+        run: |
+          Write-Host "🪟 Testing local installation on Windows..."
+          
+          # Show system info
+          Write-Host "📊 System Info:"
+          Write-Host "Windows Version: $((Get-ComputerInfo).WindowsProductName)"
+          Write-Host "Architecture: $env:PROCESSOR_ARCHITECTURE"
+          Write-Host "Available RAM: $([math]::Round((Get-ComputerInfo).TotalPhysicalMemory / 1GB, 2)) GB"
+          Write-Host "CPU: $((Get-ComputerInfo).CsProcessors.Name)"
+          
+          # Install Make if not available (using Chocolatey)
+          if (-not (Get-Command make -ErrorAction SilentlyContinue)) {
+            Write-Host "📦 Installing Make via Chocolatey..."
+            choco install make -y
+          }
+          
+          # Follow the installation guide exactly
+          make setup-local
+          
+          # Check for port conflicts
+          make check-ports
+          
+          # Create minimal docker-compose override for testing
+          if ("${{ github.event.inputs.skip_services }}" -eq "true") {
+            @"
+          version: '3.8'
+          services:
+            # Disable resource-intensive services for faster testing
+            ml-api:
+              deploy:
+                replicas: 0
+            prometheus:
+              deploy:
+                replicas: 0
+            grafana:
+              deploy:
+                replicas: 0
+            loki:
+              deploy:
+                replicas: 0
+            promtail:
+              deploy:
+                replicas: 0
+            cadvisor:
+              deploy:
+                replicas: 0
+            node-exporter:
+              deploy:
+                replicas: 0
+          "@ | Out-File -FilePath "docker-compose.test.yml" -Encoding utf8
+            $env:COMPOSE_FILE = "docker-compose.yml:docker-compose.test.yml"
+          }
+          
+          # Start services
+          make run-local
+          
+          # Wait for services to be ready
+          Write-Host "⏳ Waiting for services to start..."
+          Start-Sleep -Seconds 45  # Windows might need more time
+          
+          # Test core endpoints (from Install_Local.md)
+          Write-Host "🔍 Testing core service endpoints..."
+          
+          # Backend API
+          for ($i = 1; $i -le 10; $i++) {
+            try {
+              $response = Invoke-WebRequest -Uri "http://localhost:8070/health" -UseBasicParsing -TimeoutSec 5
+              if ($response.StatusCode -eq 200) {
+                Write-Host "✅ Backend API is healthy"
+                break
+              }
+            } catch {
+              if ($i -eq 10) {
+                Write-Host "❌ Backend API failed to start"
+                exit 1
+              } else {
+                Write-Host "⏳ Waiting for backend API... (attempt $i/10)"
+                Start-Sleep -Seconds 10
+              }
+            }
+          }
+          
+          # Thesaurus API
+          for ($i = 1; $i -le 5; $i++) {
+            try {
+              $response = Invoke-WebRequest -Uri "http://localhost:8002/health" -UseBasicParsing -TimeoutSec 5
+              if ($response.StatusCode -eq 200) {
+                Write-Host "✅ Thesaurus API is healthy"
+                break
+              }
+            } catch {
+              if ($i -eq 5) {
+                Write-Host "❌ Thesaurus API failed to start"
+                exit 1
+              } else {
+                Write-Host "⏳ Waiting for thesaurus API... (attempt $i/5)"
+                Start-Sleep -Seconds 10
+              }
+            }
+          }
+          
+          # LLM API
+          for ($i = 1; $i -le 5; $i++) {
+            try {
+              $response = Invoke-WebRequest -Uri "http://localhost:8003/health" -UseBasicParsing -TimeoutSec 5
+              if ($response.StatusCode -eq 200) {
+                Write-Host "✅ LLM API is healthy"
+                break
+              }
+            } catch {
+              if ($i -eq 5) {
+                Write-Host "❌ LLM API failed to start"
+                exit 1
+              } else {
+                Write-Host "⏳ Waiting for LLM API... (attempt $i/5)"
+                Start-Sleep -Seconds 10
+              }
+            }
+          }
+          
+          # Test ML API only if not skipped
+          if ("${{ github.event.inputs.skip_services }}" -ne "true") {
+            for ($i = 1; $i -le 15; $i++) {
+              try {
+                $response = Invoke-WebRequest -Uri "http://localhost:8001/health" -UseBasicParsing -TimeoutSec 5
+                if ($response.StatusCode -eq 200) {
+                  Write-Host "✅ ML API is healthy"
+                  break
+                }
+              } catch {
+                if ($i -eq 15) {
+                  Write-Host "❌ ML API failed to start"
+                  exit 1
+                } else {
+                  Write-Host "⏳ Waiting for ML API... (attempt $i/15)"
+                  Start-Sleep -Seconds 15
+                }
+              }
+            }
+          }
+          
+          # Test Quick Start endpoints (from Install_Local.md)
+          Write-Host "🎯 Testing Quick Start endpoints..."
+          
+          # Test Swagger UI
+          try {
+            $response = Invoke-WebRequest -Uri "http://localhost:8070/swagger/" -UseBasicParsing -TimeoutSec 10
+            if ($response.StatusCode -eq 200) {
+              Write-Host "✅ Swagger UI is accessible at http://localhost:8070/swagger/"
+            }
+          } catch {
+            Write-Host "❌ Swagger UI is not accessible"
+            exit 1
+          }
+          
+          # Test Directus admin panel
+          try {
+            $response = Invoke-WebRequest -Uri "http://localhost:8055" -UseBasicParsing -TimeoutSec 10
+            if ($response.StatusCode -eq 200) {
+              Write-Host "✅ Directus admin panel is accessible at http://localhost:8055/"
+            }
+          } catch {
+            Write-Host "❌ Directus admin panel is not accessible"
+            exit 1
+          }
+          
+          # Test Distractor API docs
+          try {
+            $response = Invoke-WebRequest -Uri "http://localhost:8001/docs" -UseBasicParsing -TimeoutSec 10
+            if ($response.StatusCode -eq 200) {
+              Write-Host "✅ Distractor API docs are accessible at http://localhost:8001/docs"
+            }
+          } catch {
+            Write-Host "⚠️ Distractor API docs are not accessible (may be disabled in test)"
+          }
+          
+          # Test Thesaurus API docs
+          try {
+            $response = Invoke-WebRequest -Uri "http://localhost:8002/docs" -UseBasicParsing -TimeoutSec 10
+            if ($response.StatusCode -eq 200) {
+              Write-Host "✅ Thesaurus API docs are accessible at http://localhost:8002/docs"
+            }
+          } catch {
+            Write-Host "❌ Thesaurus API docs are not accessible"
+            exit 1
+          }
+          
+          # Test LLM API docs
+          try {
+            $response = Invoke-WebRequest -Uri "http://localhost:8003/docs" -UseBasicParsing -TimeoutSec 10
+            if ($response.StatusCode -eq 200) {
+              Write-Host "✅ LLM API docs are accessible at http://localhost:8003/docs"
+            }
+          } catch {
+            Write-Host "❌ LLM API docs are not accessible"
+            exit 1
+          }
+        shell: powershell
+
+      - name: Show service status
+        if: always()
+        run: |
+          Write-Host "📊 Service Status:"
+          make status
+          
+          Write-Host "📋 Docker Compose Services:"
+          docker compose ps
+          
+          Write-Host "💾 Disk Usage:"
+          Get-PSDrive C | Select-Object Used,Free,@{Name="Size";Expression={$_.Used+$_.Free}}
+        shell: powershell
+
+      - name: Show logs on failure
+        if: failure()
+        run: |
+          Write-Host "🔍 Service Logs:"
+          docker compose logs --tail=50
+        shell: powershell
+
+      - name: Cleanup
+        if: always()
+        run: |
+          make stop-local
+          docker system prune -f
+        shell: powershell
+
+  test-macos:
+    runs-on: macos-latest
+    if: github.event.inputs.test_platform == 'macos-latest' || github.event.inputs.test_platform == 'all' || github.event.inputs.test_platform == ''
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Docker Desktop
+        run: |
+          echo "🍎 Installing Docker Desktop for macOS..."
+          
+          # Download Docker Desktop for Mac (Universal - works on both Intel and Apple Silicon)
+          curl -L -o docker.dmg "https://desktop.docker.com/mac/main/universal/Docker.dmg"
+          
+          # Mount the DMG
+          sudo hdiutil attach docker.dmg
+          
+          # Install Docker.app
+          sudo cp -R /Volumes/Docker/Docker.app /Applications/
+          
+          # Unmount the DMG
+          sudo hdiutil detach /Volumes/Docker
+          
+          # Start Docker Desktop
+          open /Applications/Docker.app
+          
+          # Wait for Docker to be ready
+          echo "⏳ Waiting for Docker Desktop to start..."
+          for i in {1..30}; do
+            if docker info > /dev/null 2>&1; then
+              echo "✅ Docker Desktop is ready"
+              break
+            elif [ $i -eq 30 ]; then
+              echo "❌ Docker Desktop failed to start within 5 minutes"
+              exit 1
+            else
+              echo "⏳ Waiting for Docker... (attempt $i/30)"
+              sleep 10
+            fi
+          done
+          
+          # Show Docker info
+          echo "📊 Docker Info:"
+          docker info | grep -E "(Server Version|Operating System|Architecture|CPUs|Total Memory)"
+
+      - name: Test macOS installation
+        run: |
+          echo "🍎 Testing local installation on macOS..."
+          
+          # Show system info
+          echo "📊 System Info:"
+          echo "macOS Version: $(sw_vers -productVersion)"
+          echo "Architecture: $(uname -m)"
+          echo "Available RAM: $(sysctl -n hw.memsize | awk '{print $1/1024/1024/1024 " GB"}')"
+          echo "CPU Info: $(sysctl -n machdep.cpu.brand_string)"
+          
+          # Check if Make is available
+          if ! command -v make &> /dev/null; then
+            echo "📦 Installing Make via Homebrew..."
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            brew install make
+          fi
+          
+          # Follow the installation guide exactly
+          make setup-local
+          
+          # Check for port conflicts
+          make check-ports
+          
+          # Create minimal docker-compose override for testing
+          if [ "${{ github.event.inputs.skip_services }}" = "true" ]; then
+            cat > docker-compose.test.yml << 'EOF'
+          version: '3.8'
+          services:
+            # Disable resource-intensive services for faster testing
+            ml-api:
+              deploy:
+                replicas: 0
+            prometheus:
+              deploy:
+                replicas: 0
+            grafana:
+              deploy:
+                replicas: 0
+            loki:
+              deploy:
+                replicas: 0
+            promtail:
+              deploy:
+                replicas: 0
+            cadvisor:
+              deploy:
+                replicas: 0
+            node-exporter:
+              deploy:
+                replicas: 0
+          EOF
+            export COMPOSE_FILE="docker-compose.yml:docker-compose.test.yml"
+          fi
+          
+          # Start services
+          make run-local
+          
+          # Wait for services to be ready
+          echo "⏳ Waiting for services to start..."
+          sleep 45  # macOS might need a bit more time
+          
+          # Test core endpoints (from Install_Local.md)
+          echo "🔍 Testing core service endpoints..."
+          
+          # Backend API
+          for i in {1..10}; do
+            if curl -f http://localhost:8070/health > /dev/null 2>&1; then
+              echo "✅ Backend API is healthy"
+              break
+            elif [ $i -eq 10 ]; then
+              echo "❌ Backend API failed to start"
+              exit 1
+            else
+              echo "⏳ Waiting for backend API... (attempt $i/10)"
+              sleep 10
+            fi
+          done
+          
+          # Thesaurus API
+          for i in {1..5}; do
+            if curl -f http://localhost:8002/health > /dev/null 2>&1; then
+              echo "✅ Thesaurus API is healthy"
+              break
+            elif [ $i -eq 5 ]; then
+              echo "❌ Thesaurus API failed to start"
+              exit 1
+            else
+              echo "⏳ Waiting for thesaurus API... (attempt $i/5)"
+              sleep 10
+            fi
+          done
+          
+          # LLM API
+          for i in {1..5}; do
+            if curl -f http://localhost:8003/health > /dev/null 2>&1; then
+              echo "✅ LLM API is healthy"
+              break
+            elif [ $i -eq 5 ]; then
+              echo "❌ LLM API failed to start"
+              exit 1
+            else
+              echo "⏳ Waiting for LLM API... (attempt $i/5)"
+              sleep 10
+            fi
+          done
+          
+          # Test ML API only if not skipped
+          if [ "${{ github.event.inputs.skip_services }}" != "true" ]; then
+            for i in {1..15}; do
+              if curl -f http://localhost:8001/health > /dev/null 2>&1; then
+                echo "✅ ML API is healthy"
+                break
+              elif [ $i -eq 15 ]; then
+                echo "❌ ML API failed to start"
+                exit 1
+              else
+                echo "⏳ Waiting for ML API... (attempt $i/15)"
+                sleep 15
+              fi
+            done
+          fi
+          
+          # Test Quick Start endpoints (from Install_Local.md)
+          echo "🎯 Testing Quick Start endpoints..."
+          
+          # Test Swagger UI
+          if curl -f http://localhost:8070/swagger/ > /dev/null 2>&1; then
+            echo "✅ Swagger UI is accessible at http://localhost:8070/swagger/"
+          else
+            echo "❌ Swagger UI is not accessible"
+            exit 1
+          fi
+          
+          # Test Directus admin panel
+          if curl -f http://localhost:8055 > /dev/null 2>&1; then
+            echo "✅ Directus admin panel is accessible at http://localhost:8055/"
+          else
+            echo "❌ Directus admin panel is not accessible"
+            exit 1
+          fi
+          
+          # Test Distractor API docs
+          if curl -f http://localhost:8001/docs > /dev/null 2>&1; then
+            echo "✅ Distractor API docs are accessible at http://localhost:8001/docs"
+          else
+            echo "⚠️ Distractor API docs are not accessible (may be disabled in test)"
+          fi
+          
+          # Test Thesaurus API docs
+          if curl -f http://localhost:8002/docs > /dev/null 2>&1; then
+            echo "✅ Thesaurus API docs are accessible at http://localhost:8002/docs"
+          else
+            echo "❌ Thesaurus API docs are not accessible"
+            exit 1
+          fi
+          
+          # Test LLM API docs
+          if curl -f http://localhost:8003/docs > /dev/null 2>&1; then
+            echo "✅ LLM API docs are accessible at http://localhost:8003/docs"
+          else
+            echo "❌ LLM API docs are not accessible"
+            exit 1
+          fi
+          
+          # Test macOS specific considerations
+          echo "🍎 Testing macOS-specific considerations..."
+          
+          # Check if ARM64 images are being used on Apple Silicon
+          if [[ "$(uname -m)" == "arm64" ]]; then
+            echo "📱 Apple Silicon detected - checking for ARM64 images..."
+            docker compose images | grep -E "(linux/arm64|arm64)" || echo "⚠️ No ARM64 images detected"
+          fi
+
+      - name: Show service status
+        if: always()
+        run: |
+          echo "📊 Service Status:"
+          make status || true
+          
+          echo "📋 Docker Compose Services:"
+          docker compose ps || true
+          
+          echo "💾 Disk Usage:"
+          df -h | head -5
+
+      - name: Show logs on failure
+        if: failure()
+        run: |
+          echo "🔍 Service Logs:"
+          docker compose logs --tail=50 || true
+
+      - name: Cleanup
+        if: always()
+        run: |
+          make stop-local || true
+          docker system prune -f || true
+
+  # Summary job that depends on all platform tests
+  platform-test-summary:
+    runs-on: ubuntu-latest
+    needs: [test-ubuntu, test-macos, test-windows]
+    if: always()
+    
+    steps:
+      - name: Test Results Summary
+        run: |
+          echo "🎯 Platform Testing Results Summary"
+          echo "=================================="
+          
+          # Check Ubuntu results
+          if [ "${{ needs.test-ubuntu.result }}" = "success" ]; then
+            echo "✅ Ubuntu: PASSED"
+          elif [ "${{ needs.test-ubuntu.result }}" = "skipped" ]; then
+            echo "⏭️ Ubuntu: SKIPPED"
+          else
+            echo "❌ Ubuntu: FAILED"
+          fi
+          
+          # Check macOS results
+          if [ "${{ needs.test-macos.result }}" = "success" ]; then
+            echo "✅ macOS: PASSED"
+          elif [ "${{ needs.test-macos.result }}" = "skipped" ]; then
+            echo "⏭️ macOS: SKIPPED"
+          else
+            echo "❌ macOS: FAILED"
+          fi
+          
+          # Check Windows results
+          if [ "${{ needs.test-windows.result }}" = "success" ]; then
+            echo "✅ Windows: PASSED"
+          elif [ "${{ needs.test-windows.result }}" = "skipped" ]; then
+            echo "⏭️ Windows: SKIPPED"
+          else
+            echo "❌ Windows: FAILED"
+          fi
+          
+          # Overall result
+          if [ "${{ needs.test-ubuntu.result }}" = "success" ] && [ "${{ needs.test-macos.result }}" = "success" ] && [ "${{ needs.test-windows.result }}" = "success" ]; then
+            echo ""
+            echo "🎉 All platform tests passed!"
+            echo "✅ Ready for deployment across all supported platforms"
+          else
+            echo ""
+            echo "⚠️ Some platform tests failed or were skipped"
+            echo "Please check the individual job results above"
+          fi

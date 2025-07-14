@@ -160,6 +160,35 @@ services:
     ports:
       - "127.0.0.1:8002:8002"  # Local access for debugging
 
+  # LLM API for AI-powered conversations (Local Build)
+  llm-api:
+    build:
+      context: ./analysis/llms
+      dockerfile: Dockerfile
+    container_name: fluently_llm_api
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+    env_file: .env  # Use root .env file
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    networks:
+      - fluently_network
+    ports:
+      - "127.0.0.1:8003:8003"  # Local access for debugging
+
+
   # ===========================================
   # ADMIN & MANAGEMENT
   # ===========================================

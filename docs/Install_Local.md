@@ -36,6 +36,7 @@ Swagger UI:  http://localhost:8070/swagger/
 Directus admin panel:     http://localhost:8055/
 Distractor API:     http://localhost:8001/docs
 Thesaurus API:     http://localhost:8002/docs
+LLM API:     http://localhost:8003/docs
 
 # 6. When finished, stop the local build and restart your services
 
