@@ -33,7 +33,7 @@ type DayWordHandler struct {
 // @Failure      400  {string}  string  "Invalid request - plain text error message"
 // @Failure      404  {string}  string  "Resource not found - plain text error message"
 // @Failure      500  {string}  string  "Internal server error - plain text error message"
-// @Router       /api/v1/day-word/ [get]
+// @Router       /api/v1/day-word [get]
 func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
@@ -56,6 +56,7 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "failed to get day word", http.StatusInternalServerError)
 		return
 	}
+	dayWordResponse.WordID = dayWord.ID
 	dayWordResponse.Word = dayWord.Word
 	dayWordResponse.Translation = dayWord.Translation
 	dayWordResponse.CEFRLevel = dayWord.CEFRLevel
