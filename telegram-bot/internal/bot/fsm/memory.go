@@ -11,6 +11,8 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/redis/go-redis/v9"
+
+	"telegram-bot/internal/domain"
 )
 
 // UserProgress represents the user's learning progress
@@ -32,10 +34,9 @@ type UserProgress struct {
 	OnboardingComplete bool `json:"onboarding_complete"`
 
 	// Questionnaire data
-	Goal         string `json:"goal"`
-	Confidence   int    `json:"confidence"`
-	SerialHabits string `json:"serial_habits"`
-	Experience   string `json:"experience"`
+	Goal       string `json:"goal"`
+	Confidence int    `json:"confidence"`
+	Experience string `json:"experience"`
 
 	// Vocabulary test
 	VocabularyTest  VocabTestData `json:"vocabulary_test"`
@@ -211,7 +212,6 @@ type ExerciseData struct {
 type OnboardingData struct {
 	Goal       string `json:"goal"`
 	Confidence string `json:"confidence"`
-	Serials    string `json:"serials"`
 	Experience string `json:"experience"`
 }
 
@@ -552,7 +552,7 @@ func (m *UserStateManager) GetCEFRTestData(ctx context.Context, userID int64) (*
 	return data, nil
 }
 
-// GetLessonData retrieves lesson data
+// GetLessonData retrieves lesson data (legacy)
 func (m *UserStateManager) GetLessonData(ctx context.Context, userID int64) (*LessonData, error) {
 	data := &LessonData{}
 	jsonData, err := m.redisClient.Get(ctx, userTempDataKey(userID, TempDataLesson)).Result()
@@ -713,4 +713,120 @@ func NewWrongStateError(expected, actual UserState) *WrongStateError {
 func IsWrongStateError(err error) bool {
 	var wse *WrongStateError
 	return errors.As(err, &wse)
+}
+
+// GetLessonProgress retrieves the new lesson progress structure
+func (m *UserStateManager) GetLessonProgress(ctx context.Context, userID int64) (*domain.LessonProgress, error) {
+	jsonData, err := m.redisClient.Get(ctx, userTempDataKey(userID, TempDataLesson)).Result()
+	if err == redis.Nil {
+		return nil, nil // Return nil if no data found
+	} else if err != nil {
+		return nil, fmt.Errorf("failed to get lesson progress: %w", err)
+	}
+
+	var progress domain.LessonProgress
+	err = json.Unmarshal([]byte(jsonData), &progress)
+	if err != nil {
+		return nil, fmt.Errorf("failed to unmarshal lesson progress: %w", err)
+	}
+
+	return &progress, nil
+}
+
+// StoreLessonProgress stores the new lesson progress structure
+func (m *UserStateManager) StoreLessonProgress(ctx context.Context, userID int64, progress *domain.LessonProgress) error {
+	jsonData, err := json.Marshal(progress)
+	if err != nil {
+		return fmt.Errorf("failed to marshal lesson progress: %w", err)
+	}
+
+	// Store with 24-hour expiration
+	err = m.redisClient.Set(ctx, userTempDataKey(userID, TempDataLesson), jsonData, 24*time.Hour).Err()
+	if err != nil {
+		return fmt.Errorf("failed to store lesson progress: %w", err)
+	}
+
+	return nil
+}
+
+// UpdateLessonProgress updates specific fields in lesson progress
+func (m *UserStateManager) UpdateLessonProgress(ctx context.Context, userID int64, updateFunc func(*domain.LessonProgress) error) error {
+	progress, err := m.GetLessonProgress(ctx, userID)
+	if err != nil {
+		return err
+	}
+
+	if progress == nil {
+		return fmt.Errorf("no lesson progress found for user %d", userID)
+	}
+
+	err = updateFunc(progress)
+	if err != nil {
+		return err
+	}
+
+	return m.StoreLessonProgress(ctx, userID, progress)
+}
+
+// ClearLessonProgress removes lesson progress data
+func (m *UserStateManager) ClearLessonProgress(ctx context.Context, userID int64) error {
+	return m.ClearTempData(ctx, userID, TempDataLesson)
+}
+
+// HasActiveLessonProgress checks if user has an active lesson in progress
+func (m *UserStateManager) HasActiveLessonProgress(ctx context.Context, userID int64) (bool, error) {
+	progress, err := m.GetLessonProgress(ctx, userID)
+	if err != nil {
+		return false, err
+	}
+
+	return progress != nil && progress.LessonData != nil, nil
+}
+
+// GetCurrentWordSet gets the current set of 3 words being studied
+func (m *UserStateManager) GetCurrentWordSet(ctx context.Context, userID int64) ([]domain.Card, error) {
+	progress, err := m.GetLessonProgress(ctx, userID)
+	if err != nil {
+		return nil, err
+	}
+
+	if progress == nil || len(progress.WordsInCurrentSet) == 0 {
+		return nil, fmt.Errorf("no current word set found")
+	}
+
+	return progress.WordsInCurrentSet, nil
+}
+
+// AddWordProgress adds a word to the learned words list
+func (m *UserStateManager) AddWordProgress(ctx context.Context, userID int64, wordProgress domain.WordProgress) error {
+	return m.UpdateLessonProgress(ctx, userID, func(progress *domain.LessonProgress) error {
+		progress.WordsLearned = append(progress.WordsLearned, wordProgress)
+		progress.LearnedCount++
+		progress.LastActivity = time.Now()
+		return nil
+	})
+}
+
+// GetJWTToken retrieves user's JWT token for API calls
+func (m *UserStateManager) GetJWTToken(ctx context.Context, userID int64) (string, error) {
+	key := fmt.Sprintf("user:%d:jwt_token", userID)
+	token, err := m.redisClient.Get(ctx, key).Result()
+	if err == redis.Nil {
+		return "", fmt.Errorf("no JWT token found for user %d", userID)
+	} else if err != nil {
+		return "", fmt.Errorf("failed to get JWT token: %w", err)
+	}
+
+	return token, nil
+}
+
+// StoreJWTToken stores user's JWT token with expiration
+func (m *UserStateManager) StoreJWTToken(ctx context.Context, userID int64, token string, expiration time.Duration) error {
+	key := fmt.Sprintf("user:%d:jwt_token", userID)
+	err := m.redisClient.Set(ctx, key, token, expiration).Err()
+	if err != nil {
+		return fmt.Errorf("failed to store JWT token: %w", err)
+	}
+
+	return nil
 }

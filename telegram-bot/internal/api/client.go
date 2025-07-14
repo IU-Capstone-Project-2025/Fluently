@@ -140,17 +140,28 @@ func (c *Client) doRequest(ctx context.Context, method, endpoint string, body in
 	return resp, nil
 }
 
-// doRequest performs GET HTTP request with proper headers
-func (c *Client) doGETRequest(ctx context.Context, method, endpoint string) (*http.Response, error) {
+// doAuthenticatedRequest performs HTTP request with JWT authentication
+func (c *Client) doAuthenticatedRequest(ctx context.Context, method, endpoint string, body interface{}, token string) (*http.Response, error) {
+	var reqBody io.Reader
+	if body != nil {
+		jsonData, err := json.Marshal(body)
+		if err != nil {
+			return nil, fmt.Errorf("failed to marshal request body: %w", err)
+		}
+		reqBody = bytes.NewBuffer(jsonData)
+	}
+
 	url := c.baseURL + endpoint
-	req, err := http.NewRequestWithContext(ctx, method, url, nil)
+	req, err := http.NewRequestWithContext(ctx, method, url, reqBody)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create request: %w", err)
 	}
 
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("User-Agent", "fluently-telegram-bot/1.0")
-	req.Header.Set("Authorization", "Bearer "+ctx.Value("token").(string))
+	if token != "" {
+		req.Header.Set("Authorization", "Bearer "+token)
+	}
 
 	resp, err := c.httpClient.Do(req)
 	if err != nil {
@@ -202,6 +213,8 @@ func (c *Client) CreateLinkToken(ctx context.Context, telegramID int64) (*Create
 		return nil, err
 	}
 
+	fmt.Println(result.LinkURL)
+
 	zap.L().With(zap.Int64("telegram_id", telegramID)).Info("Successfully created link token")
 	return &result, nil
 }
@@ -226,11 +239,11 @@ func (c *Client) CheckLinkStatus(ctx context.Context, telegramID int64) (*CheckL
 	return &result, nil
 }
 
-// GenerateLesson generates a new lesson for the user
-func (c *Client) GenerateLesson(ctx context.Context, userID, cefrLevel string, wordsPerLesson int) (*domain.LessonResponse, error) {
-	resp, err := c.doGETRequest(ctx, "GET", "/api/v1/lesson")
+// GenerateLesson generates a new lesson for the user with JWT authentication
+func (c *Client) GenerateLesson(ctx context.Context, token string) (*domain.LessonResponse, error) {
+	resp, err := c.doAuthenticatedRequest(ctx, "GET", "/api/v1/lesson", nil, token)
 	if err != nil {
-		zap.L().With(zap.String("user_id", userID), zap.Error(err)).Error("Failed to generate lesson")
+		zap.L().With(zap.Error(err)).Error("Failed to generate lesson")
 		return nil, err
 	}
 
@@ -241,9 +254,9 @@ func (c *Client) GenerateLesson(ctx context.Context, userID, cefrLevel string, w
 	}
 
 	zap.L().With(
-		zap.String("user_id", userID),
-		zap.String("lesson_id", result.Lesson.LessonID.String()),
+		zap.String("cefr_level", result.Lesson.CEFRLevel),
 		zap.Int("word_count", len(result.Cards)),
+		zap.Int("words_per_lesson", result.Lesson.WordsPerLesson),
 	).Info("Successfully generated lesson")
 	return &result, nil
 }
@@ -313,4 +326,21 @@ func (c *Client) GetUserStats(ctx context.Context, userID string) (map[string]in
 
 	zap.L().With(zap.String("user_id", userID)).Debug("Successfully retrieved user stats")
 	return result, nil
+}
+
+// SendLessonProgress sends word progress data to backend after lesson completion
+func (c *Client) SendLessonProgress(ctx context.Context, token string, progressData []domain.WordProgress) error {
+	resp, err := c.doAuthenticatedRequest(ctx, "POST", "/api/v1/progress", progressData, token)
+	if err != nil {
+		zap.L().With(zap.Error(err)).Error("Failed to send lesson progress")
+		return err
+	}
+
+	if err := c.parseResponse(resp, nil); err != nil {
+		zap.L().With(zap.Error(err)).Error("Failed to parse send lesson progress response")
+		return err
+	}
+
+	zap.L().With(zap.Int("words_count", len(progressData))).Info("Successfully sent lesson progress")
+	return nil
 }
