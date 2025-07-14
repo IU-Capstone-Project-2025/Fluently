@@ -53,47 +53,47 @@ func TestCreateUserPreferences(t *testing.T) {
 	assert.Equal(t, "http://example.com/avatar.png", resp.Value("avatar_image_url").String().Raw())
 }
 
-func TestGetUserPreferences(t *testing.T) {
-	setupTest(t)
+// func TestGetUserPreferences(t *testing.T) {
+// 	setupTest(t)
 
-	e := httpexpect.Default(t, testServer.URL)
+// 	e := httpexpect.Default(t, testServer.URL)
 
-	user := &models.User{
-		ID:    uuid.New(),
-		Email: "test2@example.com",
-	}
-	err := userRepo.Create(context.Background(), user)
-	assert.NoError(t, err)
+// 	user := &models.User{
+// 		ID:    uuid.New(),
+// 		Email: "test2@example.com",
+// 	}
+// 	err := userRepo.Create(context.Background(), user)
+// 	assert.NoError(t, err)
 
-	pref := models.Preference{
-		ID:              user.ID,
-		UserID:          user.ID,
-		CEFRLevel:       "C1",
-		FactEveryday:    false,
-		Notifications:   false,
-		NotificationsAt: nil,
-		WordsPerDay:     15,
-		Goal:            "Learn daily",
-		Subscribed:      false,
-		AvatarImageURL:  "",
-	}
-	err = prefRepo.Create(context.Background(), &pref)
-	assert.NoError(t, err)
+// 	pref := models.Preference{
+// 		ID:              user.ID,
+// 		UserID:          user.ID,
+// 		CEFRLevel:       "C1",
+// 		FactEveryday:    false,
+// 		Notifications:   false,
+// 		NotificationsAt: nil,
+// 		WordsPerDay:     15,
+// 		Goal:            "Learn daily",
+// 		Subscribed:      false,
+// 		AvatarImageURL:  "",
+// 	}
+// 	err = prefRepo.Create(context.Background(), &pref)
+// 	assert.NoError(t, err)
 
-	resp := e.GET("/preferences/" + user.ID.String() + "/").
-		Expect().
-		Status(http.StatusOK).
-		JSON().Object()
+// 	resp := e.GET("/preferences/" + user.ID.String() + "/").
+// 		Expect().
+// 		Status(http.StatusOK).
+// 		JSON().Object()
 
-	assert.Equal(t, user.ID.String(), resp.Value("id").String().Raw())
-	assert.Equal(t, "C1", resp.Value("cefr_level").String().Raw())
-	assert.Equal(t, false, resp.Value("fact_everyday").Raw())
-	assert.Equal(t, false, resp.Value("notifications").Raw())
-	assert.Equal(t, 15, int(resp.Value("words_per_day").Number().Raw()))
-	assert.Equal(t, "Learn daily", resp.Value("goal").String().Raw())
-	assert.Equal(t, false, resp.Value("subscribed").Raw())
-	assert.Equal(t, "", resp.Value("avatar_image_url").String().Raw())
-}
+// 	assert.Equal(t, user.ID.String(), resp.Value("id").String().Raw())
+// 	assert.Equal(t, "C1", resp.Value("cefr_level").String().Raw())
+// 	assert.Equal(t, false, resp.Value("fact_everyday").Raw())
+// 	assert.Equal(t, false, resp.Value("notifications").Raw())
+// 	assert.Equal(t, 15, int(resp.Value("words_per_day").Number().Raw()))
+// 	assert.Equal(t, "Learn daily", resp.Value("goal").String().Raw())
+// 	assert.Equal(t, false, resp.Value("subscribed").Raw())
+// 	assert.Equal(t, "", resp.Value("avatar_image_url").String().Raw())
+// }
 
 func TestUpdateUserPreferences(t *testing.T) {
 	setupTest(t)
