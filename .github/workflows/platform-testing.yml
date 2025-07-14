@@ -746,8 +746,9 @@ jobs:
                     # Continue anyway - we'll check if it worked in the next steps
                   }
                 }
+              } catch {
+                Write-Host "Emergency Docker container mode switch failed: $($_.Exception.Message)"
               }
-            } while ($elapsed -lt $timeout)
             
             if (-not $linuxMode) {
               Write-Host "CRITICAL: Failed to switch to Linux containers after all attempts"
@@ -1082,7 +1083,7 @@ jobs:
           if command -v docker &> /dev/null; then
             echo "Docker CLI is available"
             if docker info > /dev/null 2>&1; then
-              echo "✅ Docker daemon is running and ready!"
+              echo "Docker daemon is running and ready!"
               docker info | grep -E "(Server Version|Operating System|Architecture)" || true
               echo "docker_ready=true" >> $GITHUB_OUTPUT
               exit 0
@@ -1093,6 +1094,31 @@ jobs:
             echo "Docker CLI not found"
           fi
           
+          # Try using colima (lightweight Docker alternative for macOS)
+          if command -v brew &> /dev/null; then
+            echo "Installing colima (lightweight Docker alternative)..."
+            brew install colima docker docker-compose
+            
+            # Start colima with minimal resources
+            echo "Starting colima..."
+            colima start --cpu 2 --memory 4 --disk 20 --arch aarch64 --vm-type=vz || {
+              echo "Failed to start colima, trying with qemu..."
+              colima start --cpu 2 --memory 4 --disk 20 --arch aarch64 || {
+                echo "Failed to start colima with both vz and qemu"
+                echo "docker_ready=false" >> $GITHUB_OUTPUT
+                exit 0
+              }
+            }
+            
+            # Check if Docker works with colima
+            if docker info > /dev/null 2>&1; then
+              echo "SUCCESS: Docker running via colima!"
+              echo "docker_ready=true" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+          fi
+          
+          echo "Could not set up Docker, skipping macOS test"
           echo "docker_ready=false" >> $GITHUB_OUTPUT
 
       - name: Set up Docker
@@ -1563,19 +1589,3 @@ jobs:
           if [ "$UBUNTU_OK" = "true" ] && [ "$MACOS_OK" = "true" ] && [ "$WINDOWS_OK" = "true" ]; then
             echo "🎉 Platform testing completed successfully!"
             echo "✅ Ubuntu: Working"
-            echo "✅ macOS: Working (or CI environment limitation)"
-            echo "✅ Windows: Working (or CI environment limitation)"
-            echo ""
-            echo "Ready for deployment across all supported platforms"
-          else
-            echo "❌ Some critical platform tests failed"
-            echo "Ubuntu (required): ${{ needs.test-ubuntu.result }}"
-            echo "macOS (CI-dependent): ${{ needs.test-macos.result }}"
-            echo "Windows (CI-dependent): ${{ needs.test-windows.result }}"
-            echo ""
-            echo "Please check the individual job results above"
-            if [ "$UBUNTU_OK" = "false" ]; then
-              echo ""
-              echo "⚠️ Ubuntu test failure indicates a real issue that needs to be fixed"
-            fi
-          fi
