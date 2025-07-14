@@ -314,10 +314,10 @@ jobs:
                 Write-Host "Docker Desktop is ready (took $elapsed seconds)"
                 break
               } else {
-                Write-Host "Docker client responding, waiting for daemon... ($elapsed/$timeout seconds)"
+                Write-Host "Docker client responding, waiting for daemon... ($elapsed of $timeout seconds)"
               }
             } catch {
-              Write-Host "Waiting for Docker to start... ($elapsed/$timeout seconds)"
+              Write-Host "Waiting for Docker to start... ($elapsed of $timeout seconds)"
             }
             
             # Try to restart Docker Desktop every 5 minutes
@@ -475,7 +475,7 @@ jobs:
                     }
                   }
                 } catch {
-                  Write-Host "Docker not ready yet, waiting... ($elapsed/$timeout seconds)"
+                  Write-Host "Docker not ready yet, waiting... ($elapsed of $timeout seconds)"
                 }
               } while ($elapsed -lt $timeout)
               
@@ -557,6 +557,28 @@ jobs:
           [Console]::OutputEncoding = [Text.Encoding]::UTF8
           
           Write-Host "Testing local installation on Windows..."
+          
+          # Create .env files from examples FIRST (before any Docker operations)
+          Write-Host "Creating .env files from examples..."
+          if (-not (Test-Path ".env")) {
+            if (Test-Path ".env.example") {
+              Copy-Item ".env.example" ".env"
+              Write-Host "Created root .env from example"
+            } else {
+              Write-Host "Warning: .env.example not found, creating minimal .env"
+              New-Item -ItemType File -Path ".env" -Force | Out-Null
+            }
+          }
+          if (-not (Test-Path "backend\.env")) {
+            if (Test-Path "backend\.env.example") {
+              Copy-Item "backend\.env.example" "backend\.env"
+              Write-Host "Created backend\.env from example"
+            } else {
+              Write-Host "Warning: backend\.env.example not found, creating minimal backend\.env"
+              New-Item -ItemType Directory -Path "backend" -Force | Out-Null
+              New-Item -ItemType File -Path "backend\.env" -Force | Out-Null
+            }
+          }
           
           # Check system resources before starting
           Write-Host "System Resources:"
@@ -682,13 +704,13 @@ jobs:
                       $linuxMode = $true
                       break
                     } else {
-                      Write-Host "Attempt $attempt/$maxAttempts: Still in Windows container mode..."
+                      Write-Host "Attempt $attempt of $maxAttempts - Still in Windows container mode..."
                       if ($dockerInfo -match "OSType:\s*(\w+)") {
                         Write-Host "Current OSType: $($matches[1])"
                       }
                     }
                   } catch {
-                    Write-Host "Attempt $attempt/$maxAttempts: Docker not ready yet..."
+                    Write-Host "Attempt $attempt of $maxAttempts - Docker not ready yet..."
                   }
                 } while ($attempt -lt $maxAttempts)
                 
@@ -717,17 +739,6 @@ jobs:
           } catch {
             Write-Host "Docker is not working properly, skipping platform test"
             exit 0
-          }
-          
-          # Create .env files from examples (like deploy.yml does)
-          Write-Host "Creating .env files from examples..."
-          if (-not (Test-Path ".env")) {
-            Copy-Item ".env.example" ".env"
-            Write-Host "Created root .env from example"
-          }
-          if (-not (Test-Path "backend\.env")) {
-            Copy-Item "backend\.env.example" "backend\.env"
-            Write-Host "Created backend\.env from example"
           }
           
           # Create dummy thesaurus data for testing (skip SSH dependency)
@@ -959,10 +970,29 @@ jobs:
         if: always()
         run: |
           Write-Host "Service Status:"
-          make status
+          # Ensure .env files exist before running status commands
+          if (-not (Test-Path ".env")) {
+            Write-Host "Creating minimal .env file for status check..."
+            New-Item -ItemType File -Path ".env" -Force | Out-Null
+          }
+          if (-not (Test-Path "backend\.env")) {
+            Write-Host "Creating minimal backend .env file for status check..."
+            New-Item -ItemType Directory -Path "backend" -Force -ErrorAction SilentlyContinue | Out-Null
+            New-Item -ItemType File -Path "backend\.env" -Force | Out-Null
+          }
+          
+          try {
+            make status
+          } catch {
+            Write-Host "Failed to get service status: $($_.Exception.Message)"
+          }
           
           Write-Host "Docker Compose Services:"
-          docker compose ps
+          try {
+            docker compose ps
+          } catch {
+            Write-Host "Failed to get Docker Compose status: $($_.Exception.Message)"
+          }
           
           Write-Host "Disk Usage:"
           Get-PSDrive C | Select-Object Used,Free,@{Name="Size";Expression={$_.Used+$_.Free}}
@@ -1114,19 +1144,33 @@ jobs:
           # Quick Docker Desktop install with timeout
           echo "Installing Docker Desktop with 5-minute timeout..."
           
-          # Clean up any existing bash completions to avoid conflicts
+                    # Clean up any existing bash completions to avoid conflicts
           echo "Cleaning up potential Docker completion conflicts..."
+          
+          # Bash completion
           rm -f /opt/homebrew/etc/bash_completion.d/docker* 2>/dev/null || true
-          # Also clean up any docker-related symlinks in completions
           find /opt/homebrew/etc/bash_completion.d/ -name "*docker*" -type l -delete 2>/dev/null || true
+          
+          # Fish completion - this is what's causing the current failure
+          rm -f /opt/homebrew/share/fish/vendor_completions.d/docker* 2>/dev/null || true
+          find /opt/homebrew/share/fish/vendor_completions.d/ -name "*docker*" -type l -delete 2>/dev/null || true
+          
+          # Zsh completion
+          rm -f /opt/homebrew/share/zsh/site-functions/_docker* 2>/dev/null || true
+          find /opt/homebrew/share/zsh/site-functions/ -name "*docker*" -type l -delete 2>/dev/null || true
+          
+          # Ensure directories exist for reinstallation
+          mkdir -p /opt/homebrew/etc/bash_completion.d/ 2>/dev/null || true
+          mkdir -p /opt/homebrew/share/fish/vendor_completions.d/ 2>/dev/null || true
+          mkdir -p /opt/homebrew/share/zsh/site-functions/ 2>/dev/null || true
           
           # Use timeout if available (from coreutils), otherwise skip timeout
           if command -v timeout &> /dev/null; then
             echo "Using timeout for installation timeout..."
-            timeout 300 brew install --cask docker-desktop --force || {
+            timeout 300 brew install --cask docker-desktop --force --no-quarantine || {
               echo "Docker Desktop installation timed out or failed, skipping macOS test"
               exit 0
-            }
+           }
           elif command -v gtimeout &> /dev/null; then
             echo "Using gtimeout for installation timeout..."
             gtimeout 300 brew install --cask docker-desktop --force || {
