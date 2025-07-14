@@ -78,9 +78,18 @@ ML_API_TAG=latest-develop
 ## 🐳 Docker Architecture
 
 ### Supported Platforms
-- **Linux**: `linux/amd64`, `linux/arm64`
-- **Windows**: Linux containers via Docker Desktop
-- **macOS**: Linux containers via Docker Desktop
+- **Linux**: `linux/amd64`, `linux/arm64` (native Docker images)
+- **Windows**: Linux containers via Docker Desktop (Windows containers not supported)
+- **macOS**: Linux containers via Docker Desktop (Intel and Apple Silicon)
+
+### Why Linux-Only Images?
+The Fluently project uses base images that are only available for Linux:
+- `alpine:latest` - Linux-only
+- `golang:1.24-alpine` - Linux-only  
+- `python:3.11-slim` - Linux-only
+- `nginx:alpine` - Linux-only
+
+**Windows containers are not supported** because the base images don't have Windows variants. All platforms run Linux containers through Docker Desktop.
 
 ### Container Architecture
 ```

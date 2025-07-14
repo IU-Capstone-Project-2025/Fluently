@@ -389,7 +389,7 @@ jobs:
             docker.io/fluentlyorg/fluently-backend:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/amd64,linux/arm64,windows/amd64,windows/intel64
+          platforms: linux/amd64,linux/arm64
 
       # Telegram Bot Build  
       - name: Build and push telegram-bot image
@@ -404,7 +404,7 @@ jobs:
             docker.io/fluentlyorg/fluently-telegram-bot:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/amd64,linux/arm64,windows/amd64,windows/intel64
+          platforms: linux/amd64,linux/arm64
 
       # ML API Build (Most expensive - 15 minutes)
       - name: Build and push ML API image
@@ -419,7 +419,7 @@ jobs:
             docker.io/fluentlyorg/fluently-ml-api:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=min
-          platforms: linux/amd64,linux/arm64,windows/amd64,windows/intel64
+          platforms: linux/amd64,linux/arm64
 
       # Nginx Build
       - name: Build and push nginx image
@@ -434,7 +434,7 @@ jobs:
             docker.io/fluentlyorg/fluently-nginx:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/amd64,linux/arm64,windows/amd64,windows/intel64
+          platforms: linux/amd64,linux/arm64
 
       - name: Build summary
         run: |
