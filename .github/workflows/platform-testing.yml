@@ -100,15 +100,15 @@ jobs:
           sleep 30
           
           # Test core endpoints (from Install_Local.md)
-          echo "🔍 Testing core service endpoints..."
+          echo "Testing core service endpoints..."
           
           # Backend API
           for i in {1..10}; do
             if curl -f http://localhost:8070/health > /dev/null 2>&1; then
-              echo "✅ Backend API is healthy"
+              echo "Backend API is healthy"
               break
             elif [ $i -eq 10 ]; then
-              echo "❌ Backend API failed to start"
+              echo "Backend API failed to start"
               exit 1
             else
               echo "⏳ Waiting for backend API... (attempt $i/10)"
@@ -119,10 +119,10 @@ jobs:
           # Thesaurus API
           for i in {1..5}; do
             if curl -f http://localhost:8002/health > /dev/null 2>&1; then
-              echo "✅ Thesaurus API is healthy"
+              echo "Thesaurus API is healthy"
               break
             elif [ $i -eq 5 ]; then
-              echo "❌ Thesaurus API failed to start"
+              echo "Thesaurus API failed to start"
               exit 1
             else
               echo "⏳ Waiting for thesaurus API... (attempt $i/5)"
@@ -133,10 +133,10 @@ jobs:
           # LLM API
           for i in {1..5}; do
             if curl -f http://localhost:8003/health > /dev/null 2>&1; then
-              echo "✅ LLM API is healthy"
+              echo "LLM API is healthy"
               break
             elif [ $i -eq 5 ]; then
-              echo "❌ LLM API failed to start"
+              echo "LLM API failed to start"
               exit 1
             else
               echo "⏳ Waiting for LLM API... (attempt $i/5)"
@@ -148,10 +148,10 @@ jobs:
           if [ "${{ github.event.inputs.skip_services }}" != "true" ]; then
             for i in {1..15}; do
               if curl -f http://localhost:8001/health > /dev/null 2>&1; then
-                echo "✅ ML API is healthy"
+                echo "ML API is healthy"
                 break
               elif [ $i -eq 15 ]; then
-                echo "❌ ML API failed to start"
+                echo "ML API failed to start"
                 exit 1
               else
                 echo "⏳ Waiting for ML API... (attempt $i/15)"
@@ -165,59 +165,59 @@ jobs:
           
           # Test Swagger UI
           if curl -f http://localhost:8070/swagger/ > /dev/null 2>&1; then
-            echo "✅ Swagger UI is accessible at http://localhost:8070/swagger/"
+            echo "Swagger UI is accessible at http://localhost:8070/swagger/"
           else
-            echo "❌ Swagger UI is not accessible"
+            echo "Swagger UI is not accessible"
             exit 1
           fi
           
           # Test Directus admin panel
           if curl -f http://localhost:8055 > /dev/null 2>&1; then
-            echo "✅ Directus admin panel is accessible at http://localhost:8055/"
+            echo "Directus admin panel is accessible at http://localhost:8055/"
           else
-            echo "❌ Directus admin panel is not accessible"
+            echo "Directus admin panel is not accessible"
             exit 1
           fi
           
           # Test Distractor API docs
           if curl -f http://localhost:8001/docs > /dev/null 2>&1; then
-            echo "✅ Distractor API docs are accessible at http://localhost:8001/docs"
+            echo "Distractor API docs are accessible at http://localhost:8001/docs"
           else
-            echo "⚠️ Distractor API docs are not accessible (may be disabled in test)"
+            echo "Distractor API docs are not accessible (may be disabled in test)"
           fi
           
           # Test Thesaurus API docs
           if curl -f http://localhost:8002/docs > /dev/null 2>&1; then
-            echo "✅ Thesaurus API docs are accessible at http://localhost:8002/docs"
+            echo "Thesaurus API docs are accessible at http://localhost:8002/docs"
           else
-            echo "❌ Thesaurus API docs are not accessible"
+            echo "Thesaurus API docs are not accessible"
             exit 1
           fi
           
           # Test LLM API docs (not mentioned in Install_Local.md but important)
           if curl -f http://localhost:8003/docs > /dev/null 2>&1; then
-            echo "✅ LLM API docs are accessible at http://localhost:8003/docs"
+            echo "LLM API docs are accessible at http://localhost:8003/docs"
           else
-            echo "❌ LLM API docs are not accessible"
+            echo "LLM API docs are not accessible"
             exit 1
           fi
 
       - name: Show service status
         if: always()
         run: |
-          echo "📊 Service Status:"
+          echo "Service Status:"
           make status || true
           
-          echo "📋 Docker Compose Services:"
+          echo "Docker Compose Services:"
           docker compose ps || true
           
-          echo "💾 Disk Usage:"
+          echo "Disk Usage:"
           df -h | head -5
 
       - name: Show logs on failure
         if: failure()
         run: |
-          echo "🔍 Service Logs:"
+          echo "Service Logs:"
           docker compose logs --tail=50 || true
 
       - name: Cleanup
@@ -236,7 +236,10 @@ jobs:
 
       - name: Set up Docker Desktop
         run: |
-          Write-Host "🪟 Setting up Docker Desktop for Windows..."
+          # Set encoding to UTF-8 for console output
+          [Console]::OutputEncoding = [Text.Encoding]::UTF8
+          
+          Write-Host "Setting up Docker Desktop for Windows..."
           
           # Install Docker Desktop via Chocolatey
           Set-ExecutionPolicy Bypass -Scope Process -Force
@@ -250,7 +253,7 @@ jobs:
           Start-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe" -WindowStyle Hidden
           
           # Wait for Docker to be ready
-          Write-Host "⏳ Waiting for Docker Desktop to start..."
+          Write-Host "Waiting for Docker Desktop to start..."
           $timeout = 300 # 5 minutes
           $elapsed = 0
           do {
@@ -258,26 +261,29 @@ jobs:
             $elapsed += 10
             try {
               docker info | Out-Null
-              Write-Host "✅ Docker Desktop is ready"
+              Write-Host "Docker Desktop is ready"
               break
             } catch {
-              Write-Host "⏳ Waiting for Docker... ($elapsed/$timeout seconds)"
+              Write-Host "Waiting for Docker... ($elapsed/$timeout seconds)"
             }
           } while ($elapsed -lt $timeout)
           
           if ($elapsed -ge $timeout) {
-            Write-Host "❌ Docker Desktop failed to start within 5 minutes"
+            Write-Host "Docker Desktop failed to start within 5 minutes"
             exit 1
           }
           
           # Show Docker info
-          Write-Host "📊 Docker Info:"
+          Write-Host "Docker Info:"
           docker info | Select-String -Pattern "(Server Version|Operating System|Architecture|CPUs|Total Memory)"
         shell: powershell
 
       - name: Test Windows installation
         run: |
-          Write-Host "🪟 Testing local installation on Windows..."
+          # Set encoding to UTF-8 for console output
+          [Console]::OutputEncoding = [Text.Encoding]::UTF8
+          
+          Write-Host "Testing local installation on Windows..."
           
           # Create dummy thesaurus data for testing (skip SSH dependency)
           New-Item -ItemType Directory -Force -Path "analysis\thesaurus"
@@ -285,10 +291,10 @@ jobs:
           word,topic,subtopic,subsubtopic,CEFR_level,Total
           test,test_topic,test_subtopic,test_subsubtopic,a1,1
           "@ | Out-File -FilePath "analysis\thesaurus\result.csv" -Encoding utf8
-          Write-Host "📄 Created dummy thesaurus data for testing"
+          Write-Host "Created dummy thesaurus data for testing"
           
           # Show system info
-          Write-Host "📊 System Info:"
+          Write-Host "System Info:"
           Write-Host "Windows Version: $((Get-ComputerInfo).WindowsProductName)"
           Write-Host "Architecture: $env:PROCESSOR_ARCHITECTURE"
           Write-Host "Available RAM: $([math]::Round((Get-ComputerInfo).TotalPhysicalMemory / 1GB, 2)) GB"
@@ -296,7 +302,7 @@ jobs:
           
           # Install Make if not available (using Chocolatey)
           if (-not (Get-Command make -ErrorAction SilentlyContinue)) {
-            Write-Host "📦 Installing Make via Chocolatey..."
+            Write-Host "Installing Make via Chocolatey..."
             choco install make -y
           }
           
@@ -341,26 +347,26 @@ jobs:
           make run-local
           
           # Wait for services to be ready
-          Write-Host "⏳ Waiting for services to start..."
+          Write-Host "Waiting for services to start..."
           Start-Sleep -Seconds 45  # Windows might need more time
           
           # Test core endpoints (from Install_Local.md)
-          Write-Host "🔍 Testing core service endpoints..."
+          Write-Host "Testing core service endpoints..."
           
           # Backend API
           for ($i = 1; $i -le 10; $i++) {
             try {
               $response = Invoke-WebRequest -Uri "http://localhost:8070/health" -UseBasicParsing -TimeoutSec 5
               if ($response.StatusCode -eq 200) {
-                Write-Host "✅ Backend API is healthy"
+                Write-Host "Backend API is healthy"
                 break
               }
             } catch {
               if ($i -eq 10) {
-                Write-Host "❌ Backend API failed to start"
+                Write-Host "Backend API failed to start"
                 exit 1
               } else {
-                Write-Host "⏳ Waiting for backend API... (attempt $i/10)"
+                Write-Host "Waiting for backend API... (attempt $i/10)"
                 Start-Sleep -Seconds 10
               }
             }
@@ -371,15 +377,15 @@ jobs:
             try {
               $response = Invoke-WebRequest -Uri "http://localhost:8002/health" -UseBasicParsing -TimeoutSec 5
               if ($response.StatusCode -eq 200) {
-                Write-Host "✅ Thesaurus API is healthy"
+                Write-Host "Thesaurus API is healthy"
                 break
               }
             } catch {
               if ($i -eq 5) {
-                Write-Host "❌ Thesaurus API failed to start"
+                Write-Host "Thesaurus API failed to start"
                 exit 1
               } else {
-                Write-Host "⏳ Waiting for thesaurus API... (attempt $i/5)"
+                Write-Host "Waiting for thesaurus API... (attempt $i/5)"
                 Start-Sleep -Seconds 10
               }
             }
@@ -390,15 +396,15 @@ jobs:
             try {
               $response = Invoke-WebRequest -Uri "http://localhost:8003/health" -UseBasicParsing -TimeoutSec 5
               if ($response.StatusCode -eq 200) {
-                Write-Host "✅ LLM API is healthy"
+                Write-Host "LLM API is healthy"
                 break
               }
             } catch {
               if ($i -eq 5) {
-                Write-Host "❌ LLM API failed to start"
+                Write-Host "LLM API failed to start"
                 exit 1
               } else {
-                Write-Host "⏳ Waiting for LLM API... (attempt $i/5)"
+                Write-Host "Waiting for LLM API... (attempt $i/5)"
                 Start-Sleep -Seconds 10
               }
             }
@@ -410,15 +416,15 @@ jobs:
               try {
                 $response = Invoke-WebRequest -Uri "http://localhost:8001/health" -UseBasicParsing -TimeoutSec 5
                 if ($response.StatusCode -eq 200) {
-                  Write-Host "✅ ML API is healthy"
+                  Write-Host "ML API is healthy"
                   break
                 }
               } catch {
                 if ($i -eq 15) {
-                  Write-Host "❌ ML API failed to start"
+                  Write-Host "ML API failed to start"
                   exit 1
                 } else {
-                  Write-Host "⏳ Waiting for ML API... (attempt $i/15)"
+                  Write-Host "Waiting for ML API... (attempt $i/15)"
                   Start-Sleep -Seconds 15
                 }
               }
@@ -432,10 +438,10 @@ jobs:
           try {
             $response = Invoke-WebRequest -Uri "http://localhost:8070/swagger/" -UseBasicParsing -TimeoutSec 10
             if ($response.StatusCode -eq 200) {
-              Write-Host "✅ Swagger UI is accessible at http://localhost:8070/swagger/"
+              Write-Host "Swagger UI is accessible at http://localhost:8070/swagger/"
             }
           } catch {
-            Write-Host "❌ Swagger UI is not accessible"
+            Write-Host "Swagger UI is not accessible"
             exit 1
           }
           
@@ -443,10 +449,10 @@ jobs:
           try {
             $response = Invoke-WebRequest -Uri "http://localhost:8055" -UseBasicParsing -TimeoutSec 10
             if ($response.StatusCode -eq 200) {
-              Write-Host "✅ Directus admin panel is accessible at http://localhost:8055/"
+              Write-Host "Directus admin panel is accessible at http://localhost:8055/"
             }
           } catch {
-            Write-Host "❌ Directus admin panel is not accessible"
+            Write-Host "Directus admin panel is not accessible"
             exit 1
           }
           
@@ -454,20 +460,20 @@ jobs:
           try {
             $response = Invoke-WebRequest -Uri "http://localhost:8001/docs" -UseBasicParsing -TimeoutSec 10
             if ($response.StatusCode -eq 200) {
-              Write-Host "✅ Distractor API docs are accessible at http://localhost:8001/docs"
+              Write-Host "Distractor API docs are accessible at http://localhost:8001/docs"
             }
           } catch {
-            Write-Host "⚠️ Distractor API docs are not accessible (may be disabled in test)"
+            Write-Host "Distractor API docs are not accessible (may be disabled in test)"
           }
           
           # Test Thesaurus API docs
           try {
             $response = Invoke-WebRequest -Uri "http://localhost:8002/docs" -UseBasicParsing -TimeoutSec 10
             if ($response.StatusCode -eq 200) {
-              Write-Host "✅ Thesaurus API docs are accessible at http://localhost:8002/docs"
+              Write-Host "Thesaurus API docs are accessible at http://localhost:8002/docs"
             }
           } catch {
-            Write-Host "❌ Thesaurus API docs are not accessible"
+            Write-Host "Thesaurus API docs are not accessible"
             exit 1
           }
           
@@ -475,10 +481,10 @@ jobs:
           try {
             $response = Invoke-WebRequest -Uri "http://localhost:8003/docs" -UseBasicParsing -TimeoutSec 10
             if ($response.StatusCode -eq 200) {
-              Write-Host "✅ LLM API docs are accessible at http://localhost:8003/docs"
+              Write-Host "LLM API docs are accessible at http://localhost:8003/docs"
             }
           } catch {
-            Write-Host "❌ LLM API docs are not accessible"
+            Write-Host "LLM API docs are not accessible"
             exit 1
           }
         shell: powershell
@@ -486,7 +492,7 @@ jobs:
       - name: Show service status
         if: always()
         run: |
-          Write-Host "📊 Service Status:"
+          Write-Host "Service Status:"
           make status
           
           Write-Host "📋 Docker Compose Services:"
@@ -499,7 +505,7 @@ jobs:
       - name: Show logs on failure
         if: failure()
         run: |
-          Write-Host "🔍 Service Logs:"
+          Write-Host "Service Logs:"
           docker compose logs --tail=50
         shell: powershell
 
@@ -520,54 +526,48 @@ jobs:
 
       - name: Install Docker Desktop
         run: |
-          echo "🍎 Installing Docker Desktop for macOS..."
+          echo "Installing Docker Desktop for macOS..."
           
-          # Download Docker Desktop for Mac (Universal - works on both Intel and Apple Silicon)
-          curl -L -o docker.dmg "https://desktop.docker.com/mac/main/universal/Docker.dmg"
+          # Use Homebrew to install Docker Desktop (more reliable)
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || true
           
-          # Mount the DMG
-          sudo hdiutil attach docker.dmg
-          
-          # Install Docker.app
-          sudo cp -R /Volumes/Docker/Docker.app /Applications/
-          
-          # Unmount the DMG
-          sudo hdiutil detach /Volumes/Docker
+          # Install Docker Desktop via Homebrew
+          brew install --cask docker
           
           # Start Docker Desktop
           open /Applications/Docker.app
           
           # Wait for Docker to be ready
-          echo "⏳ Waiting for Docker Desktop to start..."
+          echo "Waiting for Docker Desktop to start..."
           for i in {1..30}; do
             if docker info > /dev/null 2>&1; then
-              echo "✅ Docker Desktop is ready"
+              echo "Docker Desktop is ready"
               break
             elif [ $i -eq 30 ]; then
-              echo "❌ Docker Desktop failed to start within 5 minutes"
+              echo "Docker Desktop failed to start within 5 minutes"
               exit 1
             else
-              echo "⏳ Waiting for Docker... (attempt $i/30)"
+              echo "Waiting for Docker... (attempt $i/30)"
               sleep 10
             fi
           done
           
           # Show Docker info
-          echo "📊 Docker Info:"
+          echo "Docker Info:"
           docker info | grep -E "(Server Version|Operating System|Architecture|CPUs|Total Memory)"
 
       - name: Test macOS installation
         run: |
-          echo "🍎 Testing local installation on macOS..."
+          echo "Testing local installation on macOS..."
           
           # Create dummy thesaurus data for testing (skip SSH dependency)
           mkdir -p analysis/thesaurus
           echo "word,topic,subtopic,subsubtopic,CEFR_level,Total" > analysis/thesaurus/result.csv
           echo "test,test_topic,test_subtopic,test_subsubtopic,a1,1" >> analysis/thesaurus/result.csv
-          echo "📄 Created dummy thesaurus data for testing"
+          echo "Created dummy thesaurus data for testing"
           
           # Show system info
-          echo "📊 System Info:"
+          echo "System Info:"
           echo "macOS Version: $(sw_vers -productVersion)"
           echo "Architecture: $(uname -m)"
           echo "Available RAM: $(sysctl -n hw.memsize | awk '{print $1/1024/1024/1024 " GB"}')"
@@ -621,22 +621,22 @@ jobs:
           make run-local
           
           # Wait for services to be ready
-          echo "⏳ Waiting for services to start..."
+          echo "Waiting for services to start..."
           sleep 45  # macOS might need a bit more time
           
           # Test core endpoints (from Install_Local.md)
-          echo "🔍 Testing core service endpoints..."
+          echo "Testing core service endpoints..."
           
           # Backend API
           for i in {1..10}; do
             if curl -f http://localhost:8070/health > /dev/null 2>&1; then
-              echo "✅ Backend API is healthy"
+              echo "Backend API is healthy"
               break
             elif [ $i -eq 10 ]; then
-              echo "❌ Backend API failed to start"
+              echo "Backend API failed to start"
               exit 1
             else
-              echo "⏳ Waiting for backend API... (attempt $i/10)"
+              echo "Waiting for backend API... (attempt $i/10)"
               sleep 10
             fi
           done
@@ -644,13 +644,13 @@ jobs:
           # Thesaurus API
           for i in {1..5}; do
             if curl -f http://localhost:8002/health > /dev/null 2>&1; then
-              echo "✅ Thesaurus API is healthy"
+              echo "Thesaurus API is healthy"
               break
             elif [ $i -eq 5 ]; then
-              echo "❌ Thesaurus API failed to start"
+              echo "Thesaurus API failed to start"
               exit 1
             else
-              echo "⏳ Waiting for thesaurus API... (attempt $i/5)"
+              echo "Waiting for thesaurus API... (attempt $i/5)"
               sleep 10
             fi
           done
@@ -658,13 +658,13 @@ jobs:
           # LLM API
           for i in {1..5}; do
             if curl -f http://localhost:8003/health > /dev/null 2>&1; then
-              echo "✅ LLM API is healthy"
+              echo "LLM API is healthy"
               break
             elif [ $i -eq 5 ]; then
-              echo "❌ LLM API failed to start"
+              echo "LLM API failed to start"
               exit 1
             else
-              echo "⏳ Waiting for LLM API... (attempt $i/5)"
+              echo "Waiting for LLM API... (attempt $i/5)"
               sleep 10
             fi
           done
@@ -673,67 +673,67 @@ jobs:
           if [ "${{ github.event.inputs.skip_services }}" != "true" ]; then
             for i in {1..15}; do
               if curl -f http://localhost:8001/health > /dev/null 2>&1; then
-                echo "✅ ML API is healthy"
+                echo "ML API is healthy"
                 break
               elif [ $i -eq 15 ]; then
-                echo "❌ ML API failed to start"
+                echo "ML API failed to start"
                 exit 1
               else
-                echo "⏳ Waiting for ML API... (attempt $i/15)"
+                echo "Waiting for ML API... (attempt $i/15)"
                 sleep 15
               fi
             done
           fi
           
           # Test Quick Start endpoints (from Install_Local.md)
-          echo "🎯 Testing Quick Start endpoints..."
+          echo "Testing Quick Start endpoints..."
           
           # Test Swagger UI
           if curl -f http://localhost:8070/swagger/ > /dev/null 2>&1; then
-            echo "✅ Swagger UI is accessible at http://localhost:8070/swagger/"
+            echo "Swagger UI is accessible at http://localhost:8070/swagger/"
           else
-            echo "❌ Swagger UI is not accessible"
+            echo "Swagger UI is not accessible"
             exit 1
           fi
           
           # Test Directus admin panel
           if curl -f http://localhost:8055 > /dev/null 2>&1; then
-            echo "✅ Directus admin panel is accessible at http://localhost:8055/"
+            echo "Directus admin panel is accessible at http://localhost:8055/"
           else
-            echo "❌ Directus admin panel is not accessible"
+            echo "Directus admin panel is not accessible"
             exit 1
           fi
           
           # Test Distractor API docs
           if curl -f http://localhost:8001/docs > /dev/null 2>&1; then
-            echo "✅ Distractor API docs are accessible at http://localhost:8001/docs"
+            echo "Distractor API docs are accessible at http://localhost:8001/docs"
           else
-            echo "⚠️ Distractor API docs are not accessible (may be disabled in test)"
+            echo "Distractor API docs are not accessible (may be disabled in test)"
           fi
           
           # Test Thesaurus API docs
           if curl -f http://localhost:8002/docs > /dev/null 2>&1; then
-            echo "✅ Thesaurus API docs are accessible at http://localhost:8002/docs"
+            echo "Thesaurus API docs are accessible at http://localhost:8002/docs"
           else
-            echo "❌ Thesaurus API docs are not accessible"
+            echo "Thesaurus API docs are not accessible"
             exit 1
           fi
           
           # Test LLM API docs
           if curl -f http://localhost:8003/docs > /dev/null 2>&1; then
-            echo "✅ LLM API docs are accessible at http://localhost:8003/docs"
+            echo "LLM API docs are accessible at http://localhost:8003/docs"
           else
-            echo "❌ LLM API docs are not accessible"
+            echo "LLM API docs are not accessible"
             exit 1
           fi
           
           # Test macOS specific considerations
-          echo "🍎 Testing macOS-specific considerations..."
+          echo "Testing macOS-specific considerations..."
           
           # Check if ARM64 images are being used on Apple Silicon
           if [[ "$(uname -m)" == "arm64" ]]; then
-            echo "📱 Apple Silicon detected - checking for ARM64 images..."
-            docker compose images | grep -E "(linux/arm64|arm64)" || echo "⚠️ No ARM64 images detected"
+            echo "Apple Silicon detected - checking for ARM64 images..."
+            docker compose images | grep -E "(linux/arm64|arm64)" || echo "No ARM64 images detected"
           fi
 
       - name: Show service status
@@ -769,43 +769,43 @@ jobs:
     steps:
       - name: Test Results Summary
         run: |
-          echo "🎯 Platform Testing Results Summary"
+          echo "Platform Testing Results Summary"
           echo "=================================="
           
           # Check Ubuntu results
           if [ "${{ needs.test-ubuntu.result }}" = "success" ]; then
-            echo "✅ Ubuntu: PASSED"
+            echo "PASSED: Ubuntu"
           elif [ "${{ needs.test-ubuntu.result }}" = "skipped" ]; then
-            echo "⏭️ Ubuntu: SKIPPED"
+            echo "SKIPPED: Ubuntu"
           else
-            echo "❌ Ubuntu: FAILED"
+            echo "FAILED: Ubuntu"
           fi
           
           # Check macOS results
           if [ "${{ needs.test-macos.result }}" = "success" ]; then
-            echo "✅ macOS: PASSED"
+            echo "PASSED: macOS"
           elif [ "${{ needs.test-macos.result }}" = "skipped" ]; then
-            echo "⏭️ macOS: SKIPPED"
+            echo "SKIPPED: macOS"
           else
-            echo "❌ macOS: FAILED"
+            echo "FAILED: macOS"
           fi
           
           # Check Windows results
           if [ "${{ needs.test-windows.result }}" = "success" ]; then
-            echo "✅ Windows: PASSED"
+            echo "PASSED: Windows"
           elif [ "${{ needs.test-windows.result }}" = "skipped" ]; then
-            echo "⏭️ Windows: SKIPPED"
+            echo "SKIPPED: Windows"
           else
-            echo "❌ Windows: FAILED"
+            echo "FAILED: Windows"
           fi
           
           # Overall result
           if [ "${{ needs.test-ubuntu.result }}" = "success" ] && [ "${{ needs.test-macos.result }}" = "success" ] && [ "${{ needs.test-windows.result }}" = "success" ]; then
             echo ""
-            echo "🎉 All platform tests passed!"
-            echo "✅ Ready for deployment across all supported platforms"
+            echo "All platform tests passed!"
+            echo "Ready for deployment across all supported platforms"
           else
             echo ""
-            echo "⚠️ Some platform tests failed or were skipped"
+            echo "Some platform tests failed or were skipped"
             echo "Please check the individual job results above"
           fi

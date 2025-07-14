@@ -81,9 +81,9 @@ run-local: check-env pull-images       ## Start all services with pre-built imag
 	@echo ""
 	@echo "🌐 Access your services:"
 	@echo "  - Swagger UI:  http://localhost:8070/swagger/"
-	@echo "  - Directus admin panel:     http://localhost:8055/
-	@echo "  - Distractor API:     http://localhost:8001/docs
-	@echo "  - Thesaurus API:     http://localhost:8002/docs
+	@echo "  - Directus admin panel:     http://localhost:8055/"
+	@echo "  - Distractor API:     http://localhost:8001/docs"
+	@echo "  - Thesaurus API:     http://localhost:8002/docs"
 	@echo ""
 	@echo "📊 Monitor with: make logs"
 
