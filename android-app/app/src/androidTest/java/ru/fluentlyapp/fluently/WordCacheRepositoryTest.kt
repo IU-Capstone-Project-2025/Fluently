@@ -22,7 +22,7 @@ class WordCacheRepositoryTest {
             targetContext,
             AppDatabase::class.java
         ).build()
-        wordCacheRepository = WordCacheRepositoryImpl(appDatabase.wordCacheDao())
+        wordCacheRepository = WordCacheRepositoryImpl(appDatabase)
     }
 
     @Test

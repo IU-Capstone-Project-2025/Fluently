@@ -163,7 +163,7 @@ fun InputWordExercisePreview() {
     FluentlyTheme {
         InputWordExercise(
             modifier = Modifier.fillMaxSize(),
-            exerciseState = Exercise.InputWord("Устаревание", "Deprecation", "Deprecation"),
+            exerciseState = Exercise.InputWord("Устаревание", wordId = "", "Deprecation", "Deprecation"),
             observer = object : InputWordObserver {
                 override fun onCompleteExercise() {}
                 override fun onConfirmInput(input: String) {}

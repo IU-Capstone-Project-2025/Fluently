@@ -146,7 +146,8 @@ fun NewWordExercisePreview() {
                                 "Эта функция устарела, начиная с  версии билиотеки 1.2",
                         "Components Deprecation is a main source of conflicts in android" to
                                 "Устаревание компонентов - главная причина конфликтов в Андроиде",
-                    )
+                    ),
+                    wordId = ""
                 ),
                 newWordObserver = object : NewWordObserver() {
                     override fun onUserKnowsWord(doesUserKnowWord: Boolean) {}
@@ -193,7 +194,8 @@ fun NewWordExerciseScrollPreview() {
                                 "Устаревание компонентов - главная причина конфликтов в Андроиде",
                         "Components Deprecation is a main source of conflicts in android" to
                                 "Устаревание компонентов - главная причина конфликтов в Андроиде",
-                    )
+                    ),
+                    wordId = ""
                 ),
                 newWordObserver = object : NewWordObserver() {
                     override fun onUserKnowsWord(doesUserKnowWord: Boolean) {}

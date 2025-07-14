@@ -7,7 +7,8 @@ import java.time.Instant
 
 @Entity(tableName = "word_progresses")
 data class WordProgressEntity(
-    @PrimaryKey val id: String,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @ColumnInfo(name = "word_id") val wordId: String,
     @ColumnInfo(name = "is_learning") val isLearning: Boolean,
     @ColumnInfo(name = "timestamp") val timestamp: Instant
 )

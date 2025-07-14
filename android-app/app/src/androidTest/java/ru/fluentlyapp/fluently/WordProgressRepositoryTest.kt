@@ -33,7 +33,7 @@ class WordProgressRepositoryTest {
     fun basic_crud_works() {
         val wordProgresses = (1..5).map {
             WordProgress(
-                it.toString(),
+                (it % 2).toString(),
                 isLearning = it % 2 == 0,
                 instant = OffsetDateTime.now().plusYears(it.toLong()).toInstant()
             )
@@ -53,18 +53,18 @@ class WordProgressRepositoryTest {
         Log.i("Test", "${expectedProgresses.joinToString()} ${actualProgresses.joinToString()}")
         assertEquals(expectedProgresses, actualProgresses)
 
-        runBlocking {
-            wordProgressRepository.removeProgress(wordProgresses[1])
-        }
-
-        expectedProgresses = wordProgresses.slice(2..3).toSet()
-        actualProgresses = runBlocking {
-            wordProgressRepository.getProgresses(
-                wordProgresses[1].instant,
-                wordProgresses[3].instant
-            ).first().toSet()
-        }
-        Log.i("Test", "${expectedProgresses.joinToString()} ${actualProgresses.joinToString()}")
-        assertEquals(expectedProgresses, actualProgresses)
+//        runBlocking {
+//            wordProgressRepository.removeProgress(wordProgresses[1])
+//        }
+//
+//        expectedProgresses = wordProgresses.slice(2..3).toSet()
+//        actualProgresses = runBlocking {
+//            wordProgressRepository.getProgresses(
+//                wordProgresses[1].timestamp,
+//                wordProgresses[3].timestamp
+//            ).first().toSet()
+//        }
+//        Log.i("Test", "${expectedProgresses.joinToString()} ${actualProgresses.joinToString()}")
+//        assertEquals(expectedProgresses, actualProgresses)
     }
 }

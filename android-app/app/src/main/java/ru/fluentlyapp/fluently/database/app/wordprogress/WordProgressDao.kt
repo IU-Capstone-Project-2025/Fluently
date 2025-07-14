@@ -13,9 +13,6 @@ interface WordProgressDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(wordProgress: WordProgressEntity)
 
-    @Delete
-    suspend fun delete(wordProgress: WordProgressEntity)
-
     @Query(
         "SELECT * FROM word_progresses WHERE timestamp BETWEEN :begin AND :end"
     )

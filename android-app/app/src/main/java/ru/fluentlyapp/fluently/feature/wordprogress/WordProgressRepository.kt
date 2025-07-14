@@ -3,13 +3,13 @@ package ru.fluentlyapp.fluently.feature.wordprogress
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import ru.fluentlyapp.fluently.database.app.wordprogress.WordProgressDao
+import timber.log.Timber
 import java.time.Instant
 import javax.inject.Inject
 import javax.inject.Singleton
 
 interface WordProgressRepository {
     suspend fun addProgress(wordProgress: WordProgress)
-    suspend fun removeProgress(wordProgress: WordProgress)
     fun getProgresses(beginDate: Instant, endDate: Instant): Flow<List<WordProgress>>
 }
 
@@ -18,22 +18,21 @@ class WordProgressRepositoryImpl @Inject constructor(
     private val wordProgressDao: WordProgressDao
 ) : WordProgressRepository {
     override suspend fun addProgress(wordProgress: WordProgress) {
+        Timber.d("addProgress $wordProgress")
         wordProgressDao.insert(wordProgress.toWordProgressEntity())
-    }
-
-    override suspend fun removeProgress(wordProgress: WordProgress) {
-        wordProgressDao.delete(wordProgress.toWordProgressEntity())
     }
 
     override fun getProgresses(
         beginDate: Instant,
         endDate: Instant
     ): Flow<List<WordProgress>> {
-        return wordProgressDao.getProgressesBetweenDates(
+        val result = wordProgressDao.getProgressesBetweenDates(
             beginDate,
             endDate
         ).map {
             it.map { it.toWordProgress() }
         }
+        Timber.v("getProgresses: $result")
+        return result
     }
 }

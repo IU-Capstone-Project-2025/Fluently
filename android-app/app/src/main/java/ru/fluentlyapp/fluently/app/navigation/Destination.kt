@@ -16,9 +16,5 @@ object Destination {
     object LessonScreen
 
     @Serializable
-    class WordsProgress(val progressType: WordsProgressType) {
-        enum class WordsProgressType {
-            LEARNED, IN_PROGRESS
-        }
-    }
+    class WordsProgress(val isLearning: Boolean)
 }

@@ -26,7 +26,8 @@ fun LessonResponseBody.convertToLesson(): Lesson {
                     doesUserKnow = null,
                     examples = card.sentences.map {
                         it.text to it.translation
-                    }
+                    },
+                    wordId = card.word_id
                 )
             )
 
@@ -44,7 +45,8 @@ fun LessonResponseBody.convertToLesson(): Lesson {
                             word = exerciseData.text!!,
                             answerVariants = options,
                             correctVariant = options.indexOf(exerciseData.correct_answer),
-                            selectedVariant = null
+                            selectedVariant = null,
+                            wordId = card.word_id
                         )
                     )
                 }
@@ -73,7 +75,8 @@ fun LessonResponseBody.convertToLesson(): Lesson {
                         Exercise.InputWord(
                             translation = translation,
                             correctAnswer = correctAnswer,
-                            inputtedWord = null
+                            inputtedWord = null,
+                            wordId = card.word_id
                         )
                     )
                 }

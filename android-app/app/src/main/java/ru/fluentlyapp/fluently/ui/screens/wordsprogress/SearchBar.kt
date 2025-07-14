@@ -74,7 +74,10 @@ fun SearchBar(
                     modifier = Modifier
                         .clip(CircleShape)
                         .clickable(
-                            onClick = { onQueryChange("") }
+                            onClick = {
+                                onQueryChange("")
+                                onSearch()
+                            }
                         )
                 )
             }

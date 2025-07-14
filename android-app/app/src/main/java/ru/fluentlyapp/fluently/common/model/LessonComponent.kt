@@ -12,6 +12,7 @@ sealed interface Exercise : LessonComponent {
     @Serializable
     data class NewWord(
         override var id: Int = -1,
+        val wordId: String = "",
         val word: String,
         val translation: String,
         val phoneticTranscription: String,
@@ -24,6 +25,7 @@ sealed interface Exercise : LessonComponent {
     @Serializable
     data class ChooseTranslation(
         override var id: Int = -1,
+        val wordId: String = "",
         val word: String,
         val answerVariants: List<String>,
         val correctVariant: Int,
@@ -35,6 +37,7 @@ sealed interface Exercise : LessonComponent {
     @Serializable
     data class FillTheGap(
         override var id: Int = -1,
+        val wordId: String = "",
         val sentence: List<String>,
         val answerVariants: List<String>,
         val correctVariant: Int,
@@ -46,6 +49,7 @@ sealed interface Exercise : LessonComponent {
     @Serializable
     data class InputWord(
         val translation: String,
+        val wordId: String = "",
         val correctAnswer: String,
         val inputtedWord: String?,
         override var id: Int = -1,

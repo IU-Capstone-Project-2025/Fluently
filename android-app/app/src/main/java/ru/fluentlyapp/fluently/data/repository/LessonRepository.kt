@@ -1,17 +1,15 @@
 package ru.fluentlyapp.fluently.data.repository
 
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import ru.fluentlyapp.fluently.common.model.Decoration
 import ru.fluentlyapp.fluently.common.model.Exercise
-import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.common.model.LessonComponent
-import ru.fluentlyapp.fluently.datastore.LessonsStatistic
-import ru.fluentlyapp.fluently.datastore.LessonsStatisticDataStore
 import ru.fluentlyapp.fluently.datastore.OngoingLessonDataStore
+import ru.fluentlyapp.fluently.feature.wordcache.WordCache
+import ru.fluentlyapp.fluently.feature.wordcache.WordCacheRepository
 import ru.fluentlyapp.fluently.network.FluentlyApiDataSource
 import timber.log.Timber
 import javax.inject.Inject
@@ -65,14 +63,12 @@ interface LessonRepository {
      * Once the user finishes the lesson, send the progress to the api.
      */
     suspend fun sendLesson()
-
-    suspend fun getLessonsStatistic(): Flow<LessonsStatistic?>
 }
 
 class DefaultLessonRepository @Inject constructor(
     val fluentlyApiDataSource: FluentlyApiDataSource,
     val ongoingLessonDataStore: OngoingLessonDataStore,
-    val lessonsStatisticDataStore: LessonsStatisticDataStore
+    val wordCacheRepository: WordCacheRepository
 ) : LessonRepository {
     override suspend fun hasSavedLesson(): Boolean {
         return try {
@@ -105,6 +101,19 @@ class DefaultLessonRepository @Inject constructor(
 
     override suspend fun fetchAndSaveOngoingLesson() {
         val lesson = fluentlyApiDataSource.getLesson()
+
+        for (component in lesson.components) {
+            if (component is Exercise.NewWord) {
+                wordCacheRepository.updateWord(
+                    WordCache(
+                        wordId = component.wordId,
+                        word = component.word,
+                        translation = component.translation,
+                        examples = component.examples
+                    )
+                )
+            }
+        }
 
         val updatedLessonComponents: List<LessonComponent> = buildList {
             add(generateOnboardingComponent(lesson.components))
@@ -173,26 +182,9 @@ class DefaultLessonRepository @Inject constructor(
             }
     }
 
-    override suspend fun getLessonsStatistic(): Flow<LessonsStatistic?> {
-        return lessonsStatisticDataStore.getLessonsStatistic()
-    }
-
     override suspend fun sendLesson() {
         ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
-            var knownWordsCount = 0
-            var newWordsCount = 0
-            for (component in lesson.components) {
-                if (component is Exercise.NewWord) {
-                    knownWordsCount += (component.doesUserKnow == true).compareTo(false)
-                    newWordsCount += (component.doesUserKnow == false).compareTo(false)
-                }
-            }
-            val initialLessonStatistic = lessonsStatisticDataStore.getLessonsStatistic().first() ?: LessonsStatistic(0, 0)
-            val updatedLessonStatistic = LessonsStatistic(
-                knownWords = initialLessonStatistic.knownWords + knownWordsCount,
-                wordsInProgress = initialLessonStatistic.wordsInProgress + newWordsCount
-            )
-            lessonsStatisticDataStore.setLessonsStatistic(updatedLessonStatistic)
+
         }
     }
 }

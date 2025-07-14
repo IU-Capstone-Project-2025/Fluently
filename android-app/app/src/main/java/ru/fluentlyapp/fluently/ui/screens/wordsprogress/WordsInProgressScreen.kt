@@ -42,6 +42,8 @@ fun WordsProgressScreen(
         modifier = modifier,
         uiState = uiState,
         onBackClick = onBackClick,
+        onQueryChange = { wordsInProgressViewModel.updateSearchString(it) },
+        onSearch = { wordsInProgressViewModel.onSearch() }
     )
 }
 
@@ -50,6 +52,8 @@ fun WordsProgressScreenContent(
     modifier: Modifier = Modifier,
     uiState: WordsProgressUiState,
     onBackClick: () -> Unit,
+    onQueryChange: (String) -> Unit,
+    onSearch: () -> Unit,
 ) {
     Column(
         modifier = modifier.background(color = FluentlyTheme.colors.primary)
@@ -90,9 +94,9 @@ fun WordsProgressScreenContent(
         ) {
             SearchBar(
                 modifier = Modifier.fillMaxWidth(),
-                onQueryChange = {},
-                onSearch = {},
-                query = ""
+                onQueryChange = onQueryChange,
+                onSearch = onSearch,
+                query = uiState.searchString
             )
             Spacer(modifier = Modifier.height(16.dp))
             WordList(
@@ -131,7 +135,9 @@ fun WordsProgressScreenPreview() {
                         )
                     )
                 }
-            )
+            ),
+            onQueryChange = {},
+            onSearch = {}
         )
     }
 }

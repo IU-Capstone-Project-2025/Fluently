@@ -47,17 +47,6 @@ class HomeScreenViewModel @Inject constructor(
                 }
             }
         }
-
-        viewModelScope.launch {
-            lessonRepository.getLessonsStatistic().collect { statistic ->
-                _uiState.update {
-                    it.copy(
-                        learnedWordsNumber = statistic?.knownWords ?: 0,
-                        inProgressWordsNumber = statistic?.wordsInProgress ?: 0
-                    )
-                }
-            }
-        }
     }
 
     fun ensureOngoingLesson() {
