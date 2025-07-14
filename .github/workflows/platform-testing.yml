@@ -678,63 +678,92 @@ jobs:
                 
                 # Restart Docker Desktop
                 Write-Host "Restarting Docker Desktop with Linux container configuration..."
-                $dockerPath = "C:\Program Files\Docker\Docker\Docker Desktop.exe"
-                if (Test-Path $dockerPath) {
+                
+                # Search for Docker Desktop in multiple possible locations
+                $possiblePaths = @(
+                  "C:\Program Files\Docker\Docker\Docker Desktop.exe",
+                  "C:\Program Files\Docker Desktop\Docker Desktop.exe",
+                  "${env:ProgramFiles}\Docker\Docker\Docker Desktop.exe",
+                  "${env:ProgramFiles(x86)}\Docker\Docker\Docker Desktop.exe"
+                )
+                
+                $dockerPath = $null
+                foreach ($path in $possiblePaths) {
+                  if (Test-Path $path) {
+                    $dockerPath = $path
+                    Write-Host "Found Docker Desktop at: $dockerPath"
+                    break
+                  }
+                }
+                
+                if ($dockerPath) {
                   Start-Process $dockerPath -WindowStyle Hidden
                   Start-Sleep -Seconds 90
                 } else {
-                  Write-Host "Docker Desktop executable not found"
-                  exit 1
-                }
-                
-                # Wait for Docker to be ready and verify container mode
-                Write-Host "Waiting for Docker to restart in Linux mode..."
-                $maxAttempts = 20
-                $attempt = 0
-                $linuxMode = $false
-                
-                do {
-                  $attempt++
-                  Start-Sleep -Seconds 15
+                  Write-Host "Docker Desktop executable not found in standard locations"
+                  Write-Host "Attempting CLI-based container mode switch..."
                   
+                  # Try CLI-based container mode switch
                   try {
-                    $dockerInfo = docker info 2>$null | Out-String
-                    if ($dockerInfo -match "OSType:\s*linux") {
-                      Write-Host "SUCCESS: Docker is now in Linux container mode"
-                      $linuxMode = $true
-                      break
-                    } else {
-                      Write-Host "Attempt $attempt of $maxAttempts - Still in Windows container mode..."
-                      if ($dockerInfo -match "OSType:\s*(\w+)") {
-                        Write-Host "Current OSType: $($matches[1])"
-                      }
+                    # Method 1: Use docker context to switch
+                    Write-Host "Trying docker context command..."
+                    docker context use default
+                    
+                    # Method 2: Use explicit platform in environment
+                    Write-Host "Setting platform environment variables..."
+                    $env:DOCKER_DEFAULT_PLATFORM = "linux/amd64"
+                    [Environment]::SetEnvironmentVariable("DOCKER_DEFAULT_PLATFORM", "linux/amd64", "Process")
+                    
+                    # Method 3: Set Docker config
+                    Write-Host "Creating Docker config with Linux platform default..."
+                    $dockerConfig = "$env:USERPROFILE\.docker\config.json"
+                    $configDir = Split-Path $dockerConfig
+                    
+                    if (-not (Test-Path $configDir)) {
+                      New-Item -ItemType Directory -Path $configDir -Force | Out-Null
                     }
+                    
+                    if (Test-Path $dockerConfig) {
+                      $config = Get-Content $dockerConfig | ConvertFrom-Json
+                      $config.PSObject.Properties.Remove("experimental")
+                      $config | Add-Member -Name "experimental" -Value "enabled" -MemberType NoteProperty -Force
+                      $config.PSObject.Properties.Remove("platform")
+                      $config | Add-Member -Name "platform" -Value "linux/amd64" -MemberType NoteProperty -Force
+                      $config | ConvertTo-Json -Depth 10 | Set-Content $dockerConfig -Force
+                    } else {
+                      @{
+                        "experimental" = "enabled"
+                        "platform" = "linux/amd64"
+                      } | ConvertTo-Json | Set-Content $dockerConfig -Force
+                    }
+                    
+                    # Restart Docker service if possible
+                    Write-Host "Attempting to restart Docker Engine service..."
+                    Restart-Service *docker* -Force -ErrorAction SilentlyContinue
+                    Start-Sleep -Seconds 30
                   } catch {
-                    Write-Host "Attempt $attempt of $maxAttempts - Docker not ready yet..."
+                    Write-Host "CLI-based container mode switch failed: $($_.Exception.Message)"
+                    # Continue anyway - we'll check if it worked in the next steps
                   }
-                } while ($attempt -lt $maxAttempts)
-                
-                if (-not $linuxMode) {
-                  Write-Host "CRITICAL: Failed to switch to Linux containers after all attempts"
-                  Write-Host "This indicates a fundamental Docker Desktop configuration issue"
-                  Write-Host "The test will fail because our images require Linux containers"
-                  
-                  # Show final Docker state for debugging
-                  Write-Host "Final Docker state:"
-                  try {
-                    docker info | Select-String -Pattern "OSType|Operating System|Server Version" -ErrorAction SilentlyContinue
-                  } catch {
-                    Write-Host "Docker info not available"
-                  }
-                  exit 1
-                } else {
-                  Write-Host "Docker successfully configured for Linux containers"
                 }
-              } catch {
-                Write-Host "Emergency container mode switch failed: $($_.Exception.Message)"
-                Write-Host "Stack trace: $($_.ScriptStackTrace)"
-                exit 1
               }
+            } while ($elapsed -lt $timeout)
+            
+            if (-not $linuxMode) {
+              Write-Host "CRITICAL: Failed to switch to Linux containers after all attempts"
+              Write-Host "This indicates a fundamental Docker Desktop configuration issue"
+              Write-Host "The test will fail because our images require Linux containers"
+              
+              # Show final Docker state for debugging
+              Write-Host "Final Docker state:"
+              try {
+                docker info | Select-String -Pattern "OSType|Operating System|Server Version" -ErrorAction SilentlyContinue
+              } catch {
+                Write-Host "Docker info not available"
+              }
+              exit 1
+            } else {
+              Write-Host "Docker successfully configured for Linux containers"
             }
           } catch {
             Write-Host "Docker is not working properly, skipping platform test"
