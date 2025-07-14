@@ -90,7 +90,7 @@ fun FluentlyNavHost(
 
         composable<Destination.WordsProgress> {
             WordsProgressScreen(
-                modifier = modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize(),
                 onBackClick = {
                     navHostController.navigate(Destination.HomeScreen) {
                         popUpTo<Destination.HomeScreen>()
