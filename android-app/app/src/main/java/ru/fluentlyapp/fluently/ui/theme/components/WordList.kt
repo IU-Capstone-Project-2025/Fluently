@@ -23,7 +23,7 @@ fun WordList(
 ) {
     val expandedWords = remember { mutableStateSetOf<Int>() }
     LazyColumn(
-        modifier = modifier.padding(16.dp),
+        modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(words.size) { index ->

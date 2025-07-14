@@ -90,7 +90,7 @@ fun HomeScreenContent(
     ) {
         Row(
             modifier = Modifier
-                .height(200.dp)
+                .height(160.dp)
                 .fillMaxWidth()
                 .padding(horizontal = 32.dp),
             verticalAlignment = Alignment.CenterVertically,

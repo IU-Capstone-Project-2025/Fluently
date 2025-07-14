@@ -15,7 +15,7 @@ interface JoinedWordProgressRepository {
         end: Instant
     ): Flow<List<JoinedWordProgress>>
 
-    fun getAllJoinedWordProgresses(): Flow<List<JoinedWordProgress>>
+    fun getPerWordOverallProgress(): Flow<List<JoinedWordProgress>>
 }
 
 
@@ -34,9 +34,17 @@ class JoinedWordProgressRepositoryImpl @Inject constructor(
         }
     }
 
-    override fun getAllJoinedWordProgresses(): Flow<List<JoinedWordProgress>> {
+    override fun getPerWordOverallProgress(): Flow<List<JoinedWordProgress>> {
         return joinedWordProgressDao.getAllJoinedWordProgress().map { list ->
-            list.map { it.toJoinedWordProgress() }
+            val map = mutableMapOf<String, JoinedWordProgress>()
+            list.forEach {
+                when {
+                    !map.contains(it.id) || (map[it.id]?.isLearning == true && !it.isLearning) -> {
+                        map[it.id] = it.toJoinedWordProgress()
+                    }
+                }
+            }
+            map.values.toList()
         }
     }
 }

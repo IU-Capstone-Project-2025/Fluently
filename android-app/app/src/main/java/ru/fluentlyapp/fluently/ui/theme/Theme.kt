@@ -19,7 +19,7 @@ data class FluentlyColors(
     val secondaryVariant: Color = Color(0xFFDFF1FD),
 
     val primary: Color = Color(0xFFF08616),
-    val primaryVariant: Color = Color(0xFFFFEFE2),
+    val primaryVariant: Color = Color(0xFFE8CAB3),
 
     val onSurface: Color = Color(0xFF1B1B1B),
     val onSurfaceVariant: Color = Color(0xFF707070),
