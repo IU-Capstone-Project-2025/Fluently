@@ -106,3 +106,21 @@ Edit environment files to customize:
 - API keys
 - Service ports
 - Domain settings
+
+### Troubleshooting
+
+**SSH Connection Issues with Thesaurus Data:**
+If you encounter SSH connection errors during `make setup-local`, you can:
+1. Skip the thesaurus setup: `make setup-env setup-volumes` then `make run-local`
+2. Create dummy thesaurus data for testing:
+   ```bash
+   mkdir -p analysis/thesaurus
+   echo "word,topic,subtopic,subsubtopic,CEFR_level,Total" > analysis/thesaurus/result.csv
+   echo "test,test_topic,test_subtopic,test_subsubtopic,a1,1" >> analysis/thesaurus/result.csv
+   ```
+
+**Common Port Conflicts:**
+- PostgreSQL (5432): `sudo systemctl stop postgresql`
+- Apache (80/443): `sudo systemctl stop apache2`
+- Nginx (80/443): `sudo systemctl stop nginx`
+- Grafana (3000): `sudo systemctl stop grafana-server`

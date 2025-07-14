@@ -29,6 +29,10 @@ on:
         default: false
         type: boolean
 
+# NOTE: This workflow tests the local installation process across different platforms
+# It creates dummy thesaurus data to avoid SSH dependencies during testing
+# The actual thesaurus data is only needed for production deployments
+
 jobs:
   test-ubuntu:
     runs-on: ubuntu-latest
@@ -45,8 +49,14 @@ jobs:
         run: |
           echo "🐧 Testing local installation on Ubuntu..."
           
-          # Follow the installation guide exactly
-          make setup-local
+          # Create dummy thesaurus data for testing (skip SSH dependency)
+          mkdir -p analysis/thesaurus
+          echo "word,topic,subtopic,subsubtopic,CEFR_level,Total" > analysis/thesaurus/result.csv
+          echo "test,test_topic,test_subtopic,test_subsubtopic,a1,1" >> analysis/thesaurus/result.csv
+          echo "📄 Created dummy thesaurus data for testing"
+          
+          # Follow the installation guide exactly (skip thesaurus setup)
+          make setup-env setup-volumes
           
           # Check for port conflicts
           make check-ports
@@ -269,6 +279,14 @@ jobs:
         run: |
           Write-Host "🪟 Testing local installation on Windows..."
           
+          # Create dummy thesaurus data for testing (skip SSH dependency)
+          New-Item -ItemType Directory -Force -Path "analysis\thesaurus"
+          @"
+          word,topic,subtopic,subsubtopic,CEFR_level,Total
+          test,test_topic,test_subtopic,test_subsubtopic,a1,1
+          "@ | Out-File -FilePath "analysis\thesaurus\result.csv" -Encoding utf8
+          Write-Host "📄 Created dummy thesaurus data for testing"
+          
           # Show system info
           Write-Host "📊 System Info:"
           Write-Host "Windows Version: $((Get-ComputerInfo).WindowsProductName)"
@@ -282,8 +300,8 @@ jobs:
             choco install make -y
           }
           
-          # Follow the installation guide exactly
-          make setup-local
+          # Follow the installation guide exactly (skip thesaurus setup)
+          make setup-env setup-volumes
           
           # Check for port conflicts
           make check-ports
@@ -542,6 +560,12 @@ jobs:
         run: |
           echo "🍎 Testing local installation on macOS..."
           
+          # Create dummy thesaurus data for testing (skip SSH dependency)
+          mkdir -p analysis/thesaurus
+          echo "word,topic,subtopic,subsubtopic,CEFR_level,Total" > analysis/thesaurus/result.csv
+          echo "test,test_topic,test_subtopic,test_subsubtopic,a1,1" >> analysis/thesaurus/result.csv
+          echo "📄 Created dummy thesaurus data for testing"
+          
           # Show system info
           echo "📊 System Info:"
           echo "macOS Version: $(sw_vers -productVersion)"
@@ -556,8 +580,8 @@ jobs:
             brew install make
           fi
           
-          # Follow the installation guide exactly
-          make setup-local
+          # Follow the installation guide exactly (skip thesaurus setup)
+          make setup-env setup-volumes
           
           # Check for port conflicts
           make check-ports
