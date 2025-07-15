@@ -246,7 +246,22 @@ class AIService:
         self._mark_failure(provider, key)
         
         # Если это критическая ошибка аутентификации
-        if "401" in str(error) or "403" in str(error):
+        if "401" in str(error) or "403" in str(error) or "invalid_api_key" in str(error).lower() or "api_key_invalid" in str(error).lower():
             logger.error(f"Invalid API key detected for {provider}: {key[-6:]}")
             if key in self.providers[provider]["keys"]:
                 self.providers[provider]["keys"].remove(key)
+                logger.warning(f"Removed invalid API key from {provider} provider")
+                
+        # Check if this was a placeholder key
+        if "your_" in key.lower() or "_here" in key.lower():
+            logger.error(f"Placeholder API key detected for {provider}: {key}")
+            logger.error(f"Please replace placeholder keys with real API keys from:")
+            if provider == "groq":
+                logger.error("  Groq: https://console.groq.com/keys")
+            elif provider == "gemini":
+                logger.error("  Gemini: https://makersuite.google.com/app/apikey")
+                
+        # If all keys for this provider are exhausted, log helpful message
+        if not self.providers[provider]["keys"]:
+            logger.error(f"All API keys for {provider} have been exhausted or are invalid")
+            logger.error(f"Please check your {provider.upper()}_API_KEYS environment variable")
