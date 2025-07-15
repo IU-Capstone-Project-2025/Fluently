@@ -127,7 +127,7 @@ func Init() {
 
 	// Set defaults
 	if cfg.Webhook.Host == "" {
-		cfg.Webhook.Host = "0.0.0.0"
+		cfg.Webhook.Host = "fluently-app.ru"
 	}
 	if cfg.Webhook.Port == "" {
 		cfg.Webhook.Port = "8060"

@@ -5,9 +5,7 @@ services:
   
   # Main Backend API
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: docker.io/fluentlyorg/fluently-backend:latest-develop
     container_name: fluently_backend
     env_file: ./backend/.env
     depends_on:
@@ -131,7 +129,7 @@ services:
     ports:
       - "127.0.0.1:8001:8001"  # Local access for debugging
 
-  # Thesaurus API for vocabulary recommendations (Local Build)
+  # Thesaurus API for vocabulary recommendations (Built from Dockerfile)
   thesaurus-api:
     build:
       context: ./analysis/thesaurus
@@ -142,6 +140,9 @@ services:
       - PYTHONPATH=/app
       - THESAURUS_ALLOWED_ORIGINS=${THESAURUS_ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:8070}
     env_file: .env  # Use root .env file
+    volumes:
+      # Mount the thesaurus data file
+      - ./analysis/thesaurus/result.csv:/app/result.csv:ro
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8002/health", "-d", '{"ping":"test"}', "-H", "Content-Type: application/json"]
       interval: 30s
@@ -159,6 +160,35 @@ services:
       - fluently_network
     ports:
       - "127.0.0.1:8002:8002"  # Local access for debugging
+
+  # LLM API for AI-powered conversations (Built from Dockerfile)
+  llm-api:
+    build:
+      context: ./analysis/llms
+      dockerfile: Dockerfile
+    container_name: fluently_llm_api
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+    env_file: .env  # Use root .env file
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    networks:
+      - fluently_network
+    ports:
+      - "127.0.0.1:8003:8003"  # Local access for debugging
+
 
   # ===========================================
   # ADMIN & MANAGEMENT

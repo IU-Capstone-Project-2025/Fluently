@@ -2,8 +2,6 @@ package handlers
 
 import (
 	"context"
-	"fmt"
-	"time"
 
 	"go.uber.org/zap"
 	tele "gopkg.in/telebot.v3"
@@ -11,7 +9,7 @@ import (
 	"telegram-bot/internal/bot/fsm"
 )
 
-// HandleLearnCommand handles the /learn command
+// HandleLearnCommand handles the /learn command with new learning flow
 func (s *HandlerService) HandleLearnCommand(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
 	// Check if the user has completed the onboarding process
 	userProgress, err := s.GetUserProgress(ctx, userID)
@@ -36,42 +34,8 @@ func (s *HandlerService) HandleLearnCommand(ctx context.Context, c tele.Context,
 			"Давайте сначала определим ваш уровень английского.", keyboard)
 	}
 
-	// Set user state to lesson start
-	if err := s.stateManager.SetState(ctx, userID, fsm.StateLessonStart); err != nil {
-		s.logger.Error("Failed to set lesson start state", zap.Error(err))
-		return err
-	}
-
-	// Create new lesson data
-	lessonData := &fsm.LessonData{
-		StartTime: time.Now(),
-	}
-
-	// Store lesson data
-	if err := s.stateManager.StoreTempData(ctx, userID, fsm.TempDataLesson, lessonData); err != nil {
-		s.logger.Error("Failed to store lesson data", zap.Error(err))
-		return err
-	}
-
-	// Send lesson start message
-	lessonText := fmt.Sprintf(
-		"📚 *Сегодняшний урок*\n\n"+
-			"Давайте изучим %d новых слов сегодня.\n\n"+
-			"Готовы начать ваш ежедневный урок?",
-		userProgress.WordsPerDay,
-	)
-
-	// Create lesson keyboard
-	keyboard := &tele.ReplyMarkup{
-		InlineKeyboard: [][]tele.InlineButton{
-			{
-				{Text: "Начать изучение", Data: "lesson:start"},
-				{Text: "Позже", Data: "lesson:later"},
-			},
-		},
-	}
-
-	return c.Send(lessonText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+	// Start new learning flow
+	return s.HandleNewLearningStart(ctx, c, userID, currentState)
 }
 
 // HandleTestCommand handles the /test command
@@ -111,9 +75,28 @@ func (s *HandlerService) HandleLessonLaterCallback(ctx context.Context, c tele.C
 	return c.Send("Урок отложен.")
 }
 
-// HandleTestStartCallback handles test start callback
-func (s *HandlerService) HandleTestStartCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Начинаем тест...")
+// HandleTestSkipCallback handles test skip callback
+func (s *HandlerService) HandleTestSkipCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	// Set user to start state (onboarding complete)
+	if err := s.stateManager.SetState(ctx, userID, fsm.StateStart); err != nil {
+		s.logger.Error("Failed to set start state", zap.Error(err))
+		return err
+	}
+
+	// Send completion message
+	completionText := "🎉 *Добро пожаловать в Fluently!*\n\n" +
+		"Настройка завершена! Теперь ты можешь начать изучение.\n\n" +
+		"Используй /learn чтобы начать свой первый урок!"
+
+	// Create main menu keyboard
+	keyboard := &tele.ReplyMarkup{
+		InlineKeyboard: [][]tele.InlineButton{
+			{{Text: "Начать изучение", Data: "lesson:start"}},
+			{{Text: "Настройки", Data: "menu:settings"}},
+		},
+	}
+
+	return c.Send(completionText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
 }
 
 // HandleWaitingForTranslationMessage handles translation waiting state

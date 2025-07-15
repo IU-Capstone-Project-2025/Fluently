@@ -44,11 +44,17 @@ Fluently can be installed in two ways:
 - Requires your own domain and SSL certificates.
 - Replicates the production environment.
 
+### Platform Support
+**Supported Platforms:** Ubuntu, macOS, Windows (with Docker Desktop)
+- All Docker images are **Linux-only** and require Linux container mode
+- See [Platform Support Documentation](docs/Platform_Support.md) for detailed requirements and troubleshooting
+
 ---
 
 ## Documentation
 - [Local Installation Guide](docs/Install_Local.md)
 - [Full Production Installation Guide](docs/Install_Full.md)
+- [Platform Support & Troubleshooting](docs/Platform_Support.md)
 - [Backend README](backend/README.md)
 
 ---

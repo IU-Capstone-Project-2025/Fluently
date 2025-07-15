@@ -231,7 +231,7 @@ jobs:
         run: docker compose -f docker-compose.test.yml down --volumes
 
   # ===========================================
-  # BUILD STAGE - Build Docker images based on changes or force flags
+  # BUILD STAGE - Build Docker images for staging and production
   # ===========================================
   build:
     name: Build Docker Images
@@ -384,10 +384,12 @@ jobs:
           context: ./backend
           file: ./backend/Dockerfile
           push: true
-          tags: docker.io/fluentlyorg/fluently-backend:latest-develop
+          tags: |
+            docker.io/fluentlyorg/fluently-backend:latest-${{ needs.setup.outputs.environment == 'production' && 'main' || 'develop' }}
+            docker.io/fluentlyorg/fluently-backend:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: ${{ needs.setup.outputs.environment == 'production' && 'linux/amd64,linux/arm64' || 'linux/amd64' }}
+          platforms: linux/amd64,linux/arm64
 
       # Telegram Bot Build  
       - name: Build and push telegram-bot image
@@ -397,10 +399,12 @@ jobs:
           context: ./telegram-bot
           file: ./telegram-bot/Dockerfile
           push: true
-          tags: docker.io/fluentlyorg/fluently-telegram-bot:latest-develop
+          tags: |
+            docker.io/fluentlyorg/fluently-telegram-bot:latest-${{ needs.setup.outputs.environment == 'production' && 'main' || 'develop' }}
+            docker.io/fluentlyorg/fluently-telegram-bot:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: ${{ needs.setup.outputs.environment == 'production' && 'linux/amd64,linux/arm64' || 'linux/amd64' }}
+          platforms: linux/amd64,linux/arm64
 
       # ML API Build (Most expensive - 15 minutes)
       - name: Build and push ML API image
@@ -410,10 +414,12 @@ jobs:
           context: ./analysis
           file: ./analysis/distractor_api/Dockerfile
           push: true
-          tags: docker.io/fluentlyorg/fluently-ml-api:latest-develop
+          tags: |
+            docker.io/fluentlyorg/fluently-ml-api:latest-${{ needs.setup.outputs.environment == 'production' && 'main' || 'develop' }}
+            docker.io/fluentlyorg/fluently-ml-api:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=min
-          platforms: ${{ needs.setup.outputs.environment == 'production' && 'linux/amd64,linux/arm64' || 'linux/amd64' }}
+          platforms: linux/amd64,linux/arm64
 
       # Nginx Build
       - name: Build and push nginx image
@@ -423,10 +429,12 @@ jobs:
           context: .
           file: ./backend/nginx-container/Dockerfile
           push: true
-          tags: docker.io/fluentlyorg/fluently-nginx:latest-develop
+          tags: |
+            docker.io/fluentlyorg/fluently-nginx:latest-${{ needs.setup.outputs.environment == 'production' && 'main' || 'develop' }}
+            docker.io/fluentlyorg/fluently-nginx:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: ${{ needs.setup.outputs.environment == 'production' && 'linux/amd64,linux/arm64' || 'linux/amd64' }}
+          platforms: linux/amd64,linux/arm64
 
       - name: Build summary
         run: |
@@ -445,7 +453,7 @@ jobs:
           fi
 
   deploy:
-    needs: [setup, build, quality-check]
+    needs: [setup, quality-check, build]
     runs-on: ubuntu-latest
     environment: ${{ needs.setup.outputs.environment }}
     if: github.event.inputs.dry_run != 'true' && always() && !failure() && !cancelled()
@@ -463,11 +471,12 @@ jobs:
           echo "Branch: ${{ github.event.inputs.branch || github.ref_name }}"
           echo "Tests Skipped: ${{ github.event.inputs.skip_tests }}"
           echo ""
-          echo "🏗️ Built Images:"
-          [ "${{ needs.build.outputs.backend-built }}" = "true" ] && echo "  ✅ Backend" || echo "  ⏭️ Backend (skipped)"
-          [ "${{ needs.build.outputs.telegram-built }}" = "true" ] && echo "  ✅ Telegram Bot" || echo "  ⏭️ Telegram Bot (skipped)"
-          [ "${{ needs.build.outputs.ml-api-built }}" = "true" ] && echo "  ✅ ML API" || echo "  ⏭️ ML API (skipped)"
-          [ "${{ needs.build.outputs.nginx-built }}" = "true" ] && echo "  ✅ Nginx" || echo "  ⏭️ Nginx (skipped)"
+          if [ "${{ needs.setup.outputs.environment }}" = "production" ]; then
+            echo "🚀 Production deployment - using existing images from staging"
+            echo "📦 No new images will be built for production"
+          else
+            echo "🏗️ Staging deployment - images will be built if needed"
+          fi
 
       - name: Deploy to ${{ needs.setup.outputs.environment }}
         uses: appleboy/ssh-action@v1.0.3
@@ -692,6 +701,22 @@ jobs:
             # Copy .env from backend to root for docker-compose to use
             echo "📋 Copying .env file to root directory for docker-compose..."
             cp backend/.env .env
+
+            # Set Docker image tags based on environment
+            echo "🏷️ Setting Docker image tags for $ENVIRONMENT environment..."
+            if [ "$ENVIRONMENT" = "production" ]; then
+              echo "BACKEND_TAG=latest-main" >> .env
+              echo "NGINX_TAG=latest-main" >> .env
+              echo "TELEGRAM_TAG=latest-main" >> .env
+              echo "ML_API_TAG=latest-main" >> .env
+              echo "✅ Using production image tags (latest-main)"
+            else
+              echo "BACKEND_TAG=latest-develop" >> .env
+              echo "NGINX_TAG=latest-develop" >> .env
+              echo "TELEGRAM_TAG=latest-develop" >> .env
+              echo "ML_API_TAG=latest-develop" >> .env
+              echo "✅ Using staging image tags (latest-develop)"
+            fi
 
             # Set Swagger host for the environment
             if [ "$ENVIRONMENT" = "production" ]; then

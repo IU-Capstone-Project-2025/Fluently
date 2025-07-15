@@ -187,3 +187,4 @@ analysis/venv/bin/
 analysis/.venv/bin/
 analysis/venv/bin/activate
 analysis/.venv/bin/activate
+docs/Docker_Platform_Issue_Fix.md
