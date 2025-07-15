@@ -16,7 +16,7 @@ interface JoinedWordProgressDao {
         FROM
         word_caches AS wc
         INNER JOIN word_progresses AS wp 
-        ON wc.id = wp.id
+        ON wc.id = wp.word_id
         WHERE wp.timestamp BETWEEN :begin AND :end 
     """)
     fun getJoinedWordProgress(

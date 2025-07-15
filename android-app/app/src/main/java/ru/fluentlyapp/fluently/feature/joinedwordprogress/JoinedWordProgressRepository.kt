@@ -31,7 +31,9 @@ class JoinedWordProgressRepositoryImpl @Inject constructor(
         end: Instant
     ): Flow<List<JoinedWordProgress>> {
         return joinedWordProgressDao.getJoinedWordProgress(begin, end).map { list ->
-            list.map { it.toJoinedWordProgress() }
+            val result = list.map { it.toJoinedWordProgress() }
+            Timber.v("getJoinedWordProgress from $begin to $end: ${result.joinToString()}")
+            result
         }
     }
 

@@ -40,7 +40,6 @@ class CalendarViewModel @Inject constructor(
         viewModelScope.launch {
             joinedWordProgressRepository
                 .getJoinedWordProgresses(
-                    // TODO: verify this shit
                     begin = newDate.atStartOfDay(ZoneId.systemDefault()).toInstant(),
                     end = newDate.plusDays(1).atStartOfDay(ZoneId.systemDefault()).toInstant()
                 )

@@ -129,8 +129,7 @@ class LessonFlowViewModel @Inject constructor(
         override fun onFinish() {
             viewModelScope.launch {
                 try {
-                    lessonRepository.sendLesson()
-                    lessonRepository.dropOngoingLesson()
+                    lessonRepository.finishLesson()
                     _commandsChannel.send(LessonFlowCommand.UserFinishesLesson)
                 } catch (ex: Exception) {
                     Timber.e(ex)
