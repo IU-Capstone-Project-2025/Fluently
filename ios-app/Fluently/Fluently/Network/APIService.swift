@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// MARK: - API base funcs
 final class APIService {
     let baseUrl = "https://fluently-app.ru"
 
@@ -92,9 +92,8 @@ final class APIService {
     }
 }
 
-
+// MARK: - API Service Errors
 extension APIService {
-    // MARK: - Error
     enum ApiError: Error, Equatable {
         case invalidURL
         case encodingFailed (String)

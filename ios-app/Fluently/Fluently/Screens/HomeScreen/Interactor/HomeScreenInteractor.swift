@@ -14,7 +14,7 @@ final class HomeScreenInteractor {
 
     func getLesson() async throws -> CardsModel{
         let cards = try await api.getLesson()
-        printCards(cards)
+//        printCards(cards)
         return cards
     }
 
@@ -24,5 +24,9 @@ final class HomeScreenInteractor {
             print(card.exercise.type)
             print(type(of: card.exercise.exerciseData))
         }
+    }
+
+    func getDayWord() async throws -> WordModel {
+        return try await api.getDayWord()
     }
 }

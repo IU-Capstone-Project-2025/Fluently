@@ -37,14 +37,14 @@ struct DayInfo: View {
         VStack(alignment: .center) {
             HStack {
                 VStack {
-                    Text(dateLabel)
+                    Text(dateLabel)     /// label with selected day date
                         .foregroundStyle(.blackText)
                         .font(.appFont.largeTitle)
                         .frame(
                             maxWidth: .infinity,
                             alignment: .leading
                         )
-                    Text(yearFormatter)
+                    Text(yearFormatter)  /// label with selected day year
                         .foregroundStyle(.blackText)
                         .font(.appFont.largeTitle)
                         .frame(
@@ -60,6 +60,7 @@ struct DayInfo: View {
                             maxWidth: .infinity,
                             alignment: .leading
                         )
+                    /// number of leaned worsd at this day
                     Text("\(words.filter({ $0.isLearned == true}).count) words")
                         .foregroundStyle(.blackText)
                         .font(.appFont.title2)
@@ -69,6 +70,7 @@ struct DayInfo: View {
                         )
                 }
             }
+            /// selector of `leaned / non-leaner` filter
             Picker("Filter Words", selection: $isLearned) {
                 Text("Learned").tag(true)
                     .foregroundStyle(.blackText)
@@ -89,6 +91,7 @@ struct DayInfo: View {
         )
     }
 
+    /// list of filtred words
     var learnedNonLearnedWords: some View {
         ScrollView {
             VStack(spacing: 10) {

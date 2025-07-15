@@ -9,18 +9,18 @@ import Foundation
 import SwiftData
 
 @Model
-final class WordModel: Codable{
-    var exercise: ExerciseModel
+final class WordModel: Codable, Sendable{
+    var exercise: ExerciseModel     /// exercise to learn word
     var isLearned: Bool = false
-    var sentences: [SentenceModel]
+    var sentences: [SentenceModel]  /// sentences with this word
     var subtopic: String
     var topic: String
-    var transcription: String = "kar"
+    var transcription: String
     var translation: String
     var word: String
-    @Attribute(.unique) var wordId: String
+    @Attribute(.unique) var wordId: String  /// **Unique ID**  for saving
 
-    var wordDate: Date
+    var wordDate: Date /// date of learning word *for statistic*
 
     init(
         exercise: ExerciseModel,
@@ -45,6 +45,7 @@ final class WordModel: Codable{
         self.wordDate = Date.now
     }
 
+    // MARK: - Codable
     enum CodingKeys: String, CodingKey {
         case exercise
         case isLearned = "is_learned"
@@ -65,7 +66,7 @@ final class WordModel: Codable{
         sentences = try container.decode([SentenceModel].self, forKey: .sentences)
         subtopic = try container.decode(String.self, forKey: .subtopic)
         topic = try container.decode(String.self, forKey: .topic)
-        transcription = try container.decodeIfPresent(String.self, forKey: .translation) ?? ""
+        transcription = try container.decodeIfPresent(String.self, forKey: .transcription) ?? ""
         translation = try container.decode(String.self, forKey: .translation)
         word = try container.decode(String.self, forKey: .word)
         wordId = try container.decode(String.self, forKey: .wordId)

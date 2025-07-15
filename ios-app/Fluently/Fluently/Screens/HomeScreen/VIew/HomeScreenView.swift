@@ -12,6 +12,7 @@ import SwiftData
 struct HomeScreenView: View {
     // MARK: - Key Objects
     @StateObject var presenter: HomeScreenPresenter
+    @Environment(\.modelContext) var modelContext
 
     @Query var words: [WordModel]
 
@@ -34,6 +35,10 @@ struct HomeScreenView: View {
         VStack {
             topBar
             infoGrid
+        }
+        .onAppear {
+            presenter.modelContext = modelContext
+            presenter.getDayWord()
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
@@ -84,7 +89,7 @@ struct HomeScreenView: View {
     ///  Grid with main info
     var infoGrid: some View {
         VStack {
-            WordOfTheDay(word: WordModel.mockWord())
+            WordOfTheDay(word: presenter.wordOfTheDay ?? WordModel.mockWord())
             cards
 
             Spacer()

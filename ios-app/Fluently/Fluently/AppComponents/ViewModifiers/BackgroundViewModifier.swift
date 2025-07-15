@@ -8,9 +8,11 @@
 import Foundation
 import SwiftUI
 
-// Full orange view modifier
+// MARK: - View modifier
+// Full orange background view modifier
 struct BackgroundViewModifier: ViewModifier {
 
+    /// toggle to make background clorful
     var colorful: Bool = false
 
     func body(content: Content) -> some View {
@@ -31,6 +33,7 @@ struct BackgroundViewModifier: ViewModifier {
         }
     }
 
+    /// background pattern
     private var colorfulBackground: some View {
         GeometryReader { proxy in
             let size = proxy.size

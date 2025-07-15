@@ -7,7 +7,9 @@
 
 import Foundation
 
+// MARK: - URLRequests Extension
 extension URLRequest {
+    /// print the current HTTP Request 
     func printRequest() {
         print("=== HTTP Request ===")
         print("URL: \(self.httpMethod ?? "GET") \(self.url?.absoluteString ?? "No URL")")

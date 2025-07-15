@@ -27,6 +27,7 @@ final class LessonModel: Codable {
         self.cefrLevel = cefrLevel
     }
 
+    // MARK: - Codable
     enum CodingKeys: String, CodingKey {
         case startedAt = "started_at"
         case totalWords = "total_words"

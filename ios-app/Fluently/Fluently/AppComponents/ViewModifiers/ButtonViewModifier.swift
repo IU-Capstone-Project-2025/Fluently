@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - View modifier
 // Modifiier for 3D Button
 struct ButtonViewModifier: ViewModifier {
     // MARK: - Color
@@ -68,6 +69,7 @@ struct ButtonViewModifier: ViewModifier {
     }
 }
 
+// MARK: - View extension
 extension View {
     func massiveButton(color: ButtonViewModifier.ButtonColor) -> some View {
         modifier(ButtonViewModifier(color: color))

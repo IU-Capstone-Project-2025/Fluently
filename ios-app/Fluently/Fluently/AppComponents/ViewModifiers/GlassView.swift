@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// view to make items look like glass
 struct GlassView: View {
     let cornerRadius: CGFloat
     let fill: Color
@@ -28,6 +29,7 @@ struct GlassView: View {
     }
 }
 
+// MARK: - View modifier
 struct GlassModifier: ViewModifier {
     let cornerRadius: CGFloat
     let fill: Color
@@ -42,6 +44,7 @@ struct GlassModifier: ViewModifier {
     }
 }
 
+// MARK: - View extension
 extension View {
     func glass(
         cornerRadius: CGFloat,

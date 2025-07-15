@@ -8,6 +8,7 @@
 import Foundation
 
 extension WordModel {
+    /// generate one mock word
     static func mockWord() -> WordModel {
         return WordModel(
 //            cefrLevel: "A1",
@@ -33,6 +34,7 @@ extension WordModel {
         )
     }
 
+    /// generate array of mock words basing
     static func generateMockWords(count: Int = 5) -> [WordModel] {
         let mockWords = [
             WordModel(

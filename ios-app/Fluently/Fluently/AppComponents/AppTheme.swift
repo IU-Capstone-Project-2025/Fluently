@@ -30,6 +30,7 @@ final class AppTheme {
     let blueSecondary = Color("blue.secondary")
 }
 
+// MARK: - Custom Fonts
 final class AppFont {
     // Fraunces - primary
     let largeTitle = Font.custom("Fraunces", size: 34.0)
@@ -64,6 +65,7 @@ final class AppFont {
     let secondaryCaption2 = Font.custom("Inter-Regular", size: 11.0)
 }
 
+// MARK: - Extensions
 extension Color {
     static let appTheme = AppTheme()
 }

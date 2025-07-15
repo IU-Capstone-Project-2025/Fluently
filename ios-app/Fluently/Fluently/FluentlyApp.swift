@@ -31,7 +31,7 @@ struct FluentlyApp: App {
 #endif
 
     init () {
-        UIView.appearance().overrideUserInterfaceStyle = .light
+        UIView.appearance().overrideUserInterfaceStyle = .light /// brutу force light theme
     }
 
     var body: some Scene {
@@ -86,7 +86,8 @@ struct FluentlyApp: App {
             .modelContainer(
                 for: [
                     CardsModel.self,
-                    WordModel.self
+                    WordModel.self,
+                    DayWord.self
                 ]
             )
         }

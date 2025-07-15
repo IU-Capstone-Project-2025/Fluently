@@ -22,6 +22,7 @@ final class SentenceModel: Codable{
         self.translation = translation
     }
 
+    // MARK: - Codable
     enum CodingKeys: String, CodingKey {
         case text
         case translation
@@ -42,8 +43,8 @@ final class SentenceModel: Codable{
     }
 }
 
+// MARK: - Hashable
 extension SentenceModel: Hashable {
-
     func hash(into hasher: inout Hasher) {
         hasher.combine(text)
         hasher.combine(translation)

@@ -51,6 +51,7 @@ struct ApiServiceUnitTest {
     }
 }
 
+// MARK: - Mock API servce
 class MockAPIService: AuthAPI{
     var shouldSucceed = true
 
@@ -84,3 +85,5 @@ class MockAPIService: AuthAPI{
         }
     }
 }
+
+// TODO: - Create mock api services to check other functionality

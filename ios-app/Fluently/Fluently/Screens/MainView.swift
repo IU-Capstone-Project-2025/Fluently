@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// MARK: - Main Screen
 struct MainView: View {
     @EnvironmentObject var router: AppRouter
     @EnvironmentObject var accountData: AccountData
@@ -18,6 +19,10 @@ struct MainView: View {
     @State private var homeView: HomeScreenView?
     @State private var statisticView:StatisticScreenView?
 
+    /// setup screens view
+    ///  `CalendarView` -  screen with info day by day
+    ///  `HomeView` - screen with main functions
+    ///  `StatisticView` - screen with user statistic
     func setupScreens() {
         calendarView = CalendarScreenBuilder.build()
         homeView = HomeScreenBuilder.build(router: router, acoount: accountData)
@@ -62,6 +67,7 @@ struct MainView: View {
     }
 }
 
+// MARK: - Preview
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         PreviewWrapper()

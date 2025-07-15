@@ -64,17 +64,3 @@ extension Date {
         return calendar.date(byAdding: components, to: startOfYear)!
     }
 }
-
-enum Weekday: Int {
-    case mon = 1
-    case tue = 2
-    case wed = 3
-    case thu = 4
-    case fri = 5
-    case sat = 6
-    case sun = 7
-
-    var shortName: String {
-       return Calendar.current.shortWeekdaySymbols[self.rawValue - 1]
-   }
-}
