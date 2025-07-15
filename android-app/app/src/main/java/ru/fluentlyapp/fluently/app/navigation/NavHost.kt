@@ -7,6 +7,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import ru.fluentlyapp.fluently.ui.screens.calendar.CalendarScreen
 import ru.fluentlyapp.fluently.ui.screens.home.HomeScreen
 import ru.fluentlyapp.fluently.ui.screens.launch.LaunchScreen
 import ru.fluentlyapp.fluently.ui.screens.lesson.LessonFlowScreen
@@ -62,7 +63,9 @@ fun FluentlyNavHost(
                 onNavigateToLesson = {
                     navHostController.navigate(Destination.LessonScreen)
                 },
-                onNavigateToCalendar = {},
+                onNavigateToCalendar = {
+                    navHostController.navigate(Destination.CalendarScreen)
+                },
                 onLearnedWordsClick = {
                     navHostController.navigate(
                         Destination.WordsProgress(isLearning = true)
@@ -97,6 +100,18 @@ fun FluentlyNavHost(
                         launchSingleTop = true
                     }
                 }
+            )
+        }
+
+        composable<Destination.CalendarScreen> {
+            CalendarScreen(
+                modifier = Modifier.fillMaxSize(),
+                onBackClick = {
+                    navHostController.navigate(Destination.HomeScreen) {
+                        popUpTo<Destination.HomeScreen>()
+                        launchSingleTop = true
+                    }
+                },
             )
         }
     }

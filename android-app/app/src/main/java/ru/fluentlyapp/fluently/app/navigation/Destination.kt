@@ -17,4 +17,7 @@ object Destination {
 
     @Serializable
     class WordsProgress(val isLearning: Boolean)
+
+    @Serializable
+    object CalendarScreen
 }

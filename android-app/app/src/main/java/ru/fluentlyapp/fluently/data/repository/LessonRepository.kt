@@ -32,12 +32,6 @@ interface LessonRepository {
      */
     suspend fun fetchAndSaveOngoingLesson()
 
-    /**
-     * Clear the ongoing lesson content.
-     *
-     * May throw exception.
-     */
-    suspend fun dropOngoingLesson()
 
     /**
      * Try to update the current lesson component.
@@ -67,7 +61,7 @@ interface LessonRepository {
     /**
      * Once the user finishes the lesson, send the progress to the api.
      */
-    suspend fun sendLesson()
+    suspend fun finishLesson()
 }
 
 class DefaultLessonRepository @Inject constructor(
@@ -131,11 +125,6 @@ class DefaultLessonRepository @Inject constructor(
         Timber.d("Store the received lesson")
     }
 
-    override suspend fun dropOngoingLesson() {
-        ongoingLessonDataStore.dropOngoingLesson()
-        Timber.d("Drop the ongoing lesson")
-    }
-
     override suspend fun updateCurrentComponent(updatedComponent: LessonComponent) {
         ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
             if (
@@ -191,7 +180,8 @@ class DefaultLessonRepository @Inject constructor(
     private fun isExerciseCorrect(word: Exercise.NewWord, exercise: Exercise): Boolean? {
         return if (
             (exercise is Exercise.FillTheGap && exercise.wordId == word.wordId) ||
-            (exercise is Exercise.FillTheGap && exercise.wordId == word.wordId) ||
+            (exercise is Exercise.NewWord && exercise.wordId == word.wordId) ||
+            (exercise is Exercise.InputWord && exercise.wordId == word.wordId) ||
             (exercise is Exercise.ChooseTranslation && exercise.wordId == word.wordId)
         )
             exercise.isCorrect
@@ -200,7 +190,7 @@ class DefaultLessonRepository @Inject constructor(
 
     }
 
-    override suspend fun sendLesson() {
+    override suspend fun finishLesson() {
         val progressMap = mutableMapOf<String, SentWordProgress>() // (word_id; progress)
         ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
             for (component in lesson.components) {
@@ -216,8 +206,8 @@ class DefaultLessonRepository @Inject constructor(
                             incorrectExercises += (result == false).compareTo(false)
                         }
                     }
-                    val overallExerciseCount = correctExercises + incorrectExercises + 1
-                    val correctnessRate: Float = correctExercises / overallExerciseCount.toFloat()
+                    val overallExerciseCount = correctExercises + incorrectExercises
+                    val correctnessRate: Float = correctExercises/ overallExerciseCount.toFloat()
                     val progress = SentWordProgress(
                         wordId = component.wordId,
                         cntReviewed = overallExerciseCount,
@@ -246,5 +236,8 @@ class DefaultLessonRepository @Inject constructor(
             )
         )
         Timber.v("Send to the fluently api data source")
+
+        ongoingLessonDataStore.dropOngoingLesson()
+        Timber.d("Drop the ongoing lesson")
     }
 }
