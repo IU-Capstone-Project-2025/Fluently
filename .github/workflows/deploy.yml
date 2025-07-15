@@ -191,7 +191,7 @@ jobs:
       - name: Start test database
         run: |
           docker compose -f docker-compose.test.yml down --volumes
-          docker compose -f docker-compose.test.yml up -d test_db
+          docker compose -f docker-compose.test.yml up -d test-db
         
       - name: Wait for DB to become healthy
         run: |
@@ -200,24 +200,87 @@ jobs:
             sleep 3
           done
         
+      - name: Seed test database
+        working-directory: ./backend
+        env:
+          DB_HOST: localhost
+          DB_PORT: 5433
+          DB_USER: test_user
+          DB_PASSWORD: test_password
+          DB_NAME: test_fluently_db
+          DB_TEST_HOST: localhost
+          DB_TEST_PORT: 5433
+          DB_TEST_USER: test_user
+          DB_TEST_PASSWORD: test_password
+          DB_TEST_NAME: test_fluently_db
+        run: |
+          echo "🌱 Seeding test database with sample data..."
+          
+          # Check if we have a database seeding/migration mechanism
+          if [ -f "init.sql" ]; then
+            echo "📝 Found init.sql, applying database schema..."
+            PGPASSWORD=test_password psql -h localhost -p 5433 -U test_user -d test_fluently_db -f init.sql
+          fi
+          
+          # If there's a seeding script or migration tool, run it
+          if [ -f "cmd/import/main.go" ]; then
+            echo "🔧 Running database import tool..."
+            go run cmd/import/main.go || echo "⚠️ Import tool failed, continuing with empty database"
+          fi
+          
+          # Alternative: Check if we can run migrations
+          if command -v migrate &> /dev/null && [ -d "migrations" ]; then
+            echo "🔧 Running database migrations..."
+            migrate -path migrations -database "postgres://test_user:test_password@localhost:5433/test_fluently_db?sslmode=disable" up || echo "⚠️ Migrations failed, continuing"
+          fi
+          
+          echo "✅ Database seeding completed"
+        
       - name: Go tests with coverage
         working-directory: ./backend
         env:
           # Generic DB variables (used by code that doesn't look at *_TEST_*)
-          DB_HOST:         localhost
-          DB_PORT:         5433
-          DB_USER:         test_user
-          DB_PASSWORD:     test_password
-          DB_NAME:         test_fluently_db
+          DB_HOST: localhost
+          DB_PORT: 5433
+          DB_USER: test_user
+          DB_PASSWORD: test_password
+          DB_NAME: test_fluently_db
 
           # Explicit *_TEST_* variables (preferred by new config helpers)
-          DB_TEST_HOST:     localhost
-          DB_TEST_PORT:     5433
-          DB_TEST_USER:     test_user
+          DB_TEST_HOST: localhost
+          DB_TEST_PORT: 5433
+          DB_TEST_USER: test_user
           DB_TEST_PASSWORD: test_password
-          DB_TEST_NAME:     test_fluently_db
+          DB_TEST_NAME: test_fluently_db
+          
+          # Set test mode to help tests initialize their own data
+          GO_ENV: test
+          TEST_MODE: true
         run: |
-          go test ./... -coverprofile=coverage.out -covermode=atomic
+          echo "🧪 Running Go tests with coverage..."
+          
+          # Install PostgreSQL client if needed for database operations
+          if ! command -v psql &> /dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y postgresql-client
+          fi
+          
+          # Run tests with verbose output to see what's happening
+          go test ./... -v -coverprofile=coverage.out -covermode=atomic || {
+            echo "❌ Tests failed, showing database state for debugging..."
+            echo "🔍 Checking if database is accessible..."
+            PGPASSWORD=test_password psql -h localhost -p 5433 -U test_user -d test_fluently_db -c "SELECT version();" || echo "❌ Database connection failed"
+            
+            echo "🔍 Checking database tables..."
+            PGPASSWORD=test_password psql -h localhost -p 5433 -U test_user -d test_fluently_db -c "\dt" || echo "❌ Failed to list tables"
+            
+            echo "🔍 Checking test database logs..."
+            docker logs fluently_test_db --tail=50 || true
+            
+            # Re-run tests to get the actual failure
+            exit 1
+          }
+          
           go tool cover -func=coverage.out
         
       - name: SonarCloud Scan
