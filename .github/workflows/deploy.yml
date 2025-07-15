@@ -191,7 +191,7 @@ jobs:
       - name: Start test database
         run: |
           docker compose -f docker-compose.test.yml down --volumes
-          docker compose -f docker-compose.test.yml up -d test_db
+          docker compose -f docker-compose.test.yml up -d
         
       - name: Wait for DB to become healthy
         run: |
@@ -200,24 +200,87 @@ jobs:
             sleep 3
           done
         
+      - name: Seed test database
+        working-directory: ./backend
+        env:
+          DB_HOST: localhost
+          DB_PORT: 5433
+          DB_USER: test_user
+          DB_PASSWORD: test_password
+          DB_NAME: test_fluently_db
+          DB_TEST_HOST: localhost
+          DB_TEST_PORT: 5433
+          DB_TEST_USER: test_user
+          DB_TEST_PASSWORD: test_password
+          DB_TEST_NAME: test_fluently_db
+        run: |
+          echo "🌱 Seeding test database with sample data..."
+          
+          # Check if we have a database seeding/migration mechanism
+          if [ -f "init.sql" ]; then
+            echo "📝 Found init.sql, applying database schema..."
+            PGPASSWORD=test_password psql -h localhost -p 5433 -U test_user -d test_fluently_db -f init.sql
+          fi
+          
+          # If there's a seeding script or migration tool, run it
+          if [ -f "cmd/import/main.go" ]; then
+            echo "🔧 Running database import tool..."
+            go run cmd/import/main.go || echo "⚠️ Import tool failed, continuing with empty database"
+          fi
+          
+          # Alternative: Check if we can run migrations
+          if command -v migrate &> /dev/null && [ -d "migrations" ]; then
+            echo "🔧 Running database migrations..."
+            migrate -path migrations -database "postgres://test_user:test_password@localhost:5433/test_fluently_db?sslmode=disable" up || echo "⚠️ Migrations failed, continuing"
+          fi
+          
+          echo "✅ Database seeding completed"
+        
       - name: Go tests with coverage
         working-directory: ./backend
         env:
           # Generic DB variables (used by code that doesn't look at *_TEST_*)
-          DB_HOST:         localhost
-          DB_PORT:         5433
-          DB_USER:         test_user
-          DB_PASSWORD:     test_password
-          DB_NAME:         test_fluently_db
+          DB_HOST: localhost
+          DB_PORT: 5433
+          DB_USER: test_user
+          DB_PASSWORD: test_password
+          DB_NAME: test_fluently_db
 
           # Explicit *_TEST_* variables (preferred by new config helpers)
-          DB_TEST_HOST:     localhost
-          DB_TEST_PORT:     5433
-          DB_TEST_USER:     test_user
+          DB_TEST_HOST: localhost
+          DB_TEST_PORT: 5433
+          DB_TEST_USER: test_user
           DB_TEST_PASSWORD: test_password
-          DB_TEST_NAME:     test_fluently_db
+          DB_TEST_NAME: test_fluently_db
+          
+          # Set test mode to help tests initialize their own data
+          GO_ENV: test
+          TEST_MODE: true
         run: |
-          go test ./... -coverprofile=coverage.out -covermode=atomic
+          echo "🧪 Running Go tests with coverage..."
+          
+          # Install PostgreSQL client if needed for database operations
+          if ! command -v psql &> /dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y postgresql-client
+          fi
+          
+          # Run tests with verbose output to see what's happening
+          go test ./... -v -coverprofile=coverage.out -covermode=atomic || {
+            echo "❌ Tests failed, showing database state for debugging..."
+            echo "🔍 Checking if database is accessible..."
+            PGPASSWORD=test_password psql -h localhost -p 5433 -U test_user -d test_fluently_db -c "SELECT version();" || echo "❌ Database connection failed"
+            
+            echo "🔍 Checking database tables..."
+            PGPASSWORD=test_password psql -h localhost -p 5433 -U test_user -d test_fluently_db -c "\dt" || echo "❌ Failed to list tables"
+            
+            echo "🔍 Checking test database logs..."
+            docker logs fluently_test_db --tail=50 || true
+            
+            # Re-run tests to get the actual failure
+            exit 1
+          }
+          
           go tool cover -func=coverage.out
         
       - name: SonarCloud Scan
@@ -388,7 +451,7 @@ jobs:
             docker.io/fluentlyorg/fluently-backend:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
 
       # Telegram Bot Build  
       - name: Build and push telegram-bot image
@@ -402,7 +465,7 @@ jobs:
             docker.io/fluentlyorg/fluently-telegram-bot:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
 
       # ML API Build (Most expensive - 15 minutes)
       - name: Build and push ML API image
@@ -416,7 +479,7 @@ jobs:
             docker.io/fluentlyorg/fluently-ml-api:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=min
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
 
       # Nginx Build
       - name: Build and push nginx image
@@ -430,7 +493,7 @@ jobs:
             docker.io/fluentlyorg/fluently-nginx:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
 
       - name: Build summary
         run: |
@@ -786,6 +849,37 @@ jobs:
               echo "REDIS_ADDR=redis:6379" >> .env
             fi
 
+            # Set LLM API keys configuration
+            echo "🔧 Setting up LLM API keys configuration..."
+            
+            # Groq API keys
+            GROQ_API_KEYS="${{ secrets.GROQ_API_KEYS }}"
+            if [ ! -z "$GROQ_API_KEYS" ]; then
+              if grep -q "GROQ_API_KEYS=" .env; then
+                sed -i "s/GROQ_API_KEYS=.*/GROQ_API_KEYS=$GROQ_API_KEYS/" .env
+              else
+                echo "GROQ_API_KEYS=$GROQ_API_KEYS" >> .env
+              fi
+              echo "✅ GROQ_API_KEYS set in .env file"
+            else
+              echo "⚠️ WARNING: GROQ_API_KEYS is empty! LLM API may not work properly."
+              echo "Please set the GROQ_API_KEYS GitHub secret with comma-separated API keys."
+            fi
+            
+            # Gemini API keys
+            GEMINI_API_KEYS="${{ secrets.GEMINI_API_KEYS }}"
+            if [ ! -z "$GEMINI_API_KEYS" ]; then
+              if grep -q "GEMINI_API_KEYS=" .env; then
+                sed -i "s/GEMINI_API_KEYS=.*/GEMINI_API_KEYS=$GEMINI_API_KEYS/" .env
+              else
+                echo "GEMINI_API_KEYS=$GEMINI_API_KEYS" >> .env
+              fi
+              echo "✅ GEMINI_API_KEYS set in .env file"
+            else
+              echo "⚠️ WARNING: GEMINI_API_KEYS is empty! LLM API may not work properly."
+              echo "Please set the GEMINI_API_KEYS GitHub secret with comma-separated API keys."
+            fi
+
             echo "📋 Main .env file ready for docker-compose..."
             
             # Debug: Show telegram bot configuration (without sensitive values)
@@ -794,6 +888,11 @@ jobs:
             echo "WEBHOOK_SECRET: $(grep "WEBHOOK_SECRET=" .env | sed 's/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=[HIDDEN]/' || echo 'Not set')"
             echo "WEBHOOK_URL: $(grep "WEBHOOK_URL=" .env || echo 'Not set')"
             echo "REDIS_ADDR: $(grep "REDIS_ADDR=" .env || echo 'Not set')"
+            
+            # Debug: Show LLM API keys configuration (without sensitive values)
+            echo "🔍 LLM API keys configuration in .env:"
+            echo "GROQ_API_KEYS: $(grep "GROQ_API_KEYS=" .env | sed 's/GROQ_API_KEYS=.*/GROQ_API_KEYS=[HIDDEN]/' || echo 'Not set')"
+            echo "GEMINI_API_KEYS: $(grep "GEMINI_API_KEYS=" .env | sed 's/GEMINI_API_KEYS=.*/GEMINI_API_KEYS=[HIDDEN]/' || echo 'Not set')"
             
 
             # Generate nginx config from template

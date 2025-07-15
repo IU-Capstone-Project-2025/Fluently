@@ -8,8 +8,8 @@ import (
 
 func RegisterPreferencesRoutes(r chi.Router, h *handler.PreferenceHandler) {
 	r.Route("/preferences", func(r chi.Router) {
-		r.Get("/", h.GetUserPreferences)                   // /preferences
-		r.Put("/", h.UpdateUserPreferences)                // /preferences
+		r.Get("/", h.GetUserPreferences)                   // /preferences (gets user from context)
+		r.Put("/user/{user_id}", h.UpdateUserPreferences)  // /preferences/user/{user_id}
 		r.Post("/user/{user_id}", h.CreateUserPreferences) // /preferences/user/{user_id}
 		r.Delete("/user/{user_id}", h.DeletePreference)    // /preferences/user/{user_id}
 	})

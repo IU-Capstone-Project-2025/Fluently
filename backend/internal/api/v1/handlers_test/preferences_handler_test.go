@@ -36,7 +36,7 @@ func TestCreateUserPreferences(t *testing.T) {
 		"avatar_image_url": "http://example.com/avatar.png",
 	}
 
-	resp := e.POST("/preferences/" + user.ID.String() + "/").
+	resp := e.POST("/preferences/user/" + user.ID.String()).
 		WithJSON(reqBody).
 		Expect().
 		Status(http.StatusCreated).
@@ -131,7 +131,7 @@ func TestUpdateUserPreferences(t *testing.T) {
 		"avatar_image_url": "http://example.com/new_avatar.png",
 	}
 
-	resp := e.PUT("/preferences/" + user.ID.String() + "/").
+	resp := e.PUT("/preferences/user/" + user.ID.String()).
 		WithJSON(updateBody).
 		Expect().
 		Status(http.StatusOK).
@@ -166,7 +166,7 @@ func TestDeletePreference(t *testing.T) {
 	err = prefRepo.Create(context.Background(), &pref)
 	assert.NoError(t, err)
 
-	e.DELETE("/preferences/" + user.ID.String() + "/").
+	e.DELETE("/preferences/user/" + user.ID.String()).
 		Expect().
 		Status(http.StatusNoContent)
 

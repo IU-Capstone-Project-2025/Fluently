@@ -1,6 +1,10 @@
 # Fluently - Local Installation Guide
 
-# You can use guide from CONTRIBUTING.md
+### Supported Platforms
+- **Linux**: Ubuntu 22.04+ (native support)
+> Note: There is no Windows or MacOS support for Fluently Docker images. All images are Linux-only.
+
+## You can use guide from CONTRIBUTING.md
 
 This guide helps you set up Fluently for local development using **pre-built Docker images** from Docker Hub. This approach is much faster than building images locally, especially for the ML API component.
 
