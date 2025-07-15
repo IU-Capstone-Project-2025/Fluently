@@ -14,6 +14,7 @@ struct ButtonViewModifier: ViewModifier {
     enum ButtonColor {
         case blue
         case orange
+        case red
     }
 
     // MARK: - Properties
@@ -34,6 +35,9 @@ struct ButtonViewModifier: ViewModifier {
             case .blue:
                 primaryColor = .blueAccent
                 secondaryColor = .blueSecondary
+            case .red:
+                primaryColor = .purpleAccent
+                secondaryColor = .purpleSecondary
         }
     }
 

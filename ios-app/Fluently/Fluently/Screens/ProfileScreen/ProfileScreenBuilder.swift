@@ -16,8 +16,11 @@ enum ProfileScreenBuilder {
         authViewModel: GoogleAuthViewModel
     ) -> ProfileScrenView {
         let router = ProfileScreenRouter(router: router)
+        let interactor = ProfileScreenInteractor()
+
         let presenter = ProfileScreenPresenter(
             router: router,
+            interactor: interactor,
             account: account,
             authViewModel: authViewModel
         )

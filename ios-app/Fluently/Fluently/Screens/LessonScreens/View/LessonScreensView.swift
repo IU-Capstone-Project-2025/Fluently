@@ -65,15 +65,9 @@ struct LessonScreensView: View {
     var topBar: some View {
         HStack {
             VStack (alignment: .leading) {
-#if targetEnvironment(simulator)
                 Text("Exercise: \(presenter.learned + 1)/\(presenter.wordsPerLesson)")
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
-#else
-                Text("Exercise: \(presenter.learned + 1)/\(presenter.wordsPerLesson)")
-                    .foregroundStyle(.whiteText)
-                    .font(.appFont.largeTitle.bold())
-#endif
             }
             Spacer()
         }

@@ -27,6 +27,8 @@ final class LessonsPresenter: ObservableObject {
     var statistic: [ExerciseSolution : [ExerciseModel]]
     var wordsProgress: [ExerciseSolution: [WordModel]] = [:]
 
+    var lessonsStack: [ExerciseModel]
+
     // MARK: - Init
     init(router: AppRouter, words: [WordModel]) {
         self.router = router
@@ -43,6 +45,8 @@ final class LessonsPresenter: ObservableObject {
 
         wordsProgress[.correct] = []
         wordsProgress[.uncorrect] = []
+
+        lessonsStack = []
     }
 
     // MARK: - Navigation
@@ -100,15 +104,6 @@ final class LessonsPresenter: ObservableObject {
     // func to represent statistic
     func finishLesson() {
         words.forEach { word in
-//            let existingWord = try? modelContext?.fetch(
-//                FetchDescriptor<WordModel>(
-//                    predicate: #Predicate { $0.wordId == word.wordId }
-//                )
-//            ).first
-//
-//            if existingWord == nil {
-//                modelContext?.insert(word)
-//            }
             modelContext?.insert(word)
         }
         try? modelContext?.save()
