@@ -8,8 +8,11 @@ python-multipart==0.0.6
 starlette-prometheus==0.10.0
 
 # AI/LLM dependencies
-groq==0.4.1
-google-generativeai==0.3.2
+groq==0.11.0
+google-generativeai==0.8.3
+
+# HTTP client dependencies
+httpx==0.25.2
 
 # Utility dependencies
 python-dotenv==1.0.0

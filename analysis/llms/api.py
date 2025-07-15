@@ -59,18 +59,32 @@ class AIService:
         # Initialize Groq client with first available key
         groq_keys = self.providers["groq"]["keys"]
         if groq_keys:
-            self.providers["groq"]["client"] = Groq(api_key=groq_keys[0])
-            logger.info(f"Groq client initialized with {len(groq_keys)} key(s)")
+            try:
+                self.providers["groq"]["client"] = Groq(api_key=groq_keys[0])
+                logger.info(f"Groq client initialized with {len(groq_keys)} key(s)")
+            except Exception as e:
+                logger.error(f"Failed to initialize Groq client: {e}")
+                logger.warning("Groq client initialization failed, continuing with Gemini only")
         else:
             logger.warning("No Groq API keys found in environment")
             
         # Initialize Gemini with first available key
         gemini_keys = self.providers["gemini"]["keys"]
         if gemini_keys:
-            genai.configure(api_key=gemini_keys[0])
-            logger.info(f"Gemini client initialized with {len(gemini_keys)} key(s)")
+            try:
+                genai.configure(api_key=gemini_keys[0])
+                logger.info(f"Gemini client initialized with {len(gemini_keys)} key(s)")
+            except Exception as e:
+                logger.error(f"Failed to initialize Gemini client: {e}")
+                logger.warning("Gemini client initialization failed")
         else:
             logger.warning("No Gemini API keys found in environment")
+            
+        # Check if at least one provider is available
+        if not any(self.providers[provider]["keys"] for provider in self.providers):
+            raise RuntimeError("No valid API keys found for any provider (Groq, Gemini)")
+            
+        logger.info("AI service initialization completed")
 
     def _get_next_key(self, provider):
         """Получение следующего API-ключа с ротацией"""
@@ -139,7 +153,12 @@ class AIService:
     async def _groq_request(self, key, messages, model_type, **kwargs):
         """Запрос к Groq API"""
         model_name = self.providers["groq"]["models"][model_type]
-        client = Groq(api_key=key)
+        
+        try:
+            client = Groq(api_key=key)
+        except Exception as e:
+            logger.error(f"Failed to create Groq client: {e}")
+            return None
         
         try:
             response = await asyncio.wait_for(

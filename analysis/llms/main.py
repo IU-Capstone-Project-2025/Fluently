@@ -18,12 +18,20 @@ async def lifespan(app: FastAPI):
     """Initialize AI service at startup"""
     global ai_service
     print("Initializing AI service...")
-    ai_service = AIService()
-    await ai_service.initialize()
-    print("AI service initialized successfully!")
+    try:
+        ai_service = AIService()
+        await ai_service.initialize()
+        print("AI service initialized successfully!")
+    except Exception as e:
+        print(f"Failed to initialize AI service: {e}")
+        print("The API will still start, but AI functionality will be limited")
+        ai_service = None
+    
     yield
+    
     # Cleanup if needed
-    del ai_service
+    if ai_service:
+        del ai_service
 
 app = FastAPI(
     title="Fluently LLM API",
@@ -51,12 +59,16 @@ class Message(BaseModel):
     content: str
 
 class ChatRequest(BaseModel):
+    model_config = {"protected_namespaces": ()}
+    
     messages: List[Message]
     model_type: Optional[str] = "balanced"  # "fast" or "balanced"
     max_tokens: Optional[int] = None
     temperature: Optional[float] = None
 
 class ChatResponse(BaseModel):
+    model_config = {"protected_namespaces": ()}
+    
     response: str
     model_used: Optional[str] = None
 
