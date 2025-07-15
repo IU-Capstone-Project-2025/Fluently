@@ -257,19 +257,33 @@ server {
 
     # Public link routes for Telegram account linking
     location /link-google {
-        proxy_pass http://fluently_backend:8070$link_uri;
+        proxy_pass http://fluently_backend:8070$request_uri;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # Forward cookies for authentication
+        proxy_set_header Cookie $http_cookie;
+        
+        # Handle redirects properly for OAuth flows
+        proxy_redirect http://fluently_backend:8070/ https://$host/;
+        proxy_redirect https://fluently_backend:8070/ https://$host/;
     }
 
     location /link-google/callback {
-        proxy_pass http://fluently_backend:8070$link_uri;
+        proxy_pass http://fluently_backend:8070$request_uri;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # Forward cookies for authentication
+        proxy_set_header Cookie $http_cookie;
+        
+        # Handle redirects properly for OAuth flows
+        proxy_redirect http://fluently_backend:8070/ https://$host/;
+        proxy_redirect https://fluently_backend:8070/ https://$host/;
     }
 
     # Thesaurus API (proxied to thesaurus service)
