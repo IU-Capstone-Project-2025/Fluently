@@ -385,8 +385,7 @@ jobs:
           file: ./backend/Dockerfile
           push: true
           tags: |
-            docker.io/fluentlyorg/fluently-backend:latest-${{ needs.setup.outputs.environment == 'production' && 'main' || 'develop' }}
-            docker.io/fluentlyorg/fluently-backend:${{ github.sha }}
+            docker.io/fluentlyorg/fluently-backend:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/amd64,linux/arm64
@@ -400,8 +399,7 @@ jobs:
           file: ./telegram-bot/Dockerfile
           push: true
           tags: |
-            docker.io/fluentlyorg/fluently-telegram-bot:latest-${{ needs.setup.outputs.environment == 'production' && 'main' || 'develop' }}
-            docker.io/fluentlyorg/fluently-telegram-bot:${{ github.sha }}
+            docker.io/fluentlyorg/fluently-telegram-bot:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/amd64,linux/arm64
@@ -415,8 +413,7 @@ jobs:
           file: ./analysis/distractor_api/Dockerfile
           push: true
           tags: |
-            docker.io/fluentlyorg/fluently-ml-api:latest-${{ needs.setup.outputs.environment == 'production' && 'main' || 'develop' }}
-            docker.io/fluentlyorg/fluently-ml-api:${{ github.sha }}
+            docker.io/fluentlyorg/fluently-ml-api:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=min
           platforms: linux/amd64,linux/arm64
@@ -430,8 +427,7 @@ jobs:
           file: ./backend/nginx-container/Dockerfile
           push: true
           tags: |
-            docker.io/fluentlyorg/fluently-nginx:latest-${{ needs.setup.outputs.environment == 'production' && 'main' || 'develop' }}
-            docker.io/fluentlyorg/fluently-nginx:${{ github.sha }}
+            docker.io/fluentlyorg/fluently-nginx:latest-develop
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/amd64,linux/arm64
@@ -702,22 +698,7 @@ jobs:
             echo "📋 Copying .env file to root directory for docker-compose..."
             cp backend/.env .env
 
-            # Set Docker image tags based on environment
-            echo "🏷️ Setting Docker image tags for $ENVIRONMENT environment..."
-            if [ "$ENVIRONMENT" = "production" ]; then
-              echo "BACKEND_TAG=latest-main" >> .env
-              echo "NGINX_TAG=latest-main" >> .env
-              echo "TELEGRAM_TAG=latest-main" >> .env
-              echo "ML_API_TAG=latest-main" >> .env
-              echo "✅ Using production image tags (latest-main)"
-            else
-              echo "BACKEND_TAG=latest-develop" >> .env
-              echo "NGINX_TAG=latest-develop" >> .env
-              echo "TELEGRAM_TAG=latest-develop" >> .env
-              echo "ML_API_TAG=latest-develop" >> .env
-              echo "✅ Using staging image tags (latest-develop)"
-            fi
-
+            
             # Set Swagger host for the environment
             if [ "$ENVIRONMENT" = "production" ]; then
               export SWAGGER_HOST="${{ secrets.ZEROTIER_IP }}:8070"
