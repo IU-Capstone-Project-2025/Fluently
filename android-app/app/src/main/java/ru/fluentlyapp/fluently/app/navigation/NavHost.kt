@@ -68,12 +68,12 @@ fun FluentlyNavHost(
                 },
                 onLearnedWordsClick = {
                     navHostController.navigate(
-                        Destination.WordsProgress(isLearning = true)
+                        Destination.WordsProgress(isLearning = false)
                     )
                 },
                 onInProgressWordsClick = {
                     navHostController.navigate(
-                        Destination.WordsProgress(isLearning = false)
+                        Destination.WordsProgress(isLearning = true)
                     )
                 }
             )

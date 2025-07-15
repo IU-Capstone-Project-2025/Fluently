@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import ru.fluentlyapp.fluently.common.model.Decoration
 import ru.fluentlyapp.fluently.common.model.Exercise
+import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.common.model.LessonComponent
 import ru.fluentlyapp.fluently.datastore.OngoingLessonDataStore
 import ru.fluentlyapp.fluently.feature.wordcache.WordCache
@@ -18,6 +19,11 @@ import ru.fluentlyapp.fluently.network.model.SentWordProgress
 import timber.log.Timber
 import java.time.Instant
 import javax.inject.Inject
+
+data class LessonStatistic(
+    val learnedWordsCount: Int = 0,
+    val wordsInProgress: Int = 0
+)
 
 interface LessonRepository {
     /**
@@ -64,12 +70,21 @@ interface LessonRepository {
     suspend fun finishLesson()
 }
 
+const val PREFERRED_NUMBER_OF_WORDS = 10
+
 class DefaultLessonRepository @Inject constructor(
     val fluentlyApiDataSource: FluentlyApiDataSource,
     val ongoingLessonDataStore: OngoingLessonDataStore,
     val wordCacheRepository: WordCacheRepository,
     val wordProgressRepository: WordProgressRepository
 ) : LessonRepository {
+    private enum class NewWordExerciseStatus {
+        IGNORED,
+        USER_IS_LEARNING,
+        USER_KNOWS,
+        NO_OCCURRENCE
+    }
+
     override suspend fun hasSavedLesson(): Boolean {
         return try {
             ongoingLessonDataStore.getOngoingLesson().first() != null
@@ -118,7 +133,6 @@ class DefaultLessonRepository @Inject constructor(
         val updatedLessonComponents: List<LessonComponent> = buildList {
             add(generateOnboardingComponent(lesson.components))
             addAll(lesson.components)
-            add(Decoration.Finish())
         }.withIdSetToIndex()
 
         ongoingLessonDataStore.setOngoingLesson(lesson.copy(components = updatedLessonComponents))
@@ -147,19 +161,105 @@ class DefaultLessonRepository @Inject constructor(
         }
     }
 
+    private fun validateCandidateLessonComponent(
+        lesson: Lesson,
+        candidateComponentIndex: Int
+    ): Boolean {
+        val candidateComponent = lesson.components[candidateComponentIndex]
+        val currentWordId = when (candidateComponent) {
+            is Exercise.FillTheGap -> { candidateComponent.wordId }
+            is Exercise.InputWord -> {  candidateComponent.wordId }
+            is Exercise.ChooseTranslation -> { candidateComponent.wordId }
+            else -> null
+        }
+
+        /**
+         * The rules are the following:
+         * 1) If component candidate is new word, then show it only if the user hasn't already
+         * started to learn a certain threshold of words
+         * 2) If component candidate is some exercise related to some word, then show it only if
+         * the related word is either hasn't been previously met in the lesson or the set that they
+         * do not know it
+         */
+        var learningWordsCount = 0
+        var originalWordStatus: NewWordExerciseStatus = NewWordExerciseStatus.NO_OCCURRENCE
+        for (i in 0..<candidateComponentIndex) {
+            val component = lesson.components[i]
+            if (component is Exercise.NewWord) {
+                if (component.doesUserKnow == false) {
+                    learningWordsCount++
+                }
+                if (currentWordId != null && component.wordId == currentWordId) {
+                    originalWordStatus = when (component.doesUserKnow) {
+                        true -> NewWordExerciseStatus.USER_KNOWS
+                        false -> NewWordExerciseStatus.USER_IS_LEARNING
+                        null -> NewWordExerciseStatus.IGNORED
+                    }
+                }
+            }
+        }
+        Timber.d("learningWordsCount=$learningWordsCount; originalWordStatus=$originalWordStatus")
+        return if (candidateComponent is Exercise.NewWord) {
+            learningWordsCount < PREFERRED_NUMBER_OF_WORDS
+        } else if (currentWordId != null) {
+            originalWordStatus in setOf(NewWordExerciseStatus.NO_OCCURRENCE, NewWordExerciseStatus.USER_IS_LEARNING)
+        } else {
+            true
+        }
+    }
+
     override suspend fun moveToNextComponent() {
         try {
-            ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
-                if (
-                    lesson.currentLessonComponentIndex + 1 < lesson.components.size && // End not reached
-                    (lesson.currentComponent as? Exercise)?.isAnswered != false // i.e. null (currentComponent is not exercise) or true
-                ) {
-                    ongoingLessonDataStore.setOngoingLesson(
-                        lesson.copy(
-                            currentLessonComponentIndex = lesson.currentLessonComponentIndex + 1
-                        )
+            val lesson = ongoingLessonDataStore.getOngoingLesson().first()
+            if (lesson == null) {
+                return
+            }
+
+            if (
+                (lesson.currentComponent as? Exercise)?.isAnswered == false // current exercise is not answered
+            ) {
+                return
+            }
+
+            if (lesson.currentLessonComponentIndex + 1 == lesson.components.size) {
+                // Add the finish screen
+                val updatedLessonComponents: List<LessonComponent> = buildList {
+                    addAll(lesson.components)
+                    add(Decoration.Finish())
+                }.withIdSetToIndex()
+                ongoingLessonDataStore.setOngoingLesson(
+                    lesson.copy(
+                        currentLessonComponentIndex = lesson.currentLessonComponentIndex + 1,
+                        components = updatedLessonComponents
                     )
-                }
+                )
+            }
+
+            var candidateComponentIndex = lesson.currentLessonComponentIndex + 1
+            while (
+                candidateComponentIndex < lesson.components.size &&
+                !validateCandidateLessonComponent(lesson, candidateComponentIndex)
+            ) {
+                candidateComponentIndex++
+            }
+
+            if (candidateComponentIndex < lesson.components.size) {
+                ongoingLessonDataStore.setOngoingLesson(
+                    lesson.copy(
+                        currentLessonComponentIndex = candidateComponentIndex
+                    )
+                )
+            } else {
+                val updatedLessonComponents: List<LessonComponent> = buildList {
+                    addAll(lesson.components)
+                    add(Decoration.Finish())
+                }.withIdSetToIndex()
+                ongoingLessonDataStore.setOngoingLesson(
+                    lesson.copy(
+                        currentLessonComponentIndex = lesson.components.size,
+                        components = updatedLessonComponents
+                    )
+                )
             }
         } catch (ex: Exception) {
             Timber.e(ex)
@@ -191,23 +291,24 @@ class DefaultLessonRepository @Inject constructor(
     }
 
     override suspend fun finishLesson() {
+        // Consider only words that HAS been answered
         val progressMap = mutableMapOf<String, SentWordProgress>() // (word_id; progress)
         ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
             for (component in lesson.components) {
-                if (component is Exercise.NewWord) {
+                if (component is Exercise.NewWord && component.isAnswered) {
                     var correctExercises = 0
                     var incorrectExercises = 0
-                    for (possibleRelatedComponent in lesson.components) {
+                    for (possiblyRelatedComponent in lesson.components) {
                         if (
-                            possibleRelatedComponent is Exercise
+                            possiblyRelatedComponent is Exercise
                         ) {
-                            val result = isExerciseCorrect(component, possibleRelatedComponent)
+                            val result = isExerciseCorrect(component, possiblyRelatedComponent)
                             correctExercises += (result == true).compareTo(false)
                             incorrectExercises += (result == false).compareTo(false)
                         }
                     }
                     val overallExerciseCount = correctExercises + incorrectExercises
-                    val correctnessRate: Float = correctExercises/ overallExerciseCount.toFloat()
+                    val correctnessRate: Float = correctExercises / overallExerciseCount.toFloat()
                     val progress = SentWordProgress(
                         wordId = component.wordId,
                         cntReviewed = overallExerciseCount,

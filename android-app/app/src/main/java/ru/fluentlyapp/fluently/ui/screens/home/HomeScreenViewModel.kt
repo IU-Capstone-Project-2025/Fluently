@@ -16,6 +16,8 @@ import ru.fluentlyapp.fluently.data.repository.LessonRepository
 import javax.inject.Inject
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.supervisorScope
+import ru.fluentlyapp.fluently.feature.joinedwordprogress.JoinedWordProgressRepository
 import ru.fluentlyapp.fluently.ui.screens.home.HomeScreenUiState.OngoingLessonState
 import timber.log.Timber
 
@@ -23,6 +25,7 @@ import timber.log.Timber
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor(
     private val lessonRepository: LessonRepository,
+    private val joinedWordProgressRepository: JoinedWordProgressRepository
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(HomeScreenUiState())
     val uiState = _uiState.asStateFlow()
@@ -32,18 +35,34 @@ class HomeScreenViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            lessonRepository.currentComponent().collect { currentComponent ->
-                if (
-                    uiState.value.ongoingLessonState in setOf(
-                        OngoingLessonState.LOADING,
-                        OngoingLessonState.ERROR
-                    )
-                ) {
-                    return@collect
+            supervisorScope {
+                launch {
+                    lessonRepository.currentComponent().collect { currentComponent ->
+                        if (
+                            uiState.value.ongoingLessonState in setOf(
+                                OngoingLessonState.LOADING,
+                                OngoingLessonState.ERROR
+                            )
+                        ) {
+                            return@collect
+                        }
+
+                        if (currentComponent == null) {
+                            _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.NOT_STARTED) }
+                        } else {
+                            _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.HAS_PAUSED) }
+                        }
+                    }
                 }
 
-                if (currentComponent == null) {
-                    _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.NOT_STARTED) }
+                launch {
+                    val progresses = joinedWordProgressRepository.getPerWordOverallProgress().first()
+                    _uiState.update {
+                        it.copy(
+                            learnedWordsNumber = progresses.count { !it.isLearning },
+                            inProgressWordsNumber = progresses.count { it.isLearning }
+                        )
+                    }
                 }
             }
         }

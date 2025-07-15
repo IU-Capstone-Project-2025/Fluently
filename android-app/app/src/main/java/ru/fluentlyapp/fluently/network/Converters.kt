@@ -62,7 +62,8 @@ fun LessonResponseBody.convertToLesson(): Lesson {
                             sentence = expandedTemplate.split("_+".toRegex()),
                             answerVariants = options,
                             correctVariant = options.indexOf(exerciseData.correct_answer),
-                            selectedVariant = null
+                            selectedVariant = null,
+                            wordId = card.word_id
                         )
                     )
                 }
