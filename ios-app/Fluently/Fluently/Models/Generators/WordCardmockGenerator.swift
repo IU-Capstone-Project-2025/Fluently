@@ -79,7 +79,7 @@ extension WordModel {
                         ],
                         correctAnswer: "book"
                     ),
-                    type: .typeTranslationRussEng
+                    type: .chooseTranslationEngRuss
                 ),
                 isLearned: true,
                 sentences: [

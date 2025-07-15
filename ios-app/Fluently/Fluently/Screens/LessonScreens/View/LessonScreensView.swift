@@ -65,7 +65,7 @@ struct LessonScreensView: View {
     var topBar: some View {
         HStack {
             VStack (alignment: .leading) {
-                Text("Exercise: \(presenter.learned + 1)/\(presenter.wordsPerLesson)")
+                Text("Words: \(presenter.learnedCount)/\(presenter.wordsPerLesson)")
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
             }
@@ -88,12 +88,13 @@ struct LessonScreensView: View {
                     ) { selectedAnswer in
                             presenter.answer(selectedAnswer)
                         }
-                    .id(presenter.currentExNumber)
+                    .id(presenter.currentExerciseNumber)
                 case .typeTranslationRussEng: /// Type correct translation
                     let typeTranslationEx = presenter.currentEx.exerciseData as! WriteFromTranslation
                     TypeTranslationView (word: typeTranslationEx.translation) { typedAnswer in
                             presenter.answer(typedAnswer)
                         }
+                    .id(presenter.currentExerciseNumber)
                 case .pickOptionSentence: /// Pick word, mathing by definition
                     let pickOptionEx = presenter.currentEx.exerciseData as! PickOptionSentence
                     PickOptionsView(
@@ -102,21 +103,21 @@ struct LessonScreensView: View {
                     ) { selectedAnswer in
                             presenter.answer(selectedAnswer)
                         }
-                    .id(presenter.currentExNumber)
+                    .id(presenter.currentExerciseNumber)
                 case .recordPronounce:
                     Text(presenter.currentEx.type.rawValue)
                 case .wordCard:
-                    let wordCard = presenter.words[presenter.currentExNumber]
+                    let wordCard = presenter.words[presenter.currentWordNumber]
                     WordCardView(
                         word: wordCard,
                         onKnowTapped: {
                             presenter.alreadyKnow()
                         },
                         onLearnTapped: {
-                            presenter.showLesson()
+                            presenter.willLearn()
                         }
                     )
-                    .id(presenter.currentExNumber)
+                    .id(presenter.currentWordNumber)
                 case .numberOfWords:
                     Text(presenter.currentEx.type.rawValue)
             }

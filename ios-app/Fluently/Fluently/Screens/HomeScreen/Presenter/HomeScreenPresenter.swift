@@ -26,7 +26,7 @@ final class HomeScreenPresenter: HomeScreenPresenting {
     @ObservedObject var account: AccountData
 #if targetEnvironment(simulator)
     @Published var lesson: CardsModel? = CardsModel(
-        cards: WordModel.generateMockWords(count: 5),
+        cards: WordModel.generateMockWords(count: 20),
         lesson: LessonModel(
             startedAt: "",
             totalWords: 10,
