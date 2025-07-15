@@ -341,63 +341,51 @@ jobs:
             COLIMA_SUCCESS=false
             
             # Attempt 1: Try VZ with minimal settings (fastest but may fail in CI)
-            echo "Attempt 1: VZ virtualization with minimal resources (2-minute timeout)..."
-            if timeout 120 colima start --cpu 1 --memory 2 --disk 10 --arch "$COLIMA_ARCH" --vm-type=vz 2>&1; then
+            echo "Attempt 1: VZ virtualization with minimal resources..."
+            if timeout 60 colima start --cpu 1 --memory 2 --disk 10 --arch "$COLIMA_ARCH" --vm-type=vz 2>&1; then
               echo "✅ Colima started successfully with VZ virtualization"
               COLIMA_SUCCESS=true
             else
               echo "VZ failed (expected in CI), trying QEMU..."
               colima delete --force 2>/dev/null || true
-              sleep 3
+              sleep 2
               
-              # Attempt 2: Try QEMU with extended timeout and minimal resources
-              echo "Attempt 2: QEMU virtualization with minimal resources (5-minute timeout)..."
-              if timeout 300 colima start --cpu 1 --memory 2 --disk 10 --arch "$COLIMA_ARCH" --vm-type=qemu 2>&1; then
+              # Attempt 2: Try QEMU with timeout and minimal resources
+              echo "Attempt 2: QEMU virtualization with minimal resources..."
+              if timeout 90 colima start --cpu 1 --memory 2 --disk 10 --arch "$COLIMA_ARCH" --vm-type=qemu 2>&1; then
                 echo "✅ Colima started successfully with QEMU virtualization"
                 COLIMA_SUCCESS=true
               else
                 echo "QEMU failed (common in CI), trying default settings..."
                 colima delete --force 2>/dev/null || true
-                sleep 3
+                sleep 2
                 
-                # Attempt 3: Try default with minimal resources and extended timeout
-                echo "Attempt 3: Default virtualization with extended timeout (10 minutes)..."
-                if timeout 600 colima start --cpu 1 --memory 2 --disk 10 --arch "$COLIMA_ARCH" 2>&1; then
+                # Attempt 3: Try default with minimal resources and longer timeout
+                echo "Attempt 3: Default virtualization with extended timeout..."
+                if timeout 120 colima start --cpu 1 --memory 2 --disk 10 --arch "$COLIMA_ARCH" 2>&1; then
                   echo "✅ Colima started successfully with default virtualization"
                   COLIMA_SUCCESS=true
                 else
-                  echo "Default virtualization failed after 10 minutes"
+                  echo "Default virtualization failed"
                   colima delete --force 2>/dev/null || true
-                  
-                  # Attempt 4: Last resort - try with even more minimal settings
-                  echo "Attempt 4: Ultra-minimal virtualization (5 minutes)..."
-                  if timeout 300 colima start --cpu 1 --memory 1 --disk 5 2>&1; then
-                    echo "✅ Colima started with ultra-minimal settings"
-                    COLIMA_SUCCESS=true
-                  else
-                    echo "All colima attempts failed after extended timeouts"
-                  fi
                 fi
               fi
             fi
             
             if [ "$COLIMA_SUCCESS" = "false" ]; then
-              echo "⚠️ All colima virtualization methods failed after extended timeouts"
-              echo "Total time attempted: ~22 minutes (VZ: 2min, QEMU: 5min, Default: 10min, Ultra-minimal: 5min)"
-              echo "This confirms that GitHub Actions CI has fundamental virtualization limitations"
+              echo "⚠️ All colima virtualization methods failed"
+              echo "This is expected in GitHub Actions CI due to nested virtualization limitations"
               echo "Colima requires hardware virtualization which is not available in CI containers"
-              echo "Time was not the limiting factor - the issue is architectural"
               echo "docker_ready=false" >> $GITHUB_OUTPUT
               exit 0
             fi
             
             # Wait for colima to fully initialize
             echo "Waiting for colima to initialize..."
-            sleep 30  # Give more time for initialization
+            sleep 20
             
             # Check if Docker works with colima (extended retry with better error handling)
-            echo "Testing Docker daemon connectivity (15-minute timeout)..."
-            for i in {1..45}; do  # 15 minutes with 20-second intervals
+            for i in {1..8}; do
               if docker info > /dev/null 2>&1; then
                 echo "SUCCESS: Docker running via colima!"
                 docker info | grep -E "(Server Version|Operating System|Architecture)" || true
@@ -405,16 +393,12 @@ jobs:
                 echo "docker_ready=true" >> $GITHUB_OUTPUT
                 exit 0
               else
-                echo "Waiting for colima Docker daemon... (attempt $i/45 - $((i*20))/900 seconds)"
-                if [ $i -eq 15 ]; then
-                  echo "Checking colima status at 5-minute mark..."
+                echo "Waiting for colima Docker daemon... (attempt $i/8)"
+                if [ $i -eq 4 ]; then
+                  echo "Checking colima status..."
                   colima status || true
                 fi
-                if [ $i -eq 30 ]; then
-                  echo "Checking colima status at 10-minute mark..."
-                  colima status || true
-                fi
-                sleep 20
+                sleep 12
               fi
             done
             
@@ -468,20 +452,20 @@ jobs:
             rm -f /opt/homebrew/share/fish/vendor_completions.d/docker* 2>/dev/null || true
             rm -f /opt/homebrew/share/zsh/site-functions/_docker* 2>/dev/null || true
             
-            # Install with extended timeout (15 minutes for thorough testing)
-            echo "Installing Docker Desktop with 15-minute timeout..."
+            # Install with extended timeout (8 minutes)
+            echo "Installing Docker Desktop with 8-minute timeout..."
             if command -v timeout &> /dev/null; then
-              timeout 900 brew install --cask docker-desktop --force --no-quarantine || {
-                echo "Docker Desktop installation timed out or failed after 15 minutes"
-                echo "This confirms CI virtualization limitations - skipping macOS test gracefully"
+              timeout 480 brew install --cask docker-desktop --force --no-quarantine || {
+                echo "Docker Desktop installation timed out or failed"
+                echo "This is common in CI environments - skipping macOS test gracefully"
                 exit 0
               }
             else
-              # Manual timeout handling (15 minutes)
+              # Manual timeout handling
               (brew install --cask docker-desktop --force --no-quarantine) &
               INSTALL_PID=$!
               
-              for i in {1..180}; do  # 15 minutes (180 * 5 seconds)
+              for i in {1..96}; do  # 8 minutes
                 if ! kill -0 $INSTALL_PID 2>/dev/null; then
                   wait $INSTALL_PID
                   RESULT=$?
@@ -492,14 +476,12 @@ jobs:
                     echo "Docker Desktop installation failed with exit code $RESULT"
                     exit 0
                   fi
-                elif [ $i -eq 180 ]; then
-                  echo "Docker Desktop installation taking longer than 15 minutes, stopping..."
+                elif [ $i -eq 96 ]; then
+                  echo "Docker Desktop installation taking too long, stopping..."
                   kill $INSTALL_PID 2>/dev/null || true
                   exit 0
                 else
-                  if [ $((i % 12)) -eq 0 ]; then  # Every minute
-                    echo "Installing Docker Desktop... ($((i*5))/900 seconds)"
-                  fi
+                  echo "Installing Docker Desktop... ($((i*5))/480 seconds)"
                   sleep 5
                 fi
               done
@@ -513,9 +495,9 @@ jobs:
               open /Applications/Docker.app &
             fi
             
-            # Wait for Docker Desktop to start with extended timeout (15 minutes for thorough testing)
-            echo "Waiting for Docker Desktop to start (15 minute timeout)..."
-            timeout_seconds=900
+            echo "Waiting for Docker Desktop to start..."
+            timeout_seconds=180  
+            # 3 minutes
             elapsed=0
             
             while [ $elapsed -lt $timeout_seconds ]; do
@@ -526,16 +508,16 @@ jobs:
                 exit 0
               fi
               
-              if [ $((elapsed % 60)) -eq 0 ]; then  # Every minute
-                echo "Waiting for Docker Desktop... ($elapsed/$timeout_seconds seconds - $((elapsed/60))/15 minutes)"
+              if [ $((elapsed % 30)) -eq 0 ]; then
+                echo "Waiting for Docker Desktop... ($elapsed/$timeout_seconds seconds)"
               fi
               
-              sleep 10  # Check every 10 seconds
-              elapsed=$((elapsed + 10))
+              sleep 5
+              elapsed=$((elapsed + 5))
             done
             
-            echo "⚠️ Docker Desktop failed to start within $timeout_seconds seconds (15 minutes)"
-            echo "This extended timeout confirms CI virtualization limitations rather than timing issues:"
+            echo "⚠️ Docker Desktop failed to start within $timeout_seconds seconds"
+            echo "This is expected in GitHub Actions CI due to virtualization limitations:"
             echo "  • CI runners are already virtualized (nested virtualization issues)"
             echo "  • Limited hardware virtualization support in containerized environments"
             echo "  • Both colima and Docker Desktop require hardware virtualization features"
