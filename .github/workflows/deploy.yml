@@ -667,14 +667,14 @@ jobs:
                 return 1
               fi
               
-              # # Check if nginx is responding
-              # echo "Checking nginx health..."
-              # if curl -f "http://localhost" >/dev/null 2>&1; then
-              #   echo "✅ Nginx is healthy"
-              # else
-              #   echo "❌ Nginx health check failed"
-              #   return 1
-              # fi
+              # Check if nginx is responding
+              echo "Checking nginx health..."
+              if curl -f "https://localhost" >/dev/null 2>&1; then
+                echo "✅ Nginx is healthy"
+              else
+                echo "❌ Nginx health check failed"
+                return 1
+              fi
               
               # # Check if Directus is healthy
               # echo "Checking Directus health..."
