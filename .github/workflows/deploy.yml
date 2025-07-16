@@ -669,12 +669,26 @@ jobs:
               
               # Check if nginx is responding
               echo "Checking nginx health..."
-              if curl -f "https://localhost" >/dev/null 2>&1; then
-                echo "✅ Nginx is healthy"
-              else
-                echo "❌ Nginx health check failed"
-                return 1
-              fi
+              for i in {1..5}; do
+                if curl -f -k "https://localhost" >/dev/null 2>&1; then
+                  echo "✅ Nginx is healthy"
+                  break
+                elif [ $i -eq 5 ]; then
+                  echo "❌ Nginx health check failed after 5 attempts"
+                  echo "🔍 Nginx container status:"
+                  docker compose ps nginx || true
+                  echo "🔍 Nginx logs:"
+                  docker compose logs nginx || true
+                  echo "🔍 Nginx process inside container:"
+                  docker compose exec -T nginx ps aux || true
+                  echo "🔍 Nginx configuration test:"
+                  docker compose exec -T nginx nginx -t || true
+                  return 1
+                else
+                  echo "⏳ Waiting for nginx... (attempt $i/5)"
+                  sleep 5
+                fi
+              done
               
               # # Check if Directus is healthy
               # echo "Checking Directus health..."
@@ -873,28 +887,30 @@ jobs:
             git checkout $BRANCH
             git pull origin $BRANCH
 
-            # Create environment-specific .env for backend if it doesn't exist
-            if [ ! -f "backend/.env" ]; then
-              echo "📝 Creating backend/.env file from example..."
-              cp backend/.env.example backend/.env
-            fi
-
             # Update environment variables based on deployment target
             echo "⚙️ Updating environment configuration..."
 
-            # Update ZeroTier IP in backend/.env
-            if grep -q "ZEROTIER_IP=" backend/.env; then
-              sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" backend/.env
+            # Ensure .env file exists at project root
+            if [ ! -f ".env" ]; then
+              echo "📝 Creating .env file at project root..."
+              touch .env
             else
-              echo "ZEROTIER_IP=$ZEROTIER_IP" >> backend/.env
+              echo "📝 .env file already exists, updating..."
             fi
 
-            # Update PUBLIC_URL in backend/.env
-            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" backend/.env
+            # Update ZeroTier IP in root .env
+            if grep -q "ZEROTIER_IP=" .env; then
+              sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" .env
+            else
+              echo "ZEROTIER_IP=$ZEROTIER_IP" >> .env
+            fi
 
-            # Copy .env from backend to root for docker-compose to use
-            echo "📋 Copying .env file to root directory for docker-compose..."
-            cp backend/.env .env
+            # Update PUBLIC_URL in root .env
+            if grep -q "PUBLIC_URL=" .env; then
+              sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" .env
+            else
+              echo "PUBLIC_URL=https://$DOMAIN" >> .env
+            fi
 
             
             # Set Swagger host for the environment
