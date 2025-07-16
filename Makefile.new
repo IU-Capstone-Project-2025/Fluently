@@ -117,11 +117,11 @@ restart-local:
 
 # Access main database
 db-shell:
-	docker compose exec postgres psql -U $(shell grep DB_USER backend/.env | cut -d '=' -f2) -d $(shell grep DB_NAME backend/.env | cut -d '=' -f2)
+	docker compose exec postgres psql -U $(shell grep DB_USER .env | cut -d '=' -f2) -d $(shell grep DB_NAME .env | cut -d '=' -f2)
 
 # Access local database
 db-shell-local:
-	docker compose -f docker-compose.yml -f docker-compose.local.yml exec postgres psql -U $(shell grep DB_USER backend/.env | cut -d '=' -f2) -d $(shell grep DB_NAME backend/.env | cut -d '=' -f2)
+	docker compose -f docker-compose.yml -f docker-compose.local.yml exec postgres psql -U $(shell grep DB_USER .env | cut -d '=' -f2) -d $(shell grep DB_NAME .env | cut -d '=' -f2)
 
 # Access test database
 test-db-shell:

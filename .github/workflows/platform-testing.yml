@@ -67,10 +67,6 @@ jobs:
             cp .env.example .env
             echo "Created root .env from example"
           fi
-          if [ ! -f backend/.env ]; then
-            cp backend/.env.example backend/.env
-            echo "Created backend/.env from example"
-          fi
           
           # Create dummy thesaurus data for testing (skip SSH dependency)
           echo "Creating dummy thesaurus data for testing..."
