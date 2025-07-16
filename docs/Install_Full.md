@@ -1,283 +1,622 @@
 # Full Production Installation Guide
 
-This guide explains how to deploy Fluently in a production-like environment with your own domain, SSL certificates, and all services running as in production.
+This guide explains how to deploy Fluently in a production environment with your own domain, SSL certificates, and all services running as in production.
 
 ---
 
 ## Prerequisites
-- [Docker](https://docs.docker.com/get-docker/) & [Docker Compose](https://docs.docker.com/compose/install/)
+- [Docker](https://docs.docker.com/get-docker/) & [Docker Compose](https://docs.docker.com/compose/install/) (v2.0+)
 - [Git](https://git-scm.com/)
 - Your own domain name (e.g., `your-domain.com`)
-- VPS or cloud server with public IP
+- VPS or cloud server with public IP and at least 8GB RAM
 - Basic understanding of DNS configuration
+- SSH access to your server
 
 ---
 
 ## 1. Clone the Repository
 ```bash
-git clone https://github.com/IU-Capstone-Project-2025/Fluently.git
+git clone https://github.com/FluentlyOrg/Fluently-fork.git
 cd Fluently-fork
 ```
 
 ---
 
 ## 2. Create Environment File
-Create a `.env` file in the `backend` directory:
+Create a `.env` file in the project root with the following configuration:
+
 ```env
-# JWT
-JWT_SECRET=supersecretjwtkey_CHANGE_THIS
+# ===========================================
+# APPLICATION CONFIGURATION
+# ===========================================
+
+# App Configuration
+APP_NAME=FluentlyAPI
+APP_HOST=0.0.0.0
+APP_PORT=8070
+
+# Database Configuration
+DB_HOST=postgres
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=your_secure_database_password_here
+DB_NAME=postgres
+
+# JWT Configuration
+JWT_SECRET=your_super_secret_jwt_key_here_make_it_long_and_secure_minimum_32_characters
 JWT_EXPIRATION=24h
 REFRESH_EXPIRATION=720h
 
-# App
-APP_NAME=fluently
-APP_PORT=8070
+# Google OAuth Configuration
+IOS_GOOGLE_CLIENT_ID=your_ios_google_client_id
+ANDROID_GOOGLE_CLIENT_ID=your_android_google_client_id
+WEB_GOOGLE_CLIENT_ID=your_web_google_client_id
+WEB_GOOGLE_CLIENT_SECRET=your_web_google_client_secret
 
-# Database
-DB_USER=postgres
-DB_PASSWORD=secure_password_CHANGE_THIS
-DB_HOST=postgres
-DB_PORT=5432
-DB_NAME=postgres
+# Logging Configuration
+LOG_LEVEL=info
+LOG_PATH=./logs/app.log
 
-# Directus configuration
-DIRECTUS_PORT=8055
+# Security Configuration
+PASSWORD_MIN_LENGTH=8
+RATE_LIMIT_REQUESTS=100
+RATE_LIMIT_DURATION=1h
+
+# Swagger Configuration
+SWAGGER_ALLOWED_EMAILS=admin@yourdomain.com
+
+# ===========================================
+# INFRASTRUCTURE CONFIGURATION
+# ===========================================
+
+# Domain Configuration
+DOMAIN=yourdomain.com
+CERT_NAME=yourdomain
+
+# ZeroTier Configuration (for secure admin access)
+ZEROTIER_IP=your.zerotier.ip
+
+# ===========================================
+# ADMIN SERVICES CONFIGURATION
+# ===========================================
+
+# Directus CMS Configuration
 DIRECTUS_ADMIN_EMAIL=admin@yourdomain.com
-DIRECTUS_ADMIN_PASSWORD=admin_password_CHANGE_THIS
-DIRECTUS_SECRET_KEY=directus_secret_CHANGE_THIS
+DIRECTUS_ADMIN_PASSWORD=your_super_secure_directus_password_here
+DIRECTUS_SECRET_KEY=your_directus_secret_key_here_make_it_long_and_secure
 
-# Grafana
-GRAFANA_ADMIN_PASSWORD=grafana_password_CHANGE_THIS
+# Grafana Configuration
+GRAFANA_ADMIN_PASSWORD=your_super_secure_grafana_password_here
 
-# Google OAuth (Configure in Google Cloud Console)
-IOS_GOOGLE_CLIENT_ID=your-ios-client-id.apps.googleusercontent.com
-ANDROID_GOOGLE_CLIENT_ID=your-android-client-id.apps.googleusercontent.com
-WEB_GOOGLE_CLIENT_ID=your-web-client-id.apps.googleusercontent.com
+# ===========================================
+# TELEGRAM BOT CONFIGURATION
+# ===========================================
 
-# Server configuration
-ZEROTIER_IP=YOUR_SERVER_IP
-PUBLIC_URL=https://your-domain.com
+# Telegram Bot Configuration
+BOT_TOKEN=your_telegram_bot_token_here
+WEBHOOK_URL=https://yourdomain.com/webhook
+WEBHOOK_PATH=/webhook
+WEBHOOK_SECRET=your_webhook_secret_here
+
+# Redis Configuration
+REDIS_ADDR=localhost:6379
+REDIS_PASSWORD=
+REDIS_DB=0
+
+# Backend API Configuration
+API_BASE_URL=https://yourdomain.com/api/v1
+API_TIMEOUT=30
+
+# Asynq Configuration (for background tasks)
+ASYNQ_REDIS_ADDR=localhost:6379
+ASYNQ_REDIS_PASSWORD=
+ASYNQ_REDIS_DB=1
+ASYNQ_CONCURRENCY=10
+
+# Environment
+ENVIRONMENT=production
+
+# ===========================================
+# LLM API CONFIGURATION
+# ===========================================
+
+# AI/LLM API Keys (comma-separated for multiple keys)
+# Get Groq API keys from: https://console.groq.com/keys
+# Get Gemini API keys from: https://makersuite.google.com/app/apikey
+GROQ_API_KEYS=your_groq_api_key_here,your_second_groq_api_key_here
+GEMINI_API_KEYS=your_gemini_api_key_here,your_second_gemini_api_key_here
+
+# ===========================================
+# EXTERNAL SERVICES
+# ===========================================
+
+# Thesaurus API Configuration
+THESAURUS_ALLOWED_ORIGINS=https://yourdomain.com,https://app.yourdomain.com
 ```
-
-Copy to project root for Docker Compose:
-```bash
-cp backend/.env .env
-```
-
 ---
 
 ## 3. Configure Domain and SSL
 
 ### Option A: Cloudflare (Recommended)
-1. **Add domain to Cloudflare**
-2. **Generate Origin Certificates:**
-   - Go to SSL/TLS → Origin Server
-   - Create Certificate for your domain
-   - Download `.pem` and `.key` files
+1. **Add domain to Cloudflare**:
+   - Sign up at [Cloudflare](https://cloudflare.com)
+   - Add your domain and update nameservers
+   - Enable "Full (Strict)" SSL mode
 
-3. **Install certificates:**
+2. **Generate Origin Certificates**:
+   - Go to SSL/TLS → Origin Server
+   - Click "Create Certificate"
+   - Select your domain and subdomains
+   - Choose "PEM" format
+   - Download both `.pem` and `.key` files
+
+3. **Install certificates on server**:
    ```bash
    sudo mkdir -p /etc/nginx/ssl
-   sudo cp your-domain.pem /etc/nginx/ssl/your-domain.pem
-   sudo cp your-domain.key /etc/nginx/ssl/your-domain.key
+   sudo cp yourdomain.pem /etc/nginx/ssl/yourdomain.pem
+   sudo cp yourdomain.key /etc/nginx/ssl/yourdomain.key
    sudo chmod 600 /etc/nginx/ssl/*
+   sudo chown root:root /etc/nginx/ssl/*
    ```
 
-4. **Update nginx template:**
-   ```bash
-   # Edit backend/nginx-container/nginx.conf.template
-   # Replace ${DOMAIN} and ${CERT_NAME} placeholders
-   ```
-
-### Option B: Let's Encrypt
+### Option B: Let's Encrypt (Alternative)
 ```bash
 # Install Certbot
+sudo apt update
 sudo apt install certbot python3-certbot-nginx
 
+# Stop any running nginx
+sudo systemctl stop nginx
+
 # Generate certificates
-sudo certbot certonly --nginx -d your-domain.com -d www.your-domain.com
+sudo certbot certonly --standalone -d yourdomain.com -d www.yourdomain.com
 
 # Certificates will be in:
-# /etc/letsencrypt/live/your-domain.com/
+# /etc/letsencrypt/live/yourdomain.com/
 ```
 
 ---
 
 ## 4. Configure Nginx
-Edit `backend/nginx-container/nginx.conf.template`:
-```nginx
-server_name your-domain.com www.your-domain.com;
 
-# Update certificate paths
-ssl_certificate /etc/nginx/ssl/your-domain.pem;
-ssl_certificate_key /etc/nginx/ssl/your-domain.key;
-```
+> [!NOTE] 
+>  Domain and certificates names will be updated automatically, if you decide to use our existing GitHub Actions workflow. But you need to set the Github Secrets first (see section 13).
+
+The nginx configuration will be automatically generated from `backend/nginx-container/nginx.conf.template` using your domain settings.
 
 ---
 
 ## 5. Setup External Volumes (Production Safety)
+Create external Docker volumes for persistent data:
 ```bash
-# Create external volumes for data persistence
+# Create external volumes for critical data
 docker volume create fluently_pgdata_safe
 docker volume create fluently_grafana_data_external
 docker volume create fluently_prometheus_data_external
-docker volume create fluently_sonarqube_data_external
+
+# Verify volumes were created
+docker volume ls | grep fluently
 ```
 
 ---
 
-## 6. Start All Services
+## 6. Configure API Keys
+
+### LLM API Keys
+1. **Groq API Keys**:
+   - Visit [Groq Console](https://console.groq.com/keys)
+   - Create new API key
+   - Add to `.env` file: `GROQ_API_KEYS=your_key_here`
+
+2. **Gemini API Keys**:
+   - Visit [Google MakerSuite](https://makersuite.google.com/app/apikey)
+   - Create new API key
+   - Add to `.env` file: `GEMINI_API_KEYS=your_key_here`
+
+### Google OAuth Setup
+1. Visit [Google Cloud Console](https://console.cloud.google.com/)
+2. Create new project or select existing
+3. Enable Google+ API
+4. Create OAuth 2.0 credentials
+5. Add authorized redirect URIs:
+   - `https://yourdomain.com/auth/google/callback`
+   - `https://yourdomain.com/api/v1/auth/google/callback`
+
+### Telegram Bot Setup
+1. Message [@BotFather](https://t.me/BotFather) on Telegram
+2. Create new bot with `/newbot`
+3. Copy bot token to `.env` file
+4. Set webhook URL: `https://yourdomain.com/webhook`
+
+---
+
+## 7. Deploy Services
 ```bash
-# Generate nginx config with your domain
-export DOMAIN="your-domain.com"
-export CERT_NAME="your-domain"
-envsubst '${DOMAIN} ${CERT_NAME}' < backend/nginx-container/nginx.conf.template > backend/nginx-container/default.conf
-
-# Start services
+# Build and start all services
 docker compose up -d --build
+
+# Check service status
+docker compose ps
+
+# View logs for specific service
+docker compose logs -f backend
+docker compose logs -f llm-api
+docker compose logs -f telegram-bot
 ```
 
 ---
 
-## 7. Access Services
+## 8. Service Architecture Overview
 
-### Public Services
-- **Backend API:** `https://your-domain.com/api/v1/`
-- **Swagger UI:** `https://your-domain.com/swagger/`
-- **Frontend:** `https://your-domain.com/`
+The Fluently platform consists of the following services:
 
-### Administrative Services (Restrict Access)
-- **Directus CMS:** `https://your-domain.com/admin/` or `http://SERVER_IP:8055`
-- **Grafana:** `http://SERVER_IP:3000`
-- **Prometheus:** `http://SERVER_IP:9090`
-- **SonarQube:** `http://SERVER_IP:9000`
+### Core Services
+- **Backend API** (Port 8070): Main Go application with REST API
+- **Postgres Database** (Port 5432): Primary data storage
+- **Redis** (Port 6379): Session storage and message queuing
+- **Nginx** (Ports 80/443): Reverse proxy and SSL termination
 
-> **Security Note:** Administrative services should be accessed via VPN or SSH tunneling in production.
+### AI/ML Services
+- **LLM API** (Port 8003): AI conversation service with Groq/Gemini
+- **ML API** (Port 8001): Machine learning distractor generation
+- **Thesaurus API** (Port 8002): Vocabulary recommendations
+
+### Communication Services
+- **Telegram Bot** (Port 8060): Telegram bot webhook handler
+
+### Administrative Services
+- **Directus CMS** (Port 8055): Content management system
+- **Grafana** (Port 3000): Monitoring dashboards
+- **Prometheus** (Port 9090): Metrics collection
+- **Loki** (Port 3100): Log aggregation
 
 ---
 
-## 8. Security Configuration
+## 9. Access Services
+
+### Public Services (via Domain)
+- **Main Website**: `https://yourdomain.com/`
+- **Backend API**: `https://yourdomain.com/api/v1/`
+- **API Documentation**: `https://yourdomain.com/swagger/`
+- **Telegram Bot Webhook**: `https://yourdomain.com/webhook`
+
+### Administrative Services (ZeroTier/SSH Tunnel)
+- **Directus CMS**: `http://SERVER_IP:8055`
+- **Grafana**: `http://SERVER_IP:3000`
+- **Prometheus**: `http://SERVER_IP:9090`
+
+### API Service Health Checks
+- **Backend Health**: `https://yourdomain.com/health`
+- **LLM API Health**: `http://SERVER_IP:8003/health`
+- **ML API Health**: `http://SERVER_IP:8001/health`
+- **Thesaurus API Health**: `http://SERVER_IP:8002/health`
+
+---
+
+## 10. Security Configuration
 
 ### Firewall Setup
 ```bash
 # Allow only necessary ports
-sudo ufw allow 22    # SSH
-sudo ufw allow 80    # HTTP
-sudo ufw allow 443   # HTTPS
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 22/tcp     # SSH
+sudo ufw allow 80/tcp     # HTTP
+sudo ufw allow 443/tcp    # HTTPS
 sudo ufw enable
 
-# Block direct access to admin ports from internet
-sudo ufw deny 3000   # Grafana
-sudo ufw deny 8055   # Directus
-sudo ufw deny 9000   # SonarQube
-sudo ufw deny 9090   # Prometheus
+# Verify firewall status
+sudo ufw status verbose
 ```
 
-### SSH Hardening
+### SSH Security
 ```bash
 # Disable password authentication
 sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+sudo sed -i 's/#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
 sudo systemctl restart sshd
 ```
 
-### ZeroTier VPN (Optional but Recommended)
+### ZeroTier VPN Setup (Recommended for Admin Access)
 ```bash
 # Install ZeroTier
 curl -s https://install.zerotier.com | sudo bash
 
 # Join your network
 sudo zerotier-cli join YOUR_NETWORK_ID
+
+# Verify connection
+sudo zerotier-cli listnetworks
+```
+
+### Environment Security
+```bash
+# Secure .env file
+chmod 600 .env
+sudo chown root:root .env
 ```
 
 ---
 
-## 9. Monitoring Setup
+## 11. Monitoring Setup
 
 ### Configure Grafana
-1. Access Grafana at `http://SERVER_IP:3000`
-2. Login with admin credentials from `.env`
-3. Import dashboards from `backend/monitoring/grafana/dashboards/`
-4. Configure data sources (Prometheus, Loki)
+1. Access Grafana at `http://YOUR_ZEROTIER_IP:3000`
+2. Login with credentials from `.env` file:
+   - Username: `admin`
+   - Password: `${GRAFANA_ADMIN_PASSWORD}`
+3. Add data sources:
+   - **Prometheus**: `http://prometheus:9090`
+   - **Loki**: `http://loki:3100`
+4. Import dashboards from `backend/monitoring/grafana/dashboards/`
 
-### Health Checks
+### Health Check Commands
 ```bash
-# Check all services
+# Check all services status
 docker compose ps
 
-# Test endpoints
-curl https://your-domain.com/health
-curl http://localhost:8070/health
-curl http://localhost:8001/health
+# Verify service health
+curl -f https://yourdomain.com/health
+curl -f http://localhost:8070/health
+curl -f http://localhost:8001/health
+curl -f http://localhost:8002/health
+curl -f http://localhost:8003/health
+
+# Check LLM API configuration
+curl -f http://localhost:8003/config
 ```
 
 ---
 
-## 10. Backup Configuration
+## 12. Backup Configuration
 
 ### Setup Automated Backups
 ```bash
 # Create backup directory
-mkdir -p /home/backups
+sudo mkdir -p /home/backups
+sudo chown $USER:$USER /home/backups
 
-# Setup cron for regular backups
-crontab -e
-# Add: 0 2 * * * /path/to/Fluently-fork/scripts/backup_volumes.sh
+# Create backup script
+cat > /home/backups/backup_fluently.sh << 'EOF'
+#!/bin/bash
+BACKUP_DIR="/home/backups"
+DATE=$(date +%Y%m%d_%H%M%S)
+PROJECT_DIR="/path/to/Fluently-fork"
+
+cd $PROJECT_DIR
+
+# Database backup
+docker compose exec -T postgres pg_dump -U postgres postgres | gzip > "$BACKUP_DIR/postgres_backup_$DATE.sql.gz"
+
+# Volume backups
+docker run --rm -v fluently_pgdata_safe:/data -v $BACKUP_DIR:/backup ubuntu tar czf /backup/pgdata_backup_$DATE.tar.gz /data
+docker run --rm -v fluently_grafana_data_external:/data -v $BACKUP_DIR:/backup ubuntu tar czf /backup/grafana_backup_$DATE.tar.gz /data
+
+# Configuration backup
+tar czf "$BACKUP_DIR/config_backup_$DATE.tar.gz" .env docker-compose.yml
+
+# Cleanup old backups (keep last 7 days)
+find $BACKUP_DIR -name "*backup_*.gz" -type f -mtime +7 -delete
+
+echo "Backup completed: $DATE"
+EOF
+
+chmod +x /home/backups/backup_fluently.sh
 ```
 
-### Manual Backup
+### Setup Cron Job
 ```bash
-# Backup volumes
-docker compose exec postgres pg_dump -U postgres postgres > backup.sql
+# Edit crontab
+crontab -e
 
-# Backup entire project
-tar -czf fluently-backup-$(date +%Y%m%d).tar.gz --exclude=node_modules --exclude=.git .
+# Add daily backup at 2 AM
+0 2 * * * /home/backups/backup_fluently.sh >> /var/log/fluently_backup.log 2>&1
 ```
 
 ---
 
-## 11. CI/CD Integration (Optional)
+## 13. CI/CD Integration (Optional)
 
-Configure GitHub Actions with these secrets:
+Configure GitHub Actions for automated deployment. Add these secrets to your repository:
+
 ```yaml
+# GitHub Repository → Settings → Secrets and variables → Actions
 DEPLOY_HOST: your-server-ip
-DEPLOY_USERNAME: deploy-user
+DEPLOY_USERNAME: your-deploy-username
 DEPLOY_SSH_KEY: |
   -----BEGIN OPENSSH PRIVATE KEY-----
   your-private-key-content
   -----END OPENSSH PRIVATE KEY-----
-ZEROTIER_IP: your-server-ip
+ZEROTIER_IP: your-zerotier-ip
+GROQ_API_KEYS: your-groq-api-keys
+GEMINI_API_KEYS: your-gemini-api-keys
+DB_PASSWORD: your-database-password
+JWT_SECRET: your-jwt-secret
+DIRECTUS_ADMIN_PASSWORD: your-directus-password
+GRAFANA_ADMIN_PASSWORD: your-grafana-password
 ```
 
-See [deploy.yml](../.github/workflows/deploy.yml) for the complete workflow.
+The CI/CD pipeline is configured in `.github/workflows/deploy.yml` and will:
+- Build and push Docker images
+- Deploy to your server
+- Run health checks
+- Send notifications
 
 ---
 
-## 12. Maintenance Commands
+## 14. Troubleshooting
 
+### Common Issues
+
+**1. Docker Build Failures**
 ```bash
-# View logs
-docker compose logs -f [service_name]
+# Clear build cache
+docker builder prune -a
 
-# Restart service
-docker compose restart [service_name]
+# Rebuild specific service
+docker compose build --no-cache llm-api
 
-# Update application
+# Check service logs
+docker compose logs -f llm-api
+```
+
+**2. SSL Certificate Issues**
+```bash
+# Verify certificates
+sudo openssl x509 -in /etc/nginx/ssl/yourdomain.pem -text -noout
+sudo openssl rsa -in /etc/nginx/ssl/yourdomain.key -check
+
+# Test SSL connection
+openssl s_client -connect yourdomain.com:443
+```
+
+**3. Database Connection Issues**
+```bash
+# Check database status
+docker compose exec postgres pg_isready -U postgres
+
+# Connect to database
+docker compose exec postgres psql -U postgres -d postgres
+
+# View database logs
+docker compose logs postgres
+```
+
+**4. LLM API Issues**
+```bash
+# Check API configuration
+curl http://localhost:8003/config
+
+# Verify API keys
+docker compose exec llm-api env | grep -E "(GROQ|GEMINI)_API_KEYS"
+
+# Test API functionality
+curl -X POST http://localhost:8003/chat \
+  -H "Content-Type: application/json" \
+  -d '{"messages": [{"role": "user", "content": "Hello"}], "model_type": "fast"}'
+```
+
+**5. Port Binding Issues**
+```bash
+# Check port usage
+sudo netstat -tulpn | grep :8070
+sudo lsof -i :8070
+
+# Change port in .env if needed
+APP_PORT=8071
+```
+
+---
+
+## 15. Maintenance Commands
+
+### Service Management
+```bash
+# Stop all services
+docker compose down
+
+# Restart specific service
+docker compose restart backend
+
+# Update and redeploy
 git pull origin main
 docker compose up -d --build
 
-# Clean up old images
+# View service logs
+docker compose logs -f --tail=100 backend
+```
+
+### Database Maintenance
+```bash
+# Database backup
+docker compose exec postgres pg_dump -U postgres postgres > backup.sql
+
+# Database restore
+docker compose exec -T postgres psql -U postgres -d postgres < backup.sql
+
+# Check database connections
+docker compose exec postgres psql -U postgres -c "SELECT * FROM pg_stat_activity;"
+```
+
+### System Cleanup
+```bash
+# Remove unused Docker resources
+docker system prune -a
+
+# Remove old images
 docker image prune -f
 
-# Database maintenance
-docker compose exec postgres pg_isready -U postgres
+# Remove unused volumes (be careful!)
+docker volume prune
+
+# Check disk usage
+docker system df
+```
+
+---
+
+## 16. Performance Optimization
+
+### Database Optimization
+```bash
+# Monitor database performance
+docker compose exec postgres psql -U postgres -c "
+SELECT query, calls, total_time, mean_time 
+FROM pg_stat_statements 
+ORDER BY total_time DESC LIMIT 10;"
+```
+
+### Resource Monitoring
+```bash
+# Monitor container resources
+docker stats
+
+# Check system resources
+htop
+df -h
+free -h
+```
+
+### Service Scaling
+```bash
+# Scale specific services
+docker compose up -d --scale llm-api=2
+docker compose up -d --scale thesaurus-api=2
 ```
 
 ---
 
 ## Notes
-- This setup is intended for production environments
-- Requires a real domain and public server
-- Use strong passwords and keep them secure
-- Regularly update certificates and dependencies
-- Monitor logs for security issues
-- For local testing, see [Local Installation Guide](Install_Local.md)
+
+### Important Considerations
+- **Resource Requirements**: Minimum 8GB RAM, 4 CPU cores recommended
+- **Storage**: At least 50GB for production deployment
+- **Network**: Stable internet connection for AI API services
+- **Monitoring**: Regularly check service health and logs
+- **Security**: Keep all secrets secure and rotate them regularly
+- **Backups**: Implement automated backup strategy
+- **Updates**: Regularly update dependencies and security patches
+
+### Production Checklist
+- [ ] Domain configured with SSL certificates
+- [ ] All API keys configured and tested
+- [ ] External volumes created for data persistence
+- [ ] Firewall configured with minimum required ports
+- [ ] SSH hardened with key-based authentication
+- [ ] ZeroTier VPN configured for admin access
+- [ ] Monitoring dashboards set up in Grafana
+- [ ] Backup automation configured and tested
+- [ ] CI/CD pipeline configured (optional)
+- [ ] All service health checks passing
+
+For local development and testing, see the [Local Installation Guide](Install_Local.md).
+
+---
+
+## Support
+
+If you encounter issues:
+1. Check the [troubleshooting section](#14-troubleshooting)
+2. Review service logs: `docker compose logs -f [service-name]`
+3. Verify configuration: Check `.env` file and service health endpoints
+4. Consult the [GitHub repository](https://github.com/FluentlyOrg/Fluently-fork) for updates and issues

@@ -35,13 +35,6 @@ setup-env:                ## Setup environment files
 	else \
 		echo " Root .env already exists"; \
 	fi
-	@if [ ! -f backend/.env ]; then \
-		cp backend/.env.example backend/.env; \
-		echo " Created backend/.env from example"; \
-	else \
-		echo " backend/.env already exists"; \
-	fi
-	@echo " Environment files ready. Edit if needed for local settings."
 
 setup-volumes:            ## Create required Docker volumes
 	@echo " Creating Docker volumes..."
@@ -231,8 +224,8 @@ update:                   ## Update to latest images and restart
 # ===========================================
 
 check-env:
-	@if [ ! -f .env ] || [ ! -f backend/.env ]; then \
-		echo " Environment files (.env or backend/.env) not found!"; \
+	@if [ ! -f .env ]; then \
+		echo " Environment files (.env) not found!"; \
 		echo "   Please run 'make setup-local' first."; \
 		exit 1; \
 	else \

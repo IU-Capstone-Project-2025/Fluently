@@ -170,8 +170,9 @@ class AIService:
         model_name = self.providers["groq"]["models"][model_type]
         
         try:
-            # Try to create a new client for each request to avoid initialization issues
-            client = Groq(api_key=key)
+            client = self.providers["groq"]["client"]
+            if not client:
+                client = Groq(api_key=key)
         except Exception as e:
             logger.error(f"Failed to create Groq client: {e}")
             # Try alternative initialization method

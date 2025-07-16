@@ -584,7 +584,7 @@ jobs:
             
             # Function to perform health checks
             check_health() {
-              echo "🏥 Performing health checks..."
+              echo "🏥 Performing comprehensive health checks..."
               
               # Wait for services to start
               sleep 10
@@ -619,6 +619,36 @@ jobs:
                 fi
               done
               
+              # Check if LLM API is healthy
+              echo "Checking LLM API health..."
+              for i in {1..10}; do
+                if docker compose exec -T llm-api curl -f "http://localhost:8003/health" >/dev/null 2>&1; then
+                  echo "✅ LLM API is healthy"
+                  break
+                elif [ $i -eq 10 ]; then
+                  echo "❌ LLM API health check failed after 10 attempts"
+                  return 1
+                else
+                  echo "⏳ Waiting for LLM API... (attempt $i/10)"
+                  sleep 10
+                fi
+              done
+              
+              # Check if Thesaurus API is healthy
+              echo "Checking Thesaurus API health..."
+              for i in {1..10}; do
+                if docker compose exec -T thesaurus-api curl -f "http://localhost:8002/health" -d '{"ping":"test"}' -H "Content-Type: application/json" >/dev/null 2>&1; then
+                  echo "✅ Thesaurus API is healthy"
+                  break
+                elif [ $i -eq 10 ]; then
+                  echo "❌ Thesaurus API health check failed after 10 attempts"
+                  return 1
+                else
+                  echo "⏳ Waiting for Thesaurus API... (attempt $i/10)"
+                  sleep 10
+                fi
+              done
+              
               # Check if PostgreSQL is healthy
               echo "Checking PostgreSQL health..."
               if docker compose exec -T postgres pg_isready -U ${DB_USER:-postgres} >/dev/null 2>&1; then
@@ -628,21 +658,131 @@ jobs:
                 return 1
               fi
               
-              # Check if nginx is responding
-              echo "Checking nginx health..."
-              if curl -f "http://localhost" >/dev/null 2>&1; then
-                echo "✅ Nginx is healthy"
+              # Check if Redis is healthy
+              echo "Checking Redis health..."
+              if docker compose exec -T redis redis-cli ping >/dev/null 2>&1; then
+                echo "✅ Redis is healthy"
               else
-                echo "❌ Nginx health check failed"
+                echo "❌ Redis health check failed"
                 return 1
               fi
+              
+              # Check if nginx is responding
+              echo "Checking nginx health..."
+              for i in {1..5}; do
+                if curl -f -k "https://localhost" >/dev/null 2>&1; then
+                  echo "✅ Nginx is healthy"
+                  break
+                elif [ $i -eq 5 ]; then
+                  echo "❌ Nginx health check failed after 5 attempts"
+                  echo "🔍 Nginx container status:"
+                  docker compose ps nginx || true
+                  echo "🔍 Nginx logs:"
+                  docker compose logs nginx || true
+                  echo "🔍 Nginx process inside container:"
+                  docker compose exec -T nginx ps aux || true
+                  echo "🔍 Nginx configuration test:"
+                  docker compose exec -T nginx nginx -t || true
+                  return 1
+                else
+                  echo "⏳ Waiting for nginx... (attempt $i/5)"
+                  sleep 5
+                fi
+              done
+              
+              # # Check if Directus is healthy
+              # echo "Checking Directus health..."
+              # for i in {1..10}; do
+              #   if curl -f "http://localhost:8055/server/health" >/dev/null 2>&1; then
+              #     echo "✅ Directus is healthy"
+              #     break
+              #   elif [ $i -eq 10 ]; then
+              #     echo "❌ Directus health check failed after 10 attempts"
+              #     return 1
+              #   else
+              #     echo "⏳ Waiting for Directus... (attempt $i/10)"
+              #     sleep 10
+              #   fi
+              # done
+              
+              # # Check if Prometheus is healthy
+              # echo "Checking Prometheus health..."
+              # for i in {1..5}; do
+              #   if curl -f "http://localhost:9090/-/healthy" >/dev/null 2>&1; then
+              #     echo "✅ Prometheus is healthy"
+              #     break
+              #   elif [ $i -eq 5 ]; then
+              #     echo "❌ Prometheus health check failed after 5 attempts"
+              #     return 1
+              #   else
+              #     echo "⏳ Waiting for Prometheus... (attempt $i/5)"
+              #     sleep 10
+              #   fi
+              # done
+              
+              # # Check if Grafana is healthy
+              # echo "Checking Grafana health..."
+              # for i in {1..10}; do
+              #   if curl -f "http://localhost:3000/api/health" >/dev/null 2>&1; then
+              #     echo "✅ Grafana is healthy"
+              #     break
+              #   elif [ $i -eq 10 ]; then
+              #     echo "❌ Grafana health check failed after 10 attempts"
+              #     return 1
+              #   else
+              #     echo "⏳ Waiting for Grafana... (attempt $i/10)"
+              #     sleep 10
+              #   fi
+              # done
+              
+              # # Check if Loki is healthy
+              # echo "Checking Loki health..."
+              # for i in {1..5}; do
+              #   if curl -f "http://localhost:3100/ready" >/dev/null 2>&1; then
+              #     echo "✅ Loki is healthy"
+              #     break
+              #   elif [ $i -eq 5 ]; then
+              #     echo "❌ Loki health check failed after 5 attempts"
+              #     return 1
+              #   else
+              #     echo "⏳ Waiting for Loki... (attempt $i/5)"
+              #     sleep 10
+              #   fi
+              # done
+              
+              # # Check if Node Exporter is healthy
+              # echo "Checking Node Exporter health..."
+              # if curl -f "http://localhost:9100/metrics" >/dev/null 2>&1; then
+              #   echo "✅ Node Exporter is healthy"
+              # else
+              #   echo "❌ Node Exporter health check failed"
+              #   return 1
+              # fi
+              
+              # # Check if Nginx Exporter is healthy
+              # echo "Checking Nginx Exporter health..."
+              # if curl -f "http://localhost:9113/metrics" >/dev/null 2>&1; then
+              #   echo "✅ Nginx Exporter is healthy"
+              # else
+              #   echo "❌ Nginx Exporter health check failed"
+              #   return 1
+              # fi
+              
+              # # Check if cAdvisor is healthy
+              # echo "Checking cAdvisor health..."
+              # if curl -f "http://localhost:8044/healthz" >/dev/null 2>&1; then
+              #   echo "✅ cAdvisor is healthy"
+              # else
+              #   echo "❌ cAdvisor health check failed"
+              #   return 1
+              # fi
               
               # Check if telegram bot is healthy
               echo "Checking telegram bot health..."
               for i in {1..3}; do
                 if docker compose ps telegram-bot | grep -q "Up"; then
                   echo "✅ Telegram bot is running"
-                  # Check if bot can connect to Telegram API
+                  # Check if bot can connect to Redis
                   if docker compose logs telegram-bot | grep -q "Successfully connected to Redis"; then
                     echo "✅ Telegram bot connected to Redis"
                   fi
@@ -663,6 +803,15 @@ jobs:
                   sleep 5
                 fi
               done
+              
+              # Check if Promtail is healthy (log aggregator)
+              echo "Checking Promtail health..."
+              if docker compose ps promtail | grep -q "Up"; then
+                echo "✅ Promtail is running"
+              else
+                echo "❌ Promtail health check failed"
+                return 1
+              fi
               
               echo "🎉 All health checks passed!"
               return 0
@@ -738,28 +887,30 @@ jobs:
             git checkout $BRANCH
             git pull origin $BRANCH
 
-            # Create environment-specific .env for backend if it doesn't exist
-            if [ ! -f "backend/.env" ]; then
-              echo "📝 Creating backend/.env file from example..."
-              cp backend/.env.example backend/.env
-            fi
-
             # Update environment variables based on deployment target
             echo "⚙️ Updating environment configuration..."
 
-            # Update ZeroTier IP in backend/.env
-            if grep -q "ZEROTIER_IP=" backend/.env; then
-              sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" backend/.env
+            # Ensure .env file exists at project root
+            if [ ! -f ".env" ]; then
+              echo "📝 Creating .env file at project root..."
+              touch .env
             else
-              echo "ZEROTIER_IP=$ZEROTIER_IP" >> backend/.env
+              echo "📝 .env file already exists, updating..."
             fi
 
-            # Update PUBLIC_URL in backend/.env
-            sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" backend/.env
+            # Update ZeroTier IP in root .env
+            if grep -q "ZEROTIER_IP=" .env; then
+              sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" .env
+            else
+              echo "ZEROTIER_IP=$ZEROTIER_IP" >> .env
+            fi
 
-            # Copy .env from backend to root for docker-compose to use
-            echo "📋 Copying .env file to root directory for docker-compose..."
-            cp backend/.env .env
+            # Update PUBLIC_URL in root .env
+            if grep -q "PUBLIC_URL=" .env; then
+              sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" .env
+            else
+              echo "PUBLIC_URL=https://$DOMAIN" >> .env
+            fi
 
             
             # Set Swagger host for the environment

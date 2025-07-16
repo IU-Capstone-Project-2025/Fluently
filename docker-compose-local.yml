@@ -6,8 +6,11 @@ services:
   # Main Backend API
   backend:
     image: docker.io/fluentlyorg/fluently-backend:latest-develop
+    # build:
+    #   context: ./backend
+    #   dockerfile: Dockerfile
     container_name: fluently_backend
-    env_file: ./backend/.env
+    env_file: .env
     depends_on:
       postgres:
         condition: service_healthy
@@ -27,7 +30,7 @@ services:
   postgres:
     image: postgres:latest
     container_name: fluently_postgres
-    env_file: ./backend/.env
+    env_file: .env
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
@@ -246,7 +249,7 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - test_network
+      - fluently_network
 
 # ===========================================
 # VOLUMES
