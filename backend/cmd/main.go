@@ -91,7 +91,7 @@ func main() {
 		logger.Log.Fatal("Failed to auto-migrate", zap.Error(err))
 	}
 
-	logger.Log.Info("Database migration completed successfully!!!!")
+	logger.Log.Info("Database migration completed successfully")
 
 	//Init Router
 	r := chi.NewRouter()
