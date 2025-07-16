@@ -23,10 +23,6 @@ services:
   nginx:
     image: docker.io/fluentlyorg/fluently-nginx:latest-develop
     container_name: fluently_nginx
-    environment:
-      - DOMAIN=${DOMAIN:-localhost}
-      - CERT_NAME=${CERT_NAME:-localhost}
-      - WEBHOOK_SECRET=${WEBHOOK_SECRET:-}
     ports:
       - "80:80"
       - "443:443"

@@ -584,7 +584,7 @@ jobs:
             
             # Function to perform health checks
             check_health() {
-              echo "🏥 Performing health checks..."
+              echo "🏥 Performing comprehensive health checks..."
               
               # Wait for services to start
               sleep 10
@@ -619,12 +619,51 @@ jobs:
                 fi
               done
               
+              # Check if LLM API is healthy
+              echo "Checking LLM API health..."
+              for i in {1..10}; do
+                if docker compose exec -T llm-api curl -f "http://localhost:8003/health" >/dev/null 2>&1; then
+                  echo "✅ LLM API is healthy"
+                  break
+                elif [ $i -eq 10 ]; then
+                  echo "❌ LLM API health check failed after 10 attempts"
+                  return 1
+                else
+                  echo "⏳ Waiting for LLM API... (attempt $i/10)"
+                  sleep 10
+                fi
+              done
+              
+              # Check if Thesaurus API is healthy
+              echo "Checking Thesaurus API health..."
+              for i in {1..10}; do
+                if docker compose exec -T thesaurus-api curl -f "http://localhost:8002/health" -d '{"ping":"test"}' -H "Content-Type: application/json" >/dev/null 2>&1; then
+                  echo "✅ Thesaurus API is healthy"
+                  break
+                elif [ $i -eq 10 ]; then
+                  echo "❌ Thesaurus API health check failed after 10 attempts"
+                  return 1
+                else
+                  echo "⏳ Waiting for Thesaurus API... (attempt $i/10)"
+                  sleep 10
+                fi
+              done
+              
               # Check if PostgreSQL is healthy
               echo "Checking PostgreSQL health..."
               if docker compose exec -T postgres pg_isready -U ${DB_USER:-postgres} >/dev/null 2>&1; then
                 echo "✅ PostgreSQL is healthy"
               else
                 echo "❌ PostgreSQL health check failed"
+                return 1
+              fi
+              
+              # Check if Redis is healthy
+              echo "Checking Redis health..."
+              if docker compose exec -T redis redis-cli ping >/dev/null 2>&1; then
+                echo "✅ Redis is healthy"
+              else
+                echo "❌ Redis health check failed"
                 return 1
               fi
               
@@ -637,12 +676,99 @@ jobs:
                 return 1
               fi
               
+              # Check if Directus is healthy
+              echo "Checking Directus health..."
+              for i in {1..10}; do
+                if curl -f "http://localhost:8055/server/health" >/dev/null 2>&1; then
+                  echo "✅ Directus is healthy"
+                  break
+                elif [ $i -eq 10 ]; then
+                  echo "❌ Directus health check failed after 10 attempts"
+                  return 1
+                else
+                  echo "⏳ Waiting for Directus... (attempt $i/10)"
+                  sleep 10
+                fi
+              done
+              
+              # Check if Prometheus is healthy
+              echo "Checking Prometheus health..."
+              for i in {1..5}; do
+                if curl -f "http://localhost:9090/-/healthy" >/dev/null 2>&1; then
+                  echo "✅ Prometheus is healthy"
+                  break
+                elif [ $i -eq 5 ]; then
+                  echo "❌ Prometheus health check failed after 5 attempts"
+                  return 1
+                else
+                  echo "⏳ Waiting for Prometheus... (attempt $i/5)"
+                  sleep 10
+                fi
+              done
+              
+              # Check if Grafana is healthy
+              echo "Checking Grafana health..."
+              for i in {1..10}; do
+                if curl -f "http://localhost:3000/api/health" >/dev/null 2>&1; then
+                  echo "✅ Grafana is healthy"
+                  break
+                elif [ $i -eq 10 ]; then
+                  echo "❌ Grafana health check failed after 10 attempts"
+                  return 1
+                else
+                  echo "⏳ Waiting for Grafana... (attempt $i/10)"
+                  sleep 10
+                fi
+              done
+              
+              # Check if Loki is healthy
+              echo "Checking Loki health..."
+              for i in {1..5}; do
+                if curl -f "http://localhost:3100/ready" >/dev/null 2>&1; then
+                  echo "✅ Loki is healthy"
+                  break
+                elif [ $i -eq 5 ]; then
+                  echo "❌ Loki health check failed after 5 attempts"
+                  return 1
+                else
+                  echo "⏳ Waiting for Loki... (attempt $i/5)"
+                  sleep 10
+                fi
+              done
+              
+              # Check if Node Exporter is healthy
+              echo "Checking Node Exporter health..."
+              if curl -f "http://localhost:9100/metrics" >/dev/null 2>&1; then
+                echo "✅ Node Exporter is healthy"
+              else
+                echo "❌ Node Exporter health check failed"
+                return 1
+              fi
+              
+              # Check if Nginx Exporter is healthy
+              echo "Checking Nginx Exporter health..."
+              if curl -f "http://localhost:9113/metrics" >/dev/null 2>&1; then
+                echo "✅ Nginx Exporter is healthy"
+              else
+                echo "❌ Nginx Exporter health check failed"
+                return 1
+              fi
+              
+              # Check if cAdvisor is healthy
+              echo "Checking cAdvisor health..."
+              if curl -f "http://localhost:8044/healthz" >/dev/null 2>&1; then
+                echo "✅ cAdvisor is healthy"
+              else
+                echo "❌ cAdvisor health check failed"
+                return 1
+              fi
+              
               # Check if telegram bot is healthy
               echo "Checking telegram bot health..."
               for i in {1..3}; do
                 if docker compose ps telegram-bot | grep -q "Up"; then
                   echo "✅ Telegram bot is running"
-                  # Check if bot can connect to Telegram API
+                  # Check if bot can connect to Redis
                   if docker compose logs telegram-bot | grep -q "Successfully connected to Redis"; then
                     echo "✅ Telegram bot connected to Redis"
                   fi
@@ -663,6 +789,15 @@ jobs:
                   sleep 5
                 fi
               done
+              
+              # Check if Promtail is healthy (log aggregator)
+              echo "Checking Promtail health..."
+              if docker compose ps promtail | grep -q "Up"; then
+                echo "✅ Promtail is running"
+              else
+                echo "❌ Promtail health check failed"
+                return 1
+              fi
               
               echo "🎉 All health checks passed!"
               return 0

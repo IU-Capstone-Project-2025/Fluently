@@ -249,7 +249,7 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - test_network
+      - fluently_network
 
 # ===========================================
 # VOLUMES
