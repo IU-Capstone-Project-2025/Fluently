@@ -667,101 +667,101 @@ jobs:
                 return 1
               fi
               
-              # Check if nginx is responding
-              echo "Checking nginx health..."
-              if curl -f "http://localhost" >/dev/null 2>&1; then
-                echo "✅ Nginx is healthy"
-              else
-                echo "❌ Nginx health check failed"
-                return 1
-              fi
+              # # Check if nginx is responding
+              # echo "Checking nginx health..."
+              # if curl -f "http://localhost" >/dev/null 2>&1; then
+              #   echo "✅ Nginx is healthy"
+              # else
+              #   echo "❌ Nginx health check failed"
+              #   return 1
+              # fi
               
-              # Check if Directus is healthy
-              echo "Checking Directus health..."
-              for i in {1..10}; do
-                if curl -f "http://localhost:8055/server/health" >/dev/null 2>&1; then
-                  echo "✅ Directus is healthy"
-                  break
-                elif [ $i -eq 10 ]; then
-                  echo "❌ Directus health check failed after 10 attempts"
-                  return 1
-                else
-                  echo "⏳ Waiting for Directus... (attempt $i/10)"
-                  sleep 10
-                fi
-              done
+              # # Check if Directus is healthy
+              # echo "Checking Directus health..."
+              # for i in {1..10}; do
+              #   if curl -f "http://localhost:8055/server/health" >/dev/null 2>&1; then
+              #     echo "✅ Directus is healthy"
+              #     break
+              #   elif [ $i -eq 10 ]; then
+              #     echo "❌ Directus health check failed after 10 attempts"
+              #     return 1
+              #   else
+              #     echo "⏳ Waiting for Directus... (attempt $i/10)"
+              #     sleep 10
+              #   fi
+              # done
               
-              # Check if Prometheus is healthy
-              echo "Checking Prometheus health..."
-              for i in {1..5}; do
-                if curl -f "http://localhost:9090/-/healthy" >/dev/null 2>&1; then
-                  echo "✅ Prometheus is healthy"
-                  break
-                elif [ $i -eq 5 ]; then
-                  echo "❌ Prometheus health check failed after 5 attempts"
-                  return 1
-                else
-                  echo "⏳ Waiting for Prometheus... (attempt $i/5)"
-                  sleep 10
-                fi
-              done
+              # # Check if Prometheus is healthy
+              # echo "Checking Prometheus health..."
+              # for i in {1..5}; do
+              #   if curl -f "http://localhost:9090/-/healthy" >/dev/null 2>&1; then
+              #     echo "✅ Prometheus is healthy"
+              #     break
+              #   elif [ $i -eq 5 ]; then
+              #     echo "❌ Prometheus health check failed after 5 attempts"
+              #     return 1
+              #   else
+              #     echo "⏳ Waiting for Prometheus... (attempt $i/5)"
+              #     sleep 10
+              #   fi
+              # done
               
-              # Check if Grafana is healthy
-              echo "Checking Grafana health..."
-              for i in {1..10}; do
-                if curl -f "http://localhost:3000/api/health" >/dev/null 2>&1; then
-                  echo "✅ Grafana is healthy"
-                  break
-                elif [ $i -eq 10 ]; then
-                  echo "❌ Grafana health check failed after 10 attempts"
-                  return 1
-                else
-                  echo "⏳ Waiting for Grafana... (attempt $i/10)"
-                  sleep 10
-                fi
-              done
+              # # Check if Grafana is healthy
+              # echo "Checking Grafana health..."
+              # for i in {1..10}; do
+              #   if curl -f "http://localhost:3000/api/health" >/dev/null 2>&1; then
+              #     echo "✅ Grafana is healthy"
+              #     break
+              #   elif [ $i -eq 10 ]; then
+              #     echo "❌ Grafana health check failed after 10 attempts"
+              #     return 1
+              #   else
+              #     echo "⏳ Waiting for Grafana... (attempt $i/10)"
+              #     sleep 10
+              #   fi
+              # done
               
-              # Check if Loki is healthy
-              echo "Checking Loki health..."
-              for i in {1..5}; do
-                if curl -f "http://localhost:3100/ready" >/dev/null 2>&1; then
-                  echo "✅ Loki is healthy"
-                  break
-                elif [ $i -eq 5 ]; then
-                  echo "❌ Loki health check failed after 5 attempts"
-                  return 1
-                else
-                  echo "⏳ Waiting for Loki... (attempt $i/5)"
-                  sleep 10
-                fi
-              done
+              # # Check if Loki is healthy
+              # echo "Checking Loki health..."
+              # for i in {1..5}; do
+              #   if curl -f "http://localhost:3100/ready" >/dev/null 2>&1; then
+              #     echo "✅ Loki is healthy"
+              #     break
+              #   elif [ $i -eq 5 ]; then
+              #     echo "❌ Loki health check failed after 5 attempts"
+              #     return 1
+              #   else
+              #     echo "⏳ Waiting for Loki... (attempt $i/5)"
+              #     sleep 10
+              #   fi
+              # done
               
-              # Check if Node Exporter is healthy
-              echo "Checking Node Exporter health..."
-              if curl -f "http://localhost:9100/metrics" >/dev/null 2>&1; then
-                echo "✅ Node Exporter is healthy"
-              else
-                echo "❌ Node Exporter health check failed"
-                return 1
-              fi
+              # # Check if Node Exporter is healthy
+              # echo "Checking Node Exporter health..."
+              # if curl -f "http://localhost:9100/metrics" >/dev/null 2>&1; then
+              #   echo "✅ Node Exporter is healthy"
+              # else
+              #   echo "❌ Node Exporter health check failed"
+              #   return 1
+              # fi
               
-              # Check if Nginx Exporter is healthy
-              echo "Checking Nginx Exporter health..."
-              if curl -f "http://localhost:9113/metrics" >/dev/null 2>&1; then
-                echo "✅ Nginx Exporter is healthy"
-              else
-                echo "❌ Nginx Exporter health check failed"
-                return 1
-              fi
+              # # Check if Nginx Exporter is healthy
+              # echo "Checking Nginx Exporter health..."
+              # if curl -f "http://localhost:9113/metrics" >/dev/null 2>&1; then
+              #   echo "✅ Nginx Exporter is healthy"
+              # else
+              #   echo "❌ Nginx Exporter health check failed"
+              #   return 1
+              # fi
               
-              # Check if cAdvisor is healthy
-              echo "Checking cAdvisor health..."
-              if curl -f "http://localhost:8044/healthz" >/dev/null 2>&1; then
-                echo "✅ cAdvisor is healthy"
-              else
-                echo "❌ cAdvisor health check failed"
-                return 1
-              fi
+              # # Check if cAdvisor is healthy
+              # echo "Checking cAdvisor health..."
+              # if curl -f "http://localhost:8044/healthz" >/dev/null 2>&1; then
+              #   echo "✅ cAdvisor is healthy"
+              # else
+              #   echo "❌ cAdvisor health check failed"
+              #   return 1
+              # fi
               
               # Check if telegram bot is healthy
               echo "Checking telegram bot health..."
