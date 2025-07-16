@@ -14,6 +14,9 @@ final class SentenceModel: Codable{
     var text: String
     var translation: String
 
+    @Relationship
+    var word: WordModel?
+
     init(
         text: String,
         translation: String

@@ -35,8 +35,9 @@ struct WordOfTheDay: View {
 
             wordCard
             addCard
+                .id(inLibAlready)
         }
-        .onAppear {
+        .onAppear() {
             inLibAlready = isWordInDictionary()
         }
     }
@@ -47,6 +48,7 @@ struct WordOfTheDay: View {
 
         do {
             let results = try modelContext.fetch(fetchDescriptor)
+            print(results)
             return !results.isEmpty
         } catch {
             print("Error checking word: \(error)")

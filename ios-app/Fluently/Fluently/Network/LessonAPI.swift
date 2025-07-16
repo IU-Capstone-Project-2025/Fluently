@@ -54,7 +54,8 @@ extension APIService: LessonAPI {
             "Bearer \(accessToken)", forHTTPHeaderField: "Authorization"
         )
 
-        _ = try await sendRequest(request)
+        let data = try await sendRequest(request)
+        print(String(data: data, encoding: .utf8) ?? "nil data returned")
     }
 
     func getDayWord() async throws -> WordModel {

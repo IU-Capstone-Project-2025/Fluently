@@ -15,7 +15,7 @@ final class PreferencesModel: Decodable, Sendable{
     var dailyWord: Bool
     var goal: String
     var id: String      /// `id` for preferences
-    var notificationAt: String
+    var notificationAt: Date
     var notifications: Bool
     var subscribed: Bool
     var userId: String  /// `id` of the user
@@ -27,7 +27,7 @@ final class PreferencesModel: Decodable, Sendable{
         dailyWord: Bool,
         goal: String,
         id: String,
-        notificationAt: String,
+        notificationAt: Date,
         notifications: Bool,
         subscribed: Bool,
         userId: String,
@@ -68,7 +68,13 @@ final class PreferencesModel: Decodable, Sendable{
         self.dailyWord = try container.decode(Bool.self, forKey: .dailyWord)
         self.goal = try container.decode(String.self, forKey: .goal)
         self.id = try container.decode(String.self, forKey: .id)
-        self.notificationAt = try container.decode(String.self, forKey: .notificationAt)
+        let notificationDateISO = try container.decodeIfPresent(String.self, forKey: .notificationAt) ?? Date.now.ISO8601Format()
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        self.notificationAt = dateFormatter.date(from:notificationDateISO)!
+
         self.notifications = try container.decode(Bool.self, forKey: .notifications)
         self.subscribed = try container.decode(Bool.self, forKey: .subscribed)
         self.userId = try container.decode(String.self, forKey: .userId)
@@ -107,7 +113,7 @@ extension PreferencesModel {
             dailyWord: dailyWord ?? (randomize ? Bool.random() : true),
             goal: goal ?? (randomize ? randomGoals.randomElement()! : "fluency"),
             id: id ?? (randomize ? UUID().uuidString : "pref_12345"),
-            notificationAt: notificationAt ?? (randomize ? "\(Int.random(in: 8...22)):00" : "09:00"),
+            notificationAt: Date.now,
             notifications: notifications ?? (randomize ? Bool.random() : true),
             subscribed: subscribed ?? (randomize ? Bool.random() : false),
             userId: userId ?? (randomize ? UUID().uuidString : "user_67890"),

@@ -163,7 +163,11 @@ final class LessonsPresenter: ObservableObject {
         // Send progress to server
         let api = APIService()
         Task {
-            try? await api.sendProgress(words: wordsProgress[.correct] ?? [])
+            do {
+                try await api.sendProgress(words: wordsProgress[.correct] ?? [])
+            } catch {
+                print("Error saving process: \(error.localizedDescription)")
+            }
         }
 
         // Print statistics

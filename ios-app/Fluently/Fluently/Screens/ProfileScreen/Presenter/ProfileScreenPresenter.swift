@@ -24,8 +24,9 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
     @Published var preferences: PreferencesModel?
 //#endif
 
-    @State var dailyWord: Bool = true
-    @State var notifications: Bool = false
+    @Published var dailyWord: Bool = true
+    @Published var notifications: Bool = false
+    @Published var notificationAt: Date = Date.now
 
     init(
         router: ProfileScreenRouter,
@@ -50,6 +51,11 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
         Task {
             do {
                 preferences = try await interactor.getPreferences()
+                if let prefs = preferences {
+                    dailyWord = prefs.dailyWord
+                    notifications = prefs.notifications
+                    notificationAt = prefs.notificationAt
+                }
             } catch {
                 print("Error while fethcing preferences: \(error.localizedDescription)")
             }

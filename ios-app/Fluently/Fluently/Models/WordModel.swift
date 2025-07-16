@@ -12,6 +12,7 @@ import SwiftData
 final class WordModel: Codable, Sendable{
     var exercise: ExerciseModel     /// exercise to learn word
     var isLearned: Bool = false
+    @Relationship(inverse: \SentenceModel.word)
     var sentences: [SentenceModel]  /// sentences with this word
     var subtopic: String
     var topic: String

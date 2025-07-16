@@ -23,6 +23,9 @@ struct ProfileScrenView: View {
             Spacer()
             infoGrid
         }
+        .onAppear {
+            presenter.getPrefs()
+        }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
         .toolbar {
@@ -94,10 +97,10 @@ struct ProfileScrenView: View {
                     cefrLevel(prefs.cefrLevel)
                     goal(prefs.goal)
                     settings(
-                        dailyWord: presenter.$dailyWord,
-                        notifications: presenter.$notifications
+                        dailyWord: $presenter.dailyWord,
+                        notifications: $presenter.notifications
                     )
-                    datePicker(date: $date)
+                    datePicker(date: $presenter.notificationAt)
 
                     Spacer(
                         minLength: 80
