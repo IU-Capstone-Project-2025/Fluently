@@ -6,6 +6,9 @@ services:
   # Main Backend API
   backend:
     image: docker.io/fluentlyorg/fluently-backend:latest-develop
+    # build:
+    #   context: ./backend
+    #   dockerfile: Dockerfile
     container_name: fluently_backend
     env_file: ./backend/.env
     depends_on:
