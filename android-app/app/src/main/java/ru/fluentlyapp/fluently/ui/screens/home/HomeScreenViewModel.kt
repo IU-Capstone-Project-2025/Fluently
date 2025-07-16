@@ -1,14 +1,10 @@
 package ru.fluentlyapp.fluently.ui.screens.home
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -18,14 +14,18 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.supervisorScope
 import ru.fluentlyapp.fluently.feature.joinedwordprogress.JoinedWordProgressRepository
+import ru.fluentlyapp.fluently.feature.wordoftheday.WordOfTheDayRepository
 import ru.fluentlyapp.fluently.ui.screens.home.HomeScreenUiState.OngoingLessonState
+import ru.fluentlyapp.fluently.ui.theme.components.WordUiState
+import ru.fluentlyapp.fluently.utils.safeLaunch
 import timber.log.Timber
 
 
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor(
     private val lessonRepository: LessonRepository,
-    private val joinedWordProgressRepository: JoinedWordProgressRepository
+    private val joinedWordProgressRepository: JoinedWordProgressRepository,
+    private val wordOfTheDayRepo: WordOfTheDayRepository
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(HomeScreenUiState())
     val uiState = _uiState.asStateFlow()
@@ -34,9 +34,9 @@ class HomeScreenViewModel @Inject constructor(
     val commandsChannel = _commandsChannel.receiveAsFlow()
 
     init {
-        viewModelScope.launch {
+        viewModelScope.safeLaunch {
             supervisorScope {
-                launch {
+                safeLaunch {
                     lessonRepository.currentComponent().collect { currentComponent ->
                         if (
                             uiState.value.ongoingLessonState in setOf(
@@ -55,16 +55,55 @@ class HomeScreenViewModel @Inject constructor(
                     }
                 }
 
-                launch {
-                    val progresses = joinedWordProgressRepository.getPerWordOverallProgress().first()
-                    _uiState.update {
-                        it.copy(
-                            learnedWordsNumber = progresses.count { !it.isLearning },
-                            inProgressWordsNumber = progresses.count { it.isLearning }
-                        )
+                safeLaunch {
+                    joinedWordProgressRepository.getPerWordOverallProgress().collect { progresses ->
+                        _uiState.update {
+                            it.copy(
+                                learnedWordsNumber = progresses.count { !it.isLearning },
+                                inProgressWordsNumber = progresses.count { it.isLearning }
+                            )
+                        }
+                    }
+                }
+
+                safeLaunch {
+                    wordOfTheDayRepo.updateWordOfTheDay()
+                }
+
+                safeLaunch {
+                    wordOfTheDayRepo.isWordOfTheDayLearning().collect { isLearning ->
+                        _uiState.update {
+                            it.copy(
+                                hasWordOfTheDaySaved = isLearning
+                            )
+                        }
+                    }
+                }
+
+                safeLaunch {
+                    wordOfTheDayRepo.getWordOfTheDay().collect { wordOfTheDay ->
+                        if (wordOfTheDay == null) {
+                            return@collect
+                        }
+
+                        _uiState.update {
+                            it.copy(
+                                wordOfTheDay = WordUiState(
+                                    word = wordOfTheDay.word,
+                                    translation = wordOfTheDay.translation,
+                                    examples = wordOfTheDay.examples
+                                )
+                            )
+                        }
                     }
                 }
             }
+        }
+    }
+
+    fun startLearningWordOfTheDay() {
+        viewModelScope.safeLaunch {
+            wordOfTheDayRepo.startLearningWordOfTheDay()
         }
     }
 
@@ -73,12 +112,12 @@ class HomeScreenViewModel @Inject constructor(
             it.copy(ongoingLessonState = OngoingLessonState.LOADING)
         }
 
-        viewModelScope.launch {
+        viewModelScope.safeLaunch {
             try {
                 if (lessonRepository.hasSavedLesson()) {
                     _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.HAS_PAUSED) }
                     _commandsChannel.send(HomeCommands.NavigateToLesson)
-                    return@launch
+                    return@safeLaunch
                 }
 
                 lessonRepository.fetchAndSaveOngoingLesson()

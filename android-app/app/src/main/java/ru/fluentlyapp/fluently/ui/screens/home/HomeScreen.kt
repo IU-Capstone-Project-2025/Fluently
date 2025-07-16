@@ -1,6 +1,6 @@
 package ru.fluentlyapp.fluently.ui.screens.home
 
-import android.util.Log
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -46,6 +46,7 @@ import coil3.request.ImageRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import ru.fluentlyapp.fluently.R
+import ru.fluentlyapp.fluently.ui.previewdata.words
 import ru.fluentlyapp.fluently.ui.screens.home.HomeScreenUiState.OngoingLessonState
 import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
 
@@ -78,7 +79,10 @@ fun HomeScreen(
         },
         onCalendarClick = onNavigateToCalendar,
         onLearnedWordsClick = onLearnedWordsClick,
-        onInProgressWordsClick = onInProgressWordsClick
+        onInProgressWordsClick = onInProgressWordsClick,
+        onStartLearningWordOfTheDay = {
+            homeScreenViewModel.startLearningWordOfTheDay()
+        }
     )
 }
 
@@ -90,6 +94,7 @@ fun HomeScreenContent(
     onCalendarClick: () -> Unit,
     onLearnedWordsClick: () -> Unit,
     onInProgressWordsClick: () -> Unit,
+    onStartLearningWordOfTheDay: () -> Unit,
 ) {
     Column(
         modifier = modifier.background(color = FluentlyTheme.colors.primary)
@@ -138,6 +143,68 @@ fun HomeScreenContent(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceEvenly
         ) {
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Column(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(FluentlyTheme.colors.surfaceInverse)
+                        .padding(16.dp)
+                        .animateContentSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    if (uiState.wordOfTheDay == null) {
+                        CircularProgressIndicator(color = FluentlyTheme.colors.onSurfaceInverse)
+                    } else {
+                        Text(
+                            fontSize = 32.sp,
+                            color = FluentlyTheme.colors.onSurfaceInverse,
+                            text = uiState.wordOfTheDay.word
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            fontSize = 20.sp,
+                            color = FluentlyTheme.colors.onSurfaceVariantInverse,
+                            text = uiState.wordOfTheDay.translation
+                        )
+                    }
+                }
+                Spacer(modifier = Modifier.height(4.dp))
+                Row(
+                    modifier = Modifier
+                        .alpha(if (uiState.wordOfTheDay == null) .5f else 1f)
+                        .clip(RoundedCornerShape(16.dp))
+                        .clickable(
+                            enabled = uiState.wordOfTheDay != null && !uiState.hasWordOfTheDaySaved,
+                            onClick = onStartLearningWordOfTheDay
+                        )
+                        .background(FluentlyTheme.colors.surfaceContainerHigh)
+                        .padding(horizontal = 16.dp, vertical = 8.dp)
+                        .animateContentSize()
+                ) {
+                    if (uiState.wordOfTheDay == null || !uiState.hasWordOfTheDaySaved) {
+                        Icon(
+                            modifier = Modifier.size(24.dp),
+                            painter = painterResource(R.drawable.ic_plus_circle),
+                            tint = FluentlyTheme.colors.onSurface,
+                            contentDescription = null
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Изучать")
+                    } else {
+                        Icon(
+                            modifier = Modifier.size(24.dp),
+                            painter = painterResource(R.drawable.ic_check_circle),
+                            tint = FluentlyTheme.colors.onSurface,
+                            contentDescription = null
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Сохранено!")
+                    }
+                }
+            }
 
             Row(modifier = Modifier.fillMaxWidth()) {
                 Column(
@@ -254,11 +321,15 @@ fun HomeScreenPreview() {
     FluentlyTheme {
         HomeScreenContent(
             modifier = Modifier.fillMaxSize(),
-            uiState = HomeScreenUiState(ongoingLessonState = OngoingLessonState.LOADING),
-            onLessonClick = { },
+            uiState = HomeScreenUiState(
+                ongoingLessonState = OngoingLessonState.LOADING,
+                wordOfTheDay = words[0]
+            ),
+            onLessonClick = {},
             onCalendarClick = { },
             onLearnedWordsClick = {},
-            onInProgressWordsClick = {}
+            onInProgressWordsClick = {},
+            onStartLearningWordOfTheDay = {}
         )
     }
 }

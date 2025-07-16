@@ -4,7 +4,9 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import ru.fluentlyapp.fluently.network.model.internal.CardApiModel
 import ru.fluentlyapp.fluently.network.model.internal.LessonResponseBody
+import ru.fluentlyapp.fluently.network.model.internal.WordOfTheDayResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.WordProgressApiModel
 
 interface FluentlyApiService {
@@ -13,4 +15,7 @@ interface FluentlyApiService {
 
     @POST("/api/v1/progress")
     suspend fun sendProgress(@Body progress: List<WordProgressApiModel>)
+
+    @GET("/api/v1/day-word")
+    suspend fun getDayOfTheWord(): Response<WordOfTheDayResponseBody>
 }

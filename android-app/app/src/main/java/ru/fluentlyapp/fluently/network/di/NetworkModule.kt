@@ -23,6 +23,10 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 abstract class NetworkModule {
     companion object {
+        private val json = Json {
+            ignoreUnknownKeys = true
+        }
+
         @Provides
         @Singleton
         fun provideFluentlyApiService(
@@ -39,7 +43,7 @@ abstract class NetworkModule {
             val retrofit = Retrofit
                 .Builder()
                 .client(customizedClient)
-                .addConverterFactory(Json.asConverterFactory("application/json; charset=UTF8".toMediaType()))
+                .addConverterFactory(json.asConverterFactory("application/json; charset=UTF8".toMediaType()))
                 .baseUrl(FLUENTLY_BASE_URL)
                 .build()
 

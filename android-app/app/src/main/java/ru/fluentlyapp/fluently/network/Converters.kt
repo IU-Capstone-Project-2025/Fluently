@@ -4,8 +4,11 @@ import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.common.model.LessonComponent
 import ru.fluentlyapp.fluently.network.model.Progress
+import ru.fluentlyapp.fluently.network.model.WordOfTheDay
+import ru.fluentlyapp.fluently.network.model.internal.CardApiModel
 import ru.fluentlyapp.fluently.network.model.internal.ExerciseApiModel.ExerciseType
 import ru.fluentlyapp.fluently.network.model.internal.LessonResponseBody
+import ru.fluentlyapp.fluently.network.model.internal.WordOfTheDayResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.WordProgressApiModel
 import kotlin.random.Random
 import kotlin.random.nextInt
@@ -101,3 +104,12 @@ fun Progress.toProgressRequestBody() =
             word_id = it.wordId
         )
     }
+
+fun WordOfTheDayResponseBody.toWordOfTheDay() = WordOfTheDay(
+    wordId = word_id,
+    word = word,
+    translation = translation,
+    examples = sentences.map {
+        it.text to it.translation
+    }
+)

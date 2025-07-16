@@ -3,7 +3,6 @@ package ru.fluentlyapp.fluently.feature.wordprogress
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import ru.fluentlyapp.fluently.database.app.AppDatabase
-import ru.fluentlyapp.fluently.database.app.wordprogress.WordProgressDao
 import timber.log.Timber
 import java.time.Instant
 import javax.inject.Inject
