@@ -77,7 +77,7 @@ docker run -p 8003:8003 --env-file .env fluently-llm-api
 ### Common Issues
 
 1. **"TypeError: Client.__init__() got an unexpected keyword argument 'proxies'"**
-   - **Solution**: Update the `groq` library to version 0.11.0 or later
+   - **Solution**: Update the `groq` library to version 0.30.0 or later
    - **Cause**: Older versions of the Groq library have compatibility issues
 
 2. **"All providers failed"**
@@ -104,9 +104,3 @@ The service logs important events including:
 
 Set `LOG_LEVEL=DEBUG` for detailed logging.
 
-### Testing
-
-Run the test script to verify functionality:
-```bash
-python test_api.py
-```
