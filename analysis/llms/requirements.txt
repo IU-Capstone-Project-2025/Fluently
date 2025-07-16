@@ -1,6 +1,6 @@
 # FastAPI and server dependencies
 fastapi
-uvicorn[standard
+uvicorn[standard]
 pydantic
 python-multipart
 
