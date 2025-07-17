@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"fluently/go-backend/internal/repository/models"
+	"fluently/go-backend/internal/repository/schemas"
 
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
@@ -51,6 +52,7 @@ func TestCreateAndGetPreference(t *testing.T) {
 
 func TestUpdatePreference(t *testing.T) {
 	ctx := context.Background()
+	var req schemas.UpdatePreferenceRequest
 
 	user := &models.User{
 		ID:       uuid.New(),
@@ -74,9 +76,13 @@ func TestUpdatePreference(t *testing.T) {
 	assert.NoError(t, err)
 	assert.NotEqual(t, uuid.Nil, pref.ID)
 
-	pref.Goal = "Updated User Topic"
-	pref.WordsPerDay = 20
-	err = preferenceRepo.Update(ctx, pref)
+	updatedGoal := "Updated User Topic"
+	updatedWordPerDay := 20
+
+	req.Goal = &updatedGoal
+	req.WordsPerDay = &updatedWordPerDay
+
+	err = preferenceRepo.Update(ctx, pref.ID, &req)
 	assert.NoError(t, err)
 
 	updated, err := preferenceRepo.GetByID(ctx, pref.ID)

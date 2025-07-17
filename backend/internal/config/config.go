@@ -163,7 +163,7 @@ func GetPostgresDSNForTest() string {
 	port := firstNotEmpty(c.Database.TestPort, c.Database.Port, "5433")
 	user := firstNotEmpty(c.Database.TestUser, c.Database.User, "test_user")
 	password := firstNotEmpty(c.Database.TestPassword, c.Database.Password, "test_password")
-	name := firstNotEmpty(c.Database.TestName, c.Database.Name, "test_fluently_db")
+	name := firstNotEmpty(c.Database.TestName, c.Database.Name, "test_db")
 
 	return fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable", user, password, host, port, name)
 }
