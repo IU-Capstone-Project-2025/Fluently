@@ -43,6 +43,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
+import coil3.request.error
+import coil3.request.placeholder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import ru.fluentlyapp.fluently.R
@@ -119,6 +121,8 @@ fun HomeScreenContent(
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
                     .data(uiState.avatarPicture)
+                    .placeholder(R.drawable.ic_funny_square)
+                    .error(R.drawable.ic_funny_square)
                     .build(),
                 contentScale = ContentScale.Crop,
                 contentDescription = "Avatar Picture",
@@ -130,7 +134,7 @@ fun HomeScreenContent(
                         color = FluentlyTheme.colors.onPrimary
                     )
                     .size(88.dp)
-                    .background(Color.Black)
+                    .background(FluentlyTheme.colors.surfaceContainerHigh)
             )
         }
         Column(

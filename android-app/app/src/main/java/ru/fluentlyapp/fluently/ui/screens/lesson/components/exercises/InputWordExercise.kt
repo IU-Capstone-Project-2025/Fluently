@@ -101,7 +101,7 @@ fun InputWordExercise(
                     Box(
                         modifier = Modifier
                             .clip(shape = RoundedCornerShape(8.dp))
-                            .background(FluentlyTheme.colors.surface)
+                            .background(FluentlyTheme.colors.surfaceContainerHigh)
                             then inputFieldModifier
                             .padding(8.dp)
                             .fillMaxWidth(.8f)

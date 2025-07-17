@@ -2,17 +2,20 @@ package ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises
 
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.ime
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -49,9 +52,16 @@ fun DialogExercise(
     dialogObserver: DialogObserver,
     isCompleted: Boolean
 ) {
-    Box(modifier = modifier.background(FluentlyTheme.colors.surface)) {
+    Box(
+        modifier = modifier
+            .background(FluentlyTheme.colors.surface)
+            .windowInsetsPadding(
+                WindowInsets.ime
+            )
+    ) {
         DialogTopFloatingButton(
             modifier = Modifier
+                .padding(top = 8.dp)
                 .align(Alignment.TopCenter),
             text = if (isCompleted) {
                 "Дальше"
@@ -78,6 +88,7 @@ fun DialogExercise(
         LazyColumn(
             state = listState,
             modifier = Modifier
+                .padding(bottom = 16.dp)
                 .fillMaxSize()
                 .zIndex(-1f),
             verticalArrangement = Arrangement.Bottom,
@@ -126,6 +137,7 @@ fun DialogExercise(
                 .heightIn(min = 60.dp)
                 .align(Alignment.BottomCenter)
                 .zIndex(0f),
+            isEnabled = !isCompleted,
             text = currentText,
             onTextChange = { currentText = it },
             onSendClick = { dialogObserver.onSendMessage(it) }

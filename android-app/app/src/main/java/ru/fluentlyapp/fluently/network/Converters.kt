@@ -7,7 +7,7 @@ import ru.fluentlyapp.fluently.network.model.Author
 import ru.fluentlyapp.fluently.network.model.Chat
 import ru.fluentlyapp.fluently.network.model.Message
 import ru.fluentlyapp.fluently.network.model.Progress
-import ru.fluentlyapp.fluently.network.model.UserPreferences
+import ru.fluentlyapp.fluently.common.model.UserPreferences
 import ru.fluentlyapp.fluently.network.model.WordOfTheDay
 import ru.fluentlyapp.fluently.network.model.internal.CardApiModel
 import ru.fluentlyapp.fluently.network.model.internal.ChatRequestBody
@@ -148,7 +148,6 @@ fun UserPreferencesResponseBody.toUserPreferences(): UserPreferences {
         factEveryday = fact_everyday,
         goal = goal,
         id = id,
-        notificationAt = notification_at,
         notifications = notifications,
         subscribed = subscribed,
         userId = user_id,

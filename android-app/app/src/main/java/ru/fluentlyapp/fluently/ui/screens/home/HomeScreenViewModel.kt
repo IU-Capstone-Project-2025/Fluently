@@ -1,5 +1,6 @@
 package ru.fluentlyapp.fluently.ui.screens.home
 
+import androidx.core.net.toUri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,6 +15,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.supervisorScope
 import ru.fluentlyapp.fluently.feature.joinedwordprogress.JoinedWordProgressRepository
+import ru.fluentlyapp.fluently.feature.userpreferences.UserPreferencesRepository
 import ru.fluentlyapp.fluently.feature.wordoftheday.WordOfTheDayRepository
 import ru.fluentlyapp.fluently.ui.screens.home.HomeScreenUiState.OngoingLessonState
 import ru.fluentlyapp.fluently.ui.theme.components.WordUiState
@@ -25,7 +27,8 @@ import timber.log.Timber
 class HomeScreenViewModel @Inject constructor(
     private val lessonRepository: LessonRepository,
     private val joinedWordProgressRepository: JoinedWordProgressRepository,
-    private val wordOfTheDayRepo: WordOfTheDayRepository
+    private val wordOfTheDayRepo: WordOfTheDayRepository,
+    private val userPreferencesRepository: UserPreferencesRepository
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(HomeScreenUiState())
     val uiState = _uiState.asStateFlow()
@@ -36,6 +39,24 @@ class HomeScreenViewModel @Inject constructor(
     init {
         viewModelScope.safeLaunch {
             supervisorScope {
+                safeLaunch {
+                    userPreferencesRepository.updateUserPreferences()
+                }
+
+                safeLaunch {
+                    userPreferencesRepository.getUserPreferences().collect { userPreferences ->
+                        if (userPreferences == null) {
+                            return@collect
+                        }
+
+                        _uiState.update {
+                            it.copy(
+                                avatarPicture = userPreferences.avatarImageUrl.toUri()
+                            )
+                        }
+                    }
+                }
+
                 safeLaunch {
                     lessonRepository.currentComponent().collect { currentComponent ->
                         if (

@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -43,8 +44,9 @@ import ru.fluentlyapp.fluently.ui.utils.SmallPhonePreview
 fun ChatTextField(
     modifier: Modifier = Modifier,
     text: String,
+    isEnabled: Boolean,
     onTextChange: (text: String) -> Unit,
-    onSendClick: (text: String) -> Unit
+    onSendClick: (text: String) -> Unit,
 ) {
     Row(
         modifier = modifier,
@@ -64,6 +66,8 @@ fun ChatTextField(
                 .padding(horizontal = 16.dp, vertical = 8.dp)
         ) {
             BasicTextField(
+                modifier = Modifier.heightIn(min = 40.dp).fillMaxWidth(),
+                enabled = isEnabled,
                 value = text,
                 textStyle = TextStyle(
                     fontSize = 16.sp,
@@ -72,9 +76,17 @@ fun ChatTextField(
                 keyboardOptions = KeyboardOptions(
                     imeAction = ImeAction.Send
                 ),
+                keyboardActions = KeyboardActions(
+                    onSend = {
+                        if (text.isNotEmpty()) {
+                            onSendClick(text)
+                            onTextChange("")
+                        }
+                    }
+                ),
                 onValueChange = onTextChange,
                 decorationBox = { innerTextField ->
-                    Box {
+                    Box(contentAlignment = Alignment.CenterStart) {
                         if (text.isEmpty()) {
                             Text(
                                 text = "Сообщение",
@@ -91,9 +103,9 @@ fun ChatTextField(
         Spacer(modifier = Modifier.width(8.dp))
         Box(
             modifier = Modifier
-                .size(40.dp)
+                .size(56.dp)
                 .clip(CircleShape)
-                .alpha(if (text.isEmpty()) .5f else 1f)
+                .alpha(if (text.isEmpty() || !isEnabled) .5f else 1f)
                 .background(FluentlyTheme.colors.primary)
                 .clickable(
                     enabled = !text.isEmpty(),
@@ -101,10 +113,11 @@ fun ChatTextField(
                         onSendClick(text)
                         onTextChange("")
                     }
-                )
-                .padding(4.dp)
+                ),
+            contentAlignment = Alignment.Center
         ) {
             Icon(
+                modifier = Modifier.size(40.dp),
                 painter = painterResource(R.drawable.ic_arrow_up),
                 tint = FluentlyTheme.colors.onPrimary,
                 contentDescription = null
@@ -130,7 +143,8 @@ fun ChatTextFieldPreview() {
                     .fillMaxWidth(),
                 text = text,
                 onTextChange = { text = it },
-                onSendClick = {}
+                onSendClick = {},
+                isEnabled = true
             )
         }
     }

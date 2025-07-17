@@ -183,7 +183,8 @@ class LessonFlowViewModel @Inject constructor(
                     fromUser = message.author == Author.USER
                 )
             },
-            isFinished = oldDialog?.isFinished == true
+            isFinished = oldDialog?.isFinished == true,
+            id = oldDialog?.id ?: -1
         )
 
         override fun onSendMessage(message: String) {
@@ -199,9 +200,12 @@ class LessonFlowViewModel @Inject constructor(
                             message = message
                         )
                     )
+                    val oldDialog = currentChat.toDialog(dialog)
+                    safeApplyAndUpdate<Dialog> { oldDialog }
                     Timber.v(currentChat.toString())
                     val updatedChat = dialogRepository.sendChat(currentChat)
-                    val updatedDialog = updatedChat.toDialog(dialog)
+                    val updatedDialog = updatedChat.toDialog(oldDialog)
+                    Timber.d("Updated dialog: $updatedDialog")
                     safeApplyAndUpdate<Dialog> { updatedDialog }
                 } catch (ex: Exception) {
                     Timber.e(ex)

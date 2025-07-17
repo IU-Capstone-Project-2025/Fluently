@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.core.net.toUri
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.supervisorScope
 import kotlinx.coroutines.withContext
 import net.openid.appauth.AuthorizationException
@@ -86,7 +87,6 @@ interface AuthManager {
 
 class GoogleBasedOAuthManager @Inject constructor(
     @BaseOkHttpClient private val baseOkHttpClient: OkHttpClient,
-    private val userPreferencesDataStore: UserPreferencesDataStore,
     private val googleOAuthService: GoogleOAuthService,
     private val serverTokenApiService: ServerTokenApiService,
     private val serverTokenDataStore: ServerTokenDataStore,

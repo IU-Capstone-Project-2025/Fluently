@@ -8,10 +8,12 @@ import retrofit2.Response
 import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.network.model.Chat
 import ru.fluentlyapp.fluently.network.model.Progress
+import ru.fluentlyapp.fluently.common.model.UserPreferences
 import ru.fluentlyapp.fluently.network.model.WordOfTheDay
 import ru.fluentlyapp.fluently.network.model.internal.CardApiModel
 import ru.fluentlyapp.fluently.network.model.internal.ChatResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.LessonResponseBody
+import ru.fluentlyapp.fluently.network.model.internal.UserPreferencesResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.WordOfTheDayResponseBody
 import ru.fluentlyapp.fluently.network.services.FluentlyApiService
 import timber.log.Timber
@@ -27,6 +29,8 @@ interface FluentlyApiDataSource {
     suspend fun sendChat(chat: Chat): Chat
 
     suspend fun sendFinish()
+
+    suspend fun getUserPreferences(): UserPreferences
 }
 
 class FluentlyApiDefaultDataSource @Inject constructor(
@@ -86,6 +90,16 @@ class FluentlyApiDefaultDataSource @Inject constructor(
         withContext(Dispatchers.IO) {
             Timber.d("Performing sendFinish")
             fluentlyApiService.sendFinish()
+        }
+    }
+
+    override suspend fun getUserPreferences(): UserPreferences {
+        return withContext(Dispatchers.IO) {
+            Timber.d("Performing getUserPreferences")
+            val response = fluentlyApiService.getUserPreferences()
+            val body: UserPreferencesResponseBody = getSuccessfulResponseBody(response)
+            Timber.d("Performing getUserPreferences: body=$body")
+            body.toUserPreferences()
         }
     }
 }

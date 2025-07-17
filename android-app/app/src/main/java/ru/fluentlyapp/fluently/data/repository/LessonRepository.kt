@@ -136,13 +136,13 @@ class DefaultLessonRepository @Inject constructor(
 
         val updatedLessonComponents: List<LessonComponent> = buildList {
             add(generateOnboardingComponent(lesson.components))
-//            addAll(lesson.components)
-//            add(
-//                Dialog (
-//                    messages = emptyList(),
-//                    isFinished = false
-//                )
-//            )
+            addAll(lesson.components)
+            add(
+                Dialog(
+                    messages = emptyList(),
+                    isFinished = false
+                )
+            )
         }.withIdSetToIndex()
 
         ongoingLessonDataStore.setOngoingLesson(lesson.copy(components = updatedLessonComponents))
@@ -151,12 +151,9 @@ class DefaultLessonRepository @Inject constructor(
 
     override suspend fun updateCurrentComponent(updatedComponent: LessonComponent) {
         ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
-            if (
-                updatedComponent::class == lesson.currentComponent::class &&
-                updatedComponent is Exercise &&
-                (lesson.currentComponent as? Exercise)?.isAnswered == false &&
-                updatedComponent.isAnswered
-            ) {
+            if ((updatedComponent::class == lesson.currentComponent::class) &&
+                ((updatedComponent is Exercise && (lesson.currentComponent as? Exercise)?.isAnswered == false && updatedComponent.isAnswered)
+                        || updatedComponent is Dialog)) {
                 Timber.d("The `updatedComponent`=$updatedComponent is valid for update")
                 val updatedComponents = lesson.components.toMutableList().apply {
                     this[lesson.currentLessonComponentIndex] = updatedComponent

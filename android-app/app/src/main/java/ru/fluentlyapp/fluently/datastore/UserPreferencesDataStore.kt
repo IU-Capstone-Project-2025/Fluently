@@ -8,28 +8,34 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.serialization.json.Json
+import ru.fluentlyapp.fluently.common.model.UserPreferences
 import javax.inject.Inject
 
-private val PROFILE_PICTURE_URI = stringPreferencesKey("profile_picture_uri")
+private val USER_PREFERENCES_KEY = stringPreferencesKey("user_preferences_key")
 
 class UserPreferencesDataStore @Inject constructor(
   val dataStore: DataStore<Preferences>
 ) {
-    suspend fun setUserProfileUri(uri: Uri) {
+    suspend fun setUserPreferences(userPreferences: UserPreferences) {
         dataStore.edit {
-            it[PROFILE_PICTURE_URI] = uri.toString()
+            it[USER_PREFERENCES_KEY] = Json.encodeToString(userPreferences)
         }
     }
 
-    fun getUserProfileUri(): Flow<Uri?> {
+    fun getUserPreferences(): Flow<UserPreferences?> {
         return dataStore.data.map {
-            it[PROFILE_PICTURE_URI]?.toUri()
+            val decoded = it[USER_PREFERENCES_KEY]
+            if (decoded == null) {
+                return@map null
+            }
+            return@map Json.decodeFromString<UserPreferences>(decoded)
         }
     }
 
-    suspend fun dropUserProfileUri() {
+    suspend fun dropUserPreferences() {
         dataStore.edit {
-            it.remove(PROFILE_PICTURE_URI)
+            it.remove(USER_PREFERENCES_KEY)
         }
     }
 }
