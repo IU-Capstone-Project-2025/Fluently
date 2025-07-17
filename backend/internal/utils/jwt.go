@@ -39,6 +39,7 @@ func GenerateJWT(user *models.User) (string, error) {
 	return tokenString, err
 }
 
+// GenerateRefreshToken generates a random refresh token
 func GenerateRefreshToken() (string, error) {
 	b := make([]byte, 32)
 	if _, err := rand.Read(b); err != nil {
