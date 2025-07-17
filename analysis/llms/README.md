@@ -71,3 +71,36 @@ Build and run with Docker:
 docker build -t fluently-llm-api .
 docker run -p 8003:8003 --env-file .env fluently-llm-api
 ```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **"TypeError: Client.__init__() got an unexpected keyword argument 'proxies'"**
+   - **Solution**: Update the `groq` library to version 0.30.0 or later
+   - **Cause**: Older versions of the Groq library have compatibility issues
+
+2. **"All providers failed"**
+   - **Solution**: Check that API keys are properly set in environment variables
+   - **Solution**: Verify API keys are valid and have sufficient quota
+   - **Solution**: Check network connectivity to API endpoints
+
+3. **Pydantic warnings about "model_" namespace**
+   - **Solution**: This is handled by setting `model_config = {"protected_namespaces": ()}` in the models
+   - **Note**: These warnings don't affect functionality
+
+4. **"Application startup failed"**
+   - **Solution**: Check that all required environment variables are set
+   - **Solution**: Verify API keys are valid
+   - **Note**: The service will still start even if AI initialization fails
+
+### Logs
+
+The service logs important events including:
+- API key initialization
+- Request failures  
+- Rate limiting events
+- Provider fallbacks
+
+Set `LOG_LEVEL=DEBUG` for detailed logging.
+

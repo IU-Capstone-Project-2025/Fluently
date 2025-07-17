@@ -7,11 +7,15 @@ services:
   backend:
     image: docker.io/fluentlyorg/fluently-backend:latest-develop
     container_name: fluently_backend
-    env_file: ./backend/.env
+    env_file: .env
     depends_on:
       postgres:
         condition: service_healthy
       ml-api:
+        condition: service_healthy
+      llm-api:
+        condition: service_healthy
+      thesaurus-api:
         condition: service_healthy
     restart: unless-stopped
     networks:
@@ -32,6 +36,7 @@ services:
       - "443:443"
     depends_on:
       - backend
+      - telegram-bot
     volumes:
       # Cloudflare Origin Certificates
       - /etc/nginx/ssl:/etc/nginx/ssl:ro
@@ -48,7 +53,7 @@ services:
   postgres:
     image: postgres:latest
     container_name: fluently_postgres
-    env_file: ./backend/.env
+    env_file: .env
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}

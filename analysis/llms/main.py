@@ -18,12 +18,20 @@ async def lifespan(app: FastAPI):
     """Initialize AI service at startup"""
     global ai_service
     print("Initializing AI service...")
-    ai_service = AIService()
-    await ai_service.initialize()
-    print("AI service initialized successfully!")
+    try:
+        ai_service = AIService()
+        await ai_service.initialize()
+        print("AI service initialized successfully!")
+    except Exception as e:
+        print(f"Failed to initialize AI service: {e}")
+        print("The API will still start, but AI functionality will be limited")
+        ai_service = None
+    
     yield
+    
     # Cleanup if needed
-    del ai_service
+    if ai_service:
+        del ai_service
 
 app = FastAPI(
     title="Fluently LLM API",
@@ -51,26 +59,85 @@ class Message(BaseModel):
     content: str
 
 class ChatRequest(BaseModel):
+    model_config = {"protected_namespaces": ()}
+    
     messages: List[Message]
     model_type: Optional[str] = "balanced"  # "fast" or "balanced"
     max_tokens: Optional[int] = None
     temperature: Optional[float] = None
 
 class ChatResponse(BaseModel):
+    model_config = {"protected_namespaces": ()}
+    
     response: str
     model_used: Optional[str] = None
 
 class HealthResponse(BaseModel):
     status: str
     ai_service_ready: bool
+    available_providers: Optional[List[str]] = None
+    message: Optional[str] = None
 
 @app.get("/health", response_model=HealthResponse)
 async def health_check():
     """Health check endpoint"""
+    if ai_service is None:
+        return HealthResponse(
+            status="degraded",
+            ai_service_ready=False,
+            available_providers=[],
+            message="AI service not initialized"
+        )
+    
+    # Check which providers have valid keys
+    available_providers = [
+        provider for provider in ai_service.providers 
+        if ai_service.providers[provider]["keys"]
+    ]
+    
+    if not available_providers:
+        return HealthResponse(
+            status="degraded",
+            ai_service_ready=False,
+            available_providers=available_providers,
+            message="No valid API keys configured. Please check GROQ_API_KEYS and GEMINI_API_KEYS environment variables."
+        )
+    
     return HealthResponse(
         status="healthy",
-        ai_service_ready=ai_service is not None
+        ai_service_ready=True,
+        available_providers=available_providers,
+        message=f"AI service ready with {len(available_providers)} provider(s): {', '.join(available_providers)}"
     )
+
+class ConfigResponse(BaseModel):
+    providers: dict
+    setup_urls: dict = {
+        "groq": "https://console.groq.com/keys",
+        "gemini": "https://makersuite.google.com/app/apikey"
+    }
+
+@app.get("/config", response_model=ConfigResponse)
+async def get_config():
+    """Get configuration status"""
+    if ai_service is None:
+        return ConfigResponse(
+            providers={
+                "groq": {"configured": False, "keys_count": 0},
+                "gemini": {"configured": False, "keys_count": 0}
+            }
+        )
+    
+    providers_info = {}
+    for provider, provider_data in ai_service.providers.items():
+        keys = provider_data["keys"]
+        providers_info[provider] = {
+            "configured": len(keys) > 0,
+            "keys_count": len(keys),
+            "has_valid_keys": len([k for k in keys if k not in ["placeholder", "your_key_here", ""]]) > 0
+        }
+    
+    return ConfigResponse(providers=providers_info)
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat_completion(request: ChatRequest):
@@ -101,7 +168,19 @@ async def chat_completion(request: ChatRequest):
         return ChatResponse(response=response)
         
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"AI service error: {str(e)}")
+        error_msg = str(e)
+        if "No providers are available" in error_msg:
+            raise HTTPException(
+                status_code=503, 
+                detail="AI service unavailable: No valid API keys configured. Please check GROQ_API_KEYS and GEMINI_API_KEYS environment variables."
+            )
+        elif "All available providers failed" in error_msg:
+            raise HTTPException(
+                status_code=503, 
+                detail="AI service unavailable: All configured providers failed. Please check your API keys are valid and have sufficient quota."
+            )
+        else:
+            raise HTTPException(status_code=500, detail=f"AI service error: {error_msg}")
 
 @app.post("/chat/simple")
 async def simple_chat(message: str, model_type: str = "balanced"):

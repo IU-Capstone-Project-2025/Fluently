@@ -1,15 +1,18 @@
 # FastAPI and server dependencies
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-pydantic==2.5.0
-python-multipart==0.0.6
+fastapi
+uvicorn[standard]
+pydantic
+python-multipart
 
 # Monitoring
-starlette-prometheus==0.10.0
+starlette-prometheus
 
 # AI/LLM dependencies
-groq==0.4.1
-google-generativeai==0.3.2
+groq
+google-generativeai
+
+# HTTP client dependencies
+httpx
 
 # Utility dependencies
-python-dotenv==1.0.0
+python-dotenv
