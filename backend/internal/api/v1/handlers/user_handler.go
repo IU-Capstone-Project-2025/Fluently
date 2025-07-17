@@ -3,6 +3,8 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
+	"time"
 
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
@@ -32,8 +34,18 @@ func buildUserResponse(user *models.User) schemas.UserResponse {
 
 // CreateUser creates a new user
 func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/users"
+	method := r.Method
+	statusCode := 201
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	var req schemas.CreateUserRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
@@ -50,6 +62,7 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := h.Repo.Create(r.Context(), &user); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to create user", http.StatusInternalServerError)
 		return
 	}
@@ -62,14 +75,25 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 
 // GetUser gets a user
 func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/users/{id}"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	user, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "user not found", http.StatusNotFound)
 		return
 	}
@@ -81,20 +105,32 @@ func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 
 // UpdateUser updates a user
 func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/users/{id}"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.CreateUserRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	user, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "user not found", http.StatusNotFound)
 		return
 	}
@@ -108,6 +144,7 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 	user.PasswordHash = req.PasswordHash
 
 	if err := h.Repo.Update(r.Context(), user); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to update user", http.StatusInternalServerError)
 		return
 	}
@@ -120,13 +157,24 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 
 // DeleteUser deletes a user
 func (h *UserHandler) DeleteUser(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/users/{id}"
+	method := r.Method
+	statusCode := 204
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	if err := h.Repo.Delete(r.Context(), id); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to delete user", http.StatusInternalServerError)
 		return
 	}

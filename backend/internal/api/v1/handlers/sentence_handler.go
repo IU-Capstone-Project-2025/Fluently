@@ -3,6 +3,8 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
+	"time"
 
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
@@ -28,14 +30,25 @@ func buildSentenceResponse(sentence *models.Sentence) schemas.SentenceResponse {
 
 // ListSentences returns all sentences for a word
 func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/sentences"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid word_id", http.StatusBadRequest)
 		return
 	}
 
 	sentences, err := h.Repo.ListByWord(r.Context(), wordID)
 	if err != nil {
+		statusCode = 500
 		http.Error(w, "failed to fetch sentences", http.StatusInternalServerError)
 		return
 	}
@@ -52,8 +65,18 @@ func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) 
 
 // CreateSentence creates a new sentence
 func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/sentences"
+	method := r.Method
+	statusCode := 201
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	var req schemas.CreateSentenceRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
@@ -66,6 +89,7 @@ func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request)
 	}
 
 	if err := h.Repo.Create(r.Context(), &s); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to create sentence", http.StatusInternalServerError)
 		return
 	}
@@ -78,20 +102,32 @@ func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request)
 
 // UpdateSentence updates a sentence
 func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/sentences/{id}"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.CreateSentenceRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	sentence, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "sentence not found", http.StatusNotFound)
 		return
 	}
@@ -105,6 +141,7 @@ func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request)
 	}
 
 	if err := h.Repo.Update(r.Context(), sentence); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to update sentence", http.StatusInternalServerError)
 		return
 	}
@@ -117,13 +154,24 @@ func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request)
 
 // DeleteSentence deletes a sentence
 func (h *SentenceHandler) DeleteSentence(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/sentences/{id}"
+	method := r.Method
+	statusCode := 204
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	if err := h.Repo.Delete(r.Context(), id); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to delete sentence", http.StatusInternalServerError)
 		return
 	}

@@ -3,6 +3,8 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
+	"time"
 
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
@@ -33,14 +35,25 @@ func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceRespons
 
 // CreateUserPreferences godoc
 func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/preferences"
+	method := r.Method
+	statusCode := 201
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	userId, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid user_id", http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.CreatePreferenceRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
@@ -59,6 +72,7 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 	}
 
 	if err := h.Repo.Create(r.Context(), pref); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to create preference", http.StatusInternalServerError)
 		return
 	}
@@ -73,8 +87,10 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 // @Summary Get user preferences
 // @Description Retrieves user preferences
 // @Tags preferences
+// @Accept json
 // @Produce json
 // @Security BearerAuth
+// @Param user_id path string true "User ID"
 // @Success 200 {object} schemas.PreferenceResponse "Successfully retrieved preferences"
 // @Failure 400 {string} string "Bad request - invalid user or preferences"
 // @Failure 401 {string} string "Unauthorized - invalid or missing token"
@@ -82,14 +98,25 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 // @Failure 500 {string} string "Internal server error"
 // @Router /api/v1/preferences [get]
 func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/preferences"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
+		statusCode = 400
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
 	pref, err := h.Repo.GetByUserID(r.Context(), user.ID)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "preference not found", http.StatusNotFound)
 		return
 	}
@@ -113,20 +140,32 @@ func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Req
 // @Failure 500 {string} string "Internal server error"
 // @Router /api/v1/preferences [put]
 func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/preferences"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
+		statusCode = 400
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.UpdatePreferenceRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	pref, err := h.Repo.GetByUserID(r.Context(), user.ID)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "preference not found", http.StatusNotFound)
 		return
 	}
@@ -159,6 +198,7 @@ func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http
 	// ============================================================
 
 	if err := h.Repo.Update(r.Context(), pref.ID, &req); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to update preference", http.StatusInternalServerError)
 		return
 	}
@@ -170,13 +210,24 @@ func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http
 
 // DeleteUserPreferences deletes user preferences
 func (h *PreferenceHandler) DeletePreference(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/preferences"
+	method := r.Method
+	statusCode := 204
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	userId, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid user_id", http.StatusBadRequest)
 		return
 	}
 
 	if err := h.Repo.Delete(r.Context(), userId); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to delete preference", http.StatusInternalServerError)
 		return
 	}

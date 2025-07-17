@@ -1,10 +1,12 @@
 package handlers
 
 import (
+	"encoding/json"
 	"errors"
 	"math/rand"
 	"net/http"
-	"encoding/json"
+	"strconv"
+	"time"
 
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
@@ -36,8 +38,18 @@ type DayWordHandler struct {
 // @Failure      500  {string}  string  "Internal server error - plain text error message"
 // @Router       /api/v1/day-word [get]
 func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/day-word"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
+		statusCode = 400
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -46,6 +58,7 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 
 	userPref, err := h.PreferenceRepo.GetByUserID(r.Context(), userID)
 	if err != nil {
+		statusCode = 500
 		http.Error(w, "failed to get preference", http.StatusInternalServerError)
 		return
 	}
@@ -55,6 +68,7 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 	// Get random word from database by cefr level
 	dayWord, err := h.WordRepo.GetDayWord(r.Context(), userPref.CEFRLevel, userID)
 	if err != nil {
+		statusCode = 500
 		http.Error(w, "failed to get day word", http.StatusInternalServerError)
 		return
 	}
@@ -70,6 +84,7 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 
 	topic, err := h.TopicRepo.GetByID(r.Context(), *dayWord.TopicID)
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "failed to get topic", http.StatusBadRequest)
 		return
 	}
@@ -80,6 +95,7 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 	for topic.ParentID != nil {
 		topic, err = h.TopicRepo.GetByID(r.Context(), *topic.ParentID)
 		if err != nil {
+			statusCode = 400
 			http.Error(w, "failed to get topic", http.StatusBadRequest)
 			return
 		}
@@ -89,6 +105,7 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 
 	sentences, err := h.SentenceRepo.GetByWordID(r.Context(), dayWord.ID)
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "failed to get sentence", http.StatusBadRequest)
 		return
 	}
@@ -117,6 +134,7 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 				Option: []string{dayWord.Word},
 			}
 		} else {
+			statusCode = 500
 			http.Error(w, "failed to get pick option", http.StatusInternalServerError)
 			return
 		}
@@ -127,6 +145,7 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 
 		randomWords, err := h.WordRepo.GetRandomWordsByCEFRLevel(r.Context(), userPref.CEFRLevel, optionToAdd)
 		if err != nil {
+			statusCode = 400
 			http.Error(w, "failed to get random words", http.StatusBadRequest)
 			return
 		}
@@ -184,6 +203,7 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 	// Check if the word is learned
 	learned, err := h.LearnedWordRepo.IsLearned(r.Context(), userID, dayWord.ID)
 	if err != nil {
+		statusCode = 500
 		http.Error(w, "failed to get learned word", http.StatusInternalServerError)
 		return
 	}
