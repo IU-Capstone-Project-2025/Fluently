@@ -108,31 +108,34 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 	// 2. Request recommendations until we collect enough valid words from DB
 	var words []models.Word
 	seen := make(map[uuid.UUID]struct{})
-	attempts := 0
-	for len(words) < lessonInfo.TotalWords && attempts < 5 {
-		recs, err := h.ThesaurusClient.Recommend(r.Context(), known)
-		if err != nil {
-			logger.Log.Error("Failed to get thesaurus recommendations", zap.Error(err))
-			break // fallback later
-		}
 
-		for _, rec := range recs {
-			if len(words) >= lessonInfo.TotalWords {
-				break
-			}
-
-			wm, err := h.WordRepo.GetByValue(r.Context(), rec.Word)
+	if len(known) > 0 { // Call Thesaurus only when we have something to send
+		attempts := 0
+		for len(words) < lessonInfo.TotalWords && attempts < 5 {
+			recs, err := h.ThesaurusClient.Recommend(r.Context(), known)
 			if err != nil {
-				// Recommendation not present in local DB – skip
-				continue
+				logger.Log.Error("Failed to get thesaurus recommendations", zap.Error(err))
+				break // fallback later
 			}
-			if _, exists := seen[wm.ID]; exists {
-				continue
+
+			for _, rec := range recs {
+				if len(words) >= lessonInfo.TotalWords {
+					break
+				}
+
+				wm, err := h.WordRepo.GetByValue(r.Context(), rec.Word)
+				if err != nil {
+					// Recommendation not present in local DB – skip
+					continue
+				}
+				if _, exists := seen[wm.ID]; exists {
+					continue
+				}
+				words = append(words, *wm)
+				seen[wm.ID] = struct{}{}
 			}
-			words = append(words, *wm)
-			seen[wm.ID] = struct{}{}
+			attempts++
 		}
-		attempts++
 	}
 
 	// 3. Fallback: fill remaining slots with random DB words
