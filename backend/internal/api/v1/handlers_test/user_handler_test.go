@@ -12,6 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateUser tests the creation of a new user
 func TestCreateUser(t *testing.T) {
 	setupTest(t)
 
@@ -41,6 +42,7 @@ func TestCreateUser(t *testing.T) {
 	assert.NotEmpty(t, resp.Value("created_at").String().Raw())
 }
 
+// TestGetUser tests the retrieval of a user
 func TestGetUser(t *testing.T) {
 	setupTest(t)
 
@@ -68,6 +70,7 @@ func TestGetUser(t *testing.T) {
 	assert.Equal(t, "admin", resp.Value("role").String().Raw())
 }
 
+// TestUpdateUser tests the update of a user
 func TestUpdateUser(t *testing.T) {
 	setupTest(t)
 
@@ -107,6 +110,7 @@ func TestUpdateUser(t *testing.T) {
 	assert.Equal(t, "updated@example.com", resp.Value("email").String().Raw())
 }
 
+// TestDeleteUser tests the deletion of a user
 func TestDeleteUser(t *testing.T) {
 	setupTest(t)
 

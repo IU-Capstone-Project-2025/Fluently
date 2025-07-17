@@ -12,10 +12,12 @@ import (
 	"github.com/google/uuid"
 )
 
+// WordHandler handles the word endpoint
 type WordHandler struct {
 	Repo *postgres.WordRepository
 }
 
+// buildWordResponse builds a WordResponse from a Word
 func buildWordResponse(w *models.Word) schemas.WordResponse {
 	resp := schemas.WordResponse{
 		ID:           w.ID.String(),
@@ -39,6 +41,7 @@ func buildWordResponse(w *models.Word) schemas.WordResponse {
 	return resp
 }
 
+// ListWords lists all words
 func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
 	words, err := h.Repo.ListWords(r.Context())
 	if err != nil {
@@ -51,10 +54,12 @@ func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
 		resp = append(resp, buildWordResponse(&word))
 	}
 
+	// Return the list of words
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }
 
+// GetWord gets a word
 func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -68,10 +73,12 @@ func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Return the word
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildWordResponse(word))
 }
 
+// CreateWord creates a new word
 func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateWordRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
@@ -113,11 +120,13 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 		AudioURL:     req.AudioURL,
 	}
 
+	// Return the created word
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(resp)
 }
 
+// UpdateWord updates a word
 func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -174,10 +183,12 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 		AudioURL:     req.AudioURL,
 	}
 
+	// Return the updated word
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }
 
+// DeleteWord deletes a word
 func (h *WordHandler) DeleteWord(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -190,5 +201,6 @@ func (h *WordHandler) DeleteWord(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Return no content
 	w.WriteHeader(http.StatusNoContent)
 }

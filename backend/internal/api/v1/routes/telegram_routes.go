@@ -6,19 +6,20 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
+// RegisterTelegramRoutes registers telegram routes
 func RegisterTelegramRoutes(r chi.Router, h *handler.TelegramHandler) {
-	// Публичные роуты (не требуют аутентификации)
+	// Public routes (no authentication required)
 	r.Route("/telegram", func(r chi.Router) {
 		r.Post("/create-link", h.CreateLinkToken)
 		r.Post("/check-status", h.CheckLinkStatus)
 	})
 
-	// Защищенные роуты
+	// Protected routes
 	r.Route("/api/v1/telegram", func(r chi.Router) {
 		r.Post("/unlink", h.UnlinkTelegram)
 	})
 
-	// Роуты для магических ссылок (публичные)
+	// Routes for magic links
 	r.Get("/link-google", h.LinkWithGoogle)
 	r.Get("/link-google/callback", h.LinkGoogleCallback)
 }

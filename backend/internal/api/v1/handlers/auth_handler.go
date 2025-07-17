@@ -30,10 +30,12 @@ type Handlers struct {
 	RefreshTokenRepo *postgres.RefreshTokenRepository
 }
 
+// generateRandomState generates a random state string
 func generateRandomState() (string, error) {
 	return utils.GenerateRefreshToken() // reuse secure random generator
 }
 
+// getStringClaim returns the string value of a claim
 func getStringClaim(claims map[string]interface{}, key string) (string, error) {
 	value, ok := claims[key]
 	if !ok || value == nil {
@@ -48,6 +50,7 @@ func getStringClaim(claims map[string]interface{}, key string) (string, error) {
 	return strValue, nil
 }
 
+// getBoolClaim returns the bool value of a claim
 func getBoolClaim(claims map[string]interface{}, key string) (bool, error) {
 	value, ok := claims[key]
 	if !ok || value == nil {
@@ -169,6 +172,7 @@ func (h *Handlers) GoogleAuthHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(resp)
 }
 
+// createUserViaGoogle creates a new user via Google
 func (h *Handlers) createUserViaGoogle(r *http.Request, sub, email, name, avatar string) *models.User {
 	// Firstly creating user preferences
 	logger.Log.Info("Creating new user with email: ", zap.String("email", email))
@@ -211,6 +215,7 @@ func (h *Handlers) createUserViaGoogle(r *http.Request, sub, email, name, avatar
 	return newUser
 }
 
+// generateTokens generates JWT and refresh token
 func (h *Handlers) generateTokens(user *models.User, w http.ResponseWriter, r *http.Request) (schemas.JwtResponse, error) {
 	// Generate JWT token
 	tokenString, err := utils.GenerateJWT(user)
@@ -338,6 +343,7 @@ func (h *Handlers) RegisterHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(resp)
 }
 
+// createUserViaPassword creates user via password
 func (h *Handlers) createUserViaPassword(r *http.Request, email, name, hash string) *models.User {
 	// Firstly creating user preferences
 	logger.Log.Info("Creating new user with email: ", zap.String("email", email))
@@ -617,6 +623,7 @@ func min(a, b int) int {
 	return b
 }
 
+// processGoogleIDToken processes Google ID token and signs user in
 func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, googleToken string) {
 	cfg := config.GetConfig()
 	// For validation we accept any of the configured client IDs as audience

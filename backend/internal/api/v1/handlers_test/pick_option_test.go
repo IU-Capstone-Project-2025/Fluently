@@ -12,6 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreatePickOption tests the creation of a pick option
 func TestCreatePickOption(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
@@ -41,6 +42,7 @@ func TestCreatePickOption(t *testing.T) {
 	assert.Equal(t, []interface{}{"one", "two", "three"}, resp.Value("options").Array().Raw())
 }
 
+// TestGetPickOption tests the retrieval of a pick option
 func TestGetPickOption(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
@@ -63,6 +65,7 @@ func TestGetPickOption(t *testing.T) {
 	assert.Equal(t, []interface{}{"a", "b", "c"}, resp.Value("options").Array().Raw())
 }
 
+// TestUpdatePickOption tests the update of a pick option
 func TestUpdatePickOption(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
@@ -92,6 +95,7 @@ func TestUpdatePickOption(t *testing.T) {
 	assert.ElementsMatch(t, []string{"new1", "new2", "new3"}, updated.Option)
 }
 
+// TestDeletePickOption tests the deletion of a pick option
 func TestDeletePickOption(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
@@ -113,6 +117,7 @@ func TestDeletePickOption(t *testing.T) {
 	assert.Error(t, err)
 }
 
+// TestListPickOptions tests the listing of pick options
 func TestListPickOptions(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)

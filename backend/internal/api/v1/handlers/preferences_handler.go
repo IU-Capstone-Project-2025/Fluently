@@ -10,10 +10,12 @@ import (
 	"fluently/go-backend/internal/utils"
 )
 
+// PreferenceHandler is a handler for preferences
 type PreferenceHandler struct {
 	Repo *postgres.PreferenceRepository
 }
 
+// buildPreferencesResponse builds a response from a preference
 func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceResponse {
 	return schemas.PreferenceResponse{
 		ID:              pref.ID,
@@ -29,6 +31,7 @@ func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceRespons
 	}
 }
 
+// CreateUserPreferences godoc
 func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http.Request) {
 	userId, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -60,6 +63,7 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 		return
 	}
 
+	// Return the created preference
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(buildPreferencesResponse(pref))
@@ -90,6 +94,7 @@ func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Req
 		return
 	}
 
+	// Return the preferences
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildPreferencesResponse(pref))
 }
@@ -158,10 +163,12 @@ func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http
 		return
 	}
 
+	// Return the updated preferences
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildPreferencesResponse(pref))
 }
 
+// DeleteUserPreferences deletes user preferences
 func (h *PreferenceHandler) DeletePreference(w http.ResponseWriter, r *http.Request) {
 	userId, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -174,5 +181,6 @@ func (h *PreferenceHandler) DeletePreference(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
+	// Return no content
 	w.WriteHeader(http.StatusNoContent)
 }

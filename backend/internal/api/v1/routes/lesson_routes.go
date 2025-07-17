@@ -6,8 +6,9 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
+// RegisterLessonRoutes registers lesson routes
 func RegisterLessonRoutes(r chi.Router, h *handlers.LessonHandler) {
 	r.Route("/lesson", func(r chi.Router) {
-		r.Get("/", h.GenerateLesson)
+		r.Get("/", h.GenerateLesson) // generate lesson (using token from context)
 	})
 }
