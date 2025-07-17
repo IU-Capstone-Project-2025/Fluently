@@ -7,9 +7,12 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct ProfileScrenView: View {
     @ObservedObject var presenter: ProfileScreenPresenter
+
+    @Query var prefs: [PreferencesModel]
 
     // MARK: - View Constances
     private enum Const {
@@ -24,7 +27,8 @@ struct ProfileScrenView: View {
             infoGrid
         }
         .onAppear {
-            presenter.getPrefs()
+//            presenter.getPrefs()
+            presenter.setupPrefs(prefs.first)
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
@@ -49,9 +53,6 @@ struct ProfileScrenView: View {
                 Text(presenter.account.name ??  "")
                     .foregroundStyle(.orangeSecondary)
                     .font(.appFont.secondaryCaption)
-//                Text(account.familyName ??  "")
-//                    .foregroundStyle(.orangeSecondary)
-//                    .font(.appFont.secondaryCaption)
             }
             Text(presenter.account.mail ?? "")
                 .foregroundStyle(.orangeSecondary)

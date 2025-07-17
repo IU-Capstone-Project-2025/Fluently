@@ -38,13 +38,22 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
         self.interactor = interactor
         self.account = account
         self.authViewModel = authViewModel
-
-        getPrefs()
     }
 
     // Navigation
     func navigateBack() {
         router.navigateBack()
+    }
+
+    func setupPrefs(_ preferences: PreferencesModel?) {
+        guard let preferences else {
+            return
+        }
+        
+        self.preferences = preferences
+        dailyWord = preferences.dailyWord
+        notifications = preferences.notifications
+        notificationAt = preferences.notificationAt
     }
 
     func getPrefs() {

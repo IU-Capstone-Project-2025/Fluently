@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-// TODO: specifi the min width and min height 
 struct WordCardView: View {
     // MARK: - Properties
     @State var word: WordModel

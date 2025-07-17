@@ -18,6 +18,8 @@ struct FluentlyApp: App {
 
     private var apiService = APIService()
 
+    @Environment(\.modelContext) var modelContext
+
 #if targetEnvironment(simulator)
 
     @State private var showLogin = false
@@ -29,6 +31,18 @@ struct FluentlyApp: App {
     @State private var showLaunchScreen = true
 
 #endif
+
+    var dayWordContainer: ModelContainer {
+        do {
+            let container = try ModelContainer(
+                for: DayWord.self,
+            )
+
+            return container
+        } catch {
+            fatalError("Container for dayly word is not created")
+        }
+    }
 
     init () {
         UIView.appearance().overrideUserInterfaceStyle = .light /// brutу force light theme
@@ -87,7 +101,8 @@ struct FluentlyApp: App {
                 for: [
                     CardsModel.self,
                     WordModel.self,
-                    DayWord.self
+                    DayWord.self,
+                    PreferencesModel.self
                 ]
             )
         }
@@ -133,6 +148,17 @@ struct FluentlyApp: App {
                 }
             } catch {
                 print("response receiving error: \(error)")
+            }
+        }
+    }
+
+    private func requestPreferences() {
+        Task {
+            do {
+                let prefs = try await apiService.getPreferences()
+                modelContext.insert(prefs)
+            } catch {
+                print("prefs lost")
             }
         }
     }
