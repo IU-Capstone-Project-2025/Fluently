@@ -9,14 +9,17 @@ import (
 	"gorm.io/gorm"
 )
 
+// LessonRepository is a repository for lessons
 type LessonRepository struct {
 	db *gorm.DB
 }
 
+// NewLessonRepository creates a new instance of LessonRepository
 func NewLessonRepository(db *gorm.DB) *LessonRepository {
 	return &LessonRepository{db: db}
 }
 
+// Create creates a new lesson
 func (r *LessonRepository) Create(ctx context.Context, lesson *models.Lesson, words []uuid.UUID) error {
 	return r.db.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
 		if err := tx.Create(lesson).Error; err != nil {
@@ -39,6 +42,7 @@ func (r *LessonRepository) Create(ctx context.Context, lesson *models.Lesson, wo
 	})
 }
 
+// GetByID returns a lesson by id
 func (r *LessonRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.Lesson, error) {
 	var lesson models.Lesson
 	err := r.db.WithContext(ctx).
@@ -54,6 +58,7 @@ func (r *LessonRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.L
 	return &lesson, nil
 }
 
+// GetLastByUser returns the last lesson for a user
 func (r *LessonRepository) GetLastByUser(ctx context.Context, userID uuid.UUID) (*models.Lesson, error) {
 	var lesson models.Lesson
 	err := r.db.WithContext(ctx).
@@ -82,7 +87,7 @@ func (r *LessonRepository) Delete(ctx context.Context, id uuid.UUID) error {
 	})
 }
 
-// GetWordsForLesson needs for generate cards in lesson
+// GetWordsForLesson needs for generate cards in lesson (random)
 func (r *LessonRepository) GetWordsForLesson(
 	ctx context.Context,
 	userID uuid.UUID,

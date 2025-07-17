@@ -10,18 +10,22 @@ import (
 	"gorm.io/gorm"
 )
 
+// UserRepository is a repository for users
 type UserRepository struct {
 	db *gorm.DB
 }
 
+// NewUserRepository creates a new instance of UserRepository
 func NewUserRepository(db *gorm.DB) *UserRepository {
 	return &UserRepository{db: db}
 }
 
+// Create creates a new user
 func (r *UserRepository) Create(ctx context.Context, user *models.User) error {
 	return r.db.WithContext(ctx).Create(user).Error
 }
 
+// GetByID returns a user by id
 func (r *UserRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.User, error) {
 	var user models.User
 	if err := r.db.WithContext(ctx).First(&user, "id = ?", id).Error; err != nil {
@@ -31,6 +35,7 @@ func (r *UserRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.Use
 	return &user, nil
 }
 
+// GetByEmail returns a user by email
 func (r *UserRepository) GetByEmail(ctx context.Context, email string) (*models.User, error) {
 	var user models.User
 	if err := r.db.WithContext(ctx).First(&user, "email = ?", email).Error; err != nil {
@@ -73,10 +78,12 @@ func (r *UserRepository) ClearRefreshToken(ctx context.Context, userID uuid.UUID
 		Update("refresh_token", "").Error
 }
 
+// Update updates a user
 func (r *UserRepository) Update(ctx context.Context, user *models.User) error {
 	return r.db.WithContext(ctx).Save(user).Error
 }
 
+// Delete deletes a user
 func (r *UserRepository) Delete(ctx context.Context, id uuid.UUID) error {
 	return r.db.WithContext(ctx).Delete(&models.User{}, "id = ?", id).Error
 }

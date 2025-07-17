@@ -6,6 +6,7 @@ import (
 	"github.com/google/uuid"
 )
 
+// Preference is a model for user preferences
 type Preference struct {
 	ID              uuid.UUID  `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
 	UserID          uuid.UUID  `gorm:"type:uuid;not null"`
@@ -19,6 +20,7 @@ type Preference struct {
 	AvatarImageURL  string     `gorm:"type:text"`
 }
 
+// TableName returns the table name for Preference
 func (Preference) TableName() string {
 	return "user_preferences"
 }

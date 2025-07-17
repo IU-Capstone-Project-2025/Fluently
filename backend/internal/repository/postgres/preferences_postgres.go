@@ -10,14 +10,17 @@ import (
 	"gorm.io/gorm"
 )
 
+// PreferenceRepository is a repository for preferences
 type PreferenceRepository struct {
 	db *gorm.DB
 }
 
+// NewPreferenceRepository creates a new instance of PreferenceRepository 
 func NewPreferenceRepository(db *gorm.DB) *PreferenceRepository {
 	return &PreferenceRepository{db: db}
 }
 
+// GetByID returns a preference by id
 func (r *PreferenceRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.Preference, error) {
 	var pref models.Preference
 	if err := r.db.WithContext(ctx).First(&pref, "id = ?", id).Error; err != nil {
@@ -27,6 +30,7 @@ func (r *PreferenceRepository) GetByID(ctx context.Context, id uuid.UUID) (*mode
 	return &pref, nil
 }
 
+// GetByUserID returns a preference by user
 func (r *PreferenceRepository) GetByUserID(ctx context.Context, userID uuid.UUID) (*models.Preference, error) {
 	var pref models.Preference
 	if err := r.db.WithContext(ctx).First(&pref, "user_id = ?", userID).Error; err != nil {
@@ -36,8 +40,7 @@ func (r *PreferenceRepository) GetByUserID(ctx context.Context, userID uuid.UUID
 	return &pref, nil
 }
 
-
-
+// Update updates a preference
 func (r *PreferenceRepository) Update(ctx context.Context, id uuid.UUID, req *schemas.UpdatePreferenceRequest) error {
 	updates := map[string]interface{}{}
 
@@ -76,11 +79,12 @@ func (r *PreferenceRepository) Update(ctx context.Context, id uuid.UUID, req *sc
 		Updates(updates).Error
 }
 
-
+// Create creates a preference
 func (r *PreferenceRepository) Create(ctx context.Context, pref *models.Preference) error {
 	return r.db.WithContext(ctx).Create(pref).Error
 }
 
+// Delete deletes a preference
 func (r *PreferenceRepository) Delete(ctx context.Context, id uuid.UUID) error {
 	return r.db.WithContext(ctx).Delete(&models.Preference{}, "id = ?", id).Error
 }

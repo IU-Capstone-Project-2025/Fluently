@@ -11,6 +11,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// Global variables
 var (
 	db *gorm.DB
 
@@ -23,6 +24,7 @@ var (
 	learnedWordRepo *LearnedWordRepository
 )
 
+// Main function for testing postgres operations
 func TestMain(m *testing.M) {
 	dsn := config.GetPostgresDSNForTest()
 
@@ -32,8 +34,10 @@ func TestMain(m *testing.M) {
 		panic("failed to connect to test database: " + err.Error())
 	}
 
+	// Connect extension for UUID
 	db.Exec(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`)
 
+	// Auto-migrate
 	err = db.AutoMigrate(
 		&models.User{},
 		&models.Word{},
@@ -47,6 +51,7 @@ func TestMain(m *testing.M) {
 		panic("failed to migrate test database")
 	}
 
+	// Initialize repositories
 	userRepo = NewUserRepository(db)
 	wordRepo = NewWordRepository(db)
 	topicRepo = NewTopicRepository(db)
@@ -64,7 +69,9 @@ func TestMain(m *testing.M) {
 	db.Exec("TRUNCATE TABLE pick_options RESTART IDENTITY CASCADE")
 	db.Exec("TRUNCATE TABLE learned_words RESTART IDENTITY CASCADE")
 
+	// Run tests
 	code := m.Run()
 
+	// Close database connection
 	os.Exit(code)
 }

@@ -44,19 +44,22 @@ type Exercise struct {
 	Data interface{} `json:"data"`
 }
 
-// Structure for different exercise
+// ------------ Structures for different exercise types ------------------
 
+// ExercisesTranslateRuToEn is a struct for translate exercise
 type ExerciseTranslateRuToEn struct {
 	Text          string   `json:"text"`
 	CorrectAnswer string   `json:"correct_answer"`
 	PickOptions   []string `json:"pick_options"`
 }
 
+// ExerciseWriteWordFromTranslation is a struct for write exercise
 type ExerciseWriteWordFromTranslation struct {
 	Translation   string `json:"translation"`
 	CorrectAnswer string `json:"correct_answer"`
 }
 
+// ExercisePickOptionSentence is a struct for pick option exercise
 type ExercisePickOptionSentence struct {
 	Template      string   `json:"template"`
 	CorrectAnswer string   `json:"correct_answer"`

@@ -2,6 +2,7 @@ package schemas
 
 import "github.com/google/uuid"
 
+// DayWordResponse is a response for day words
 type DayWordResponse struct {
 	WordID        uuid.UUID  `json:"word_id"`
 	Word          string     `json:"word"`

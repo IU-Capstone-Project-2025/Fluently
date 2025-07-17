@@ -6,6 +6,7 @@ import (
 	"github.com/google/uuid"
 )
 
+// CreatePreferenceRequest is a request body for creating a preference
 type CreatePreferenceRequest struct {
 	UserID         uuid.UUID  `json:"user_id"`
 	CEFRLevel      string     `json:"cefr_level" binding:"required"`
@@ -18,6 +19,7 @@ type CreatePreferenceRequest struct {
 	AvatarImageURL string     `json:"avatar_image_url"`
 }
 
+// UpdatePreferenceRequest is a request body for updating a preference
 type UpdatePreferenceRequest struct {
 	CEFRLevel      *string    `json:"cefr_level,omitempty"`
 	FactEveryday   *bool      `json:"fact_everyday,omitempty"`
@@ -29,6 +31,7 @@ type UpdatePreferenceRequest struct {
 	AvatarImageURL *string    `json:"avatar_image_url,omitempty"`
 }
 
+// PreferenceResponse is a response for a preference
 type PreferenceResponse struct {
 	ID              uuid.UUID  `json:"id"`
 	UserID          uuid.UUID  `json:"user_id"`
