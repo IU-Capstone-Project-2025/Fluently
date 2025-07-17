@@ -10,6 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateAndGetPickOption tests the creation and retrieval of a pick option
 func TestCreateAndGetPickOption(t *testing.T) {
 	ctx := context.Background()
 
@@ -31,6 +32,7 @@ func TestCreateAndGetPickOption(t *testing.T) {
 	assert.Equal(t, pickOption.SentenceID, got.SentenceID)
 }
 
+// TestListPickOptionsByWordID tests the listing of pick options by word id
 func TestListPickOptionsByWordID(t *testing.T) {
 	ctx := context.Background()
 	wordID := uuid.New()
@@ -58,6 +60,7 @@ func TestListPickOptionsByWordID(t *testing.T) {
 	assert.Len(t, opts, 2)
 }
 
+// TestUpdatePickOption tests the updating of a pick option
 func TestUpdatePickOption(t *testing.T) {
 	ctx := context.Background()
 
@@ -79,6 +82,7 @@ func TestUpdatePickOption(t *testing.T) {
 	assert.ElementsMatch(t, []string{"New1", "New2", "New3"}, got.Option)
 }
 
+// TestDeletePickOption tests the deletion of a pick option
 func TestDeletePickOption(t *testing.T) {
 	ctx := context.Background()
 

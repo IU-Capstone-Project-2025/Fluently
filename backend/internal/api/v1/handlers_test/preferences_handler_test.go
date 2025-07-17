@@ -13,6 +13,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateUserPreferences tests the creation of user preferences
 func TestCreateUserPreferences(t *testing.T) {
 	setupTest(t)
 
@@ -53,6 +54,7 @@ func TestCreateUserPreferences(t *testing.T) {
 	assert.Equal(t, "http://example.com/avatar.png", resp.Value("avatar_image_url").String().Raw())
 }
 
+// TestDeletePreference tests the deletion of user preferences
 func TestDeletePreference(t *testing.T) {
 	setupTest(t)
 

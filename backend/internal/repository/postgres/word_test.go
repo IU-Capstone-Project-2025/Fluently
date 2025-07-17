@@ -10,6 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateAndGetWord tests the creation and retrieval of a word
 func TestCreateAndGetWord(t *testing.T) {
 	ctx := context.Background()
 	word := &models.Word{
@@ -34,6 +35,7 @@ func TestCreateAndGetWord(t *testing.T) {
 	assert.Equal(t, word.AudioURL, found.AudioURL)
 }
 
+// TestListWord tests the listing of words
 func TestListWord(t *testing.T) {
 	ctx := context.Background()
 
@@ -42,6 +44,7 @@ func TestListWord(t *testing.T) {
 	assert.NotNil(t, words)
 }
 
+// TestUpdateWord tests the update of a word
 func TestUpdateWord(t *testing.T) {
 	ctx := context.Background()
 	word := &models.Word{
@@ -67,6 +70,7 @@ func TestUpdateWord(t *testing.T) {
 	assert.Equal(t, "Rickroll URL", updated.AudioURL)
 }
 
+// DeleteWord tests the deletion of a word
 func DeleteWord(t *testing.T) {
 	ctx := context.Background()
 	word := &models.Word{

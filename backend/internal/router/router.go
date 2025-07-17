@@ -152,6 +152,7 @@ func flexibleJWTVerifier(next http.Handler) http.Handler {
 			return
 		}
 
+		// Check if token is nil
 		if token == nil {
 			logger.Log.Error("Invalid JWT token - token is nil",
 				zap.String("token_prefix", tokenPrefix),
@@ -193,12 +194,13 @@ func min(a, b int) int {
 	return b
 }
 
+// InitRoutes initializes routes
 func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	// Initialize JWT auth
 	utils.InitJWTAuth()
 
 	r.Use(cors.Handler(cors.Options{
-		AllowedOrigins:   []string{"*"}, // или конкретные
+		AllowedOrigins:   []string{"*"}, // Allow all origins
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
 		ExposedHeaders:   []string{"Link"},

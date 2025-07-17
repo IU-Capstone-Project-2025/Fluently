@@ -36,8 +36,8 @@ import (
 // @in header
 // @name Authorization
 // @description Type "Bearer" followed by a space and JWT token.
-
 func main() {
+	// Config init
 	appConfig.Init()
 	logger.Init(true) // or false for production
 	defer logger.Log.Sync()
@@ -55,27 +55,7 @@ func main() {
 		logger.Log.Fatal("Failed to connect to database", zap.Error(err))
 	}
 
-	// Clean up orphaned records before migration to prevent foreign key constraint violations
-	// logger.Log.Info("Performing database cleanup before migration...")
-
-	// cleanupQueries := map[string]string{
-	// 	"user_preferences": "DELETE FROM user_preferences WHERE user_id NOT IN (SELECT id FROM users)",
-	// 	"learned_words":    "DELETE FROM learned_words WHERE user_id NOT IN (SELECT id FROM users)",
-	// 	"sentences":        "DELETE FROM sentences WHERE topic_id NOT IN (SELECT id FROM topics)",
-	// 	"pick_options":     "DELETE FROM pick_options WHERE sentence_id NOT IN (SELECT id FROM sentences)",
-	// }
-
-	// for table, query := range cleanupQueries {
-	// 	result := db.Exec(query)
-	// 	if result.Error != nil {
-	// 		logger.Log.Warn("Cleanup failed for table", zap.String("table", table), zap.Error(result.Error))
-	// 	} else if result.RowsAffected > 0 {
-	// 		logger.Log.Info("Cleaned orphaned records", zap.String("table", table), zap.Int64("affected_rows", result.RowsAffected))
-	// 	}
-	// }
-
-	// logger.Log.Info("Database cleanup completed, starting migration...")
-
+	// Auto-migrate
 	err = db.AutoMigrate(
 		&models.User{},
 		&models.Preference{},
@@ -90,13 +70,13 @@ func main() {
 	if err != nil {
 		logger.Log.Fatal("Failed to auto-migrate", zap.Error(err))
 	}
-
 	logger.Log.Info("Database migration completed successfully")
 
-	//Init Router
+	//Init Router with routes
 	r := chi.NewRouter()
 	router.InitRoutes(db, r)
 
+	// Start server
 	logger.Log.Info("Logger initialization successful!")
 	logger.Log.Info("App starting",
 		zap.String("name", appConfig.GetConfig().API.AppName),

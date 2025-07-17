@@ -10,10 +10,12 @@ import (
 	"fluently/go-backend/internal/utils"
 )
 
+// SentenceHandler handles the sentence endpoint
 type SentenceHandler struct {
 	Repo *postgres.SentenceRepository
 }
 
+// buildSentenceResponse builds a SentenceResponse from a Sentence
 func buildSentenceResponse(sentence *models.Sentence) schemas.SentenceResponse {
 	return schemas.SentenceResponse{
 		ID:          sentence.ID.String(),
@@ -24,6 +26,7 @@ func buildSentenceResponse(sentence *models.Sentence) schemas.SentenceResponse {
 	}
 }
 
+// ListSentences returns all sentences for a word
 func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) {
 	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
@@ -42,10 +45,12 @@ func (h *SentenceHandler) ListSentences(w http.ResponseWriter, r *http.Request) 
 		resp = append(resp, buildSentenceResponse(&s))
 	}
 
+	// Return the list of sentences
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }
 
+// CreateSentence creates a new sentence
 func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateSentenceRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
@@ -65,11 +70,13 @@ func (h *SentenceHandler) CreateSentence(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
+	// Return the created sentence
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(buildSentenceResponse(&s))
 }
 
+// UpdateSentence updates a sentence
 func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -102,11 +109,13 @@ func (h *SentenceHandler) UpdateSentence(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
+	// Return the updated sentence
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(buildSentenceResponse(sentence))
 }
 
+// DeleteSentence deletes a sentence
 func (h *SentenceHandler) DeleteSentence(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -119,5 +128,6 @@ func (h *SentenceHandler) DeleteSentence(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
+	// Return no content
 	w.WriteHeader(http.StatusNoContent)
 }

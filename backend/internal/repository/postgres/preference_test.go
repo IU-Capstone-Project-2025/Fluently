@@ -12,6 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateAndGetPreference is a test for creating and getting a preference
 func TestCreateAndGetPreference(t *testing.T) {
 	ctx := context.Background()
 
@@ -50,6 +51,7 @@ func TestCreateAndGetPreference(t *testing.T) {
 	assert.Equal(t, pref.Subscribed, found.Subscribed)
 }
 
+// TestUpdatePreference is a test for updating a preference
 func TestUpdatePreference(t *testing.T) {
 	ctx := context.Background()
 	var req schemas.UpdatePreferenceRequest
@@ -91,6 +93,7 @@ func TestUpdatePreference(t *testing.T) {
 	assert.Equal(t, 20, updated.WordsPerDay)
 }
 
+// TestGetByUserID is a test for getting a preference by user
 func TestGetByUserID(t *testing.T) {
 	ctx := context.Background()
 
@@ -120,6 +123,7 @@ func TestGetByUserID(t *testing.T) {
 	assert.Equal(t, user.ID, found.UserID)
 }
 
+// TestDeletePreference is a test for deleting a preference
 func TestDeletePreference(t *testing.T) {
 	ctx := context.Background()
 

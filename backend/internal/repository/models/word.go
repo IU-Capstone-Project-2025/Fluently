@@ -4,6 +4,7 @@ import (
 	"github.com/google/uuid"
 )
 
+// Word is a model for words
 type Word struct {
 	ID           uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
 	Word         string    `gorm:"type:varchar(30);not null"`
@@ -14,10 +15,10 @@ type Word struct {
 	AudioURL     string    `gorm:"type:text"`
 	Phonetic     string    `gorm:"type:varchar(100)"` // phonetic transcription
 
-	TopicID *uuid.UUID `gorm:"type:uuid"` // foreign key to Topic
-	Topic   *Topic     `gorm:"foreignKey:TopicID;constraint:OnUpdate:CASCADE,OnDelete:SET NULL"`
+	TopicID *uuid.UUID `gorm:"type:uuid"`                                                        // foreign key to Topic
+	Topic   *Topic     `gorm:"foreignKey:TopicID;constraint:OnUpdate:CASCADE,OnDelete:SET NULL"` // Topic has many words
 
-	Sentences []Sentence `gorm:"foreignKey:WordID;constraint:OnDelete:CASCADE"`
+	Sentences []Sentence `gorm:"foreignKey:WordID;constraint:OnDelete:CASCADE"` // Word has many sentences
 }
 
 func (Word) TableName() string {

@@ -12,10 +12,12 @@ import (
 	"github.com/google/uuid"
 )
 
+// LearnedWordHandler is a handler for learned words
 type LearnedWordHandler struct {
 	Repo *postgres.LearnedWordRepository
 }
 
+// buildLearnedWordResponse builds a response from a learned word
 func buildLearnedWordResponse(word *models.LearnedWords) schemas.LearnedWordResponse {
 	return schemas.LearnedWordResponse{
 		UserID:          word.UserID,
@@ -27,6 +29,7 @@ func buildLearnedWordResponse(word *models.LearnedWords) schemas.LearnedWordResp
 	}
 }
 
+// GetLearnedWords returns all learned words
 func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -45,10 +48,12 @@ func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Requ
 		resp = append(resp, buildLearnedWordResponse(&w))
 	}
 
+	// Return the list of learned words
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }
 
+// GetLearnedWord returns a single learned word for a user
 func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -68,10 +73,12 @@ func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
+	// Return the learned word
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildLearnedWordResponse(word))
 }
 
+// CreateLearnedWord creates a new learned word
 func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -104,10 +111,12 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 		return
 	}
 
+	// Return the created learned word
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 }
 
+// UpdateLearnedWord updates a learned word
 func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -143,10 +152,12 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 		return
 	}
 
+	// Return the updated learned word
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
 
+// DeleteLearnedWord deletes a learned word
 func (h *LearnedWordHandler) DeleteLearnedWord(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -165,5 +176,6 @@ func (h *LearnedWordHandler) DeleteLearnedWord(w http.ResponseWriter, r *http.Re
 		return
 	}
 
+	// Return no content
 	w.WriteHeader(http.StatusNoContent)
 }

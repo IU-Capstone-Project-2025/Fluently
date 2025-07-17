@@ -6,6 +6,7 @@ import (
 	"github.com/google/uuid"
 )
 
+// User is a model for users
 type User struct {
 	ID           uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
 	GoogleID     string    `gorm:"type:varchar(100)"`
@@ -20,9 +21,10 @@ type User struct {
 	IsActive     bool      `gorm:"default:true"`
 	CreatedAt    time.Time `gorm:"autoCreateTime"`
 
-	Pref *Preference `gorm:"foreignKey:UserID;constraint:OnUpdate:CASCADE,OnDelete: SET NULL"`
+	Pref *Preference `gorm:"foreignKey:UserID;constraint:OnUpdate:CASCADE,OnDelete: SET NULL"` // One-to-one relationship
 }
 
+// TableName returns the table name for User
 func (User) TableName() string {
 	return "users"
 }

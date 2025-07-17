@@ -13,10 +13,11 @@ import (
 	"go.uber.org/zap"
 )
 
+// contextKey is a custom type for context keys
 type contextKey string
 
 const (
-	UserContextKey contextKey = "user"
+	UserContextKey contextKey = "user" // Key for user in context
 )
 
 // CustomAuthenticator is a custom version of jwtauth.Authenticator that returns JSON errors

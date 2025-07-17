@@ -6,6 +6,7 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
+// RegisterTopicRoutes registers topic routes
 func RegisterTopicRoutes(r chi.Router, h *handler.TopicHandler) {
 	r.Route("/topics", func(r chi.Router) {
 		r.Post("/", h.CreateTopic)
