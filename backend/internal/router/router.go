@@ -243,6 +243,15 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	})
 	r.Get("/swagger/*", httpSwagger.WrapHandler)
 
+	userRepo := postgres.NewUserRepository(db)
+	wordRepo := postgres.NewWordRepository(db)
+	sentenceRepo := postgres.NewSentenceRepository(db)
+	learnedWordRepo := postgres.NewLearnedWordRepository(db)
+	preferenceRepo := postgres.NewPreferenceRepository(db)
+	pickOptionRepo := postgres.NewPickOptionRepository(db)
+	topicRepo := postgres.NewTopicRepository(db)
+	lessonRepo := postgres.NewLessonRepository(db)
+
 	// Protected routes using flexible JWT authentication
 	r.Route("/api/v1", func(r chi.Router) {
 		// JWT authentication middleware (supports both "Bearer token" and "token" formats)
@@ -250,31 +259,31 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		r.Use(authMiddleware.CustomAuthenticator)
 
 		// Protected API routes
-		routes.RegisterUserRoutes(r, &handlers.UserHandler{Repo: postgres.NewUserRepository(db)})
-		routes.RegisterWordRoutes(r, &handlers.WordHandler{Repo: postgres.NewWordRepository(db)})
-		routes.RegisterSentenceRoutes(r, &handlers.SentenceHandler{Repo: postgres.NewSentenceRepository(db)})
-		routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: postgres.NewLearnedWordRepository(db)})
-		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: postgres.NewPreferenceRepository(db)})
-		routes.RegisterPickOptionRoutes(r, &handlers.PickOptionHandler{Repo: postgres.NewPickOptionRepository(db)})
+		routes.RegisterUserRoutes(r, &handlers.UserHandler{Repo: userRepo})
+		routes.RegisterWordRoutes(r, &handlers.WordHandler{Repo: wordRepo})
+		routes.RegisterSentenceRoutes(r, &handlers.SentenceHandler{Repo: sentenceRepo})
+		routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: learnedWordRepo})
+		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: preferenceRepo})
+		routes.RegisterPickOptionRoutes(r, &handlers.PickOptionHandler{Repo: pickOptionRepo})
 		routes.RegisterProgressRoutes(r, &handlers.ProgressHandler{
-			WordRepo:        postgres.NewWordRepository(db),
-			LearnedWordRepo: postgres.NewLearnedWordRepository(db),
+			WordRepo:        wordRepo,
+			LearnedWordRepo: learnedWordRepo,
 		})
 		routes.RegisterDayWordRoutes(r, &handlers.DayWordHandler{
-			WordRepo:        postgres.NewWordRepository(db),
-			PreferenceRepo:  postgres.NewPreferenceRepository(db),
-			TopicRepo:       postgres.NewTopicRepository(db),
-			SentenceRepo:    postgres.NewSentenceRepository(db),
-			PickOptionRepo:  postgres.NewPickOptionRepository(db),
-			LearnedWordRepo: postgres.NewLearnedWordRepository(db),
+			WordRepo:        wordRepo,
+			PreferenceRepo:  preferenceRepo,
+			TopicRepo:       topicRepo,
+			SentenceRepo:    sentenceRepo,
+			PickOptionRepo:  pickOptionRepo,
+			LearnedWordRepo: learnedWordRepo,
 		})
 		routes.RegisterLessonRoutes(r, &handlers.LessonHandler{
-			PreferenceRepo: postgres.NewPreferenceRepository(db),
-			TopicRepo:      postgres.NewTopicRepository(db),
-			SentenceRepo:   postgres.NewSentenceRepository(db),
-			PickOptionRepo: postgres.NewPickOptionRepository(db),
-			WordRepo:       postgres.NewWordRepository(db),
-			Repo:           postgres.NewLessonRepository(db),
+			PreferenceRepo: preferenceRepo,
+			TopicRepo:      topicRepo,
+			SentenceRepo:   sentenceRepo,
+			PickOptionRepo: pickOptionRepo,
+			WordRepo:       wordRepo,
+			Repo:           lessonRepo,
 		})
 
 		// --- new AI-related routes ---
