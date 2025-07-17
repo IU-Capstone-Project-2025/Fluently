@@ -31,7 +31,7 @@ func TestCreatePickOption(t *testing.T) {
 		"options":     []string{"one", "two", "three"},
 	}
 
-	resp := e.POST("/api/v1/pick-options/").
+	resp := e.POST("/pick-options").
 		WithJSON(body).
 		Expect().
 		Status(http.StatusCreated).
@@ -56,7 +56,7 @@ func TestGetPickOption(t *testing.T) {
 	err := pickOptionRepo.Create(context.Background(), &option)
 	assert.NoError(t, err)
 
-	resp := e.GET("/api/v1/pick-options/" + option.ID.String()).
+	resp := e.GET("/pick-options/" + option.ID.String()).
 		Expect().
 		Status(http.StatusOK).
 		JSON().Object()
@@ -85,7 +85,7 @@ func TestUpdatePickOption(t *testing.T) {
 		"options":     []string{"new1", "new2", "new3"},
 	}
 
-	e.PUT("/api/v1/pick-options/" + option.ID.String()).
+	e.PUT("/pick-options/" + option.ID.String()).
 		WithJSON(update).
 		Expect().
 		Status(http.StatusOK)
@@ -109,7 +109,7 @@ func TestDeletePickOption(t *testing.T) {
 	err := pickOptionRepo.Create(context.Background(), &option)
 	assert.NoError(t, err)
 
-	e.DELETE("/api/v1/pick-options/" + option.ID.String()).
+	e.DELETE("/pick-options/" + option.ID.String()).
 		Expect().
 		Status(http.StatusNoContent)
 
@@ -148,7 +148,7 @@ func TestListPickOptions(t *testing.T) {
 		assert.NoError(t, err)
 	}
 
-	resp := e.GET("/api/v1/words/" + wordID.String() + "/pick-options").
+	resp := e.GET("/words/" + wordID.String() + "/pick-options").
 		Expect().
 		Status(http.StatusOK).
 		JSON().Array()
