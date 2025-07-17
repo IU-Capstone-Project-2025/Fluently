@@ -22,6 +22,7 @@ type Config struct {
 	Logger   LoggerConfig
 	Google   GoogleConfig
 	Swagger  SwaggerConfig
+	Redis    RedisConfig
 }
 
 // AuthConfig represents the authentication configuration
@@ -72,6 +73,11 @@ type GoogleConfig struct {
 type SwaggerConfig struct {
 	AllowedEmails map[string]bool
 	Host          string
+}
+
+// RedisConfig represents the Redis configuration
+type RedisConfig struct {
+	ChatLockTTL time.Duration
 }
 
 // Init loads the configuration from environment variables
@@ -136,6 +142,9 @@ func Init() {
 		Swagger: SwaggerConfig{
 			AllowedEmails: parseEmailWhitelist(viper.GetString("SWAGGER_ALLOWED_EMAILS")),
 			Host:          viper.GetString("SWAGGER_HOST"),
+		},
+		Redis: RedisConfig{
+			ChatLockTTL: viper.GetDuration("REDIS_CHAT_LOCK_TTL"),
 		},
 	}
 }

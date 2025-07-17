@@ -66,6 +66,7 @@ func main() {
 		&models.RefreshToken{},
 		&models.LearnedWords{},
 		&models.LinkToken{},
+		&models.ChatHistory{},
 	)
 	if err != nil {
 		logger.Log.Fatal("Failed to auto-migrate", zap.Error(err))
