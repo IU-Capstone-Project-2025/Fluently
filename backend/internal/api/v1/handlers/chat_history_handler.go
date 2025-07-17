@@ -3,6 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
 	"time"
 
 	schemas "fluently/go-backend/internal/repository/schemas"
@@ -39,20 +40,31 @@ type ChatHistoryHandler struct {
 // @Failure 401 {object} schemas.ErrorResponse
 // @Router /api/v1/chat/history [get]
 func (h *ChatHistoryHandler) GetHistory(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/chat/history"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	ctx := r.Context()
 	user, err := utils.GetCurrentUser(ctx)
 	if err != nil {
+		statusCode = 401
 		http.Error(w, "unauthorized", http.StatusUnauthorized)
 		return
 	}
 
 	dayStr := r.URL.Query().Get("day")
 	if dayStr == "" {
+		statusCode = 400
 		http.Error(w, "query param 'day' required", http.StatusBadRequest)
 		return
 	}
 	dayTime, err := time.Parse(time.RFC3339, dayStr)
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid day format", http.StatusBadRequest)
 		return
 	}
@@ -62,6 +74,7 @@ func (h *ChatHistoryHandler) GetHistory(w http.ResponseWriter, r *http.Request) 
 
 	histories, err := h.Repo.ListByUserAndDay(ctx, user.ID, dayStart, dayEnd)
 	if err != nil {
+		statusCode = 500
 		http.Error(w, "db error", http.StatusInternalServerError)
 		return
 	}
@@ -71,6 +84,7 @@ func (h *ChatHistoryHandler) GetHistory(w http.ResponseWriter, r *http.Request) 
 		var chat []ChatMessage
 		err = json.Unmarshal(hst.Messages, &chat)
 		if err != nil {
+			statusCode = 500
 			logger.Log.Error("failed to unmarshal chat history", zap.Error(err))
 			http.Error(w, "failed to unmarshal chat history", http.StatusInternalServerError)
 			return
@@ -85,6 +99,7 @@ func (h *ChatHistoryHandler) GetHistory(w http.ResponseWriter, r *http.Request) 
 	w.Header().Set("Content-Type", "application/json")
 	err = json.NewEncoder(w).Encode(resp)
 	if err != nil {
+		statusCode = 500
 		logger.Log.Error("failed to encode response", zap.Error(err))
 		http.Error(w, "failed to encode response", http.StatusInternalServerError)
 		return

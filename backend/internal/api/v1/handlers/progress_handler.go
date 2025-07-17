@@ -3,6 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
 	"time"
 
 	"fluently/go-backend/internal/repository/models"
@@ -38,8 +39,18 @@ type ProgressRequest struct {
 // @Success      200  {string}  string  "ok"
 // @Router       /api/v1/progress [post]
 func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/progress"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
+		statusCode = 400
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -49,6 +60,7 @@ func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Requ
 	var progress []ProgressRequest
 	err = json.NewDecoder(r.Body).Decode(&progress)
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
@@ -56,12 +68,14 @@ func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Requ
 	for _, p := range progress {
 		word, err := h.WordRepo.GetByID(r.Context(), p.WordID)
 		if err != nil {
+			statusCode = 404
 			http.Error(w, "word not found: "+err.Error(), http.StatusNotFound)
 			return
 		}
 
 		existing, err := h.LearnedWordRepo.GetByUserWordID(r.Context(), userID, word.ID)
 		if err != nil && err != gorm.ErrRecordNotFound {
+			statusCode = 500
 			http.Error(w, "failed to get learned word", http.StatusInternalServerError)
 			return
 		}
@@ -79,6 +93,7 @@ func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Requ
 				ConfidenceScore:  p.ConfidenceScore,
 			}
 			if err := h.LearnedWordRepo.Create(r.Context(), lw); err != nil {
+				statusCode = 500
 				http.Error(w, "failed to create learned word", http.StatusInternalServerError)
 				return
 			}
@@ -89,6 +104,7 @@ func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Requ
 			existing.ConfidenceScore = p.ConfidenceScore
 
 			if err := h.LearnedWordRepo.Update(r.Context(), existing); err != nil {
+				statusCode = 500
 				http.Error(w, "failed to update learned word", http.StatusInternalServerError)
 				return
 			}

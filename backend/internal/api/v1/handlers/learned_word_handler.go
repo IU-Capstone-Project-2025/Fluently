@@ -3,6 +3,8 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
+	"time"
 
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
@@ -31,14 +33,24 @@ func buildLearnedWordResponse(word *models.LearnedWords) schemas.LearnedWordResp
 
 // GetLearnedWords returns all learned words
 func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/learned-words"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid user_id", http.StatusBadRequest)
 		return
 	}
 
 	words, err := h.Repo.ListByUserID(r.Context(), userID)
 	if err != nil {
+		statusCode = 500
 		http.Error(w, "failed to fetch learned words", http.StatusInternalServerError)
 		return
 	}
@@ -55,20 +67,31 @@ func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Requ
 
 // GetLearnedWord returns a single learned word for a user
 func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/learned-words/{user_id}/{word_id}"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid user_id", http.StatusBadRequest)
 		return
 	}
 
 	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid word_id", http.StatusBadRequest)
 		return
 	}
 
 	word, err := h.Repo.GetByUserWordID(r.Context(), userID, wordID)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "learned word not found", http.StatusNotFound)
 		return
 	}
@@ -80,19 +103,30 @@ func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Reque
 
 // CreateLearnedWord creates a new learned word
 func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/learned-words"
+	method := r.Method
+	statusCode := 201
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid user_id", http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.CreateLearnedWordRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	if req.UserID != uuid.Nil && req.UserID != userID {
+		statusCode = 400
 		http.Error(w, "user_id mismatch", http.StatusBadRequest)
 		return
 	}
@@ -107,6 +141,7 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 	}
 
 	if err := h.Repo.Create(r.Context(), &word); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to create learned word", http.StatusInternalServerError)
 		return
 	}
@@ -118,26 +153,38 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 
 // UpdateLearnedWord updates a learned word
 func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/learned-words/{user_id}/{word_id}"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid user_id", http.StatusBadRequest)
 		return
 	}
 
 	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid word_id", http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.CreateLearnedWordRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	word, err := h.Repo.GetByUserWordID(r.Context(), userID, wordID)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "learned word not found", http.StatusNotFound)
 		return
 	}
@@ -148,6 +195,7 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 	word.ConfidenceScore = req.ConfidenceScore
 
 	if err := h.Repo.Update(r.Context(), word); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to update", http.StatusInternalServerError)
 		return
 	}
@@ -159,19 +207,30 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 
 // DeleteLearnedWord deletes a learned word
 func (h *LearnedWordHandler) DeleteLearnedWord(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/learned-words/{user_id}/{word_id}"
+	method := r.Method
+	statusCode := 204
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	userID, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid user_id", http.StatusBadRequest)
 		return
 	}
 
 	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid word_id", http.StatusBadRequest)
 		return
 	}
 
 	if err := h.Repo.Delete(r.Context(), userID, wordID); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to delete learned word", http.StatusInternalServerError)
 		return
 	}
