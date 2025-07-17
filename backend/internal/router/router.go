@@ -261,11 +261,11 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 			LearnedWordRepo: postgres.NewLearnedWordRepository(db),
 		})
 		routes.RegisterDayWordRoutes(r, &handlers.DayWordHandler{
-			WordRepo:       postgres.NewWordRepository(db),
-			PreferenceRepo: postgres.NewPreferenceRepository(db),
-			TopicRepo:      postgres.NewTopicRepository(db),
-			SentenceRepo:   postgres.NewSentenceRepository(db),
-			PickOptionRepo: postgres.NewPickOptionRepository(db),
+			WordRepo:        postgres.NewWordRepository(db),
+			PreferenceRepo:  postgres.NewPreferenceRepository(db),
+			TopicRepo:       postgres.NewTopicRepository(db),
+			SentenceRepo:    postgres.NewSentenceRepository(db),
+			PickOptionRepo:  postgres.NewPickOptionRepository(db),
 			LearnedWordRepo: postgres.NewLearnedWordRepository(db),
 		})
 		routes.RegisterLessonRoutes(r, &handlers.LessonHandler{
@@ -276,5 +276,22 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 			WordRepo:       postgres.NewWordRepository(db),
 			Repo:           postgres.NewLessonRepository(db),
 		})
+
+		// --- new AI-related routes ---
+		chatHandler := &handlers.ChatHandler{
+			Redis:       utils.Redis(),
+			HistoryRepo: postgres.NewChatHistoryRepository(db),
+			LLMClient:   utils.NewLLMClient(utils.LLMClientConfig{}),
+		}
+		distractorHandler := &handlers.DistractorHandler{
+			Client: utils.NewDistractorClient(utils.DistractorClientConfig{}),
+		}
+		thesaurusHandler := &handlers.ThesaurusHandler{
+			Client: utils.NewThesaurusClient(utils.ThesaurusClientConfig{}),
+		}
+
+		routes.RegisterChatRoutes(r, chatHandler)
+		routes.RegisterDistractorRoutes(r, distractorHandler)
+		routes.RegisterThesaurusRoutes(r, thesaurusHandler)
 	})
 }
