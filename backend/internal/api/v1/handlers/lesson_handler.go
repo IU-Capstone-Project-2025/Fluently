@@ -20,13 +20,6 @@ import (
 	"gorm.io/gorm"
 )
 
-// List of exercise types
-var exerciseTypes = []string{
-	"translate_ru_to_en",
-	"write_word_from_translation",
-	"pick_option_sentence",
-}
-
 // LessonHandler handles the lesson endpoint
 type LessonHandler struct {
 	PreferenceRepo  *postgres.PreferenceRepository
