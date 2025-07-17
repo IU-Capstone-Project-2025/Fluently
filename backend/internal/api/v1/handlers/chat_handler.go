@@ -14,6 +14,8 @@ import (
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/schemas"
 
+	"strconv"
+
 	"github.com/bsm/redislock"
 	"github.com/google/uuid"
 	goredis "github.com/redis/go-redis/v9"
@@ -51,10 +53,11 @@ var stopWords = []string{"finish", "всё", "хочу закончить"}
 
 // Chat godoc
 // @Summary Отправить сообщение в диалоге с ИИ
-// @Description Добавляет очередное сообщение пользователя, получает ответ LLM, сохраняет историю в Redis. При обнаружении стоп-слов диалог считается завершённым и будет сохранён в базу.
+// @Description Добавляет очередное сообщение пользователя, получает ответ LLM, сохраняет историю в Redis. Возможные значения для поля Author: "user", "llm".
 // @Tags Chat
 // @Accept json
 // @Produce json
+// @Security BearerAuth
 // @Param request body ChatRequest true "Сообщения диалога"
 // @Success 200 {object} ChatResponse
 // @Failure 400 {object} schemas.ErrorResponse
@@ -62,13 +65,23 @@ var stopWords = []string{"finish", "всё", "хочу закончить"}
 // @Failure 500 {object} schemas.ErrorResponse
 // @Router /api/v1/chat [post]
 func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/chat"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	ctx := r.Context()
 	var req ChatRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid body", http.StatusBadRequest)
 		return
 	}
 	if len(req.Chat) == 0 {
+		statusCode = 400
 		http.Error(w, "chat array empty", http.StatusBadRequest)
 		return
 	}
@@ -77,15 +90,18 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 	// /chat/finish) for the same user are serialized.
 	user, err := utils.GetCurrentUser(ctx)
 	if err != nil {
+		statusCode = 401
 		http.Error(w, "unauthorized", http.StatusUnauthorized)
 		return
 	}
 
 	lock, err := utils.AcquireChatLock(ctx, user.ID)
 	if err == redislock.ErrNotObtained {
+		statusCode = 429
 		http.Error(w, "another chat operation is in progress", http.StatusTooManyRequests)
 		return
 	} else if err != nil {
+		statusCode = 500
 		logger.Log.Error("failed to acquire chat lock", zap.Error(err))
 		http.Error(w, "internal error", http.StatusInternalServerError)
 		return
@@ -109,11 +125,13 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 	reply, err := h.LLMClient.Chat(ctx, llmMsgs, "balanced", nil, nil)
 	logger.Log.Info("LLM reply", zap.String("reply", reply))
 	if reply == "" {
+		statusCode = 500
 		logger.Log.Error("LLM reply is empty")
 		http.Error(w, "LLM reply is empty", http.StatusInternalServerError)
 		return
 	}
 	if err != nil {
+		statusCode = 500
 		logger.Log.Error("LLM error", zap.Error(err))
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -134,6 +152,7 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 	if len(req.Chat) > 1 {
 		lastMsg = strings.ToLower(req.Chat[len(req.Chat)-2].Message)
 	} else {
+		statusCode = 500
 		logger.Log.Error("no last message")
 		http.Error(w, "no last message", http.StatusInternalServerError)
 		return
@@ -161,24 +180,36 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 // @Summary Завершить диалог с ИИ
 // @Description Принудительно завершает текущий диалог: переносит историю из Redis в Postgres и очищает кеш.
 // @Tags Chat
+// @Security BearerAuth
 // @Produce json
 // @Success 204 "Диалог сохранён, ответ без тела"
 // @Failure 401 {object} schemas.ErrorResponse
 // @Failure 500 {object} schemas.ErrorResponse
 // @Router /api/v1/chat/finish [post]
 func (h *ChatHandler) FinishChat(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/chat/finish"
+	method := r.Method
+	statusCode := 204
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	ctx := r.Context()
 	user, err := utils.GetCurrentUser(ctx)
 	if err != nil {
+		statusCode = 401
 		http.Error(w, "unauthorized", http.StatusUnauthorized)
 		return
 	}
 
 	lock, err := utils.AcquireChatLock(ctx, user.ID)
 	if err == redislock.ErrNotObtained {
+		statusCode = 429
 		http.Error(w, "chat operation in progress, try later", http.StatusTooManyRequests)
 		return
 	} else if err != nil {
+		statusCode = 500
 		logger.Log.Error("failed to acquire chat lock", zap.Error(err))
 		http.Error(w, "internal error", http.StatusInternalServerError)
 		return
@@ -186,6 +217,7 @@ func (h *ChatHandler) FinishChat(w http.ResponseWriter, r *http.Request) {
 	defer lock.Release(ctx)
 
 	if err := h.flushChat(ctx, user.ID); err != nil {
+		statusCode = 500
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}

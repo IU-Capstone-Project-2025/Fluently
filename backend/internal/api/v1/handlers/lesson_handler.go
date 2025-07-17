@@ -5,6 +5,7 @@ import (
 	"errors"
 	"math/rand"
 	"net/http"
+	"strconv"
 	"strings"
 	"time"
 
@@ -63,8 +64,18 @@ func replaceWordWithUnderscores(text, word string) string {
 // @Failure 500 {string} string "Internal server error"
 // @Router /api/v1/lesson [get]
 func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/lesson"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
+		statusCode = 400
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -76,6 +87,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 
 	userPref, err := h.PreferenceRepo.GetByUserID(r.Context(), userID)
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "failed to get preference", http.StatusBadRequest)
 		return
 	}
@@ -92,6 +104,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 	// 1. Gather list of words the user already knows
 	learnedWords, err := h.LearnedWordRepo.ListByUserID(r.Context(), userID)
 	if err != nil {
+		statusCode = 500
 		logger.Log.Error("Failed to list learned words", zap.Error(err))
 		http.Error(w, "failed to list learned words", http.StatusInternalServerError)
 		return
@@ -149,6 +162,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 			remaining,
 		)
 		if err != nil {
+			statusCode = 400
 			logger.Log.Error("Failed to get fallback words", zap.Error(err))
 			http.Error(w, "failed to get words for lesson", http.StatusBadRequest)
 			return
@@ -166,6 +180,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if len(words) == 0 {
+		statusCode = 500
 		http.Error(w, "no suitable words found for lesson", http.StatusInternalServerError)
 		return
 	}
@@ -185,6 +200,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 
 		topic, err := h.TopicRepo.GetByID(r.Context(), *word.TopicID)
 		if err != nil {
+			statusCode = 400
 			http.Error(w, "failed to get topic", http.StatusBadRequest)
 			return
 		}
@@ -195,6 +211,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		for topic.ParentID != nil {
 			topic, err = h.TopicRepo.GetByID(r.Context(), *topic.ParentID)
 			if err != nil {
+				statusCode = 400
 				http.Error(w, "failed to get topic", http.StatusBadRequest)
 				return
 			}
@@ -205,6 +222,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		// Sentence process
 		sentences, err := h.SentenceRepo.GetByWordID(r.Context(), word.ID)
 		if err != nil {
+			statusCode = 400
 			http.Error(w, "failed to get sentence", http.StatusBadRequest)
 			return
 		}
@@ -233,6 +251,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 					Option: []string{word.Word},
 				}
 			} else {
+				statusCode = 500
 				http.Error(w, "failed to get pick option", http.StatusInternalServerError)
 				return
 			}
@@ -243,6 +262,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 
 			randomWords, err := h.WordRepo.GetRandomWordsByCEFRLevel(r.Context(), userPref.CEFRLevel, optionToAdd)
 			if err != nil {
+				statusCode = 400
 				http.Error(w, "failed to get random words", http.StatusBadRequest)
 				return
 			}
@@ -312,6 +332,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	if err := json.NewEncoder(w).Encode(lesson); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to encode response", http.StatusInternalServerError)
 		return
 	}

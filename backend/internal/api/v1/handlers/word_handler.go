@@ -3,6 +3,8 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
+	"time"
 
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
@@ -11,6 +13,9 @@ import (
 
 	"github.com/google/uuid"
 )
+
+// swagger:ignore
+var _ schemas.ErrorResponse
 
 // WordHandler handles the word endpoint
 type WordHandler struct {
@@ -43,8 +48,17 @@ func buildWordResponse(w *models.Word) schemas.WordResponse {
 
 // ListWords lists all words
 func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/words"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	words, err := h.Repo.ListWords(r.Context())
 	if err != nil {
+		statusCode = 500
 		http.Error(w, "failed to fetch words", http.StatusInternalServerError)
 		return
 	}
@@ -61,14 +75,24 @@ func (h *WordHandler) ListWords(w http.ResponseWriter, r *http.Request) {
 
 // GetWord gets a word
 func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/words/{id}"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	word, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "word not found", http.StatusNotFound)
 		return
 	}
@@ -80,8 +104,17 @@ func (h *WordHandler) GetWord(w http.ResponseWriter, r *http.Request) {
 
 // CreateWord creates a new word
 func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/words"
+	method := r.Method
+	statusCode := 201
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	var req schemas.CreateWordRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
@@ -106,6 +139,7 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := h.Repo.Create(r.Context(), &word); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to create word", http.StatusInternalServerError)
 		return
 	}
@@ -128,20 +162,31 @@ func (h *WordHandler) CreateWord(w http.ResponseWriter, r *http.Request) {
 
 // UpdateWord updates a word
 func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/words/{id}"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.CreateWordRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	word, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "word not found", http.StatusNotFound)
 		return
 	}
@@ -169,6 +214,7 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := h.Repo.Update(r.Context(), word); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to update word", http.StatusInternalServerError)
 		return
 	}
@@ -190,13 +236,23 @@ func (h *WordHandler) UpdateWord(w http.ResponseWriter, r *http.Request) {
 
 // DeleteWord deletes a word
 func (h *WordHandler) DeleteWord(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/words/{id}"
+	method := r.Method
+	statusCode := 204
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	if err := h.Repo.Delete(r.Context(), id); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to delete word", http.StatusInternalServerError)
 		return
 	}
