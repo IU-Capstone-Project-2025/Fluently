@@ -290,7 +290,8 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 			Client: utils.NewThesaurusClient(utils.ThesaurusClientConfig{}),
 		}
 
-		routes.RegisterChatRoutes(r, chatHandler)
+		chatHistoryHandler := &handlers.ChatHistoryHandler{Repo: postgres.NewChatHistoryRepository(db)}
+		routes.RegisterChatRoutes(r, chatHandler, chatHistoryHandler)
 		routes.RegisterDistractorRoutes(r, distractorHandler)
 		routes.RegisterThesaurusRoutes(r, thesaurusHandler)
 	})

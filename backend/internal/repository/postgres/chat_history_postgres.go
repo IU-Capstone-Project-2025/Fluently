@@ -3,6 +3,7 @@ package postgres
 import (
 	"context"
 	"encoding/json"
+	"time"
 
 	"fluently/go-backend/internal/repository/models"
 
@@ -33,6 +34,16 @@ func (r *ChatHistoryRepository) ListByUser(ctx context.Context, userID uuid.UUID
 		query = query.Limit(limit)
 	}
 	err := query.Find(&list).Error
+	return list, err
+}
+
+// ListByUserAndDay returns histories for a specific user created on a given UTC day.
+func (r *ChatHistoryRepository) ListByUserAndDay(ctx context.Context, userID uuid.UUID, dayStart, dayEnd time.Time) ([]models.ChatHistory, error) {
+	var list []models.ChatHistory
+	err := r.db.WithContext(ctx).
+		Where("user_id = ? AND created_at >= ? AND created_at < ?", userID, dayStart, dayEnd).
+		Order("created_at ASC").
+		Find(&list).Error
 	return list, err
 }
 
