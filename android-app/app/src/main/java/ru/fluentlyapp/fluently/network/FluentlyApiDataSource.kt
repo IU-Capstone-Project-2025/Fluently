@@ -6,9 +6,11 @@ import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import retrofit2.Response
 import ru.fluentlyapp.fluently.common.model.Lesson
+import ru.fluentlyapp.fluently.network.model.Chat
 import ru.fluentlyapp.fluently.network.model.Progress
 import ru.fluentlyapp.fluently.network.model.WordOfTheDay
 import ru.fluentlyapp.fluently.network.model.internal.CardApiModel
+import ru.fluentlyapp.fluently.network.model.internal.ChatResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.LessonResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.WordOfTheDayResponseBody
 import ru.fluentlyapp.fluently.network.services.FluentlyApiService
@@ -16,16 +18,15 @@ import timber.log.Timber
 import javax.inject.Inject
 
 interface FluentlyApiDataSource {
-    /**
-     * Fetch the generated lesson user from the server.
-     *
-     * May throw exception.
-     */
     suspend fun getLesson(): Lesson
 
     suspend fun sendProgress(progress: Progress): Unit
 
     suspend fun getWordOfTheDay(): WordOfTheDay
+
+    suspend fun sendChat(chat: Chat): Chat
+
+    suspend fun sendFinish()
 }
 
 class FluentlyApiDefaultDataSource @Inject constructor(
@@ -69,6 +70,22 @@ class FluentlyApiDefaultDataSource @Inject constructor(
             val response = fluentlyApiService.getDayOfTheWord()
             val body: WordOfTheDayResponseBody = getSuccessfulResponseBody(response)
             body.toWordOfTheDay()
+        }
+    }
+
+    override suspend fun sendChat(chat: Chat): Chat {
+        return withContext(Dispatchers.IO) {
+            Timber.d("Performing request sendChat")
+            val response = fluentlyApiService.sendChat(chat.toChatRequestBody())
+            val body: ChatResponseBody = getSuccessfulResponseBody(response)
+            body.toChat()
+        }
+    }
+
+    override suspend fun sendFinish() {
+        withContext(Dispatchers.IO) {
+            Timber.d("Performing sendFinish")
+            fluentlyApiService.sendFinish()
         }
     }
 }

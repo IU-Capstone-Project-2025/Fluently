@@ -72,14 +72,17 @@ class WordOfTheDayRepository @Inject constructor(
     fun isWordOfTheDayLearning(): Flow<Boolean> {
         val today = LocalDate.now()
         return wordProgressRepository.getProgresses(
-            beginDate = today.atStartOfDay(ZoneId.systemDefault()).toInstant(),
+            beginDate = today.minusDays(1).atStartOfDay(ZoneId.systemDefault()).toInstant(),
             endDate = today.plusDays(1).atStartOfDay(ZoneId.systemDefault()).toInstant()
         ).map { list ->
             val wordOfTheDay = getWordOfTheDay().first()
             if (wordOfTheDay == null) {
                 return@map false
             }
-            list.find { it.wordId == wordOfTheDay.wordId } != null
+            val result = list.find { it.wordId == wordOfTheDay.wordId } != null
+            Timber.d("isWordOfTheDayLearning: $result")
+            result
         }
     }
 }
+

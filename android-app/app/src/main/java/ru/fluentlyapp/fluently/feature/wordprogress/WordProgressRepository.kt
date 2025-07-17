@@ -34,7 +34,6 @@ class WordProgressRepositoryImpl @Inject constructor(
         ).map {
             it.map { it.toWordProgress() }
         }
-        Timber.v("getProgresses: $result")
         return result
     }
 }

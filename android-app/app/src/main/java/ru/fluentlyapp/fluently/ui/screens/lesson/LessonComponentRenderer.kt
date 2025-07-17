@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import ru.fluentlyapp.fluently.common.model.Decoration
+import ru.fluentlyapp.fluently.common.model.Dialog
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.LessonComponent
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.FinishDecoration
@@ -21,6 +22,8 @@ import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.Onboardin
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.OnboardingDecoration
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationExercise
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.DialogExercise
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.DialogObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.FillGapsExercise
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.FillGapsObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.InputWordExercise
@@ -44,7 +47,8 @@ fun LessonComponentRenderer(
     fillGapsObserver: FillGapsObserver,
     inputWordObserver: InputWordObserver,
     onboardingDecorationObserver: OnboardingDecorationObserver,
-    finishDecorationObserver: FinishDecorationObserver
+    finishDecorationObserver: FinishDecorationObserver,
+    dialogObserver: DialogObserver
 ) {
     AnimatedContent(
         modifier = modifier,
@@ -116,6 +120,15 @@ fun LessonComponentRenderer(
                     exerciseState = targetComponent,
                     observer = inputWordObserver,
                     isCompleted = targetComponent.isAnswered
+                )
+            }
+
+            is Dialog -> {
+                DialogExercise(
+                    modifier = Modifier.fillMaxSize(),
+                    exerciseState = targetComponent,
+                    dialogObserver = dialogObserver,
+                    isCompleted = targetComponent.isFinished
                 )
             }
         }

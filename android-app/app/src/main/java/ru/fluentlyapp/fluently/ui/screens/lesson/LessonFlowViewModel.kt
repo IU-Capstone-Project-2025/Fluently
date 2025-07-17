@@ -9,21 +9,29 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import ru.fluentlyapp.fluently.common.model.Dialog
 import ru.fluentlyapp.fluently.data.repository.LessonRepository
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.LessonComponent
+import ru.fluentlyapp.fluently.feature.dialog.DialogRepository
+import ru.fluentlyapp.fluently.network.model.Author
+import ru.fluentlyapp.fluently.network.model.Chat
+import ru.fluentlyapp.fluently.network.model.Message
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.FinishDecorationObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.OnboardingDecorationObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationObserver
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.DialogObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.FillGapsObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.InputWordObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.NewWordObserver
+import ru.fluentlyapp.fluently.utils.safeLaunch
 import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
 class LessonFlowViewModel @Inject constructor(
-    private val lessonRepository: LessonRepository
+    private val lessonRepository: LessonRepository,
+    private val dialogRepository: DialogRepository
 ) : ViewModel() {
     // Start collecting the lesson state from the repository
     val currentComponent: StateFlow<LessonComponent?> = lessonRepository.currentComponent()
@@ -106,7 +114,7 @@ class LessonFlowViewModel @Inject constructor(
     val inputWordObserver = object : InputWordObserver {
         override fun onConfirmInput(inputtedWord: String) {
             safeApplyAndUpdate<Exercise.InputWord> {
-                it.copy(inputtedWord = inputtedWord)
+                it.copy(inputtedWord = inputtedWord.trim())
             }
         }
 
@@ -119,7 +127,7 @@ class LessonFlowViewModel @Inject constructor(
 
     val onboardingDecorationObserver = object : OnboardingDecorationObserver() {
         override fun onContinue() {
-            viewModelScope.launch {
+            viewModelScope.safeLaunch {
                 lessonRepository.moveToNextComponent()
             }
         }
@@ -133,6 +141,65 @@ class LessonFlowViewModel @Inject constructor(
                     _commandsChannel.send(LessonFlowCommand.UserFinishesLesson)
                 } catch (ex: Exception) {
                     Timber.e(ex)
+                }
+            }
+        }
+    }
+
+    val dialogObserver = object : DialogObserver() {
+        override fun onMoveNext() {
+            viewModelScope.safeLaunch {
+                lessonRepository.moveToNextComponent()
+            }
+        }
+
+        override fun onCompleteDialog() {
+            viewModelScope.launch {
+                try {
+                    dialogRepository.sendFinish()
+                    safeApplyAndUpdate<Dialog> {
+                        it.copy(isFinished = true)
+                    }
+                } catch (ex: Exception) {
+                    Timber.e(ex)
+                }
+            }
+        }
+
+        private fun Dialog.toChat() = Chat(
+            chat = messages.map {
+                Message(
+                    author = if (it.fromUser) Author.USER else Author.LLM,
+                    message = it.text
+                )
+            }
+        )
+
+        private fun Chat.toDialog(oldDialog: Dialog?) = Dialog(
+            messages = chat.withIndex().map { (index, message) ->
+                Dialog.Message(
+                    messageId = index.toLong(),
+                    text = message.message,
+                    fromUser = message.author == Author.USER
+                )
+            },
+            isFinished = oldDialog?.isFinished == true
+        )
+
+        override fun onSendMessage(message: String) {
+            val dialog: Dialog? = currentComponent.value as? Dialog
+            if (dialog == null || dialog.isFinished) {
+                return
+            }
+            viewModelScope.launch {
+                try {
+                    val currentChat = dialog.toChat()
+                    val updatedChat = dialogRepository.sendChat(currentChat)
+                    val updatedDialog = updatedChat.toDialog(dialog)
+                    safeApplyAndUpdate<Dialog> { updatedDialog }
+                } catch (ex: Exception) {
+                    Timber.e(ex)
+                    return@launch
                 }
             }
         }

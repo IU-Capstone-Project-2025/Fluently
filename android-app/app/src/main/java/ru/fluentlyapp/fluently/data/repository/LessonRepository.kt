@@ -5,6 +5,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import ru.fluentlyapp.fluently.common.model.Decoration
+import ru.fluentlyapp.fluently.common.model.Dialog
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.common.model.LessonComponent
@@ -19,6 +20,7 @@ import ru.fluentlyapp.fluently.network.model.SentWordProgress
 import timber.log.Timber
 import java.time.Instant
 import javax.inject.Inject
+import kotlin.math.min
 
 data class LessonStatistic(
     val learnedWordsCount: Int = 0,
@@ -37,7 +39,6 @@ interface LessonRepository {
      * May throw exception.
      */
     suspend fun fetchAndSaveOngoingLesson()
-
 
     /**
      * Try to update the current lesson component.
@@ -104,7 +105,10 @@ class DefaultLessonRepository @Inject constructor(
                 exercisesCount++
             }
         }
-        return Decoration.Onboarding(wordsCount, exercisesCount)
+        return Decoration.Onboarding(
+            min(PREFERRED_NUMBER_OF_WORDS, wordsCount),
+            min(PREFERRED_NUMBER_OF_WORDS, exercisesCount)
+        )
     }
 
     private fun List<LessonComponent>.withIdSetToIndex(): List<LessonComponent> {
@@ -133,6 +137,12 @@ class DefaultLessonRepository @Inject constructor(
         val updatedLessonComponents: List<LessonComponent> = buildList {
             add(generateOnboardingComponent(lesson.components))
             addAll(lesson.components)
+            add(
+                Dialog (
+                    messages = emptyList(),
+                    isFinished = false
+                )
+            )
         }.withIdSetToIndex()
 
         ongoingLessonDataStore.setOngoingLesson(lesson.copy(components = updatedLessonComponents))
@@ -167,9 +177,18 @@ class DefaultLessonRepository @Inject constructor(
     ): Boolean {
         val candidateComponent = lesson.components[candidateComponentIndex]
         val currentWordId = when (candidateComponent) {
-            is Exercise.FillTheGap -> { candidateComponent.wordId }
-            is Exercise.InputWord -> {  candidateComponent.wordId }
-            is Exercise.ChooseTranslation -> { candidateComponent.wordId }
+            is Exercise.FillTheGap -> {
+                candidateComponent.wordId
+            }
+
+            is Exercise.InputWord -> {
+                candidateComponent.wordId
+            }
+
+            is Exercise.ChooseTranslation -> {
+                candidateComponent.wordId
+            }
+
             else -> null
         }
 
@@ -202,7 +221,10 @@ class DefaultLessonRepository @Inject constructor(
         return if (candidateComponent is Exercise.NewWord) {
             learningWordsCount < PREFERRED_NUMBER_OF_WORDS
         } else if (currentWordId != null) {
-            originalWordStatus in setOf(NewWordExerciseStatus.NO_OCCURRENCE, NewWordExerciseStatus.USER_IS_LEARNING)
+            originalWordStatus in setOf(
+                NewWordExerciseStatus.NO_OCCURRENCE,
+                NewWordExerciseStatus.USER_IS_LEARNING
+            )
         } else {
             true
         }
@@ -216,7 +238,8 @@ class DefaultLessonRepository @Inject constructor(
             }
 
             if (
-                (lesson.currentComponent as? Exercise)?.isAnswered == false // current exercise is not answered
+                (lesson.currentComponent as? Exercise)?.isAnswered == false || // current exercise is not answered
+                (lesson.currentComponent as? Dialog)?.isFinished == false // or the dialog is not finished
             ) {
                 return
             }

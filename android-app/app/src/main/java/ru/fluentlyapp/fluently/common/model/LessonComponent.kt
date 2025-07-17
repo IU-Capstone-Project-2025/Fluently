@@ -68,6 +68,20 @@ sealed interface Exercise : LessonComponent {
 }
 
 @Serializable
+data class Dialog(
+    val messages: List<Message>,
+    val isFinished: Boolean,
+    override var id: Int = -1
+) : LessonComponent {
+    @Serializable
+    data class Message(
+        val messageId: Long,
+        val text: String,
+        val fromUser: Boolean,
+    )
+}
+
+@Serializable
 sealed interface Decoration : LessonComponent {
     @Serializable
     class Loading(override var id: Int = -1) : Decoration

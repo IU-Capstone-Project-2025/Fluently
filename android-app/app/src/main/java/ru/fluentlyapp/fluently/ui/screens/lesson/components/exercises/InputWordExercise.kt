@@ -93,13 +93,15 @@ fun InputWordExercise(
             )
             BasicTextField(
                 value = inputWordValue,
+                enabled = !isCompleted,
                 onValueChange = { inputWordValue = it },
                 textStyle = TextStyle(fontSize = 16.sp),
+                singleLine = true,
                 decorationBox = { innerTextField ->
                     Box(
                         modifier = Modifier
                             .clip(shape = RoundedCornerShape(8.dp))
-                            .background(FluentlyTheme.colors.surfaceContainerHigh)
+                            .background(FluentlyTheme.colors.surface)
                             then inputFieldModifier
                             .padding(8.dp)
                             .fillMaxWidth(.8f)
@@ -125,7 +127,7 @@ fun InputWordExercise(
 
             Box(
                 modifier = Modifier
-                    .alpha(if (inputWordValue.isEmpty()) .5f else 1f)
+                    .alpha(if (inputWordValue.isEmpty() || isCompleted) .5f else 1f)
                     .clip(RoundedCornerShape(8.dp))
                     .background(FluentlyTheme.colors.secondary)
                     .clickable(

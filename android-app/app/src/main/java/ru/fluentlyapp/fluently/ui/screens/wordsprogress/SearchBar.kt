@@ -33,6 +33,7 @@ fun SearchBar(
 ) {
     BasicTextField(
         value = query,
+        singleLine = true,
         onValueChange = onQueryChange,
         textStyle = TextStyle(fontSize = 16.sp),
         keyboardOptions = KeyboardOptions.Default.copy(

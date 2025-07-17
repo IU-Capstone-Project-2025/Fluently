@@ -3,11 +3,17 @@ package ru.fluentlyapp.fluently.network
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.common.model.LessonComponent
+import ru.fluentlyapp.fluently.network.model.Author
+import ru.fluentlyapp.fluently.network.model.Chat
+import ru.fluentlyapp.fluently.network.model.Message
 import ru.fluentlyapp.fluently.network.model.Progress
 import ru.fluentlyapp.fluently.network.model.WordOfTheDay
 import ru.fluentlyapp.fluently.network.model.internal.CardApiModel
+import ru.fluentlyapp.fluently.network.model.internal.ChatRequestBody
+import ru.fluentlyapp.fluently.network.model.internal.ChatResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.ExerciseApiModel.ExerciseType
 import ru.fluentlyapp.fluently.network.model.internal.LessonResponseBody
+import ru.fluentlyapp.fluently.network.model.internal.MessageApiModel
 import ru.fluentlyapp.fluently.network.model.internal.WordOfTheDayResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.WordProgressApiModel
 import kotlin.random.Random
@@ -112,4 +118,22 @@ fun WordOfTheDayResponseBody.toWordOfTheDay() = WordOfTheDay(
     examples = sentences.map {
         it.text to it.translation
     }
+)
+
+fun Message.toMessageApiModel() = MessageApiModel(
+    author = author.key,
+    message = message
+)
+
+fun MessageApiModel.toMessage() = Message(
+    author = Author.entries.first { it.key == author },
+    message = message
+)
+
+fun ChatResponseBody.toChat() = Chat(
+    chat = chat.map { it.toMessage() }
+)
+
+fun Chat.toChatRequestBody() = ChatRequestBody(
+    chat = chat.map { it.toMessageApiModel() }
 )

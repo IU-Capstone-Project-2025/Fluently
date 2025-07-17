@@ -47,7 +47,8 @@ fun LessonFlowScreen(
             fillGapsObserver = lessonFlowViewModel.fillGapsObserver,
             inputWordObserver = lessonFlowViewModel.inputWordObserver,
             onboardingDecorationObserver = lessonFlowViewModel.onboardingDecorationObserver,
-            finishDecorationObserver = lessonFlowViewModel.finishDecorationObserver
+            finishDecorationObserver = lessonFlowViewModel.finishDecorationObserver,
+            dialogObserver = lessonFlowViewModel.dialogObserver
         )
     }
 }
