@@ -251,6 +251,13 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	pickOptionRepo := postgres.NewPickOptionRepository(db)
 	topicRepo := postgres.NewTopicRepository(db)
 	lessonRepo := postgres.NewLessonRepository(db)
+	chatHistoryRepo := postgres.NewChatHistoryRepository(db)
+
+	thesaurusClient := utils.NewThesaurusClient(utils.ThesaurusClientConfig{})
+	llmClient := utils.NewLLMClient(utils.LLMClientConfig{})
+	distractorClient := utils.NewDistractorClient(utils.DistractorClientConfig{})
+
+	chatHistoryHandler := &handlers.ChatHistoryHandler{Repo: chatHistoryRepo}
 
 	// Protected routes using flexible JWT authentication
 	r.Route("/api/v1", func(r chi.Router) {
@@ -278,28 +285,29 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 			LearnedWordRepo: learnedWordRepo,
 		})
 		routes.RegisterLessonRoutes(r, &handlers.LessonHandler{
-			PreferenceRepo: preferenceRepo,
-			TopicRepo:      topicRepo,
-			SentenceRepo:   sentenceRepo,
-			PickOptionRepo: pickOptionRepo,
-			WordRepo:       wordRepo,
-			Repo:           lessonRepo,
+			PreferenceRepo:  preferenceRepo,
+			TopicRepo:       topicRepo,
+			SentenceRepo:    sentenceRepo,
+			PickOptionRepo:  pickOptionRepo,
+			WordRepo:        wordRepo,
+			Repo:            lessonRepo,
+			LearnedWordRepo: learnedWordRepo,
+			ThesaurusClient: thesaurusClient,
 		})
 
 		// --- new AI-related routes ---
 		chatHandler := &handlers.ChatHandler{
 			Redis:       utils.Redis(),
-			HistoryRepo: postgres.NewChatHistoryRepository(db),
-			LLMClient:   utils.NewLLMClient(utils.LLMClientConfig{}),
+			HistoryRepo: chatHistoryRepo,
+			LLMClient:   llmClient,
 		}
 		distractorHandler := &handlers.DistractorHandler{
-			Client: utils.NewDistractorClient(utils.DistractorClientConfig{}),
+			Client: distractorClient,
 		}
 		thesaurusHandler := &handlers.ThesaurusHandler{
-			Client: utils.NewThesaurusClient(utils.ThesaurusClientConfig{}),
+			Client: thesaurusClient,
 		}
 
-		chatHistoryHandler := &handlers.ChatHistoryHandler{Repo: postgres.NewChatHistoryRepository(db)}
 		routes.RegisterChatRoutes(r, chatHandler, chatHistoryHandler)
 		routes.RegisterDistractorRoutes(r, distractorHandler)
 		routes.RegisterThesaurusRoutes(r, thesaurusHandler)
