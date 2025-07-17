@@ -14,6 +14,7 @@ import (
 	"fluently/go-backend/internal/utils"
 	"fluently/go-backend/pkg/logger"
 
+	"github.com/google/uuid"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 )
@@ -27,12 +28,14 @@ var exerciseTypes = []string{
 
 // LessonHandler handles the lesson endpoint
 type LessonHandler struct {
-	PreferenceRepo *postgres.PreferenceRepository
-	TopicRepo      *postgres.TopicRepository
-	SentenceRepo   *postgres.SentenceRepository
-	PickOptionRepo *postgres.PickOptionRepository
-	WordRepo       *postgres.WordRepository
-	Repo           *postgres.LessonRepository
+	PreferenceRepo  *postgres.PreferenceRepository
+	TopicRepo       *postgres.TopicRepository
+	SentenceRepo    *postgres.SentenceRepository
+	PickOptionRepo  *postgres.PickOptionRepository
+	WordRepo        *postgres.WordRepository
+	Repo            *postgres.LessonRepository
+	LearnedWordRepo *postgres.LearnedWordRepository
+	ThesaurusClient *utils.ThesaurusClient
 }
 
 // replaceWordWithUnderscores replaces a word in a text with underscores
@@ -85,16 +88,85 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 	// Lesson card block
 	var cards []schemas.Card
 
-	words, err := h.Repo.GetWordsForLesson(
-		r.Context(),
-		userID,
-		userPref.CEFRLevel,
-		userPref.Goal,
-		lessonInfo.TotalWords,
-	)
+	// -------------------- Fetch recommendations from Thesaurus --------------------
+	// 1. Gather list of words the user already knows
+	learnedWords, err := h.LearnedWordRepo.ListByUserID(r.Context(), userID)
 	if err != nil {
-		logger.Log.Error("Failed to get words for lesson", zap.Error(err))
-		http.Error(w, "failed to get words for lesson", http.StatusBadRequest)
+		logger.Log.Error("Failed to list learned words", zap.Error(err))
+		http.Error(w, "failed to list learned words", http.StatusInternalServerError)
+		return
+	}
+
+	var known []string
+	for _, lw := range learnedWords {
+		wm, err := h.WordRepo.GetByID(r.Context(), lw.WordID)
+		if err == nil {
+			known = append(known, wm.Word)
+		}
+	}
+
+	// 2. Request recommendations until we collect enough valid words from DB
+	var words []models.Word
+	seen := make(map[uuid.UUID]struct{})
+
+	if len(known) > 0 { // Call Thesaurus only when we have something to send
+		attempts := 0
+		for len(words) < lessonInfo.TotalWords && attempts < 5 {
+			recs, err := h.ThesaurusClient.Recommend(r.Context(), known)
+			if err != nil {
+				logger.Log.Error("Failed to get thesaurus recommendations", zap.Error(err))
+				break // fallback later
+			}
+
+			for _, rec := range recs {
+				if len(words) >= lessonInfo.TotalWords {
+					break
+				}
+
+				wm, err := h.WordRepo.GetByValue(r.Context(), rec.Word)
+				if err != nil {
+					// Recommendation not present in local DB – skip
+					continue
+				}
+				if _, exists := seen[wm.ID]; exists {
+					continue
+				}
+				words = append(words, *wm)
+				seen[wm.ID] = struct{}{}
+			}
+			attempts++
+		}
+	}
+
+	// 3. Fallback: fill remaining slots with random DB words
+	if len(words) < lessonInfo.TotalWords {
+		remaining := lessonInfo.TotalWords - len(words)
+		additional, err := h.Repo.GetWordsForLesson(
+			r.Context(),
+			userID,
+			userPref.CEFRLevel,
+			userPref.Goal,
+			remaining,
+		)
+		if err != nil {
+			logger.Log.Error("Failed to get fallback words", zap.Error(err))
+			http.Error(w, "failed to get words for lesson", http.StatusBadRequest)
+			return
+		}
+		for _, wdb := range additional {
+			if _, exists := seen[wdb.ID]; exists {
+				continue
+			}
+			words = append(words, wdb)
+			seen[wdb.ID] = struct{}{}
+			if len(words) >= lessonInfo.TotalWords {
+				break
+			}
+		}
+	}
+
+	if len(words) == 0 {
+		http.Error(w, "no suitable words found for lesson", http.StatusInternalServerError)
 		return
 	}
 
