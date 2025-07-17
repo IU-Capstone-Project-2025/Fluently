@@ -11,7 +11,7 @@ type CreatePreferenceRequest struct {
 	CEFRLevel      string     `json:"cefr_level" binding:"required"`
 	FactEveryday   bool       `json:"fact_everyday"`
 	Notifications  bool       `json:"notifications"`
-	NotificationAt *time.Time `json:"notification_at"`
+	NotificationAt *time.Time `json:"notification_at,omitempty"`
 	WordsPerDay    int        `json:"words_per_day"`
 	Goal           string     `json:"goal"`
 	Subscribed     bool       `json:"subscribed"`

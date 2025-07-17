@@ -56,25 +56,25 @@ func main() {
 	}
 
 	// Clean up orphaned records before migration to prevent foreign key constraint violations
-	logger.Log.Info("Performing database cleanup before migration...")
+	// logger.Log.Info("Performing database cleanup before migration...")
 
-	cleanupQueries := map[string]string{
-		"user_preferences": "DELETE FROM user_preferences WHERE user_id NOT IN (SELECT id FROM users)",
-		"learned_words":    "DELETE FROM learned_words WHERE user_id NOT IN (SELECT id FROM users)",
-		"sentences":        "DELETE FROM sentences WHERE topic_id NOT IN (SELECT id FROM topics)",
-		"pick_options":     "DELETE FROM pick_options WHERE sentence_id NOT IN (SELECT id FROM sentences)",
-	}
+	// cleanupQueries := map[string]string{
+	// 	"user_preferences": "DELETE FROM user_preferences WHERE user_id NOT IN (SELECT id FROM users)",
+	// 	"learned_words":    "DELETE FROM learned_words WHERE user_id NOT IN (SELECT id FROM users)",
+	// 	"sentences":        "DELETE FROM sentences WHERE topic_id NOT IN (SELECT id FROM topics)",
+	// 	"pick_options":     "DELETE FROM pick_options WHERE sentence_id NOT IN (SELECT id FROM sentences)",
+	// }
 
-	for table, query := range cleanupQueries {
-		result := db.Exec(query)
-		if result.Error != nil {
-			logger.Log.Warn("Cleanup failed for table", zap.String("table", table), zap.Error(result.Error))
-		} else if result.RowsAffected > 0 {
-			logger.Log.Info("Cleaned orphaned records", zap.String("table", table), zap.Int64("affected_rows", result.RowsAffected))
-		}
-	}
+	// for table, query := range cleanupQueries {
+	// 	result := db.Exec(query)
+	// 	if result.Error != nil {
+	// 		logger.Log.Warn("Cleanup failed for table", zap.String("table", table), zap.Error(result.Error))
+	// 	} else if result.RowsAffected > 0 {
+	// 		logger.Log.Info("Cleaned orphaned records", zap.String("table", table), zap.Int64("affected_rows", result.RowsAffected))
+	// 	}
+	// }
 
-	logger.Log.Info("Database cleanup completed, starting migration...")
+	// logger.Log.Info("Database cleanup completed, starting migration...")
 
 	err = db.AutoMigrate(
 		&models.User{},
