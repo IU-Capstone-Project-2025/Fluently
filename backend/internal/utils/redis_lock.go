@@ -5,6 +5,8 @@ import (
 	"sync"
 	"time"
 
+	"fluently/go-backend/internal/config"
+
 	"github.com/bsm/redislock"
 	"github.com/google/uuid"
 	goredis "github.com/redis/go-redis/v9"
@@ -34,6 +36,6 @@ func redisLocker() *redislock.Client {
 // will be serialized. The lock automatically expires after a short TTL so that
 // it does not remain forever if the holder crashes.
 func AcquireChatLock(ctx context.Context, userID uuid.UUID) (*redislock.Lock, error) {
-	const ttl = 10 * time.Second // plenty for a single chat request
+	ttl := config.GetConfig().Redis.ChatLockTTL * time.Second
 	return redisLocker().Obtain(ctx, "lock:chat:"+userID.String(), ttl, nil)
 }
