@@ -71,7 +71,7 @@ interface LessonRepository {
     suspend fun finishLesson()
 }
 
-const val PREFERRED_NUMBER_OF_WORDS = 1
+const val PREFERRED_NUMBER_OF_WORDS = 10
 
 class DefaultLessonRepository @Inject constructor(
     val fluentlyApiDataSource: FluentlyApiDataSource,
