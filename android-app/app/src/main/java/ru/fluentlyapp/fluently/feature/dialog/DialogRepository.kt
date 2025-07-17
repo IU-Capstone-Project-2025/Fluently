@@ -16,7 +16,7 @@ class DialogRepository @Inject constructor(
     }
 
     suspend fun sendChat(chat: Chat): Chat {
-        Timber.d("sendChat")
+        Timber.d("sendChat: $chat")
         val result = fluentlyApiDataSource.sendChat(chat)
         Timber.d("sendChat: $result")
         return result

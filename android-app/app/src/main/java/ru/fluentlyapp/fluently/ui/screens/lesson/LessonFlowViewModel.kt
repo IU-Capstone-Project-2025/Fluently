@@ -193,7 +193,13 @@ class LessonFlowViewModel @Inject constructor(
             }
             viewModelScope.launch {
                 try {
-                    val currentChat = dialog.toChat()
+                    val currentChat = dialog.toChat().copy(
+                        chat = dialog.toChat().chat + Message(
+                            author = Author.USER,
+                            message = message
+                        )
+                    )
+                    Timber.v(currentChat.toString())
                     val updatedChat = dialogRepository.sendChat(currentChat)
                     val updatedDialog = updatedChat.toDialog(dialog)
                     safeApplyAndUpdate<Dialog> { updatedDialog }

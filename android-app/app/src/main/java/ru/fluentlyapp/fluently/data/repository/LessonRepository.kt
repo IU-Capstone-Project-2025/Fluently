@@ -71,7 +71,7 @@ interface LessonRepository {
     suspend fun finishLesson()
 }
 
-const val PREFERRED_NUMBER_OF_WORDS = 10
+const val PREFERRED_NUMBER_OF_WORDS = 1
 
 class DefaultLessonRepository @Inject constructor(
     val fluentlyApiDataSource: FluentlyApiDataSource,
@@ -136,13 +136,13 @@ class DefaultLessonRepository @Inject constructor(
 
         val updatedLessonComponents: List<LessonComponent> = buildList {
             add(generateOnboardingComponent(lesson.components))
-            addAll(lesson.components)
-            add(
-                Dialog (
-                    messages = emptyList(),
-                    isFinished = false
-                )
-            )
+//            addAll(lesson.components)
+//            add(
+//                Dialog (
+//                    messages = emptyList(),
+//                    isFinished = false
+//                )
+//            )
         }.withIdSetToIndex()
 
         ongoingLessonDataStore.setOngoingLesson(lesson.copy(components = updatedLessonComponents))
@@ -199,6 +199,7 @@ class DefaultLessonRepository @Inject constructor(
          * 2) If component candidate is some exercise related to some word, then show it only if
          * the related word is either hasn't been previously met in the lesson or the set that they
          * do not know it
+         * 3) Otherwise, always return true
          */
         var learningWordsCount = 0
         var originalWordStatus: NewWordExerciseStatus = NewWordExerciseStatus.NO_OCCURRENCE

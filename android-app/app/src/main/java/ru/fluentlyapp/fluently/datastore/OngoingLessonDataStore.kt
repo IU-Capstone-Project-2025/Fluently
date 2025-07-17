@@ -11,6 +11,7 @@ import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
 import kotlinx.serialization.modules.subclass
 import ru.fluentlyapp.fluently.common.model.Decoration
+import ru.fluentlyapp.fluently.common.model.Dialog
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.common.model.LessonComponent
@@ -30,6 +31,8 @@ private val lessonModule = SerializersModule {
         subclass(Decoration.Loading::class)
         subclass(Decoration.Finish::class)
         subclass(Decoration.Onboarding::class)
+
+        subclass(Dialog::class)
     }
 }
 

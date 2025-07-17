@@ -24,6 +24,6 @@ interface FluentlyApiService {
     @POST("/api/v1/chat")
     suspend fun sendChat(@Body chat: ChatRequestBody): Response<ChatResponseBody>
 
-    @POST
+    @POST("/api/v1/chat/finish")
     suspend fun sendFinish()
 }

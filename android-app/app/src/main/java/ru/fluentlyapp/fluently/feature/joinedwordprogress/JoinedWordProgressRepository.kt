@@ -39,7 +39,6 @@ class JoinedWordProgressRepositoryImpl @Inject constructor(
 
     override fun getPerWordOverallProgress(): Flow<List<JoinedWordProgress>> {
         return joinedWordProgressDao.getAllJoinedWordProgress().map { list ->
-            Timber.d("getPerWordOverallProgress; tmp result: $list")
             val map = mutableMapOf<String, JoinedWordProgress>()
             list.forEach {
                 if (!map.contains(it.id) || (map[it.id]?.isLearning == true && !it.isLearning)) {
@@ -47,7 +46,6 @@ class JoinedWordProgressRepositoryImpl @Inject constructor(
                 }
             }
             val result = map.values.toList()
-            Timber.d("getPerWordOverallProgress: $result")
             result
         }
     }

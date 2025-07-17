@@ -52,7 +52,6 @@ fun DialogExercise(
     Box(modifier = modifier.background(FluentlyTheme.colors.surface)) {
         DialogTopFloatingButton(
             modifier = Modifier
-                .padding(top = 16.dp)
                 .align(Alignment.TopCenter),
             text = if (isCompleted) {
                 "Дальше"

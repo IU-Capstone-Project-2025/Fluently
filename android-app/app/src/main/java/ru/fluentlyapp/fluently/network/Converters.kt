@@ -7,6 +7,7 @@ import ru.fluentlyapp.fluently.network.model.Author
 import ru.fluentlyapp.fluently.network.model.Chat
 import ru.fluentlyapp.fluently.network.model.Message
 import ru.fluentlyapp.fluently.network.model.Progress
+import ru.fluentlyapp.fluently.network.model.UserPreferences
 import ru.fluentlyapp.fluently.network.model.WordOfTheDay
 import ru.fluentlyapp.fluently.network.model.internal.CardApiModel
 import ru.fluentlyapp.fluently.network.model.internal.ChatRequestBody
@@ -14,6 +15,7 @@ import ru.fluentlyapp.fluently.network.model.internal.ChatResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.ExerciseApiModel.ExerciseType
 import ru.fluentlyapp.fluently.network.model.internal.LessonResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.MessageApiModel
+import ru.fluentlyapp.fluently.network.model.internal.UserPreferencesResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.WordOfTheDayResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.WordProgressApiModel
 import kotlin.random.Random
@@ -137,3 +139,19 @@ fun ChatResponseBody.toChat() = Chat(
 fun Chat.toChatRequestBody() = ChatRequestBody(
     chat = chat.map { it.toMessageApiModel() }
 )
+
+
+fun UserPreferencesResponseBody.toUserPreferences(): UserPreferences {
+    return UserPreferences(
+        avatarImageUrl = avatar_image_url,
+        cefrLevel = cefr_level,
+        factEveryday = fact_everyday,
+        goal = goal,
+        id = id,
+        notificationAt = notification_at,
+        notifications = notifications,
+        subscribed = subscribed,
+        userId = user_id,
+        wordsPerDay = words_per_day
+    )
+}
