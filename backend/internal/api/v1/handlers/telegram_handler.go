@@ -236,7 +236,7 @@ func (h *TelegramHandler) LinkWithGoogle(w http.ResponseWriter, r *http.Request)
 			scheme = "http"
 		}
 	}
-	redirectURI := fmt.Sprintf("%s://%s/link-google/callback?token=%s", scheme, r.Host, token)
+	redirectURI := fmt.Sprintf("%s://%s/link-google/callback", scheme, r.Host)
 	state := token // use token as state
 
 	// Send response
@@ -250,23 +250,23 @@ func (h *TelegramHandler) LinkWithGoogle(w http.ResponseWriter, r *http.Request)
 // @Tags         telegram
 // @Accept       json
 // @Produce      json
-// @Param        token   query      string  true  "Link token"
 // @Param        code    query      string  true  "OAuth code"
-// @Param        state   query      string  true  "OAuth state"
+// @Param        state   query      string  true  "OAuth state (contains link token)"
 // @Success      200  {object}  map[string]string
 // @Failure      400  {object}  schemas.ErrorResponse
 // @Failure      500  {object}  schemas.ErrorResponse
 // @Router       /link-google/callback [get]
 func (h *TelegramHandler) LinkGoogleCallback(w http.ResponseWriter, r *http.Request) {
-	token := r.URL.Query().Get("token")
 	code := r.URL.Query().Get("code")
 	state := r.URL.Query().Get("state")
 
-	// Check parameters
-	if token == "" || code == "" || state != token {
+	// Check parameters - use state as token
+	if code == "" || state == "" {
 		http.Error(w, "invalid parameters", http.StatusBadRequest)
 		return
 	}
+
+	token := state // token is passed as state parameter
 
 	// Check link token
 	linkToken, err := h.LinkTokenRepo.GetByToken(r.Context(), token)
