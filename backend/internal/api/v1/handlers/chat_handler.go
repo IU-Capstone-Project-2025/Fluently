@@ -173,7 +173,7 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 
 	// Return chat with AI reply
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(ChatResponse{Chat: req.Chat})
+	json.NewEncoder(w).Encode(ChatResponse(req))
 }
 
 // FinishChat godoc
