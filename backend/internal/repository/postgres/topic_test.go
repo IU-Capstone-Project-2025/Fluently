@@ -10,6 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateAndGetTopic tests the creation and retrieval of a topic
 func TestCreateAndGetTopic(t *testing.T) {
 	ctx := context.Background()
 	topic := &models.Topic{
@@ -25,6 +26,7 @@ func TestCreateAndGetTopic(t *testing.T) {
 	assert.Equal(t, topic.Title, found.Title)
 }
 
+// TestNestedTopics tests the creation and retrieval of a nested topic
 func TestNestedTopics(t *testing.T) {
 	ctx := context.Background()
 	main := &models.Topic{

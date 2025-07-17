@@ -12,10 +12,12 @@ import (
 	"github.com/google/uuid"
 )
 
+// PickOptionHandler handles the pick option endpoint
 type PickOptionHandler struct {
 	Repo *postgres.PickOptionRepository
 }
 
+// buildPickOptionResponse builds a PickOptionResponse from a PickOption
 func buildPickOptionResponse(option *models.PickOption) schemas.PickOptionResponse {
 	return schemas.PickOptionResponse{
 		ID:         option.ID.String(),
@@ -25,6 +27,7 @@ func buildPickOptionResponse(option *models.PickOption) schemas.PickOptionRespon
 	}
 }
 
+// CreatePickOption creates a new pick option
 func (h *PickOptionHandler) CreatePickOption(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreatePickOptionRequest
 
@@ -62,11 +65,13 @@ func (h *PickOptionHandler) CreatePickOption(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
+	// Return the created option
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(buildPickOptionResponse(&option))
 }
 
+// UpdatePickOption updates a pick option
 func (h *PickOptionHandler) UpdatePickOption(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -93,6 +98,7 @@ func (h *PickOptionHandler) UpdatePickOption(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
+	// Return the updated topic
 	w.WriteHeader(http.StatusOK)
 }
 
@@ -111,6 +117,7 @@ func (h *PickOptionHandler) DeletePickOption(w http.ResponseWriter, r *http.Requ
 	w.WriteHeader(http.StatusNoContent)
 }
 
+// GetPickOption gets a pick option
 func (h *PickOptionHandler) GetPickOption(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -124,10 +131,12 @@ func (h *PickOptionHandler) GetPickOption(w http.ResponseWriter, r *http.Request
 		return
 	}
 
+	// Return the option
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildPickOptionResponse(option))
 }
 
+// ListPickOptions lists all pick options
 func (h *PickOptionHandler) ListPickOptions(w http.ResponseWriter, r *http.Request) {
 	userID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
@@ -146,6 +155,7 @@ func (h *PickOptionHandler) ListPickOptions(w http.ResponseWriter, r *http.Reque
 		resp = append(resp, buildPickOptionResponse(&o))
 	}
 
+	// Return the list of options
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }

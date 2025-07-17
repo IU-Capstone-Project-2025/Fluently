@@ -18,12 +18,14 @@ import (
 	"gorm.io/gorm"
 )
 
+// List of exercise types
 var exerciseTypes = []string{
 	"translate_ru_to_en",
 	"write_word_from_translation",
 	"pick_option_sentence",
 }
 
+// LessonHandler handles the lesson endpoint
 type LessonHandler struct {
 	PreferenceRepo *postgres.PreferenceRepository
 	TopicRepo      *postgres.TopicRepository
@@ -33,6 +35,7 @@ type LessonHandler struct {
 	Repo           *postgres.LessonRepository
 }
 
+// replaceWordWithUnderscores replaces a word in a text with underscores
 func replaceWordWithUnderscores(text, word string) string {
 	lowerText := strings.ToLower(text)
 	lowerWord := strings.ToLower(word)
@@ -95,10 +98,12 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Shuffle words
 	rand.Shuffle(len(words), func(i, j int) {
 		words[i], words[j] = words[j], words[i]
 	})
 
+	// Process words
 	for _, word := range words {
 		var card schemas.Card
 
@@ -175,6 +180,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
+		// Shuffle options
 		rand.Shuffle(len(pickOptionTranslate.Option), func(i, j int) {
 			pickOptionTranslate.Option[i], pickOptionTranslate.Option[j] = pickOptionTranslate.Option[j], pickOptionTranslate.Option[i]
 		})
@@ -199,6 +205,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		// pick_option_sentence
 		var pickOptionSentence schemas.ExercisePickOptionSentence
 
+		// Shuffle options
 		rand.Shuffle(len(pickOptionTranslate.Option), func(i, j int) {
 			pickOptionTranslate.Option[i], pickOptionTranslate.Option[j] = pickOptionTranslate.Option[j], pickOptionTranslate.Option[i]
 		})
@@ -215,6 +222,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 			Data: pickOptionSentence,
 		})
 
+		// Pick random exercise
 		randomExercise := exercises[rand.Intn(len(exercises))]
 
 		card.Exercise = randomExercise
@@ -222,11 +230,13 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		logger.Log.Info("Card generated", zap.Any("card", card))
 	}
 
+	// Generate lesson
 	var lesson schemas.LessonResponse
 	lesson.Lesson = lessonInfo
 	lesson.Cards = cards
 	logger.Log.Info("Lesson generated", zap.Any("lesson", lesson))
 
+	// Send response
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	if err := json.NewEncoder(w).Encode(lesson); err != nil {

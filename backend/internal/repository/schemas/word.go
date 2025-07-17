@@ -6,6 +6,7 @@ type ErrorResponse struct {
 	Message string `json:"message" example:"invalid request"`
 }
 
+// CreateWordRequest is a request body for creating a word
 type CreateWordRequest struct {
 	Word         string  `json:"word" binding:"required"`
 	CEFRLevel    string  `json:"cefr_level"`
@@ -15,6 +16,7 @@ type CreateWordRequest struct {
 	AudioURL     *string `json:"audio_url"`
 }
 
+// WordResponse is a response for a word
 type WordResponse struct {
 	ID           string  `json:"id"`
 	Word         string  `json:"word"`

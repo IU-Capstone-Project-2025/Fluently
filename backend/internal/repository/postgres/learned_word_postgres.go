@@ -10,14 +10,17 @@ import (
 	"gorm.io/gorm"
 )
 
+// LearnedWordRepository is a repository for learned words
 type LearnedWordRepository struct {
 	db *gorm.DB
 }
 
+// NewLearnedWordRepository creates a new instance of LearnedWordRepository
 func NewLearnedWordRepository(db *gorm.DB) *LearnedWordRepository {
 	return &LearnedWordRepository{db: db}
 }
 
+// ListByUserID returns a list of learned words for a user
 func (r *LearnedWordRepository) ListByUserID(ctx context.Context, userID uuid.UUID) ([]models.LearnedWords, error) {
 	var words []models.LearnedWords
 	err := r.db.WithContext(ctx).
@@ -27,10 +30,11 @@ func (r *LearnedWordRepository) ListByUserID(ctx context.Context, userID uuid.UU
 	return words, err
 }
 
+// GetByUserWordID returns a learned word for a user
 func (r *LearnedWordRepository) GetByUserWordID(ctx context.Context, userID, wordID uuid.UUID) (*models.LearnedWords, error) {
 	var lw models.LearnedWords
 	err := r.db.WithContext(ctx).
-		First(&lw, "user_id = ? AND word_id = ?", userID, wordID).Error
+		First(&lw, "user_id = ? AND word_id = ?", userID, wordID).Error // learned word for user using word id and user id
 	if err != nil {
 		return nil, err
 	}
@@ -38,10 +42,11 @@ func (r *LearnedWordRepository) GetByUserWordID(ctx context.Context, userID, wor
 	return &lw, nil
 }
 
+// IsLearned checks if a word is learned
 func (r *LearnedWordRepository) IsLearned(ctx context.Context, userID, wordID uuid.UUID) (bool, error) {
 	var lw models.LearnedWords
 	err := r.db.WithContext(ctx).First(&lw, "user_id = ? AND word_id = ?", userID, wordID).Error
-	if errors.Is(err, gorm.ErrRecordNotFound) {
+	if errors.Is(err, gorm.ErrRecordNotFound) { // If the record is not found return false (not error)
 		return false, nil
 	}
 	if err != nil {
@@ -50,14 +55,17 @@ func (r *LearnedWordRepository) IsLearned(ctx context.Context, userID, wordID uu
 	return true, nil
 }
 
+// Create creates a new learned word
 func (r *LearnedWordRepository) Create(ctx context.Context, lw *models.LearnedWords) error {
 	return r.db.WithContext(ctx).Create(lw).Error
 }
 
+// Update updates a learned word
 func (r *LearnedWordRepository) Update(ctx context.Context, lw *models.LearnedWords) error {
 	return r.db.WithContext(ctx).Save(lw).Error
 }
 
+// Delete deletes a learned word
 func (r *LearnedWordRepository) Delete(ctx context.Context, userID, wordID uuid.UUID) error {
 	return r.db.WithContext(ctx).
 		Delete(&models.LearnedWords{}, "user_id = ? AND word_id = ?", userID, wordID).Error

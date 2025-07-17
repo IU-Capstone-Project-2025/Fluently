@@ -12,6 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateWord tests the creation of a new word
 func TestCreateWord(t *testing.T) {
 	setupTest(t)
 
@@ -45,6 +46,7 @@ func TestCreateWord(t *testing.T) {
 	assert.NotEmpty(t, resp.Value("id").Raw())
 }
 
+// TestListWords tests the retrieval of all words
 func TestListWords(t *testing.T) {
 	setupTest(t)
 
@@ -82,6 +84,7 @@ func TestListWords(t *testing.T) {
 	assert.True(t, found)
 }
 
+// TestGetWord tests the retrieval of a word
 func TestGetWord(t *testing.T) {
 	setupTest(t)
 
@@ -110,6 +113,7 @@ func TestGetWord(t *testing.T) {
 	assert.Equal(t, "вишня", resp.Value("translation").String().Raw())
 }
 
+// TestUpdateWord tests the update of a word
 func TestUpdateWord(t *testing.T) {
 	setupTest(t)
 
@@ -148,6 +152,7 @@ func TestUpdateWord(t *testing.T) {
 	assert.Equal(t, "http://updated.audio", resp.Value("audio_url").String().Raw())
 }
 
+// TestDeleteWord tests the deletion of a word
 func TestDeleteWord(t *testing.T) {
 	setupTest(t)
 

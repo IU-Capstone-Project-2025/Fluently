@@ -15,6 +15,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// setupTest sets up the test server
 var (
 	db         *gorm.DB
 	testServer *httptest.Server
@@ -28,6 +29,9 @@ var (
 	learnedWordRepo *pg.LearnedWordRepository
 )
 
+// setupTest sets up the test server
+// This function is called before each test
+// It sets up the test server and the database
 func setupTest(t *testing.T) {
 	dsn := config.GetPostgresDSNForTest()
 	var err error
@@ -37,8 +41,10 @@ func setupTest(t *testing.T) {
 		t.Fatalf("failed to connect to DB: %v", err)
 	}
 
+	// Connect extension for UUID
 	db.Exec(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`)
 
+	// Auto-migrate
 	err = db.AutoMigrate(
 		&models.User{},
 		&models.Word{},
@@ -52,6 +58,7 @@ func setupTest(t *testing.T) {
 		t.Fatalf("failed to migrate DB: %v", err)
 	}
 
+	// Create repositories
 	wordRepo = pg.NewWordRepository(db)
 	userRepo = pg.NewUserRepository(db)
 	topicRepo = pg.NewTopicRepository(db)
@@ -69,6 +76,7 @@ func setupTest(t *testing.T) {
 	db.Exec("TRUNCATE TABLE topics RESTART IDENTITY CASCADE")
 	db.Exec("TRUNCATE TABLE users RESTART IDENTITY CASCADE")
 
+	// Create handlers
 	wordHandler := &handlers.WordHandler{Repo: pg.NewWordRepository(db)}
 	userHandler := &handlers.UserHandler{Repo: pg.NewUserRepository(db)}
 	topicHandler := &handlers.TopicHandler{Repo: pg.NewTopicRepository(db)}
@@ -78,6 +86,7 @@ func setupTest(t *testing.T) {
 	learnedWordHandler := &handlers.LearnedWordHandler{Repo: learnedWordRepo}
 	progressHandler := &handlers.ProgressHandler{WordRepo: wordRepo, LearnedWordRepo: learnedWordRepo}
 
+	// Create router
 	r := chi.NewRouter()
 	routes.RegisterWordRoutes(r, wordHandler)
 	routes.RegisterUserRoutes(r, userHandler)
@@ -88,5 +97,6 @@ func setupTest(t *testing.T) {
 	routes.RegisterLearnedWordRoutes(r, learnedWordHandler)
 	routes.RegisterProgressRoutes(r, progressHandler)
 
+	// Create test server
 	testServer = httptest.NewServer(r)
 }

@@ -11,6 +11,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateGetUpdateDeleteLearnedWord tests the Create, Get, Update, and Delete methods for LearnedWords
 func TestCreateGetUpdateDeleteLearnedWord(t *testing.T) {
 	ctx := context.Background()
 

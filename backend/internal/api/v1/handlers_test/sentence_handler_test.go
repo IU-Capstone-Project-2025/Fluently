@@ -12,6 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateSentence tests the creation of a sentence
 func TestCreateSentence(t *testing.T) {
 	setupTest(t)
 
@@ -44,6 +45,7 @@ func TestCreateSentence(t *testing.T) {
 	assert.Equal(t, "http://example.com/audio.mp3", resp.Value("audio_url").String().Raw())
 }
 
+// TestListSentences tests the listing of sentences
 func TestListSentences(t *testing.T) {
 	setupTest(t)
 
@@ -92,6 +94,7 @@ func TestListSentences(t *testing.T) {
 	assert.True(t, found)
 }
 
+// TestUpdateSentence tests the update of a sentence
 func TestUpdateSentence(t *testing.T) {
 	setupTest(t)
 
@@ -130,6 +133,7 @@ func TestUpdateSentence(t *testing.T) {
 	assert.Equal(t, "http://example.com/new_audio.mp3", resp.Value("audio_url").String().Raw())
 }
 
+// TestDeleteSentence tests the deletion of a sentence
 func TestDeleteSentence(t *testing.T) {
 	setupTest(t)
 

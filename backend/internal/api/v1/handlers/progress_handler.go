@@ -13,37 +13,13 @@ import (
 	"gorm.io/gorm"
 )
 
+// ProgressHandler handles the progress endpoint
 type ProgressHandler struct {
 	LearnedWordRepo *postgres.LearnedWordRepository
 	WordRepo        *postgres.WordRepository
 }
 
-/*
-[
-  {
-    "word": "hello",
-    "translation": "привет",
-    "learned_at": "2024-01-15T10:30:00Z",
-    "confidence_score": 85,
-    "cnt_reviewed": 3
-  },
-  {
-    "word": "world",
-    "translation": "мир",
-    "learned_at": "2024-01-15T11:45:00Z",
-    "confidence_score": 92,
-    "cnt_reviewed": 1
-  },
-  {
-    "word": "beautiful",
-    "translation": "красивый",
-    "learned_at": "2024-01-16T09:15:00Z",
-    "confidence_score": 78,
-    "cnt_reviewed": 5
-  }
-]
-*/
-
+// ProgressRequest is a request body for updating user progress
 type ProgressRequest struct {
 	WordID          uuid.UUID `json:"word_id"`
 	LearnedAt       time.Time `json:"learned_at"`
@@ -119,5 +95,6 @@ func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Requ
 		}
 	}
 
+	// Return ok
 	w.WriteHeader(http.StatusOK)
 }

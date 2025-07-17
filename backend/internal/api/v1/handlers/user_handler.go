@@ -12,6 +12,7 @@ import (
 	"github.com/google/uuid"
 )
 
+// UserHandler handles the user endpoint
 type UserHandler struct {
 	Repo *postgres.UserRepository
 }
@@ -29,6 +30,7 @@ func buildUserResponse(user *models.User) schemas.UserResponse {
 	}
 }
 
+// CreateUser creates a new user
 func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateUserRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
@@ -52,11 +54,13 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Return the created user
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
-
 	json.NewEncoder(w).Encode(buildUserResponse(&user))
 }
+
+// GetUser gets a user
 func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -70,10 +74,12 @@ func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Return the user
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildUserResponse(user))
 }
 
+// UpdateUser updates a user
 func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -106,11 +112,13 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Return the updated user
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(buildUserResponse(user))
 }
 
+// DeleteUser deletes a user
 func (h *UserHandler) DeleteUser(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -123,5 +131,6 @@ func (h *UserHandler) DeleteUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Return no content
 	w.WriteHeader(http.StatusNoContent)
 }

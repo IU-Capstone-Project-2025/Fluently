@@ -152,6 +152,7 @@ func flexibleJWTVerifier(next http.Handler) http.Handler {
 			return
 		}
 
+		// Check if token is nil
 		if token == nil {
 			logger.Log.Error("Invalid JWT token - token is nil",
 				zap.String("token_prefix", tokenPrefix),
@@ -193,12 +194,13 @@ func min(a, b int) int {
 	return b
 }
 
+// InitRoutes initializes routes
 func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	// Initialize JWT auth
 	utils.InitJWTAuth()
 
 	r.Use(cors.Handler(cors.Options{
-		AllowedOrigins:   []string{"*"}, // или конкретные
+		AllowedOrigins:   []string{"*"}, // Allow all origins
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
 		ExposedHeaders:   []string{"Link"},
@@ -259,11 +261,11 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 			LearnedWordRepo: postgres.NewLearnedWordRepository(db),
 		})
 		routes.RegisterDayWordRoutes(r, &handlers.DayWordHandler{
-			WordRepo:       postgres.NewWordRepository(db),
-			PreferenceRepo: postgres.NewPreferenceRepository(db),
-			TopicRepo:      postgres.NewTopicRepository(db),
-			SentenceRepo:   postgres.NewSentenceRepository(db),
-			PickOptionRepo: postgres.NewPickOptionRepository(db),
+			WordRepo:        postgres.NewWordRepository(db),
+			PreferenceRepo:  postgres.NewPreferenceRepository(db),
+			TopicRepo:       postgres.NewTopicRepository(db),
+			SentenceRepo:    postgres.NewSentenceRepository(db),
+			PickOptionRepo:  postgres.NewPickOptionRepository(db),
 			LearnedWordRepo: postgres.NewLearnedWordRepository(db),
 		})
 		routes.RegisterLessonRoutes(r, &handlers.LessonHandler{
@@ -274,5 +276,23 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 			WordRepo:       postgres.NewWordRepository(db),
 			Repo:           postgres.NewLessonRepository(db),
 		})
+
+		// --- new AI-related routes ---
+		chatHandler := &handlers.ChatHandler{
+			Redis:       utils.Redis(),
+			HistoryRepo: postgres.NewChatHistoryRepository(db),
+			LLMClient:   utils.NewLLMClient(utils.LLMClientConfig{}),
+		}
+		distractorHandler := &handlers.DistractorHandler{
+			Client: utils.NewDistractorClient(utils.DistractorClientConfig{}),
+		}
+		thesaurusHandler := &handlers.ThesaurusHandler{
+			Client: utils.NewThesaurusClient(utils.ThesaurusClientConfig{}),
+		}
+
+		chatHistoryHandler := &handlers.ChatHistoryHandler{Repo: postgres.NewChatHistoryRepository(db)}
+		routes.RegisterChatRoutes(r, chatHandler, chatHistoryHandler)
+		routes.RegisterDistractorRoutes(r, distractorHandler)
+		routes.RegisterThesaurusRoutes(r, thesaurusHandler)
 	})
 }

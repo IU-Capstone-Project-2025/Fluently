@@ -14,6 +14,7 @@ import (
 	"github.com/spf13/viper"
 )
 
+// Config represents the application configuration
 type Config struct {
 	Auth     AuthConfig
 	API      ApiConfig
@@ -21,8 +22,10 @@ type Config struct {
 	Logger   LoggerConfig
 	Google   GoogleConfig
 	Swagger  SwaggerConfig
+	Redis    RedisConfig
 }
 
+// AuthConfig represents the authentication configuration
 type AuthConfig struct {
 	JWTSecret         string
 	JWTExpiration     time.Duration
@@ -32,12 +35,14 @@ type AuthConfig struct {
 	RateLimitDuration time.Duration
 }
 
+// ApiConfig represents the API configuration
 type ApiConfig struct {
 	AppName string
 	AppHost string
 	AppPort string
 }
 
+// DatabaseConfig represents the database configuration
 type DatabaseConfig struct {
 	User         string
 	Password     string
@@ -51,24 +56,34 @@ type DatabaseConfig struct {
 	TestPort     string
 }
 
+// LoggerConfig represents the logger configuration
 type LoggerConfig struct {
 	Level string
 	Path  string
 }
 
+// GoogleConfig represents the Google configuration
 type GoogleConfig struct {
 	IosClientID     string
 	AndroidClientID string
 	WebClientID     string
 }
 
+// SwaggerConfig represents the Swagger configuration
 type SwaggerConfig struct {
 	AllowedEmails map[string]bool
 	Host          string
 }
 
+// RedisConfig represents the Redis configuration
+type RedisConfig struct {
+	ChatLockTTL time.Duration
+}
+
+// Init loads the configuration from environment variables
 var cfg *Config
 
+// Init loads the configuration from environment variables
 func Init() {
 	// Load .env file
 	err := godotenv.Load()
@@ -88,6 +103,7 @@ func Init() {
 	viper.SetDefault("RATE_LIMIT_REQUESTS", 100)
 	viper.SetDefault("RATE_LIMIT_DURATION", "1h")
 
+	// Read configuration
 	cfg = &Config{
 		Auth: AuthConfig{
 			JWTSecret:         viper.GetString("JWT_SECRET"),
@@ -127,6 +143,9 @@ func Init() {
 			AllowedEmails: parseEmailWhitelist(viper.GetString("SWAGGER_ALLOWED_EMAILS")),
 			Host:          viper.GetString("SWAGGER_HOST"),
 		},
+		Redis: RedisConfig{
+			ChatLockTTL: viper.GetDuration("REDIS_CHAT_LOCK_TTL"),
+		},
 	}
 }
 
@@ -163,7 +182,7 @@ func GetPostgresDSNForTest() string {
 	port := firstNotEmpty(c.Database.TestPort, c.Database.Port, "5433")
 	user := firstNotEmpty(c.Database.TestUser, c.Database.User, "test_user")
 	password := firstNotEmpty(c.Database.TestPassword, c.Database.Password, "test_password")
-	name := firstNotEmpty(c.Database.TestName, c.Database.Name, "test_fluently_db")
+	name := firstNotEmpty(c.Database.TestName, c.Database.Name, "test_db")
 
 	return fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable", user, password, host, port, name)
 }

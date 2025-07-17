@@ -12,10 +12,12 @@ import (
 	"github.com/google/uuid"
 )
 
+// TopicHandler handles the topic endpoint
 type TopicHandler struct {
 	Repo *postgres.TopicRepository
 }
 
+// buildTopicResponse builds a TopicResponse from a Topic
 func buildTopicResponse(topic *models.Topic) schemas.TopicResponse {
 	return schemas.TopicResponse{
 		ID:    topic.ID.String(),
@@ -23,6 +25,7 @@ func buildTopicResponse(topic *models.Topic) schemas.TopicResponse {
 	}
 }
 
+// GetTopic gets a topic
 func (h *TopicHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -36,10 +39,13 @@ func (h *TopicHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Return the topic
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildTopicResponse(topic))
 }
 
+// GetMainTopic gets the main topic
+// The main topic is the topic that has no parent
 func (h *TopicHandler) GetMainTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -53,6 +59,7 @@ func (h *TopicHandler) GetMainTopic(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Find the main topic (the topic that has no parent)
 	for topic.ParentID != nil {
 		topic, err = h.Repo.GetByID(r.Context(), *topic.ParentID)
 		if err != nil {
@@ -61,10 +68,13 @@ func (h *TopicHandler) GetMainTopic(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	// Return the topic
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildTopicResponse(topic))
 }
 
+// GetPathToMainTopic gets the path to the main topic
+// The path is a list of topics that lead to the main topic
 func (h *TopicHandler) GetPathToMainTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -81,6 +91,7 @@ func (h *TopicHandler) GetPathToMainTopic(w http.ResponseWriter, r *http.Request
 	}
 	path = append(path, topic.ID)
 
+	// Find the main topic (the topic that has no parent)
 	for topic.ParentID != nil {
 		topic, err = h.Repo.GetByID(r.Context(), *topic.ParentID)
 		if err != nil {
@@ -90,17 +101,20 @@ func (h *TopicHandler) GetPathToMainTopic(w http.ResponseWriter, r *http.Request
 		path = append(path, topic.ID)
 	}
 
+	// Convert the path to a slice of strings
 	strPath := make([]string, len(path))
 	for i, id := range path {
 		strPath[i] = id.String()
 	}
 
+	// Return the path
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string][]string{
 		"topics": strPath,
 	})
 }
 
+// CreateTopic creates a new topic
 func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
 	var req schemas.CreateTopicRequest
 
@@ -118,11 +132,13 @@ func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Return the created topic
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(buildTopicResponse(&topic))
 }
 
+// UpdateTopic updates a topic
 func (h *TopicHandler) UpdateTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -149,11 +165,13 @@ func (h *TopicHandler) UpdateTopic(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Return the updated topic
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(buildTopicResponse(topic))
 }
 
+// DeleteTopic deletes a topic
 func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -166,5 +184,6 @@ func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Return no content
 	w.WriteHeader(http.StatusNoContent)
 }

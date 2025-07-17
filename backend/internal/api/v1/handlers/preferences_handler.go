@@ -10,10 +10,12 @@ import (
 	"fluently/go-backend/internal/utils"
 )
 
+// PreferenceHandler is a handler for preferences
 type PreferenceHandler struct {
 	Repo *postgres.PreferenceRepository
 }
 
+// buildPreferencesResponse builds a response from a preference
 func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceResponse {
 	return schemas.PreferenceResponse{
 		ID:              pref.ID,
@@ -29,6 +31,7 @@ func buildPreferencesResponse(pref *models.Preference) schemas.PreferenceRespons
 	}
 }
 
+// CreateUserPreferences godoc
 func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http.Request) {
 	userId, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -60,6 +63,7 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 		return
 	}
 
+	// Return the created preference
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(buildPreferencesResponse(pref))
@@ -90,47 +94,81 @@ func (h PreferenceHandler) GetUserPreferences(w http.ResponseWriter, r *http.Req
 		return
 	}
 
+	// Return the preferences
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildPreferencesResponse(pref))
 }
 
+// UpdateUserPreferences godoc
+// @Summary Update user preferences
+// @Description Updates user preferences
+// @Tags preferences
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Success 200 {object} schemas.PreferenceResponse "Successfully updated preferences"
+// @Failure 400 {string} string "Bad request - invalid user or preferences"
+// @Failure 401 {string} string "Unauthorized - invalid or missing token"
+// @Failure 404 {string} string "Not found - user or preferences not found"
+// @Failure 500 {string} string "Internal server error"
+// @Router /api/v1/preferences [put]
 func (h *PreferenceHandler) UpdateUserPreferences(w http.ResponseWriter, r *http.Request) {
-	userId, err := utils.ParseUUIDParam(r, "user_id")
+	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
-		http.Error(w, "invalid user_id", http.StatusBadRequest)
+		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	var req schemas.CreatePreferenceRequest
+	var req schemas.UpdatePreferenceRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
-	pref, err := h.Repo.GetByID(r.Context(), userId)
+	pref, err := h.Repo.GetByUserID(r.Context(), user.ID)
 	if err != nil {
 		http.Error(w, "preference not found", http.StatusNotFound)
 		return
 	}
 
-	pref.CEFRLevel = req.CEFRLevel
-	pref.FactEveryday = req.FactEveryday
-	pref.Notifications = req.Notifications
-	pref.NotificationsAt = req.NotificationAt
-	pref.WordsPerDay = req.WordsPerDay
-	pref.Goal = req.Goal
-	pref.Subscribed = req.Subscribed
-	pref.AvatarImageURL = req.AvatarImageURL
+	// ======================== Update block ========================
+	if req.CEFRLevel != nil {
+		pref.CEFRLevel = *req.CEFRLevel
+	}
+	if req.FactEveryday != nil {
+		pref.FactEveryday = *req.FactEveryday
+	}
+	if req.Notifications != nil {
+		pref.Notifications = *req.Notifications
+	}
+	if req.NotificationAt != nil {
+		pref.NotificationsAt = req.NotificationAt
+	}
+	if req.WordsPerDay != nil {
+		pref.WordsPerDay = *req.WordsPerDay
+	}
+	if req.Goal != nil {
+		pref.Goal = *req.Goal
+	}
+	if req.Subscribed != nil {
+		pref.Subscribed = *req.Subscribed
+	}
+	if req.AvatarImageURL != nil {
+		pref.AvatarImageURL = *req.AvatarImageURL
+	}
+	// ============================================================
 
-	if err := h.Repo.Update(r.Context(), pref); err != nil {
+	if err := h.Repo.Update(r.Context(), pref.ID, &req); err != nil {
 		http.Error(w, "failed to update preference", http.StatusInternalServerError)
 		return
 	}
 
+	// Return the updated preferences
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildPreferencesResponse(pref))
 }
 
+// DeleteUserPreferences deletes user preferences
 func (h *PreferenceHandler) DeletePreference(w http.ResponseWriter, r *http.Request) {
 	userId, err := utils.ParseUUIDParam(r, "user_id")
 	if err != nil {
@@ -143,5 +181,6 @@ func (h *PreferenceHandler) DeletePreference(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
+	// Return no content
 	w.WriteHeader(http.StatusNoContent)
 }

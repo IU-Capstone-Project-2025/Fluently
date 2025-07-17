@@ -9,6 +9,7 @@ import (
 // For storing []string like text[] in PostgreSQL
 type StringArray []string
 
+// Value implements the driver.Valuer interface
 func (sa StringArray) Value() (driver.Value, error) {
 	if len(sa) == 0 {
 		return "{}", nil
@@ -22,6 +23,7 @@ func (sa StringArray) Value() (driver.Value, error) {
 	return "{" + strings.Join(quoted, ",") + "}", nil
 }
 
+// Scan implements the sql.Scanner interface
 func (sa *StringArray) Scan(src interface{}) error {
 	str, ok := src.(string)
 	if !ok {

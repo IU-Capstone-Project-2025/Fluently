@@ -6,11 +6,13 @@ import (
 	"testing"
 
 	"fluently/go-backend/internal/repository/models"
+
 	"github.com/gavv/httpexpect/v2"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateTopic tests the creation of a new topic
 func TestCreateTopic(t *testing.T) {
 	setupTest(t)
 
@@ -34,6 +36,7 @@ func TestCreateTopic(t *testing.T) {
 	assert.NotEmpty(t, resp.Value("id").String().Raw())
 }
 
+// TestGetTopic tests the retrieval of a topic
 func TestGetTopic(t *testing.T) {
 	setupTest(t)
 
@@ -55,6 +58,7 @@ func TestGetTopic(t *testing.T) {
 	assert.Equal(t, "Test Topic", resp.Value("title").String().Raw())
 }
 
+// TestUpdateTopic tests the update of a topic
 func TestUpdateTopic(t *testing.T) {
 	setupTest(t)
 
@@ -81,6 +85,7 @@ func TestUpdateTopic(t *testing.T) {
 	assert.Equal(t, "Updated Title", resp.Value("title").String().Raw())
 }
 
+// TestDeleteTopic tests the deletion of a topic
 func TestDeleteTopic(t *testing.T) {
 	setupTest(t)
 
@@ -102,6 +107,7 @@ func TestDeleteTopic(t *testing.T) {
 		Status(http.StatusNotFound)
 }
 
+// TestGetMainTopic tests the retrieval of the main topic
 func TestGetMainTopic(t *testing.T) {
 	setupTest(t)
 
@@ -131,6 +137,7 @@ func TestGetMainTopic(t *testing.T) {
 	assert.Equal(t, "Root Topic", resp.Value("title").String().Raw())
 }
 
+// TestGetPathToMainTopic tests the retrieval of the path to the main topic
 func TestGetPathToMainTopic(t *testing.T) {
 	setupTest(t)
 

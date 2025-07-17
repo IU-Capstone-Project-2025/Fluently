@@ -14,6 +14,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// DayWordHandler handles the day word endpoint
 type DayWordHandler struct {
 	WordRepo        *postgres.WordRepository
 	PreferenceRepo  *postgres.PreferenceRepository
@@ -51,6 +52,7 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 
 	var dayWordResponse schemas.DayWordResponse
 
+	// Get random word from database by cefr level
 	dayWord, err := h.WordRepo.GetDayWord(r.Context(), userPref.CEFRLevel, userID)
 	if err != nil {
 		http.Error(w, "failed to get day word", http.StatusInternalServerError)
@@ -61,6 +63,7 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 	dayWordResponse.Translation = dayWord.Translation
 	dayWordResponse.CEFRLevel = dayWord.CEFRLevel
 
+	// Get phonetic if exists
 	if dayWord.Phonetic != "" {
 		dayWordResponse.Transcription = &dayWord.Phonetic
 	}
@@ -73,6 +76,7 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 
 	dayWordResponse.Subtopic = topic.Title
 
+	// Get main topic (parent topic)
 	for topic.ParentID != nil {
 		topic, err = h.TopicRepo.GetByID(r.Context(), *topic.ParentID)
 		if err != nil {
@@ -172,22 +176,26 @@ func (h *DayWordHandler) GetDayWord(w http.ResponseWriter, r *http.Request) {
 		Data: pickOptionSentence,
 	})
 
+	// Randomly select an exercise
 	randomExercise := exercises[rand.Intn(len(exercises))]
 
 	dayWordResponse.Exercise = randomExercise
 
+	// Check if the word is learned
 	learned, err := h.LearnedWordRepo.IsLearned(r.Context(), userID, dayWord.ID)
 	if err != nil {
 		http.Error(w, "failed to get learned word", http.StatusInternalServerError)
 		return
 	}
 
+	// Set IsLearned field
 	if learned {
 		dayWordResponse.IsLearned = true
 	} else {
 		dayWordResponse.IsLearned = false
 	}
 
+	// Set UserPref field
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(dayWordResponse)

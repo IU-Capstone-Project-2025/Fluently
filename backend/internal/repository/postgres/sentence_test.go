@@ -10,6 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateAndGetSentence tests the creation and retrieval of a sentence
 func TestCreateAndGetSentence(t *testing.T) {
 	ctx := context.Background()
 	word := &models.Word{
@@ -41,6 +42,7 @@ func TestCreateAndGetSentence(t *testing.T) {
 	assert.Equal(t, sentence.AudioURL, found.AudioURL)
 }
 
+// TestUpdateSentence tests the update of a sentence
 func TestUpdateSentence(t *testing.T) {
 	ctx := context.Background()
 	word := &models.Word{
@@ -74,6 +76,7 @@ func TestUpdateSentence(t *testing.T) {
 	assert.Equal(t, "http://nojojoref.mp3", updated.AudioURL)
 }
 
+// TestDeleteSentence tests the deletion of a sentence
 func TestDeleteSentence(t *testing.T) {
 	ctx := context.Background()
 	word := &models.Word{

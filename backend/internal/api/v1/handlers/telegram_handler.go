@@ -20,12 +20,13 @@ import (
 	"gorm.io/gorm"
 )
 
+// TelegramHandler handles the telegram endpoint
 type TelegramHandler struct {
 	UserRepo      *postgres.UserRepository
 	LinkTokenRepo *postgres.LinkTokenRepository
 }
 
-// generateLinkToken генерирует безопасный токен для связывания
+// generateLinkToken generates a random link token
 func generateLinkToken() (string, error) {
 	b := make([]byte, 32)
 	if _, err := rand.Read(b); err != nil {
@@ -35,8 +36,8 @@ func generateLinkToken() (string, error) {
 }
 
 // CreateLinkToken godoc
-// @Summary      Создать токен для связывания Telegram аккаунта
-// @Description  Создает магическую ссылку для связывания Telegram ID с Google аккаунтом
+// @Summary      Create link token for Telegram account linking
+// @Description  Create a magic link for linking Telegram ID with Google account
 // @Tags         telegram
 // @Accept       json
 // @Produce      json
@@ -54,21 +55,21 @@ func (h *TelegramHandler) CreateLinkToken(w http.ResponseWriter, r *http.Request
 		return
 	}
 
-	// Проверяем, не связан ли уже этот Telegram ID
+	// Check if Telegram ID is already linked
 	if _, err := h.UserRepo.GetByTelegramID(r.Context(), req.TelegramID); err == nil {
 		logger.Log.Warn("Telegram ID already linked", zap.Int64("telegram_id", req.TelegramID))
 		http.Error(w, "telegram account already linked", http.StatusConflict)
 		return
 	}
 
-	// Удаляем старые токены для этого Telegram ID
+	// Delete old tokens for this Telegram ID
 	if existingTokens, err := h.LinkTokenRepo.GetActiveTelegramTokens(r.Context(), req.TelegramID); err == nil {
 		for _, token := range existingTokens {
 			h.LinkTokenRepo.MarkAsUsed(r.Context(), token.ID)
 		}
 	}
 
-	// Генерируем новый токен
+	// Generate link token
 	token, err := generateLinkToken()
 	if err != nil {
 		logger.Log.Error("Failed to generate link token", zap.Error(err))
@@ -76,7 +77,7 @@ func (h *TelegramHandler) CreateLinkToken(w http.ResponseWriter, r *http.Request
 		return
 	}
 
-	// Создаем запись токена
+	// Create link token
 	linkToken := &models.LinkToken{
 		Token:      token,
 		TelegramID: req.TelegramID,
@@ -90,7 +91,7 @@ func (h *TelegramHandler) CreateLinkToken(w http.ResponseWriter, r *http.Request
 		return
 	}
 
-	// Формируем ответ
+	// Format link URL
 	ExternalHostName := "fluently-app.ru"
 	linkURL := fmt.Sprintf("https://%s/link-google?token=%s", ExternalHostName, token)
 
@@ -100,13 +101,14 @@ func (h *TelegramHandler) CreateLinkToken(w http.ResponseWriter, r *http.Request
 		ExpiresAt: linkToken.ExpiresAt.Format(time.RFC3339),
 	}
 
+	// Send response
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }
 
 // CheckLinkStatus godoc
-// @Summary      Проверить статус связывания Telegram аккаунта
-// @Description  Проверяет, связан ли Telegram ID с каким-либо аккаунтом
+// @Summary      Check status of Telegram account linking
+// @Description  Check if Telegram ID is linked to any account
 // @Tags         telegram
 // @Accept       json
 // @Produce      json
@@ -150,13 +152,14 @@ func (h *TelegramHandler) CheckLinkStatus(w http.ResponseWriter, r *http.Request
 
 	logger.Log.Info("CheckLinkStatus: ", zap.Any("resp", resp))
 
+	// Send response
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }
 
 // LinkWithGoogle godoc
-// @Summary      Связать аккаунт через Google OAuth
-// @Description  Обрабатывает магическую ссылку и связывает Telegram ID с Google аккаунтом
+// @Summary      Link Telegram account with Google account
+// @Description  Process magic link and link Telegram ID with Google account
 // @Tags         telegram
 // @Accept       json
 // @Produce      json
@@ -174,7 +177,7 @@ func (h *TelegramHandler) LinkWithGoogle(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
-	// Находим токен
+	// Fund link token
 	linkToken, err := h.LinkTokenRepo.GetByToken(r.Context(), token)
 	if err != nil {
 		logger.Log.Error("Link token not found", zap.Error(err))
@@ -182,7 +185,7 @@ func (h *TelegramHandler) LinkWithGoogle(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
-	// Проверяем срок действия и использование
+	// Check expiration and usage
 	if linkToken.Used || linkToken.ExpiresAt.Before(time.Now()) {
 		logger.Log.Warn("Link token expired or used",
 			zap.Bool("used", linkToken.Used),
@@ -191,13 +194,15 @@ func (h *TelegramHandler) LinkWithGoogle(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
-	// Если пользователь уже аутентифицирован через Google OAuth
-	// то связываем его аккаунт с Telegram ID
+	/*
+	* If user is not authenticated, redirect to Google OAuth
+	* then connect his account with Telegram ID
+	*
+	* Here should be check if user is authenticated
+	* If user is not authenticated, redirect to Google OAuth
+	 */
 
-	// Здесь должна быть проверка аутентификации пользователя
-	// Если пользователь не аутентифицирован, перенаправляем на Google OAuth
-
-	// Пример HTML страницы для перенаправления
+	// HTML example for redirect
 	html := `
 <!DOCTYPE html>
 <html>
@@ -222,7 +227,7 @@ func (h *TelegramHandler) LinkWithGoogle(w http.ResponseWriter, r *http.Request)
 </body>
 </html>`
 
-	// Формируем redirect_uri и state
+	// Form redirect_uri and state
 	scheme := r.Header.Get("X-Forwarded-Proto")
 	if scheme == "" {
 		if r.TLS != nil {
@@ -232,15 +237,16 @@ func (h *TelegramHandler) LinkWithGoogle(w http.ResponseWriter, r *http.Request)
 		}
 	}
 	redirectURI := fmt.Sprintf("%s://%s/link-google/callback?token=%s", scheme, r.Host, token)
-	state := token // используем токен как state
+	state := token // use token as state
 
+	// Send response
 	w.Header().Set("Content-Type", "text/html")
 	fmt.Fprintf(w, html, redirectURI, state)
 }
 
 // LinkGoogleCallback godoc
-// @Summary      Callback для связывания через Google
-// @Description  Обрабатывает callback от Google OAuth и завершает связывание
+// @Summary      Callback for linking with Google
+// @Description  Process callback from Google OAuth and finish linking
 // @Tags         telegram
 // @Accept       json
 // @Produce      json
@@ -256,24 +262,24 @@ func (h *TelegramHandler) LinkGoogleCallback(w http.ResponseWriter, r *http.Requ
 	code := r.URL.Query().Get("code")
 	state := r.URL.Query().Get("state")
 
-	// Проверяем параметры
+	// Check parameters
 	if token == "" || code == "" || state != token {
 		http.Error(w, "invalid parameters", http.StatusBadRequest)
 		return
 	}
 
-	// Находим токен связывания
+	// Check link token
 	linkToken, err := h.LinkTokenRepo.GetByToken(r.Context(), token)
 	if err != nil || linkToken.Used || linkToken.ExpiresAt.Before(time.Now()) {
 		http.Error(w, "invalid or expired token", http.StatusGone)
 		return
 	}
 
-	// Здесь нужно обработать Google OAuth код и получить информацию о пользователе
-	// Используем существующую логику из auth_handler.go
+	// Here should be OAuth code exchange and get user info
+	// Use existing logic from auth_handler.go
 	cfg := config.GetConfig()
 
-	// Настраиваем OAuth config для callback
+	// Configure OAuth config for callback
 	oauthCfg := config.GoogleOAuthConfig()
 	scheme := r.Header.Get("X-Forwarded-Proto")
 	if scheme == "" {
@@ -285,7 +291,7 @@ func (h *TelegramHandler) LinkGoogleCallback(w http.ResponseWriter, r *http.Requ
 	}
 	oauthCfg.RedirectURL = fmt.Sprintf("%s://%s/link-google/callback", scheme, r.Host)
 
-	// Обмениваем код на токен
+	// Exchange code for token
 	oauthToken, err := oauthCfg.Exchange(r.Context(), code)
 	if err != nil {
 		logger.Log.Error("OAuth code exchange failed", zap.Error(err))
@@ -293,7 +299,7 @@ func (h *TelegramHandler) LinkGoogleCallback(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
-	// Извлекаем ID токен
+	// Get ID token
 	rawIDToken, ok := oauthToken.Extra("id_token").(string)
 	if !ok {
 		logger.Log.Error("ID token missing in OAuth response")
@@ -301,7 +307,7 @@ func (h *TelegramHandler) LinkGoogleCallback(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
-	// Валидируем ID токен (используем существующую логику)
+	// Validate ID token
 	audiences := []string{
 		cfg.Google.WebClientID,
 		fmt.Sprintf("%s.apps.googleusercontent.com", cfg.Google.IosClientID),
@@ -321,7 +327,7 @@ func (h *TelegramHandler) LinkGoogleCallback(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
-	// Извлекаем данные пользователя
+	// Get user info
 	claims := payload.Claims
 	userEmail := claims["email"].(string)
 	emailVerified := claims["email_verified"].(bool)
@@ -332,7 +338,7 @@ func (h *TelegramHandler) LinkGoogleCallback(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
-	// Находим пользователя по email
+	// Find user by email
 	user, err := h.UserRepo.GetByEmail(r.Context(), userEmail)
 	if err != nil {
 		logger.Log.Error("User not found", zap.Error(err))
@@ -340,19 +346,19 @@ func (h *TelegramHandler) LinkGoogleCallback(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
-	// Связываем Telegram ID с пользователем
+	// Link Telegram ID with user
 	if err := h.UserRepo.LinkTelegramID(r.Context(), user.ID, linkToken.TelegramID); err != nil {
 		logger.Log.Error("Failed to link telegram ID", zap.Error(err))
 		http.Error(w, "failed to link account", http.StatusInternalServerError)
 		return
 	}
 
-	// Помечаем токен как использованный
+	// Mark token as used
 	if err := h.LinkTokenRepo.MarkAsUsed(r.Context(), linkToken.ID); err != nil {
 		logger.Log.Error("Failed to mark token as used", zap.Error(err))
 	}
 
-	// Отображаем страницу успеха
+	// Send success HTML response
 	html := `
 <!DOCTYPE html>
 <html>
@@ -374,13 +380,14 @@ func (h *TelegramHandler) LinkGoogleCallback(w http.ResponseWriter, r *http.Requ
 </body>
 </html>`
 
+	// Send HTML response
 	w.Header().Set("Content-Type", "text/html")
 	fmt.Fprint(w, html)
 }
 
 // UnlinkTelegram godoc
-// @Summary      Отвязать Telegram аккаунт
-// @Description  Удаляет связь между Telegram ID и аккаунтом пользователя
+// @Summary      Unlink Telegram account
+// @Description  Delete the link between Telegram ID and user account
 // @Tags         telegram
 // @Accept       json
 // @Produce      json
@@ -398,7 +405,7 @@ func (h *TelegramHandler) UnlinkTelegram(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
-	// Находим пользователя по Telegram ID
+	// Find user by Telegram ID
 	user, err := h.UserRepo.GetByTelegramID(r.Context(), req.TelegramID)
 	if err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
@@ -410,13 +417,14 @@ func (h *TelegramHandler) UnlinkTelegram(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
-	// Отвязываем Telegram ID
+	// Unlink Telegram ID
 	if err := h.UserRepo.UnlinkTelegramID(r.Context(), user.ID); err != nil {
 		logger.Log.Error("Failed to unlink telegram", zap.Error(err))
 		http.Error(w, "failed to unlink account", http.StatusInternalServerError)
 		return
 	}
 
+	// Send success JSON response
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]string{
 		"message": "Telegram account successfully unlinked",
