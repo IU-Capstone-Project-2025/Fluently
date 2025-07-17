@@ -5,6 +5,7 @@ go 1.24
 toolchain go1.24.1
 
 require (
+	github.com/bsm/redislock v0.9.4
 	github.com/gavv/httpexpect/v2 v2.17.0
 	github.com/go-chi/chi/v5 v5.0.12
 	github.com/go-chi/cors v1.2.1

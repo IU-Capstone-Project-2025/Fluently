@@ -6,6 +6,9 @@ import (
 	"time"
 
 	"fluently/go-backend/internal/repository/models"
+	"fluently/go-backend/pkg/logger"
+
+	"go.uber.org/zap"
 
 	"github.com/google/uuid"
 	"gorm.io/datatypes"
@@ -26,16 +29,16 @@ func (r *ChatHistoryRepository) Create(ctx context.Context, history *models.Chat
 	return r.db.WithContext(ctx).Create(history).Error
 }
 
-// ListByUser fetches histories for a user.
-func (r *ChatHistoryRepository) ListByUser(ctx context.Context, userID uuid.UUID, limit int) ([]models.ChatHistory, error) {
-	var list []models.ChatHistory
-	query := r.db.WithContext(ctx).Where("user_id = ?", userID).Order("created_at DESC")
-	if limit > 0 {
-		query = query.Limit(limit)
-	}
-	err := query.Find(&list).Error
-	return list, err
-}
+// // ListByUser fetches histories for a user.
+// func (r *ChatHistoryRepository) ListByUser(ctx context.Context, userID uuid.UUID, limit int) ([]models.ChatHistory, error) {
+// 	var list []models.ChatHistory
+// 	query := r.db.WithContext(ctx).Where("user_id = ?", userID).Order("created_at DESC")
+// 	if limit > 0 {
+// 		query = query.Limit(limit)
+// 	}
+// 	err := query.Find(&list).Error
+// 	return list, err
+// }
 
 // ListByUserAndDay returns histories for a specific user created on a given UTC day.
 func (r *ChatHistoryRepository) ListByUserAndDay(ctx context.Context, userID uuid.UUID, dayStart, dayEnd time.Time) ([]models.ChatHistory, error) {
@@ -49,6 +52,10 @@ func (r *ChatHistoryRepository) ListByUserAndDay(ctx context.Context, userID uui
 
 // ToJSON helper to marshal messages directly.
 func ToJSON(v any) datatypes.JSON {
-	b, _ := json.Marshal(v)
+	b, err := json.Marshal(v)
+	if err != nil {
+		logger.Log.Error("failed to marshal to json", zap.Error(err))
+		return datatypes.JSON{}
+	}
 	return datatypes.JSON(b)
 }

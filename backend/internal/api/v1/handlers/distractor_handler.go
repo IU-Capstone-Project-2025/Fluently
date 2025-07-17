@@ -42,10 +42,15 @@ func (h *DistractorHandler) Generate(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "invalid body", http.StatusBadRequest)
 		return
 	}
+	if req.Sentence == "" || req.Word == "" {
+		http.Error(w, "invalid request", http.StatusBadRequest)
+		return
+	}
 	picks, err := h.Client.GenerateDistractors(ctx, req.Sentence, req.Word)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(DistractorResponse{PickOptions: picks})
 }

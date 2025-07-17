@@ -114,7 +114,11 @@ func (c *ThesaurusClient) Recommend(ctx context.Context, knownWords []string) ([
 	if err != nil {
 		return nil, fmt.Errorf("failed to make HTTP request: %w", err)
 	}
-	defer resp.Body.Close()
+	defer func() {
+		if resp != nil && resp.Body != nil {
+			resp.Body.Close()
+		}
+	}()
 
 	// Read body
 	respBody, err := io.ReadAll(resp.Body)

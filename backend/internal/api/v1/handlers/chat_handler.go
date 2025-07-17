@@ -9,12 +9,15 @@ import (
 
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/utils"
+	"fluently/go-backend/pkg/logger"
 
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/schemas"
 
+	"github.com/bsm/redislock"
 	"github.com/google/uuid"
 	goredis "github.com/redis/go-redis/v9"
+	"go.uber.org/zap"
 	"gorm.io/datatypes"
 )
 
@@ -70,11 +73,24 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Acquire per-user distributed lock so concurrent requests (e.g. /chat and
+	// /chat/finish) for the same user are serialized.
 	user, err := utils.GetCurrentUser(ctx)
 	if err != nil {
 		http.Error(w, "unauthorized", http.StatusUnauthorized)
 		return
 	}
+
+	lock, err := utils.AcquireChatLock(ctx, user.ID)
+	if err == redislock.ErrNotObtained {
+		http.Error(w, "another chat operation is in progress", http.StatusTooManyRequests)
+		return
+	} else if err != nil {
+		logger.Log.Error("failed to acquire chat lock", zap.Error(err))
+		http.Error(w, "internal error", http.StatusInternalServerError)
+		return
+	}
+	defer lock.Release(ctx)
 
 	// Convert messages to LLM format
 	var llmMsgs []utils.LLMMessage
@@ -91,7 +107,14 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 
 	// Call LLM
 	reply, err := h.LLMClient.Chat(ctx, llmMsgs, "balanced", nil, nil)
+	logger.Log.Info("LLM reply", zap.String("reply", reply))
+	if reply == "" {
+		logger.Log.Error("LLM reply is empty")
+		http.Error(w, "LLM reply is empty", http.StatusInternalServerError)
+		return
+	}
 	if err != nil {
+		logger.Log.Error("LLM error", zap.Error(err))
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
@@ -106,7 +129,15 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Check stop words on the last user message
-	lastMsg := strings.ToLower(req.Chat[len(req.Chat)-2].Message)
+	// Check out OutOfRange error from the LLM
+	lastMsg := ""
+	if len(req.Chat) > 1 {
+		lastMsg = strings.ToLower(req.Chat[len(req.Chat)-2].Message)
+	} else {
+		logger.Log.Error("no last message")
+		http.Error(w, "no last message", http.StatusInternalServerError)
+		return
+	}
 	shouldFinish := false
 	for _, sw := range stopWords {
 		if strings.Contains(lastMsg, sw) {
@@ -116,7 +147,9 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if shouldFinish {
-		h.finishChat(ctx, user.ID)
+		if err := h.flushChat(ctx, user.ID); err != nil {
+			logger.Log.Error("failed to flush chat", zap.Error(err))
+		}
 	}
 
 	// Return chat with AI reply
@@ -140,29 +173,46 @@ func (h *ChatHandler) FinishChat(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "unauthorized", http.StatusUnauthorized)
 		return
 	}
-	if err := h.finishChat(ctx, user.ID); err != nil {
+
+	lock, err := utils.AcquireChatLock(ctx, user.ID)
+	if err == redislock.ErrNotObtained {
+		http.Error(w, "chat operation in progress, try later", http.StatusTooManyRequests)
+		return
+	} else if err != nil {
+		logger.Log.Error("failed to acquire chat lock", zap.Error(err))
+		http.Error(w, "internal error", http.StatusInternalServerError)
+		return
+	}
+	defer lock.Release(ctx)
+
+	if err := h.flushChat(ctx, user.ID); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 	w.WriteHeader(http.StatusNoContent)
 }
 
-// finishChat flushes redis to postgres and clears key
-func (h *ChatHandler) finishChat(ctx context.Context, userID uuid.UUID) error {
+// flushChat moves chat history from Redis to Postgres atomically. Callers must
+// hold the per-user chat lock before invoking this method.
+func (h *ChatHandler) flushChat(ctx context.Context, userID uuid.UUID) error {
 	key := "chat:" + userID.String()
-	data, err := h.Redis.Get(ctx, key).Bytes()
-	if err != nil {
+
+	// Atomically fetch and delete using GETDEL (Redis >= 6.2).
+	data, err := h.Redis.GetDel(ctx, key).Bytes()
+	if err == goredis.Nil {
 		return nil // nothing to flush
+	}
+	if err != nil {
+		logger.Log.Error("failed to get/del chat from redis", zap.Error(err))
+		return err
+	}
+	if len(data) == 0 {
+		return nil
 	}
 
 	history := models.ChatHistory{
 		UserID:   userID,
 		Messages: datatypes.JSON(data),
 	}
-	if err := h.HistoryRepo.Create(ctx, &history); err != nil {
-		return err
-	}
-
-	h.Redis.Del(ctx, key)
-	return nil
+	return h.HistoryRepo.Create(ctx, &history)
 }

@@ -9,6 +9,9 @@ import (
 
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/utils"
+	"fluently/go-backend/pkg/logger"
+
+	"go.uber.org/zap"
 )
 
 var _ = schemas.ErrorResponse{}
@@ -66,7 +69,12 @@ func (h *ChatHistoryHandler) GetHistory(w http.ResponseWriter, r *http.Request) 
 	var resp []ChatHistoryItem
 	for _, hst := range histories {
 		var chat []ChatMessage
-		_ = json.Unmarshal(hst.Messages, &chat)
+		err = json.Unmarshal(hst.Messages, &chat)
+		if err != nil {
+			logger.Log.Error("failed to unmarshal chat history", zap.Error(err))
+			http.Error(w, "failed to unmarshal chat history", http.StatusInternalServerError)
+			return
+		}
 		resp = append(resp, ChatHistoryItem{
 			ID:        hst.ID.String(),
 			CreatedAt: hst.CreatedAt,
@@ -75,5 +83,10 @@ func (h *ChatHistoryHandler) GetHistory(w http.ResponseWriter, r *http.Request) 
 	}
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(resp)
+	err = json.NewEncoder(w).Encode(resp)
+	if err != nil {
+		logger.Log.Error("failed to encode response", zap.Error(err))
+		http.Error(w, "failed to encode response", http.StatusInternalServerError)
+		return
+	}
 }

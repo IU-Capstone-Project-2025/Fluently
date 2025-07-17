@@ -152,7 +152,7 @@ func (c *LLMClient) ChatSimple(ctx context.Context, message string, modelType st
 		modelType = "balanced"
 	}
 
-	url := fmt.Sprintf("%s/chat/simple?message=%s&model_type=%s", c.baseURL, urlQueryEscape(message), urlQueryEscape(modelType))
+	url := fmt.Sprintf("%s/chat/simple?message=%s&model_type=%s", c.baseURL, url.QueryEscape(message), url.QueryEscape(modelType))
 	req, err := http.NewRequestWithContext(ctx, http.MethodPost, url, nil)
 	if err != nil {
 		return "", fmt.Errorf("failed to create HTTP request: %w", err)
@@ -213,9 +213,4 @@ func (c *LLMClient) HealthCheck(ctx context.Context) (bool, error) {
 func ChatWithDefaults(ctx context.Context, messages []LLMMessage) (string, error) {
 	client := NewLLMClient(LLMClientConfig{})
 	return client.Chat(ctx, messages, "balanced", nil, nil)
-}
-
-// urlQueryEscape is a tiny helper to safely escape query parameters.
-func urlQueryEscape(s string) string {
-	return (&url.URL{Path: s}).EscapedPath()
 }
