@@ -2,70 +2,59 @@ from transformers import BertTokenizerFast, BertForMaskedLM
 import torch
 import re
 import random
+import spacy
+from collections import OrderedDict
 
 class DistractorGenerator:
     def __init__(self):
+        # Загрузка модели BERT
         self.model_name = "bert-base-uncased"
         self.tokenizer = BertTokenizerFast.from_pretrained(self.model_name)
         self.model = BertForMaskedLM.from_pretrained(self.model_name)
         self.model.eval()
 
-        # Простой словарь для ручной лемматизации
-        self.lemmatization_map = {
-            "mice": "mouse",
-            "geese": "goose",
-            "feet": "foot",
-            "teeth": "tooth",
-            "knives": "knife",
-            "playing": "play",
-            "played": "play",
-            "plays": "play",
-            "broke": "break",
-            "broken": "break",
-            "began": "begin",
-            "begun": "begin",
-            "birds": "bird",
-            "cats": "cat",
-            "dogs": "dog",
-            "children": "child",
-            "men": "man",
-            "women": "woman"
-        }
+        # Загрузка модели spaCy для английского языка
+        try:
+            self.nlp = spacy.load("en_core_web_sm")
+        except OSError:
+            # Автоматическая установка модели при первом запуске
+            import subprocess
+            import sys
+            subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"], check=True)
+            self.nlp = spacy.load("en_core_web_sm")
 
-    def custom_lemmatize(self, word: str) -> str:
-        """Простая ручная лемматизация для английского языка"""
-        word_lower = word.lower()
+    def is_valid_distractor(self, token: str, target_lemma: str) -> bool:
+        """Проверяет, является ли токен валидным дистрактором"""
+        # Проверка длины
+        if len(token) < 2:
+            return False
 
-        # Сначала проверяем исключения
-        if word_lower in self.lemmatization_map:
-            return self.lemmatization_map[word_lower]
+        # Проверка на содержание только букв
+        if not token.isalpha():
+            return False
 
-        # Правила для регулярных форм
-        if word_lower.endswith("ies") and len(word_lower) > 3:
-            return word_lower[:-3] + "y"
-        if word_lower.endswith("es") and len(word_lower) > 2:
-            return word_lower[:-2]
-        if word_lower.endswith("s") and len(word_lower) > 1:
-            return word_lower[:-1]
-        if word_lower.endswith("ing") and len(word_lower) > 4:
-            return word_lower[:-3]
-        if word_lower.endswith("ed") and len(word_lower) > 3:
-            return word_lower[:-2]
+        # Проверка на части слов (BERT-specific)
+        if token.startswith("##"):
+            return False
 
-        return word_lower
+        # Проверка на совпадение с целевой леммой
+        try:
+            token_lemma = self.nlp(token)[0].lemma_.lower()
+        except:
+            token_lemma = token.lower()
+
+        return token_lemma != target_lemma
 
     def generate_distractors(self, sentence: str, target_word: str, num_distractors: int = 3) -> list:
-        # Лемматизируем целевое слово
-        target_lemma = self.custom_lemmatize(target_word).lower()
+        # Обработка предложения с помощью spaCy
+        doc = self.nlp(sentence)
+        target_lemma = self.nlp(target_word)[0].lemma_.lower()
 
-        # Ищем слово для маскирования
-        words = re.findall(r'\b\w+\b', sentence)
+        # Поиск слова для маскирования по лемме
         word_to_mask = None
-
-        for word in words:
-            word_lemma = self.custom_lemmatize(word).lower()
-            if word_lemma == target_lemma:
-                word_to_mask = word
+        for token in doc:
+            if token.lemma_.lower() == target_lemma:
+                word_to_mask = token.text
                 break
 
         if word_to_mask is None:
@@ -76,7 +65,8 @@ class DistractorGenerator:
             rf"\b{re.escape(word_to_mask)}\b",
             self.tokenizer.mask_token,
             sentence,
-            count=1
+            count=1,
+            flags=re.IGNORECASE
         )
 
         if masked_sentence == sentence:
@@ -102,19 +92,15 @@ class DistractorGenerator:
             candidates = []
             for idx in top_indices:
                 token = self.tokenizer.decode(idx).strip()
-                token_lower = token.lower()
 
                 # Пропускаем невалидные варианты
-                if (not token
-                    or token.startswith("##")
-                    or not token.isalpha()
-                    or self.custom_lemmatize(token) == target_lemma):
+                if not self.is_valid_distractor(token, target_lemma):
                     continue
 
                 candidates.append(token)
 
-            # Удаляем дубликаты
-            candidates = list(dict.fromkeys(candidates))
+            # Удаляем дубликаты с сохранением порядка
+            candidates = list(OrderedDict.fromkeys(candidates))
 
             # Выбираем "средние" по вероятности варианты
             if candidates:
@@ -142,11 +128,15 @@ if __name__ == "__main__":
         ("He played football yesterday", "play"),
         ("These mice are tiny", "mouse"),
         ("Children are playing outside", "child"),
-        ("Women in business", "woman")
+        ("Women in business", "woman"),
+        ("The geese are flying south", "goose"),
+        ("His feet are cold", "foot"),
+        ("She has a new pair of teeth", "tooth"),
+        ("A cat is on the mat", "cat")  # Проверка на однобуквенные слова
     ]
 
     for sentence, word in examples:
         distractors = generator.generate_distractors(sentence, word)
         print(f"Предложение: {sentence}")
         print(f"Целевое слово: {word}")
-        print(f"Дистракторы: {', '.join(distractors)}\n")
+        print(f"Дистракторы: {', '.join(distractors) if distractors else 'No distractors found'}\n")

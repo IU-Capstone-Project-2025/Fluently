@@ -34,6 +34,7 @@ type ChatHistoryHandler struct {
 // @Description Возвращает все завершённые диалоги пользователя за указанный день (UTC). Передайте ?day=YYYY-MM-DDTHH:MM:SSZ
 // @Tags Chat
 // @Produce json
+// @Security BearerAuth
 // @Param day query string true "Точка внутри нужного дня в формате RFC3339 (пример: 2025-07-17T00:00:00Z)"
 // @Success 200 {array} ChatHistoryItem
 // @Failure 400 {object} schemas.ErrorResponse
