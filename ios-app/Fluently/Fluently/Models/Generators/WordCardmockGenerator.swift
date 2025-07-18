@@ -8,6 +8,7 @@
 import Foundation
 
 extension WordModel {
+    /// generate one mock word
     static func mockWord() -> WordModel {
         return WordModel(
 //            cefrLevel: "A1",
@@ -26,13 +27,14 @@ extension WordModel {
             sentences: [],
             subtopic: "Car",
             topic: "Vechile",
-//            transcription: "ka:r",
+            transcription: "ka:r",
             translation: "Машина",
             word: "Car",
             wordId: UUID().uuidString
         )
     }
 
+    /// generate array of mock words basing
     static func generateMockWords(count: Int = 5) -> [WordModel] {
         let mockWords = [
             WordModel(
@@ -59,7 +61,7 @@ extension WordModel {
                 ],
                 subtopic: "Food",
                 topic: "Fruits",
-//                transcription: "ˈæp.əl",
+                transcription: "ˈæp.əl",
                 translation: "Яблоко",
                 word: "Apple",
                 wordId: UUID().uuidString
@@ -77,7 +79,7 @@ extension WordModel {
                         ],
                         correctAnswer: "book"
                     ),
-                    type: .typeTranslationRussEng
+                    type: .chooseTranslationEngRuss
                 ),
                 isLearned: true,
                 sentences: [
@@ -92,7 +94,7 @@ extension WordModel {
                 ],
                 subtopic: "Education",
                 topic: "Objects",
-//                transcription: "bʊk",
+                transcription: "bʊk",
                 translation: "Книга",
                 word: "Book",
                 wordId: UUID().uuidString
@@ -115,7 +117,7 @@ extension WordModel {
                 ],
                 subtopic: "Activities",
                 topic: "Sports",
-//                transcription: "rʌn",
+                transcription: "rʌn",
                 translation: "Бегать",
                 word: "Run",
                 wordId: UUID().uuidString
@@ -138,7 +140,7 @@ extension WordModel {
                 ],
                 subtopic: "Art",
                 topic: "Adjectives",
-//                transcription: "ˈbjuː.tɪ.fəl",
+                transcription: "ˈbjuː.tɪ.fəl",
                 translation: "Красивый",
                 word: "Beautiful",
                 wordId: UUID().uuidString

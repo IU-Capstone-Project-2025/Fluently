@@ -12,13 +12,13 @@ enum LoginScreenBuilder {
 
     static func build(
         router: AppRouter,
-        acount: AccountData,
+        account: AccountData,
         authViewModel: GoogleAuthViewModel
     ) -> LoginView {
         let router = LoginRouter(router: router)
         let presenter = LoginPresenter (
             router: router,
-            account: acount,
+            account: account,
             authViewModel: authViewModel
         )
         

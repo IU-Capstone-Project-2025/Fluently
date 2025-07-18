@@ -20,6 +20,6 @@ final class HomeScreenRouter {
     }
 
     func navigatoToLesson(_ lesson: CardsModel) {
-        router.navigate(to: AppRoutes.lesson(lesson))
+        router.navigate(to: AppRoutes.lesson)
     }
 }

@@ -7,10 +7,23 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct HomeScreenView: View {
     // MARK: - Key Objects
-    @ObservedObject var presenter: HomeScreenPresenter
+    @StateObject var presenter: HomeScreenPresenter
+    @Environment(\.modelContext) var modelContext
+
+    var words: [WordModel] {
+        let descriptor = FetchDescriptor<WordModel>(
+            predicate: #Predicate {
+                $0.isInLesson == false &&
+                $0.isDayWord == false
+            },
+//            sortBy: [SortDescriptor(\.wordDate, order: .reverse)]
+        )
+        return (try? modelContext.fetch(descriptor)) ?? []
+    }
 
     // MARK: - Properties
     @State var goal: String = "Traveling"
@@ -32,25 +45,28 @@ struct HomeScreenView: View {
             topBar
             infoGrid
         }
-        .navigationBarBackButtonHidden()
-        .modifier(BackgroundViewModifier())
-        .task {
-            do {
-                // TODO: fix this logic
-                try await presenter.getLesson()
-            } catch {
-                print(error)
+        .onAppear {
+            presenter.modelContext = modelContext
+            presenter.getDayWord()
+            Task {
+                do {
+                    try await presenter.getLesson()
+                } catch {
+                    print(error)
+                }
             }
         }
+        .navigationBarBackButtonHidden()
+        .modifier(BackgroundViewModifier())
 
         .fullScreenCover(item: $openedScreen) { screenType in
             switch screenType {
                 case .notes:
                     presenter.buildNotesScreen()
                 case .learned:
-                    presenter.buildDictionaryScreen()
+                    presenter.buildDictionaryScreen(isLearned: true)
                 case .nonLearned:
-                    NonLearnedView()
+                    presenter.buildDictionaryScreen(isLearned: false)
             }
         }
     }
@@ -61,12 +77,12 @@ struct HomeScreenView: View {
     var topBar: some View {
         HStack {
             VStack (alignment: .leading) {
-                Text("Goal:")
+                Text("Home")
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
-                Text(goal)
-                    .foregroundStyle(.whiteText)
-                    .font(.appFont.largeTitle.bold())
+//                Text(goal)
+//                    .foregroundStyle(.whiteText)
+//                    .font(.appFont.largeTitle.bold())
             }
             Spacer()
             AvatarImage(
@@ -82,7 +98,7 @@ struct HomeScreenView: View {
     ///  Grid with main info
     var infoGrid: some View {
         VStack {
-            WordOfTheDay(word: WordModel.mockWord())
+            WordOfTheDay(word: presenter.wordOfTheDay ?? WordModel.mockWord())
             cards
 
             Spacer()
@@ -98,11 +114,14 @@ struct HomeScreenView: View {
     ///  List of the cards
     var cards: some View {
         HStack(spacing: 12) {
-            ForEach(ScreenCard.CardType.allCases, id: \.self) { type in
-                ScreenCard(type: type) {
-                    openedScreen = type
-                }
-                .animation(.easeInOut, value: openedScreen)
+            ScreenCard(type: .notes) {
+                openedScreen = .notes
+            }
+            ScreenCard(type: .learned, count: "\(words.filter { $0.isLearned == true}.count)") {
+                openedScreen = .learned
+            }
+            ScreenCard(type: .nonLearned, count: "\(words.filter { $0.isLearned == false}.count)") {
+                openedScreen = .nonLearned
             }
         }
         .padding(.horizontal, Const.horizontalPadding)

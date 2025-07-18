@@ -11,6 +11,8 @@ import SwiftUI
 struct CalendarScreenView: View {
     @ObservedObject var presenter: CalendarScreenPresenter
 
+    @Environment(\.modelContext) var modelContext
+
     private enum Const {
         // Paddings
         static let horizontalPadding = CGFloat(30)
@@ -24,6 +26,9 @@ struct CalendarScreenView: View {
                     infoGrid
                     infoLayer
                 }
+            }
+            .onAppear {
+                presenter.setModelContext(modelContext)
             }
             .navigationBarBackButtonHidden()
             .modifier(BackgroundViewModifier())
@@ -56,7 +61,10 @@ struct CalendarScreenView: View {
                     cornerRadius: 0,
                     fill: .orangePrimary
                 )
-            DayInfo(selectedDate: presenter.selectedDate)
+            DayInfo(
+                selectedDate: presenter.selectedDate,
+                words: presenter.getForDate(presenter.selectedDate)
+            )
         }
     }
 }

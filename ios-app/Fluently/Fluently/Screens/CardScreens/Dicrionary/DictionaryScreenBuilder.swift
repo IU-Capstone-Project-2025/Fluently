@@ -9,12 +9,10 @@ import Foundation
 
 enum DictionaryScreenBuilder {
     static func build(
-
+        isLearned: Bool
     ) -> DictionaryView {
-        let presenter = DictionaryScreenPresenter()
-
         return DictionaryView(
-//            presenter: presenter
+            isLearned: isLearned
         )
     }
 }
