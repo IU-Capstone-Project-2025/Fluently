@@ -465,25 +465,56 @@ func (s *HandlerService) completeTest(ctx context.Context, c tele.Context, userI
 		cefrLevel,
 	)
 
-	// Create completion keyboard
-	keyboard := &tele.ReplyMarkup{
-		InlineKeyboard: [][]tele.InlineButton{
-			{{Text: "Начать изучение", Data: "lesson:start"}},
-			{{Text: "Настройки", Data: "menu:settings"}},
-		},
-	}
-
 	// Clear test data
 	if err := s.stateManager.ClearTempData(ctx, userID, fsm.TempDataCEFRTest); err != nil {
 		s.logger.Error("Failed to clear test data", zap.Error(err))
 	}
 
-	// Set user back to start state
-	if err := s.stateManager.SetState(ctx, userID, fsm.StateStart); err != nil {
-		s.logger.Error("Failed to set start state", zap.Error(err))
-	}
+	// Check if user is authenticated
+	isAuthenticated := s.IsUserAuthenticated(ctx, userID)
 
-	return c.Send(resultText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+	if !isAuthenticated {
+		// New user - need to authenticate to save progress
+		resultText += "\n\n🔐 **Для сохранения прогресса нужно создать аккаунт**\n\n" +
+			"Регистрация через Google займет всего 30 секунд и позволит сохранить твой прогресс на всех устройствах."
+
+		keyboard := &tele.ReplyMarkup{
+			InlineKeyboard: [][]tele.InlineButton{
+				{{Text: "🔐 Создать аккаунт", Data: "auth:register"}},
+				{{Text: "🔑 У меня уже есть аккаунт", Data: "auth:existing_user"}},
+				{{Text: "⏭ Попробовать без аккаунта", Data: "test:skip"}},
+			},
+		}
+
+		return c.Send(resultText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+	} else {
+		// Authenticated user - update preferences with CEFR level
+		userProgress, err := s.GetUserProgress(ctx, userID)
+		if err != nil {
+			s.logger.Error("Failed to get user progress", zap.Error(err))
+		} else {
+			userProgress.CEFRLevel = cefrLevel
+			err = s.UpdateUserProgress(ctx, userID, userProgress)
+			if err != nil {
+				s.logger.Error("Failed to update user progress with CEFR level", zap.Error(err))
+			}
+		}
+
+		// Create completion keyboard
+		keyboard := &tele.ReplyMarkup{
+			InlineKeyboard: [][]tele.InlineButton{
+				{{Text: "Начать изучение", Data: "lesson:start"}},
+				{{Text: "Настройки", Data: "menu:settings"}},
+			},
+		}
+
+		// Set user back to start state
+		if err := s.stateManager.SetState(ctx, userID, fsm.StateStart); err != nil {
+			s.logger.Error("Failed to set start state", zap.Error(err))
+		}
+
+		return c.Send(resultText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+	}
 }
 
 // determineCEFRLevel determines CEFR level based on group scores

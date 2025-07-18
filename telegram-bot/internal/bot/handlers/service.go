@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
@@ -62,23 +63,145 @@ func (s *HandlerService) TransitionState(ctx context.Context, userID int64, newS
 	return s.stateManager.SetState(ctx, userID, newState)
 }
 
-// GetUserProgress (from API) for now - mock
+// GetUserProgress retrieves user progress from backend API
 func (s *HandlerService) GetUserProgress(ctx context.Context, userID int64) (*domain.UserProgress, error) {
-	// For now, return a default user progress
-	// This should be implemented to call the actual API
-	return &domain.UserProgress{
+	// Check if user is authenticated
+	if !s.stateManager.IsUserAuthenticated(ctx, userID) {
+		// Return minimal user progress for unauthenticated users
+		return &domain.UserProgress{
+			UserID:           userID,
+			CEFRLevel:        "",
+			WordsPerDay:      10,
+			NotificationTime: "10:00",
+		}, nil
+	}
+
+	// Get access token
+	accessToken, err := s.stateManager.GetValidAccessToken(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get access token", zap.Int64("user_id", userID), zap.Error(err))
+		return nil, err
+	}
+
+	// Get preferences from backend
+	preferences, err := s.apiClient.GetUserPreferences(ctx, accessToken)
+	if err != nil {
+		s.logger.Error("Failed to get user preferences", zap.Int64("user_id", userID), zap.Error(err))
+		return nil, err
+	}
+
+	// Convert to domain model
+	userProgress := &domain.UserProgress{
 		UserID:           userID,
-		CEFRLevel:        "A1",
-		WordsPerDay:      10,
-		NotificationTime: "10:00",
-	}, nil
+		CEFRLevel:        preferences.CEFRLevel,
+		WordsPerDay:      preferences.WordsPerDay,
+		NotificationTime: preferences.NotificationAt,
+		LearnedWords:     0, // TODO: Get from backend stats
+		CurrentStreak:    0, // TODO: Get from backend stats
+		LongestStreak:    0, // TODO: Get from backend stats
+		LastActivity:     time.Now(),
+		StartDate:        time.Now().Format("2006-01-02"),
+		Preferences: map[string]interface{}{
+			"goal":             preferences.Goal,
+			"fact_everyday":    preferences.FactEveryday,
+			"subscribed":       preferences.Subscribed,
+			"avatar_image_url": preferences.AvatarImageURL,
+			"notifications":    preferences.Notifications,
+		},
+	}
+
+	return userProgress, nil
 }
 
-// UpdateUserProgress update user progress through API
+// UpdateUserProgress updates user progress through backend API
 func (s *HandlerService) UpdateUserProgress(ctx context.Context, userID int64, progress *domain.UserProgress) error {
-	// For now, this is a placeholder
-	// This should be implemented to call the actual API
+	// Check if user is authenticated
+	if !s.stateManager.IsUserAuthenticated(ctx, userID) {
+		return fmt.Errorf("user %d is not authenticated", userID)
+	}
+
+	// Get access token
+	accessToken, err := s.stateManager.GetValidAccessToken(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get access token", zap.Int64("user_id", userID), zap.Error(err))
+		return err
+	}
+
+	// Convert to backend format
+	updateRequest := &api.UpdatePreferenceRequest{
+		CEFRLevel:      progress.CEFRLevel,
+		WordsPerDay:    progress.WordsPerDay,
+		NotificationAt: progress.NotificationTime,
+		Notifications:  progress.NotificationsEnabled(),
+	}
+
+	// Extract additional preferences
+	if progress.Preferences != nil {
+		if goal, ok := progress.Preferences["goal"].(string); ok {
+			updateRequest.Goal = goal
+		}
+		if factEveryday, ok := progress.Preferences["fact_everyday"].(bool); ok {
+			updateRequest.FactEveryday = factEveryday
+		}
+		if subscribed, ok := progress.Preferences["subscribed"].(bool); ok {
+			updateRequest.Subscribed = subscribed
+		}
+		if avatarURL, ok := progress.Preferences["avatar_image_url"].(string); ok {
+			updateRequest.AvatarImageURL = avatarURL
+		}
+	}
+
+	// Update preferences in backend
+	_, err = s.apiClient.UpdateUserPreferences(ctx, accessToken, updateRequest)
+	if err != nil {
+		s.logger.Error("Failed to update user preferences", zap.Int64("user_id", userID), zap.Error(err))
+		return err
+	}
+
+	s.logger.Info("Successfully updated user progress", zap.Int64("user_id", userID))
 	return nil
+}
+
+// IsUserAuthenticated checks if user has valid authentication
+func (s *HandlerService) IsUserAuthenticated(ctx context.Context, userID int64) bool {
+	return s.stateManager.IsUserAuthenticated(ctx, userID)
+}
+
+// HasUserCompletedOnboarding checks if user has completed the onboarding process
+func (s *HandlerService) HasUserCompletedOnboarding(ctx context.Context, userID int64) (bool, error) {
+	userProgress, err := s.GetUserProgress(ctx, userID)
+	if err != nil {
+		return false, err
+	}
+
+	// User has completed onboarding if they have:
+	// 1. CEFR level set
+	// 2. Words per day preference set (non-zero)
+	// 3. Notification preference set (either enabled or disabled)
+	return userProgress.CEFRLevel != "" &&
+		userProgress.WordsPerDay > 0 &&
+		userProgress.NotificationTime != "", nil
+}
+
+// GetUserAuthenticationStatus returns detailed authentication status
+func (s *HandlerService) GetUserAuthenticationStatus(ctx context.Context, userID int64) (bool, bool, error) {
+	isAuthenticated := s.IsUserAuthenticated(ctx, userID)
+	s.logger.Debug("User authentication check", zap.Int64("user_id", userID), zap.Bool("is_authenticated", isAuthenticated))
+
+	hasCompletedOnboarding := false
+
+	if isAuthenticated {
+		completed, err := s.HasUserCompletedOnboarding(ctx, userID)
+		if err != nil {
+			s.logger.Error("Failed to check onboarding completion", zap.Int64("user_id", userID), zap.Error(err))
+			return isAuthenticated, false, err
+		}
+		hasCompletedOnboarding = completed
+		s.logger.Debug("User onboarding check", zap.Int64("user_id", userID), zap.Bool("has_completed_onboarding", hasCompletedOnboarding))
+	}
+
+	s.logger.Info("User authentication status", zap.Int64("user_id", userID), zap.Bool("is_authenticated", isAuthenticated), zap.Bool("has_completed_onboarding", hasCompletedOnboarding))
+	return isAuthenticated, hasCompletedOnboarding, nil
 }
 
 // HandleTextMessage handles text messages based on state
@@ -152,6 +275,11 @@ func (s *HandlerService) HandleCallback(ctx context.Context, c tele.Context, use
 	if strings.HasPrefix(data, "voice:") {
 		action := strings.TrimPrefix(data, "voice:")
 		return s.HandleVoiceCallback(ctx, c, userID, action)
+	}
+
+	if strings.HasPrefix(data, "stats:") {
+		action := strings.TrimPrefix(data, "stats:")
+		return s.HandleStatsCallback(ctx, c, userID, action)
 	}
 
 	if strings.HasPrefix(data, "help:") {

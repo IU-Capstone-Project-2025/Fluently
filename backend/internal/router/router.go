@@ -219,8 +219,9 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	// Initialize Telegram handler
 	linkTokenRepo := postgres.NewLinkTokenRepository(db)
 	telegramHandler := &handlers.TelegramHandler{
-		UserRepo:      postgres.NewUserRepository(db),
-		LinkTokenRepo: linkTokenRepo,
+		UserRepo:         postgres.NewUserRepository(db),
+		LinkTokenRepo:    linkTokenRepo,
+		RefreshTokenRepo: postgres.NewRefreshTokenRepository(db),
 	}
 
 	// Start cleanup task for expired tokens (every hour)

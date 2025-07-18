@@ -13,8 +13,10 @@ import (
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/repository/schemas"
+	"fluently/go-backend/internal/utils"
 	"fluently/go-backend/pkg/logger"
 
+	"github.com/google/uuid"
 	"go.uber.org/zap"
 	"google.golang.org/api/idtoken"
 	"gorm.io/gorm"
@@ -22,8 +24,9 @@ import (
 
 // TelegramHandler handles the telegram endpoint
 type TelegramHandler struct {
-	UserRepo      *postgres.UserRepository
-	LinkTokenRepo *postgres.LinkTokenRepository
+	UserRepo         *postgres.UserRepository
+	LinkTokenRepo    *postgres.LinkTokenRepository
+	RefreshTokenRepo *postgres.RefreshTokenRepository
 }
 
 // generateLinkToken generates a random link token
@@ -383,6 +386,93 @@ func (h *TelegramHandler) LinkGoogleCallback(w http.ResponseWriter, r *http.Requ
 	// Send HTML response
 	w.Header().Set("Content-Type", "text/html")
 	fmt.Fprint(w, html)
+}
+
+// GetJWTTokens godoc
+// @Summary      Get JWT tokens for linked Telegram user
+// @Description  Retrieve JWT tokens for a user who has already linked their Telegram account
+// @Tags         telegram
+// @Accept       json
+// @Produce      json
+// @Param        request  body      schemas.TelegramTokenRequest  true  "Telegram ID"
+// @Success      200  {object}  schemas.JwtResponse
+// @Failure      400  {object}  schemas.ErrorResponse
+// @Failure      404  {object}  schemas.ErrorResponse
+// @Failure      500  {object}  schemas.ErrorResponse
+// @Router       /telegram/get-tokens [post]
+func (h *TelegramHandler) GetJWTTokens(w http.ResponseWriter, r *http.Request) {
+	var req schemas.TelegramTokenRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		logger.Log.Error("Invalid request body", zap.Error(err))
+		http.Error(w, "invalid request body", http.StatusBadRequest)
+		return
+	}
+
+	// Find user by telegram ID
+	user, err := h.UserRepo.GetByTelegramID(r.Context(), req.TelegramID)
+	if err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			logger.Log.Error("User not found for telegram ID", zap.Int64("telegram_id", req.TelegramID))
+			http.Error(w, "user not found", http.StatusNotFound)
+			return
+		}
+		logger.Log.Error("Failed to get user by telegram ID", zap.Error(err))
+		http.Error(w, "internal server error", http.StatusInternalServerError)
+		return
+	}
+
+	// Generate JWT tokens
+	resp, err := h.generateTokens(user, r)
+	if err != nil {
+		logger.Log.Error("Failed to generate tokens", zap.Error(err))
+		http.Error(w, "failed to generate tokens", http.StatusInternalServerError)
+		return
+	}
+
+	// Update last login time
+	if err := h.UserRepo.UpdateLastLogin(r.Context(), user.ID); err != nil {
+		logger.Log.Error("Failed to update last login time", zap.Error(err))
+		// Don't fail the request for this
+	}
+
+	logger.Log.Info("JWT tokens generated for telegram user", zap.Int64("telegram_id", req.TelegramID))
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(resp)
+}
+
+// generateTokens generates JWT and refresh token for telegram handler
+func (h *TelegramHandler) generateTokens(user *models.User, r *http.Request) (schemas.JwtResponse, error) {
+	// Generate JWT token
+	tokenString, err := utils.GenerateJWT(user)
+	if err != nil {
+		return schemas.JwtResponse{}, err
+	}
+
+	// Generate refresh token
+	refreshToken, err := utils.GenerateRefreshToken()
+	if err != nil {
+		return schemas.JwtResponse{}, err
+	}
+
+	refreshTokenModel := &models.RefreshToken{
+		ID:        uuid.New(),
+		UserID:    user.ID,
+		Token:     refreshToken,
+		ExpiresAt: time.Now().Add(30 * 24 * time.Hour),
+	}
+	if err := h.RefreshTokenRepo.Create(r.Context(), refreshTokenModel); err != nil {
+		return schemas.JwtResponse{}, err
+	}
+
+	resp := schemas.JwtResponse{
+		AccessToken:  tokenString,
+		RefreshToken: refreshToken,
+		TokenType:    "Bearer",
+		ExpiresIn:    int64(config.GetConfig().Auth.JWTExpiration.Seconds()),
+	}
+
+	return resp, nil
 }
 
 // UnlinkTelegram godoc
