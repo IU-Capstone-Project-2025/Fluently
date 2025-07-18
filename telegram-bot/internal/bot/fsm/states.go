@@ -124,15 +124,25 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateTestGroup3, StateTestGroup4}:             true,
 	{StateTestGroup4, StateTestGroup5}:             true,
 	{StateTestGroup5, StateCEFRTestProcessing}:     true,
+	{StateTestGroup5, StateCEFRTestResult}:         true, // Direct transition for completion
 	{StateCEFRTestProcessing, StateCEFRTestResult}: true,
 	{StateCEFRTestResult, StateLevelDetermination}: true,
 	{StateLevelDetermination, StatePlanCreation}:   true,
 	{StatePlanCreation, StateLessonStart}:          true,
 
+	// Test skip flow
+	{StateVocabularyTest, StateCEFRTestResult}: true, // Allow skipping test
+	{StateTestGroup1, StateCEFRTestResult}:     true, // Allow skipping from any test stage
+	{StateTestGroup2, StateCEFRTestResult}:     true,
+	{StateTestGroup3, StateCEFRTestResult}:     true,
+	{StateTestGroup4, StateCEFRTestResult}:     true,
+
 	// Lesson flow - main states
 	{StateLessonStart, StateLessonInProgress}:    true,
 	{StateLessonInProgress, StateLessonComplete}: true,
 	{StateLessonComplete, StateLessonStart}:      true,
+	{StateStart, StateLessonStart}:               true, // Allow starting lesson from main menu
+	{StateStart, StateLessonInProgress}:          true, // Allow continuing lesson from main menu
 
 	// New Learning Flow: Show 3 words → Test → Repeat
 	{StateLessonInProgress, StateShowingWordSet}:   true,
@@ -188,6 +198,20 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateAccountLinking, StateWaitingForLink}: true,
 	{StateWaitingForLink, StateAccountLinked}:  true,
 	{StateAccountLinked, StateQuestionnaire}:   true,
+
+	// Additional authentication flows
+	{StateWelcome, StateAccountLinking}:        true,
+	{StateAccountLinking, StateStart}:          true,
+	{StateAccountLinked, StateStart}:           true,
+	{StateQuestionnaire, StateAccountLinking}:  true,
+	{StateCEFRTestResult, StateAccountLinking}: true,
+	{StateAccountLinking, StateQuestionnaire}:  true,
+
+	// Welcome to lesson transitions (for authenticated users)
+	{StateWelcome, StateLessonStart}:      true,
+	{StateWelcome, StateLessonInProgress}: true,
+	{StateWelcome, StateStart}:            true, // Allow transition from welcome to start
+	{StateWelcome, StateQuestionnaire}:    true, // Allow transition from welcome to questionnaire for fast-track onboarding
 
 	// Settings flow - main menu transitions
 	{StateStart, StateSettings}:                 true,

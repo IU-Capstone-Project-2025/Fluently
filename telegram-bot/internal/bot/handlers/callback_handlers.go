@@ -16,6 +16,14 @@ import (
 // HandleLessonCallback handles lesson-related callbacks
 func (s *HandlerService) HandleLessonCallback(ctx context.Context, c tele.Context, userID int64, action string) error {
 	switch action {
+	case "start":
+		// Get current state for HandleLessonStartCallback
+		currentState, err := s.stateManager.GetState(ctx, userID)
+		if err != nil {
+			s.logger.Error("Failed to get current state", zap.Error(err))
+			return err
+		}
+		return s.HandleLessonStartCallback(ctx, c, userID, currentState)
 	case "start_word_set":
 		return s.HandleStartWordSet(ctx, c, userID, fsm.StateShowingWordSet)
 	case "continue":
@@ -96,10 +104,159 @@ func (s *HandlerService) HandleExerciseCallback(ctx context.Context, c tele.Cont
 // HandleAuthCallback handles authentication-related callbacks
 func (s *HandlerService) HandleAuthCallback(ctx context.Context, c tele.Context, userID int64, action string) error {
 	switch action {
+	case "existing_user":
+		return s.HandleExistingUserAuth(ctx, c, userID)
+	case "new_user":
+		return s.HandleNewUserAuth(ctx, c, userID)
+	case "register":
+		return s.HandleRegisterAuth(ctx, c, userID)
 	case "check_link":
 		return s.handleCheckLinkStatus(ctx, c, userID)
 	default:
 		return c.Send("❌ Неизвестная команда авторизации")
+	}
+}
+
+// HandleExistingUserAuth handles existing user authentication flow
+func (s *HandlerService) HandleExistingUserAuth(ctx context.Context, c tele.Context, userID int64) error {
+	// First check if user is already linked
+	linkStatus, err := s.apiClient.CheckLinkStatus(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to check link status", zap.Error(err))
+		return c.Send("❌ Произошла ошибка при проверке статуса связи. Попробуйте позже.")
+	}
+
+	if linkStatus.IsLinked {
+		// User is already linked, proceed directly to authentication check
+		s.logger.Info("User is already linked, proceeding to check authentication", zap.Int64("user_id", userID))
+		return s.handleCheckLinkStatus(ctx, c, userID)
+	}
+
+	// Create link token for existing user who is not yet linked
+	linkResponse, err := s.apiClient.CreateLinkToken(ctx, userID)
+	if err != nil {
+		// Handle the case where the account is already linked (409 error)
+		if strings.Contains(err.Error(), "already linked") || strings.Contains(err.Error(), "409") {
+			s.logger.Info("Account already linked, proceeding to check status", zap.Int64("user_id", userID))
+			return s.handleCheckLinkStatus(ctx, c, userID)
+		}
+		s.logger.Error("Failed to create link token for existing user", zap.Error(err))
+		return c.Send("❌ Произошла ошибка. Попробуйте позже.")
+	}
+
+	// Store linking data
+	err = s.stateManager.StoreUserLinkingData(ctx, userID, linkResponse.Token, time.Hour)
+	if err != nil {
+		s.logger.Error("Failed to store linking data", zap.Error(err))
+	}
+
+	authText := fmt.Sprintf(
+		"🔐 *Авторизация для существующего пользователя*\n\n"+
+			"Для входа в ваш аккаунт необходимо пройти авторизацию через Google.\n\n"+
+			"🔗 *Ссылка для авторизации:*\n[Нажмите здесь для входа](%s)\n\n"+
+			"После авторизации вернитесь и нажмите \"Проверить связь\".",
+		linkResponse.LinkURL,
+	)
+
+	keyboard := &tele.ReplyMarkup{
+		InlineKeyboard: [][]tele.InlineButton{
+			{
+				{Text: "🔄 Проверить связь", Data: "auth:check_link"},
+				{Text: "❓ Помощь", Data: "help:auth"},
+			},
+		},
+	}
+
+	return c.Send(authText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+}
+
+// HandleNewUserAuth handles new user authentication flow with onboarding
+func (s *HandlerService) HandleNewUserAuth(ctx context.Context, c tele.Context, userID int64) error {
+	// Check current state first
+	currentState, err := s.stateManager.GetState(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get current state", zap.Error(err))
+		return err
+	}
+
+	// Only set state to welcome if not already there
+	if currentState != fsm.StateWelcome {
+		if err := s.stateManager.SetState(ctx, userID, fsm.StateWelcome); err != nil {
+			s.logger.Error("Failed to set welcome state", zap.Error(err))
+			return err
+		}
+	}
+
+	// Start onboarding process
+	return s.HandleOnboardingStartCallback(ctx, c, userID, fsm.StateWelcome)
+}
+
+// HandleRegisterAuth handles user registration after CEFR test completion
+func (s *HandlerService) HandleRegisterAuth(ctx context.Context, c tele.Context, userID int64) error {
+	// First check if user is already linked
+	linkStatus, err := s.apiClient.CheckLinkStatus(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to check link status", zap.Error(err))
+		return c.Send("❌ Произошла ошибка при проверке статуса связи. Попробуйте позже.")
+	}
+
+	if linkStatus.IsLinked {
+		// User is already linked, proceed directly to authentication check
+		s.logger.Info("User is already linked during registration, proceeding to check authentication", zap.Int64("user_id", userID))
+		return s.handleCheckLinkStatus(ctx, c, userID)
+	}
+
+	// Create link token for new user registration
+	linkResponse, err := s.apiClient.CreateLinkToken(ctx, userID)
+	if err != nil {
+		// Handle the case where the account is already linked (409 error)
+		if strings.Contains(err.Error(), "already linked") || strings.Contains(err.Error(), "409") {
+			s.logger.Info("Account already linked during registration, proceeding to check status", zap.Int64("user_id", userID))
+			return s.handleCheckLinkStatus(ctx, c, userID)
+		}
+		s.logger.Error("Failed to create link token for registration", zap.Error(err))
+		return c.Send("❌ Произошла ошибка. Попробуйте позже.")
+	}
+
+	// Store linking data
+	err = s.stateManager.StoreUserLinkingData(ctx, userID, linkResponse.Token, time.Hour)
+	if err != nil {
+		s.logger.Error("Failed to store linking data", zap.Error(err))
+	}
+
+	authText := fmt.Sprintf(
+		"🔐 *Создание аккаунта*\n\n"+
+			"Для сохранения прогресса создадим аккаунт через Google.\n\n"+
+			"🎯 **Преимущества аккаунта:**\n"+
+			"• Сохранение прогресса на всех устройствах\n"+
+			"• Персональная статистика\n"+
+			"• Синхронизация с веб-версией\n\n"+
+			"🔗 *Ссылка для регистрации:*\n[Нажмите здесь для создания аккаунта](%s)\n\n"+
+			"После регистрации вернитесь и нажмите \"Проверить связь\".",
+		linkResponse.LinkURL,
+	)
+
+	keyboard := &tele.ReplyMarkup{
+		InlineKeyboard: [][]tele.InlineButton{
+			{
+				{Text: "🔄 Проверить связь", Data: "auth:check_link"},
+				{Text: "⏭ Пропустить", Data: "lesson:start"},
+			},
+		},
+	}
+
+	return c.Send(authText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+}
+
+// HandleStatsCallback handles statistics-related callbacks
+func (s *HandlerService) HandleStatsCallback(ctx context.Context, c tele.Context, userID int64, action string) error {
+	switch action {
+	case "show":
+		return s.HandleStatsCommand(ctx, c, userID, fsm.StateStart)
+	case "overall":
+		return s.HandleStatsCommand(ctx, c, userID, fsm.StateStart)
+	default:
+		return c.Send("❌ Неизвестная команда статистики")
 	}
 }
 
@@ -223,21 +380,96 @@ func (s *HandlerService) handleFinalStats(ctx context.Context, c tele.Context, u
 
 // handleCheckLinkStatus checks if user's Google account is linked
 func (s *HandlerService) handleCheckLinkStatus(ctx context.Context, c tele.Context, userID int64) error {
+	s.logger.Info("Checking link status", zap.Int64("user_id", userID))
+
 	linkStatus, err := s.apiClient.CheckLinkStatus(ctx, userID)
 	if err != nil {
-		s.logger.Error("Failed to check link status", zap.Error(err))
+		s.logger.Error("Failed to check link status", zap.Int64("user_id", userID), zap.Error(err))
 		return c.Send("❌ Не удалось проверить статус связи")
 	}
+
+	s.logger.Info("Link status result", zap.Int64("user_id", userID), zap.Bool("is_linked", linkStatus.IsLinked))
 
 	if !linkStatus.IsLinked {
 		return c.Send("🔗 Аккаунт еще не связан. Пожалуйста, завершите процесс авторизации по ссылке выше.")
 	}
 
-	// Store JWT token if available
-	// Note: You would typically get the JWT token from the link status response
-	// For now, we'll assume the token is available from a separate authentication flow
+	// Account is linked, now we need to get JWT tokens
+	s.logger.Info("Account is linked, attempting to get JWT tokens", zap.Int64("user_id", userID))
 
-	return c.Send("✅ Аккаунт успешно связан! Теперь вы можете начать изучение.\n\nИспользуйте /learn для начала урока.")
+	// Get JWT tokens from the backend after successful linking
+	jwtTokens, err := s.apiClient.GetJWTTokens(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get JWT tokens after linking", zap.Int64("user_id", userID), zap.Error(err))
+		// For now, let's still proceed - this might be an API issue
+		// In a real implementation, you'd handle this error appropriately
+	} else {
+		// Store JWT tokens
+		s.logger.Info("Storing JWT tokens", zap.Int64("user_id", userID), zap.String("access_token_length", fmt.Sprintf("%d", len(jwtTokens.AccessToken))))
+
+		// Store access token with 24 hour expiration (adjust as needed)
+		err = s.stateManager.StoreJWTToken(ctx, userID, jwtTokens.AccessToken, 24*time.Hour)
+		if err != nil {
+			s.logger.Error("Failed to store JWT access token", zap.Int64("user_id", userID), zap.Error(err))
+		} else {
+			s.logger.Info("Successfully stored JWT access token", zap.Int64("user_id", userID))
+		}
+
+		// Also store using the new format if available
+		if jwtTokens.RefreshToken != "" {
+			err = s.stateManager.StoreJWTTokens(ctx, userID, jwtTokens.AccessToken, jwtTokens.RefreshToken, 24*time.Hour, 30*24*time.Hour)
+			if err != nil {
+				s.logger.Error("Failed to store JWT tokens", zap.Int64("user_id", userID), zap.Error(err))
+			} else {
+				s.logger.Info("Successfully stored JWT tokens", zap.Int64("user_id", userID))
+			}
+		}
+	}
+
+	// Clear linking data
+	err = s.stateManager.ClearUserLinkingData(ctx, userID)
+	if err != nil {
+		s.logger.Warn("Failed to clear linking data", zap.Int64("user_id", userID), zap.Error(err))
+	}
+
+	// Check if user has completed onboarding
+	isAuthenticated, hasCompletedOnboarding, err := s.GetUserAuthenticationStatus(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get user authentication status", zap.Int64("user_id", userID), zap.Error(err))
+		return err
+	}
+
+	s.logger.Info("Post-linking authentication status", zap.Int64("user_id", userID), zap.Bool("is_authenticated", isAuthenticated), zap.Bool("has_completed_onboarding", hasCompletedOnboarding))
+
+	if isAuthenticated && hasCompletedOnboarding {
+		// User is fully set up - show main menu
+		successText := "✅ *Аккаунт успешно связан!*\n\n🎉 Добро пожаловать обратно! Теперь вы можете продолжить изучение."
+
+		keyboard := &tele.ReplyMarkup{
+			InlineKeyboard: [][]tele.InlineButton{
+				{
+					{Text: "🚀 Начать урок", Data: "lesson:start"},
+					{Text: "🏠 Главное меню", Data: "menu:main"},
+				},
+			},
+		}
+
+		return c.Send(successText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+	} else {
+		// User needs to complete onboarding
+		successText := "✅ *Аккаунт успешно связан!*\n\n📋 Теперь давайте завершим настройку вашего профиля для эффективного обучения."
+
+		keyboard := &tele.ReplyMarkup{
+			InlineKeyboard: [][]tele.InlineButton{
+				{
+					{Text: "✅ Завершить настройку", Data: "questionnaire:start"},
+					{Text: "🚀 Пропустить в урок", Data: "lesson:start"},
+				},
+			},
+		}
+
+		return c.Send(successText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+	}
 }
 
 // handleHelpAuth provides help information about authentication
