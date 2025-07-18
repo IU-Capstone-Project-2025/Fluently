@@ -18,6 +18,28 @@ func (s *HandlerService) HandleStartCommand(ctx context.Context, c tele.Context,
 		return err
 	}
 
+	// Check user authentication status
+	isAuthenticated, hasCompletedOnboarding, err := s.GetUserAuthenticationStatus(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get user authentication status", zap.Error(err))
+		return err
+	}
+
+	// Handle different user states
+	if isAuthenticated && hasCompletedOnboarding {
+		// User is fully set up - fast-track to main menu
+		return s.showMainMenu(ctx, c, userID)
+	} else if isAuthenticated && !hasCompletedOnboarding {
+		// User is authenticated but hasn't completed onboarding - fast-track onboarding
+		return s.showFastTrackOnboarding(ctx, c, userID)
+	} else {
+		// User is not authenticated - show initial welcome with auth options
+		return s.showWelcomeWithAuthOptions(ctx, c, userID)
+	}
+}
+
+// showWelcomeWithAuthOptions shows the welcome message with authentication options
+func (s *HandlerService) showWelcomeWithAuthOptions(ctx context.Context, c tele.Context, userID int64) error {
 	// Transition to welcome state
 	if err := s.stateManager.SetState(ctx, userID, fsm.StateWelcome); err != nil {
 		s.logger.Error("Failed to set welcome state", zap.Error(err))
@@ -27,33 +49,94 @@ func (s *HandlerService) HandleStartCommand(ctx context.Context, c tele.Context,
 	// Send welcome message
 	welcomeText := fmt.Sprintf(
 		"Привет, %s! 👋\n\n"+
-			"Я помогу тебе выучить английский легко и весело!",
+			"Я помогу тебе выучить английский легко и весело!\n\n"+
+			"Выбери, как продолжить:",
 		c.Sender().FirstName,
 	)
 
-	// Add "Get Started" button
-	startBtn := &tele.InlineButton{
-		Text: "Начать",
-		Data: "onboarding:start",
-	}
-	alreadyHaveAccount := &tele.InlineButton{
+	// Create buttons for different flows
+	existingUserBtn := &tele.InlineButton{
 		Text: "У меня уже есть аккаунт",
-		Data: "account:link",
+		Data: "auth:existing_user",
 	}
+	newUserBtn := &tele.InlineButton{
+		Text: "Начать",
+		Data: "auth:new_user",
+	}
+
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
-			{*startBtn, *alreadyHaveAccount},
+			{*newUserBtn},
+			{*existingUserBtn},
 		},
 	}
 
-	// Send the message
-	if _, err := s.bot.Send(c.Sender(), welcomeText, &tele.SendOptions{ParseMode: tele.ModeMarkdown, ReplyMarkup: keyboard}); err != nil {
-		s.logger.Error("Failed to send welcome message", zap.Error(err))
+	return c.Send(welcomeText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+}
+
+// showMainMenu shows the main menu for authenticated users
+func (s *HandlerService) showMainMenu(ctx context.Context, c tele.Context, userID int64) error {
+	// Set state to start
+	if err := s.stateManager.SetState(ctx, userID, fsm.StateStart); err != nil {
+		s.logger.Error("Failed to set start state", zap.Error(err))
 		return err
 	}
 
-	// User should now be in StateWelcome, waiting for them to click "Начать"
-	return nil
+	// Get user progress for personalized welcome
+	userProgress, err := s.GetUserProgress(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get user progress", zap.Error(err))
+		return err
+	}
+
+	welcomeText := fmt.Sprintf(
+		"🎉 *С возвращением!*\n\n"+
+			"📊 Твой уровень: *%s*\n"+
+			"📚 Слов в день: *%d*\n\n"+
+			"Что будем изучать сегодня?",
+		userProgress.CEFRLevel,
+		userProgress.WordsPerDay,
+	)
+
+	keyboard := &tele.ReplyMarkup{
+		InlineKeyboard: [][]tele.InlineButton{
+			{
+				{Text: "🚀 Начать урок", Data: "lesson:start"},
+				{Text: "📊 Статистика", Data: "stats:show"},
+			},
+			{
+				{Text: "⚙️ Настройки", Data: "menu:settings"},
+				{Text: "❓ Помощь", Data: "menu:help"},
+			},
+		},
+	}
+
+	return c.Send(welcomeText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+}
+
+// showFastTrackOnboarding shows fast-track onboarding for authenticated but incomplete users
+func (s *HandlerService) showFastTrackOnboarding(ctx context.Context, c tele.Context, userID int64) error {
+	// Set state to questionnaire
+	if err := s.stateManager.SetState(ctx, userID, fsm.StateQuestionnaire); err != nil {
+		s.logger.Error("Failed to set questionnaire state", zap.Error(err))
+		return err
+	}
+
+	onboardingText := fmt.Sprintf(
+		"✨ *Привет, %s!*\n\n"+
+			"Осталось совсем немного - давай закончим настройку твоего профиля для эффективного обучения.\n\n"+
+			"Это займет всего 2 минуты! 🕐",
+		c.Sender().FirstName,
+	)
+
+	keyboard := &tele.ReplyMarkup{
+		InlineKeyboard: [][]tele.InlineButton{
+			{{Text: "✅ Завершить настройку", Data: "questionnaire:start"}},
+			{{Text: "🚀 Пропустить в урок", Data: "lesson:start"}},
+		},
+	}
+
+	return c.Send(onboardingText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
 }
 
 // HandleHelpCommand handles the /help command
@@ -62,6 +145,7 @@ func (s *HandlerService) HandleHelpCommand(ctx context.Context, c tele.Context, 
 		"Вот команды, которые вы можете использовать:\n\n" +
 		"*/start* - Начать ваше путешествие в изучении языка\n" +
 		"*/learn* - Начать сегодняшний урок\n" +
+		"*/lesson* - Быстрый доступ к уроку\n" +
 		"*/settings* - Настроить предпочтения обучения\n" +
 		"*/test* - Пройти тест на определение уровня словарного запаса\n" +
 		"*/stats* - Посмотреть статистику обучения\n" +
@@ -202,12 +286,12 @@ func (s *HandlerService) HandleAccountLinkCallback(ctx context.Context, c tele.C
 
 // HandleMainMenuCallback handles main menu callback
 func (s *HandlerService) HandleMainMenuCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Главное меню...")
+	return s.showMainMenu(ctx, c, userID)
 }
 
 // HandleHelpMenuCallback handles help menu callback
 func (s *HandlerService) HandleHelpMenuCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Меню помощи...")
+	return s.HandleHelpCommand(ctx, c, userID, currentState)
 }
 
 // HandleUnknownStateMessage handles unknown state messages

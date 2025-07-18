@@ -76,6 +76,40 @@ type UserInfo struct {
 	Email string `json:"email"`
 }
 
+// JWTResponse represents JWT token response from backend
+type JWTResponse struct {
+	AccessToken  string `json:"access_token"`
+	RefreshToken string `json:"refresh_token"`
+	TokenType    string `json:"token_type"`
+	ExpiresIn    int    `json:"expires_in"`
+}
+
+// PreferenceResponse represents user preferences from backend
+type PreferenceResponse struct {
+	ID             string `json:"id"`
+	UserID         string `json:"user_id"`
+	CEFRLevel      string `json:"cefr_level"`
+	WordsPerDay    int    `json:"words_per_day"`
+	NotificationAt string `json:"notification_at"`
+	Notifications  bool   `json:"notifications"`
+	Goal           string `json:"goal"`
+	FactEveryday   bool   `json:"fact_everyday"`
+	Subscribed     bool   `json:"subscribed"`
+	AvatarImageURL string `json:"avatar_image_url"`
+}
+
+// UpdatePreferenceRequest represents user preferences update request
+type UpdatePreferenceRequest struct {
+	CEFRLevel      string `json:"cefr_level,omitempty"`
+	WordsPerDay    int    `json:"words_per_day,omitempty"`
+	NotificationAt string `json:"notification_at,omitempty"`
+	Notifications  bool   `json:"notifications,omitempty"`
+	Goal           string `json:"goal,omitempty"`
+	FactEveryday   bool   `json:"fact_everyday,omitempty"`
+	Subscribed     bool   `json:"subscribed,omitempty"`
+	AvatarImageURL string `json:"avatar_image_url,omitempty"`
+}
+
 // WordProgressRequest represents word progress update request
 type WordProgressRequest struct {
 	UserID    string    `json:"user_id"`
@@ -103,6 +137,14 @@ type ExerciseResultRequest struct {
 	Correct      bool      `json:"correct"`
 	AttemptCount int       `json:"attempt_count"`
 	TimeSpent    int       `json:"time_spent"`
+}
+
+// ProgressRequest represents progress request for backend API
+type ProgressRequest struct {
+	WordID          string    `json:"word_id"`
+	LearnedAt       time.Time `json:"learned_at"`
+	ConfidenceScore int       `json:"confidence_score"`
+	CntReviewed     int       `json:"cnt_reviewed"`
 }
 
 // ErrorResponse represents API error response
@@ -213,8 +255,6 @@ func (c *Client) CreateLinkToken(ctx context.Context, telegramID int64) (*Create
 		return nil, err
 	}
 
-	fmt.Println(result.LinkURL)
-
 	zap.L().With(zap.Int64("telegram_id", telegramID)).Info("Successfully created link token")
 	return &result, nil
 }
@@ -236,6 +276,42 @@ func (c *Client) CheckLinkStatus(ctx context.Context, telegramID int64) (*CheckL
 	}
 
 	zap.L().With(zap.Int64("telegram_id", telegramID), zap.Bool("is_linked", result.IsLinked)).Debug("Checked link status")
+	return &result, nil
+}
+
+// GetUserPreferences retrieves user preferences from backend
+func (c *Client) GetUserPreferences(ctx context.Context, token string) (*PreferenceResponse, error) {
+	resp, err := c.doAuthenticatedRequest(ctx, "GET", "/api/v1/preferences", nil, token)
+	if err != nil {
+		zap.L().With(zap.Error(err)).Error("Failed to get user preferences")
+		return nil, err
+	}
+
+	var result PreferenceResponse
+	if err := c.parseResponse(resp, &result); err != nil {
+		zap.L().With(zap.Error(err)).Error("Failed to parse user preferences response")
+		return nil, err
+	}
+
+	zap.L().With(zap.String("user_id", result.UserID)).Debug("Successfully retrieved user preferences")
+	return &result, nil
+}
+
+// UpdateUserPreferences updates user preferences in backend
+func (c *Client) UpdateUserPreferences(ctx context.Context, token string, preferences *UpdatePreferenceRequest) (*PreferenceResponse, error) {
+	resp, err := c.doAuthenticatedRequest(ctx, "PUT", "/api/v1/preferences", preferences, token)
+	if err != nil {
+		zap.L().With(zap.Error(err)).Error("Failed to update user preferences")
+		return nil, err
+	}
+
+	var result PreferenceResponse
+	if err := c.parseResponse(resp, &result); err != nil {
+		zap.L().With(zap.Error(err)).Error("Failed to parse update preferences response")
+		return nil, err
+	}
+
+	zap.L().With(zap.String("user_id", result.UserID)).Info("Successfully updated user preferences")
 	return &result, nil
 }
 
@@ -328,9 +404,40 @@ func (c *Client) GetUserStats(ctx context.Context, userID string) (map[string]in
 	return result, nil
 }
 
+// GetJWTTokens retrieves JWT tokens for an authenticated user
+func (c *Client) GetJWTTokens(ctx context.Context, telegramID int64) (*JWTResponse, error) {
+	req := AuthRequest{TelegramID: telegramID}
+
+	resp, err := c.doRequest(ctx, "POST", "/telegram/get-tokens", req)
+	if err != nil {
+		zap.L().With(zap.Int64("telegram_id", telegramID), zap.Error(err)).Error("Failed to get JWT tokens")
+		return nil, err
+	}
+
+	var result JWTResponse
+	if err := c.parseResponse(resp, &result); err != nil {
+		zap.L().With(zap.Error(err)).Error("Failed to parse JWT tokens response")
+		return nil, err
+	}
+
+	zap.L().With(zap.Int64("telegram_id", telegramID)).Debug("Successfully retrieved JWT tokens")
+	return &result, nil
+}
+
 // SendLessonProgress sends word progress data to backend after lesson completion
 func (c *Client) SendLessonProgress(ctx context.Context, token string, progressData []domain.WordProgress) error {
-	resp, err := c.doAuthenticatedRequest(ctx, "POST", "/api/v1/progress", progressData, token)
+	// Convert to backend format
+	var progressRequests []ProgressRequest
+	for _, progress := range progressData {
+		progressRequests = append(progressRequests, ProgressRequest{
+			WordID:          progress.Word, // Using word as ID for now
+			LearnedAt:       progress.LearnedAt,
+			ConfidenceScore: progress.ConfidenceScore,
+			CntReviewed:     progress.CntReviewed,
+		})
+	}
+
+	resp, err := c.doAuthenticatedRequest(ctx, "POST", "/api/v1/progress", progressRequests, token)
 	if err != nil {
 		zap.L().With(zap.Error(err)).Error("Failed to send lesson progress")
 		return err

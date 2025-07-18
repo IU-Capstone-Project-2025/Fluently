@@ -12,6 +12,7 @@ func RegisterTelegramRoutes(r chi.Router, h *handler.TelegramHandler) {
 	r.Route("/telegram", func(r chi.Router) {
 		r.Post("/create-link", h.CreateLinkToken)
 		r.Post("/check-status", h.CheckLinkStatus)
+		r.Post("/get-tokens", h.GetJWTTokens)
 	})
 
 	// Protected routes

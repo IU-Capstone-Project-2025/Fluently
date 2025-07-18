@@ -167,6 +167,7 @@ const (
 	TempDataSettings   TempDataType = "settings"
 	TempDataExercise   TempDataType = "exercise"
 	TempDataOnboarding TempDataType = "onboarding"
+	TempDataConfidence TempDataType = "confidence"
 )
 
 // CEFRTestData holds temporary data for CEFR test flow
@@ -534,6 +535,24 @@ func (m *UserStateManager) StoreTempData(ctx context.Context, userID int64, data
 	return nil
 }
 
+// GetTempData retrieves temporary data for a specific flow
+func (m *UserStateManager) GetTempData(ctx context.Context, userID int64, dataType TempDataType) (interface{}, error) {
+	jsonData, err := m.redisClient.Get(ctx, userTempDataKey(userID, dataType)).Result()
+	if err == redis.Nil {
+		return nil, fmt.Errorf("no temp data found for type %s", dataType)
+	} else if err != nil {
+		return nil, fmt.Errorf("failed to get temp data: %w", err)
+	}
+
+	var data interface{}
+	err = json.Unmarshal([]byte(jsonData), &data)
+	if err != nil {
+		return nil, fmt.Errorf("failed to unmarshal temp data: %w", err)
+	}
+
+	return data, nil
+}
+
 // GetCEFRTestData retrieves CEFR test data
 func (m *UserStateManager) GetCEFRTestData(ctx context.Context, userID int64) (*CEFRTestData, error) {
 	data := &CEFRTestData{}
@@ -812,20 +831,156 @@ func (m *UserStateManager) GetJWTToken(ctx context.Context, userID int64) (strin
 	key := fmt.Sprintf("user:%d:jwt_token", userID)
 	token, err := m.redisClient.Get(ctx, key).Result()
 	if err == redis.Nil {
+		// Log when no token is found
+		fmt.Printf("DEBUG: No JWT token found for user %d (key: %s)\n", userID, key)
 		return "", fmt.Errorf("no JWT token found for user %d", userID)
 	} else if err != nil {
+		fmt.Printf("DEBUG: Failed to get JWT token for user %d: %v\n", userID, err)
 		return "", fmt.Errorf("failed to get JWT token: %w", err)
 	}
 
+	fmt.Printf("DEBUG: Successfully retrieved JWT token for user %d (token length: %d)\n", userID, len(token))
 	return token, nil
 }
 
 // StoreJWTToken stores user's JWT token with expiration
 func (m *UserStateManager) StoreJWTToken(ctx context.Context, userID int64, token string, expiration time.Duration) error {
 	key := fmt.Sprintf("user:%d:jwt_token", userID)
+	fmt.Printf("DEBUG: Storing JWT token for user %d (key: %s, token length: %d, expiration: %v)\n", userID, key, len(token), expiration)
+
 	err := m.redisClient.Set(ctx, key, token, expiration).Err()
 	if err != nil {
+		fmt.Printf("DEBUG: Failed to store JWT token for user %d: %v\n", userID, err)
 		return fmt.Errorf("failed to store JWT token: %w", err)
+	}
+
+	fmt.Printf("DEBUG: Successfully stored JWT token for user %d\n", userID)
+	return nil
+}
+
+// GetJWTTokens retrieves user's JWT access and refresh tokens
+func (m *UserStateManager) GetJWTTokens(ctx context.Context, userID int64) (accessToken, refreshToken string, err error) {
+	accessKey := fmt.Sprintf("user:%d:access_token", userID)
+	refreshKey := fmt.Sprintf("user:%d:refresh_token", userID)
+
+	// Get access token
+	accessToken, err = m.redisClient.Get(ctx, accessKey).Result()
+	if err != nil && err != redis.Nil {
+		return "", "", fmt.Errorf("failed to get access token: %w", err)
+	}
+
+	// Get refresh token
+	refreshToken, err = m.redisClient.Get(ctx, refreshKey).Result()
+	if err != nil && err != redis.Nil {
+		return "", "", fmt.Errorf("failed to get refresh token: %w", err)
+	}
+
+	// If no tokens found, return error
+	if accessToken == "" && refreshToken == "" {
+		return "", "", fmt.Errorf("no JWT tokens found for user %d", userID)
+	}
+
+	return accessToken, refreshToken, nil
+}
+
+// StoreJWTTokens stores user's JWT access and refresh tokens with expiration
+func (m *UserStateManager) StoreJWTTokens(ctx context.Context, userID int64, accessToken, refreshToken string, accessExpiration, refreshExpiration time.Duration) error {
+	accessKey := fmt.Sprintf("user:%d:access_token", userID)
+	refreshKey := fmt.Sprintf("user:%d:refresh_token", userID)
+
+	// Store access token
+	err := m.redisClient.Set(ctx, accessKey, accessToken, accessExpiration).Err()
+	if err != nil {
+		return fmt.Errorf("failed to store access token: %w", err)
+	}
+
+	// Store refresh token
+	err = m.redisClient.Set(ctx, refreshKey, refreshToken, refreshExpiration).Err()
+	if err != nil {
+		return fmt.Errorf("failed to store refresh token: %w", err)
+	}
+
+	return nil
+}
+
+// ClearJWTTokens removes user's JWT tokens
+func (m *UserStateManager) ClearJWTTokens(ctx context.Context, userID int64) error {
+	accessKey := fmt.Sprintf("user:%d:access_token", userID)
+	refreshKey := fmt.Sprintf("user:%d:refresh_token", userID)
+	oldKey := fmt.Sprintf("user:%d:jwt_token", userID) // Legacy key
+
+	keys := []string{accessKey, refreshKey, oldKey}
+	err := m.redisClient.Del(ctx, keys...).Err()
+	if err != nil {
+		return fmt.Errorf("failed to clear JWT tokens: %w", err)
+	}
+
+	return nil
+}
+
+// GetValidAccessToken retrieves a valid access token, refreshing if necessary
+func (m *UserStateManager) GetValidAccessToken(ctx context.Context, userID int64) (string, error) {
+	accessKey := fmt.Sprintf("user:%d:access_token", userID)
+
+	// Try to get current access token
+	accessToken, err := m.redisClient.Get(ctx, accessKey).Result()
+	if err == nil && accessToken != "" {
+		// Token exists, return it
+		fmt.Printf("DEBUG: Found access token for user %d (key: %s, token length: %d)\n", userID, accessKey, len(accessToken))
+		return accessToken, nil
+	}
+
+	// If no access token, try to get from legacy key for backward compatibility
+	legacyKey := fmt.Sprintf("user:%d:jwt_token", userID)
+	accessToken, err = m.redisClient.Get(ctx, legacyKey).Result()
+	if err == nil && accessToken != "" {
+		fmt.Printf("DEBUG: Found legacy JWT token for user %d (key: %s, token length: %d)\n", userID, legacyKey, len(accessToken))
+		return accessToken, nil
+	}
+
+	// No valid access token found
+	fmt.Printf("DEBUG: No valid access token found for user %d (checked keys: %s, %s)\n", userID, accessKey, legacyKey)
+	return "", fmt.Errorf("no valid access token found for user %d", userID)
+}
+
+// IsUserAuthenticated checks if user has valid authentication tokens
+func (m *UserStateManager) IsUserAuthenticated(ctx context.Context, userID int64) bool {
+	token, err := m.GetValidAccessToken(ctx, userID)
+	isAuthenticated := err == nil
+	fmt.Printf("DEBUG: IsUserAuthenticated for user %d: %v (token length: %d, error: %v)\n", userID, isAuthenticated, len(token), err)
+	return isAuthenticated
+}
+
+// StoreUserLinkingData stores temporary data during the linking process
+func (m *UserStateManager) StoreUserLinkingData(ctx context.Context, userID int64, linkToken string, expiration time.Duration) error {
+	key := fmt.Sprintf("user:%d:linking_token", userID)
+	err := m.redisClient.Set(ctx, key, linkToken, expiration).Err()
+	if err != nil {
+		return fmt.Errorf("failed to store linking token: %w", err)
+	}
+
+	return nil
+}
+
+// GetUserLinkingData retrieves linking data for user
+func (m *UserStateManager) GetUserLinkingData(ctx context.Context, userID int64) (string, error) {
+	key := fmt.Sprintf("user:%d:linking_token", userID)
+	token, err := m.redisClient.Get(ctx, key).Result()
+	if err == redis.Nil {
+		return "", fmt.Errorf("no linking token found for user %d", userID)
+	} else if err != nil {
+		return "", fmt.Errorf("failed to get linking token: %w", err)
+	}
+
+	return token, nil
+}
+
+// ClearUserLinkingData removes linking data for user
+func (m *UserStateManager) ClearUserLinkingData(ctx context.Context, userID int64) error {
+	key := fmt.Sprintf("user:%d:linking_token", userID)
+	err := m.redisClient.Del(ctx, key).Err()
+	if err != nil {
+		return fmt.Errorf("failed to clear linking token: %w", err)
 	}
 
 	return nil

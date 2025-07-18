@@ -427,17 +427,41 @@ func (s *HandlerService) formatDuration(d time.Duration) string {
 
 // handleUnauthenticatedUser handles users without JWT tokens
 func (s *HandlerService) handleUnauthenticatedUser(ctx context.Context, c tele.Context, userID int64) error {
+	// Check if user has completed onboarding (questionnaire + CEFR test)
+	userProgress, err := s.GetUserProgress(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get user progress", zap.Error(err))
+		return err
+	}
+
+	if userProgress.CEFRLevel == "" {
+		// User hasn't completed onboarding - redirect to onboarding
+		return s.redirectToOnboarding(ctx, c, userID)
+	}
+
+	// User has completed onboarding but isn't authenticated - offer authentication
 	linkResponse, err := s.apiClient.CreateLinkToken(ctx, userID)
 	if err != nil {
 		s.logger.Error("Failed to create link token", zap.Error(err))
 		return c.Send("❌ Произошла ошибка. Попробуйте позже.")
 	}
 
+	// Store linking data
+	err = s.stateManager.StoreUserLinkingData(ctx, userID, linkResponse.Token, time.Hour)
+	if err != nil {
+		s.logger.Error("Failed to store linking data", zap.Error(err))
+	}
+
 	authText := fmt.Sprintf(
-		"🔐 <b>Требуется авторизация</b>\n\n"+
-			"Для доступа к урокам необходимо связать ваш аккаунт Telegram с аккаунтом Google.\n\n"+
-			"🔗 <b>Ссылка для авторизации:</b>\n<a href=\"%s\">Нажмите здесь для авторизации</a>\n\n"+
+		"🔐 *Требуется авторизация*\n\n"+
+			"Для доступа к персональным урокам необходимо связать ваш аккаунт Telegram с аккаунтом Google.\n\n"+
+			"🎯 **Это позволит:**\n"+
+			"• Сохранить ваш прогресс (уровень %s)\n"+
+			"• Получить персональные уроки\n"+
+			"• Синхронизировать данные между устройствами\n\n"+
+			"🔗 *Ссылка для авторизации:*\n[Нажмите здесь для авторизации](%s)\n\n"+
 			"После авторизации вернитесь и нажмите \"Проверить связь\".",
+		userProgress.CEFRLevel,
 		linkResponse.LinkURL,
 	)
 
@@ -450,7 +474,32 @@ func (s *HandlerService) handleUnauthenticatedUser(ctx context.Context, c tele.C
 		},
 	}
 
-	return c.Send(authText, &tele.SendOptions{ParseMode: tele.ModeHTML}, keyboard)
+	return c.Send(authText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+}
+
+// redirectToOnboarding redirects user to complete onboarding first
+func (s *HandlerService) redirectToOnboarding(ctx context.Context, c tele.Context, userID int64) error {
+	onboardingText := fmt.Sprintf(
+		"👋 *Привет, %s!*\n\n"+
+			"Перед началом изучения давайте сначала настроим твой профиль.\n\n"+
+			"📋 **Что нужно сделать:**\n"+
+			"• Ответить на пару вопросов\n"+
+			"• Пройти тест уровня CEFR\n"+
+			"• Создать аккаунт для сохранения прогресса\n\n"+
+			"Займет всего 3-5 минут! 🕐",
+		c.Sender().FirstName,
+	)
+
+	keyboard := &tele.ReplyMarkup{
+		InlineKeyboard: [][]tele.InlineButton{
+			{
+				{Text: "🚀 Начать настройку", Data: "auth:new_user"},
+				{Text: "🔗 У меня есть аккаунт", Data: "auth:existing_user"},
+			},
+		},
+	}
+
+	return c.Send(onboardingText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
 }
 
 // sendWordVoiceMessage generates and sends a voice message for a word

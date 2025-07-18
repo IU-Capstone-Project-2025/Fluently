@@ -35,3 +35,8 @@ type UserBasic struct {
 type TelegramUnlinkRequest struct {
 	TelegramID int64 `json:"telegram_id" binding:"required"`
 }
+
+// TelegramTokenRequest is a request body for getting JWT tokens for a linked Telegram user
+type TelegramTokenRequest struct {
+	TelegramID int64 `json:"telegram_id" binding:"required"`
+}

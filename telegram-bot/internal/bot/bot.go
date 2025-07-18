@@ -85,6 +85,7 @@ func (tb *TelegramBot) setupHandlers() {
 	tb.bot.Handle("/help", tb.handleHelp)
 	tb.bot.Handle("/settings", tb.handleSettings)
 	tb.bot.Handle("/learn", tb.handleLearn)
+	tb.bot.Handle("/lesson", tb.handleLesson)
 	tb.bot.Handle("/test", tb.handleTest)
 	tb.bot.Handle("/stats", tb.handleStats)
 	tb.bot.Handle("/cancel", tb.handleCancel)
@@ -165,6 +166,19 @@ func (tb *TelegramBot) handleLearn(c tele.Context) error {
 	}
 
 	return tb.handlerService.HandleLearnCommand(ctx, c, userID, currentState)
+}
+
+// handleLesson handles the /lesson command
+func (tb *TelegramBot) handleLesson(c tele.Context) error {
+	ctx := context.Background()
+	userID := c.Sender().ID
+	currentState, err := tb.stateManager.GetState(ctx, userID)
+	if err != nil {
+		tb.logger.Error("Failed to get user state")
+		currentState = fsm.StateStart
+	}
+
+	return tb.handlerService.HandleLessonCommand(ctx, c, userID, currentState)
 }
 
 // handleTest handles the /test command

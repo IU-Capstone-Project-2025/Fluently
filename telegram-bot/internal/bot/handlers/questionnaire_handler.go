@@ -88,6 +88,11 @@ func (s *HandlerService) HandleGoalCallback(ctx context.Context, c tele.Context,
 func (s *HandlerService) HandleConfidenceCallback(ctx context.Context, c tele.Context, userID int64, answer string) error {
 	s.logger.Info("User answered confidence question", zap.Int64("user_id", userID), zap.String("answer", answer))
 
+	// Store confidence level for later use
+	if err := s.stateManager.StoreTempData(ctx, userID, fsm.TempDataConfidence, answer); err != nil {
+		s.logger.Error("Failed to store confidence level", zap.Error(err))
+	}
+
 	// Transition directly to experience question (skip serials)
 	if err := s.stateManager.SetState(ctx, userID, fsm.StateQuestionExperience); err != nil {
 		s.logger.Error("Failed to set experience state", zap.Error(err))
