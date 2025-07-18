@@ -40,7 +40,7 @@ struct FluentlyApp: App {
 
             return container
         } catch {
-            fatalError("Container for dayly word is not created")
+            fatalError("Container for daily word is not created")
         }
     }
 
@@ -63,7 +63,7 @@ struct FluentlyApp: App {
                         } else {
                             LoginScreenBuilder.build(
                                 router: router,
-                                acount: account,
+                                account: account,
                                 authViewModel: authViewModel
                             )
                                 .onOpenURL(perform: handleURL)
@@ -77,7 +77,7 @@ struct FluentlyApp: App {
                         case .login:
                             LoginScreenBuilder.build(
                                 router: router,
-                                acount: account,
+                                account: account,
                                 authViewModel: authViewModel
                             )
                         case .profile:
@@ -154,14 +154,6 @@ struct FluentlyApp: App {
 
 // MARK: - Routes
 enum AppRoutes: Hashable {
-    static func == (lhs: AppRoutes, rhs: AppRoutes) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine("AppRoutes")
-    }
-
     case homeScreen
     case login
     case profile
