@@ -87,14 +87,18 @@ struct LessonScreensView: View {
                     let chooseWordEx = presenter.currentEx.exerciseData as! ChooseTranslationEngRuss
                     ChooseTranslationView(
                         word: chooseWordEx.text,
-                        answers: chooseWordEx.options
+                        answers: chooseWordEx.options,
+                        correctAnswer: chooseWordEx.correctAnswer
                     ) { selectedAnswer in
                         presenter.answer(selectedAnswer)
                     }
                     .id(presenter.currentExerciseNumber)
                 case .typeTranslationRussEng: /// Type correct translation
                     let typeTranslationEx = presenter.currentEx.exerciseData as! WriteFromTranslation
-                    TypeTranslationView (word: typeTranslationEx.translation) { typedAnswer in
+                    TypeTranslationView (
+                        word: typeTranslationEx.translation,
+                        correctAnswer: typeTranslationEx.correctAnswer
+                    ) { typedAnswer in
                         presenter.answer(typedAnswer)
                     }
                     .id(presenter.currentExerciseNumber)
@@ -102,7 +106,8 @@ struct LessonScreensView: View {
                     let pickOptionEx = presenter.currentEx.exerciseData as! PickOptionSentence
                     PickOptionsView(
                         sentence: pickOptionEx.template,
-                        answers: pickOptionEx.options
+                        answers: pickOptionEx.options,
+                        correctAnswer: pickOptionEx.correctAnswer
                     ) { selectedAnswer in
                         presenter.answer(selectedAnswer)
                     }

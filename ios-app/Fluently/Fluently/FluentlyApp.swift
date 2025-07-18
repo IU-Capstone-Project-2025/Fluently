@@ -101,7 +101,6 @@ struct FluentlyApp: App {
                     WordModel.self,
                     DayWord.self,
                     PreferencesModel.self,
-                    CardsModel.self
                 ]
             )
         }

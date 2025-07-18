@@ -14,7 +14,9 @@ struct ButtonViewModifier: ViewModifier {
     enum ButtonColor {
         case blue
         case orange
+        case purple
         case red
+        case green
     }
 
     // MARK: - Properties
@@ -35,9 +37,15 @@ struct ButtonViewModifier: ViewModifier {
             case .blue:
                 primaryColor = .blueAccent
                 secondaryColor = .blueSecondary
-            case .red:
+            case .purple:
                 primaryColor = .purpleAccent
                 secondaryColor = .purpleSecondary
+            case .red:
+                primaryColor = .redPrimary
+                secondaryColor = .redSecondary
+            case .green:
+                primaryColor = .greenPrimary
+                secondaryColor = .greenSecondary
         }
     }
 
@@ -77,5 +85,29 @@ struct ButtonViewModifier: ViewModifier {
 extension View {
     func massiveButton(color: ButtonViewModifier.ButtonColor) -> some View {
         modifier(ButtonViewModifier(color: color))
+    }
+}
+
+// MARK: - Preview
+struct ButtonsPreview: PreviewProvider {
+
+    static var previews: some View {
+        VStack(spacing: 20) {
+            Text("Orange")
+                .padding()
+                .massiveButton(color: .orange)
+            Text("Blue")
+                .padding()
+                .massiveButton(color: .blue)
+            Text("Purple")
+                .padding()
+                .massiveButton(color: .purple)
+            Text("Red")
+                .padding()
+                .massiveButton(color: .red)
+            Text("Green")
+                .padding()
+                .massiveButton(color: .green)
+        }
     }
 }

@@ -136,7 +136,7 @@ struct AIChatView: View {
 
     /// input field
     private var inputField: some View {
-        TextField("Messaege", text: $inputMessage, axis: .vertical)
+        TextField("Message", text: $inputMessage, axis: .vertical)
             .lineLimit(5, reservesSpace: false)
             .frame(maxWidth: .infinity)
             .padding()

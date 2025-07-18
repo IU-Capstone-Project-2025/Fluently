@@ -13,6 +13,11 @@ struct TypeTranslationView: View {
     @State var word: String
     @State var typedAnswer: String = ""
 
+    @State var correctAnswer: String
+
+    @State var isCorrect = false
+    @State var answerIsShown = false
+
     var onAnswerSelected: (String) -> Void
 
     var body: some View {
@@ -25,6 +30,13 @@ struct TypeTranslationView: View {
             answerField
                 .padding(.vertical)
                 .padding(.horizontal, 100)
+
+            if answerIsShown {
+                Text(correctAnswer)
+                    .font(.appFont.secondaryHeadline)
+                    .foregroundStyle(.grayFluently)
+                    .padding()
+            }
 
             Spacer()
 
@@ -42,8 +54,15 @@ struct TypeTranslationView: View {
 
     var buttonNext: some View {
         Button {
-            if !typedAnswer.isEmpty {
+            if answerIsShown {
                 onAnswerSelected(typedAnswer.lowercased().trimmingCharacters(in: .whitespacesAndNewlines))
+            } else {
+                if !typedAnswer.isEmpty {
+                    withAnimation(.easeIn(duration: 0.3)) {
+                        answerIsShown = true
+                        isCorrect = correctAnswer == typedAnswer.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+                    }
+                }
             }
         } label: {
             Text("Next")
@@ -62,8 +81,9 @@ struct TypeTranslationView: View {
                 .lineLimit(1)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .massiveButton(color: .orange)
+                .massiveButton(color: answerIsShown ? isCorrect ? .green : .red : .orange)
                 .frame(maxHeight: 60)
+                .disabled(answerIsShown)
         }
     }
 }

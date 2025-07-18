@@ -65,7 +65,7 @@ final class WordModel: Codable, Sendable{
     required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        // Requireed Fields
+        // Required Fields
         transcription = try container.decodeIfPresent(String.self, forKey: .transcription) ?? ""
         translation = try container.decode(String.self, forKey: .translation)
         word = try container.decode(String.self, forKey: .word)

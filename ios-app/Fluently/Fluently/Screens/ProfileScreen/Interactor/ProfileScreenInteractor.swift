@@ -15,7 +15,7 @@ final class ProfileScreenInteractor: ObservableObject {
         self.api = APIService()
     }
 
-    func getPreferences() async throws -> PreferencesModel? {
-        return try? await api.getPreferences()
+    func getPreferences() async throws -> PreferencesModel {
+        return try await api.getPreferences()
     }
 }

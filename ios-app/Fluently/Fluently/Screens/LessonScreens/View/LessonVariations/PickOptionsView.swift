@@ -14,6 +14,11 @@ struct PickOptionsView: View {
     @State var selectedAnswer: String?
     @State var answers: [String]
 
+    @State var correctAnswer: String
+
+    @State var isCorrect = false
+    @State var answerIsShown = false
+
     var onAnswerSelected: (String) -> Void
 
     var body: some View {
@@ -38,7 +43,15 @@ struct PickOptionsView: View {
     var buttonNext: some View {
         Button {
             if let selectedAnswer {
-                onAnswerSelected(selectedAnswer)
+                if answerIsShown {
+                    onAnswerSelected(selectedAnswer)
+                } else {
+                    withAnimation(.easeIn(duration: 0.3)) {
+                        answerIsShown = true
+                        isCorrect = correctAnswer == selectedAnswer
+                    }
+                }
+//                onAnswerSelected(selectedAnswer)
             }
         } label: {
             Text("Next")
@@ -56,7 +69,10 @@ struct PickOptionsView: View {
             ForEach(answers, id: \.self ) { answer in
                 AnswerButton (
                     isSelected: selectedAnswer == answer,
-                    answer: answer) {
+                    isCorrectAnswer: answer == correctAnswer,
+                    isSubmitted: answerIsShown,
+                    answer: answer
+                ) {
                         selectedAnswer = answer
                     }
             }
