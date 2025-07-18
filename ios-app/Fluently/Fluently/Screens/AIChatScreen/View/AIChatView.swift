@@ -50,11 +50,15 @@ struct AIChatView: View {
                     showExitAlert = true
                 }
         }
+        .onAppear {
+            presenter.sendMessage("Hello!")
+        }
         .alert("Are you sure, that you want exit?", isPresented: $showExitAlert) {
             Button ("No", role: .cancel) {
                 showExitAlert = false
             }
             Button ("Yes", role: .destructive) {
+                presenter.finishChat()
                 onExit?()
             }
         }

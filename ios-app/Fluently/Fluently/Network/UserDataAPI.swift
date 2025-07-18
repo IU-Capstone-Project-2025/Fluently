@@ -22,7 +22,8 @@ extension APIService: UserDataAPI {
 
         let request = try makeAuthorizedRequest(
             path: path,
-            method: method
+            method: method,
+            body: Optional<String>.none
         )
 
         return try await fetchAndDecode(request: request)

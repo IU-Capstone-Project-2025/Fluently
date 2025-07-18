@@ -91,9 +91,10 @@ final class APIService {
         }
     }
 
-    func makeAuthorizedRequest(
+    func makeAuthorizedRequest<T: Encodable>(
         path: String,
         method: String,
+        body: T? = nil,
         headers: [String: String] = [:]
     ) throws -> URLRequest {
         guard let accessToken = KeyChainManager.shared.getAccessToken() else {
@@ -103,7 +104,7 @@ final class APIService {
         var request = try makeRequest(
             path: path,
             method: method,
-            body: Optional<String>.none,
+            body: body,
             headers: headers
         )
 

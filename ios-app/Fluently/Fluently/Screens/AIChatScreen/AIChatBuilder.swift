@@ -12,7 +12,11 @@ enum AIChatBuilder {
     static func build (
         onExit: Optional< () -> Void>
     ) -> AIChatView {
-        let presenter = AIChatScreenPresenter()
+        let interactor = AIChatInteractor()
+
+        let presenter = AIChatScreenPresenter(
+            interactor: interactor
+        )
 
         return AIChatView (
             onExit: onExit,

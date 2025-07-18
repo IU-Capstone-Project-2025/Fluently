@@ -22,7 +22,8 @@ extension APIService: LessonAPI {
 
         let request = try makeAuthorizedRequest(
             path: "/api/v1/lesson",
-            method: "GET"
+            method: "GET",
+            body: Optional<String>.none
         )
 
         return try await fetchAndDecode(request: request) as CardsModel
@@ -66,7 +67,8 @@ extension APIService: LessonAPI {
 
         let request = try makeAuthorizedRequest(
             path: path,
-            method: method
+            method: method,
+            body: Optional<String>.none
         )
 
         return try await fetchAndDecode(request: request)

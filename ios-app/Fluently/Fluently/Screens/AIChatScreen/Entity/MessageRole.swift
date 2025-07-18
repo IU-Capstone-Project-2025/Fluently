@@ -8,6 +8,6 @@
 import Foundation
 
 enum MessageRole: String {
-    case ai = "assistant"
+    case ai = "llm"
     case user = "user"
 }

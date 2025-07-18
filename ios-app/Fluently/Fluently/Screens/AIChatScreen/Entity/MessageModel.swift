@@ -21,8 +21,8 @@ final class MessageModel: Codable {
     // MARK: - Codable
 
     enum CodingKeys: String, CodingKey {
-        case text
-        case role
+        case text = "message"
+        case role = "author"
     }
 
     required init(from decoder: any Decoder) throws {
