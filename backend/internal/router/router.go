@@ -298,9 +298,12 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 
 		// --- new AI-related routes ---
 		chatHandler := &handlers.ChatHandler{
-			Redis:       utils.Redis(),
-			HistoryRepo: chatHistoryRepo,
-			LLMClient:   llmClient,
+			Redis:           utils.Redis(),
+			HistoryRepo:     chatHistoryRepo,
+			LLMClient:       llmClient,
+			LearnedWordRepo: learnedWordRepo,
+			WordRepo:        wordRepo,
+			TopicRepo:       topicRepo,
 		}
 		distractorHandler := &handlers.DistractorHandler{
 			Client: distractorClient,

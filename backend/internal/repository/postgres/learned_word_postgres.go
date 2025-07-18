@@ -70,3 +70,17 @@ func (r *LearnedWordRepository) Delete(ctx context.Context, userID, wordID uuid.
 	return r.db.WithContext(ctx).
 		Delete(&models.LearnedWords{}, "user_id = ? AND word_id = ?", userID, wordID).Error
 }
+
+// GetRecentlyLearnedWords returns recently learned words for a user with word details
+func (r *LearnedWordRepository) GetRecentlyLearnedWords(ctx context.Context, userID uuid.UUID, limit int) ([]models.Word, error) {
+	var words []models.Word
+	err := r.db.WithContext(ctx).
+		Table("words").
+		Joins("JOIN learned_words ON words.id = learned_words.word_id").
+		Where("learned_words.user_id = ?", userID).
+		Order("learned_words.learned_at DESC").
+		Limit(limit).
+		Find(&words).Error
+
+	return words, err
+}
