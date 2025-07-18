@@ -27,8 +27,8 @@ struct ProfileScrenView: View {
             infoGrid
         }
         .onAppear {
-//            presenter.getPrefs()
-            presenter.setupPrefs(prefs.first)
+            presenter.getPrefs()
+//            presenter.setupPrefs(prefs.first)
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())

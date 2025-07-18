@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+enum AIChatBuilder {
+
+    static func build (
+        onExit: Optional< () -> Void>
+    ) -> AIChatView {
+        let presenter = AIChatScreenPresenter()
+
+        return AIChatView (
+            onExit: onExit,
+            presenter: presenter
+        )
+    }
+}

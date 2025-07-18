@@ -101,7 +101,31 @@ final class HomeScreenPresenter: HomeScreenPresenting {
             return
         }
 
+        if findLesson(context: modelContext) != nil {
+            lesson = findLesson(context: modelContext!)
+            return
+        }
+
         lesson = try await interactor.getLesson()
+
+//        guard let lesson else {
+//            return
+//        }
+//        modelContext?.insert(lesson)
+//        try modelContext?.save()
+        print("Lesson saved in memory")
+    }
+
+    @MainActor
+    func findLesson(context: ModelContext?) -> CardsModel? {
+        let descriptor = FetchDescriptor<CardsModel>()
+
+        do {
+            return try context?.fetch(descriptor).first
+        } catch {
+            print("SwiftData fetch failed: \(error)")
+            return nil
+        }
     }
 
     // Builders 
@@ -123,6 +147,7 @@ final class HomeScreenPresenter: HomeScreenPresenting {
 
     func navigatoToLesson() {
         router.navigatoToLesson(lesson!)
+        modelContext?.delete(lesson!)
         lesson = nil
     }
 }

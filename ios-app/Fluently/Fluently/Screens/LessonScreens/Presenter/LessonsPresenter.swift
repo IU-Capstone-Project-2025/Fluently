@@ -18,6 +18,7 @@ final class LessonsPresenter: ObservableObject {
     // MARK: - Properties
     private(set) var words: [WordModel]
     @Published private(set) var currentWordNumber: Int = 0
+    
     @Published private(set) var currentEx: ExerciseModel
     @Published private(set) var currentExType: ExerciseModelType
 
@@ -29,6 +30,8 @@ final class LessonsPresenter: ObservableObject {
 
     private var lessonsStack: [WordModel] = []
     private(set) var currentExerciseNumber: Int = 0
+
+    @Published private(set) var isAIChat = false
 
     // MARK: - Init
     init(router: AppRouter, words: [WordModel]) {
@@ -173,6 +176,10 @@ final class LessonsPresenter: ObservableObject {
         // Print statistics
         printLessonStatistics()
 
+        isAIChat = true
+    }
+
+    func closeLesson() {
         // Navigate back
         navigateBack()
     }

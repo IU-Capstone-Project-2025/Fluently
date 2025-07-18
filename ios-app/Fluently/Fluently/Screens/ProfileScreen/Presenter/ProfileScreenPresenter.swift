@@ -64,6 +64,7 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
                     dailyWord = prefs.dailyWord
                     notifications = prefs.notifications
                     notificationAt = prefs.notificationAt
+                    setupPrefs(prefs)
                 }
             } catch {
                 print("Error while fethcing preferences: \(error.localizedDescription)")

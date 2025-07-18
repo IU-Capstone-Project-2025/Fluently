@@ -11,26 +11,52 @@ import SwiftUI
 struct AIChatView: View {
     // MARK: - Properties
     @State var inputMessage: String = ""
+    @State var showExitAlert = false
     @FocusState var textFieldFocused
 
     var endId = UUID()
 
-    @State var messages: [MessageModel] = MessageModel.mockGenerator()
+    var onExit: Optional<() -> Void>
+
+    @ObservedObject var presenter: AIChatScreenPresenter
 
     // MARK: - View Constances
     private enum Const {
         // Paddings
         static let horizontalPadding = CGFloat(30)
-
+        static let backButtonPadding = CGFloat(35)
         // Corner Radiuses
         static let sheetCornerRadius = CGFloat(20)
         static let gridInfoVerticalPadding = CGFloat(20)
+    }
+
+    mutating func setupExit(action: @escaping () -> Void) {
+        onExit = action
     }
 
     var body: some View {
         ZStack {
             messagesGrid
             inputView
+            backButton
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity,
+                    alignment: .topLeading
+                )
+                .padding(Const.backButtonPadding)
+                .ignoresSafeArea()
+                .onTapGesture {
+                    showExitAlert = true
+                }
+        }
+        .alert("Are you sure, that you want exit?", isPresented: $showExitAlert) {
+            Button ("No", role: .cancel) {
+                showExitAlert = false
+            }
+            Button ("Yes", role: .destructive) {
+                onExit?()
+            }
         }
     }
 
@@ -40,7 +66,7 @@ struct AIChatView: View {
         ScrollViewReader { proxy in
             ScrollView {
                 VStack {
-                    ForEach(messages, id: \.text) { message in
+                    ForEach(presenter.messages, id: \.text) { message in
                         MessageView(
                             text: message.text,
                             role: message.role
@@ -53,7 +79,12 @@ struct AIChatView: View {
                         .id(endId)
                 }
                 .scrollIndicators(.hidden)
-                .onChange(of: messages.count) { _, _ in
+                .onAppear {
+                    withAnimation {
+                        proxy.scrollTo(endId, anchor: .bottom)
+                    }
+                }
+                .onChange(of: presenter.messages.count) { _, _ in
                     withAnimation {
                         proxy.scrollTo(endId, anchor: .bottom)
                     }
@@ -63,6 +94,7 @@ struct AIChatView: View {
         }
     }
 
+    /// Input field + button to send message
     private var inputView: some View {
         HStack(
             alignment: .bottom,
@@ -96,6 +128,7 @@ struct AIChatView: View {
         )
     }
 
+    /// input field
     private var inputField: some View {
         TextField("Messaege", text: $inputMessage, axis: .vertical)
             .lineLimit(5, reservesSpace: false)
@@ -116,6 +149,19 @@ struct AIChatView: View {
             }
     }
 
+    private var backButton: some View {
+        Image(systemName: "arrowshape.turn.up.left.fill")
+            .font(.title3)
+            .foregroundStyle(.whiteBackground)
+            .padding()
+            .glass(
+                cornerRadius: 100,
+                fill: .orangePrimary,
+                opacity: 0.8
+            )
+    }
+
+    /// button to send message
     private func sendButton(action: @escaping () -> Void) -> some View {
         Button {
             action()
@@ -127,22 +173,18 @@ struct AIChatView: View {
         }
     }
 
+    /// model of message
     private func mesageView(message: MessageModel) -> some View {
         Text(message.text)
             .frame(alignment: message.role == .ai ? .leading : .trailing)
     }
 
+    /// send message in presenter
     private func sendMessage() {
         guard !inputMessage.isEmpty else { return }
 
-        let newMessage = MessageModel(text: inputMessage, role: .user)
-        messages.append(newMessage)
+        presenter.sendMessage(inputMessage)
         inputMessage = ""
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let aiResponse = MessageModel(text: "This is an automated response", role: .ai)
-            messages.append(aiResponse)
-        }
     }
 }
 
@@ -155,7 +197,9 @@ struct AIChatPreview: PreviewProvider {
 
     struct PreviewWrapper: View {
         var body: some View {
-            AIChatView()
+            AIChatBuilder.build() {
+                print("exit")
+            }
         }
     }
 }

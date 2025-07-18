@@ -102,7 +102,8 @@ struct FluentlyApp: App {
                     CardsModel.self,
                     WordModel.self,
                     DayWord.self,
-                    PreferencesModel.self
+                    PreferencesModel.self,
+                    CardsModel.self
                 ]
             )
         }
@@ -148,17 +149,6 @@ struct FluentlyApp: App {
                 }
             } catch {
                 print("response receiving error: \(error)")
-            }
-        }
-    }
-
-    private func requestPreferences() {
-        Task {
-            do {
-                let prefs = try await apiService.getPreferences()
-                modelContext.insert(prefs)
-            } catch {
-                print("prefs lost")
             }
         }
     }

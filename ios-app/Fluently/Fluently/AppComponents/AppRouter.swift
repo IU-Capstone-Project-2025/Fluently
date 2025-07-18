@@ -33,6 +33,10 @@ final class AppRouter: ObservableObject {
 
     /// returns to previous screen
     func pop() {
-        navigationPath.removeLast()
+        if navigationPath.count >= 1  {
+            navigationPath.removeLast()
+        } else {
+            navigationPath.append(AppRoutes.homeScreen)
+        }
     }
 }

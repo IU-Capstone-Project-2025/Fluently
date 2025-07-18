@@ -21,7 +21,7 @@ final class WordModel: Codable, Sendable{
     var word: String
     @Attribute(.unique) var wordId: String  /// **Unique ID**  for saving
 
-    var wordDate: Date /// date of learning word *for statistic*
+    var wordDate: Date = Date.now /// date of learning word *for statistic*
 
     init(
         exercise: ExerciseModel,
