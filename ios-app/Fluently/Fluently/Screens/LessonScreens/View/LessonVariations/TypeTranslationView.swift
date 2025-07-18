@@ -60,7 +60,7 @@ struct TypeTranslationView: View {
                 if !typedAnswer.isEmpty {
                     withAnimation(.easeIn(duration: 0.3)) {
                         answerIsShown = true
-                        isCorrect = correctAnswer == typedAnswer.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+                        isCorrect = correctAnswer.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == typedAnswer.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
                     }
                 }
             }

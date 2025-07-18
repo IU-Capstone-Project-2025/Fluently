@@ -30,7 +30,7 @@ struct LessonScreensView: View {
         static let gridInfoVerticalPadding = CGFloat(20)
     }
 
-    @State var chat: AIChatView = AIChatBuilder.build(onExit: nil)
+    @State var chat: AIChatView = AIChatBuilder.build()
 
     var body: some View {
         Group {

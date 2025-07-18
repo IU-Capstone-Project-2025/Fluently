@@ -16,7 +16,7 @@ struct AIChatView: View {
 
     var endId = UUID()
 
-    var onExit: Optional<() -> Void>
+    var onExit: (() -> Void)?
 
     @ObservedObject var presenter: AIChatScreenPresenter
 
@@ -28,10 +28,6 @@ struct AIChatView: View {
         // Corner Radiuses
         static let sheetCornerRadius = CGFloat(20)
         static let gridInfoVerticalPadding = CGFloat(20)
-    }
-
-    mutating func setupExit(action: @escaping () -> Void) {
-        onExit = action
     }
 
     var body: some View {

@@ -59,6 +59,7 @@ struct ButtonViewModifier: ViewModifier {
                         Spacer()
                         RoundedRectangle(cornerRadius: 12)
                             .fill(primaryColor)
+                            .stroke(primaryColor, lineWidth: 1)
                             .frame(alignment: .bottom)
                             .offset(y: isPressed ? 10 : 6)
                     }
