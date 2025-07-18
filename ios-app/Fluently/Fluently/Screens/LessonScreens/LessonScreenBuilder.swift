@@ -9,12 +9,10 @@ import Foundation
 
 enum LessonScreenBuilder {
     static func build (
-        router: AppRouter,
-        lesson: [WordModel]
+        router: AppRouter
     ) -> LessonScreensView {
         let presenter = LessonsPresenter (
-            router: router,
-            words: lesson
+            router: router
         )
 
         return LessonScreensView (

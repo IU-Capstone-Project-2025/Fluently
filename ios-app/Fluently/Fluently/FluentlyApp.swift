@@ -59,7 +59,6 @@ struct FluentlyApp: App {
                             }
                     } else {
                         if !showLogin {
-//                            HomeScreenBuilder.build(router: router, acoount: account)
                             MainView()
                         } else {
                             LoginScreenBuilder.build(
@@ -87,10 +86,9 @@ struct FluentlyApp: App {
                                 account: account,
                                 authViewModel: authViewModel
                             )
-                        case .lesson(let cards):
+                        case .lesson:
                             LessonScreenBuilder.build(
                                 router: router,
-                                lesson: cards.cards
                             )
                     }
                 }
@@ -167,5 +165,5 @@ enum AppRoutes: Hashable {
     case homeScreen
     case login
     case profile
-    case lesson(CardsModel)
+    case lesson
 }

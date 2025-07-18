@@ -14,15 +14,13 @@ struct HomeScreenView: View {
     @StateObject var presenter: HomeScreenPresenter
     @Environment(\.modelContext) var modelContext
 
-//    @Query var words: [WordModel]
-
     var words: [WordModel] {
         let descriptor = FetchDescriptor<WordModel>(
             predicate: #Predicate {
                 $0.isInLesson == false &&
                 $0.isDayWord == false
             },
-            sortBy: [SortDescriptor(\.wordDate, order: .reverse)]
+//            sortBy: [SortDescriptor(\.wordDate, order: .reverse)]
         )
         return (try? modelContext.fetch(descriptor)) ?? []
     }
@@ -60,13 +58,6 @@ struct HomeScreenView: View {
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
-//        .task {
-//            do {
-//                try await presenter.getLesson()
-//            } catch {
-//                print(error)
-//            }
-//        }
 
         .fullScreenCover(item: $openedScreen) { screenType in
             switch screenType {

@@ -34,15 +34,11 @@ final class LessonsPresenter: ObservableObject {
     @Published private(set) var isAIChat = false
 
     // MARK: - Init
-    init(router: AppRouter, words: [WordModel]) {
+    init(router: AppRouter) {
         self.router = router
         self.words = []
 
-        guard !words.isEmpty else {
-            fatalError("Words array cannot be empty")
-        }
-
-        self.currentEx = words[0].exercise ?? ExerciseModel.init(data: EmptyExerciseData(), type: .wordCard)
+        self.currentEx = ExerciseModel.init(data: EmptyExerciseData(), type: .wordCard)
         self.currentExType = .wordCard
 
         /// Initialize statistics dictionaries

@@ -93,8 +93,8 @@ struct AIChatView: View {
                         proxy.scrollTo(endId, anchor: .bottom)
                     }
                 }
-                .scrollDismissesKeyboard(.immediately)
             }
+            .scrollDismissesKeyboard(.interactively)
         }
     }
 
@@ -109,8 +109,10 @@ struct AIChatView: View {
                 sendMessage()
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .padding(.horizontal, 12)
-        .padding(.top, 20)
+        .padding(.top, 8)
+        .safeAreaPadding(8)
         .background(
             VStack {
                 Spacer()

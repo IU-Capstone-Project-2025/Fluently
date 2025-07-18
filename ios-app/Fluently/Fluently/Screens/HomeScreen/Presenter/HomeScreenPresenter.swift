@@ -134,8 +134,14 @@ final class HomeScreenPresenter: HomeScreenPresenting {
     }
 
     // Builders 
-    func buildNotesScreen() -> NotesView{
+    func buildNotesScreen() -> some View{
+#if targetEnvironment(simulator)
+        return AIChatBuilder.build() {
+            print("bebeb")
+        }
+#else
         return NotesScreenBuilder.build(router: router.router)
+#endif
     }
 
     func buildDictionaryScreen(isLearned: Bool) -> DictionaryView{
