@@ -41,7 +41,7 @@ extension APIService: LessonAPI {
 
         let progressItems = words.map { word in
             ProgressDTO(
-                word_id: word.wordId
+                word_id: word.wordId ?? UUID().uuidString
             )
         }
 

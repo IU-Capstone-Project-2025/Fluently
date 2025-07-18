@@ -81,7 +81,7 @@ struct DictionaryView: View {
                 .padding(.horizontal)
             ScrollView {
                 LazyVStack (alignment: .center, spacing: 12) {
-                    ForEach(Array(presenter.filteredWords).sorted(by: { $0.wordDate > $1.wordDate }), id: \.wordId) { word in
+                    ForEach(Array(presenter.filteredWords).sorted(by: { $0.wordDate > $1.wordDate }).filter({$0.wordId != nil}), id: \.wordId) { word in
                         WordCardRow(word: word)
                     }
                 }

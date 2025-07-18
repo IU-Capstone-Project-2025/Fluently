@@ -56,10 +56,10 @@ struct WordCardRow: View {
 
     var textInfo: some View {
         VStack(alignment: .leading) {
-            Text(word.word)
+            Text(word.word ?? "")
                 .font(.appFont.title2)
                 .foregroundStyle(.blackText)
-            Text(word.translation)
+            Text(word.translation ?? " ")
                 .font(.appFont.subheadline)
                 .foregroundStyle(.grayFluently)
 
@@ -67,14 +67,14 @@ struct WordCardRow: View {
     }
 
     var transcription: some View {
-        Text(word.transcription)
+        Text(word.transcription!)
             .font(.appFont.title3)
             .foregroundStyle(.blackText)
     }
 
     var sentences: some View {
         VStack(alignment: .leading, spacing: 6) {
-            ForEach(word.sentences.prefix(3), id: \.self) { sentence in
+            ForEach(word.sentences!.prefix(3), id: \.self) { sentence in
                 Text("- \(sentence.text)")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.appFont.headline)

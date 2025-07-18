@@ -19,9 +19,9 @@ final class HomeScreenInteractor {
 
     func printCards(_ cards: CardsModel) {
         cards.cards.forEach { card in
-            print(card.word)
-            print(card.exercise.type)
-            print(type(of: card.exercise.exerciseData))
+            print(card.word ?? "Nil word")
+            print(card.exercise?.type ?? "Nil exercise")
+            print(type(of: card.exercise?.exerciseData))
         }
     }
 

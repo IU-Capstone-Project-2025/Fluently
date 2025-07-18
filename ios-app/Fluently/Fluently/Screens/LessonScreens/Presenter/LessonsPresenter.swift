@@ -16,7 +16,7 @@ final class LessonsPresenter: ObservableObject {
     var modelContext: ModelContext?
 
     // MARK: - Properties
-    private(set) var words: [WordModel]
+    @Published private(set) var words: [WordModel]
     @Published private(set) var currentWordNumber: Int = 0
     
     @Published private(set) var currentEx: ExerciseModel
@@ -36,13 +36,13 @@ final class LessonsPresenter: ObservableObject {
     // MARK: - Init
     init(router: AppRouter, words: [WordModel]) {
         self.router = router
-        self.words = words
+        self.words = []
 
         guard !words.isEmpty else {
             fatalError("Words array cannot be empty")
         }
 
-        self.currentEx = words[0].exercise
+        self.currentEx = words[0].exercise ?? ExerciseModel.init(data: EmptyExerciseData(), type: .wordCard)
         self.currentExType = .wordCard
 
         /// Initialize statistics dictionaries
@@ -50,6 +50,25 @@ final class LessonsPresenter: ObservableObject {
         statistic[.uncorrect] = []
         wordsProgress[.correct] = []
         wordsProgress[.uncorrect] = []
+    }
+
+    func fetchWords() throws {
+        guard let context = modelContext else {
+            print("No model")
+            fatalError()
+        }
+
+        let predicate = #Predicate<WordModel> { word in
+            word.isInLesson == true
+        }
+
+        let descriptor = FetchDescriptor<WordModel>(
+            predicate: predicate,
+            sortBy: [SortDescriptor(\.wordDate)]
+        )
+
+        words = try context.fetch(descriptor)
+        currentEx = words[0].exercise!
     }
 
     // MARK: - Navigation
@@ -62,7 +81,7 @@ final class LessonsPresenter: ObservableObject {
     private func showExercises() {
         guard !lessonsStack.isEmpty else { return }
 
-        currentEx = lessonsStack[currentExerciseNumber].exercise
+        currentEx = lessonsStack[currentExerciseNumber].exercise!
         currentExType = currentEx.type
     }
 
@@ -86,8 +105,15 @@ final class LessonsPresenter: ObservableObject {
             /// Next word card if we're not showing exercises yet
             currentWordNumber += 1
             if currentWordNumber < words.count {
-                currentEx = words[currentWordNumber].exercise
-                currentExType = .wordCard
+                if let ex = words[currentWordNumber].exercise {
+                    currentEx = ex
+                    currentExType = .wordCard
+                } else {
+                    print(words[currentWordNumber].word ?? "Nil name")
+                    print(words[currentWordNumber].exercise?.type ?? "Nil lesson")
+                    print(currentWordNumber)
+                    alreadyKnow()
+                }
             }
         }
     }
@@ -99,8 +125,12 @@ final class LessonsPresenter: ObservableObject {
         currentWordNumber += 1
 
         if currentWordNumber < words.count {
-            currentEx = words[currentWordNumber].exercise
-            currentExType = .wordCard
+            if let ex = words[currentWordNumber].exercise {
+                currentEx = ex
+                currentExType = .wordCard
+            } else {
+                alreadyKnow()
+            }
         } else if !lessonsStack.isEmpty && currentExerciseNumber != lessonsStack.count {
             /// If we finished words but have exercises to complete
             showExercises()
@@ -111,7 +141,7 @@ final class LessonsPresenter: ObservableObject {
     }
 
     func answer(_ answer: String) {
-        print("\(currentExerciseNumber), \(lessonsStack[currentExerciseNumber].word), answer: \(answer)")
+        print("\(currentExerciseNumber), \(lessonsStack[currentExerciseNumber].word!), answer: \(answer)")
         guard !lessonsStack.isEmpty, currentExerciseNumber < lessonsStack.count else {
             print("Skip")
             return
@@ -144,14 +174,18 @@ final class LessonsPresenter: ObservableObject {
         if currentExerciseNumber >= lessonsStack.count {
             if currentWordNumber < words.count - 1 {
                 currentWordNumber += 1
-                currentEx = words[currentWordNumber].exercise
-                currentExType = .wordCard
+                if let ex = words[currentWordNumber].exercise {
+                    currentEx = ex
+                    currentExType = .wordCard
+                } else {
+                    nextExercise()
+                }
             } else {
                 finishLesson()
             }
         } else {
             // Show next exercise in current batch
-            currentEx = lessonsStack[currentExerciseNumber].exercise
+            currentEx = lessonsStack[currentExerciseNumber].exercise!
             currentExType = currentEx.type
         }
     }
@@ -159,6 +193,7 @@ final class LessonsPresenter: ObservableObject {
     func finishLesson() {
         // Save progress
         words.forEach { word in
+            word.isInLesson = false
             modelContext?.insert(word)
         }
         try? modelContext?.save()

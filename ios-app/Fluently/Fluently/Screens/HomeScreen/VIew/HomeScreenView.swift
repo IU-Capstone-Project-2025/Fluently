@@ -14,7 +14,18 @@ struct HomeScreenView: View {
     @StateObject var presenter: HomeScreenPresenter
     @Environment(\.modelContext) var modelContext
 
-    @Query var words: [WordModel]
+//    @Query var words: [WordModel]
+
+    var words: [WordModel] {
+        let descriptor = FetchDescriptor<WordModel>(
+            predicate: #Predicate {
+                $0.isInLesson == false &&
+                $0.isDayWord == false
+            },
+            sortBy: [SortDescriptor(\.wordDate, order: .reverse)]
+        )
+        return (try? modelContext.fetch(descriptor)) ?? []
+    }
 
     // MARK: - Properties
     @State var goal: String = "Traveling"
@@ -39,16 +50,23 @@ struct HomeScreenView: View {
         .onAppear {
             presenter.modelContext = modelContext
             presenter.getDayWord()
+            Task {
+                do {
+                    try await presenter.getLesson()
+                } catch {
+                    print(error)
+                }
+            }
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
-        .task {
-            do {
-                try await presenter.getLesson()
-            } catch {
-                print(error)
-            }
-        }
+//        .task {
+//            do {
+//                try await presenter.getLesson()
+//            } catch {
+//                print(error)
+//            }
+//        }
 
         .fullScreenCover(item: $openedScreen) { screenType in
             switch screenType {
@@ -108,10 +126,10 @@ struct HomeScreenView: View {
             ScreenCard(type: .notes) {
                 openedScreen = .notes
             }
-            ScreenCard(type: .learned, count: "\(words.filter { $0.isLearned == true }.count)") {
+            ScreenCard(type: .learned, count: "\(words.filter { $0.isLearned == true}.count)") {
                 openedScreen = .learned
             }
-            ScreenCard(type: .nonLearned, count: "\(words.filter { $0.isLearned == false }.count)") {
+            ScreenCard(type: .nonLearned, count: "\(words.filter { $0.isLearned == false}.count)") {
                 openedScreen = .nonLearned
             }
         }

@@ -74,10 +74,14 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         guard let modelContext else {
             return
         }
+        wordOfTheDay?.isDayWord = true
+
         let dayWordDTO = DayWord(
             word: wordOfTheDay
         )
         modelContext.insert(dayWordDTO)
+
+        try? modelContext.save()
     }
 
     func getTodaysWord() -> WordModel? {
@@ -97,22 +101,23 @@ final class HomeScreenPresenter: HomeScreenPresenting {
 
     @MainActor
     func getLesson() async throws {
-        guard lesson == nil else {
+
+        if let existingLesson = findLesson(context: modelContext) {
+            self.lesson = existingLesson
             return
         }
 
-        if findLesson(context: modelContext) != nil {
-            lesson = findLesson(context: modelContext!)
-            return
+        let newLesson = try await interactor.getLesson()
+
+        guard let modelContext else {
+            throw LessonError.noModelContext
         }
 
-        lesson = try await interactor.getLesson()
+        modelContext.insert(newLesson)
+        try modelContext.save()
 
-//        guard let lesson else {
-//            return
-//        }
-//        modelContext?.insert(lesson)
-//        try modelContext?.save()
+        self.lesson = newLesson
+
         print("Lesson saved in memory")
     }
 
@@ -149,5 +154,12 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         router.navigatoToLesson(lesson!)
         modelContext?.delete(lesson!)
         lesson = nil
+    }
+
+
+    enum LessonError: Error {
+        case noModelContext
+        case invalidLessonData
+        case saveFailed(Error)
     }
 }

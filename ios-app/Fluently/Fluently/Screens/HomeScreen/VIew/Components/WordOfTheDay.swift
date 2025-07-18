@@ -43,17 +43,19 @@ struct WordOfTheDay: View {
     }
 
     func isWordInDictionary() -> Bool {
-        let predicate = #Predicate<WordModel> { $0.id == word.id }
-        let fetchDescriptor = FetchDescriptor<WordModel>(predicate: predicate)
+        return !word.isDayWord
 
-        do {
-            let results = try modelContext.fetch(fetchDescriptor)
-            print(results)
-            return !results.isEmpty
-        } catch {
-            print("Error checking word: \(error)")
-            return false
-        }
+//        let predicate = #Predicate<WordModel> { $0.id == word.id }
+//        let fetchDescriptor = FetchDescriptor<WordModel>(predicate: predicate)
+//
+//        do {
+//            let results = try modelContext.fetch(fetchDescriptor)
+//            print(results)
+//            return !results.isEmpty
+//        } catch {
+//            print("Error checking word: \(error)")
+//            return false
+//        }
     }
 
     // MARK: - Subviews
@@ -61,11 +63,11 @@ struct WordOfTheDay: View {
     /// Card displaying the word of the day and its translation
     private var wordCard: some View {
         VStack {
-            Text(word.word)
+            Text(word.word!)
                 .font(.appFont.title.bold())
                 .foregroundStyle(.whiteText)
 
-            Text(word.translation)
+            Text(word.translation!)
                 .font(.appFont.callout)
                 .foregroundStyle(.whiteBackground.secondary)
         }
@@ -87,6 +89,8 @@ struct WordOfTheDay: View {
                 .font(.appFont.secondarySubheadline)
         }
         .onTapGesture {
+            word.isDayWord = false
+            word.isInLesson = false
             modelContext.insert(word)
 
             try? modelContext.save()

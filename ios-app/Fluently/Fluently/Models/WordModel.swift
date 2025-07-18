@@ -10,18 +10,21 @@ import SwiftData
 
 @Model
 final class WordModel: Codable, Sendable{
-    var exercise: ExerciseModel     /// exercise to learn word
+    var exercise: ExerciseModel?     /// exercise to learn word
     var isLearned: Bool = false
     @Relationship(inverse: \SentenceModel.word)
-    var sentences: [SentenceModel]  /// sentences with this word
-    var subtopic: String
-    var topic: String
-    var transcription: String
-    var translation: String
-    var word: String
-    @Attribute(.unique) var wordId: String  /// **Unique ID**  for saving
+    var sentences: [SentenceModel]?  /// sentences with this word
+    var subtopic: String?
+    var topic: String?
+    var transcription: String?
+    var translation: String?
+    var word: String?
+    @Attribute(.unique) var wordId: String?  /// **Unique ID**  for saving
 
     var wordDate: Date = Date.now /// date of learning word *for statistic*
+
+    var isDayWord: Bool = false
+    var isInLesson: Bool = false
 
     init(
         exercise: ExerciseModel,
@@ -62,16 +65,23 @@ final class WordModel: Codable, Sendable{
     required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        exercise = try container.decode(ExerciseModel.self, forKey: .exercise)
-        isLearned = false
-        sentences = try container.decode([SentenceModel].self, forKey: .sentences)
-        subtopic = try container.decode(String.self, forKey: .subtopic)
-        topic = try container.decode(String.self, forKey: .topic)
+        // Requireed Fields
         transcription = try container.decodeIfPresent(String.self, forKey: .transcription) ?? ""
         translation = try container.decode(String.self, forKey: .translation)
         word = try container.decode(String.self, forKey: .word)
         wordId = try container.decode(String.self, forKey: .wordId)
 
+        // Optional fields
+        exercise = try container.decode(ExerciseModel.self, forKey: .exercise)
+        subtopic = try container.decodeIfPresent(String.self, forKey: .subtopic)
+        topic = try container.decodeIfPresent(String.self, forKey: .topic)
+
+        // Relationships with empty array fallback
+           sentences = try container.decodeIfPresent([SentenceModel].self, forKey: .sentences) ?? []
+
+        // Default Values
+        isLearned = false
+        isInLesson = true
         wordDate = Date.now
     }
 

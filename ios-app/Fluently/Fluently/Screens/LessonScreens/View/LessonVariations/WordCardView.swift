@@ -39,23 +39,23 @@ struct WordCardView: View {
     var wordCard: some View{
         VStack(alignment: .leading, spacing: 10) {
             VStack (alignment: .leading, spacing: 4) {
-                Text(word.word)
+                Text(word.word!)
                     .foregroundStyle(.blackText)
                     .font(.appFont.title)
-                Text(word.translation)
+                Text(word.translation!)
                     .foregroundStyle(.blackText.opacity(0.6))
                     .font(.appFont.subheadline)
-                Text(word.transcription)
+                Text(word.transcription!)
                     .foregroundStyle(.blackText)
                     .font(.appFont.subheadline)
             }
 
-            Text("\(word.topic) : \(word.subtopic)")
+            Text("\(word.topic!) : \(word.subtopic!)")
                 .foregroundStyle(.blackText)
                 .font(.appFont.caption)
 
             VStack(alignment: .leading, spacing: 4) {
-                ForEach(word.sentences.prefix(3), id: \.self) { sentence in
+                ForEach(word.sentences!.prefix(3), id: \.self) { sentence in
                     VStack(alignment: .leading) {
                         Text("- \(sentence.text)")
                             .foregroundColor(.blackText)

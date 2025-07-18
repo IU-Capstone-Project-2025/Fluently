@@ -8,7 +8,6 @@
 import Foundation
 
 enum LessonScreenBuilder {
-
     static func build (
         router: AppRouter,
         lesson: [WordModel]
@@ -17,7 +16,7 @@ enum LessonScreenBuilder {
             router: router,
             words: lesson
         )
-        
+
         return LessonScreensView (
             presenter: presenter
         )

@@ -56,6 +56,7 @@ struct LessonScreensView: View {
         }
         .onAppear {
             presenter.modelContext = modelContext
+            try? presenter.fetchWords()
             chat.onExit = presenter.navigateBack
         }
         .navigationBarBackButtonHidden()
