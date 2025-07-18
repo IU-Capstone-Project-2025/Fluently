@@ -20,7 +20,79 @@ type UserProgress struct {
 	Preferences      map[string]interface{} `json:"preferences"`       // Additional preferences
 }
 
-// Word represents a vocabulary word with learning data
+// New lesson structure matching the backend JSON format
+
+// Lesson represents the lesson metadata
+type Lesson struct {
+	StartedAt      string `json:"started_at"`
+	WordsPerLesson int    `json:"words_per_lesson"`
+	TotalWords     int    `json:"total_words"`
+	CEFRLevel      string `json:"cefr_level"`
+}
+
+// Sentence represents a sentence with its translation
+type Sentence struct {
+	Text        string `json:"text"`
+	Translation string `json:"translation"`
+}
+
+// ExerciseData represents different types of exercise data
+type ExerciseData struct {
+	Template      string   `json:"template,omitempty"` // For pick_option_sentence
+	CorrectAnswer string   `json:"correct_answer"`
+	PickOptions   []string `json:"pick_options,omitempty"` // For multiple choice exercises
+	Translation   string   `json:"translation,omitempty"`  // For write_word_from_translation
+	Text          string   `json:"text,omitempty"`         // For translate_ru_to_en
+}
+
+// Exercise represents an exercise for a word
+type Exercise struct {
+	Type string       `json:"type"`
+	Data ExerciseData `json:"data"`
+}
+
+// Card represents a word card with all its learning data
+type Card struct {
+	WordID      string     `json:"word_id"`
+	Word        string     `json:"word"`
+	Translation string     `json:"translation"`
+	Topic       string     `json:"topic"`
+	Subtopic    string     `json:"subtopic"`
+	Sentences   []Sentence `json:"sentences"`
+	Exercise    Exercise   `json:"exercise"`
+}
+
+// LessonResponse represents the complete lesson response from backend
+type LessonResponse struct {
+	Lesson Lesson `json:"lesson"`
+	Cards  []Card `json:"cards"`
+}
+
+// Learning progress tracking models
+
+// WordProgress represents progress for a single word
+type WordProgress struct {
+	Word            string    `json:"word"`
+	LearnedAt       time.Time `json:"learned_at"`
+	ConfidenceScore int       `json:"confidence_score"`
+	CntReviewed     int       `json:"cnt_reviewed"`
+}
+
+// LessonProgress represents overall lesson progress stored in Redis
+type LessonProgress struct {
+	LessonData        *LessonResponse `json:"lesson_data"`
+	CurrentWordIndex  int             `json:"current_word_index"`
+	CurrentPhase      string          `json:"current_phase"` // "showing_words", "exercises", "completed"
+	WordsInCurrentSet []Card          `json:"words_in_current_set"`
+	CurrentSetIndex   int             `json:"current_set_index"`
+	ExerciseIndex     int             `json:"exercise_index"`
+	WordsLearned      []WordProgress  `json:"words_learned"`
+	StartTime         time.Time       `json:"start_time"`
+	LastActivity      time.Time       `json:"last_activity"`
+	LearnedCount      int             `json:"learned_count"` // Count of words actually learned (goal: 10)
+}
+
+// Legacy models - keeping for backward compatibility
 type Word struct {
 	ID             int64     `json:"id"`
 	Word           string    `json:"word"`
@@ -157,6 +229,7 @@ func calculateNextReview(word *Word) time.Time {
 	return time.Now().AddDate(0, 0, daysToAdd)
 }
 
+// Legacy schemas - keeping for backward compatibility but not used in new learning logic
 type SentenceSchema struct {
 	SentenceID  uuid.UUID `json:"sentence_id"`
 	Text        string    `json:"text"`
@@ -207,11 +280,4 @@ type ProgressSchema struct {
 type SyncSchema struct {
 	Dirty        bool   `json:"dirty"`
 	LastSyncedAt string `json:"last_synced_at"`
-}
-
-type LessonResponse struct {
-	Lesson   LessonSchema   `json:"lesson"`
-	Cards    []CardSchema   `json:"cards"`
-	Progress ProgressSchema `json:"progress"`
-	Sync     SyncSchema     `json:"sync"`
 }

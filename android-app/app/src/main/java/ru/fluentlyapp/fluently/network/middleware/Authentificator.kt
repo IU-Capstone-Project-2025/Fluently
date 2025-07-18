@@ -12,6 +12,7 @@ import ru.fluentlyapp.fluently.auth.datastore.ServerTokenDataStore
 import ru.fluentlyapp.fluently.network.HEADER_AUTHORIZATION
 import ru.fluentlyapp.fluently.network.TOKEN_TYPE
 import ru.fluentlyapp.fluently.auth.api.ServerTokenApiService
+import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -23,13 +24,14 @@ import javax.inject.Singleton
 @Singleton
 class AuthAuthenticator @Inject constructor(
     private val serverTokenDataStore: ServerTokenDataStore,
-    private val refreshServerTokenService: ServerTokenApiService,
     private val authManager: AuthManager
 ) : Authenticator {
     override fun authenticate(route: Route?, response: Response): Request? {
-        val token = runBlocking {
+        Timber.d("Catch unauthorized HTTP response")
+        val token: ServerToken? = runBlocking {
             authManager.getSavedServerToken()
         }
+        Timber.d("Get server token from authManager: %s", token.toString())
         synchronized(this) {
             val updatedToken = runBlocking {
                 authManager.getSavedServerToken()
@@ -44,7 +46,7 @@ class AuthAuthenticator @Inject constructor(
                     try {
                         authManager.sendRefreshToken()
                     } catch (ex: Exception) {
-                        Log.e("Authentificator", "Couldn't fetch the server token in refresh send: $ex")
+                        Timber.e(ex)
                         null
                     }
                 }
@@ -61,11 +63,18 @@ class AuthAuthenticator @Inject constructor(
                 }
             }
 
+            Timber.d("Finally, get fresh accessToken: %s", accessToken)
+
             return if (accessToken != null) {
-                response.request
+                val updatedRequest = response.request
                     .newBuilder()
+                    .removeHeader(HEADER_AUTHORIZATION)
                     .addHeader(HEADER_AUTHORIZATION, "$TOKEN_TYPE $accessToken")
                     .build()
+                updatedRequest.headers.forEach { header ->
+                    Timber.d("Header: ${header.first} = ${header.second}")
+                }
+                updatedRequest
             } else {
                 null
             }

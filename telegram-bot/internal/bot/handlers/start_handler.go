@@ -18,6 +18,28 @@ func (s *HandlerService) HandleStartCommand(ctx context.Context, c tele.Context,
 		return err
 	}
 
+	// Check user authentication status
+	isAuthenticated, hasCompletedOnboarding, err := s.GetUserAuthenticationStatus(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get user authentication status", zap.Error(err))
+		return err
+	}
+
+	// Handle different user states
+	if isAuthenticated && hasCompletedOnboarding {
+		// User is fully set up - fast-track to main menu
+		return s.showMainMenu(ctx, c, userID)
+	} else if isAuthenticated && !hasCompletedOnboarding {
+		// User is authenticated but hasn't completed onboarding - fast-track onboarding
+		return s.showFastTrackOnboarding(ctx, c, userID)
+	} else {
+		// User is not authenticated - show initial welcome with auth options
+		return s.showWelcomeWithAuthOptions(ctx, c, userID)
+	}
+}
+
+// showWelcomeWithAuthOptions shows the welcome message with authentication options
+func (s *HandlerService) showWelcomeWithAuthOptions(ctx context.Context, c tele.Context, userID int64) error {
 	// Transition to welcome state
 	if err := s.stateManager.SetState(ctx, userID, fsm.StateWelcome); err != nil {
 		s.logger.Error("Failed to set welcome state", zap.Error(err))
@@ -26,35 +48,95 @@ func (s *HandlerService) HandleStartCommand(ctx context.Context, c tele.Context,
 
 	// Send welcome message
 	welcomeText := fmt.Sprintf(
-		"Привет, %s!\n\n"+
-			"Добро пожаловать в Fluently — платформа для изучения *разговорного* английского языка.\n\n"+
-			"Я помогу тебе научиться говорить на английском *свободно*",
+		"Привет, %s! 👋\n\n"+
+			"Я помогу тебе выучить английский легко и весело!\n\n"+
+			"Выбери, как продолжить:",
 		c.Sender().FirstName,
 	)
 
-	// Add "Get Started" button
-	startBtn := &tele.InlineButton{
-		Text: "Начать",
-		Data: "onboarding:start",
-	}
-	alreadyHaveAccount := &tele.InlineButton{
+	// Create buttons for different flows
+	existingUserBtn := &tele.InlineButton{
 		Text: "У меня уже есть аккаунт",
-		Data: "account:link",
+		Data: "auth:existing_user",
 	}
+	newUserBtn := &tele.InlineButton{
+		Text: "Начать",
+		Data: "auth:new_user",
+	}
+
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
-			{*startBtn, *alreadyHaveAccount},
+			{*newUserBtn},
+			{*existingUserBtn},
 		},
 	}
 
-	// Send the message
-	if _, err := s.bot.Send(c.Sender(), welcomeText, &tele.SendOptions{ParseMode: tele.ModeMarkdown, ReplyMarkup: keyboard}); err != nil {
-		s.logger.Error("Failed to send welcome message", zap.Error(err))
+	return c.Send(welcomeText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+}
+
+// showMainMenu shows the main menu for authenticated users
+func (s *HandlerService) showMainMenu(ctx context.Context, c tele.Context, userID int64) error {
+	// Set state to start
+	if err := s.stateManager.SetState(ctx, userID, fsm.StateStart); err != nil {
+		s.logger.Error("Failed to set start state", zap.Error(err))
 		return err
 	}
 
-	// User should now be in StateWelcome, waiting for them to click "Начать"
-	return nil
+	// Get user progress for personalized welcome
+	userProgress, err := s.GetUserProgress(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get user progress", zap.Error(err))
+		return err
+	}
+
+	welcomeText := fmt.Sprintf(
+		"🎉 *С возвращением!*\n\n"+
+			"📊 Твой уровень: *%s*\n"+
+			"📚 Слов в день: *%d*\n\n"+
+			"Что будем изучать сегодня?",
+		userProgress.CEFRLevel,
+		userProgress.WordsPerDay,
+	)
+
+	keyboard := &tele.ReplyMarkup{
+		InlineKeyboard: [][]tele.InlineButton{
+			{
+				{Text: "🚀 Начать урок", Data: "lesson:start"},
+				{Text: "📊 Статистика", Data: "stats:show"},
+			},
+			{
+				{Text: "⚙️ Настройки", Data: "menu:settings"},
+				{Text: "❓ Помощь", Data: "menu:help"},
+			},
+		},
+	}
+
+	return c.Send(welcomeText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+}
+
+// showFastTrackOnboarding shows fast-track onboarding for authenticated but incomplete users
+func (s *HandlerService) showFastTrackOnboarding(ctx context.Context, c tele.Context, userID int64) error {
+	// Set state to questionnaire
+	if err := s.stateManager.SetState(ctx, userID, fsm.StateQuestionnaire); err != nil {
+		s.logger.Error("Failed to set questionnaire state", zap.Error(err))
+		return err
+	}
+
+	onboardingText := fmt.Sprintf(
+		"✨ *Привет, %s!*\n\n"+
+			"Осталось совсем немного - давай закончим настройку твоего профиля для эффективного обучения.\n\n"+
+			"Это займет всего 2 минуты! 🕐",
+		c.Sender().FirstName,
+	)
+
+	keyboard := &tele.ReplyMarkup{
+		InlineKeyboard: [][]tele.InlineButton{
+			{{Text: "✅ Завершить настройку", Data: "questionnaire:start"}},
+			{{Text: "🚀 Пропустить в урок", Data: "lesson:start"}},
+		},
+	}
+
+	return c.Send(onboardingText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
 }
 
 // HandleHelpCommand handles the /help command
@@ -63,6 +145,7 @@ func (s *HandlerService) HandleHelpCommand(ctx context.Context, c tele.Context, 
 		"Вот команды, которые вы можете использовать:\n\n" +
 		"*/start* - Начать ваше путешествие в изучении языка\n" +
 		"*/learn* - Начать сегодняшний урок\n" +
+		"*/lesson* - Быстрый доступ к уроку\n" +
 		"*/settings* - Настроить предпочтения обучения\n" +
 		"*/test* - Пройти тест на определение уровня словарного запаса\n" +
 		"*/stats* - Посмотреть статистику обучения\n" +
@@ -116,19 +199,16 @@ func (s *HandlerService) HandleOnboardingStartCallback(ctx context.Context, c te
 	}
 
 	// Send method explanation message
-	methodText := "🎯 *Методика изучения Fluently*\n\n" +
-		"Наша методика основана на принципах интервальных повторений и фокусе на самых важных словах.\n\n" +
-		"🔑 **Ключевые принципы:**\n" +
-		"• Изучение 10 слов в день\n" +
-		"• Фокус на 80-90% самых используемых слов\n" +
-		"• Интервальные повторения для закрепления\n" +
-		"• Персонализированный подход\n\n" +
-		"Готовы продолжить настройку?"
+	methodText := "🎯 *Как это работает?*\n\n" +
+		"• 10 новых слов каждый день\n" +
+		"• Только самые нужные слова\n" +
+		"• Повторения в нужный момент\n\n" +
+		"Просто и эффективно! 🚀"
 
 	// Create continue button
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
-			{{Text: "Продолжить", Data: "onboarding:method"}},
+			{{Text: "Понятно!", Data: "onboarding:method"}},
 		},
 	}
 
@@ -153,19 +233,14 @@ func (s *HandlerService) HandleOnboardingMethodCallback(ctx context.Context, c t
 	}
 
 	// Send spaced repetition explanation message
-	spacedRepetitionText := "🧠 *Интервальные повторения*\n\n" +
-		"Это научно обоснованная методика, которая помогает перенести информацию из кратковременной памяти в долговременную.\n\n" +
-		"🔄 **Как это работает:**\n" +
-		"• Повторение через увеличивающиеся интервалы\n" +
-		"• Адаптация к вашему темпу обучения\n" +
-		"• Оптимизация времени для каждого слова\n" +
-		"• Максимальная эффективность запоминания\n\n" +
-		"Теперь давайте узнаем о ваших целях и предпочтениях!"
+	spacedRepetitionText := "🧠 *Секрет запоминания*\n\n" +
+		"Показываю слово именно тогда, когда ты его почти забыл.\n\n" +
+		"Так твой мозг запоминает навсегда! 💡"
 
 	// Create continue button
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
-			{{Text: "Начать опрос", Data: "onboarding:questionnaire"}},
+			{{Text: "Круто! Дальше", Data: "onboarding:questionnaire"}},
 		},
 	}
 
@@ -190,15 +265,14 @@ func (s *HandlerService) HandleOnboardingQuestionnaireCallback(ctx context.Conte
 	}
 
 	// Send questionnaire introduction message
-	questionnaireText := "📋 *Анкета для персонализации*\n\n" +
-		"Для создания идеального плана обучения нам нужно узнать несколько вещей о вас.\n\n" +
-		"Это займет всего 2-3 минуты, но поможет сделать ваше обучение максимально эффективным.\n\n" +
-		"Готовы начать?"
+	questionnaireText := "📋 *Расскажи о себе*\n\n" +
+		"Пару быстрых вопросов, чтобы подобрать уроки именно для тебя.\n\n" +
+		"Займет 1 минуту 🕐"
 
 	// Create continue button
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
-			{{Text: "Да, начинаем!", Data: "questionnaire:start"}},
+			{{Text: "Поехали!", Data: "questionnaire:start"}},
 		},
 	}
 
@@ -212,12 +286,12 @@ func (s *HandlerService) HandleAccountLinkCallback(ctx context.Context, c tele.C
 
 // HandleMainMenuCallback handles main menu callback
 func (s *HandlerService) HandleMainMenuCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Главное меню...")
+	return s.showMainMenu(ctx, c, userID)
 }
 
 // HandleHelpMenuCallback handles help menu callback
 func (s *HandlerService) HandleHelpMenuCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
-	return c.Send("Меню помощи...")
+	return s.HandleHelpCommand(ctx, c, userID, currentState)
 }
 
 // HandleUnknownStateMessage handles unknown state messages

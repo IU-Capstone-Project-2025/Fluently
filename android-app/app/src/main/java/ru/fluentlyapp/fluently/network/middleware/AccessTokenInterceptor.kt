@@ -8,6 +8,7 @@ import ru.fluentlyapp.fluently.auth.model.ServerToken
 import ru.fluentlyapp.fluently.auth.datastore.ServerTokenDataStore
 import ru.fluentlyapp.fluently.network.HEADER_AUTHORIZATION
 import ru.fluentlyapp.fluently.network.TOKEN_TYPE
+import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -23,6 +24,7 @@ class AccessTokenInterceptor @Inject constructor(
         val token: ServerToken? = runBlocking {
             authManager.getSavedServerToken()
         }
+        Timber.d("Get server token from authManager: %s", token.toString())
 
         val updatedRequest = chain
             .request()

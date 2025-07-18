@@ -2,9 +2,9 @@ services:
   test-db:
     image: postgres:15
     environment:
-      POSTGRES_DB: test_db
+      POSTGRES_DB: test_fluently_db
       POSTGRES_USER: test_user
-      POSTGRES_PASSWORD: test_pass
+      POSTGRES_PASSWORD: test_password
     ports:
       - "5433:5432"
     volumes:

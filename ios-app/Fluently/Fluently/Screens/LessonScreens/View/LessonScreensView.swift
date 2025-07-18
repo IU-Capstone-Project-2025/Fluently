@@ -16,6 +16,8 @@ struct LessonScreensView: View {
     @Environment(\.modelContext) var modelContext
 
     @State var showExitAlert = false
+    @State var showChat = false
+
     @ObservedObject var presenter: LessonsPresenter
 
     // MARK: - View Constances
@@ -28,35 +30,36 @@ struct LessonScreensView: View {
         static let gridInfoVerticalPadding = CGFloat(20)
     }
 
+    @State var chat: AIChatView = AIChatBuilder.build(onExit: nil)
+
     var body: some View {
-        VStack {
-            topBar
-            infoGrid
-        }
-        .toolbar() {
-            /// exit button
-            ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    showExitAlert = true
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .foregroundStyle(.whiteText)
-                }
+        Group {
+            if showChat {
+                chat
+                    .transition(.opacity)
+            } else {
+                exerciseContentView
+                    .alert("Are you sure, that you want exit?", isPresented: $showExitAlert) {
+                        Button ("No", role: .cancel) {
+                            showExitAlert = false
+                        }
+                        Button ("Yes", role: .destructive) {
+                            router.pop()
+                        }
+                    }
             }
         }
-        .alert("Are you sure, that you want exit?", isPresented: $showExitAlert) {
-            Button ("No", role: .cancel) {
-                showExitAlert = false
-            }
-            Button ("Yes", role: .destructive) {
-                router.pop()
+        .onChange(of: presenter.isAIChat) { _, newValue in
+            if newValue {
+                showChat = newValue
             }
         }
         .onAppear {
             presenter.modelContext = modelContext
+            try? presenter.fetchWords()
+            chat.onExit = presenter.navigateBack
         }
         .navigationBarBackButtonHidden()
-        .modifier(BackgroundViewModifier())
     }
 
     // MARK: - SubViews
@@ -65,15 +68,9 @@ struct LessonScreensView: View {
     var topBar: some View {
         HStack {
             VStack (alignment: .leading) {
-#if targetEnvironment(simulator)
-                Text("Exercise: \(presenter.learned + 1)/\(presenter.wordsPerLesson)")
+                Text("Words: \(presenter.learnedCount)/\(presenter.wordsPerLesson)")
                     .foregroundStyle(.whiteText)
                     .font(.appFont.largeTitle.bold())
-#else
-                Text("Exercise: \(presenter.learned + 1)/\(presenter.wordsPerLesson)")
-                    .foregroundStyle(.whiteText)
-                    .font(.appFont.largeTitle.bold())
-#endif
             }
             Spacer()
         }
@@ -92,41 +89,65 @@ struct LessonScreensView: View {
                         word: chooseWordEx.text,
                         answers: chooseWordEx.options
                     ) { selectedAnswer in
-                            presenter.answer(selectedAnswer)
-                        }
-                    .id(presenter.currentExNumber)
+                        presenter.answer(selectedAnswer)
+                    }
+                    .id(presenter.currentExerciseNumber)
                 case .typeTranslationRussEng: /// Type correct translation
                     let typeTranslationEx = presenter.currentEx.exerciseData as! WriteFromTranslation
                     TypeTranslationView (word: typeTranslationEx.translation) { typedAnswer in
-                            presenter.answer(typedAnswer)
-                        }
+                        presenter.answer(typedAnswer)
+                    }
+                    .id(presenter.currentExerciseNumber)
                 case .pickOptionSentence: /// Pick word, mathing by definition
                     let pickOptionEx = presenter.currentEx.exerciseData as! PickOptionSentence
                     PickOptionsView(
                         sentence: pickOptionEx.template,
                         answers: pickOptionEx.options
                     ) { selectedAnswer in
-                            presenter.answer(selectedAnswer)
-                        }
-                    .id(presenter.currentExNumber)
+                        presenter.answer(selectedAnswer)
+                    }
+                    .id(presenter.currentExerciseNumber)
                 case .recordPronounce:
                     Text(presenter.currentEx.type.rawValue)
                 case .wordCard:
-                    let wordCard = presenter.words[presenter.currentExNumber]
-                    WordCardView(
-                        word: wordCard,
-                        onKnowTapped: {
-                            presenter.nextExercise()
-                        },
-                        onLearnTapped: {
-                            presenter.showLesson()
-                        }
-                    )
-                    .id(presenter.currentExNumber)
+                    if presenter.words.indices.contains(presenter.currentWordNumber) {
+                        let wordCard = presenter.words[presenter.currentWordNumber]
+                        WordCardView(
+                            word: wordCard,
+                            onKnowTapped: {
+                                presenter.alreadyKnow()
+                            },
+                            onLearnTapped: {
+                                presenter.willLearn()
+                            }
+                        )
+                        .id(presenter.currentWordNumber)
+                    }
                 case .numberOfWords:
                     Text(presenter.currentEx.type.rawValue)
             }
         }
         .modifier(SheetViewModifier())
+    }
+
+    // MARK: - Exercise View
+
+    var exerciseContentView: some View {
+        VStack {
+            topBar
+            infoGrid
+        }
+        .toolbar() {
+            /// exit button
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    showExitAlert = true
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundStyle(.whiteText)
+                }
+            }
+        }
+        .modifier(BackgroundViewModifier())
     }
 }

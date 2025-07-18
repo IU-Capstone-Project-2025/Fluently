@@ -16,7 +16,6 @@ const (
 	StateQuestionnaire      UserState = "questionnaire"
 	StateQuestionGoal       UserState = "question_goal"
 	StateQuestionConfidence UserState = "question_confidence"
-	StateQuestionSerials    UserState = "question_serials"
 	StateQuestionExperience UserState = "question_experience"
 
 	// CEFR Test Flow
@@ -31,13 +30,30 @@ const (
 	StateLevelDetermination UserState = "level_determination"
 	StatePlanCreation       UserState = "plan_creation"
 
-	// Stage 3: Learning Flow
+	// Stage 3: Learning Flow (New Implementation)
 	// Main Learning States
 	StateLessonStart      UserState = "lesson_start"
 	StateLessonInProgress UserState = "lesson_in_progress"
 	StateLessonComplete   UserState = "lesson_complete"
 
-	// Detailed Learning Process
+	// New Learning Flow: Show 3 words → Test → Repeat
+	StateShowingWordSet     UserState = "showing_word_set"     // Showing current set of 3 words
+	StateShowingWord1       UserState = "showing_word_1"       // Showing word 1 of 3
+	StateShowingWord2       UserState = "showing_word_2"       // Showing word 2 of 3
+	StateShowingWord3       UserState = "showing_word_3"       // Showing word 3 of 3
+	StateReadyForExercises  UserState = "ready_for_exercises"  // Ready to start exercises for current set
+	StateDoingExercises     UserState = "doing_exercises"      // Doing exercises for current set
+	StateExerciseInProgress UserState = "exercise_in_progress" // Single exercise in progress
+	StateSetComplete        UserState = "set_complete"         // Current set of 3 words complete
+	StatePreparingNextSet   UserState = "preparing_next_set"   // Preparing next set of words
+
+	// Exercise Types (new implementation)
+	StatePickOptionSentence   UserState = "pick_option_sentence"   // Multiple choice with sentence template
+	StateWriteWordTranslation UserState = "write_word_translation" // Write word from translation
+	StateTranslateRuToEn      UserState = "translate_ru_to_en"     // Translate Russian to English
+	StateWaitingForTextInput  UserState = "waiting_for_text_input" // Waiting for user text input
+
+	// Legacy Learning Process (keeping for backward compatibility)
 	StateShowingWords          UserState = "showing_words"
 	StateShowingFirstBlock     UserState = "showing_first_block"
 	StateShowingSecondBlock    UserState = "showing_second_block"
@@ -46,7 +62,7 @@ const (
 	StateShowingIndividualWord UserState = "showing_individual_word"
 	StateExerciseReview        UserState = "exercise_review"
 
-	// Exercise States
+	// Legacy Exercise States
 	StateAudioDictation        UserState = "audio_dictation"
 	StateTranslationCheck      UserState = "translation_check"
 	StateMultipleChoiceCheck   UserState = "multiple_choice_check"
@@ -96,11 +112,10 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateSpacedRepetition, StateQuestionnaire}:     true,
 
 	// Questionnaire flow
-	{StateQuestionnaire, StateQuestionGoal}:         true,
-	{StateQuestionGoal, StateQuestionConfidence}:    true,
-	{StateQuestionConfidence, StateQuestionSerials}: true,
-	{StateQuestionSerials, StateQuestionExperience}: true,
-	{StateQuestionExperience, StateVocabularyTest}:  true,
+	{StateQuestionnaire, StateQuestionGoal}:            true,
+	{StateQuestionGoal, StateQuestionConfidence}:       true,
+	{StateQuestionConfidence, StateQuestionExperience}: true,
+	{StateQuestionExperience, StateVocabularyTest}:     true,
 
 	// Vocabulary test flow
 	{StateVocabularyTest, StateTestGroup1}:         true,
@@ -109,17 +124,50 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateTestGroup3, StateTestGroup4}:             true,
 	{StateTestGroup4, StateTestGroup5}:             true,
 	{StateTestGroup5, StateCEFRTestProcessing}:     true,
+	{StateTestGroup5, StateCEFRTestResult}:         true, // Direct transition for completion
 	{StateCEFRTestProcessing, StateCEFRTestResult}: true,
 	{StateCEFRTestResult, StateLevelDetermination}: true,
 	{StateLevelDetermination, StatePlanCreation}:   true,
 	{StatePlanCreation, StateLessonStart}:          true,
 
+	// Test skip flow
+	{StateVocabularyTest, StateCEFRTestResult}: true, // Allow skipping test
+	{StateTestGroup1, StateCEFRTestResult}:     true, // Allow skipping from any test stage
+	{StateTestGroup2, StateCEFRTestResult}:     true,
+	{StateTestGroup3, StateCEFRTestResult}:     true,
+	{StateTestGroup4, StateCEFRTestResult}:     true,
+
 	// Lesson flow - main states
 	{StateLessonStart, StateLessonInProgress}:    true,
 	{StateLessonInProgress, StateLessonComplete}: true,
 	{StateLessonComplete, StateLessonStart}:      true,
+	{StateStart, StateLessonStart}:               true, // Allow starting lesson from main menu
+	{StateStart, StateLessonInProgress}:          true, // Allow continuing lesson from main menu
 
-	// Detailed learning flow
+	// New Learning Flow: Show 3 words → Test → Repeat
+	{StateLessonInProgress, StateShowingWordSet}:   true,
+	{StateShowingWordSet, StateShowingWord1}:       true,
+	{StateShowingWord1, StateShowingWord2}:         true,
+	{StateShowingWord2, StateShowingWord3}:         true,
+	{StateShowingWord3, StateReadyForExercises}:    true,
+	{StateReadyForExercises, StateDoingExercises}:  true,
+	{StateDoingExercises, StateExerciseInProgress}: true,
+	{StateExerciseInProgress, StateDoingExercises}: true, // Next exercise
+	{StateDoingExercises, StateSetComplete}:        true, // All exercises done
+	{StateSetComplete, StatePreparingNextSet}:      true,
+	{StatePreparingNextSet, StateShowingWordSet}:   true, // Next set of words
+	{StateSetComplete, StateLessonComplete}:        true, // 10 words learned
+
+	// Exercise flow for new implementation
+	{StateExerciseInProgress, StatePickOptionSentence}:    true,
+	{StateExerciseInProgress, StateWriteWordTranslation}:  true,
+	{StateExerciseInProgress, StateTranslateRuToEn}:       true,
+	{StateWriteWordTranslation, StateWaitingForTextInput}: true,
+	{StateTranslateRuToEn, StateWaitingForTextInput}:      true,
+	{StatePickOptionSentence, StateDoingExercises}:        true, // Back to exercise queue
+	{StateWaitingForTextInput, StateDoingExercises}:       true, // Back to exercise queue
+
+	// Legacy detailed learning flow (keeping for backward compatibility)
 	{StateLessonInProgress, StateShowingFirstBlock}:       true,
 	{StateShowingFirstBlock, StateExerciseAfterBlock}:     true,
 	{StateExerciseAfterBlock, StateShowingSecondBlock}:    true,
@@ -150,6 +198,20 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateAccountLinking, StateWaitingForLink}: true,
 	{StateWaitingForLink, StateAccountLinked}:  true,
 	{StateAccountLinked, StateQuestionnaire}:   true,
+
+	// Additional authentication flows
+	{StateWelcome, StateAccountLinking}:        true,
+	{StateAccountLinking, StateStart}:          true,
+	{StateAccountLinked, StateStart}:           true,
+	{StateQuestionnaire, StateAccountLinking}:  true,
+	{StateCEFRTestResult, StateAccountLinking}: true,
+	{StateAccountLinking, StateQuestionnaire}:  true,
+
+	// Welcome to lesson transitions (for authenticated users)
+	{StateWelcome, StateLessonStart}:      true,
+	{StateWelcome, StateLessonInProgress}: true,
+	{StateWelcome, StateStart}:            true, // Allow transition from welcome to start
+	{StateWelcome, StateQuestionnaire}:    true, // Allow transition from welcome to questionnaire for fast-track onboarding
 
 	// Settings flow - main menu transitions
 	{StateStart, StateSettings}:                 true,
@@ -198,6 +260,11 @@ func IsValidTransition(from, to UserState) bool {
 		return true
 	}
 
+	// Special case: allow transitions to lesson states from any state
+	if to == StateLessonStart || to == StateLessonInProgress {
+		return true
+	}
+
 	// Special case: allow transitions from error recovery to most main states
 	if from == StateErrorRecovery && isMainState(to) {
 		return true
@@ -212,6 +279,7 @@ func isMainState(state UserState) bool {
 		StateStart,
 		StateSettings,
 		StateLessonStart,
+		StateLessonInProgress,
 		StateVocabularyTest,
 	}
 
@@ -233,6 +301,22 @@ func IsLessonState(state UserState) bool {
 	lessonStates := []UserState{
 		StateLessonStart,
 		StateLessonInProgress,
+		StateLessonComplete,
+		// New learning flow states
+		StateShowingWordSet,
+		StateShowingWord1,
+		StateShowingWord2,
+		StateShowingWord3,
+		StateReadyForExercises,
+		StateDoingExercises,
+		StateExerciseInProgress,
+		StateSetComplete,
+		StatePreparingNextSet,
+		StatePickOptionSentence,
+		StateWriteWordTranslation,
+		StateTranslateRuToEn,
+		StateWaitingForTextInput,
+		// Legacy states
 		StateShowingWords,
 		StateShowingFirstBlock,
 		StateShowingSecondBlock,
@@ -246,7 +330,6 @@ func IsLessonState(state UserState) bool {
 		StateWaitingForAudio,
 		StateWaitingForTranslation,
 		StateWaitingForChoice,
-		StateLessonComplete,
 	}
 
 	return slices.Contains(lessonStates, state)
@@ -255,6 +338,14 @@ func IsLessonState(state UserState) bool {
 // IsExerciseState checks if the state is an exercise state
 func IsExerciseState(state UserState) bool {
 	exerciseStates := []UserState{
+		// New exercise states
+		StateDoingExercises,
+		StateExerciseInProgress,
+		StatePickOptionSentence,
+		StateWriteWordTranslation,
+		StateTranslateRuToEn,
+		StateWaitingForTextInput,
+		// Legacy exercise states
 		StateAudioDictation,
 		StateTranslationCheck,
 		StateMultipleChoiceCheck,

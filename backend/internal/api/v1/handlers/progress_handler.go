@@ -3,6 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
 	"time"
 
 	"fluently/go-backend/internal/repository/models"
@@ -13,36 +14,15 @@ import (
 	"gorm.io/gorm"
 )
 
+// ProgressHandler handles the progress endpoint
 type ProgressHandler struct {
 	LearnedWordRepo *postgres.LearnedWordRepository
 	WordRepo        *postgres.WordRepository
 }
 
-/*
-[
-  {
-    "word": "hello",
-    "learned_at": "2024-01-15T10:30:00Z",
-    "confidence_score": 85,
-    "cnt_reviewed": 3
-  },
-  {
-    "word": "world",
-    "learned_at": "2024-01-15T11:45:00Z",
-    "confidence_score": 92,
-    "cnt_reviewed": 1
-  },
-  {
-    "word": "beautiful",
-    "learned_at": "2024-01-16T09:15:00Z",
-    "confidence_score": 78,
-    "cnt_reviewed": 5
-  }
-]
-*/
-
+// ProgressRequest is a request body for updating user progress
 type ProgressRequest struct {
-	Word            string    `json:"word"`
+	WordID          uuid.UUID `json:"word_id"`
 	LearnedAt       time.Time `json:"learned_at"`
 	ConfidenceScore int       `json:"confidence_score"`
 	CntReviewed     int       `json:"cnt_reviewed"`
@@ -50,17 +30,27 @@ type ProgressRequest struct {
 
 // UpdateUserProgress godoc
 // @Summary      Update user progress
-// @Description  Updates the user's learned words progress. Accepts an array of word progress objects.
+// @Description  Updates the user's learned words progress. Accepts an array of word progress objects with word-translation pairs.
 // @Tags         progress
 // @Accept       json
 // @Produce      json
 // @Security     BearerAuth
-// @Param        progress body []ProgressRequest true "List of progress updates"
+// @Param        progress body []ProgressRequest true "List of progress updates with word-translation pairs"
 // @Success      200  {string}  string  "ok"
 // @Router       /api/v1/progress [post]
 func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/progress"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
+		statusCode = 400
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -70,19 +60,22 @@ func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Requ
 	var progress []ProgressRequest
 	err = json.NewDecoder(r.Body).Decode(&progress)
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	for _, p := range progress {
-		word, err := h.WordRepo.GetByValue(r.Context(), p.Word)
+		word, err := h.WordRepo.GetByID(r.Context(), p.WordID)
 		if err != nil {
-			http.Error(w, "word not found: "+p.Word, http.StatusNotFound)
+			statusCode = 404
+			http.Error(w, "word not found: "+err.Error(), http.StatusNotFound)
 			return
 		}
 
 		existing, err := h.LearnedWordRepo.GetByUserWordID(r.Context(), userID, word.ID)
 		if err != nil && err != gorm.ErrRecordNotFound {
+			statusCode = 500
 			http.Error(w, "failed to get learned word", http.StatusInternalServerError)
 			return
 		}
@@ -100,6 +93,7 @@ func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Requ
 				ConfidenceScore:  p.ConfidenceScore,
 			}
 			if err := h.LearnedWordRepo.Create(r.Context(), lw); err != nil {
+				statusCode = 500
 				http.Error(w, "failed to create learned word", http.StatusInternalServerError)
 				return
 			}
@@ -110,11 +104,13 @@ func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Requ
 			existing.ConfidenceScore = p.ConfidenceScore
 
 			if err := h.LearnedWordRepo.Update(r.Context(), existing); err != nil {
+				statusCode = 500
 				http.Error(w, "failed to update learned word", http.StatusInternalServerError)
 				return
 			}
 		}
 	}
 
+	// Return ok
 	w.WriteHeader(http.StatusOK)
 }

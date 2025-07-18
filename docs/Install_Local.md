@@ -1,6 +1,10 @@
 # Fluently - Local Installation Guide
 
-# You can use guide from CONTRIBUTING.md
+### Supported Platforms
+- **Linux**: Ubuntu 22.04+ (native support)
+> Note: There is no Windows or MacOS support for Fluently Docker images. All images are Linux-only.
+
+## You can use guide from CONTRIBUTING.md
 
 This guide helps you set up Fluently for local development using **pre-built Docker images** from Docker Hub. This approach is much faster than building images locally, especially for the ML API component.
 
@@ -36,6 +40,7 @@ Swagger UI:  http://localhost:8070/swagger/
 Directus admin panel:     http://localhost:8055/
 Distractor API:     http://localhost:8001/docs
 Thesaurus API:     http://localhost:8002/docs
+LLM API:     http://localhost:8003/docs
 
 # 6. When finished, stop the local build and restart your services
 
@@ -105,3 +110,21 @@ Edit environment files to customize:
 - API keys
 - Service ports
 - Domain settings
+
+### Troubleshooting
+
+**SSH Connection Issues with Thesaurus Data:**
+If you encounter SSH connection errors during `make setup-local`, you can:
+1. Skip the thesaurus setup: `make setup-env setup-volumes` then `make run-local`
+2. Create dummy thesaurus data for testing:
+   ```bash
+   mkdir -p analysis/thesaurus
+   echo "word,topic,subtopic,subsubtopic,CEFR_level,Total" > analysis/thesaurus/result.csv
+   echo "test,test_topic,test_subtopic,test_subsubtopic,a1,1" >> analysis/thesaurus/result.csv
+   ```
+
+**Common Port Conflicts:**
+- PostgreSQL (5432): `sudo systemctl stop postgresql`
+- Apache (80/443): `sudo systemctl stop apache2`
+- Nginx (80/443): `sudo systemctl stop nginx`
+- Grafana (3000): `sudo systemctl stop grafana-server`

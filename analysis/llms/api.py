@@ -59,18 +59,41 @@ class AIService:
         # Initialize Groq client with first available key
         groq_keys = self.providers["groq"]["keys"]
         if groq_keys:
-            self.providers["groq"]["client"] = Groq(api_key=groq_keys[0])
-            logger.info(f"Groq client initialized with {len(groq_keys)} key(s)")
+            try:
+                # Try to initialize Groq client with minimal parameters
+                import os
+                os.environ["GROQ_API_KEY"] = groq_keys[0]
+                self.providers["groq"]["client"] = Groq(api_key=groq_keys[0])
+                logger.info(f"Groq client initialized with {len(groq_keys)} key(s)")
+            except Exception as e:
+                logger.error(f"Failed to initialize Groq client: {e}")
+                logger.warning("Groq client initialization failed, removing Groq from available providers")
+                self.providers["groq"]["keys"] = []  # Remove Groq keys to prevent further attempts
         else:
             logger.warning("No Groq API keys found in environment")
             
         # Initialize Gemini with first available key
         gemini_keys = self.providers["gemini"]["keys"]
         if gemini_keys:
-            genai.configure(api_key=gemini_keys[0])
-            logger.info(f"Gemini client initialized with {len(gemini_keys)} key(s)")
+            try:
+                genai.configure(api_key=gemini_keys[0])
+                logger.info(f"Gemini client initialized with {len(gemini_keys)} key(s)")
+            except Exception as e:
+                logger.error(f"Failed to initialize Gemini client: {e}")
+                logger.warning("Gemini client initialization failed, removing Gemini from available providers")
+                self.providers["gemini"]["keys"] = []  # Remove Gemini keys to prevent further attempts
         else:
             logger.warning("No Gemini API keys found in environment")
+            
+        # Check if at least one provider is available
+        available_providers = [provider for provider in self.providers if self.providers[provider]["keys"]]
+        if not available_providers:
+            logger.error("No valid API keys found for any provider (Groq, Gemini)")
+            logger.warning("AI service will continue but with limited functionality")
+        else:
+            logger.info(f"AI service initialized with providers: {', '.join(available_providers)}")
+            
+        logger.info("AI service initialization completed")
 
     def _get_next_key(self, provider):
         """Получение следующего API-ключа с ротацией"""
@@ -110,10 +133,15 @@ class AIService:
         :param model_type: Тип модели ("fast", "balanced")
         :return: Ответ ИИ
         """
-        providers_order = ["groq", "gemini"]
+        # Get providers that have keys available
+        available_providers = [provider for provider in ["groq", "gemini"] if self.providers[provider]["keys"]]
+        
+        if not available_providers:
+            raise RuntimeError("No providers are available. Please check your API keys configuration.")
+        
         response = None
         
-        for provider in providers_order:
+        for provider in available_providers:
             key = self._get_next_key(provider)
             if not key:
                 continue
@@ -129,17 +157,37 @@ class AIService:
                     response = await self._gemini_request(key, messages, model_type, **kwargs)
                 
                 if response:
+                    logger.info(f"Successfully got response from {provider}")
                     return response
                     
             except Exception as e:
                 self._handle_error(provider, key, e)
         
-        raise RuntimeError("All providers failed")
+        raise RuntimeError(f"All available providers failed: {available_providers}")
 
     async def _groq_request(self, key, messages, model_type, **kwargs):
         """Запрос к Groq API"""
         model_name = self.providers["groq"]["models"][model_type]
-        client = Groq(api_key=key)
+        
+        try:
+            client = self.providers["groq"]["client"]
+            if not client:
+                client = Groq(api_key=key)
+        except Exception as e:
+            logger.error(f"Failed to create Groq client: {e}")
+            # Try alternative initialization method
+            try:
+                import os
+                old_key = os.environ.get("GROQ_API_KEY")
+                os.environ["GROQ_API_KEY"] = key
+                client = Groq()
+                if old_key:
+                    os.environ["GROQ_API_KEY"] = old_key
+                elif "GROQ_API_KEY" in os.environ:
+                    del os.environ["GROQ_API_KEY"]
+            except Exception as e2:
+                logger.error(f"Alternative Groq client initialization also failed: {e2}")
+                return None
         
         try:
             response = await asyncio.wait_for(
@@ -157,6 +205,9 @@ class AIService:
                 logger.warning(f"Groq rate limit exceeded for key: {key[-6:]}")
                 return None
             raise
+        except Exception as e:
+            logger.error(f"Groq request failed: {e}")
+            return None
 
     async def _gemini_request(self, key, messages, model_type, **kwargs):
         """Запрос к Gemini API"""
@@ -196,7 +247,22 @@ class AIService:
         self._mark_failure(provider, key)
         
         # Если это критическая ошибка аутентификации
-        if "401" in str(error) or "403" in str(error):
+        if "401" in str(error) or "403" in str(error) or "invalid_api_key" in str(error).lower() or "api_key_invalid" in str(error).lower():
             logger.error(f"Invalid API key detected for {provider}: {key[-6:]}")
             if key in self.providers[provider]["keys"]:
                 self.providers[provider]["keys"].remove(key)
+                logger.warning(f"Removed invalid API key from {provider} provider")
+                
+        # Check if this was a placeholder key
+        if "your_" in key.lower() or "_here" in key.lower():
+            logger.error(f"Placeholder API key detected for {provider}: {key}")
+            logger.error(f"Please replace placeholder keys with real API keys from:")
+            if provider == "groq":
+                logger.error("  Groq: https://console.groq.com/keys")
+            elif provider == "gemini":
+                logger.error("  Gemini: https://makersuite.google.com/app/apikey")
+                
+        # If all keys for this provider are exhausted, log helpful message
+        if not self.providers[provider]["keys"]:
+            logger.error(f"All API keys for {provider} have been exhausted or are invalid")
+            logger.error(f"Please check your {provider.upper()}_API_KEYS environment variable")

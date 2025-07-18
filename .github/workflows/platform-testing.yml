@@ -1,0 +1,281 @@
+name: Platform Testing
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'docker-compose*.yml'
+      - 'Makefile'
+      - 'docs/Install_Local.md'
+      - 'backend/**'
+      - 'telegram-bot/**'
+      - 'analysis/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
+    inputs:
+      test_platform:
+        description: "Platform to test"
+        required: false
+        default: "all"
+        type: choice
+        options:
+          - ubuntu-latest
+      skip_services:
+        description: "Skip heavy services (ML API, monitoring) for faster testing"
+        required: false
+        default: false
+        type: boolean
+
+# NOTE: This workflow tests the local installation process across different platforms
+# It creates dummy thesaurus data to avoid SSH dependencies during testing
+# The actual thesaurus data is only needed for production deployments
+
+jobs:
+  test-ubuntu:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.test_platform == 'ubuntu-latest' || github.event.inputs.test_platform == 'all' || github.event.inputs.test_platform == ''
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Test Ubuntu installation
+        run: |
+          echo "Testing local installation on Ubuntu..."
+          
+          # Verify Docker is working
+          echo "Verifying Docker installation..."
+          if ! docker --version; then
+            echo "❌ Docker not available"
+            exit 1
+          fi
+          
+          if ! docker info > /dev/null 2>&1; then
+            echo "❌ Docker daemon not running"
+            exit 1
+          fi
+          
+          echo "✅ Docker is working correctly on Ubuntu"
+          docker info | grep -E "(Server Version|Operating System|Architecture|CPUs|Total Memory)" || true
+          
+          # Create .env files from examples (like deploy.yml does)
+          echo "Creating .env files from examples..."
+          if [ ! -f .env ]; then
+            cp .env.example .env
+            echo "Created root .env from example"
+          fi
+          
+          # Create dummy thesaurus data for testing (skip SSH dependency)
+          echo "Creating dummy thesaurus data for testing..."
+          mkdir -p analysis/thesaurus
+          cat > analysis/thesaurus/result.csv << 'EOF'
+          word,topic,subtopic,subsubtopic,CEFR_level,Total
+          test,test_topic,test_subtopic,test_subsubtopic,a1,1
+          example,example_topic,example_subtopic,example_subsubtopic,a2,1
+          sample,sample_topic,sample_subtopic,sample_subsubtopic,b1,1
+          EOF
+          echo "Created dummy thesaurus data for testing"
+          
+          # Setup volumes (skip make setup-env since we already created .env files)
+          make setup-volumes
+          
+          # Check for port conflicts
+          make check-ports
+          
+          # Pre-build local images that need to be built from Dockerfiles
+          echo "Pre-building local images for faster startup..."
+          docker compose -f docker-compose-local.yml build thesaurus-api llm-api
+          
+          # Create minimal docker-compose override for testing
+          if [ "${{ github.event.inputs.skip_services }}" = "true" ]; then
+            cat > docker-compose.test.yml << 'EOF'
+          version: '3.8'
+          services:
+            # Disable resource-intensive services for faster testing
+            ml-api:
+              deploy:
+                replicas: 0
+            prometheus:
+              deploy:
+                replicas: 0
+            grafana:
+              deploy:
+                replicas: 0
+            loki:
+              deploy:
+                replicas: 0
+            promtail:
+              deploy:
+                replicas: 0
+            cadvisor:
+              deploy:
+                replicas: 0
+            node-exporter:
+              deploy:
+                replicas: 0
+          EOF
+            export COMPOSE_FILE="docker-compose.yml:docker-compose.test.yml"
+          fi
+          
+          # Start services
+          make run-local
+          
+          # Wait for services to be ready
+          echo "Waiting for services to start..."
+          sleep 45  # Give services more time to start
+          
+          # Test core endpoints (from Install_Local.md)
+          echo "Testing core service endpoints..."
+          
+          # Backend API
+          for i in {1..10}; do
+            if curl -f http://localhost:8070/health > /dev/null 2>&1; then
+              echo "Backend API is healthy"
+              break
+            elif [ $i -eq 10 ]; then
+              echo "Backend API failed to start"
+              exit 1
+            else
+              echo "Waiting for backend API... (attempt $i/10)"
+              sleep 10
+            fi
+          done
+          
+          # Thesaurus API with extended timeout (built from Dockerfile)
+          for i in {1..10}; do
+            if curl -f -X POST http://localhost:8002/health -H "Content-Type: application/json" -d '{"ping":"test"}' > /dev/null 2>&1; then
+              echo "Thesaurus API is healthy"
+              break
+            elif [ $i -eq 10 ]; then
+              echo "Thesaurus API failed to start"
+              echo "Checking thesaurus container logs..."
+              docker compose logs thesaurus-api || true
+              exit 1
+            else
+              echo "Waiting for thesaurus API... (attempt $i/10)"
+              sleep 20
+            fi
+          done
+          
+          # LLM API
+          for i in {1..5}; do
+            if curl -f http://localhost:8003/health > /dev/null 2>&1; then
+              echo "LLM API is healthy"
+              break
+            elif [ $i -eq 5 ]; then
+              echo "LLM API failed to start"
+              exit 1
+            else
+              echo "Waiting for LLM API... (attempt $i/5)"
+              sleep 10
+            fi
+          done
+          
+          # Test ML API only if not skipped
+          if [ "${{ github.event.inputs.skip_services }}" != "true" ]; then
+            for i in {1..15}; do
+              if curl -f http://localhost:8001/health > /dev/null 2>&1; then
+                echo "ML API is healthy"
+                break
+              elif [ $i -eq 15 ]; then
+                echo "ML API failed to start"
+                exit 1
+              else
+                echo "Waiting for ML API... (attempt $i/15)"
+                sleep 15
+              fi
+            done
+          fi
+          
+          # Test Quick Start endpoints (from Install_Local.md)
+          echo "Testing Quick Start endpoints..."
+          
+          # Test Swagger UI
+          if curl -f http://localhost:8070/swagger/ > /dev/null 2>&1; then
+            echo "Swagger UI is accessible at http://localhost:8070/swagger/"
+          else
+            echo "Swagger UI is not accessible"
+            exit 1
+          fi
+          
+          # Test Directus admin panel
+          if curl -f http://localhost:8055 > /dev/null 2>&1; then
+            echo "Directus admin panel is accessible at http://localhost:8055/"
+          else
+            echo "Directus admin panel is not accessible"
+            exit 1
+          fi
+          
+          # Test Distractor API docs
+          if curl -f http://localhost:8001/docs > /dev/null 2>&1; then
+            echo "Distractor API docs are accessible at http://localhost:8001/docs"
+          else
+            echo "Distractor API docs are not accessible (may be disabled in test)"
+          fi
+          
+          # Test Thesaurus API docs
+          if curl -f http://localhost:8002/docs > /dev/null 2>&1; then
+            echo "Thesaurus API docs are accessible at http://localhost:8002/docs"
+          else
+            echo "Thesaurus API docs are not accessible"
+            exit 1
+          fi
+          
+          # Test LLM API docs
+          if curl -f http://localhost:8003/docs > /dev/null 2>&1; then
+            echo "LLM API docs are accessible at http://localhost:8003/docs"
+          else
+            echo "LLM API docs are not accessible"
+            exit 1
+          fi
+          
+          echo "🎉 All Ubuntu platform tests completed successfully!"
+          echo "✅ Docker setup working"
+          echo "✅ All services started"
+          echo "✅ All health checks passed"
+          echo "✅ All endpoints accessible"
+
+      - name: Show service status
+        if: always()
+        run: |
+          echo "Service Status:"
+          make status || true
+          
+          echo "Docker Compose Services:"
+          docker compose ps || true
+          
+          echo "Disk Usage:"
+          df -h | head -5
+
+      - name: Show logs on failure
+        if: failure()
+        run: |
+          echo "Service Logs:"
+          docker compose logs --tail=50 || true
+
+      - name: Cleanup
+        if: always()
+        run: |
+          make stop-local || true
+          docker system prune -f || true
+
+  # Summary job that depends on all platform tests
+  platform-test-summary:
+    runs-on: ubuntu-latest
+    needs: test-ubuntu  
+    if: always()
+    
+    steps:
+      - name: Test Results Summary
+        run: |
+          echo "Platform Testing Results Summary"
+          echo "=================================="
+          
+          # Check Ubuntu results
+          if [ "${{ needs.test-ubuntu.result }}" = "success" ]; then
+            echo "✅ PASSED: Ubuntu"
+            UBUNTU_OK="true"
+          fi

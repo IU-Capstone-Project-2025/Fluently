@@ -6,6 +6,7 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
+// RegisterWordRoutes registers word routes
 func RegisterWordRoutes(r chi.Router, h *handler.WordHandler) {
 	r.Route("/words", func(r chi.Router) {
 		r.Get("/", h.ListWords)

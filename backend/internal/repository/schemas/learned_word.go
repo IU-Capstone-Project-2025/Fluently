@@ -6,6 +6,7 @@ import (
 	"github.com/google/uuid"
 )
 
+// CreateLearnedWordRequest is a request body for creating a learned word
 type CreateLearnedWordRequest struct {
 	UserID          uuid.UUID `json:"user_id" binding:"required"`
 	WordID          uuid.UUID `json:"word_id" binding:"required"`
@@ -15,6 +16,7 @@ type CreateLearnedWordRequest struct {
 	ConfidenceScore int       `json:"confidence_score"`
 }
 
+// LearnedWordResponse is a response body for a learned word
 type LearnedWordResponse struct {
 	UserID          uuid.UUID `json:"user_id"`
 	WordID          uuid.UUID `json:"word_id"`

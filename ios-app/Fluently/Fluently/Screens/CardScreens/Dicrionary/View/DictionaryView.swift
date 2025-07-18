@@ -9,16 +9,19 @@ import SwiftUI
 import SwiftData
 
 struct DictionaryView: View {
-//    @ObservedObject var presenter: DictionaryScreenPresenter
     @Environment(\.dismiss) var dismiss
 
     @Environment(\.modelContext) var modelContext
 
     @StateObject private var presenter: DictionaryScreenPresenter
 
-    init() {
-        _presenter = StateObject(wrappedValue: DictionaryScreenPresenter())
+    var isLearned: Bool
 
+    init(isLearned: Bool) {
+        self.isLearned = isLearned
+        _presenter = StateObject(wrappedValue: DictionaryScreenPresenter(
+            isLearned: isLearned
+        ))
     }
 
     @State var prefix: String = ""
@@ -62,7 +65,7 @@ struct DictionaryView: View {
     /// Top Bar
     var topBar: some View {
         VStack(alignment: .center) {
-            Text("Dictionary")
+            Text( isLearned ? "Learned" : "Non-Learned")
                 .foregroundStyle(.whiteText)
                 .font(.appFont.largeTitle.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -77,8 +80,8 @@ struct DictionaryView: View {
                 .padding(.bottom, 12)
                 .padding(.horizontal)
             ScrollView {
-                VStack (alignment: .center, spacing: 12) {
-                    ForEach(presenter.filteredWords, id: \.wordId) { word in
+                LazyVStack (alignment: .center, spacing: 12) {
+                    ForEach(Array(presenter.filteredWords).sorted(by: { $0.wordDate > $1.wordDate }).filter({$0.wordId != nil}), id: \.wordId) { word in
                         WordCardRow(word: word)
                     }
                 }
@@ -101,11 +104,9 @@ struct DictionaryPreview: PreviewProvider {
     }
 
     struct PreviewWrapper: View {
-        @StateObject var presenter = DictionaryScreenPresenter()
-
         var body: some View {
             DictionaryView(
-//                presenter: presenter
+                isLearned: true
             )
         }
     }

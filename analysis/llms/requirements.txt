@@ -1,0 +1,18 @@
+# FastAPI and server dependencies
+fastapi
+uvicorn[standard]
+pydantic
+python-multipart
+
+# Monitoring
+starlette-prometheus
+
+# AI/LLM dependencies
+groq
+google-generativeai
+
+# HTTP client dependencies
+httpx
+
+# Utility dependencies
+python-dotenv

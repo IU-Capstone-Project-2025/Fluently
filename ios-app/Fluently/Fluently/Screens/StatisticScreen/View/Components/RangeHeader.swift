@@ -19,6 +19,7 @@ struct RangeHeader: View {
             Picker("Select range", selection: $selectedRange) {
                 ForEach(TimeRange.allCases, id: \.id) { range in
                     Text(range.rawValue).tag(range)
+                        .foregroundStyle(.blackText)
                 }
             }
             .pickerStyle(.segmented)

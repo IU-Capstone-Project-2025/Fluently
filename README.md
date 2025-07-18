@@ -31,6 +31,9 @@ https://fluently-app.ru/swagger/index.html
 
 ## Installation & Testing
 
+> [!IMPORTANT]
+> Full and local installations are **only** supported on Linux (Ubuntu 22.04+).
+
 Fluently can be installed in two ways:
 
 ### 1. [Local/Development Installation](docs/Install_Local.md)
@@ -44,11 +47,13 @@ Fluently can be installed in two ways:
 - Requires your own domain and SSL certificates.
 - Replicates the production environment.
 
+
 ---
 
 ## Documentation
 - [Local Installation Guide](docs/Install_Local.md)
 - [Full Production Installation Guide](docs/Install_Full.md)
+- [Platform Support & Troubleshooting](docs/Platform_Support.md)
 - [Backend README](backend/README.md)
 
 ---

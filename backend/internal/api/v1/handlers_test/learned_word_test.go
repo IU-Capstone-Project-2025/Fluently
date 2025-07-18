@@ -13,6 +13,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateLearnedWord tests the creation of a learned word
 func TestCreateLearnedWord(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
@@ -47,6 +48,7 @@ func TestCreateLearnedWord(t *testing.T) {
 		Status(http.StatusCreated)
 }
 
+// TestGetLearnedWord tests the retrieval of a learned word
 func TestGetLearnedWord(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
@@ -77,6 +79,7 @@ func TestGetLearnedWord(t *testing.T) {
 	resp.Value("learned_at").String().NotEmpty()
 }
 
+// TestUpdateLearnedWord tests the update of a learned word
 func TestUpdateLearnedWord(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
@@ -112,6 +115,7 @@ func TestUpdateLearnedWord(t *testing.T) {
 	assert.Equal(t, 99, updated.ConfidenceScore)
 }
 
+// TestDeleteLearnedWord tests the deletion of a learned word
 func TestDeleteLearnedWord(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)

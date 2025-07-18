@@ -12,6 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreatePickOption tests the creation of a pick option
 func TestCreatePickOption(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
@@ -30,7 +31,7 @@ func TestCreatePickOption(t *testing.T) {
 		"options":     []string{"one", "two", "three"},
 	}
 
-	resp := e.POST("/api/v1/pick-options/").
+	resp := e.POST("/pick-options").
 		WithJSON(body).
 		Expect().
 		Status(http.StatusCreated).
@@ -41,6 +42,7 @@ func TestCreatePickOption(t *testing.T) {
 	assert.Equal(t, []interface{}{"one", "two", "three"}, resp.Value("options").Array().Raw())
 }
 
+// TestGetPickOption tests the retrieval of a pick option
 func TestGetPickOption(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
@@ -54,7 +56,7 @@ func TestGetPickOption(t *testing.T) {
 	err := pickOptionRepo.Create(context.Background(), &option)
 	assert.NoError(t, err)
 
-	resp := e.GET("/api/v1/pick-options/" + option.ID.String()).
+	resp := e.GET("/pick-options/" + option.ID.String()).
 		Expect().
 		Status(http.StatusOK).
 		JSON().Object()
@@ -63,6 +65,7 @@ func TestGetPickOption(t *testing.T) {
 	assert.Equal(t, []interface{}{"a", "b", "c"}, resp.Value("options").Array().Raw())
 }
 
+// TestUpdatePickOption tests the update of a pick option
 func TestUpdatePickOption(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
@@ -82,7 +85,7 @@ func TestUpdatePickOption(t *testing.T) {
 		"options":     []string{"new1", "new2", "new3"},
 	}
 
-	e.PUT("/api/v1/pick-options/" + option.ID.String()).
+	e.PUT("/pick-options/" + option.ID.String()).
 		WithJSON(update).
 		Expect().
 		Status(http.StatusOK)
@@ -92,6 +95,7 @@ func TestUpdatePickOption(t *testing.T) {
 	assert.ElementsMatch(t, []string{"new1", "new2", "new3"}, updated.Option)
 }
 
+// TestDeletePickOption tests the deletion of a pick option
 func TestDeletePickOption(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
@@ -105,7 +109,7 @@ func TestDeletePickOption(t *testing.T) {
 	err := pickOptionRepo.Create(context.Background(), &option)
 	assert.NoError(t, err)
 
-	e.DELETE("/api/v1/pick-options/" + option.ID.String()).
+	e.DELETE("/pick-options/" + option.ID.String()).
 		Expect().
 		Status(http.StatusNoContent)
 
@@ -113,6 +117,7 @@ func TestDeletePickOption(t *testing.T) {
 	assert.Error(t, err)
 }
 
+// TestListPickOptions tests the listing of pick options
 func TestListPickOptions(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
@@ -143,7 +148,7 @@ func TestListPickOptions(t *testing.T) {
 		assert.NoError(t, err)
 	}
 
-	resp := e.GET("/api/v1/words/" + wordID.String() + "/pick-options").
+	resp := e.GET("/words/" + wordID.String() + "/pick-options").
 		Expect().
 		Status(http.StatusOK).
 		JSON().Array()

@@ -10,7 +10,7 @@ import (
 	"go.uber.org/zap"
 )
 
-// CleanupExpiredTokens удаляет истекшие токены связывания
+// CleanupExpiredTokens deletes expired link tokens
 func CleanupExpiredTokens(repo *postgres.LinkTokenRepository) {
 	ctx := context.Background()
 
@@ -21,7 +21,7 @@ func CleanupExpiredTokens(repo *postgres.LinkTokenRepository) {
 	}
 }
 
-// StartTokenCleanupTask запускает периодическую очистку токенов
+// StartTokenCleanupTask starts a periodic token cleanup task
 func StartTokenCleanupTask(repo *postgres.LinkTokenRepository, interval time.Duration) {
 	ticker := time.NewTicker(interval)
 	go func() {

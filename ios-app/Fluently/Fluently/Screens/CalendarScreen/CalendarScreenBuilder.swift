@@ -8,7 +8,6 @@
 import Foundation
 
 enum CalendarScreenBuilder {
-
     static func build(
 
     ) -> CalendarScreenView {

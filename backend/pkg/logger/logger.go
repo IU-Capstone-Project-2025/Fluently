@@ -5,8 +5,10 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
+// Log is a global logger
 var Log *zap.Logger
 
+// Init initializes the logger
 func Init(isDev bool) {
     var cfg zap.Config
     if isDev {
@@ -14,7 +16,7 @@ func Init(isDev bool) {
     } else {
         cfg = zap.NewProductionConfig()
         cfg.EncoderConfig.TimeKey = "timestamp"
-        cfg.EncoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
+        cfg.EncoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder // "2006-01-02T15:04:05Z07:00"
     }
 
     var err error

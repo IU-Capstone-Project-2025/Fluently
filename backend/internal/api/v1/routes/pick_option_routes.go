@@ -6,18 +6,16 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
+// RegisterPickOptionRoutes registers pick option routes
 func RegisterPickOptionRoutes(r chi.Router, h *handler.PickOptionHandler) {
-	r.Route("/api/v1", func(r chi.Router) {
-		r.Route("/pick-options", func(r chi.Router) {
-			r.Post("/", h.CreatePickOption)
-			r.Route("/{id}", func(r chi.Router) {
-				r.Get("/", h.GetPickOption)
-				r.Put("/", h.UpdatePickOption)
-				r.Delete("/", h.DeletePickOption)
-			})
+	r.Route("/pick-options", func(r chi.Router) {
+		r.Post("/", h.CreatePickOption)
+		r.Route("/{id}", func(r chi.Router) {
+			r.Get("/", h.GetPickOption)
+			r.Put("/", h.UpdatePickOption)
+			r.Delete("/", h.DeletePickOption)
 		})
-
-		// GET /api/v1/words/{word_id}/pick-options
-		r.Get("/words/{word_id}/pick-options", h.ListPickOptions)
 	})
+
+	r.Get("/words/{word_id}/pick-options", h.ListPickOptions)
 }

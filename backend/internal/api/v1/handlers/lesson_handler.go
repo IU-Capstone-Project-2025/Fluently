@@ -5,6 +5,7 @@ import (
 	"errors"
 	"math/rand"
 	"net/http"
+	"strconv"
 	"strings"
 	"time"
 
@@ -14,27 +15,29 @@ import (
 	"fluently/go-backend/internal/utils"
 	"fluently/go-backend/pkg/logger"
 
+	"github.com/google/uuid"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 )
 
-var exerciseTypes = []string{
-	"translate_ru_to_en",
-	"write_word_from_translation",
-	"pick_option_sentence",
-}
-
+// LessonHandler handles the lesson endpoint
 type LessonHandler struct {
-	PreferenceRepo *postgres.PreferenceRepository
-	TopicRepo      *postgres.TopicRepository
-	SentenceRepo   *postgres.SentenceRepository
-	PickOptionRepo *postgres.PickOptionRepository
-	WordRepo       *postgres.WordRepository
-	Repo           *postgres.LessonRepository
+	PreferenceRepo  *postgres.PreferenceRepository
+	TopicRepo       *postgres.TopicRepository
+	SentenceRepo    *postgres.SentenceRepository
+	PickOptionRepo  *postgres.PickOptionRepository
+	WordRepo        *postgres.WordRepository
+	Repo            *postgres.LessonRepository
+	LearnedWordRepo *postgres.LearnedWordRepository
+	ThesaurusClient *utils.ThesaurusClient
 }
 
+// replaceWordWithUnderscores replaces a word in a text with underscores
 func replaceWordWithUnderscores(text, word string) string {
-	wordIndex := strings.Index(text, word)
+	lowerText := strings.ToLower(text)
+	lowerWord := strings.ToLower(word)
+
+	wordIndex := strings.Index(lowerText, lowerWord)
 	if wordIndex == -1 {
 		return text
 	}
@@ -46,7 +49,6 @@ func replaceWordWithUnderscores(text, word string) string {
 // @Summary Generate a new lesson for the user
 // @Description Creates a personalized lesson based on user preferences, including words, exercises, and topics
 // @Tags lessons
-// @Accept json
 // @Produce json
 // @Security BearerAuth
 // @Success 200 {object} schemas.LessonResponse "Successfully generated lesson"
@@ -55,8 +57,18 @@ func replaceWordWithUnderscores(text, word string) string {
 // @Failure 500 {string} string "Internal server error"
 // @Router /api/v1/lesson [get]
 func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/lesson"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
+		statusCode = 400
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -68,6 +80,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 
 	userPref, err := h.PreferenceRepo.GetByUserID(r.Context(), userID)
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "failed to get preference", http.StatusBadRequest)
 		return
 	}
@@ -80,23 +93,97 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 	// Lesson card block
 	var cards []schemas.Card
 
-	words, err := h.Repo.GetWordsForLesson(
-		r.Context(),
-		userID,
-		userPref.CEFRLevel,
-		userPref.Goal,
-		lessonInfo.TotalWords,
-	)
+	// -------------------- Fetch recommendations from Thesaurus --------------------
+	// 1. Gather list of words the user already knows
+	learnedWords, err := h.LearnedWordRepo.ListByUserID(r.Context(), userID)
 	if err != nil {
-		logger.Log.Error("Failed to get words for lesson", zap.Error(err))
-		http.Error(w, "failed to get words for lesson", http.StatusBadRequest)
+		statusCode = 500
+		logger.Log.Error("Failed to list learned words", zap.Error(err))
+		http.Error(w, "failed to list learned words", http.StatusInternalServerError)
 		return
 	}
 
+	var known []string
+	for _, lw := range learnedWords {
+		wm, err := h.WordRepo.GetByID(r.Context(), lw.WordID)
+		if err == nil {
+			known = append(known, wm.Word)
+		}
+	}
+
+	// 2. Request recommendations until we collect enough valid words from DB
+	var words []models.Word
+	seen := make(map[uuid.UUID]struct{})
+
+	if len(known) > 0 { // Call Thesaurus only when we have something to send
+		attempts := 0
+		for len(words) < lessonInfo.TotalWords && attempts < 5 {
+			recs, err := h.ThesaurusClient.Recommend(r.Context(), known)
+			if err != nil {
+				logger.Log.Error("Failed to get thesaurus recommendations", zap.Error(err))
+				break // fallback later
+			}
+
+			for _, rec := range recs {
+				if len(words) >= lessonInfo.TotalWords {
+					break
+				}
+
+				wm, err := h.WordRepo.GetByValue(r.Context(), rec.Word)
+				if err != nil {
+					// Recommendation not present in local DB – skip
+					continue
+				}
+				if _, exists := seen[wm.ID]; exists {
+					continue
+				}
+				words = append(words, *wm)
+				seen[wm.ID] = struct{}{}
+			}
+			attempts++
+		}
+	}
+
+	// 3. Fallback: fill remaining slots with random DB words
+	if len(words) < lessonInfo.TotalWords {
+		remaining := lessonInfo.TotalWords - len(words)
+		additional, err := h.Repo.GetWordsForLesson(
+			r.Context(),
+			userID,
+			userPref.CEFRLevel,
+			userPref.Goal,
+			remaining,
+		)
+		if err != nil {
+			statusCode = 400
+			logger.Log.Error("Failed to get fallback words", zap.Error(err))
+			http.Error(w, "failed to get words for lesson", http.StatusBadRequest)
+			return
+		}
+		for _, wdb := range additional {
+			if _, exists := seen[wdb.ID]; exists {
+				continue
+			}
+			words = append(words, wdb)
+			seen[wdb.ID] = struct{}{}
+			if len(words) >= lessonInfo.TotalWords {
+				break
+			}
+		}
+	}
+
+	if len(words) == 0 {
+		statusCode = 500
+		http.Error(w, "no suitable words found for lesson", http.StatusInternalServerError)
+		return
+	}
+
+	// Shuffle words
 	rand.Shuffle(len(words), func(i, j int) {
 		words[i], words[j] = words[j], words[i]
 	})
 
+	// Process words
 	for _, word := range words {
 		var card schemas.Card
 
@@ -106,6 +193,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 
 		topic, err := h.TopicRepo.GetByID(r.Context(), *word.TopicID)
 		if err != nil {
+			statusCode = 400
 			http.Error(w, "failed to get topic", http.StatusBadRequest)
 			return
 		}
@@ -116,6 +204,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		for topic.ParentID != nil {
 			topic, err = h.TopicRepo.GetByID(r.Context(), *topic.ParentID)
 			if err != nil {
+				statusCode = 400
 				http.Error(w, "failed to get topic", http.StatusBadRequest)
 				return
 			}
@@ -126,6 +215,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		// Sentence process
 		sentences, err := h.SentenceRepo.GetByWordID(r.Context(), word.ID)
 		if err != nil {
+			statusCode = 400
 			http.Error(w, "failed to get sentence", http.StatusBadRequest)
 			return
 		}
@@ -154,6 +244,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 					Option: []string{word.Word},
 				}
 			} else {
+				statusCode = 500
 				http.Error(w, "failed to get pick option", http.StatusInternalServerError)
 				return
 			}
@@ -164,6 +255,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 
 			randomWords, err := h.WordRepo.GetRandomWordsByCEFRLevel(r.Context(), userPref.CEFRLevel, optionToAdd)
 			if err != nil {
+				statusCode = 400
 				http.Error(w, "failed to get random words", http.StatusBadRequest)
 				return
 			}
@@ -173,6 +265,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
+		// Shuffle options
 		rand.Shuffle(len(pickOptionTranslate.Option), func(i, j int) {
 			pickOptionTranslate.Option[i], pickOptionTranslate.Option[j] = pickOptionTranslate.Option[j], pickOptionTranslate.Option[i]
 		})
@@ -197,6 +290,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		// pick_option_sentence
 		var pickOptionSentence schemas.ExercisePickOptionSentence
 
+		// Shuffle options
 		rand.Shuffle(len(pickOptionTranslate.Option), func(i, j int) {
 			pickOptionTranslate.Option[i], pickOptionTranslate.Option[j] = pickOptionTranslate.Option[j], pickOptionTranslate.Option[i]
 		})
@@ -213,6 +307,7 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 			Data: pickOptionSentence,
 		})
 
+		// Pick random exercise
 		randomExercise := exercises[rand.Intn(len(exercises))]
 
 		card.Exercise = randomExercise
@@ -220,14 +315,17 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		logger.Log.Info("Card generated", zap.Any("card", card))
 	}
 
+	// Generate lesson
 	var lesson schemas.LessonResponse
 	lesson.Lesson = lessonInfo
 	lesson.Cards = cards
 	logger.Log.Info("Lesson generated", zap.Any("lesson", lesson))
 
+	// Send response
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	if err := json.NewEncoder(w).Encode(lesson); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to encode response", http.StatusInternalServerError)
 		return
 	}

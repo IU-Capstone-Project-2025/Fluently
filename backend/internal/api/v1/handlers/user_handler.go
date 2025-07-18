@@ -3,6 +3,8 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
+	"time"
 
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
@@ -12,6 +14,7 @@ import (
 	"github.com/google/uuid"
 )
 
+// UserHandler handles the user endpoint
 type UserHandler struct {
 	Repo *postgres.UserRepository
 }
@@ -29,21 +32,20 @@ func buildUserResponse(user *models.User) schemas.UserResponse {
 	}
 }
 
-// CreateUser godoc
-// @Summary      Create a user
-// @Description  Registers a new user
-// @Tags         users
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        user  body      schemas.CreateUserRequest  true  "User data"
-// @Success      201  {object}  schemas.UserResponse
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/users/ [post]
+// CreateUser creates a new user
 func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/users"
+	method := r.Method
+	statusCode := 201
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	var req schemas.CreateUserRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
@@ -60,74 +62,75 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := h.Repo.Create(r.Context(), &user); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to create user", http.StatusInternalServerError)
 		return
 	}
 
+	// Return the created user
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
-
 	json.NewEncoder(w).Encode(buildUserResponse(&user))
 }
 
-// GetUser godoc
-// @Summary      Get user by ID
-// @Description  Returns a user by their unique identifier
-// @Tags         users
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id   path      string  true  "User ID"
-// @Success      200  {object}  schemas.UserResponse
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      404  {object}  schemas.ErrorResponse
-// @Router       /api/v1/users/{id} [get]
+// GetUser gets a user
 func (h *UserHandler) GetUser(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/users/{id}"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	user, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "user not found", http.StatusNotFound)
 		return
 	}
 
+	// Return the user
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildUserResponse(user))
 }
 
-// UpdateUser godoc
-// @Summary      Update a user
-// @Description  Updates user data by ID
-// @Tags         users
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id    path      string                   true  "User ID"
-// @Param        user  body      schemas.CreateUserRequest  true  "User data"
-// @Success      200  {object}  schemas.UserResponse
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      404  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/users/{id} [put]
+// UpdateUser updates a user
 func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/users/{id}"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	var req schemas.CreateUserRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
 
 	user, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "user not found", http.StatusNotFound)
 		return
 	}
@@ -141,39 +144,41 @@ func (h *UserHandler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 	user.PasswordHash = req.PasswordHash
 
 	if err := h.Repo.Update(r.Context(), user); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to update user", http.StatusInternalServerError)
 		return
 	}
 
+	// Return the updated user
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(buildUserResponse(user))
 }
 
-// DeleteUser godoc
-// @Summary      Delete a user
-// @Description  Deletes a user by ID
-// @Tags         users
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id   path      string  true  "User ID"
-// @Success      204  ""
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      404  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/users/{id} [delete]
+// DeleteUser deletes a user
 func (h *UserHandler) DeleteUser(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/users/{id}"
+	method := r.Method
+	statusCode := 204
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	if err := h.Repo.Delete(r.Context(), id); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to delete user", http.StatusInternalServerError)
 		return
 	}
 
+	// Return no content
 	w.WriteHeader(http.StatusNoContent)
 }

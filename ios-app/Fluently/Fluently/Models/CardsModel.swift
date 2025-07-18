@@ -8,8 +8,10 @@
 import Foundation
 import SwiftData
 
+// MARK: - Cards Model
+/// model of data that returning at lesson request
 @Model
-final class CardsModel: Codable {
+final class CardsModel: Codable, Sendable {
     var cards: [WordModel]
     var lesson: LessonModel
 
@@ -21,6 +23,7 @@ final class CardsModel: Codable {
         self.lesson = lesson
     }
 
+    // MARK: - Codable
     enum CodingKeys: String, CodingKey {
         case cards
         case lesson

@@ -1,6 +1,7 @@
 package router
 
 import (
+	"fmt"
 	"net/http"
 	"strings"
 	"time"
@@ -9,6 +10,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
 	"github.com/go-chi/jwtauth/v5"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	httpSwagger "github.com/swaggo/http-swagger"
 	"gorm.io/gorm"
 
@@ -43,18 +45,118 @@ func flexibleJWTVerifier(next http.Handler) http.Handler {
 			tokenString = authHeader
 		}
 
+		// Trim any whitespace that might cause issues
+		tokenString = strings.TrimSpace(tokenString)
+
+		// WORKAROUND: Handle malformed client tokens like "ServerToken(accessToken=eyJ...)"
+		if strings.HasPrefix(tokenString, "ServerToken(accessToken=") {
+			logger.Log.Warn("Client sending malformed token format - applying workaround",
+				zap.String("malformed_prefix", tokenString[:min(30, len(tokenString))]),
+			)
+
+			// Extract the actual JWT token from ServerToken(accessToken=TOKEN)
+			start := strings.Index(tokenString, "accessToken=")
+			if start != -1 {
+				start += len("accessToken=")
+				end := strings.LastIndex(tokenString, ")")
+				if end != -1 && end > start {
+					extractedToken := tokenString[start:end]
+					logger.Log.Info("Extracted JWT token from malformed format",
+						zap.String("extracted_prefix", extractedToken[:min(20, len(extractedToken))]),
+						zap.Int("extracted_length", len(extractedToken)),
+					)
+					tokenString = extractedToken
+				} else {
+					logger.Log.Error("Failed to extract token from malformed format - missing closing parenthesis")
+					w.Header().Set("Content-Type", "application/json")
+					w.WriteHeader(http.StatusUnauthorized)
+					w.Write([]byte(`{"error": "malformed token format"}`))
+					return
+				}
+			} else {
+				logger.Log.Error("Failed to extract token from malformed format - missing accessToken=")
+				w.Header().Set("Content-Type", "application/json")
+				w.WriteHeader(http.StatusUnauthorized)
+				w.Write([]byte(`{"error": "malformed token format"}`))
+				return
+			}
+		}
+
+		// Log token details for debugging (first 20 chars only for security)
+		tokenPrefix := tokenString
+		if len(tokenString) > 20 {
+			tokenPrefix = tokenString[:20] + "..."
+		}
+		logger.Log.Debug("JWT token received",
+			zap.String("token_prefix", tokenPrefix),
+			zap.Int("token_length", len(tokenString)),
+			zap.String("authorization_header", authHeader[:min(50, len(authHeader))]),
+		)
+
+		// Check if token looks like a valid JWT (should have 3 parts separated by dots)
+		parts := strings.Split(tokenString, ".")
+		if len(parts) != 3 {
+			logger.Log.Error("Invalid JWT format - should have 3 parts separated by dots",
+				zap.Int("parts_count", len(parts)),
+				zap.String("token_prefix", tokenPrefix),
+			)
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusUnauthorized)
+			w.Write([]byte(`{"error": "invalid token format"}`))
+			return
+		}
+
+		// Verify each part contains valid base64
+		for i, part := range parts {
+			if len(part) == 0 {
+				logger.Log.Error("JWT part is empty",
+					zap.Int("part_index", i),
+					zap.String("token_prefix", tokenPrefix),
+				)
+				w.Header().Set("Content-Type", "application/json")
+				w.WriteHeader(http.StatusUnauthorized)
+				w.Write([]byte(`{"error": "invalid token format"}`))
+				return
+			}
+
+			// Check for invalid characters in base64
+			for j, char := range part {
+				if !isValidBase64Char(char) {
+					logger.Log.Error("Invalid character found in JWT part",
+						zap.Int("part_index", i),
+						zap.Int("char_position", j),
+						zap.String("invalid_char", string(char)),
+						zap.Int("char_code", int(char)),
+						zap.String("token_prefix", tokenPrefix),
+					)
+					w.Header().Set("Content-Type", "application/json")
+					w.WriteHeader(http.StatusUnauthorized)
+					w.Write([]byte(`{"error": "invalid token encoding"}`))
+					return
+				}
+			}
+		}
+
 		// Verify and parse the token
 		token, err := utils.TokenAuth.Decode(tokenString)
 		if err != nil {
-			logger.Log.Error("JWT decode error", zap.Error(err))
+			logger.Log.Error("JWT decode error",
+				zap.Error(err),
+				zap.String("token_prefix", tokenPrefix),
+				zap.Int("token_length", len(tokenString)),
+				zap.Strings("token_parts_lengths", getPartsLengths(parts)),
+			)
 			w.Header().Set("Content-Type", "application/json")
 			w.WriteHeader(http.StatusUnauthorized)
 			w.Write([]byte(`{"error": "unauthorized"}`))
 			return
 		}
 
+		// Check if token is nil
 		if token == nil {
-			logger.Log.Error("Invalid JWT token")
+			logger.Log.Error("Invalid JWT token - token is nil",
+				zap.String("token_prefix", tokenPrefix),
+			)
 			w.Header().Set("Content-Type", "application/json")
 			w.WriteHeader(http.StatusUnauthorized)
 			w.Write([]byte(`{"error": "unauthorized"}`))
@@ -67,12 +169,38 @@ func flexibleJWTVerifier(next http.Handler) http.Handler {
 	})
 }
 
+// Helper function to check if a character is valid in base64
+func isValidBase64Char(char rune) bool {
+	return (char >= 'A' && char <= 'Z') ||
+		(char >= 'a' && char <= 'z') ||
+		(char >= '0' && char <= '9') ||
+		char == '+' || char == '/' || char == '-' || char == '_' || char == '='
+}
+
+// Helper function to get lengths of JWT parts
+func getPartsLengths(parts []string) []string {
+	lengths := make([]string, len(parts))
+	for i, part := range parts {
+		lengths[i] = fmt.Sprintf("%d", len(part))
+	}
+	return lengths
+}
+
+// Helper function for min
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+// InitRoutes initializes routes
 func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	// Initialize JWT auth
 	utils.InitJWTAuth()
 
 	r.Use(cors.Handler(cors.Options{
-		AllowedOrigins:   []string{"*"}, // или конкретные
+		AllowedOrigins:   []string{"*"}, // Allow all origins
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
 		ExposedHeaders:   []string{"Link"},
@@ -91,8 +219,9 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	// Initialize Telegram handler
 	linkTokenRepo := postgres.NewLinkTokenRepository(db)
 	telegramHandler := &handlers.TelegramHandler{
-		UserRepo:      postgres.NewUserRepository(db),
-		LinkTokenRepo: linkTokenRepo,
+		UserRepo:         postgres.NewUserRepository(db),
+		LinkTokenRepo:    linkTokenRepo,
+		RefreshTokenRepo: postgres.NewRefreshTokenRepository(db),
 	}
 
 	// Start cleanup task for expired tokens (every hour)
@@ -101,6 +230,9 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	// Public routes (NO AUTHENTICATION REQUIRED)
 	routes.RegisterAuthRoutes(r, authHandlers)
 	routes.RegisterTelegramRoutes(r, telegramHandler)
+
+	// Prometheus metrics endpoint
+	r.Handle("/metrics", promhttp.Handler())
 
 	r.Get("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("ok"))
@@ -112,6 +244,22 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	})
 	r.Get("/swagger/*", httpSwagger.WrapHandler)
 
+	userRepo := postgres.NewUserRepository(db)
+	wordRepo := postgres.NewWordRepository(db)
+	sentenceRepo := postgres.NewSentenceRepository(db)
+	learnedWordRepo := postgres.NewLearnedWordRepository(db)
+	preferenceRepo := postgres.NewPreferenceRepository(db)
+	pickOptionRepo := postgres.NewPickOptionRepository(db)
+	topicRepo := postgres.NewTopicRepository(db)
+	lessonRepo := postgres.NewLessonRepository(db)
+	chatHistoryRepo := postgres.NewChatHistoryRepository(db)
+
+	thesaurusClient := utils.NewThesaurusClient(utils.ThesaurusClientConfig{})
+	llmClient := utils.NewLLMClient(utils.LLMClientConfig{})
+	distractorClient := utils.NewDistractorClient(utils.DistractorClientConfig{})
+
+	chatHistoryHandler := &handlers.ChatHistoryHandler{Repo: chatHistoryRepo}
+
 	// Protected routes using flexible JWT authentication
 	r.Route("/api/v1", func(r chi.Router) {
 		// JWT authentication middleware (supports both "Bearer token" and "token" formats)
@@ -119,19 +267,53 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		r.Use(authMiddleware.CustomAuthenticator)
 
 		// Protected API routes
-		routes.RegisterUserRoutes(r, &handlers.UserHandler{Repo: postgres.NewUserRepository(db)})
-		routes.RegisterWordRoutes(r, &handlers.WordHandler{Repo: postgres.NewWordRepository(db)})
-		routes.RegisterSentenceRoutes(r, &handlers.SentenceHandler{Repo: postgres.NewSentenceRepository(db)})
-		routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: postgres.NewLearnedWordRepository(db)})
-		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: postgres.NewPreferenceRepository(db)})
-		routes.RegisterPickOptionRoutes(r, &handlers.PickOptionHandler{Repo: postgres.NewPickOptionRepository(db)})
-		routes.RegisterLessonRoutes(r, &handlers.LessonHandler{
-			PreferenceRepo: postgres.NewPreferenceRepository(db),
-			TopicRepo:      postgres.NewTopicRepository(db),
-			SentenceRepo:   postgres.NewSentenceRepository(db),
-			PickOptionRepo: postgres.NewPickOptionRepository(db),
-			WordRepo:       postgres.NewWordRepository(db),
-			Repo:           postgres.NewLessonRepository(db),
+		routes.RegisterUserRoutes(r, &handlers.UserHandler{Repo: userRepo})
+		routes.RegisterWordRoutes(r, &handlers.WordHandler{Repo: wordRepo})
+		routes.RegisterSentenceRoutes(r, &handlers.SentenceHandler{Repo: sentenceRepo})
+		routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: learnedWordRepo})
+		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: preferenceRepo})
+		routes.RegisterPickOptionRoutes(r, &handlers.PickOptionHandler{Repo: pickOptionRepo})
+		routes.RegisterProgressRoutes(r, &handlers.ProgressHandler{
+			WordRepo:        wordRepo,
+			LearnedWordRepo: learnedWordRepo,
 		})
+		routes.RegisterDayWordRoutes(r, &handlers.DayWordHandler{
+			WordRepo:        wordRepo,
+			PreferenceRepo:  preferenceRepo,
+			TopicRepo:       topicRepo,
+			SentenceRepo:    sentenceRepo,
+			PickOptionRepo:  pickOptionRepo,
+			LearnedWordRepo: learnedWordRepo,
+		})
+		routes.RegisterLessonRoutes(r, &handlers.LessonHandler{
+			PreferenceRepo:  preferenceRepo,
+			TopicRepo:       topicRepo,
+			SentenceRepo:    sentenceRepo,
+			PickOptionRepo:  pickOptionRepo,
+			WordRepo:        wordRepo,
+			Repo:            lessonRepo,
+			LearnedWordRepo: learnedWordRepo,
+			ThesaurusClient: thesaurusClient,
+		})
+
+		// --- new AI-related routes ---
+		chatHandler := &handlers.ChatHandler{
+			Redis:           utils.Redis(),
+			HistoryRepo:     chatHistoryRepo,
+			LLMClient:       llmClient,
+			LearnedWordRepo: learnedWordRepo,
+			WordRepo:        wordRepo,
+			TopicRepo:       topicRepo,
+		}
+		distractorHandler := &handlers.DistractorHandler{
+			Client: distractorClient,
+		}
+		thesaurusHandler := &handlers.ThesaurusHandler{
+			Client: thesaurusClient,
+		}
+
+		routes.RegisterChatRoutes(r, chatHandler, chatHistoryHandler)
+		routes.RegisterDistractorRoutes(r, distractorHandler)
+		routes.RegisterThesaurusRoutes(r, thesaurusHandler)
 	})
 }

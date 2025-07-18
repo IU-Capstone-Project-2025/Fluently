@@ -3,6 +3,8 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
+	"time"
 
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
@@ -12,10 +14,12 @@ import (
 	"github.com/google/uuid"
 )
 
+// TopicHandler handles the topic endpoint
 type TopicHandler struct {
 	Repo *postgres.TopicRepository
 }
 
+// buildTopicResponse builds a TopicResponse from a Topic
 func buildTopicResponse(topic *models.Topic) schemas.TopicResponse {
 	return schemas.TopicResponse{
 		ID:    topic.ID.String(),
@@ -23,89 +27,92 @@ func buildTopicResponse(topic *models.Topic) schemas.TopicResponse {
 	}
 }
 
-// GetTopic godoc
-// @Summary      Get topic by ID
-// @Description  Returns a topic by its unique identifier
-// @Tags         topics
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id   path      string  true  "Topic ID"
-// @Success      200  {object}  schemas.TopicResponse
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      404  {object}  schemas.ErrorResponse
-// @Router       /api/v1/topics/{id} [get]
+// GetTopic gets a topic
 func (h *TopicHandler) GetTopic(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/topics/{id}"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	topic, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "topic not found", http.StatusNotFound)
 		return
 	}
 
+	// Return the topic
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildTopicResponse(topic))
 }
 
-// GetMainTopic godoc
-// @Summary      Get main topic by ID
-// @Description  Returns the main topic (root parent) for a given topic ID
-// @Tags         topics
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id   path      string  true  "Topic ID"
-// @Success      200  {object}  schemas.TopicResponse
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      404  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/topics/{id}/main [get]
+// GetMainTopic gets the main topic
+// The main topic is the topic that has no parent
 func (h *TopicHandler) GetMainTopic(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/topics/main/{id}"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
 
 	topic, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "topic not found", http.StatusNotFound)
 		return
 	}
 
+	// Find the main topic (the topic that has no parent)
 	for topic.ParentID != nil {
 		topic, err = h.Repo.GetByID(r.Context(), *topic.ParentID)
 		if err != nil {
+			statusCode = 500
 			http.Error(w, "failed to fetch parent topic", http.StatusInternalServerError)
 			return
 		}
 	}
 
+	// Return the topic
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(buildTopicResponse(topic))
 }
 
-// GetPathToMainTopic godoc
-// @Summary      Get path to main topic
-// @Description  Returns the path from a topic to its main topic (root parent)
-// @Tags         topics
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id   path      string  true  "Topic ID"
-// @Success      200  {object}  map[string][]string
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      404  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/topics/{id}/path [get]
+// GetPathToMainTopic gets the path to the main topic
+// The path is a list of topics that lead to the main topic
 func (h *TopicHandler) GetPathToMainTopic(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/topics/path/{id}"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
+		statusCode = 400
 		http.Error(w, "invalid id", http.StatusBadRequest)
 		return
 	}
@@ -114,47 +121,51 @@ func (h *TopicHandler) GetPathToMainTopic(w http.ResponseWriter, r *http.Request
 
 	topic, err := h.Repo.GetByID(r.Context(), id)
 	if err != nil {
+		statusCode = 404
 		http.Error(w, "topic not found", http.StatusNotFound)
 		return
 	}
 	path = append(path, topic.ID)
 
+	// Find the main topic (the topic that has no parent)
 	for topic.ParentID != nil {
 		topic, err = h.Repo.GetByID(r.Context(), *topic.ParentID)
 		if err != nil {
+			statusCode = 500
 			http.Error(w, "failed to fetch parent topic", http.StatusInternalServerError)
 			return
 		}
 		path = append(path, topic.ID)
 	}
 
+	// Convert the path to a slice of strings
 	strPath := make([]string, len(path))
 	for i, id := range path {
 		strPath[i] = id.String()
 	}
 
+	// Return the path
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string][]string{
 		"topics": strPath,
 	})
 }
 
-// CreateTopic godoc
-// @Summary      Create a new topic
-// @Description  Adds a new topic
-// @Tags         topics
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        topic  body      schemas.CreateTopicRequest  true  "Topic data"
-// @Success      201  {object}  schemas.TopicResponse
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/topics/ [post]
+// CreateTopic creates a new topic
 func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/topics"
+	method := r.Method
+	statusCode := 201
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
 	var req schemas.CreateTopicRequest
 
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		statusCode = 400
 		http.Error(w, "invalid request body", http.StatusBadRequest)
 		return
 	}
@@ -164,29 +175,18 @@ func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := h.Repo.Create(r.Context(), &topic); err != nil {
+		statusCode = 500
 		http.Error(w, "failed to create topic", http.StatusInternalServerError)
 		return
 	}
 
+	// Return the created topic
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(buildTopicResponse(&topic))
 }
 
-// UpdateTopic godoc
-// @Summary      Update a topic
-// @Description  Updates an existing topic by ID
-// @Tags         topics
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id     path      string                     true  "Topic ID"
-// @Param        topic  body      schemas.CreateTopicRequest true  "Topic data"
-// @Success      200  {object}  schemas.TopicResponse
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      404  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/topics/{id} [put]
+// UpdateTopic updates a topic
 func (h *TopicHandler) UpdateTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -213,23 +213,13 @@ func (h *TopicHandler) UpdateTopic(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Return the updated topic
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(buildTopicResponse(topic))
 }
 
-// DeleteTopic godoc
-// @Summary      Delete a topic
-// @Description  Deletes a topic by ID
-// @Tags         topics
-// @Accept       json
-// @Produce      json
-// @Security     BearerAuth
-// @Param        id   path      string  true  "Topic ID"
-// @Success      204  ""
-// @Failure      400  {object}  schemas.ErrorResponse
-// @Failure      500  {object}  schemas.ErrorResponse
-// @Router       /api/v1/topics/{id} [delete]
+// DeleteTopic deletes a topic
 func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 	id, err := utils.ParseUUIDParam(r, "id")
 	if err != nil {
@@ -242,5 +232,6 @@ func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Return no content
 	w.WriteHeader(http.StatusNoContent)
 }

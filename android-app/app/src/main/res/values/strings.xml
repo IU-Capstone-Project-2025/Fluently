@@ -10,4 +10,6 @@
     <string name="welcome_to_fluently">Welcome to Fluently</string>
     <string name="login_error_text">Something went wrong, please try again</string>
     <string name="choose_missing_word">Выберите пропущенное слово</string>
+    <string name="enter_the_word_translation">Введите перевод слова</string>
+    <string name="check">ПРОВЕРИТЬ</string>
 </resources>

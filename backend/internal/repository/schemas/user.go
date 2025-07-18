@@ -6,6 +6,7 @@ import (
 	"github.com/google/uuid"
 )
 
+// CreateUserRequest is a request body for creating a user
 type CreateUserRequest struct {
 	Name         string `json:"name" binding:"required"`
 	Email        string `json:"email"`
@@ -16,6 +17,7 @@ type CreateUserRequest struct {
 	IsActive     bool   `json:"is_active"`
 }
 
+// UserResponse is a response for a user
 type UserResponse struct {
 	ID         uuid.UUID `json:"id"`
 	Name       string    `json:"name"`

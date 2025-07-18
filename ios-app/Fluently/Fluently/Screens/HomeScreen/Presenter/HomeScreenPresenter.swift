@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 // MARK: - Protocol for presenter
 protocol HomeScreenPresenting: ObservableObject {
@@ -25,7 +26,7 @@ final class HomeScreenPresenter: HomeScreenPresenting {
     @ObservedObject var account: AccountData
 #if targetEnvironment(simulator)
     @Published var lesson: CardsModel? = CardsModel(
-        cards: WordModel.generateMockWords(count: 5),
+        cards: WordModel.generateMockWords(count: 20),
         lesson: LessonModel(
             startedAt: "",
             totalWords: 10,
@@ -38,6 +39,10 @@ final class HomeScreenPresenter: HomeScreenPresenting {
     @Published var lesson: CardsModel?
 #endif
 
+    @Published var wordOfTheDay: WordModel?
+
+    var modelContext: ModelContext?
+
     init(
         router: HomeScreenRouter,
         interactor: HomeScreenInteractor,
@@ -48,21 +53,101 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         self.account = account
     }
 
-    func getLesson() async throws {
-        guard lesson == nil else {
+    func getDayWord() {
+        wordOfTheDay = getTodaysWord()
+        guard wordOfTheDay == nil else {
             return
         }
 
-        lesson = try await interactor.getLesson()
+        Task {
+            do {
+                self.wordOfTheDay = try await interactor.getDayWord()
+                await saveWordOfTheDay()
+            } catch {
+                print("Error on getting word of the day: \(error.localizedDescription)")
+                wordOfTheDay = WordModel.mockWord()
+            }
+        }
+    }
+
+    func saveWordOfTheDay() async {
+        guard let modelContext else {
+            return
+        }
+        wordOfTheDay?.isDayWord = true
+
+        let dayWordDTO = DayWord(
+            word: wordOfTheDay
+        )
+        modelContext.insert(dayWordDTO)
+
+        try? modelContext.save()
+    }
+
+    func getTodaysWord() -> WordModel? {
+        guard let modelContext else {
+            print("no context")
+            return WordModel.mockWord()
+        }
+
+        let today = Calendar.current.startOfDay(for: Date())
+        let predicate = #Predicate<DayWord> {
+            $0.date >= today
+        }
+
+        let descriptor = FetchDescriptor<DayWord>(predicate: predicate)
+        return try? modelContext.fetch(descriptor).first?.word
+    }
+
+    @MainActor
+    func getLesson() async throws {
+
+        if let existingLesson = findLesson(context: modelContext) {
+            self.lesson = existingLesson
+            return
+        }
+
+        let newLesson = try await interactor.getLesson()
+
+        guard let modelContext else {
+            throw LessonError.noModelContext
+        }
+
+        modelContext.insert(newLesson)
+        try modelContext.save()
+
+        self.lesson = newLesson
+
+        print("Lesson saved in memory")
+    }
+
+    @MainActor
+    func findLesson(context: ModelContext?) -> CardsModel? {
+        let descriptor = FetchDescriptor<CardsModel>()
+
+        do {
+            return try context?.fetch(descriptor).first
+        } catch {
+            print("SwiftData fetch failed: \(error)")
+            return nil
+        }
     }
 
     // Builders 
-    func buildNotesScreen() -> NotesView{
+    func buildNotesScreen() -> some View{
+#if targetEnvironment(simulator)
+        return AIChatBuilder.build() {
+            print("bebeb")
+        }
+#else
         return NotesScreenBuilder.build(router: router.router)
+#endif
     }
 
-    func buildDictionaryScreen() -> DictionaryView{
-        return DictionaryScreenBuilder.build()
+    func buildDictionaryScreen(isLearned: Bool) -> DictionaryView{
+        return DictionaryScreenBuilder.build(
+            isLearned: isLearned
+        )
     }
 
     // Navigation
@@ -73,5 +158,14 @@ final class HomeScreenPresenter: HomeScreenPresenting {
 
     func navigatoToLesson() {
         router.navigatoToLesson(lesson!)
+        modelContext?.delete(lesson!)
+        lesson = nil
+    }
+
+
+    enum LessonError: Error {
+        case noModelContext
+        case invalidLessonData
+        case saveFailed(Error)
     }
 }

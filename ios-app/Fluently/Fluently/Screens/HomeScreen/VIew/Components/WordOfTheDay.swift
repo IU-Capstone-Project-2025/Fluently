@@ -5,12 +5,16 @@
 //  Created by Савва Пономарев on 18.06.2025.
 //
 
-
 import SwiftUI
+import SwiftData
 
 struct WordOfTheDay: View {
+    @Environment(\.modelContext) var modelContext
+
     // MARK: - Properties
-    @State var word: WordModel
+    var word: WordModel
+
+    @State var inLibAlready = false
 
     // MARK: - Constants
     private enum Const {
@@ -31,7 +35,27 @@ struct WordOfTheDay: View {
 
             wordCard
             addCard
+                .id(inLibAlready)
         }
+        .onAppear() {
+            inLibAlready = isWordInDictionary()
+        }
+    }
+
+    func isWordInDictionary() -> Bool {
+        return !word.isDayWord
+
+//        let predicate = #Predicate<WordModel> { $0.id == word.id }
+//        let fetchDescriptor = FetchDescriptor<WordModel>(predicate: predicate)
+//
+//        do {
+//            let results = try modelContext.fetch(fetchDescriptor)
+//            print(results)
+//            return !results.isEmpty
+//        } catch {
+//            print("Error checking word: \(error)")
+//            return false
+//        }
     }
 
     // MARK: - Subviews
@@ -39,11 +63,11 @@ struct WordOfTheDay: View {
     /// Card displaying the word of the day and its translation
     private var wordCard: some View {
         VStack {
-            Text(word.word)
+            Text(word.word!)
                 .font(.appFont.title.bold())
                 .foregroundStyle(.whiteText)
 
-            Text(word.translation)
+            Text(word.translation!)
                 .font(.appFont.callout)
                 .foregroundStyle(.whiteBackground.secondary)
         }
@@ -58,12 +82,23 @@ struct WordOfTheDay: View {
     /// Button for adding the word to collection
     private var addCard: some View {
         HStack(spacing: 3) {
-            Image(systemName: "plus.circle")
+            Image(systemName: !inLibAlready ? "plus.circle" : "checkmark.circle")
                 .foregroundStyle(.blackText)
-            Text("Add to collection")
+            Text( !inLibAlready ? "Add to collection" : "Already in collection")
                 .foregroundStyle(.blackText)
                 .font(.appFont.secondarySubheadline)
         }
+        .onTapGesture {
+            word.isDayWord = false
+            word.isInLesson = false
+            modelContext.insert(word)
+
+            try? modelContext.save()
+            withAnimation(.easeIn(duration: 0.3)) {
+                inLibAlready = true
+            }
+        }
+        .disabled(inLibAlready)
         .padding(.vertical, 4)
         .padding(.horizontal, 2)
         .background(

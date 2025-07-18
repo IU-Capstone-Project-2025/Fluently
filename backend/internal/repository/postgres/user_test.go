@@ -10,6 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// TestCreateAndGetUser
 func TestCreateAndGetUser(t *testing.T) {
 	ctx := context.Background()
 
@@ -31,6 +32,7 @@ func TestCreateAndGetUser(t *testing.T) {
 	assert.Equal(t, user.Name, found.Name)
 }
 
+// TestUpdateRefreshToken
 func TestUpdateRefreshToken(t *testing.T) {
 	ctx := context.Background()
 	user := &models.User{
@@ -56,6 +58,7 @@ func TestUpdateRefreshToken(t *testing.T) {
 	assert.False(t, found.LastLoginAt.IsZero()) // Check if update
 }
 
+// TestClearRefreshToken clears the refresh token
 func TestClearRefreshToken(t *testing.T) {
 	ctx := context.Background()
 	user := &models.User{
@@ -77,6 +80,7 @@ func TestClearRefreshToken(t *testing.T) {
 	assert.Equal(t, "", found.RefreshToken)
 }
 
+// TestLinkAndGetByTelegramID is a test for linking a user to a Telegram ID
 func TestLinkAndGetByTelegramID(t *testing.T) {
 	ctx := context.Background()
 	user := &models.User{
@@ -106,6 +110,7 @@ func TestLinkAndGetByTelegramID(t *testing.T) {
 	assert.Nil(t, found.TelegramID)
 }
 
+// TestDuplicateEmail is a test for checking if a user with the same email already exists
 func TestDuplicateEmail(t *testing.T) {
 	ctx := context.Background()
 	email := "duplicate@example.com"

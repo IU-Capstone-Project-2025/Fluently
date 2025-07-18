@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pandas as pd
 from collections import Counter
+from starlette_prometheus import PrometheusMiddleware, metrics
 
 # карта CEFR для внутренней логики (если понадобится)
 CEFR_LEVELS = {'a1': 1, 'a2': 2, 'b1': 3, 'b2': 4, 'c1': 5, 'c2': 6}
@@ -99,9 +100,14 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Configure CORS with environment variables
-allowed_origins = os.getenv("THESAURUS_ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:8070").split(",")
+# Add Prometheus middleware
+app.add_middleware(PrometheusMiddleware)
+app.add_route("/metrics", metrics)
 
+# Define allowed origins for CORS
+allowed_origins = ["*"]
+
+# CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
