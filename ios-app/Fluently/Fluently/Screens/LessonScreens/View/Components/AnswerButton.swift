@@ -18,18 +18,16 @@ struct AnswerButton: View {
     var onTap: () -> Void
 
     var body: some View {
-        Button {
-            onTap()
-        } label: {
-            Text(answer)
-                .padding()
-                .frame(maxWidth: .infinity)
-                .massiveButton(color: isSubmitted ? isCorrectAnswer ? .green : .red : .orange)
-                .grayscale( isSubmitted && (isSelected || isCorrectAnswer) ? 0 : isSelected ? 0 : 1)
-                .frame(maxHeight: 60)
-        }
-        .disabled(isSubmitted)
-        .buttonStyle(OpaqueButtonStyle())
+        Text(answer)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .massiveButton(color: isSubmitted ? isCorrectAnswer ? .green : .red : .orange)
+            .grayscale( isSubmitted && (isSelected || isCorrectAnswer) ? 0 : isSelected ? 0 : 1)
+            .frame(maxHeight: 60)
+            .onTapGesture {
+                onTap()
+            }
+            .disabled(isSubmitted)
     }
 }
 

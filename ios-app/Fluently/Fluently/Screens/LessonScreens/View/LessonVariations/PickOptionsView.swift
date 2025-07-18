@@ -41,27 +41,24 @@ struct PickOptionsView: View {
     // MARK: - Subviews
 
     var buttonNext: some View {
-        Button {
-            if let selectedAnswer {
-                if answerIsShown {
-                    onAnswerSelected(selectedAnswer)
-                } else {
-                    withAnimation(.easeIn(duration: 0.3)) {
-                        answerIsShown = true
-                        isCorrect = correctAnswer == selectedAnswer
+        Text("Next")
+            .padding()
+            .frame(maxWidth: .infinity)
+            .massiveButton(color: .blue)
+            .grayscale( selectedAnswer == nil ? 1 : 0)
+            .frame(maxHeight: 60)
+            .onTapGesture {
+                if let selectedAnswer {
+                    if answerIsShown {
+                        onAnswerSelected(selectedAnswer)
+                    } else {
+                        withAnimation(.easeIn(duration: 0.3)) {
+                            answerIsShown = true
+                            isCorrect = correctAnswer == selectedAnswer
+                        }
                     }
                 }
-//                onAnswerSelected(selectedAnswer)
             }
-        } label: {
-            Text("Next")
-                .padding()
-                .frame(maxWidth: .infinity)
-                .massiveButton(color: .blue)
-                .grayscale( selectedAnswer == nil ? 1 : 0)
-                .frame(maxHeight: 60)
-        }
-        .buttonStyle(PlainButtonStyle())
     }
 
     var listOfAnswers: some View {
