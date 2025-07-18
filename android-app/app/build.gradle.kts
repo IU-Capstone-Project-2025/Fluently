@@ -44,6 +44,7 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
 }
@@ -85,6 +86,9 @@ dependencies {
 
     // AppAuth library for Google OAuth
     implementation(libs.appauth)
+
+    // Timber logging
+    implementation(libs.timber)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

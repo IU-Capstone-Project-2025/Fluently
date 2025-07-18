@@ -41,7 +41,7 @@ abstract class AuthModule {
 
     @Binds
     @Singleton
-    abstract fun bindAuthRepository(
-        googleBasedAuthRepository: GoogleBasedOAuthManager
+    abstract fun bindAuthManager(
+        googleBasedAuthManager: GoogleBasedOAuthManager
     ): AuthManager
 }

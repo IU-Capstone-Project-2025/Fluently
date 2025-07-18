@@ -13,5 +13,11 @@ object Destination {
     object HomeScreen
 
     @Serializable
-    data class LessonScreen(val lessonId: String)
+    object LessonScreen
+
+    @Serializable
+    class WordsProgress(val isLearning: Boolean)
+
+    @Serializable
+    object CalendarScreen
 }

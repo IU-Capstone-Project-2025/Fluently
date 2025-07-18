@@ -1,10 +1,10 @@
 package ru.fluentlyapp.fluently.ui.screens.home
 
-import android.util.Log
+import androidx.core.net.toUri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -12,65 +12,141 @@ import kotlinx.coroutines.launch
 import ru.fluentlyapp.fluently.data.repository.LessonRepository
 import javax.inject.Inject
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.supervisorScope
+import ru.fluentlyapp.fluently.feature.joinedwordprogress.JoinedWordProgressRepository
+import ru.fluentlyapp.fluently.feature.userpreferences.UserPreferencesRepository
+import ru.fluentlyapp.fluently.feature.wordoftheday.WordOfTheDayRepository
 import ru.fluentlyapp.fluently.ui.screens.home.HomeScreenUiState.OngoingLessonState
+import ru.fluentlyapp.fluently.ui.theme.components.WordUiState
+import ru.fluentlyapp.fluently.utils.safeLaunch
+import timber.log.Timber
+
 
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor(
-    private val lessonRepository: LessonRepository
+    private val lessonRepository: LessonRepository,
+    private val joinedWordProgressRepository: JoinedWordProgressRepository,
+    private val wordOfTheDayRepo: WordOfTheDayRepository,
+    private val userPreferencesRepository: UserPreferencesRepository
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(HomeScreenUiState())
     val uiState = _uiState.asStateFlow()
 
-    /**
-     * When the user presses on the new lesson, the received current lesson id will be emitted
-     * into this flow.
-     */
-    private val _ongoingLessonId = MutableStateFlow<String?>(null)
-    val ongoingLessonId = _ongoingLessonId.asStateFlow()
+    private val _commandsChannel = Channel<HomeCommands>()
+    val commandsChannel = _commandsChannel.receiveAsFlow()
 
     init {
-        viewModelScope.launch {
-            // On each update of the saved lesson id, update the ui state correspondingly
-            lessonRepository.getSavedOngoingLessonIdAsFlow().collect { id ->
-                if (id == null) {
-                    // No saved id -> mark the absence of any saved ongoing lesson
-                    _uiState.update {
-                        it.copy(ongoingLessonState = OngoingLessonState.NOT_STARTED)
+        viewModelScope.safeLaunch {
+            supervisorScope {
+                safeLaunch {
+                    userPreferencesRepository.updateUserPreferences()
+                }
+
+                safeLaunch {
+                    userPreferencesRepository.getUserPreferences().collect { userPreferences ->
+                        if (userPreferences == null) {
+                            return@collect
+                        }
+
+                        _uiState.update {
+                            it.copy(
+                                avatarPicture = userPreferences.avatarImageUrl.toUri()
+                            )
+                        }
                     }
-                } else {
-                    _uiState.update {
-                        it.copy(ongoingLessonState = OngoingLessonState.HAS_PAUSED)
+                }
+
+                safeLaunch {
+                    lessonRepository.currentComponent().collect { currentComponent ->
+                        if (
+                            uiState.value.ongoingLessonState in setOf(
+                                OngoingLessonState.LOADING,
+                                OngoingLessonState.ERROR
+                            )
+                        ) {
+                            return@collect
+                        }
+
+                        if (currentComponent == null) {
+                            _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.NOT_STARTED) }
+                        } else {
+                            _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.HAS_PAUSED) }
+                        }
+                    }
+                }
+
+                safeLaunch {
+                    joinedWordProgressRepository.getPerWordOverallProgress().collect { progresses ->
+                        _uiState.update {
+                            it.copy(
+                                learnedWordsNumber = progresses.count { !it.isLearning },
+                                inProgressWordsNumber = progresses.count { it.isLearning }
+                            )
+                        }
+                    }
+                }
+
+                safeLaunch {
+                    wordOfTheDayRepo.updateWordOfTheDay()
+                }
+
+                safeLaunch {
+                    wordOfTheDayRepo.isWordOfTheDayLearning().collect { isLearning ->
+                        _uiState.update {
+                            it.copy(
+                                hasWordOfTheDaySaved = isLearning
+                            )
+                        }
+                    }
+                }
+
+                safeLaunch {
+                    wordOfTheDayRepo.getWordOfTheDay().collect { wordOfTheDay ->
+                        if (wordOfTheDay == null) {
+                            return@collect
+                        }
+
+                        _uiState.update {
+                            it.copy(
+                                wordOfTheDay = WordUiState(
+                                    word = wordOfTheDay.word,
+                                    translation = wordOfTheDay.translation,
+                                    examples = wordOfTheDay.examples
+                                )
+                            )
+                        }
                     }
                 }
             }
         }
     }
 
-    fun getOngoingLessonId() {
+    fun startLearningWordOfTheDay() {
+        viewModelScope.safeLaunch {
+            wordOfTheDayRepo.startLearningWordOfTheDay()
+        }
+    }
+
+    fun ensureOngoingLesson() {
         _uiState.update {
             it.copy(ongoingLessonState = OngoingLessonState.LOADING)
         }
 
-        viewModelScope.launch(Dispatchers.IO) {
-            val lessonId = lessonRepository.getSavedOngoingLessonIdAsFlow().first()
-
-            if (lessonId != null) {
-                _ongoingLessonId.value = lessonId
-                _uiState.update {
-                    it.copy(ongoingLessonState = OngoingLessonState.HAS_PAUSED)
-                }
-                return@launch
-            }
-
+        viewModelScope.safeLaunch {
             try {
-                val ongoingLesson = lessonRepository.fetchCurrentLesson()
-                lessonRepository.setSavedOngoingLessonId(ongoingLesson.lessonId)
-                _ongoingLessonId.value = ongoingLesson.lessonId
-            } catch (ex: Exception) {
-                Log.e("HomeScreenViewModel", "Failed to catch lesson: $ex")
-                _uiState.update {
-                    it.copy(ongoingLessonState = OngoingLessonState.ERROR)
+                if (lessonRepository.hasSavedLesson()) {
+                    _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.HAS_PAUSED) }
+                    _commandsChannel.send(HomeCommands.NavigateToLesson)
+                    return@safeLaunch
                 }
+
+                lessonRepository.fetchAndSaveOngoingLesson()
+                _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.HAS_PAUSED) }
+                _commandsChannel.send(HomeCommands.NavigateToLesson)
+            } catch (ex: Exception) {
+                Timber.e(ex)
+                _uiState.update { it.copy(ongoingLessonState = OngoingLessonState.ERROR) }
             }
         }
     }

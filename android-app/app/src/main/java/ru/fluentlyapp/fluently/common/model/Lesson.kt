@@ -1,5 +1,8 @@
 package ru.fluentlyapp.fluently.common.model
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Lesson(
     val lessonId: String,
     val components: List<LessonComponent>,
