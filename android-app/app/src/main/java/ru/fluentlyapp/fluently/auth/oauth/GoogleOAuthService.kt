@@ -9,7 +9,10 @@ import net.openid.appauth.AuthorizationRequest
 import net.openid.appauth.AuthorizationService
 import net.openid.appauth.AuthorizationServiceConfiguration
 import net.openid.appauth.TokenRequest
+import okhttp3.OkHttpClient
 import ru.fluentlyapp.fluently.auth.model.OAuthToken
+import ru.fluentlyapp.fluently.common.di.BaseOkHttpClient
+import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.coroutines.suspendCoroutine

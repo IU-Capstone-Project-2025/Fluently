@@ -69,7 +69,7 @@ struct AvatarImage: View{
         .buttonStyle(.plain)
     }
 
-    // image loading error handling
+    /// image loading error handling
     private func fallbackIcon() -> some View {
         Image(systemName: "person")
             .resizable()
@@ -77,6 +77,7 @@ struct AvatarImage: View{
             .padding()
     }
 
+    /// taking image from cache
     private func emptyImage(url imageUrlString: String) -> Image? {
         if let cache = imageCache.object(forKey: imageUrlString as AnyObject) {
             return Image(uiImage: cache)
@@ -84,6 +85,7 @@ struct AvatarImage: View{
         return nil
     }
 
+    /// caching image 
     private func cacheImage() async {
        guard let imageUrlString = account.image,
              let url = URL(string: imageUrlString) else { return }

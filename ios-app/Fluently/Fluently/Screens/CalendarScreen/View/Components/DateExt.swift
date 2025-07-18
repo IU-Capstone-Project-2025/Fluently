@@ -9,33 +9,58 @@ import Foundation
 
 // MARK: - Date extension
 extension Date {
+    // MARK: - Week Helpers
     var startOfWeek: Date? {
-        let gregorian = Calendar(identifier: .gregorian)
-        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
-        return gregorian.date(byAdding: .day, value: 1, to: sunday)
+        let calendar = Calendar.current
+        guard let day = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+        return day
     }
 
     var endOfWeek: Date? {
-        let gregorian = Calendar(identifier: .gregorian)
-        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
-        return gregorian.date(byAdding: .day, value: 7, to: sunday)
+        let calendar = Calendar.current
+        guard let day = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+        return calendar.date(byAdding: .day, value: 6, to: day)
     }
 
     func addingWeeks(_ weeks: Int) -> Date {
         Calendar.current.date(byAdding: .weekOfYear, value: weeks, to: self) ?? self
     }
-}
 
-enum Weekday: Int {
-    case mon = 1
-    case tue = 2
-    case wed = 3
-    case thu = 4
-    case fri = 5
-    case sat = 6
-    case sun = 7
+    // MARK: - Month Helpers
+    var startOfMonth: Date {
+        Calendar.current.date(
+            from: Calendar.current.dateComponents([.year, .month], from: self)
+        ) ?? self
+    }
 
-    var shortName: String {
-       return Calendar.current.shortWeekdaySymbols[self.rawValue - 1]
-   }
+    var endOfMonth: Date {
+        let calendar = Calendar.current
+        guard let nextMonth = calendar.date(byAdding: .month, value: 1, to: self.startOfMonth) else { return self }
+        return calendar.date(byAdding: .day, value: -1, to: nextMonth) ?? self
+    }
+
+    var startOfDay: Date {
+        Calendar.current.startOfDay(for: self)
+    }
+
+    var endOfDay: Date {
+        var components = DateComponents()
+        components.day = 1
+        components.second = -1
+        return Calendar.current.date(byAdding: components, to: startOfDay) ?? self
+    }
+
+    var startOfYear: Date {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year], from: self)
+        return calendar.date(from: components)!
+    }
+
+    var endOfYear: Date {
+        let calendar = Calendar.current
+        var components = DateComponents()
+        components.year = 1
+        components.second = -1
+        return calendar.date(byAdding: components, to: startOfYear)!
+    }
 }

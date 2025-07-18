@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-// Modifier for white sheet view 
+// MARK: - View modifier
+// Modifier for white sheet view
 struct SheetViewModifier: ViewModifier {
     var glassView: Bool = false
 
@@ -40,6 +41,7 @@ struct SheetViewModifier: ViewModifier {
     }
 }
 
+// MARK: - Preview
 struct SheetViewPreview: PreviewProvider {
 
     static var previews: some View {

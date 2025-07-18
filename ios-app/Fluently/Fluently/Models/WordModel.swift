@@ -9,16 +9,22 @@ import Foundation
 import SwiftData
 
 @Model
-final class WordModel: Codable{
-    var exercise: ExerciseModel
+final class WordModel: Codable, Sendable{
+    var exercise: ExerciseModel?     /// exercise to learn word
     var isLearned: Bool = false
-    var sentences: [SentenceModel]
-    var subtopic: String
-    var topic: String
-    var transcription: String = "kar"
-    var translation: String
-    var word: String
-    var wordId: String
+    @Relationship(inverse: \SentenceModel.word)
+    var sentences: [SentenceModel]?  /// sentences with this word
+    var subtopic: String?
+    var topic: String?
+    var transcription: String?
+    var translation: String?
+    var word: String?
+    @Attribute(.unique) var wordId: String?  /// **Unique ID**  for saving
+
+    var wordDate: Date = Date.now /// date of learning word *for statistic*
+
+    var isDayWord: Bool = false
+    var isInLesson: Bool = false
 
     init(
         exercise: ExerciseModel,
@@ -26,7 +32,7 @@ final class WordModel: Codable{
         sentences: [SentenceModel],
         subtopic: String,
         topic: String,
-//        transcription: String,
+        transcription: String,
         translation: String,
         word: String,
         wordId: String
@@ -35,19 +41,22 @@ final class WordModel: Codable{
         self.sentences = sentences
         self.subtopic = subtopic
         self.topic = topic
-//        self.transcription = transcription
+        self.transcription = transcription
         self.translation = translation
         self.word = word
         self.wordId = wordId
+
+        self.wordDate = Date.now
     }
 
+    // MARK: - Codable
     enum CodingKeys: String, CodingKey {
         case exercise
         case isLearned = "is_learned"
         case sentences
         case subtopic
         case topic
-//        case transcription
+        case transcription
         case translation
         case word
         case wordId = "word_id"
@@ -56,15 +65,24 @@ final class WordModel: Codable{
     required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        exercise = try container.decode(ExerciseModel.self, forKey: .exercise)
-        isLearned = false
-        sentences = try container.decode([SentenceModel].self, forKey: .sentences)
-        subtopic = try container.decode(String.self, forKey: .subtopic)
-        topic = try container.decode(String.self, forKey: .topic)
-//        transcription: String,
+        // Requireed Fields
+        transcription = try container.decodeIfPresent(String.self, forKey: .transcription) ?? ""
         translation = try container.decode(String.self, forKey: .translation)
         word = try container.decode(String.self, forKey: .word)
         wordId = try container.decode(String.self, forKey: .wordId)
+
+        // Optional fields
+        exercise = try container.decode(ExerciseModel.self, forKey: .exercise)
+        subtopic = try container.decodeIfPresent(String.self, forKey: .subtopic)
+        topic = try container.decodeIfPresent(String.self, forKey: .topic)
+
+        // Relationships with empty array fallback
+           sentences = try container.decodeIfPresent([SentenceModel].self, forKey: .sentences) ?? []
+
+        // Default Values
+        isLearned = false
+        isInLesson = true
+        wordDate = Date.now
     }
 
     func encode(to encoder: any Encoder) throws {
@@ -75,9 +93,18 @@ final class WordModel: Codable{
         try container.encode(sentences, forKey: .sentences)
         try container.encode(subtopic, forKey: .subtopic)
         try container.encode(topic, forKey: .topic)
-//        transcription: String,
         try container.encode(translation, forKey: .translation)
         try container.encode(word, forKey: .word)
         try container.encode(wordId, forKey: .wordId)
+    }
+}
+
+extension WordModel: Hashable {
+    static func == (lhs: WordModel, rhs: WordModel) -> Bool {
+        lhs.wordId == rhs.wordId
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(wordId)
     }
 }

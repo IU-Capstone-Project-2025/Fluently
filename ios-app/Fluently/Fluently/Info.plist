@@ -26,7 +26,5 @@
 		<key>UIImageName</key>
 		<string>LaunchScreenIcon</string>
 	</dict>
-	<key>NSMicrophoneUsageDescription</key>
-	<string></string>
 </dict>
 </plist>

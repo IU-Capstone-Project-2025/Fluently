@@ -10,9 +10,10 @@ import SwiftData
 
 @Model
 final class ExerciseModel: Codable {
-    private var storedData: Data?
-    var type: ExerciseModelType
+    private var storedData: Data?   /// data for the lesson in raw format
+    var type: ExerciseModelType     /// type of lesson
 
+    /// data for the lesson **Decoded**
     var exerciseData: any ExerciseData{
         get {
             guard let storedData else {
@@ -31,7 +32,6 @@ final class ExerciseModel: Codable {
                         return try decoder.decode(PickOptionSentence.self, from: storedData)
                 }
             } catch {
-                fatalError("damn")
                 return EmptyExerciseData()
             }
         }
@@ -46,6 +46,7 @@ final class ExerciseModel: Codable {
         self.exerciseData = data
     }
 
+    // MARK: - Codable
     private enum CodingKeys: String, CodingKey {
         case data
         case type

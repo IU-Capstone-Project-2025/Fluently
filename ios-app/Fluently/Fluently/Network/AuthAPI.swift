@@ -7,12 +7,14 @@
 
 import Foundation
 
+// MARK: - Protocol
 protocol AuthAPI {
     // Tokens
     func authGoogle(_ gid: String) async throws -> AuthResponse
     func updateAccessToken() async throws
 }
 
+// MARK: - Auth Logic
 extension APIService: AuthAPI {
     func authGoogle(_ gid: String) async throws -> AuthResponse {
         let request = try makeRequest(
@@ -29,6 +31,7 @@ extension APIService: AuthAPI {
     }
 }
 
+// MARK: - Private
 private extension APIService {
     func refreshTokens() async throws -> AuthResponse {
         guard let refreshToken = KeyChainManager.shared.getRefreshToken() else {

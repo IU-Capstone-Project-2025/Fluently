@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct StatisticInfo: View {
     var range: TimeRange
@@ -13,6 +14,8 @@ struct StatisticInfo: View {
     @StateObject var presenter = StatisticInfoGrid()
 
     @State var weekStart = Date.now.startOfWeek
+
+    @Environment(\.modelContext) var modelContext
 
     var dayNumberFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -36,6 +39,10 @@ struct StatisticInfo: View {
     var body: some View {
         dayHeader
         infoGrid
+            .onAppear {
+                presenter.setModelContext(modelContext)
+                print(presenter.weekStat[0])
+            }
     }
 
     var dayHeader: some View {
@@ -118,7 +125,7 @@ struct StatisticInfo: View {
                     }
                 case .month:
                     GeometryReader { geometry in
-                        let daysInMonth = weekStart!.getLastDayOfMonth()
+//                        let daysInMonth = weekStart!.getLastDayOfMonth()
                         let cellWidth = geometry.size.width / 30
 
                         ForEach(0..<30) { dayOffset in
@@ -143,13 +150,13 @@ struct StatisticInfo: View {
 
     @ViewBuilder
     var rangeGrid: some View {
-        let maxValue = presenter.getMax(range: range)
+        let maxValue = max(presenter.getMax(range: range), 1)
 
         HStack {
             switch range {
                 case .week:
                     ForEach(0..<7, id: \.self) { index in
-                        let value = presenter.randomWeek[index]
+                        let value = presenter.weekStat[index]
                         VStack {
                             RoundedRectangle(cornerRadius: 4)
                                 .fill(Color.orangePrimary)
@@ -162,7 +169,7 @@ struct StatisticInfo: View {
 
                 case .month:
                     ForEach(0..<30, id: \.self) { index in
-                        let value = presenter.randomMonth[index]
+                        let value = presenter.monthStat[index]
                         VStack {
                             RoundedRectangle(cornerRadius: 4)
                                 .fill(Color.orangePrimary)
@@ -176,7 +183,7 @@ struct StatisticInfo: View {
 
                 case .year:
                     ForEach(0..<12, id: \.self) { index in
-                        let value = presenter.randomWYear[index]
+                        let value = presenter.yearStat[index]
                         VStack {
                             RoundedRectangle(cornerRadius: 4)
                                 .fill(Color.orangePrimary)

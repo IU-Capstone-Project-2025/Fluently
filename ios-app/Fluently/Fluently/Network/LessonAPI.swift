@@ -7,8 +7,11 @@
 
 import Foundation
 
+// MARK: - Protocol
 protocol LessonAPI {
     func getLesson() async throws -> CardsModel
+    func sendProgress(words: [WordModel]) async throws
+    func getDayWord() async throws -> WordModel
 }
 
 // MARK: - Lessons
@@ -19,67 +22,55 @@ extension APIService: LessonAPI {
 
         let request = try makeAuthorizedRequest(
             path: "/api/v1/lesson",
-            method: "GET"
+            method: "GET",
+            body: Optional<String>.none
         )
 
         return try await fetchAndDecode(request: request) as CardsModel
     }
 
-    // MARK: - Private Helpers
+    func sendProgress(words: [WordModel]) async throws {
+        try await validateToken()
 
-    private func validateToken() async throws {
-        if !KeyChainManager.shared.isTokenValid() {
-            try await updateAccessToken()
-        }
-    }
-
-    private func makeAuthorizedRequest(
-        path: String,
-        method: String,
-        headers: [String: String] = [:]
-    ) throws -> URLRequest {
         guard let accessToken = KeyChainManager.shared.getAccessToken() else {
             throw KeyChainManager.KeychainError.emptyAccessToken
+        }
+
+        let path = "/api/v1/progress"
+        let method = "POST"
+
+        let progressItems = words.map { word in
+            ProgressDTO(
+                word_id: word.wordId ?? UUID().uuidString
+            )
         }
 
         var request = try makeRequest(
             path: path,
             method: method,
-            body: Optional<String>.none,
-            headers: headers
+            body: progressItems
         )
 
         request.setValue(
             "Bearer \(accessToken)", forHTTPHeaderField: "Authorization"
         )
 
-        return request
+        let data = try await sendRequest(request)
+        print(String(data: data, encoding: .utf8) ?? "nil data returned")
     }
 
-    private func fetchAndDecode<T: Decodable>(
-        request: URLRequest,
-        decoder: JSONDecoder = JSONDecoder()
-    ) async throws -> T {
-        let data = try await sendRequest(request)
+    func getDayWord() async throws -> WordModel {
+        try await validateToken()
 
-        do {
-            return try decoder.decode(T.self, from: data)
+        let path = "/api/v1/day-word"
+        let method = "GET"
 
-        } catch let error as DecodingError {
-            print("JSON Decoding Error: \(error.localizedDescription)")
-            switch error {
-                case .typeMismatch(let type, let context):
-                    print("Type mismatch for \(type): \(context.debugDescription)")
-                case .valueNotFound(let type, let context):
-                    print("Value not found for \(type): \(context.debugDescription)")
-                case .keyNotFound(let key, let context):
-                    print("Key '\(key.stringValue)' not found: \(context.debugDescription)")
-                case .dataCorrupted(let context):
-                    print("Data corrupted: \(context.debugDescription)")
-                @unknown default:
-                    print("Unknown error: \(error)")
-            }
-            throw ApiError.decodingFailed(error.localizedDescription)
-        }
+        let request = try makeAuthorizedRequest(
+            path: path,
+            method: method,
+            body: Optional<String>.none
+        )
+
+        return try await fetchAndDecode(request: request)
     }
 }

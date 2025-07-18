@@ -15,19 +15,28 @@ final class AppRouter: ObservableObject {
         self.navigationPath = initialPath
     }
 
+    /// returns the current Navigation path
     func getPath() -> NavigationPath {
         return navigationPath
     }
 
+    /// navigate to sprecific screen basing on
+    /// `destination` -> `AppRoutes`
     func navigate(to destination: any Hashable) {
         navigationPath.append(destination)
     }
 
+    /// returns to the first screen
     func popToRoot() {
         navigationPath.removeLast(navigationPath.count)
     }
 
+    /// returns to previous screen
     func pop() {
-        navigationPath.removeLast()
+        if navigationPath.count >= 1  {
+            navigationPath.removeLast()
+        } else {
+            navigationPath.append(AppRoutes.homeScreen)
+        }
     }
 }

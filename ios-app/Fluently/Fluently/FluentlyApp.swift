@@ -18,6 +18,8 @@ struct FluentlyApp: App {
 
     private var apiService = APIService()
 
+    @Environment(\.modelContext) var modelContext
+
 #if targetEnvironment(simulator)
 
     @State private var showLogin = false
@@ -30,6 +32,22 @@ struct FluentlyApp: App {
 
 #endif
 
+    var dayWordContainer: ModelContainer {
+        do {
+            let container = try ModelContainer(
+                for: DayWord.self,
+            )
+
+            return container
+        } catch {
+            fatalError("Container for daily word is not created")
+        }
+    }
+
+    init () {
+        UIView.appearance().overrideUserInterfaceStyle = .light /// brutу force light theme
+    }
+
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navigationPath) {
@@ -41,12 +59,11 @@ struct FluentlyApp: App {
                             }
                     } else {
                         if !showLogin {
-//                            HomeScreenBuilder.build(router: router, acoount: account)
                             MainView()
                         } else {
                             LoginScreenBuilder.build(
                                 router: router,
-                                acount: account,
+                                account: account,
                                 authViewModel: authViewModel
                             )
                                 .onOpenURL(perform: handleURL)
@@ -60,7 +77,7 @@ struct FluentlyApp: App {
                         case .login:
                             LoginScreenBuilder.build(
                                 router: router,
-                                acount: account,
+                                account: account,
                                 authViewModel: authViewModel
                             )
                         case .profile:
@@ -69,10 +86,9 @@ struct FluentlyApp: App {
                                 account: account,
                                 authViewModel: authViewModel
                             )
-                        case .lesson(let cards):
+                        case .lesson:
                             LessonScreenBuilder.build(
                                 router: router,
-                                lesson: cards.cards
                             )
                     }
                 }
@@ -82,7 +98,10 @@ struct FluentlyApp: App {
             .modelContainer(
                 for: [
                     CardsModel.self,
-                    WordModel.self
+                    WordModel.self,
+                    DayWord.self,
+                    PreferencesModel.self,
+                    CardsModel.self
                 ]
             )
         }
@@ -135,16 +154,8 @@ struct FluentlyApp: App {
 
 // MARK: - Routes
 enum AppRoutes: Hashable {
-    static func == (lhs: AppRoutes, rhs: AppRoutes) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine("AppRoutes")
-    }
-
     case homeScreen
     case login
     case profile
-    case lesson(CardsModel)
+    case lesson
 }

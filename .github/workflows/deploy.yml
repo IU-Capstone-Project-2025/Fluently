@@ -21,11 +21,6 @@ on:
           - auto
           - production
           - staging
-      rollback:
-        description: "Rollback to previous version"
-        required: false
-        default: false
-        type: boolean
       dry_run:
         description: "Dry run - build images but don't deploy"
         required: false
@@ -61,6 +56,11 @@ on:
         required: false
         default: false
         type: boolean
+      rebuild_containers:
+        description: "Rebuild containers during deployment (--build flag)"
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   # Determine deployment environment
@@ -69,7 +69,6 @@ jobs:
     outputs:
       environment: ${{ steps.env.outputs.environment }}
       domain: ${{ steps.env.outputs.domain }}
-      is_rollback: ${{ github.event.inputs.rollback || 'false' }}
     steps:
       - name: Determine environment
         id: env
@@ -103,12 +102,6 @@ jobs:
           
           echo "environment=$ENVIRONMENT" >> $GITHUB_OUTPUT
           echo "domain=$DOMAIN" >> $GITHUB_OUTPUT
-          
-          if [ "${{ github.event.inputs.rollback }}" = "true" ]; then
-            echo "🔄 Rollback requested for $ENVIRONMENT environment"
-          else
-            echo "🚀 Deploying branch '$BRANCH' to $ENVIRONMENT environment ($DOMAIN)"
-          fi
 
   # Code quality analysis
   quality-check:
@@ -526,9 +519,9 @@ jobs:
           echo "🔍 Deployment Information:"
           echo "Environment: ${{ needs.setup.outputs.environment }}"
           echo "Domain: ${{ needs.setup.outputs.domain }}"
-          echo "Is Rollback: ${{ needs.setup.outputs.is_rollback }}"
           echo "Branch: ${{ github.event.inputs.branch || github.ref_name }}"
           echo "Tests Skipped: ${{ github.event.inputs.skip_tests }}"
+          echo "Rebuild Containers: ${{ github.event.inputs.rebuild_containers }}"
           echo ""
           if [ "${{ needs.setup.outputs.environment }}" = "production" ]; then
             echo "🚀 Production deployment - using existing images from staging"
@@ -551,7 +544,6 @@ jobs:
             BRANCH="${{ github.event.inputs.branch || github.ref_name }}"
             ENVIRONMENT="${{ needs.setup.outputs.environment }}"
             DOMAIN="${{ needs.setup.outputs.domain }}"
-            IS_ROLLBACK="${{ needs.setup.outputs.is_rollback }}"
             
             echo "🔄 Starting deployment process for $ENVIRONMENT environment"
             echo "🌐 Domain: $DOMAIN"
@@ -1086,7 +1078,12 @@ jobs:
             
             # Start services with force recreate
             echo "🚀 Starting services..."
-            docker compose up -d --force-recreate
+            if [ "${{ github.event.inputs.rebuild_containers }}" = "true" ]; then
+              echo "🔨 Rebuilding containers during deployment..."
+              docker compose up -d --force-recreate --build
+            else
+              docker compose up -d --force-recreate
+            fi
 
             # Perform health checks
             if check_health; then

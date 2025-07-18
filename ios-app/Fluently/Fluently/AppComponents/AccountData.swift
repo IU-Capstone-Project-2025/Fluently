@@ -35,6 +35,7 @@ final class AccountData: ObservableObject {
     }
 }
 
+// MARK: - Account Errors
 enum AccountError: Error {
     case decodingError
 }
