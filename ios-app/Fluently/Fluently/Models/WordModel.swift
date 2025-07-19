@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 
+
 @Model
 final class WordModel: Codable, Sendable{
     var exercise: ExerciseModel?     /// exercise to learn word
@@ -20,6 +21,14 @@ final class WordModel: Codable, Sendable{
     var translation: String?
     var word: String?
     @Attribute(.unique) var wordId: String?  /// **Unique ID**  for saving
+
+    @available(iOS 18, *)
+    #Index<WordModel> (
+        [
+            \.word,
+             \.translation
+        ]
+    )
 
     var wordDate: Date = Date.now /// date of learning word *for statistic*
 

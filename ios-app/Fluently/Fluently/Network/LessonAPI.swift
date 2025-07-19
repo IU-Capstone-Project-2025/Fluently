@@ -39,11 +39,19 @@ extension APIService: LessonAPI {
         let path = "/api/v1/progress"
         let method = "POST"
 
-        let progressItems = words.map { word in
-            ProgressDTO(
-                word_id: word.wordId ?? UUID().uuidString
-            )
+//        let progressItems = words.map { word in
+//            ProgressDTO(
+//                word_id: word.wordId ?? UUID().uuidString
+//            )
+//        }
+
+        let progressItems: [WordProgressItem] = words.compactMap { word in
+            guard let wordId = word.wordId else { return nil }
+            return word.isLearned ?
+                .learned(ProgressDTO(word_id: wordId)) :
+                .notLearned(wordId)
         }
+
 
         var request = try makeRequest(
             path: path,
@@ -72,5 +80,24 @@ extension APIService: LessonAPI {
         )
 
         return try await fetchAndDecode(request: request)
+    }
+}
+
+enum WordProgressItem: Encodable {
+    case learned(ProgressDTO)
+    case notLearned(String)
+
+    enum CodingKeys: String, CodingKey {
+        case wordId = "word_id"
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        switch self {
+            case .learned(let dto):
+                try dto.encode(to: encoder)
+            case .notLearned(let id):
+                try container.encode(id, forKey: .wordId)
+        }
     }
 }

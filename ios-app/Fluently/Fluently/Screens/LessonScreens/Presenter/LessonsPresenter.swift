@@ -198,7 +198,7 @@ final class LessonsPresenter: ObservableObject {
         let api = APIService()
         Task {
             do {
-                try await api.sendProgress(words: wordsProgress[.correct] ?? [])
+                try await api.sendProgress(words: wordsProgress.flatMap{ $0.value })
             } catch {
                 print("Error saving process: \(error.localizedDescription)")
             }

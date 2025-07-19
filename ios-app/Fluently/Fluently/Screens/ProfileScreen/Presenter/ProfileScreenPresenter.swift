@@ -18,15 +18,15 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
 
     @ObservedObject var account: AccountData
     @ObservedObject var authViewModel: GoogleAuthViewModel
-//#if targetEnvironment(simulator)
-//    @Published var preferences: PreferencesModel = PreferencesModel.generate()
-//#else
-    @Published var preferences: PreferencesModel?
-//#endif
 
+    @Published var preferences: PreferencesModel?
+
+    @Published var goals: [String]
     @Published var dailyWord: Bool = true
     @Published var notifications: Bool = false
     @Published var notificationAt: Date = Date.now
+    @Published var wordsPerDay: Int = 10
+    @Published var goal: String = ""
 
     init(
         router: ProfileScreenRouter,
@@ -38,10 +38,13 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
         self.interactor = interactor
         self.account = account
         self.authViewModel = authViewModel
+
+        self.goals = []
     }
 
     // Navigation
     func navigateBack() {
+        updatePrefs()
         router.navigateBack()
     }
 
@@ -51,9 +54,24 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
         }
         
         self.preferences = preferences
+
         dailyWord = preferences.dailyWord
         notifications = preferences.notifications
         notificationAt = preferences.notificationAt
+        wordsPerDay = preferences.wordPerDay
+        goal = preferences.goal
+
+        getGoals()
+    }
+
+    func getGoals() {
+        Task {
+            do {
+                goals = try await interactor.getGoals()
+            } catch {
+                print("Error while requesting goals: \(error)")
+            }
+        }
     }
 
     func getPrefs() {
@@ -66,6 +84,27 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
                     notificationAt = prefs.notificationAt
                     setupPrefs(prefs)
                 }
+            } catch {
+                print("Error while fethcing preferences: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    func updatePrefs() {
+        guard let preferences else {
+            return
+        }
+
+        print("saving")
+        Task {
+            do {
+                preferences.dailyWord = dailyWord
+                preferences.notificationAt = notificationAt
+                preferences.notifications = notifications
+                preferences.wordPerDay = wordsPerDay
+                preferences.goal = goal
+
+                try await interactor.api.updatePreferences(preferences)
             } catch {
                 print("Error while fethcing preferences: \(error.localizedDescription)")
             }
