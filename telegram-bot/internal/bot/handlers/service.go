@@ -2,6 +2,8 @@ package handlers
 
 import (
 	"context"
+	"encoding/base64"
+	"encoding/json"
 	"fmt"
 	"strconv"
 	"strings"
@@ -63,6 +65,25 @@ func (s *HandlerService) TransitionState(ctx context.Context, userID int64, newS
 	return s.stateManager.SetState(ctx, userID, newState)
 }
 
+// SetStateIfDifferent sets the user state only if it's different from the current state
+// This prevents "invalid state transition from X to X" errors
+func (s *HandlerService) SetStateIfDifferent(ctx context.Context, userID int64, newState fsm.UserState) error {
+	currentState, err := s.stateManager.GetState(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get current state", zap.Int64("user_id", userID), zap.Error(err))
+		return err
+	}
+
+	// Only set state if it's different from current state
+	if currentState != newState {
+		s.logger.With(zap.Int64("user_id", userID), zap.String("from_state", string(currentState)), zap.String("to_state", string(newState))).Debug("Transitioning state")
+		return s.stateManager.SetState(ctx, userID, newState)
+	}
+
+	s.logger.With(zap.Int64("user_id", userID), zap.String("state", string(newState))).Debug("State already set, skipping transition")
+	return nil
+}
+
 // GetUserProgress retrieves user progress from backend API
 func (s *HandlerService) GetUserProgress(ctx context.Context, userID int64) (*domain.UserProgress, error) {
 	// Check if user is authenticated
@@ -87,6 +108,34 @@ func (s *HandlerService) GetUserProgress(ctx context.Context, userID int64) (*do
 	preferences, err := s.apiClient.GetUserPreferences(ctx, accessToken)
 	if err != nil {
 		s.logger.Error("Failed to get user preferences", zap.Int64("user_id", userID), zap.Error(err))
+
+		// Check if this is a 404 error (preferences not found)
+		if strings.Contains(err.Error(), "404") || strings.Contains(err.Error(), "preference not found") {
+			s.logger.Warn("User preferences not found, returning default preferences", zap.Int64("user_id", userID))
+
+			// Return default preferences for authenticated users without saved preferences
+			// This handles the case where a user is linked but preferences were never created
+			return &domain.UserProgress{
+				UserID:           userID,
+				CEFRLevel:        "A1",    // Default level
+				WordsPerDay:      10,      // Default words per day
+				NotificationTime: "10:00", // Default notification time
+				LearnedWords:     0,
+				CurrentStreak:    0,
+				LongestStreak:    0,
+				LastActivity:     time.Now(),
+				StartDate:        time.Now().Format("2006-01-02"),
+				Preferences: map[string]interface{}{
+					"goal":             "Learn new words",
+					"fact_everyday":    false,
+					"subscribed":       false,
+					"avatar_image_url": "",
+					"notifications":    false,
+				},
+			}, nil
+		}
+
+		// For other errors, still return the error
 		return nil, err
 	}
 
@@ -127,39 +176,138 @@ func (s *HandlerService) UpdateUserProgress(ctx context.Context, userID int64, p
 		return err
 	}
 
-	// Convert to backend format
-	updateRequest := &api.UpdatePreferenceRequest{
-		CEFRLevel:      progress.CEFRLevel,
-		WordsPerDay:    progress.WordsPerDay,
-		NotificationAt: progress.NotificationTime,
-		Notifications:  progress.NotificationsEnabled(),
+	// Преобразуем в формат backend, только если значения существуют (не nil)
+	updateRequest := &api.UpdatePreferenceRequest{}
+
+	if progress.CEFRLevel != "" {
+		updateRequest.CEFRLevel = &progress.CEFRLevel
 	}
+	if progress.WordsPerDay != 0 {
+		updateRequest.WordsPerDay = &progress.WordsPerDay
+	}
+	if progress.NotificationTime != "" {
+		notificationTime, err := time.Parse("15:04", progress.NotificationTime)
+		if err != nil {
+			s.logger.Error("Failed to parse notification time", zap.String("notification_time", progress.NotificationTime), zap.Error(err))
+			return err
+		}
+		updateRequest.NotificationAt = &notificationTime
+	}
+	notifications := progress.NotificationsEnabled()
+	updateRequest.Notifications = &notifications
 
 	// Extract additional preferences
 	if progress.Preferences != nil {
 		if goal, ok := progress.Preferences["goal"].(string); ok {
-			updateRequest.Goal = goal
+			updateRequest.Goal = &goal
 		}
 		if factEveryday, ok := progress.Preferences["fact_everyday"].(bool); ok {
-			updateRequest.FactEveryday = factEveryday
+			updateRequest.FactEveryday = &factEveryday
 		}
 		if subscribed, ok := progress.Preferences["subscribed"].(bool); ok {
-			updateRequest.Subscribed = subscribed
+			updateRequest.Subscribed = &subscribed
 		}
 		if avatarURL, ok := progress.Preferences["avatar_image_url"].(string); ok {
-			updateRequest.AvatarImageURL = avatarURL
+			updateRequest.AvatarImageURL = &avatarURL
 		}
 	}
 
 	// Update preferences in backend
+	s.logger.Info("Updating user preferences", zap.Any("update_request", updateRequest))
 	_, err = s.apiClient.UpdateUserPreferences(ctx, accessToken, updateRequest)
 	if err != nil {
 		s.logger.Error("Failed to update user preferences", zap.Int64("user_id", userID), zap.Error(err))
-		return err
+
+		// Check if this is a 404 error (preferences not found)
+		if strings.Contains(err.Error(), "404") || strings.Contains(err.Error(), "preference not found") {
+			s.logger.Warn("User preferences not found, creating new preferences", zap.Int64("user_id", userID))
+
+			// Get user ID from JWT token
+			userIDFromToken, err := s.getUserIDFromToken(accessToken)
+			if err != nil {
+				s.logger.Error("Failed to get user ID from token", zap.Int64("user_id", userID), zap.Error(err))
+				// Continue without backend sync
+				return nil
+			}
+
+			// Try to create preferences instead
+			createRequest := &api.CreatePreferenceRequest{
+				CEFRLevel:      progress.CEFRLevel,
+				WordsPerDay:    progress.WordsPerDay,
+				Notifications:  progress.NotificationsEnabled(),
+				Goal:           "Learn new words",
+				FactEveryday:   false,
+				Subscribed:     false,
+				AvatarImageURL: "",
+			}
+
+			if progress.NotificationTime != "" {
+				notificationTime, err := time.Parse("15:04", progress.NotificationTime)
+				if err == nil {
+					createRequest.NotificationAt = &notificationTime
+				}
+			}
+
+			// Extract additional preferences
+			if progress.Preferences != nil {
+				if goal, ok := progress.Preferences["goal"].(string); ok && goal != "" {
+					createRequest.Goal = goal
+				}
+				if factEveryday, ok := progress.Preferences["fact_everyday"].(bool); ok {
+					createRequest.FactEveryday = factEveryday
+				}
+				if subscribed, ok := progress.Preferences["subscribed"].(bool); ok {
+					createRequest.Subscribed = subscribed
+				}
+				if avatarURL, ok := progress.Preferences["avatar_image_url"].(string); ok && avatarURL != "" {
+					createRequest.AvatarImageURL = avatarURL
+				}
+			}
+
+			// Create preferences
+			if _, createErr := s.apiClient.CreateUserPreferences(ctx, accessToken, userIDFromToken, createRequest); createErr != nil {
+				s.logger.Error("Failed to create user preferences", zap.Int64("user_id", userID), zap.Error(createErr))
+				// Continue without backend sync
+			} else {
+				s.logger.Info("Successfully created user preferences", zap.Int64("user_id", userID))
+			}
+		} else {
+			// For other errors, still return the error
+			return err
+		}
 	}
 
 	s.logger.Info("Successfully updated user progress", zap.Int64("user_id", userID))
 	return nil
+}
+
+// getUserIDFromToken extracts user ID from JWT token
+func (s *HandlerService) getUserIDFromToken(tokenString string) (string, error) {
+	// Split the token into parts
+	parts := strings.Split(tokenString, ".")
+	if len(parts) != 3 {
+		return "", fmt.Errorf("invalid JWT format")
+	}
+
+	// Decode the payload (second part)
+	payload, err := base64.RawURLEncoding.DecodeString(parts[1])
+	if err != nil {
+		return "", fmt.Errorf("failed to decode JWT payload: %w", err)
+	}
+
+	// Parse the JSON payload
+	var claims map[string]interface{}
+	if err := json.Unmarshal(payload, &claims); err != nil {
+		return "", fmt.Errorf("failed to parse JWT claims: %w", err)
+	}
+
+	// Extract user ID from 'sub' claim
+	userID, ok := claims["sub"].(string)
+	if !ok {
+		return "", fmt.Errorf("user ID not found in JWT claims")
+	}
+
+	return userID, nil
 }
 
 // IsUserAuthenticated checks if user has valid authentication
@@ -232,6 +380,8 @@ func (s *HandlerService) HandleTextMessage(ctx context.Context, c tele.Context, 
 		return s.HandleSettingsWordsPerDayInputMessage(ctx, c, userID, currentState)
 	case fsm.StateSettingsTimeInput:
 		return s.HandleSettingsTimeInputMessage(ctx, c, userID, currentState)
+	case fsm.StateSettingsCEFRLevel:
+		return s.HandleSettingsCEFRLevelInputMessage(ctx, c, userID, currentState)
 	case fsm.StateWaitingForTranslation:
 		return s.HandleWaitingForTranslationMessage(ctx, c, userID, currentState)
 	case fsm.StateWaitingForAudio:
@@ -345,6 +495,20 @@ func (s *HandlerService) HandleCallback(ctx context.Context, c tele.Context, use
 	if strings.HasPrefix(data, "notification_time:") {
 		answer := strings.TrimPrefix(data, "notification_time:")
 		return s.HandleNotificationTimeCallback(ctx, c, userID, answer)
+	}
+
+	// Handle settings callbacks
+	if strings.HasPrefix(data, "settings:words:") {
+		return s.HandleSettingsWordsCallback(ctx, c, userID, data)
+	}
+	if strings.HasPrefix(data, "settings:time:") {
+		return s.HandleSettingsTimeCallback(ctx, c, userID, data)
+	}
+	if strings.HasPrefix(data, "settings:cefr:") {
+		return s.HandleSettingsCEFRCallback(ctx, c, userID, data)
+	}
+	if data == "settings:back" {
+		return s.HandleSettingsBackCallback(ctx, c, userID, currentState)
 	}
 
 	// Route based on callback data prefix and current state

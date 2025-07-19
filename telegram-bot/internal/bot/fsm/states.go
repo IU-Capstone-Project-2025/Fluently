@@ -236,6 +236,7 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateSettingsWordsPerDay, StateSettingsWordsPerDayInput}: true,
 	{StateSettingsWordsPerDayInput, StateSettings}:            true,
 	{StateSettingsWordsPerDay, StateSettings}:                 true,
+	{StateSettings, StateSettingsWordsPerDayInput}:            true, // Allow direct transition for custom input
 
 	// Settings - Notifications flow
 	{StateSettingsNotifications, StateSettingsTimeSelection}: true,
@@ -243,11 +244,13 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateSettingsTimeInput, StateSettingsNotifications}:     true,
 	{StateSettingsTimeSelection, StateSettingsNotifications}: true,
 	{StateSettingsNotifications, StateSettings}:              true,
+	{StateSettings, StateSettingsTimeInput}:                  true, // Allow direct transition for custom input
 
 	// Settings - CEFR Level flow
 	{StateSettingsCEFRLevel, StateVocabularyTest}: true,
 	{StateCEFRTestResult, StateSettingsCEFRLevel}: true,
 	{StateSettingsCEFRLevel, StateSettings}:       true,
+	{StateSettings, StateSettingsCEFRLevel}:       true, // Allow direct transition for custom input
 
 	// Settings - Language flow
 	{StateSettingsLanguage, StateSettings}: true,

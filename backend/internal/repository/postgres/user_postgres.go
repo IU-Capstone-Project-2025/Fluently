@@ -46,22 +46,26 @@ func (r *UserRepository) GetByEmail(ctx context.Context, email string) (*models.
 }
 
 // UpdateRefreshToken updates the refresh token for a user
+// This method is deprecated - use RefreshTokenRepository instead
 func (r *UserRepository) UpdateRefreshToken(ctx context.Context, userID uuid.UUID, refreshToken string) error {
+	// This method is kept for backward compatibility but should not be used
+	// Use RefreshTokenRepository.Create() instead
 	return r.db.WithContext(ctx).Model(&models.User{}).
 		Where("id = ?", userID).
-		Updates(map[string]interface{}{
-			"refresh_token": refreshToken,
-			"last_login_at": time.Now(),
-		}).Error
+		Update("last_login_at", time.Now()).Error
 }
 
 // GetByRefreshToken retrieves a user by their refresh token
+// This method is deprecated - use RefreshTokenRepository instead
 func (r *UserRepository) GetByRefreshToken(ctx context.Context, refreshToken string) (*models.User, error) {
-	var user models.User
-	if err := r.db.WithContext(ctx).First(&user, "refresh_token = ?", refreshToken).Error; err != nil {
+	// This method is kept for backward compatibility but should not be used
+	// Use RefreshTokenRepository.GetByToken() instead
+	var refreshTokenModel models.RefreshToken
+	if err := r.db.WithContext(ctx).First(&refreshTokenModel, "token = ? AND revoked = false AND expires_at > NOW()", refreshToken).Error; err != nil {
 		return nil, err
 	}
-	return &user, nil
+
+	return r.GetByID(ctx, refreshTokenModel.UserID)
 }
 
 // UpdateLastLogin updates the last login timestamp for a user
@@ -72,10 +76,13 @@ func (r *UserRepository) UpdateLastLogin(ctx context.Context, userID uuid.UUID) 
 }
 
 // ClearRefreshToken clears the refresh token for a user
+// This method is deprecated - use RefreshTokenRepository instead
 func (r *UserRepository) ClearRefreshToken(ctx context.Context, userID uuid.UUID) error {
-	return r.db.WithContext(ctx).Model(&models.User{}).
-		Where("id = ?", userID).
-		Update("refresh_token", "").Error
+	// This method is kept for backward compatibility but should not be used
+	// Use RefreshTokenRepository.RevokeByUserID() instead
+	return r.db.WithContext(ctx).Model(&models.RefreshToken{}).
+		Where("user_id = ?", userID).
+		Update("revoked", true).Error
 }
 
 // Update updates a user

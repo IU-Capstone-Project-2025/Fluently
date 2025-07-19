@@ -76,8 +76,8 @@ func (s *HandlerService) showWelcomeWithAuthOptions(ctx context.Context, c tele.
 
 // showMainMenu shows the main menu for authenticated users
 func (s *HandlerService) showMainMenu(ctx context.Context, c tele.Context, userID int64) error {
-	// Set state to start
-	if err := s.stateManager.SetState(ctx, userID, fsm.StateStart); err != nil {
+	// Set state to start (only if different from current state)
+	if err := s.SetStateIfDifferent(ctx, userID, fsm.StateStart); err != nil {
 		s.logger.Error("Failed to set start state", zap.Error(err))
 		return err
 	}
