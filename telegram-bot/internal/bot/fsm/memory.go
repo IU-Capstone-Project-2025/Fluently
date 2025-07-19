@@ -162,12 +162,17 @@ type TempDataType string
 
 const (
 	// Temp data types for different flows
-	TempDataCEFRTest   TempDataType = "cefr_test"
-	TempDataLesson     TempDataType = "lesson"
-	TempDataSettings   TempDataType = "settings"
-	TempDataExercise   TempDataType = "exercise"
-	TempDataOnboarding TempDataType = "onboarding"
-	TempDataConfidence TempDataType = "confidence"
+	TempDataCEFRTest         TempDataType = "cefr_test"
+	TempDataLesson           TempDataType = "lesson"
+	TempDataSettings         TempDataType = "settings"
+	TempDataExercise         TempDataType = "exercise"
+	TempDataOnboarding       TempDataType = "onboarding"
+	TempDataConfidence       TempDataType = "confidence"
+	TempDataGoal             TempDataType = "goal"
+	TempDataExperience       TempDataType = "experience"
+	TempDataWordsPerDay      TempDataType = "words_per_day"
+	TempDataNotifications    TempDataType = "notifications"
+	TempDataNotificationTime TempDataType = "notification_time"
 )
 
 // CEFRTestData holds temporary data for CEFR test flow
@@ -211,9 +216,12 @@ type ExerciseData struct {
 
 // OnboardingData holds temporary data for onboarding flow
 type OnboardingData struct {
-	Goal       string `json:"goal"`
-	Confidence string `json:"confidence"`
-	Experience string `json:"experience"`
+	Goal             string `json:"goal"`
+	Confidence       string `json:"confidence"`
+	Experience       string `json:"experience"`
+	WordsPerDay      int    `json:"words_per_day"`
+	Notifications    bool   `json:"notifications"`
+	NotificationTime string `json:"notification_time"`
 }
 
 // CreateNewUserProgress creates a new user progress instance

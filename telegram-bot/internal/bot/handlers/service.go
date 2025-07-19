@@ -222,6 +222,12 @@ func (s *HandlerService) HandleTextMessage(ctx context.Context, c tele.Context, 
 		return s.HandleQuestionConfidenceMessage(ctx, c, userID, currentState)
 	case fsm.StateQuestionExperience:
 		return s.HandleQuestionExperienceMessage(ctx, c, userID, currentState)
+	case fsm.StateQuestionWordsPerDay:
+		return s.HandleQuestionWordsPerDayMessage(ctx, c, userID, currentState)
+	case fsm.StateQuestionNotifications:
+		return s.HandleQuestionNotificationsMessage(ctx, c, userID, currentState)
+	case fsm.StateQuestionNotificationTime:
+		return s.HandleQuestionNotificationTimeMessage(ctx, c, userID, currentState)
 	case fsm.StateSettingsWordsPerDayInput:
 		return s.HandleSettingsWordsPerDayInputMessage(ctx, c, userID, currentState)
 	case fsm.StateSettingsTimeInput:
@@ -327,6 +333,18 @@ func (s *HandlerService) HandleCallback(ctx context.Context, c tele.Context, use
 	if strings.HasPrefix(data, "experience:") {
 		answer := strings.TrimPrefix(data, "experience:")
 		return s.HandleExperienceCallback(ctx, c, userID, answer)
+	}
+	if strings.HasPrefix(data, "words_per_day:") {
+		answer := strings.TrimPrefix(data, "words_per_day:")
+		return s.HandleWordsPerDayCallback(ctx, c, userID, answer)
+	}
+	if strings.HasPrefix(data, "notifications:") {
+		answer := strings.TrimPrefix(data, "notifications:")
+		return s.HandleNotificationsCallback(ctx, c, userID, answer)
+	}
+	if strings.HasPrefix(data, "notification_time:") {
+		answer := strings.TrimPrefix(data, "notification_time:")
+		return s.HandleNotificationTimeCallback(ctx, c, userID, answer)
 	}
 
 	// Route based on callback data prefix and current state

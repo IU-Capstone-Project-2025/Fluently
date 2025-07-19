@@ -356,6 +356,8 @@ func (h *TelegramHandler) LinkGoogleCallback(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
+	logger.Log.Info("Successfully linked telegram account", zap.Int64("telegram_id", linkToken.TelegramID), zap.String("user_id", user.ID.String()))
+
 	// Mark token as used
 	if err := h.LinkTokenRepo.MarkAsUsed(r.Context(), linkToken.ID); err != nil {
 		logger.Log.Error("Failed to mark token as used", zap.Error(err))

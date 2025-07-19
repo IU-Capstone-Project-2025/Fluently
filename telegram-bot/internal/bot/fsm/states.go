@@ -13,10 +13,13 @@ const (
 	StateSpacedRepetition  UserState = "spaced_repetition"
 
 	// Stage 2: Personalization
-	StateQuestionnaire      UserState = "questionnaire"
-	StateQuestionGoal       UserState = "question_goal"
-	StateQuestionConfidence UserState = "question_confidence"
-	StateQuestionExperience UserState = "question_experience"
+	StateQuestionnaire            UserState = "questionnaire"
+	StateQuestionGoal             UserState = "question_goal"
+	StateQuestionConfidence       UserState = "question_confidence"
+	StateQuestionExperience       UserState = "question_experience"
+	StateQuestionWordsPerDay      UserState = "question_words_per_day"
+	StateQuestionNotifications    UserState = "question_notifications"
+	StateQuestionNotificationTime UserState = "question_notification_time"
 
 	// CEFR Test Flow
 	StateVocabularyTest     UserState = "vocabulary_test"
@@ -112,10 +115,13 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateSpacedRepetition, StateQuestionnaire}:     true,
 
 	// Questionnaire flow
-	{StateQuestionnaire, StateQuestionGoal}:            true,
-	{StateQuestionGoal, StateQuestionConfidence}:       true,
-	{StateQuestionConfidence, StateQuestionExperience}: true,
-	{StateQuestionExperience, StateVocabularyTest}:     true,
+	{StateQuestionnaire, StateQuestionGoal}:                     true,
+	{StateQuestionGoal, StateQuestionConfidence}:                true,
+	{StateQuestionConfidence, StateQuestionExperience}:          true,
+	{StateQuestionExperience, StateQuestionWordsPerDay}:         true,
+	{StateQuestionWordsPerDay, StateQuestionNotifications}:      true,
+	{StateQuestionNotifications, StateQuestionNotificationTime}: true,
+	{StateQuestionNotificationTime, StateVocabularyTest}:        true,
 
 	// Vocabulary test flow
 	{StateVocabularyTest, StateTestGroup1}:         true,
@@ -127,8 +133,13 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateTestGroup5, StateCEFRTestResult}:         true, // Direct transition for completion
 	{StateCEFRTestProcessing, StateCEFRTestResult}: true,
 	{StateCEFRTestResult, StateLevelDetermination}: true,
-	{StateLevelDetermination, StatePlanCreation}:   true,
-	{StatePlanCreation, StateLessonStart}:          true,
+
+	// CEFR result can also transition directly to start (onboarding complete)
+	{StateCEFRTestResult, StateStart}: true,
+
+	// CEFR level settings transitions
+	{StateLevelDetermination, StatePlanCreation}: true,
+	{StatePlanCreation, StateLessonStart}:        true,
 
 	// Test skip flow
 	{StateVocabularyTest, StateCEFRTestResult}: true, // Allow skipping test

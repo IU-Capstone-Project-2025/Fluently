@@ -216,20 +216,14 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		RefreshTokenRepo: postgres.NewRefreshTokenRepository(db),
 	}
 
-	// Initialize Telegram handler
+	// Initialize link token repository for cleanup task
 	linkTokenRepo := postgres.NewLinkTokenRepository(db)
-	telegramHandler := &handlers.TelegramHandler{
-		UserRepo:         postgres.NewUserRepository(db),
-		LinkTokenRepo:    linkTokenRepo,
-		RefreshTokenRepo: postgres.NewRefreshTokenRepository(db),
-	}
 
 	// Start cleanup task for expired tokens (every hour)
 	utils.StartTokenCleanupTask(linkTokenRepo, time.Hour)
 
 	// Public routes (NO AUTHENTICATION REQUIRED)
 	routes.RegisterAuthRoutes(r, authHandlers)
-	routes.RegisterTelegramRoutes(r, telegramHandler)
 
 	// Prometheus metrics endpoint
 	r.Handle("/metrics", promhttp.Handler())
@@ -260,6 +254,16 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	distractorClient := utils.NewDistractorClient(utils.DistractorClientConfig{})
 
 	chatHistoryHandler := &handlers.ChatHistoryHandler{Repo: chatHistoryRepo}
+
+	// Initialize Telegram handler with all required repositories
+	telegramHandler := &handlers.TelegramHandler{
+		UserRepo:         userRepo,
+		LinkTokenRepo:    linkTokenRepo,
+		RefreshTokenRepo: postgres.NewRefreshTokenRepository(db),
+	}
+
+	// Register telegram routes now that handler is initialized
+	routes.RegisterTelegramRoutes(r, telegramHandler)
 
 	// Protected routes using flexible JWT authentication
 	r.Route("/api/v1", func(r chi.Router) {
