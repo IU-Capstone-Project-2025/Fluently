@@ -515,7 +515,7 @@ func (s *HandlerService) completeTest(ctx context.Context, c tele.Context, userI
 				s.logger.Error("Failed to build complete preferences", zap.Error(err))
 				// Fallback to just CEFR level
 				preferences = &api.UpdatePreferenceRequest{
-					CEFRLevel: cefrLevel,
+					CEFRLevel: &cefrLevel,
 				}
 			}
 
@@ -525,9 +525,9 @@ func (s *HandlerService) completeTest(ctx context.Context, c tele.Context, userI
 				s.logger.Info("Successfully updated complete user preferences from test",
 					zap.Int64("user_id", userID),
 					zap.String("cefr_level", cefrLevel),
-					zap.Int("words_per_day", preferences.WordsPerDay),
-					zap.Bool("notifications", preferences.Notifications),
-					zap.String("goal", preferences.Goal))
+					zap.Int("words_per_day", *preferences.WordsPerDay),
+					zap.Bool("notifications", *preferences.Notifications),
+					zap.String("goal", *preferences.Goal))
 			}
 		}
 
