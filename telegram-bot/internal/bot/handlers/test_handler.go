@@ -8,6 +8,7 @@ import (
 	"go.uber.org/zap"
 	tele "gopkg.in/telebot.v3"
 
+	"telegram-bot/internal/api"
 	"telegram-bot/internal/bot/fsm"
 )
 
@@ -465,9 +466,26 @@ func (s *HandlerService) completeTest(ctx context.Context, c tele.Context, userI
 		cefrLevel,
 	)
 
-	// Clear test data
+	// Clear test data and questionnaire temp data
 	if err := s.stateManager.ClearTempData(ctx, userID, fsm.TempDataCEFRTest); err != nil {
 		s.logger.Error("Failed to clear test data", zap.Error(err))
+	}
+
+	// Clear all questionnaire temp data now that onboarding is complete
+	tempDataTypes := []fsm.TempDataType{
+		fsm.TempDataGoal,
+		fsm.TempDataExperience,
+		fsm.TempDataConfidence,
+		fsm.TempDataWordsPerDay,
+		fsm.TempDataNotifications,
+		fsm.TempDataNotificationTime,
+	}
+
+	for _, dataType := range tempDataTypes {
+		if err := s.stateManager.ClearTempData(ctx, userID, dataType); err != nil {
+			s.logger.Error("Failed to clear questionnaire temp data",
+				zap.String("data_type", string(dataType)), zap.Error(err))
+		}
 	}
 
 	// Check if user is authenticated
@@ -488,15 +506,28 @@ func (s *HandlerService) completeTest(ctx context.Context, c tele.Context, userI
 
 		return c.Send(resultText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
 	} else {
-		// Authenticated user - update preferences with CEFR level
-		userProgress, err := s.GetUserProgress(ctx, userID)
-		if err != nil {
-			s.logger.Error("Failed to get user progress", zap.Error(err))
-		} else {
-			userProgress.CEFRLevel = cefrLevel
-			err = s.UpdateUserProgress(ctx, userID, userProgress)
+		// Authenticated user - update complete preferences with test results
+		token, err := s.stateManager.GetJWTToken(ctx, userID)
+		if err == nil {
+			// Build complete preferences from questionnaire answers
+			preferences, err := s.buildCompletePreferencesFromQuestionnaire(ctx, userID, cefrLevel)
 			if err != nil {
-				s.logger.Error("Failed to update user progress with CEFR level", zap.Error(err))
+				s.logger.Error("Failed to build complete preferences", zap.Error(err))
+				// Fallback to just CEFR level
+				preferences = &api.UpdatePreferenceRequest{
+					CEFRLevel: cefrLevel,
+				}
+			}
+
+			if _, err := s.apiClient.UpdateUserPreferences(ctx, token, preferences); err != nil {
+				s.logger.Error("Failed to update user preferences", zap.Error(err))
+			} else {
+				s.logger.Info("Successfully updated complete user preferences from test",
+					zap.Int64("user_id", userID),
+					zap.String("cefr_level", cefrLevel),
+					zap.Int("words_per_day", preferences.WordsPerDay),
+					zap.Bool("notifications", preferences.Notifications),
+					zap.String("goal", preferences.Goal))
 			}
 		}
 
@@ -507,6 +538,30 @@ func (s *HandlerService) completeTest(ctx context.Context, c tele.Context, userI
 				{{Text: "Настройки", Data: "menu:settings"}},
 			},
 		}
+
+		// Add preferences summary to result text for authenticated users
+		wordsPerDayData, _ := s.stateManager.GetTempData(ctx, userID, fsm.TempDataWordsPerDay)
+		wordsPerDay, _ := wordsPerDayData.(int)
+		if wordsPerDay == 0 {
+			wordsPerDay = 10 // Default
+		}
+
+		notificationsData, _ := s.stateManager.GetTempData(ctx, userID, fsm.TempDataNotifications)
+		notifications, _ := notificationsData.(bool)
+
+		notificationStatus := "отключены"
+		if notifications {
+			notificationStatus = "включены"
+		}
+
+		resultText += fmt.Sprintf(
+			"\n\n📊 **Ваши настройки:**\n"+
+				"• Слов в день: *%d*\n"+
+				"• Уведомления: *%s*\n\n"+
+				"Настройка завершена! Теперь можете начать изучение.",
+			wordsPerDay,
+			notificationStatus,
+		)
 
 		// Set user back to start state
 		if err := s.stateManager.SetState(ctx, userID, fsm.StateStart); err != nil {

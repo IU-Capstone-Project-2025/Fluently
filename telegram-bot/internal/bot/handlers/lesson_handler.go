@@ -145,25 +145,57 @@ func (s *HandlerService) HandleTestSkipCallback(ctx context.Context, c tele.Cont
 		s.logger.Error("Failed to store CEFR level", zap.Error(err))
 	}
 
-	// Save the CEFR level to the backend (if user is authenticated)
+	// Save all preferences to the backend (if user is authenticated)
 	token, err := s.stateManager.GetJWTToken(ctx, userID)
 	if err == nil {
-		// User is authenticated, save preferences to backend
-		preferences := &api.UpdatePreferenceRequest{
-			CEFRLevel: cefrLevel,
+		// User is authenticated, build complete preferences from questionnaire answers
+		preferences, err := s.buildCompletePreferencesFromQuestionnaire(ctx, userID, cefrLevel)
+		if err != nil {
+			s.logger.Error("Failed to build complete preferences", zap.Error(err))
+			// Fallback to just CEFR level
+			preferences = &api.UpdatePreferenceRequest{
+				CEFRLevel: cefrLevel,
+			}
 		}
+
 		if _, err := s.apiClient.UpdateUserPreferences(ctx, token, preferences); err != nil {
-			s.logger.Error("Failed to update user preferences with CEFR level", zap.Error(err))
+			s.logger.Error("Failed to update user preferences", zap.Error(err))
+		} else {
+			s.logger.Info("Successfully updated complete user preferences",
+				zap.Int64("user_id", userID),
+				zap.String("cefr_level", cefrLevel),
+				zap.Int("words_per_day", preferences.WordsPerDay),
+				zap.Bool("notifications", preferences.Notifications),
+				zap.String("goal", preferences.Goal))
 		}
 	}
 
-	// Send completion message with assigned level
+	// Send completion message with assigned level and preferences summary
+	wordsPerDayData, _ := s.stateManager.GetTempData(ctx, userID, fsm.TempDataWordsPerDay)
+	wordsPerDay, _ := wordsPerDayData.(int)
+	if wordsPerDay == 0 {
+		wordsPerDay = 10 // Default
+	}
+
+	notificationsData, _ := s.stateManager.GetTempData(ctx, userID, fsm.TempDataNotifications)
+	notifications, _ := notificationsData.(bool)
+
+	notificationStatus := "отключены"
+	if notifications {
+		notificationStatus = "включены"
+	}
+
 	completionText := fmt.Sprintf(
 		"🎉 *Добро пожаловать в Fluently!*\n\n"+
-			"На основе ваших ответов мы определили ваш уровень как *%s*.\n\n"+
+			"📊 **Ваши настройки:**\n"+
+			"• Уровень: *%s*\n"+
+			"• Слов в день: *%d*\n"+
+			"• Уведомления: *%s*\n\n"+
 			"Настройка завершена! Теперь ты можешь начать изучение.\n\n"+
 			"Используй /learn чтобы начать свой первый урок!",
 		cefrLevel,
+		wordsPerDay,
+		notificationStatus,
 	)
 
 	// Create main menu keyboard
@@ -177,6 +209,23 @@ func (s *HandlerService) HandleTestSkipCallback(ctx context.Context, c tele.Cont
 	// Send the completion message and transition to start state
 	if err := c.Send(completionText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard); err != nil {
 		return err
+	}
+
+	// Clear all questionnaire temp data now that onboarding is complete
+	tempDataTypes := []fsm.TempDataType{
+		fsm.TempDataGoal,
+		fsm.TempDataExperience,
+		fsm.TempDataConfidence,
+		fsm.TempDataWordsPerDay,
+		fsm.TempDataNotifications,
+		fsm.TempDataNotificationTime,
+	}
+
+	for _, dataType := range tempDataTypes {
+		if err := s.stateManager.ClearTempData(ctx, userID, dataType); err != nil {
+			s.logger.Error("Failed to clear questionnaire temp data",
+				zap.String("data_type", string(dataType)), zap.Error(err))
+		}
 	}
 
 	// Set final state to start (onboarding complete)
@@ -217,4 +266,66 @@ func (s *HandlerService) HandleAudioExerciseResponse(ctx context.Context, c tele
 // HandleLearnMenuCallback handles learn menu callback
 func (s *HandlerService) HandleLearnMenuCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
 	return c.Send("Меню обучения...")
+}
+
+// buildCompletePreferencesFromQuestionnaire collects all questionnaire answers and builds a complete preferences request
+func (s *HandlerService) buildCompletePreferencesFromQuestionnaire(ctx context.Context, userID int64, cefrLevel string) (*api.UpdatePreferenceRequest, error) {
+	preferences := &api.UpdatePreferenceRequest{
+		CEFRLevel: cefrLevel,
+	}
+
+	// Get goal from temp data
+	if goalData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataGoal); err == nil {
+		if goal, ok := goalData.(string); ok {
+			// Map goal values to more descriptive text
+			switch goal {
+			case "work":
+				preferences.Goal = "Работа и карьера"
+			case "travel":
+				preferences.Goal = "Путешествия"
+			case "education":
+				preferences.Goal = "Образование"
+			case "communication":
+				preferences.Goal = "Общение"
+			default:
+				preferences.Goal = "Изучение английского"
+			}
+		}
+	} else {
+		preferences.Goal = "Изучение английского" // Default
+	}
+
+	// Get words per day from temp data
+	if wordsPerDayData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataWordsPerDay); err == nil {
+		if wordsPerDay, ok := wordsPerDayData.(int); ok {
+			preferences.WordsPerDay = wordsPerDay
+		}
+	} else {
+		preferences.WordsPerDay = 10 // Default
+	}
+
+	// Get notifications setting from temp data
+	if notificationsData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataNotifications); err == nil {
+		if notifications, ok := notificationsData.(bool); ok {
+			preferences.Notifications = notifications
+		}
+	} else {
+		preferences.Notifications = false // Default
+	}
+
+	// Get notification time from temp data
+	if notificationTimeData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataNotificationTime); err == nil {
+		if notificationTime, ok := notificationTimeData.(string); ok {
+			preferences.NotificationAt = notificationTime
+		}
+	} else {
+		preferences.NotificationAt = "10:00" // Default
+	}
+
+	// Set other preferences to reasonable defaults
+	preferences.FactEveryday = false
+	preferences.Subscribed = false
+	preferences.AvatarImageURL = ""
+
+	return preferences, nil
 }
