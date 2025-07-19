@@ -2,7 +2,10 @@ package ru.fluentlyapp.fluently.ui.screens.launch
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.systemBars
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -50,7 +53,11 @@ fun LaunchScreen(
 fun LaunchScreenContent(
     modifier: Modifier = Modifier,
 ) {
-    Box(modifier = modifier.background(color = Color.White)) {
+    Box(
+        modifier = modifier
+            .background(color = Color.White)
+            .windowInsetsPadding(WindowInsets.systemBars)
+    ) {
         Text(
             modifier = Modifier.align(Alignment.Center),
             text = stringResource(R.string.fluently),

@@ -1,7 +1,14 @@
 package ru.fluentlyapp.fluently.ui.screens.lesson
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.ime
+import androidx.compose.foundation.layout.navigationBars
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.systemBars
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -31,7 +38,10 @@ fun LessonFlowScreen(
         }
     }
 
-    Column(modifier = modifier) {
+    Column(
+        modifier = modifier
+            .windowInsetsPadding(WindowInsets.navigationBars)
+    ) {
         TopAppBar(modifier = Modifier.fillMaxWidth(), onBackClick = onBackClick)
 
         LessonComponentRenderer(

@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -13,8 +14,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.ime
+import androidx.compose.foundation.layout.imeNestedScroll
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -45,6 +48,7 @@ abstract class DialogObserver {
     abstract fun onMoveNext()
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun DialogExercise(
     modifier: Modifier = Modifier,
@@ -55,13 +59,12 @@ fun DialogExercise(
     Box(
         modifier = modifier
             .background(FluentlyTheme.colors.surface)
-            .windowInsetsPadding(
-                WindowInsets.ime
-            )
+            .windowInsetsPadding(WindowInsets.ime)
     ) {
         DialogTopFloatingButton(
             modifier = Modifier
                 .padding(top = 8.dp)
+                .height(48.dp)
                 .align(Alignment.TopCenter),
             text = if (isCompleted) {
                 "Дальше"
@@ -94,6 +97,9 @@ fun DialogExercise(
             verticalArrangement = Arrangement.Bottom,
             contentPadding = PaddingValues(bottom = 60.dp, start = 10.dp, end = 10.dp, top = 0.dp),
         ) {
+            item {
+                Spacer(modifier = Modifier.height(48.dp))
+            }
             items(
                 items = exerciseState.messages,
                 key = { it.messageId }
