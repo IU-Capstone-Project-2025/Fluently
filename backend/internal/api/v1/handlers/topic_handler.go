@@ -254,7 +254,7 @@ func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 // @Description Возвращает все темы, которые начинаются с заглавной буквы
 // @Tags topics
 // @Produce json
-// @Success 200 {array} schemas.TopicResponse
+// @Success 200 {array} schemas.TopicTitleResponse
 // @Failure 500 {object} schemas.ErrorResponse
 // @Security BearerAuth
 // @Router /api/v1/topics [get]
@@ -276,10 +276,12 @@ func (h *TopicHandler) GetTopics(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Build response
-	var resp []schemas.TopicResponse
+	// Build response with only titles
+	var resp []schemas.TopicTitleResponse
 	for _, topic := range topics {
-		resp = append(resp, buildTopicResponse(&topic))
+		resp = append(resp, schemas.TopicTitleResponse{
+			Title: topic.Title,
+		})
 	}
 
 	w.Header().Set("Content-Type", "application/json")
