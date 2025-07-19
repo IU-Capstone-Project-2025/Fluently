@@ -278,6 +278,7 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: learnedWordRepo})
 		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: preferenceRepo})
 		routes.RegisterPickOptionRoutes(r, &handlers.PickOptionHandler{Repo: pickOptionRepo})
+		routes.RegisterTopicRoutes(r, &handlers.TopicHandler{Repo: topicRepo})
 		routes.RegisterProgressRoutes(r, &handlers.ProgressHandler{
 			WordRepo:           wordRepo,
 			LearnedWordRepo:    learnedWordRepo,
