@@ -62,10 +62,10 @@ func main() {
 	logger.Info("Redis connection established")
 
 	// Initialize API client
-	apiClient := api.NewClient(cfg.API.BaseURL)
+	apiClient := api.NewClient(cfg.API.BaseURL, logger)
 
 	// Initialize task scheduler
-	scheduler := tasks.NewScheduler(cfg.Redis.Addr, cfg.Redis.Password, cfg.Redis.DB)
+	scheduler := tasks.NewScheduler(cfg.Redis.Addr, cfg.Redis.Password, cfg.Redis.DB, logger)
 
 	// Create bot
 	telegramBot, err := bot.NewTelegramBot(cfg, redisClient, apiClient, scheduler, logger)

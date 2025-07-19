@@ -260,9 +260,14 @@ func (s *HandlerService) HandleSettingsWordsPerDayInputMessage(ctx context.Conte
 func (s *HandlerService) HandleSettingsTimeInputMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
 	text := strings.TrimSpace(c.Text())
 
-	// Validate time format (HH:MM)
-	if !isValidTimeFormat(text) {
-		return c.Send("❌ Пожалуйста, введите время в формате ЧЧ:ММ (например, 09:30)")
+	// Parse time using flexible format parser
+	parsedTime, err := ParseTimeFormat(text)
+	if err != nil {
+		s.logger.Warn("Invalid time format provided",
+			zap.String("time_input", text),
+			zap.Int64("user_id", userID),
+			zap.Error(err))
+		return c.Send("❌ Пожалуйста, введите время в формате ЧЧ:ММ (например, 09:30, 9 30, 9:30):")
 	}
 
 	// Get current user progress
@@ -272,8 +277,8 @@ func (s *HandlerService) HandleSettingsTimeInputMessage(ctx context.Context, c t
 		return err
 	}
 
-	// Update notification time
-	userProgress.NotificationTime = text
+	// Update notification time with parsed format
+	userProgress.NotificationTime = parsedTime
 
 	// Save to backend
 	if err := s.UpdateUserProgress(ctx, userID, userProgress); err != nil {
@@ -287,7 +292,7 @@ func (s *HandlerService) HandleSettingsTimeInputMessage(ctx context.Context, c t
 		return err
 	}
 
-	statusMessage := fmt.Sprintf("✅ Время уведомлений изменено на *%s*", text)
+	statusMessage := fmt.Sprintf("✅ Время уведомлений изменено на *%s*", parsedTime)
 	return s.sendSettingsMessage(ctx, c, userID, userProgress, statusMessage)
 }
 
@@ -407,12 +412,23 @@ func (s *HandlerService) HandleSettingsWordsCallback(ctx context.Context, c tele
 
 // HandleSettingsTimeCallback handles notification time selection callbacks
 func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.Context, userID int64, data string) error {
+	s.logger.Debug("Processing settings time callback",
+		zap.String("data", data),
+		zap.Int64("user_id", userID))
+
 	parts := strings.Split(data, ":")
-	if len(parts) != 3 {
+	if len(parts) < 3 || len(parts) > 4 {
+		s.logger.Error("Invalid settings time callback format",
+			zap.String("data", data),
+			zap.Int("parts_count", len(parts)))
 		return c.Send("❌ Неверный формат данных.")
 	}
 
 	value := parts[2]
+
+	s.logger.Debug("Extracted time value",
+		zap.String("value", value),
+		zap.Int64("user_id", userID))
 
 	if value == "custom" {
 		// Set state to input mode (direct transition from settings)
@@ -420,7 +436,7 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 			s.logger.Error("Failed to set time input state", zap.Error(err))
 			return err
 		}
-		return c.Send("📝 Введите время уведомлений в формате ЧЧ:ММ (например, 09:30):")
+		return c.Send("📝 Введите время уведомлений (например, 09:30, 9 30, 9:30):")
 	}
 
 	if value == "disabled" {
@@ -449,8 +465,13 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 		return s.sendSettingsMessage(ctx, c, userID, userProgress, statusMessage)
 	}
 
-	// Validate time format
-	if !isValidTimeFormat(value) {
+	// Validate time format using flexible parser
+	parsedTime, err := ParseTimeFormat(value)
+	if err != nil {
+		s.logger.Warn("Invalid time format provided in callback",
+			zap.String("time_value", value),
+			zap.Int64("user_id", userID),
+			zap.Error(err))
 		return c.Send("❌ Неверный формат времени.")
 	}
 
@@ -461,8 +482,8 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 		return err
 	}
 
-	// Update notification time
-	userProgress.NotificationTime = value
+	// Update notification time with parsed format
+	userProgress.NotificationTime = parsedTime
 
 	// Save to backend
 	if err := s.UpdateUserProgress(ctx, userID, userProgress); err != nil {
@@ -476,7 +497,7 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 		return err
 	}
 
-	statusMessage := fmt.Sprintf("✅ Время уведомлений изменено на *%s*", value)
+	statusMessage := fmt.Sprintf("✅ Время уведомлений изменено на *%s*", parsedTime)
 	return s.sendSettingsMessage(ctx, c, userID, userProgress, statusMessage)
 }
 
@@ -555,20 +576,4 @@ func formatCEFRLevel(level string) string {
 		return "Не установлен"
 	}
 	return level
-}
-
-// isValidTimeFormat checks if the time string is in HH:MM format
-func isValidTimeFormat(timeStr string) bool {
-	if len(timeStr) != 5 || timeStr[2] != ':' {
-		return false
-	}
-
-	hour, err1 := strconv.Atoi(timeStr[:2])
-	minute, err2 := strconv.Atoi(timeStr[3:])
-
-	if err1 != nil || err2 != nil {
-		return false
-	}
-
-	return hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59
 }

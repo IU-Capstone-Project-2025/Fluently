@@ -240,11 +240,13 @@ var ValidTransitions = map[StateTransition]bool{
 
 	// Settings - Notifications flow
 	{StateSettingsNotifications, StateSettingsTimeSelection}: true,
+	{StateSettingsNotifications, StateSettingsTimeInput}:     true, // Allow direct transition for custom time
 	{StateSettingsTimeSelection, StateSettingsTimeInput}:     true,
 	{StateSettingsTimeInput, StateSettingsNotifications}:     true,
 	{StateSettingsTimeSelection, StateSettingsNotifications}: true,
 	{StateSettingsNotifications, StateSettings}:              true,
 	{StateSettings, StateSettingsTimeInput}:                  true, // Allow direct transition for custom input
+	{StateSettingsTimeInput, StateSettings}:                  true, // Allow direct transition for custom input
 
 	// Settings - CEFR Level flow
 	{StateSettingsCEFRLevel, StateVocabularyTest}: true,

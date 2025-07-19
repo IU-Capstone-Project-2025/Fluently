@@ -3,7 +3,6 @@ package tasks
 import (
 	"context"
 	"encoding/json"
-	"telegram-bot/pkg/logger"
 
 	"github.com/hibiken/asynq"
 	"go.uber.org/zap"
@@ -46,17 +45,26 @@ type TaskHandler interface {
 }
 
 // DefaultTaskHandler provides default implementations
-type DefaultTaskHandler struct{}
+type DefaultTaskHandler struct {
+	logger *zap.Logger
+}
+
+// NewDefaultTaskHandler creates a new default task handler with logger
+func NewDefaultTaskHandler(logger *zap.Logger) *DefaultTaskHandler {
+	return &DefaultTaskHandler{
+		logger: logger,
+	}
+}
 
 // HandleLessonReminderTask handles lesson reminder tasks
 func (h *DefaultTaskHandler) HandleLessonReminderTask(ctx context.Context, task *asynq.Task) error {
 	var payload LessonReminderPayload
 	if err := json.Unmarshal(task.Payload(), &payload); err != nil {
-		logger.Log.Error("Failed to unmarshal lesson reminder payload", zap.Error(err))
+		h.logger.Error("Failed to unmarshal lesson reminder payload", zap.Error(err))
 		return err
 	}
 
-	logger.Log.Info("Processing lesson reminder task",
+	h.logger.Info("Processing lesson reminder task",
 		zap.Int64("telegram_id", payload.TelegramID),
 		zap.String("reminder_type", payload.ReminderType))
 
@@ -70,11 +78,11 @@ func (h *DefaultTaskHandler) HandleLessonReminderTask(ctx context.Context, task 
 func (h *DefaultTaskHandler) HandleDailyNotificationTask(ctx context.Context, task *asynq.Task) error {
 	var payload DailyNotificationPayload
 	if err := json.Unmarshal(task.Payload(), &payload); err != nil {
-		logger.Log.Error("Failed to unmarshal daily notification payload", zap.Error(err))
+		h.logger.Error("Failed to unmarshal daily notification payload", zap.Error(err))
 		return err
 	}
 
-	logger.Log.Info("Processing daily notification task",
+	h.logger.Info("Processing daily notification task",
 		zap.Int64("telegram_id", payload.TelegramID),
 		zap.String("notification_type", payload.NotificationType))
 
@@ -88,11 +96,11 @@ func (h *DefaultTaskHandler) HandleDailyNotificationTask(ctx context.Context, ta
 func (h *DefaultTaskHandler) HandleGenerateLessonTask(ctx context.Context, task *asynq.Task) error {
 	var payload GenerateLessonPayload
 	if err := json.Unmarshal(task.Payload(), &payload); err != nil {
-		logger.Log.Error("Failed to unmarshal generate lesson payload", zap.Error(err))
+		h.logger.Error("Failed to unmarshal generate lesson payload", zap.Error(err))
 		return err
 	}
 
-	logger.Log.Info("Processing generate lesson task",
+	h.logger.Info("Processing generate lesson task",
 		zap.Int64("telegram_id", payload.TelegramID),
 		zap.String("user_id", payload.UserID),
 		zap.String("cefr_level", payload.CEFRLevel))
@@ -107,11 +115,11 @@ func (h *DefaultTaskHandler) HandleGenerateLessonTask(ctx context.Context, task 
 func (h *DefaultTaskHandler) HandleSyncProgressTask(ctx context.Context, task *asynq.Task) error {
 	var payload SyncProgressPayload
 	if err := json.Unmarshal(task.Payload(), &payload); err != nil {
-		logger.Log.Error("Failed to unmarshal sync progress payload", zap.Error(err))
+		h.logger.Error("Failed to unmarshal sync progress payload", zap.Error(err))
 		return err
 	}
 
-	logger.Log.Info("Processing sync progress task",
+	h.logger.Info("Processing sync progress task",
 		zap.Int64("telegram_id", payload.TelegramID),
 		zap.String("user_id", payload.UserID))
 
@@ -123,7 +131,7 @@ func (h *DefaultTaskHandler) HandleSyncProgressTask(ctx context.Context, task *a
 
 // HandleCleanupSessionsTask handles session cleanup tasks
 func (h *DefaultTaskHandler) HandleCleanupSessionsTask(ctx context.Context, task *asynq.Task) error {
-	logger.Log.Info("Processing cleanup sessions task")
+	h.logger.Info("Processing cleanup sessions task")
 
 	// TODO: Implement session cleanup logic
 	// This would clean up expired sessions and temporary data
