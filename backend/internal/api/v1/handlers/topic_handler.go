@@ -237,6 +237,15 @@ func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 }
 
 // GetTopics returns all main topics in a list format
+// GetTopics возвращает список всех основных тем
+// @Summary Получить список тем
+// @Description Возвращает все основные темы в виде списка
+// @Tags topics
+// @Produce json
+// @Success 200 {array} schemas.TopicResponse
+// @Failure 500 {object} utils.HTTPError
+// @Security BearerAuth
+// @Router /api/v1/topics [get]
 func (h *TopicHandler) GetTopics(w http.ResponseWriter, r *http.Request) {
 	start := time.Now()
 	endpoint := "/api/v1/topics"
