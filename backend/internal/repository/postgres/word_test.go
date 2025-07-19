@@ -6,7 +6,6 @@ import (
 
 	"fluently/go-backend/internal/repository/models"
 
-	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -14,7 +13,6 @@ import (
 func TestCreateAndGetWord(t *testing.T) {
 	ctx := context.Background()
 	word := &models.Word{
-		ID:           uuid.New(),
 		Word:         "apple",
 		CEFRLevel:    "A1",
 		PartOfSpeech: "noun",
@@ -48,7 +46,6 @@ func TestListWord(t *testing.T) {
 func TestUpdateWord(t *testing.T) {
 	ctx := context.Background()
 	word := &models.Word{
-		ID:           uuid.New(),
 		Word:         "banana",
 		CEFRLevel:    "A1",
 		PartOfSpeech: "noun",
@@ -74,7 +71,6 @@ func TestUpdateWord(t *testing.T) {
 func DeleteWord(t *testing.T) {
 	ctx := context.Background()
 	word := &models.Word{
-		ID:           uuid.New(),
 		Word:         "orange",
 		CEFRLevel:    "A1",
 		PartOfSpeech: "noun",
