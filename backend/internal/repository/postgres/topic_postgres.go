@@ -53,3 +53,15 @@ func (r *TopicRepository) GetAll(ctx context.Context) ([]models.Topic, error) {
 
 	return topics, nil
 }
+
+// GetAllStartingWithCapital returns all topics that start with a capital letter
+func (r *TopicRepository) GetAllStartingWithCapital(ctx context.Context) ([]models.Topic, error) {
+	var topics []models.Topic
+	if err := r.db.WithContext(ctx).
+		Where("title ~ '^[A-Z]'").
+		Find(&topics).Error; err != nil {
+		return nil, err
+	}
+
+	return topics, nil
+}

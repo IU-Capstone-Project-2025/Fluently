@@ -236,10 +236,10 @@ func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNoContent)
 }
 
-// GetTopics returns all main topics in a list format
-// GetTopics возвращает список всех основных тем
+// GetTopics returns all topics that start with a capital letter
+// GetTopics возвращает список тем, которые начинаются с заглавной буквы
 // @Summary Получить список тем
-// @Description Возвращает все основные темы в виде списка
+// @Description Возвращает все темы, которые начинаются с заглавной буквы
 // @Tags topics
 // @Produce json
 // @Success 200 {array} schemas.TopicResponse
@@ -256,8 +256,8 @@ func (h *TopicHandler) GetTopics(w http.ResponseWriter, r *http.Request) {
 		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
 	}()
 
-	// Fetch all topics from the repository
-	topics, err := h.Repo.GetAll(r.Context())
+	// Fetch all topics that start with a capital letter from the repository
+	topics, err := h.Repo.GetAllStartingWithCapital(r.Context())
 	if err != nil {
 		statusCode = 500
 		http.Error(w, "failed to fetch topics", http.StatusInternalServerError)
