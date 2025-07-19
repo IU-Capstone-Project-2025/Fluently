@@ -253,6 +253,7 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	topicRepo := postgres.NewTopicRepository(db)
 	lessonRepo := postgres.NewLessonRepository(db)
 	chatHistoryRepo := postgres.NewChatHistoryRepository(db)
+	notLearnedWordRepo := postgres.NewNotLearnedWordRepository(db)
 
 	thesaurusClient := utils.NewThesaurusClient(utils.ThesaurusClientConfig{})
 	llmClient := utils.NewLLMClient(utils.LLMClientConfig{})
@@ -274,8 +275,9 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: preferenceRepo})
 		routes.RegisterPickOptionRoutes(r, &handlers.PickOptionHandler{Repo: pickOptionRepo})
 		routes.RegisterProgressRoutes(r, &handlers.ProgressHandler{
-			WordRepo:        wordRepo,
-			LearnedWordRepo: learnedWordRepo,
+			WordRepo:           wordRepo,
+			LearnedWordRepo:    learnedWordRepo,
+			NotLearnedWordRepo: notLearnedWordRepo,
 		})
 		routes.RegisterDayWordRoutes(r, &handlers.DayWordHandler{
 			WordRepo:        wordRepo,
