@@ -154,7 +154,7 @@ func (s *HandlerService) HandleTestSkipCallback(ctx context.Context, c tele.Cont
 			s.logger.Error("Failed to build complete preferences", zap.Error(err))
 			// Fallback to just CEFR level
 			preferences = &api.UpdatePreferenceRequest{
-				CEFRLevel: cefrLevel,
+				CEFRLevel: &cefrLevel,
 			}
 		}
 
@@ -164,9 +164,9 @@ func (s *HandlerService) HandleTestSkipCallback(ctx context.Context, c tele.Cont
 			s.logger.Info("Successfully updated complete user preferences",
 				zap.Int64("user_id", userID),
 				zap.String("cefr_level", cefrLevel),
-				zap.Int("words_per_day", preferences.WordsPerDay),
-				zap.Bool("notifications", preferences.Notifications),
-				zap.String("goal", preferences.Goal))
+				zap.Int("words_per_day", *preferences.WordsPerDay),
+				zap.Bool("notifications", *preferences.Notifications),
+				zap.String("goal", *preferences.Goal))
 		}
 	}
 
@@ -271,61 +271,58 @@ func (s *HandlerService) HandleLearnMenuCallback(ctx context.Context, c tele.Con
 // buildCompletePreferencesFromQuestionnaire collects all questionnaire answers and builds a complete preferences request
 func (s *HandlerService) buildCompletePreferencesFromQuestionnaire(ctx context.Context, userID int64, cefrLevel string) (*api.UpdatePreferenceRequest, error) {
 	preferences := &api.UpdatePreferenceRequest{
-		CEFRLevel: cefrLevel,
+		CEFRLevel: &cefrLevel,
 	}
+
+	goal := ""
+	factEveryday := false
+	subscribed := false
+	avatarImageURL := ""
 
 	// Get goal from temp data
 	if goalData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataGoal); err == nil {
-		if goal, ok := goalData.(string); ok {
+		if goalValue, ok := goalData.(string); ok {
 			// Map goal values to more descriptive text
-			switch goal {
+			switch goalValue {
 			case "work":
-				preferences.Goal = "Работа и карьера"
+				goal = "Работа и карьера"
 			case "travel":
-				preferences.Goal = "Путешествия"
+				goal = "Путешествия"
 			case "education":
-				preferences.Goal = "Образование"
+				goal = "Образование"
 			case "communication":
-				preferences.Goal = "Общение"
+				goal = "Общение"
 			default:
-				preferences.Goal = "Изучение английского"
+				goal = "Изучение английского"
 			}
 		}
 	} else {
-		preferences.Goal = "Изучение английского" // Default
+		preferences.Goal = &goal
+		preferences.FactEveryday = &factEveryday
+		preferences.Subscribed = &subscribed
+		preferences.AvatarImageURL = &avatarImageURL
 	}
 
 	// Get words per day from temp data
 	if wordsPerDayData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataWordsPerDay); err == nil {
 		if wordsPerDay, ok := wordsPerDayData.(int); ok {
-			preferences.WordsPerDay = wordsPerDay
+			wordsPerDay = wordsPerDay
 		}
-	} else {
-		preferences.WordsPerDay = 10 // Default
 	}
 
 	// Get notifications setting from temp data
 	if notificationsData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataNotifications); err == nil {
 		if notifications, ok := notificationsData.(bool); ok {
-			preferences.Notifications = notifications
+			notifications = notifications
 		}
-	} else {
-		preferences.Notifications = false // Default
 	}
 
 	// Get notification time from temp data
 	if notificationTimeData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataNotificationTime); err == nil {
 		if notificationTime, ok := notificationTimeData.(string); ok {
-			preferences.NotificationAt = notificationTime
+			notificationTime = notificationTime
 		}
-	} else {
-		preferences.NotificationAt = "10:00" // Default
 	}
-
-	// Set other preferences to reasonable defaults
-	preferences.FactEveryday = false
-	preferences.Subscribed = false
-	preferences.AvatarImageURL = ""
 
 	return preferences, nil
 }

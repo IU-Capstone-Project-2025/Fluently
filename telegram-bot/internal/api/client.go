@@ -11,6 +11,8 @@ import (
 
 	"telegram-bot/internal/domain"
 
+	"telegram-bot/pkg/logger"
+
 	"github.com/google/uuid"
 	"go.uber.org/zap"
 )
@@ -98,16 +100,28 @@ type PreferenceResponse struct {
 	AvatarImageURL string `json:"avatar_image_url"`
 }
 
+// CreatePreferenceRequest represents user preferences creation request
+type CreatePreferenceRequest struct {
+	CEFRLevel      string     `json:"cefr_level"`
+	FactEveryday   bool       `json:"fact_everyday"`
+	Notifications  bool       `json:"notifications"`
+	NotificationAt *time.Time `json:"notification_at,omitempty"`
+	WordsPerDay    int        `json:"words_per_day"`
+	Goal           string     `json:"goal"`
+	Subscribed     bool       `json:"subscribed"`
+	AvatarImageURL string     `json:"avatar_image_url"`
+}
+
 // UpdatePreferenceRequest represents user preferences update request
 type UpdatePreferenceRequest struct {
-	CEFRLevel      string `json:"cefr_level,omitempty"`
-	WordsPerDay    int    `json:"words_per_day,omitempty"`
-	NotificationAt string `json:"notification_at,omitempty"`
-	Notifications  bool   `json:"notifications,omitempty"`
-	Goal           string `json:"goal,omitempty"`
-	FactEveryday   bool   `json:"fact_everyday,omitempty"`
-	Subscribed     bool   `json:"subscribed,omitempty"`
-	AvatarImageURL string `json:"avatar_image_url,omitempty"`
+	CEFRLevel      *string    `json:"cefr_level,omitempty"`
+	FactEveryday   *bool      `json:"fact_everyday,omitempty"`
+	Notifications  *bool      `json:"notifications,omitempty"`
+	NotificationAt *time.Time `json:"notification_at,omitempty"`
+	WordsPerDay    *int       `json:"words_per_day,omitempty"`
+	Goal           *string    `json:"goal,omitempty"`
+	Subscribed     *bool      `json:"subscribed,omitempty"`
+	AvatarImageURL *string    `json:"avatar_image_url,omitempty"`
 }
 
 // WordProgressRequest represents word progress update request
@@ -205,6 +219,7 @@ func (c *Client) doAuthenticatedRequest(ctx context.Context, method, endpoint st
 		req.Header.Set("Authorization", "Bearer "+token)
 	}
 
+	logger.Log.Info("Sending request", zap.String("url", url), zap.String("method", method), zap.Any("body", body))
 	resp, err := c.httpClient.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("failed to execute request: %w", err)
@@ -294,6 +309,24 @@ func (c *Client) GetUserPreferences(ctx context.Context, token string) (*Prefere
 	}
 
 	zap.L().With(zap.String("user_id", result.UserID)).Debug("Successfully retrieved user preferences")
+	return &result, nil
+}
+
+// CreateUserPreferences creates user preferences in backend
+func (c *Client) CreateUserPreferences(ctx context.Context, token string, userID string, preferences *CreatePreferenceRequest) (*PreferenceResponse, error) {
+	resp, err := c.doAuthenticatedRequest(ctx, "POST", "/api/v1/preferences/user/"+userID, preferences, token)
+	if err != nil {
+		zap.L().With(zap.Error(err)).Error("Failed to create user preferences")
+		return nil, err
+	}
+
+	var result PreferenceResponse
+	if err := c.parseResponse(resp, &result); err != nil {
+		zap.L().With(zap.Error(err)).Error("Failed to parse create preferences response")
+		return nil, err
+	}
+
+	zap.L().With(zap.String("user_id", result.UserID)).Info("Successfully created user preferences")
 	return &result, nil
 }
 

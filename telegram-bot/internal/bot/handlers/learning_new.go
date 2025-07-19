@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"strings"
 	"time"
 
 	"go.uber.org/zap"
@@ -37,6 +38,24 @@ func (s *HandlerService) HandleNewLearningStart(ctx context.Context, c tele.Cont
 	lessonResponse, err := s.apiClient.GenerateLesson(ctx, token)
 	if err != nil {
 		s.logger.Error("Failed to generate lesson", zap.Error(err))
+
+		// Check if this is a preferences-related error
+		if strings.Contains(err.Error(), "failed to get preference") || strings.Contains(err.Error(), "preference not found") {
+			s.logger.Warn("Lesson generation failed due to missing preferences, guiding user to setup", zap.Int64("user_id", userID))
+
+			// Guide user to complete their profile setup
+			message := "🔧 *Настройка профиля требуется*\n\n" +
+				"Для создания персональных уроков необходимо завершить настройку профиля.\n\n" +
+				"📝 Что нужно сделать:\n" +
+				"• Определить ваш уровень английского\n" +
+				"• Установить количество слов в день\n" +
+				"• Настроить уведомления\n\n" +
+				"Используйте команду /start для завершения настройки."
+
+			return c.Send(message, &tele.SendOptions{ParseMode: tele.ModeMarkdown})
+		}
+
+		// For other errors, show generic message
 		return c.Send("❌ Не удалось получить урок. Попробуйте позже.")
 	}
 

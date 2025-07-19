@@ -441,7 +441,7 @@ func (h *Handlers) RefreshTokenHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// revoke old refresh token
-	if err := h.RefreshTokenRepo.Revoke(r.Context(), rt.ID); err != nil {
+	if err := h.RefreshTokenRepo.RevokeToken(r.Context(), rt.Token); err != nil {
 		logger.Log.Error("Could not revoke token", zap.Error(err))
 		http.Error(w, "could not revoke token", http.StatusInternalServerError)
 		return
