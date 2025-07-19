@@ -25,7 +25,6 @@ import androidx.compose.ui.unit.sp
 import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
-import ru.fluentlyapp.fluently.ui.utils.SmallPhonePreview
 
 data class WordUiState(
     val word: String,
@@ -68,7 +67,7 @@ fun NewWordCard(
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                text = "Примеры",
+                text = stringResource(R.string.examples),
                 color = FluentlyTheme.colors.onSurfaceVariant
             )
             repeat(examples.size) { index ->

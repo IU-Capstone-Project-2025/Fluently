@@ -48,6 +48,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import ru.fluentlyapp.fluently.R
+import timber.log.Timber
 
 @Composable
 fun LoginScreen(
@@ -64,7 +65,7 @@ fun LoginScreen(
     val authPageLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { activityResult ->
-        Log.i("LoginScreen", "Received activityResult=$activityResult")
+        Timber.d("Received activityResult=$activityResult")
         loginScreenViewModel.handleAuthResponseIntent(activityResult.data)
     }
 

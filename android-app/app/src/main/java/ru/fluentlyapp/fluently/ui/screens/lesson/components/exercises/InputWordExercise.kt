@@ -115,7 +115,7 @@ fun InputWordExercise(
             if (exerciseState.isAnswered && exerciseState.inputtedWord != exerciseState.correctAnswer) {
                 Text(
                     text = buildAnnotatedString {
-                        append("Правильный ответ: ")
+                        append(stringResource(R.string.correct_answer))
                         withStyle(SpanStyle(fontWeight = FontWeight.Bold)) {
                             append(exerciseState.correctAnswer)
                         }

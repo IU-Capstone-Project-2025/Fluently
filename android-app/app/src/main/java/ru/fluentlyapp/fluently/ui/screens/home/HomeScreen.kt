@@ -38,6 +38,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.Hyphens
@@ -115,7 +116,7 @@ fun HomeScreenContent(
         ) {
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = "Домашний экран",
+                    text = stringResource(R.string.home_screen),
                     lineHeight = 40.sp,
                     fontSize = 32.sp,
                     color = FluentlyTheme.colors.onPrimary,
@@ -129,7 +130,7 @@ fun HomeScreenContent(
                     .error(R.drawable.ic_funny_square)
                     .build(),
                 contentScale = ContentScale.Crop,
-                contentDescription = "Avatar Picture",
+                contentDescription = stringResource(R.string.avatar_picture),
                 modifier = Modifier
                     .clip(CircleShape)
                     .border(
@@ -200,7 +201,7 @@ fun HomeScreenContent(
                             contentDescription = null
                         )
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Изучать")
+                        Text(stringResource(R.string.study))
                     } else {
                         Icon(
                             modifier = Modifier.size(24.dp),
@@ -209,7 +210,7 @@ fun HomeScreenContent(
                             contentDescription = null
                         )
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Сохранено!")
+                        Text(stringResource(R.string.studying))
                     }
                 }
             }
@@ -234,7 +235,7 @@ fun HomeScreenContent(
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
-                        text = "Календарь",
+                        text = stringResource(R.string.calendar),
                         fontSize = 12.sp,
                         softWrap = true,
                         style = TextStyle(
@@ -260,7 +261,7 @@ fun HomeScreenContent(
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(text = uiState.learnedWordsNumber.toString(), fontSize = 32.sp)
-                    Text(text = "Изучено", fontSize = 12.sp)
+                    Text(text = stringResource(R.string.learned), fontSize = 12.sp)
                 }
                 Spacer(modifier = Modifier.width(12.dp))
                 Column(
@@ -280,7 +281,7 @@ fun HomeScreenContent(
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(text = uiState.inProgressWordsNumber.toString(), fontSize = 32.sp)
-                    Text(text = "Изучаются", fontSize = 12.sp)
+                    Text(text = stringResource(R.string.in_progress), fontSize = 12.sp)
                 }
             }
             Box(
@@ -309,10 +310,10 @@ fun HomeScreenContent(
                     }
                     Text(
                         text = when (uiState.ongoingLessonState) {
-                            OngoingLessonState.ERROR -> "Ошибка :("
-                            OngoingLessonState.HAS_PAUSED -> "Продолжить урок"
-                            OngoingLessonState.LOADING -> "Загружаем урок..."
-                            OngoingLessonState.NOT_STARTED -> "Начать урок"
+                            OngoingLessonState.ERROR -> stringResource(R.string.error_home)
+                            OngoingLessonState.HAS_PAUSED -> stringResource(R.string.continue_lesson)
+                            OngoingLessonState.LOADING -> stringResource(R.string.loading_lesson)
+                            OngoingLessonState.NOT_STARTED -> stringResource(R.string.begin_lesson)
                         },
                         fontSize = 24.sp,
                         color = FluentlyTheme.colors.onSurfaceInverse

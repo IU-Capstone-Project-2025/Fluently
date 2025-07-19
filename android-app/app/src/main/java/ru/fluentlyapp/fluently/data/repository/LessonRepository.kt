@@ -19,6 +19,8 @@ import ru.fluentlyapp.fluently.network.model.Progress
 import ru.fluentlyapp.fluently.network.model.SentWordProgress
 import timber.log.Timber
 import java.time.Instant
+import java.util.LinkedList
+import java.util.Stack
 import javax.inject.Inject
 import kotlin.math.min
 
@@ -71,7 +73,7 @@ interface LessonRepository {
     suspend fun finishLesson()
 }
 
-const val PREFERRED_NUMBER_OF_WORDS = 1
+const val PREFERRED_NUMBER_OF_WORDS = 10
 
 class DefaultLessonRepository @Inject constructor(
     val fluentlyApiDataSource: FluentlyApiDataSource,
@@ -118,6 +120,43 @@ class DefaultLessonRepository @Inject constructor(
         return this
     }
 
+    private fun List<LessonComponent>.smartRearrange(): List<LessonComponent> {
+        var result = LinkedList<LessonComponent>()
+        var exerciseCollector = mutableSetOf<Exercise>()
+        var collectorBegin = 0
+
+        val flushCollector = {
+            result.addAll(
+                collectorBegin,
+                exerciseCollector.filter { it is Exercise.NewWord } +
+                        exerciseCollector.filter { it !is Exercise.NewWord }
+            )
+
+            exerciseCollector.clear()
+        }
+
+        for (component in this) {
+            if (component is Exercise) {
+                if (exerciseCollector.isEmpty()) {
+                    collectorBegin = result.size
+                }
+                exerciseCollector.add(component)
+
+                if (exerciseCollector.count { it is Exercise.NewWord } == 3) {
+                    flushCollector()
+                }
+            } else {
+                result.add(component)
+            }
+        }
+
+        if (exerciseCollector.isNotEmpty()) {
+            flushCollector()
+        }
+
+        return result.toList()
+    }
+
     override suspend fun fetchAndSaveOngoingLesson() {
         val lesson = fluentlyApiDataSource.getLesson()
 
@@ -143,7 +182,9 @@ class DefaultLessonRepository @Inject constructor(
                     isFinished = false
                 )
             )
-        }.withIdSetToIndex()
+        }
+            .smartRearrange()
+            .withIdSetToIndex()
 
         ongoingLessonDataStore.setOngoingLesson(lesson.copy(components = updatedLessonComponents))
         Timber.d("Store the received lesson")

@@ -31,8 +31,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
+import androidx.core.content.ContextCompat
+import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.common.model.Dialog
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import ru.fluentlyapp.fluently.ui.theme.components.ChatTextField
@@ -67,9 +70,9 @@ fun DialogExercise(
                 .height(48.dp)
                 .align(Alignment.TopCenter),
             text = if (isCompleted) {
-                "Дальше"
+                stringResource(R.string.continue_)
             } else {
-                "Закончить диалог"
+                stringResource(R.string.finish_dialog)
             },
             onClick = {
                 if (isCompleted) {
