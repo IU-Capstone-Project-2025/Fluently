@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"net/http"
 	"strconv"
-	"strings"
 	"time"
 
 	"fluently/go-backend/internal/repository/models"
@@ -176,12 +175,6 @@ func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := h.Repo.Create(r.Context(), &topic); err != nil {
-		// Check if it's a duplicate key error
-		if strings.Contains(err.Error(), "duplicate key value violates unique constraint") {
-			statusCode = 409
-			http.Error(w, "topic with this title already exists", http.StatusConflict)
-			return
-		}
 		statusCode = 500
 		http.Error(w, "failed to create topic", http.StatusInternalServerError)
 		return
@@ -216,11 +209,6 @@ func (h *TopicHandler) UpdateTopic(w http.ResponseWriter, r *http.Request) {
 	topic.Title = req.Title
 
 	if err := h.Repo.Update(r.Context(), topic); err != nil {
-		// Check if it's a duplicate key error
-		if strings.Contains(err.Error(), "duplicate key value violates unique constraint") {
-			http.Error(w, "topic with this title already exists", http.StatusConflict)
-			return
-		}
 		http.Error(w, "failed to update topic", http.StatusInternalServerError)
 		return
 	}
@@ -251,7 +239,7 @@ func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 // GetTopics returns all topics that start with a capital letter
 // GetTopics возвращает список тем, которые начинаются с заглавной буквы
 // @Summary Получить список тем
-// @Description Возвращает все темы, которые начинаются с заглавной буквы
+// @Description Возвращает все темы, которые начинаются с заглавной буквы (только названия)
 // @Tags topics
 // @Produce json
 // @Success 200 {array} schemas.TopicTitleResponse

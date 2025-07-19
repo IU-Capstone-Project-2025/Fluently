@@ -65,23 +65,3 @@ func (r *TopicRepository) GetAllStartingWithCapital(ctx context.Context) ([]mode
 
 	return topics, nil
 }
-
-// GetByTitle returns a topic by title
-func (r *TopicRepository) GetByTitle(ctx context.Context, title string) (*models.Topic, error) {
-	var topic models.Topic
-	if err := r.db.WithContext(ctx).First(&topic, "title = ?", title).Error; err != nil {
-		return nil, err
-	}
-
-	return &topic, nil
-}
-
-// ExistsByTitle checks if a topic with the given title exists
-func (r *TopicRepository) ExistsByTitle(ctx context.Context, title string) (bool, error) {
-	var count int64
-	if err := r.db.WithContext(ctx).Model(&models.Topic{}).Where("title = ?", title).Count(&count).Error; err != nil {
-		return false, err
-	}
-
-	return count > 0, nil
-}
