@@ -243,7 +243,7 @@ func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 // @Tags topics
 // @Produce json
 // @Success 200 {array} schemas.TopicResponse
-// @Failure 500 {object} utils.HTTPError
+// @Failure 500 {object} schemas.ErrorResponse
 // @Security BearerAuth
 // @Router /api/v1/topics [get]
 func (h *TopicHandler) GetTopics(w http.ResponseWriter, r *http.Request) {
