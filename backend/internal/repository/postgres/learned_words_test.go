@@ -40,7 +40,6 @@ func TestCreateGetUpdateDeleteLearnedWord(t *testing.T) {
 
 	// CREATE
 	learned := &models.LearnedWords{
-		ID:               uuid.New(),
 		UserID:           user.ID,
 		WordID:           word.ID,
 		LearnedAt:        time.Now().Add(-24 * time.Hour),
