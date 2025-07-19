@@ -12,8 +12,3 @@ type TopicResponse struct {
 	Title    string `json:"title"`
 	ParentID string `json:"parent_id"`
 }
-
-// TopicTitleResponse is a response containing only topic titles
-type TopicTitleResponse struct {
-	Title string `json:"title"`
-}
