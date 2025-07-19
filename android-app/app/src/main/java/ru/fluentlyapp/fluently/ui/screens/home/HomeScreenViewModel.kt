@@ -38,11 +38,12 @@ class HomeScreenViewModel @Inject constructor(
         viewModelScope.safeLaunch {
             supervisorScope {
                 safeLaunch {
-                    userPreferencesRepository.updateUserPreferences()
+                    val preferences = userPreferencesRepository.getRemoteUserPreferences()
+                    userPreferencesRepository.updateCachedUserPreferences(preferences)
                 }
 
                 safeLaunch {
-                    userPreferencesRepository.getUserPreferences().collect { userPreferences ->
+                    userPreferencesRepository.getCachedUserPreferences().collect { userPreferences ->
                         if (userPreferences == null) {
                             return@collect
                         }
