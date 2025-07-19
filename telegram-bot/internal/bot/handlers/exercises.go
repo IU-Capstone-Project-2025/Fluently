@@ -13,6 +13,19 @@ import (
 	"telegram-bot/internal/domain"
 )
 
+// replaceWordWithUnderscores replaces a word in a text with underscores
+func replaceWordWithUnderscores(text, word string) string {
+	lowerText := strings.ToLower(text)
+	lowerWord := strings.ToLower(word)
+
+	wordIndex := strings.Index(lowerText, lowerWord)
+	if wordIndex == -1 {
+		return text
+	}
+
+	return text[:wordIndex] + strings.Repeat("_", len(word)) + text[wordIndex+len(word):]
+}
+
 // showPickOptionSentenceExercise displays a multiple choice exercise with sentence template
 func (s *HandlerService) showPickOptionSentenceExercise(ctx context.Context, c tele.Context, userID int64, word domain.Card, exercise domain.Exercise) error {
 	if err := s.stateManager.SetState(ctx, userID, fsm.StatePickOptionSentence); err != nil {
@@ -24,14 +37,17 @@ func (s *HandlerService) showPickOptionSentenceExercise(ctx context.Context, c t
 		return err
 	}
 
+	// Replace the word with underscores in the template
+	processedTemplate := replaceWordWithUnderscores(exercise.Data.Template, word.Word)
+
 	exerciseText := fmt.Sprintf(
-		"📝 *Упражнение %d из %d*\n\n"+
-			"🎯 Выберите правильный вариант:\n\n"+
-			"📖 %s\n\n"+
+		"Упражнение %d из %d\n\n"+
+			"Выберите правильный вариант:\n\n"+
+			"%s\n\n"+
 			"Выберите правильный ответ:",
 		progress.ExerciseIndex+1,
 		len(progress.WordsInCurrentSet),
-		exercise.Data.Template,
+		processedTemplate,
 	)
 
 	// Create option buttons
@@ -62,9 +78,9 @@ func (s *HandlerService) showWriteWordTranslationExercise(ctx context.Context, c
 	}
 
 	exerciseText := fmt.Sprintf(
-		"✍️ *Упражнение %d из %d*\n\n"+
-			"🎯 Напишите английское слово по переводу:\n\n"+
-			"🌐 *Перевод:* %s\n\n"+
+		"Упражнение %d из %d\n\n"+
+			"Напишите английское слово по переводу:\n\n"+
+			"Перевод: %s\n\n"+
 			"Введите английское слово:",
 		progress.ExerciseIndex+1,
 		len(progress.WordsInCurrentSet),
@@ -110,9 +126,9 @@ func (s *HandlerService) showTranslateRuToEnExercise(ctx context.Context, c tele
 // showTranslateRuToEnMultipleChoice displays Russian to English translation with multiple choice
 func (s *HandlerService) showTranslateRuToEnMultipleChoice(ctx context.Context, c tele.Context, userID int64, word domain.Card, exercise domain.Exercise, progress *domain.LessonProgress) error {
 	exerciseText := fmt.Sprintf(
-		"🌐 *Упражнение %d из %d*\n\n"+
-			"🎯 Переведите на английский:\n\n"+
-			"🇷🇺 %s\n\n"+
+		"Упражнение %d из %d\n\n"+
+			"Переведите на английский:\n\n"+
+			"%s\n\n"+
 			"Выберите правильный перевод:",
 		progress.ExerciseIndex+1,
 		len(progress.WordsInCurrentSet),
@@ -138,9 +154,9 @@ func (s *HandlerService) showTranslateRuToEnMultipleChoice(ctx context.Context, 
 // showTranslateRuToEnTextInput displays Russian to English translation with text input
 func (s *HandlerService) showTranslateRuToEnTextInput(ctx context.Context, c tele.Context, userID int64, word domain.Card, exercise domain.Exercise, progress *domain.LessonProgress) error {
 	exerciseText := fmt.Sprintf(
-		"✍️ *Упражнение %d из %d*\n\n"+
-			"🎯 Переведите на английский:\n\n"+
-			"🇷🇺 %s\n\n"+
+		"Упражнение %d из %d\n\n"+
+			"Переведите на английский:\n\n"+
+			"%s\n\n"+
 			"Введите английский перевод:",
 		progress.ExerciseIndex+1,
 		len(progress.WordsInCurrentSet),

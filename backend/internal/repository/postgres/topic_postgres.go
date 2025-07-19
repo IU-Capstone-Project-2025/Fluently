@@ -43,3 +43,13 @@ func (r *TopicRepository) Update(ctx context.Context, topic *models.Topic) error
 func (r *TopicRepository) Delete(ctx context.Context, id uuid.UUID) error {
 	return r.db.WithContext(ctx).Delete(&models.Topic{}, "id = ?", id).Error
 }
+
+// GetAll returns all topics
+func (r *TopicRepository) GetAll(ctx context.Context) ([]models.Topic, error) {
+	var topics []models.Topic
+	if err := r.db.WithContext(ctx).Find(&topics).Error; err != nil {
+		return nil, err
+	}
+
+	return topics, nil
+}

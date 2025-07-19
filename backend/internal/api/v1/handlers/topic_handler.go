@@ -235,3 +235,33 @@ func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 	// Return no content
 	w.WriteHeader(http.StatusNoContent)
 }
+
+// GetTopics returns all main topics in a list format
+func (h *TopicHandler) GetTopics(w http.ResponseWriter, r *http.Request) {
+	start := time.Now()
+	endpoint := "/api/v1/topics"
+	method := r.Method
+	statusCode := 200
+	defer func() {
+		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
+		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
+	}()
+
+	// Fetch all topics from the repository
+	topics, err := h.Repo.GetAll(r.Context())
+	if err != nil {
+		statusCode = 500
+		http.Error(w, "failed to fetch topics", http.StatusInternalServerError)
+		return
+	}
+
+	// Build response
+	var resp []schemas.TopicResponse
+	for _, topic := range topics {
+		resp = append(resp, buildTopicResponse(&topic))
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(resp)
+}

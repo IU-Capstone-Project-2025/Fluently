@@ -31,7 +31,7 @@ func (s *HandlerService) HandleSettingsCommand(ctx context.Context, c tele.Conte
 		return err
 	}
 
-	// Send initial settings message
+	// Send initial settings message (will delete previous one if exists)
 	return s.sendSettingsMessage(ctx, c, userID, userProgress, "")
 }
 
@@ -135,23 +135,46 @@ func (s *HandlerService) sendSettingsMessage(ctx context.Context, c tele.Context
 		}
 	}
 
-	// Check if we have a stored message ID to edit
-	if messageID, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataSettings); err == nil {
-		if msgID, ok := messageID.(int); ok {
-			// Try to edit existing message
-			if _, err := c.Bot().Edit(&tele.Message{ID: msgID, Chat: c.Message().Chat}, settingsText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard); err == nil {
-				return nil
+	// Try to delete previous settings message if it exists
+	if messageIDData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataSettingsMessageID); err == nil {
+		if messageID, ok := messageIDData.(int); ok {
+			// Try to delete the previous message
+			if deleteErr := c.Bot().Delete(&tele.Message{
+				ID:   messageID,
+				Chat: c.Message().Chat,
+			}); deleteErr == nil {
+				s.logger.Debug("Successfully deleted previous settings message",
+					zap.Int64("user_id", userID),
+					zap.Int("message_id", messageID))
+			} else {
+				s.logger.Warn("Failed to delete previous settings message",
+					zap.Int64("user_id", userID),
+					zap.Int("message_id", messageID),
+					zap.Error(deleteErr))
 			}
 		}
 	}
 
-	// Send new message if editing failed or no stored message ID
-	if err := c.Send(settingsText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard); err != nil {
+	// Send new message
+	msg, err := c.Bot().Send(c.Sender(), settingsText, &tele.SendOptions{
+		ParseMode: tele.ModeMarkdown,
+	}, keyboard)
+
+	if err != nil {
 		return err
 	}
 
-	// For now, we'll just send a new message each time since getting message ID is complex
-	// In a production environment, you might want to implement a more sophisticated approach
+	// Store the new message ID for future deletion
+	if err := s.stateManager.StoreTempData(ctx, userID, fsm.TempDataSettingsMessageID, msg.ID); err != nil {
+		s.logger.Warn("Failed to store settings message ID",
+			zap.Int64("user_id", userID),
+			zap.Error(err))
+	} else {
+		s.logger.Debug("Stored new settings message ID",
+			zap.Int64("user_id", userID),
+			zap.Int("message_id", msg.ID))
+	}
+
 	return nil
 }
 
@@ -353,10 +376,7 @@ func (s *HandlerService) HandleSettingsBackCallback(ctx context.Context, c tele.
 		return err
 	}
 
-	// Clear any temporary data
-	s.stateManager.ClearTempData(ctx, userID, SettingsMessageID)
-
-	// Send clean settings message
+	// Send clean settings message (will delete previous one if exists)
 	return s.sendSettingsMessage(ctx, c, userID, userProgress, "")
 }
 
@@ -416,15 +436,16 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 		zap.String("data", data),
 		zap.Int64("user_id", userID))
 
-	parts := strings.Split(data, ":")
-	if len(parts) < 3 || len(parts) > 4 {
-		s.logger.Error("Invalid settings time callback format",
-			zap.String("data", data),
-			zap.Int("parts_count", len(parts)))
+	// Parse callback data: settings:time:value
+	// For time values like "09:00", we need to handle the colon in time
+	if !strings.HasPrefix(data, "settings:time:") {
+		s.logger.Error("Invalid settings time callback format - missing prefix",
+			zap.String("data", data))
 		return c.Send("❌ Неверный формат данных.")
 	}
 
-	value := parts[2]
+	// Extract the time value after "settings:time:"
+	value := strings.TrimPrefix(data, "settings:time:")
 
 	s.logger.Debug("Extracted time value",
 		zap.String("value", value),
@@ -576,4 +597,32 @@ func formatCEFRLevel(level string) string {
 		return "Не установлен"
 	}
 	return level
+}
+
+// clearSettingsMessage deletes the settings message and clears the stored ID
+func (s *HandlerService) clearSettingsMessage(ctx context.Context, c tele.Context, userID int64) {
+	// Try to delete the settings message if it exists
+	if messageIDData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataSettingsMessageID); err == nil {
+		if messageID, ok := messageIDData.(int); ok {
+			// Try to delete the message
+			if deleteErr := c.Bot().Delete(&tele.Message{
+				ID:   messageID,
+				Chat: c.Message().Chat,
+			}); deleteErr == nil {
+				s.logger.Debug("Successfully deleted settings message on exit",
+					zap.Int64("user_id", userID),
+					zap.Int("message_id", messageID))
+			} else {
+				s.logger.Warn("Failed to delete settings message on exit",
+					zap.Int64("user_id", userID),
+					zap.Int("message_id", messageID),
+					zap.Error(deleteErr))
+			}
+		}
+	}
+
+	// Clear the stored message ID
+	if err := s.stateManager.ClearTempData(ctx, userID, fsm.TempDataSettingsMessageID); err != nil {
+		s.logger.Warn("Failed to clear settings message ID on exit", zap.Error(err))
+	}
 }

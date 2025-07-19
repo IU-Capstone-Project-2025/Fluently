@@ -243,34 +243,24 @@ func (s *HandlerService) HandleShowWord(ctx context.Context, c tele.Context, use
 		return err
 	}
 
-	// Generate voice message
-	wordText := fmt.Sprintf("🔤 *Слово %d из 3*", wordIndex+1)
-	err = c.Send(wordText, &tele.SendOptions{ParseMode: tele.ModeMarkdown})
-	if err != nil {
-		return err
-	}
-
-	// Generate and send voice message for the word
-	if err := s.sendWordVoiceMessage(ctx, c, word.Word); err != nil {
-		s.logger.Warn("Failed to send voice message", zap.Error(err))
-		// Continue with text-only version if voice fails
-	}
-
-	// Format word information
+	// Format word information with bolded English word and quoted examples
 	detailText := fmt.Sprintf(
-		"**%s** - %s\n\n"+
-			"📝 *Примеры:*",
+		"Слово %d из %d\n"+
+			"<b>%s</b> - %s\n"+
+			"Examples:",
+		wordIndex+1,
+		len(progress.WordsInCurrentSet),
 		word.Word,
 		word.Translation,
 	)
 
-	// Add examples
+	// Add examples as quoted sentences using Telegram's quote format
 	for i, sentence := range word.Sentences {
 		if i >= 2 { // Limit to 2 examples
 			break
 		}
 		detailText += fmt.Sprintf(
-			"\n\n📖 %s\n🌐 %s",
+			"\n<blockquote>%s</blockquote>\n%s",
 			sentence.Text,
 			sentence.Translation,
 		)
@@ -281,12 +271,6 @@ func (s *HandlerService) HandleShowWord(ctx context.Context, c tele.Context, use
 
 	// Navigation buttons
 	var navButtons []tele.InlineButton
-	if wordIndex > 0 {
-		navButtons = append(navButtons, tele.InlineButton{
-			Text: "◀️ Предыдущее",
-			Data: fmt.Sprintf("lesson:show_word:%d", wordIndex-1),
-		})
-	}
 
 	if wordIndex < 2 {
 		navButtons = append(navButtons, tele.InlineButton{
@@ -312,7 +296,18 @@ func (s *HandlerService) HandleShowWord(ctx context.Context, c tele.Context, use
 
 	keyboard := &tele.ReplyMarkup{InlineKeyboard: buttons}
 
-	return c.Send(detailText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+	// Generate and send voice message for the word pronunciation
+	if err := s.sendWordVoiceMessage(ctx, c, word.Word); err != nil {
+		s.logger.Warn("Failed to send voice message", zap.Error(err))
+		// Continue with text-only version if voice fails
+	}
+
+	// Send the combined message with voice and text
+	if err := c.Send(detailText, &tele.SendOptions{ParseMode: tele.ModeHTML}, keyboard); err != nil {
+		return err
+	}
+
+	return nil
 }
 
 // HandleReadyForExercises transitions to exercise phase
@@ -328,7 +323,7 @@ func (s *HandlerService) HandleReadyForExercises(ctx context.Context, c tele.Con
 	}
 
 	readyText := fmt.Sprintf(
-		"🎯 *Время упражнений!*\n\n"+
+		"Время упражнений!\n\n"+
 			"Проверим, как вы усвоили эти 3 слова:\n"+
 			"• %s\n"+
 			"• %s\n"+
@@ -548,6 +543,6 @@ func (s *HandlerService) sendWordVoiceMessage(ctx context.Context, c tele.Contex
 	}()
 
 	// Send voice message
-	voice := &tele.Voice{File: tele.FromDisk(tempFile)}
+	voice := &tele.Voice{File: tele.FromDisk(tempFile), Caption: word}
 	return c.Send(voice)
 }
