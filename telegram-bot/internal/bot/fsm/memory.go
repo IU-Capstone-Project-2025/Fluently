@@ -162,17 +162,18 @@ type TempDataType string
 
 const (
 	// Temp data types for different flows
-	TempDataCEFRTest         TempDataType = "cefr_test"
-	TempDataLesson           TempDataType = "lesson"
-	TempDataSettings         TempDataType = "settings"
-	TempDataExercise         TempDataType = "exercise"
-	TempDataOnboarding       TempDataType = "onboarding"
-	TempDataConfidence       TempDataType = "confidence"
-	TempDataGoal             TempDataType = "goal"
-	TempDataExperience       TempDataType = "experience"
-	TempDataWordsPerDay      TempDataType = "words_per_day"
-	TempDataNotifications    TempDataType = "notifications"
-	TempDataNotificationTime TempDataType = "notification_time"
+	TempDataCEFRTest          TempDataType = "cefr_test"
+	TempDataLesson            TempDataType = "lesson"
+	TempDataSettings          TempDataType = "settings"
+	TempDataSettingsMessageID TempDataType = "settings_message_id"
+	TempDataExercise          TempDataType = "exercise"
+	TempDataOnboarding        TempDataType = "onboarding"
+	TempDataConfidence        TempDataType = "confidence"
+	TempDataGoal              TempDataType = "goal"
+	TempDataExperience        TempDataType = "experience"
+	TempDataWordsPerDay       TempDataType = "words_per_day"
+	TempDataNotifications     TempDataType = "notifications"
+	TempDataNotificationTime  TempDataType = "notification_time"
 )
 
 // CEFRTestData holds temporary data for CEFR test flow

@@ -22,10 +22,11 @@ const (
 type Scheduler struct {
 	client *asynq.Client
 	server *asynq.Server
+	logger *zap.Logger
 }
 
 // NewScheduler creates a new task scheduler
-func NewScheduler(redisAddr, redisPassword string, redisDB int) *Scheduler {
+func NewScheduler(redisAddr, redisPassword string, redisDB int, logger *zap.Logger) *Scheduler {
 	redisOpt := asynq.RedisClientOpt{
 		Addr:     redisAddr,
 		Password: redisPassword,
@@ -46,6 +47,7 @@ func NewScheduler(redisAddr, redisPassword string, redisDB int) *Scheduler {
 	return &Scheduler{
 		client: client,
 		server: server,
+		logger: logger,
 	}
 }
 
@@ -97,7 +99,7 @@ func (s *Scheduler) ScheduleLessonReminder(userID, telegramID int64, reminderTyp
 
 	info, err := s.client.Enqueue(task, asynq.ProcessIn(delay), asynq.Queue("default"))
 	if err != nil {
-		zap.L().With(
+		s.logger.With(
 			zap.Error(err),
 			zap.Int64("telegram_id", telegramID),
 			zap.String("reminder_type", reminderType),
@@ -105,7 +107,7 @@ func (s *Scheduler) ScheduleLessonReminder(userID, telegramID int64, reminderTyp
 		return err
 	}
 
-	zap.L().With(
+	s.logger.With(
 		zap.String("task_id", info.ID),
 		zap.Int64("telegram_id", telegramID),
 		zap.Duration("delay", delay),
@@ -128,7 +130,7 @@ func (s *Scheduler) ScheduleDailyNotification(userID, telegramID int64, notifica
 
 	info, err := s.client.Enqueue(task, asynq.ProcessAt(scheduleTime), asynq.Queue("default"))
 	if err != nil {
-		zap.L().With(
+		s.logger.With(
 			zap.Error(err),
 			zap.Int64("telegram_id", telegramID),
 			zap.String("notification_type", notificationType),
@@ -136,7 +138,7 @@ func (s *Scheduler) ScheduleDailyNotification(userID, telegramID int64, notifica
 		return err
 	}
 
-	zap.L().With(
+	s.logger.With(
 		zap.String("task_id", info.ID),
 		zap.Int64("telegram_id", telegramID),
 		zap.Time("schedule_time", scheduleTime),
@@ -160,7 +162,7 @@ func (s *Scheduler) ScheduleGenerateLesson(userID string, telegramID int64, cefr
 
 	info, err := s.client.Enqueue(task, asynq.ProcessIn(delay), asynq.Queue("critical"))
 	if err != nil {
-		zap.L().With(
+		s.logger.With(
 			zap.Error(err),
 			zap.Int64("telegram_id", telegramID),
 			zap.String("user_id", userID),
@@ -168,7 +170,7 @@ func (s *Scheduler) ScheduleGenerateLesson(userID string, telegramID int64, cefr
 		return err
 	}
 
-	zap.L().With(
+	s.logger.With(
 		zap.String("task_id", info.ID),
 		zap.Int64("telegram_id", telegramID),
 		zap.String("user_id", userID),
@@ -191,7 +193,7 @@ func (s *Scheduler) ScheduleProgressSync(userID string, telegramID int64, progre
 
 	info, err := s.client.Enqueue(task, asynq.Queue("low"))
 	if err != nil {
-		zap.L().With(
+		s.logger.With(
 			zap.Error(err),
 			zap.Int64("telegram_id", telegramID),
 			zap.String("user_id", userID),
@@ -199,7 +201,7 @@ func (s *Scheduler) ScheduleProgressSync(userID string, telegramID int64, progre
 		return err
 	}
 
-	zap.L().With(
+	s.logger.With(
 		zap.String("task_id", info.ID),
 		zap.Int64("telegram_id", telegramID),
 		zap.String("user_id", userID),
@@ -214,7 +216,7 @@ func (s *Scheduler) ScheduleRecurringDailyNotifications(userID, telegramID int64
 		scheduleTime := notificationTime.Add(time.Duration(i) * 24 * time.Hour)
 		err := s.ScheduleDailyNotification(userID, telegramID, "daily", scheduleTime)
 		if err != nil {
-			zap.L().With(
+			s.logger.With(
 				zap.Error(err),
 				zap.Int64("telegram_id", telegramID),
 				zap.Int("day", i),
@@ -223,7 +225,7 @@ func (s *Scheduler) ScheduleRecurringDailyNotifications(userID, telegramID int64
 		}
 	}
 
-	zap.L().With(
+	s.logger.With(
 		zap.Int64("telegram_id", telegramID),
 		zap.Time("start_time", notificationTime),
 	).Info("Scheduled recurring daily notifications")
@@ -234,7 +236,7 @@ func (s *Scheduler) ScheduleRecurringDailyNotifications(userID, telegramID int64
 func (s *Scheduler) CancelUserTasks(telegramID int64) error {
 	// Note: Asynq doesn't provide a direct way to cancel tasks by custom criteria
 	// This would require implementing a custom task tracker or using Redis directly
-	zap.L().With(zap.Int64("telegram_id", telegramID)).Info("Cancelling user tasks")
+	s.logger.With(zap.Int64("telegram_id", telegramID)).Info("Cancelling user tasks")
 	// Implementation would depend on specific requirements
 	return nil
 }
@@ -275,7 +277,7 @@ func NewSyncProgressTask(payload SyncProgressPayload) (*asynq.Task, error) {
 // Close closes the scheduler
 func (s *Scheduler) Close() error {
 	if err := s.client.Close(); err != nil {
-		zap.L().Error("Failed to close Asynq client", zap.Error(err))
+		s.logger.Error("Failed to close Asynq client", zap.Error(err))
 		return err
 	}
 	return nil

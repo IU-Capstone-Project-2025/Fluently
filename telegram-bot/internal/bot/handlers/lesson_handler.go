@@ -3,6 +3,7 @@ package handlers
 import (
 	"context"
 	"fmt"
+	"time"
 
 	"go.uber.org/zap"
 	tele "gopkg.in/telebot.v3"
@@ -274,10 +275,13 @@ func (s *HandlerService) buildCompletePreferencesFromQuestionnaire(ctx context.C
 		CEFRLevel: &cefrLevel,
 	}
 
-	goal := ""
+	goal := "Изучение английского" // Default goal
 	factEveryday := false
 	subscribed := false
 	avatarImageURL := ""
+	wordsPerDay := 10 // Default words per day
+	notifications := false
+	var notificationTime *time.Time
 
 	// Get goal from temp data
 	if goalData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataGoal); err == nil {
@@ -296,32 +300,45 @@ func (s *HandlerService) buildCompletePreferencesFromQuestionnaire(ctx context.C
 				goal = "Изучение английского"
 			}
 		}
-	} else {
-		preferences.Goal = &goal
-		preferences.FactEveryday = &factEveryday
-		preferences.Subscribed = &subscribed
-		preferences.AvatarImageURL = &avatarImageURL
 	}
 
 	// Get words per day from temp data
 	if wordsPerDayData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataWordsPerDay); err == nil {
-		if wordsPerDay, ok := wordsPerDayData.(int); ok {
-			wordsPerDay = wordsPerDay
+		if wordsPerDayValue, ok := wordsPerDayData.(int); ok {
+			wordsPerDay = wordsPerDayValue
 		}
 	}
 
 	// Get notifications setting from temp data
 	if notificationsData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataNotifications); err == nil {
-		if notifications, ok := notificationsData.(bool); ok {
-			notifications = notifications
+		if notificationsValue, ok := notificationsData.(bool); ok {
+			notifications = notificationsValue
 		}
 	}
 
 	// Get notification time from temp data
 	if notificationTimeData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataNotificationTime); err == nil {
-		if notificationTime, ok := notificationTimeData.(string); ok {
-			notificationTime = notificationTime
+		if notificationTimeStr, ok := notificationTimeData.(string); ok && notificationTimeStr != "" {
+			// Parse the time string to time.Time using flexible parser
+			if parsedTime, err := ParseTimeToTime(notificationTimeStr); err == nil {
+				notificationTime = parsedTime
+			} else {
+				s.logger.Warn("Failed to parse notification time from questionnaire",
+					zap.String("notification_time", notificationTimeStr),
+					zap.Error(err))
+			}
 		}
+	}
+
+	// Assign all values to preferences
+	preferences.Goal = &goal
+	preferences.FactEveryday = &factEveryday
+	preferences.Subscribed = &subscribed
+	preferences.AvatarImageURL = &avatarImageURL
+	preferences.WordsPerDay = &wordsPerDay
+	preferences.Notifications = &notifications
+	if notificationTime != nil {
+		preferences.NotificationAt = notificationTime
 	}
 
 	return preferences, nil

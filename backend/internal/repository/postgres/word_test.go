@@ -6,7 +6,6 @@ import (
 
 	"fluently/go-backend/internal/repository/models"
 
-	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -14,7 +13,6 @@ import (
 func TestCreateAndGetWord(t *testing.T) {
 	ctx := context.Background()
 	word := &models.Word{
-		ID:           uuid.New(),
 		Word:         "apple",
 		CEFRLevel:    "A1",
 		PartOfSpeech: "noun",
@@ -26,7 +24,7 @@ func TestCreateAndGetWord(t *testing.T) {
 	err := wordRepo.Create(ctx, word)
 	assert.NoError(t, err)
 
-	found, err := wordRepo.GetByID(ctx, word.ID)
+	found, err := wordRepo.GetByValue(ctx, word.Word)
 	assert.NoError(t, err)
 	assert.Equal(t, word.Word, found.Word)
 	assert.Equal(t, word.Translation, found.Translation)
@@ -48,7 +46,6 @@ func TestListWord(t *testing.T) {
 func TestUpdateWord(t *testing.T) {
 	ctx := context.Background()
 	word := &models.Word{
-		ID:           uuid.New(),
 		Word:         "banana",
 		CEFRLevel:    "A1",
 		PartOfSpeech: "noun",
@@ -64,7 +61,7 @@ func TestUpdateWord(t *testing.T) {
 	err = wordRepo.Update(ctx, word)
 	assert.NoError(t, err)
 
-	updated, err := wordRepo.GetByID(ctx, word.ID)
+	updated, err := wordRepo.GetByValue(ctx, word.Word)
 	assert.NoError(t, err)
 	assert.Equal(t, "Новый перевод", updated.Translation)
 	assert.Equal(t, "Rickroll URL", updated.AudioURL)
@@ -74,7 +71,6 @@ func TestUpdateWord(t *testing.T) {
 func DeleteWord(t *testing.T) {
 	ctx := context.Background()
 	word := &models.Word{
-		ID:           uuid.New(),
 		Word:         "orange",
 		CEFRLevel:    "A1",
 		PartOfSpeech: "noun",
@@ -83,9 +79,13 @@ func DeleteWord(t *testing.T) {
 	err := wordRepo.Create(ctx, word)
 	assert.NoError(t, err)
 
-	err = wordRepo.Delete(ctx, word.ID)
+	// Get the word by value to get its ID
+	found, err := wordRepo.GetByValue(ctx, word.Word)
 	assert.NoError(t, err)
 
-	_, err = wordRepo.GetByID(ctx, word.ID)
+	err = wordRepo.Delete(ctx, found.ID)
+	assert.NoError(t, err)
+
+	_, err = wordRepo.GetByID(ctx, found.ID)
 	assert.Error(t, err) // Not Found
 }

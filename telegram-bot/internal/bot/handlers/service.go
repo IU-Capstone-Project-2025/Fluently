@@ -144,10 +144,10 @@ func (s *HandlerService) GetUserProgress(ctx context.Context, userID int64) (*do
 		UserID:           userID,
 		CEFRLevel:        preferences.CEFRLevel,
 		WordsPerDay:      preferences.WordsPerDay,
-		NotificationTime: preferences.NotificationAt,
-		LearnedWords:     0, // TODO: Get from backend stats
-		CurrentStreak:    0, // TODO: Get from backend stats
-		LongestStreak:    0, // TODO: Get from backend stats
+		NotificationTime: "", // Will be set below after parsing
+		LearnedWords:     0,  // TODO: Get from backend stats
+		CurrentStreak:    0,  // TODO: Get from backend stats
+		LongestStreak:    0,  // TODO: Get from backend stats
 		LastActivity:     time.Now(),
 		StartDate:        time.Now().Format("2006-01-02"),
 		Preferences: map[string]interface{}{
@@ -157,6 +157,48 @@ func (s *HandlerService) GetUserProgress(ctx context.Context, userID int64) (*do
 			"avatar_image_url": preferences.AvatarImageURL,
 			"notifications":    preferences.Notifications,
 		},
+	}
+
+	// Parse notification time from ISO format to HH:MM format
+	if preferences.NotificationAt != "" {
+		s.logger.Debug("Parsing notification time from backend",
+			zap.String("notification_at", preferences.NotificationAt))
+
+		// Try to parse the ISO format time
+		notificationTime, err := time.Parse(time.RFC3339, preferences.NotificationAt)
+		if err != nil {
+			// If RFC3339 fails, try other common formats
+			notificationTime, err = time.Parse("2006-01-02T15:04:05Z", preferences.NotificationAt)
+			if err != nil {
+				// If that fails too, try parsing as HH:MM format (in case it's already in the right format)
+				notificationTime, err = time.Parse("15:04", preferences.NotificationAt)
+				if err != nil {
+					s.logger.Warn("Failed to parse notification time from backend",
+						zap.String("notification_at", preferences.NotificationAt),
+						zap.Error(err))
+					// Set default time if parsing fails
+					userProgress.NotificationTime = "10:00"
+				} else {
+					// Already in HH:MM format
+					userProgress.NotificationTime = preferences.NotificationAt
+				}
+			} else {
+				// Successfully parsed ISO format, convert to HH:MM
+				userProgress.NotificationTime = notificationTime.Format("15:04")
+			}
+		} else {
+			// Successfully parsed RFC3339 format, convert to HH:MM
+			userProgress.NotificationTime = notificationTime.Format("15:04")
+		}
+
+		s.logger.Debug("Successfully converted notification time",
+			zap.String("from", preferences.NotificationAt),
+			zap.String("to", userProgress.NotificationTime))
+	} else {
+		// No notification time set, use default
+		userProgress.NotificationTime = "10:00"
+		s.logger.Debug("No notification time from backend, using default",
+			zap.String("default_time", userProgress.NotificationTime))
 	}
 
 	return userProgress, nil
@@ -186,15 +228,23 @@ func (s *HandlerService) UpdateUserProgress(ctx context.Context, userID int64, p
 		updateRequest.WordsPerDay = &progress.WordsPerDay
 	}
 	if progress.NotificationTime != "" {
-		notificationTime, err := time.Parse("15:04", progress.NotificationTime)
+		s.logger.Debug("Parsing notification time for update",
+			zap.String("notification_time", progress.NotificationTime))
+
+		notificationTime, err := ParseTimeToTime(progress.NotificationTime)
 		if err != nil {
 			s.logger.Error("Failed to parse notification time", zap.String("notification_time", progress.NotificationTime), zap.Error(err))
 			return err
 		}
-		updateRequest.NotificationAt = &notificationTime
+		updateRequest.NotificationAt = notificationTime
+		s.logger.Debug("Successfully parsed notification time for update",
+			zap.String("parsed_time", notificationTime.Format("15:04")))
+	} else {
+		// If notification time is empty, set notifications to false
+		notifications := false
+		updateRequest.Notifications = &notifications
+		s.logger.Debug("Notification time is empty, setting notifications to false")
 	}
-	notifications := progress.NotificationsEnabled()
-	updateRequest.Notifications = &notifications
 
 	// Extract additional preferences
 	if progress.Preferences != nil {
@@ -242,10 +292,19 @@ func (s *HandlerService) UpdateUserProgress(ctx context.Context, userID int64, p
 			}
 
 			if progress.NotificationTime != "" {
-				notificationTime, err := time.Parse("15:04", progress.NotificationTime)
+				notificationTime, err := ParseTimeToTime(progress.NotificationTime)
 				if err == nil {
-					createRequest.NotificationAt = &notificationTime
+					createRequest.NotificationAt = notificationTime
+				} else {
+					s.logger.Warn("Failed to parse notification time for create request",
+						zap.String("notification_time", progress.NotificationTime),
+						zap.Error(err))
+					// Set notifications to false if time parsing fails
+					createRequest.Notifications = false
 				}
+			} else {
+				// If notification time is empty, set notifications to false
+				createRequest.Notifications = false
 			}
 
 			// Extract additional preferences

@@ -286,6 +286,11 @@ func (s *HandlerService) HandleAccountLinkCallback(ctx context.Context, c tele.C
 
 // HandleMainMenuCallback handles main menu callback
 func (s *HandlerService) HandleMainMenuCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	// Clear settings message if we're coming from settings
+	if fsm.IsSettingsState(currentState) {
+		s.clearSettingsMessage(ctx, c, userID)
+	}
+
 	return s.showMainMenu(ctx, c, userID)
 }
 

@@ -175,6 +175,10 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateExerciseInProgress, StateTranslateRuToEn}:       true,
 	{StateWriteWordTranslation, StateWaitingForTextInput}: true,
 	{StateTranslateRuToEn, StateWaitingForTextInput}:      true,
+	{StateTranslateRuToEn, StateExerciseInProgress}:       true, // Allow transition back to exercise in progress
+	{StatePickOptionSentence, StateExerciseInProgress}:    true, // Allow transition back to exercise in progress
+	{StateWriteWordTranslation, StateExerciseInProgress}:  true, // Allow transition back to exercise in progress
+	{StateWaitingForTextInput, StateExerciseInProgress}:   true, // Allow transition back to exercise in progress
 	{StatePickOptionSentence, StateDoingExercises}:        true, // Back to exercise queue
 	{StateWaitingForTextInput, StateDoingExercises}:       true, // Back to exercise queue
 
@@ -203,6 +207,20 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateWaitingForAudio, StateExerciseReview}:         true,
 	{StateWaitingForTranslation, StateExerciseReview}:   true,
 	{StateWaitingForChoice, StateExerciseReview}:        true,
+	{StateTranslationCheck, StateExerciseInProgress}:    true,
+	{StateMultipleChoiceCheck, StateExerciseInProgress}: true,
+	{StateAudioDictation, StateExerciseInProgress}:      true,
+	{StateExerciseInProgress, StateTranslationCheck}:    true,
+	{StateExerciseInProgress, StateMultipleChoiceCheck}: true,
+	{StateExerciseInProgress, StateAudioDictation}:      true,
+	{StateExerciseInProgress, StateSetComplete}:         true,
+	{StateTranslateRuToEn, StateSetComplete}:            true,
+	{StateWriteWordTranslation, StateSetComplete}:       true,
+	{StatePickOptionSentence, StateSetComplete}:         true,
+	{StateSetComplete, StateLessonComplete}:             true,
+	{StateSetComplete, StateLessonStart}:                true,
+	{StateSetComplete, StateLessonInProgress}:           true,
+	{StateSetComplete, StateShowingWordSet}:             true,
 
 	// Account management
 	{StateStart, StateAccountLinking}:          true,
@@ -240,11 +258,16 @@ var ValidTransitions = map[StateTransition]bool{
 
 	// Settings - Notifications flow
 	{StateSettingsNotifications, StateSettingsTimeSelection}: true,
+	{StateSettingsNotifications, StateSettingsTimeInput}:     true, // Allow direct transition for custom time
 	{StateSettingsTimeSelection, StateSettingsTimeInput}:     true,
 	{StateSettingsTimeInput, StateSettingsNotifications}:     true,
 	{StateSettingsTimeSelection, StateSettingsNotifications}: true,
 	{StateSettingsNotifications, StateSettings}:              true,
 	{StateSettings, StateSettingsTimeInput}:                  true, // Allow direct transition for custom input
+	{StateSettingsTimeInput, StateSettings}:                  true,
+	{StateSettingsTimeInput, StateSettingsTimeSelection}:     true,
+	{StateSettingsTimeSelection, StateSettingsTimeInput}:     true,
+	{StateSettings, StateStart}:                              true,
 
 	// Settings - CEFR Level flow
 	{StateSettingsCEFRLevel, StateVocabularyTest}: true,

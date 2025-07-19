@@ -137,7 +137,7 @@ func (tts *TTSService) getCacheKey(text string, language string) string {
 // GenerateWordVoiceMessage generates a voice message specifically for word learning
 func (tts *TTSService) GenerateWordVoiceMessage(word string) ([]byte, error) {
 	// Format the word for better pronunciation
-	formattedText := fmt.Sprintf("The word is: %s", word)
+	formattedText := fmt.Sprintf("%s", word)
 
 	return tts.GenerateVoiceMessage(formattedText, "en")
 }

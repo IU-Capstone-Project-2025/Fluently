@@ -31,7 +31,7 @@ func (s *HandlerService) HandleSettingsCommand(ctx context.Context, c tele.Conte
 		return err
 	}
 
-	// Send initial settings message
+	// Send initial settings message (will delete previous one if exists)
 	return s.sendSettingsMessage(ctx, c, userID, userProgress, "")
 }
 
@@ -135,23 +135,46 @@ func (s *HandlerService) sendSettingsMessage(ctx context.Context, c tele.Context
 		}
 	}
 
-	// Check if we have a stored message ID to edit
-	if messageID, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataSettings); err == nil {
-		if msgID, ok := messageID.(int); ok {
-			// Try to edit existing message
-			if _, err := c.Bot().Edit(&tele.Message{ID: msgID, Chat: c.Message().Chat}, settingsText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard); err == nil {
-				return nil
+	// Try to delete previous settings message if it exists
+	if messageIDData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataSettingsMessageID); err == nil {
+		if messageID, ok := messageIDData.(int); ok {
+			// Try to delete the previous message
+			if deleteErr := c.Bot().Delete(&tele.Message{
+				ID:   messageID,
+				Chat: c.Message().Chat,
+			}); deleteErr == nil {
+				s.logger.Debug("Successfully deleted previous settings message",
+					zap.Int64("user_id", userID),
+					zap.Int("message_id", messageID))
+			} else {
+				s.logger.Warn("Failed to delete previous settings message",
+					zap.Int64("user_id", userID),
+					zap.Int("message_id", messageID),
+					zap.Error(deleteErr))
 			}
 		}
 	}
 
-	// Send new message if editing failed or no stored message ID
-	if err := c.Send(settingsText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard); err != nil {
+	// Send new message
+	msg, err := c.Bot().Send(c.Sender(), settingsText, &tele.SendOptions{
+		ParseMode: tele.ModeMarkdown,
+	}, keyboard)
+
+	if err != nil {
 		return err
 	}
 
-	// For now, we'll just send a new message each time since getting message ID is complex
-	// In a production environment, you might want to implement a more sophisticated approach
+	// Store the new message ID for future deletion
+	if err := s.stateManager.StoreTempData(ctx, userID, fsm.TempDataSettingsMessageID, msg.ID); err != nil {
+		s.logger.Warn("Failed to store settings message ID",
+			zap.Int64("user_id", userID),
+			zap.Error(err))
+	} else {
+		s.logger.Debug("Stored new settings message ID",
+			zap.Int64("user_id", userID),
+			zap.Int("message_id", msg.ID))
+	}
+
 	return nil
 }
 
@@ -260,9 +283,14 @@ func (s *HandlerService) HandleSettingsWordsPerDayInputMessage(ctx context.Conte
 func (s *HandlerService) HandleSettingsTimeInputMessage(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
 	text := strings.TrimSpace(c.Text())
 
-	// Validate time format (HH:MM)
-	if !isValidTimeFormat(text) {
-		return c.Send("❌ Пожалуйста, введите время в формате ЧЧ:ММ (например, 09:30)")
+	// Parse time using flexible format parser
+	parsedTime, err := ParseTimeFormat(text)
+	if err != nil {
+		s.logger.Warn("Invalid time format provided",
+			zap.String("time_input", text),
+			zap.Int64("user_id", userID),
+			zap.Error(err))
+		return c.Send("❌ Пожалуйста, введите время в формате ЧЧ:ММ (например, 09:30, 9 30, 9:30):")
 	}
 
 	// Get current user progress
@@ -272,8 +300,8 @@ func (s *HandlerService) HandleSettingsTimeInputMessage(ctx context.Context, c t
 		return err
 	}
 
-	// Update notification time
-	userProgress.NotificationTime = text
+	// Update notification time with parsed format
+	userProgress.NotificationTime = parsedTime
 
 	// Save to backend
 	if err := s.UpdateUserProgress(ctx, userID, userProgress); err != nil {
@@ -287,7 +315,7 @@ func (s *HandlerService) HandleSettingsTimeInputMessage(ctx context.Context, c t
 		return err
 	}
 
-	statusMessage := fmt.Sprintf("✅ Время уведомлений изменено на *%s*", text)
+	statusMessage := fmt.Sprintf("✅ Время уведомлений изменено на *%s*", parsedTime)
 	return s.sendSettingsMessage(ctx, c, userID, userProgress, statusMessage)
 }
 
@@ -348,10 +376,7 @@ func (s *HandlerService) HandleSettingsBackCallback(ctx context.Context, c tele.
 		return err
 	}
 
-	// Clear any temporary data
-	s.stateManager.ClearTempData(ctx, userID, SettingsMessageID)
-
-	// Send clean settings message
+	// Send clean settings message (will delete previous one if exists)
 	return s.sendSettingsMessage(ctx, c, userID, userProgress, "")
 }
 
@@ -407,12 +432,24 @@ func (s *HandlerService) HandleSettingsWordsCallback(ctx context.Context, c tele
 
 // HandleSettingsTimeCallback handles notification time selection callbacks
 func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.Context, userID int64, data string) error {
-	parts := strings.Split(data, ":")
-	if len(parts) != 3 {
+	s.logger.Debug("Processing settings time callback",
+		zap.String("data", data),
+		zap.Int64("user_id", userID))
+
+	// Parse callback data: settings:time:value
+	// For time values like "09:00", we need to handle the colon in time
+	if !strings.HasPrefix(data, "settings:time:") {
+		s.logger.Error("Invalid settings time callback format - missing prefix",
+			zap.String("data", data))
 		return c.Send("❌ Неверный формат данных.")
 	}
 
-	value := parts[2]
+	// Extract the time value after "settings:time:"
+	value := strings.TrimPrefix(data, "settings:time:")
+
+	s.logger.Debug("Extracted time value",
+		zap.String("value", value),
+		zap.Int64("user_id", userID))
 
 	if value == "custom" {
 		// Set state to input mode (direct transition from settings)
@@ -420,7 +457,7 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 			s.logger.Error("Failed to set time input state", zap.Error(err))
 			return err
 		}
-		return c.Send("📝 Введите время уведомлений в формате ЧЧ:ММ (например, 09:30):")
+		return c.Send("📝 Введите время уведомлений (например, 09:30, 9 30, 9:30):")
 	}
 
 	if value == "disabled" {
@@ -449,8 +486,13 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 		return s.sendSettingsMessage(ctx, c, userID, userProgress, statusMessage)
 	}
 
-	// Validate time format
-	if !isValidTimeFormat(value) {
+	// Validate time format using flexible parser
+	parsedTime, err := ParseTimeFormat(value)
+	if err != nil {
+		s.logger.Warn("Invalid time format provided in callback",
+			zap.String("time_value", value),
+			zap.Int64("user_id", userID),
+			zap.Error(err))
 		return c.Send("❌ Неверный формат времени.")
 	}
 
@@ -461,8 +503,8 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 		return err
 	}
 
-	// Update notification time
-	userProgress.NotificationTime = value
+	// Update notification time with parsed format
+	userProgress.NotificationTime = parsedTime
 
 	// Save to backend
 	if err := s.UpdateUserProgress(ctx, userID, userProgress); err != nil {
@@ -476,7 +518,7 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 		return err
 	}
 
-	statusMessage := fmt.Sprintf("✅ Время уведомлений изменено на *%s*", value)
+	statusMessage := fmt.Sprintf("✅ Время уведомлений изменено на *%s*", parsedTime)
 	return s.sendSettingsMessage(ctx, c, userID, userProgress, statusMessage)
 }
 
@@ -557,18 +599,30 @@ func formatCEFRLevel(level string) string {
 	return level
 }
 
-// isValidTimeFormat checks if the time string is in HH:MM format
-func isValidTimeFormat(timeStr string) bool {
-	if len(timeStr) != 5 || timeStr[2] != ':' {
-		return false
+// clearSettingsMessage deletes the settings message and clears the stored ID
+func (s *HandlerService) clearSettingsMessage(ctx context.Context, c tele.Context, userID int64) {
+	// Try to delete the settings message if it exists
+	if messageIDData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataSettingsMessageID); err == nil {
+		if messageID, ok := messageIDData.(int); ok {
+			// Try to delete the message
+			if deleteErr := c.Bot().Delete(&tele.Message{
+				ID:   messageID,
+				Chat: c.Message().Chat,
+			}); deleteErr == nil {
+				s.logger.Debug("Successfully deleted settings message on exit",
+					zap.Int64("user_id", userID),
+					zap.Int("message_id", messageID))
+			} else {
+				s.logger.Warn("Failed to delete settings message on exit",
+					zap.Int64("user_id", userID),
+					zap.Int("message_id", messageID),
+					zap.Error(deleteErr))
+			}
+		}
 	}
 
-	hour, err1 := strconv.Atoi(timeStr[:2])
-	minute, err2 := strconv.Atoi(timeStr[3:])
-
-	if err1 != nil || err2 != nil {
-		return false
+	// Clear the stored message ID
+	if err := s.stateManager.ClearTempData(ctx, userID, fsm.TempDataSettingsMessageID); err != nil {
+		s.logger.Warn("Failed to clear settings message ID on exit", zap.Error(err))
 	}
-
-	return hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59
 }
