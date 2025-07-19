@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 
 	"fluently/go-backend/internal/repository/models"
@@ -175,6 +176,12 @@ func (h *TopicHandler) CreateTopic(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := h.Repo.Create(r.Context(), &topic); err != nil {
+		// Check if it's a duplicate key error
+		if strings.Contains(err.Error(), "duplicate key value violates unique constraint") {
+			statusCode = 409
+			http.Error(w, "topic with this title already exists", http.StatusConflict)
+			return
+		}
 		statusCode = 500
 		http.Error(w, "failed to create topic", http.StatusInternalServerError)
 		return
@@ -209,6 +216,11 @@ func (h *TopicHandler) UpdateTopic(w http.ResponseWriter, r *http.Request) {
 	topic.Title = req.Title
 
 	if err := h.Repo.Update(r.Context(), topic); err != nil {
+		// Check if it's a duplicate key error
+		if strings.Contains(err.Error(), "duplicate key value violates unique constraint") {
+			http.Error(w, "topic with this title already exists", http.StatusConflict)
+			return
+		}
 		http.Error(w, "failed to update topic", http.StatusInternalServerError)
 		return
 	}
@@ -236,13 +248,13 @@ func (h *TopicHandler) DeleteTopic(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNoContent)
 }
 
-// GetTopics returns all main topics in a list format
-// GetTopics возвращает список всех основных тем
+// GetTopics returns all topics that start with a capital letter
+// GetTopics возвращает список тем, которые начинаются с заглавной буквы
 // @Summary Получить список тем
-// @Description Возвращает все основные темы в виде списка
+// @Description Возвращает все темы, которые начинаются с заглавной буквы
 // @Tags topics
 // @Produce json
-// @Success 200 {array} schemas.TopicResponse
+// @Success 200 {array} schemas.TopicTitleResponse
 // @Failure 500 {object} schemas.ErrorResponse
 // @Security BearerAuth
 // @Router /api/v1/topics [get]
@@ -256,18 +268,20 @@ func (h *TopicHandler) GetTopics(w http.ResponseWriter, r *http.Request) {
 		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
 	}()
 
-	// Fetch all topics from the repository
-	topics, err := h.Repo.GetAll(r.Context())
+	// Fetch all topics that start with a capital letter from the repository
+	topics, err := h.Repo.GetAllStartingWithCapital(r.Context())
 	if err != nil {
 		statusCode = 500
 		http.Error(w, "failed to fetch topics", http.StatusInternalServerError)
 		return
 	}
 
-	// Build response
-	var resp []schemas.TopicResponse
+	// Build response with only titles
+	var resp []schemas.TopicTitleResponse
 	for _, topic := range topics {
-		resp = append(resp, buildTopicResponse(&topic))
+		resp = append(resp, schemas.TopicTitleResponse{
+			Title: topic.Title,
+		})
 	}
 
 	w.Header().Set("Content-Type", "application/json")
