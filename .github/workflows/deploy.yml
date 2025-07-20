@@ -263,9 +263,9 @@ jobs:
           fi
           
           # Run tests with proper coverage collection including external test packages
-          # Use -coverpkg flag to include all packages in coverage
+          # Use explicit package listing for comprehensive coverage
           # Use -p 1 to run tests sequentially to avoid database conflicts
-          go test ./... -v -coverprofile=coverage.out -covermode=atomic -coverpkg=./... -p 1 || {
+          go test ./... -v -coverprofile=coverage.out -covermode=atomic -coverpkg=fluently/go-backend/internal/api/v1/handlers,fluently/go-backend/internal/repository/postgres,fluently/go-backend/cmd/...,fluently/go-backend/internal/... -p 1 || {
             echo "❌ Tests failed, showing database state for debugging..."
             echo "🔍 Checking if database is accessible..."
             PGPASSWORD=test_password psql -h localhost -p 5433 -U test_user -d test_fluently_db -c "SELECT version();" || echo "❌ Database connection failed"
