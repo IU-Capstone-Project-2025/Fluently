@@ -60,15 +60,20 @@ struct FluentlyApp: App {
                     } else {
                         if !showLogin {
                             MainView()
+                                .id(1)
                         } else {
                             LoginScreenBuilder.build(
                                 router: router,
                                 account: account,
                                 authViewModel: authViewModel
                             )
-                                .onOpenURL(perform: handleURL)
+                            .id(2)
+                            .onOpenURL(perform: handleURL)
                         }
                     }
+                }
+                .onChange(of: account.isLoggedIn){
+                    showLogin = !account.isLoggedIn
                 }
                 .navigationDestination(for: AppRoutes.self) { route in
                     switch route {

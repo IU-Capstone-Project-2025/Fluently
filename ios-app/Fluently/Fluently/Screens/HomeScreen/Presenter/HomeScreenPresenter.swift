@@ -173,7 +173,13 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         let descriptor = FetchDescriptor<CardsModel>()
         
         do {
-           let lesson = try modelContext?.fetch(descriptor)
+            let lessons = try modelContext?.fetch(descriptor)
+
+            if let lessons {
+                lessons.forEach { l in
+                    modelContext?.delete(l)
+                }
+            }
         } catch {
             print("SwiftData fetch failed: \(error)")
             return
@@ -211,8 +217,9 @@ final class HomeScreenPresenter: HomeScreenPresenting {
 
     func navigatoToLesson() {
         router.navigatoToLesson(lesson!)
-        modelContext?.delete(lesson!)
-        lesson = nil
+//        modelContext?.delete(lesson!)
+//        lesson = nil
+        deleteLesson()
     }
 
 

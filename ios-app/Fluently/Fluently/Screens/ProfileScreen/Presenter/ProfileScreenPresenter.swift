@@ -131,7 +131,7 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
     func signOut() {
         authViewModel.signOut()
         account.isLoggedIn = false
-        router.popToRoot()
-        router.navigateToLogin()
+
+        router.navigateBack()
     }
 }
