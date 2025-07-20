@@ -184,6 +184,7 @@ jobs:
       - name: Start test database
         run: |
           docker compose -f docker-compose.test.yml down --volumes
+
           docker compose -f docker-compose.test.yml up -d
         
       - name: Wait for DB to become healthy
@@ -249,6 +250,9 @@ jobs:
           # Set test mode to help tests initialize their own data
           GO_ENV: test
           TEST_MODE: true
+                    
+          # JWT configuration for tests
+          JWT_SECRET: ${{ secrets.TEST_JWT_SECRET }}
         run: |
           echo "🧪 Running Go tests with coverage..."
           
@@ -258,8 +262,10 @@ jobs:
             sudo apt-get install -y postgresql-client
           fi
           
-          # Run tests with verbose output to see what's happening
-          go test ./... -v -coverprofile=coverage.out -covermode=atomic || {
+          # Run tests with proper coverage collection including external test packages
+          # Use explicit package listing for comprehensive coverage
+          # Use -p 1 to run tests sequentially to avoid database conflicts
+          go test ./... -v -coverprofile=coverage.out -covermode=atomic -coverpkg=fluently/go-backend/internal/api/v1/handlers,fluently/go-backend/internal/repository/postgres,fluently/go-backend/cmd/...,fluently/go-backend/internal/... -p 1 || {
             echo "❌ Tests failed, showing database state for debugging..."
             echo "🔍 Checking if database is accessible..."
             PGPASSWORD=test_password psql -h localhost -p 5433 -U test_user -d test_fluently_db -c "SELECT version();" || echo "❌ Database connection failed"

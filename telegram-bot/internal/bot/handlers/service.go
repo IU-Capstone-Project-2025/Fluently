@@ -596,6 +596,8 @@ func (s *HandlerService) HandleCallback(ctx context.Context, c tele.Context, use
 		return s.HandleSettingsCEFRLevelCallback(ctx, c, userID, currentState)
 	case "menu:main":
 		return s.HandleMainMenuCallback(ctx, c, userID, currentState)
+	case "menu:back_to_main":
+		return s.HandleBackToMainMenuCallback(ctx, c, userID, currentState)
 	case "menu:settings":
 		return s.HandleSettingsMenuCallback(ctx, c, userID, currentState)
 	case "menu:learn":

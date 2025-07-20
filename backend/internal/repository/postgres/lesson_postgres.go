@@ -99,6 +99,29 @@ func (r *LessonRepository) GetWordsForLesson(
 
 	cefrLevel = strings.ToLower(cefrLevel)
 
+	var topicID uuid.UUID
+	var topic models.Topic
+
+	if strings.ToLower(topicTitle) == "learn new words" ||
+		topicTitle == "" || strings.ToLower(topicTitle) == "general" ||
+		strings.ToLower(topicTitle) == "all" {
+		err := r.db.WithContext(ctx).
+			Order("RANDOM()").
+			First(&topic).Error
+		if err != nil {
+			return nil, err
+		}
+		topicID = topic.ID
+	} else {
+		err := r.db.WithContext(ctx).
+			Where("title = ?", topicTitle).
+			First(&topic).Error
+		if err != nil {
+			return nil, err
+		}
+		topicID = topic.ID
+	}
+
 	subQuery := r.db.
 		Table("learned_words").
 		Select("word_id").
@@ -107,6 +130,7 @@ func (r *LessonRepository) GetWordsForLesson(
 	err := r.db.WithContext(ctx).
 		Model(&models.Word{}).
 		Where("cefr_level = ?", cefrLevel).
+		Where("topic_id = ?", topicID).
 		Where("id NOT IN (?)", subQuery).
 		Order("RANDOM()").
 		Limit(limit).

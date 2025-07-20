@@ -42,3 +42,17 @@ func (r *NotLearnedWordRepository) DeleteIfExists(ctx context.Context, userID, w
 	return r.db.WithContext(ctx).Where("user_id = ? AND word_id = ?", userID, wordID).
 		Delete(&models.NotLearnedWords{}).Error
 }
+
+// GetRecentlyNotLearnedWords returns recently not learned words for a user with word details
+func (r *NotLearnedWordRepository) GetRecentlyNotLearnedWords(ctx context.Context, userID uuid.UUID, limit int) ([]models.Word, error) {
+	var words []models.Word
+	err := r.db.WithContext(ctx).
+		Table("words").
+		Joins("JOIN not_learned_words ON words.id = not_learned_words.word_id").
+		Where("not_learned_words.user_id = ?", userID).
+		Order("RANDOM()").
+		Limit(limit).
+		Find(&words).Error
+
+	return words, err
+}

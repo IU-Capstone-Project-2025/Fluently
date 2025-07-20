@@ -55,12 +55,13 @@ type ChatResponse struct {
 // -------------------- handler --------------------------------------
 
 type ChatHandler struct {
-	Redis           *goredis.Client
-	HistoryRepo     *postgres.ChatHistoryRepository
-	LLMClient       *utils.LLMClient
-	LearnedWordRepo *postgres.LearnedWordRepository
-	WordRepo        *postgres.WordRepository
-	TopicRepo       *postgres.TopicRepository
+	Redis              *goredis.Client
+	HistoryRepo        *postgres.ChatHistoryRepository
+	LLMClient          *utils.LLMClient
+	LearnedWordRepo    *postgres.LearnedWordRepository
+	NotLearnedWordRepo *postgres.NotLearnedWordRepository
+	WordRepo           *postgres.WordRepository
+	TopicRepo          *postgres.TopicRepository
 }
 
 var stopWords = []string{"finish", "всё", "хочу закончить"}
@@ -129,22 +130,29 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 	}
 	defer lock.Release(ctx)
 
-	// Auto-populate words for the user if not provided and topic is specified
-	if req.Topic != "" && len(req.Words) == 0 {
+	// Auto-populate words and extract topic/subtopic if not provided
+	if len(req.Words) == 0 {
 		if err := h.getWordsForUser(ctx, &req, user.ID); err != nil {
 			logger.Log.Warn("failed to get words for user", zap.Error(err))
 		}
 	}
 
-	// Check if this is the start of a new dialog (first message and topic/words provided)
-	isNewDialog := len(req.Chat) == 1 && req.Topic != "" && len(req.Words) > 0
+	// Extract topic and subtopic from random words if not provided
+	if req.Topic == "" || req.Subtopic == "" {
+		if err := h.extractTopicAndSubtopic(ctx, &req); err != nil {
+			logger.Log.Warn("failed to extract topic and subtopic", zap.Error(err))
+		}
+	}
+
+	// Check if this is the start of a new dialog (first message with words provided)
+	isNewDialog := len(req.Chat) == 1 && len(req.Words) > 0
 
 	var llmMsgs []utils.LLMMessage
 	var reply string
 
 	if isNewDialog {
 		// This is the beginning of a new dialog with prompt
-		reply, err = h.startPromptedDialog(ctx, req, user.ID)
+		reply, err = h.startPromptedDialog(ctx, req)
 		if err != nil {
 			statusCode = 500
 			logger.Log.Error("failed to start prompted dialog", zap.Error(err))
@@ -323,7 +331,7 @@ func (h *ChatHandler) convertMessagesToLLM(messages []ChatMessage) []utils.LLMMe
 }
 
 // startPromptedDialog initiates a new dialog with system and initial prompts
-func (h *ChatHandler) startPromptedDialog(ctx context.Context, req ChatRequest, userID uuid.UUID) (string, error) {
+func (h *ChatHandler) startPromptedDialog(ctx context.Context, req ChatRequest) (string, error) {
 	// Build words list for the prompt
 	wordsStr := h.buildWordsString(req.Words)
 
@@ -436,17 +444,17 @@ func (h *ChatHandler) continuePromptedDialog(ctx context.Context, req ChatReques
 	return true, reply, nil
 }
 
-// getWordsForUser retrieves words for the user either from request or from recently learned words
+// getWordsForUser retrieves words for the user either from request or from recently not learned words
 func (h *ChatHandler) getWordsForUser(ctx context.Context, req *ChatRequest, userID uuid.UUID) error {
 	// If words are already provided in the request, use them
 	if len(req.Words) > 0 {
 		return nil
 	}
 
-	// Get recently learned words for the user
-	recentWords, err := h.LearnedWordRepo.GetRecentlyLearnedWords(ctx, userID, 15)
+	// Get recently not learned words for the user
+	recentWords, err := h.NotLearnedWordRepo.GetRecentlyNotLearnedWords(ctx, userID, 15)
 	if err != nil {
-		logger.Log.Warn("failed to get recently learned words", zap.Error(err))
+		logger.Log.Warn("failed to get recently not learned words", zap.Error(err))
 		// Don't fail the request, just continue without words
 		return nil
 	}
@@ -462,6 +470,72 @@ func (h *ChatHandler) getWordsForUser(ctx context.Context, req *ChatRequest, use
 	}
 
 	logger.Log.Info("populated words for user", zap.Int("word_count", len(req.Words)))
+	return nil
+}
+
+// extractTopicAndSubtopic extracts topic and subtopic from random words
+func (h *ChatHandler) extractTopicAndSubtopic(ctx context.Context, req *ChatRequest) error {
+	// If topic and subtopic are already provided, use them
+	if req.Topic != "" && req.Subtopic != "" {
+		return nil
+	}
+
+	// Get random words with topic information
+	randomWords, err := h.WordRepo.GetRandomWordsWithTopic(ctx, 10)
+	if err != nil {
+		logger.Log.Warn("failed to get random words for topic extraction", zap.Error(err))
+		return nil
+	}
+
+	// Find the most common topic among the random words
+	topicCount := make(map[string]int)
+	for _, word := range randomWords {
+		if word.Topic != nil && word.Topic.Title != "" {
+			topicCount[word.Topic.Title]++
+		}
+	}
+
+	// Find the topic with the highest count
+	var mostCommonTopic string
+	maxCount := 0
+	for topic, count := range topicCount {
+		if count > maxCount {
+			maxCount = count
+			mostCommonTopic = topic
+		}
+	}
+
+	// Set the topic if found
+	if mostCommonTopic != "" {
+		req.Topic = mostCommonTopic
+		logger.Log.Info("extracted topic from random words", zap.String("topic", req.Topic))
+	}
+
+	// For subtopic, we can use a random word's context or create a generic one
+	if req.Subtopic == "" {
+		// Try to find a word with context to use as subtopic
+		for _, word := range randomWords {
+			if word.Context != "" {
+				// Extract a simple subtopic from context (first few words)
+				contextWords := strings.Fields(word.Context)
+				if len(contextWords) > 0 {
+					req.Subtopic = contextWords[0]
+					if len(contextWords) > 1 {
+						req.Subtopic += " " + contextWords[1]
+					}
+					logger.Log.Info("extracted subtopic from word context", zap.String("subtopic", req.Subtopic))
+					break
+				}
+			}
+		}
+
+		// If no context found, use a generic subtopic
+		if req.Subtopic == "" {
+			req.Subtopic = "general conversation"
+			logger.Log.Info("using generic subtopic", zap.String("subtopic", req.Subtopic))
+		}
+	}
+
 	return nil
 }
 

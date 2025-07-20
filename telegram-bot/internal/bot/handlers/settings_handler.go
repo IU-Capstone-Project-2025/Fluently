@@ -18,6 +18,13 @@ const SettingsMessageID = "settings_message_id"
 
 // HandleSettingsCommand handles the /settings command
 func (s *HandlerService) HandleSettingsCommand(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	// Delete the previous message if it exists
+	if c.Message() != nil {
+		if err := c.Delete(); err != nil {
+			// Log the error but don't fail the operation
+			s.logger.Warn("Failed to delete previous message", zap.Error(err))
+		}
+	}
 	// Get current user progress for settings
 	userProgress, err := s.GetUserProgress(ctx, userID)
 	if err != nil {
@@ -37,6 +44,13 @@ func (s *HandlerService) HandleSettingsCommand(ctx context.Context, c tele.Conte
 
 // sendSettingsMessage sends or updates the settings message
 func (s *HandlerService) sendSettingsMessage(ctx context.Context, c tele.Context, userID int64, userProgress *domain.UserProgress, statusMessage string) error {
+	// Delete the previous message if it exists
+	if c.Message() != nil {
+		if err := c.Delete(); err != nil {
+			// Log the error but don't fail the operation
+			s.logger.Warn("Failed to delete previous message", zap.Error(err))
+		}
+	}
 	// Create settings message
 	settingsText := "⚙️ *Настройки*\n\n" +
 		fmt.Sprintf("🔤 Уровень CEFR: *%s*\n", formatCEFRLevel(userProgress.CEFRLevel)) +
@@ -119,7 +133,6 @@ func (s *HandlerService) sendSettingsMessage(ctx context.Context, c tele.Context
 					{Text: "C2 - В совершенстве", Data: "settings:cefr:C2"},
 				},
 				{{Text: "Пройти тест", Data: "settings:cefr:test"}},
-				{{Text: "Ввести вручную", Data: "settings:cefr:custom"}},
 				{{Text: "Отмена", Data: "settings:back"}},
 			},
 		}
@@ -130,7 +143,7 @@ func (s *HandlerService) sendSettingsMessage(ctx context.Context, c tele.Context
 				{{Text: "🔤 Уровень CEFR", Data: "settings:cefr_level"}},
 				{{Text: "📚 Слов в день", Data: "settings:words_per_day"}},
 				{{Text: "🔔 Уведомления", Data: "settings:notifications"}},
-				{{Text: "Назад в главное меню", Data: "menu:main"}},
+				{{Text: "Назад в главное меню", Data: "menu:back_to_main"}},
 			},
 		}
 	}
@@ -432,6 +445,13 @@ func (s *HandlerService) HandleSettingsWordsCallback(ctx context.Context, c tele
 
 // HandleSettingsTimeCallback handles notification time selection callbacks
 func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.Context, userID int64, data string) error {
+	// Delete the previous message if it exists
+	if c.Message() != nil {
+		if err := c.Delete(); err != nil {
+			// Log the error but don't fail the operation
+			s.logger.Warn("Failed to delete previous message", zap.Error(err))
+		}
+	}
 	s.logger.Debug("Processing settings time callback",
 		zap.String("data", data),
 		zap.Int64("user_id", userID))
@@ -452,15 +472,29 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 		zap.Int64("user_id", userID))
 
 	if value == "custom" {
+		// Delete the previous message if it exists
+		if c.Message() != nil {
+			if err := c.Delete(); err != nil {
+				// Log the error but don't fail the operation
+				s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			}
+		}
 		// Set state to input mode (direct transition from settings)
 		if err := s.stateManager.SetState(ctx, userID, fsm.StateSettingsTimeInput); err != nil {
 			s.logger.Error("Failed to set time input state", zap.Error(err))
 			return err
 		}
-		return c.Send("📝 Введите время уведомлений (например, 09:30, 9 30, 9:30):")
+		return c.Send("Когда поставить напоминалку?")
 	}
 
 	if value == "disabled" {
+		// Delete the previous message if it exists
+		if c.Message() != nil {
+			if err := c.Delete(); err != nil {
+				// Log the error but don't fail the operation
+				s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			}
+		}
 		// Disable notifications
 		userProgress, err := s.GetUserProgress(ctx, userID)
 		if err != nil {
@@ -524,6 +558,14 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 
 // HandleSettingsCEFRCallback handles CEFR level selection callbacks
 func (s *HandlerService) HandleSettingsCEFRCallback(ctx context.Context, c tele.Context, userID int64, data string) error {
+	// Delete the previous message if it exists
+	if c.Message() != nil {
+		if err := c.Delete(); err != nil {
+			// Log the error but don't fail the operation
+			s.logger.Warn("Failed to delete previous message", zap.Error(err))
+		}
+	}
+
 	parts := strings.Split(data, ":")
 	if len(parts) != 3 {
 		return c.Send("❌ Неверный формат данных.")
@@ -532,21 +574,19 @@ func (s *HandlerService) HandleSettingsCEFRCallback(ctx context.Context, c tele.
 	value := parts[2]
 
 	if value == "test" {
+		// Delete the previous message if it exists
+		if c.Message() != nil {
+			if err := c.Delete(); err != nil {
+				// Log the error but don't fail the operation
+				s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			}
+		}
 		// Start CEFR test
 		if err := s.stateManager.SetState(ctx, userID, fsm.StateVocabularyTest); err != nil {
 			s.logger.Error("Failed to set vocabulary test state", zap.Error(err))
 			return err
 		}
 		return s.HandleTestStartCallback(ctx, c, userID, fsm.StateVocabularyTest)
-	}
-
-	if value == "custom" {
-		// Set state to input mode (direct transition from settings)
-		if err := s.stateManager.SetState(ctx, userID, fsm.StateSettingsCEFRLevel); err != nil {
-			s.logger.Error("Failed to set CEFR level input state", zap.Error(err))
-			return err
-		}
-		return c.Send("📝 Введите уровень CEFR (A1, A2, B1, B2, C1, C2):")
 	}
 
 	// Validate CEFR level

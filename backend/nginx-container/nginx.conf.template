@@ -94,6 +94,13 @@ server {
         add_header Cache-Control "public, immutable";
     }
 
+    # CSS and JS files with cache control
+    location ~* \.(css|js)$ {
+        expires 1h;
+        add_header Cache-Control "public, must-revalidate";
+        add_header ETag $request_uri$request_time;
+    }
+
     # ===========================================
     # TELEGRAM BOT WEBHOOK CONFIGURATION
     # ===========================================
@@ -289,5 +296,11 @@ server {
     # Catch-all for static files
     location / {
         try_files $uri $uri/ /index.html;
+        
+        # Add cache control for HTML files to ensure updates are reflected
+        location ~* \.html$ {
+            expires 5m;
+            add_header Cache-Control "public, must-revalidate";
+        }
     }
     }
