@@ -447,7 +447,7 @@ func (h *ChatHandler) startPromptedDialog(ctx context.Context, req ChatRequest, 
 }
 
 // continuePromptedDialog continues an existing prompted dialog
-func (h *ChatHandler) continuePromptedDialog(ctx context.Context, req ChatRequest, userID uuid.UUID, topic, subtopic string, words []ChatWord) (bool, string, error) {
+func (h *ChatHandler) continuePromptedDialog(ctx context.Context, req ChatRequest, userID uuid.UUID, topic string, _ string, words []ChatWord) (bool, string, error) {
 	// Check if we have stored dialog data with topic and words
 	if topic == "" || len(words) == 0 {
 		// Try to get stored dialog data from Redis
@@ -461,7 +461,7 @@ func (h *ChatHandler) continuePromptedDialog(ctx context.Context, req ChatReques
 		}
 
 		// Parse stored dialog data
-		var storedData map[string]interface{}
+		var storedData map[string]any
 		if err := json.Unmarshal(data, &storedData); err != nil {
 			return false, "", nil // Invalid data, proceed with regular chat
 		}
@@ -471,9 +471,9 @@ func (h *ChatHandler) continuePromptedDialog(ctx context.Context, req ChatReques
 			topic = t
 		}
 		// Note: subtopic is not stored in the new conversation flow, so we keep the original value
-		if wordsData, ok := storedData["words"].([]interface{}); ok {
+		if wordsData, ok := storedData["words"].([]any); ok {
 			for _, wordData := range wordsData {
-				if wordMap, ok := wordData.(map[string]interface{}); ok {
+				if wordMap, ok := wordData.(map[string]any); ok {
 					word := ChatWord{}
 					if w, ok := wordMap["word"].(string); ok {
 						word.Word = w
