@@ -51,10 +51,19 @@ func setupTest(t *testing.T) {
 		t.Fatalf("failed to connect to DB: %v", err)
 	}
 
-	// Connect extension for UUID
-	db.Exec(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`)
+	// Drop all tables first to ensure clean state
+	db.Exec("DROP TABLE IF EXISTS learned_words CASCADE")
+	db.Exec("DROP TABLE IF EXISTS pick_options CASCADE")
+	db.Exec("DROP TABLE IF EXISTS user_preferences CASCADE")
+	db.Exec("DROP TABLE IF EXISTS sentences CASCADE")
+	db.Exec("DROP TABLE IF EXISTS words CASCADE")
+	db.Exec("DROP TABLE IF EXISTS topics CASCADE")
+	db.Exec("DROP TABLE IF EXISTS users CASCADE")
 
-	// Auto-migrate
+	// Drop custom types if they exist to prevent conflicts
+	db.Exec("DROP TYPE IF EXISTS string_array CASCADE")
+
+	// Auto-migrate (UUID extension should already be available from init.sql)
 	err = db.AutoMigrate(
 		&models.User{},
 		&models.Word{},
@@ -76,25 +85,6 @@ func setupTest(t *testing.T) {
 	prefRepo = pg.NewPreferenceRepository(db)
 	pickOptionRepo = pg.NewPickOptionRepository(db)
 	learnedWordRepo = pg.NewLearnedWordRepository(db)
-
-	// Clear all tables in proper dependency order (dependent tables first)
-	// Use DELETE instead of TRUNCATE to avoid deadlocks in concurrent tests
-	db.Exec("DELETE FROM learned_words")
-	db.Exec("DELETE FROM pick_options")
-	db.Exec("DELETE FROM user_preferences")
-	db.Exec("DELETE FROM sentences")
-	db.Exec("DELETE FROM words")
-	db.Exec("DELETE FROM topics")
-	db.Exec("DELETE FROM users")
-
-	// Reset sequences after DELETE operations
-	db.Exec("ALTER SEQUENCE IF EXISTS learned_words_id_seq RESTART WITH 1")
-	db.Exec("ALTER SEQUENCE IF EXISTS pick_options_id_seq RESTART WITH 1")
-	db.Exec("ALTER SEQUENCE IF EXISTS user_preferences_id_seq RESTART WITH 1")
-	db.Exec("ALTER SEQUENCE IF EXISTS sentences_id_seq RESTART WITH 1")
-	db.Exec("ALTER SEQUENCE IF EXISTS words_id_seq RESTART WITH 1")
-	db.Exec("ALTER SEQUENCE IF EXISTS topics_id_seq RESTART WITH 1")
-	db.Exec("ALTER SEQUENCE IF EXISTS users_id_seq RESTART WITH 1")
 
 	// Create handlers
 	wordHandler := &handlers.WordHandler{Repo: pg.NewWordRepository(db)}

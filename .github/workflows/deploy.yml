@@ -184,6 +184,7 @@ jobs:
       - name: Start test database
         run: |
           docker compose -f docker-compose.test.yml down --volumes
+          docker volume prune -f
           docker compose -f docker-compose.test.yml up -d
         
       - name: Wait for DB to become healthy
@@ -263,7 +264,8 @@ jobs:
           
           # Run tests with proper coverage collection including external test packages
           # Use -coverpkg flag to include all packages in coverage
-          go test ./... -v -coverprofile=coverage.out -covermode=atomic -coverpkg=./... || {
+          # Use -p 1 to run tests sequentially to avoid database conflicts
+          go test ./... -v -coverprofile=coverage.out -covermode=atomic -coverpkg=./... -p 1 || {
             echo "❌ Tests failed, showing database state for debugging..."
             echo "🔍 Checking if database is accessible..."
             PGPASSWORD=test_password psql -h localhost -p 5433 -U test_user -d test_fluently_db -c "SELECT version();" || echo "❌ Database connection failed"
