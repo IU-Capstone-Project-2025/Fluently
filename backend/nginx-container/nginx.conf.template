@@ -230,25 +230,6 @@ server {
         limit_req zone=api_zone burst=50 nodelay;
     }
 
-    # Swagger documentation (proxied to backend)
-    location /swagger {
-        proxy_pass http://fluently_backend:8070/swagger;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header X-Forwarded-Host $host;
-    }
-
-    location /swagger/ {
-        proxy_pass http://fluently_backend:8070/swagger/;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header X-Forwarded-Host $host;
-    }
-
     # Telegram public routes (for account linking) - proxied to backend
     location /telegram/ {
         proxy_pass http://fluently_backend:8070/telegram/;
