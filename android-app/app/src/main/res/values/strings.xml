@@ -16,7 +16,7 @@
     <string name="calendar">Calendar</string>
     <string name="learned_words">Learned Words</string>
     <string name="words_in_progress">Words In Progress</string>
-    <string name="home_screen">Home Screen</string>
+    <string name="your_goal">Your Goal:\n%s</string>
     <string name="avatar_picture">Avatar Picture</string>
     <string name="study">Learn</string>
     <string name="studying">Studying!</string>
@@ -44,4 +44,10 @@
     <string name="loading">Loading</string>
     <string name="retry">Retry</string>
     <string name="something_went_wrong">Something went wrong</string>
+    <string name="onboarding_top_text">To begin with, let\'s adjust you study preferences (you can always modify them in the settings later)</string>
+    <string name="finish">Finish</string>
+    <string name="words_per_lesson">Words per lesson</string>
+    <string name="topic_to_learn">Topic to learn</string>
+    <string name="approximate_level_of_english">Approximate level of English</string>
+    <string name="settings">Settings</string>
 </resources>

@@ -20,4 +20,7 @@ object Destination {
 
     @Serializable
     object CalendarScreen
+
+    @Serializable
+    object OnboardingScreen
 }

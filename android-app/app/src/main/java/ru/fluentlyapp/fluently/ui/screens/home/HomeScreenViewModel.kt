@@ -50,7 +50,8 @@ class HomeScreenViewModel @Inject constructor(
 
                         _uiState.update {
                             it.copy(
-                                avatarPicture = userPreferences.avatarImageUrl.toUri()
+                                avatarPicture = userPreferences.avatarImageUrl.toUri(),
+                                preferredTopic = userPreferences.goal
                             )
                         }
                     }

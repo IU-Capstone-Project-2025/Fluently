@@ -3,11 +3,11 @@ package ru.fluentlyapp.fluently.ui.screens.onboarding
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
-import ru.fluentlyapp.fluently.common.model.CefrLevel
 import ru.fluentlyapp.fluently.common.model.UserPreferences
 import ru.fluentlyapp.fluently.feature.topics.TopicRepository
 import ru.fluentlyapp.fluently.feature.userpreferences.UserPreferencesRepository
@@ -22,21 +22,35 @@ class OnboardingViewModel @Inject constructor(
 ) : ViewModel() {
     private val _uiState = MutableStateFlow<OnboardingScreenUiState>(
         OnboardingScreenUiState(
-            loadingState = LoadingState.LOADING,
-            userPreferences = null,
-            availableTopics = emptyList()
+            initialLoadingState = InitialLoadingState.LOADING,
+            userPreferences = UserPreferences.empty(),
+            availableTopics = emptyList(),
+            uploadingLoadingState = UploadingLoadingState.IDLE
         )
     )
     val uiState = _uiState.asStateFlow()
 
+    private val _commands = Channel<OnboardingScreenCommand>()
+    val commands = _commands.receiveAsFlow()
+
     init {
         initOnboarding()
+
+        viewModelScope.safeLaunch {
+            userPreferencesRepository.getCachedUserPreferences().collect { preferences ->
+                if (preferences != null) {
+                    _uiState.update {
+                        it.copy(userPreferences = preferences)
+                    }
+                }
+            }
+        }
     }
 
     fun initOnboarding() {
         viewModelScope.safeLaunch {
             _uiState.update {
-                it.copy(loadingState = LoadingState.LOADING)
+                it.copy(initialLoadingState = InitialLoadingState.LOADING)
             }
             try {
                 val remotePreferences = userPreferencesRepository.getRemoteUserPreferences()
@@ -45,14 +59,14 @@ class OnboardingViewModel @Inject constructor(
                     it.copy(
                         userPreferences = remotePreferences,
                         availableTopics = topics,
-                        loadingState = LoadingState.SUCCESS
+                        initialLoadingState = InitialLoadingState.SUCCESS
                     )
                 }
             } catch (ex: Exception) {
                 Timber.e(ex)
                 _uiState.update {
                     it.copy(
-                        loadingState = LoadingState.ERROR
+                        initialLoadingState = InitialLoadingState.ERROR
                     )
                 }
             }
@@ -60,12 +74,31 @@ class OnboardingViewModel @Inject constructor(
     }
 
     fun updateUserPreferences(userPreferences: UserPreferences) {
-        _uiState.update { it.copy(userPreferences = userPreferences) }
+        viewModelScope.safeLaunch {
+            userPreferencesRepository.updateCachedUserPreferences(userPreferences)
+        }
     }
 
-    fun sendUserPreferences(preferences: UserPreferences) {
+    fun completeUserPreferences() {
+        _uiState.update {
+            it.copy(uploadingLoadingState = UploadingLoadingState.UPLOADING)
+        }
         viewModelScope.safeLaunch {
-            userPreferencesRepository.updateRemoteUserPreferences(preferences)
+            try {
+                _uiState.value.userPreferences.let {
+                    userPreferencesRepository.updateRemoteUserPreferences(it)
+                    userPreferencesRepository.updateCachedUserPreferences(it)
+                }
+                _uiState.update {
+                    it.copy(uploadingLoadingState = UploadingLoadingState.SUCCESS)
+                }
+                _commands.send(OnboardingScreenCommand.UserPreferencesUploadedCommand)
+            } catch (ex: Exception) {
+                Timber.e(ex)
+                _uiState.update {
+                    it.copy(uploadingLoadingState = UploadingLoadingState.ERROR)
+                }
+            }
         }
     }
 }

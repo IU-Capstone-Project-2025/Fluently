@@ -22,5 +22,19 @@ data class UserPreferences(
     val subscribed: Boolean,
     val userId: String,
     val wordsPerDay: Int
-)
+) {
 
+    companion object {
+        fun empty() = UserPreferences(
+            avatarImageUrl = "",
+            cefrLevel = CefrLevel.A1, // Choose this
+            factEveryday = false,
+            goal = "", // Choose this
+            id = "",
+            notifications = false,
+            subscribed = false,
+            userId = "",
+            wordsPerDay = 10 // Choose this
+        )
+    }
+}

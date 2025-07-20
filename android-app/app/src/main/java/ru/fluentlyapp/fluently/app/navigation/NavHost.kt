@@ -12,6 +12,7 @@ import ru.fluentlyapp.fluently.ui.screens.home.HomeScreen
 import ru.fluentlyapp.fluently.ui.screens.launch.LaunchScreen
 import ru.fluentlyapp.fluently.ui.screens.lesson.LessonFlowScreen
 import ru.fluentlyapp.fluently.ui.screens.login.LoginScreen
+import ru.fluentlyapp.fluently.ui.screens.onboarding.OnboardingScreen
 import ru.fluentlyapp.fluently.ui.screens.wordsprogress.WordsProgressScreen
 
 @Composable
@@ -48,7 +49,7 @@ fun FluentlyNavHost(
             LoginScreen(
                 modifier = Modifier.fillMaxSize(),
                 onSuccessfulLogin = {
-                    navHostController.navigate(Destination.HomeScreen) {
+                    navHostController.navigate(Destination.OnboardingScreen) {
                         popUpTo<Destination.LoginScreen>() {
                             inclusive = true
                         }
@@ -110,6 +111,19 @@ fun FluentlyNavHost(
                     navHostController.navigate(Destination.HomeScreen) {
                         popUpTo<Destination.HomeScreen>()
                         launchSingleTop = true
+                    }
+                },
+            )
+        }
+
+        composable<Destination.OnboardingScreen> {
+            OnboardingScreen(
+                modifier = Modifier.fillMaxSize(),
+                onComplete = {
+                    navHostController.navigate(Destination.HomeScreen) {
+                        popUpTo<Destination.LoginScreen>() {
+                            inclusive = true
+                        }
                     }
                 },
             )
