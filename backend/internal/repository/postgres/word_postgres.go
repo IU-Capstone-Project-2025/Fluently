@@ -79,6 +79,33 @@ func (r *WordRepository) GetRandomWordsByCEFRLevel(ctx context.Context, cefrLeve
 	return words, nil
 }
 
+// GetRandomWordsByTopicIDs returns random words by multiple topic IDs, excluding learned words
+func (r *WordRepository) GetRandomWordsByTopicIDs(ctx context.Context, topicIDs []uuid.UUID, cefrLevel string, userID uuid.UUID, limit int) ([]models.Word, error) {
+	var words []models.Word
+
+	cefrLevel = strings.ToLower(cefrLevel)
+
+	subQuery := r.db.
+		Table("learned_words").
+		Select("word_id").
+		Where("user_id = ?", userID)
+
+	err := r.db.WithContext(ctx).
+		Model(&models.Word{}).
+		Where("cefr_level = ?", cefrLevel).
+		Where("topic_id IN ?", topicIDs).
+		Where("id NOT IN (?)", subQuery).
+		Order("RANDOM()").
+		Limit(limit).
+		Find(&words).Error
+
+	if err != nil {
+		return nil, err
+	}
+
+	return words, nil
+}
+
 // GetDayWord returns a random word by cefr level
 func (r *WordRepository) GetDayWord(ctx context.Context, cefrLevel string, userID uuid.UUID) (*models.Word, error) {
 	var word models.Word

@@ -184,6 +184,7 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 	// If we have a stored topic and this is a new dialog, use it and send first message
 	if storedTopic != "" && len(storedWords) > 0 && isNewDialog {
 		topic = storedTopic
+		subtopic = "conversation" // Use a default subtopic for stored conversations
 		words = storedWords
 		// Generate the first message from the backend
 		firstMessage, err := h.generateFirstMessage(ctx, topic, words)
@@ -469,9 +470,7 @@ func (h *ChatHandler) continuePromptedDialog(ctx context.Context, req ChatReques
 		if t, ok := storedData["topic"].(string); ok {
 			topic = t
 		}
-		if st, ok := storedData["subtopic"].(string); ok {
-			subtopic = st
-		}
+		// Note: subtopic is not stored in the new conversation flow, so we keep the original value
 		if wordsData, ok := storedData["words"].([]interface{}); ok {
 			for _, wordData := range wordsData {
 				if wordMap, ok := wordData.(map[string]interface{}); ok {

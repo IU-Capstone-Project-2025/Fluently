@@ -29,6 +29,73 @@ func (r *TopicRepository) GetByID(ctx context.Context, id uuid.UUID) (*models.To
 	return &topic, nil
 }
 
+// GetByTitle returns a topic by title
+func (r *TopicRepository) GetByTitle(ctx context.Context, title string) (*models.Topic, error) {
+	var topic models.Topic
+	if err := r.db.WithContext(ctx).Where("title = ?", title).First(&topic).Error; err != nil {
+		return nil, err
+	}
+
+	return &topic, nil
+}
+
+// GetChildrenByParentID returns all child topics of a given parent
+func (r *TopicRepository) GetChildrenByParentID(ctx context.Context, parentID uuid.UUID) ([]models.Topic, error) {
+	var topics []models.Topic
+	if err := r.db.WithContext(ctx).Where("parent_id = ?", parentID).Find(&topics).Error; err != nil {
+		return nil, err
+	}
+
+	return topics, nil
+}
+
+// GetSiblingsByParentID returns all sibling topics (topics with the same parent)
+func (r *TopicRepository) GetSiblingsByParentID(ctx context.Context, parentID uuid.UUID, excludeTopicID uuid.UUID) ([]models.Topic, error) {
+	var topics []models.Topic
+	if err := r.db.WithContext(ctx).
+		Where("parent_id = ? AND id != ?", parentID, excludeTopicID).
+		Find(&topics).Error; err != nil {
+		return nil, err
+	}
+
+	return topics, nil
+}
+
+// GetTopicHierarchy returns the full path from root to the given topic
+func (r *TopicRepository) GetTopicHierarchy(ctx context.Context, topicID uuid.UUID) ([]models.Topic, error) {
+	var hierarchy []models.Topic
+
+	currentTopic, err := r.GetByID(ctx, topicID)
+	if err != nil {
+		return nil, err
+	}
+
+	// Add current topic
+	hierarchy = append(hierarchy, *currentTopic)
+
+	// Traverse up the hierarchy
+	for currentTopic.ParentID != nil {
+		parentTopic, err := r.GetByID(ctx, *currentTopic.ParentID)
+		if err != nil {
+			return nil, err
+		}
+		hierarchy = append([]models.Topic{*parentTopic}, hierarchy...)
+		currentTopic = parentTopic
+	}
+
+	return hierarchy, nil
+}
+
+// GetMainTopics returns all main topics (topics with no parent)
+func (r *TopicRepository) GetMainTopics(ctx context.Context) ([]models.Topic, error) {
+	var topics []models.Topic
+	if err := r.db.WithContext(ctx).Where("parent_id IS NULL").Find(&topics).Error; err != nil {
+		return nil, err
+	}
+
+	return topics, nil
+}
+
 // Create creates a new topic
 func (r *TopicRepository) Create(ctx context.Context, topic *models.Topic) error {
 	return r.db.WithContext(ctx).Create(topic).Error
