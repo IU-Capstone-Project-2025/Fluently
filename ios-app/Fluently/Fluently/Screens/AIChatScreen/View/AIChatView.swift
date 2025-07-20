@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct AIChatView: View {
     // MARK: - Properties
@@ -19,6 +20,8 @@ struct AIChatView: View {
     var onExit: (() -> Void)?
 
     @ObservedObject var presenter: AIChatScreenPresenter
+
+    @Query var prefs: [PreferencesModel]
 
     // MARK: - View Constances
     private enum Const {
@@ -34,17 +37,29 @@ struct AIChatView: View {
         ZStack {
             messagesGrid
             inputView
-            backButton
-                .frame(
-                    maxWidth: .infinity,
-                    maxHeight: .infinity,
-                    alignment: .topLeading
-                )
-                .padding(Const.backButtonPadding)
-                .ignoresSafeArea()
-                .onTapGesture {
-                    showExitAlert = true
-                }
+//            backButton
+//                .frame(
+//                    maxWidth: .infinity,
+//                    maxHeight: .infinity,
+//                    alignment: .topLeading
+//                )
+//                .padding(Const.backButtonPadding)
+//                .ignoresSafeArea()
+//                .onTapGesture {
+//                    showExitAlert = true
+//                }
+        }
+        .navigationTitle(
+            Text(prefs.first?.goal ?? "Ai Chat")
+        )
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigation) {
+                backButton
+                    .onTapGesture {
+                        showExitAlert = true
+                    }
+            }
         }
         .onAppear {
             presenter.sendMessage("Hello!")
@@ -154,13 +169,13 @@ struct AIChatView: View {
     private var backButton: some View {
         Image(systemName: "arrowshape.turn.up.left.fill")
             .font(.title3)
-            .foregroundStyle(.whiteBackground)
-            .padding()
-            .glass(
-                cornerRadius: 100,
-                fill: .orangePrimary,
-                opacity: 0.8
-            )
+            .foregroundStyle(.orangePrimary)
+//            .padding()
+//            .glass(
+//                cornerRadius: 100,
+//                fill: .orangePrimary,
+//                opacity: 0.8
+//            )
     }
 
     /// button to send message

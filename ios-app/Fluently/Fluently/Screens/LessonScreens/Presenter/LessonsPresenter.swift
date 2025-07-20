@@ -56,9 +56,11 @@ final class LessonsPresenter: ObservableObject {
         let descriptor = FetchDescriptor<PreferencesModel>()
 
         let preferences = try? modelContext.fetch(descriptor)
-
+        print("fetching")
+        print("preferences: \(preferences == nil)")
         if let preferences, let prefs = preferences.first {
             wordsPerLesson = prefs.wordPerDay
+            print(wordsPerLesson, prefs.wordPerDay)
         }
     }
 
@@ -78,7 +80,7 @@ final class LessonsPresenter: ObservableObject {
         )
 
         words = try context.fetch(descriptor)
-        currentEx = words[0].exercise!
+        currentEx = words.first?.exercise! ?? ExerciseModel(data: EmptyExerciseData(), type: .wordCard)
     }
 
     // MARK: - Navigation
@@ -177,7 +179,7 @@ final class LessonsPresenter: ObservableObject {
 
         currentExerciseNumber += 1
 
-        if learnedCount == wordsPerLesson {
+        if learnedCount == wordsPerLesson && currentExerciseNumber == wordsPerLesson {
             finishLesson()
         }
 

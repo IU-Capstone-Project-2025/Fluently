@@ -80,6 +80,18 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
     func getPrefs() {
         Task {
             do {
+
+                let descriptor = FetchDescriptor<PreferencesModel>()
+                let oldPrefs = try? modelContext?.fetch(descriptor)
+
+                if let oldPrefs {
+                    oldPrefs.forEach { pref in
+                        modelContext?.delete(pref)
+                    }
+                }
+
+                try modelContext?.save()
+
                 preferences = try await interactor.getPreferences()
                 if let prefs = preferences {
                     setupPrefs(prefs)
@@ -119,8 +131,6 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
     func signOut() {
         authViewModel.signOut()
         account.isLoggedIn = false
-
-        // TODO: - Think more abour this implementation
         router.popToRoot()
         router.navigateToLogin()
     }

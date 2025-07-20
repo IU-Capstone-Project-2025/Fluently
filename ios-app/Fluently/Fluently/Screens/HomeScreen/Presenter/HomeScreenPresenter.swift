@@ -70,6 +70,7 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         }
     }
 
+//    @MainActor
     func compare() {
         guard let modelContext else {
             return
@@ -86,16 +87,22 @@ final class HomeScreenPresenter: HomeScreenPresenting {
 
         Task {
             if localPreferences == nil {
-                preferences = try? await interactor.getPrefs()
+                preferences = try await interactor.getPrefs()
             } else {
                 preferences = localPreferences
             }
 
-            if let prefs = preferences, lesson.cards.count < prefs.wordPerDay * 2 {
+            guard let preferences else {
+                print("No valid preferences available")
+                return
+            }
+
+            if lesson.lesson.wordsPerLesson < preferences.wordPerDay{
+                print(lesson.lesson.wordsPerLesson,  preferences.wordPerDay)
                 deleteLesson()
                 try? await getLesson()
             } else {
-                print("No valid preferences available")
+                print("everthing ok")
             }
         }
     }
@@ -166,7 +173,7 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         let descriptor = FetchDescriptor<CardsModel>()
         
         do {
-           lesson = try modelContext?.fetch(descriptor).first
+           let lesson = try modelContext?.fetch(descriptor)
         } catch {
             print("SwiftData fetch failed: \(error)")
             return

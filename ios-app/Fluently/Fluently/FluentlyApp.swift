@@ -100,7 +100,7 @@ struct FluentlyApp: App {
                     CardsModel.self,
                     WordModel.self,
                     DayWord.self,
-                    PreferencesModel.self,
+                    PreferencesModel.self
                 ]
             )
         }
@@ -144,9 +144,31 @@ struct FluentlyApp: App {
                 } catch {
                     print("token saving error: \(error)")
                 }
+                getPreferences()
             } catch {
                 print("response receiving error: \(error)")
             }
+        }
+    }
+
+    private func getPreferences() {
+        let descriptor = FetchDescriptor<PreferencesModel>()
+        do {
+            let prefs: [PreferencesModel] = try modelContext.fetch(descriptor)
+            prefs.forEach { pref in
+                modelContext.delete(pref)
+            }
+            try modelContext.save()
+
+            Task {
+                let newPreferences = try? await apiService.getPreferences()
+                if let newPreferences {
+                    modelContext.insert(newPreferences)
+                }
+                try modelContext.save()
+            }
+        } catch {
+            print("Error while getting preferences: \(error)")
         }
     }
 }

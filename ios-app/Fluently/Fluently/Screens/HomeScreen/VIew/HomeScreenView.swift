@@ -17,8 +17,9 @@ struct HomeScreenView: View {
     var words: [WordModel] {
         let descriptor = FetchDescriptor<WordModel>(
             predicate: #Predicate {
-                $0.isInLesson == false &&
-                $0.isDayWord == false
+                $0.isInLesson == false
+//                ||
+//                $0.isDayWord == false
             },
 //            sortBy: [SortDescriptor(\.wordDate, order: .reverse)]
         )
@@ -48,15 +49,15 @@ struct HomeScreenView: View {
         .onAppear {
             presenter.modelContext = modelContext
             presenter.getDayWord()
-            presenter.compare()
-            print("appear")
             Task {
                 do {
                     try await presenter.getLesson()
+                    presenter.compare()
                 } catch {
                     print(error)
                 }
             }
+            presenter.compare()
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
