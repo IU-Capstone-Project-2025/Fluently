@@ -6,6 +6,7 @@ import (
 
 	"fluently/go-backend/internal/repository/models"
 
+	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -88,4 +89,60 @@ func DeleteWord(t *testing.T) {
 
 	_, err = wordRepo.GetByID(ctx, found.ID)
 	assert.Error(t, err) // Not Found
+}
+
+// TestGetRandomWordsWithTopic tests the GetRandomWordsWithTopic method
+func TestGetRandomWordsWithTopic(t *testing.T) {
+	ctx := context.Background()
+
+	// Create a test topic
+	topic := &models.Topic{
+		ID:    uuid.New(),
+		Title: "Test Topic",
+	}
+	err := topicRepo.Create(ctx, topic)
+	assert.NoError(t, err)
+
+	// Create test words with topic
+	word1 := &models.Word{
+		ID:           uuid.New(),
+		Word:         "apple",
+		CEFRLevel:    "A1",
+		PartOfSpeech: "noun",
+		Translation:  "яблоко",
+		Context:      "I ate an apple",
+		TopicID:      &topic.ID,
+	}
+	err = wordRepo.Create(ctx, word1)
+	assert.NoError(t, err)
+
+	word2 := &models.Word{
+		ID:           uuid.New(),
+		Word:         "book",
+		CEFRLevel:    "A1",
+		PartOfSpeech: "noun",
+		Translation:  "книга",
+		Context:      "I read a book",
+		TopicID:      &topic.ID,
+	}
+	err = wordRepo.Create(ctx, word2)
+	assert.NoError(t, err)
+
+	// Test GetRandomWordsWithTopic
+	words, err := wordRepo.GetRandomWordsWithTopic(ctx, 10)
+	assert.NoError(t, err)
+	assert.Len(t, words, 2)
+
+	// Verify the words are returned with topic information
+	wordMap := make(map[string]models.Word)
+	for _, word := range words {
+		wordMap[word.Word] = word
+	}
+
+	assert.Contains(t, wordMap, "apple")
+	assert.Contains(t, wordMap, "book")
+	assert.NotNil(t, wordMap["apple"].Topic)
+	assert.NotNil(t, wordMap["book"].Topic)
+	assert.Equal(t, "Test Topic", wordMap["apple"].Topic.Title)
+	assert.Equal(t, "Test Topic", wordMap["book"].Topic.Title)
 }

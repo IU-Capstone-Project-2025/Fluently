@@ -28,6 +28,9 @@ func TestCreateLearnedWord(t *testing.T) {
 	}
 	assert.NoError(t, userRepo.Create(context.Background(), &user))
 
+	// Set the test user for authentication
+	setTestUser(&user)
+
 	word := models.Word{
 		ID:   uuid.New(),
 		Word: "learn",
@@ -42,7 +45,7 @@ func TestCreateLearnedWord(t *testing.T) {
 		"confidence_score": 85,
 	}
 
-	e.POST("/users/" + user.ID.String() + "/learned-words").
+	e.POST("/api/v1/users/learned-words").
 		WithJSON(req).
 		Expect().
 		Status(http.StatusCreated)
@@ -58,6 +61,9 @@ func TestGetLearnedWord(t *testing.T) {
 	assert.NoError(t, userRepo.Create(context.Background(), &user))
 	assert.NoError(t, wordRepo.Create(context.Background(), &word))
 
+	// Set the test user for authentication
+	setTestUser(&user)
+
 	learned := models.LearnedWords{
 		UserID:           user.ID,
 		WordID:           word.ID,
@@ -67,7 +73,7 @@ func TestGetLearnedWord(t *testing.T) {
 	}
 	assert.NoError(t, learnedWordRepo.Create(context.Background(), &learned))
 
-	resp := e.GET("/users/" + user.ID.String() + "/learned-words/" + word.ID.String()).
+	resp := e.GET("/api/v1/users/learned-words/" + word.ID.String()).
 		Expect().
 		Status(http.StatusOK).
 		JSON().Object()
@@ -89,6 +95,9 @@ func TestUpdateLearnedWord(t *testing.T) {
 	assert.NoError(t, userRepo.Create(context.Background(), &user))
 	assert.NoError(t, wordRepo.Create(context.Background(), &word))
 
+	// Set the test user for authentication
+	setTestUser(&user)
+
 	learned := models.LearnedWords{
 		UserID:           user.ID,
 		WordID:           word.ID,
@@ -104,7 +113,7 @@ func TestUpdateLearnedWord(t *testing.T) {
 		"cnt_reviewed":     5,
 		"confidence_score": 99,
 	}
-	e.PUT("/users/" + user.ID.String() + "/learned-words/" + word.ID.String()).
+	e.PUT("/api/v1/users/learned-words/" + word.ID.String()).
 		WithJSON(body).
 		Expect().
 		Status(http.StatusOK)
@@ -125,6 +134,9 @@ func TestDeleteLearnedWord(t *testing.T) {
 	assert.NoError(t, userRepo.Create(context.Background(), &user))
 	assert.NoError(t, wordRepo.Create(context.Background(), &word))
 
+	// Set the test user for authentication
+	setTestUser(&user)
+
 	learned := models.LearnedWords{
 		UserID:           user.ID,
 		WordID:           word.ID,
@@ -134,7 +146,7 @@ func TestDeleteLearnedWord(t *testing.T) {
 	}
 	assert.NoError(t, learnedWordRepo.Create(context.Background(), &learned))
 
-	e.DELETE("/users/" + user.ID.String() + "/learned-words/" + word.ID.String()).
+	e.DELETE("/api/v1/users/learned-words/" + word.ID.String()).
 		Expect().
 		Status(http.StatusNoContent)
 

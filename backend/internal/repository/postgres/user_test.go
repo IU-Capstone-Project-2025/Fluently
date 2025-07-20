@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-// TestCreateAndGetUser
+// TestCreateAndGetUser tests the Create and Get methods for User
 func TestCreateAndGetUser(t *testing.T) {
 	ctx := context.Background()
 
@@ -19,7 +19,7 @@ func TestCreateAndGetUser(t *testing.T) {
 	user := &models.User{
 		ID:       id,
 		Name:     "Test User",
-		Email:    "test@example.com",
+		Email:    "test-create-get@example.com", // Use unique email
 		Role:     "user",
 		IsActive: true,
 	}

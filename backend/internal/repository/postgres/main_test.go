@@ -15,14 +15,15 @@ import (
 var (
 	db *gorm.DB
 
-	userRepo         *UserRepository
-	wordRepo         *WordRepository
-	topicRepo        *TopicRepository
-	sentenceRepo     *SentenceRepository
-	preferenceRepo   *PreferenceRepository
-	pickOptionRepo   *PickOptionRepository
-	learnedWordRepo  *LearnedWordRepository
-	refreshTokenRepo *RefreshTokenRepository
+	userRepo           *UserRepository
+	wordRepo           *WordRepository
+	topicRepo          *TopicRepository
+	sentenceRepo       *SentenceRepository
+	preferenceRepo     *PreferenceRepository
+	pickOptionRepo     *PickOptionRepository
+	learnedWordRepo    *LearnedWordRepository
+	notLearnedWordRepo *NotLearnedWordRepository
+	refreshTokenRepo   *RefreshTokenRepository
 )
 
 // Main function for testing postgres operations
@@ -47,6 +48,7 @@ func TestMain(m *testing.M) {
 		&models.Preference{},
 		&models.PickOption{},
 		&models.LearnedWords{},
+		&models.NotLearnedWords{},
 		&models.RefreshToken{},
 	)
 	if err != nil {
@@ -61,6 +63,7 @@ func TestMain(m *testing.M) {
 	preferenceRepo = NewPreferenceRepository(db)
 	pickOptionRepo = NewPickOptionRepository(db)
 	learnedWordRepo = NewLearnedWordRepository(db)
+	notLearnedWordRepo = NewNotLearnedWordRepository(db)
 	refreshTokenRepo = NewRefreshTokenRepository(db)
 
 	// Clear all tables before test
@@ -71,6 +74,7 @@ func TestMain(m *testing.M) {
 	db.Exec("TRUNCATE TABLE user_preferences RESTART IDENTITY CASCADE")
 	db.Exec("TRUNCATE TABLE pick_options RESTART IDENTITY CASCADE")
 	db.Exec("TRUNCATE TABLE learned_words RESTART IDENTITY CASCADE")
+	db.Exec("TRUNCATE TABLE not_learned_words RESTART IDENTITY CASCADE")
 	db.Exec("TRUNCATE TABLE refresh_tokens RESTART IDENTITY CASCADE")
 
 	// Run tests

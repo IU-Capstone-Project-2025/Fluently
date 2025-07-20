@@ -249,6 +249,9 @@ jobs:
           # Set test mode to help tests initialize their own data
           GO_ENV: test
           TEST_MODE: true
+                    
+          # JWT configuration for tests
+          JWT_SECRET: ${{ secrets.TEST_JWT_SECRET }}
         run: |
           echo "🧪 Running Go tests with coverage..."
           

@@ -1,16 +1,22 @@
 package handlers_test
 
 import (
+	"context"
+	"net/http"
 	"net/http/httptest"
+	"sync"
 	"testing"
 
 	"fluently/go-backend/internal/api/v1/handlers"
 	"fluently/go-backend/internal/api/v1/routes"
 	"fluently/go-backend/internal/config"
+	"fluently/go-backend/internal/middleware"
 	"fluently/go-backend/internal/repository/models"
 	pg "fluently/go-backend/internal/repository/postgres"
+	"fluently/go-backend/internal/utils"
 
 	"github.com/go-chi/chi/v5"
+	"github.com/google/uuid"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -27,6 +33,10 @@ var (
 	prefRepo        *pg.PreferenceRepository
 	pickOptionRepo  *pg.PickOptionRepository
 	learnedWordRepo *pg.LearnedWordRepository
+
+	// Global test user for authentication
+	testUser      *models.User
+	testUserMutex sync.RWMutex
 )
 
 // setupTest sets up the test server
@@ -88,15 +98,55 @@ func setupTest(t *testing.T) {
 
 	// Create router
 	r := chi.NewRouter()
-	routes.RegisterWordRoutes(r, wordHandler)
-	routes.RegisterUserRoutes(r, userHandler)
-	routes.RegisterTopicRoutes(r, topicHandler)
-	routes.RegisterSentenceRoutes(r, sentenceHandler)
-	routes.RegisterPreferencesRoutes(r, prefHandler)
-	routes.RegisterPickOptionRoutes(r, pickOptionHandler)
-	routes.RegisterLearnedWordRoutes(r, learnedWordHandler)
-	routes.RegisterProgressRoutes(r, progressHandler)
+
+	// Initialize JWT auth for tests
+	utils.InitJWTAuth()
+
+	// Add authentication middleware for protected routes
+	r.Route("/api/v1", func(r chi.Router) {
+		// For tests, we'll use a simplified auth middleware that doesn't require real JWT
+		r.Use(testAuthMiddleware)
+
+		// Protected API routes
+		routes.RegisterUserRoutes(r, userHandler)
+		routes.RegisterWordRoutes(r, wordHandler)
+		routes.RegisterTopicRoutes(r, topicHandler)
+		routes.RegisterSentenceRoutes(r, sentenceHandler)
+		routes.RegisterPreferencesRoutes(r, prefHandler)
+		routes.RegisterPickOptionRoutes(r, pickOptionHandler)
+		routes.RegisterLearnedWordRoutes(r, learnedWordHandler)
+		routes.RegisterProgressRoutes(r, progressHandler)
+	})
 
 	// Create test server
 	testServer = httptest.NewServer(r)
+}
+
+// setTestUser sets the user for the current test
+func setTestUser(user *models.User) {
+	testUserMutex.Lock()
+	defer testUserMutex.Unlock()
+	testUser = user
+}
+
+// testAuthMiddleware is a simplified authentication middleware for tests
+func testAuthMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		testUserMutex.RLock()
+		user := testUser
+		testUserMutex.RUnlock()
+
+		if user == nil {
+			// Create a default test user if none is set
+			user = &models.User{
+				ID:    uuid.New(),
+				Email: "test@example.com",
+				Role:  "user",
+			}
+		}
+
+		// Add user to context
+		ctx := context.WithValue(r.Context(), middleware.UserContextKey, user)
+		next.ServeHTTP(w, r.WithContext(ctx))
+	})
 }

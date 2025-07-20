@@ -218,14 +218,23 @@ func (h *PreferenceHandler) DeletePreference(w http.ResponseWriter, r *http.Requ
 		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
 	}()
 
-	userId, err := utils.ParseUUIDParam(r, "user_id")
+	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
 		statusCode = 400
-		http.Error(w, "invalid user_id", http.StatusBadRequest)
+		http.Error(w, "unauthorized", http.StatusUnauthorized)
 		return
 	}
 
-	if err := h.Repo.Delete(r.Context(), userId); err != nil {
+	// First get the preference to get its ID
+	pref, err := h.Repo.GetByUserID(r.Context(), user.ID)
+	if err != nil {
+		statusCode = 404
+		http.Error(w, "preference not found", http.StatusNotFound)
+		return
+	}
+
+	// Then delete by preference ID
+	if err := h.Repo.Delete(r.Context(), pref.ID); err != nil {
 		statusCode = 500
 		http.Error(w, "failed to delete preference", http.StatusInternalServerError)
 		return

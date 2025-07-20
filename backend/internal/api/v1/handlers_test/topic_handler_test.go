@@ -16,18 +16,15 @@ import (
 func TestCreateTopic(t *testing.T) {
 	setupTest(t)
 
-	e := httpexpect.WithConfig(httpexpect.Config{
-		BaseURL:  testServer.URL,
-		Client:   testServer.Client(),
-		Reporter: httpexpect.NewAssertReporter(t),
-	})
+	e := httpexpect.Default(t, testServer.URL)
 
-	reqBody := map[string]interface{}{
-		"title": "New Topic",
+	req := map[string]interface{}{
+		"title":     "New Topic",
+		"parent_id": nil,
 	}
 
-	resp := e.POST("/topics/").
-		WithJSON(reqBody).
+	resp := e.POST("/api/v1/topics").
+		WithJSON(req).
 		Expect().
 		Status(http.StatusCreated).
 		JSON().Object()
@@ -49,7 +46,7 @@ func TestGetTopic(t *testing.T) {
 	err := topicRepo.Create(context.Background(), &topic)
 	assert.NoError(t, err)
 
-	resp := e.GET("/topics/" + topic.ID.String()).
+	resp := e.GET("/api/v1/topics/" + topic.ID.String()).
 		Expect().
 		Status(http.StatusOK).
 		JSON().Object()
@@ -66,7 +63,7 @@ func TestUpdateTopic(t *testing.T) {
 
 	topic := models.Topic{
 		ID:    uuid.New(),
-		Title: "Old Title",
+		Title: "Original Title",
 	}
 	err := topicRepo.Create(context.Background(), &topic)
 	assert.NoError(t, err)
@@ -75,7 +72,7 @@ func TestUpdateTopic(t *testing.T) {
 		"title": "Updated Title",
 	}
 
-	resp := e.PUT("/topics/" + topic.ID.String()).
+	resp := e.PUT("/api/v1/topics/" + topic.ID.String()).
 		WithJSON(updateBody).
 		Expect().
 		Status(http.StatusOK).
@@ -93,26 +90,27 @@ func TestDeleteTopic(t *testing.T) {
 
 	topic := models.Topic{
 		ID:    uuid.New(),
-		Title: "Topic to delete",
+		Title: "Delete Me",
 	}
 	err := topicRepo.Create(context.Background(), &topic)
 	assert.NoError(t, err)
 
-	e.DELETE("/topics/" + topic.ID.String()).
+	e.DELETE("/api/v1/topics/" + topic.ID.String()).
 		Expect().
 		Status(http.StatusNoContent)
 
-	e.GET("/topics/" + topic.ID.String()).
+	e.GET("/api/v1/topics/" + topic.ID.String()).
 		Expect().
 		Status(http.StatusNotFound)
 }
 
-// TestGetMainTopic tests the retrieval of the main topic
+// TestGetMainTopic tests the retrieval of a main topic
 func TestGetMainTopic(t *testing.T) {
 	setupTest(t)
 
 	e := httpexpect.Default(t, testServer.URL)
 
+	// Create a root topic
 	rootTopic := models.Topic{
 		ID:    uuid.New(),
 		Title: "Root Topic",
@@ -120,6 +118,7 @@ func TestGetMainTopic(t *testing.T) {
 	err := topicRepo.Create(context.Background(), &rootTopic)
 	assert.NoError(t, err)
 
+	// Create a child topic
 	childTopic := models.Topic{
 		ID:       uuid.New(),
 		Title:    "Child Topic",
@@ -128,7 +127,7 @@ func TestGetMainTopic(t *testing.T) {
 	err = topicRepo.Create(context.Background(), &childTopic)
 	assert.NoError(t, err)
 
-	resp := e.GET("/topics/root-topic/" + childTopic.ID.String()).
+	resp := e.GET("/api/v1/topics/root-topic/" + childTopic.ID.String()).
 		Expect().
 		Status(http.StatusOK).
 		JSON().Object()
@@ -137,12 +136,13 @@ func TestGetMainTopic(t *testing.T) {
 	assert.Equal(t, "Root Topic", resp.Value("title").String().Raw())
 }
 
-// TestGetPathToMainTopic tests the retrieval of the path to the main topic
+// TestGetPathToMainTopic tests the retrieval of path to main topic
 func TestGetPathToMainTopic(t *testing.T) {
 	setupTest(t)
 
 	e := httpexpect.Default(t, testServer.URL)
 
+	// Create a root topic
 	rootTopic := models.Topic{
 		ID:    uuid.New(),
 		Title: "Root Topic",
@@ -150,6 +150,7 @@ func TestGetPathToMainTopic(t *testing.T) {
 	err := topicRepo.Create(context.Background(), &rootTopic)
 	assert.NoError(t, err)
 
+	// Create a child topic
 	childTopic := models.Topic{
 		ID:       uuid.New(),
 		Title:    "Child Topic",
@@ -158,13 +159,20 @@ func TestGetPathToMainTopic(t *testing.T) {
 	err = topicRepo.Create(context.Background(), &childTopic)
 	assert.NoError(t, err)
 
-	resp := e.GET("/topics/path-to-root/" + childTopic.ID.String()).
+	resp := e.GET("/api/v1/topics/path-to-root/" + childTopic.ID.String()).
 		Expect().
 		Status(http.StatusOK).
 		JSON().Object()
 
-	topics := resp.Value("topics").Array()
+	// The response should have a "topics" field containing an array
+	topicsArray := resp.Value("topics").Array()
 
-	assert.Equal(t, childTopic.ID.String(), topics.Value(0).String().Raw())
-	assert.Equal(t, rootTopic.ID.String(), topics.Value(1).String().Raw())
+	// Should have 2 topics in the path: child and root
+	assert.Equal(t, 2, int(topicsArray.Length().Raw()))
+
+	// First should be the child topic ID
+	assert.Equal(t, childTopic.ID.String(), topicsArray.Value(0).String().Raw())
+
+	// Second should be the root topic ID
+	assert.Equal(t, rootTopic.ID.String(), topicsArray.Value(1).String().Raw())
 }

@@ -28,7 +28,7 @@ func TestCreateUser(t *testing.T) {
 		"is_active":     true,
 	}
 
-	resp := e.POST("/users").
+	resp := e.POST("/api/v1/users").
 		WithJSON(req).
 		Expect().
 		Status(http.StatusCreated).
@@ -61,7 +61,7 @@ func TestGetUser(t *testing.T) {
 	err := userRepo.Create(context.Background(), &user)
 	assert.NoError(t, err)
 
-	resp := e.GET("/users/" + user.ID.String()).
+	resp := e.GET("/api/v1/users/" + user.ID.String()).
 		Expect().
 		Status(http.StatusOK).
 		JSON().Object()
@@ -78,10 +78,10 @@ func TestUpdateUser(t *testing.T) {
 
 	user := models.User{
 		ID:           uuid.New(),
-		Name:         "Initial",
-		Email:        "init@example.com",
+		Name:         "Original",
+		Email:        "original@example.com",
 		Role:         "user",
-		IsActive:     false,
+		IsActive:     true,
 		Provider:     "local",
 		GoogleID:     "google789",
 		PasswordHash: "hashed",
@@ -90,16 +90,13 @@ func TestUpdateUser(t *testing.T) {
 	assert.NoError(t, err)
 
 	updateBody := map[string]interface{}{
-		"name":          "Updated Name",
-		"email":         "updated@example.com",
-		"provider":      "google",
-		"google_id":     "google999",
-		"password_hash": "newhash",
-		"role":          "admin",
-		"is_active":     true,
+		"name":      "Updated Name",
+		"email":     "updated@example.com",
+		"role":      "admin",
+		"is_active": true,
 	}
 
-	resp := e.PUT("/users/" + user.ID.String()).
+	resp := e.PUT("/api/v1/users/" + user.ID.String()).
 		WithJSON(updateBody).
 		Expect().
 		Status(http.StatusOK).
@@ -118,22 +115,22 @@ func TestDeleteUser(t *testing.T) {
 
 	user := models.User{
 		ID:           uuid.New(),
-		Name:         "DeleteMe",
-		Email:        "deleteme@example.com",
+		Name:         "Delete Me",
+		Email:        "delete@example.com",
 		Role:         "user",
 		IsActive:     true,
 		Provider:     "local",
-		GoogleID:     "gid",
-		PasswordHash: "pass",
+		GoogleID:     "google999",
+		PasswordHash: "hashed",
 	}
 	err := userRepo.Create(context.Background(), &user)
 	assert.NoError(t, err)
 
-	e.DELETE("/users/" + user.ID.String()).
+	e.DELETE("/api/v1/users/" + user.ID.String()).
 		Expect().
 		Status(http.StatusNoContent)
 
-	e.GET("/users/" + user.ID.String()).
+	e.GET("/api/v1/users/" + user.ID.String()).
 		Expect().
 		Status(http.StatusNotFound)
 }
