@@ -20,7 +20,7 @@ func TestCreateUser(t *testing.T) {
 
 	req := map[string]interface{}{
 		"name":          "John Doe",
-		"email":         "john@example.com",
+		"email":         "john-" + uuid.New().String()[:8] + "@example.com",
 		"provider":      "local",
 		"google_id":     "google123",
 		"password_hash": "secret",
@@ -51,7 +51,7 @@ func TestGetUser(t *testing.T) {
 	user := models.User{
 		ID:           uuid.New(),
 		Name:         "Jane",
-		Email:        "jane@example.com",
+		Email:        "jane-" + uuid.New().String()[:8] + "@example.com",
 		Role:         "admin",
 		IsActive:     true,
 		Provider:     "local",
@@ -79,7 +79,7 @@ func TestUpdateUser(t *testing.T) {
 	user := models.User{
 		ID:           uuid.New(),
 		Name:         "Original",
-		Email:        "original@example.com",
+		Email:        "original-" + uuid.New().String()[:8] + "@example.com",
 		Role:         "user",
 		IsActive:     true,
 		Provider:     "local",
@@ -91,7 +91,7 @@ func TestUpdateUser(t *testing.T) {
 
 	updateBody := map[string]interface{}{
 		"name":      "Updated Name",
-		"email":     "updated@example.com",
+		"email":     "updated-" + uuid.New().String()[:8] + "@example.com",
 		"role":      "admin",
 		"is_active": true,
 	}
@@ -116,7 +116,7 @@ func TestDeleteUser(t *testing.T) {
 	user := models.User{
 		ID:           uuid.New(),
 		Name:         "Delete Me",
-		Email:        "delete@example.com",
+		Email:        "delete-" + uuid.New().String()[:8] + "@example.com",
 		Role:         "user",
 		IsActive:     true,
 		Provider:     "local",

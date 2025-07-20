@@ -23,7 +23,7 @@ func TestCreateUserPreferences(t *testing.T) {
 	// Create the user first to avoid foreign key constraint violation
 	user := models.User{
 		ID:           userID,
-		Email:        "preferences@test.com",
+		Email:        "preferences-" + uuid.New().String()[:8] + "@test.com",
 		Provider:     "local",
 		PasswordHash: "hashed",
 		Role:         "user",
@@ -70,7 +70,7 @@ func TestDeletePreference(t *testing.T) {
 	// Create the user first to avoid foreign key constraint violation
 	user := models.User{
 		ID:           userID,
-		Email:        "delete-pref@test.com",
+		Email:        "delete-pref-" + uuid.New().String()[:8] + "@test.com",
 		Provider:     "local",
 		PasswordHash: "hashed",
 		Role:         "user",

@@ -20,7 +20,7 @@ func TestCreateLearnedWord(t *testing.T) {
 
 	user := models.User{
 		ID:           uuid.New(),
-		Email:        "test@user.com",
+		Email:        "test-" + uuid.New().String()[:8] + "@user.com",
 		Provider:     "local",
 		PasswordHash: "hashed",
 		Role:         "user",
@@ -56,7 +56,7 @@ func TestGetLearnedWord(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
 
-	user := models.User{ID: uuid.New(), Email: "get@test.com", Provider: "local", PasswordHash: "x", Role: "user", IsActive: true}
+	user := models.User{ID: uuid.New(), Email: "get-" + uuid.New().String()[:8] + "@test.com", Provider: "local", PasswordHash: "x", Role: "user", IsActive: true}
 	word := models.Word{ID: uuid.New(), Word: "testword"}
 	assert.NoError(t, userRepo.Create(context.Background(), &user))
 	assert.NoError(t, wordRepo.Create(context.Background(), &word))
@@ -90,7 +90,7 @@ func TestUpdateLearnedWord(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
 
-	user := models.User{ID: uuid.New(), Email: "update@test.com", Provider: "local", PasswordHash: "x", Role: "user", IsActive: true}
+	user := models.User{ID: uuid.New(), Email: "update-" + uuid.New().String()[:8] + "@test.com", Provider: "local", PasswordHash: "x", Role: "user", IsActive: true}
 	word := models.Word{ID: uuid.New(), Word: "updateword"}
 	assert.NoError(t, userRepo.Create(context.Background(), &user))
 	assert.NoError(t, wordRepo.Create(context.Background(), &word))
@@ -129,7 +129,7 @@ func TestDeleteLearnedWord(t *testing.T) {
 	setupTest(t)
 	e := httpexpect.Default(t, testServer.URL)
 
-	user := models.User{ID: uuid.New(), Email: "delete@test.com", Provider: "local", PasswordHash: "x", Role: "user", IsActive: true}
+	user := models.User{ID: uuid.New(), Email: "delete-" + uuid.New().String()[:8] + "@test.com", Provider: "local", PasswordHash: "x", Role: "user", IsActive: true}
 	word := models.Word{ID: uuid.New(), Word: "deleteword"}
 	assert.NoError(t, userRepo.Create(context.Background(), &user))
 	assert.NoError(t, wordRepo.Create(context.Background(), &word))

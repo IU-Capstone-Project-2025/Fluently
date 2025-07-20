@@ -78,13 +78,23 @@ func setupTest(t *testing.T) {
 	learnedWordRepo = pg.NewLearnedWordRepository(db)
 
 	// Clear all tables in proper dependency order (dependent tables first)
-	db.Exec("TRUNCATE TABLE learned_words RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE pick_options RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE user_preferences RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE sentences RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE words RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE topics RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE users RESTART IDENTITY CASCADE")
+	// Use DELETE instead of TRUNCATE to avoid deadlocks in concurrent tests
+	db.Exec("DELETE FROM learned_words")
+	db.Exec("DELETE FROM pick_options")
+	db.Exec("DELETE FROM user_preferences")
+	db.Exec("DELETE FROM sentences")
+	db.Exec("DELETE FROM words")
+	db.Exec("DELETE FROM topics")
+	db.Exec("DELETE FROM users")
+
+	// Reset sequences after DELETE operations
+	db.Exec("ALTER SEQUENCE IF EXISTS learned_words_id_seq RESTART WITH 1")
+	db.Exec("ALTER SEQUENCE IF EXISTS pick_options_id_seq RESTART WITH 1")
+	db.Exec("ALTER SEQUENCE IF EXISTS user_preferences_id_seq RESTART WITH 1")
+	db.Exec("ALTER SEQUENCE IF EXISTS sentences_id_seq RESTART WITH 1")
+	db.Exec("ALTER SEQUENCE IF EXISTS words_id_seq RESTART WITH 1")
+	db.Exec("ALTER SEQUENCE IF EXISTS topics_id_seq RESTART WITH 1")
+	db.Exec("ALTER SEQUENCE IF EXISTS users_id_seq RESTART WITH 1")
 
 	// Create handlers
 	wordHandler := &handlers.WordHandler{Repo: pg.NewWordRepository(db)}

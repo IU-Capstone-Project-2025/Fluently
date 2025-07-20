@@ -261,8 +261,9 @@ jobs:
             sudo apt-get install -y postgresql-client
           fi
           
-          # Run tests with verbose output to see what's happening
-          go test ./... -v -coverprofile=coverage.out -covermode=atomic || {
+          # Run tests with proper coverage collection including external test packages
+          # Use -coverpkg flag to include all packages in coverage
+          go test ./... -v -coverprofile=coverage.out -covermode=atomic -coverpkg=./... || {
             echo "❌ Tests failed, showing database state for debugging..."
             echo "🔍 Checking if database is accessible..."
             PGPASSWORD=test_password psql -h localhost -p 5433 -U test_user -d test_fluently_db -c "SELECT version();" || echo "❌ Database connection failed"
