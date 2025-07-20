@@ -23,7 +23,7 @@ final class LessonsPresenter: ObservableObject {
     @Published private(set) var currentExType: ExerciseModelType
 
     @Published private(set) var learnedCount = 0
-    private(set) var wordsPerLesson = 10
+    @Published private(set) var wordsPerLesson = 10
 
     var statistic: [ExerciseSolution: [ExerciseModel]] = [:]
     var wordsProgress: [ExerciseSolution: [WordModel]] = [:]
@@ -46,6 +46,20 @@ final class LessonsPresenter: ObservableObject {
         statistic[.uncorrect] = []
         wordsProgress[.correct] = []
         wordsProgress[.uncorrect] = []
+    }
+
+    func wordsPerLessonLoad() {
+        guard let modelContext else {
+            return
+        }
+
+        let descriptor = FetchDescriptor<PreferencesModel>()
+
+        let preferences = try? modelContext.fetch(descriptor)
+
+        if let preferences, let prefs = preferences.first {
+            wordsPerLesson = prefs.wordPerDay
+        }
     }
 
     func fetchWords() throws {

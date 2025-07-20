@@ -48,6 +48,8 @@ struct HomeScreenView: View {
         .onAppear {
             presenter.modelContext = modelContext
             presenter.getDayWord()
+            presenter.compare()
+            print("appear")
             Task {
                 do {
                     try await presenter.getLesson()
@@ -142,6 +144,7 @@ struct HomeScreenView: View {
                         .fill(.blackFluently)
                 )
                 .padding(.horizontal, Const.horizontalPadding * 3)
+                .id(presenter.lesson?.id)
         }
         .disabled(presenter.lesson == nil)
     }

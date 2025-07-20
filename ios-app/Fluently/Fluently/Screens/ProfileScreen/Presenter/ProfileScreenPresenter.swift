@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 protocol ProfileScreenPresenting: ObservableObject {
 
@@ -27,6 +28,8 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
     @Published var notificationAt: Date = Date.now
     @Published var wordsPerDay: Int = 10
     @Published var goal: String = ""
+
+    var modelContext: ModelContext?
 
     init(
         router: ProfileScreenRouter,
@@ -79,11 +82,12 @@ final class ProfileScreenPresenter: ProfileScreenPresenting {
             do {
                 preferences = try await interactor.getPreferences()
                 if let prefs = preferences {
-                    dailyWord = prefs.dailyWord
-                    notifications = prefs.notifications
-                    notificationAt = prefs.notificationAt
                     setupPrefs(prefs)
+                    modelContext?.insert(prefs)
+
+                    try modelContext?.save()
                 }
+
             } catch {
                 print("Error while fethcing preferences: \(error.localizedDescription)")
             }

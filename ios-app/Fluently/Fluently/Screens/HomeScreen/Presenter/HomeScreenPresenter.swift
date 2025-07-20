@@ -70,6 +70,36 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         }
     }
 
+    func compare() {
+        guard let modelContext else {
+            return
+        }
+
+        guard let lesson else {
+            return
+        }
+
+        let descriptor = FetchDescriptor<PreferencesModel>()
+        let localPreferences = try? modelContext.fetch(descriptor).first
+
+        var preferences: PreferencesModel?
+
+        Task {
+            if localPreferences == nil {
+                preferences = try? await interactor.getPrefs()
+            } else {
+                preferences = localPreferences
+            }
+
+            if let prefs = preferences, lesson.cards.count < prefs.wordPerDay * 2 {
+                deleteLesson()
+                try? await getLesson()
+            } else {
+                print("No valid preferences available")
+            }
+        }
+    }
+
     func saveWordOfTheDay() async {
         guard let modelContext else {
             return
@@ -101,7 +131,6 @@ final class HomeScreenPresenter: HomeScreenPresenting {
 
     @MainActor
     func getLesson() async throws {
-
         if let existingLesson = findLesson(context: modelContext) {
             self.lesson = existingLesson
             return
@@ -130,6 +159,23 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         } catch {
             print("SwiftData fetch failed: \(error)")
             return nil
+        }
+    }
+
+    func deleteLesson() {
+        let descriptor = FetchDescriptor<CardsModel>()
+        
+        do {
+           lesson = try modelContext?.fetch(descriptor).first
+        } catch {
+            print("SwiftData fetch failed: \(error)")
+            return
+        }
+
+        if lesson != nil {
+            modelContext?.delete(lesson!)
+            lesson = nil
+            print("lesson deleted")
         }
     }
 

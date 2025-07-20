@@ -25,6 +25,10 @@ final class HomeScreenInteractor {
         }
     }
 
+    func getPrefs() async throws -> PreferencesModel {
+        return try await api.getPreferences()
+    }
+
     func getDayWord() async throws -> WordModel {
         return try await api.getDayWord()
     }

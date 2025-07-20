@@ -14,6 +14,8 @@ struct ProfileScrenView: View {
 
     @Query var prefs: [PreferencesModel]
 
+    @Environment(\.modelContext) var modelContext
+
     // MARK: - View Constances
     private enum Const {
         static var avatarSize = CGFloat(120)
@@ -27,6 +29,7 @@ struct ProfileScrenView: View {
             infoGrid
         }
         .onAppear {
+            presenter.modelContext = modelContext
             presenter.getPrefs()
 //            presenter.setupPrefs(prefs.first)
         }
