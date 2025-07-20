@@ -13,6 +13,7 @@ struct HomeScreenView: View {
     // MARK: - Key Objects
     @StateObject var presenter: HomeScreenPresenter
     @Environment(\.modelContext) var modelContext
+    @Environment(\.isNetworkConnected) var isNetworkConnected
 
     var words: [WordModel] {
         let descriptor = FetchDescriptor<WordModel>(
@@ -60,6 +61,14 @@ struct HomeScreenView: View {
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
+
+        .sheet(isPresented: .constant(!(isNetworkConnected ?? true))) {
+            NetworkSheetView()
+                .presentationDetents([.medium])
+                .presentationBackground(.clear)
+                .presentationBackgroundInteraction(.disabled)
+                .interactiveDismissDisabled()
+        }
 
         .fullScreenCover(item: $openedScreen) { screenType in
             switch screenType {

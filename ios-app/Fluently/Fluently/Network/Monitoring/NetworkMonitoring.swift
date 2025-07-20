@@ -9,13 +9,13 @@ import SwiftUI
 import Network
 
 extension EnvironmentValues {
-    @Entry var isConnected: Bool?
+    @Entry var isNetworkConnected: Bool?
     @Entry var connectionType: NWInterface.InterfaceType?
 }
 
 class NetworkMonitoring: ObservableObject {
 
-    @Published var isConnected: Bool?
+    @Published var isNetworkConnected: Bool?
     @Published var connectionType: NWInterface.InterfaceType?
 
     private var queue = DispatchQueue(label: "Monitoring")
@@ -28,7 +28,7 @@ class NetworkMonitoring: ObservableObject {
     private func startMonitoring() {
         monitor.pathUpdateHandler = { path in
             Task { @MainActor in
-                self.isConnected = path.status == .satisfied
+                self.isNetworkConnected = path.status == .satisfied
 
                 let types: [NWInterface.InterfaceType] = [.wifi, .cellular, .loopback, .wiredEthernet]
                 if let type = types.first(where: { path.usesInterfaceType($0) }) {

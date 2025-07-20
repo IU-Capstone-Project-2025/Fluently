@@ -16,6 +16,8 @@ struct FluentlyApp: App {
     @StateObject private var authViewModel = GoogleAuthViewModel()
     @StateObject private var router = AppRouter()
 
+    @StateObject private var networkMonitoring = NetworkMonitoring()
+
     private var apiService = APIService()
 
     @Environment(\.modelContext) var modelContext
@@ -100,6 +102,10 @@ struct FluentlyApp: App {
             }
             .environmentObject(account)
             .environmentObject(router)
+
+            .environment(\.isNetworkConnected, networkMonitoring.isNetworkConnected)
+            .environment(\.connectionType, networkMonitoring.connectionType)
+
             .modelContainer(
                 for: [
                     CardsModel.self,
