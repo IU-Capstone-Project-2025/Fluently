@@ -299,7 +299,7 @@ fun HomeScreenContent(
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(text = uiState.inProgressWordsNumber.toString(), fontSize = 32.sp)
-                        Text(text = stringResource(R.string.in_progress), fontSize = 12.sp)
+                        Text(text = stringResource(R.string.in_progress_), fontSize = 12.sp)
                     }
                 }
                 Box(

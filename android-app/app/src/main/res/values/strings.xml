@@ -21,7 +21,7 @@
     <string name="study">Learn</string>
     <string name="studying">Studying!</string>
     <string name="learned">Studied</string>
-    <string name="in_progress">In Progress</string>
+    <string name="in_progress_">In Progress</string>
     <string name="error_home">Error :(</string>
     <string name="continue_lesson">Continue Lesson</string>
     <string name="loading_lesson">Loading Lesson…</string>
@@ -39,8 +39,8 @@
     <string name="know">KNOWN WORD</string>
     <string name="study_capitalized">STUDY</string>
     <string name="examples">Examples</string>
-    <string name="Message">Сообщение</string>
-    <string name="Examples">Примеры</string>
+    <string name="Message">Message</string>
+    <string name="Examples">Examples</string>
     <string name="loading">Loading</string>
     <string name="retry">Retry</string>
     <string name="something_went_wrong">Something went wrong</string>
