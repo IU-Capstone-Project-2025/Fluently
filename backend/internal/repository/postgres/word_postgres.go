@@ -75,7 +75,7 @@ func (r *WordRepository) GetRandomWordsByCEFRLevel(ctx context.Context, cefrLeve
 	if err != nil {
 		return nil, err
 	}
-	
+
 	return words, nil
 }
 
@@ -110,4 +110,20 @@ func (r *WordRepository) Update(ctx context.Context, word *models.Word) error {
 // Delete deletes a word
 func (r *WordRepository) Delete(ctx context.Context, id uuid.UUID) error {
 	return r.db.WithContext(ctx).Delete(&models.Word{}, "id = ?", id).Error
+}
+
+// GetRandomWordsWithTopic returns random words with topic information for topic/subtopic extraction
+func (r *WordRepository) GetRandomWordsWithTopic(ctx context.Context, limit int) ([]models.Word, error) {
+	var words []models.Word
+	err := r.db.WithContext(ctx).
+		Preload("Topic").
+		Order("RANDOM()").
+		Limit(limit).
+		Find(&words).Error
+
+	if err != nil {
+		return nil, err
+	}
+
+	return words, err
 }
