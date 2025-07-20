@@ -67,10 +67,9 @@ interface LessonRepository {
      */
     suspend fun moveToNextComponent()
 
-    /**
-     * Once the user finishes the lesson, send the progress to the api.
-     */
-    suspend fun finishLesson()
+    suspend fun dropLesson()
+
+    suspend fun sendCurrentProgress()
 }
 
 const val PREFERRED_NUMBER_OF_WORDS = 10
@@ -176,6 +175,7 @@ class DefaultLessonRepository @Inject constructor(
         val updatedLessonComponents: List<LessonComponent> = buildList {
             add(generateOnboardingComponent(lesson.components))
             addAll(lesson.components)
+            add(Decoration.LearningPartComplete())
             add(
                 Dialog(
                     messages = emptyList(),
@@ -352,7 +352,7 @@ class DefaultLessonRepository @Inject constructor(
 
     }
 
-    override suspend fun finishLesson() {
+    override suspend fun sendCurrentProgress() {
         // Consider only words that HAS been answered
         val progressMap = mutableMapOf<String, SentWordProgress>() // (word_id; progress)
         ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
@@ -399,8 +399,11 @@ class DefaultLessonRepository @Inject constructor(
             )
         )
         Timber.v("Send to the fluently api data source")
+    }
 
+    override suspend fun dropLesson() {
         ongoingLessonDataStore.dropOngoingLesson()
         Timber.d("Drop the ongoing lesson")
     }
+
 }

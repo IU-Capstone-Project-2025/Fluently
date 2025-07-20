@@ -40,6 +40,7 @@ class HomeScreenViewModel @Inject constructor(
                 safeLaunch {
                     val preferences = userPreferencesRepository.getRemoteUserPreferences()
                     userPreferencesRepository.updateCachedUserPreferences(preferences)
+                    Timber.d("HomeScreen additional preference sync")
                 }
 
                 safeLaunch {

@@ -18,6 +18,7 @@ import ru.fluentlyapp.fluently.network.model.Author
 import ru.fluentlyapp.fluently.network.model.Chat
 import ru.fluentlyapp.fluently.network.model.Message
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.FinishDecorationObserver
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.LearningPartCompleteObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.OnboardingDecorationObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.ChooseTranslationObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.exercises.DialogObserver
@@ -137,11 +138,20 @@ class LessonFlowViewModel @Inject constructor(
         override fun onFinish() {
             viewModelScope.launch {
                 try {
-                    lessonRepository.finishLesson()
+                    lessonRepository.dropLesson()
                     _commandsChannel.send(LessonFlowCommand.UserFinishesLesson)
                 } catch (ex: Exception) {
                     Timber.e(ex)
                 }
+            }
+        }
+    }
+
+    val learningPartCompleteObserver = object : LearningPartCompleteObserver() {
+        override fun onMoveNext() {
+            viewModelScope.safeLaunch {
+                lessonRepository.sendCurrentProgress()
+                lessonRepository.moveToNextComponent()
             }
         }
     }

@@ -23,4 +23,7 @@ object Destination {
 
     @Serializable
     object OnboardingScreen
+
+    @Serializable
+    object SettingsScreen
 }

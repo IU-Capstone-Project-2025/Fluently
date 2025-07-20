@@ -57,9 +57,15 @@ fun SettingsScreen(
         modifier = modifier,
         uiState = uiState,
         onBackClick = onBackClick,
-        onUpdateUserPreferences = {},
-        onSubmitUserPreferences = {},
-        onUserLoggedOut = {}
+        onUpdateUserPreferences = {
+            settingsScreenViewModel.updateUserPreferences(it)
+        },
+        onSubmitUserPreferences = {
+            settingsScreenViewModel.uploadUserPreferences()
+        },
+        onUserLoggedOut = {
+            settingsScreenViewModel.logout()
+        }
     )
     LaunchedEffect(onUserLoggedOut) {
         withContext(Dispatchers.Main.immediate) {

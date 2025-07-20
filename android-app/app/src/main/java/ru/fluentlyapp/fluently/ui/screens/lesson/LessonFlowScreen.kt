@@ -58,7 +58,8 @@ fun LessonFlowScreen(
             inputWordObserver = lessonFlowViewModel.inputWordObserver,
             onboardingDecorationObserver = lessonFlowViewModel.onboardingDecorationObserver,
             finishDecorationObserver = lessonFlowViewModel.finishDecorationObserver,
-            dialogObserver = lessonFlowViewModel.dialogObserver
+            dialogObserver = lessonFlowViewModel.dialogObserver,
+            learningPartCompleteObserver = lessonFlowViewModel.learningPartCompleteObserver
         )
     }
 }

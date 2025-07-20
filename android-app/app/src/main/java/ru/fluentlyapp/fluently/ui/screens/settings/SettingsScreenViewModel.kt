@@ -38,6 +38,11 @@ class SettingsScreenViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             safeLaunch {
+                val remotePreferences = userPreferencesRepository.getRemoteUserPreferences()
+                userPreferencesRepository.updateCachedUserPreferences(remotePreferences)
+            }
+
+            safeLaunch {
                 _uiState.update {
                     it.copy(
                         availableTopics = topicRepository.getAvailableTopic()
@@ -59,15 +64,17 @@ class SettingsScreenViewModel @Inject constructor(
     }
 
     fun logout() {
-        viewModelScope.launch {
+        viewModelScope.safeLaunch {
             authManager.deleteServerToken()
             _commands.send(SettingScreenCommand.LoginCredentialsRemovedCommand)
         }
     }
 
     fun updateUserPreferences(preferences: UserPreferences) {
-        viewModelScope.safeLaunch {
-            userPreferencesRepository.updateCachedUserPreferences(preferences)
+        _uiState.update {
+            it.copy(
+                userPreferences = preferences
+            )
         }
     }
 

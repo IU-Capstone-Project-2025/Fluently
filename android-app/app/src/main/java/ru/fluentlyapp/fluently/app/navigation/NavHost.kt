@@ -1,6 +1,7 @@
 package ru.fluentlyapp.fluently.app.navigation
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -13,6 +14,7 @@ import ru.fluentlyapp.fluently.ui.screens.launch.LaunchScreen
 import ru.fluentlyapp.fluently.ui.screens.lesson.LessonFlowScreen
 import ru.fluentlyapp.fluently.ui.screens.login.LoginScreen
 import ru.fluentlyapp.fluently.ui.screens.onboarding.OnboardingScreen
+import ru.fluentlyapp.fluently.ui.screens.settings.SettingsScreen
 import ru.fluentlyapp.fluently.ui.screens.wordsprogress.WordsProgressScreen
 
 @Composable
@@ -76,6 +78,9 @@ fun FluentlyNavHost(
                     navHostController.navigate(
                         Destination.WordsProgress(isLearning = true)
                     )
+                },
+                onNavigateToSettings = {
+                    navHostController.navigate(Destination.SettingsScreen)
                 }
             )
         }
@@ -126,6 +131,25 @@ fun FluentlyNavHost(
                         }
                     }
                 },
+            )
+        }
+
+        composable<Destination.SettingsScreen> {
+            SettingsScreen(
+                modifier = Modifier.fillMaxSize(),
+                onBackClick = {
+                    navHostController.navigate(Destination.HomeScreen) {
+                        popUpTo<Destination.HomeScreen>()
+                        launchSingleTop = true
+                    }
+                },
+                onUserLoggedOut = {
+                    navHostController.navigate(Destination.LaunchScreen) {
+                        popUpTo<Destination.HomeScreen> {
+                            inclusive = true
+                        }
+                    }
+                }
             )
         }
     }
