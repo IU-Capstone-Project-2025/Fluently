@@ -12,6 +12,13 @@ import (
 
 // HandleStatsCommand handles the /stats command
 func (s *HandlerService) HandleStatsCommand(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	// Delete the previous message if it exists, but preserve lesson completion messages
+	if c.Message() != nil {
+		if err := c.Delete(); err != nil {
+			// Log the error but don't fail the operation
+			s.logger.Warn("Failed to delete previous message", zap.Error(err))
+		}
+	}
 	// Get user progress
 	userProgress, err := s.GetUserProgress(ctx, userID)
 	if err != nil {
@@ -39,7 +46,7 @@ func (s *HandlerService) HandleStatsCommand(ctx context.Context, c tele.Context,
 	// Create back button
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
-			{{Text: "Назад в главное меню", Data: "menu:main"}},
+			{{Text: "Назад в главное меню", Data: "menu:back_to_main"}},
 		},
 	}
 

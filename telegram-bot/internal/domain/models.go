@@ -73,23 +73,33 @@ type LessonResponse struct {
 // WordProgress represents progress for a single word
 type WordProgress struct {
 	Word            string    `json:"word"`
+	Translation     string    `json:"translation"` // Add translation for display
+	WordID          string    `json:"word_id"`     // Add WordID for backend API
 	LearnedAt       time.Time `json:"learned_at"`
 	ConfidenceScore int       `json:"confidence_score"`
 	CntReviewed     int       `json:"cnt_reviewed"`
+	AlreadyKnown    bool      `json:"already_known"` // Flag to mark words as "already known"
+}
+
+// BadlyAnsweredWord represents a word that was answered incorrectly
+type BadlyAnsweredWord struct {
+	WordID string `json:"word_id"`
 }
 
 // LessonProgress represents overall lesson progress stored in Redis
 type LessonProgress struct {
-	LessonData        *LessonResponse `json:"lesson_data"`
-	CurrentWordIndex  int             `json:"current_word_index"`
-	CurrentPhase      string          `json:"current_phase"` // "showing_words", "exercises", "completed"
-	WordsInCurrentSet []Card          `json:"words_in_current_set"`
-	CurrentSetIndex   int             `json:"current_set_index"`
-	ExerciseIndex     int             `json:"exercise_index"`
-	WordsLearned      []WordProgress  `json:"words_learned"`
-	StartTime         time.Time       `json:"start_time"`
-	LastActivity      time.Time       `json:"last_activity"`
-	LearnedCount      int             `json:"learned_count"` // Count of words actually learned (goal: 10)
+	LessonData         *LessonResponse     `json:"lesson_data"`
+	CurrentWordIndex   int                 `json:"current_word_index"`
+	CurrentPhase       string              `json:"current_phase"` // "showing_words", "exercises", "completed"
+	WordsInCurrentSet  []Card              `json:"words_in_current_set"`
+	CurrentSetIndex    int                 `json:"current_set_index"`
+	ExerciseIndex      int                 `json:"exercise_index"`
+	WordsLearned       []WordProgress      `json:"words_learned"`
+	BadlyAnsweredWords []BadlyAnsweredWord `json:"badly_answered_words"` // Words answered incorrectly
+	StartTime          time.Time           `json:"start_time"`
+	LastActivity       time.Time           `json:"last_activity"`
+	LearnedCount       int                 `json:"learned_count"`       // Count of words actually learned (goal: 10)
+	AlreadyKnownCount  int                 `json:"already_known_count"` // Count of words marked as already known
 }
 
 // Legacy models - keeping for backward compatibility

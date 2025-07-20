@@ -89,6 +89,7 @@ func (tb *TelegramBot) setupHandlers() {
 	tb.bot.Handle("/test", tb.handleTest)
 	tb.bot.Handle("/stats", tb.handleStats)
 	tb.bot.Handle("/cancel", tb.handleCancel)
+	tb.bot.Handle("/menu", tb.handleMenu)
 
 	// Message handler for all text messages
 	tb.bot.Handle(tele.OnText, tb.handleMessage)
@@ -218,6 +219,19 @@ func (tb *TelegramBot) handleCancel(c tele.Context) error {
 	}
 
 	return tb.handlerService.HandleCancelCommand(ctx, c, userID, currentState)
+}
+
+// handleMenu handles the /menu command
+func (tb *TelegramBot) handleMenu(c tele.Context) error {
+	ctx := context.Background()
+	userID := c.Sender().ID
+	currentState, err := tb.stateManager.GetState(ctx, userID)
+	if err != nil {
+		tb.logger.Error("Failed to get user state")
+		currentState = fsm.StateStart
+	}
+
+	return tb.handlerService.HandleMenuCommand(ctx, c, userID, currentState)
 }
 
 // handleMessage handles all text messages

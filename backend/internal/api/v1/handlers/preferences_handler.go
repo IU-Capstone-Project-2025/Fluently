@@ -90,7 +90,6 @@ func (h *PreferenceHandler) CreateUserPreferences(w http.ResponseWriter, r *http
 // @Accept json
 // @Produce json
 // @Security BearerAuth
-// @Param user_id path string true "User ID"
 // @Success 200 {object} schemas.PreferenceResponse "Successfully retrieved preferences"
 // @Failure 400 {string} string "Bad request - invalid user or preferences"
 // @Failure 401 {string} string "Unauthorized - invalid or missing token"

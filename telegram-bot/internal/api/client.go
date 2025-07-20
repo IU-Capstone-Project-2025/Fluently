@@ -155,10 +155,10 @@ type ExerciseResultRequest struct {
 
 // ProgressRequest represents progress request for backend API
 type ProgressRequest struct {
-	WordID          string    `json:"word_id"`
-	LearnedAt       time.Time `json:"learned_at"`
-	ConfidenceScore int       `json:"confidence_score"`
-	CntReviewed     int       `json:"cnt_reviewed"`
+	WordID          string     `json:"word_id"`
+	LearnedAt       *time.Time `json:"learned_at,omitempty"`
+	ConfidenceScore *int       `json:"confidence_score,omitempty"`
+	CntReviewed     *int       `json:"cnt_reviewed,omitempty"`
 }
 
 // ErrorResponse represents API error response
@@ -458,15 +458,25 @@ func (c *Client) GetJWTTokens(ctx context.Context, telegramID int64) (*JWTRespon
 }
 
 // SendLessonProgress sends word progress data to backend after lesson completion
-func (c *Client) SendLessonProgress(ctx context.Context, token string, progressData []domain.WordProgress) error {
+func (c *Client) SendLessonProgress(ctx context.Context, token string, progressData []domain.WordProgress, badlyAnsweredWords []domain.BadlyAnsweredWord) error {
 	// Convert to backend format
 	var progressRequests []ProgressRequest
+
+	// Add well-answered words with full metadata
 	for _, progress := range progressData {
 		progressRequests = append(progressRequests, ProgressRequest{
-			WordID:          progress.Word, // Using word as ID for now
-			LearnedAt:       progress.LearnedAt,
-			ConfidenceScore: progress.ConfidenceScore,
-			CntReviewed:     progress.CntReviewed,
+			WordID:          progress.WordID,
+			LearnedAt:       &progress.LearnedAt,
+			ConfidenceScore: &progress.ConfidenceScore,
+			CntReviewed:     &progress.CntReviewed,
+		})
+	}
+
+	// Add badly-answered words with only word_id (no metadata)
+	for _, badWord := range badlyAnsweredWords {
+		progressRequests = append(progressRequests, ProgressRequest{
+			WordID: badWord.WordID,
+			// No metadata for badly answered words
 		})
 	}
 
@@ -481,6 +491,6 @@ func (c *Client) SendLessonProgress(ctx context.Context, token string, progressD
 		return err
 	}
 
-	c.logger.With(zap.Int("words_count", len(progressData))).Info("Successfully sent lesson progress")
+	c.logger.With(zap.Int("words_count", len(progressData)+len(badlyAnsweredWords))).Info("Successfully sent lesson progress")
 	return nil
 }

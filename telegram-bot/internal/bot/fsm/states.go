@@ -55,6 +55,7 @@ const (
 	StateWriteWordTranslation UserState = "write_word_translation" // Write word from translation
 	StateTranslateRuToEn      UserState = "translate_ru_to_en"     // Translate Russian to English
 	StateWaitingForTextInput  UserState = "waiting_for_text_input" // Waiting for user text input
+	StateWordAlreadyKnown     UserState = "word_already_known"     // User marked word as already known
 
 	// Legacy Learning Process (keeping for backward compatibility)
 	StateShowingWords          UserState = "showing_words"
@@ -176,11 +177,24 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateWriteWordTranslation, StateWaitingForTextInput}: true,
 	{StateTranslateRuToEn, StateWaitingForTextInput}:      true,
 	{StateTranslateRuToEn, StateExerciseInProgress}:       true, // Allow transition back to exercise in progress
-	{StatePickOptionSentence, StateExerciseInProgress}:    true, // Allow transition back to exercise in progress
-	{StateWriteWordTranslation, StateExerciseInProgress}:  true, // Allow transition back to exercise in progress
-	{StateWaitingForTextInput, StateExerciseInProgress}:   true, // Allow transition back to exercise in progress
+	{StatePickOptionSentence, StateExerciseInProgress}:    true,
+	{StateWriteWordTranslation, StateExerciseInProgress}:  true,
+	{StateWaitingForTextInput, StateExerciseInProgress}:   true,
 	{StatePickOptionSentence, StateDoingExercises}:        true, // Back to exercise queue
-	{StateWaitingForTextInput, StateDoingExercises}:       true, // Back to exercise queue
+	{StateWaitingForTextInput, StateDoingExercises}:       true,
+	{StateWaitingForTextInput, StateSetComplete}:          true,
+	{StateShowingWord1, StateReadyForExercises}:           true,
+	{StateShowingWord2, StateReadyForExercises}:           true,
+	{StateShowingWord3, StateReadyForExercises}:           true,
+
+	// Word already known flow
+	{StateShowingWord1, StateWordAlreadyKnown}:      true,
+	{StateShowingWord2, StateWordAlreadyKnown}:      true,
+	{StateShowingWord3, StateWordAlreadyKnown}:      true,
+	{StateWordAlreadyKnown, StateShowingWord1}:      true, // Continue to next word
+	{StateWordAlreadyKnown, StateShowingWord2}:      true, // Continue to next word
+	{StateWordAlreadyKnown, StateShowingWord3}:      true, // Continue to next word
+	{StateWordAlreadyKnown, StateReadyForExercises}: true, // If last word in set
 
 	// Legacy detailed learning flow (keeping for backward compatibility)
 	{StateLessonInProgress, StateShowingFirstBlock}:       true,
@@ -302,6 +316,11 @@ func IsValidTransition(from, to UserState) bool {
 		return true
 	}
 
+	// Special case: allow transitions to start state from any state
+	if to == StateStart {
+		return true
+	}
+
 	// Special case: allow transitions from error recovery to most main states
 	if from == StateErrorRecovery && isMainState(to) {
 		return true
@@ -353,6 +372,7 @@ func IsLessonState(state UserState) bool {
 		StateWriteWordTranslation,
 		StateTranslateRuToEn,
 		StateWaitingForTextInput,
+		StateWordAlreadyKnown,
 		// Legacy states
 		StateShowingWords,
 		StateShowingFirstBlock,
