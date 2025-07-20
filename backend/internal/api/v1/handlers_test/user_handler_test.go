@@ -20,7 +20,7 @@ func TestCreateUser(t *testing.T) {
 
 	req := map[string]interface{}{
 		"name":          "John Doe",
-		"email":         "john-" + uuid.New().String()[:8] + "@example.com",
+		"email":         "john@example.com",
 		"provider":      "local",
 		"google_id":     "google123",
 		"password_hash": "secret",
@@ -91,7 +91,7 @@ func TestUpdateUser(t *testing.T) {
 
 	updateBody := map[string]interface{}{
 		"name":      "Updated Name",
-		"email":     "updated-" + uuid.New().String()[:8] + "@example.com",
+		"email":     "updated@example.com",
 		"role":      "admin",
 		"is_active": true,
 	}
