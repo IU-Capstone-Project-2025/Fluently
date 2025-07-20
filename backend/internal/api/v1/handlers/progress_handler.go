@@ -261,6 +261,7 @@ Return only the topic, nothing else.`, wordsList.String())
 	}
 
 	response, err := h.LLMClient.Chat(ctx, llmMsgs, "balanced", nil, nil)
+
 	if err != nil {
 		return "", fmt.Errorf("LLM error: %w", err)
 	}
@@ -269,6 +270,7 @@ Return only the topic, nothing else.`, wordsList.String())
 	topic := strings.TrimSpace(response)
 	topic = strings.Trim(topic, `"'`)
 
+	logger.Log.Info("generated topic for conversation", zap.String("topic", topic))
 	if topic == "" {
 		return "general conversation", nil // fallback topic
 	}

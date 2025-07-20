@@ -129,7 +129,7 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 	data, err := h.Redis.Get(ctx, key).Bytes()
 	if err == nil && len(data) > 0 {
 		// Parse stored dialog data
-		var storedData map[string]interface{}
+		var storedData map[string]any
 		if err := json.Unmarshal(data, &storedData); err == nil {
 			// Extract topic and words from stored data
 			if t, ok := storedData["topic"].(string); ok {
@@ -138,9 +138,9 @@ func (h *ChatHandler) Chat(w http.ResponseWriter, r *http.Request) {
 			if st, ok := storedData["subtopic"].(string); ok {
 				subtopic = st
 			}
-			if wordsData, ok := storedData["words"].([]interface{}); ok {
+			if wordsData, ok := storedData["words"].([]any); ok {
 				for _, wordData := range wordsData {
-					if wordMap, ok := wordData.(map[string]interface{}); ok {
+					if wordMap, ok := wordData.(map[string]any); ok {
 						word := ChatWord{}
 						if w, ok := wordMap["word"].(string); ok {
 							word.Word = w
@@ -664,7 +664,7 @@ func (h *ChatHandler) getStoredConversationTopic(ctx context.Context, userID uui
 		return "", nil, fmt.Errorf("failed to get stored topic: %w", err)
 	}
 
-	var topicData map[string]interface{}
+	var topicData map[string]any
 	if err := json.Unmarshal(data, &topicData); err != nil {
 		return "", nil, fmt.Errorf("failed to unmarshal topic data: %w", err)
 	}
@@ -677,9 +677,9 @@ func (h *ChatHandler) getStoredConversationTopic(ctx context.Context, userID uui
 
 	// Extract words
 	var words []ChatWord
-	if wordsData, ok := topicData["words"].([]interface{}); ok {
+	if wordsData, ok := topicData["words"].([]any); ok {
 		for _, wordData := range wordsData {
-			if wordMap, ok := wordData.(map[string]interface{}); ok {
+			if wordMap, ok := wordData.(map[string]any); ok {
 				word := ChatWord{}
 				if w, ok := wordMap["word"].(string); ok {
 					word.Word = w
