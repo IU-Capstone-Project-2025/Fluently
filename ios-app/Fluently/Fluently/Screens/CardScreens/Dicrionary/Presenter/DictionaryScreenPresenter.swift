@@ -25,8 +25,7 @@ final class DictionaryScreenPresenter: DictionaryScreenPresenting {
         let descriptor = FetchDescriptor<WordModel>(
             predicate: #Predicate {
                 $0.isLearned == isLearned &&
-                $0.isInLesson == false &&
-                $0.isDayWord == false
+                $0.isInLibrary == true
             },
             sortBy: [SortDescriptor(\.wordDate, order: .reverse)]
         )

@@ -35,7 +35,7 @@ final class CalendarScreenPresenter: CalendarScreenPresenting {
         }
 
         let predicate = #Predicate<WordModel> { word in
-            return ((word.wordDate >= startOfDay) && (word.wordDate < endOfDay))
+            return ((word.wordDate >= startOfDay) && (word.wordDate < endOfDay) && word.isInLibrary == true)
         }
 
         let descriptor = FetchDescriptor(

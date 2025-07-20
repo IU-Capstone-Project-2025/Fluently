@@ -11,11 +11,25 @@ import SwiftData
 
 // MARK: - Protocol for presenter
 protocol HomeScreenPresenting: ObservableObject {
-    func getLesson() async throws
-
     // Navigation
     func navigatoToProfile()
     func navigatoToLesson()
+
+    // checkers for quality saved data
+    func checkForNilIDs() async
+    func compare()
+
+    // daily word logic
+    func saveWordOfTheDay() async
+    func getTodaysWord() -> WordModel?
+
+    // lesson logic
+    func findLesson(context: ModelContext?) -> CardsModel?
+    func getLesson() async throws
+    func deleteLesson()
+
+    // screens for cards 
+    func buildDictionaryScreen(isLearned: Bool) -> DictionaryView
 }
 
 // MARK: - Presenter implementation
@@ -53,15 +67,20 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         self.account = account
     }
 
+
     func getDayWord() {
         wordOfTheDay = getTodaysWord()
         guard wordOfTheDay == nil else {
             return
         }
-
+        
         Task {
             do {
                 self.wordOfTheDay = try await interactor.getDayWord()
+                if let wordOfTheDay {
+                    wordOfTheDay.isDayWord = true
+                    wordOfTheDay.isInLibrary = false
+                }
                 await saveWordOfTheDay()
             } catch {
                 print("Error on getting word of the day: \(error.localizedDescription)")
@@ -70,7 +89,26 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         }
     }
 
-//    @MainActor
+    func checkForNilIDs() async {
+        guard let modelContext else {
+            return
+        }
+
+        let descriptor = FetchDescriptor<WordModel>()
+        let words = try? modelContext.fetch(descriptor)
+
+        guard let words else { return }
+        var count = 0
+        words.forEach { word in
+            if word.wordId == nil {
+                modelContext.delete(word)
+                count += 1
+            }
+        }
+        print("\(count) nil words deleted")
+        try? modelContext.save()
+    }
+
     func compare() {
         guard let modelContext else {
             return
@@ -157,12 +195,13 @@ final class HomeScreenPresenter: HomeScreenPresenting {
         print("Lesson saved in memory")
     }
 
-    @MainActor
     func findLesson(context: ModelContext?) -> CardsModel? {
         let descriptor = FetchDescriptor<CardsModel>()
 
         do {
-            return try context?.fetch(descriptor).first
+            let found = try context?.fetch(descriptor).first
+            if let found, found.cards.count == 0 { return nil }
+            return found
         } catch {
             print("SwiftData fetch failed: \(error)")
             return nil
@@ -210,15 +249,12 @@ final class HomeScreenPresenter: HomeScreenPresenting {
     }
 
     // Navigation
-
     func navigatoToProfile() {
         router.navigatoToProfile()
     }
 
     func navigatoToLesson() {
         router.navigatoToLesson(lesson!)
-//        modelContext?.delete(lesson!)
-//        lesson = nil
         deleteLesson()
     }
 

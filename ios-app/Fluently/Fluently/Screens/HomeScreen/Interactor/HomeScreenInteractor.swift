@@ -14,6 +14,9 @@ final class HomeScreenInteractor {
 
     func getLesson() async throws -> CardsModel{
         let cards = try await api.getLesson()
+        cards.cards.forEach { card in
+            card.isInLibrary = false
+        }
         return cards
     }
 

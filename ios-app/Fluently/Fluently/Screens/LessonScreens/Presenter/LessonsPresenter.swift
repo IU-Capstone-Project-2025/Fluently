@@ -206,6 +206,7 @@ final class LessonsPresenter: ObservableObject {
         // Save progress
         words.forEach { word in
             word.isInLesson = false
+            word.isInLibrary = true
             modelContext?.insert(word)
         }
         try? modelContext?.save()

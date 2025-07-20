@@ -17,11 +17,9 @@ struct HomeScreenView: View {
     var words: [WordModel] {
         let descriptor = FetchDescriptor<WordModel>(
             predicate: #Predicate {
-                $0.isInLesson == false
-//                ||
-//                $0.isDayWord == false
-            },
-//            sortBy: [SortDescriptor(\.wordDate, order: .reverse)]
+                $0.isInLesson == false &&
+                $0.isInLibrary == true
+            }
         )
         return (try? modelContext.fetch(descriptor)) ?? []
     }
@@ -53,6 +51,7 @@ struct HomeScreenView: View {
                 do {
                     try await presenter.getLesson()
                     presenter.compare()
+                    await presenter.checkForNilIDs()
                 } catch {
                     print(error)
                 }

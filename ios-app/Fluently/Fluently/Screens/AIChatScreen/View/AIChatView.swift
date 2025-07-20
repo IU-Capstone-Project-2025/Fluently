@@ -37,17 +37,6 @@ struct AIChatView: View {
         ZStack {
             messagesGrid
             inputView
-//            backButton
-//                .frame(
-//                    maxWidth: .infinity,
-//                    maxHeight: .infinity,
-//                    alignment: .topLeading
-//                )
-//                .padding(Const.backButtonPadding)
-//                .ignoresSafeArea()
-//                .onTapGesture {
-//                    showExitAlert = true
-//                }
         }
         .navigationTitle(
             Text(prefs.first?.goal ?? "Ai Chat")
@@ -60,9 +49,6 @@ struct AIChatView: View {
                         showExitAlert = true
                     }
             }
-        }
-        .onAppear {
-            presenter.sendMessage("Hello!")
         }
         .alert("Are you sure, that you want exit?", isPresented: $showExitAlert) {
             Button ("No", role: .cancel) {
@@ -82,10 +68,12 @@ struct AIChatView: View {
             ScrollView {
                 VStack {
                     ForEach(presenter.messages, id: \.text) { message in
-                        MessageView(
-                            text: message.text,
-                            role: message.role
-                        )
+                        if message.text != "" {
+                            MessageView(
+                                text: message.text,
+                                role: message.role
+                            )
+                        }
                     }
                     Spacer(
                         minLength: 60
@@ -170,12 +158,6 @@ struct AIChatView: View {
         Image(systemName: "arrowshape.turn.up.left.fill")
             .font(.title3)
             .foregroundStyle(.orangePrimary)
-//            .padding()
-//            .glass(
-//                cornerRadius: 100,
-//                fill: .orangePrimary,
-//                opacity: 0.8
-//            )
     }
 
     /// button to send message

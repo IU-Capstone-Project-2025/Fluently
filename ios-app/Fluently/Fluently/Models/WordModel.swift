@@ -32,8 +32,12 @@ final class WordModel: Codable, Sendable{
 
     var wordDate: Date = Date.now /// date of learning word *for statistic*
 
+//    @Transient
     var isDayWord: Bool = false
+//    @Transient
     var isInLesson: Bool = false
+//    @Transient
+    var isInLibrary: Bool = true
 
     init(
         exercise: ExerciseModel,
