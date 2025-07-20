@@ -1123,7 +1123,7 @@ jobs:
               
               # Protect critical volumes first
               echo "🔒 Verifying critical volumes are protected..."
-              CRITICAL_VOLUMES="fluently_pgdata_safe fluently_grafana_data_external"
+              CRITICAL_VOLUMES="fluently_pgdata_safe"
               for vol in $CRITICAL_VOLUMES; do
                 if docker volume ls | grep -q "$vol"; then
                   echo "✅ Critical volume protected: $vol"

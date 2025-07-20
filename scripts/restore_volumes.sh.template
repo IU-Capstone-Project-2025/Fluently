@@ -55,27 +55,6 @@ docker run --rm \
   -v "$BACKUP_PATH":/backup \
   alpine sh -c "rm -rf /data/* && tar xzf /backup/postgres_data.tar.gz -C /"
 
-# Restore Grafana data
-echo "📈 Restoring Grafana data..."
-docker run --rm \
-  -v fluently_grafana_data_external:/data \
-  -v "$BACKUP_PATH":/backup \
-  alpine sh -c "rm -rf /data/* && tar xzf /backup/grafana_data.tar.gz -C /"
-
-# Restore Prometheus data
-echo "📊 Restoring Prometheus data..."
-docker run --rm \
-  -v fluently_prometheus_data_external:/data \
-  -v "$BACKUP_PATH":/backup \
-  alpine sh -c "rm -rf /data/* && tar xzf /backup/prometheus_data.tar.gz -C /"
-
-# Restore SonarQube data
-echo "🔍 Restoring SonarQube data..."
-docker run --rm \
-  -v fluently_sonarqube_data_external:/data \
-  -v "$BACKUP_PATH":/backup \
-  alpine sh -c "rm -rf /data/* && tar xzf /backup/sonarqube_data.tar.gz -C /"
-
 echo "✅ $ENVIRONMENT restore completed. Starting services..."
 docker compose up -d
 
