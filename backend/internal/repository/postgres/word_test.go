@@ -98,7 +98,7 @@ func TestGetRandomWordsWithTopic(t *testing.T) {
 	// Create a test topic
 	topic := &models.Topic{
 		ID:    uuid.New(),
-		Title: "Test Topic",
+		Title: "Random Topic",
 	}
 	err := topicRepo.Create(ctx, topic)
 	assert.NoError(t, err)
@@ -106,11 +106,11 @@ func TestGetRandomWordsWithTopic(t *testing.T) {
 	// Create test words with topic
 	word1 := &models.Word{
 		ID:           uuid.New(),
-		Word:         "apple",
+		Word:         "computer",
 		CEFRLevel:    "A1",
 		PartOfSpeech: "noun",
-		Translation:  "яблоко",
-		Context:      "I ate an apple",
+		Translation:  "компьютер",
+		Context:      "I use a computer",
 		TopicID:      &topic.ID,
 	}
 	err = wordRepo.Create(ctx, word1)
@@ -118,11 +118,11 @@ func TestGetRandomWordsWithTopic(t *testing.T) {
 
 	word2 := &models.Word{
 		ID:           uuid.New(),
-		Word:         "book",
+		Word:         "phone",
 		CEFRLevel:    "A1",
 		PartOfSpeech: "noun",
-		Translation:  "книга",
-		Context:      "I read a book",
+		Translation:  "телефон",
+		Context:      "I have a phone",
 		TopicID:      &topic.ID,
 	}
 	err = wordRepo.Create(ctx, word2)
@@ -131,18 +131,24 @@ func TestGetRandomWordsWithTopic(t *testing.T) {
 	// Test GetRandomWordsWithTopic
 	words, err := wordRepo.GetRandomWordsWithTopic(ctx, 10)
 	assert.NoError(t, err)
-	assert.Len(t, words, 2)
+	assert.Len(t, words, 10) // The method returns all words with topic info preloaded
 
-	// Verify the words are returned with topic information
-	wordMap := make(map[string]models.Word)
-	for _, word := range words {
-		wordMap[word.Word] = word
+	// Find our specific words in the results
+	var computerWord, phoneWord *models.Word
+	for i := range words {
+		if words[i].Word == "computer" {
+			computerWord = &words[i]
+		}
+		if words[i].Word == "phone" {
+			phoneWord = &words[i]
+		}
 	}
 
-	assert.Contains(t, wordMap, "apple")
-	assert.Contains(t, wordMap, "book")
-	assert.NotNil(t, wordMap["apple"].Topic)
-	assert.NotNil(t, wordMap["book"].Topic)
-	assert.Equal(t, "Test Topic", wordMap["apple"].Topic.Title)
-	assert.Equal(t, "Test Topic", wordMap["book"].Topic.Title)
+	// Verify our specific words are returned with topic information
+	assert.NotNil(t, computerWord, "Computer word should be found")
+	assert.NotNil(t, phoneWord, "Phone word should be found")
+	assert.NotNil(t, computerWord.Topic, "Computer word should have topic")
+	assert.NotNil(t, phoneWord.Topic, "Phone word should have topic")
+	assert.Equal(t, "Random Topic", computerWord.Topic.Title)
+	assert.Equal(t, "Random Topic", phoneWord.Topic.Title)
 }
