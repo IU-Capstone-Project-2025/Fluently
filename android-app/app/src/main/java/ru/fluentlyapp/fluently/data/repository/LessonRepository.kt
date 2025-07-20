@@ -9,7 +9,9 @@ import ru.fluentlyapp.fluently.common.model.Dialog
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.common.model.LessonComponent
+import ru.fluentlyapp.fluently.common.model.UserPreferences
 import ru.fluentlyapp.fluently.datastore.OngoingLessonDataStore
+import ru.fluentlyapp.fluently.feature.userpreferences.UserPreferencesRepository
 import ru.fluentlyapp.fluently.feature.wordcache.WordCache
 import ru.fluentlyapp.fluently.feature.wordcache.WordCacheRepository
 import ru.fluentlyapp.fluently.feature.wordprogress.WordProgress
@@ -72,13 +74,11 @@ interface LessonRepository {
     suspend fun sendCurrentProgress()
 }
 
-const val PREFERRED_NUMBER_OF_WORDS = 10
-
 class DefaultLessonRepository @Inject constructor(
     val fluentlyApiDataSource: FluentlyApiDataSource,
     val ongoingLessonDataStore: OngoingLessonDataStore,
     val wordCacheRepository: WordCacheRepository,
-    val wordProgressRepository: WordProgressRepository
+    val wordProgressRepository: WordProgressRepository,
 ) : LessonRepository {
     private enum class NewWordExerciseStatus {
         IGNORED,
@@ -96,10 +96,10 @@ class DefaultLessonRepository @Inject constructor(
         }
     }
 
-    private fun generateOnboardingComponent(components: List<LessonComponent>): Decoration.Onboarding {
+    private suspend fun generateOnboardingComponent(lesson: Lesson): Decoration.Onboarding {
         var wordsCount = 0
         var exercisesCount = 0
-        for (component in components) {
+        for (component in lesson.components) {
             if (component is Exercise.NewWord) {
                 wordsCount++
             } else if (component is Exercise) {
@@ -107,8 +107,8 @@ class DefaultLessonRepository @Inject constructor(
             }
         }
         return Decoration.Onboarding(
-            min(PREFERRED_NUMBER_OF_WORDS, wordsCount),
-            min(PREFERRED_NUMBER_OF_WORDS, exercisesCount)
+            min(lesson.wordsPerLesson, wordsCount),
+            min(lesson.wordsPerLesson, exercisesCount)
         )
     }
 
@@ -141,7 +141,7 @@ class DefaultLessonRepository @Inject constructor(
                 }
                 exerciseCollector.add(component)
 
-                if (exerciseCollector.count { it is Exercise.NewWord } == 3) {
+                if (exerciseCollector.size == 6) {
                     flushCollector()
                 }
             } else {
@@ -173,7 +173,7 @@ class DefaultLessonRepository @Inject constructor(
         }
 
         val updatedLessonComponents: List<LessonComponent> = buildList {
-            add(generateOnboardingComponent(lesson.components))
+            add(generateOnboardingComponent(lesson))
             addAll(lesson.components)
             add(Decoration.LearningPartComplete())
             add(
@@ -257,8 +257,9 @@ class DefaultLessonRepository @Inject constructor(
             }
         }
         Timber.d("learningWordsCount=$learningWordsCount; originalWordStatus=$originalWordStatus")
+
         return if (candidateComponent is Exercise.NewWord) {
-            learningWordsCount < PREFERRED_NUMBER_OF_WORDS
+            learningWordsCount < lesson.wordsPerLesson
         } else if (currentWordId != null) {
             originalWordStatus in setOf(
                 NewWordExerciseStatus.NO_OCCURRENCE,

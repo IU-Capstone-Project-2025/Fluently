@@ -86,11 +86,16 @@ fun DialogExercise(
         val listState = rememberLazyListState()
 
         LaunchedEffect(exerciseState.messages.size) {
+            if (exerciseState.messages.isEmpty()) {
+                dialogObserver.onSendMessage("")
+            }
+
             if (exerciseState.messages.isNotEmpty()) {
                 listState.animateScrollToItem(exerciseState.messages.size - 1)
             }
         }
 
+        val emptyMessageStub = stringResource(R.string.start_the_conversation)
         LazyColumn(
             state = listState,
             modifier = Modifier
@@ -104,7 +109,11 @@ fun DialogExercise(
                 Spacer(modifier = Modifier.height(48.dp))
             }
             items(
-                items = exerciseState.messages,
+                items = exerciseState.messages.map {
+                    if (it.text.isEmpty() && it.fromUser) it.copy(
+                        text = emptyMessageStub
+                    ) else it
+                },
                 key = { it.messageId }
             ) { message ->
                 val alignment = if (message.fromUser) {

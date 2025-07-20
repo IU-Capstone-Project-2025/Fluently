@@ -101,7 +101,8 @@ fun LessonResponseBody.convertToLesson(): Lesson {
     return Lesson(
         lessonId = "",
         components = lessonComponents,
-        currentLessonComponentIndex = 0
+        currentLessonComponentIndex = 0,
+        wordsPerLesson = lesson.words_per_lesson
     )
 }
 

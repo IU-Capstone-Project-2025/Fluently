@@ -151,6 +151,7 @@ class LessonFlowViewModel @Inject constructor(
         override fun onMoveNext() {
             viewModelScope.safeLaunch {
                 lessonRepository.sendCurrentProgress()
+                dialogObserver.onSendMessage("")
                 lessonRepository.moveToNextComponent()
             }
         }
