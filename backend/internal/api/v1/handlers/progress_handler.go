@@ -1,16 +1,22 @@
 package handlers
 
 import (
+	"context"
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 
 	"fluently/go-backend/internal/repository/models"
 	"fluently/go-backend/internal/repository/postgres"
 	"fluently/go-backend/internal/utils"
+	"fluently/go-backend/pkg/logger"
 
 	"github.com/google/uuid"
+	goredis "github.com/redis/go-redis/v9"
+	"go.uber.org/zap"
 	"gorm.io/gorm"
 )
 
@@ -19,6 +25,8 @@ type ProgressHandler struct {
 	LearnedWordRepo    *postgres.LearnedWordRepository
 	WordRepo           *postgres.WordRepository
 	NotLearnedWordRepo *postgres.NotLearnedWordRepository
+	LLMClient          *utils.LLMClient
+	Redis              *goredis.Client
 }
 
 // ProgressRequest is a request body for updating user progress
@@ -173,10 +181,133 @@ func (h *ProgressHandler) UpdateUserProgress(w http.ResponseWriter, r *http.Requ
 		}
 	}
 
+	// Generate conversation topic for newly learned words
+	if err := h.generateAndStoreConversationTopic(r.Context(), userID, progress); err != nil {
+		logger.Log.Warn("failed to generate conversation topic", zap.Error(err))
+		// Don't fail the request, just log the warning
+	}
+
 	// Return ok
 	w.WriteHeader(http.StatusOK)
 }
 
 func isNotLearnedWord(p ProgressRequest) bool {
 	return p.LearnedAt == nil && p.ConfidenceScore == nil && p.CntReviewed == nil
+}
+
+// generateAndStoreConversationTopic generates a conversation topic based on learned words and stores it in Redis
+func (h *ProgressHandler) generateAndStoreConversationTopic(ctx context.Context, userID uuid.UUID, progress []ProgressRequest) error {
+	// Collect learned words from the progress
+	var learnedWords []models.Word
+	for _, p := range progress {
+		if !isNotLearnedWord(p) {
+			word, err := h.WordRepo.GetByID(ctx, p.WordID)
+			if err != nil {
+				logger.Log.Warn("failed to get word for topic generation", zap.Error(err), zap.String("word_id", p.WordID.String()))
+				continue
+			}
+			learnedWords = append(learnedWords, *word)
+		}
+	}
+
+	if len(learnedWords) == 0 {
+		logger.Log.Info("no learned words found for topic generation")
+		return nil
+	}
+
+	// Generate topic using LLM
+	topic, err := h.generateTopicFromWords(ctx, learnedWords)
+	if err != nil {
+		return fmt.Errorf("failed to generate topic: %w", err)
+	}
+
+	// Store topic and words in Redis
+	if err := h.storeConversationTopic(ctx, userID, topic, learnedWords); err != nil {
+		return fmt.Errorf("failed to store conversation topic: %w", err)
+	}
+
+	logger.Log.Info("generated and stored conversation topic",
+		zap.String("topic", topic),
+		zap.Int("word_count", len(learnedWords)),
+		zap.String("user_id", userID.String()))
+
+	return nil
+}
+
+// generateTopicFromWords generates a conversation topic based on the learned words
+func (h *ProgressHandler) generateTopicFromWords(ctx context.Context, words []models.Word) (string, error) {
+	// Build words list for the prompt
+	var wordsList strings.Builder
+	for i, word := range words {
+		wordsList.WriteString(fmt.Sprintf("- %s (%s): %s", word.Word, word.PartOfSpeech, word.Translation))
+		if i < len(words)-1 {
+			wordsList.WriteString("\n")
+		}
+	}
+
+	// Create prompt for topic generation
+	prompt := fmt.Sprintf(`Based on these English words that a user just learned, generate a natural conversation topic that would allow them to practice these words in context. The topic should be something people would naturally talk about.
+
+Words learned:
+%s
+
+Generate a short, specific conversation topic (2-4 words) that relates to these words. Examples: "buying a ticket in airport", "cooking dinner", "planning a vacation", "shopping for clothes".
+
+Return only the topic, nothing else.`, wordsList.String())
+
+	// Call LLM to generate topic
+	llmMsgs := []utils.LLMMessage{
+		{Role: "user", Content: prompt},
+	}
+
+	response, err := h.LLMClient.Chat(ctx, llmMsgs, "balanced", nil, nil)
+	if err != nil {
+		return "", fmt.Errorf("LLM error: %w", err)
+	}
+
+	// Clean up the response (remove quotes, extra whitespace, etc.)
+	topic := strings.TrimSpace(response)
+	topic = strings.Trim(topic, `"'`)
+
+	if topic == "" {
+		return "general conversation", nil // fallback topic
+	}
+
+	return topic, nil
+}
+
+// storeConversationTopic stores the generated topic and words in Redis
+func (h *ProgressHandler) storeConversationTopic(ctx context.Context, userID uuid.UUID, topic string, words []models.Word) error {
+	// Convert words to ChatWord format for consistency with chat handler
+	var chatWords []ChatWord
+	for _, word := range words {
+		chatWord := ChatWord{
+			Word:         word.Word,
+			Context:      word.Context,
+			PartOfSpeech: word.PartOfSpeech,
+		}
+		chatWords = append(chatWords, chatWord)
+	}
+
+	// Create data structure for Redis
+	topicData := map[string]interface{}{
+		"topic":      topic,
+		"words":      chatWords,
+		"created_at": time.Now().UTC(),
+	}
+
+	// Marshal to JSON
+	data, err := json.Marshal(topicData)
+	if err != nil {
+		return fmt.Errorf("failed to marshal topic data: %w", err)
+	}
+
+	// Store in Redis with key "chat_topic:{userID}"
+	key := "chat_topic:" + userID.String()
+	err = h.Redis.Set(ctx, key, data, 24*time.Hour).Err() // expire after a day
+	if err != nil {
+		return fmt.Errorf("failed to store topic in Redis: %w", err)
+	}
+
+	return nil
 }

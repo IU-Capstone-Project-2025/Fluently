@@ -94,7 +94,13 @@ func setupTest(t *testing.T) {
 	prefHandler := &handlers.PreferenceHandler{Repo: pg.NewPreferenceRepository(db)}
 	pickOptionHandler := &handlers.PickOptionHandler{Repo: pg.NewPickOptionRepository(db)}
 	learnedWordHandler := &handlers.LearnedWordHandler{Repo: learnedWordRepo}
-	progressHandler := &handlers.ProgressHandler{WordRepo: wordRepo, LearnedWordRepo: learnedWordRepo}
+	progressHandler := &handlers.ProgressHandler{
+		WordRepo:           wordRepo,
+		LearnedWordRepo:    learnedWordRepo,
+		NotLearnedWordRepo: pg.NewNotLearnedWordRepository(db),
+		LLMClient:          utils.NewLLMClient(utils.LLMClientConfig{}),
+		Redis:              utils.Redis(),
+	}
 
 	// Create router
 	r := chi.NewRouter()

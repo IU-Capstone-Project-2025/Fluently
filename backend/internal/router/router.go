@@ -283,6 +283,8 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 			WordRepo:           wordRepo,
 			LearnedWordRepo:    learnedWordRepo,
 			NotLearnedWordRepo: notLearnedWordRepo,
+			LLMClient:          llmClient,
+			Redis:              utils.Redis(),
 		})
 		routes.RegisterDayWordRoutes(r, &handlers.DayWordHandler{
 			WordRepo:        wordRepo,
