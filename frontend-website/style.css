@@ -1,4 +1,4 @@
-/* Fluently Website Styles - Version 2025.07.20.01 - Cache Busted */
+/* Fluently Website Styles - Version 2025.07.20.03 - Cache Busted */
 :root {
     --background: #F6F6F6;
     --secondary-bg: #EEF2F5;
@@ -334,6 +334,40 @@ main {
     font-weight: 500;
     color: var(--text-dark);
     
+}
+
+.social-sticker {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.social-sticker:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.social-sticker.email {
+    background: var(--blue-bg);
+    color: var(--cta-blue);
+}
+
+.social-sticker.email:hover {
+    background: var(--cta-blue);
+    color: white;
+}
+
+.social-sticker.github {
+    background: var(--light-gray);
+    color: var(--text-dark);
+}
+
+.social-sticker.github:hover {
+    background: var(--text-dark);
+    color: white;
 }
 
 /* Footer */
