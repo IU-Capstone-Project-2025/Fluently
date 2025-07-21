@@ -28,6 +28,14 @@ final class AppTheme {
 //    Blue
     let blueAccent = Color("blue.accent")
     let blueSecondary = Color("blue.secondary")
+
+    // Green
+    let greenAccent = Color("green.primary")
+    let greenSecondary = Color("green.secondary")
+
+    // Red
+    let redAccent = Color("red.primary")
+    let redSecondary = Color("red.secondary")
 }
 
 // MARK: - Custom Fonts

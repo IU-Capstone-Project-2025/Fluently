@@ -16,13 +16,9 @@ import (
 func TestCreateWord(t *testing.T) {
 	setupTest(t)
 
-	e := httpexpect.WithConfig(httpexpect.Config{
-		BaseURL:  testServer.URL,
-		Client:   testServer.Client(),
-		Reporter: httpexpect.NewAssertReporter(t),
-	})
+	e := httpexpect.Default(t, testServer.URL)
 
-	reqBody := map[string]interface{}{
+	req := map[string]interface{}{
 		"word":           "apple",
 		"cefr_level":     "A1",
 		"part_of_speech": "noun",
@@ -31,19 +27,19 @@ func TestCreateWord(t *testing.T) {
 		"audio_url":      "http://tyanka-vovanka.com",
 	}
 
-	resp := e.POST("/words").
-		WithJSON(reqBody).
+	resp := e.POST("/api/v1/words").
+		WithJSON(req).
 		Expect().
 		Status(http.StatusCreated).
 		JSON().Object()
 
-	assert.Equal(t, "apple", resp.Value("word").Raw())
-	assert.Equal(t, "A1", resp.Value("cefr_level").Raw())
-	assert.Equal(t, "noun", resp.Value("part_of_speech").Raw())
-	assert.Equal(t, "яблоко", resp.Value("translation").Raw())
-	assert.Equal(t, "I ate an apple", resp.Value("context").Raw())
-	assert.Equal(t, "http://tyanka-vovanka.com", resp.Value("audio_url").Raw())
-	assert.NotEmpty(t, resp.Value("id").Raw())
+	assert.Equal(t, "apple", resp.Value("word").String().Raw())
+	assert.Equal(t, "A1", resp.Value("cefr_level").String().Raw())
+	assert.Equal(t, "noun", resp.Value("part_of_speech").String().Raw())
+	assert.Equal(t, "яблоко", resp.Value("translation").String().Raw())
+	assert.Equal(t, "I ate an apple", resp.Value("context").String().Raw())
+	assert.Equal(t, "http://tyanka-vovanka.com", resp.Value("audio_url").String().Raw())
+	assert.NotEmpty(t, resp.Value("id").String().Raw())
 }
 
 // TestListWords tests the retrieval of all words
@@ -65,7 +61,7 @@ func TestListWords(t *testing.T) {
 	err := wordRepo.Create(context.Background(), &word)
 	assert.NoError(t, err)
 
-	resp := e.GET("/words").
+	resp := e.GET("/api/v1/words").
 		Expect().
 		Status(http.StatusOK).
 		JSON().Array()
@@ -102,7 +98,7 @@ func TestGetWord(t *testing.T) {
 	err := wordRepo.Create(context.Background(), &word)
 	assert.NoError(t, err)
 
-	resp := e.GET("/words/" + word.ID.String()).
+	resp := e.GET("/api/v1/words/" + word.ID.String()).
 		Expect().
 		Status(http.StatusOK).
 		JSON().Object()
@@ -139,7 +135,7 @@ func TestUpdateWord(t *testing.T) {
 		"audio_url":      "http://updated.audio",
 	}
 
-	resp := e.PUT("/words/" + word.ID.String()).
+	resp := e.PUT("/api/v1/words/" + word.ID.String()).
 		WithJSON(updateBody).
 		Expect().
 		Status(http.StatusOK).
@@ -168,11 +164,11 @@ func TestDeleteWord(t *testing.T) {
 	err := wordRepo.Create(context.Background(), &word)
 	assert.NoError(t, err)
 
-	e.DELETE("/words/" + word.ID.String()).
+	e.DELETE("/api/v1/words/" + word.ID.String()).
 		Expect().
 		Status(http.StatusNoContent)
 
-	e.GET("/words/" + word.ID.String()).
+	e.GET("/api/v1/words/" + word.ID.String()).
 		Expect().
 		Status(http.StatusNotFound)
 }

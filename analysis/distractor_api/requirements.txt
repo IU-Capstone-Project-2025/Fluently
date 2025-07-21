@@ -34,3 +34,4 @@ charset-normalizer
 certifi
 idna
 urllib3
+spacy

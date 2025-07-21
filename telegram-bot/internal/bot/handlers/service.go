@@ -2,6 +2,8 @@ package handlers
 
 import (
 	"context"
+	"encoding/base64"
+	"encoding/json"
 	"fmt"
 	"strconv"
 	"strings"
@@ -11,6 +13,7 @@ import (
 	"go.uber.org/zap"
 	tele "gopkg.in/telebot.v3"
 
+	"os"
 	"telegram-bot/config"
 	"telegram-bot/internal/api"
 	"telegram-bot/internal/bot/fsm"
@@ -42,7 +45,7 @@ func NewHandlerService(
 	logger *zap.Logger,
 ) *HandlerService {
 	// Initialize TTS service
-	ttsService := utils.NewTTSService("./tmp/tts", logger)
+	ttsService := utils.NewTTSService(cfg.TTS.CacheDir, logger)
 
 	return &HandlerService{
 		config:       cfg,
@@ -61,6 +64,25 @@ func (s *HandlerService) TransitionState(ctx context.Context, userID int64, newS
 	s.logger.With(zap.Int64("user_id", userID), zap.String("new_state", string(newState))).Debug("Transitioning state")
 
 	return s.stateManager.SetState(ctx, userID, newState)
+}
+
+// SetStateIfDifferent sets the user state only if it's different from the current state
+// This prevents "invalid state transition from X to X" errors
+func (s *HandlerService) SetStateIfDifferent(ctx context.Context, userID int64, newState fsm.UserState) error {
+	currentState, err := s.stateManager.GetState(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get current state", zap.Int64("user_id", userID), zap.Error(err))
+		return err
+	}
+
+	// Only set state if it's different from current state
+	if currentState != newState {
+		s.logger.With(zap.Int64("user_id", userID), zap.String("from_state", string(currentState)), zap.String("to_state", string(newState))).Debug("Transitioning state")
+		return s.stateManager.SetState(ctx, userID, newState)
+	}
+
+	s.logger.With(zap.Int64("user_id", userID), zap.String("state", string(newState))).Debug("State already set, skipping transition")
+	return nil
 }
 
 // GetUserProgress retrieves user progress from backend API
@@ -87,6 +109,34 @@ func (s *HandlerService) GetUserProgress(ctx context.Context, userID int64) (*do
 	preferences, err := s.apiClient.GetUserPreferences(ctx, accessToken)
 	if err != nil {
 		s.logger.Error("Failed to get user preferences", zap.Int64("user_id", userID), zap.Error(err))
+
+		// Check if this is a 404 error (preferences not found)
+		if strings.Contains(err.Error(), "404") || strings.Contains(err.Error(), "preference not found") {
+			s.logger.Warn("User preferences not found, returning default preferences", zap.Int64("user_id", userID))
+
+			// Return default preferences for authenticated users without saved preferences
+			// This handles the case where a user is linked but preferences were never created
+			return &domain.UserProgress{
+				UserID:           userID,
+				CEFRLevel:        "A1",    // Default level
+				WordsPerDay:      10,      // Default words per day
+				NotificationTime: "10:00", // Default notification time
+				LearnedWords:     0,
+				CurrentStreak:    0,
+				LongestStreak:    0,
+				LastActivity:     time.Now(),
+				StartDate:        time.Now().Format("2006-01-02"),
+				Preferences: map[string]interface{}{
+					"goal":             "Learn new words",
+					"fact_everyday":    false,
+					"subscribed":       false,
+					"avatar_image_url": "",
+					"notifications":    false,
+				},
+			}, nil
+		}
+
+		// For other errors, still return the error
 		return nil, err
 	}
 
@@ -95,10 +145,10 @@ func (s *HandlerService) GetUserProgress(ctx context.Context, userID int64) (*do
 		UserID:           userID,
 		CEFRLevel:        preferences.CEFRLevel,
 		WordsPerDay:      preferences.WordsPerDay,
-		NotificationTime: preferences.NotificationAt,
-		LearnedWords:     0, // TODO: Get from backend stats
-		CurrentStreak:    0, // TODO: Get from backend stats
-		LongestStreak:    0, // TODO: Get from backend stats
+		NotificationTime: "", // Will be set below after parsing
+		LearnedWords:     0,  // TODO: Get from backend stats
+		CurrentStreak:    0,  // TODO: Get from backend stats
+		LongestStreak:    0,  // TODO: Get from backend stats
 		LastActivity:     time.Now(),
 		StartDate:        time.Now().Format("2006-01-02"),
 		Preferences: map[string]interface{}{
@@ -108,6 +158,48 @@ func (s *HandlerService) GetUserProgress(ctx context.Context, userID int64) (*do
 			"avatar_image_url": preferences.AvatarImageURL,
 			"notifications":    preferences.Notifications,
 		},
+	}
+
+	// Parse notification time from ISO format to HH:MM format
+	if preferences.NotificationAt != "" {
+		s.logger.Debug("Parsing notification time from backend",
+			zap.String("notification_at", preferences.NotificationAt))
+
+		// Try to parse the ISO format time
+		notificationTime, err := time.Parse(time.RFC3339, preferences.NotificationAt)
+		if err != nil {
+			// If RFC3339 fails, try other common formats
+			notificationTime, err = time.Parse("2006-01-02T15:04:05Z", preferences.NotificationAt)
+			if err != nil {
+				// If that fails too, try parsing as HH:MM format (in case it's already in the right format)
+				notificationTime, err = time.Parse("15:04", preferences.NotificationAt)
+				if err != nil {
+					s.logger.Warn("Failed to parse notification time from backend",
+						zap.String("notification_at", preferences.NotificationAt),
+						zap.Error(err))
+					// Set default time if parsing fails
+					userProgress.NotificationTime = "10:00"
+				} else {
+					// Already in HH:MM format
+					userProgress.NotificationTime = preferences.NotificationAt
+				}
+			} else {
+				// Successfully parsed ISO format, convert to HH:MM
+				userProgress.NotificationTime = notificationTime.Format("15:04")
+			}
+		} else {
+			// Successfully parsed RFC3339 format, convert to HH:MM
+			userProgress.NotificationTime = notificationTime.Format("15:04")
+		}
+
+		s.logger.Debug("Successfully converted notification time",
+			zap.String("from", preferences.NotificationAt),
+			zap.String("to", userProgress.NotificationTime))
+	} else {
+		// No notification time set, use default
+		userProgress.NotificationTime = "10:00"
+		s.logger.Debug("No notification time from backend, using default",
+			zap.String("default_time", userProgress.NotificationTime))
 	}
 
 	return userProgress, nil
@@ -127,39 +219,155 @@ func (s *HandlerService) UpdateUserProgress(ctx context.Context, userID int64, p
 		return err
 	}
 
-	// Convert to backend format
-	updateRequest := &api.UpdatePreferenceRequest{
-		CEFRLevel:      progress.CEFRLevel,
-		WordsPerDay:    progress.WordsPerDay,
-		NotificationAt: progress.NotificationTime,
-		Notifications:  progress.NotificationsEnabled(),
+	// Преобразуем в формат backend, только если значения существуют (не nil)
+	updateRequest := &api.UpdatePreferenceRequest{}
+
+	if progress.CEFRLevel != "" {
+		updateRequest.CEFRLevel = &progress.CEFRLevel
+	}
+	if progress.WordsPerDay != 0 {
+		updateRequest.WordsPerDay = &progress.WordsPerDay
+	}
+	if progress.NotificationTime != "" {
+		s.logger.Debug("Parsing notification time for update",
+			zap.String("notification_time", progress.NotificationTime))
+
+		notificationTime, err := ParseTimeToTime(progress.NotificationTime)
+		if err != nil {
+			s.logger.Error("Failed to parse notification time", zap.String("notification_time", progress.NotificationTime), zap.Error(err))
+			return err
+		}
+		updateRequest.NotificationAt = notificationTime
+		s.logger.Debug("Successfully parsed notification time for update",
+			zap.String("parsed_time", notificationTime.Format("15:04")))
+	} else {
+		// If notification time is empty, set notifications to false
+		notifications := false
+		updateRequest.Notifications = &notifications
+		s.logger.Debug("Notification time is empty, setting notifications to false")
 	}
 
 	// Extract additional preferences
 	if progress.Preferences != nil {
 		if goal, ok := progress.Preferences["goal"].(string); ok {
-			updateRequest.Goal = goal
+			updateRequest.Goal = &goal
 		}
 		if factEveryday, ok := progress.Preferences["fact_everyday"].(bool); ok {
-			updateRequest.FactEveryday = factEveryday
+			updateRequest.FactEveryday = &factEveryday
 		}
 		if subscribed, ok := progress.Preferences["subscribed"].(bool); ok {
-			updateRequest.Subscribed = subscribed
+			updateRequest.Subscribed = &subscribed
 		}
 		if avatarURL, ok := progress.Preferences["avatar_image_url"].(string); ok {
-			updateRequest.AvatarImageURL = avatarURL
+			updateRequest.AvatarImageURL = &avatarURL
 		}
 	}
 
 	// Update preferences in backend
+	s.logger.Info("Updating user preferences", zap.Any("update_request", updateRequest))
 	_, err = s.apiClient.UpdateUserPreferences(ctx, accessToken, updateRequest)
 	if err != nil {
 		s.logger.Error("Failed to update user preferences", zap.Int64("user_id", userID), zap.Error(err))
-		return err
+
+		// Check if this is a 404 error (preferences not found)
+		if strings.Contains(err.Error(), "404") || strings.Contains(err.Error(), "preference not found") {
+			s.logger.Warn("User preferences not found, creating new preferences", zap.Int64("user_id", userID))
+
+			// Get user ID from JWT token
+			userIDFromToken, err := s.getUserIDFromToken(accessToken)
+			if err != nil {
+				s.logger.Error("Failed to get user ID from token", zap.Int64("user_id", userID), zap.Error(err))
+				// Continue without backend sync
+				return nil
+			}
+
+			// Try to create preferences instead
+			createRequest := &api.CreatePreferenceRequest{
+				CEFRLevel:      progress.CEFRLevel,
+				WordsPerDay:    progress.WordsPerDay,
+				Notifications:  progress.NotificationsEnabled(),
+				Goal:           "Learn new words",
+				FactEveryday:   false,
+				Subscribed:     false,
+				AvatarImageURL: "",
+			}
+
+			if progress.NotificationTime != "" {
+				notificationTime, err := ParseTimeToTime(progress.NotificationTime)
+				if err == nil {
+					createRequest.NotificationAt = notificationTime
+				} else {
+					s.logger.Warn("Failed to parse notification time for create request",
+						zap.String("notification_time", progress.NotificationTime),
+						zap.Error(err))
+					// Set notifications to false if time parsing fails
+					createRequest.Notifications = false
+				}
+			} else {
+				// If notification time is empty, set notifications to false
+				createRequest.Notifications = false
+			}
+
+			// Extract additional preferences
+			if progress.Preferences != nil {
+				if goal, ok := progress.Preferences["goal"].(string); ok && goal != "" {
+					createRequest.Goal = goal
+				}
+				if factEveryday, ok := progress.Preferences["fact_everyday"].(bool); ok {
+					createRequest.FactEveryday = factEveryday
+				}
+				if subscribed, ok := progress.Preferences["subscribed"].(bool); ok {
+					createRequest.Subscribed = subscribed
+				}
+				if avatarURL, ok := progress.Preferences["avatar_image_url"].(string); ok && avatarURL != "" {
+					createRequest.AvatarImageURL = avatarURL
+				}
+			}
+
+			// Create preferences
+			if _, createErr := s.apiClient.CreateUserPreferences(ctx, accessToken, userIDFromToken, createRequest); createErr != nil {
+				s.logger.Error("Failed to create user preferences", zap.Int64("user_id", userID), zap.Error(createErr))
+				// Continue without backend sync
+			} else {
+				s.logger.Info("Successfully created user preferences", zap.Int64("user_id", userID))
+			}
+		} else {
+			// For other errors, still return the error
+			return err
+		}
 	}
 
 	s.logger.Info("Successfully updated user progress", zap.Int64("user_id", userID))
 	return nil
+}
+
+// getUserIDFromToken extracts user ID from JWT token
+func (s *HandlerService) getUserIDFromToken(tokenString string) (string, error) {
+	// Split the token into parts
+	parts := strings.Split(tokenString, ".")
+	if len(parts) != 3 {
+		return "", fmt.Errorf("invalid JWT format")
+	}
+
+	// Decode the payload (second part)
+	payload, err := base64.RawURLEncoding.DecodeString(parts[1])
+	if err != nil {
+		return "", fmt.Errorf("failed to decode JWT payload: %w", err)
+	}
+
+	// Parse the JSON payload
+	var claims map[string]interface{}
+	if err := json.Unmarshal(payload, &claims); err != nil {
+		return "", fmt.Errorf("failed to parse JWT claims: %w", err)
+	}
+
+	// Extract user ID from 'sub' claim
+	userID, ok := claims["sub"].(string)
+	if !ok {
+		return "", fmt.Errorf("user ID not found in JWT claims")
+	}
+
+	return userID, nil
 }
 
 // IsUserAuthenticated checks if user has valid authentication
@@ -222,10 +430,18 @@ func (s *HandlerService) HandleTextMessage(ctx context.Context, c tele.Context, 
 		return s.HandleQuestionConfidenceMessage(ctx, c, userID, currentState)
 	case fsm.StateQuestionExperience:
 		return s.HandleQuestionExperienceMessage(ctx, c, userID, currentState)
+	case fsm.StateQuestionWordsPerDay:
+		return s.HandleQuestionWordsPerDayMessage(ctx, c, userID, currentState)
+	case fsm.StateQuestionNotifications:
+		return s.HandleQuestionNotificationsMessage(ctx, c, userID, currentState)
+	case fsm.StateQuestionNotificationTime:
+		return s.HandleQuestionNotificationTimeMessage(ctx, c, userID, currentState)
 	case fsm.StateSettingsWordsPerDayInput:
 		return s.HandleSettingsWordsPerDayInputMessage(ctx, c, userID, currentState)
 	case fsm.StateSettingsTimeInput:
 		return s.HandleSettingsTimeInputMessage(ctx, c, userID, currentState)
+	case fsm.StateSettingsCEFRLevel:
+		return s.HandleSettingsCEFRLevelInputMessage(ctx, c, userID, currentState)
 	case fsm.StateWaitingForTranslation:
 		return s.HandleWaitingForTranslationMessage(ctx, c, userID, currentState)
 	case fsm.StateWaitingForAudio:
@@ -328,6 +544,35 @@ func (s *HandlerService) HandleCallback(ctx context.Context, c tele.Context, use
 		answer := strings.TrimPrefix(data, "experience:")
 		return s.HandleExperienceCallback(ctx, c, userID, answer)
 	}
+	if strings.HasPrefix(data, "words_per_day:") {
+		answer := strings.TrimPrefix(data, "words_per_day:")
+		return s.HandleWordsPerDayCallback(ctx, c, userID, answer)
+	}
+	if strings.HasPrefix(data, "notifications:") {
+		answer := strings.TrimPrefix(data, "notifications:")
+		return s.HandleNotificationsCallback(ctx, c, userID, answer)
+	}
+	if strings.HasPrefix(data, "notification_time:") {
+		answer := strings.TrimPrefix(data, "notification_time:")
+		return s.HandleNotificationTimeCallback(ctx, c, userID, answer)
+	}
+
+	// Handle settings callbacks
+	if strings.HasPrefix(data, "settings:words:") {
+		return s.HandleSettingsWordsCallback(ctx, c, userID, data)
+	}
+	if strings.HasPrefix(data, "settings:time:") {
+		return s.HandleSettingsTimeCallback(ctx, c, userID, data)
+	}
+	if strings.HasPrefix(data, "settings:cefr:") {
+		return s.HandleSettingsCEFRCallback(ctx, c, userID, data)
+	}
+	if strings.HasPrefix(data, "settings:topic:") {
+		return s.HandleSettingsTopicCallback(ctx, c, userID, data)
+	}
+	if data == "settings:back" {
+		return s.HandleSettingsBackCallback(ctx, c, userID, currentState)
+	}
 
 	// Route based on callback data prefix and current state
 	switch data {
@@ -353,8 +598,12 @@ func (s *HandlerService) HandleCallback(ctx context.Context, c tele.Context, use
 		return s.HandleSettingsNotificationsCallback(ctx, c, userID, currentState)
 	case "settings:cefr_level":
 		return s.HandleSettingsCEFRLevelCallback(ctx, c, userID, currentState)
+	case "settings:goal_topic":
+		return s.HandleSettingsGoalTopicCallback(ctx, c, userID, currentState)
 	case "menu:main":
 		return s.HandleMainMenuCallback(ctx, c, userID, currentState)
+	case "menu:back_to_main":
+		return s.HandleBackToMainMenuCallback(ctx, c, userID, currentState)
 	case "menu:settings":
 		return s.HandleSettingsMenuCallback(ctx, c, userID, currentState)
 	case "menu:learn":
@@ -510,4 +759,317 @@ func (s *HandlerService) HandlePhotoMessage(ctx context.Context, c tele.Context,
 
 	// For now, photos aren't part of the learning flow
 	return c.Send("Используйте /help чтобы увидеть доступные команды.")
+}
+
+// sendThinkingMessage sends a "bot is thinking" message and returns the message ID for later deletion
+func (s *HandlerService) sendThinkingMessage(ctx context.Context, c tele.Context, userID int64, operation string) (*tele.Message, error) {
+	thinkingText := fmt.Sprintf("🤔 *%s*\n\nПожалуйста, подождите...", operation)
+
+	msg, err := c.Bot().Send(c.Chat(), thinkingText, &tele.SendOptions{
+		ParseMode: tele.ModeMarkdown,
+	})
+
+	if err != nil {
+		s.logger.Error("Failed to send thinking message",
+			zap.Int64("user_id", userID),
+			zap.String("operation", operation),
+			zap.Error(err))
+		return nil, err
+	}
+
+	s.logger.Debug("Sent thinking message",
+		zap.Int64("user_id", userID),
+		zap.String("operation", operation),
+		zap.Int("message_id", msg.ID))
+
+	return msg, nil
+}
+
+// sendThinkingGif sends a thinking GIF animation and returns the message ID for later deletion
+func (s *HandlerService) sendThinkingGif(ctx context.Context, c tele.Context, userID int64, operation string) (*tele.Message, error) {
+	// Use the existing GIF file in assets/gifs/
+	gifUrl := "https://media1.tenor.com/m/yKT3Srq0_oEAAAAC/gjirlfriend.gif"
+
+	// Try sending as photo first (GIFs can be sent as photos)
+	animation := &tele.Animation{
+		File:    tele.FromURL(gifUrl),
+		Caption: fmt.Sprintf("🤔 %s\n\nПожалуйста, подождите...", operation),
+	}
+
+	msg, err := c.Bot().Send(c.Chat(), animation, &tele.SendOptions{
+		ParseMode: tele.ModeMarkdown,
+	})
+
+	// If photo fails, try sending as animation
+	if err != nil {
+		s.logger.Warn("Failed to send as photo, trying as animation",
+			zap.String("file_path", gifUrl),
+			zap.Error(err))
+
+		animation := &tele.Animation{
+			File:    tele.FromURL(gifUrl),
+			Caption: fmt.Sprintf("🤔 %s\n\nПожалуйста, подождите...", operation),
+		}
+
+		msg, err = c.Bot().Send(c.Chat(), animation, &tele.SendOptions{
+			ParseMode: tele.ModeMarkdown,
+		})
+	}
+
+	// If animation fails, try sending as document
+	if err != nil {
+		s.logger.Warn("Failed to send as animation, trying as document",
+			zap.String("file_path", gifUrl),
+			zap.Error(err))
+
+		document := &tele.Document{
+			File:    tele.FromURL(gifUrl),
+			Caption: fmt.Sprintf("🤔 %s\n\nПожалуйста, подождите...", operation),
+		}
+
+		msg, err = c.Bot().Send(c.Chat(), document, &tele.SendOptions{
+			ParseMode: tele.ModeMarkdown,
+		})
+	}
+
+	if err != nil {
+		s.logger.Error("Failed to send thinking GIF",
+			zap.Int64("user_id", userID),
+			zap.String("operation", operation),
+			zap.Error(err))
+		return nil, err
+	}
+
+	s.logger.Debug("Sent thinking GIF",
+		zap.Int64("user_id", userID),
+		zap.String("operation", operation),
+		zap.Int("message_id", msg.ID))
+
+	return msg, nil
+}
+
+// sendThinkingGifFromFile sends a thinking GIF from a local file
+func (s *HandlerService) sendThinkingGifFromFile(ctx context.Context, c tele.Context, userID int64, operation string, filePath string) (*tele.Message, error) {
+	// Check if file exists
+	if _, err := os.Stat(filePath); os.IsNotExist(err) {
+		s.logger.Warn("Thinking GIF file not found, falling back to text message",
+			zap.String("file_path", filePath),
+			zap.Error(err))
+		return s.sendThinkingMessage(ctx, c, userID, operation)
+	}
+
+	// Try sending as photo first (GIFs can be sent as photos)
+	photo := &tele.Photo{
+		File:    tele.FromDisk(filePath),
+		Caption: fmt.Sprintf("🤔 %s\n\nПожалуйста, подождите...", operation),
+	}
+
+	msg, err := c.Bot().Send(c.Chat(), photo, &tele.SendOptions{
+		ParseMode: tele.ModeMarkdown,
+	})
+
+	// If photo fails, try sending as animation
+	if err != nil {
+		s.logger.Warn("Failed to send as photo, trying as animation",
+			zap.String("file_path", filePath),
+			zap.Error(err))
+
+		animation := &tele.Animation{
+			File:    tele.FromDisk(filePath),
+			Caption: fmt.Sprintf("🤔 %s\n\nПожалуйста, подождите...", operation),
+		}
+
+		msg, err = c.Bot().Send(c.Chat(), animation, &tele.SendOptions{
+			ParseMode: tele.ModeMarkdown,
+		})
+	}
+
+	// If animation fails, try sending as document
+	if err != nil {
+		s.logger.Warn("Failed to send as animation, trying as document",
+			zap.String("file_path", filePath),
+			zap.Error(err))
+
+		document := &tele.Document{
+			File:    tele.FromDisk(filePath),
+			Caption: fmt.Sprintf("🤔 %s\n\nПожалуйста, подождите...", operation),
+		}
+
+		msg, err = c.Bot().Send(c.Chat(), document, &tele.SendOptions{
+			ParseMode: tele.ModeMarkdown,
+		})
+	}
+
+	if err != nil {
+		s.logger.Error("Failed to send thinking GIF from file",
+			zap.Int64("user_id", userID),
+			zap.String("operation", operation),
+			zap.String("file_path", filePath),
+			zap.Error(err))
+		return nil, err
+	}
+
+	s.logger.Debug("Sent thinking GIF from file",
+		zap.Int64("user_id", userID),
+		zap.String("operation", operation),
+		zap.String("file_path", filePath),
+		zap.Int("message_id", msg.ID))
+
+	return msg, nil
+}
+
+// startTypingIndicator starts a typing indicator for the current chat
+func (s *HandlerService) startTypingIndicator(ctx context.Context, c tele.Context) error {
+	if err := c.Notify(tele.Typing); err != nil {
+		s.logger.Warn("Failed to start typing indicator", zap.Error(err))
+		return err
+	}
+	s.logger.Debug("Started typing indicator")
+	return nil
+}
+
+// stopTypingIndicator stops the typing indicator for the current chat
+func (s *HandlerService) stopTypingIndicator(ctx context.Context, c tele.Context) error {
+	// In telebot v3, typing indicators automatically stop after a timeout
+	// or when a new message is sent. We don't need to explicitly stop them.
+	// Just log that we're done with typing.
+	s.logger.Debug("Typing indicator will stop automatically")
+	return nil
+}
+
+// withTypingIndicator executes a function while showing a typing indicator
+func (s *HandlerService) withTypingIndicator(ctx context.Context, c tele.Context, operation func() error) error {
+	// Start typing indicator
+	if err := s.startTypingIndicator(ctx, c); err != nil {
+		// Continue even if typing indicator fails
+		s.logger.Debug("Continuing without typing indicator", zap.Error(err))
+	}
+
+	// Ensure typing indicator is stopped when function completes
+	defer func() {
+		if err := s.stopTypingIndicator(ctx, c); err != nil {
+			s.logger.Debug("Failed to stop typing indicator", zap.Error(err))
+		}
+	}()
+
+	// Execute the operation
+	return operation()
+}
+
+// withThinkingMessageAndTyping executes a function while showing both typing indicator and thinking message
+func (s *HandlerService) withThinkingMessageAndTyping(ctx context.Context, c tele.Context, userID int64, operation string, fn func() error) error {
+	// Start typing indicator immediately
+	if err := s.startTypingIndicator(ctx, c); err != nil {
+		s.logger.Debug("Continuing without typing indicator", zap.Error(err))
+	}
+
+	// Send thinking message after a short delay to avoid spam
+	thinkingMsg, err := s.sendThinkingMessage(ctx, c, userID, operation)
+	if err != nil {
+		s.logger.Error("Failed to send thinking message", zap.Error(err))
+		// Continue without thinking message if it fails
+	}
+
+	// Ensure cleanup when function completes
+	defer func() {
+		// Stop typing indicator
+		if err := s.stopTypingIndicator(ctx, c); err != nil {
+			s.logger.Debug("Failed to stop typing indicator", zap.Error(err))
+		}
+
+		// Delete thinking message if it was sent
+		if thinkingMsg != nil {
+			if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+				s.logger.Debug("Failed to delete thinking message", zap.Error(deleteErr))
+			}
+		}
+	}()
+
+	// Execute the operation
+	return fn()
+}
+
+// withThinkingGifAndTyping executes a function while showing both typing indicator and thinking GIF
+func (s *HandlerService) withThinkingGifAndTyping(ctx context.Context, c tele.Context, userID int64, operation string, fn func() error) error {
+	// Start typing indicator immediately
+	if err := s.startTypingIndicator(ctx, c); err != nil {
+		s.logger.Debug("Continuing without typing indicator", zap.Error(err))
+	}
+
+	// Send thinking GIF after a short delay to avoid spam
+	thinkingMsg, err := s.sendThinkingGif(ctx, c, userID, operation)
+	if err != nil {
+		s.logger.Error("Failed to send thinking GIF", zap.Error(err))
+		// Continue without thinking GIF if it fails
+	}
+
+	// Ensure cleanup when function completes
+	defer func() {
+		// Stop typing indicator
+		if err := s.stopTypingIndicator(ctx, c); err != nil {
+			s.logger.Debug("Failed to stop typing indicator", zap.Error(err))
+		}
+
+		// Delete thinking GIF if it was sent
+		if thinkingMsg != nil {
+			if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+				s.logger.Debug("Failed to delete thinking GIF", zap.Error(deleteErr))
+			}
+		}
+	}()
+
+	// Execute the operation
+	return fn()
+}
+
+// withThinkingGifFromFileAndTyping executes a function while showing both typing indicator and thinking GIF from local file
+func (s *HandlerService) withThinkingGifFromFileAndTyping(ctx context.Context, c tele.Context, userID int64, operation string, gifFilePath string, fn func() error) error {
+	// Start typing indicator immediately
+	if err := s.startTypingIndicator(ctx, c); err != nil {
+		s.logger.Debug("Continuing without typing indicator", zap.Error(err))
+	}
+
+	// Send thinking GIF from file after a short delay to avoid spam
+	thinkingMsg, err := s.sendThinkingGifFromFile(ctx, c, userID, operation, gifFilePath)
+	if err != nil {
+		s.logger.Error("Failed to send thinking GIF from file", zap.Error(err))
+		// Continue without thinking GIF if it fails
+	}
+
+	// Ensure cleanup when function completes
+	defer func() {
+		// Stop typing indicator
+		if err := s.stopTypingIndicator(ctx, c); err != nil {
+			s.logger.Debug("Failed to stop typing indicator", zap.Error(err))
+		}
+
+		// Delete thinking GIF if it was sent
+		if thinkingMsg != nil {
+			if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+				s.logger.Debug("Failed to delete thinking GIF", zap.Error(deleteErr))
+			}
+		}
+	}()
+
+	// Execute the operation
+	return fn()
+}
+
+// deleteMessage safely deletes a message with error handling
+func (s *HandlerService) deleteMessage(ctx context.Context, c tele.Context, messageID int) error {
+	if err := c.Bot().Delete(&tele.Message{ID: messageID, Chat: c.Chat()}); err != nil {
+		// Only log as warning if it's not a "message not found" error
+		if !strings.Contains(err.Error(), "message to delete not found") {
+			s.logger.Warn("Failed to delete message",
+				zap.Int("message_id", messageID),
+				zap.Error(err))
+		} else {
+			s.logger.Debug("Message already deleted or not found",
+				zap.Int("message_id", messageID))
+		}
+		return err
+	}
+
+	s.logger.Debug("Successfully deleted message", zap.Int("message_id", messageID))
+	return nil
 }

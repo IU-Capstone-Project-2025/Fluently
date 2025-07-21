@@ -169,7 +169,7 @@ test-backend: run-test-db ## Run backend tests with test database
 	export DB_USER=test_user && \
 	export DB_NAME=test_db && \
 	export DB_PASSWORD=test_password && \
-	go test -v -coverprofile=coverage.out ./...
+	go test -v -coverprofile=coverage.out -covermode=atomic -coverpkg=./... ./...
 	@cd backend && go tool cover -html=coverage.out -o coverage.html
 	@echo " Tests complete. Coverage report: backend/coverage.html"
 

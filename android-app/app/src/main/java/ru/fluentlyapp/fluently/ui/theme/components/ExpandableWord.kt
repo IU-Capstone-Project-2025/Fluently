@@ -30,6 +30,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -79,14 +80,16 @@ fun ExpandableWord(
             Icon(
                 painter = painterResource(R.drawable.ic_chevron_right),
                 contentDescription = "Expand list",
-                modifier = Modifier.rotate(rotationAngle).size(32.dp)
+                modifier = Modifier
+                    .rotate(rotationAngle)
+                    .size(32.dp)
             )
         }
         AnimatedVisibility(visible = isExpanded) {
             Column(modifier = Modifier.fillMaxWidth()) {
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Примеры",
+                    text = stringResource(R.string.Examples),
                     color = FluentlyTheme.colors.onSurfaceVariant
                 )
                 repeat(word.examples.size) { index ->

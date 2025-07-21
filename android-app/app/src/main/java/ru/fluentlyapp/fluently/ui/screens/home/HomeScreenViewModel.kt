@@ -8,10 +8,8 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 import ru.fluentlyapp.fluently.data.repository.LessonRepository
 import javax.inject.Inject
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.supervisorScope
 import ru.fluentlyapp.fluently.feature.joinedwordprogress.JoinedWordProgressRepository
@@ -40,18 +38,21 @@ class HomeScreenViewModel @Inject constructor(
         viewModelScope.safeLaunch {
             supervisorScope {
                 safeLaunch {
-                    userPreferencesRepository.updateUserPreferences()
+                    val preferences = userPreferencesRepository.getRemoteUserPreferences()
+                    userPreferencesRepository.updateCachedUserPreferences(preferences)
+                    Timber.d("HomeScreen additional preference sync")
                 }
 
                 safeLaunch {
-                    userPreferencesRepository.getUserPreferences().collect { userPreferences ->
+                    userPreferencesRepository.getCachedUserPreferences().collect { userPreferences ->
                         if (userPreferences == null) {
                             return@collect
                         }
 
                         _uiState.update {
                             it.copy(
-                                avatarPicture = userPreferences.avatarImageUrl.toUri()
+                                avatarPicture = userPreferences.avatarImageUrl.toUri(),
+                                preferredTopic = userPreferences.goal
                             )
                         }
                     }

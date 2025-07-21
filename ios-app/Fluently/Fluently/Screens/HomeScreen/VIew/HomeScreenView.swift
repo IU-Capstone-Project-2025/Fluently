@@ -13,14 +13,14 @@ struct HomeScreenView: View {
     // MARK: - Key Objects
     @StateObject var presenter: HomeScreenPresenter
     @Environment(\.modelContext) var modelContext
+    @Environment(\.isNetworkConnected) var isNetworkConnected
 
     var words: [WordModel] {
         let descriptor = FetchDescriptor<WordModel>(
             predicate: #Predicate {
                 $0.isInLesson == false &&
-                $0.isDayWord == false
-            },
-//            sortBy: [SortDescriptor(\.wordDate, order: .reverse)]
+                $0.isInLibrary == true
+            }
         )
         return (try? modelContext.fetch(descriptor)) ?? []
     }
@@ -51,13 +51,24 @@ struct HomeScreenView: View {
             Task {
                 do {
                     try await presenter.getLesson()
+                    presenter.compare()
+                    await presenter.checkForNilIDs()
                 } catch {
                     print(error)
                 }
             }
+            presenter.compare()
         }
         .navigationBarBackButtonHidden()
         .modifier(BackgroundViewModifier())
+
+        .sheet(isPresented: .constant(!(isNetworkConnected ?? true))) {
+            NetworkSheetView()
+                .presentationDetents([.medium])
+                .presentationBackground(.clear)
+                .presentationBackgroundInteraction(.disabled)
+                .interactiveDismissDisabled()
+        }
 
         .fullScreenCover(item: $openedScreen) { screenType in
             switch screenType {
@@ -142,6 +153,7 @@ struct HomeScreenView: View {
                         .fill(.blackFluently)
                 )
                 .padding(.horizontal, Const.horizontalPadding * 3)
+                .id(presenter.lesson?.id)
         }
         .disabled(presenter.lesson == nil)
     }

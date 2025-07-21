@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Extension Debug</title>
+    <style>
+        body {
+            width: 400px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .permission-check {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 3px;
+        }
+        
+        .permission-check.success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .permission-check.error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 3px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        #log {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Extension Debug Panel</h2>
+    
+    <div class="section">
+        <h3>Permission Status</h3>
+        <div id="permissionStatus"></div>
+        <button onclick="checkPermissions()">Recheck Permissions</button>
+        <button onclick="requestPermissions()">Request Permissions</button>
+    </div>
+    
+    <div class="section">
+        <h3>Storage Test</h3>
+        <button onclick="testStorage()">Test Storage</button>
+        <button onclick="clearStorage()">Clear Storage</button>
+        <div id="storageStatus"></div>
+    </div>
+    
+    <div class="section">
+        <h3>Authentication Test</h3>
+        <button onclick="testAuth()">Check Auth Status</button>
+        <button onclick="openAuthPage()">Open Auth Page</button>
+        <div id="authStatus"></div>
+    </div>
+    
+    <div class="section">
+        <h3>Debug Log</h3>
+        <button onclick="clearLog()">Clear Log</button>
+        <div id="log"></div>
+    </div>
+    
+    <script src="debug.js"></script>
+</body>
+</html>

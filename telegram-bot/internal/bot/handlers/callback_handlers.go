@@ -55,6 +55,15 @@ func (s *HandlerService) HandleLessonCallback(ctx context.Context, c tele.Contex
 			}
 			return s.HandleShowWord(ctx, c, userID, wordIndex)
 		}
+		// Handle already_know callbacks with index
+		if strings.HasPrefix(action, "already_know:") {
+			indexStr := strings.TrimPrefix(action, "already_know:")
+			wordIndex, err := strconv.Atoi(indexStr)
+			if err != nil {
+				return err
+			}
+			return s.HandleWordAlreadyKnown(ctx, c, userID, wordIndex)
+		}
 		return c.Send("❌ Неизвестная команда")
 	}
 }
@@ -281,33 +290,36 @@ func (s *HandlerService) handleLessonStats(ctx context.Context, c tele.Context, 
 	targetCount := progress.LessonData.Lesson.WordsPerLesson
 	duration := s.formatDuration(time.Since(progress.StartTime))
 
-	correctWords := 0
-	totalWords := len(progress.WordsLearned)
+	// Calculate statistics - exclude "already known" words from the count
+	wellAnsweredWords := 0
 	for _, wordProgress := range progress.WordsLearned {
 		if wordProgress.ConfidenceScore > 0 {
-			correctWords++
+			// Check if this word was marked as "already known"
+			if !wordProgress.AlreadyKnown {
+				// This is a newly learned word, not "already known"
+				wellAnsweredWords++
+			}
 		}
 	}
 
 	var accuracy float64
-	if totalWords > 0 {
-		accuracy = float64(correctWords) / float64(totalWords) * 100
+	newlyLearnedCount := progress.LearnedCount - progress.AlreadyKnownCount
+	if newlyLearnedCount > 0 {
+		accuracy = float64(wellAnsweredWords) / float64(newlyLearnedCount) * 100
 	}
 
 	statsText := fmt.Sprintf(
 		"📊 *Статистика урока*\n\n"+
 			"🎯 Прогресс: %d/%d слов\n"+
-			"✅ Правильных ответов: %d из %d\n"+
+			"✅ Правильно: %d из %d\n"+
 			"📈 Точность: %.1f%%\n"+
-			"⏱ Время: %s\n"+
-			"📚 Текущий набор: #%d",
+			"⏱ Время: %s\n",
 		learnedCount,
 		targetCount,
-		correctWords,
-		totalWords,
+		wellAnsweredWords,
+		targetCount, // Show correct answers vs target words (user_preferences.words_per_day)
 		accuracy,
 		duration,
-		progress.CurrentSetIndex,
 	)
 
 	keyboard := &tele.ReplyMarkup{
@@ -328,43 +340,79 @@ func (s *HandlerService) handleFinalStats(ctx context.Context, c tele.Context, u
 		return c.Send("❌ Нет данных о завершенном уроке")
 	}
 
-	totalWords := len(progress.WordsLearned)
+	// Calculate statistics - exclude "already known" words from the count
 	correctWords := 0
+	newlyLearnedCorrectWords := 0
+
 	for _, wordProgress := range progress.WordsLearned {
 		if wordProgress.ConfidenceScore > 0 {
 			correctWords++
+			// Check if this word was marked as "already known"
+			if !wordProgress.AlreadyKnown {
+				// This is a newly learned word, not "already known"
+				newlyLearnedCorrectWords++
+			}
 		}
 	}
 
 	duration := s.formatDuration(time.Since(progress.StartTime))
-	accuracy := float64(correctWords) / float64(totalWords) * 100
+	// Calculate accuracy based on newly learned words only
+	newlyLearnedCount := progress.LearnedCount - progress.AlreadyKnownCount
+	accuracy := float64(newlyLearnedCorrectWords) / float64(newlyLearnedCount) * 100
 
-	// Show learned words
+	// Show learned words with translations
 	var learnedWordsText strings.Builder
-	learnedWordsText.WriteString("📚 *Изученные слова:*\n")
+	learnedWordsText.WriteString(fmt.Sprintf("📚 *За урок выучено %d слов:*\n\n", newlyLearnedCorrectWords))
 
 	for _, wordProgress := range progress.WordsLearned {
-		if wordProgress.ConfidenceScore > 0 {
-			learnedWordsText.WriteString(fmt.Sprintf("✅ %s\n", wordProgress.Word))
-		} else {
-			learnedWordsText.WriteString(fmt.Sprintf("❌ %s\n", wordProgress.Word))
+		if wordProgress.ConfidenceScore > 0 && !wordProgress.AlreadyKnown {
+			learnedWordsText.WriteString(fmt.Sprintf("#%s - %s\n", wordProgress.Word, wordProgress.Translation))
 		}
+	}
+
+	// Add information about retry words if any remain
+	var retryInfo string
+	if len(progress.RetryWords) > 0 {
+		retryInfo = fmt.Sprintf("\n🔄 *Слова для повторения:* %d\n", len(progress.RetryWords))
 	}
 
 	finalStatsText := fmt.Sprintf(
 		"🏆 *Финальная статистика*\n\n"+
 			"✅ Слов выучено: %d\n"+
-			"🎯 Правильных ответов: %d из %d\n"+
+			"💡 Уже знал: %d слов\n"+
+			"🎯 Правильно: %d из %d\n"+
 			"📈 Точность: %.1f%%\n"+
-			"⏱ Время урока: %s\n\n"+
+			"⏱ Время урока: %s%s\n\n"+
 			"%s",
 		progress.LearnedCount,
-		correctWords,
-		totalWords,
+		progress.AlreadyKnownCount,
+		newlyLearnedCorrectWords,
+		progress.LessonData.Lesson.WordsPerLesson,
 		accuracy,
 		duration,
+		retryInfo,
 		learnedWordsText.String(),
 	)
+
+	// Send progress to backend
+	token, err := s.stateManager.GetJWTToken(ctx, userID)
+	if err == nil {
+		err = s.apiClient.SendLessonProgress(ctx, token, progress.WordsLearned, progress.BadlyAnsweredWords)
+		if err != nil {
+			s.logger.Error("Failed to send lesson progress to backend", zap.Error(err))
+		}
+	}
+
+	// Clear lesson progress
+	err = s.stateManager.ClearLessonProgress(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to clear lesson progress", zap.Error(err))
+	}
+
+	// Reset state to start
+	if err := s.stateManager.SetState(ctx, userID, fsm.StateStart); err != nil {
+		s.logger.Error("Failed to reset state", zap.Error(err))
+	}
 
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{

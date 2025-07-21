@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Successful - Fluently</title>
+    <link rel="stylesheet" href="style.css?v=2025072003">
+    <style>
+        .auth-success-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .success-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 1s ease-in-out;
+        }
+
+        .success-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .success-message {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .user-info {
+            background: var(--light-accent);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: block;
+            border: 3px solid var(--primary-accent);
+        }
+
+        .user-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .user-email {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: 0 4px 12px rgba(160, 67, 219, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(160, 67, 219, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .success-card {
+                padding: 30px 20px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-success-container">
+        <div class="success-card">
+            <div class="success-icon">✅</div>
+            <h1 class="success-title">Authentication Successful!</h1>
+            <p class="success-message">
+                You've successfully signed in with your Google account. 
+                Your account is now connected to the Fluently Word Learner extension.
+            </p>
+            
+            <div class="user-info" id="userInfo">
+                <img id="userAvatar" src="logo-t.png" alt="User Avatar" class="user-avatar">
+                <div class="user-name" id="userName">Loading...</div>
+                <div class="user-email" id="userEmail">Loading...</div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="closeWindow()">
+                    🎉 Continue to Extension
+                </button>
+                <a href="index.html" class="btn btn-secondary">
+                    🏠 Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Parse URL parameters to get user data
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            const email = urlParams.get('email');
+            const picture = urlParams.get('picture');
+            const accessToken = urlParams.get('access_token');
+
+            if (name && email) {
+                // Store user data for extension
+                const userData = {
+                    name,
+                    email,
+                    picture,
+                    accessToken,
+                    loginTime: new Date().toISOString()
+                };
+                
+                localStorage.setItem('fluently_user', JSON.stringify(userData));
+                localStorage.setItem('fluently_access_token', accessToken);
+                
+                // Display user info
+                document.getElementById('userName').textContent = name;
+                document.getElementById('userEmail').textContent = email;
+                
+                if (picture) {
+                    document.getElementById('userAvatar').src = picture;
+                }
+                
+                // Clean URL parameters
+                window.history.replaceState({}, document.title, '/auth-success.html');
+                
+                // Notify extension about successful authentication
+                console.log('Notifying extension about auth success...');
+                setTimeout(() => {
+                    window.postMessage({ 
+                        type: 'AUTH_SUCCESS',
+                        token: accessToken,
+                        email: email
+                    }, '*');
+                }, 500);
+                
+                // Auto-close after 5 seconds if opened from extension
+                setTimeout(() => {
+                    if (window.opener || window.name === 'fluently_auth') {
+                        closeWindow();
+                    }
+                }, 5000);
+            } else {
+                // Check if user is already logged in
+                const storedUser = localStorage.getItem('fluently_user');
+                if (storedUser) {
+                    const userData = JSON.parse(storedUser);
+                    document.getElementById('userName').textContent = userData.name;
+                    document.getElementById('userEmail').textContent = userData.email;
+                    if (userData.picture) {
+                        document.getElementById('userAvatar').src = userData.picture;
+                    }
+                } else {
+                    // Redirect to home if no auth data
+                    window.location.href = '/index.html';
+                }
+            }
+        });
+
+        function closeWindow() {
+            console.log('Closing window and notifying extension...');
+            
+            // Get the stored user data
+            const userData = localStorage.getItem('fluently_user');
+            const accessToken = localStorage.getItem('fluently_access_token');
+            
+            // Send message to extension if opened from it
+            if (window.opener) {
+                const authData = { 
+                    type: 'AUTH_SUCCESS',
+                    token: accessToken,
+                    email: userData ? JSON.parse(userData).email : null
+                };
+                console.log('Sending auth data to opener:', authData);
+                window.opener.postMessage(authData, '*');
+            }
+            
+            // Also try to communicate with extension via window messaging
+            window.postMessage({ 
+                type: 'AUTH_SUCCESS',
+                token: accessToken,
+                email: userData ? JSON.parse(userData).email : null
+            }, '*');
+            
+            // Close window or redirect
+            setTimeout(() => {
+                if (window.name === 'fluently_auth' || window.opener) {
+                    window.close();
+                } else {
+                    window.location.href = '/index.html';
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html> 

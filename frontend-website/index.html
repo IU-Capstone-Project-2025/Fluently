@@ -1,66 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluently - AI-Powered English Learning</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./logo.jpg" type="image/jpeg">
+    <title data-en="Fluently - Learn English Fluently" data-ru="Fluently - Изучайте английский свободно">Fluently - Изучайте английский свободно</title>
+    <link rel="stylesheet" href="style.css?v=2025072003">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <img src="./logo.jpg" alt="Fluently Logo" class="logo">
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#contact">Contact</a>
-                <button id="loginBtn" class="cta google-login-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24">
-                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                    </svg>
-                    Login with Google
-                </button>
+            <div class="nav-brand">
+                <img src="logo-t.png" alt="Fluently Logo" class="logo">
+                <span class="brand-name">Fluently</span>
+            </div>
+            <div class="nav-right">
+                <div class="language-switcher">
+                    <button id="langToggle" class="lang-btn">
+                        <i class="fas fa-language"></i>
+                        <span data-en="EN" data-ru="RU">RU</span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Master English with AI-Powered Conversations</h1>
-            <p>Personalized learning for A2-C2 levels with progress tracking across all devices</p>
-            <div class="auth-section">
-                <p>Sign in to start your learning journey</p>
-                <button id="mainLoginBtn" class="cta google-login-btn large">
+            <h1 data-en="Learn English Fluently" data-ru="Изучайте английский свободно">Изучайте английский свободно</h1>
+            <p data-en="Master English through our innovative learning platform. Track your progress, learn new words, and improve your fluency with personalized lessons." data-ru="Овладейте английским языком через нашу инновационную платформу обучения. Отслеживайте свой прогресс, изучайте новые слова и улучшайте беглость с персонализированными уроками.">Овладейте английским языком через нашу инновационную платформу обучения. Отслеживайте свой прогресс, изучайте новые слова и улучшайте беглость с персонализированными уроками.</p>
+        </section>
+
+        <section class="features">
+            <h3 data-en="Why Choose Fluently?" data-ru="Почему Fluently?">Почему Fluently?</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-book-open"></i>
+                    <h4 data-en="Personalized Learning" data-ru="Персонализированное обучение">Персонализированное обучение</h4>
+                    <p data-en="Adaptive vocabulary learning tailored to your level" data-ru="Адаптивное изучение словарного запаса, подстроенное под ваш уровень">Адаптивное изучение словарного запаса, подстроенное под ваш уровень</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4 data-en="Progress Tracking" data-ru="Отслеживание прогресса">Отслеживание прогресса</h4>
+                    <p data-en="Monitor your improvement with detailed analytics" data-ru="Отслеживайте свои улучшения с детальной аналитикой">Отслеживайте свои улучшения с детальной аналитикой</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h4 data-en="Smart Algorithm" data-ru="Умный алгоритм">Умный алгоритм</h4>
+                    <p data-en="AI-powered spaced repetition for optimal retention" data-ru="ИИ-алгоритм интервального повторения для оптимального запоминания">ИИ-алгоритм интервального повторения для оптимального запоминания</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-comments"></i>
+                    <h4 data-en="Interactive Chat" data-ru="Интерактивный чат">Интерактивный чат</h4>
+                    <p data-en="Practice conversations with AI tutors" data-ru="Практикуйте разговоры с ИИ">Практикуйте разговоры с ИИ</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h4 data-en="Real life examples" data-ru="Реальные примеры">Реальные примеры</h4>
+                    <p data-en="Learn from authentic materials and contexts" data-ru="Изучайте на основе аутентичных материалов и контекстов">Изучайте на основе аутентичных материалов и контекстов</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-gears"></i>
+                    <h4 data-en="Adaptive Difficulty" data-ru="Адаптивная сложность">Адаптивная сложность</h4>
+                    <p data-en="Challenges that match your skill level" data-ru="Задания, соответствующие вашему уровню английского">Задания, соответствующие вашему уровню английского</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="downloads">
+            <h3 data-en="Get Fluently" data-ru="Получить Fluently">Получить Fluently</h3>
+            <p data-en="Download our apps and start learning English today" data-ru="Скачайте наши приложения и начните изучать английский уже сегодня">Скачайте наши приложения и начните изучать английский уже сегодня</p>
+            <div class="download-buttons">
+                <a href="https://github.com/FluentlyOrg/Fluently-fork/releases/download/v1.0.0-mob/app-release.apk" class="download-btn android">
+                    <i class="fab fa-android"></i>
+                    <div>
+                        <span data-en="Download for" data-ru="Скачать для">Скачать для</span>
+                        <strong>Android</strong>
+                    </div>
+                </a>
+                <a href="https://github.com/FluentlyOrg/Fluently-fork/releases/download/v1.0.0-mob/Fluently.ipa" class="download-btn ios">
+                    <i class="fab fa-apple"></i>
+                    <div>
+                        <span data-en="Download for" data-ru="Скачать для">Скачать для</span>
+                        <strong>iOS</strong>
+                    </div>
+                </a>
+                <a href="http://t.me/FluentlyInEnglishBot" class="download-btn telegram">
+                    <i class="fab fa-telegram"></i>
+                    <div>
+                        <span data-en="Try our" data-ru="Попробуйте наш">Попробуйте наш</span>
+                        <strong data-en="Telegram Bot" data-ru="Telegram Бот">Telegram Бот</strong>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="extension">
+            <h3 data-en="Chrome Extension" data-ru="Расширение для Chrome">Расширение для Chrome</h3>
+            <p data-en="Add words to your learning list while browsing the web" data-ru="Добавляйте слова в список изучения во время веб-серфинга">Добавляйте слова в список изучения во время веб-серфинга</p>
+            <div class="extension-card">
+                <div class="extension-info">
+                    <div class="extension-icon">
+                        <i class="fab fa-chrome"></i>
+                    </div>
+                    <div class="extension-details">
+                        <h4 data-en="Fluently Word Learner" data-ru="Fluently Word Learner">Fluently Word Learner</h4>
+                        <p data-en="Instantly add any word you encounter online to your Fluently learning list. Perfect for expanding your vocabulary while reading articles, watching videos, or browsing social media." data-ru="Мгновенно добавляйте любые встреченные в интернете слова в ваш список изучения Fluently. Идеально для расширения словарного запаса при чтении статей, просмотре видео или веб-серфинге.">Мгновенно добавляйте любые встреченные в интернете слова в ваш список изучения Fluently. Идеально для расширения словарного запаса при чтении статей, просмотре видео или веб-серфинге.</p>
+                        <div class="extension-features">
+                            <span class="feature-tag" data-en="One-click word adding" data-ru="Добавление слов в один клик">Добавление слов в один клик</span>
+                            <span class="feature-tag" data-en="Google OAuth" data-ru="Google OAuth">Google OAuth</span>
+                            <span class="feature-tag" data-en="Word validation" data-ru="Проверка слов">Проверка слов</span>
+                            <span class="feature-tag" data-en="Beautiful UI" data-ru="Красивый интерфейс">Красивый интерфейс</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="extension-actions">
+                    <a href="https://github.com/FluentlyOrg/Fluently-fork/blob/main/web-extension.zip" class="extension-btn primary" target="_blank">
+                        <i class="fas fa-download"></i>
+                        <span data-en="Download Extension" data-ru="Скачать расширение">Скачать расширение</span>
+                    </a>
+                    <button class="extension-btn secondary" onclick="showInstallInstructions()">
+                        <i class="fas fa-info-circle"></i>
+                        <span data-en="Install Guide" data-ru="Инструкция по установке">Инструкция по установке</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h3 data-en="Contact Us" data-ru="Связаться с нами">Связаться с нами</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:Woolfer0097@yandex.ru" class="social-sticker email" title="Email" data-en="Mail to CEO" data-ru="Написать CEO">Написать CEO</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <a href="mailto:mastermigkc@gmail.com" class="social-sticker email" title="Email" data-en="Mail to Technical Support" data-ru="Написать в техподдержку">Написать в техподдержку</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/FluentlyOrg/Fluently-fork" class="social-sticker github" title="GitHub">github.com/FluentlyOrg</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-en="&copy; 2025 Fluently. All rights reserved." data-ru="&copy; 2025 Fluently. Все права защищены.">&copy; 2025 Fluently. Все права защищены.</p>
+    </footer>
+
+    <script>
+        // Language switcher functionality
+        const langToggle = document.getElementById('langToggle');
+        const htmlElement = document.documentElement;
+        let currentLang = 'ru'; // Default language
+
+        function switchLanguage() {
+            currentLang = currentLang === 'ru' ? 'en' : 'ru';
+            htmlElement.setAttribute('lang', currentLang);
+            
+            // Update all elements with translation data
+            const elements = document.querySelectorAll('[data-en][data-ru]');
+            elements.forEach(element => {
+                if (element.tagName === 'TITLE') {
+                    element.textContent = element.getAttribute(`data-${currentLang}`);
+                } else {
+                    element.innerHTML = element.getAttribute(`data-${currentLang}`);
+                }
+            });
+            
+            // Update language button
+            const langButton = langToggle.querySelector('span');
+            langButton.textContent = currentLang.toUpperCase();
+        }
+
+        // Google Authentication functionality
+        function checkAuthStatus() {
+            const userData = localStorage.getItem('fluently_user');
+            if (userData) {
+                // User is logged in, update UI
+                const user = JSON.parse(userData);
+                updateUIForLoggedInUser(user);
+            }
+        }
+
+        function updateUIForLoggedInUser(user) {
+            // Update login buttons to show user info
+            const loginBtn = document.getElementById('loginBtn');
+            const mainLoginBtn = document.getElementById('mainLoginBtn');
+            
+            if (loginBtn) {
+                loginBtn.innerHTML = `
+                    <img src="${user.picture || './logo-t.png'}" alt="User Avatar" 
+                         style="width: 20px; height: 20px; border-radius: 50%; margin-right: 8px;">
+                    ${user.name}
+                `;
+                loginBtn.onclick = () => window.location.href = '/auth-success.html';
+            }
+            
+            if (mainLoginBtn) {
+                mainLoginBtn.innerHTML = `
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <span data-en="Continue to Extension" data-ru="Перейти к расширению">Перейти к расширению</span>
+                `;
+                mainLoginBtn.onclick = () => window.location.href = '/auth-success.html';
+            }
+        }
+
+        function initiateGoogleLogin() {
+            // Show loading state
+            const button = event.target.closest('button');
+            const originalText = button.innerHTML;
+            const loadingText = currentLang === 'en' ? '🔄 Signing in...' : '🔄 Вход...';
+            button.innerHTML = loadingText;
+            button.disabled = true;
+            
+            // Redirect to backend Google OAuth endpoint
+            window.location.href = `/auth/google`;
+        }
+
+        // Utility function to handle authentication errors
+        function handleAuthError(error) {
+            console.error('Authentication error:', error);
+            const errorMessage = currentLang === 'en' ? 'Authentication failed. Please try again.' : 'Ошибка авторизации. Попробуйте снова.';
+            alert(errorMessage);
+            
+            // Reset login buttons
+            const loginBtn = document.getElementById('loginBtn');
+            const mainLoginBtn = document.getElementById('mainLoginBtn');
+            
+            if (loginBtn) {
+                loginBtn.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    <span data-en="Login with Google" data-ru="Войти через Google">Войти через Google</span>
+                `;
+                loginBtn.disabled = false;
+            }
+            
+            if (mainLoginBtn) {
+                mainLoginBtn.innerHTML = `
                     <svg width="24" height="24" viewBox="0 0 24 24">
                         <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                         <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                         <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
                         <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                     </svg>
-                    Get Started with Google
-                </button>
-            </div>
-        </section>
-        
-        <h3>Features</h3>
-        <section id="features" class="features">
-            <ul>
-            <li>🗣️ Realistic AI conversations</li>
-            <li>📚 Personalized vocabulary lessons</li>
-            <li>📈 Progress tracking across devices</li>
-            <li>🧠 Adaptive learning based on user goals and schedule</li>
-            </ul>
-        </section>
-    </main>
+                    <span data-en="Get Started with Google" data-ru="Начать с Google">Начать с Google</span>
+                `;
+                mainLoginBtn.disabled = false;
+            }
+        }
 
-    <footer>
-        <!-- Footer content -->
-    </footer>
+        function showInstallInstructions() {
+            const instructions = currentLang === 'en' 
+                ? `Chrome Extension Installation Guide:
 
-    <script src="./script.js"></script>
+FROM SOURCE:
+1. Go to chrome://extensions/
+2. Enable "Developer mode" (top right)
+3. Click "Load unpacked"
+4. Select the web-extension folder
+5. Done! Extension appears in toolbar
+
+FROM ZIP:
+1. Download and extract the ZIP file
+2. Go to chrome://extensions/
+3. Enable "Developer mode" (top right)
+4. Click "Load unpacked"
+5. Select the extracted folder
+6. Done! Extension appears in toolbar
+
+For detailed instructions, visit our GitHub repository.`
+                : `Инструкция по установке расширения Chrome:
+
+ИЗ ИСХОДНОГО КОДА:
+1. Перейдите на chrome://extensions/
+2. Включите "Режим разработчика" (справа вверху)
+3. Нажмите "Загрузить распакованное"
+4. Выберите папку web-extension
+5. Готово! Расширение появится в панели инструментов
+
+ИЗ ZIP ФАЙЛА:
+1. Скачайте и распакуйте ZIP файл
+2. Перейдите на chrome://extensions/
+3. Включите "Режим разработчика" (справа вверху)
+4. Нажмите "Загрузить распакованное"
+5. Выберите распакованную папку
+6. Готово! Расширение появится в панели инструментов
+
+Подробные инструкции смотрите в нашем GitHub репозитории.`;
+            
+            alert(instructions);
+        }
+
+        // DOM ready event listener
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is already logged in
+            checkAuthStatus();
+
+            // Google OAuth login handlers
+            const loginBtn = document.getElementById('loginBtn');
+            const mainLoginBtn = document.getElementById('mainLoginBtn');
+            
+            if (loginBtn) {
+                loginBtn.addEventListener('click', initiateGoogleLogin);
+            }
+            
+            if (mainLoginBtn) {
+                mainLoginBtn.addEventListener('click', initiateGoogleLogin);
+            }
+
+            // Add event listener to language toggle button
+            langToggle.addEventListener('click', switchLanguage);
+
+            // Mobile menu toggle functionality
+            const navRight = document.querySelector('.nav-right');
+            if (navRight && window.innerWidth <= 768) {
+                const menuToggle = document.createElement('div');
+                menuToggle.className = 'mobile-menu-toggle';
+                menuToggle.innerHTML = '☰';
+                
+                document.querySelector('nav').appendChild(menuToggle);
+                
+                menuToggle.addEventListener('click', () => {
+                    navRight.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

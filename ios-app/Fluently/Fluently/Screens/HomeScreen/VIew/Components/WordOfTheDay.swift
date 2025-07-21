@@ -63,11 +63,11 @@ struct WordOfTheDay: View {
     /// Card displaying the word of the day and its translation
     private var wordCard: some View {
         VStack {
-            Text(word.word!)
+            Text(word.word ?? "Error loading")
                 .font(.appFont.title.bold())
                 .foregroundStyle(.whiteText)
 
-            Text(word.translation!)
+            Text(word.translation ?? "Error loading")
                 .font(.appFont.callout)
                 .foregroundStyle(.whiteBackground.secondary)
         }

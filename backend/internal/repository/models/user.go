@@ -15,7 +15,6 @@ type User struct {
 	Role         string    `gorm:"type:varchar(10);default:'user'"`
 	Email        string    `gorm:"type:varchar(100);uniqueIndex"`
 	PasswordHash string    `gorm:"type:text"`
-	RefreshToken string    `gorm:"type:text"`
 	TelegramID   *int64    `gorm:"type:bigint;uniqueIndex"`
 	LastLoginAt  time.Time `gorm:"autoUpdateTime"`
 	IsActive     bool      `gorm:"default:true"`

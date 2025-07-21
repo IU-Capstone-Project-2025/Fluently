@@ -25,8 +25,7 @@ final class DictionaryScreenPresenter: DictionaryScreenPresenting {
         let descriptor = FetchDescriptor<WordModel>(
             predicate: #Predicate {
                 $0.isLearned == isLearned &&
-                $0.isInLesson == false &&
-                $0.isDayWord == false
+                $0.isInLibrary == true
             },
             sortBy: [SortDescriptor(\.wordDate, order: .reverse)]
         )
@@ -45,15 +44,16 @@ final class DictionaryScreenPresenter: DictionaryScreenPresenting {
 
     func setModelContext(_ context: ModelContext) {
         self.modelContext = context
-//        words.forEach { word in
-//            word.isInLesson = false
-//
-//            if word.wordId == nil || word.word == nil {
-//                modelContext?.delete(word)
-//            }
-//        }
-//
-//        try? modelContext?.save()
+    }
+
+    private func cleaning() {
+        words.forEach { word in
+            if word.translation == nil || word.word == nil {
+                modelContext?.delete(word)
+            }
+        }
+
+        try? modelContext?.save()
     }
 
     func filter(prefix: String) {
@@ -61,6 +61,8 @@ final class DictionaryScreenPresenter: DictionaryScreenPresenting {
             filteredWords = words
             return
         }
+
+        cleaning()
 
         filteredWords = words.filter { $0.word!.contains(prefix.lowercased()) || $0.translation!.contains(prefix.lowercased())}
     }

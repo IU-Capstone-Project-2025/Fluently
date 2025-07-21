@@ -3,6 +3,7 @@ package handlers
 import (
 	"context"
 	"fmt"
+	"strings"
 
 	"go.uber.org/zap"
 	tele "gopkg.in/telebot.v3"
@@ -12,6 +13,17 @@ import (
 
 // HandleStatsCommand handles the /stats command
 func (s *HandlerService) HandleStatsCommand(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	// Delete the previous message if it exists, but preserve lesson completion messages
+	if c.Message() != nil {
+		if err := c.Delete(); err != nil {
+			// Only log as warning if it's not a "message not found" error
+			if !strings.Contains(err.Error(), "message to delete not found") {
+				s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			} else {
+				s.logger.Debug("Previous message already deleted or not found", zap.Error(err))
+			}
+		}
+	}
 	// Get user progress
 	userProgress, err := s.GetUserProgress(ctx, userID)
 	if err != nil {
@@ -39,7 +51,7 @@ func (s *HandlerService) HandleStatsCommand(ctx context.Context, c tele.Context,
 	// Create back button
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
-			{{Text: "Назад в главное меню", Data: "menu:main"}},
+			{{Text: "Назад в главное меню", Data: "menu:back_to_main"}},
 		},
 	}
 

@@ -75,7 +75,34 @@ func (r *WordRepository) GetRandomWordsByCEFRLevel(ctx context.Context, cefrLeve
 	if err != nil {
 		return nil, err
 	}
-	
+
+	return words, nil
+}
+
+// GetRandomWordsByTopicIDs returns random words by multiple topic IDs, excluding learned words
+func (r *WordRepository) GetRandomWordsByTopicIDs(ctx context.Context, topicIDs []uuid.UUID, cefrLevel string, userID uuid.UUID, limit int) ([]models.Word, error) {
+	var words []models.Word
+
+	cefrLevel = strings.ToLower(cefrLevel)
+
+	subQuery := r.db.
+		Table("learned_words").
+		Select("word_id").
+		Where("user_id = ?", userID)
+
+	err := r.db.WithContext(ctx).
+		Model(&models.Word{}).
+		Where("cefr_level = ?", cefrLevel).
+		Where("topic_id IN ?", topicIDs).
+		Where("id NOT IN (?)", subQuery).
+		Order("RANDOM()").
+		Limit(limit).
+		Find(&words).Error
+
+	if err != nil {
+		return nil, err
+	}
+
 	return words, nil
 }
 
@@ -110,4 +137,20 @@ func (r *WordRepository) Update(ctx context.Context, word *models.Word) error {
 // Delete deletes a word
 func (r *WordRepository) Delete(ctx context.Context, id uuid.UUID) error {
 	return r.db.WithContext(ctx).Delete(&models.Word{}, "id = ?", id).Error
+}
+
+// GetRandomWordsWithTopic returns random words with topic information for topic/subtopic extraction
+func (r *WordRepository) GetRandomWordsWithTopic(ctx context.Context, limit int) ([]models.Word, error) {
+	var words []models.Word
+	err := r.db.WithContext(ctx).
+		Preload("Topic").
+		Order("RANDOM()").
+		Limit(limit).
+		Find(&words).Error
+
+	if err != nil {
+		return nil, err
+	}
+
+	return words, err
 }

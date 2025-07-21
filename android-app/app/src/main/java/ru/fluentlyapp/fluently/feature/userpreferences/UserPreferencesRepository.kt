@@ -13,17 +13,28 @@ class UserPreferencesRepository @Inject constructor(
     private val fluentlyApiDataSource: FluentlyApiDataSource,
     private val userPreferencesDataStore: UserPreferencesDataStore
 ) {
-    suspend fun updateUserPreferences() {
-        val userPreferences = fluentlyApiDataSource.getUserPreferences()
-        userPreferencesDataStore.setUserPreferences(userPreferences)
+    suspend fun updateCachedUserPreferences(userPreferences: UserPreferences) {
         Timber.v("Update user preferences: $userPreferences")
+        userPreferencesDataStore.setUserPreferences(userPreferences)
     }
 
-    fun getUserPreferences(): Flow<UserPreferences?> {
+    suspend fun getRemoteUserPreferences(): UserPreferences {
+        val result = fluentlyApiDataSource.getUserPreferences()
+        Timber.d("getRemoteUserPreferences: $result")
+        return result
+    }
+
+    fun getCachedUserPreferences(): Flow<UserPreferences?> {
         return userPreferencesDataStore.getUserPreferences()
     }
 
-    suspend fun dropUserPreferences() {
+    suspend fun updateRemoteUserPreferences(preferences: UserPreferences) {
+        Timber.d("updateRemoveUserPreferences: $preferences")
+        fluentlyApiDataSource.sendUserPreferences(preferences)
+    }
+
+    suspend fun dropCachedUserPreferences() {
+        Timber.d("dropCachedUserPreferences")
         userPreferencesDataStore.dropUserPreferences()
     }
 }

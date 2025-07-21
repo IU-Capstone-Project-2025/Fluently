@@ -162,12 +162,19 @@ type TempDataType string
 
 const (
 	// Temp data types for different flows
-	TempDataCEFRTest   TempDataType = "cefr_test"
-	TempDataLesson     TempDataType = "lesson"
-	TempDataSettings   TempDataType = "settings"
-	TempDataExercise   TempDataType = "exercise"
-	TempDataOnboarding TempDataType = "onboarding"
-	TempDataConfidence TempDataType = "confidence"
+	TempDataCEFRTest          TempDataType = "cefr_test"
+	TempDataLesson            TempDataType = "lesson"
+	TempDataSettings          TempDataType = "settings"
+	TempDataSettingsMessageID TempDataType = "settings_message_id"
+	TempDataExercise          TempDataType = "exercise"
+	TempDataOnboarding        TempDataType = "onboarding"
+	TempDataConfidence        TempDataType = "confidence"
+	TempDataGoal              TempDataType = "goal"
+	TempDataExperience        TempDataType = "experience"
+	TempDataWordsPerDay       TempDataType = "words_per_day"
+	TempDataNotifications     TempDataType = "notifications"
+	TempDataNotificationTime  TempDataType = "notification_time"
+	TempDataTopicSelection    TempDataType = "topic_selection"
 )
 
 // CEFRTestData holds temporary data for CEFR test flow
@@ -198,6 +205,14 @@ type SettingsData struct {
 	TimeFormat    string      `json:"time_format"`    // for time settings
 }
 
+// TopicSelectionData holds temporary data for topic selection flow
+type TopicSelectionData struct {
+	Topics        []string `json:"topics"`          // all available topics (unique)
+	CurrentPage   int      `json:"current_page"`    // current page (0-based)
+	TopicsPerPage int      `json:"topics_per_page"` // topics per page (default 5)
+	TotalPages    int      `json:"total_pages"`     // total number of pages
+}
+
 // ExerciseData holds temporary data for exercise flow
 type ExerciseData struct {
 	ExerciseType  string                   `json:"exercise_type"`
@@ -211,9 +226,12 @@ type ExerciseData struct {
 
 // OnboardingData holds temporary data for onboarding flow
 type OnboardingData struct {
-	Goal       string `json:"goal"`
-	Confidence string `json:"confidence"`
-	Experience string `json:"experience"`
+	Goal             string `json:"goal"`
+	Confidence       string `json:"confidence"`
+	Experience       string `json:"experience"`
+	WordsPerDay      int    `json:"words_per_day"`
+	Notifications    bool   `json:"notifications"`
+	NotificationTime string `json:"notification_time"`
 }
 
 // CreateNewUserProgress creates a new user progress instance
@@ -627,20 +645,42 @@ func (m *UserStateManager) GetExerciseData(ctx context.Context, userID int64) (*
 
 // GetOnboardingData retrieves onboarding data
 func (m *UserStateManager) GetOnboardingData(ctx context.Context, userID int64) (*OnboardingData, error) {
-	data := &OnboardingData{}
-	jsonData, err := m.redisClient.Get(ctx, userTempDataKey(userID, TempDataOnboarding)).Result()
+	data, err := m.GetTempData(ctx, userID, TempDataOnboarding)
+	if err != nil {
+		return nil, err
+	}
+
+	if data == nil {
+		return &OnboardingData{}, nil
+	}
+
+	onboardingData, ok := data.(*OnboardingData)
+	if !ok {
+		return nil, fmt.Errorf("invalid onboarding data type")
+	}
+
+	return onboardingData, nil
+}
+
+func (m *UserStateManager) GetTopicSelectionData(ctx context.Context, userID int64) (*TopicSelectionData, error) {
+	data := &TopicSelectionData{}
+	jsonData, err := m.redisClient.Get(ctx, userTempDataKey(userID, TempDataTopicSelection)).Result()
 	if err == redis.Nil {
-		return data, nil // Return empty struct if no data found
+		return nil, nil // Return nil if no data found
 	} else if err != nil {
-		return nil, fmt.Errorf("failed to get onboarding data: %w", err)
+		return nil, fmt.Errorf("failed to get topic selection data: %w", err)
 	}
 
 	err = json.Unmarshal([]byte(jsonData), data)
 	if err != nil {
-		return nil, fmt.Errorf("failed to unmarshal onboarding data: %w", err)
+		return nil, fmt.Errorf("failed to unmarshal topic selection data: %w", err)
 	}
 
 	return data, nil
+}
+
+func (m *UserStateManager) StoreTopicSelectionData(ctx context.Context, userID int64, data *TopicSelectionData) error {
+	return m.StoreTempData(ctx, userID, TempDataTopicSelection, data)
 }
 
 // ClearTempData removes temporary data for a specific flow

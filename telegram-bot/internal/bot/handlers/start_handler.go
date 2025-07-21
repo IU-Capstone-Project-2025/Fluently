@@ -3,6 +3,7 @@ package handlers
 import (
 	"context"
 	"fmt"
+	"strings"
 
 	"go.uber.org/zap"
 	tele "gopkg.in/telebot.v3"
@@ -76,8 +77,8 @@ func (s *HandlerService) showWelcomeWithAuthOptions(ctx context.Context, c tele.
 
 // showMainMenu shows the main menu for authenticated users
 func (s *HandlerService) showMainMenu(ctx context.Context, c tele.Context, userID int64) error {
-	// Set state to start
-	if err := s.stateManager.SetState(ctx, userID, fsm.StateStart); err != nil {
+	// Set state to start (only if different from current state)
+	if err := s.SetStateIfDifferent(ctx, userID, fsm.StateStart); err != nil {
 		s.logger.Error("Failed to set start state", zap.Error(err))
 		return err
 	}
@@ -149,6 +150,7 @@ func (s *HandlerService) HandleHelpCommand(ctx context.Context, c tele.Context, 
 		"*/settings* - Настроить предпочтения обучения\n" +
 		"*/test* - Пройти тест на определение уровня словарного запаса\n" +
 		"*/stats* - Посмотреть статистику обучения\n" +
+		"*/menu* - Вернуться в главное меню\n" +
 		"*/help* - Показать это сообщение справки\n" +
 		"*/cancel* - Отменить текущее действие\n\n" +
 		"Нужна дополнительная помощь? Напишите свой вопрос, и я постараюсь помочь."
@@ -169,6 +171,11 @@ func (s *HandlerService) HandleCancelCommand(ctx context.Context, c tele.Context
 		"Используйте /start чтобы начать заново или /help чтобы увидеть доступные команды."
 
 	return c.Send(cancelText)
+}
+
+// HandleMenuCommand handles the /menu command
+func (s *HandlerService) HandleMenuCommand(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	return s.HandleMainMenuCallback(ctx, c, userID, currentState)
 }
 
 // HandleWelcomeMessage handles welcome state messages
@@ -286,6 +293,33 @@ func (s *HandlerService) HandleAccountLinkCallback(ctx context.Context, c tele.C
 
 // HandleMainMenuCallback handles main menu callback
 func (s *HandlerService) HandleMainMenuCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	// Clear settings message if we're coming from settings
+	if fsm.IsSettingsState(currentState) {
+		s.clearSettingsMessage(ctx, c, userID)
+	}
+
+	return s.showMainMenu(ctx, c, userID)
+}
+
+// HandleBackToMainMenuCallback handles "back to main menu" callback with message deletion
+func (s *HandlerService) HandleBackToMainMenuCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	// Delete the previous message when going back to main menu
+	if c.Message() != nil {
+		if err := c.Delete(); err != nil {
+			// Only log as warning if it's not a "message not found" error
+			if !strings.Contains(err.Error(), "message to delete not found") {
+				s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			} else {
+				s.logger.Debug("Previous message already deleted or not found", zap.Error(err))
+			}
+		}
+	}
+
+	// Clear settings message if we're coming from settings
+	if fsm.IsSettingsState(currentState) {
+		s.clearSettingsMessage(ctx, c, userID)
+	}
+
 	return s.showMainMenu(ctx, c, userID)
 }
 

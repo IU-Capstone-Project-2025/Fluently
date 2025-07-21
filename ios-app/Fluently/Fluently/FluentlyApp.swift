@@ -16,6 +16,8 @@ struct FluentlyApp: App {
     @StateObject private var authViewModel = GoogleAuthViewModel()
     @StateObject private var router = AppRouter()
 
+    @StateObject private var networkMonitoring = NetworkMonitoring()
+
     private var apiService = APIService()
 
     @Environment(\.modelContext) var modelContext
@@ -60,15 +62,20 @@ struct FluentlyApp: App {
                     } else {
                         if !showLogin {
                             MainView()
+                                .id(1)
                         } else {
                             LoginScreenBuilder.build(
                                 router: router,
                                 account: account,
                                 authViewModel: authViewModel
                             )
-                                .onOpenURL(perform: handleURL)
+                            .id(2)
+                            .onOpenURL(perform: handleURL)
                         }
                     }
+                }
+                .onChange(of: account.isLoggedIn){
+                    showLogin = !account.isLoggedIn
                 }
                 .navigationDestination(for: AppRoutes.self) { route in
                     switch route {
@@ -95,13 +102,16 @@ struct FluentlyApp: App {
             }
             .environmentObject(account)
             .environmentObject(router)
+
+            .environment(\.isNetworkConnected, networkMonitoring.isNetworkConnected)
+            .environment(\.connectionType, networkMonitoring.connectionType)
+
             .modelContainer(
                 for: [
                     CardsModel.self,
                     WordModel.self,
                     DayWord.self,
-                    PreferencesModel.self,
-                    CardsModel.self
+                    PreferencesModel.self
                 ]
             )
         }
@@ -145,9 +155,31 @@ struct FluentlyApp: App {
                 } catch {
                     print("token saving error: \(error)")
                 }
+                getPreferences()
             } catch {
                 print("response receiving error: \(error)")
             }
+        }
+    }
+
+    private func getPreferences() {
+        let descriptor = FetchDescriptor<PreferencesModel>()
+        do {
+            let prefs: [PreferencesModel] = try modelContext.fetch(descriptor)
+            prefs.forEach { pref in
+                modelContext.delete(pref)
+            }
+            try modelContext.save()
+
+            Task {
+                let newPreferences = try? await apiService.getPreferences()
+                if let newPreferences {
+                    modelContext.insert(newPreferences)
+                }
+                try modelContext.save()
+            }
+        } catch {
+            print("Error while getting preferences: \(error)")
         }
     }
 }

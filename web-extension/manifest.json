@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Fluently - Изучение слов",
+  "version": "1.0.2",
+  "description": "Добавляйте слова в список изучения Fluently",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://fluently-app.ru/*",
+    "https://*.fluently-app.ru/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Fluently - Изучение слов"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://fluently-app.ru/auth-success.html*", 
+        "https://fluently-app.ru/auth-success*",
+        "https://*.fluently-app.ru/auth-success*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ]
+} 

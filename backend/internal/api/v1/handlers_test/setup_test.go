@@ -1,16 +1,22 @@
 package handlers_test
 
 import (
+	"context"
+	"net/http"
 	"net/http/httptest"
+	"sync"
 	"testing"
 
 	"fluently/go-backend/internal/api/v1/handlers"
 	"fluently/go-backend/internal/api/v1/routes"
 	"fluently/go-backend/internal/config"
+	"fluently/go-backend/internal/middleware"
 	"fluently/go-backend/internal/repository/models"
 	pg "fluently/go-backend/internal/repository/postgres"
+	"fluently/go-backend/internal/utils"
 
 	"github.com/go-chi/chi/v5"
+	"github.com/google/uuid"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -27,6 +33,10 @@ var (
 	prefRepo        *pg.PreferenceRepository
 	pickOptionRepo  *pg.PickOptionRepository
 	learnedWordRepo *pg.LearnedWordRepository
+
+	// Global test user for authentication
+	testUser      *models.User
+	testUserMutex sync.RWMutex
 )
 
 // setupTest sets up the test server
@@ -41,10 +51,19 @@ func setupTest(t *testing.T) {
 		t.Fatalf("failed to connect to DB: %v", err)
 	}
 
-	// Connect extension for UUID
-	db.Exec(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`)
+	// Drop all tables first to ensure clean state
+	db.Exec("DROP TABLE IF EXISTS learned_words CASCADE")
+	db.Exec("DROP TABLE IF EXISTS pick_options CASCADE")
+	db.Exec("DROP TABLE IF EXISTS user_preferences CASCADE")
+	db.Exec("DROP TABLE IF EXISTS sentences CASCADE")
+	db.Exec("DROP TABLE IF EXISTS words CASCADE")
+	db.Exec("DROP TABLE IF EXISTS topics CASCADE")
+	db.Exec("DROP TABLE IF EXISTS users CASCADE")
 
-	// Auto-migrate
+	// Drop custom types if they exist to prevent conflicts
+	db.Exec("DROP TYPE IF EXISTS string_array CASCADE")
+
+	// Auto-migrate (UUID extension should already be available from init.sql)
 	err = db.AutoMigrate(
 		&models.User{},
 		&models.Word{},
@@ -67,15 +86,6 @@ func setupTest(t *testing.T) {
 	pickOptionRepo = pg.NewPickOptionRepository(db)
 	learnedWordRepo = pg.NewLearnedWordRepository(db)
 
-	// Clear all tables in proper dependency order (dependent tables first)
-	db.Exec("TRUNCATE TABLE learned_words RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE pick_options RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE user_preferences RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE sentences RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE words RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE topics RESTART IDENTITY CASCADE")
-	db.Exec("TRUNCATE TABLE users RESTART IDENTITY CASCADE")
-
 	// Create handlers
 	wordHandler := &handlers.WordHandler{Repo: pg.NewWordRepository(db)}
 	userHandler := &handlers.UserHandler{Repo: pg.NewUserRepository(db)}
@@ -84,19 +94,65 @@ func setupTest(t *testing.T) {
 	prefHandler := &handlers.PreferenceHandler{Repo: pg.NewPreferenceRepository(db)}
 	pickOptionHandler := &handlers.PickOptionHandler{Repo: pg.NewPickOptionRepository(db)}
 	learnedWordHandler := &handlers.LearnedWordHandler{Repo: learnedWordRepo}
-	progressHandler := &handlers.ProgressHandler{WordRepo: wordRepo, LearnedWordRepo: learnedWordRepo}
+	progressHandler := &handlers.ProgressHandler{
+		WordRepo:           wordRepo,
+		LearnedWordRepo:    learnedWordRepo,
+		NotLearnedWordRepo: pg.NewNotLearnedWordRepository(db),
+		LLMClient:          utils.NewLLMClient(utils.LLMClientConfig{}),
+		Redis:              utils.Redis(),
+	}
 
 	// Create router
 	r := chi.NewRouter()
-	routes.RegisterWordRoutes(r, wordHandler)
-	routes.RegisterUserRoutes(r, userHandler)
-	routes.RegisterTopicRoutes(r, topicHandler)
-	routes.RegisterSentenceRoutes(r, sentenceHandler)
-	routes.RegisterPreferencesRoutes(r, prefHandler)
-	routes.RegisterPickOptionRoutes(r, pickOptionHandler)
-	routes.RegisterLearnedWordRoutes(r, learnedWordHandler)
-	routes.RegisterProgressRoutes(r, progressHandler)
+
+	// Initialize JWT auth for tests
+	utils.InitJWTAuth()
+
+	// Add authentication middleware for protected routes
+	r.Route("/api/v1", func(r chi.Router) {
+		// For tests, we'll use a simplified auth middleware that doesn't require real JWT
+		r.Use(testAuthMiddleware)
+
+		// Protected API routes
+		routes.RegisterUserRoutes(r, userHandler)
+		routes.RegisterWordRoutes(r, wordHandler)
+		routes.RegisterTopicRoutes(r, topicHandler)
+		routes.RegisterSentenceRoutes(r, sentenceHandler)
+		routes.RegisterPreferencesRoutes(r, prefHandler)
+		routes.RegisterPickOptionRoutes(r, pickOptionHandler)
+		routes.RegisterLearnedWordRoutes(r, learnedWordHandler)
+		routes.RegisterProgressRoutes(r, progressHandler)
+	})
 
 	// Create test server
 	testServer = httptest.NewServer(r)
+}
+
+// setTestUser sets the user for the current test
+func setTestUser(user *models.User) {
+	testUserMutex.Lock()
+	defer testUserMutex.Unlock()
+	testUser = user
+}
+
+// testAuthMiddleware is a simplified authentication middleware for tests
+func testAuthMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		testUserMutex.RLock()
+		user := testUser
+		testUserMutex.RUnlock()
+
+		if user == nil {
+			// Create a default test user if none is set
+			user = &models.User{
+				ID:    uuid.New(),
+				Email: "test@example.com",
+				Role:  "user",
+			}
+		}
+
+		// Add user to context
+		ctx := context.WithValue(r.Context(), middleware.UserContextKey, user)
+		next.ServeHTTP(w, r.WithContext(ctx))
+	})
 }

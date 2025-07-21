@@ -116,20 +116,21 @@ services:
     environment:
       # Override Redis connection for Docker network
       - REDIS_ADDR=redis:6379
-      - WEBHOOK_HOST=0.0.0.0
-      - WEBHOOK_PORT=8060
-      - WEBHOOK_PATH=/webhook
+      # TTS cache directory
+      - TTS_CACHE_DIR=/tmp/tts
+      - BOT_TOKEN=${BOT_TOKEN}
+      - ASYNQ_REDIS_ADDR=${ASYNQ_REDIS_ADDR}
+      - ASYNQ_REDIS_PASSWORD=${ASYNQ_REDIS_PASSWORD}
+      - ASYNQ_REDIS_DB=${ASYNQ_REDIS_DB}
+    volumes:
+      # TTS cache directory
+      - fluently_telegram_tts_cache:/tmp/tts
     depends_on:
       redis:
         condition: service_healthy
-      backend:
-        condition: service_started
     networks:
       - fluently_network
-    # Bot webhook endpoint for NGINX to proxy to
-    ports:
-      - "127.0.0.1:8060:8060"  # Local access for NGINX proxy
-      - "${ZEROTIER_IP}:8060:8060"  # ZeroTier access
+    # Bot is using long polling, no webhook ports needed
 
   # ML Distractor API (Internal only)
   ml-api:
@@ -437,6 +438,7 @@ volumes:
   fluently_model_cache:  # Can be re-downloaded
   fluently_redis_data:   # Session data, not critical
   fluently_loki_data:    # Logs, not critical for recovery
+  fluently_telegram_tts_cache:  # TTS cache for telegram bot
   test_pgdata:           # Test database data
 
 # ===========================================

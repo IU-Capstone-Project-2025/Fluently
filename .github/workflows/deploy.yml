@@ -184,6 +184,7 @@ jobs:
       - name: Start test database
         run: |
           docker compose -f docker-compose.test.yml down --volumes
+
           docker compose -f docker-compose.test.yml up -d
         
       - name: Wait for DB to become healthy
@@ -249,6 +250,9 @@ jobs:
           # Set test mode to help tests initialize their own data
           GO_ENV: test
           TEST_MODE: true
+                    
+          # JWT configuration for tests
+          JWT_SECRET: ${{ secrets.TEST_JWT_SECRET }}
         run: |
           echo "🧪 Running Go tests with coverage..."
           
@@ -258,8 +262,10 @@ jobs:
             sudo apt-get install -y postgresql-client
           fi
           
-          # Run tests with verbose output to see what's happening
-          go test ./... -v -coverprofile=coverage.out -covermode=atomic || {
+          # Run tests with proper coverage collection including external test packages
+          # Use explicit package listing for comprehensive coverage
+          # Use -p 1 to run tests sequentially to avoid database conflicts
+          go test ./... -v -coverprofile=coverage.out -covermode=atomic -coverpkg=fluently/go-backend/internal/api/v1/handlers,fluently/go-backend/internal/repository/postgres,fluently/go-backend/cmd/...,fluently/go-backend/internal/... -p 1 || {
             echo "❌ Tests failed, showing database state for debugging..."
             echo "🔍 Checking if database is accessible..."
             PGPASSWORD=test_password psql -h localhost -p 5433 -U test_user -d test_fluently_db -c "SELECT version();" || echo "❌ Database connection failed"
@@ -545,18 +551,12 @@ jobs:
             ENVIRONMENT="${{ needs.setup.outputs.environment }}"
             DOMAIN="${{ needs.setup.outputs.domain }}"
             
-            echo "🔄 Starting deployment process for $ENVIRONMENT environment"
-            echo "🌐 Domain: $DOMAIN"
-            echo "🌟 Branch: $BRANCH"
+            echo "🔄 Starting deployment for $ENVIRONMENT"
+            echo "🌐 Domain: $DOMAIN, Branch: $BRANCH"
             
             # Production safety check
             if [ "$ENVIRONMENT" = "production" ]; then
-              echo "⚠️  PRODUCTION DEPLOYMENT WARNING"
-              echo "Environment: PRODUCTION"
-              echo "Domain: $DOMAIN"
-              echo "Branch: $BRANCH"
-              echo "Triggered by: ${{ github.actor }}"
-              echo "🚀 Proceeding with production deployment..."
+              echo "⚠️  PRODUCTION DEPLOYMENT - Triggered by: ${{ github.actor }}"
               sleep 3
             fi
             
@@ -571,113 +571,92 @@ jobs:
               BACKUP_DIR="/home/deploy-staging/backups"
             fi
             
-            # Create backup directory if it doesn't exist
             mkdir -p "$BACKUP_DIR"
             
             # Function to perform health checks
             check_health() {
-              echo "🏥 Performing comprehensive health checks..."
-              
-              # Wait for services to start
+              echo "🏥 Performing health checks..."
               sleep 10
               
               # Check if backend is healthy
-              echo "Checking backend health..."
               for i in {1..10}; do
                 if curl -f "http://localhost:8070/health" >/dev/null 2>&1; then
-                  echo "✅ Backend is healthy"
+                  echo "✅ Backend healthy"
                   break
                 elif [ $i -eq 10 ]; then
-                  echo "❌ Backend health check failed after 10 attempts"
+                  echo "❌ Backend health check failed"
                   return 1
                 else
-                  echo "⏳ Waiting for backend... (attempt $i/10)"
                   sleep 10
                 fi
               done
               
               # Check if ML API is healthy (takes 2-3 minutes to initialize)
-              echo "Checking ML API health..."
               for i in {1..20}; do
                 if docker compose exec -T ml-api curl -f "http://localhost:8001/health" >/dev/null 2>&1; then
-                  echo "✅ ML API is healthy"
+                  echo "✅ ML API healthy"
                   break
                 elif [ $i -eq 20 ]; then
-                  echo "❌ ML API health check failed after 20 attempts"
+                  echo "❌ ML API health check failed"
                   return 1
                 else
-                  echo "⏳ Waiting for ML API... (attempt $i/20)"
                   sleep 15
                 fi
               done
               
               # Check if LLM API is healthy
-              echo "Checking LLM API health..."
               for i in {1..10}; do
                 if docker compose exec -T llm-api curl -f "http://localhost:8003/health" >/dev/null 2>&1; then
-                  echo "✅ LLM API is healthy"
+                  echo "✅ LLM API healthy"
                   break
                 elif [ $i -eq 10 ]; then
-                  echo "❌ LLM API health check failed after 10 attempts"
+                  echo "❌ LLM API health check failed"
                   return 1
                 else
-                  echo "⏳ Waiting for LLM API... (attempt $i/10)"
                   sleep 10
                 fi
               done
               
               # Check if Thesaurus API is healthy
-              echo "Checking Thesaurus API health..."
               for i in {1..10}; do
                 if docker compose exec -T thesaurus-api curl -f "http://localhost:8002/health" -d '{"ping":"test"}' -H "Content-Type: application/json" >/dev/null 2>&1; then
-                  echo "✅ Thesaurus API is healthy"
+                  echo "✅ Thesaurus API healthy"
                   break
                 elif [ $i -eq 10 ]; then
-                  echo "❌ Thesaurus API health check failed after 10 attempts"
+                  echo "❌ Thesaurus API health check failed"
                   return 1
                 else
-                  echo "⏳ Waiting for Thesaurus API... (attempt $i/10)"
                   sleep 10
                 fi
               done
               
               # Check if PostgreSQL is healthy
-              echo "Checking PostgreSQL health..."
               if docker compose exec -T postgres pg_isready -U ${DB_USER:-postgres} >/dev/null 2>&1; then
-                echo "✅ PostgreSQL is healthy"
+                echo "✅ PostgreSQL healthy"
               else
                 echo "❌ PostgreSQL health check failed"
                 return 1
               fi
               
               # Check if Redis is healthy
-              echo "Checking Redis health..."
               if docker compose exec -T redis redis-cli ping >/dev/null 2>&1; then
-                echo "✅ Redis is healthy"
+                echo "✅ Redis healthy"
               else
                 echo "❌ Redis health check failed"
                 return 1
               fi
               
               # Check if nginx is responding
-              echo "Checking nginx health..."
               for i in {1..5}; do
                 if curl -f -k "https://localhost" >/dev/null 2>&1; then
-                  echo "✅ Nginx is healthy"
+                  echo "✅ Nginx healthy"
                   break
                 elif [ $i -eq 5 ]; then
-                  echo "❌ Nginx health check failed after 5 attempts"
-                  echo "🔍 Nginx container status:"
+                  echo "❌ Nginx health check failed"
                   docker compose ps nginx || true
-                  echo "🔍 Nginx logs:"
                   docker compose logs nginx || true
-                  echo "🔍 Nginx process inside container:"
-                  docker compose exec -T nginx ps aux || true
-                  echo "🔍 Nginx configuration test:"
-                  docker compose exec -T nginx nginx -t || true
                   return 1
                 else
-                  echo "⏳ Waiting for nginx... (attempt $i/5)"
                   sleep 5
                 fi
               done
@@ -770,36 +749,27 @@ jobs:
               # fi
               
               # Check if telegram bot is healthy
-              echo "Checking telegram bot health..."
               for i in {1..3}; do
                 if docker compose ps telegram-bot | grep -q "Up"; then
-                  echo "✅ Telegram bot is running"
-                  # Check if bot can connect to Redis
-                  if docker compose logs telegram-bot | grep -q "Successfully connected to Redis"; then
-                    echo "✅ Telegram bot connected to Redis"
-                  fi
+                  echo "✅ Telegram bot running"
                   if docker compose logs telegram-bot | grep -q "telegram: Not Found (404)"; then
-                    echo "❌ Telegram bot has invalid token (404 error)"
-                    echo "🔍 Bot logs:"
+                    echo "❌ Telegram bot has invalid token"
                     docker compose logs --tail=10 telegram-bot || true
                     return 1
                   fi
                   break
                 elif [ $i -eq 3 ]; then
                   echo "❌ Telegram bot health check failed"
-                  echo "🔍 Bot logs:"
                   docker compose logs --tail=10 telegram-bot || true
                   return 1
                 else
-                  echo "⏳ Waiting for telegram bot... (attempt $i/3)"
                   sleep 5
                 fi
               done
               
-              # Check if Promtail is healthy (log aggregator)
-              echo "Checking Promtail health..."
+              # Check if Promtail is healthy
               if docker compose ps promtail | grep -q "Up"; then
-                echo "✅ Promtail is running"
+                echo "✅ Promtail running"
               else
                 echo "❌ Promtail health check failed"
                 return 1
@@ -811,20 +781,25 @@ jobs:
             
             # Function to rollback
             rollback() {
-              echo "🔄 Rolling back to previous version..."
+              echo "🔄 Rolling back..."
               
-              # Find the latest backup
               LATEST_BACKUP=$(ls -t "$BACKUP_DIR"/fluently-backup-*.tar.gz 2>/dev/null | head -1)
               
               if [ -z "$LATEST_BACKUP" ]; then
-                echo "❌ No backup found for rollback!"
+                echo "❌ No backup found!"
                 return 1
               fi
               
               echo "📦 Found backup: $LATEST_BACKUP"
               
-              # Stop current services
               docker compose down --remove-orphans || true
+              
+              # Force remove any conflicting containers
+              docker rm -f fluently_backend fluently_nginx fluently_postgres fluently_redis 2>/dev/null || true
+              docker rm -f fluently_ml_api fluently_llm_api fluently_thesaurus_api 2>/dev/null || true
+              docker rm -f fluently_telegram-bot fluently_directus 2>/dev/null || true
+              docker rm -f fluently_prometheus fluently_grafana fluently_loki fluently_promtail 2>/dev/null || true
+              docker rm -f fluently_node_exporter fluently_nginx_exporter fluently_cadvisor 2>/dev/null || true
               
               # Create rollback backup of current state
               ROLLBACK_BACKUP="$BACKUP_DIR/fluently-rollback-backup-$(date +%Y%m%d-%H%M%S).tar.gz"
@@ -856,115 +831,68 @@ jobs:
             if [ "$ENVIRONMENT" = "production" ]; then
               echo "📦 Creating backup..."
               BACKUP_FILE="$BACKUP_DIR/fluently-backup-$(date +%Y%m%d-%H%M%S).tar.gz"
-              tar -czf "$BACKUP_FILE" --exclude=node_modules --exclude=.git . || echo "⚠️ Backup failed but continuing..."
-              
-              # Keep only last 5 backups
+              tar -czf "$BACKUP_FILE" --exclude=node_modules --exclude=.git . || echo "⚠️ Backup failed"
               ls -t "$BACKUP_DIR"/fluently-backup-*.tar.gz 2>/dev/null | tail -n +6 | xargs rm -f 2>/dev/null || true
             fi
             
-            # Store current state for potential rollback
             CURRENT_STATE_BACKUP="$BACKUP_DIR/fluently-current-state-$(date +%Y%m%d-%H%M%S).tar.gz"
             tar -czf "$CURRENT_STATE_BACKUP" --exclude=node_modules --exclude=.git . || echo "⚠️ Current state backup failed"
             
-            # Update code
             echo "📥 Updating code..."
-
-            # Fix Git ownership issue
             git config --global --add safe.directory $(pwd)
-
-            # Restore any local changes before pulling
             git restore .
-
             git fetch origin
             git checkout $BRANCH
             git pull origin $BRANCH
 
-            # Update environment variables based on deployment target
             echo "⚙️ Updating environment configuration..."
 
-            # Ensure .env file exists at project root
             if [ ! -f ".env" ]; then
-              echo "📝 Creating .env file at project root..."
               touch .env
-            else
-              echo "📝 .env file already exists, updating..."
             fi
 
-            # Update ZeroTier IP in root .env
             if grep -q "ZEROTIER_IP=" .env; then
               sed -i "s/ZEROTIER_IP=.*/ZEROTIER_IP=$ZEROTIER_IP/" .env
             else
               echo "ZEROTIER_IP=$ZEROTIER_IP" >> .env
             fi
 
-            # Update PUBLIC_URL in root .env
             if grep -q "PUBLIC_URL=" .env; then
               sed -i "s|PUBLIC_URL=.*|PUBLIC_URL=https://$DOMAIN|g" .env
             else
               echo "PUBLIC_URL=https://$DOMAIN" >> .env
             fi
 
-            
-            # Set Swagger host for the environment
             if [ "$ENVIRONMENT" = "production" ]; then
               export SWAGGER_HOST="${{ secrets.ZEROTIER_IP }}:8070"
             else
               export SWAGGER_HOST="${{ secrets.STAGING_ZEROTIER_IP }}:8070"
             fi
             
-            echo "🔧 Setting up environment variables..."
-            echo "SWAGGER_HOST=$SWAGGER_HOST"
-            
-            # Add SWAGGER_HOST to .env file
             echo "SWAGGER_HOST=$SWAGGER_HOST" >> .env
             
-            # Add telegram bot environment variables if they don't exist
-            echo "🔧 Setting up Telegram bot configuration..."
             if [ "$ENVIRONMENT" = "production" ]; then
               BOT_TOKEN="${{ secrets.TELEGRAM_BOT_TOKEN }}"
               WEBHOOK_SECRET="${{ secrets.WEBHOOK_SECRET }}"
-              echo "📝 Using production bot credentials"
             else
               BOT_TOKEN="${{ secrets.STAGING_TELEGRAM_BOT_TOKEN }}"
               WEBHOOK_SECRET="${{ secrets.STAGING_WEBHOOK_SECRET }}"
-              echo "📝 Using staging bot credentials"
             fi
             
-            # Debug: Check if secrets are provided (without printing actual values)
             if [ -z "$BOT_TOKEN" ]; then
-              echo "⚠️ WARNING: BOT_TOKEN is empty for $ENVIRONMENT environment!"
-              echo "Please set the following GitHub secret:"
-              if [ "$ENVIRONMENT" = "production" ]; then
-                echo "   TELEGRAM_BOT_TOKEN"
-              else
-                echo "   STAGING_TELEGRAM_BOT_TOKEN"
-              fi
-            else
-              echo "✅ BOT_TOKEN is provided (length: ${#BOT_TOKEN} characters)"
+              echo "⚠️ BOT_TOKEN is empty for $ENVIRONMENT"
             fi
             
             if [ -z "$WEBHOOK_SECRET" ]; then
-              echo "⚠️ WARNING: WEBHOOK_SECRET is empty for $ENVIRONMENT environment!"
-              echo "Please set the following GitHub secret:"
-              if [ "$ENVIRONMENT" = "production" ]; then
-                echo "   WEBHOOK_SECRET"
-              else
-                echo "   STAGING_WEBHOOK_SECRET"
-              fi
-            else
-              echo "✅ WEBHOOK_SECRET is provided"
+              echo "⚠️ WEBHOOK_SECRET is empty for $ENVIRONMENT"
             fi
             
-            # Set telegram bot configuration in root .env
             if [ ! -z "$BOT_TOKEN" ]; then
               if grep -q "BOT_TOKEN=" .env; then
                 sed -i "s/BOT_TOKEN=.*/BOT_TOKEN=$BOT_TOKEN/" .env
               else
                 echo "BOT_TOKEN=$BOT_TOKEN" >> .env
               fi
-              echo "✅ BOT_TOKEN set in .env file"
-            else
-              echo "❌ Skipping BOT_TOKEN setup (empty value)"
             fi
             
             if [ ! -z "$WEBHOOK_SECRET" ]; then
@@ -973,29 +901,20 @@ jobs:
               else
                 echo "WEBHOOK_SECRET=$WEBHOOK_SECRET" >> .env
               fi
-              echo "✅ WEBHOOK_SECRET set in .env file"
-            else
-              echo "❌ Skipping WEBHOOK_SECRET setup (empty value)"
             fi
             
-            # Set webhook URL
             if grep -q "WEBHOOK_URL=" .env; then
               sed -i "s|WEBHOOK_URL=.*|WEBHOOK_URL=https://$DOMAIN/webhook|g" .env
             else
               echo "WEBHOOK_URL=https://$DOMAIN/webhook" >> .env
             fi
             
-            # Set Redis configuration for Docker network
             if grep -q "REDIS_ADDR=" .env; then
               sed -i "s|REDIS_ADDR=.*|REDIS_ADDR=redis:6379|g" .env
             else
               echo "REDIS_ADDR=redis:6379" >> .env
             fi
 
-            # Set LLM API keys configuration
-            echo "🔧 Setting up LLM API keys configuration..."
-            
-            # Groq API keys
             GROQ_API_KEYS="${{ secrets.GROQ_API_KEYS }}"
             if [ ! -z "$GROQ_API_KEYS" ]; then
               if grep -q "GROQ_API_KEYS=" .env; then
@@ -1003,13 +922,10 @@ jobs:
               else
                 echo "GROQ_API_KEYS=$GROQ_API_KEYS" >> .env
               fi
-              echo "✅ GROQ_API_KEYS set in .env file"
             else
-              echo "⚠️ WARNING: GROQ_API_KEYS is empty! LLM API may not work properly."
-              echo "Please set the GROQ_API_KEYS GitHub secret with comma-separated API keys."
+              echo "⚠️ GROQ_API_KEYS is empty"
             fi
             
-            # Gemini API keys
             GEMINI_API_KEYS="${{ secrets.GEMINI_API_KEYS }}"
             if [ ! -z "$GEMINI_API_KEYS" ]; then
               if grep -q "GEMINI_API_KEYS=" .env; then
@@ -1017,29 +933,13 @@ jobs:
               else
                 echo "GEMINI_API_KEYS=$GEMINI_API_KEYS" >> .env
               fi
-              echo "✅ GEMINI_API_KEYS set in .env file"
             else
-              echo "⚠️ WARNING: GEMINI_API_KEYS is empty! LLM API may not work properly."
-              echo "Please set the GEMINI_API_KEYS GitHub secret with comma-separated API keys."
+              echo "⚠️ GEMINI_API_KEYS is empty"
             fi
-
-            echo "📋 Main .env file ready for docker-compose..."
-            
-            # Debug: Show telegram bot configuration (without sensitive values)
-            echo "🔍 Telegram bot configuration in .env:"
-            echo "BOT_TOKEN: $(grep "BOT_TOKEN=" .env | sed 's/BOT_TOKEN=.*/BOT_TOKEN=[HIDDEN]/' || echo 'Not set')"
-            echo "WEBHOOK_SECRET: $(grep "WEBHOOK_SECRET=" .env | sed 's/WEBHOOK_SECRET=.*/WEBHOOK_SECRET=[HIDDEN]/' || echo 'Not set')"
-            echo "WEBHOOK_URL: $(grep "WEBHOOK_URL=" .env || echo 'Not set')"
-            echo "REDIS_ADDR: $(grep "REDIS_ADDR=" .env || echo 'Not set')"
-            
-            # Debug: Show LLM API keys configuration (without sensitive values)
-            echo "🔍 LLM API keys configuration in .env:"
-            echo "GROQ_API_KEYS: $(grep "GROQ_API_KEYS=" .env | sed 's/GROQ_API_KEYS=.*/GROQ_API_KEYS=[HIDDEN]/' || echo 'Not set')"
-            echo "GEMINI_API_KEYS: $(grep "GEMINI_API_KEYS=" .env | sed 's/GEMINI_API_KEYS=.*/GEMINI_API_KEYS=[HIDDEN]/' || echo 'Not set')"
             
 
-            # Generate nginx config from template
-            echo "🔧 Generating nginx configuration from template..."
+            
+
             if [ "$ENVIRONMENT" = "production" ]; then
               export CERT_NAME="fluently-app-ru"
             else
@@ -1047,19 +947,39 @@ jobs:
             fi
 
             export DOMAIN
-            # Specify which variables to substitute, leaving nginx variables untouched
             envsubst '${DOMAIN} ${CERT_NAME}' < backend/nginx-container/nginx.conf.template > backend/nginx-container/default.conf
 
-            echo "Generated nginx config for $DOMAIN with cert $CERT_NAME"
-
-            # Check disk space before deployment
-            echo "📊 Disk space before deployment:"
-            df -h | grep -E "(overlay|docker|/$)"
+            echo "Generated nginx config for $DOMAIN"
             
             echo "🐳 Pulling latest images and starting containers..."
-            # Stop services first
+            
+            # Aggressive container cleanup to prevent name conflicts
+            echo "🧹 Performing aggressive container cleanup..."
+            
+            # Stop all containers first
             docker compose down --remove-orphans || true
-
+            
+            # Force remove any containers that might be stuck with our service names
+            echo "🗑️ Force removing any stuck containers..."
+            # Core services
+            docker rm -f fluently_backend fluently_nginx fluently_postgres fluently_redis 2>/dev/null || true
+            # API services
+            docker rm -f fluently_ml_api fluently_llm_api fluently_thesaurus_api 2>/dev/null || true
+            # Bot and CMS
+            docker rm -f fluently_telegram-bot fluently_directus 2>/dev/null || true
+            # Monitoring services
+            docker rm -f fluently_prometheus fluently_grafana fluently_loki fluently_promtail 2>/dev/null || true
+            # Additional monitoring
+            docker rm -f fluently_node_exporter fluently_nginx_exporter fluently_cadvisor 2>/dev/null || true
+            
+            # Also remove any containers in "created" state that might cause conflicts
+            echo "🗑️ Removing containers in 'created' state..."
+            docker ps -a --filter "status=created" --format "{{.Names}}" | grep -E "fluently_|fluently-" | xargs -r docker rm -f 2>/dev/null || true
+            
+            # Clean up any containers that might have similar names
+            echo "🗑️ Cleaning up containers with similar names..."
+            docker ps -a --format "{{.Names}}" | grep -E "fluently_|fluently-" | xargs -r docker rm -f 2>/dev/null || true
+            
             # Clean up Docker networks to prevent conflicts
             echo "🧹 Cleaning up Docker networks..."
             
@@ -1070,19 +990,44 @@ jobs:
             # Prune unused networks
             docker network prune -f || true
             
-            echo "✅ Network cleanup completed"
+            echo "✅ Container and network cleanup completed"
 
             # Pull latest images instead of building
             echo "📥 Pulling latest Docker images..."
             docker compose pull
             
+            # Final check for any remaining conflicting containers
+            echo "🔍 Final check for conflicting containers..."
+            CONFLICTING_CONTAINERS=$(docker ps -a --format "{{.Names}}" | grep -E "fluently_|fluently-" || true)
+            if [ ! -z "$CONFLICTING_CONTAINERS" ]; then
+              echo "⚠️ Found conflicting containers, removing them:"
+              echo "$CONFLICTING_CONTAINERS"
+              echo "$CONFLICTING_CONTAINERS" | xargs -r docker rm -f 2>/dev/null || true
+            else
+              echo "✅ No conflicting containers found"
+            fi
+            
             # Start services with force recreate
             echo "🚀 Starting services..."
             if [ "${{ github.event.inputs.rebuild_containers }}" = "true" ]; then
               echo "🔨 Rebuilding containers during deployment..."
-              docker compose up -d --force-recreate --build
+              docker compose up -d --force-recreate --build || {
+                echo "❌ Failed to start services with rebuild"
+                echo "🔍 Checking for container conflicts..."
+                docker ps -a | grep fluently || echo "No fluently containers found"
+                echo "🔍 Checking docker compose status..."
+                docker compose ps || true
+                exit 1
+              }
             else
-              docker compose up -d --force-recreate
+              docker compose up -d --force-recreate || {
+                echo "❌ Failed to start services"
+                echo "🔍 Checking for container conflicts..."
+                docker ps -a | grep fluently || echo "No fluently containers found"
+                echo "🔍 Checking docker compose status..."
+                docker compose ps || true
+                exit 1
+              }
             fi
 
             # Perform health checks
@@ -1117,7 +1062,7 @@ jobs:
               
               # Protect critical volumes first
               echo "🔒 Verifying critical volumes are protected..."
-              CRITICAL_VOLUMES="fluently_pgdata_safe fluently_grafana_data_external"
+              CRITICAL_VOLUMES="fluently_pgdata_safe"
               for vol in $CRITICAL_VOLUMES; do
                 if docker volume ls | grep -q "$vol"; then
                   echo "✅ Critical volume protected: $vol"

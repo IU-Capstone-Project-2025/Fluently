@@ -94,12 +94,14 @@ func (h *PickOptionHandler) UpdatePickOption(w http.ResponseWriter, r *http.Requ
 	option.Option = req.Options
 
 	if err := h.Repo.Update(r.Context(), option); err != nil {
-		http.Error(w, "failed to update topic", http.StatusInternalServerError)
+		http.Error(w, "failed to update option", http.StatusInternalServerError)
 		return
 	}
 
-	// Return the updated topic
+	// Return the updated option
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(buildPickOptionResponse(option))
 }
 
 func (h *PickOptionHandler) DeletePickOption(w http.ResponseWriter, r *http.Request) {

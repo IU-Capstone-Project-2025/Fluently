@@ -14,6 +14,9 @@ final class HomeScreenInteractor {
 
     func getLesson() async throws -> CardsModel{
         let cards = try await api.getLesson()
+        cards.cards.forEach { card in
+            card.isInLibrary = false
+        }
         return cards
     }
 
@@ -23,6 +26,10 @@ final class HomeScreenInteractor {
             print(card.exercise?.type ?? "Nil exercise")
             print(type(of: card.exercise?.exerciseData))
         }
+    }
+
+    func getPrefs() async throws -> PreferencesModel {
+        return try await api.getPreferences()
     }
 
     func getDayWord() async throws -> WordModel {

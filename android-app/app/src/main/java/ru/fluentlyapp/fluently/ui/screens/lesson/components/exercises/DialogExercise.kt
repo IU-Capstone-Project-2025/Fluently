@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -13,8 +14,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.ime
+import androidx.compose.foundation.layout.imeNestedScroll
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -28,8 +31,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
+import androidx.core.content.ContextCompat
+import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.common.model.Dialog
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import ru.fluentlyapp.fluently.ui.theme.components.ChatTextField
@@ -45,6 +51,7 @@ abstract class DialogObserver {
     abstract fun onMoveNext()
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun DialogExercise(
     modifier: Modifier = Modifier,
@@ -55,18 +62,17 @@ fun DialogExercise(
     Box(
         modifier = modifier
             .background(FluentlyTheme.colors.surface)
-            .windowInsetsPadding(
-                WindowInsets.ime
-            )
+            .windowInsetsPadding(WindowInsets.ime)
     ) {
         DialogTopFloatingButton(
             modifier = Modifier
                 .padding(top = 8.dp)
+                .height(48.dp)
                 .align(Alignment.TopCenter),
             text = if (isCompleted) {
-                "Дальше"
+                stringResource(R.string.continue_)
             } else {
-                "Закончить диалог"
+                stringResource(R.string.finish_dialog)
             },
             onClick = {
                 if (isCompleted) {
@@ -80,11 +86,16 @@ fun DialogExercise(
         val listState = rememberLazyListState()
 
         LaunchedEffect(exerciseState.messages.size) {
+            if (exerciseState.messages.isEmpty()) {
+                dialogObserver.onSendMessage("")
+            }
+
             if (exerciseState.messages.isNotEmpty()) {
                 listState.animateScrollToItem(exerciseState.messages.size - 1)
             }
         }
 
+        val emptyMessageStub = stringResource(R.string.start_the_conversation)
         LazyColumn(
             state = listState,
             modifier = Modifier
@@ -94,8 +105,15 @@ fun DialogExercise(
             verticalArrangement = Arrangement.Bottom,
             contentPadding = PaddingValues(bottom = 60.dp, start = 10.dp, end = 10.dp, top = 0.dp),
         ) {
+            item {
+                Spacer(modifier = Modifier.height(48.dp))
+            }
             items(
-                items = exerciseState.messages,
+                items = exerciseState.messages.map {
+                    if (it.text.isEmpty() && it.fromUser) it.copy(
+                        text = emptyMessageStub
+                    ) else it
+                },
                 key = { it.messageId }
             ) { message ->
                 val alignment = if (message.fromUser) {

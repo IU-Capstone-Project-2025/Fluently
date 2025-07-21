@@ -19,15 +19,17 @@ import (
 type Client struct {
 	baseURL    string
 	httpClient *http.Client
+	logger     *zap.Logger
 }
 
 // NewClient creates a new API client
-func NewClient(baseURL string) *Client {
+func NewClient(baseURL string, logger *zap.Logger) *Client {
 	return &Client{
 		baseURL: baseURL,
 		httpClient: &http.Client{
 			Timeout: 30 * time.Second,
 		},
+		logger: logger,
 	}
 }
 
@@ -98,16 +100,33 @@ type PreferenceResponse struct {
 	AvatarImageURL string `json:"avatar_image_url"`
 }
 
+// CreatePreferenceRequest represents user preferences creation request
+type CreatePreferenceRequest struct {
+	CEFRLevel      string     `json:"cefr_level"`
+	FactEveryday   bool       `json:"fact_everyday"`
+	Notifications  bool       `json:"notifications"`
+	NotificationAt *time.Time `json:"notification_at,omitempty"`
+	WordsPerDay    int        `json:"words_per_day"`
+	Goal           string     `json:"goal"`
+	Subscribed     bool       `json:"subscribed"`
+	AvatarImageURL string     `json:"avatar_image_url"`
+}
+
 // UpdatePreferenceRequest represents user preferences update request
 type UpdatePreferenceRequest struct {
-	CEFRLevel      string `json:"cefr_level,omitempty"`
-	WordsPerDay    int    `json:"words_per_day,omitempty"`
-	NotificationAt string `json:"notification_at,omitempty"`
-	Notifications  bool   `json:"notifications,omitempty"`
-	Goal           string `json:"goal,omitempty"`
-	FactEveryday   bool   `json:"fact_everyday,omitempty"`
-	Subscribed     bool   `json:"subscribed,omitempty"`
-	AvatarImageURL string `json:"avatar_image_url,omitempty"`
+	CEFRLevel      *string    `json:"cefr_level,omitempty"`
+	FactEveryday   *bool      `json:"fact_everyday,omitempty"`
+	Notifications  *bool      `json:"notifications,omitempty"`
+	NotificationAt *time.Time `json:"notification_at,omitempty"`
+	WordsPerDay    *int       `json:"words_per_day,omitempty"`
+	Goal           *string    `json:"goal,omitempty"`
+	Subscribed     *bool      `json:"subscribed,omitempty"`
+	AvatarImageURL *string    `json:"avatar_image_url,omitempty"`
+}
+
+// TopicResponse represents a topic from the backend
+type TopicResponse struct {
+	Title string `json:"title"`
 }
 
 // WordProgressRequest represents word progress update request
@@ -141,10 +160,10 @@ type ExerciseResultRequest struct {
 
 // ProgressRequest represents progress request for backend API
 type ProgressRequest struct {
-	WordID          string    `json:"word_id"`
-	LearnedAt       time.Time `json:"learned_at"`
-	ConfidenceScore int       `json:"confidence_score"`
-	CntReviewed     int       `json:"cnt_reviewed"`
+	WordID          string     `json:"word_id"`
+	LearnedAt       *time.Time `json:"learned_at,omitempty"`
+	ConfidenceScore *int       `json:"confidence_score,omitempty"`
+	CntReviewed     *int       `json:"cnt_reviewed,omitempty"`
 }
 
 // ErrorResponse represents API error response
@@ -205,6 +224,7 @@ func (c *Client) doAuthenticatedRequest(ctx context.Context, method, endpoint st
 		req.Header.Set("Authorization", "Bearer "+token)
 	}
 
+	c.logger.Info("Sending request", zap.String("url", url), zap.String("method", method), zap.Any("body", body))
 	resp, err := c.httpClient.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("failed to execute request: %w", err)
@@ -245,17 +265,17 @@ func (c *Client) CreateLinkToken(ctx context.Context, telegramID int64) (*Create
 
 	resp, err := c.doRequest(ctx, "POST", "/telegram/create-link", req)
 	if err != nil {
-		zap.L().With(zap.Int64("telegram_id", telegramID), zap.Error(err)).Error("Failed to create link token")
+		c.logger.With(zap.Int64("telegram_id", telegramID), zap.Error(err)).Error("Failed to create link token")
 		return nil, err
 	}
 
 	var result CreateLinkTokenResponse
 	if err := c.parseResponse(resp, &result); err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to parse create link token response")
+		c.logger.With(zap.Error(err)).Error("Failed to parse create link token response")
 		return nil, err
 	}
 
-	zap.L().With(zap.Int64("telegram_id", telegramID)).Info("Successfully created link token")
+	c.logger.With(zap.Int64("telegram_id", telegramID)).Info("Successfully created link token")
 	return &result, nil
 }
 
@@ -265,17 +285,17 @@ func (c *Client) CheckLinkStatus(ctx context.Context, telegramID int64) (*CheckL
 
 	resp, err := c.doRequest(ctx, "POST", "/telegram/check-status", req)
 	if err != nil {
-		zap.L().With(zap.Int64("telegram_id", telegramID), zap.Error(err)).Error("Failed to check link status")
+		c.logger.With(zap.Int64("telegram_id", telegramID), zap.Error(err)).Error("Failed to check link status")
 		return nil, err
 	}
 
 	var result CheckLinkStatusResponse
 	if err := c.parseResponse(resp, &result); err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to parse check link status response")
+		c.logger.With(zap.Error(err)).Error("Failed to parse check link status response")
 		return nil, err
 	}
 
-	zap.L().With(zap.Int64("telegram_id", telegramID), zap.Bool("is_linked", result.IsLinked)).Debug("Checked link status")
+	c.logger.With(zap.Int64("telegram_id", telegramID), zap.Bool("is_linked", result.IsLinked)).Debug("Checked link status")
 	return &result, nil
 }
 
@@ -283,17 +303,35 @@ func (c *Client) CheckLinkStatus(ctx context.Context, telegramID int64) (*CheckL
 func (c *Client) GetUserPreferences(ctx context.Context, token string) (*PreferenceResponse, error) {
 	resp, err := c.doAuthenticatedRequest(ctx, "GET", "/api/v1/preferences", nil, token)
 	if err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to get user preferences")
+		c.logger.With(zap.Error(err)).Error("Failed to get user preferences")
 		return nil, err
 	}
 
 	var result PreferenceResponse
 	if err := c.parseResponse(resp, &result); err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to parse user preferences response")
+		c.logger.With(zap.Error(err)).Error("Failed to parse user preferences response")
 		return nil, err
 	}
 
-	zap.L().With(zap.String("user_id", result.UserID)).Debug("Successfully retrieved user preferences")
+	c.logger.With(zap.String("user_id", result.UserID)).Debug("Successfully retrieved user preferences")
+	return &result, nil
+}
+
+// CreateUserPreferences creates user preferences in backend
+func (c *Client) CreateUserPreferences(ctx context.Context, token string, userID string, preferences *CreatePreferenceRequest) (*PreferenceResponse, error) {
+	resp, err := c.doAuthenticatedRequest(ctx, "POST", "/api/v1/preferences/user/"+userID, preferences, token)
+	if err != nil {
+		c.logger.With(zap.Error(err)).Error("Failed to create user preferences")
+		return nil, err
+	}
+
+	var result PreferenceResponse
+	if err := c.parseResponse(resp, &result); err != nil {
+		c.logger.With(zap.Error(err)).Error("Failed to parse create preferences response")
+		return nil, err
+	}
+
+	c.logger.With(zap.String("user_id", result.UserID)).Info("Successfully created user preferences")
 	return &result, nil
 }
 
@@ -301,35 +339,53 @@ func (c *Client) GetUserPreferences(ctx context.Context, token string) (*Prefere
 func (c *Client) UpdateUserPreferences(ctx context.Context, token string, preferences *UpdatePreferenceRequest) (*PreferenceResponse, error) {
 	resp, err := c.doAuthenticatedRequest(ctx, "PUT", "/api/v1/preferences", preferences, token)
 	if err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to update user preferences")
+		c.logger.With(zap.Error(err)).Error("Failed to update user preferences")
 		return nil, err
 	}
 
 	var result PreferenceResponse
 	if err := c.parseResponse(resp, &result); err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to parse update preferences response")
+		c.logger.With(zap.Error(err)).Error("Failed to parse update preferences response")
 		return nil, err
 	}
 
-	zap.L().With(zap.String("user_id", result.UserID)).Info("Successfully updated user preferences")
+	c.logger.With(zap.String("user_id", result.UserID)).Info("Successfully updated user preferences")
 	return &result, nil
+}
+
+// GetTopics retrieves all available topics from backend
+func (c *Client) GetTopics(ctx context.Context, token string) ([]TopicResponse, error) {
+	resp, err := c.doAuthenticatedRequest(ctx, "GET", "/api/v1/topics", nil, token)
+	if err != nil {
+		c.logger.With(zap.Error(err)).Error("Failed to get topics")
+		return nil, err
+	}
+
+	var result []TopicResponse
+	if err := c.parseResponse(resp, &result); err != nil {
+		c.logger.With(zap.Error(err)).Error("Failed to parse get topics response")
+		return nil, err
+	}
+
+	c.logger.With(zap.Int("topic_count", len(result))).Debug("Successfully retrieved topics")
+	return result, nil
 }
 
 // GenerateLesson generates a new lesson for the user with JWT authentication
 func (c *Client) GenerateLesson(ctx context.Context, token string) (*domain.LessonResponse, error) {
 	resp, err := c.doAuthenticatedRequest(ctx, "GET", "/api/v1/lesson", nil, token)
 	if err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to generate lesson")
+		c.logger.With(zap.Error(err)).Error("Failed to generate lesson")
 		return nil, err
 	}
 
 	var result domain.LessonResponse
 	if err := c.parseResponse(resp, &result); err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to parse generate lesson response")
+		c.logger.With(zap.Error(err)).Error("Failed to parse generate lesson response")
 		return nil, err
 	}
 
-	zap.L().With(
+	c.logger.With(
 		zap.String("cefr_level", result.Lesson.CEFRLevel),
 		zap.Int("word_count", len(result.Cards)),
 		zap.Int("words_per_lesson", result.Lesson.WordsPerLesson),
@@ -348,16 +404,16 @@ func (c *Client) UpdateWordProgress(ctx context.Context, userID string, wordID u
 
 	resp, err := c.doRequest(ctx, "POST", "/api/v1/words/progress", req)
 	if err != nil {
-		zap.L().With(zap.String("user_id", userID), zap.String("word_id", wordID.String()), zap.Error(err)).Error("Failed to update word progress")
+		c.logger.With(zap.String("user_id", userID), zap.String("word_id", wordID.String()), zap.Error(err)).Error("Failed to update word progress")
 		return err
 	}
 
 	if err := c.parseResponse(resp, nil); err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to parse update word progress response")
+		c.logger.With(zap.Error(err)).Error("Failed to parse update word progress response")
 		return err
 	}
 
-	zap.L().With(
+	c.logger.With(
 		zap.String("user_id", userID),
 		zap.String("word_id", wordID.String()),
 		zap.Bool("correct", correct),
@@ -369,16 +425,16 @@ func (c *Client) UpdateWordProgress(ctx context.Context, userID string, wordID u
 func (c *Client) UpdateProgress(ctx context.Context, req ProgressUpdateRequest) error {
 	resp, err := c.doRequest(ctx, "POST", "/api/v1/progress/update", req)
 	if err != nil {
-		zap.L().With(zap.String("user_id", req.UserID), zap.Error(err)).Error("Failed to update progress")
+		c.logger.With(zap.String("user_id", req.UserID), zap.Error(err)).Error("Failed to update progress")
 		return err
 	}
 
 	if err := c.parseResponse(resp, nil); err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to parse update progress response")
+		c.logger.With(zap.Error(err)).Error("Failed to parse update progress response")
 		return err
 	}
 
-	zap.L().With(
+	c.logger.With(
 		zap.String("user_id", req.UserID),
 		zap.String("lesson_id", req.LessonID.String()),
 		zap.Int("exercises_completed", req.ExercisesCompleted),
@@ -390,17 +446,17 @@ func (c *Client) UpdateProgress(ctx context.Context, req ProgressUpdateRequest) 
 func (c *Client) GetUserStats(ctx context.Context, userID string) (map[string]interface{}, error) {
 	resp, err := c.doRequest(ctx, "GET", "/api/v1/users/"+userID+"/stats", nil)
 	if err != nil {
-		zap.L().With(zap.String("user_id", userID), zap.Error(err)).Error("Failed to get user stats")
+		c.logger.With(zap.String("user_id", userID), zap.Error(err)).Error("Failed to get user stats")
 		return nil, err
 	}
 
 	var result map[string]interface{}
 	if err := c.parseResponse(resp, &result); err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to parse get user stats response")
+		c.logger.With(zap.Error(err)).Error("Failed to parse get user stats response")
 		return nil, err
 	}
 
-	zap.L().With(zap.String("user_id", userID)).Debug("Successfully retrieved user stats")
+	c.logger.With(zap.String("user_id", userID)).Debug("Successfully retrieved user stats")
 	return result, nil
 }
 
@@ -410,44 +466,54 @@ func (c *Client) GetJWTTokens(ctx context.Context, telegramID int64) (*JWTRespon
 
 	resp, err := c.doRequest(ctx, "POST", "/telegram/get-tokens", req)
 	if err != nil {
-		zap.L().With(zap.Int64("telegram_id", telegramID), zap.Error(err)).Error("Failed to get JWT tokens")
+		c.logger.With(zap.Int64("telegram_id", telegramID), zap.Error(err)).Error("Failed to get JWT tokens")
 		return nil, err
 	}
 
 	var result JWTResponse
 	if err := c.parseResponse(resp, &result); err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to parse JWT tokens response")
+		c.logger.With(zap.Error(err)).Error("Failed to parse JWT tokens response")
 		return nil, err
 	}
 
-	zap.L().With(zap.Int64("telegram_id", telegramID)).Debug("Successfully retrieved JWT tokens")
+	c.logger.With(zap.Int64("telegram_id", telegramID)).Debug("Successfully retrieved JWT tokens")
 	return &result, nil
 }
 
 // SendLessonProgress sends word progress data to backend after lesson completion
-func (c *Client) SendLessonProgress(ctx context.Context, token string, progressData []domain.WordProgress) error {
+func (c *Client) SendLessonProgress(ctx context.Context, token string, progressData []domain.WordProgress, badlyAnsweredWords []domain.BadlyAnsweredWord) error {
 	// Convert to backend format
 	var progressRequests []ProgressRequest
+
+	// Add well-answered words with full metadata
 	for _, progress := range progressData {
 		progressRequests = append(progressRequests, ProgressRequest{
-			WordID:          progress.Word, // Using word as ID for now
-			LearnedAt:       progress.LearnedAt,
-			ConfidenceScore: progress.ConfidenceScore,
-			CntReviewed:     progress.CntReviewed,
+			WordID:          progress.WordID,
+			LearnedAt:       &progress.LearnedAt,
+			ConfidenceScore: &progress.ConfidenceScore,
+			CntReviewed:     &progress.CntReviewed,
+		})
+	}
+
+	// Add badly-answered words with only word_id (no metadata)
+	for _, badWord := range badlyAnsweredWords {
+		progressRequests = append(progressRequests, ProgressRequest{
+			WordID: badWord.WordID,
+			// No metadata for badly answered words
 		})
 	}
 
 	resp, err := c.doAuthenticatedRequest(ctx, "POST", "/api/v1/progress", progressRequests, token)
 	if err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to send lesson progress")
+		c.logger.With(zap.Error(err)).Error("Failed to send lesson progress")
 		return err
 	}
 
 	if err := c.parseResponse(resp, nil); err != nil {
-		zap.L().With(zap.Error(err)).Error("Failed to parse send lesson progress response")
+		c.logger.With(zap.Error(err)).Error("Failed to parse send lesson progress response")
 		return err
 	}
 
-	zap.L().With(zap.Int("words_count", len(progressData))).Info("Successfully sent lesson progress")
+	c.logger.With(zap.Int("words_count", len(progressData)+len(badlyAnsweredWords))).Info("Successfully sent lesson progress")
 	return nil
 }

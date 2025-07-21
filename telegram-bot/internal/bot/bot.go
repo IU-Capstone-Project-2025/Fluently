@@ -29,26 +29,13 @@ type TelegramBot struct {
 
 // NewTelegramBot creates a new Telegram bot instance
 func NewTelegramBot(cfg *config.Config, redisClient *redis.Client, apiClient *api.Client, scheduler *tasks.Scheduler, logger *zap.Logger) (*TelegramBot, error) {
-	// Create bot settings
+	// Create bot settings for long polling
 	settings := tele.Settings{
 		Token:  cfg.Bot.Token,
 		Poller: &tele.LongPoller{Timeout: 10 * time.Second},
 	}
 
-	// webhookURL := cfg.Bot.WebhookURL
-	// webhookURL := ""
-
-	// Configure webhook if URL is provided
-	// if webhookURL != "" {
-	// 	webhook := &tele.Webhook{
-	// 		Listen:   fmt.Sprintf(":%s", cfg.Bot.WebhookPort),
-	// 		Endpoint: &tele.WebhookEndpoint{PublicURL: cfg.Bot.WebhookURL},
-	// 	}
-	// 	settings.Poller = webhook
-	// 	logger.Info("Using webhook", zap.String("url", cfg.Bot.WebhookURL))
-	// } else {
-	// 	logger.Info("Using long polling")
-	// }
+	logger.Info("Using long polling")
 
 	// Create bot instance
 	bot, err := tele.NewBot(settings)
@@ -89,6 +76,7 @@ func (tb *TelegramBot) setupHandlers() {
 	tb.bot.Handle("/test", tb.handleTest)
 	tb.bot.Handle("/stats", tb.handleStats)
 	tb.bot.Handle("/cancel", tb.handleCancel)
+	tb.bot.Handle("/menu", tb.handleMenu)
 
 	// Message handler for all text messages
 	tb.bot.Handle(tele.OnText, tb.handleMessage)
@@ -218,6 +206,19 @@ func (tb *TelegramBot) handleCancel(c tele.Context) error {
 	}
 
 	return tb.handlerService.HandleCancelCommand(ctx, c, userID, currentState)
+}
+
+// handleMenu handles the /menu command
+func (tb *TelegramBot) handleMenu(c tele.Context) error {
+	ctx := context.Background()
+	userID := c.Sender().ID
+	currentState, err := tb.stateManager.GetState(ctx, userID)
+	if err != nil {
+		tb.logger.Error("Failed to get user state")
+		currentState = fsm.StateStart
+	}
+
+	return tb.handlerService.HandleMenuCommand(ctx, c, userID, currentState)
 }
 
 // handleMessage handles all text messages

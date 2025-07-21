@@ -18,11 +18,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
 
@@ -44,7 +46,7 @@ fun FinishDecoration(
     ) {
         Text(
             textAlign = TextAlign.Center,
-            text = "Урок пройден!",
+            text = stringResource(R.string.lesson_is_completed),
             fontSize = 64.sp,
             lineHeight = 64.sp
         )
@@ -59,7 +61,7 @@ fun FinishDecoration(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    "Я молодец \uD83D\uDE0E",
+                    stringResource(R.string.i_am_sigma),
                     fontWeight = FontWeight.Bold,
                     fontSize = 32.sp,
                     color = FluentlyTheme.colors.onPrimary

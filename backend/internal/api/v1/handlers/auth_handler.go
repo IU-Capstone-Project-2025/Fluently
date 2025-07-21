@@ -441,7 +441,7 @@ func (h *Handlers) RefreshTokenHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// revoke old refresh token
-	if err := h.RefreshTokenRepo.Revoke(r.Context(), rt.ID); err != nil {
+	if err := h.RefreshTokenRepo.RevokeToken(r.Context(), rt.Token); err != nil {
 		logger.Log.Error("Could not revoke token", zap.Error(err))
 		http.Error(w, "could not revoke token", http.StatusInternalServerError)
 		return
@@ -733,12 +733,15 @@ func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, g
 	}
 
 	// Encode user data as URL parameters
-	redirectURL := fmt.Sprintf("%s://%s/profile.html?name=%s&email=%s&picture=%s&access_token=%s",
+	redirectURL := fmt.Sprintf("%s://%s/auth-success.html?name=%s&email=%s&picture=%s&access_token=%s",
 		scheme, r.Host,
 		url.QueryEscape(user.Name),
 		url.QueryEscape(user.Email),
 		url.QueryEscape(avatar),
 		url.QueryEscape(resp.AccessToken))
 
+	logger.Log.Info("Redirecting to auth-success.html with query params", zap.String("redirectURL", redirectURL))
+
+	// Ensure this redirect is not overwritten elsewhere
 	http.Redirect(w, r, redirectURL, http.StatusTemporaryRedirect)
 }

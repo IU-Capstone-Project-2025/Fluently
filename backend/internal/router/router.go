@@ -216,20 +216,14 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		RefreshTokenRepo: postgres.NewRefreshTokenRepository(db),
 	}
 
-	// Initialize Telegram handler
+	// Initialize link token repository for cleanup task
 	linkTokenRepo := postgres.NewLinkTokenRepository(db)
-	telegramHandler := &handlers.TelegramHandler{
-		UserRepo:         postgres.NewUserRepository(db),
-		LinkTokenRepo:    linkTokenRepo,
-		RefreshTokenRepo: postgres.NewRefreshTokenRepository(db),
-	}
 
 	// Start cleanup task for expired tokens (every hour)
 	utils.StartTokenCleanupTask(linkTokenRepo, time.Hour)
 
 	// Public routes (NO AUTHENTICATION REQUIRED)
 	routes.RegisterAuthRoutes(r, authHandlers)
-	routes.RegisterTelegramRoutes(r, telegramHandler)
 
 	// Prometheus metrics endpoint
 	r.Handle("/metrics", promhttp.Handler())
@@ -244,6 +238,11 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	})
 	r.Get("/swagger/*", httpSwagger.WrapHandler)
 
+	// Serve /auth-success.html as a static file for OAuth success redirect
+	r.Get("/auth-success.html", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "/app/static/auth-success.html")
+	})
+
 	userRepo := postgres.NewUserRepository(db)
 	wordRepo := postgres.NewWordRepository(db)
 	sentenceRepo := postgres.NewSentenceRepository(db)
@@ -253,12 +252,23 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	topicRepo := postgres.NewTopicRepository(db)
 	lessonRepo := postgres.NewLessonRepository(db)
 	chatHistoryRepo := postgres.NewChatHistoryRepository(db)
+	notLearnedWordRepo := postgres.NewNotLearnedWordRepository(db)
 
 	thesaurusClient := utils.NewThesaurusClient(utils.ThesaurusClientConfig{})
 	llmClient := utils.NewLLMClient(utils.LLMClientConfig{})
 	distractorClient := utils.NewDistractorClient(utils.DistractorClientConfig{})
 
 	chatHistoryHandler := &handlers.ChatHistoryHandler{Repo: chatHistoryRepo}
+
+	// Initialize Telegram handler with all required repositories
+	telegramHandler := &handlers.TelegramHandler{
+		UserRepo:         userRepo,
+		LinkTokenRepo:    linkTokenRepo,
+		RefreshTokenRepo: postgres.NewRefreshTokenRepository(db),
+	}
+
+	// Register telegram routes now that handler is initialized
+	routes.RegisterTelegramRoutes(r, telegramHandler)
 
 	// Protected routes using flexible JWT authentication
 	r.Route("/api/v1", func(r chi.Router) {
@@ -271,11 +281,19 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		routes.RegisterWordRoutes(r, &handlers.WordHandler{Repo: wordRepo})
 		routes.RegisterSentenceRoutes(r, &handlers.SentenceHandler{Repo: sentenceRepo})
 		routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: learnedWordRepo})
+		routes.RegisterNotLearnedWordRoutes(r, &handlers.NotLearnedWordHandler{
+			Repo:     notLearnedWordRepo,
+			WordRepo: wordRepo,
+		})
 		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: preferenceRepo})
 		routes.RegisterPickOptionRoutes(r, &handlers.PickOptionHandler{Repo: pickOptionRepo})
+		routes.RegisterTopicRoutes(r, &handlers.TopicHandler{Repo: topicRepo})
 		routes.RegisterProgressRoutes(r, &handlers.ProgressHandler{
-			WordRepo:        wordRepo,
-			LearnedWordRepo: learnedWordRepo,
+			WordRepo:           wordRepo,
+			LearnedWordRepo:    learnedWordRepo,
+			NotLearnedWordRepo: notLearnedWordRepo,
+			LLMClient:          llmClient,
+			Redis:              utils.Redis(),
 		})
 		routes.RegisterDayWordRoutes(r, &handlers.DayWordHandler{
 			WordRepo:        wordRepo,
@@ -286,24 +304,26 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 			LearnedWordRepo: learnedWordRepo,
 		})
 		routes.RegisterLessonRoutes(r, &handlers.LessonHandler{
-			PreferenceRepo:  preferenceRepo,
-			TopicRepo:       topicRepo,
-			SentenceRepo:    sentenceRepo,
-			PickOptionRepo:  pickOptionRepo,
-			WordRepo:        wordRepo,
-			Repo:            lessonRepo,
-			LearnedWordRepo: learnedWordRepo,
-			ThesaurusClient: thesaurusClient,
+			PreferenceRepo:     preferenceRepo,
+			TopicRepo:          topicRepo,
+			SentenceRepo:       sentenceRepo,
+			PickOptionRepo:     pickOptionRepo,
+			WordRepo:           wordRepo,
+			Repo:               lessonRepo,
+			LearnedWordRepo:    learnedWordRepo,
+			NotLearnedWordRepo: notLearnedWordRepo,
+			ThesaurusClient:    thesaurusClient,
 		})
 
 		// --- new AI-related routes ---
 		chatHandler := &handlers.ChatHandler{
-			Redis:           utils.Redis(),
-			HistoryRepo:     chatHistoryRepo,
-			LLMClient:       llmClient,
-			LearnedWordRepo: learnedWordRepo,
-			WordRepo:        wordRepo,
-			TopicRepo:       topicRepo,
+			Redis:              utils.Redis(),
+			HistoryRepo:        chatHistoryRepo,
+			LLMClient:          llmClient,
+			LearnedWordRepo:    learnedWordRepo,
+			NotLearnedWordRepo: notLearnedWordRepo,
+			WordRepo:           wordRepo,
+			TopicRepo:          topicRepo,
 		}
 		distractorHandler := &handlers.DistractorHandler{
 			Client: distractorClient,

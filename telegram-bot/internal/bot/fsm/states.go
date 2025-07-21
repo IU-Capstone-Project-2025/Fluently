@@ -13,10 +13,13 @@ const (
 	StateSpacedRepetition  UserState = "spaced_repetition"
 
 	// Stage 2: Personalization
-	StateQuestionnaire      UserState = "questionnaire"
-	StateQuestionGoal       UserState = "question_goal"
-	StateQuestionConfidence UserState = "question_confidence"
-	StateQuestionExperience UserState = "question_experience"
+	StateQuestionnaire            UserState = "questionnaire"
+	StateQuestionGoal             UserState = "question_goal"
+	StateQuestionConfidence       UserState = "question_confidence"
+	StateQuestionExperience       UserState = "question_experience"
+	StateQuestionWordsPerDay      UserState = "question_words_per_day"
+	StateQuestionNotifications    UserState = "question_notifications"
+	StateQuestionNotificationTime UserState = "question_notification_time"
 
 	// CEFR Test Flow
 	StateVocabularyTest     UserState = "vocabulary_test"
@@ -52,6 +55,7 @@ const (
 	StateWriteWordTranslation UserState = "write_word_translation" // Write word from translation
 	StateTranslateRuToEn      UserState = "translate_ru_to_en"     // Translate Russian to English
 	StateWaitingForTextInput  UserState = "waiting_for_text_input" // Waiting for user text input
+	StateWordAlreadyKnown     UserState = "word_already_known"     // User marked word as already known
 
 	// Legacy Learning Process (keeping for backward compatibility)
 	StateShowingWords          UserState = "showing_words"
@@ -83,6 +87,7 @@ const (
 	StateSettingsTimeInput        UserState = "settings_time_input"
 	StateSettingsCEFRLevel        UserState = "settings_cefr_level"
 	StateSettingsLanguage         UserState = "settings_language"
+	StateSettingsTopicSelection   UserState = "settings_topic_selection"
 
 	// Account Management
 	StateAccountLinking UserState = "account_linking"
@@ -112,10 +117,13 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateSpacedRepetition, StateQuestionnaire}:     true,
 
 	// Questionnaire flow
-	{StateQuestionnaire, StateQuestionGoal}:            true,
-	{StateQuestionGoal, StateQuestionConfidence}:       true,
-	{StateQuestionConfidence, StateQuestionExperience}: true,
-	{StateQuestionExperience, StateVocabularyTest}:     true,
+	{StateQuestionnaire, StateQuestionGoal}:                     true,
+	{StateQuestionGoal, StateQuestionConfidence}:                true,
+	{StateQuestionConfidence, StateQuestionExperience}:          true,
+	{StateQuestionExperience, StateQuestionWordsPerDay}:         true,
+	{StateQuestionWordsPerDay, StateQuestionNotifications}:      true,
+	{StateQuestionNotifications, StateQuestionNotificationTime}: true,
+	{StateQuestionNotificationTime, StateVocabularyTest}:        true,
 
 	// Vocabulary test flow
 	{StateVocabularyTest, StateTestGroup1}:         true,
@@ -127,8 +135,13 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateTestGroup5, StateCEFRTestResult}:         true, // Direct transition for completion
 	{StateCEFRTestProcessing, StateCEFRTestResult}: true,
 	{StateCEFRTestResult, StateLevelDetermination}: true,
-	{StateLevelDetermination, StatePlanCreation}:   true,
-	{StatePlanCreation, StateLessonStart}:          true,
+
+	// CEFR result can also transition directly to start (onboarding complete)
+	{StateCEFRTestResult, StateStart}: true,
+
+	// CEFR level settings transitions
+	{StateLevelDetermination, StatePlanCreation}: true,
+	{StatePlanCreation, StateLessonStart}:        true,
 
 	// Test skip flow
 	{StateVocabularyTest, StateCEFRTestResult}: true, // Allow skipping test
@@ -164,8 +177,25 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateExerciseInProgress, StateTranslateRuToEn}:       true,
 	{StateWriteWordTranslation, StateWaitingForTextInput}: true,
 	{StateTranslateRuToEn, StateWaitingForTextInput}:      true,
+	{StateTranslateRuToEn, StateExerciseInProgress}:       true, // Allow transition back to exercise in progress
+	{StatePickOptionSentence, StateExerciseInProgress}:    true,
+	{StateWriteWordTranslation, StateExerciseInProgress}:  true,
+	{StateWaitingForTextInput, StateExerciseInProgress}:   true,
 	{StatePickOptionSentence, StateDoingExercises}:        true, // Back to exercise queue
-	{StateWaitingForTextInput, StateDoingExercises}:       true, // Back to exercise queue
+	{StateWaitingForTextInput, StateDoingExercises}:       true,
+	{StateWaitingForTextInput, StateSetComplete}:          true,
+	{StateShowingWord1, StateReadyForExercises}:           true,
+	{StateShowingWord2, StateReadyForExercises}:           true,
+	{StateShowingWord3, StateReadyForExercises}:           true,
+
+	// Word already known flow
+	{StateShowingWord1, StateWordAlreadyKnown}:      true,
+	{StateShowingWord2, StateWordAlreadyKnown}:      true,
+	{StateShowingWord3, StateWordAlreadyKnown}:      true,
+	{StateWordAlreadyKnown, StateShowingWord1}:      true, // Continue to next word
+	{StateWordAlreadyKnown, StateShowingWord2}:      true, // Continue to next word
+	{StateWordAlreadyKnown, StateShowingWord3}:      true, // Continue to next word
+	{StateWordAlreadyKnown, StateReadyForExercises}: true, // If last word in set
 
 	// Legacy detailed learning flow (keeping for backward compatibility)
 	{StateLessonInProgress, StateShowingFirstBlock}:       true,
@@ -192,6 +222,21 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateWaitingForAudio, StateExerciseReview}:         true,
 	{StateWaitingForTranslation, StateExerciseReview}:   true,
 	{StateWaitingForChoice, StateExerciseReview}:        true,
+	{StateTranslationCheck, StateExerciseInProgress}:    true,
+	{StateMultipleChoiceCheck, StateExerciseInProgress}: true,
+	{StateAudioDictation, StateExerciseInProgress}:      true,
+	{StateExerciseInProgress, StateTranslationCheck}:    true,
+	{StateExerciseInProgress, StateMultipleChoiceCheck}: true,
+	{StateExerciseInProgress, StateAudioDictation}:      true,
+	{StateExerciseInProgress, StateSetComplete}:         true,
+	{StateTranslateRuToEn, StateSetComplete}:            true,
+	{StateWriteWordTranslation, StateSetComplete}:       true,
+	{StatePickOptionSentence, StateSetComplete}:         true,
+	{StateSetComplete, StateLessonComplete}:             true,
+	{StateSetComplete, StateLessonStart}:                true,
+	{StateSetComplete, StateLessonInProgress}:           true,
+	{StateSetComplete, StateShowingWordSet}:             true,
+	{StateSetComplete, StateSetComplete}:                true,
 
 	// Account management
 	{StateStart, StateAccountLinking}:          true,
@@ -225,21 +270,32 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateSettingsWordsPerDay, StateSettingsWordsPerDayInput}: true,
 	{StateSettingsWordsPerDayInput, StateSettings}:            true,
 	{StateSettingsWordsPerDay, StateSettings}:                 true,
+	{StateSettings, StateSettingsWordsPerDayInput}:            true, // Allow direct transition for custom input
 
 	// Settings - Notifications flow
 	{StateSettingsNotifications, StateSettingsTimeSelection}: true,
+	{StateSettingsNotifications, StateSettingsTimeInput}:     true, // Allow direct transition for custom time
 	{StateSettingsTimeSelection, StateSettingsTimeInput}:     true,
 	{StateSettingsTimeInput, StateSettingsNotifications}:     true,
 	{StateSettingsTimeSelection, StateSettingsNotifications}: true,
 	{StateSettingsNotifications, StateSettings}:              true,
+	{StateSettings, StateSettingsTimeInput}:                  true, // Allow direct transition for custom input
+	{StateSettingsTimeInput, StateSettings}:                  true,
+	{StateSettingsTimeInput, StateSettingsTimeSelection}:     true,
+	{StateSettingsTimeSelection, StateSettingsTimeInput}:     true,
+	{StateSettings, StateStart}:                              true,
 
 	// Settings - CEFR Level flow
 	{StateSettingsCEFRLevel, StateVocabularyTest}: true,
 	{StateCEFRTestResult, StateSettingsCEFRLevel}: true,
 	{StateSettingsCEFRLevel, StateSettings}:       true,
+	{StateSettings, StateSettingsCEFRLevel}:       true, // Allow direct transition for custom input
 
 	// Settings - Language flow
-	{StateSettingsLanguage, StateSettings}: true,
+	{StateSettingsLanguage, StateSettings}:       true,
+	{StateSettings, StateSettingsLanguage}:       true,
+	{StateSettings, StateSettingsTopicSelection}: true,
+	{StateSettingsTopicSelection, StateSettings}: true,
 
 	// Common transitions to/from lesson flow
 	{StateSettings, StateLessonStart}: true,
@@ -262,6 +318,11 @@ func IsValidTransition(from, to UserState) bool {
 
 	// Special case: allow transitions to lesson states from any state
 	if to == StateLessonStart || to == StateLessonInProgress {
+		return true
+	}
+
+	// Special case: allow transitions to start state from any state
+	if to == StateStart {
 		return true
 	}
 
@@ -316,6 +377,7 @@ func IsLessonState(state UserState) bool {
 		StateWriteWordTranslation,
 		StateTranslateRuToEn,
 		StateWaitingForTextInput,
+		StateWordAlreadyKnown,
 		// Legacy states
 		StateShowingWords,
 		StateShowingFirstBlock,

@@ -41,14 +41,14 @@ func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Requ
 		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
 		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
 	}()
-	userID, err := utils.ParseUUIDParam(r, "user_id")
+	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
-		statusCode = 400
-		http.Error(w, "invalid user_id", http.StatusBadRequest)
+		statusCode = 401
+		http.Error(w, "unauthorized", http.StatusUnauthorized)
 		return
 	}
 
-	words, err := h.Repo.ListByUserID(r.Context(), userID)
+	words, err := h.Repo.ListByUserID(r.Context(), user.ID)
 	if err != nil {
 		statusCode = 500
 		http.Error(w, "failed to fetch learned words", http.StatusInternalServerError)
@@ -68,17 +68,17 @@ func (h *LearnedWordHandler) GetLearnedWords(w http.ResponseWriter, r *http.Requ
 // GetLearnedWord returns a single learned word for a user
 func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Request) {
 	start := time.Now()
-	endpoint := "/api/v1/learned-words/{user_id}/{word_id}"
+	endpoint := "/api/v1/learned-words/{word_id}"
 	method := r.Method
 	statusCode := 200
 	defer func() {
 		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
 		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
 	}()
-	userID, err := utils.ParseUUIDParam(r, "user_id")
+	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
-		statusCode = 400
-		http.Error(w, "invalid user_id", http.StatusBadRequest)
+		statusCode = 401
+		http.Error(w, "unauthorized", http.StatusUnauthorized)
 		return
 	}
 
@@ -89,7 +89,7 @@ func (h *LearnedWordHandler) GetLearnedWord(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
-	word, err := h.Repo.GetByUserWordID(r.Context(), userID, wordID)
+	word, err := h.Repo.GetByUserWordID(r.Context(), user.ID, wordID)
 	if err != nil {
 		statusCode = 404
 		http.Error(w, "learned word not found", http.StatusNotFound)
@@ -111,10 +111,10 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
 		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
 	}()
-	userID, err := utils.ParseUUIDParam(r, "user_id")
+	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
-		statusCode = 400
-		http.Error(w, "invalid user_id", http.StatusBadRequest)
+		statusCode = 401
+		http.Error(w, "unauthorized", http.StatusUnauthorized)
 		return
 	}
 
@@ -125,14 +125,14 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 		return
 	}
 
-	if req.UserID != uuid.Nil && req.UserID != userID {
+	if req.UserID != uuid.Nil && req.UserID != user.ID {
 		statusCode = 400
 		http.Error(w, "user_id mismatch", http.StatusBadRequest)
 		return
 	}
 
 	word := models.LearnedWords{
-		UserID:           req.UserID,
+		UserID:           user.ID,
 		WordID:           req.WordID,
 		LearnedAt:        req.LearnedAt,
 		LastReviewed:     req.LastReviewed,
@@ -154,24 +154,17 @@ func (h *LearnedWordHandler) CreateLearnedWord(w http.ResponseWriter, r *http.Re
 // UpdateLearnedWord updates a learned word
 func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Request) {
 	start := time.Now()
-	endpoint := "/api/v1/learned-words/{user_id}/{word_id}"
+	endpoint := "/api/v1/learned-words/{word_id}"
 	method := r.Method
 	statusCode := 200
 	defer func() {
 		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
 		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
 	}()
-	userID, err := utils.ParseUUIDParam(r, "user_id")
+	user, err := utils.GetCurrentUser(r.Context())
 	if err != nil {
-		statusCode = 400
-		http.Error(w, "invalid user_id", http.StatusBadRequest)
-		return
-	}
-
-	wordID, err := utils.ParseUUIDParam(r, "word_id")
-	if err != nil {
-		statusCode = 400
-		http.Error(w, "invalid word_id", http.StatusBadRequest)
+		statusCode = 401
+		http.Error(w, "unauthorized", http.StatusUnauthorized)
 		return
 	}
 
@@ -182,7 +175,7 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 		return
 	}
 
-	word, err := h.Repo.GetByUserWordID(r.Context(), userID, wordID)
+	word, err := h.Repo.GetByUserWordID(r.Context(), user.ID, req.WordID)
 	if err != nil {
 		statusCode = 404
 		http.Error(w, "learned word not found", http.StatusNotFound)
@@ -208,30 +201,29 @@ func (h *LearnedWordHandler) UpdateLearnedWord(w http.ResponseWriter, r *http.Re
 // DeleteLearnedWord deletes a learned word
 func (h *LearnedWordHandler) DeleteLearnedWord(w http.ResponseWriter, r *http.Request) {
 	start := time.Now()
-	endpoint := "/api/v1/learned-words/{user_id}/{word_id}"
+	endpoint := "/api/v1/learned-words/{word_id}"
 	method := r.Method
 	statusCode := 204
 	defer func() {
 		httpRequestsTotal.WithLabelValues(method, endpoint, strconv.Itoa(statusCode)).Inc()
 		httpRequestDuration.WithLabelValues(method, endpoint).Observe(time.Since(start).Seconds())
 	}()
-	userID, err := utils.ParseUUIDParam(r, "user_id")
-	if err != nil {
-		statusCode = 400
-		http.Error(w, "invalid user_id", http.StatusBadRequest)
-		return
-	}
-
 	wordID, err := utils.ParseUUIDParam(r, "word_id")
 	if err != nil {
 		statusCode = 400
 		http.Error(w, "invalid word_id", http.StatusBadRequest)
 		return
 	}
+	user, err := utils.GetCurrentUser(r.Context())
+	if err != nil {
+		statusCode = 401
+		http.Error(w, "unauthorized", http.StatusUnauthorized)
+		return
+	}
 
-	if err := h.Repo.Delete(r.Context(), userID, wordID); err != nil {
+	if err := h.Repo.Delete(r.Context(), user.ID, wordID); err != nil {
 		statusCode = 500
-		http.Error(w, "failed to delete learned word", http.StatusInternalServerError)
+		http.Error(w, "failed to delete", http.StatusInternalServerError)
 		return
 	}
 

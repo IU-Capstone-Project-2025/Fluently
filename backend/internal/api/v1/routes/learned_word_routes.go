@@ -8,7 +8,7 @@ import (
 
 // RegisterLearnedWordRoutes registers learned word routes
 func RegisterLearnedWordRoutes(r chi.Router, h *handler.LearnedWordHandler) {
-	r.Route("/users/{user_id}/learned-words", func(r chi.Router) {
+	r.Route("/users/learned-words", func(r chi.Router) {
 		r.Get("/", h.GetLearnedWords)
 		r.Get("/{word_id}", h.GetLearnedWord)
 		r.Post("/", h.CreateLearnedWord)

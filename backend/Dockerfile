@@ -50,6 +50,8 @@ RUN apk add --no-cache curl
 WORKDIR /app
 COPY --from=builder /app/fluently-backend .
 COPY --from=builder /app/docs ./docs
+# Copy static files
+COPY --from=builder /app/internal/static/auth-success.html /app/static/auth-success.html
 
 # Create a simple startup script that handles environment setup
 RUN echo '#!/bin/sh' > /app/start.sh && \
