@@ -45,7 +45,7 @@ func NewHandlerService(
 	logger *zap.Logger,
 ) *HandlerService {
 	// Initialize TTS service
-	ttsService := utils.NewTTSService("./tmp/tts", logger)
+	ttsService := utils.NewTTSService(cfg.TTS.CacheDir, logger)
 
 	return &HandlerService{
 		config:       cfg,

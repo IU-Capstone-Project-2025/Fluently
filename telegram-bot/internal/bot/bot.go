@@ -29,26 +29,13 @@ type TelegramBot struct {
 
 // NewTelegramBot creates a new Telegram bot instance
 func NewTelegramBot(cfg *config.Config, redisClient *redis.Client, apiClient *api.Client, scheduler *tasks.Scheduler, logger *zap.Logger) (*TelegramBot, error) {
-	// Create bot settings
+	// Create bot settings for long polling
 	settings := tele.Settings{
 		Token:  cfg.Bot.Token,
 		Poller: &tele.LongPoller{Timeout: 10 * time.Second},
 	}
 
-	// webhookURL := cfg.Bot.WebhookURL
-	// webhookURL := ""
-
-	// Configure webhook if URL is provided
-	// if webhookURL != "" {
-	// 	webhook := &tele.Webhook{
-	// 		Listen:   fmt.Sprintf(":%s", cfg.Bot.WebhookPort),
-	// 		Endpoint: &tele.WebhookEndpoint{PublicURL: cfg.Bot.WebhookURL},
-	// 	}
-	// 	settings.Poller = webhook
-	// 	logger.Info("Using webhook", zap.String("url", cfg.Bot.WebhookURL))
-	// } else {
-	// 	logger.Info("Using long polling")
-	// }
+	logger.Info("Using long polling")
 
 	// Create bot instance
 	bot, err := tele.NewBot(settings)
