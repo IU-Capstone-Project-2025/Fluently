@@ -10,19 +10,16 @@ import (
 )
 
 type Config struct {
-	Bot     BotConfig
-	Logger  LoggerConfig
-	Redis   RedisConfig
-	Webhook WebhookConfig
-	API     APIConfig
-	Asynq   AsynqConfig
-	TTS     TTSConfig
+	Bot    BotConfig
+	Logger LoggerConfig
+	Redis  RedisConfig
+	API    APIConfig
+	Asynq  AsynqConfig
+	TTS    TTSConfig
 }
 
 type BotConfig struct {
-	Token       string
-	WebhookURL  string
-	WebhookPort string
+	Token string
 }
 
 type LoggerConfig struct {
@@ -34,16 +31,6 @@ type RedisConfig struct {
 	Addr     string
 	Password string
 	DB       int
-}
-
-type WebhookConfig struct {
-	Host        string
-	Port        string
-	Path        string
-	Secret      string
-	CertFile    string
-	KeyFile     string
-	MaxBodySize int64
 }
 
 type APIConfig struct {
@@ -95,9 +82,7 @@ func Init() {
 
 	cfg = &Config{
 		Bot: BotConfig{
-			Token:       viper.GetString("BOT_TOKEN"),
-			WebhookURL:  viper.GetString("WEBHOOK_URL"),
-			WebhookPort: viper.GetString("WEBHOOK_PORT"),
+			Token: viper.GetString("BOT_TOKEN"),
 		},
 		Logger: LoggerConfig{
 			Level: viper.GetString("LOG_LEVEL"),
@@ -108,15 +93,7 @@ func Init() {
 			Password: viper.GetString("REDIS_PASSWORD"),
 			DB:       viper.GetInt("REDIS_DB"),
 		},
-		Webhook: WebhookConfig{
-			Host:        viper.GetString("WEBHOOK_HOST"),
-			Port:        viper.GetString("WEBHOOK_PORT"),
-			Path:        viper.GetString("WEBHOOK_PATH"),
-			Secret:      viper.GetString("WEBHOOK_SECRET"),
-			CertFile:    viper.GetString("WEBHOOK_CERT_FILE"),
-			KeyFile:     viper.GetString("WEBHOOK_KEY_FILE"),
-			MaxBodySize: viper.GetInt64("WEBHOOK_MAX_BODY_SIZE"),
-		},
+
 		API: APIConfig{
 			BaseURL: viper.GetString("API_BASE_URL"),
 			APIKey:  viper.GetString("API_KEY"),
@@ -134,18 +111,6 @@ func Init() {
 	}
 
 	// Set defaults
-	if cfg.Webhook.Host == "" {
-		cfg.Webhook.Host = "fluently-app.ru"
-	}
-	if cfg.Webhook.Port == "" {
-		cfg.Webhook.Port = "8060"
-	}
-	if cfg.Webhook.Path == "" {
-		cfg.Webhook.Path = "/webhook"
-	}
-	if cfg.Webhook.MaxBodySize == 0 {
-		cfg.Webhook.MaxBodySize = 1024 * 1024 // 1MB
-	}
 	if cfg.API.Timeout == 0 {
 		cfg.API.Timeout = 30
 	}
