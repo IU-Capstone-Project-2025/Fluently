@@ -24,7 +24,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
     -ldflags="-w -s -extldflags '-static'" \
     -o fluently_bot ./cmd/main.go
 
-RUN mkdir -p /tmp/tts && chmod 777 /tmp/tts
+RUN mkdir -p /tmp/tts && chmod 777 /tmp/tts && chown root:root /tmp/tts && chown deploy:deploy /tmp/tts
 
 # Production stage
 FROM scratch
