@@ -24,8 +24,6 @@ RUN --mount=type=cache,target=/go/pkg/mod \
     -ldflags="-w -s -extldflags '-static'" \
     -o fluently_bot ./cmd/main.go
 
-RUN mkdir -p /tmp/tts && chmod 777 /tmp/tts && chown root:root /tmp/tts && chown deploy:deploy /tmp/tts
-
 # Production stage
 FROM scratch
 
@@ -49,6 +47,11 @@ WORKDIR /
 
 # Expose port if needed (adjust as per your application)
 EXPOSE 8080
+
+# Ensure /tmp/tts exists and is writable by the app user
+USER root
+RUN mkdir -p /tmp/tts && chmod 777 /tmp/tts
+USER 1000:1000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
