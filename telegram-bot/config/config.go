@@ -56,6 +56,7 @@ func Init() {
 	// Try to find .env file in multiple locations
 	envPaths := []string{
 		".env",          // Current directory
+		"/.env",         // Root directory (for Docker containers)
 		"../.env",       // Parent directory (if running from telegram-bot/)
 		"../../.env",    // Two levels up (if running from telegram-bot/cmd/)
 		"../../../.env", // Three levels up (if running from telegram-bot/config/)
