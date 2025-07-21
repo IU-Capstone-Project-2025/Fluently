@@ -1,23 +1,32 @@
 [![Deploy](https://github.com/FluentlyOrg/Fluently-fork/actions/workflows/deploy.yml/badge.svg)](https://github.com/FluentlyOrg/Fluently-fork/actions/workflows/deploy.yml)
 
 # Fluently - AI-Powered English Learning Platform
-![Fluently Log](frontend-website/logo.jpg)
+![Fluently Log](frontend-website/logo-t.png)
 ## Overview
 Fluently is a cross-platform, open-source educational system for learning English, designed as a capstone project. It features:
-- 🗣️ Realistic AI conversations
+- 🦾 Interactive Chat: Practice conversations with AI
 - 📚 Personalized vocabulary lessons
 - 📈 Progress tracking
 - 🧠 Adaptive learning based on user goals
 
-**Platforms:** Android, iOS, Telegram Bot (soon), Web (Swagger UI for API)
+**Platforms:** Android, iOS, Telegram Bot
 
 ## Links
 
-Main project site (still in development)  
+Main project site 
 https://fluently-app.ru
 
-Swagger (Fluently API documentation)  
-https://fluently-app.ru/swagger/index.html
+Telegram Bot 
+http://t.me/FluentlyInEnglishBot
+
+Terms of Use
+https://fluently-app.ru/terms
+
+### Latest Releases
+
+[Android](https://github.com/FluentlyOrg/Fluently-fork/releases/download/v1.0.0-mob/app-release.apk)
+
+[iOS](https://github.com/FluentlyOrg/Fluently-fork/releases/download/v1.0.0-mob/Fluently.ipa)
 
 ## Tech Stack
 | Component       | Technologies                                                                 |

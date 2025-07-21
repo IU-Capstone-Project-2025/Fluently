@@ -15,6 +15,8 @@ import GoogleSignIn
 struct LoginView: View {
     @ObservedObject var presenter: LoginPresenter
 
+    @EnvironmentObject var account: AccountData
+
     // MARK: - Properties
     let name: String = "Fluently"
 
@@ -37,7 +39,7 @@ struct LoginView: View {
         .modifier(BackgroundViewModifier())
         .onReceive(presenter.authViewModel.$isSignedIn) { isSignedIn in
             if isSignedIn {
-                presenter.navigateToHome()
+                account.isLoggedIn = true
             }
         }
     }

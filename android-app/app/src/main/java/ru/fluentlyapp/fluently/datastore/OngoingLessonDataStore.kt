@@ -31,6 +31,7 @@ private val lessonModule = SerializersModule {
         subclass(Decoration.Loading::class)
         subclass(Decoration.Finish::class)
         subclass(Decoration.Onboarding::class)
+        subclass(Decoration.LearningPartComplete::class)
 
         subclass(Dialog::class)
     }

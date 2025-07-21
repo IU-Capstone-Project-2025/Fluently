@@ -23,8 +23,12 @@ func (s *HandlerService) HandleNewLearningStart(ctx context.Context, c tele.Cont
 		if messageText != "" && !strings.Contains(messageText, "🏆 *Урок завершен!*") {
 			// Only delete if it's not a lesson completion message
 			if err := c.Delete(); err != nil {
-				// Log the error but don't fail the operation
-				s.logger.Warn("Failed to delete previous message", zap.Error(err))
+				// Only log as warning if it's not a "message not found" error
+				if !strings.Contains(err.Error(), "message to delete not found") {
+					s.logger.Warn("Failed to delete previous message", zap.Error(err))
+				} else {
+					s.logger.Debug("Previous message already deleted or not found", zap.Error(err))
+				}
 			}
 		}
 	}
@@ -47,8 +51,15 @@ func (s *HandlerService) HandleNewLearningStart(ctx context.Context, c tele.Cont
 		return s.resumeLesson(ctx, c, userID)
 	}
 
-	// Generate new lesson from backend
-	lessonResponse, err := s.apiClient.GenerateLesson(ctx, token)
+	// Send thinking message and start typing indicator
+	var lessonResponse *domain.LessonResponse
+	err = s.withThinkingGifAndTyping(ctx, c, userID, "Генерирую персональный урок", func() error {
+		// Generate new lesson from backend
+		var generateErr error
+		lessonResponse, generateErr = s.apiClient.GenerateLesson(ctx, token)
+		return generateErr
+	})
+
 	if err != nil {
 		s.logger.Error("Failed to generate lesson", zap.Error(err))
 
@@ -175,8 +186,12 @@ func (s *HandlerService) HandleStartWordSet(ctx context.Context, c tele.Context,
 		if messageText != "" && !strings.Contains(messageText, "🏆 *Урок завершен!*") {
 			// Only delete if it's not a lesson completion message
 			if err := c.Delete(); err != nil {
-				// Log the error but don't fail the operation
-				s.logger.Warn("Failed to delete previous message", zap.Error(err))
+				// Only log as warning if it's not a "message not found" error
+				if !strings.Contains(err.Error(), "message to delete not found") {
+					s.logger.Warn("Failed to delete previous message", zap.Error(err))
+				} else {
+					s.logger.Debug("Previous message already deleted or not found", zap.Error(err))
+				}
 			}
 		}
 	}
@@ -503,6 +518,11 @@ func (s *HandlerService) showNextExercise(ctx context.Context, c tele.Context, u
 		return err
 	}
 
+	// Check if we're in retry mode
+	if progress.CurrentPhase == "retry" {
+		return s.showNextRetryExercise(ctx, c, userID)
+	}
+
 	// Check if all exercises for current set are complete
 	if progress.ExerciseIndex >= len(progress.WordsInCurrentSet) {
 		return s.completeCurrentSet(ctx, c, userID)
@@ -549,27 +569,179 @@ func (s *HandlerService) getNextWordSet(progress *domain.LessonProgress) ([]doma
 	}
 
 	// Calculate start index based on words already shown in this lesson
-	startIndex := wordsLearnedInLesson
+	// We need to track how many words we've already shown, not just learned
+	wordsShownInLesson := progress.CurrentSetIndex * 3 // Each set has 3 words
 	cards := progress.LessonData.Cards
+
+	// Start from the next available word after what we've already shown
+	startIndex := wordsShownInLesson
 
 	if startIndex >= len(cards) {
 		return nil, fmt.Errorf("no more words available")
 	}
 
-	endIndex := startIndex + wordsInThisSet
-	if endIndex > len(cards) {
-		endIndex = len(cards)
+	// Find the next available words that haven't been used yet
+	var selectedWords []domain.Card
+	wordsFound := 0
+
+	for i := startIndex; i < len(cards) && wordsFound < wordsInThisSet; i++ {
+		wordID := cards[i].WordID
+
+		// Check if this word is already in the current set
+		isInCurrentSet := false
+		for _, currentWord := range progress.WordsInCurrentSet {
+			if currentWord.WordID == wordID {
+				isInCurrentSet = true
+				break
+			}
+		}
+
+		// Check if this word was already learned or shown
+		isAlreadyUsed := false
+		for _, learnedWord := range progress.WordsLearned {
+			if learnedWord.WordID == wordID {
+				isAlreadyUsed = true
+				break
+			}
+		}
+
+		// If word is not in current set and not already used, add it
+		if !isInCurrentSet && !isAlreadyUsed {
+			selectedWords = append(selectedWords, cards[i])
+			wordsFound++
+		}
 	}
 
-	return cards[startIndex:endIndex], nil
+	if len(selectedWords) == 0 {
+		return nil, fmt.Errorf("no more words available")
+	}
+
+	return selectedWords, nil
+}
+
+// startRetryPhase begins the retry phase for words that were answered incorrectly
+func (s *HandlerService) startRetryPhase(ctx context.Context, c tele.Context, userID int64) error {
+	progress, err := s.stateManager.GetLessonProgress(ctx, userID)
+	if err != nil {
+		return err
+	}
+
+	s.logger.Info("Starting retry phase",
+		zap.Int64("user_id", userID),
+		zap.Int("retry_words_count", len(progress.RetryWords)))
+
+	// Set phase to retry and reset retry index
+	err = s.stateManager.UpdateLessonProgress(ctx, userID, func(p *domain.LessonProgress) error {
+		p.CurrentPhase = "retry"
+		p.RetryIndex = 0
+		p.LastActivity = time.Now()
+		return nil
+	})
+	if err != nil {
+		return err
+	}
+
+	// Send retry phase message
+	retryText := fmt.Sprintf(
+		"🔄 *Повторение слов*\n\n"+
+			"📝 У вас есть %d слов, которые нужно повторить.\n\n"+
+			"Давайте закрепим знания!",
+		len(progress.RetryWords),
+	)
+
+	keyboard := &tele.ReplyMarkup{
+		InlineKeyboard: [][]tele.InlineButton{
+			{
+				{Text: "🚀 Начать повторение", Data: "exercise:next"},
+			},
+		},
+	}
+
+	return c.Send(retryText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+}
+
+// showNextRetryExercise displays the next retry exercise
+func (s *HandlerService) showNextRetryExercise(ctx context.Context, c tele.Context, userID int64) error {
+	progress, err := s.stateManager.GetLessonProgress(ctx, userID)
+	if err != nil {
+		return err
+	}
+
+	// Check if all retry exercises are complete
+	if progress.RetryIndex >= len(progress.RetryWords) {
+		return s.completeRetryPhase(ctx, c, userID)
+	}
+
+	// Get current retry word and its exercise
+	currentWord := progress.RetryWords[progress.RetryIndex]
+	exercise := currentWord.Exercise
+
+	// Set state to exercise in progress
+	if err := s.stateManager.SetState(ctx, userID, fsm.StateExerciseInProgress); err != nil {
+		return err
+	}
+
+	// Handle different exercise types
+	switch exercise.Type {
+	case "pick_option_sentence":
+		return s.showPickOptionSentenceExercise(ctx, c, userID, currentWord, exercise)
+	case "write_word_from_translation":
+		return s.showWriteWordTranslationExercise(ctx, c, userID, currentWord, exercise)
+	case "translate_ru_to_en":
+		return s.showTranslateRuToEnExercise(ctx, c, userID, currentWord, exercise)
+	default:
+		return fmt.Errorf("unknown exercise type: %s", exercise.Type)
+	}
+}
+
+// completeRetryPhase handles completion of the retry phase
+func (s *HandlerService) completeRetryPhase(ctx context.Context, c tele.Context, userID int64) error {
+	progress, err := s.stateManager.GetLessonProgress(ctx, userID)
+	if err != nil {
+		return err
+	}
+
+	s.logger.Info("Completing retry phase",
+		zap.Int64("user_id", userID),
+		zap.Int("remaining_retry_words", len(progress.RetryWords)))
+
+	// Set phase back to completed
+	err = s.stateManager.UpdateLessonProgress(ctx, userID, func(p *domain.LessonProgress) error {
+		p.CurrentPhase = "completed"
+		p.LastActivity = time.Now()
+		return nil
+	})
+	if err != nil {
+		return err
+	}
+
+	// Send completion message
+	completionText := fmt.Sprintf(
+		"✅ *Повторение завершено!*\n\n"+
+			"🎯 Вы повторили %d слов.\n\n"+
+			"Теперь давайте завершим урок!",
+		len(progress.RetryWords),
+	)
+
+	keyboard := &tele.ReplyMarkup{
+		InlineKeyboard: [][]tele.InlineButton{
+			{
+				{Text: "🏆 Завершить урок", Data: "lesson:final_stats"},
+			},
+		},
+	}
+
+	return c.Send(completionText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
 }
 
 // Helper function to get replacement word for "already known" words
 func (s *HandlerService) getReplacementWord(progress *domain.LessonProgress, currentWordIndex int) (*domain.Card, error) {
-	// Start looking for replacement words after the lesson's target word count
-	// This ensures replacement words don't interfere with the next set
-	targetWordsCount := progress.LessonData.Lesson.WordsPerLesson
-	startIndex := targetWordsCount + currentWordIndex
+	// Start looking for replacement words after all words that will be shown in regular sets
+	// Calculate how many words will be shown in total
+	totalWordsToShow := progress.LessonData.Lesson.WordsPerLesson
+
+	// Start looking from the end of all regular words to avoid conflicts
+	startIndex := totalWordsToShow
 
 	// Check if we have more words available
 	if startIndex >= len(progress.LessonData.Cards) {
@@ -589,17 +761,17 @@ func (s *HandlerService) getReplacementWord(progress *domain.LessonProgress, cur
 			}
 		}
 
-		// Check if this word was already learned
-		isAlreadyLearned := false
+		// Check if this word was already learned or shown
+		isAlreadyUsed := false
 		for _, learnedWord := range progress.WordsLearned {
 			if learnedWord.WordID == wordID {
-				isAlreadyLearned = true
+				isAlreadyUsed = true
 				break
 			}
 		}
 
-		// If word is not in current set and not already learned, use it
-		if !isInCurrentSet && !isAlreadyLearned {
+		// If word is not in current set and not already used, use it
+		if !isInCurrentSet && !isAlreadyUsed {
 			replacementCard := progress.LessonData.Cards[i]
 			return &replacementCard, nil
 		}

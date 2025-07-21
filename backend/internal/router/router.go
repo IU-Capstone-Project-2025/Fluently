@@ -276,6 +276,10 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 		routes.RegisterWordRoutes(r, &handlers.WordHandler{Repo: wordRepo})
 		routes.RegisterSentenceRoutes(r, &handlers.SentenceHandler{Repo: sentenceRepo})
 		routes.RegisterLearnedWordRoutes(r, &handlers.LearnedWordHandler{Repo: learnedWordRepo})
+		routes.RegisterNotLearnedWordRoutes(r, &handlers.NotLearnedWordHandler{
+			Repo:     notLearnedWordRepo,
+			WordRepo: wordRepo,
+		})
 		routes.RegisterPreferencesRoutes(r, &handlers.PreferenceHandler{Repo: preferenceRepo})
 		routes.RegisterPickOptionRoutes(r, &handlers.PickOptionHandler{Repo: pickOptionRepo})
 		routes.RegisterTopicRoutes(r, &handlers.TopicHandler{Repo: topicRepo})
@@ -295,14 +299,15 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 			LearnedWordRepo: learnedWordRepo,
 		})
 		routes.RegisterLessonRoutes(r, &handlers.LessonHandler{
-			PreferenceRepo:  preferenceRepo,
-			TopicRepo:       topicRepo,
-			SentenceRepo:    sentenceRepo,
-			PickOptionRepo:  pickOptionRepo,
-			WordRepo:        wordRepo,
-			Repo:            lessonRepo,
-			LearnedWordRepo: learnedWordRepo,
-			ThesaurusClient: thesaurusClient,
+			PreferenceRepo:     preferenceRepo,
+			TopicRepo:          topicRepo,
+			SentenceRepo:       sentenceRepo,
+			PickOptionRepo:     pickOptionRepo,
+			WordRepo:           wordRepo,
+			Repo:               lessonRepo,
+			LearnedWordRepo:    learnedWordRepo,
+			NotLearnedWordRepo: notLearnedWordRepo,
+			ThesaurusClient:    thesaurusClient,
 		})
 
 		// --- new AI-related routes ---

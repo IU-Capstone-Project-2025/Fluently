@@ -1,5 +1,5 @@
 # Dockerfile for FastAPI Distractor API (CPU-Only Optimized)
-FROM python:3.11-slim as base
+FROM python:3.11-slim AS base
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
@@ -49,6 +49,9 @@ USER app
 # Download models at build time to cache them in the image
 # This prevents download time during first API call
 RUN python -c "from transformers import BertTokenizerFast, BertForMaskedLM; BertTokenizerFast.from_pretrained('bert-base-uncased'); BertForMaskedLM.from_pretrained('bert-base-uncased')" || echo "Model download optional - will download at runtime if needed"
+
+# Download spaCy model at build time
+RUN python -m spacy download en_core_web_sm
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5m --retries=3 \

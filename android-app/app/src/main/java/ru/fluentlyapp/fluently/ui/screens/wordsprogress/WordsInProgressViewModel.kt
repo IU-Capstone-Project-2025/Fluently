@@ -33,9 +33,9 @@ class WordsInProgressViewModel @Inject constructor(
         WordsProgressUiState(
             words = emptyList(),
             pageTitle = if (wordProgressRoute.isLearning) {
-                "Слова в обучении"
+                "Words In Progress"
             } else {
-                "Выученные слова"
+                "Learned Words"
             },
             searchString = ""
         )

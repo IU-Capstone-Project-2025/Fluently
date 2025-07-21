@@ -3,6 +3,7 @@ package handlers
 import (
 	"context"
 	"fmt"
+	"strings"
 
 	"go.uber.org/zap"
 	tele "gopkg.in/telebot.v3"
@@ -15,8 +16,12 @@ func (s *HandlerService) HandleStatsCommand(ctx context.Context, c tele.Context,
 	// Delete the previous message if it exists, but preserve lesson completion messages
 	if c.Message() != nil {
 		if err := c.Delete(); err != nil {
-			// Log the error but don't fail the operation
-			s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			// Only log as warning if it's not a "message not found" error
+			if !strings.Contains(err.Error(), "message to delete not found") {
+				s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			} else {
+				s.logger.Debug("Previous message already deleted or not found", zap.Error(err))
+			}
 		}
 	}
 	// Get user progress

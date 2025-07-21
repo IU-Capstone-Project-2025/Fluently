@@ -10,7 +10,7 @@ import Foundation
 enum AIChatBuilder {
 
     static func build (
-        onExit: Optional< () -> Void>
+        onExit: (() -> Void)? = nil
     ) -> AIChatView {
         let interactor = AIChatInteractor()
 

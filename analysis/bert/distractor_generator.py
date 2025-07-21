@@ -14,14 +14,7 @@ class DistractorGenerator:
         self.model.eval()
 
         # Загрузка модели spaCy для английского языка
-        try:
-            self.nlp = spacy.load("en_core_web_sm")
-        except OSError:
-            # Автоматическая установка модели при первом запуске
-            import subprocess
-            import sys
-            subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"], check=True)
-            self.nlp = spacy.load("en_core_web_sm")
+        self.nlp = spacy.load("en_core_web_sm")
 
     def is_valid_distractor(self, token: str, target_lemma: str) -> bool:
         """Проверяет, является ли токен валидным дистрактором"""

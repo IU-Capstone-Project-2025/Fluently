@@ -22,14 +22,15 @@ import (
 
 // LessonHandler handles the lesson endpoint
 type LessonHandler struct {
-	PreferenceRepo  *postgres.PreferenceRepository
-	TopicRepo       *postgres.TopicRepository
-	SentenceRepo    *postgres.SentenceRepository
-	PickOptionRepo  *postgres.PickOptionRepository
-	WordRepo        *postgres.WordRepository
-	Repo            *postgres.LessonRepository
-	LearnedWordRepo *postgres.LearnedWordRepository
-	ThesaurusClient *utils.ThesaurusClient
+	PreferenceRepo     *postgres.PreferenceRepository
+	TopicRepo          *postgres.TopicRepository
+	SentenceRepo       *postgres.SentenceRepository
+	PickOptionRepo     *postgres.PickOptionRepository
+	WordRepo           *postgres.WordRepository
+	Repo               *postgres.LessonRepository
+	LearnedWordRepo    *postgres.LearnedWordRepository
+	NotLearnedWordRepo *postgres.NotLearnedWordRepository
+	ThesaurusClient    *utils.ThesaurusClient
 }
 
 // replaceWordWithUnderscores replaces a word in a text with underscores
@@ -144,7 +145,28 @@ func (h *LessonHandler) GenerateLesson(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// 3. Fallback: fill remaining slots with random DB words
+	// 3. Fallback: get words from not learned table first
+	if len(words) < lessonInfo.TotalWords {
+		remaining := lessonInfo.TotalWords - len(words)
+		notLearnedWords, err := h.NotLearnedWordRepo.GetRecentlyNotLearnedWords(r.Context(), userID, remaining)
+		if err != nil {
+			logger.Log.Error("Failed to get not learned words", zap.Error(err))
+			// Continue to next fallback instead of failing
+		} else {
+			for _, nlw := range notLearnedWords {
+				if _, exists := seen[nlw.ID]; exists {
+					continue
+				}
+				words = append(words, nlw)
+				seen[nlw.ID] = struct{}{}
+				if len(words) >= lessonInfo.TotalWords {
+					break
+				}
+			}
+		}
+	}
+
+	// 4. Fallback: fill remaining slots with random DB words
 	if len(words) < lessonInfo.TotalWords {
 		remaining := lessonInfo.TotalWords - len(words)
 		additional, err := h.Repo.GetWordsForLesson(

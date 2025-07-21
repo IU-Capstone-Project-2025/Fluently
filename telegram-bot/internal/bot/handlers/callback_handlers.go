@@ -370,13 +370,19 @@ func (s *HandlerService) handleFinalStats(ctx context.Context, c tele.Context, u
 		}
 	}
 
+	// Add information about retry words if any remain
+	var retryInfo string
+	if len(progress.RetryWords) > 0 {
+		retryInfo = fmt.Sprintf("\n🔄 *Слова для повторения:* %d\n", len(progress.RetryWords))
+	}
+
 	finalStatsText := fmt.Sprintf(
 		"🏆 *Финальная статистика*\n\n"+
 			"✅ Слов выучено: %d\n"+
 			"💡 Уже знал: %d слов\n"+
 			"🎯 Правильно: %d из %d\n"+
 			"📈 Точность: %.1f%%\n"+
-			"⏱ Время урока: %s\n\n"+
+			"⏱ Время урока: %s%s\n\n"+
 			"%s",
 		progress.LearnedCount,
 		progress.AlreadyKnownCount,
@@ -384,8 +390,29 @@ func (s *HandlerService) handleFinalStats(ctx context.Context, c tele.Context, u
 		progress.LessonData.Lesson.WordsPerLesson,
 		accuracy,
 		duration,
+		retryInfo,
 		learnedWordsText.String(),
 	)
+
+	// Send progress to backend
+	token, err := s.stateManager.GetJWTToken(ctx, userID)
+	if err == nil {
+		err = s.apiClient.SendLessonProgress(ctx, token, progress.WordsLearned, progress.BadlyAnsweredWords)
+		if err != nil {
+			s.logger.Error("Failed to send lesson progress to backend", zap.Error(err))
+		}
+	}
+
+	// Clear lesson progress
+	err = s.stateManager.ClearLessonProgress(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to clear lesson progress", zap.Error(err))
+	}
+
+	// Reset state to start
+	if err := s.stateManager.SetState(ctx, userID, fsm.StateStart); err != nil {
+		s.logger.Error("Failed to reset state", zap.Error(err))
+	}
 
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{

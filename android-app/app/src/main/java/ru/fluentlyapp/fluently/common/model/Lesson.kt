@@ -4,6 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Lesson(
+    val wordsPerLesson: Int,
     val lessonId: String,
     val components: List<LessonComponent>,
     val currentLessonComponentIndex: Int = 0

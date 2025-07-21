@@ -13,6 +13,7 @@ import (
 	"go.uber.org/zap"
 	tele "gopkg.in/telebot.v3"
 
+	"os"
 	"telegram-bot/config"
 	"telegram-bot/internal/api"
 	"telegram-bot/internal/bot/fsm"
@@ -566,6 +567,9 @@ func (s *HandlerService) HandleCallback(ctx context.Context, c tele.Context, use
 	if strings.HasPrefix(data, "settings:cefr:") {
 		return s.HandleSettingsCEFRCallback(ctx, c, userID, data)
 	}
+	if strings.HasPrefix(data, "settings:topic:") {
+		return s.HandleSettingsTopicCallback(ctx, c, userID, data)
+	}
 	if data == "settings:back" {
 		return s.HandleSettingsBackCallback(ctx, c, userID, currentState)
 	}
@@ -594,6 +598,8 @@ func (s *HandlerService) HandleCallback(ctx context.Context, c tele.Context, use
 		return s.HandleSettingsNotificationsCallback(ctx, c, userID, currentState)
 	case "settings:cefr_level":
 		return s.HandleSettingsCEFRLevelCallback(ctx, c, userID, currentState)
+	case "settings:goal_topic":
+		return s.HandleSettingsGoalTopicCallback(ctx, c, userID, currentState)
 	case "menu:main":
 		return s.HandleMainMenuCallback(ctx, c, userID, currentState)
 	case "menu:back_to_main":
@@ -753,4 +759,317 @@ func (s *HandlerService) HandlePhotoMessage(ctx context.Context, c tele.Context,
 
 	// For now, photos aren't part of the learning flow
 	return c.Send("Используйте /help чтобы увидеть доступные команды.")
+}
+
+// sendThinkingMessage sends a "bot is thinking" message and returns the message ID for later deletion
+func (s *HandlerService) sendThinkingMessage(ctx context.Context, c tele.Context, userID int64, operation string) (*tele.Message, error) {
+	thinkingText := fmt.Sprintf("🤔 *%s*\n\nПожалуйста, подождите...", operation)
+
+	msg, err := c.Bot().Send(c.Chat(), thinkingText, &tele.SendOptions{
+		ParseMode: tele.ModeMarkdown,
+	})
+
+	if err != nil {
+		s.logger.Error("Failed to send thinking message",
+			zap.Int64("user_id", userID),
+			zap.String("operation", operation),
+			zap.Error(err))
+		return nil, err
+	}
+
+	s.logger.Debug("Sent thinking message",
+		zap.Int64("user_id", userID),
+		zap.String("operation", operation),
+		zap.Int("message_id", msg.ID))
+
+	return msg, nil
+}
+
+// sendThinkingGif sends a thinking GIF animation and returns the message ID for later deletion
+func (s *HandlerService) sendThinkingGif(ctx context.Context, c tele.Context, userID int64, operation string) (*tele.Message, error) {
+	// Use the existing GIF file in assets/gifs/
+	gifUrl := "https://media1.tenor.com/m/yKT3Srq0_oEAAAAC/gjirlfriend.gif"
+
+	// Try sending as photo first (GIFs can be sent as photos)
+	animation := &tele.Animation{
+		File:    tele.FromURL(gifUrl),
+		Caption: fmt.Sprintf("🤔 %s\n\nПожалуйста, подождите...", operation),
+	}
+
+	msg, err := c.Bot().Send(c.Chat(), animation, &tele.SendOptions{
+		ParseMode: tele.ModeMarkdown,
+	})
+
+	// If photo fails, try sending as animation
+	if err != nil {
+		s.logger.Warn("Failed to send as photo, trying as animation",
+			zap.String("file_path", gifUrl),
+			zap.Error(err))
+
+		animation := &tele.Animation{
+			File:    tele.FromURL(gifUrl),
+			Caption: fmt.Sprintf("🤔 %s\n\nПожалуйста, подождите...", operation),
+		}
+
+		msg, err = c.Bot().Send(c.Chat(), animation, &tele.SendOptions{
+			ParseMode: tele.ModeMarkdown,
+		})
+	}
+
+	// If animation fails, try sending as document
+	if err != nil {
+		s.logger.Warn("Failed to send as animation, trying as document",
+			zap.String("file_path", gifUrl),
+			zap.Error(err))
+
+		document := &tele.Document{
+			File:    tele.FromURL(gifUrl),
+			Caption: fmt.Sprintf("🤔 %s\n\nПожалуйста, подождите...", operation),
+		}
+
+		msg, err = c.Bot().Send(c.Chat(), document, &tele.SendOptions{
+			ParseMode: tele.ModeMarkdown,
+		})
+	}
+
+	if err != nil {
+		s.logger.Error("Failed to send thinking GIF",
+			zap.Int64("user_id", userID),
+			zap.String("operation", operation),
+			zap.Error(err))
+		return nil, err
+	}
+
+	s.logger.Debug("Sent thinking GIF",
+		zap.Int64("user_id", userID),
+		zap.String("operation", operation),
+		zap.Int("message_id", msg.ID))
+
+	return msg, nil
+}
+
+// sendThinkingGifFromFile sends a thinking GIF from a local file
+func (s *HandlerService) sendThinkingGifFromFile(ctx context.Context, c tele.Context, userID int64, operation string, filePath string) (*tele.Message, error) {
+	// Check if file exists
+	if _, err := os.Stat(filePath); os.IsNotExist(err) {
+		s.logger.Warn("Thinking GIF file not found, falling back to text message",
+			zap.String("file_path", filePath),
+			zap.Error(err))
+		return s.sendThinkingMessage(ctx, c, userID, operation)
+	}
+
+	// Try sending as photo first (GIFs can be sent as photos)
+	photo := &tele.Photo{
+		File:    tele.FromDisk(filePath),
+		Caption: fmt.Sprintf("🤔 %s\n\nПожалуйста, подождите...", operation),
+	}
+
+	msg, err := c.Bot().Send(c.Chat(), photo, &tele.SendOptions{
+		ParseMode: tele.ModeMarkdown,
+	})
+
+	// If photo fails, try sending as animation
+	if err != nil {
+		s.logger.Warn("Failed to send as photo, trying as animation",
+			zap.String("file_path", filePath),
+			zap.Error(err))
+
+		animation := &tele.Animation{
+			File:    tele.FromDisk(filePath),
+			Caption: fmt.Sprintf("🤔 %s\n\nПожалуйста, подождите...", operation),
+		}
+
+		msg, err = c.Bot().Send(c.Chat(), animation, &tele.SendOptions{
+			ParseMode: tele.ModeMarkdown,
+		})
+	}
+
+	// If animation fails, try sending as document
+	if err != nil {
+		s.logger.Warn("Failed to send as animation, trying as document",
+			zap.String("file_path", filePath),
+			zap.Error(err))
+
+		document := &tele.Document{
+			File:    tele.FromDisk(filePath),
+			Caption: fmt.Sprintf("🤔 %s\n\nПожалуйста, подождите...", operation),
+		}
+
+		msg, err = c.Bot().Send(c.Chat(), document, &tele.SendOptions{
+			ParseMode: tele.ModeMarkdown,
+		})
+	}
+
+	if err != nil {
+		s.logger.Error("Failed to send thinking GIF from file",
+			zap.Int64("user_id", userID),
+			zap.String("operation", operation),
+			zap.String("file_path", filePath),
+			zap.Error(err))
+		return nil, err
+	}
+
+	s.logger.Debug("Sent thinking GIF from file",
+		zap.Int64("user_id", userID),
+		zap.String("operation", operation),
+		zap.String("file_path", filePath),
+		zap.Int("message_id", msg.ID))
+
+	return msg, nil
+}
+
+// startTypingIndicator starts a typing indicator for the current chat
+func (s *HandlerService) startTypingIndicator(ctx context.Context, c tele.Context) error {
+	if err := c.Notify(tele.Typing); err != nil {
+		s.logger.Warn("Failed to start typing indicator", zap.Error(err))
+		return err
+	}
+	s.logger.Debug("Started typing indicator")
+	return nil
+}
+
+// stopTypingIndicator stops the typing indicator for the current chat
+func (s *HandlerService) stopTypingIndicator(ctx context.Context, c tele.Context) error {
+	// In telebot v3, typing indicators automatically stop after a timeout
+	// or when a new message is sent. We don't need to explicitly stop them.
+	// Just log that we're done with typing.
+	s.logger.Debug("Typing indicator will stop automatically")
+	return nil
+}
+
+// withTypingIndicator executes a function while showing a typing indicator
+func (s *HandlerService) withTypingIndicator(ctx context.Context, c tele.Context, operation func() error) error {
+	// Start typing indicator
+	if err := s.startTypingIndicator(ctx, c); err != nil {
+		// Continue even if typing indicator fails
+		s.logger.Debug("Continuing without typing indicator", zap.Error(err))
+	}
+
+	// Ensure typing indicator is stopped when function completes
+	defer func() {
+		if err := s.stopTypingIndicator(ctx, c); err != nil {
+			s.logger.Debug("Failed to stop typing indicator", zap.Error(err))
+		}
+	}()
+
+	// Execute the operation
+	return operation()
+}
+
+// withThinkingMessageAndTyping executes a function while showing both typing indicator and thinking message
+func (s *HandlerService) withThinkingMessageAndTyping(ctx context.Context, c tele.Context, userID int64, operation string, fn func() error) error {
+	// Start typing indicator immediately
+	if err := s.startTypingIndicator(ctx, c); err != nil {
+		s.logger.Debug("Continuing without typing indicator", zap.Error(err))
+	}
+
+	// Send thinking message after a short delay to avoid spam
+	thinkingMsg, err := s.sendThinkingMessage(ctx, c, userID, operation)
+	if err != nil {
+		s.logger.Error("Failed to send thinking message", zap.Error(err))
+		// Continue without thinking message if it fails
+	}
+
+	// Ensure cleanup when function completes
+	defer func() {
+		// Stop typing indicator
+		if err := s.stopTypingIndicator(ctx, c); err != nil {
+			s.logger.Debug("Failed to stop typing indicator", zap.Error(err))
+		}
+
+		// Delete thinking message if it was sent
+		if thinkingMsg != nil {
+			if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+				s.logger.Debug("Failed to delete thinking message", zap.Error(deleteErr))
+			}
+		}
+	}()
+
+	// Execute the operation
+	return fn()
+}
+
+// withThinkingGifAndTyping executes a function while showing both typing indicator and thinking GIF
+func (s *HandlerService) withThinkingGifAndTyping(ctx context.Context, c tele.Context, userID int64, operation string, fn func() error) error {
+	// Start typing indicator immediately
+	if err := s.startTypingIndicator(ctx, c); err != nil {
+		s.logger.Debug("Continuing without typing indicator", zap.Error(err))
+	}
+
+	// Send thinking GIF after a short delay to avoid spam
+	thinkingMsg, err := s.sendThinkingGif(ctx, c, userID, operation)
+	if err != nil {
+		s.logger.Error("Failed to send thinking GIF", zap.Error(err))
+		// Continue without thinking GIF if it fails
+	}
+
+	// Ensure cleanup when function completes
+	defer func() {
+		// Stop typing indicator
+		if err := s.stopTypingIndicator(ctx, c); err != nil {
+			s.logger.Debug("Failed to stop typing indicator", zap.Error(err))
+		}
+
+		// Delete thinking GIF if it was sent
+		if thinkingMsg != nil {
+			if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+				s.logger.Debug("Failed to delete thinking GIF", zap.Error(deleteErr))
+			}
+		}
+	}()
+
+	// Execute the operation
+	return fn()
+}
+
+// withThinkingGifFromFileAndTyping executes a function while showing both typing indicator and thinking GIF from local file
+func (s *HandlerService) withThinkingGifFromFileAndTyping(ctx context.Context, c tele.Context, userID int64, operation string, gifFilePath string, fn func() error) error {
+	// Start typing indicator immediately
+	if err := s.startTypingIndicator(ctx, c); err != nil {
+		s.logger.Debug("Continuing without typing indicator", zap.Error(err))
+	}
+
+	// Send thinking GIF from file after a short delay to avoid spam
+	thinkingMsg, err := s.sendThinkingGifFromFile(ctx, c, userID, operation, gifFilePath)
+	if err != nil {
+		s.logger.Error("Failed to send thinking GIF from file", zap.Error(err))
+		// Continue without thinking GIF if it fails
+	}
+
+	// Ensure cleanup when function completes
+	defer func() {
+		// Stop typing indicator
+		if err := s.stopTypingIndicator(ctx, c); err != nil {
+			s.logger.Debug("Failed to stop typing indicator", zap.Error(err))
+		}
+
+		// Delete thinking GIF if it was sent
+		if thinkingMsg != nil {
+			if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+				s.logger.Debug("Failed to delete thinking GIF", zap.Error(deleteErr))
+			}
+		}
+	}()
+
+	// Execute the operation
+	return fn()
+}
+
+// deleteMessage safely deletes a message with error handling
+func (s *HandlerService) deleteMessage(ctx context.Context, c tele.Context, messageID int) error {
+	if err := c.Bot().Delete(&tele.Message{ID: messageID, Chat: c.Chat()}); err != nil {
+		// Only log as warning if it's not a "message not found" error
+		if !strings.Contains(err.Error(), "message to delete not found") {
+			s.logger.Warn("Failed to delete message",
+				zap.Int("message_id", messageID),
+				zap.Error(err))
+		} else {
+			s.logger.Debug("Message already deleted or not found",
+				zap.Int("message_id", messageID))
+		}
+		return err
+	}
+
+	s.logger.Debug("Successfully deleted message", zap.Int("message_id", messageID))
+	return nil
 }

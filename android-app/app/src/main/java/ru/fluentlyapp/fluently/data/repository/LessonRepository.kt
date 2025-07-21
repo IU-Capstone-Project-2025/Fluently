@@ -9,7 +9,9 @@ import ru.fluentlyapp.fluently.common.model.Dialog
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.common.model.LessonComponent
+import ru.fluentlyapp.fluently.common.model.UserPreferences
 import ru.fluentlyapp.fluently.datastore.OngoingLessonDataStore
+import ru.fluentlyapp.fluently.feature.userpreferences.UserPreferencesRepository
 import ru.fluentlyapp.fluently.feature.wordcache.WordCache
 import ru.fluentlyapp.fluently.feature.wordcache.WordCacheRepository
 import ru.fluentlyapp.fluently.feature.wordprogress.WordProgress
@@ -19,6 +21,8 @@ import ru.fluentlyapp.fluently.network.model.Progress
 import ru.fluentlyapp.fluently.network.model.SentWordProgress
 import timber.log.Timber
 import java.time.Instant
+import java.util.LinkedList
+import java.util.Stack
 import javax.inject.Inject
 import kotlin.math.min
 
@@ -65,19 +69,16 @@ interface LessonRepository {
      */
     suspend fun moveToNextComponent()
 
-    /**
-     * Once the user finishes the lesson, send the progress to the api.
-     */
-    suspend fun finishLesson()
-}
+    suspend fun dropLesson()
 
-const val PREFERRED_NUMBER_OF_WORDS = 10
+    suspend fun sendCurrentProgress()
+}
 
 class DefaultLessonRepository @Inject constructor(
     val fluentlyApiDataSource: FluentlyApiDataSource,
     val ongoingLessonDataStore: OngoingLessonDataStore,
     val wordCacheRepository: WordCacheRepository,
-    val wordProgressRepository: WordProgressRepository
+    val wordProgressRepository: WordProgressRepository,
 ) : LessonRepository {
     private enum class NewWordExerciseStatus {
         IGNORED,
@@ -95,10 +96,10 @@ class DefaultLessonRepository @Inject constructor(
         }
     }
 
-    private fun generateOnboardingComponent(components: List<LessonComponent>): Decoration.Onboarding {
+    private suspend fun generateOnboardingComponent(lesson: Lesson): Decoration.Onboarding {
         var wordsCount = 0
         var exercisesCount = 0
-        for (component in components) {
+        for (component in lesson.components) {
             if (component is Exercise.NewWord) {
                 wordsCount++
             } else if (component is Exercise) {
@@ -106,8 +107,8 @@ class DefaultLessonRepository @Inject constructor(
             }
         }
         return Decoration.Onboarding(
-            min(PREFERRED_NUMBER_OF_WORDS, wordsCount),
-            min(PREFERRED_NUMBER_OF_WORDS, exercisesCount)
+            min(lesson.wordsPerLesson, wordsCount),
+            min(lesson.wordsPerLesson, exercisesCount)
         )
     }
 
@@ -116,6 +117,43 @@ class DefaultLessonRepository @Inject constructor(
             this[index].id = index
         }
         return this
+    }
+
+    private fun List<LessonComponent>.smartRearrange(): List<LessonComponent> {
+        var result = LinkedList<LessonComponent>()
+        var exerciseCollector = mutableSetOf<Exercise>()
+        var collectorBegin = 0
+
+        val flushCollector = {
+            result.addAll(
+                collectorBegin,
+                exerciseCollector.filter { it is Exercise.NewWord } +
+                        exerciseCollector.filter { it !is Exercise.NewWord }
+            )
+
+            exerciseCollector.clear()
+        }
+
+        for (component in this) {
+            if (component is Exercise) {
+                if (exerciseCollector.isEmpty()) {
+                    collectorBegin = result.size
+                }
+                exerciseCollector.add(component)
+
+                if (exerciseCollector.size == 6) {
+                    flushCollector()
+                }
+            } else {
+                result.add(component)
+            }
+        }
+
+        if (exerciseCollector.isNotEmpty()) {
+            flushCollector()
+        }
+
+        return result.toList()
     }
 
     override suspend fun fetchAndSaveOngoingLesson() {
@@ -135,15 +173,18 @@ class DefaultLessonRepository @Inject constructor(
         }
 
         val updatedLessonComponents: List<LessonComponent> = buildList {
-            add(generateOnboardingComponent(lesson.components))
+            add(generateOnboardingComponent(lesson))
             addAll(lesson.components)
+            add(Decoration.LearningPartComplete())
             add(
                 Dialog(
                     messages = emptyList(),
                     isFinished = false
                 )
             )
-        }.withIdSetToIndex()
+        }
+            .smartRearrange()
+            .withIdSetToIndex()
 
         ongoingLessonDataStore.setOngoingLesson(lesson.copy(components = updatedLessonComponents))
         Timber.d("Store the received lesson")
@@ -216,8 +257,9 @@ class DefaultLessonRepository @Inject constructor(
             }
         }
         Timber.d("learningWordsCount=$learningWordsCount; originalWordStatus=$originalWordStatus")
+
         return if (candidateComponent is Exercise.NewWord) {
-            learningWordsCount < PREFERRED_NUMBER_OF_WORDS
+            learningWordsCount < lesson.wordsPerLesson
         } else if (currentWordId != null) {
             originalWordStatus in setOf(
                 NewWordExerciseStatus.NO_OCCURRENCE,
@@ -311,7 +353,7 @@ class DefaultLessonRepository @Inject constructor(
 
     }
 
-    override suspend fun finishLesson() {
+    override suspend fun sendCurrentProgress() {
         // Consider only words that HAS been answered
         val progressMap = mutableMapOf<String, SentWordProgress>() // (word_id; progress)
         ongoingLessonDataStore.getOngoingLesson().first()?.let { lesson ->
@@ -358,8 +400,11 @@ class DefaultLessonRepository @Inject constructor(
             )
         )
         Timber.v("Send to the fluently api data source")
+    }
 
+    override suspend fun dropLesson() {
         ongoingLessonDataStore.dropOngoingLesson()
         Timber.d("Drop the ongoing lesson")
     }
+
 }

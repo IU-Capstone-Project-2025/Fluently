@@ -79,29 +79,25 @@ struct WordCardView: View {
     }
 
     var buttonLearn: some View {
-        Button {
-            onLearnTapped()
-        } label: {
-            Text("Learn")
-                .padding()
-                .frame(maxWidth: .infinity)
-                .massiveButton(color: .blue)
-                .frame(maxHeight: 60)
-        }
-        .buttonStyle(PlainButtonStyle())
+        Text("Learn")
+            .padding()
+            .frame(maxWidth: .infinity)
+            .massiveButton(color: .blue)
+            .frame(maxHeight: 60)
+            .onTapGesture {
+                onLearnTapped()
+            }
     }
 
     var buttonKnow: some View {
-        Button {
-            onKnowTapped()
-        } label: {
-            Text("Know")
-                .padding()
-                .frame(maxWidth: .infinity)
-                .massiveButton(color: .blue)
-                .frame(maxHeight: 60)
-        }
-        .buttonStyle(PlainButtonStyle())
+        Text("Know")
+            .padding()
+            .frame(maxWidth: .infinity)
+            .massiveButton(color: .blue)
+            .frame(maxHeight: 60)
+            .onTapGesture {
+                onKnowTapped()
+            }
     }
 }
 
