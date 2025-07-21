@@ -16,6 +16,7 @@ type Config struct {
 	Webhook WebhookConfig
 	API     APIConfig
 	Asynq   AsynqConfig
+	TTS     TTSConfig
 }
 
 type BotConfig struct {
@@ -56,6 +57,10 @@ type AsynqConfig struct {
 	RedisPassword string
 	RedisDB       int
 	Concurrency   int
+}
+
+type TTSConfig struct {
+	CacheDir string
 }
 
 var cfg *Config
@@ -123,6 +128,9 @@ func Init() {
 			RedisDB:       viper.GetInt("ASYNQ_REDIS_DB"),
 			Concurrency:   viper.GetInt("ASYNQ_CONCURRENCY"),
 		},
+		TTS: TTSConfig{
+			CacheDir: viper.GetString("TTS_CACHE_DIR"),
+		},
 	}
 
 	// Set defaults
@@ -152,6 +160,9 @@ func Init() {
 	}
 	if cfg.Asynq.RedisDB == 0 {
 		cfg.Asynq.RedisDB = cfg.Redis.DB
+	}
+	if cfg.TTS.CacheDir == "" {
+		cfg.TTS.CacheDir = "/tmp/tts"
 	}
 }
 

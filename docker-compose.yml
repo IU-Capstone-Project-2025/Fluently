@@ -119,6 +119,11 @@ services:
       - WEBHOOK_HOST=0.0.0.0
       - WEBHOOK_PORT=8060
       - WEBHOOK_PATH=/webhook
+      # TTS cache directory
+      - TTS_CACHE_DIR=/tmp/tts
+    volumes:
+      # TTS cache directory
+      - fluently_telegram_tts_cache:/tmp/tts
     depends_on:
       redis:
         condition: service_healthy
@@ -437,6 +442,7 @@ volumes:
   fluently_model_cache:  # Can be re-downloaded
   fluently_redis_data:   # Session data, not critical
   fluently_loki_data:    # Logs, not critical for recovery
+  fluently_telegram_tts_cache:  # TTS cache for telegram bot
   test_pgdata:           # Test database data
 
 # ===========================================
