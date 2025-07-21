@@ -740,5 +740,8 @@ func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, g
 		url.QueryEscape(avatar),
 		url.QueryEscape(resp.AccessToken))
 
+	logger.Log.Info("Redirecting to auth-success.html with query params", zap.String("redirectURL", redirectURL))
+
+	// Ensure this redirect is not overwritten elsewhere
 	http.Redirect(w, r, redirectURL, http.StatusTemporaryRedirect)
 }

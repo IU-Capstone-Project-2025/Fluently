@@ -2,6 +2,7 @@
 (function() {
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === 'getAuthToken') {
+            // Parse URL parameters from the current page
             const params = new URLSearchParams(window.location.search);
             const token = params.get('access_token');
             const email = params.get('email');
