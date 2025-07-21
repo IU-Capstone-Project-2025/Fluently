@@ -834,7 +834,16 @@ jobs:
               docker compose down --remove-orphans || true
               
               # Force remove any conflicting containers
-              docker rm -f fluently_backend fluently_nginx fluently_postgres fluently_redis fluently_ml_api fluently_llm_api fluently_thesaurus_api fluently_telegram-bot fluently_directus fluently_prometheus fluently_grafana fluently_loki fluently_promtail fluently_node_exporter fluently_nginx_exporter fluently_cadvisor 2>/dev/null || true
+              # Core services
+              docker rm -f fluently_backend fluently_nginx fluently_postgres fluently_redis 2>/dev/null || true
+              # API services
+              docker rm -f fluently_ml_api fluently_llm_api fluently_thesaurus_api 2>/dev/null || true
+              # Bot and CMS
+              docker rm -f fluently_telegram-bot fluently_directus 2>/dev/null || true
+              # Monitoring services
+              docker rm -f fluently_prometheus fluently_grafana fluently_loki fluently_promtail 2>/dev/null || true
+              # Additional monitoring
+              docker rm -f fluently_node_exporter fluently_nginx_exporter fluently_cadvisor 2>/dev/null || true
               
               # Create rollback backup of current state
               ROLLBACK_BACKUP="$BACKUP_DIR/fluently-rollback-backup-$(date +%Y%m%d-%H%M%S).tar.gz"
@@ -1076,7 +1085,16 @@ jobs:
             
             # Force remove any containers that might be stuck with our service names
             echo "🗑️ Force removing any stuck containers..."
-            docker rm -f fluently_backend fluently_nginx fluently_postgres fluently_redis fluently_ml_api fluently_llm_api fluently_thesaurus_api fluently_telegram-bot fluently_directus fluently_prometheus fluently_grafana fluently_loki fluently_promtail fluently_node_exporter fluently_nginx_exporter fluently_cadvisor 2>/dev/null || true
+            # Core services
+            docker rm -f fluently_backend fluently_nginx fluently_postgres fluently_redis 2>/dev/null || true
+            # API services
+            docker rm -f fluently_ml_api fluently_llm_api fluently_thesaurus_api 2>/dev/null || true
+            # Bot and CMS
+            docker rm -f fluently_telegram-bot fluently_directus 2>/dev/null || true
+            # Monitoring services
+            docker rm -f fluently_prometheus fluently_grafana fluently_loki fluently_promtail 2>/dev/null || true
+            # Additional monitoring
+            docker rm -f fluently_node_exporter fluently_nginx_exporter fluently_cadvisor 2>/dev/null || true
             
             # Also remove any containers in "created" state that might cause conflicts
             echo "🗑️ Removing containers in 'created' state..."
