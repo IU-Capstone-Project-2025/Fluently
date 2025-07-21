@@ -238,6 +238,11 @@ func InitRoutes(db *gorm.DB, r *chi.Mux) {
 	})
 	r.Get("/swagger/*", httpSwagger.WrapHandler)
 
+	// Serve /auth-success.html as a static file for OAuth success redirect
+	r.Get("/auth-success.html", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "/app/static/auth-success.html")
+	})
+
 	userRepo := postgres.NewUserRepository(db)
 	wordRepo := postgres.NewWordRepository(db)
 	sentenceRepo := postgres.NewSentenceRepository(db)
