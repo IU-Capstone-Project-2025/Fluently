@@ -214,6 +214,16 @@
                 // Clean URL parameters
                 window.history.replaceState({}, document.title, '/auth-success.html');
                 
+                // Notify extension about successful authentication
+                console.log('Notifying extension about auth success...');
+                setTimeout(() => {
+                    window.postMessage({ 
+                        type: 'AUTH_SUCCESS',
+                        token: accessToken,
+                        email: email
+                    }, '*');
+                }, 500);
+                
                 // Auto-close after 5 seconds if opened from extension
                 setTimeout(() => {
                     if (window.opener || window.name === 'fluently_auth') {
@@ -238,17 +248,38 @@
         });
 
         function closeWindow() {
+            console.log('Closing window and notifying extension...');
+            
+            // Get the stored user data
+            const userData = localStorage.getItem('fluently_user');
+            const accessToken = localStorage.getItem('fluently_access_token');
+            
             // Send message to extension if opened from it
             if (window.opener) {
-                window.opener.postMessage({ type: 'AUTH_SUCCESS' }, '*');
+                const authData = { 
+                    type: 'AUTH_SUCCESS',
+                    token: accessToken,
+                    email: userData ? JSON.parse(userData).email : null
+                };
+                console.log('Sending auth data to opener:', authData);
+                window.opener.postMessage(authData, '*');
             }
             
+            // Also try to communicate with extension via window messaging
+            window.postMessage({ 
+                type: 'AUTH_SUCCESS',
+                token: accessToken,
+                email: userData ? JSON.parse(userData).email : null
+            }, '*');
+            
             // Close window or redirect
-            if (window.name === 'fluently_auth') {
-                window.close();
-            } else {
-                window.location.href = '/index.html';
-            }
+            setTimeout(() => {
+                if (window.name === 'fluently_auth' || window.opener) {
+                    window.close();
+                } else {
+                    window.location.href = '/index.html';
+                }
+            }, 1000);
         }
     </script>
 </body>

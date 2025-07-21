@@ -1,40 +1,117 @@
 // content.js
 (function() {
+    console.log('Fluently extension content script loaded on:', window.location.href);
+    
+    // Listen for messages from the popup
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (request.action === 'getAuthToken') {
-            // Parse URL parameters from the current page
+            console.log('Getting auth token from page...');
+            
+            // First try URL parameters
             const params = new URLSearchParams(window.location.search);
-            const token = params.get('access_token');
-            const email = params.get('email');
+            let token = params.get('access_token');
+            let email = params.get('email');
+            
+            // If not in URL, try localStorage
+            if (!token) {
+                const fluentlyUser = localStorage.getItem('fluently_user');
+                const fluentlyToken = localStorage.getItem('fluently_access_token');
+                
+                if (fluentlyUser) {
+                    try {
+                        const userData = JSON.parse(fluentlyUser);
+                        token = userData.accessToken;
+                        email = userData.email;
+                    } catch (e) {
+                        console.error('Error parsing user data:', e);
+                    }
+                }
+                
+                if (!token && fluentlyToken) {
+                    token = fluentlyToken;
+                }
+            }
+            
+            console.log('Found token:', !!token, 'email:', email);
             sendResponse({ token, email });
+        }
+    });
+    
+    // Listen for messages from the auth-success page
+    window.addEventListener('message', function(event) {
+        if (event.data && event.data.type === 'AUTH_SUCCESS') {
+            console.log('Received AUTH_SUCCESS message');
+            
+            // Wait a bit for localStorage to be set
+            setTimeout(() => {
+                const fluentlyUser = localStorage.getItem('fluently_user');
+                const fluentlyToken = localStorage.getItem('fluently_access_token');
+                
+                let token = null;
+                let email = null;
+                
+                if (fluentlyUser) {
+                    try {
+                        const userData = JSON.parse(fluentlyUser);
+                        token = userData.accessToken;
+                        email = userData.email;
+                    } catch (e) {
+                        console.error('Error parsing user data:', e);
+                    }
+                }
+                
+                if (!token && fluentlyToken) {
+                    token = fluentlyToken;
+                }
+                
+                if (token) {
+                    console.log('Sending auth completion to background');
+                    chrome.runtime.sendMessage({
+                        action: 'authCompleted',
+                        token: token,
+                        email: email || 'User'
+                    });
+                }
+            }, 500);
         }
     });
 })();
 
-// Listen for auth completion by monitoring URL changes
-let lastUrl = location.href;
-new MutationObserver(() => {
-    const url = location.href;
-    if (url !== lastUrl) {
-        lastUrl = url;
+// Monitor for auth success page load
+if (window.location.href.includes('auth-success.html')) {
+    console.log('On auth success page, checking for auth data...');
+    
+    // Check immediately
+    setTimeout(() => {
+        const fluentlyUser = localStorage.getItem('fluently_user');
+        const fluentlyToken = localStorage.getItem('fluently_access_token');
         
-        // If we're on the main site after auth, try to extract token
-        if (url.includes('fluently-app.ru') && !url.includes('/auth/')) {
-            setTimeout(() => {
-                // Give the page time to load and set localStorage
-                const token = localStorage.getItem('accessToken') || 
-                             localStorage.getItem('token');
-                
-                if (token) {
-                    // Notify the popup that we have a token
-                    chrome.runtime.sendMessage({
-                        action: 'authCompleted',
-                        token: token,
-                        email: localStorage.getItem('userEmail') || 
-                               localStorage.getItem('email') || 'User'
-                    });
+        if (fluentlyUser || fluentlyToken) {
+            let token = null;
+            let email = null;
+            
+            if (fluentlyUser) {
+                try {
+                    const userData = JSON.parse(fluentlyUser);
+                    token = userData.accessToken;
+                    email = userData.email;
+                } catch (e) {
+                    console.error('Error parsing user data:', e);
                 }
-            }, 1000);
+            }
+            
+            if (!token && fluentlyToken) {
+                token = fluentlyToken;
+            }
+            
+            if (token) {
+                console.log('Auto-sending auth completion to background');
+                chrome.runtime.sendMessage({
+                    action: 'authCompleted',
+                    token: token,
+                    email: email || 'User'
+                });
+            }
         }
-    }
-}).observe(document, { subtree: true, childList: true }); 
+    }, 1000);
+} 

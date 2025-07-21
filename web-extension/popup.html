@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluently Word Learner</title>
+    <title>Fluently - Изучение слов</title>
     <style>
         body {
             width: 350px;
@@ -216,32 +216,32 @@
     <div class="container">
         <div class="header">
             <h1>Fluently</h1>
-            <p>Add words to your learning list</p>
+            <p>Добавляйте слова в список изучения</p>
         </div>
 
         <!-- Authentication Section -->
         <div id="authSection" class="auth-section">
-            <button id="loginBtn" class="login-btn">Login with Google</button>
+            <button id="loginBtn" class="login-btn">Войти через Google</button>
         </div>
 
         <!-- User Info Section -->
         <div id="userInfo" class="user-info" style="display: none;">
-            <h3>Welcome!</h3>
+            <h3>Добро пожаловать!</h3>
             <p id="userEmail"></p>
-            <button id="logoutBtn" class="logout-btn">Logout</button>
+            <button id="logoutBtn" class="logout-btn">Выйти</button>
         </div>
 
         <!-- Word Input Section -->
         <div id="wordInputSection" class="word-input-section" style="display: none;">
             <div class="input-group">
-                <label for="wordInput">Enter a word to learn:</label>
-                <input type="text" id="wordInput" class="word-input" placeholder="e.g., beautiful" maxlength="50">
+                <label for="wordInput">Введите слово для изучения:</label>
+                <input type="text" id="wordInput" class="word-input" placeholder="например, beautiful" maxlength="50">
             </div>
-            <button id="addWordBtn" class="add-btn">Add to Learning List</button>
+            <button id="addWordBtn" class="add-btn">Добавить в список изучения</button>
             
             <div id="loading" class="loading">
                 <div class="spinner"></div>
-                <p>Adding word...</p>
+                <p>Добавляем слово...</p>
             </div>
             
             <div id="message" class="message"></div>

@@ -9,7 +9,7 @@ Fluently is a cross-platform, open-source educational system for learning Englis
 - 📈 Progress tracking
 - 🧠 Adaptive learning based on user goals
 
-**Platforms:** Android, iOS, Telegram Bot
+**Platforms:** Android, iOS, Telegram Bot, Chrome Extension
 
 ## Links
 
@@ -18,6 +18,9 @@ https://fluently-app.ru
 
 Telegram Bot 
 http://t.me/FluentlyInEnglishBot
+
+Chrome Extension
+[Installation guide here](web-extension/README.md)
 
 Terms of Use
 https://fluently-app.ru/terms
