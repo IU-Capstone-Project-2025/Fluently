@@ -20,6 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
 });
 
+// Listen for changes in chrome.storage.local to update UI on auth changes
+chrome.storage.onChanged.addListener(function(changes, area) {
+    if (area === 'local' && (changes.accessToken || changes.userEmail)) {
+        checkAuthStatus();
+    }
+});
+
 function setupEventListeners() {
     loginBtn.addEventListener('click', handleLogin);
     logoutBtn.addEventListener('click', handleLogout);
