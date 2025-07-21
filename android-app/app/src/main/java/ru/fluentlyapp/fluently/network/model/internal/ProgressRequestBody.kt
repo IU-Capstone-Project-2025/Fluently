@@ -4,8 +4,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class WordProgressApiModel(
-    val cnt_reviewed: Int,
-    val confidence_score: Int,
-    val learned_at: String,
+    val cnt_reviewed: Int? = null,
+    val confidence_score: Int? = null,
+    val learned_at: String? = null,
     val word_id: String
 )

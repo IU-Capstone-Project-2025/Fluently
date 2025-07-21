@@ -27,7 +27,7 @@ class AuthAuthenticator @Inject constructor(
     private val authManager: AuthManager
 ) : Authenticator {
     override fun authenticate(route: Route?, response: Response): Request? {
-        Timber.d("Catch unauthorized HTTP response")
+        Timber.d("Catch unauthorized HTTP response: $response")
         val token: ServerToken? = runBlocking {
             authManager.getSavedServerToken()
         }

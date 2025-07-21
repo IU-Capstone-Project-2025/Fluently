@@ -9,11 +9,14 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBars
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
@@ -32,6 +35,7 @@ import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.res.stringResource
 import ru.fluentlyapp.fluently.ui.previewdata.words
 import ru.fluentlyapp.fluently.ui.theme.components.WordList
 import java.time.LocalDate
@@ -63,7 +67,9 @@ fun CalendarScreenContent(
     onShowInProgressWords: (Boolean) -> Unit
 ) {
     Column(
-        modifier = modifier.background(color = FluentlyTheme.colors.primary)
+        modifier = modifier
+            .background(color = FluentlyTheme.colors.primary)
+            .windowInsetsPadding(WindowInsets.systemBars)
     ) {
         Box(
             modifier = Modifier
@@ -78,12 +84,12 @@ fun CalendarScreenContent(
                     .align(Alignment.CenterStart),
                 tint = FluentlyTheme.colors.primaryVariant,
                 painter = painterResource(R.drawable.ic_chevron_left),
-                contentDescription = "Back button"
+                contentDescription = stringResource(R.string.back_button)
             )
 
             Text(
                 modifier = Modifier.align(Alignment.Center),
-                text = "Календарь",
+                text = stringResource(R.string.calendar),
                 fontSize = 28.sp,
                 color = FluentlyTheme.colors.onPrimary,
                 fontWeight = FontWeight.Bold,
@@ -114,12 +120,12 @@ fun CalendarScreenContent(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 SwitchText(
-                    text = "Выученные слова",
+                    text = stringResource(R.string.learned_words),
                     isActive = !uiState.showIsLearning,
                     onClick = { onShowInProgressWords(false) }
                 )
                 SwitchText(
-                    text = "Слова в обучении",
+                    text = stringResource(R.string.words_in_progress),
                     isActive = uiState.showIsLearning,
                     onClick = { onShowInProgressWords(true) }
                 )

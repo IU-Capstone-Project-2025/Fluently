@@ -1,5 +1,6 @@
 package ru.fluentlyapp.fluently.network
 
+import ru.fluentlyapp.fluently.common.model.CefrLevel
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.Lesson
 import ru.fluentlyapp.fluently.common.model.LessonComponent
@@ -15,6 +16,7 @@ import ru.fluentlyapp.fluently.network.model.internal.ChatResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.ExerciseApiModel.ExerciseType
 import ru.fluentlyapp.fluently.network.model.internal.LessonResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.MessageApiModel
+import ru.fluentlyapp.fluently.network.model.internal.UserPreferencesRequestBody
 import ru.fluentlyapp.fluently.network.model.internal.UserPreferencesResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.WordOfTheDayResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.WordProgressApiModel
@@ -99,18 +101,23 @@ fun LessonResponseBody.convertToLesson(): Lesson {
     return Lesson(
         lessonId = "",
         components = lessonComponents,
-        currentLessonComponentIndex = 0
+        currentLessonComponentIndex = 0,
+        wordsPerLesson = lesson.words_per_lesson
     )
 }
 
 fun Progress.toProgressRequestBody() =
     progresses.map {
-        WordProgressApiModel(
-            cnt_reviewed = it.cntReviewed,
-            confidence_score = it.confidenceScore,
-            learned_at = it.learnedAt.toString(),
-            word_id = it.wordId
-        )
+        if (it.confidenceScore > 90) {
+            WordProgressApiModel(
+                cnt_reviewed = it.cntReviewed,
+                confidence_score = it.confidenceScore,
+                learned_at = it.learnedAt.toString(),
+                word_id = it.wordId
+            )
+        } else {
+            WordProgressApiModel(word_id = it.wordId)
+        }
     }
 
 fun WordOfTheDayResponseBody.toWordOfTheDay() = WordOfTheDay(
@@ -144,7 +151,7 @@ fun Chat.toChatRequestBody() = ChatRequestBody(
 fun UserPreferencesResponseBody.toUserPreferences(): UserPreferences {
     return UserPreferences(
         avatarImageUrl = avatar_image_url,
-        cefrLevel = cefr_level,
+        cefrLevel = CefrLevel.entries.firstOrNull { it.key == cefr_level } ?: CefrLevel.A1,
         factEveryday = fact_everyday,
         goal = goal,
         id = id,
@@ -152,5 +159,19 @@ fun UserPreferencesResponseBody.toUserPreferences(): UserPreferences {
         subscribed = subscribed,
         userId = user_id,
         wordsPerDay = words_per_day
+    )
+}
+
+fun UserPreferences.toUserPreferencesRequestBody(): UserPreferencesRequestBody {
+    return UserPreferencesRequestBody(
+        avatar_image_url = avatarImageUrl,
+        cefr_level = cefrLevel.key,
+        fact_everyday = factEveryday,
+        goal = goal,
+        id = id,
+        notifications = notifications,
+        subscribed = subscribed,
+        user_id = userId,
+        words_per_day = wordsPerDay
     )
 }

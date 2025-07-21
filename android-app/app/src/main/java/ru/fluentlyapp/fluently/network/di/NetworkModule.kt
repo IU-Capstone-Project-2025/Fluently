@@ -25,6 +25,7 @@ abstract class NetworkModule {
     companion object {
         private val json = Json {
             ignoreUnknownKeys = true
+            encodeDefaults = false
         }
 
         @Provides

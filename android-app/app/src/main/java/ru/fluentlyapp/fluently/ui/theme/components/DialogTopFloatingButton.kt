@@ -26,7 +26,8 @@ fun DialogTopFloatingButton(
             .clip(RoundedCornerShape(16.dp))
             .clickable(onClick = onClick)
             .background(FluentlyTheme.colors.secondary)
-            .padding(12.dp)
+            .padding(horizontal = 16.dp),
+        contentAlignment = Alignment.Center
     ) {
         Text(
             text = text,

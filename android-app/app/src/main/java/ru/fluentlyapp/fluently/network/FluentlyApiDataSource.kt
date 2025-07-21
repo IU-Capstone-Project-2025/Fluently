@@ -13,6 +13,7 @@ import ru.fluentlyapp.fluently.network.model.WordOfTheDay
 import ru.fluentlyapp.fluently.network.model.internal.CardApiModel
 import ru.fluentlyapp.fluently.network.model.internal.ChatResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.LessonResponseBody
+import ru.fluentlyapp.fluently.network.model.internal.TopicApiModel
 import ru.fluentlyapp.fluently.network.model.internal.UserPreferencesResponseBody
 import ru.fluentlyapp.fluently.network.model.internal.WordOfTheDayResponseBody
 import ru.fluentlyapp.fluently.network.services.FluentlyApiService
@@ -31,6 +32,10 @@ interface FluentlyApiDataSource {
     suspend fun sendFinish()
 
     suspend fun getUserPreferences(): UserPreferences
+
+    suspend fun sendUserPreferences(preferences: UserPreferences)
+
+    suspend fun getTopics(): List<String>
 }
 
 class FluentlyApiDefaultDataSource @Inject constructor(
@@ -100,6 +105,23 @@ class FluentlyApiDefaultDataSource @Inject constructor(
             val body: UserPreferencesResponseBody = getSuccessfulResponseBody(response)
             Timber.d("Performing getUserPreferences: body=$body")
             body.toUserPreferences()
+        }
+    }
+
+    override suspend fun sendUserPreferences(userPreferences: UserPreferences) {
+        withContext(Dispatchers.IO) {
+            Timber.d("Performing sendUserPreferences: $userPreferences")
+            fluentlyApiService.putUserPreferences(userPreferences.toUserPreferencesRequestBody())
+        }
+    }
+
+    override suspend fun getTopics(): List<String> {
+        return withContext(Dispatchers.IO) {
+            Timber.d("Performing getTopics")
+            val response = fluentlyApiService.getTopics()
+            val body: List<TopicApiModel> = getSuccessfulResponseBody(response)
+            Timber.d("Performing getTopics: body=$body")
+            body.map { it.title }
         }
     }
 }

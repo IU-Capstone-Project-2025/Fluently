@@ -1,6 +1,8 @@
 package ru.fluentlyapp.fluently.app
 
+import android.os.Build
 import android.os.Bundle
+import android.view.Window
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -27,7 +29,6 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier
                         .background(color = FluentlyTheme.colors.surface)
                         .fillMaxSize()
-                        .padding(WindowInsets.systemBars.asPaddingValues())
                 )
             }
         }

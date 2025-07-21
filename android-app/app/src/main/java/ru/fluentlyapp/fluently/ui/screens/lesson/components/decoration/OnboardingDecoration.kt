@@ -17,10 +17,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.ui.theme.FluentlyTheme
 import ru.fluentlyapp.fluently.ui.utils.DevicePreviews
 
@@ -51,24 +53,24 @@ fun OnboardingDecoration(
         ) {
             Text(
                 textAlign = TextAlign.Center,
-                text = "Начнём урок!",
+                text = stringResource(R.string.begin_the_lesson),
                 fontSize = 64.sp,
                 lineHeight = 64.sp
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "В этом уроке ты:",
+                text = stringResource(R.string.in_this_lesson_you),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(8.dp))
             // TODO: add normal plural formatting for russian and english
             Text(
-                "Узнаешь %d новых слов".format(onboardingDecorationUiState.newWordsCount),
+                stringResource(R.string.learn_x_new_words).format(onboardingDecorationUiState.newWordsCount),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
-                "Пройдёшь %d упражнений".format(onboardingDecorationUiState.exercisesCount),
+                stringResource(R.string.complete_x_exercises).format(onboardingDecorationUiState.exercisesCount),
                 fontSize = 20.sp
             )
         }
@@ -83,7 +85,7 @@ fun OnboardingDecoration(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    "Go!",
+                    stringResource(R.string.go),
                     fontWeight = FontWeight.Bold,
                     fontSize = 64.sp,
                     color = FluentlyTheme.colors.onPrimary

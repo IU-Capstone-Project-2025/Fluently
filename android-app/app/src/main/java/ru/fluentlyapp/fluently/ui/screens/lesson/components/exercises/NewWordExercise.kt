@@ -19,9 +19,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import ru.fluentlyapp.fluently.R
 import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.ui.theme.components.ExerciseContinueButton
 import ru.fluentlyapp.fluently.ui.theme.components.NewWordCard
@@ -77,7 +79,7 @@ fun NewWordExercise(
             ) {
                 Text(
                     modifier = Modifier.fillMaxWidth(),
-                    text = "ЗНАЮ",
+                    text = stringResource(R.string.know),
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
                     color = FluentlyTheme.colors.onSurfaceVariant
@@ -100,7 +102,7 @@ fun NewWordExercise(
             ) {
                 Text(
                     modifier = Modifier.fillMaxWidth(),
-                    text = "УЧИТЬ",
+                    text = stringResource(R.string.study_capitalized),
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
                     color = FluentlyTheme.colors.onPrimary

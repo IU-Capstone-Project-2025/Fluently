@@ -16,6 +16,8 @@ import ru.fluentlyapp.fluently.common.model.Exercise
 import ru.fluentlyapp.fluently.common.model.LessonComponent
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.FinishDecoration
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.FinishDecorationObserver
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.LearningPartCompleteDecoration
+import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.LearningPartCompleteObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.LoadingDecoration
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.OnboardingDecorationObserver
 import ru.fluentlyapp.fluently.ui.screens.lesson.components.decoration.OnboardingDecorationUiState
@@ -48,7 +50,8 @@ fun LessonComponentRenderer(
     inputWordObserver: InputWordObserver,
     onboardingDecorationObserver: OnboardingDecorationObserver,
     finishDecorationObserver: FinishDecorationObserver,
-    dialogObserver: DialogObserver
+    dialogObserver: DialogObserver,
+    learningPartCompleteObserver: LearningPartCompleteObserver
 ) {
     AnimatedContent(
         modifier = modifier,
@@ -129,6 +132,13 @@ fun LessonComponentRenderer(
                     exerciseState = targetComponent,
                     dialogObserver = dialogObserver,
                     isCompleted = targetComponent.isFinished
+                )
+            }
+
+            is Decoration.LearningPartComplete -> {
+                LearningPartCompleteDecoration(
+                    modifier = Modifier.fillMaxSize(),
+                    learningPartCompleteObserver = learningPartCompleteObserver
                 )
             }
         }

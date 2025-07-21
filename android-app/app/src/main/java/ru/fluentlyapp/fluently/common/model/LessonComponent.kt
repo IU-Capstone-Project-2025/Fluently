@@ -1,5 +1,6 @@
 package ru.fluentlyapp.fluently.common.model
 
+import androidx.browser.customtabs.CustomTabsService
 import kotlinx.serialization.Serializable
 
 sealed interface LessonComponent {
@@ -94,5 +95,9 @@ sealed interface Decoration : LessonComponent {
     ) : Decoration
 
     @Serializable
-    class Finish(override var id: Int = -1): Decoration
+    class Finish(override var id: Int = -1) : Decoration
+
+    @Serializable
+    class LearningPartComplete(override var id: Int = -1) : Decoration
+
 }

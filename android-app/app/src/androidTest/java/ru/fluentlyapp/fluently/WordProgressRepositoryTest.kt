@@ -25,7 +25,7 @@ class WordProgressRepositoryTest {
             AppDatabase::class.java
         ).build()
         wordProgressRepository = WordProgressRepositoryImpl(
-            appDatabase.wordProgressDao()
+            appDatabase
         )
     }
 
