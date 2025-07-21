@@ -76,7 +76,7 @@ func Init() {
 	}
 
 	if !envLoaded {
-		log.Println("No .env file found, reading environment variables")
+		log.Println("No .env file found, using environment variables from container/runtime")
 	}
 
 	viper.AutomaticEnv()

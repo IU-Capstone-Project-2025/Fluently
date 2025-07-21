@@ -118,6 +118,10 @@ services:
       - REDIS_ADDR=redis:6379
       # TTS cache directory
       - TTS_CACHE_DIR=/tmp/tts
+      - BOT_TOKEN=${BOT_TOKEN}
+      - ASYNQ_REDIS_ADDR=${ASYNQ_REDIS_ADDR}
+      - ASYNQ_REDIS_PASSWORD=${ASYNQ_REDIS_PASSWORD}
+      - ASYNQ_REDIS_DB=${ASYNQ_REDIS_DB}
     volumes:
       # TTS cache directory
       - fluently_telegram_tts_cache:/tmp/tts

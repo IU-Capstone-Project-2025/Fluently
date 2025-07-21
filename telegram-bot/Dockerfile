@@ -42,9 +42,6 @@ COPY --from=builder /app/fluently_bot /fluently_bot
 # Copy config directory if it exists
 COPY --from=builder /app/config /config
 
-# Copy .env file if it exists
-COPY --from=builder /app/.env /.env
-
 # Set working directory
 WORKDIR /
 
