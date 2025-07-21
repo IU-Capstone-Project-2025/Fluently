@@ -733,7 +733,7 @@ func processGoogleIDToken(h *Handlers, w http.ResponseWriter, r *http.Request, g
 	}
 
 	// Encode user data as URL parameters
-	redirectURL := fmt.Sprintf("%s://%s/profile.html?name=%s&email=%s&picture=%s&access_token=%s",
+	redirectURL := fmt.Sprintf("%s://%s/auth-success.html?name=%s&email=%s&picture=%s&access_token=%s",
 		scheme, r.Host,
 		url.QueryEscape(user.Name),
 		url.QueryEscape(user.Email),
