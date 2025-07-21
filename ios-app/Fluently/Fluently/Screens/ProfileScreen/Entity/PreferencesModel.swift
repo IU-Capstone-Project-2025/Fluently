@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class PreferencesModel: Decodable, Sendable{
+final class PreferencesModel: Codable, Sendable{
     var avatarURL: String
     var cefrLevel: String
     var dailyWord: Bool
@@ -79,6 +79,21 @@ final class PreferencesModel: Decodable, Sendable{
         self.subscribed = try container.decode(Bool.self, forKey: .subscribed)
         self.userId = try container.decode(String.self, forKey: .userId)
         self.wordPerDay =  try container.decode(Int.self, forKey: .wordPerDay)
+    }
+
+    func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        try container.encode(avatarURL, forKey: .avatarURL)
+        try container.encode(cefrLevel, forKey: .cefrLevel)
+        try container.encode(dailyWord, forKey: .dailyWord)
+        try container.encode(goal, forKey: .goal)
+        try container.encode(id, forKey: .id)
+        try container.encode(notificationAt.ISO8601Format(), forKey: .notificationAt)
+        try container.encode(notifications, forKey: .notifications)
+        try container.encode(subscribed, forKey: .subscribed)
+        try container.encode(userId, forKey: .userId)
+        try container.encode(wordPerDay, forKey: .wordPerDay)
     }
 }
 

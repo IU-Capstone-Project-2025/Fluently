@@ -25,7 +25,7 @@ struct MessageView: View {
     }
 
     private var content: some View {
-        Text(text)
+        Text(LocalizedStringKey(stringLiteral: text))
             .foregroundColor(.blackText)
             .padding(.horizontal, 16)
             .padding(.vertical, 12)

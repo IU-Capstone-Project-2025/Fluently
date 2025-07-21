@@ -20,7 +20,7 @@ final class AIChatInteractor: ObservableObject {
 
     func finishChat(chat: [MessageModel]) {
         Task {
-            try await api.finishChat(chat: chat)
+            await api.finishChat(chat: chat)
         }
     }
 }

@@ -20,6 +20,11 @@ final class AIChatScreenPresenter: ObservableObject{
 
     init(interactor: AIChatInteractor) {
         self.interactor = interactor
+
+        let initMessage = MessageModel(text: "", role: .user)
+        Task {
+            messages = try await interactor.sendMessage(chat: [initMessage])
+        }
     }
 
     @MainActor

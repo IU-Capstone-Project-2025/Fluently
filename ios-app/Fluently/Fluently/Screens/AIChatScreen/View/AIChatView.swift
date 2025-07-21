@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct AIChatView: View {
     // MARK: - Properties
@@ -16,9 +17,11 @@ struct AIChatView: View {
 
     var endId = UUID()
 
-    var onExit: Optional<() -> Void>
+    var onExit: (() -> Void)?
 
     @ObservedObject var presenter: AIChatScreenPresenter
+
+    @Query var prefs: [PreferencesModel]
 
     // MARK: - View Constances
     private enum Const {
@@ -30,28 +33,22 @@ struct AIChatView: View {
         static let gridInfoVerticalPadding = CGFloat(20)
     }
 
-    mutating func setupExit(action: @escaping () -> Void) {
-        onExit = action
-    }
-
     var body: some View {
         ZStack {
             messagesGrid
             inputView
-            backButton
-                .frame(
-                    maxWidth: .infinity,
-                    maxHeight: .infinity,
-                    alignment: .topLeading
-                )
-                .padding(Const.backButtonPadding)
-                .ignoresSafeArea()
-                .onTapGesture {
-                    showExitAlert = true
-                }
         }
-        .onAppear {
-            presenter.sendMessage("Hello!")
+        .navigationTitle(
+            Text(prefs.first?.goal ?? "Ai Chat")
+        )
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigation) {
+                backButton
+                    .onTapGesture {
+                        showExitAlert = true
+                    }
+            }
         }
         .alert("Are you sure, that you want exit?", isPresented: $showExitAlert) {
             Button ("No", role: .cancel) {
@@ -71,10 +68,12 @@ struct AIChatView: View {
             ScrollView {
                 VStack {
                     ForEach(presenter.messages, id: \.text) { message in
-                        MessageView(
-                            text: message.text,
-                            role: message.role
-                        )
+                        if message.text != "" {
+                            MessageView(
+                                text: message.text,
+                                role: message.role
+                            )
+                        }
                     }
                     Spacer(
                         minLength: 60
@@ -136,7 +135,7 @@ struct AIChatView: View {
 
     /// input field
     private var inputField: some View {
-        TextField("Messaege", text: $inputMessage, axis: .vertical)
+        TextField("Message", text: $inputMessage, axis: .vertical)
             .lineLimit(5, reservesSpace: false)
             .frame(maxWidth: .infinity)
             .padding()
@@ -158,13 +157,7 @@ struct AIChatView: View {
     private var backButton: some View {
         Image(systemName: "arrowshape.turn.up.left.fill")
             .font(.title3)
-            .foregroundStyle(.whiteBackground)
-            .padding()
-            .glass(
-                cornerRadius: 100,
-                fill: .orangePrimary,
-                opacity: 0.8
-            )
+            .foregroundStyle(.orangePrimary)
     }
 
     /// button to send message

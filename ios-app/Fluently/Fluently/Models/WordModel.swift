@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 
+
 @Model
 final class WordModel: Codable, Sendable{
     var exercise: ExerciseModel?     /// exercise to learn word
@@ -21,10 +22,22 @@ final class WordModel: Codable, Sendable{
     var word: String?
     @Attribute(.unique) var wordId: String?  /// **Unique ID**  for saving
 
+    @available(iOS 18, *)
+    #Index<WordModel> (
+        [
+            \.word,
+             \.translation
+        ]
+    )
+
     var wordDate: Date = Date.now /// date of learning word *for statistic*
 
+//    @Transient
     var isDayWord: Bool = false
+//    @Transient
     var isInLesson: Bool = false
+//    @Transient
+    var isInLibrary: Bool = true
 
     init(
         exercise: ExerciseModel,
@@ -65,7 +78,7 @@ final class WordModel: Codable, Sendable{
     required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        // Requireed Fields
+        // Required Fields
         transcription = try container.decodeIfPresent(String.self, forKey: .transcription) ?? ""
         translation = try container.decode(String.self, forKey: .translation)
         word = try container.decode(String.self, forKey: .word)

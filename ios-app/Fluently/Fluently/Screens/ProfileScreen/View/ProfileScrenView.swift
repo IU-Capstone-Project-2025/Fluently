@@ -14,6 +14,8 @@ struct ProfileScrenView: View {
 
     @Query var prefs: [PreferencesModel]
 
+    @Environment(\.modelContext) var modelContext
+
     // MARK: - View Constances
     private enum Const {
         static var avatarSize = CGFloat(120)
@@ -27,6 +29,7 @@ struct ProfileScrenView: View {
             infoGrid
         }
         .onAppear {
+            presenter.modelContext = modelContext
             presenter.getPrefs()
 //            presenter.setupPrefs(prefs.first)
         }
@@ -88,21 +91,23 @@ struct ProfileScrenView: View {
         }
     }
 
-    @State var date = Date.now
-
     @ViewBuilder
     var userPreferences: some View {
         if let prefs = presenter.preferences {
             ScrollView {
                 VStack(spacing: 12) {
                     cefrLevel(prefs.cefrLevel)
-                    goal(prefs.goal)
+                    goal($presenter.goal)
                     settings(
                         dailyWord: $presenter.dailyWord,
                         notifications: $presenter.notifications
                     )
-                    datePicker(date: $presenter.notificationAt)
-
+                    if presenter.notifications {
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                            datePicker(date: $presenter.notificationAt)
+                        }
+                    }
+                    numberOfWords(wordsNumber: $presenter.wordsPerDay)
                     Spacer(
                         minLength: 80
                     )
@@ -116,6 +121,7 @@ struct ProfileScrenView: View {
                 }
                 .padding(.horizontal)
             }
+            .scrollDismissesKeyboard(.interactively)
             .scrollIndicators(.hidden)
         } else {
             ZStack {
@@ -163,15 +169,25 @@ struct ProfileScrenView: View {
         )
     }
 
-    func goal(_ goal: String) -> some View {
+    func goal(_ goal: Binding<String>) -> some View {
         HStack {
             Text("Your learning goal:")
                 .font(.appFont.title2)
                 .frame(alignment: .leading)
             Spacer()
-            Text(goal)
-                .font(.appFont.title)
-                .frame(alignment: .trailing)
+            Picker(
+                "Goal",
+                selection: goal
+            ) {
+                ForEach(presenter.goals, id: \.hashValue) { topic in
+                    Text(topic)
+                        .tag(topic)
+                }
+            }
+            .pickerStyle(.menu)
+//            Text(goal)
+//                .font(.appFont.title)
+//                .frame(alignment: .trailing)
         }
         .padding()
         .frame(maxWidth: .infinity)
@@ -214,6 +230,32 @@ struct ProfileScrenView: View {
         .font(.appFont.title2)
         .foregroundStyle(.orangePrimary)
         .datePickerStyle(.compact)
+        .padding()
+        .glass(
+            cornerRadius: 20,
+            fill: .orangePrimary
+        )
+    }
+
+    func numberOfWords(wordsNumber: Binding<Int>) -> some View {
+        HStack {
+            Text("Words per lesson")
+                .foregroundStyle(.orangePrimary)
+                .font(.appFont.title2)
+            Spacer()
+
+            TextField("words", value: wordsNumber, formatter: NumberFormatter())
+                .keyboardType(.numberPad)
+                .frame(width: 60)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 3)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(.orangeSecondary)
+                )
+                .font(.body)
+        }
+        .frame(maxWidth: .infinity)
         .padding()
         .glass(
             cornerRadius: 20,

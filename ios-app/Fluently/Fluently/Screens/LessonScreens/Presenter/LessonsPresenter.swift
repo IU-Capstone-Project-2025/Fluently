@@ -23,7 +23,7 @@ final class LessonsPresenter: ObservableObject {
     @Published private(set) var currentExType: ExerciseModelType
 
     @Published private(set) var learnedCount = 0
-    private(set) var wordsPerLesson = 10
+    @Published private(set) var wordsPerLesson = 10
 
     var statistic: [ExerciseSolution: [ExerciseModel]] = [:]
     var wordsProgress: [ExerciseSolution: [WordModel]] = [:]
@@ -48,6 +48,22 @@ final class LessonsPresenter: ObservableObject {
         wordsProgress[.uncorrect] = []
     }
 
+    func wordsPerLessonLoad() {
+        guard let modelContext else {
+            return
+        }
+
+        let descriptor = FetchDescriptor<PreferencesModel>()
+
+        let preferences = try? modelContext.fetch(descriptor)
+        print("fetching")
+        print("preferences: \(preferences == nil)")
+        if let preferences, let prefs = preferences.first {
+            wordsPerLesson = prefs.wordPerDay
+            print(wordsPerLesson, prefs.wordPerDay)
+        }
+    }
+
     func fetchWords() throws {
         guard let context = modelContext else {
             print("No model")
@@ -64,7 +80,7 @@ final class LessonsPresenter: ObservableObject {
         )
 
         words = try context.fetch(descriptor)
-        currentEx = words[0].exercise!
+        currentEx = words.first?.exercise! ?? ExerciseModel(data: EmptyExerciseData(), type: .wordCard)
     }
 
     // MARK: - Navigation
@@ -163,7 +179,7 @@ final class LessonsPresenter: ObservableObject {
 
         currentExerciseNumber += 1
 
-        if learnedCount == wordsPerLesson {
+        if learnedCount == wordsPerLesson && currentExerciseNumber == wordsPerLesson {
             finishLesson()
         }
 
@@ -190,6 +206,7 @@ final class LessonsPresenter: ObservableObject {
         // Save progress
         words.forEach { word in
             word.isInLesson = false
+            word.isInLibrary = true
             modelContext?.insert(word)
         }
         try? modelContext?.save()
@@ -198,7 +215,7 @@ final class LessonsPresenter: ObservableObject {
         let api = APIService()
         Task {
             do {
-                try await api.sendProgress(words: wordsProgress[.correct] ?? [])
+                try await api.sendProgress(words: wordsProgress.flatMap{ $0.value })
             } catch {
                 print("Error saving process: \(error.localizedDescription)")
             }

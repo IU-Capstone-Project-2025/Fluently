@@ -39,7 +39,7 @@ extension APIService: AIChatAPI {
         }
     }
     
-    func finishChat(chat: [MessageModel]) async throws {
+    func finishChat(chat: [MessageModel]) async {
         do {
             try await validateToken()
 

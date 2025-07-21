@@ -14,6 +14,11 @@ struct ChooseTranslationView: View {
     @State var selectedAnswer: String?
     @State var answers: [String]
 
+    @State var correctAnswer: String
+
+    @State var isCorrect = false
+    @State var answerIsShown = false
+
     var onAnswerSelected: (String) -> Void
 
     var body: some View {
@@ -36,19 +41,24 @@ struct ChooseTranslationView: View {
 
     // MARK: - Subviews
     var buttonNext: some View {
-        Button {
-            if let selectedAnswer {
-                onAnswerSelected(selectedAnswer)
+        Text("Next")
+            .padding()
+            .frame(maxWidth: .infinity)
+            .massiveButton(color: .blue)
+            .grayscale( selectedAnswer == nil ? 1 : 0)
+            .frame(maxHeight: 60)
+            .onTapGesture {
+                if let selectedAnswer {
+                    if answerIsShown {
+                        onAnswerSelected(selectedAnswer)
+                    } else {
+                        withAnimation(.easeIn(duration: 0.3)) {
+                            answerIsShown = true
+                            isCorrect = correctAnswer == selectedAnswer
+                        }
+                    }
+                }
             }
-        } label: {
-            Text("Next")
-                .padding()
-                .frame(maxWidth: .infinity)
-                .massiveButton(color: .blue)
-                .grayscale( selectedAnswer == nil ? 1 : 0)
-                .frame(maxHeight: 60)
-        }
-        .buttonStyle(PlainButtonStyle())
     }
 
     var listOfAnswers: some View {
@@ -56,7 +66,10 @@ struct ChooseTranslationView: View {
             ForEach(answers, id: \.self ) { answer in
                 AnswerButton (
                     isSelected: selectedAnswer == answer,
-                    answer: answer) {
+                    isCorrectAnswer: answer == correctAnswer,
+                    isSubmitted: answerIsShown,
+                    answer: answer
+                ) {
                         selectedAnswer = answer
                     }
             }
