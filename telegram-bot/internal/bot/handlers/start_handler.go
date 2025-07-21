@@ -3,6 +3,7 @@ package handlers
 import (
 	"context"
 	"fmt"
+	"strings"
 
 	"go.uber.org/zap"
 	tele "gopkg.in/telebot.v3"
@@ -305,8 +306,12 @@ func (s *HandlerService) HandleBackToMainMenuCallback(ctx context.Context, c tel
 	// Delete the previous message when going back to main menu
 	if c.Message() != nil {
 		if err := c.Delete(); err != nil {
-			// Log the error but don't fail the operation
-			s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			// Only log as warning if it's not a "message not found" error
+			if !strings.Contains(err.Error(), "message to delete not found") {
+				s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			} else {
+				s.logger.Debug("Previous message already deleted or not found", zap.Error(err))
+			}
 		}
 	}
 

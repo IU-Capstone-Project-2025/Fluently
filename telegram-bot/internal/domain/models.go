@@ -90,12 +90,14 @@ type BadlyAnsweredWord struct {
 type LessonProgress struct {
 	LessonData         *LessonResponse     `json:"lesson_data"`
 	CurrentWordIndex   int                 `json:"current_word_index"`
-	CurrentPhase       string              `json:"current_phase"` // "showing_words", "exercises", "completed"
+	CurrentPhase       string              `json:"current_phase"` // "showing_words", "exercises", "completed", "retry"
 	WordsInCurrentSet  []Card              `json:"words_in_current_set"`
 	CurrentSetIndex    int                 `json:"current_set_index"`
 	ExerciseIndex      int                 `json:"exercise_index"`
 	WordsLearned       []WordProgress      `json:"words_learned"`
 	BadlyAnsweredWords []BadlyAnsweredWord `json:"badly_answered_words"` // Words answered incorrectly
+	RetryWords         []Card              `json:"retry_words"`          // Words that need to be retried
+	RetryIndex         int                 `json:"retry_index"`          // Current index in retry queue
 	StartTime          time.Time           `json:"start_time"`
 	LastActivity       time.Time           `json:"last_activity"`
 	LearnedCount       int                 `json:"learned_count"`       // Count of words actually learned (goal: 10)

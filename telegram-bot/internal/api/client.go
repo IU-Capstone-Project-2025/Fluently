@@ -124,6 +124,11 @@ type UpdatePreferenceRequest struct {
 	AvatarImageURL *string    `json:"avatar_image_url,omitempty"`
 }
 
+// TopicResponse represents a topic from the backend
+type TopicResponse struct {
+	Title string `json:"title"`
+}
+
 // WordProgressRequest represents word progress update request
 type WordProgressRequest struct {
 	UserID    string    `json:"user_id"`
@@ -346,6 +351,24 @@ func (c *Client) UpdateUserPreferences(ctx context.Context, token string, prefer
 
 	c.logger.With(zap.String("user_id", result.UserID)).Info("Successfully updated user preferences")
 	return &result, nil
+}
+
+// GetTopics retrieves all available topics from backend
+func (c *Client) GetTopics(ctx context.Context, token string) ([]TopicResponse, error) {
+	resp, err := c.doAuthenticatedRequest(ctx, "GET", "/api/v1/topics", nil, token)
+	if err != nil {
+		c.logger.With(zap.Error(err)).Error("Failed to get topics")
+		return nil, err
+	}
+
+	var result []TopicResponse
+	if err := c.parseResponse(resp, &result); err != nil {
+		c.logger.With(zap.Error(err)).Error("Failed to parse get topics response")
+		return nil, err
+	}
+
+	c.logger.With(zap.Int("topic_count", len(result))).Debug("Successfully retrieved topics")
+	return result, nil
 }
 
 // GenerateLesson generates a new lesson for the user with JWT authentication

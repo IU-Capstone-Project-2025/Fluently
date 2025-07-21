@@ -159,9 +159,28 @@ func (s *HandlerService) HandleTestSkipCallback(ctx context.Context, c tele.Cont
 			}
 		}
 
+		// Send thinking message
+		thinkingMsg, err := s.sendThinkingMessage(ctx, c, userID, "Сохраняю настройки")
+		if err != nil {
+			s.logger.Error("Failed to send thinking message", zap.Error(err))
+			// Continue without thinking message if it fails
+		}
+
 		if _, err := s.apiClient.UpdateUserPreferences(ctx, token, preferences); err != nil {
+			// Delete thinking message if it was sent
+			if thinkingMsg != nil {
+				if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+					s.logger.Warn("Failed to delete thinking message", zap.Error(deleteErr))
+				}
+			}
 			s.logger.Error("Failed to update user preferences", zap.Error(err))
 		} else {
+			// Delete thinking message if it was sent
+			if thinkingMsg != nil {
+				if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+					s.logger.Warn("Failed to delete thinking message", zap.Error(deleteErr))
+				}
+			}
 			s.logger.Info("Successfully updated complete user preferences",
 				zap.Int64("user_id", userID),
 				zap.String("cefr_level", cefrLevel),
@@ -172,14 +191,23 @@ func (s *HandlerService) HandleTestSkipCallback(ctx context.Context, c tele.Cont
 	}
 
 	// Send completion message with assigned level and preferences summary
-	wordsPerDayData, _ := s.stateManager.GetTempData(ctx, userID, fsm.TempDataWordsPerDay)
-	wordsPerDay, _ := wordsPerDayData.(int)
-	if wordsPerDay == 0 {
-		wordsPerDay = 10 // Default
+	wordsPerDay := 10 // Default
+	if wordsPerDayData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataWordsPerDay); err == nil {
+		// Handle JSON number unmarshaling (numbers come back as float64)
+		switch v := wordsPerDayData.(type) {
+		case int:
+			wordsPerDay = v
+		case float64:
+			wordsPerDay = int(v)
+		}
 	}
 
-	notificationsData, _ := s.stateManager.GetTempData(ctx, userID, fsm.TempDataNotifications)
-	notifications, _ := notificationsData.(bool)
+	notifications := false // Default
+	if notificationsData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataNotifications); err == nil {
+		if notificationsValue, ok := notificationsData.(bool); ok {
+			notifications = notificationsValue
+		}
+	}
 
 	notificationStatus := "отключены"
 	if notifications {
@@ -304,8 +332,12 @@ func (s *HandlerService) buildCompletePreferencesFromQuestionnaire(ctx context.C
 
 	// Get words per day from temp data
 	if wordsPerDayData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataWordsPerDay); err == nil {
-		if wordsPerDayValue, ok := wordsPerDayData.(int); ok {
-			wordsPerDay = wordsPerDayValue
+		// Handle JSON number unmarshaling (numbers come back as float64)
+		switch v := wordsPerDayData.(type) {
+		case int:
+			wordsPerDay = v
+		case float64:
+			wordsPerDay = int(v)
 		}
 	}
 

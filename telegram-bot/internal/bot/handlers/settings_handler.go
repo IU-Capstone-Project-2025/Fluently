@@ -9,6 +9,7 @@ import (
 	"go.uber.org/zap"
 	tele "gopkg.in/telebot.v3"
 
+	"telegram-bot/internal/api"
 	"telegram-bot/internal/bot/fsm"
 	"telegram-bot/internal/domain"
 )
@@ -21,8 +22,12 @@ func (s *HandlerService) HandleSettingsCommand(ctx context.Context, c tele.Conte
 	// Delete the previous message if it exists
 	if c.Message() != nil {
 		if err := c.Delete(); err != nil {
-			// Log the error but don't fail the operation
-			s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			// Only log as warning if it's not a "message not found" error
+			if !strings.Contains(err.Error(), "message to delete not found") {
+				s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			} else {
+				s.logger.Debug("Previous message already deleted or not found", zap.Error(err))
+			}
 		}
 	}
 	// Get current user progress for settings
@@ -47,8 +52,12 @@ func (s *HandlerService) sendSettingsMessage(ctx context.Context, c tele.Context
 	// Delete the previous message if it exists
 	if c.Message() != nil {
 		if err := c.Delete(); err != nil {
-			// Log the error but don't fail the operation
-			s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			// Only log as warning if it's not a "message not found" error
+			if !strings.Contains(err.Error(), "message to delete not found") {
+				s.logger.Warn("Failed to delete previous message", zap.Error(err))
+			} else {
+				s.logger.Debug("Previous message already deleted or not found", zap.Error(err))
+			}
 		}
 	}
 	// Create settings message
@@ -56,6 +65,13 @@ func (s *HandlerService) sendSettingsMessage(ctx context.Context, c tele.Context
 		fmt.Sprintf("🔤 Уровень CEFR: *%s*\n", formatCEFRLevel(userProgress.CEFRLevel)) +
 		fmt.Sprintf("📚 Слов в день: *%d*\n", userProgress.WordsPerDay) +
 		fmt.Sprintf("🔔 Уведомления: *%s*\n", formatNotificationTime(userProgress.NotificationTime))
+
+	// Add goal display if available
+	if userProgress.Preferences != nil {
+		if goal, ok := userProgress.Preferences["goal"].(string); ok && goal != "" {
+			settingsText += fmt.Sprintf("🎯 Цель изучения: *%s*\n", goal)
+		}
+	}
 
 	if statusMessage != "" {
 		settingsText += "\n" + statusMessage
@@ -136,6 +152,9 @@ func (s *HandlerService) sendSettingsMessage(ctx context.Context, c tele.Context
 				{{Text: "Отмена", Data: "settings:back"}},
 			},
 		}
+	case fsm.StateSettingsTopicSelection:
+		// Show topic selection options
+		return s.sendTopicSelectionMessage(ctx, c, userID)
 	default:
 		// Default settings keyboard
 		keyboard = &tele.ReplyMarkup{
@@ -143,6 +162,7 @@ func (s *HandlerService) sendSettingsMessage(ctx context.Context, c tele.Context
 				{{Text: "🔤 Уровень CEFR", Data: "settings:cefr_level"}},
 				{{Text: "📚 Слов в день", Data: "settings:words_per_day"}},
 				{{Text: "🔔 Уведомления", Data: "settings:notifications"}},
+				{{Text: "🎯 Цель изучения", Data: "settings:goal_topic"}},
 				{{Text: "Назад в главное меню", Data: "menu:back_to_main"}},
 			},
 		}
@@ -150,23 +170,41 @@ func (s *HandlerService) sendSettingsMessage(ctx context.Context, c tele.Context
 
 	// Try to delete previous settings message if it exists
 	if messageIDData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataSettingsMessageID); err == nil {
-		if messageID, ok := messageIDData.(int); ok {
-			// Try to delete the previous message
-			if deleteErr := c.Bot().Delete(&tele.Message{
-				ID:   messageID,
-				Chat: c.Message().Chat,
-			}); deleteErr == nil {
-				s.logger.Debug("Successfully deleted previous settings message",
-					zap.Int64("user_id", userID),
-					zap.Int("message_id", messageID))
-			} else {
+		// Handle JSON number unmarshaling (numbers come back as float64)
+		var messageID int
+		switch v := messageIDData.(type) {
+		case int:
+			messageID = v
+		case float64:
+			messageID = int(v)
+		default:
+			s.logger.Warn("Invalid message ID type for deletion", zap.Any("type", v))
+			goto sendNewMessage
+		}
+
+		// Try to delete the previous message
+		if deleteErr := c.Bot().Delete(&tele.Message{
+			ID:   messageID,
+			Chat: c.Message().Chat,
+		}); deleteErr == nil {
+			s.logger.Debug("Successfully deleted previous settings message",
+				zap.Int64("user_id", userID),
+				zap.Int("message_id", messageID))
+		} else {
+			// Only log as warning if it's not a "message not found" error
+			if !strings.Contains(deleteErr.Error(), "message to delete not found") {
 				s.logger.Warn("Failed to delete previous settings message",
 					zap.Int64("user_id", userID),
 					zap.Int("message_id", messageID),
 					zap.Error(deleteErr))
+			} else {
+				s.logger.Debug("Previous settings message already deleted or not found",
+					zap.Int64("user_id", userID),
+					zap.Int("message_id", messageID))
 			}
 		}
 	}
+sendNewMessage:
 
 	// Send new message
 	msg, err := c.Bot().Send(c.Sender(), settingsText, &tele.SendOptions{
@@ -276,8 +314,13 @@ func (s *HandlerService) HandleSettingsWordsPerDayInputMessage(ctx context.Conte
 	// Update words per day
 	userProgress.WordsPerDay = wordsPerDay
 
-	// Save to backend
-	if err := s.UpdateUserProgress(ctx, userID, userProgress); err != nil {
+	// Send thinking message and start typing indicator
+	err = s.withThinkingGifAndTyping(ctx, c, userID, "Сохраняю настройки", func() error {
+		// Save to backend
+		return s.UpdateUserProgress(ctx, userID, userProgress)
+	})
+
+	if err != nil {
 		s.logger.Error("Failed to update user progress", zap.Error(err))
 		return c.Send("❌ Не удалось сохранить настройки. Попробуйте позже.")
 	}
@@ -316,8 +359,13 @@ func (s *HandlerService) HandleSettingsTimeInputMessage(ctx context.Context, c t
 	// Update notification time with parsed format
 	userProgress.NotificationTime = parsedTime
 
-	// Save to backend
-	if err := s.UpdateUserProgress(ctx, userID, userProgress); err != nil {
+	// Send thinking message and start typing indicator
+	err = s.withThinkingGifAndTyping(ctx, c, userID, "Сохраняю настройки", func() error {
+		// Save to backend
+		return s.UpdateUserProgress(ctx, userID, userProgress)
+	})
+
+	if err != nil {
 		s.logger.Error("Failed to update user progress", zap.Error(err))
 		return c.Send("❌ Не удалось сохранить настройки. Попробуйте позже.")
 	}
@@ -352,8 +400,13 @@ func (s *HandlerService) HandleSettingsCEFRLevelInputMessage(ctx context.Context
 	// Update CEFR level
 	userProgress.CEFRLevel = text
 
-	// Save to backend
-	if err := s.UpdateUserProgress(ctx, userID, userProgress); err != nil {
+	// Send thinking message and start typing indicator
+	err = s.withThinkingGifAndTyping(ctx, c, userID, "Сохраняю настройки", func() error {
+		// Save to backend
+		return s.UpdateUserProgress(ctx, userID, userProgress)
+	})
+
+	if err != nil {
 		s.logger.Error("Failed to update user progress", zap.Error(err))
 		return c.Send("❌ Не удалось сохранить настройки. Попробуйте позже.")
 	}
@@ -427,10 +480,30 @@ func (s *HandlerService) HandleSettingsWordsCallback(ctx context.Context, c tele
 	// Update words per day
 	userProgress.WordsPerDay = wordsPerDay
 
+	// Send thinking message
+	thinkingMsg, err := s.sendThinkingMessage(ctx, c, userID, "Сохраняю настройки")
+	if err != nil {
+		s.logger.Error("Failed to send thinking message", zap.Error(err))
+		// Continue without thinking message if it fails
+	}
+
 	// Save to backend
 	if err := s.UpdateUserProgress(ctx, userID, userProgress); err != nil {
+		// Delete thinking message if it was sent
+		if thinkingMsg != nil {
+			if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+				s.logger.Warn("Failed to delete thinking message", zap.Error(deleteErr))
+			}
+		}
 		s.logger.Error("Failed to update user progress", zap.Error(err))
 		return c.Send("❌ Не удалось сохранить настройки. Попробуйте позже.")
+	}
+
+	// Delete thinking message if it was sent
+	if thinkingMsg != nil {
+		if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+			s.logger.Warn("Failed to delete thinking message", zap.Error(deleteErr))
+		}
 	}
 
 	// Return to settings with success message
@@ -504,10 +577,30 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 
 		userProgress.NotificationTime = ""
 
+		// Send thinking message
+		thinkingMsg, err := s.sendThinkingMessage(ctx, c, userID, "Сохраняю настройки")
+		if err != nil {
+			s.logger.Error("Failed to send thinking message", zap.Error(err))
+			// Continue without thinking message if it fails
+		}
+
 		// Save to backend
 		if err := s.UpdateUserProgress(ctx, userID, userProgress); err != nil {
+			// Delete thinking message if it was sent
+			if thinkingMsg != nil {
+				if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+					s.logger.Warn("Failed to delete thinking message", zap.Error(deleteErr))
+				}
+			}
 			s.logger.Error("Failed to update user progress", zap.Error(err))
 			return c.Send("❌ Не удалось сохранить настройки. Попробуйте позже.")
+		}
+
+		// Delete thinking message if it was sent
+		if thinkingMsg != nil {
+			if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+				s.logger.Warn("Failed to delete thinking message", zap.Error(deleteErr))
+			}
 		}
 
 		// Return to settings with success message
@@ -540,10 +633,30 @@ func (s *HandlerService) HandleSettingsTimeCallback(ctx context.Context, c tele.
 	// Update notification time with parsed format
 	userProgress.NotificationTime = parsedTime
 
+	// Send thinking message
+	thinkingMsg, err := s.sendThinkingMessage(ctx, c, userID, "Сохраняю настройки")
+	if err != nil {
+		s.logger.Error("Failed to send thinking message", zap.Error(err))
+		// Continue without thinking message if it fails
+	}
+
 	// Save to backend
 	if err := s.UpdateUserProgress(ctx, userID, userProgress); err != nil {
+		// Delete thinking message if it was sent
+		if thinkingMsg != nil {
+			if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+				s.logger.Warn("Failed to delete thinking message", zap.Error(deleteErr))
+			}
+		}
 		s.logger.Error("Failed to update user progress", zap.Error(err))
 		return c.Send("❌ Не удалось сохранить настройки. Попробуйте позже.")
+	}
+
+	// Delete thinking message if it was sent
+	if thinkingMsg != nil {
+		if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+			s.logger.Warn("Failed to delete thinking message", zap.Error(deleteErr))
+		}
 	}
 
 	// Return to settings with success message
@@ -605,10 +718,30 @@ func (s *HandlerService) HandleSettingsCEFRCallback(ctx context.Context, c tele.
 	// Update CEFR level
 	userProgress.CEFRLevel = value
 
+	// Send thinking message
+	thinkingMsg, err := s.sendThinkingMessage(ctx, c, userID, "Сохраняю настройки")
+	if err != nil {
+		s.logger.Error("Failed to send thinking message", zap.Error(err))
+		// Continue without thinking message if it fails
+	}
+
 	// Save to backend
 	if err := s.UpdateUserProgress(ctx, userID, userProgress); err != nil {
+		// Delete thinking message if it was sent
+		if thinkingMsg != nil {
+			if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+				s.logger.Warn("Failed to delete thinking message", zap.Error(deleteErr))
+			}
+		}
 		s.logger.Error("Failed to update user progress", zap.Error(err))
 		return c.Send("❌ Не удалось сохранить настройки. Попробуйте позже.")
+	}
+
+	// Delete thinking message if it was sent
+	if thinkingMsg != nil {
+		if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+			s.logger.Warn("Failed to delete thinking message", zap.Error(deleteErr))
+		}
 	}
 
 	// Return to settings with success message
@@ -641,28 +774,443 @@ func formatCEFRLevel(level string) string {
 
 // clearSettingsMessage deletes the settings message and clears the stored ID
 func (s *HandlerService) clearSettingsMessage(ctx context.Context, c tele.Context, userID int64) {
-	// Try to delete the settings message if it exists
+	// Try to delete previous settings message if it exists
 	if messageIDData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataSettingsMessageID); err == nil {
-		if messageID, ok := messageIDData.(int); ok {
-			// Try to delete the message
-			if deleteErr := c.Bot().Delete(&tele.Message{
-				ID:   messageID,
-				Chat: c.Message().Chat,
-			}); deleteErr == nil {
-				s.logger.Debug("Successfully deleted settings message on exit",
-					zap.Int64("user_id", userID),
-					zap.Int("message_id", messageID))
+		// Handle JSON number unmarshaling (numbers come back as float64)
+		var messageID int
+		switch v := messageIDData.(type) {
+		case int:
+			messageID = v
+		case float64:
+			messageID = int(v)
+		default:
+			s.logger.Warn("Invalid message ID type for deletion", zap.Any("type", v))
+			return
+		}
+
+		// Try to delete the previous message
+		if err := c.Bot().Delete(&tele.Message{ID: messageID, Chat: c.Chat()}); err != nil {
+			// Only log as warning if it's not a "message not found" error
+			if !strings.Contains(err.Error(), "message to delete not found") {
+				s.logger.Warn("Failed to delete previous settings message", zap.Error(err))
 			} else {
-				s.logger.Warn("Failed to delete settings message on exit",
-					zap.Int64("user_id", userID),
-					zap.Int("message_id", messageID),
-					zap.Error(deleteErr))
+				s.logger.Debug("Previous settings message already deleted or not found")
 			}
 		}
 	}
+}
 
-	// Clear the stored message ID
-	if err := s.stateManager.ClearTempData(ctx, userID, fsm.TempDataSettingsMessageID); err != nil {
-		s.logger.Warn("Failed to clear settings message ID on exit", zap.Error(err))
+// sendTopicSelectionMessage sends the topic selection interface
+func (s *HandlerService) sendTopicSelectionMessage(ctx context.Context, c tele.Context, userID int64) error {
+	// Check if user is authenticated
+	if !s.stateManager.IsUserAuthenticated(ctx, userID) {
+		return s.sendSettingsMessage(ctx, c, userID, &domain.UserProgress{}, "❌ Необходимо связать аккаунт для изменения цели")
 	}
+
+	// Get access token
+	accessToken, err := s.stateManager.GetValidAccessToken(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get access token for topic selection", zap.Error(err))
+		return s.sendSettingsMessage(ctx, c, userID, &domain.UserProgress{}, "❌ Ошибка авторизации")
+	}
+
+	// Send thinking message and start typing indicator
+	var topics []api.TopicResponse
+	err = s.withThinkingGifAndTyping(ctx, c, userID, "Загружаю доступные темы", func() error {
+		// Get topics from API
+		var topicsErr error
+		topics, topicsErr = s.apiClient.GetTopics(ctx, accessToken)
+		return topicsErr
+	})
+
+	if err != nil {
+		s.logger.Error("Failed to get topics", zap.Error(err))
+		return s.sendSettingsMessage(ctx, c, userID, &domain.UserProgress{}, "❌ Ошибка загрузки тем")
+	}
+
+	// Remove duplicates and create unique topics list
+	uniqueTopics := make([]string, 0)
+	seen := make(map[string]bool)
+
+	for _, topic := range topics {
+		if !seen[topic.Title] {
+			seen[topic.Title] = true
+			uniqueTopics = append(uniqueTopics, topic.Title)
+		}
+	}
+
+	// Create topic selection data
+	topicData := &fsm.TopicSelectionData{
+		Topics:        uniqueTopics,
+		CurrentPage:   0,
+		TopicsPerPage: 5,
+		TotalPages:    (len(uniqueTopics) + 4) / 5, // Ceiling division
+	}
+
+	// Store topic selection data
+	if err := s.stateManager.StoreTopicSelectionData(ctx, userID, topicData); err != nil {
+		s.logger.Error("Failed to store topic selection data", zap.Error(err))
+		return s.sendSettingsMessage(ctx, c, userID, &domain.UserProgress{}, "❌ Ошибка сохранения данных")
+	}
+
+	// Send topic selection message
+	return s.sendTopicSelectionPage(ctx, c, userID, topicData)
+}
+
+// sendTopicSelectionPage sends a specific page of topics
+func (s *HandlerService) sendTopicSelectionPage(ctx context.Context, c tele.Context, userID int64, topicData *fsm.TopicSelectionData) error {
+	// Delete previous settings message if it exists
+	if messageIDData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataSettingsMessageID); err == nil {
+		// Handle JSON number unmarshaling (numbers come back as float64)
+		var messageID int
+		switch v := messageIDData.(type) {
+		case int:
+			messageID = v
+		case float64:
+			messageID = int(v)
+		default:
+			s.logger.Warn("Invalid message ID type for deletion", zap.Any("type", v))
+			goto sendNewMessage
+		}
+
+		// Try to delete the previous message
+		if err := c.Bot().Delete(&tele.Message{ID: messageID, Chat: c.Chat()}); err != nil {
+			// Only log as warning if it's not a "message not found" error
+			if !strings.Contains(err.Error(), "message to delete not found") {
+				s.logger.Warn("Failed to delete previous settings message", zap.Error(err))
+			} else {
+				s.logger.Debug("Previous settings message already deleted or not found",
+					zap.Int64("user_id", userID),
+					zap.Int("message_id", messageID))
+			}
+		} else {
+			s.logger.Debug("Successfully deleted previous settings message",
+				zap.Int64("user_id", userID),
+				zap.Int("message_id", messageID))
+		}
+	}
+sendNewMessage:
+
+	// Calculate start and end indices for current page
+	start := topicData.CurrentPage * topicData.TopicsPerPage
+	end := start + topicData.TopicsPerPage
+	if end > len(topicData.Topics) {
+		end = len(topicData.Topics)
+	}
+
+	// Get topics for current page
+	pageTopics := topicData.Topics[start:end]
+
+	// Create message text
+	messageText := "🎯 *Выберите цель изучения*\n\n"
+	for i, topic := range pageTopics {
+		messageText += fmt.Sprintf("%d. %s\n", i+1, topic)
+	}
+	messageText += fmt.Sprintf("\nСтраница %d из %d", topicData.CurrentPage+1, topicData.TotalPages)
+
+	// Create keyboard
+	var keyboard [][]tele.InlineButton
+
+	// Add topic buttons (5 per row)
+	for i, topic := range pageTopics {
+		row := i / 5
+
+		// Ensure we have enough rows
+		for len(keyboard) <= row {
+			keyboard = append(keyboard, []tele.InlineButton{})
+		}
+
+		keyboard[row] = append(keyboard[row], tele.InlineButton{
+			Text: fmt.Sprintf("%d", i+1),
+			Data: fmt.Sprintf("settings:topic:select:%s", topic),
+		})
+	}
+
+	// Add navigation buttons
+	var navRow []tele.InlineButton
+
+	if topicData.CurrentPage > 0 {
+		navRow = append(navRow, tele.InlineButton{
+			Text: "⬅️ Назад",
+			Data: "settings:topic:prev",
+		})
+	}
+
+	if topicData.CurrentPage < topicData.TotalPages-1 {
+		navRow = append(navRow, tele.InlineButton{
+			Text: "Вперед ➡️",
+			Data: "settings:topic:next",
+		})
+	}
+
+	if len(navRow) > 0 {
+		keyboard = append(keyboard, navRow)
+	}
+
+	// Add cancel button
+	keyboard = append(keyboard, []tele.InlineButton{
+		{Text: "Отмена", Data: "settings:back"},
+	})
+
+	// Send message
+	msg, err := c.Bot().Send(c.Chat(), messageText, &tele.ReplyMarkup{
+		InlineKeyboard: keyboard,
+	}, tele.ModeMarkdown)
+	if err != nil {
+		return err
+	}
+
+	// Store message ID for later deletion
+	return s.stateManager.StoreTempData(ctx, userID, fsm.TempDataSettingsMessageID, msg.ID)
+}
+
+// HandleSettingsGoalTopicCallback handles the goal topic selection callback
+func (s *HandlerService) HandleSettingsGoalTopicCallback(ctx context.Context, c tele.Context, userID int64, currentState fsm.UserState) error {
+	// Set state to topic selection
+	if err := s.SetStateIfDifferent(ctx, userID, fsm.StateSettingsTopicSelection); err != nil {
+		s.logger.Error("Failed to set topic selection state", zap.Error(err))
+		return err
+	}
+
+	// Send topic selection message
+	return s.sendTopicSelectionMessage(ctx, c, userID)
+}
+
+// HandleSettingsTopicCallback handles topic selection callbacks
+func (s *HandlerService) HandleSettingsTopicCallback(ctx context.Context, c tele.Context, userID int64, data string) error {
+	// Parse the callback data
+	parts := strings.Split(data, ":")
+	if len(parts) < 3 {
+		s.logger.Error("Invalid topic callback format", zap.String("data", data))
+		return fmt.Errorf("invalid callback format")
+	}
+
+	action := parts[2]
+
+	switch action {
+	case "select":
+		if len(parts) < 4 {
+			s.logger.Error("Invalid topic select callback format", zap.String("data", data))
+			return fmt.Errorf("invalid callback format")
+		}
+		// Extract the selected topic (parts[3] and beyond, joined with ":")
+		selectedTopic := strings.Join(parts[3:], ":")
+		return s.handleTopicSelection(ctx, c, userID, selectedTopic)
+	case "prev":
+		return s.handleTopicNavigation(ctx, c, userID, -1)
+	case "next":
+		return s.handleTopicNavigation(ctx, c, userID, 1)
+	default:
+		s.logger.Error("Unknown topic action", zap.String("action", action))
+		return fmt.Errorf("unknown topic action")
+	}
+}
+
+// handleTopicSelection handles when a user selects a topic
+func (s *HandlerService) handleTopicSelection(ctx context.Context, c tele.Context, userID int64, selectedTopic string) error {
+	// Check if user is authenticated
+	if !s.stateManager.IsUserAuthenticated(ctx, userID) {
+		return s.sendSettingsMessage(ctx, c, userID, &domain.UserProgress{}, "❌ Необходимо связать аккаунт для изменения цели")
+	}
+
+	// Get access token
+	accessToken, err := s.stateManager.GetValidAccessToken(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get access token for topic selection", zap.Error(err))
+		return s.sendSettingsMessage(ctx, c, userID, &domain.UserProgress{}, "❌ Ошибка авторизации")
+	}
+
+	// Send thinking message
+	thinkingMsg, err := s.sendThinkingMessage(ctx, c, userID, "Обновляю цель изучения")
+	if err != nil {
+		s.logger.Error("Failed to send thinking message", zap.Error(err))
+		// Continue without thinking message if it fails
+	}
+
+	// Update user preferences with the selected topic
+	updateRequest := &api.UpdatePreferenceRequest{
+		Goal: &selectedTopic,
+	}
+
+	_, err = s.apiClient.UpdateUserPreferences(ctx, accessToken, updateRequest)
+
+	// Delete thinking message if it was sent
+	if thinkingMsg != nil {
+		if deleteErr := s.deleteMessage(ctx, c, thinkingMsg.ID); deleteErr != nil {
+			s.logger.Warn("Failed to delete thinking message", zap.Error(deleteErr))
+		}
+	}
+
+	if err != nil {
+		s.logger.Error("Failed to update user preferences with topic", zap.Error(err))
+		return s.sendSettingsMessage(ctx, c, userID, &domain.UserProgress{}, "❌ Ошибка обновления цели")
+	}
+
+	// Delete the topic selection message
+	if messageIDData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataSettingsMessageID); err == nil {
+		// Handle JSON number unmarshaling (numbers come back as float64)
+		var messageID int
+		switch v := messageIDData.(type) {
+		case int:
+			messageID = v
+		case float64:
+			messageID = int(v)
+		default:
+			s.logger.Warn("Invalid message ID type for deletion", zap.Any("type", v))
+			goto continueAfterDeletion
+		}
+
+		if err := c.Bot().Delete(&tele.Message{ID: messageID, Chat: c.Chat()}); err != nil {
+			s.logger.Warn("Failed to delete topic selection message", zap.Error(err))
+		}
+	}
+continueAfterDeletion:
+
+	// Clear topic selection data
+	if err := s.stateManager.ClearTempData(ctx, userID, fsm.TempDataTopicSelection); err != nil {
+		s.logger.Warn("Failed to clear topic selection data", zap.Error(err))
+	}
+
+	// Set state back to settings
+	if err := s.SetStateIfDifferent(ctx, userID, fsm.StateSettings); err != nil {
+		s.logger.Error("Failed to set settings state", zap.Error(err))
+		return err
+	}
+
+	// Get updated user progress
+	userProgress, err := s.GetUserProgress(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get user progress after topic selection", zap.Error(err))
+		return err
+	}
+
+	// Send updated settings message
+	return s.sendSettingsMessage(ctx, c, userID, userProgress, fmt.Sprintf("✅ Цель обновлена: *%s*", selectedTopic))
+}
+
+// handleTopicNavigation handles topic page navigation
+func (s *HandlerService) handleTopicNavigation(ctx context.Context, c tele.Context, userID int64, direction int) error {
+	// Get current topic selection data
+	topicData, err := s.stateManager.GetTopicSelectionData(ctx, userID)
+	if err != nil {
+		s.logger.Error("Failed to get topic selection data", zap.Error(err))
+		return s.sendSettingsMessage(ctx, c, userID, &domain.UserProgress{}, "❌ Ошибка загрузки данных")
+	}
+
+	if topicData == nil {
+		s.logger.Error("No topic selection data found")
+		return s.sendSettingsMessage(ctx, c, userID, &domain.UserProgress{}, "❌ Данные не найдены")
+	}
+
+	// Calculate new page
+	newPage := topicData.CurrentPage + direction
+	if newPage < 0 || newPage >= topicData.TotalPages {
+		s.logger.Error("Invalid page navigation", zap.Int("current_page", topicData.CurrentPage), zap.Int("direction", direction))
+		return fmt.Errorf("invalid page navigation")
+	}
+
+	// Update current page
+	topicData.CurrentPage = newPage
+
+	// Store updated data
+	if err := s.stateManager.StoreTopicSelectionData(ctx, userID, topicData); err != nil {
+		s.logger.Error("Failed to store updated topic selection data", zap.Error(err))
+		return s.sendSettingsMessage(ctx, c, userID, &domain.UserProgress{}, "❌ Ошибка сохранения данных")
+	}
+
+	// Get current message ID
+	messageIDData, err := s.stateManager.GetTempData(ctx, userID, fsm.TempDataSettingsMessageID)
+	if err != nil {
+		s.logger.Error("Failed to get message ID", zap.Error(err))
+		return s.sendSettingsMessage(ctx, c, userID, &domain.UserProgress{}, "❌ Ошибка получения ID сообщения")
+	}
+
+	// Handle JSON number unmarshaling (numbers come back as float64)
+	var messageID int
+	switch v := messageIDData.(type) {
+	case int:
+		messageID = v
+	case float64:
+		messageID = int(v)
+	default:
+		s.logger.Error("Invalid message ID type", zap.Any("type", v))
+		return s.sendSettingsMessage(ctx, c, userID, &domain.UserProgress{}, "❌ Ошибка типа ID сообщения")
+	}
+
+	// Update the existing message instead of deleting and recreating
+	return s.updateTopicSelectionMessage(ctx, c, userID, topicData, messageID)
+}
+
+// updateTopicSelectionMessage updates an existing topic selection message
+func (s *HandlerService) updateTopicSelectionMessage(ctx context.Context, c tele.Context, userID int64, topicData *fsm.TopicSelectionData, messageID int) error {
+	// Calculate start and end indices for current page
+	start := topicData.CurrentPage * topicData.TopicsPerPage
+	end := start + topicData.TopicsPerPage
+	if end > len(topicData.Topics) {
+		end = len(topicData.Topics)
+	}
+
+	// Get topics for current page
+	pageTopics := topicData.Topics[start:end]
+
+	// Create message text
+	messageText := "🎯 *Выберите цель изучения*\n\n"
+	for i, topic := range pageTopics {
+		messageText += fmt.Sprintf("%d. %s\n", i+1, topic)
+	}
+	messageText += fmt.Sprintf("\nСтраница %d из %d", topicData.CurrentPage+1, topicData.TotalPages)
+
+	// Create keyboard
+	var keyboard [][]tele.InlineButton
+
+	// Add topic buttons (5 per row)
+	for i, topic := range pageTopics {
+		row := i / 5
+
+		// Ensure we have enough rows
+		for len(keyboard) <= row {
+			keyboard = append(keyboard, []tele.InlineButton{})
+		}
+
+		keyboard[row] = append(keyboard[row], tele.InlineButton{
+			Text: fmt.Sprintf("%d", i+1),
+			Data: fmt.Sprintf("settings:topic:select:%s", topic),
+		})
+	}
+
+	// Add navigation buttons
+	var navRow []tele.InlineButton
+
+	if topicData.CurrentPage > 0 {
+		navRow = append(navRow, tele.InlineButton{
+			Text: "⬅️ Назад",
+			Data: "settings:topic:prev",
+		})
+	}
+
+	if topicData.CurrentPage < topicData.TotalPages-1 {
+		navRow = append(navRow, tele.InlineButton{
+			Text: "Вперед ➡️",
+			Data: "settings:topic:next",
+		})
+	}
+
+	if len(navRow) > 0 {
+		keyboard = append(keyboard, navRow)
+	}
+
+	// Add cancel button
+	keyboard = append(keyboard, []tele.InlineButton{
+		{Text: "Отмена", Data: "settings:back"},
+	})
+
+	// Update the existing message
+	_, err := c.Bot().Edit(
+		&tele.Message{ID: messageID, Chat: c.Chat()},
+		messageText,
+		&tele.ReplyMarkup{InlineKeyboard: keyboard},
+		tele.ModeMarkdown,
+	)
+
+	return err
 }

@@ -1,9 +1,10 @@
+# Production Dockerfile for Telegram Bot
 FROM golang:1.24-alpine AS builder
 
-WORKDIR /app
+# Install git and build dependencies
+RUN apk add --no-cache git ca-certificates tzdata
 
-# Install git for Go module dependencies
-RUN apk add --no-cache git
+WORKDIR /app
 
 # Copy go mod files first for better layer caching
 COPY go.mod go.sum ./
@@ -15,20 +16,41 @@ RUN --mount=type=cache,target=/go/pkg/mod \
 # Copy source code
 COPY . .
 
-# Build the application with caching
+# Build the application with optimizations for production
 RUN --mount=type=cache,target=/go/pkg/mod \
     --mount=type=cache,target=/root/.cache/go-build \
-    CGO_ENABLED=0 GOOS=linux go build -a -ldflags="-w -s" -o fluently_bot ./cmd/main.go
+    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
+    -a -installsuffix cgo \
+    -ldflags="-w -s -extldflags '-static'" \
+    -o fluently_bot ./cmd/main.go
 
-FROM alpine:latest
+# Production stage
+FROM scratch
 
-# Install ca-certificates for HTTPS requests
-RUN apk --no-cache add ca-certificates
+# Copy ca-certificates from builder for HTTPS requests
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
-WORKDIR /root/
+# Copy timezone data
+COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
 
-# Copy binary and config from builder
-COPY --from=builder /app/fluently_bot .
-COPY --from=builder /app/config ./config
+# Create non-root user for security
+USER 1000:1000
 
-CMD ["./fluently_bot"]
+# Copy binary from builder
+COPY --from=builder /app/fluently_bot /fluently_bot
+
+# Copy config directory if it exists
+COPY --from=builder /app/config /config
+
+# Set working directory
+WORKDIR /
+
+# Expose port if needed (adjust as per your application)
+EXPOSE 8080
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD ["/fluently_bot", "--health-check"] || exit 1
+
+# Run the application
+CMD ["/fluently_bot"]

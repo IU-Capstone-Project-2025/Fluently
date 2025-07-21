@@ -195,8 +195,41 @@ func (s *HandlerService) HandlePickOptionAnswer(ctx context.Context, c tele.Cont
 		return err
 	}
 
-	currentWord := progress.WordsInCurrentSet[progress.ExerciseIndex]
-	exercise := currentWord.Exercise
+	s.logger.Debug("Processing pick option answer",
+		zap.Int64("user_id", userID),
+		zap.String("current_phase", progress.CurrentPhase),
+		zap.Int("exercise_index", progress.ExerciseIndex),
+		zap.Int("retry_index", progress.RetryIndex),
+		zap.Int("words_in_current_set", len(progress.WordsInCurrentSet)),
+		zap.Int("retry_words_count", len(progress.RetryWords)))
+
+	var currentWord domain.Card
+	var exercise domain.Exercise
+
+	// Check if we're in retry mode
+	if progress.CurrentPhase == "retry" {
+		// Validate retry index
+		if progress.RetryIndex >= len(progress.RetryWords) {
+			s.logger.Error("Retry index out of bounds",
+				zap.Int64("user_id", userID),
+				zap.Int("retry_index", progress.RetryIndex),
+				zap.Int("retry_words_length", len(progress.RetryWords)))
+			return fmt.Errorf("retry index out of bounds: %d >= %d", progress.RetryIndex, len(progress.RetryWords))
+		}
+		currentWord = progress.RetryWords[progress.RetryIndex]
+	} else {
+		// Validate exercise index
+		if progress.ExerciseIndex >= len(progress.WordsInCurrentSet) {
+			s.logger.Error("Exercise index out of bounds",
+				zap.Int64("user_id", userID),
+				zap.Int("exercise_index", progress.ExerciseIndex),
+				zap.Int("words_in_current_set_length", len(progress.WordsInCurrentSet)))
+			return fmt.Errorf("exercise index out of bounds: %d >= %d", progress.ExerciseIndex, len(progress.WordsInCurrentSet))
+		}
+		currentWord = progress.WordsInCurrentSet[progress.ExerciseIndex]
+	}
+
+	exercise = currentWord.Exercise
 	isCorrect := selectedOption == exercise.Data.CorrectAnswer
 
 	return s.processExerciseAnswer(ctx, c, userID, currentWord, isCorrect, selectedOption)
@@ -209,8 +242,41 @@ func (s *HandlerService) HandleTextInputAnswer(ctx context.Context, c tele.Conte
 		return err
 	}
 
-	currentWord := progress.WordsInCurrentSet[progress.ExerciseIndex]
-	exercise := currentWord.Exercise
+	s.logger.Debug("Processing text input answer",
+		zap.Int64("user_id", userID),
+		zap.String("current_phase", progress.CurrentPhase),
+		zap.Int("exercise_index", progress.ExerciseIndex),
+		zap.Int("retry_index", progress.RetryIndex),
+		zap.Int("words_in_current_set", len(progress.WordsInCurrentSet)),
+		zap.Int("retry_words_count", len(progress.RetryWords)))
+
+	var currentWord domain.Card
+	var exercise domain.Exercise
+
+	// Check if we're in retry mode
+	if progress.CurrentPhase == "retry" {
+		// Validate retry index
+		if progress.RetryIndex >= len(progress.RetryWords) {
+			s.logger.Error("Retry index out of bounds",
+				zap.Int64("user_id", userID),
+				zap.Int("retry_index", progress.RetryIndex),
+				zap.Int("retry_words_length", len(progress.RetryWords)))
+			return fmt.Errorf("retry index out of bounds: %d >= %d", progress.RetryIndex, len(progress.RetryWords))
+		}
+		currentWord = progress.RetryWords[progress.RetryIndex]
+	} else {
+		// Validate exercise index
+		if progress.ExerciseIndex >= len(progress.WordsInCurrentSet) {
+			s.logger.Error("Exercise index out of bounds",
+				zap.Int64("user_id", userID),
+				zap.Int("exercise_index", progress.ExerciseIndex),
+				zap.Int("words_in_current_set_length", len(progress.WordsInCurrentSet)))
+			return fmt.Errorf("exercise index out of bounds: %d >= %d", progress.ExerciseIndex, len(progress.WordsInCurrentSet))
+		}
+		currentWord = progress.WordsInCurrentSet[progress.ExerciseIndex]
+	}
+
+	exercise = currentWord.Exercise
 
 	// Clean and compare answers
 	cleanUserAnswer := strings.ToLower(strings.TrimSpace(userAnswer))
@@ -243,24 +309,56 @@ func (s *HandlerService) processExerciseAnswer(ctx context.Context, c tele.Conte
 			userAnswer,
 		)
 
-		// Add word to learned words if correct
-		wordProgress := domain.WordProgress{
-			Word:            word.Word,
-			Translation:     word.Translation,
-			WordID:          word.WordID,
-			LearnedAt:       time.Now(),
-			ConfidenceScore: 100,
-			CntReviewed:     1,
-		}
-
-		err = s.stateManager.UpdateLessonProgress(ctx, userID, func(p *domain.LessonProgress) error {
-			p.WordsLearned = append(p.WordsLearned, wordProgress)
-			p.LearnedCount++
-			p.LastActivity = time.Now()
-			return nil
-		})
+		// Check if this is a retry exercise
+		progress, err := s.stateManager.GetLessonProgress(ctx, userID)
 		if err != nil {
-			s.logger.Error("Failed to add word progress", zap.Error(err))
+			s.logger.Error("Failed to get lesson progress", zap.Error(err))
+		} else if progress.CurrentPhase == "retry" {
+			// This is a retry exercise - update the existing word progress and remove from retry queue
+			err = s.stateManager.UpdateLessonProgress(ctx, userID, func(p *domain.LessonProgress) error {
+				// Find and update the existing word progress
+				for i, wp := range p.WordsLearned {
+					if wp.WordID == word.WordID {
+						p.WordsLearned[i].ConfidenceScore = 100
+						p.WordsLearned[i].CntReviewed++
+						break
+					}
+				}
+
+				// Remove word from retry queue
+				for i, retryWord := range p.RetryWords {
+					if retryWord.WordID == word.WordID {
+						p.RetryWords = append(p.RetryWords[:i], p.RetryWords[i+1:]...)
+						break
+					}
+				}
+
+				p.LastActivity = time.Now()
+				return nil
+			})
+			if err != nil {
+				s.logger.Error("Failed to update retry word progress", zap.Error(err))
+			}
+		} else {
+			// Regular exercise - add new word progress
+			wordProgress := domain.WordProgress{
+				Word:            word.Word,
+				Translation:     word.Translation,
+				WordID:          word.WordID,
+				LearnedAt:       time.Now(),
+				ConfidenceScore: 100,
+				CntReviewed:     1,
+			}
+
+			err = s.stateManager.UpdateLessonProgress(ctx, userID, func(p *domain.LessonProgress) error {
+				p.WordsLearned = append(p.WordsLearned, wordProgress)
+				p.LearnedCount++
+				p.LastActivity = time.Now()
+				return nil
+			})
+			if err != nil {
+				s.logger.Error("Failed to add word progress", zap.Error(err))
+			}
 		}
 	} else {
 		emoji = "❌"
@@ -276,36 +374,77 @@ func (s *HandlerService) processExerciseAnswer(ctx context.Context, c tele.Conte
 			exercise.Data.CorrectAnswer,
 		)
 
-		// Add word with low confidence if incorrect
-		wordProgress := domain.WordProgress{
-			Word:            word.Word,
-			Translation:     word.Translation,
-			WordID:          word.WordID,
-			LearnedAt:       time.Now(),
-			ConfidenceScore: 0,
-			CntReviewed:     0,
-		}
-
-		// Add to badly answered words list
-		badlyAnsweredWord := domain.BadlyAnsweredWord{
-			WordID: word.WordID,
-		}
-
-		err = s.stateManager.UpdateLessonProgress(ctx, userID, func(p *domain.LessonProgress) error {
-			p.WordsLearned = append(p.WordsLearned, wordProgress)
-			p.BadlyAnsweredWords = append(p.BadlyAnsweredWords, badlyAnsweredWord)
-			p.LearnedCount++
-			p.LastActivity = time.Now()
-			return nil
-		})
+		// Check if this is a retry exercise
+		progress, err := s.stateManager.GetLessonProgress(ctx, userID)
 		if err != nil {
-			s.logger.Error("Failed to add word progress", zap.Error(err))
+			s.logger.Error("Failed to get lesson progress", zap.Error(err))
+		} else if progress.CurrentPhase == "retry" {
+			// This is a retry exercise - update existing word progress and keep in retry queue
+			err = s.stateManager.UpdateLessonProgress(ctx, userID, func(p *domain.LessonProgress) error {
+				// Find and update the existing word progress
+				for i, wp := range p.WordsLearned {
+					if wp.WordID == word.WordID {
+						p.WordsLearned[i].ConfidenceScore = 0
+						p.WordsLearned[i].CntReviewed++
+						break
+					}
+				}
+
+				// Move word to end of retry queue for another attempt
+				for i, retryWord := range p.RetryWords {
+					if retryWord.WordID == word.WordID {
+						// Remove from current position
+						p.RetryWords = append(p.RetryWords[:i], p.RetryWords[i+1:]...)
+						// Add to end of queue
+						p.RetryWords = append(p.RetryWords, word)
+						break
+					}
+				}
+
+				p.LastActivity = time.Now()
+				return nil
+			})
+			if err != nil {
+				s.logger.Error("Failed to update retry word progress", zap.Error(err))
+			}
+		} else {
+			// Regular exercise - add new word progress
+			wordProgress := domain.WordProgress{
+				Word:            word.Word,
+				Translation:     word.Translation,
+				WordID:          word.WordID,
+				LearnedAt:       time.Now(),
+				ConfidenceScore: 0,
+				CntReviewed:     0,
+			}
+
+			// Add to badly answered words list
+			badlyAnsweredWord := domain.BadlyAnsweredWord{
+				WordID: word.WordID,
+			}
+
+			err = s.stateManager.UpdateLessonProgress(ctx, userID, func(p *domain.LessonProgress) error {
+				p.WordsLearned = append(p.WordsLearned, wordProgress)
+				p.BadlyAnsweredWords = append(p.BadlyAnsweredWords, badlyAnsweredWord)
+				// Add word to retry queue for later practice
+				p.RetryWords = append(p.RetryWords, word)
+				p.LearnedCount++
+				p.LastActivity = time.Now()
+				return nil
+			})
+			if err != nil {
+				s.logger.Error("Failed to add word progress", zap.Error(err))
+			}
 		}
 	}
 
-	// Update exercise index
+	// Update exercise index based on current phase
 	err = s.stateManager.UpdateLessonProgress(ctx, userID, func(p *domain.LessonProgress) error {
-		p.ExerciseIndex++
+		if p.CurrentPhase == "retry" {
+			p.RetryIndex++
+		} else {
+			p.ExerciseIndex++
+		}
 		p.LastActivity = time.Now()
 		return nil
 	})
@@ -357,6 +496,13 @@ func (s *HandlerService) completeCurrentSet(ctx context.Context, c tele.Context,
 		nextSetSize = wordsLeft
 	}
 
+	completionText := fmt.Sprintf(
+		"✅ *Набор слов завершен!*\n\n"+
+			"🎯 Вы успешно изучили %d слов в этом наборе.\n\n"+
+			"Продолжайте изучение или посмотрите статистику:",
+		len(progress.WordsInCurrentSet),
+	)
+
 	keyboard := &tele.ReplyMarkup{
 		InlineKeyboard: [][]tele.InlineButton{
 			{
@@ -366,11 +512,16 @@ func (s *HandlerService) completeCurrentSet(ctx context.Context, c tele.Context,
 		},
 	}
 
-	return c.Send("", &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
+	return c.Send(completionText, &tele.SendOptions{ParseMode: tele.ModeMarkdown}, keyboard)
 }
 
 // completeLessonFlow handles completion of the entire lesson
 func (s *HandlerService) completeLessonFlow(ctx context.Context, c tele.Context, userID int64, progress *domain.LessonProgress) error {
+	// Check if there are words to retry
+	if len(progress.RetryWords) > 0 {
+		return s.startRetryPhase(ctx, c, userID)
+	}
+
 	// Set state to lesson complete
 	if err := s.stateManager.SetState(ctx, userID, fsm.StateLessonComplete); err != nil {
 		return err
@@ -465,7 +616,22 @@ func (s *HandlerService) HandleSkipExercise(ctx context.Context, c tele.Context,
 		return err
 	}
 
-	currentWord := progress.WordsInCurrentSet[progress.ExerciseIndex]
+	var currentWord domain.Card
+
+	// Check if we're in retry mode
+	if progress.CurrentPhase == "retry" {
+		// Validate retry index
+		if progress.RetryIndex >= len(progress.RetryWords) {
+			return fmt.Errorf("retry index out of bounds: %d >= %d", progress.RetryIndex, len(progress.RetryWords))
+		}
+		currentWord = progress.RetryWords[progress.RetryIndex]
+	} else {
+		// Validate exercise index
+		if progress.ExerciseIndex >= len(progress.WordsInCurrentSet) {
+			return fmt.Errorf("exercise index out of bounds: %d >= %d", progress.ExerciseIndex, len(progress.WordsInCurrentSet))
+		}
+		currentWord = progress.WordsInCurrentSet[progress.ExerciseIndex]
+	}
 
 	// Mark word as skipped (low confidence)
 	wordProgress := domain.WordProgress{
@@ -493,9 +659,13 @@ func (s *HandlerService) HandleSkipExercise(ctx context.Context, c tele.Context,
 		s.logger.Error("Failed to add skipped word progress", zap.Error(err))
 	}
 
-	// Update exercise index
+	// Update exercise index based on current phase
 	err = s.stateManager.UpdateLessonProgress(ctx, userID, func(p *domain.LessonProgress) error {
-		p.ExerciseIndex++
+		if p.CurrentPhase == "retry" {
+			p.RetryIndex++
+		} else {
+			p.ExerciseIndex++
+		}
 		p.LastActivity = time.Now()
 		return nil
 	})
@@ -529,8 +699,25 @@ func (s *HandlerService) HandleExerciseHint(ctx context.Context, c tele.Context,
 		return err
 	}
 
-	currentWord := progress.WordsInCurrentSet[progress.ExerciseIndex]
-	exercise := currentWord.Exercise
+	var currentWord domain.Card
+	var exercise domain.Exercise
+
+	// Check if we're in retry mode
+	if progress.CurrentPhase == "retry" {
+		// Validate retry index
+		if progress.RetryIndex >= len(progress.RetryWords) {
+			return fmt.Errorf("retry index out of bounds: %d >= %d", progress.RetryIndex, len(progress.RetryWords))
+		}
+		currentWord = progress.RetryWords[progress.RetryIndex]
+	} else {
+		// Validate exercise index
+		if progress.ExerciseIndex >= len(progress.WordsInCurrentSet) {
+			return fmt.Errorf("exercise index out of bounds: %d >= %d", progress.ExerciseIndex, len(progress.WordsInCurrentSet))
+		}
+		currentWord = progress.WordsInCurrentSet[progress.ExerciseIndex]
+	}
+
+	exercise = currentWord.Exercise
 
 	var hintText string
 

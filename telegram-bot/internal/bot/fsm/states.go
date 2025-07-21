@@ -87,6 +87,7 @@ const (
 	StateSettingsTimeInput        UserState = "settings_time_input"
 	StateSettingsCEFRLevel        UserState = "settings_cefr_level"
 	StateSettingsLanguage         UserState = "settings_language"
+	StateSettingsTopicSelection   UserState = "settings_topic_selection"
 
 	// Account Management
 	StateAccountLinking UserState = "account_linking"
@@ -235,6 +236,7 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateSetComplete, StateLessonStart}:                true,
 	{StateSetComplete, StateLessonInProgress}:           true,
 	{StateSetComplete, StateShowingWordSet}:             true,
+	{StateSetComplete, StateSetComplete}:                true,
 
 	// Account management
 	{StateStart, StateAccountLinking}:          true,
@@ -290,7 +292,10 @@ var ValidTransitions = map[StateTransition]bool{
 	{StateSettings, StateSettingsCEFRLevel}:       true, // Allow direct transition for custom input
 
 	// Settings - Language flow
-	{StateSettingsLanguage, StateSettings}: true,
+	{StateSettingsLanguage, StateSettings}:       true,
+	{StateSettings, StateSettingsLanguage}:       true,
+	{StateSettings, StateSettingsTopicSelection}: true,
+	{StateSettingsTopicSelection, StateSettings}: true,
 
 	// Common transitions to/from lesson flow
 	{StateSettings, StateLessonStart}: true,
