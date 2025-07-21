@@ -28,7 +28,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
 RUN mkdir -p /tmp/tts && chmod 777 /tmp/tts
 
 # Production stage
-FROM scratch
+FROM alpine:latest
 
 # Copy ca-certificates from builder for HTTPS requests
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
@@ -36,11 +36,15 @@ COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 # Copy timezone data
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
 
-# Copy /tmp/tts directory from builder
-COPY --from=builder /tmp/tts /tmp/tts
+# Copy /tmp/tts directory from builder (optional, but we'll recreate it anyway)
+# COPY --from=builder /tmp/tts /tmp/tts
 
-# Create non-root user for security
-USER 1000:1000
+# Create non-root user for security (ensure it exists in alpine)
+RUN adduser -D -u 1000 appuser
+
+# Ensure /tmp/tts exists and is writable by the app user
+USER root
+RUN mkdir -p /tmp/tts && chmod 777 /tmp/tts && chown appuser:appuser /tmp/tts
 
 # Copy binary from builder
 COPY --from=builder /app/fluently_bot /fluently_bot
@@ -53,6 +57,9 @@ WORKDIR /
 
 # Expose port if needed (adjust as per your application)
 EXPOSE 8080
+
+# Switch to non-root user
+USER appuser
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
