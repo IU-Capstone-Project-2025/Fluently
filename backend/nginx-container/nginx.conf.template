@@ -274,6 +274,18 @@ server {
         proxy_redirect https://fluently_backend:8070/ https://$host/;
     }
 
+    # Proxy /auth-success.html to backend for OAuth redirect with query params
+    location = /auth-success.html {
+        proxy_pass http://fluently_backend:8070/auth-success.html;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_set_header Cookie $http_cookie;
+    }
+
     # Catch-all for static files
     location / {
         try_files $uri $uri/ /index.html;
