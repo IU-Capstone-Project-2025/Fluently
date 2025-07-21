@@ -24,6 +24,9 @@ RUN --mount=type=cache,target=/go/pkg/mod \
     -ldflags="-w -s -extldflags '-static'" \
     -o fluently_bot ./cmd/main.go
 
+# Create /tmp/tts and set permissions in builder stage
+RUN mkdir -p /tmp/tts && chmod 777 /tmp/tts
+
 # Production stage
 FROM scratch
 
@@ -32,6 +35,9 @@ COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 # Copy timezone data
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
+
+# Copy /tmp/tts directory from builder
+COPY --from=builder /tmp/tts /tmp/tts
 
 # Create non-root user for security
 USER 1000:1000
@@ -47,11 +53,6 @@ WORKDIR /
 
 # Expose port if needed (adjust as per your application)
 EXPOSE 8080
-
-# Ensure /tmp/tts exists and is writable by the app user
-USER root
-RUN mkdir -p /tmp/tts && chmod 777 /tmp/tts
-USER 1000:1000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
