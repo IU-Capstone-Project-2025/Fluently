@@ -116,6 +116,38 @@
             </div>
         </section>
 
+        <section class="extension">
+            <h3 data-en="Chrome Extension" data-ru="Расширение для Chrome">Расширение для Chrome</h3>
+            <p data-en="Add words to your learning list while browsing the web" data-ru="Добавляйте слова в список изучения во время веб-серфинга">Добавляйте слова в список изучения во время веб-серфинга</p>
+            <div class="extension-card">
+                <div class="extension-info">
+                    <div class="extension-icon">
+                        <i class="fab fa-chrome"></i>
+                    </div>
+                    <div class="extension-details">
+                        <h4 data-en="Fluently Word Learner" data-ru="Fluently Word Learner">Fluently Word Learner</h4>
+                        <p data-en="Instantly add any word you encounter online to your Fluently learning list. Perfect for expanding your vocabulary while reading articles, watching videos, or browsing social media." data-ru="Мгновенно добавляйте любые встреченные в интернете слова в ваш список изучения Fluently. Идеально для расширения словарного запаса при чтении статей, просмотре видео или веб-серфинге.">Мгновенно добавляйте любые встреченные в интернете слова в ваш список изучения Fluently. Идеально для расширения словарного запаса при чтении статей, просмотре видео или веб-серфинге.</p>
+                        <div class="extension-features">
+                            <span class="feature-tag" data-en="One-click word adding" data-ru="Добавление слов в один клик">Добавление слов в один клик</span>
+                            <span class="feature-tag" data-en="Google OAuth" data-ru="Google OAuth">Google OAuth</span>
+                            <span class="feature-tag" data-en="Word validation" data-ru="Проверка слов">Проверка слов</span>
+                            <span class="feature-tag" data-en="Beautiful UI" data-ru="Красивый интерфейс">Красивый интерфейс</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="extension-actions">
+                    <a href="https://github.com/FluentlyOrg/Fluently-fork/tree/main/web-extension" class="extension-btn primary" target="_blank">
+                        <i class="fas fa-download"></i>
+                        <span data-en="Download Extension" data-ru="Скачать расширение">Скачать расширение</span>
+                    </a>
+                    <button class="extension-btn secondary" onclick="showInstallInstructions()">
+                        <i class="fas fa-info-circle"></i>
+                        <span data-en="Install Guide" data-ru="Инструкция по установке">Инструкция по установке</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <section class="contact">
             <h3 data-en="Contact Us" data-ru="Связаться с нами">Связаться с нами</h3>
             <div class="contact-info">
@@ -246,6 +278,48 @@
                 `;
                 mainLoginBtn.disabled = false;
             }
+        }
+
+        function showInstallInstructions() {
+            const instructions = currentLang === 'en' 
+                ? `Chrome Extension Installation Guide:
+
+FROM SOURCE:
+1. Go to chrome://extensions/
+2. Enable "Developer mode" (top right)
+3. Click "Load unpacked"
+4. Select the web-extension folder
+5. Done! Extension appears in toolbar
+
+FROM ZIP:
+1. Download and extract the ZIP file
+2. Go to chrome://extensions/
+3. Enable "Developer mode" (top right)
+4. Click "Load unpacked"
+5. Select the extracted folder
+6. Done! Extension appears in toolbar
+
+For detailed instructions, visit our GitHub repository.`
+                : `Инструкция по установке расширения Chrome:
+
+ИЗ ИСХОДНОГО КОДА:
+1. Перейдите на chrome://extensions/
+2. Включите "Режим разработчика" (справа вверху)
+3. Нажмите "Загрузить распакованное"
+4. Выберите папку web-extension
+5. Готово! Расширение появится в панели инструментов
+
+ИЗ ZIP ФАЙЛА:
+1. Скачайте и распакуйте ZIP файл
+2. Перейдите на chrome://extensions/
+3. Включите "Режим разработчика" (справа вверху)
+4. Нажмите "Загрузить распакованное"
+5. Выберите распакованную папку
+6. Готово! Расширение появится в панели инструментов
+
+Подробные инструкции смотрите в нашем GitHub репозитории.`;
+            
+            alert(instructions);
         }
 
         // DOM ready event listener
