@@ -829,8 +829,12 @@ jobs:
               
               echo "📦 Found backup: $LATEST_BACKUP"
               
-              # Stop current services
+              # Stop current services and clean up containers
+              echo "🛑 Stopping services and cleaning up containers..."
               docker compose down --remove-orphans || true
+              
+              # Force remove any conflicting containers
+              docker rm -f fluently_backend fluently_nginx fluently_postgres fluently_redis fluently_ml_api fluently_llm_api fluently_thesaurus_api fluently_telegram-bot fluently_directus fluently_prometheus fluently_grafana fluently_loki fluently_promtail fluently_node_exporter fluently_nginx_exporter fluently_cadvisor 2>/dev/null || true
               
               # Create rollback backup of current state
               ROLLBACK_BACKUP="$BACKUP_DIR/fluently-rollback-backup-$(date +%Y%m%d-%H%M%S).tar.gz"
@@ -1063,9 +1067,25 @@ jobs:
             df -h | grep -E "(overlay|docker|/$)"
             
             echo "🐳 Pulling latest images and starting containers..."
-            # Stop services first
+            
+            # Aggressive container cleanup to prevent name conflicts
+            echo "🧹 Performing aggressive container cleanup..."
+            
+            # Stop all containers first
             docker compose down --remove-orphans || true
-
+            
+            # Force remove any containers that might be stuck with our service names
+            echo "🗑️ Force removing any stuck containers..."
+            docker rm -f fluently_backend fluently_nginx fluently_postgres fluently_redis fluently_ml_api fluently_llm_api fluently_thesaurus_api fluently_telegram-bot fluently_directus fluently_prometheus fluently_grafana fluently_loki fluently_promtail fluently_node_exporter fluently_nginx_exporter fluently_cadvisor 2>/dev/null || true
+            
+            # Also remove any containers in "created" state that might cause conflicts
+            echo "🗑️ Removing containers in 'created' state..."
+            docker ps -a --filter "status=created" --format "{{.Names}}" | grep -E "fluently_|fluently-" | xargs -r docker rm -f 2>/dev/null || true
+            
+            # Clean up any containers that might have similar names
+            echo "🗑️ Cleaning up containers with similar names..."
+            docker ps -a --format "{{.Names}}" | grep -E "fluently_|fluently-" | xargs -r docker rm -f 2>/dev/null || true
+            
             # Clean up Docker networks to prevent conflicts
             echo "🧹 Cleaning up Docker networks..."
             
@@ -1076,19 +1096,44 @@ jobs:
             # Prune unused networks
             docker network prune -f || true
             
-            echo "✅ Network cleanup completed"
+            echo "✅ Container and network cleanup completed"
 
             # Pull latest images instead of building
             echo "📥 Pulling latest Docker images..."
             docker compose pull
             
+            # Final check for any remaining conflicting containers
+            echo "🔍 Final check for conflicting containers..."
+            CONFLICTING_CONTAINERS=$(docker ps -a --format "{{.Names}}" | grep -E "fluently_|fluently-" || true)
+            if [ ! -z "$CONFLICTING_CONTAINERS" ]; then
+              echo "⚠️ Found conflicting containers, removing them:"
+              echo "$CONFLICTING_CONTAINERS"
+              echo "$CONFLICTING_CONTAINERS" | xargs -r docker rm -f 2>/dev/null || true
+            else
+              echo "✅ No conflicting containers found"
+            fi
+            
             # Start services with force recreate
             echo "🚀 Starting services..."
             if [ "${{ github.event.inputs.rebuild_containers }}" = "true" ]; then
               echo "🔨 Rebuilding containers during deployment..."
-              docker compose up -d --force-recreate --build
+              docker compose up -d --force-recreate --build || {
+                echo "❌ Failed to start services with rebuild"
+                echo "🔍 Checking for container conflicts..."
+                docker ps -a | grep fluently || echo "No fluently containers found"
+                echo "🔍 Checking docker compose status..."
+                docker compose ps || true
+                exit 1
+              }
             else
-              docker compose up -d --force-recreate
+              docker compose up -d --force-recreate || {
+                echo "❌ Failed to start services"
+                echo "🔍 Checking for container conflicts..."
+                docker ps -a | grep fluently || echo "No fluently containers found"
+                echo "🔍 Checking docker compose status..."
+                docker compose ps || true
+                exit 1
+              }
             fi
 
             # Perform health checks
