@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Fluently Word Learner",
+  "version": "1.0.0",
+  "description": "Add words to your Fluently learning list",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://fluently-app.ru/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Fluently Word Learner"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://fluently-app.ru/auth-success.html*"],
+      "js": ["content.js", "popup.js", "background.js"]
+    }
+  ]
+} 
